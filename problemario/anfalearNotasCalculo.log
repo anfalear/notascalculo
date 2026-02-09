@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (MiKTeX 25.4) (format=lualatex 2025.7.7)  5 FEB 2026 10:13
+This is LuaHBTeX, Version 1.22.0 (MiKTeX 25.4) (format=lualatex 2025.7.7)  9 FEB 2026 15:23
  restricted system commands enabled.
 **anfalearNotasCalculo.tex
 (./anfalearNotasCalculo.tex
@@ -1890,54 +1890,77 @@ LaTeX Info: Redefining \% on input line 1.
 [16]
 Capítulo 3.
 
+Underfull \vbox (badness 1231) has occurred while \output is active []
+
+
 
 [17
 
 ]
 Package hyperref Info: bookmark level for unknown rem defaults to 0 on input li
-ne 43.
+ne 56.
 
 
-LaTeX Info: Redefining \. on input line 164.
-LaTeX Info: Redefining \% on input line 164.
+LaTeX Info: Redefining \. on input line 177.
+LaTeX Info: Redefining \% on input line 177.
 [18]
-
-
-
-
-
-
-
-LaTeX Info: Redefining \. on input line 192.
-LaTeX Info: Redefining \% on input line 192.
-[19]
-warning  (pdf backend): ignoring duplicate destination with the name 'example.8'
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-LaTeX Info: Redefining \. on input line 284.
-LaTeX Info: Redefining \% on input line 284.
+LaTeX Info: Redefining \. on input line 201.
+LaTeX Info: Redefining \% on input line 201.
+[19]
+warning  (pdf backend): ignoring duplicate destination with the name 'example.8'
+
+
+Underfull \vbox (badness 4608) has occurred while \output is active []
+
+
+
+LaTeX Info: Redefining \. on input line 272.
+LaTeX Info: Redefining \% on input line 272.
 [20]
 warning  (pdf backend): ignoring duplicate destination with the name 'definition
 .9'
 
 
-LaTeX Info: Redefining \. on input line 326.
-LaTeX Info: Redefining \% on input line 326.
+LaTeX Info: Redefining \. on input line 333.
+LaTeX Info: Redefining \% on input line 333.
 [21]
 
-LaTeX Info: Redefining \. on input line 395.
-LaTeX Info: Redefining \% on input line 395.
-[22])
+LaTeX Info: Redefining \. on input line 398.
+LaTeX Info: Redefining \% on input line 398.
+[22]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+LaTeX Info: Redefining \. on input line 457.
+LaTeX Info: Redefining \% on input line 457.
+[23]
+
+LaTeX Info: Redefining \. on input line 491.
+LaTeX Info: Redefining \% on input line 491.
+[24]
+
+LaTeX Info: Redefining \. on input line 566.
+LaTeX Info: Redefining \% on input line 566.
+[25]
+
+LaTeX Info: Redefining \. on input line 626.
+LaTeX Info: Redefining \% on input line 626.
+[26]
+
+LaTeX Info: Redefining \. on input line 682.
+LaTeX Info: Redefining \% on input line 682.
+[27])
 No file anfalearNotasCalculo.bbl.
 
 
 LaTeX Info: Redefining \. on input line 435.
 LaTeX Info: Redefining \% on input line 435.
-[23]
+[28]
 \tf@loe=\write8
 
 \openout8 = anfalearNotasCalculo.loe
@@ -1949,20 +1972,30 @@ LaTeX Info: Redefining \% on input line 11.
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-06-09>
  ***********
-Package rerunfilecheck Info: File `anfalearNotasCalculo.out' has not changed.
-(rerunfilecheck)             Checksum: AFB92F06A29E2F30F422C2DFE104F6B3;2527.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `anfalearNotasCalculo.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `anfalearNotasCalculo.out':
+(rerunfilecheck)             Before: DD1C30D3E9C3A54F40F680CD36DEA873;2527
+(rerunfilecheck)             After:  A92A2F80F2DC080B6355357ABFBF433E;2706.
 )
 
 Here is how much of LuaTeX's memory you used:
- 66064 strings out of 470205
- 100000,2848258 words of node,token memory allocated
- 1722 words of node memory still in use:
-   32 hlist, 2 vlist, 14 rule, 2 glue, 4 kern, 1 glyph, 139 attribute, 101 glue_
-spec, 107 attribute_list, 2 write, 24 pdf_literal, 2 pdf_action, 24 pdf_colorsta
+ 67436 strings out of 470205
+ 125003,2848258 words of node,token memory allocated
+ 1824 words of node memory still in use:
+   32 hlist, 2 vlist, 14 rule, 2 glue, 4 kern, 1 glyph, 173 attribute, 101 glue_
+spec, 124 attribute_list, 2 write, 24 pdf_literal, 2 pdf_action, 24 pdf_colorsta
 ck nodes
-   avail lists: 1:11,2:4358,3:1640,4:184,5:436,6:92,7:7447,8:40,9:1296,10:18,11:
+   avail lists: 1:27,2:5463,3:2150,4:184,5:441,6:92,7:8120,8:40,9:1296,10:14,11:
 828
- 92809 multiletter control sequences out of 65536+600000
+ 94132 multiletter control sequences out of 65536+600000
  84 fonts using 6272783 bytes
  76i,21n,95p,1148b,2830s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/users/anfalear/appdata/local/programs/miktex/fonts/opentype/public/lm/lmroma
@@ -1987,9 +2020,9 @@ X/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/anfalear/AppData/Local/Progr
 ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/anfalear/AppData/
 Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/anfalea
 r/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on anfalearNotasCalculo.pdf (23 pages, 284348 bytes).
+Output written on anfalearNotasCalculo.pdf (28 pages, 336719 bytes).
 
-PDF statistics: 520 PDF objects out of 1000 (max. 8388607)
- 186 named destinations out of 1000 (max. 131072)
+PDF statistics: 601 PDF objects out of 1000 (max. 8388607)
+ 235 named destinations out of 1000 (max. 131072)
  368 words of extra memory for PDF output out of 10000 (max. 100000000)
 

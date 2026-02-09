@@ -12,7 +12,7 @@ Una función \( f \) es una regla de correspondencia que asigna a cada elemento 
 
 El conjunto de todos los valores \( f(x) \) obtenidos se denomina \textbf{rango} o \textbf{imagen} de \( f \). Es común decir que $x$ es la variable independiente y $f(x)$ es la variable dependiente además de usar la notación $y=f(x)$ de manera indistinta.
 \end{definition}
-\begin{prob} 
+\begin{prob} \label{ejdominio}
 Calcule el dominio de las siguientes funciones
 \begin{enumerate}
 \item $f(x)=x^2-8x+5.$
@@ -25,13 +25,26 @@ Calcule el dominio de las siguientes funciones
 \item La función es un polinomio de grado $2$. Los polinomios están definidos para todo $x \in \mathbb{R}$, sin restricciones. Por tanto, \(
 \operatorname{Dom}(f) = \mathbb{R}.
 \)
-\item La raíz cuadrada requiere que su argumento sea no negativo, es decir
+
+\item La raíz cuadrada requiere $1 - x^2 \geq 0$. Factorizamos:
 \[
-1 - x^2 \geq 0 \iff x^2 \leq 1 \iff -1 \leq x \leq 1.
+1 - x^2 = (1 - x)(1 + x) \geq 0.
 \]
-No hay otras restricciones. Por tanto, \(
-\operatorname{Dom}(f) = [-1, 1].
-\)
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+Intervalo & $1+x$ & $1-x$ & $(1-x)(1+x)$ \\
+\hline $(-\infty,-1)$ & $-$ & $+$ & $-$ \\
+\hline $(-1,1)$ & $+$ & $+$ & $+$ \\
+\hline $(1,+\infty)$ & $+$ & $-$ & $-$ \\
+\hline
+\end{tabular}
+\caption{Tabla de signos para el problema \ref{ejdominio} }
+\end{table}
+
+
+
 \item Analizamos cada radical por separado. Para $\sqrt{3+x}$ se cumple que $3 + x \geq 0 \iff x \geq -3$ y para $\sqrt[4]{7-x}$ se tiene que las raíces de índice par requieren radicando $\geq 0$. Así, $7 - x \geq 0 \iff x \leq 7$. Finalmente la suma está definida cuando ambas lo están, por tanto 
 \(\operatorname{Dom}(f) = [-3, 7].\)
 \item La función está definida para todo número real excepto donde el denominador sea 0. De esta manera, \(\operatorname{Dom}(f) = \mathbb{R}-\lbrace 3 \rbrace.\)
@@ -167,7 +180,7 @@ Aunque conocer las cuatro representaciones de una función (verbal, numérica, a
 
 \begin{rem}[Prueba de la recta vertical]
 
-\begin{multicols}{2}
+
 Una curva en el plano $XY$ es la gráfica de una función $y=f(x)$ si y solo si ninguna recta vertical se interseca con la curva en más de un punto. 
 
 Por ejemplo, la circunferencia de radio $1$ centrada en el origen, dada por $x^2 + y^2 = 1$, no representa una función de $x$, ya que una recta vertical como $x=0.5$ la interseca dos veces.
@@ -185,10 +198,10 @@ Por ejemplo, la circunferencia de radio $1$ centrada en el origen, dada por $x^2
 \caption{Circunferencia unitaria fallando la prueba de la recta vertical.}
 \label{fig:circulo-vertical}
 \end{figure}
-\end{multicols}
+
 \end{rem}
 
-\begin{definition}[Funciones crecientes y decrecientes] Una función $f$ se denomina \textbf{creciente} sobre un intervalo $I$ si $f(x_1)<f(x_2)$ siempre que $x_1<x_2$ para todo $x\in I.$ De manera análoga $f$ se denomina \textbf{decreciente} sobre un intervalo $I$ si $f(x_1)>f(x_2)$ siempre que $x_1<x_2\in I.$
+\begin{definition}[Funciones crecientes y decrecientes] Una función $f$ se denomina \textbf{creciente} sobre un intervalo $I$ si $f(x_1)<f(x_2)$ siempre que $x_1<x_2$ para todo $x\in I.$ De manera análoga, $f$ se denomina \textbf{decreciente} sobre un intervalo $I$ si $f(x_1)>f(x_2)$ siempre que $x_1<x_2\in I.$
 \end{definition}
 
 \begin{example} 
@@ -285,16 +298,18 @@ El dominio de la función es $\mathbb{R}$. Graficamos cada pieza por separado: P
 \end{example}
 
 \begin{definition}[Funciones pares e impares]
-Una función $f: D \to \mathbb{R}$ se denomina \textbf{par} si satisface la condición de simetría respecto al eje $y$:
+Una función $f: D \to \mathbb{R}$ se clasifica como \textbf{par} si satisface la simetría respecto al eje $y$:
 \[
-f(-x) = f(x) \quad \forall x \in D \cap (-D) \neq \emptyset.
+f(-x) = f(x) \quad \forall x \in D \cap (-D),
 \]
-Análogamente, se denomina \textbf{impar} si satisface la condición de simetría respecto al origen:
+donde $D \cap (-D) \neq \emptyset$ asegura que el dominio contenga pares simétricos respecto al origen. 
+
+Análogamente, se clasifica como \textbf{impar} si exhibe simetría puntual respecto al origen:
 \[
-f(-x) = -f(x) \quad \forall x \in D \cap (-D) \neq \emptyset,
+f(-x) = -f(x) \quad \forall x \in D \cap (-D).
 \]
-donde $D \cap (-D) \neq \emptyset$ garantiza que el dominio sea simétrico respecto al origen o contenga al menos pares simétricos.
 \end{definition}
+
 
 \begin{example}
 La función $f(x) = x^2$ es par, ya que:
@@ -383,8 +398,8 @@ Estas reglas garantizan que $x^r$ produzca valores reales para todo $x$ en su do
 
 \begin{figure}[H]
 \centering
-\begin{tikzpicture}[scale=0.8]
-\draw[->] (-2,-2) -- (2,-2) node[right] {$x$};
+\begin{tikzpicture}[scale=0.4]
+\draw[->] (-2,0) -- (2,0) node[right] {$x$};
 \draw[->] (0,-2) -- (0,3) node[above] {$y$};
 \draw[thick, blue, domain=-1.8:-0.1, samples=100] plot (\x, {1/\x});
 \draw[thick, blue, domain=0.1:1.8, samples=100] plot (\x, {1/\x});
@@ -410,8 +425,284 @@ Estas reglas garantizan que $x^r$ produzca valores reales para todo $x$ en su do
 \end{example}
 
 
+\begin{definition}[Función exponencial] Sea $a$ un número real tal que $a>0$ y $a\neq 1.$ Se define la función exponencial como $f(x)=a^{x}.$ El dominio serán todos los números reales.
+\end{definition}
+
+\begin{example}[Ejemplos de funciones exponenciales]
+Los siguientes son ejemplos de funciones exponenciales:
+
+ \begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.1]
+% Ejes comunes
+\draw[->] (-2.2,0) -- (2.2,0) node[right] {$x$};
+\draw[->] (0,0) -- (0,9) node[above] {$y$};
+
+% f(x) = 3^x (creciente, base >1)
+\draw[thick, blue, domain=-2:2, samples=100] plot (\x, {2^\x});
+\node[blue, above right] at (1.5,6) {$f(x)=3^x$};
+
+% g(x) = (1/2)^x = 2^{-x} (decreciente, 0<base<1)
+\draw[thick, red, domain=-2:2, samples=100] plot (\x, {(1/2)^\x});
+\node[red, above left] at (-1.5,2) {$g(x)=\left(\frac{1}{2}\right)^x$};
+
+% Puntos clave
+\filldraw (0,1) circle (2pt) node[below] {$f(0)=g(0)=1$};
+\node at (2,-0.3) [below] {$2$};
+\node at (-2,-0.3) [below] {$-2$};
+\end{tikzpicture}
+\caption{Exponenciales: $f(x)=2^x$ ($\operatorname{Dom}=\mathbb{R}, y>0$), $g(x)=(1/2)^x$ (asíntota $y=0$).}
+\label{fig:exp-3-1/5}
+\end{figure}
+\end{example}
+
+\begin{definition}[Función logarítmica]
+Sea $a > 0$, $a \neq 1$ una base válida. La \textbf{función logarítmica} $f(x) = \log_a x$ se define como la función inversa de la exponencial $a^x$, satisfaciendo la propiedad fundamental:
+\[
+a^{\log_a x} = x = \log_a (a^x) \quad \forall x > 0.
+\]
+Su dominio natural es $(0, +\infty)$ y su rango es $\mathbb{R}$, siendo estrictamente creciente si $a > 1$ y estrictamente decreciente si $0 < a < 1$.
+\end{definition}
+
+\begin{example}[Funciones logarítmicas elementales]
+Consideremos dos casos representativos:
+
+\textbf{a)} $f(x) = \log_2 x$ (base $>1$, creciente):
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.1]
+\draw[->] (-0.5,0) -- (3.5,0) node[right] {$x$};
+\draw[->] (0,-2) -- (0,2.5) node[above] {$y$};
+\draw[thick, blue, domain=0.1:3.2, samples=100] plot (\x, {log2(\x)});
+\filldraw (1,0) circle (2pt) node[below] {$1$};
+\node[blue, above right] at (2,1.2) {$\log_2 x$};
+\end{tikzpicture}
+\caption{$\log_2 x$: $\operatorname{Dom}=(0,+\infty)$, pasa por $(1,0)$, creciente.}
+\end{figure}
+\end{example}
+
+Antes de seguir con el siguiente tipo de funciones, es necesaria la siguiente definición 
+
+\begin{definition}[Función periódica]
+Una función $f: D \to \mathbb{R}$ se denomina \textbf{periódica} si existe un número real positivo $T > 0$, llamado \textbf{período} de $f$, tal que:
+\[
+f(x + T) = f(x) \quad \forall x \in D \text{ con } x + T \in D.
+\]
+
+El menor número positivo $T$ que satisface esta condición se conoce como \textbf{período fundamental}. Equivalentemente, $f(x + nT) = f(x)$ para todo entero $n \in \mathbb{Z}$ tal que $x + nT \in D$. 
+\end{definition}
+\begin{rem}
+Las funciones periódicas presentan la propiedad geométrica de que su gráfica se compone de copias trasladas del segmento básico correspondiente a un período. Ejemplos clásicos incluyen las funciones trigonométricas, donde $\sin x$ y $\cos x$ tienen período fundamental $2\pi$, mientras que $\tan x$ tiene período $\pi$.
+\end{rem}
 
 
+\begin{definition}[Funciones trigonométricas fundamentales]
+Las \textbf{funciones trigonométricas fundamentales} se definen para $x \in \mathbb{R}$ medido en radianes, originadas en las razones trigonométricas de un ángulo en el círculo unitario. Se distinguen seis funciones periódicas con período fundamental $2\pi$ (excepto las secantes y cosecantes), cuyos dominios, rangos y comportamientos se detallan a continuación:
+
+\begin{itemize}
+\item $\sin x$: $\operatorname{Dom} = \mathbb{R}$, $\operatorname{Rango} = [-1,1]$, paridad impar.
+\item $\cos x$: $\operatorname{Dom} = \mathbb{R}$, $\operatorname{Rango} = [-1,1]$, paridad par.
+\item $\tan x$: $\operatorname{Dom} = \mathbb{R} \setminus \left\{\frac{\pi}{2} + k\pi \mid k \in \mathbb{Z}\right\}$, $\operatorname{Rango} = \mathbb{R}$, período $\pi$, paridad impar.
+\item $\cot x$: $\operatorname{Dom} = \mathbb{R} \setminus \{k\pi \mid k \in \mathbb{Z}\}$, $\operatorname{Rango} = \mathbb{R}$, período $\pi$, paridad impar.
+\item $\sec x = \frac{1}{\cos x}$: $\operatorname{Dom} = \mathbb{R} \setminus \left\{\frac{\pi}{2} + k\pi \mid k \in \mathbb{Z}\right\}$, $\operatorname{Rango} = (-\infty,-1] \cup [1,+\infty)$.
+\item $\csc x = \frac{1}{\sin x}$: $\operatorname{Dom} = \mathbb{R} \setminus \{k\pi \mid k \in \mathbb{Z}\}$, $\operatorname{Rango} = (-\infty,-1] \cup [1,+\infty)$.
+\end{itemize}
+\end{definition}
+
+\begin{example}[Gráficas de las funciones trigonométricas fundamentales] Se presentan a continuación las gráficas de las funciones trigonométricas fundamentales:
+\begin{figure}[H]
+\centering
+% sin x y cos x
+\begin{tikzpicture}[scale=0.5]
+\draw[->] (-0.5,0) -- (7,0) node[right] {$x$};
+\draw[->] (0,-1.5) -- (0,2) node[above] {$y$};
+\draw[thick, blue, domain=0:6.28, samples=150] plot (\x, {sin(\x r)});
+\draw[thick, orange, domain=0:6.28, samples=150] plot (\x, {cos(\x r)});
+\node[blue, above] at (3.5,0.8) {$\sin x$};
+\node[orange, right] at (1,1) {$\cos x$};
+\end{tikzpicture}
+\caption{$\sin x$, $\cos x$: período $2\pi$, rango $[-1,1]$.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+% tan x y cot x
+\begin{tikzpicture}[scale=0.5]
+\draw[->] (-4,0) -- (4,0) node[right] {$x$};
+\draw[->] (0,-4) -- (0,4) node[above] {$y$};
+\draw[thick, red, domain=-1.4:1.4, samples=100] plot (\x, {tan(\x r)});
+\draw[dashed] (1.57,-2.5) -- (1.57,2.5);
+\draw[dashed] (-1.57,-2.5) -- (-1.57,2.5);
+\draw[dashed] (4.71,-2.5) -- (4.71,2.5);
+\draw[thick, purple, domain=0.2:3, samples=100] plot (\x, {1/tan(\x r)});
+\node[red, above right] at (0.8,1.8) {$\tan x$};
+\node[purple, below right] at (2.5,-1.8) {$\cot x$};
+\end{tikzpicture}
+\caption{$\tan x$, $\cot x$: período $\pi$, rango $\mathbb{R}$, asíntotas verticales en $\pi/2.$}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+% sec x y csc x
+\begin{tikzpicture}[scale=0.5]
+\draw[->] (-5,0) -- (5,0) node[right] {$x$};
+\draw[->] (0,-2) -- (0,3) node[above] {$y$};
+\draw[thick, teal, domain=-1.3:1.3, samples=100] plot (\x, {1/cos(\x r)});
+\draw[thick, teal, domain=1.9:4.3, samples=100] plot (\x, {1/cos(\x r)});
+\draw[dashed] (1.57,-2) -- (1.57,3);
+\draw[dashed] (4.71,-2) -- (4.71,3);
+\draw[thick, magenta, domain=0.3:1.3, samples=100] plot (\x, {1/sin(\x r)});
+\draw[thick, magenta, domain=1.7:2.8, samples=100] plot (\x, {1/sin(\x r)});
+\draw[thick, magenta, domain=-2.9:-0.5, samples=100] plot (\x, {1/sin(\x r)});
+\draw[dashed] (3.14,-2) -- (3.14,3);
+\draw[dashed] (3.14,-1) -- (3.14,1);
+\draw[dashed] (3.14,1) -- (3.14,1);
+\node[teal, above] at (0.8,2.2) {$\sec x$};
+\node[magenta, above] at (2.5,2.2) {$\csc x$};
+\end{tikzpicture}
+\caption{$\sec x = 1/\cos x$, $\csc x = 1/\sin x$: rango $\mathbb{R}\setminus(-1,1)$, asíntotas verticales.}
+\end{figure}
+\end{example}
+
+\begin{definition}[Función compuesta]
+Sean $f$ y $g$ dos funciones tales que $g$ está definida en un conjunto $D_g$ y $f$ está definida en un conjunto $D_f$. Si para todo $x \in D_g$ se tiene que $g(x) \in D_f$, se puede definir la \textbf{función compuesta} de $f$ con $g$ como
+\[
+(f \circ g)(x) = f(g(x)).
+\]
+El dominio de la función compuesta $f \circ g$ está formado por todos aquellos $x \in D_g$ tales que la imagen $g(x)$ pertenece al dominio de $f$, es decir:
+\[
+\operatorname{Dom}(f \circ g) = \{\, x \in D_g : g(x) \in D_f \,\}.
+\]
+\end{definition}
+
+\begin{example}
+La función
+\[
+y = \sqrt{1 - x^2}
+\]
+puede interpretarse como una función compuesta de la siguiente manera:
+\[
+f(u) = \sqrt{u}, \qquad u = g(x) = 1 - x^2.
+\]
+Aquí, la función interior es $g(x) = 1 - x^2$ y la función exterior es $f(u) = \sqrt{u}$.
+
+El dominio de $g$ es todo $\mathbb{R}$, mientras que el dominio de $f$ es $[0,+\infty)$, pues la raíz cuadrada sólo está definida para argumentos no negativos. Para que la función compuesta $f(g(x)) = \sqrt{1 - x^2}$ esté definida, se requiere que
+\[
+g(x) = 1 - x^2 \geq 0.
+\]
+Resolvemos la desigualdad:
+\[
+1 - x^2 \geq 0 
+\iff x^2 \leq 1 
+\iff -1 \leq x \leq 1.
+\]
+Por lo tanto,
+\[
+\operatorname{Dom}(f \circ g) = [-1,1].
+\]
+En conclusión, $y = \sqrt{1 - x^2}$ es una función compuesta de $f(u)=\sqrt{u}$ y $g(x)=1-x^2$, cuyo dominio está dado por el intervalo cerrado $[-1,1]$.
+\end{example}
+\begin{rem}[Composiciones múltiples]
+Es posible componer una función múltiples veces formando cadenas de funciones. Por ejemplo, la función
+\[
+f(x) = \ln(\sin(x^2 + 1))
+\]
+puede descomponerse en la composición sucesiva de tres funciones elementales:
+\[
+f(x) = \ln \circ \sin \circ p(x),
+\]
+donde:
+\begin{itemize}
+\item $p(x) = x^2 + 1$ (función potencia desplazada),
+\item $u = \sin(v)$ con $v = p(x)$, 
+\item $y = \ln(u)$ con $u = \sin(p(x))$.
+\end{itemize}
+
+Para determinar su dominio, se analizan las restricciones de cada función desde la exterior hacia la interior:
+\begin{enumerate}
+\item $\ln(u)$ requiere $u > 0$,
+\item $\sin(v) \in [-1,1]$, pero debe satisfacer $\sin(v) > 0$,
+\item $v = x^2 + 1 \geq 1 > 0$ (siempre definido).
+\end{enumerate}
+Así, $\operatorname{Dom}(f) = \{x \in \mathbb{R} : \sin(x^2 + 1) > 0\}$, equivalente a los intervalos donde el seno es positivo.
+\end{rem}
+
+
+\begin{definition}[Función elemental]
+Una función $f: D \to \mathbb{R}$ se denomina \textbf{elemental} si puede obtenerse a partir de funciones elementales básicas (potencias, exponenciales, logarítmicas, trigonométricas y sus inversas) y constantes reales, mediante un número \emph{finito} de las siguientes operaciones:
+\begin{itemize}
+\item Suma, resta, multiplicación y división entre funciones,
+\item Composición de funciones.
+\end{itemize}
+
+Formalmente, el conjunto de funciones elementales $\mathcal{E}$ se define recursivamente como el menor conjunto que contiene:
+\begin{itemize}
+\item Las funciones potencia $x \mapsto x^r$ ($r \in \mathbb{Q}$),
+\item Las exponenciales $x \mapsto a^x$ ($a > 0$, $a \neq 1$),
+\item Las logarítmicas $x \mapsto \log_a x$ ($a > 0$, $a \neq 1$), 
+\item Las funciones trigonométricas $\sin x$, $\cos x$, $\tan x$, etc.,
+\item Las constantes $x \mapsto c$ ($c \in \mathbb{R}$),
+\item Y está cerrado bajo suma, producto, cociente y composición.
+\end{itemize}
+
+Las expresiones analíticas usuales en cálculo (polinomios, racionales, exponenciales-trigonométricas, etc.) son funciones elementales.
+\end{definition}
+
+Un tipo particular de funciones elementales son las \textbf{funciones algebraicas}, que se obtienen únicamente mediante operaciones algebraicas (suma, resta, multiplicación, división y raíces) sobre la variable independiente $x$. Se definen detalladamente a continuación:
+
+\begin{definition}[Función algebraica]
+Una función $f: D \to \mathbb{R}$ es \textbf{algebraica} si puede expresarse mediante una expresión finita que involucre únicamente la variable $x$, números reales y las operaciones de suma, resta, multiplicación, división y extracción de raíces $n$-ésimas (con $n \in \mathbb{N}^+$). Equivalentemente, satisface una ecuación polinómica con coeficientes reales:
+\[
+P(x, f(x)) = 0,
+\]
+donde $P$ es un polinomio en dos variables.
+\end{definition}
+
+\begin{definition}[Función lineal]
+Una función $f: \mathbb{R} \to \mathbb{R}$ es \textbf{lineal} si tiene la forma
+\[
+f(x) = mx + b,
+\]
+donde $m, b \in \mathbb{R}$ son constantes. Aquí $m$ es la \textbf{pendiente} y $b$ el \textbf{intercepto} con el eje $y$. Su dominio y rango son $\mathbb{R}$, y es inyectiva si $m \neq 0$.
+\end{definition}
+
+\begin{definition}[Función polinómica]
+Una función $f: \mathbb{R} \to \mathbb{R}$ es \textbf{polinómica} si se expresa como
+\[
+f(x) = a_n x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a_0,
+\]
+donde $n \in \mathbb{N} \cup \{0\}$ es el \textbf{grado}, $a_i \in \mathbb{R}$ y $a_n \neq 0$. Su dominio es $\mathbb{R}$. Cuando $n \geq 2$, se clasifican según su grado (cuadrática $n=2$, cúbica $n=3$, etc.).
+\end{definition}
+
+\begin{definition}[Función racional]
+Una función $f: D \to \mathbb{R}$ es \textbf{racional} si es un cociente de dos polinomios:
+\[
+f(x) = \frac{P(x)}{Q(x)},
+\]
+donde $P, Q$ son polinomios con $Q \not\equiv 0$. Su dominio es
+\[
+D = \mathbb{R} \setminus \{x \in \mathbb{R} : Q(x) = 0\}.
+\]
+Las asíntotas y discontinuidades se determinan por los ceros del denominador.
+\end{definition}
+
+\begin{definition}[Función irracional]
+Una función $f: D \to \mathbb{R}$ es \textbf{irracional} (o radical) si en su expresión analítica aparece al menos una raíz $n$-ésima con $n \geq 2$. El dominio se restringe por las condiciones de definición de las raíces:
+\[
+\sqrt[n]{P(x)} \quad \text{requiere } P(x) \geq 0 \text{ si } n \text{ par}.
+\]
+Ejemplos: $f(x) = \sqrt{x}$, $g(x) = \sqrt[3]{x^2 + 1}$.
+\end{definition}
+
+Las funciones que no son algebraicas se denominan \textbf{trascendentes}. Ejemplos incluyen las funciones trigonométricas ($y = \cos x$), exponenciales ($y = 10^x$) y logarítmicas ($y = \ln x$), cuya definición trasciende las operaciones algebraicas elementales.
+
+
+
+Cerramos con los ejercicios correspondientes a este capítulo
+
+
+\section{Ejercicios del capítulo}
 
 
 
