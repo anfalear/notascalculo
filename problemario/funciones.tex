@@ -436,11 +436,11 @@ Los siguientes son ejemplos de funciones exponenciales:
 \begin{tikzpicture}[scale=1.1]
 % Ejes comunes
 \draw[->] (-2.2,0) -- (2.2,0) node[right] {$x$};
-\draw[->] (0,0) -- (0,9) node[above] {$y$};
+\draw[->] (0,0) -- (0,4) node[above] {$y$};
 
 % f(x) = 3^x (creciente, base >1)
 \draw[thick, blue, domain=-2:2, samples=100] plot (\x, {2^\x});
-\node[blue, above right] at (1.5,6) {$f(x)=3^x$};
+\node[blue, above right] at (1.5,2) {$f(x)=2^x$};
 
 % g(x) = (1/2)^x = 2^{-x} (decreciente, 0<base<1)
 \draw[thick, red, domain=-2:2, samples=100] plot (\x, {(1/2)^\x});
@@ -577,11 +577,9 @@ El dominio de la función compuesta $f \circ g$ está formado por todos aquellos
 \end{definition}
 
 \begin{example}
-La función
-\[
+La función \(
 y = \sqrt{1 - x^2}
-\]
-puede interpretarse como una función compuesta de la siguiente manera:
+\) puede interpretarse como una función compuesta de la siguiente manera:
 \[
 f(u) = \sqrt{u}, \qquad u = g(x) = 1 - x^2.
 \]
@@ -698,8 +696,430 @@ Ejemplos: $f(x) = \sqrt{x}$, $g(x) = \sqrt[3]{x^2 + 1}$.
 Las funciones que no son algebraicas se denominan \textbf{trascendentes}. Ejemplos incluyen las funciones trigonométricas ($y = \cos x$), exponenciales ($y = 10^x$) y logarítmicas ($y = \ln x$), cuya definición trasciende las operaciones algebraicas elementales.
 
 
+\section{Transformaciones de funciones}
 
-Cerramos con los ejercicios correspondientes a este capítulo
+A partir de las funciones básicas estudiadas previamente, las combinaciones de funciones se producen de manera natural: $(f+g)(x)=f(x)+g(x),$ $(f-g)(x)=f(x)-g(x),$ $(fg)(x)=f(x)g(x),$ y $(\dfrac{f}{g})(x)=\dfrac{f(x)}{g(x)}$ con $g(x)\neq 0.$  Ahora, es posible generar nuevas funciones mediante \textbf{transformaciones geométricas} de sus gráficas: traslaciones, dilataciones, compresiones y reflexiones. Estas operaciones preservan las propiedades fundamentales de la función original, modificando únicamente su posición y escala. 
+
+Dados $h, k \in \mathbb{R}$ y $y = f(x)$, las siguientes transformaciones desplazan la gráfica de $f$:
+
+\begin{itemize}
+\item $y = f(x - h)$: \textbf{Traslación horizontal} de $h$ unidades ($h > 0$ hacia la derecha, $h < 0$ hacia la izquierda).
+\item $y = f(x) + k$: \textbf{Traslación vertical} de $k$ unidades ($k > 0$ hacia arriba, $k < 0$ hacia abajo).
+\item $y = f(x - h) + k$: \textbf{Traslación combinada} (horizontal $h$, vertical $k$).
+\end{itemize}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=0.8]
+% Original: y = (x)^2 = x^2
+
+\draw[->] (-2.5,0) -- (2.5,0) node[right] {$x$};
+\draw[->] (0,-0.5) -- (0,5) node[above] {$y$};
+\draw[blue,thick, domain=-2.2:2.2, samples=100] plot (\x, {\x*\x});
+\node[blue, above right] at (-4,1.5) {$y = f(x) = x^2$};
+
+
+% f(x-h) = (x-1)^2, h=1
+
+\draw[red,thick, domain=-1.2:3.2, samples=100] plot (\x, {(\x-1)^2});
+\node[red, above right] at (2,2.5) {$y = f(x-1) = (x-1)^2$};
+
+
+% f(x)+k = x^2 + 2, k=2
+
+
+\draw[green,thick, domain=-2.2:2.2, samples=100] plot (\x, {\x*\x + 2});
+\node[green, above right] at (1.5,6) {$y = f(x)+2 = x^2+2$};
+
+
+% f(x-h)+k = (x-1)^2 + 2
+
+\draw[magenta,thick, domain=-1.2:3.2, samples=100] plot (\x, {(\x-1)^2 + 2});
+\node[magenta, above right] at (2,3.5) {$y = f(x-1)+2 = (x-1)^2+2$};
+
+\end{tikzpicture}
+\caption{Traslaciones de $y=x^2$: vértice se desplaza de $(0,0)$ a $(h,k)=(1,2)$.}
+\label{fig:traslaciones-parabola}
+\end{figure}
+
+
+Suponga que $c > 0$, $c \neq 1$. Las siguientes transformaciones modifican la escala y orientación:
+
+\begin{itemize}
+\item $y = c \cdot f(x)$ ($c > 1$): \textbf{Dilatación vertical} por factor $c$.
+\item $y = \frac{1}{c} \cdot f(x)$ ($c > 1$): \textbf{Compresión vertical} por factor $c$.
+\item $y = f(c \cdot x)$ ($c > 1$): \textbf{Compresión horizontal} por factor $c$.
+\item $y = f\left(\frac{x}{c}\right)$ ($c > 1$): \textbf{Dilatación horizontal} por factor $c$.
+\item $y = -f(x)$: \textbf{Reflexión respecto al eje $x$}.
+\item $y = f(-x)$: \textbf{Reflexión respecto al eje $y$} (preserva paridad).
+\end{itemize}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.1]
+
+% Ejes compartidos
+\draw[->] (-0.5,0) -- (7,0) node[right] {$x$};
+\draw[->] (0,-3) -- (0,3.2) node[above] {$y$};
+
+% Líneas referencia y=±1
+\draw[gray!40,dashed] (0,1) -- (7,1);
+\draw[gray!40,dashed] (0,-1) -- (7,-1);
+
+% 1. Original: sin(x)
+\draw[thick, blue, domain=0:6.3, samples=120] plot (\x, {sin((\x) r)});
+\node[blue, font=\small, above right] at (1.8,1.2) {$\sin x$};
+
+% 2. Amplitud 2: 2sin(x)
+\draw[thick, red, domain=0:6.3, samples=120] plot (\x, {2*sin((\x-3.8) r)});
+\node[red, font=\small, above] at (1.8,2.5) {$2\sin x$};
+
+% 3. Compresión vertical: 0.5sin(x)
+\draw[thick, orange, domain=0:6.3, samples=120] plot (\x, {0.5*sin((\x-7.3) r)});
+\node[orange, font=\small, above right] at (1.8,0.8) {$0.5\sin x$};
+
+% 4. Compresión horizontal: sin(2x)
+\draw[thick, green!70!black, domain=0:6.3, samples=120] plot (\x, {sin(2*(\x-10.8) r)});
+\node[green!70!black, font=\small, above] at (1.8,2) {$\sin 2x$};
+
+% 5. Reflexión vertical: -sin(x)
+\draw[thick, magenta, domain=0:6.8, samples=120] plot (\x, {-sin((\x-14.3) r)});
+\node[magenta, font=\small, below] at (1.8,-0.8) {$-\sin x$};
+\end{tikzpicture}
+\caption{Transformaciones superpuestas de $y=\sin x$: amplitud, compresiones y reflexión.}
+\label{fig:transformaciones-seno}
+\end{figure}
+
+
+
+Estas transformaciones permiten sistematizar el análisis gráfico de funciones complejas a partir de funciones básicas conocidas. Para las funciones trigonométricas periódicas $\sin x$ y $\cos x$, cuya forma canónica tiene amplitud $1$, línea media $y=0$ y período $2\pi$, la forma generalizada es $y = C + A \sin \bigl[ a(t + b) \bigr]$ o $y = C + A \cos \bigl[ a(t + b) \bigr],$ donde los parámetros tienen interpretación geométrica precisa:
+
+\begin{itemize}
+\item \textbf{Amplitud} $|A|$: distancia máxima desde la línea central hasta los valores extremos.
+\item \textbf{Período fundamental} $T = \dfrac{2\pi}{|a|}$: longitud del ciclo completo ($a > 0$ implica compresión, $0 < a < 1$ dilatación horizontal).
+\item \textbf{Línea central (desfase vertical)} $C$: valor medio alrededor del cual oscila la función.
+\item \textbf{Desfase horizontal} $-b$: desplazamiento lateral del ciclo básico ($\phi = -b$ comúnmente denotado).
+\end{itemize}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.1]
+% Ejes
+\draw[->] (-0.3,0) -- (7.5,0) node[right] {$t$};
+\draw[->] (0,-2.8) -- (0,3) node[above] {$y$};
+
+% Función: y = 0.5 + 1.5 sin(1.2(t + 0.3))
+\draw[thick,blue,domain=0:6.5,samples=200,smooth] plot (\x, {0.5 + 1.5*sin(1.2*(\x + 0.3) r)});
+
+% Línea central C=0.5
+\draw[dashed,gray,thick] (0,0.5) -- (6.5,0.5) node[right,font=\small] {$y=C=0.5$};
+
+% Amplitud A=1.5
+\draw[<->,red,thick] (5.8,0.5) -- (5.8,2) node[midway,right,font=\small] {$|A|=1.5$};
+
+% Período T=2π/1.2 ≈ 5.24
+\draw[<->,purple,thick] (0.5,-2.5) -- (5.74,-2.5) node[midway,below,font=\small] {$T=\frac{2\pi}{|1.2|}\approx5.24$};
+
+% Máximos/mínimos para referencia
+\filldraw (2.1,2) circle (1.5pt) node[above,font=\tiny] {máx};
+\filldraw (4.8,-1) circle (1.5pt) node[below,font=\tiny] {mín};
+
+% Etiqueta función
+\node[below=0.1cm,font=\footnotesize] at (3.5,-3.5) {$y = 0.5 + 1.5\sin[1.2(t+0.3)]$};
+
+\end{tikzpicture}
+\caption{Componentes de la forma amplitud-fase.}
+\label{fig:forma-amplitud-fase}
+\end{figure}
+
+Esta parametrización es fundamental para modelar fenómenos oscilatorios (resortes, ondas, circuitos AC) donde la amplitud, frecuencia y fase determinan el comportamiento físico observado.
+
+\section{Funciones inversas}
+
+Muchos fenómenos físicos y matemáticos admiten dos perspectivas complementarias. Considere, por ejemplo, el proceso productivo de una planta de muebles: dada una cantidad de tiempo $t$, podemos determinar la cantidad de muebles producidos $f(t)$; alternativamente, dada una cantidad específica de muebles $y$, podríamos determinar el tiempo necesario para producirlos $t = f^{-1}(y)$. 
+
+En este contexto, si $y = f(t)$ describe la producción acumulada en función del tiempo, la función inversa $f^{-1}$ responde a la pregunta ``¿en cuánto tiempo se producen $y$ muebles?''. Para que esta operación inversa sea bien definida matemáticamente, es necesario garantizar que cada valor $y$ en el rango de $f$ corresponda a un único $x$ en el dominio, condición que formalizamos mediante el concepto de inyectividad.
+
+\begin{definition}[Función inyectiva]
+Una función $f: D \to \mathbb{R}$ es \textbf{inyectiva} si para todo par de elementos distintos $x_1, x_2 \in D$ se cumple:
+\[
+x_1 \neq x_2 \implies f(x_1) \neq f(x_2).
+\]
+Equivalentemente, $f(a) = f(b)$ implica $a = b$ para todo $a, b \in D$.
+\end{definition}
+
+\begin{rem}[Prueba de la recta horizontal]
+Una función $f$ es inyectiva si y solo si ninguna recta horizontal $y = k$ (con $k \in \mathbb{R}$) interseca su gráfica en más de un punto. Esta condición geométrica es equivalente a la definición algebraica anterior y proporciona un criterio visual directo para verificar la inyectividad.
+\end{rem}
+
+La inyectividad garantiza que cada valor en el rango de $f$ proviene de exactamente un elemento del dominio, condición necesaria y suficiente para que exista una función inversa bien definida $f^{-1}: \operatorname{Ran}(f) \to D$ tal que:
+\(
+f(f^{-1}(y)) = y \quad \text{y} \quad f^{-1}(f(x)) = x.
+\)
+
+Este contexto nos permite introducir rigurosamente el concepto de función inversa.
+
+\begin{definition}[Función inversa]
+Sea $f: D \to R$ una función inyectiva, con dominio $D$ y rango (imagen) $R = f(D)$. La \textbf{función inversa} de $f$, denotada por $f^{-1}: R \to D$, se define mediante la relación
+\[
+f^{-1}(y) = x \;\Longleftrightarrow\; f(x) = y,
+\]
+para todo $y \in R$ y el único $x \in D$ que satisface dicha igualdad. En otras palabras, $f^{-1}$ “deshace” la acción de $f$.
+\end{definition}
+
+\begin{rem}
+En general, $f^{-1} \neq \dfrac{1}{f}$: la notación $f^{-1}$ no denota recíproco, sino \emph{función inversa}. Además, cuando $f$ es inyectiva se satisfacen las identidades de composición
+\[
+f^{-1}(f(x)) = x \quad \text{para todo } x \in D,
+\]
+\[
+f(f^{-1}(y)) = y \quad \text{para todo } y \in R.
+\]
+Estas igualdades permiten calcular analíticamente la función inversa: dada la ecuación $y = f(x)$, se despeja $x$ en términos de $y$ y, finalmente, se intercambian los roles de las variables ($y$ se renombra como $x$).
+\end{rem}
+
+\begin{example}
+Determine una fórmula para la inversa de las funciones
+\(
+y = \frac{4x - 1}{2x + 3} \) y \( y = 2x - 3.\)
+
+\begin{myproof}
+\textbf{1. Inversa de } $\displaystyle y = \frac{4x - 1}{2x + 3}$.
+
+Partimos de la ecuación
+\[
+y = \frac{4x - 1}{2x + 3}.
+\]
+Paso 1: Intercambiamos $x$ e $y$ para reflejar la inversión:
+\[
+x = \frac{4y - 1}{2y + 3}.
+\]
+Paso 2: Despejamos $y$ en términos de $x$. Multiplicamos ambos lados por $2y + 3$:
+\[
+x(2y + 3) = 4y - 1.
+\]
+Distribuimos:
+\[
+2xy + 3x = 4y - 1.
+\]
+Paso 3: Reagrupamos los términos que contienen $y$ en un lado:
+\[
+2xy - 4y = -1 - 3x.
+\]
+Factorizamos $y$:
+\[
+y(2x - 4) = -1 - 3x.
+\]
+Paso 4: Despejamos $y$:
+\[
+y = \frac{-1 - 3x}{2x - 4}.
+\]
+Podemos multiplicar numerador y denominador por $-1$ para simplificar:
+\[
+y = \frac{3x + 1}{4 - 2x}.
+\]
+Por lo tanto,
+\[
+f^{-1}(x) = \frac{3x + 1}{4 - 2x}.
+\]
+
+\textbf{2. Inversa de } $\displaystyle y = 2x - 3$.
+
+Partimos de
+\[
+y = 2x - 3.
+\]
+Paso 1: Intercambiamos $x$ e $y$:
+\[
+x = 2y - 3.
+\]
+Paso 2: Despejamos $y$ en términos de $x$:
+\[
+x + 3 = 2y \quad \Longrightarrow \quad y = \frac{x + 3}{2}.
+\]
+Por tanto,
+\[
+f^{-1}(x) = \frac{x + 3}{2}.
+\]
+
+En ambos casos, puede verificarse la corrección comprobando que $f^{-1}(f(x)) = x$ y $f(f^{-1}(x)) = x$ en los dominios correspondientes.
+\end{myproof}
+\end{example}
+
+Después del contexto establecido sobre funciones inversas, las funciones trigonométricas básicas ($\sin x$, $\cos x$, etc.) no son globalmente inyectivas debido a su periodicidad. Para definir sus inversas, se restringen a intervalos \emph{principales} donde cada una es biyectiva (inyectiva y sobreyectiva) sobre su rango. Estas funciones trigonométricas inversas se definen a continuación:
+
+\begin{definition}[Funciones trigonométricas inversas]
+Las seis funciones trigonométricas inversas fundamentales se definen con dominios y rangos específicos que garantizan su inyectividad:
+
+\begin{center}
+\begin{tabular}{|c|l|l|}
+\hline
+\textbf{Función} & \textbf{Dominio (principal)} & \textbf{Rango} \\
+\hline
+$\operatorname{arcsin} x$ & $[-1, 1]$ & $\left[-\frac{\pi}{2}, \frac{\pi}{2}\right]$ \\
+\hline
+$\operatorname{arccos} x$ & $[-1, 1]$ & $[0, \pi]$ \\
+\hline
+$\operatorname{arctan} x$ & $\mathbb{R}$ & $\left(-\frac{\pi}{2}, \frac{\pi}{2}\right)$ \\
+\hline
+$\operatorname{arccot} x$ & $\mathbb{R}$ & $(0, \pi)$ \\
+\hline
+$\operatorname{arcsec} x$ & $(-\infty, -1] \cup [1, +\infty)$ & $[0, \pi] \setminus \{\frac{\pi}{2}\}$ \\
+\hline
+$\operatorname{arccsc} x$ & $(-\infty, -1] \cup [1, +\infty)$ & $\left[-\frac{\pi}{2}, \frac{\pi}{2}\right] \setminus \{0\}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\end{definition}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines = center,
+    xlabel = {$x$},
+    ylabel = {$y$},
+    title = {$y = \arcsin(x)$},
+    domain = -1:1,
+    samples = 100,
+    ymin = -2,
+    ymax = 2,
+    xmin = -1.5,
+    xmax = 1.5,
+    grid = major,
+    legend pos = north west,
+    width = 10cm,
+    height = 8cm,
+    ytick = {-1.5708, 0, 1.5708},
+    yticklabels = {$-\pi/2$, $0$, $\pi/2$},
+    trig format plots=rad
+]
+\addplot[blue, thick] {asin(x)};
+\addlegendentry{$\arcsin(x)$}
+\addplot[red, dashed, domain=-1.5:1.5] {pi/2};
+\addplot[red, dashed, domain=-1.5:1.5] {-pi/2};
+\end{axis}
+\end{tikzpicture}
+\caption{Función arcoseno: dominio $[-1,1]$, rango $[-\pi/2, \pi/2]$}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines = center,
+    xlabel = {$x$},
+    ylabel = {$y$},
+    title = {$y = \arccos(x)$},
+    domain = -1:1,
+    samples = 100,
+    ymin = -0.5,
+    ymax = 3.5,
+    xmin = -1.5,
+    xmax = 1.5,
+    grid = major,
+    legend pos = north east,
+    width = 10cm,
+    height = 8cm,
+    ytick = {0, 1.5708, 3.14159},
+    yticklabels = {$0$, $\pi/2$, $\pi$},
+    trig format plots=rad
+]
+\addplot[blue, thick] {acos(x)};
+\addlegendentry{$\arccos(x)$}
+\addplot[red, dashed, domain=-1.5:1.5] {pi};
+\addplot[red, dashed, domain=-1.5:1.5] {0};
+\end{axis}
+\end{tikzpicture}
+\caption{Función arcocoseno: dominio $[-1,1]$, rango $[0, \pi]$}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines = center,
+    xlabel = {$x$},
+    ylabel = {$y$},
+    title = {$y = \arctan(x)$},
+    domain = -10:10,
+    samples = 200,
+    ymin = -2,
+    ymax = 2,
+    xmin = -10,
+    xmax = 10,
+    grid = major,
+    legend pos = north west,
+    width = 10cm,
+    height = 8cm,
+    ytick = {-1.5708, 0, 1.5708},
+    yticklabels = {$-\pi/2$, $0$, $\pi/2$},
+    trig format plots=rad
+]
+\addplot[blue, thick] {atan(x)};
+\addlegendentry{$\arctan(x)$}
+\addplot[red, dashed, domain=-10:10] {pi/2};
+\addplot[red, dashed, domain=-10:10] {-pi/2};
+\end{axis}
+\end{tikzpicture}
+\caption{Función arcotangente: dominio $(-\infty, \infty)$, rango $(-\pi/2, \pi/2)$}
+\end{figure}
+
+
+
+\section{Operaciones con logaritmos y exponenciales naturales}
+
+Concluimos este capítulo presentando las propiedades fundamentales de las funciones exponenciales y logarítmicas, esenciales para el desarrollo del cálculo diferencial. En particular, se destaca el número \( e \approx 2.71828 \), cuya función asociada \( y = e^x \) tiene pendiente igual a \(1\) en el punto \((0,1)\). Esta característica se demostrará formalmente en el capítulo de límites. Por ahora, estudiaremos las leyes algebraicas que gobiernan las operaciones con potencias, exponentes y logaritmos.
+
+\begin{theorem}[Leyes de los exponentes]
+Sean \( a, b > 0 \) y \( x, y \in \mathbb{R} \). Se cumplen las siguientes propiedades:
+\begin{enumerate}
+    \item \( b^{x+y} = b^x \, b^y \)
+    \item \( b^{x-y} = \dfrac{b^x}{b^y} \)
+    \item \( (b^x)^y = b^{xy} \)
+    \item \( (ab)^x = a^x \, b^x \)
+\end{enumerate}
+\end{theorem}
+
+\begin{theorem}[Leyes de los logaritmos]
+Sea \( b > 0 \) con \( b \neq 1 \), y sean \( x, y > 0 \) y \( r \in \mathbb{R} \). Entonces se verifican las siguientes propiedades:
+\begin{enumerate}
+    \item \( \log_b(xy) = \log_b x + \log_b y \)
+    \item \( \log_b\!\left(\dfrac{x}{y}\right) = \log_b x - \log_b y \)
+    \item \( \log_b(x^r) = r\,\log_b x \)
+\end{enumerate}
+Además, la definición de logaritmo establece la equivalencia \(
+\log_b x = y \quad \Longleftrightarrow \quad b^y = x.
+\)
+\end{theorem}
+
+\begin{definition}[Función logaritmo natural]
+El logaritmo natural \(\ln x\) es el logaritmo de base \(e\), es decir \(
+\ln x = \log_e x.
+\)
+Para todo \( x > 0 \) y \( y \in \mathbb{R} \) se cumple 
+\(
+\ln x = y \iff e^y = x,$ $\ln(e^x) = x, $ y $e^{\ln x} = x.$ En particular, en \(x = 1\), se obtiene \(
+\ln e = 1.
+\)
+\end{definition}
+
+\begin{theorem}[Cambio de base a logaritmos naturales]
+Sea \( b > 0 \) y \( b \neq 1 \). Se cumple que \(
+\log_b x = \frac{\ln x}{\ln b}.
+\)
+\end{theorem}
+
+\begin{proof}
+Sea \( y = \log_b x \). Por definición, \( b^y = x \). Al aplicar logaritmos naturales a ambos lados \(
+y \ln b = \ln x.
+\) Despejando \( y \), se obtiene \(
+y = \frac{\ln x}{\ln b},
+\) lo que establece la fórmula de cambio de base.
+\end{proof}
+
+
 
 
 \section{Ejercicios del capítulo}
