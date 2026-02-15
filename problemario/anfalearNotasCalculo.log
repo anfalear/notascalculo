@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (MiKTeX 25.4) (format=lualatex 2025.7.7)  11 FEB 2026 17:48
+This is LuaHBTeX, Version 1.22.0 (MiKTeX 25.4) (format=lualatex 2025.7.7)  15 FEB 2026 12:43
  restricted system commands enabled.
 **anfalearNotasCalculo.tex
 (./anfalearNotasCalculo.tex
@@ -1798,9 +1798,9 @@ LaTeX Info: Redefining \% on input line 1.
 \openout6 = anfalearNotasCalculo.toc
 
 
-[4] (./anfalearNotasCalculo.loe)
+[4] (./anfalearNotasCalculo.loe
 
-[5]
+[5])
 
 LaTeX Info: Redefining \. on input line 421.
 LaTeX Info: Redefining \% on input line 421.
@@ -1985,13 +1985,54 @@ Underfull \vbox (badness 4792) has occurred while \output is active []
 
 LaTeX Info: Redefining \. on input line 1071.
 LaTeX Info: Redefining \% on input line 1071.
-[34])
+[34]
+
+
+
+
+
+LaTeX Info: Redefining \. on input line 1130.
+LaTeX Info: Redefining \% on input line 1130.
+[35]
+
+
+
+
+
+
+Underfull \vbox (badness 1584) has occurred while \output is active []
+
+
+
+LaTeX Info: Redefining \. on input line 1235.
+LaTeX Info: Redefining \% on input line 1235.
+[36]
+
+LaTeX Info: Redefining \. on input line 1290.
+LaTeX Info: Redefining \% on input line 1290.
+[37]
+
+
+
+
+
+
+
+LaTeX Info: Redefining \. on input line 1341.
+LaTeX Info: Redefining \% on input line 1341.
+[38]
+
+
+
+
+
+)
 No file anfalearNotasCalculo.bbl.
 
 
 LaTeX Info: Redefining \. on input line 435.
 LaTeX Info: Redefining \% on input line 435.
-[35]
+[39]
 \tf@loe=\write8
 
 \openout8 = anfalearNotasCalculo.loe
@@ -2004,23 +2045,21 @@ LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-06-09>
  ***********
 Package rerunfilecheck Info: File `anfalearNotasCalculo.out' has not changed.
-(rerunfilecheck)             Checksum: B03C585C0136E1B47D499931D0146B17;3390.
+(rerunfilecheck)             Checksum: 15594D7BF85FE9CAB210ABC67D962670;3387.
 )
 
 Here is how much of LuaTeX's memory you used:
- 68598 strings out of 470205
+ 68688 strings out of 470205
  125003,2848258 words of node,token memory allocated
- 1944 words of node memory still in use:
-   32 hlist, 2 vlist, 14 rule, 2 glue, 4 kern, 1 glyph, 213 attribute, 101 glue_
-spec, 144 attribute_list, 2 write, 24 pdf_literal, 2 pdf_action, 24 pdf_colorsta
+ 1962 words of node memory still in use:
+   32 hlist, 2 vlist, 14 rule, 2 glue, 4 kern, 1 glyph, 217 attribute, 101 glue_
+spec, 146 attribute_list, 2 write, 24 pdf_literal, 3 pdf_action, 24 pdf_colorsta
 ck nodes
-   avail lists: 1:25,2:9398,3:4271,4:218,5:597,6:143,7:8120,8:40,9:1296,10:14,11
-:828
- 95250 multiletter control sequences out of 65536+600000
+   avail lists: 1:26,2:9395,3:4271,4:218,5:612,6:143,7:8120,8:40,9:1296,10:20,11
+:898
+ 95267 multiletter control sequences out of 65536+600000
  94 fonts using 7085951 bytes
  76i,21n,95p,1148b,2830s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-warning  (pdf backend): unreferenced destination with name 'theorem.38'
 <c:/users/anfalear/appdata/local/programs/miktex/fonts/opentype/public/lm/lmroma
 n6-regular.otf><c:/users/anfalear/appdata/local/programs/miktex/fonts/opentype/p
 ublic/lm/lmroman8-regular.otf><c:/users/anfalear/appdata/local/programs/miktex/f
@@ -2046,9 +2085,9 @@ alear/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C
 :/Users/anfalear/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
 sy8.pfb><C:/Users/anfalear/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
 onts/symbols/msbm10.pfb>
-Output written on anfalearNotasCalculo.pdf (35 pages, 421269 bytes).
+Output written on anfalearNotasCalculo.pdf (39 pages, 449617 bytes).
 
-PDF statistics: 720 PDF objects out of 1000 (max. 8388607)
- 279 named destinations out of 1000 (max. 131072)
+PDF statistics: 823 PDF objects out of 1000 (max. 8388607)
+ 352 named destinations out of 1000 (max. 131072)
  400 words of extra memory for PDF output out of 10000 (max. 100000000)
 

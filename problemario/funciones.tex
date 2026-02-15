@@ -1124,9 +1124,237 @@ y = \frac{\ln x}{\ln b},
 
 \section{Ejercicios del capítulo}
 
+\begin{prob} Calcule el dominio de las siguientes funciones, exprese este dominio en forma de conjunto, en forma de intervalo y realice la gráfica de este intervalo:
+\begin{multicols}{2}
+\begin{enumerate}
+\item $\dfrac{x+4}{x^2-9}$ \item $\dfrac{2x^3-5}{x^2+x-6}$ \item $\dfrac{x+1}{1+\dfrac{1}{x+1}}$ \item $\sqrt{4-x^2}$ \item $\sqrt{\dfrac{(x^2+1)(x-3)}{x^2-9}}$ \item $\sqrt{\dfrac{x^2-x}{x^2-2x}}$ \item $x^2+8x+1.$ \item $\dfrac{\cos x}{1-\sin x}.$ \item $\dfrac{1}{1-\tan x}.$ 
+\end{enumerate}
+\end{multicols}
+\end{prob}
+
+\begin{prob} Construya una representación algebraica, es decir, una fórmula explícita para los siguientes problemas. Calcule el dominio de esa representación.
+
+\begin{enumerate}
+\item Un rectángulo tiene 16 m\(^2\) de área. Exprese el perímetro del rectángulo en función de la longitud de uno de sus lados.
+
+\item Una caja rectangular abierta con 2 m\(^3\) de volumen tiene una base cuadrada. Exprese el área superficial de la caja en función de la longitud de uno de los lados de la base.
+
+
+\item Una ventana normanda tiene la forma de un rectángulo coronado por un semicírculo. Si el perímetro de la ventana es de 15 m, exprese el área \( A \) de la ventana en función del ancho \( x \) de la ventana.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=0.8]
+    % Dimensiones para la figura
+    \def\x{4}   % ancho de la ventana
+    \def\y{4}   % altura del rectángulo
+    \def\r{\x/2} % radio del semicírculo
+
+    % Rellenar el semicírculo (azul claro)
+    \fill[black!20] (\x,\y) arc (0:180:\r) -- cycle;
+
+    % Dibujar los ejes
+    \draw[->] (0,0) -- (\x+0.5,0) node[right] {$x$};
+    \draw[->] (0,0) -- (0,\y+\r+0.5); % eje vertical sin etiqueta
+
+    % Dibujar el rectángulo
+    \draw (0,0) rectangle (\x,\y);
 
 
 
+    % Dibujar el contorno del semicírculo
+    \draw (\x,\y) arc (0:180:\r);
+\end{tikzpicture}
+\caption{Ventana normanda}
+\end{figure}
+
+\item En un determinado país, el impuesto sobre la renta se calcula como sigue. No hay impuesto sobre la renta para ingresos de hasta \$10\,000. Los ingresos de más de \$10\,000 se gravan con una tasa de 10\%, hasta un ingreso de \$20\,000. Los ingresos superiores a \$20\,000 se gravan en 15\%.
+
+\begin{enumerate}
+\item Trace la gráfica de la tasa de impuestos \(R\) en función del ingreso \(I\).
+
+\item ¿Qué impuesto corresponde a un ingreso de \$14\,000?  
+¿Y de \$26\,000?
+
+\item Trace la gráfica del impuesto total \(T\) en función del ingreso \(I\).
+\end{enumerate}
+\item A un campo de forma rectangular se le colocaron 240 m de cerca. Encuentre un modelo matemático que exprese el área del terreno como una función de su longitud. ¿Cuál es el dominio de esta función?
+
+\item Una página impresa contiene una región de impresión de 50 \(cm^2\), un margen de $1.5 cm$  en las partes superior e inferior y un margen de  $1.5 cm$ en los lados. Encuentre un modelo matemático que exprese el área total de la página como una función del ancho de la región de impresión. ¿Cuál es el dominio de esta función?
+
+\item Se va a construir una caja sin tapa, a partir de una hoja rectangular de cartón que tiene dimensiones de 12 por 20 centímetros, recortando cuadrados iguales de lado \(x\) en cada una de las esquinas y doblando los lados como se ilustra en la figura. Exprese el volumen \(V\) de la caja en función de \(x\).
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=0.4]
+    % Rectángulo de cartón (vista en planta)
+    \draw[thick, blue] (0,0) rectangle (20,12);
+    
+    % Etiquetas de dimensiones externas
+    \draw[<->] (0,-1) -- (20,-1) node[midway, below] {20};
+    \draw[<->] (-1,0) -- (-1,12) node[midway, left] {12};
+    
+    % Dibujar cuadrados recortados en las esquinas (rellenos)
+    % Esquina inferior izquierda
+    \fill[blue!20] (0,0) rectangle (2,2);
+    \draw[thick] (0,2) -- (2,2) -- (2,0);
+    
+    % Esquina superior izquierda
+    \fill[blue!20] (0,12) rectangle (2,10);
+    \draw[thick] (0,10) -- (2,10) -- (2,12);
+    
+    % Esquina inferior derecha
+    \fill[blue!20] (20,0) rectangle (18,2);
+    \draw[thick] (20,2) -- (18,2) -- (18,0);
+    
+    % Esquina superior derecha
+    \fill[blue!20] (20,12) rectangle (18,10);
+    \draw[thick] (20,10) -- (18,10) -- (18,12);
+    
+    % Etiquetas x en los cuadrados recortados
+    \node at (1,1) {$x$};
+    \node at (1,11) {$x$};
+    \node at (19,1) {$x$};
+    \node at (19,11) {$x$};
+    
+    % Etiquetas x en los lados (pestañas que se doblan)
+    \node at (1,3) {$x$};
+    \node at (1,9) {$x$};
+    \node at (19,3) {$x$};
+    \node at (19,9) {$x$};
+    
+    % Líneas punteadas para indicar dobleces
+    \draw[dashed, gray] (2,0) -- (2,12);
+    \draw[dashed, gray] (18,0) -- (18,12);
+    \draw[dashed, gray] (2,2) -- (20,2);
+    \draw[dashed, gray] (1,10) -- (18,10);
+\end{tikzpicture}
+\caption{Caja sin tapa: Hoja de cartón de $20 \times 12$ cm con cuadrados de lado $x$ recortados en las esquinas}
+\label{fig:caja}
+\end{figure}
+
+\item Un plan de telefonía celular tiene una carga básica de 35 dólares al mes. El plan incluye 400 minutos gratis y cargos de 10 centavos de dólar por cada minuto adicional de uso. Escriba el costo mensual \(C\) como una función del número \(x\) de minutos utilizados, y trace la gráfica de \(C\) como una función de \(x\) para \(0 \leq x \leq 600\).
 
 
 
+\item Un almacén que tiene un piso rectangular de \(15\,000\ \text{m}^2\) se construye de modo que tenga pasillos de \(2\ m\) de ancho en el frente y en el fondo del almacén, y pasillos de \(1.5\ m\) de ancho en los lados.  Encuentre un modelo matemático que exprese el área total del terreno donde se construirá el almacén y los pasillos como una función de la longitud del frente y del fondo del almacén.  ¿Cuál es el dominio de esta función?
+ 
+\item Una tienda de acampar (llamada también carpa para \textit{camping}) con forma de pirámide de base cuadrada se construye a partir de una pieza cuadrada de material de $5\ cm$ de lado. En la base de la pirámide sea $x$ metros la distancia del centro a uno de sus lados como se muestra en la figura.   Encuentre un modelo matemático que exprese el volumen de la tienda de acampar como función de $x$ y calcule su dominio.
+
+\begin{figure}[H]
+\begin{center}
+\begin{tikzpicture}[scale=1.5, thick]
+    % Cuadrado exterior (base)
+    \draw[thick] (0,0) rectangle (5,5);
+    
+    % Cuadrado interior (base de la caja)
+    \draw[thick] (1.5,1.5) rectangle (3.5,3.5);
+    
+    % Cara derecha (lateral)
+    \draw[thick, fill=blue!10] (3.5,3.5) -- (5,2.5) -- (3.5,1.5) -- cycle;
+    
+    % Cara superior (lateral)
+    \draw[thick, fill=blue!15] (3.5,3.5) -- (2.5,5) -- (1.5,3.5) -- cycle;
+    
+    % Cara izquierda (lateral)
+    \draw[thick, fill=blue!10] (1.5,3.5) -- (0,2.5) -- (1.5,1.5) -- cycle;
+    
+    % Cara inferior (lateral)
+    \draw[thick, fill=blue!15] (1.5,1.5) -- (2.5,0) -- (3.5,1.5) -- cycle;
+    
+    % Líneas de conexión para dar perspectiva 3D
+    \draw[thick] (3.5,3.5) -- (5,2.5);
+    \draw[thick] (5,2.5) -- (3.5,1.5);
+    \draw[thick] (1.5,3.5) -- (2.5,5);
+    \draw[thick] (1.5,3.5) -- (0,2.5);
+    \draw[thick] (0,2.5) -- (1.5,1.5);
+    \draw[thick] (1.5,1.5) -- (2.5,0);
+    \draw[thick] (2.5,0) -- (3.5,1.5);
+    \draw[thick] (2.5,5) -- (3.5,3.5);
+    
+    % Dimensión superior: 5 m
+    \draw[|<->|, thick] (0,5.4) -- (5,5.4) node[midway, above] {$5\ \text{m}$};
+    
+    % Dimensión de x (ancho del borde)
+    \draw[|<->|] (2.5,2.5) -- (3.5,2.5) node[midway, below] {$x$};
+    
+\end{tikzpicture}
+\end{center}
+\caption{Caja armada con pestañas laterales}
+\label{fig:caja-3d}
+\end{figure}
+
+\textit{Sugerencia:} La fórmula para el volumen de una pirámide es $V=\dfrac{1}{3}Bh,$ donde $V,\ B$ y $h$ son, respectivamente, la medida del volumen, el área de la base y la altura. Esta altura se define como la medida del segmento perpendicular del vértice de la pirámide al plano de la base.  
+
+\item El volumen de una esfera es función de su radio. Si el radio de una esfera mide $r$ centímetros y $V(r)$ centímetros cúbicos es su volumen, entonces $V(r)=\dfrac{4}{3}\pi r^3.$ Suponga que una bola de nieve de $70$  centímetros de radio comenzó a derretirse a una tasa constante de $5\ cm/min.$ Si $f(t)$ es el radio de la bola de nieve después de $t$ minutos:
+\begin{enumerate}[$a.$]
+\item Calcule $\left(V\circ f\right)(t),$ interprete su resultado y calcule su dominio.
+\item Determine el volumen de la bola de nieve después de $10$ minutos.
+\end{enumerate}
+
+\item En un ambiente limitado donde $A$ es el número óptimo de bacterias soportado por el ambiente, la tasa de crecimiento bacteriano es conjuntamente proporcional al número presente de bacterias y a la diferencia entre $A$ y el número presente. Suponga que el número óptimo soportable por un ambiente particular es 1 millón de bacterias, y que la tasa de crecimiento es de 60 bacterias por minuto cuando se tienen 1000 bacterias presentes. Encuentre un modelo matemático que exprese la tasa de crecimiento bacteriano en función del número de bacterias presentes. ¿Cuál es la tasa de crecimiento cuando están presentes 100000 bacterias?
+
+\item La población de ciertas especies en un ambiente limitado con una población inicial de 100 y capacidad de carga de 1000 es
+$$P(t) = \dfrac{100000}{100 + 900e^{-2t}}$$
+donde $t$ se mide en años.
+\begin{enumerate} 
+    \item Grafique esta función y estime cuánto tiempo le toma a la población llegar a 900.
+    \item Encuentre la inversa de esta función y explique su significado.
+    \item Utilice la función inversa para encontrar el tiempo necesario para que la población llegue a 900. Compare con el resultado del inciso (a).
+\end{enumerate}
+\end{enumerate}
+\end{prob}
+
+\begin{prob} Determine si las siguientes funciones son par, impar o ninguna de las dos. 
+\begin{multicols}{2}
+\begin{enumerate}
+\item $f(x)=\dfrac{x^2}{x^4+1}$ \item $f(x)=1+3x^3-x^5$
+\end{enumerate}
+\end{multicols}
+\end{prob}
+
+\begin{prob} ¿Qué tienen en común todos los miembros de la familia de funciones lineales $f(x)=1+m(x+3)$? Trace la gráfica de varias funciones de esta familia.
+\end{prob}
+
+\begin{prob} ¿Qué tienen en común todos los miembros de la familia de funciones lineales $f(x)=c-x$? Trace la gráfica de varias funciones de esta familia.
+\end{prob}
+
+\begin{prob} Encuentre una expresión para función cúbica $f$ si $f(1)=6$ y $f(-1)=f(0)=f(2)=0.$
+\end{prob}
+
+\begin{prob} Algunas de las mareas más altas en el mundo ocurren en la bahía de Fundy en la costa atlántica de Canadá. En Hopewell Cape la profundidad del agua durante la marea baja es de 2.0 m y con la marea alta es de aproximadamente 12.0 m. El período natural de oscilación es de alrededor de 12 horas y el 30 de junio de 2009 la marea alta se produjo a las 6:45. Determine una función que involucre la función coseno que modele la profundidad $D(t)$ (en metros) en función del tiempo $t$ (en horas después de la medianoche) en ese día. \end{prob} 
+
+\begin{prob}  Comenzando con la gráfica de $y = e^x$, encuentre la ecuación de la gráfica que resulta de:
+\begin{enumerate} 
+    \item desplazarla 2 unidades hacia abajo.
+    \item desplazarla 2 unidades a la derecha.
+    \item reflejarla con respecto al eje $x$.
+    \item reflejarla con respecto al eje $y$.
+    \item reflejarla con respecto al eje $x$ y luego reflejarla con respecto al eje $y$.
+\end{enumerate} 
+\end{prob}
+
+\begin{prob} Si $f(x) = x^5 + x^3 + x$, determine $f^{-1}(3)$ y $f(f^{-1}(2))$. Además, si $g(x) = 3 + x + e^x$, determine $g^{-1}(4)$.
+\end{prob}
+
+\begin{prob} Sea $f(x) = \sqrt{1 - x^2}$, $0 \leq x \leq 1$. Encuentre $f^{-1}$. ¿Cómo se relaciona con $f$? Identifique la gráfica de $f$ y complemente su respuesta anterior.
+\end{prob}
+
+\begin{prob} Resuelva cada ecuación para $x$.
+
+\begin{multicols}{2}
+\begin{enumerate} 
+    \item $e^{7-4x} = 6$
+    \item $\ln(3x - 10) = 2$
+ 
+    \item $\ln(x^2 - 1) = 3$
+    \item $e^{2x} - 3e^x + 2 = 0$
+ 
+    \item $2^{x-5} = 3$
+    \item $\ln x + \ln(x - 1) = 1$
+ 
+    \item $\ln(\ln x) = 1$
+    \item $e^{ax} = Ce^{bx}$, donde $a \neq b$
+\end{enumerate}
+\end{multicols}
+\end{prob} 
