@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (MiKTeX 25.4) (format=lualatex 2025.7.7)  15 FEB 2026 12:43
+This is LuaHBTeX, Version 1.22.0 (MiKTeX 25.4) (format=lualatex 2025.7.7)  16 FEB 2026 15:35
  restricted system commands enabled.
 **anfalearNotasCalculo.tex
 (./anfalearNotasCalculo.tex
@@ -2026,13 +2026,37 @@ LaTeX Info: Redefining \% on input line 1341.
 
 
 
+) (./tecintegracion.tex
+
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+[39]
+
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+[40
+
+]
+Capítulo 4.
+
+
+
+
+
+
+[41]
+
+
+
+
+
 )
 No file anfalearNotasCalculo.bbl.
 
 
-LaTeX Info: Redefining \. on input line 435.
-LaTeX Info: Redefining \% on input line 435.
-[39]
+LaTeX Info: Redefining \. on input line 436.
+LaTeX Info: Redefining \% on input line 436.
+[42]
 \tf@loe=\write8
 
 \openout8 = anfalearNotasCalculo.loe
@@ -2045,19 +2069,19 @@ LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-06-09>
  ***********
 Package rerunfilecheck Info: File `anfalearNotasCalculo.out' has not changed.
-(rerunfilecheck)             Checksum: 15594D7BF85FE9CAB210ABC67D962670;3387.
+(rerunfilecheck)             Checksum: D03D18B7D20E049DCF325F7A492B1D35;3663.
 )
 
 Here is how much of LuaTeX's memory you used:
- 68688 strings out of 470205
+ 68737 strings out of 470205
  125003,2848258 words of node,token memory allocated
  1962 words of node memory still in use:
    32 hlist, 2 vlist, 14 rule, 2 glue, 4 kern, 1 glyph, 217 attribute, 101 glue_
 spec, 146 attribute_list, 2 write, 24 pdf_literal, 3 pdf_action, 24 pdf_colorsta
 ck nodes
-   avail lists: 1:26,2:9395,3:4271,4:218,5:612,6:143,7:8120,8:40,9:1296,10:20,11
+   avail lists: 1:26,2:9395,3:4271,4:218,5:613,6:143,7:8120,8:40,9:1296,10:20,11
 :898
- 95267 multiletter control sequences out of 65536+600000
+ 95276 multiletter control sequences out of 65536+600000
  94 fonts using 7085951 bytes
  76i,21n,95p,1148b,2830s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/users/anfalear/appdata/local/programs/miktex/fonts/opentype/public/lm/lmroma
@@ -2085,9 +2109,9 @@ alear/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C
 :/Users/anfalear/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
 sy8.pfb><C:/Users/anfalear/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
 onts/symbols/msbm10.pfb>
-Output written on anfalearNotasCalculo.pdf (39 pages, 449617 bytes).
+Output written on anfalearNotasCalculo.pdf (42 pages, 460961 bytes).
 
-PDF statistics: 823 PDF objects out of 1000 (max. 8388607)
- 352 named destinations out of 1000 (max. 131072)
- 400 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 879 PDF objects out of 1000 (max. 8388607)
+ 387 named destinations out of 1000 (max. 131072)
+ 416 words of extra memory for PDF output out of 10000 (max. 100000000)
 
