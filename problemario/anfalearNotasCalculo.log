@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (MiKTeX 25.4) (format=lualatex 2025.7.7)  16 FEB 2026 15:35
+This is LuaHBTeX, Version 1.22.0 (MiKTeX 25.4) (format=lualatex 2025.7.7)  8 MAR 2026 11:38
  restricted system commands enabled.
 **anfalearNotasCalculo.tex
 (./anfalearNotasCalculo.tex
@@ -2026,7 +2026,7 @@ LaTeX Info: Redefining \% on input line 1341.
 
 
 
-) (./tecintegracion.tex
+) (./limites.tex
 
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
@@ -2040,11 +2040,109 @@ LaTeX Info: Redefining \% on input line 1.
 Capítulo 4.
 
 
-
-
-
-
 [41]
+warning  (pdf backend): ignoring duplicate destination with the name 'example.3'
+
+
+
+LaTeX Info: Redefining \. on input line 47.
+LaTeX Info: Redefining \% on input line 47.
+[42]
+warning  (pdf backend): ignoring duplicate destination with the name 'rem.5'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'theorem.6'
+
+
+warning  (pdf backend): ignoring duplicate destination with the name 'definition
+.7'
+
+
+LaTeX Info: Redefining \. on input line 86.
+LaTeX Info: Redefining \% on input line 86.
+[43]
+
+LaTeX Info: Redefining \. on input line 123.
+LaTeX Info: Redefining \% on input line 123.
+[44]
+warning  (pdf backend): ignoring duplicate destination with the name 'definition
+.13'
+
+
+LaTeX Info: Redefining \. on input line 159.
+LaTeX Info: Redefining \% on input line 159.
+[45]
+warning  (pdf backend): ignoring duplicate destination with the name 'definition
+.17'
+
+
+LaTeX Info: Redefining \. on input line 189.
+LaTeX Info: Redefining \% on input line 189.
+[46]
+Package hyperref Info: bookmark level for unknown coro defaults to 0 on input l
+ine 197.
+
+warning  (pdf backend): ignoring duplicate destination with the name 'example.22
+'
+
+
+LaTeX Info: Redefining \. on input line 239.
+LaTeX Info: Redefining \% on input line 239.
+[47]
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.40'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.41'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.42'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.43'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.44'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.45'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.46'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.47'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.48'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.49'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.50'
+
+
+LaTeX Info: Redefining \. on input line 332.
+LaTeX Info: Redefining \% on input line 332.
+[48]
+
+LaTeX Info: Redefining \. on input line 419.
+LaTeX Info: Redefining \% on input line 419.
+[49]
+
+LaTeX Info: Redefining \. on input line 494.
+LaTeX Info: Redefining \% on input line 494.
+[50]
+Underfull \vbox (badness 2726) has occurred while \output is active []
+
+
+
+LaTeX Info: Redefining \. on input line 559.
+LaTeX Info: Redefining \% on input line 559.
+[51]) (./tecintegracion.tex
+
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+[52]
+Capítulo 5.
+
+
+
+
+
+
+[53
+
+]
 
 
 
@@ -2054,9 +2152,9 @@ Capítulo 4.
 No file anfalearNotasCalculo.bbl.
 
 
-LaTeX Info: Redefining \. on input line 436.
-LaTeX Info: Redefining \% on input line 436.
-[42]
+LaTeX Info: Redefining \. on input line 437.
+LaTeX Info: Redefining \% on input line 437.
+[54]
 \tf@loe=\write8
 
 \openout8 = anfalearNotasCalculo.loe
@@ -2068,20 +2166,27 @@ LaTeX Info: Redefining \% on input line 11.
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-06-09>
  ***********
-Package rerunfilecheck Info: File `anfalearNotasCalculo.out' has not changed.
-(rerunfilecheck)             Checksum: D03D18B7D20E049DCF325F7A492B1D35;3663.
+
+
+Package rerunfilecheck Warning: File `anfalearNotasCalculo.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `anfalearNotasCalculo.out':
+(rerunfilecheck)             Before: 30EA1D3551A06DBB0456DACAB6484E05;6173
+(rerunfilecheck)             After:  7BDB49AD742DB0A7CF8910864638F4C1;6332.
 )
 
 Here is how much of LuaTeX's memory you used:
- 68737 strings out of 470205
+ 69117 strings out of 470205
  125003,2848258 words of node,token memory allocated
- 1962 words of node memory still in use:
-   32 hlist, 2 vlist, 14 rule, 2 glue, 4 kern, 1 glyph, 217 attribute, 101 glue_
-spec, 146 attribute_list, 2 write, 24 pdf_literal, 3 pdf_action, 24 pdf_colorsta
+ 2064 words of node memory still in use:
+   32 hlist, 2 vlist, 14 rule, 2 glue, 4 kern, 1 glyph, 251 attribute, 101 glue_
+spec, 163 attribute_list, 2 write, 24 pdf_literal, 3 pdf_action, 24 pdf_colorsta
 ck nodes
-   avail lists: 1:26,2:9395,3:4271,4:218,5:613,6:143,7:8120,8:40,9:1296,10:20,11
+   avail lists: 1:26,2:9344,3:4271,4:218,5:623,6:143,7:8120,8:87,9:1296,10:20,11
 :898
- 95276 multiletter control sequences out of 65536+600000
+ 95440 multiletter control sequences out of 65536+600000
  94 fonts using 7085951 bytes
  76i,21n,95p,1148b,2830s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/users/anfalear/appdata/local/programs/miktex/fonts/opentype/public/lm/lmroma
@@ -2107,11 +2212,13 @@ l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/anfalear/App
 Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/anf
 alear/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C
 :/Users/anfalear/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
-sy8.pfb><C:/Users/anfalear/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
-onts/symbols/msbm10.pfb>
-Output written on anfalearNotasCalculo.pdf (42 pages, 460961 bytes).
+sy6.pfb><C:/Users/anfalear/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
+onts/cm/cmsy8.pfb><C:/Users/anfalear/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/amsfonts/symbols/msam10.pfb><C:/Users/anfalear/AppData/Local/Programs/MiKT
+eX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on anfalearNotasCalculo.pdf (54 pages, 586420 bytes).
 
-PDF statistics: 879 PDF objects out of 1000 (max. 8388607)
- 387 named destinations out of 1000 (max. 131072)
- 416 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 1212 PDF objects out of 1440 (max. 8388607)
+ 598 named destinations out of 1000 (max. 131072)
+ 512 words of extra memory for PDF output out of 10000 (max. 100000000)
 
