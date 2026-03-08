@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (MiKTeX 25.4) (format=lualatex 2025.7.7)  8 MAR 2026 11:38
+This is LuaHBTeX, Version 1.22.0 (MiKTeX 25.4) (format=lualatex 2025.7.7)  8 MAR 2026 16:44
  restricted system commands enabled.
 **anfalearNotasCalculo.tex
 (./anfalearNotasCalculo.tex
@@ -1792,21 +1792,33 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 [3] (./anfalearNotasCalculo.toc
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-)
+
+
+[4])
 \tf@toc=\write6
 
 \openout6 = anfalearNotasCalculo.toc
 
 
-[4] (./anfalearNotasCalculo.loe
+LaTeX Info: Redefining \. on input line 419.
+LaTeX Info: Redefining \% on input line 419.
+Package babel Info: 'spanish' activates 'spanish' shorthands.
+(babel)             Reported  on input line 419.
+[5] (./anfalearNotasCalculo.loe
 
-[5])
+[6]
+
+LaTeX Info: Redefining \. on input line 108.
+LaTeX Info: Redefining \% on input line 108.
+[7]
+
+LaTeX Info: Redefining \. on input line 165.
+LaTeX Info: Redefining \% on input line 165.
+[8])
 
 LaTeX Info: Redefining \. on input line 421.
 LaTeX Info: Redefining \% on input line 421.
-Package babel Info: 'spanish' activates 'spanish' shorthands.
-(babel)             Reported  on input line 421.
-[6] (./anfalearNotasCalculo.lof
+[9] (./anfalearNotasCalculo.lof
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 )
@@ -1815,13 +1827,7 @@ LaTeX Info: Redefining \% on input line 1.
 \openout7 = anfalearNotasCalculo.lof
  (./politicas.tex
 
-[7]
-
-LaTeX Info: Redefining \. on input line 1.
-LaTeX Info: Redefining \% on input line 1.
-[8
-
-]
+[10]
 Capítulo 1.
 
 Overfull \hbox (6.79999pt too wide) in paragraph at lines 3--6
@@ -1830,19 +1836,21 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 3--6
 
 
 
-[9]
+[11
+
+]
 
 LaTeX Info: Redefining \. on input line 94.
 LaTeX Info: Redefining \% on input line 94.
-[10]) (./preliminares.tex
+[12]) (./preliminares.tex
 
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-[11]
+[13]
 
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-[12
+[14
 
 ]
 Capítulo 2.
@@ -1850,7 +1858,7 @@ Package hyperref Info: bookmark level for unknown theorem defaults to 0 on inpu
 t line 17.
 
 
-[13]
+[15]
 Package hyperref Info: bookmark level for unknown example defaults to 0 on inpu
 t line 60.
 Package hyperref Info: bookmark level for unknown definition defaults to 0 on i
@@ -1859,15 +1867,15 @@ nput line 71.
 
 LaTeX Info: Redefining \. on input line 86.
 LaTeX Info: Redefining \% on input line 86.
-[14]
+[16]
 
 LaTeX Info: Redefining \. on input line 152.
 LaTeX Info: Redefining \% on input line 152.
-[15]
+[17]
 
 LaTeX Info: Redefining \. on input line 225.
 LaTeX Info: Redefining \% on input line 225.
-[16]
+[18]
 Missing character: There is no ≠ (U+2260) in font [lmroman12-regular]:+tlig;!
 Missing character: There is no ≥ (U+2265) in font [lmroman12-regular]:+tlig;!
 Missing character: There is no ≠ (U+2260) in font [lmroman12-regular]:+tlig;!
@@ -1882,7 +1890,7 @@ ine 276.
 
 LaTeX Info: Redefining \. on input line 296.
 LaTeX Info: Redefining \% on input line 296.
-[17
+[19
 Missing character: There is no ≠ (U+2260) in font [lmroman12-regular]:+tlig;!
 Missing character: There is no ≥ (U+2265) in font [lmroman12-regular]:+tlig;!
 ]
@@ -1895,14 +1903,14 @@ Missing character: There is no ≥ (U+2265) in font [lmroman12-regular]:+tlig;!
 
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-[18]
+[20]
 Capítulo 3.
 
 Underfull \vbox (badness 1231) has occurred while \output is active []
 
 
 
-[19
+[21
 
 ]
 Package hyperref Info: bookmark level for unknown rem defaults to 0 on input li
@@ -1911,14 +1919,14 @@ ne 56.
 
 LaTeX Info: Redefining \. on input line 177.
 LaTeX Info: Redefining \% on input line 177.
-[20]
+[22]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
 LaTeX Info: Redefining \. on input line 201.
 LaTeX Info: Redefining \% on input line 201.
-[21]
+[23]
 warning  (pdf backend): ignoring duplicate destination with the name 'example.8'
 
 
@@ -1928,64 +1936,64 @@ Underfull \vbox (badness 4608) has occurred while \output is active []
 
 LaTeX Info: Redefining \. on input line 272.
 LaTeX Info: Redefining \% on input line 272.
-[22]
+[24]
 warning  (pdf backend): ignoring duplicate destination with the name 'definition
 .9'
 
 
 LaTeX Info: Redefining \. on input line 333.
 LaTeX Info: Redefining \% on input line 333.
-[23]
+[25]
 
 LaTeX Info: Redefining \. on input line 398.
 LaTeX Info: Redefining \% on input line 398.
-[24]
+[26]
 
 LaTeX Info: Redefining \. on input line 461.
 LaTeX Info: Redefining \% on input line 461.
-[25]
+[27]
 
 LaTeX Info: Redefining \. on input line 526.
 LaTeX Info: Redefining \% on input line 526.
-[26]
+[28]
 
 LaTeX Info: Redefining \. on input line 597.
 LaTeX Info: Redefining \% on input line 597.
-[27]
+[29]
 
 LaTeX Info: Redefining \. on input line 654.
 LaTeX Info: Redefining \% on input line 654.
-[28]
+[30]
 
 LaTeX Info: Redefining \. on input line 708.
 LaTeX Info: Redefining \% on input line 708.
-[29]
+[31]
 
 LaTeX Info: Redefining \. on input line 800.
 LaTeX Info: Redefining \% on input line 800.
-[30]
+[32]
 
 LaTeX Info: Redefining \. on input line 860.
 LaTeX Info: Redefining \% on input line 860.
-[31]
+[33]
 
 LaTeX Info: Redefining \. on input line 946.
 LaTeX Info: Redefining \% on input line 946.
-[32]
+[34]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
 LaTeX Info: Redefining \. on input line 1006.
 LaTeX Info: Redefining \% on input line 1006.
-[33]
+[35]
 Underfull \vbox (badness 4792) has occurred while \output is active []
 
 
 
 LaTeX Info: Redefining \. on input line 1071.
 LaTeX Info: Redefining \% on input line 1071.
-[34]
+[36]
 
 
 
@@ -1993,7 +2001,7 @@ LaTeX Info: Redefining \% on input line 1071.
 
 LaTeX Info: Redefining \. on input line 1130.
 LaTeX Info: Redefining \% on input line 1130.
-[35]
+[37]
 
 
 
@@ -2006,11 +2014,11 @@ Underfull \vbox (badness 1584) has occurred while \output is active []
 
 LaTeX Info: Redefining \. on input line 1235.
 LaTeX Info: Redefining \% on input line 1235.
-[36]
+[38]
 
 LaTeX Info: Redefining \. on input line 1290.
 LaTeX Info: Redefining \% on input line 1290.
-[37]
+[39]
 
 
 
@@ -2020,7 +2028,7 @@ LaTeX Info: Redefining \% on input line 1290.
 
 LaTeX Info: Redefining \. on input line 1341.
 LaTeX Info: Redefining \% on input line 1341.
-[38]
+[40]
 
 
 
@@ -2030,24 +2038,24 @@ LaTeX Info: Redefining \% on input line 1341.
 
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-[39]
+[41]
 
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-[40
+[42
 
 ]
 Capítulo 4.
 
 
-[41]
+[43]
 warning  (pdf backend): ignoring duplicate destination with the name 'example.3'
 
 
 
 LaTeX Info: Redefining \. on input line 47.
 LaTeX Info: Redefining \% on input line 47.
-[42]
+[44]
 warning  (pdf backend): ignoring duplicate destination with the name 'rem.5'
 
 warning  (pdf backend): ignoring duplicate destination with the name 'theorem.6'
@@ -2059,25 +2067,25 @@ warning  (pdf backend): ignoring duplicate destination with the name 'definition
 
 LaTeX Info: Redefining \. on input line 86.
 LaTeX Info: Redefining \% on input line 86.
-[43]
+[45]
 
 LaTeX Info: Redefining \. on input line 123.
 LaTeX Info: Redefining \% on input line 123.
-[44]
+[46]
 warning  (pdf backend): ignoring duplicate destination with the name 'definition
 .13'
 
 
 LaTeX Info: Redefining \. on input line 159.
 LaTeX Info: Redefining \% on input line 159.
-[45]
+[47]
 warning  (pdf backend): ignoring duplicate destination with the name 'definition
 .17'
 
 
 LaTeX Info: Redefining \. on input line 189.
 LaTeX Info: Redefining \% on input line 189.
-[46]
+[48]
 Package hyperref Info: bookmark level for unknown coro defaults to 0 on input l
 ine 197.
 
@@ -2087,7 +2095,7 @@ warning  (pdf backend): ignoring duplicate destination with the name 'example.22
 
 LaTeX Info: Redefining \. on input line 239.
 LaTeX Info: Redefining \% on input line 239.
-[47]
+[49]
 warning  (pdf backend): ignoring duplicate destination with the name 'prob.40'
 
 warning  (pdf backend): ignoring duplicate destination with the name 'prob.41'
@@ -2113,26 +2121,26 @@ warning  (pdf backend): ignoring duplicate destination with the name 'prob.50'
 
 LaTeX Info: Redefining \. on input line 332.
 LaTeX Info: Redefining \% on input line 332.
-[48]
+[50]
 
 LaTeX Info: Redefining \. on input line 419.
 LaTeX Info: Redefining \% on input line 419.
-[49]
+[51]
 
 LaTeX Info: Redefining \. on input line 494.
 LaTeX Info: Redefining \% on input line 494.
-[50]
+[52]
 Underfull \vbox (badness 2726) has occurred while \output is active []
 
 
 
 LaTeX Info: Redefining \. on input line 559.
 LaTeX Info: Redefining \% on input line 559.
-[51]) (./tecintegracion.tex
+[53]) (./tecintegracion.tex
 
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-[52]
+[54]
 Capítulo 5.
 
 
@@ -2140,7 +2148,7 @@ Capítulo 5.
 
 
 
-[53
+[55
 
 ]
 
@@ -2148,13 +2156,369 @@ Capítulo 5.
 
 
 
+
+warning  (pdf backend): ignoring duplicate destination with the name 'theorem.4'
+
+
+
+LaTeX Info: Redefining \. on input line 85.
+LaTeX Info: Redefining \% on input line 85.
+[56]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 87.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\intop' on input line 87.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\ilimits@' on input line 87.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\sin' on input line 87.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 87.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\cos' on input line 87.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 87.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leavevmode@ifvmode' on input line 87.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 2.00043pt
+(hyperref)                removed on input line 87.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 87.
+
+Package hyperref Info: bookmark level for unknown pasos defaults to 0 on input 
+line 92.
+
+warning  (pdf backend): ignoring duplicate destination with the name 'example.8'
+
+
+warning  (pdf backend): ignoring duplicate destination with the name 'example.9'
+
+
+
+LaTeX Info: Redefining \. on input line 131.
+LaTeX Info: Redefining \% on input line 131.
+[57]
+warning  (pdf backend): ignoring duplicate destination with the name 'theorem.10
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'theorem.11
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'rem.12'
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 149.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\intop' on input line 149.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\ilimits@' on input line 149.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\tan' on input line 149.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 149.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\sec' on input line 149.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 149.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leavevmode@ifvmode' on input line 149.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 2.00043pt
+(hyperref)                removed on input line 149.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 149.
+
+
+warning  (pdf backend): ignoring duplicate destination with the name 'example.14
+'
+
+
+LaTeX Info: Redefining \. on input line 176.
+LaTeX Info: Redefining \% on input line 176.
+[58]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 176.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\intop' on input line 176.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\ilimits@' on input line 176.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\sin' on input line 176.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\cos' on input line 176.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leavevmode@ifvmode' on input line 176.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 2.00043pt
+(hyperref)                removed on input line 176.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 176.
+
+
+warning  (pdf backend): ignoring duplicate destination with the name 'example.15
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'rem.16'
+
+
+LaTeX Info: Redefining \. on input line 207.
+LaTeX Info: Redefining \% on input line 207.
+[59]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 207.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 207.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 207.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 207.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 207.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 264.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 264.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 264.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 264.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 264.
+
+
+
+LaTeX Info: Redefining \. on input line 269.
+LaTeX Info: Redefining \% on input line 269.
+[60]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 299.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 299.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 299.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 299.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 299.
+
+
+warning  (pdf backend): ignoring duplicate destination with the name 'example.20
+'
+
+
+LaTeX Info: Redefining \. on input line 332.
+LaTeX Info: Redefining \% on input line 332.
+[61]
+Overfull \hbox (18.74005pt too wide) in paragraph at lines 349--350
+[][]\TU/lmr/bx/n/12 Ob-ser-va-ción 5.21. []\TU/lmr/m/it/12 Cuan-do el ra-di-cal
+ in-vo-lu-cra una ex-pre-sión cua-drá-ti-ca ge-ne-ral de la for-ma $[]$,
+ []
+
+
+warning  (pdf backend): ignoring duplicate destination with the name 'example.22
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'example.23
+'
+
+
+LaTeX Info: Redefining \. on input line 393.
+LaTeX Info: Redefining \% on input line 393.
+[62]
+Overfull \hbox (1.12071pt too wide) detected at line 422
+ $[] [][] \OML/cmm/m/it/12 x dx \OT1/cmr/m/n/12 = [][] \OML/cmm/m/it/12 x [] x 
+\OMS/cmsy/m/n/12 ^^@ [] [] \OML/cmm/m/it/12 x \OMS/cmsy/m/n/12  \OT1/cmr/m/n/1
+2 3 [][] \OML/cmm/m/it/12 x [] x [] x dx \OT1/cmr/m/n/12 = [][] \OML/cmm/m/it/1
+2 x [] x \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 3 [] [][] \OML/cmm/m/it/12 x [][]
+ x [][] x dx:$ 
+ []
+
+
+Overfull \hbox (74.50177pt too wide) detected at line 427
+ $[] [][] \OML/cmm/m/it/12 x dx \OT1/cmr/m/n/12 = [][] \OML/cmm/m/it/12 x [] x 
+\OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 3 [] [][] \OML/cmm/m/it/12 x [][] x\OT1/cm
+r/m/n/12 ([][] \OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 1) \OML/
+cmm/m/it/12 dx \OT1/cmr/m/n/12 = [][] \OML/cmm/m/it/12 x [] x \OMS/cmsy/m/n/12 
+^^@ \OT1/cmr/m/n/12 3 [] [][] \OML/cmm/m/it/12 x [][] x dx \OT1/cmr/m/n/12 + 3 
+[] [][] \OML/cmm/m/it/12 x [][] x dx:$ 
+ []
+
+
+
+LaTeX Info: Redefining \. on input line 450.
+LaTeX Info: Redefining \% on input line 450.
+[63]
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.25'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.26'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.27'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.28'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.29'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.30'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.31'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.32'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.33'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.34'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.35'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.36'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.37'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.38'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.39'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.40'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.41'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.42'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.43'
+
+
+LaTeX Info: Redefining \. on input line 534.
+LaTeX Info: Redefining \% on input line 534.
+[64]
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.44'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.45'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.46'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.47'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.48'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.49'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.50'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.51'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.52'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.53'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.54'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.55'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.56'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.57'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.58'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.59'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.60'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.61'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.62'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.63'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.64'
 )
 No file anfalearNotasCalculo.bbl.
 
 
 LaTeX Info: Redefining \. on input line 437.
 LaTeX Info: Redefining \% on input line 437.
-[54]
+[65]
 \tf@loe=\write8
 
 \openout8 = anfalearNotasCalculo.loe
@@ -2166,27 +2530,20 @@ LaTeX Info: Redefining \% on input line 11.
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-06-09>
  ***********
-
-
-Package rerunfilecheck Warning: File `anfalearNotasCalculo.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `anfalearNotasCalculo.out':
-(rerunfilecheck)             Before: 30EA1D3551A06DBB0456DACAB6484E05;6173
-(rerunfilecheck)             After:  7BDB49AD742DB0A7CF8910864638F4C1;6332.
+Package rerunfilecheck Info: File `anfalearNotasCalculo.out' has not changed.
+(rerunfilecheck)             Checksum: 7EC224A53FA4652062F09B8F6AF7BAE5;9050.
 )
 
 Here is how much of LuaTeX's memory you used:
- 69117 strings out of 470205
+ 69265 strings out of 470205
  125003,2848258 words of node,token memory allocated
- 2064 words of node memory still in use:
-   32 hlist, 2 vlist, 14 rule, 2 glue, 4 kern, 1 glyph, 251 attribute, 101 glue_
-spec, 163 attribute_list, 2 write, 24 pdf_literal, 3 pdf_action, 24 pdf_colorsta
+ 2334 words of node memory still in use:
+   32 hlist, 2 vlist, 14 rule, 2 glue, 4 kern, 1 glyph, 341 attribute, 101 glue_
+spec, 208 attribute_list, 2 write, 24 pdf_literal, 3 pdf_action, 24 pdf_colorsta
 ck nodes
-   avail lists: 1:26,2:9344,3:4271,4:218,5:623,6:143,7:8120,8:87,9:1296,10:20,11
-:898
- 95440 multiletter control sequences out of 65536+600000
+   avail lists: 1:26,2:9209,3:4271,4:238,5:623,6:180,7:8120,8:87,9:1296,10:20,11
+:994
+ 95491 multiletter control sequences out of 65536+600000
  94 fonts using 7085951 bytes
  76i,21n,95p,1148b,2830s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/users/anfalear/appdata/local/programs/miktex/fonts/opentype/public/lm/lmroma
@@ -2216,9 +2573,9 @@ sy6.pfb><C:/Users/anfalear/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
 onts/cm/cmsy8.pfb><C:/Users/anfalear/AppData/Local/Programs/MiKTeX/fonts/type1/p
 ublic/amsfonts/symbols/msam10.pfb><C:/Users/anfalear/AppData/Local/Programs/MiKT
 eX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on anfalearNotasCalculo.pdf (54 pages, 586420 bytes).
+Output written on anfalearNotasCalculo.pdf (65 pages, 685478 bytes).
 
-PDF statistics: 1212 PDF objects out of 1440 (max. 8388607)
- 598 named destinations out of 1000 (max. 131072)
- 512 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 1525 PDF objects out of 1728 (max. 8388607)
+ 695 named destinations out of 1000 (max. 131072)
+ 616 words of extra memory for PDF output out of 10000 (max. 100000000)
 
