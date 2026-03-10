@@ -1,106 +1,201 @@
 \chapter{Límites y Continuidad}
 
+%%==========================================================
 \section{Ideas Preliminares y Contexto Histórico}
+%%==========================================================
 
-El concepto de límite representa, sin exageración, el umbral entre el álgebra clásica y el análisis matemático moderno. Antes de que este concepto fuera formalizado, los matemáticos de los siglos XVII y XVIII —entre ellos Isaac Newton y Gottfried Wilhelm Leibniz— utilizaban nociones intuitivas de \emph{cantidades infinitamente pequeñas} o \emph{fluxiones} para justificar los procedimientos del cálculo diferencial e integral. Aunque sus resultados eran correctos en la práctica, la ausencia de un fundamento riguroso generó críticas filosóficas profundas: el obispo George Berkeley, en su célebre panfleto \emph{The Analyst} (1734), atacó estas ideas llamando a los infinitésimos ``fantasmas de cantidades que desaparecen'', cuestionando la coherencia lógica de toda la empresa.
+El concepto de límite representa, sin exageración, el umbral entre el
+álgebra clásica y el análisis matemático moderno. Antes de que este
+concepto fuera formalizado, los matemáticos de los siglos XVII y XVIII
+---entre ellos Isaac Newton y Gottfried Wilhelm Leibniz--- utilizaban
+nociones intuitivas de \emph{cantidades infinitamente pequeñas} o
+\emph{fluxiones} para justificar los procedimientos del cálculo
+diferencial e integral. Aunque sus resultados eran correctos en la
+práctica, la ausencia de un fundamento riguroso generó críticas
+filosóficas profundas: el obispo George Berkeley, en su célebre panfleto
+\emph{The Analyst} (1734), atacó estas ideas llamando a los infinitésimos
+``fantasmas de cantidades que desaparecen'', cuestionando la coherencia
+lógica de toda la empresa.
 
-La respuesta definitiva a esta crítica tardó casi un siglo en llegar. Fue Augustin-Louis Cauchy quien, en su \emph{Cours d'Analyse} de 1821, reformuló el cálculo sobre la base de los límites, entendidos no como entidades infinitamente pequeñas sino como un proceso de aproximación controlada. Poco después, Karl Weierstrass completó esta tarea en la segunda mitad del siglo XIX, introduciendo la definición cuantitativa con épsilon y delta que hoy se enseña en todo el mundo. Esta formalización eliminó la ambigüedad y permitió distinguir con precisión entre la idea intuitiva de ``acercarse'' a un valor y el valor en sí, una distinción que, aunque sutil, es conceptualmente fundamental.
+La respuesta definitiva a esta crítica tardó casi un siglo en llegar. Fue
+Augustin-Louis Cauchy quien, en su \emph{Cours d'Analyse} de 1821,
+reformuló el cálculo sobre la base de los límites, entendidos no como
+entidades infinitamente pequeñas sino como un proceso de aproximación
+controlada. Poco después, Karl Weierstrass completó esta tarea en la
+segunda mitad del siglo XIX, introduciendo la definición cuantitativa con
+épsilon y delta que hoy se enseña en todo el mundo. Esta formalización
+eliminó la ambigüedad y permitió distinguir con precisión entre la idea
+intuitiva de ``acercarse'' a un valor y el valor en sí, una distinción
+que, aunque sutil, es conceptualmente fundamental.
 
 \begin{rem}
-La tensión entre intuición y rigor es una constante en la historia del análisis. El concepto de límite ilustra perfectamente cómo la matemática puede operar con éxito práctico durante décadas antes de obtener una fundamentación lógica completamente satisfactoria. Autores como Purcell, Spivak y Larson presentan esta travesía histórica para motivar la necesidad de la definición formal, y es recomendable consultarlos en paralelo al estudio del presente texto.
+La tensión entre intuición y rigor es una constante en la historia del
+análisis. El concepto de límite ilustra perfectamente cómo la matemática
+puede operar con éxito práctico durante décadas antes de obtener una
+fundamentación lógica completamente satisfactoria. Autores como Purcell,
+Spivak y Larson presentan esta travesía histórica para motivar la
+necesidad de la definición formal, y es recomendable consultarlos en
+paralelo al estudio del presente texto.
 \end{rem}
 
-\section{Definición Intuitiva}
+%%==========================================================
+\section{Definición Intuitiva del Límite}
+%%==========================================================
 
-De manera informal, se dice que una función $f(x)$ tiene por límite el número $L$ cuando $x$ se aproxima a $a$ ---lo que se escribe como $\lim_{x \to a} f(x) = L$--- si los valores de $f(x)$ pueden hacerse tan cercanos a $L$ como se desee, con tal de que $x$ esté suficientemente cerca de $a$, sin necesidad de que $x$ sea igual a $a$. Esta última condición es decisiva: el límite describe el comportamiento \emph{alrededor} del punto $a$, no \emph{en} el punto $a$. Por ello, una función puede perfectamente tener un límite en un punto donde no está definida, o donde su valor difiere del límite mismo.
+De manera informal, se dice que $f(x)$ tiene por límite el número $L$
+cuando $x$ se aproxima a $a$ ---escrito $\lim_{x\to a}f(x)=L$--- si los
+valores de $f(x)$ pueden hacerse tan cercanos a $L$ como se desee, con
+tal de que $x$ esté suficientemente cerca de $a$, sin necesidad de que
+$x$ sea igual a $a$. Esta última condición es decisiva: el límite describe
+el comportamiento \emph{alrededor} del punto $a$, no \emph{en} el punto
+$a$. Por ello, una función puede perfectamente tener un límite en un punto
+donde no está definida, o donde su valor difiere del límite mismo.
 
-Imaginemos, por ejemplo, la función $f(x) = \frac{x^2 - 1}{x - 1}$. Esta función no está definida en $x = 1$, pues allí el denominador se anula. Sin embargo, para todo $x \neq 1$, la expresión se simplifica como $f(x) = x + 1$. Cuando $x$ se acerca a $1$ ---por la izquierda o por la derecha--- los valores de $f(x)$ se acercan a $2$. La función ``se comporta como si'' valiera $2$ en $x = 1$, aunque técnicamente no exista ahí. Esta situación, lejos de ser un caso patológico, es precisamente el tipo de fenómeno que aparece de forma natural al calcular derivadas: toda derivada es, en su esencia, un límite de una expresión que es indeterminada en el punto de interés.
+Imaginemos la función $f(x) = \frac{x^2-1}{x-1}$. Esta función no está
+definida en $x=1$, pues allí el denominador se anula. Sin embargo, para
+todo $x\neq 1$ se simplifica como $f(x) = x+1$. Cuando $x$ se acerca
+a $1$ ---por la izquierda o por la derecha--- los valores de $f(x)$ se
+acercan a $2$. La función ``se comporta como si'' valiera $2$ en $x=1$,
+aunque técnicamente no exista ahí. Esta situación es precisamente el
+tipo de fenómeno que aparece de forma natural al calcular derivadas: toda
+derivada es, en su esencia, un límite de una expresión indeterminada en
+el punto de interés.
 
-\section{Definición Formal Épsilon-Delta}
+%%==========================================================
+\section{Definición Formal: Épsilon-Delta}
+%%==========================================================
 
 \begin{definition}
-Sea $f$ una función definida en algún intervalo abierto que contiene al número $c$, excepto posiblemente en $c$ mismo, y sea $L$ un número real. Se dice que el \textbf{límite de $f(x)$ cuando $x$ tiende a $c$ es $L$}, y se escribe
+Sea $f$ definida en algún intervalo abierto que contiene a $c$, excepto
+posiblemente en $c$ mismo. Se dice que
 \[
-\lim_{x \to c} f(x) = L,
+\lim_{x \to c} f(x) = L
 \]
-si para todo número real $\epsilon > 0$ existe un número real $\delta > 0$ tal que, si $x$ satisface $0 < |x - c| < \delta$, entonces $|f(x) - L| < \epsilon$.
+si para todo $\epsilon > 0$ existe $\delta > 0$ tal que
+\[
+0 < |x - c| < \delta \implies |f(x) - L| < \epsilon.
+\]
 \end{definition}
 
-La belleza de esta definición reside en cómo traduce la noción cualitativa de ``cercanía'' a una relación cuantitativa y verificable. El número $\epsilon$ representa un margen de tolerancia en los valores de la función: estamos dispuestos a aceptar que $f(x)$ se aproxime a $L$ dentro de un error menor que $\epsilon$. El número $\delta$ representa la ``respuesta'' a ese desafío: para lograr esa tolerancia en los valores de $f$, basta restringir $x$ a una vecindad de radio $\delta$ alrededor de $c$. La condición $0 < |x - c|$ expresa explícitamente que $x$ no debe igualar a $c$: el comportamiento de $f$ exactamente en $c$ es irrelevante para la existencia del límite.
+La belleza de esta definición reside en cómo traduce la noción cualitativa
+de ``cercanía'' a una relación cuantitativa y verificable. El número
+$\epsilon$ representa un margen de tolerancia en los valores de la
+función. El número $\delta$ es la ``respuesta'' a ese desafío: para lograr
+esa tolerancia en los valores de $f$, basta restringir $x$ a una vecindad
+de radio $\delta$ alrededor de $c$. La condición $0<|x-c|$ expresa que
+el comportamiento de $f$ exactamente en $c$ es irrelevante para la
+existencia del límite.
 
-Esta definición admite una interpretación lúdica como un juego adversarial: un ``retador'' elige un $\epsilon$ arbitrariamente pequeño, y el ``defensor'' debe responder con un $\delta$ apropiado. Si el defensor puede siempre encontrar tal $\delta$, sin importar cuán pequeño sea el $\epsilon$ elegido, el límite existe y es $L$.
+\begin{rem}
+Esta definición admite una interpretación lúdica como un
+\textbf{juego adversarial}: un ``retador'' elige un $\epsilon$
+arbitrariamente pequeño, y el ``defensor'' debe responder con un $\delta$
+apropiado. Si el defensor puede siempre encontrar tal $\delta$, sin
+importar cuán pequeño sea el $\epsilon$ elegido, el límite existe y es
+$L$. Esta imagen, propuesta por Spivak en su \emph{Calculus}, es una de
+las mejores herramientas pedagógicas para interiorizar la definición.
+\end{rem}
 
 \begin{example}
-Demostrar mediante la definición $\epsilon$-$\delta$ que $\lim_{x \to 3} (2x - 1) = 5$.
+Demostrar mediante la definición $\epsilon$-$\delta$ que
+$\lim_{x \to 3}(2x-1) = 5$.
 \end{example}
 
 \begin{myproof}
-Dado $\epsilon > 0$, necesitamos encontrar $\delta > 0$ tal que si $0 < |x - 3| < \delta$, entonces $|(2x-1) - 5| < \epsilon$. Simplificamos la expresión de la función: $|(2x-1) - 5| = |2x - 6| = 2|x - 3|$. Para que esta cantidad sea menor que $\epsilon$, basta exigir $|x - 3| < \frac{\epsilon}{2}$. Por lo tanto, elegimos $\delta = \frac{\epsilon}{2}$. En efecto, si $0 < |x - 3| < \delta = \frac{\epsilon}{2}$, entonces
+Dado $\epsilon > 0$, buscamos $\delta > 0$ tal que $0<|x-3|<\delta$
+implique $|(2x-1)-5|<\epsilon$. Simplificamos:
+$|(2x-1)-5| = |2x-6| = 2|x-3|$.
+Para que $2|x-3| < \epsilon$ basta exigir $|x-3| < \frac{\epsilon}{2}$.
+Elegimos $\delta = \frac{\epsilon}{2}$. Entonces, si $0 < |x-3| < \delta$:
 \[
-|(2x-1) - 5| = 2|x-3| < 2 \cdot \frac{\epsilon}{2} = \epsilon. \qquad \square
+|(2x-1)-5| = 2|x-3| < 2\cdot\frac{\epsilon}{2} = \epsilon. \qquad\square
 \]
 \end{myproof}
 
+\begin{theorem}[Unicidad del límite]
+Si $\lim_{x\to c}f(x)$ existe, entonces es único.
+\end{theorem}
+
+La unicidad se demuestra por contradicción: si existieran dos límites
+distintos $L_1 \neq L_2$, tomando $\epsilon = \frac{|L_1-L_2|}{2}$ se
+obtiene que $f(x)$ no puede estar simultáneamente a distancia menor que
+$\epsilon$ de $L_1$ y de $L_2$, contradiciendo la definición.
+
+%%==========================================================
 \section{Propiedades Algebraicas de los Límites}
+%%==========================================================
 
-Una vez establecida la existencia del límite mediante la definición formal, resulta imprescindible disponer de herramientas prácticas para calcular límites sin necesidad de recurrir a la definición cada vez. Estos instrumentos son las leyes algebraicas de los límites, que permiten descomponer el cálculo de un límite complejo en la combinación de límites más simples.
-
-\begin{theorem}[Propiedades algebraicas de los límites]
-Sean $f$ y $g$ funciones tales que $\lim_{x \to c} f(x) = L$ y $\lim_{x \to c} g(x) = K$, y sea $k$ una constante real. Entonces se verifican las siguientes propiedades:
+\begin{theorem}[Leyes de los límites]
+Sean $\lim_{x\to c}f(x) = L$ y $\lim_{x\to c}g(x) = K$, $k\in\R$:
 \begin{enumerate}
-    \item $\lim_{x \to c} k = k$ (el límite de una constante es esa constante).
-    \item $\lim_{x \to c} [f(x) \pm g(x)] = L \pm K$.
-    \item $\lim_{x \to c} [k \cdot f(x)] = k \cdot L$.
-    \item $\lim_{x \to c} [f(x) \cdot g(x)] = L \cdot K$.
-    \item $\lim_{x \to c} \frac{f(x)}{g(x)} = \frac{L}{K}$, \quad siempre que $K \neq 0$.
-    \item $\lim_{x \to c} [f(x)]^n = L^n$, \quad para $n \in \N$.
-    \item $\lim_{x \to c} \sqrt[n]{f(x)} = \sqrt[n]{L}$, \quad siempre que $L > 0$ si $n$ es par.
+    \item $\lim_{x\to c} k = k$.
+    \item $\lim_{x\to c}[f(x)\pm g(x)] = L \pm K$.
+    \item $\lim_{x\to c}[k\cdot f(x)] = kL$.
+    \item $\lim_{x\to c}[f(x)\cdot g(x)] = LK$.
+    \item $\lim_{x\to c}\dfrac{f(x)}{g(x)} = \dfrac{L}{K}$, \quad
+    siempre que $K\neq 0$.
+    \item $\lim_{x\to c}[f(x)]^n = L^n$, \quad $n\in\N$.
+    \item $\lim_{x\to c}\sqrt[n]{f(x)} = \sqrt[n]{L}$, \quad con
+    $L>0$ si $n$ es par.
 \end{enumerate}
 \end{theorem}
 
 \begin{rem}
-Estas propiedades se demuestran rigurosamente a partir de la definición $\epsilon$-$\delta$. Su importancia práctica es enorme: gracias a ellas, el límite de cualquier función polinómica $p(x) = a_n x^n + \cdots + a_0$ en un punto $c$ se reduce simplemente a evaluar $p(c)$, lo que justifica el procedimiento de sustitución directa que se utiliza en la gran mayoría de los cálculos elementales.
+Gracias a estas propiedades, el límite de cualquier función polinómica
+$p(x) = a_n x^n + \cdots + a_0$ en un punto $c$ se reduce simplemente
+a evaluar $p(c)$. Esto justifica el procedimiento de \textbf{sustitución
+directa} que se utiliza en la gran mayoría de los cálculos elementales.
 \end{rem}
 
-\begin{theorem}[Unicidad del límite]
-Si $\lim_{x \to c} f(x)$ existe, entonces es único. Es decir, no puede suceder que $\lim_{x \to c} f(x) = L_1$ y $\lim_{x \to c} f(x) = L_2$ con $L_1 \neq L_2$ simultáneamente.
-\end{theorem}
-
-La unicidad del límite es un resultado que, aunque intuitivamente obvio, requiere demostración formal. La idea es sencilla: si hubiera dos límites distintos $L_1 \neq L_2$, tomando $\epsilon = \frac{|L_1 - L_2|}{2}$ se obtiene una contradicción con la definición, pues la función no puede estar simultáneamente a distancia menor que $\epsilon$ de $L_1$ y de $L_2$.
-
+%%==========================================================
 \section{Límites Laterales y Condición de Existencia}
+%%==========================================================
 
-Hasta ahora hemos considerado que $x$ se aproxima a $c$ sin restricción de dirección. Sin embargo, en muchas funciones de interés práctico ---como la función valor absoluto, la función piso o las funciones definidas por casos--- el comportamiento de la función difiere según si $x$ se acerca por valores menores o mayores que $c$. Para capturar este fenómeno se introducen los límites laterales.
+En muchas funciones de interés práctico ---como la función valor absoluto,
+la función piso o las funciones definidas por casos--- el comportamiento
+difiere según si $x$ se acerca por valores menores o mayores que $c$.
 
 \begin{definition}
-Se dice que $L$ es el \textbf{límite por la derecha} de $f$ en $c$, y se escribe $\lim_{x \to c^+} f(x) = L$, si para todo $\epsilon > 0$ existe $\delta > 0$ tal que $0 < x - c < \delta$ implica $|f(x) - L| < \epsilon$. Análogamente, $L$ es el \textbf{límite por la izquierda}, denotado $\lim_{x \to c^-} f(x) = L$, si para todo $\epsilon > 0$ existe $\delta > 0$ tal que $0 < c - x < \delta$ implica $|f(x) - L| < \epsilon$.
+$L$ es el \textbf{límite por la derecha} de $f$ en $c$,
+$\lim_{x\to c^+}f(x) = L$, si para todo $\epsilon>0$ existe $\delta>0$
+tal que $0<x-c<\delta$ implica $|f(x)-L|<\epsilon$. Análogamente,
+$\lim_{x\to c^-}f(x)=L$ si $0<c-x<\delta$ implica $|f(x)-L|<\epsilon$.
 \end{definition}
 
 \begin{theorem}[Condición de existencia del límite bilateral]
-$\lim_{x \to c} f(x) = L$ si y solo si $\lim_{x \to c^-} f(x) = L$ y $\lim_{x \to c^+} f(x) = L$.
+$\lim_{x\to c}f(x) = L$ si y solo si
+$\lim_{x\to c^-}f(x) = L$ y $\lim_{x\to c^+}f(x) = L$.
 \end{theorem}
 
-Este teorema convierte la verificación de la existencia del límite bilateral en la comprobación de dos condiciones más simples. En particular, si los límites laterales existen pero difieren, el límite bilateral no existe. Un ejemplo ilustrativo es la función $f(x) = \frac{|x|}{x}$ en $x = 0$: para $x > 0$ se tiene $f(x) = 1$, por lo que el límite por la derecha es $1$; para $x < 0$ se tiene $f(x) = -1$, por lo que el límite por la izquierda es $-1$. Como los laterales difieren, $\lim_{x \to 0} \frac{|x|}{x}$ no existe.
+Un ejemplo ilustrativo es $f(x)=\frac{|x|}{x}$ en $x=0$: el límite por
+la derecha es $1$ y por la izquierda es $-1$; como difieren,
+$\lim_{x\to 0}\frac{|x|}{x}$ no existe.
 
 \begin{example}
-Sea $f(x) = \begin{cases} x^2 + 1 & \text{si } x < 2 \\ 3x - 1 & \text{si } x \geq 2 \end{cases}$. Determinar si $\lim_{x \to 2} f(x)$ existe.
+Sea $f(x) = \begin{cases} x^2+1 & x<2 \\ 3x-1 & x\geq 2 \end{cases}$.
+Determinar si $\lim_{x\to 2}f(x)$ existe.
 \end{example}
 
 \begin{myproof}
-Calculamos los límites laterales. Por la izquierda: $\lim_{x \to 2^-} (x^2 + 1) = 4 + 1 = 5$. Por la derecha: $\lim_{x \to 2^+} (3x - 1) = 6 - 1 = 5$. Como ambos laterales coinciden e igualan $5$, concluimos que $\lim_{x \to 2} f(x) = 5$.
+$\lim_{x\to 2^-}(x^2+1)=5$ y $\lim_{x\to 2^+}(3x-1)=5$. Como ambos
+laterales coinciden, $\lim_{x\to 2}f(x) = 5$. $\square$
 \end{myproof}
 
+%%==========================================================
 \section{El Teorema del Encaje}
+%%==========================================================
 
 \begin{theorem}[Del encaje o del sándwich]
-Si $h(x) \leq f(x) \leq g(x)$ para todo $x$ en algún intervalo abierto que contiene a $c$ (salvo posiblemente en $c$), y si
-\[
-\lim_{x \to c} h(x) = \lim_{x \to c} g(x) = L,
-\]
-entonces $\lim_{x \to c} f(x) = L$.
+Si $h(x)\leq f(x)\leq g(x)$ en algún intervalo abierto que contiene a
+$c$ (salvo posiblemente en $c$), y
+$\lim_{x\to c}h(x) = \lim_{x\to c}g(x) = L$,
+entonces $\lim_{x\to c}f(x)=L$.
 \end{theorem}
 
-La idea geométrica de este teorema es transparente: si una función $f$ queda permanentemente comprimida entre dos funciones $h$ y $g$ que convergen al mismo valor $L$, entonces $f$ no tiene escapatoria: también debe converger a $L$. Este resultado es mucho más que un truco técnico; constituye una herramienta de demostración de primera línea para funciones cuyo límite no puede calcularse algebraicamente. Su aplicación más célebre es la demostración del límite trigonométrico fundamental.
+La idea geométrica es transparente: si $f$ queda permanentemente
+comprimida entre $h$ y $g$ que convergen al mismo valor, $f$ tampoco
+tiene escapatoria. Su aplicación más célebre es el límite trigonométrico
+fundamental.
 
 \begin{theorem}[Límite trigonométrico fundamental]
 \[
@@ -109,454 +204,588 @@ La idea geométrica de este teorema es transparente: si una función $f$ queda p
 \end{theorem}
 
 \begin{myproof}
-Para $0 < x < \frac{\pi}{2}$, un argumento geométrico basado en la comparación de áreas de sectores circulares y triángulos inscriptos establece la desigualdad
+Para $0<x<\frac{\pi}{2}$, la comparación de áreas de sectores circulares
+y triángulos inscritos establece la desigualdad
 \[
 \cos x \leq \frac{\sin x}{x} \leq 1.
 \]
-Dado que $\lim_{x \to 0^+} \cos x = 1$ y $\lim_{x \to 0^+} 1 = 1$, el Teorema del Encaje garantiza que $\lim_{x \to 0^+} \frac{\sin x}{x} = 1$. La igualdad $\frac{\sin(-x)}{-x} = \frac{\sin x}{x}$ muestra que la función es par, por lo que el límite lateral por la izquierda también es $1$. Por la condición de existencia bilateral, $\lim_{x \to 0} \frac{\sin x}{x} = 1$.
+Como $\lim_{x\to 0^+}\cos x = 1$, el Teorema del Encaje da
+$\lim_{x\to 0^+}\frac{\sin x}{x}=1$. La función es par, así que el
+límite lateral izquierdo también es $1$, y se concluye el resultado.
+$\square$
 \end{myproof}
 
 \begin{rem}
-Como corolario del límite anterior, se puede demostrar que $\lim_{x \to 0} \frac{1 - \cos x}{x} = 0$, usando la identidad trigonométrica $1 - \cos x = 2\sin^2\frac{x}{2}$ y el límite fundamental. Estos dos resultados son la base sobre la que se construyen las fórmulas de diferenciación de las funciones seno y coseno.
+Como corolario inmediato, se puede demostrar usando la identidad
+$1-\cos x = 2\sin^2\!\frac{x}{2}$ que
+$\lim_{x\to 0}\frac{1-\cos x}{x} = 0$. Estos dos límites son la base
+sobre la que se construyen las fórmulas de derivación de $\sin x$ y
+$\cos x$.
 \end{rem}
 
+%%==========================================================
 \section{Límites Infinitos y en el Infinito}
+%%==========================================================
 
 \begin{definition}
-Se dice que $\lim_{x \to c} f(x) = +\infty$ si para todo número $M > 0$ existe $\delta > 0$ tal que $0 < |x - c| < \delta$ implica $f(x) > M$. Geométricamente, esto significa que la recta $x = c$ es una \textbf{asíntota vertical} de la gráfica de $f$.
+Se dice que $\lim_{x\to c}f(x) = +\infty$ si para todo $M>0$ existe
+$\delta>0$ tal que $0<|x-c|<\delta$ implica $f(x)>M$. Geométricamente,
+la recta $x=c$ es una \textbf{asíntota vertical} de la gráfica de $f$.
 
-Se dice que $\lim_{x \to \infty} f(x) = L$ si para todo $\epsilon > 0$ existe $N > 0$ tal que $x > N$ implica $|f(x) - L| < \epsilon$. En este caso, la recta $y = L$ es una \textbf{asíntota horizontal} de la gráfica de $f$.
+Se dice que $\lim_{x\to\infty}f(x) = L$ si para todo $\epsilon>0$
+existe $N>0$ tal que $x>N$ implica $|f(x)-L|<\epsilon$. En este caso,
+la recta $y=L$ es una \textbf{asíntota horizontal}.
 \end{definition}
 
-El comportamiento de funciones racionales proporciona los ejemplos más instructivos de ambos fenómenos. En la función $f(x) = \frac{1}{x-2}$, los valores de $f$ crecen sin cota cuando $x \to 2$, generando una asíntota vertical en $x = 2$. En cambio, $\lim_{x \to \infty} \frac{1}{x-2} = 0$, pues el denominador domina y la función se aplana hacia cero, generando la asíntota horizontal $y = 0$.
-
-\section{La Regla de L'Hôpital}
-
-Una de las situaciones más frecuentes al calcular límites es la aparición de \emph{formas indeterminadas}: expresiones del tipo $\frac{0}{0}$ o $\frac{\infty}{\infty}$ que por sí solas no determinan el valor del límite. Para resolverlas, existe una herramienta poderosa debida a Guillaume de l'Hôpital ---aunque frecuentemente atribuida a Johann Bernoulli, quien la descubrió y la comunicó a l'Hôpital---: el criterio que lleva su nombre.
-
-\begin{theorem}[Regla de L'Hôpital]
-Sea $\lim_{x \to c} f(x) = 0$ y $\lim_{x \to c} g(x) = 0$ (o ambos infinitos). Si $f$ y $g$ son diferenciables en un entorno de $c$ (salvo posiblemente en $c$), $g'(x) \neq 0$ en ese entorno, y $\lim_{x \to c} \frac{f'(x)}{g'(x)}$ existe, entonces
-\[
-\lim_{x \to c} \frac{f(x)}{g(x)} = \lim_{x \to c} \frac{f'(x)}{g'(x)}.
-\]
-\end{theorem}
-
-\begin{example}
-Calcular $\lim_{x \to 0} \frac{x - \sin x}{x^3}$.
-\end{example}
-
-\begin{myproof}
-La sustitución directa produce $\frac{0}{0}$, una forma indeterminada. Aplicamos la regla de L'Hôpital repetidamente:
-\[
-\lim_{x \to 0} \frac{x - \sin x}{x^3} = \lim_{x \to 0} \frac{1 - \cos x}{3x^2} = \lim_{x \to 0} \frac{\sin x}{6x} = \frac{1}{6} \lim_{x \to 0} \frac{\sin x}{x} = \frac{1}{6} \cdot 1 = \frac{1}{6}.
-\]
-\end{myproof}
-
 \begin{rem}
-La regla de L'Hôpital es aplicable también a formas indeterminadas del tipo $0 \cdot \infty$, $\infty - \infty$, $0^0$, $1^\infty$ e $\infty^0$, tras una reescritura algebraica adecuada que las reduzca a la forma $\frac{0}{0}$ o $\frac{\infty}{\infty}$.
+El comportamiento de funciones racionales proporciona los ejemplos más
+instructivos. En $f(x) = \frac{1}{x-2}$, los valores crecen sin cota
+cuando $x\to 2$, generando una asíntota vertical en $x=2$. En cambio,
+$\lim_{x\to\infty}\frac{1}{x-2} = 0$ da la asíntota horizontal $y=0$.
+Para funciones racionales $\frac{P(x)}{Q(x)}$, el comportamiento en el
+infinito está completamente determinado por la relación entre los grados
+de $P$ y $Q$: si $\deg P < \deg Q$ la asíntota horizontal es $y=0$; si
+$\deg P = \deg Q$ es $y = \frac{a_n}{b_n}$ (cociente de coeficientes
+líderes); si $\deg P > \deg Q$ no hay asíntota horizontal.
 \end{rem}
 
+%%==========================================================
 \section{Continuidad}
+%%==========================================================
 
 \begin{definition}
-Una función $f$ es \textbf{continua en el punto $c$} si se satisfacen simultáneamente tres condiciones:
+$f$ es \textbf{continua en $c$} si se satisfacen simultáneamente:
 \begin{enumerate}
     \item $f(c)$ está definida.
-    \item $\lim_{x \to c} f(x)$ existe.
-    \item $\lim_{x \to c} f(x) = f(c)$.
+    \item $\lim_{x\to c}f(x)$ existe.
+    \item $\lim_{x\to c}f(x) = f(c)$.
 \end{enumerate}
-Si alguna de estas condiciones falla, se dice que $f$ es \textbf{discontinua} en $c$. $f$ es continua en un intervalo abierto $(a,b)$ si es continua en cada punto del intervalo. $f$ es continua en el intervalo cerrado $[a,b]$ si es continua en $(a,b)$, y además $\lim_{x \to a^+} f(x) = f(a)$ y $\lim_{x \to b^-} f(x) = f(b)$.
+Si alguna condición falla, $f$ es \textbf{discontinua} en $c$. $f$ es
+continua en un intervalo cerrado $[a,b]$ si es continua en $(a,b)$, y
+además $\lim_{x\to a^+}f(x)=f(a)$ y $\lim_{x\to b^-}f(x)=f(b)$.
 \end{definition}
 
-La imagen intuitiva de continuidad ---``se puede trazar la gráfica sin levantar el lápiz''--- captura bien la idea pero es insuficiente como definición matemática. La definición formal en términos de límites es la que permite razonar con precisión sobre casos extremos, como la función de Thomae o las funciones definidas en intervalos cerrados con comportamiento especial en los extremos. Nótese que la continuidad en un intervalo cerrado $[a,b]$ requiere únicamente límites laterales en los extremos $a$ y $b$, lo cual permite que funciones como $f(x) = \sqrt{x}$ sean continuas en $[0, +\infty)$ a pesar de que el límite bilateral en $x = 0$ no exista.
+La imagen intuitiva de continuidad ---``se puede trazar la gráfica sin
+levantar el lápiz''--- captura bien la idea pero es insuficiente como
+definición matemática. Nótese que la continuidad en $[a,b]$ requiere
+únicamente límites laterales en los extremos, lo cual permite que
+funciones como $f(x)=\sqrt{x}$ sean continuas en $[0,+\infty)$.
 
-\subsection{Clasificación de Discontinuidades}
+\subsection{Clasificación de discontinuidades}
 
 \begin{definition}
-Sea $f$ discontinua en $c$. Se distinguen los siguientes tipos:
+Sea $f$ discontinua en $c$. Se distinguen:
 \begin{itemize}
-    \item \textbf{Discontinuidad removible:} $\lim_{x \to c} f(x)$ existe, pero es distinto de $f(c)$ o $f$ no está definida en $c$. Es removible porque puede eliminarse redefiniendo $f(c) := \lim_{x \to c} f(x)$.
-    \item \textbf{Discontinuidad de salto:} Los límites laterales $\lim_{x \to c^-} f(x)$ y $\lim_{x \to c^+} f(x)$ existen pero son distintos. La magnitud $\abs{\lim_{x \to c^+} f(x) - \lim_{x \to c^-} f(x)}$ se denomina el \emph{salto} de $f$ en $c$.
-    \item \textbf{Discontinuidad infinita:} Al menos uno de los límites laterales es $\pm\infty$. Corresponde a la presencia de una asíntota vertical.
-    \item \textbf{Discontinuidad oscilante:} El límite no existe porque la función oscila sin converger, como sucede con $f(x) = \sin\!\left(\frac{1}{x}\right)$ en $x = 0$.
+    \item \textbf{Removible:} $\lim_{x\to c}f(x)$ existe pero es distinto
+    de $f(c)$, o $f(c)$ no está definida. Se elimina redefiniendo
+    $f(c):=\lim_{x\to c}f(x)$.
+    \item \textbf{De salto:} Los laterales existen pero
+    $\lim_{x\to c^-}f(x)\neq\lim_{x\to c^+}f(x)$. El
+    \emph{salto} es $\abs{\lim_{x\to c^+}f(x) - \lim_{x\to c^-}f(x)}$.
+    \item \textbf{Infinita:} Al menos un lateral es $\pm\infty$;
+    corresponde a una asíntota vertical.
+    \item \textbf{Oscilante:} El límite no existe por oscilación sin
+    convergencia, como $\sin\!\left(\frac{1}{x}\right)$ en $x=0$.
 \end{itemize}
 \end{definition}
 
 \begin{rem}
-Esta clasificación tiene implicaciones profundas en el análisis: una función acotada y Riemann-integrable en $[a,b]$ debe ser continua \emph{casi en todas partes}, es decir, puede tener discontinuidades, pero únicamente en un conjunto de \textbf{medida nula} (un conjunto que puede cubrirse con intervalos cuya longitud total es arbitrariamente pequeña). Esto explica por qué la función de Thomae ---discontinua en todos los racionales, pero en un conjunto de medida nula--- sí es Riemann-integrable, mientras que la función de Dirichlet ---discontinua en todos los reales--- no lo es.
+Una función acotada Riemann-integrable en $[a,b]$ puede tener
+discontinuidades, pero únicamente en un conjunto de \textbf{medida nula}
+(Lebesgue). Esto explica por qué la función de Thomae ---discontinua en
+todos los racionales, pero sobre un conjunto de medida nula--- es
+Riemann-integrable, mientras que la función de Dirichlet ---discontinua
+en todos los reales--- no lo es.
 \end{rem}
 
+%%==========================================================
 \section{El Teorema del Valor Intermedio}
+%%==========================================================
 
 \begin{theorem}[Teorema del Valor Intermedio (TVI)]
-Si $f$ es continua en el intervalo cerrado $[a, b]$ y $k$ es cualquier número comprendido estrictamente entre $f(a)$ y $f(b)$ (con $f(a) \neq f(b)$), entonces existe al menos un número $c \in (a, b)$ tal que $f(c) = k$.
+Si $f$ es continua en $[a,b]$ y $k$ es cualquier número estrictamente
+comprendido entre $f(a)$ y $f(b)$ (con $f(a)\neq f(b)$), entonces existe
+al menos un $c\in(a,b)$ tal que $f(c)=k$.
 \end{theorem}
 
-El Teorema del Valor Intermedio es un resultado de existencia, no de construcción: garantiza que cierto valor \emph{debe} alcanzarse, pero no indica dónde ni cómo encontrarlo. Su demostración descansa sobre la propiedad de completitud de los números reales, es decir, la ausencia de ``huecos'' en la recta real. Esta propiedad es lo que fundamentalmente distingue a $\R$ del conjunto de los racionales $\Q$: la función $f(x) = x^2$ es continua en $\Q$ y satisface $f(1) = 1 < 2 < 4 = f(2)$, pero el valor $k = 2$ nunca es alcanzado dentro de $\Q$ pues $\sqrt{2} \notin \Q$.
+El TVI es un resultado de \emph{existencia}, no de construcción. Su
+demostración descansa sobre la \textbf{completitud de $\R$}: la ausencia
+de ``huecos'' en la recta real. Esta propiedad es lo que distingue
+fundamentalmente a $\R$ de $\Q$: la función $f(x)=x^2$ es continua en
+$\Q$ y satisface $f(1)=1<2<4=f(2)$, pero $\sqrt{2}\notin\Q$ implica que
+$k=2$ nunca se alcanza dentro de los racionales.
 
-\begin{coro}[Teorema de Bolzano --- localización de ceros]
-Si $f$ es continua en $[a, b]$ y $f(a) \cdot f(b) < 0$ (es decir, $f(a)$ y $f(b)$ tienen signos opuestos), entonces existe al menos un $c \in (a, b)$ tal que $f(c) = 0$.
+\begin{coro}[Bolzano --- localización de ceros]
+Si $f$ es continua en $[a,b]$ y $f(a)\cdot f(b)<0$, entonces existe al
+menos un $c\in(a,b)$ con $f(c)=0$.
 \end{coro}
 
-Este corolario es la base del \textbf{método de bisección}, el algoritmo numérico más elemental para aproximar raíces de ecuaciones. El proceso consiste en evaluar $f$ en el punto medio $m = \frac{a+b}{2}$ del intervalo: si $f(m) = 0$, se ha encontrado la raíz; si $f(a) \cdot f(m) < 0$, la raíz está en $[a,m]$; en caso contrario, está en $[m,b]$. Repitiendo el procedimiento, el intervalo de incertidumbre se reduce a la mitad en cada iteración, garantizando convergencia a la raíz con cualquier precisión deseada.
+Este corolario es la base del \textbf{método de bisección}: se evalúa
+$f$ en el punto medio $m=\frac{a+b}{2}$; según el signo de $f(m)$, la
+raíz queda en $[a,m]$ o en $[m,b]$. El intervalo de incertidumbre se
+reduce a la mitad en cada iteración, garantizando convergencia con
+cualquier precisión deseada.
 
 \begin{example}
-Demostrar que $f(x) = x^3 + 2x - 1$ tiene al menos una raíz real en $(0,1)$.
+Demostrar que $f(x)=x^3+2x-1$ tiene al menos una raíz en $(0,1)$.
 \end{example}
 
 \begin{myproof}
-$f$ es continua en $[0,1]$ por ser polinómica. Evaluamos: $f(0) = -1 < 0$ y $f(1) = 1 + 2 - 1 = 2 > 0$. Como $f(0) \cdot f(1) < 0$, el Corolario de Bolzano garantiza la existencia de $c \in (0,1)$ con $f(c) = 0$.
+$f$ es continua en $[0,1]$ por ser polinómica. $f(0)=-1<0$ y
+$f(1)=2>0$. Como $f(0)\cdot f(1)<0$, el Corolario de Bolzano garantiza
+$c\in(0,1)$ con $f(c)=0$. $\square$
 \end{myproof}
 
 \begin{example}
-Demostrar que la ecuación $x = \cos x$ tiene solución en $\left(0, \frac{\pi}{2}\right)$.
+Demostrar que $x=\cos x$ tiene solución en $\left(0,\frac{\pi}{2}\right)$.
 \end{example}
 
 \begin{myproof}
-Definimos $g(x) = x - \cos x$, continua en $\left[0, \frac{\pi}{2}\right]$. Se tiene $g(0) = -1 < 0$ y $g\!\left(\frac{\pi}{2}\right) = \frac{\pi}{2} > 0$. Por el Corolario de Bolzano, existe $c \in \left(0, \frac{\pi}{2}\right)$ tal que $g(c) = 0$, es decir, $c = \cos c$.
+Sea $g(x)=x-\cos x$, continua en $\left[0,\frac{\pi}{2}\right]$.
+$g(0)=-1<0$ y $g\!\left(\frac{\pi}{2}\right)=\frac{\pi}{2}>0$. Por
+Bolzano existe $c\in\!\left(0,\frac{\pi}{2}\right)$ con $g(c)=0$, es
+decir, $c=\cos c$. $\square$
 \end{myproof}
 
+%%==========================================================
+\section{Infinitesimales Equivalentes}
+%%==========================================================
+
+\subsection{Definición y comparación de órdenes}
+
+Una función $\alpha(x)$ se denomina \textbf{infinitesimal} cuando
+$x\to a$ si $\lim_{x\to a}\alpha(x)=0$. Cuando dos infinitesimales
+tienden a cero en el mismo proceso límite, la razón entre ellos captura
+cuál desaparece más rápido.
+
+\begin{definition}
+Sean $\alpha$, $\beta$ infinitesimales para $x\to a$:
+\begin{enumerate}
+    \item $\beta$ es de \textbf{orden superior} a $\alpha$ si
+    $\lim\frac{\beta}{\alpha}=0$; se escribe $\beta=o(\alpha)$.
+    \item Son del \textbf{mismo orden} si $\lim\frac{\beta}{\alpha}=
+    A\neq 0$.
+    \item Son \textbf{equivalentes}, escrito $\alpha\sim\beta$, si
+    $\lim\frac{\beta}{\alpha}=1$.
+\end{enumerate}
+\end{definition}
+
+\begin{rem}
+$\alpha\sim\beta$ si y solo si $\alpha-\beta = o(\alpha)$. Por ejemplo,
+$\sin x\sim x$ cuando $x\to 0$ porque $x-\sin x\sim\frac{x^3}{6}$, que
+tiende a cero mucho más rápido que $x$.
+\end{rem}
+
+\subsection{Principio de sustitución}
+
+\begin{theorem}[Sustitución de equivalentes]
+Si $\alpha\sim\alpha'$ y $\beta\sim\beta'$ cuando $x\to a$, entonces
+\[
+\lim_{x\to a}\frac{\alpha}{\beta} = \lim_{x\to a}\frac{\alpha'}{\beta'}.
+\]
+\end{theorem}
+
+\begin{rem}
+La técnica es plenamente válida en \textbf{productos y cocientes}, pero
+debe usarse con precaución en \textbf{sumas y restas}: si los equivalentes
+se cancelan, es necesario recurrir a términos de orden superior mediante
+desarrollos de Taylor-Maclaurin.
+\end{rem}
+
+\subsection{Tabla de equivalencias fundamentales cuando $x\to 0$}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{>{$}c<{$} @{\quad$\sim$\quad} >{$}c<{$} l}
+\toprule
+f(x) & g(x) & \textbf{Justificación} \\
+\midrule
+\sin x & x
+    & $\lim_{x\to 0}\frac{\sin x}{x}=1$ \\
+\tan x & x
+    & $\lim_{x\to 0}\frac{\tan x}{x}=1$ \\
+\arcsin x & x
+    & consecuencia de $\sin x\sim x$ \\
+\arctan x & x
+    & consecuencia de $\tan x\sim x$ \\
+1-\cos x & \dfrac{x^2}{2}
+    & identidad $1-\cos x = 2\sin^2\!\frac{x}{2}$ \\
+\ln(1+x) & x
+    & $(\ln x)'\big|_{x=1}=1$ \\
+e^x-1 & x
+    & $(e^x)'\big|_{x=0}=1$ \\
+a^x-1 & x\ln a
+    & cambio de base $a^x = e^{x\ln a}$ \\
+(1+x)^\alpha - 1 & \alpha x
+    & derivada de la potencia en $x=0$ \\
+\sqrt[n]{1+x}-1 & \dfrac{x}{n}
+    & caso $\alpha=\frac{1}{n}$ del anterior \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{wow}
+Todas las equivalencias de la tabla son instancias del desarrollo de Taylor
+de primer orden: si $f(0)=0$, entonces $f(x)\sim f'(0)\cdot x$ cuando
+$x\to 0$. Esto convierte la tabla entera en un corolario de una sola
+idea: $(\sin x)'|_0=1$ da $\sin x\sim x$; $(\ln(1+x))'|_0=1$ da
+$\ln(1+x)\sim x$; $((1+x)^\alpha)'|_0=\alpha$ da $(1+x)^\alpha-1\sim
+\alpha x$. No es necesario memorizar cada entrada por separado.
+\end{wow}
+
+\subsection{Ejemplos}
+
+\begin{example}
+Calcular $\displaystyle\lim_{x\to 0}\frac{\ln(1+3x)}{\sin 2x}$.
+\end{example}
+
+\begin{myproof}
+$\ln(1+3x)\sim 3x$ y $\sin 2x\sim 2x$:
+\[
+\lim_{x\to 0}\frac{\ln(1+3x)}{\sin 2x}
+= \lim_{x\to 0}\frac{3x}{2x} = \frac{3}{2}. \qquad\square
+\]
+\end{myproof}
+
+\begin{example}
+Calcular $\displaystyle\lim_{x\to 0}\frac{e^{5x}-1}{\tan 3x}$.
+\end{example}
+
+\begin{myproof}
+$e^{5x}-1\sim 5x$ y $\tan 3x\sim 3x$:
+\[
+\lim_{x\to 0}\frac{e^{5x}-1}{\tan 3x}
+= \lim_{x\to 0}\frac{5x}{3x} = \frac{5}{3}. \qquad\square
+\]
+\end{myproof}
+
+\begin{example}
+Calcular $\displaystyle\lim_{x\to 0}\frac{1-\cos x}{x\sin x}$.
+\end{example}
+
+\begin{myproof}
+$1-\cos x\sim\frac{x^2}{2}$ y $\sin x\sim x$:
+\[
+\lim_{x\to 0}\frac{1-\cos x}{x\sin x}
+= \lim_{x\to 0}\frac{x^2/2}{x\cdot x}
+= \frac{1}{2}. \qquad\square
+\]
+\end{myproof}
+
+\begin{example}
+Calcular $\displaystyle\lim_{x\to 0}\frac{\arcsin 2x}{\ln(1+4x)}$.
+\end{example}
+
+\begin{myproof}
+$\arcsin 2x\sim 2x$ y $\ln(1+4x)\sim 4x$:
+\[
+\lim_{x\to 0}\frac{\arcsin 2x}{\ln(1+4x)}
+= \lim_{x\to 0}\frac{2x}{4x} = \frac{1}{2}. \qquad\square
+\]
+\end{myproof}
+
+%%==========================================================
 \section{Problemas Propuestos}
+%%==========================================================
+
+
 
 \begin{prob}
-$\displaystyle \lim_{h \to 0} \left( \frac{1}{h} - \frac{1}{h\sqrt{h+1}} \right)$
+$\displaystyle\lim_{h\to 0}\!\left(\frac{1}{h}-\frac{1}{h\sqrt{h+1}}\right)$
 \end{prob}
 
 \begin{prob}
-$\displaystyle \lim_{x \to 4} \frac{x^2 + 5x + 4}{x^2 - 3x - 4}$
+$\displaystyle\lim_{x\to 4}\frac{x^2+5x+4}{x^2-3x-4}$
 \end{prob}
 
 \begin{prob}
-$\displaystyle \lim_{x \to 4} \frac{x^2 - 4x}{x^2 - 3x - 4}$
+$\displaystyle\lim_{x\to 4}\frac{x^2-4x}{x^2-3x-4}$
 \end{prob}
 
 \begin{prob}
-$\displaystyle \lim_{x \to 3} \frac{2x^2 + 7x + 3}{x^2 - 9}$
+$\displaystyle\lim_{x\to 3}\frac{2x^2+7x+3}{x^2-9}$
 \end{prob}
 
 \begin{prob}
-$\displaystyle \lim_{x \to 1} \frac{x^2 - 1}{x - 1}$
+$\displaystyle\lim_{x\to 1}\frac{x^2-1}{x-1}$
 \end{prob}
 
 \begin{prob}
-$\displaystyle \lim_{x \to 4} \frac{x^2 - 4x}{x^2 - 4}$
+$\displaystyle\lim_{x\to 1}\frac{x^4+2x+1}{x^2+2x+1}$
 \end{prob}
 
 \begin{prob}
-$\displaystyle \lim_{x \to 2} \frac{x^3 + 8}{x^2 + 8}$
+$\displaystyle\lim_{x\to 1}\frac{\sqrt{x}-1}{x-1}$
 \end{prob}
 
 \begin{prob}
-$\displaystyle \lim_{x \to 1} \frac{x^4 + 2x + 1}{x^2 + 2x + 1}$
+$\displaystyle\lim_{x\to 1}\frac{\sqrt{x}-\sqrt{x^2}}{x-1}$
 \end{prob}
 
 \begin{prob}
-$\displaystyle \lim_{t \to 1} \left( \frac{t}{t+1} + \frac{1}{t+1} \right)$
+$\displaystyle\lim_{x\to 0}\frac{\sqrt{2}-\sqrt{1+\cos x}}{\sin^2 x}$
 \end{prob}
 
 \begin{prob}
-$\displaystyle \lim_{t \to 0} \left( \frac{1}{\sqrt{1+t}} - \frac{1}{t} \right)$
+$\displaystyle\lim_{x\to 2}\frac{x^3+8}{x^2+8}$
 \end{prob}
 
 \begin{prob}
-$\displaystyle \lim_{x \to 1} \frac{\sqrt{x} - 1}{x - 1}$
+$\displaystyle\lim_{t\to 1}\!\left(\frac{t}{t+1}+\frac{1}{t+1}\right)$
 \end{prob}
 
 \begin{prob}
-$\displaystyle \lim_{u \to \frac{\pi}{3}} \frac{1 - 2\cos u}{\sin\!\left(u - \frac{\pi}{3}\right)}$
+$\displaystyle\lim_{t\to 0}\!\left(\frac{1}{\sqrt{1+t}}-\frac{1}{t}\right)$
 \end{prob}
 
 \begin{prob}
-$\displaystyle \lim_{x \to 0} \frac{\sqrt{2} - \sqrt{1 + \cos x}}{\sin^2 x}$
+$\displaystyle\lim_{x\to 1}\!\left(\frac{x^4-x^3}{x^2-1}-\frac{x^3}{x^2-1}\right)$
+\end{prob}
+
+
+
+\begin{prob}
+$\displaystyle\lim_{u\to\pi/3}\frac{1-2\cos u}{\sin\!\left(u-\frac{\pi}{3}\right)}$
 \end{prob}
 
 \begin{prob}
-$\displaystyle \lim_{x \to 3} \frac{\sqrt{1 - x} - 3}{2 + \sqrt{x}}$
+$\displaystyle\lim_{x\to 1}\frac{\sin x-\cos x}{\cos 2x}$
 \end{prob}
 
 \begin{prob}
-$\displaystyle \lim_{x \to 1} \left( \frac{x^4 - x^3}{x^2 - 1} - \frac{x^3}{x^2 - 1} \right)$
+$\displaystyle\lim_{x\to\pi/2}\frac{2\sin^2 x+\sin x-1}{2\sin^2 x-3\sin x+1}$
 \end{prob}
 
 \begin{prob}
-$\displaystyle \lim_{x \to 1} \frac{\sqrt{x} - \sqrt{x^2}}{x - 1}$
+$\displaystyle\lim_{x\to\pi/3}\frac{\tan^3 x-3\tan x}{\cos\!\left(x+\frac{\pi}{6}\right)}$
 \end{prob}
 
 \begin{prob}
-$\displaystyle \lim_{x \to 1} \frac{\sin(x) - \cos(x)}{\cos(2x)}$
+$\displaystyle\lim_{x\to 0}\frac{x^2}{\sqrt{1+x\sin x}-\sqrt{\cos x}}$
 \end{prob}
 
 \begin{prob}
-$\displaystyle \lim_{x \to 2} \frac{6x^2 + 11x - 6}{x - 2}$
+$\displaystyle\lim_{x\to 0}\frac{\ln(1+x)}{x}$
+\end{prob}
+
+
+
+\begin{prob}
+$\displaystyle\lim_{x\to\infty}\!\left(\frac{x^2+1}{x^2-2}\right)^{x^2}$
 \end{prob}
 
 \begin{prob}
-$\displaystyle \lim_{x \to \frac{\pi}{2}} \frac{2\sin^2 x + \sin x - 1}{2\sin^2 x - 3\sin x + 1}$
+$\displaystyle\lim_{x\to 0}(1+x^2)^{\cot^2 x}$
 \end{prob}
 
 \begin{prob}
-$\displaystyle \lim_{x \to \frac{\pi}{3}} \frac{\tan^3 x - 3\tan x}{\cos\!\left( x + \frac{\pi}{6} \right)}$
+$\displaystyle\lim_{x\to 1}(1+\sin\pi x)^{\cot\pi x}$
 \end{prob}
 
 \begin{prob}
-$\displaystyle \lim_{x \to 0} \frac{x^2}{\sqrt{1 + x\sin x} - \sqrt{\cos x}}$
+$\displaystyle\lim_{x\to\infty}\frac{5x^2}{3x^2-5}$
 \end{prob}
 
 \begin{prob}
-$\displaystyle \lim_{x \to \infty} \left( \frac{x^2 + 1}{x^2 - 2} \right)^{x^2}$
+$\displaystyle\lim_{x\to\infty}\frac{3x-7}{4x^2+x}$
 \end{prob}
 
 \begin{prob}
-$\displaystyle \lim_{x \to 0} \left( 1 + x^2 \right)^{\cot^2 x}$
+$\displaystyle\lim_{x\to\pi/2}\tan x$ \; (analizar límites laterales).
 \end{prob}
 
 \begin{prob}
-$\displaystyle \lim_{x \to 1} \left( 1 + \sin \pi x \right)^{\cot \pi x}$
+$\displaystyle\lim_{x\to\infty}\frac{x^2-x\sqrt{x^2-1}}{x}$
+\hfill\textit{Sugerencia: racionalizar el numerador.}
 \end{prob}
 
 \begin{prob}
-$\displaystyle \lim_{x \to 0} \frac{\ln(1 + x)}{x}$
+$\displaystyle\lim_{n\to\infty}\frac{n}{\sqrt{n^2+1}}$.
+Determine si la sucesión es convergente.
 \end{prob}
 
 \begin{prob}
-Determinar los puntos de discontinuidad y analizar el carácter de dichos puntos para la función
+$\displaystyle\lim_{n\to\infty}\frac{n^2}{\sqrt{n^3+2n+1}}$.
+Determine si la sucesión es convergente.
+\end{prob}
+
+
+
+\begin{prob}
+Si $\lim_{x\to 1}f(x)=4$ y $\lim_{x\to 1}g(x)=-2$, calcule
+$\lim_{x\to 1}\frac{f(x)}{g(x)}$. Cite explícitamente las propiedades
+utilizadas.
+\end{prob}
+
+\begin{prob}
+¿Existe $a$ tal que el límite
+$\displaystyle\lim_{x\to 2}\frac{3x^2+ax+a+3}{x^2+x-2}$ exista?
+Si es así, encuentre $a$ y el valor del límite.
+\end{prob}
+
+\begin{prob}
+Determine $\displaystyle\lim_{x\to\infty}f(x)$ si para toda $x>1$
+se satisface
 \[
-f(x) = \frac{x}{(1 + x)^2}, \quad x \neq -1; \qquad f(-1) = 0.
+\frac{10x-21}{2e^x} < f(x) < \frac{5\sqrt{x}}{\sqrt{x}-1}.
+\]
+Justifique indicando el teorema utilizado.
+\end{prob}
+
+
+
+\begin{prob}
+Encuentre las asíntotas verticales de $f(x)=\dfrac{x^2}{16-x^2}$ y
+verifique el tipo de infinito en cada una.
+\end{prob}
+
+\begin{prob}
+Encuentre las asíntotas horizontales de $f(x)=\dfrac{x^2}{16-x^2}$.
+\end{prob}
+
+\begin{prob}
+Encuentre todas las asíntotas horizontales y verticales de
+$f(x)=\dfrac{x^2}{x^2-4}$. Grafique indicando las asíntotas.
+\end{prob}
+
+\begin{prob}
+Encuentre todas las asíntotas horizontales y verticales de
+$f(x)=\dfrac{3x^2+2x+1}{2x^2-3}$.
+\end{prob}
+
+\begin{prob}
+Halle $\lim_{x\to -5}\frac{5}{x+5}$ e interprete geométricamente.
+\end{prob}
+
+
+
+\begin{prob}
+Determinar los puntos de discontinuidad y su carácter para
+\[
+f(x) = \frac{x}{(1+x)^2},\; x\neq -1; \qquad f(-1)=0.
 \]
 \end{prob}
 
 \begin{prob}
-Determina $\displaystyle \lim_{x \to \infty} f(x)$ si, para toda $x > 1$, se satisface la desigualdad
-\[
-\frac{10x - 21}{2e^x} < f(x) < \frac{5\sqrt{x}}{\sqrt{x}-1}.
-\]
-Justifique su respuesta indicando el teorema utilizado.
-\end{prob}
-
-\begin{prob}
-Si $\displaystyle \lim_{x \to 1} f(x) = 4$ y $\displaystyle \lim_{x \to 1} g(x) = -2$, calcule $\displaystyle \lim_{x \to 1} \frac{f(x)}{g(x)}$. Cite explícitamente las propiedades algebraicas de los límites utilizadas.
-\end{prob}
-
-\begin{prob}
-¿Existe un número $a$ tal que el límite
-\[
-\lim_{x \to 2} \frac{3x^2 + ax + a + 3}{x^2 + x - 2}
-\]
-exista? Si es así, encuentre el valor de $a$ y el valor del límite.
-\end{prob}
-
-\begin{prob}
-Determine $\displaystyle \lim_{n \to \infty} \frac{n}{\sqrt{n^2 + 1}}$ y determine si la sucesión es convergente.
-\end{prob}
-
-\begin{prob}
-Determine $\displaystyle \lim_{n \to \infty} \frac{n^2}{\sqrt{n^3 + 2n + 1}}$ y determine si la sucesión es convergente.
-\end{prob}
-
-\begin{prob}[El monje tibetano]
-Un monje tibetano sale del monasterio a las 7:00 y emprende su camino habitual hacia la cima de la montaña, a donde llega a las 19:00. La mañana siguiente inicia el regreso desde la cima por la misma ruta a las 7:00 y llega al monasterio a las 19:00. Mediante el Teorema del Valor Intermedio demuestre que existe un punto a lo largo de la ruta que el monje cruzará exactamente a la misma hora en ambos días.
-\end{prob}
-
-\begin{prob}
-Demuestre que existe un número real que es exactamente uno más que su propio cubo.
-\end{prob}
-
-\begin{prob}
-Demuestre que en el intervalo $[-3, 1]$ existe un número real que es exactamente igual a su cuadrado menos $7$.
-\end{prob}
-
-\begin{prob}
-Demuestre que entre todas las esferas cuyos radios satisfacen $5 \leq r \leq 8$, existe al menos una con volumen de $1500~\text{cm}^3$.
-\end{prob}
-
-\begin{prob}
-En febrero del 2000 el costo de enviar una carta por correo era de 33 centavos por la primera onza, y 22 centavos adicionales por cada onza o fracción de ésta hasta 13 onzas.
+Encuentre los valores de $m$ y $n$ para que $f$ sea continua en $\R$:
 \begin{enumerate}[a)]
-    \item ¿Cuál es el dominio de la función costo?
-    \item ¿Es la función continua en todo su dominio? Explique detalladamente su razonamiento.
+    \item $f(x) =
+    \begin{cases}
+        mx & x<3 \\ n & x=3 \\ -2x+9 & x>3
+    \end{cases}$
+    \item $f(x) =
+    \begin{cases}
+        mx-n & x<1 \\ 5 & x=1 \\ mn+2 & x>1
+    \end{cases}$
+    \item $f(x) =
+    \begin{cases}
+        2x+1 & x\leq 3 \\ mx+n & 3<x<5 \\ 2x+5 & x\geq 5
+    \end{cases}$
 \end{enumerate}
 \end{prob}
 
 \begin{prob}
-Encuentre los valores de $m$ y $n$ de tal manera que la función $f$ sea continua en $\R$:
-\begin{enumerate}[a)]
-    \item $f(x) =
-    \begin{cases}
-        mx & \text{si } x < 3 \\
-        n & \text{si } x = 3 \\
-        -2x + 9 & \text{si } x > 3
-    \end{cases}$
-
-    \item $f(x) =
-    \begin{cases}
-        mx - n & \text{si } x < 1 \\
-        5 & \text{si } x = 1 \\
-        mn + 2 & \text{si } x > 1
-    \end{cases}$
-
-    \item $f(x) =
-    \begin{cases}
-        2x + 1 & \text{si } x \leq 3 \\
-        mx + n & \text{si } 3 < x < 5 \\
-        2x + 5 & \text{si } x \geq 5
-    \end{cases}$
-\end{enumerate}
-\end{prob}
-
-\begin{prob}
-Estudie la continuidad de la función
-\[
-f(x) = \frac{\sqrt{x^2 - 1}}{x^4 - x^3 - x^2 + x},
-\]
+Estudie la continuidad de
+$f(x)=\dfrac{\sqrt{x^2-1}}{x^4-x^3-x^2+x}$
 clasificando cada punto de discontinuidad según su tipo.
 \end{prob}
 
 \begin{prob}
-Determine si la función $f$ es continua en los intervalos indicados:
+Trace la gráfica de $f(x)=|\sin x|$ e indique y clasifique todos los
+puntos de discontinuidad, si los hay.
+\end{prob}
+
+\begin{prob}
+Trace la gráfica de $f(x)=|\cos x|$ e indique y clasifique todos los
+puntos de discontinuidad, si los hay.
+\end{prob}
+
+\begin{prob}
+En febrero del 2000 el costo de enviar una carta era 33 centavos por la
+primera onza y 22 adicionales por cada onza o fracción hasta 13 onzas.
 \begin{enumerate}[a)]
-    \item $[-1, 3]$
-    \item $(2, 4]$
+    \item ¿Cuál es el dominio de la función costo?
+    \item ¿Es la función continua en todo su dominio? Justifique.
 \end{enumerate}
 \end{prob}
 
 \begin{prob}
-Trace la gráfica de $f(x) = \abs{\sin x}$ e indique y clasifique todos los puntos de discontinuidad de $f$, si los hay.
+Suponga que $f$ es continua en $[0,1]$ excepto en $x=0.25$, y que
+$f(0)=1$, $f(1)=3$. Sea $N=2$. Trace dos posibles gráficas de $f$: una
+en que no satisfaga la conclusión del TVI, y otra en que sí la satisfaga
+aun sin cumplir la hipótesis de continuidad completa.
+\end{prob}
+
+
+
+\begin{prob}[El monje tibetano]
+Un monje sale del monasterio a las 7:00 y llega a la cima a las 19:00.
+Al día siguiente regresa por la misma ruta en el mismo horario. Mediante
+el TVI demuestre que existe un punto de la ruta que el monje cruzará
+exactamente a la misma hora en ambos días.
 \end{prob}
 
 \begin{prob}
-Trace la gráfica de $f(x) = \abs{\cos x}$ e indique y clasifique todos los puntos de discontinuidad de $f$, si los hay.
+Demuestre que existe un número real que es exactamente uno más que su
+propio cubo.
 \end{prob}
 
 \begin{prob}
-¿Tiene el polinomio $p(x) = x^{11} + x - x + 2$ raíces reales en el intervalo $(0,1)$? Justifique su respuesta utilizando el Teorema del Valor Intermedio.
+Demuestre que en $[-3,1]$ existe un número real igual a su cuadrado
+menos $7$.
 \end{prob}
 
 \begin{prob}
-La fuerza gravitacional ejercida por la Tierra sobre una masa unitaria a distancia $r$ del centro del planeta es
+Demuestre que entre todas las esferas con $5\leq r\leq 8$, existe al
+menos una con volumen de $1500~\text{cm}^3$.
+\end{prob}
+
+\begin{prob}
+¿Tiene el polinomio $p(x)=x^{11}+x-x+2$ raíces en $(0,1)$? Justifique
+con el TVI.
+\end{prob}
+
+\begin{prob}
+La fuerza gravitacional sobre una masa unitaria a distancia $r$ del
+centro de la Tierra es
 \[
-F(r) =
+F(r)=
 \begin{cases}
-\dfrac{GM}{R^3}\, r & \text{si } r < R, \\[6pt]
-\dfrac{GM}{r^2} & \text{si } r \geq R,
+\dfrac{GM}{R^3}\,r & r<R,\\[6pt]
+\dfrac{GM}{r^2} & r\geq R.
 \end{cases}
 \]
-donde $M$ es la masa de la Tierra, $R$ su radio y $G$ la constante gravitacional. ¿Es $F$ una función continua de $r$? Justifique formalmente.
+¿Es $F$ continua? Justifique formalmente.
 \end{prob}
 
-\begin{prob}
-Suponga que $f$ es continua en $[0,1]$ excepto en $x = 0.25$, y que $f(0) = 1$, $f(1) = 3$. Sea $N = 2$. Trace dos posibles gráficas de $f$: una en que $f$ \emph{no} satisfaga la conclusión del Teorema del Valor Intermedio, y otra en que sí la satisfaga aun sin cumplir la hipótesis de continuidad completa.
-\end{prob}
+
 
 \begin{prob}
-Halle $\displaystyle \lim_{x \to -5} \frac{5}{x + 5}$ y determine si el límite existe. Interprete geométricamente el resultado.
-\end{prob}
-
-\begin{prob}
-Encuentre las asíntotas verticales de $f(x) = \dfrac{x^2}{16 - x^2}$ y verifique el tipo de infinito en cada una.
-\end{prob}
-
-\begin{prob}
-Encuentre las asíntotas horizontales de $f(x) = \dfrac{x^2}{16 - x^2}$.
-\end{prob}
-
-\begin{prob}
-Halle $\displaystyle \lim_{x \to \infty} \frac{5x^2}{3x^2 - 5}$.
-\end{prob}
-
-\begin{prob}
-Halle $\displaystyle \lim_{x \to \infty} \frac{3x - 7}{4x^2 + x}$.
-\end{prob}
-
-\begin{prob}
-Halle $\displaystyle \lim_{x \to \frac{\pi}{2}} \tan x$ analizando los límites laterales.
-\end{prob}
-
-\begin{prob}
-Halle $\displaystyle \lim_{x \to \infty} \frac{x^2 - x\sqrt{x^2 - 1}}{x}$. \textit{Sugerencia:} racionalice el numerador.
-\end{prob}
-
-\begin{prob}
-Encuentre todas las asíntotas horizontales y verticales de $f(x) = \dfrac{x^2}{x^2 - 4}$. Grafique indicando las asíntotas.
-\end{prob}
-
-\begin{prob}
-Encuentre todas las asíntotas horizontales y verticales de $f(x) = \dfrac{3x^2 + 2x + 1}{2x^2 - 3}$.
-\end{prob}
-
-\begin{prob}
-Deduzca si cada afirmación es verdadera o falsa y justifique rigurosamente su respuesta:
+Deduzca si cada afirmación es verdadera o falsa y justifique
+rigurosamente:
 \begin{enumerate}[a)]
-    \item Si $\displaystyle \lim_{x \to a} f(x) = 3$ y $\displaystyle \lim_{x \to a} g(x) = 0$, entonces $\displaystyle \lim_{x \to a} \frac{f(x)}{g(x)}$ no existe.
-    \item Si $\displaystyle \lim_{x \to a} f(x)$ existe y $\displaystyle \lim_{x \to a} g(x)$ no existe, entonces $\displaystyle \lim_{x \to a} f(x)\,g(x)$ no existe.
-    \item Si $\displaystyle \lim_{x \to a} f(x) = \infty$ y $\displaystyle \lim_{x \to a} g(x) = \infty$, entonces $\displaystyle \lim_{x \to a} \frac{f(x)}{g(x)} = \infty$.
-    \item Si $\displaystyle \lim_{x \to a} f(x) = \infty$ y $\displaystyle \lim_{x \to a} g(x) = \infty$, entonces $\displaystyle \lim_{x \to a} [f(x) - g(x)] = 0$.
-    \item Si $f$ es un polinomio, entonces $\displaystyle \lim_{x \to \infty} f(x) = \infty$.
-    \item Toda función polinómica es continua sobre $(-\infty, +\infty)$.
-    \item Para $f(x) = x^5 + 3x - 1$ existe un número $c \in [-1, 1]$ tal que $f(c) = 0$.
-    \item Si $f$ y $g$ son continuas en $x = 2$, entonces $f/g$ es continua en $2$.
-    \item La función techo $f(x) = \lceil x \rceil$ no es continua sobre el intervalo $(0,1]$.
-    \item Si $\displaystyle \lim_{x \to a} f(x)$ y $\displaystyle \lim_{x \to a} g(x)$ existen, entonces $\displaystyle \lim_{x \to a} [f(x) + g(x)]$ existe.
-    \item Si $f$ es discontinua en $x = 3$, entonces $f(3)$ no está definido.
-    \item Si $f$ es discontinua en $x = a$, entonces $\displaystyle \lim_{x \to a} f(x) = 0$.
-    \item Si $f$ es continua en $[a,b]$ y $f(a)\,f(b) < 0$, entonces existe al menos una raíz de $f(x) = 0$ en $(a, b)$.
+    \item Si $\lim_{x\to a}f(x)=3$ y $\lim_{x\to a}g(x)=0$, entonces
+    $\lim_{x\to a}\frac{f(x)}{g(x)}$ no existe.
+    \item Si $\lim_{x\to a}f(x)$ existe y $\lim_{x\to a}g(x)$ no existe,
+    entonces $\lim_{x\to a}f(x)g(x)$ no existe.
+    \item Si $\lim_{x\to a}f(x)=\infty$ y $\lim_{x\to a}g(x)=\infty$,
+    entonces $\lim_{x\to a}\frac{f(x)}{g(x)}=\infty$.
+    \item Si $\lim_{x\to a}f(x)=\infty$ y $\lim_{x\to a}g(x)=\infty$,
+    entonces $\lim_{x\to a}[f(x)-g(x)]=0$.
+    \item Si $f$ es un polinomio, entonces $\lim_{x\to\infty}f(x)=\infty$.
+    \item Toda función polinómica es continua sobre $(-\infty,+\infty)$.
+    \item Para $f(x)=x^5+3x-1$ existe $c\in[-1,1]$ con $f(c)=0$.
+    \item Si $f$ y $g$ son continuas en $x=2$, entonces $f/g$ es continua
+    en $2$.
+    \item La función techo $f(x)=\lceil x\rceil$ no es continua en
+    $(0,1]$.
+    \item Si $\lim_{x\to a}f(x)$ y $\lim_{x\to a}g(x)$ existen, entonces
+    $\lim_{x\to a}[f(x)+g(x)]$ existe.
+    \item Si $f$ es discontinua en $x=3$, entonces $f(3)$ no está
+    definido.
+    \item Si $f$ es discontinua en $x=a$, entonces
+    $\lim_{x\to a}f(x)=0$.
+    \item Si $f$ es continua en $[a,b]$ y $f(a)f(b)<0$, entonces existe
+    al menos una raíz de $f(x)=0$ en $(a,b)$.
 \end{enumerate}
 \end{prob}
-
-\begin{prob}
-Encuentre la ecuación de la recta perpendicular a la recta tangente en el punto $(1, 2)$ sobre la gráfica de $f(x) = -4x^2 + 6x$.
-\end{prob}
-
-\begin{prob}
-Dado el polinomio cúbico $f(x) = x^3 - 3x^2 - 9x + 5$:
-\begin{itemize}
-    \item \textbf{Verifique} que los puntos $(-1, 10)$ y $(3, -22)$ pertenecen a la curva.
-    \item \textbf{Demuestre} que la recta tangente a $f$ en cada uno de esos puntos es horizontal.
-    \item \textbf{Grafique} el polinomio y las rectas tangentes horizontales en los puntos dados.
-\end{itemize}
-\end{prob}
-
-\begin{prob}
-Sea $y = \sqrt{x}$.
-\begin{enumerate}[a)]
-    \item Halle la pendiente de la recta tangente en $x = a$.
-    \item Halle las ecuaciones de las rectas tangentes en los puntos $(1, 1)$ y $(4, 2)$.
-\end{enumerate}
-\end{prob}
-
-\begin{prob}
-Halle la ecuación de la recta tangente a $y = f(x)$ en $x = 5$, sabiendo que $f(5) = 3$ y $f'(5) = 4$.
-\end{prob}
-
-\begin{prob}
-Dibuje la gráfica de una función $f$ para la cual $f(0) = 0$, $f'(0) = 3$, $f(1) = 0$ y $f(2) = 1$.
-\end{prob}
-
-\begin{prob}
-Si se lanza una roca verticalmente hacia arriba en el planeta Marte con una velocidad inicial de $10~\text{m/s}$, su altura (en metros) después de $t$ segundos es $H(t) = 10t - 1.86t^2$.
-\begin{enumerate}[a)]
-    \item Halle la velocidad de la roca después de un segundo.
-    \item Halle la velocidad de la roca cuando $t = a$.
-    \item ¿Cuándo caerá la roca a la superficie?
-    \item ¿Con qué velocidad chocará la roca contra la superficie?
-\end{enumerate}
-\end{prob}
-
-\begin{prob}
-Suponga que un círculo de radio $r$ y centro $(0, c)$ está inscrito en la parábola $y = x^2$ como lo muestra la siguiente figura. En el punto de tangencia, las pendientes de ambas curvas deben coincidir. Encuentre la pendiente de la circunferencia implícitamente y muestre que en el punto de tangencia $y = c - \dfrac{r^2}{2}$. Luego use las ecuaciones de la circunferencia y la parábola para mostrar que $c = r^2 + \dfrac{1}{4}$.
-
-\begin{center}
-\begin{tikzpicture}[scale=1.4]
-  \draw[->] (-2.3,0) -- (2.3,0) node[anchor=west] {$x$};
-  \draw[->] (0,-0.5) -- (0,3.9) node[anchor=south] {$y$};
-  \draw[blue,thick,domain=-2:2,samples=100] plot (\x,{\x*\x})
-    node[above right] {$y = x^2$};
-  \draw[thick] (0,1.3) circle [radius=1.3];
-  \filldraw (0,1.3) circle (0.04) node[right] {$(0, c)$};
-  \filldraw[red] (1.1,{1.1*1.1}) circle (0.05);
-  \filldraw[red] (-1.1,{1.1*1.1}) circle (0.05);
-\end{tikzpicture}
-
-\textit{Figura: Un círculo de radio $r$ inscrito en la parábola $y = x^2$.}
-\end{center}
-\end{prob}
-

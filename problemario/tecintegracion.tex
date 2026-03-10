@@ -1,68 +1,396 @@
-\chapter{Técnicas de integración}
+\chapter{Técnicas de Integración}
 
-\section{Ejercicios}
+%----------------------------------------------------------
+\section{Panorama General}
+%----------------------------------------------------------
 
-\begin{prob} Calcule las siguientes integrales indefinidas
-\begin{multicols}{2}
-\begin{enumerate}
-\item $\displaystyle\int \sqrt{1-4y}\ dy.$
-\item $\displaystyle\int x^4\sqrt{3x^5-5}\ dx.$
-\item $\displaystyle\int y^2\sec^2(y^3)\ dy.$
-\item $\displaystyle\int \dfrac{\left( x^2-4x+6\right)}{x^3-6x^2+18x}\ dx.$
-\item $\displaystyle\int x^2 e^x \cos x\,dx.$
-\item $\displaystyle\int \dfrac{x^2+2x}{\sqrt{x^3+3x^2+1}}\ dx.$
-\item $\displaystyle\int \sec x\tan x\cos\left( \sec x \right)\ dx.$
-\item $\displaystyle\int x^2e^x\ dx.$
-\item $\displaystyle\int \cos^{2} x\ dx.$
-\item $\displaystyle\int \dfrac{xe^x}{\left( x+1\right)^2}\ dx.$
-\item $\displaystyle\int \sen t\ln\left( \cos t \right)\ dt.$
-\item $\displaystyle\int x\sec^2 x\ dx.$
-\item $\displaystyle\int x\arctan x\ dx.$
-\item $\displaystyle\int e^x\cos x\ dx.$
-\item $\displaystyle\int \sqrt{20-8x-x^2}\ dx.$
-\item $\displaystyle\int \dfrac{5x-1}{x^2-1}\ dx.$
-\item $\displaystyle\int \dfrac{3x-13}{(x+2)(x-5)}\ dx.$
-\item $\displaystyle\int \cos x\sqrt{4-\sen^2 x}\ dx.$
-\item $\displaystyle\int \dfrac{2x^2+3x+2}{x^3+4x^2+6x+4}\ dx.$
-\item $\displaystyle\int \dfrac{1}{9x^4+x^2}\ dx.$
-\item $\displaystyle\int \dfrac{e^{5x}}{\left(e^{2x} + 1 \right)^2}\ dx.$
-\item $\displaystyle\int \dfrac{\ln x}{x^2}\ dx.$
-\item $\displaystyle\int \dfrac{2x^2-x-20}{x^2+x-6}\ dx.$
-\item $\displaystyle\int \dfrac{2x^2-5x+1}{x^3-2x^2-x+2}\ dx.$
-\item $\displaystyle\int \frac{x^3+2x^2-3x+1}{x^2-1}\,dx.$
-\item $\displaystyle\int \frac{x^2}{(x-1)^2(x^2+4)}\,dx.$
-\item $\displaystyle\int \frac{2x^3-5x^2+4x-1}{(x^2+1)^2}\,dx.$
-\item $\displaystyle\int \frac{x^2\ln x}{x^2+1}\,dx.$
-\end{enumerate}
-\end{multicols}
-\end{prob}
+El Segundo Teorema Fundamental del Cálculo convierte el problema de calcular
+una integral definida en el problema de encontrar una antiderivada. Sin
+embargo, mientras que la diferenciación es un proceso completamente
+algorítmico ---la regla de la cadena, el producto y el cociente bastan para
+diferenciar cualquier función elemental---, la integración carece de un
+algoritmo universal. Existen funciones perfectamente continuas, como
+$e^{-x^2}$ o $\frac{\sin x}{x}$, cuya antiderivada no puede expresarse en
+términos de funciones elementales. Esta asimetría profunda entre derivación
+e integración motivó el desarrollo histórico de un repertorio de
+\textbf{técnicas de transformación} que permiten reducir integrales
+complicadas a formas conocidas.
 
-
-
-
-
-La integración, en su formulación más elemental, puede entenderse como la operación inversa de la diferenciación. Sin embargo, mientras que toda función elemental diferenciable produce una derivada elemental, la situación inversa es radicalmente distinta: existen funciones perfectamente continuas y bien comportadas cuya primitiva no puede expresarse en términos de funciones elementales. Esta asimetría profunda entre diferenciación e integración motivó el desarrollo histórico de un amplio arsenal de técnicas de transformación algebraica y trigonométrica que permiten reducir integrales complejas a formas conocidas.
-
-Entre las técnicas más elegantes de este arsenal se encuentran la \textbf{integración de potencias trigonométricas} y la \textbf{sustitución trigonométrica}. La primera explota la riqueza algebraica de las identidades pitagóricas para descomponer potencias de funciones trigonométricas en factores más simples. La segunda, notablemente ingeniosa, utiliza la geometría del triángulo rectángulo para eliminar radicales de la forma $\sqrt{a^2 \pm u^2}$ o $\sqrt{u^2 - a^2}$, transformando expresiones irracionales en integrales trigonométricas tratables.
+En este capítulo se estudian cinco técnicas fundamentales: la
+\textbf{sustitución simple}, contraparte de la regla de la cadena; la
+\textbf{integración por partes}, contraparte de la regla del producto; la
+\textbf{integración de potencias trigonométricas}, basada en las identidades
+pitagóricas; la \textbf{sustitución trigonométrica}, para eliminar radicales
+mediante geometría del triángulo; y la \textbf{descomposición en fracciones
+parciales}, herramienta algebraica para integrar funciones racionales.
+Dominar estas técnicas requiere práctica sistemática: el reconocimiento de
+la forma adecuada en cada situación se desarrolla con la experiencia.
 
 \begin{rem}
-La sistematización de estas técnicas se consolidó en los siglos XVIII y XIX, principalmente a través del trabajo de Euler, Lagrange y los desarrollos incluidos en los tratados de Lacroix y posteriormente en los textos modernos de Purcell, Larson y Stewart. Es importante subrayar que en todos los casos la estrategia fundamental es la misma: transformar la integral original en otra cuya forma sea reconocible, sin alterar el valor del resultado.
+El matemático inglés Joseph Liouville (1809--1882) desarrolló la teoría que
+determina con precisión cuándo una función elemental tiene antiderivada
+elemental. El resultado central (teorema de Liouville, formalizado
+algorítmicamente por Risch en 1969) establece que la integrabilidad en
+términos de funciones elementales es la excepción, no la regla. Este hecho
+justifica tanto la importancia de las técnicas algebraicas de este capítulo
+como la de los métodos numéricos de integración que se abordan más adelante.
 \end{rem}
 
-\section{Identidades Trigonométricas Esenciales}
+%----------------------------------------------------------
+\section{Sustitución Simple}
+%----------------------------------------------------------
 
-Antes de abordar las técnicas de integración, conviene consolidar el catálogo de identidades trigonométricas que las sustentan. Estas identidades no deben memorizarse como fórmulas aisladas, sino comprenderse como consecuencias del teorema de Pitágoras y de las definiciones de las funciones trigonométricas sobre el círculo unitario.
+\subsection{Fundamento teórico}
 
-\begin{theorem}[Identidades pitagóricas]
-Para todo ángulo $x \in \R$ donde las funciones involucradas estén definidas:
+La regla de sustitución es la contraparte de la regla de la cadena. Si $F$
+es antiderivada de $f$, entonces
 \[
-\sin^2 x + \cos^2 x = 1, \qquad 1 + \tan^2 x = \sec^2 x, \qquad \cot^2 x + 1 = \csc^2 x.
+\frac{d}{dx}\big[F(g(x))\big] = F'(g(x))\cdot g'(x) = f(g(x))\cdot g'(x).
+\]
+Integrando ambos lados se obtiene la identidad fundamental de la técnica:
+
+\begin{theorem}[Regla de sustitución --- integral indefinida]
+Si $u = g(x)$ es diferenciable en su dominio y $f$ es continua en el rango
+de $g$, entonces
+\[
+\int f(g(x))\, g'(x)\, dx = \int f(u)\, du.
 \]
 \end{theorem}
 
-\begin{theorem}[Identidades de ángulo doble y reducción de potencia]
+La sustitución opera formalmente como si $du = g'(x)\,dx$ fuera un cambio de
+variable literal: se reemplaza $g(x)$ por $u$ y el diferencial $g'(x)\,dx$
+por $du$, transformando la integral original en una nueva integral en $u$.
+
+\begin{pasos}
+El procedimiento sistemático es:
+\begin{enumerate}
+    \item Identificar una subexpresión $u = g(x)$ cuya derivada $g'(x)$
+    aparezca (o pueda aislarse) en el integrando.
+    \item Calcular $du = g'(x)\,dx$ y despejar $dx$ si es necesario.
+    \item Reescribir la integral \emph{completamente} en términos de $u$ y
+    $du$.
+    \item Evaluar la integral resultante en $u$.
+    \item Sustituir $u = g(x)$ para regresar a la variable original.
+\end{enumerate}
+\end{pasos}
+
+\begin{rem}
+La elección de $u$ es el paso más crítico y no tiene una regla infalible.
+Como orientación general: probar con la expresión bajo un radical, el
+exponente de una función exponencial, el argumento de una función
+trigonométrica, o la expresión elevada a una potencia. Si la primera
+elección no simplifica la integral, se debe intentar otra.
+\end{rem}
+
+\subsection{Sustitución en integrales definidas}
+
+\begin{theorem}[Regla de sustitución --- integral definida]
+Si $g'$ es continua en $[a,b]$ y $f$ es continua en el rango de $g$,
+entonces
 \[
-\sin^2 x = \frac{1 - \cos 2x}{2}, \qquad \cos^2 x = \frac{1 + \cos 2x}{2}, \qquad \sin x \cos x = \frac{\sin 2x}{2}.
+\int_a^b f(g(x))\, g'(x)\, dx = \int_{g(a)}^{g(b)} f(u)\, du.
+\]
+\end{theorem}
+
+Al transformar los límites de integración junto con la variable, se evita
+la necesidad de regresar a la variable original. Este enfoque es
+generalmente más eficiente para integrales definidas.
+
+\subsection{Ejemplos}
+
+\begin{example}
+Calcular $\displaystyle\int \sin^5 x \cos x\, dx$.
+\end{example}
+
+\begin{myproof}
+Observamos que $\cos x$ es la derivada de $\sin x$. Tomamos $u = \sin x$,
+$du = \cos x\, dx$:
+\[
+\int \sin^5 x \cos x\, dx = \int u^5\, du = \frac{u^6}{6} + C
+= \frac{\sin^6 x}{6} + C. \qquad \square
+\]
+\end{myproof}
+
+\begin{example}
+Calcular $\displaystyle\int \frac{dx}{x \ln x}$.
+\end{example}
+
+\begin{myproof}
+Como $\frac{1}{x}$ es la derivada de $\ln x$, tomamos $u = \ln x$,
+$du = \frac{dx}{x}$:
+\[
+\int \frac{dx}{x \ln x} = \int \frac{du}{u} = \ln|u| + C
+= \ln|\ln x| + C. \qquad \square
+\]
+\end{myproof}
+
+\begin{example}
+Calcular $\displaystyle\int \sqrt{2x+1}\, dx$.
+\end{example}
+
+\begin{myproof}
+Sea $u = 2x+1$, $du = 2\,dx$:
+\[
+\int \sqrt{2x+1}\, dx = \frac{1}{2}\int u^{1/2}\, du
+= \frac{1}{2}\cdot\frac{u^{3/2}}{3/2} + C
+= \frac{1}{3}(2x+1)^{3/2} + C. \qquad \square
+\]
+\end{myproof}
+
+\begin{example}
+Calcular $\displaystyle\int \tan x\, dx$.
+\end{example}
+
+\begin{myproof}
+Escribimos $\tan x = \frac{\sin x}{\cos x}$ y tomamos $u = \cos x$,
+$du = -\sin x\, dx$:
+\[
+\int \tan x\, dx = -\int \frac{du}{u} = -\ln|u| + C = \ln|\sec x| + C.
+\qquad \square
+\]
+\end{myproof}
+
+\begin{example}
+Calcular $\displaystyle\int_0^4 \frac{x}{\sqrt{x^2+9}}\, dx$.
+\end{example}
+
+\begin{myproof}
+Sea $u = x^2+9$, $du = 2x\,dx$. Límites: $x=0 \Rightarrow u=9$;
+$x=4 \Rightarrow u=25$:
+\[
+\int_0^4 \frac{x}{\sqrt{x^2+9}}\, dx
+= \frac{1}{2}\int_9^{25} u^{-1/2}\, du
+= \Big[\sqrt{u}\Big]_9^{25}
+= \sqrt{25} - \sqrt{9} = 2. \qquad \square
+\]
+\end{myproof}
+
+%----------------------------------------------------------
+\section{Integración por Partes}
+%----------------------------------------------------------
+
+\subsection{Fundamento teórico}
+
+La integración por partes es la contraparte de la regla del producto. De
+$\frac{d}{dx}[uv] = u\,v' + v\,u'$, integrando y despejando:
+
+\begin{theorem}[Fórmula de integración por partes]
+Si $u$ y $v$ son funciones con derivadas continuas:
+\[
+\int u\, dv = u\,v - \int v\, du.
+\]
+Para integrales definidas:
+\[
+\int_a^b u\, dv = \Big[u\,v\Big]_a^b - \int_a^b v\, du.
+\]
+\end{theorem}
+
+La técnica transforma $\int u\,dv$ en $\int v\,du$. Para que sea útil, la
+segunda integral debe ser más simple que la primera. La elección de $u$ y
+$dv$ es la clave del método.
+
+\subsection{La regla LIATE}
+
+Una guía práctica para elegir $u$ es el acrónimo \textbf{LIATE}:
+\begin{center}
+\textbf{L}ogarítmicas $\;\to\;$
+\textbf{I}nversas trigonométricas $\;\to\;$
+\textbf{A}lgebraicas $\;\to\;$
+\textbf{T}rigonométricas $\;\to\;$
+\textbf{E}xponenciales
+\end{center}
+Se elige $u$ según la función que aparezca más a la izquierda, y $dv$ como
+el resto del integrando. Las funciones logarítmicas e inversas trigonométricas
+tienen derivadas más simples que ellas mismas (simplifican $\int v\,du$),
+mientras que las exponenciales conservan su forma al integrarse (conveniente
+para $dv$).
+
+\begin{rem}
+La regla LIATE es una \emph{guía}, no una ley. Existen tres patrones que la
+trascienden: (1) la \textbf{aplicación repetida}, cuando el integrando es un
+polinomio multiplicado por una exponencial o trigonométrica (como $\int x^2
+e^x\,dx$ o $\int x^2 \sin x\,dx$); (2) el truco de escribir $f(x) = f(x)
+\cdot 1$ para integrar sola una función como $\ln x$ o $\arcsin x$; y (3)
+la \textbf{integral cíclica}, cuando el integrando del tipo $e^{ax}\sin(bx)$
+reaparece en el lado derecho, permitiendo resolver algebraicamente.
+\end{rem}
+
+\subsection{Ejemplos}
+
+\begin{example}
+Calcular $\displaystyle\int x e^x\, dx$.
+\end{example}
+
+\begin{myproof}
+Por LIATE: $u = x$, $dv = e^x\,dx$; $du = dx$, $v = e^x$:
+\[
+\int x e^x\, dx = x e^x - \int e^x\, dx = e^x(x-1) + C. \qquad \square
+\]
+\end{myproof}
+
+\begin{example}
+Calcular $\displaystyle\int \ln x\, dx$.
+\end{example}
+
+\begin{myproof}
+Escribimos $\ln x = \ln x \cdot 1$; tomamos $u = \ln x$, $dv = dx$;
+$du = \frac{dx}{x}$, $v = x$:
+\[
+\int \ln x\, dx = x\ln x - \int x\cdot\frac{1}{x}\, dx
+= x\ln x - x + C. \qquad \square
+\]
+\end{myproof}
+
+\begin{example}
+Calcular $\displaystyle\int \arcsin x\, dx$.
+\end{example}
+
+\begin{myproof}
+$u = \arcsin x$, $dv = dx$; $du = \frac{dx}{\sqrt{1-x^2}}$, $v = x$:
+\[
+\int \arcsin x\, dx = x\arcsin x - \int \frac{x}{\sqrt{1-x^2}}\, dx.
+\]
+La integral residual se resuelve con $w = 1-x^2$, $dw = -2x\,dx$:
+\[
+-\frac{1}{2}\int w^{-1/2}\, dw = -\sqrt{w} + C = -\sqrt{1-x^2}+C.
+\]
+Por tanto:
+\[
+\int \arcsin x\, dx = x\arcsin x + \sqrt{1-x^2} + C. \qquad \square
+\]
+\end{myproof}
+
+\begin{example}
+Calcular $\displaystyle\int x^2 \sin x\, dx$.
+\end{example}
+
+\begin{myproof}
+Se aplican dos rondas de integración por partes.
+
+\noindent\textit{Primera ronda:} $u = x^2$, $dv = \sin x\,dx$;
+$du = 2x\,dx$, $v = -\cos x$:
+\[
+\int x^2 \sin x\, dx = -x^2\cos x + 2\int x\cos x\, dx.
+\]
+\textit{Segunda ronda sobre $\int x\cos x\,dx$:} $u = x$,
+$dv = \cos x\,dx$; $du = dx$, $v = \sin x$:
+\[
+\int x\cos x\, dx = x\sin x - \int \sin x\, dx = x\sin x + \cos x + C.
+\]
+Combinando:
+\[
+\int x^2 \sin x\, dx = -x^2\cos x + 2x\sin x + 2\cos x + C.
+\qquad \square
+\]
+\end{myproof}
+
+\begin{example}
+Calcular $\displaystyle\int x^3 e^{2x}\, dx$ usando integración por partes
+tabular.
+\end{example}
+
+\begin{myproof}
+Cuando el integrando es un polinomio multiplicado por una función que se
+integra conservando su forma (exponencial, seno, coseno), la
+\textbf{integración por partes tabular} organiza las rondas sucesivas en una
+tabla, evitando la repetición algebraica. Se construyen dos columnas: la de
+\textbf{derivadas sucesivas} del factor polinómico (hasta anularse) y la de
+\textbf{antiderivadas sucesivas} del factor trascendente. Los signos
+alternan $+, -, +, -,\ldots$
+
+\begin{center}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{c c c}
+\toprule
+\textbf{Signo} & \textbf{Derivadas} & \textbf{Antiderivadas} \\
+\midrule
+$+$ & $x^3$ & $e^{2x}$ \\
+$-$ & $3x^2$ & $\dfrac{1}{2}e^{2x}$ \\
+$+$ & $6x$ & $\dfrac{1}{4}e^{2x}$ \\
+$-$ & $6$ & $\dfrac{1}{8}e^{2x}$ \\
+$+$ & $0$ & $\dfrac{1}{16}e^{2x}$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+El resultado es la suma de los productos diagonales (elemento de la columna
+de derivadas por el elemento inmediatamente abajo en la columna de
+antiderivadas), con los signos indicados:
+\[
+\int x^3 e^{2x}\, dx
+= x^3\cdot\frac{e^{2x}}{2}
+- 3x^2\cdot\frac{e^{2x}}{4}
++ 6x\cdot\frac{e^{2x}}{8}
+- 6\cdot\frac{e^{2x}}{16} + C
+= e^{2x}\!\left(\frac{x^3}{2} - \frac{3x^2}{4} + \frac{3x}{4} -
+\frac{3}{8}\right) + C. \qquad \square
+\]
+\end{myproof}
+
+\begin{example}
+Calcular $\displaystyle\int e^x \sin x\, dx$.
+\end{example}
+
+\begin{myproof}
+$u = \sin x$, $dv = e^x\,dx$; $du = \cos x\,dx$, $v = e^x$:
+\[
+\int e^x \sin x\, dx = e^x \sin x - \int e^x \cos x\, dx.
+\]
+Sobre $\int e^x\cos x\,dx$: $u = \cos x$, $dv = e^x\,dx$;
+$du = -\sin x\,dx$, $v = e^x$:
+\[
+\int e^x \cos x\, dx = e^x\cos x + \int e^x \sin x\, dx.
+\]
+Sustituyendo en la primera ecuación:
+\[
+\int e^x \sin x\, dx = e^x\sin x - e^x\cos x - \int e^x\sin x\, dx.
+\]
+La integral original reaparece. Sumando $\int e^x\sin x\,dx$ a ambos lados:
+\[
+2\int e^x\sin x\, dx = e^x(\sin x - \cos x) + C
+\implies \int e^x\sin x\, dx = \frac{e^x(\sin x - \cos x)}{2} + C.
+\qquad \square
+\]
+\end{myproof}
+
+\begin{wow}
+El ejemplo anterior ilustra la \textbf{integral cíclica}: al aplicar
+integración por partes dos veces a un producto del tipo $e^{ax}\cdot
+\text{trig}(bx)$, la integral original reaparece y puede despejarse
+algebraicamente. Este patrón se presenta invariablemente para
+$\int e^{ax}\sin(bx)\,dx$ e $\int e^{ax}\cos(bx)\,dx$, cuyo resultado
+general es
+\[
+\int e^{ax}\sin(bx)\,dx = \frac{e^{ax}(a\sin bx - b\cos bx)}{a^2+b^2}+C,
+\qquad
+\int e^{ax}\cos(bx)\,dx = \frac{e^{ax}(a\cos bx + b\sin bx)}{a^2+b^2}+C.
+\]
+\end{wow}
+
+%----------------------------------------------------------
+\section{Identidades Trigonométricas Esenciales}
+%----------------------------------------------------------
+
+Antes de abordar las siguientes técnicas conviene consolidar el catálogo de
+identidades que las sustentan. Estas identidades son consecuencias del
+teorema de Pitágoras y de las definiciones de las funciones trigonométricas
+sobre el círculo unitario; no deben memorizarse como fórmulas aisladas,
+sino comprenderse como relaciones geométricas.
+
+\begin{theorem}[Identidades pitagóricas]
+Para todo $x \in \R$ donde las funciones estén definidas:
+\[
+\sin^2 x + \cos^2 x = 1, \qquad
+1 + \tan^2 x = \sec^2 x, \qquad
+\cot^2 x + 1 = \csc^2 x.
+\]
+\end{theorem}
+
+\begin{theorem}[Identidades de reducción de potencia y ángulo doble]
+\[
+\sin^2 x = \frac{1 - \cos 2x}{2}, \qquad
+\cos^2 x = \frac{1 + \cos 2x}{2}, \qquad
+\sin x \cos x = \frac{\sin 2x}{2}.
 \]
 \end{theorem}
 
@@ -79,21 +407,35 @@ Para todo ángulo $x \in \R$ donde las funciones involucradas estén definidas:
 \end{theorem}
 
 \begin{rem}
-Las fórmulas de reducción de potencia $\sin^2 x = \frac{1-\cos 2x}{2}$ y $\cos^2 x = \frac{1+\cos 2x}{2}$ son, junto con la identidad $\sin^2 x + \cos^2 x = 1$, las herramientas más utilizadas en la integración de potencias trigonométricas. Su uso sistemático permite reducir cualquier potencia entera de $\sin x$ o $\cos x$ a una combinación lineal de funciones trigonométricas de múltiplos del ángulo.
+Las identidades de reducción de potencia $\sin^2 x = \frac{1-\cos 2x}{2}$
+y $\cos^2 x = \frac{1+\cos 2x}{2}$ son las herramientas más frecuentes en
+la integración de potencias pares. Su uso iterativo permite reducir
+cualquier potencia entera de $\sin x$ o $\cos x$ a una combinación lineal
+de funciones de ángulos múltiples, que se integran directamente.
 \end{rem}
 
+%----------------------------------------------------------
 \section{Integración de Potencias Trigonométricas}
+%----------------------------------------------------------
 
 \subsection{Integrales de la forma $\int \sin^m x \cos^n x \, dx$}
 
-La estrategia para evaluar esta familia de integrales depende de la paridad de los exponentes $m$ y $n$. La idea central en todos los casos es aislar un factor diferencial $du$ compatible con una sustitución algebraica, y luego convertir el integrando restante a la nueva variable.
+La estrategia depende de la paridad de los exponentes. La idea central es
+aislar un diferencial natural para sustitución algebraica y convertir el
+resto del integrando a la nueva variable.
 
 \begin{pasos}
-\textbf{Caso 1: $m$ impar.} Se escribe $\sin^m x = \sin^{m-1} x \cdot \sin x$ y se reserva el factor $\sin x \, dx$ como el diferencial de la sustitución $u = \cos x$ (pues $du = -\sin x \, dx$). El factor $\sin^{m-1} x$, cuya potencia es ahora par, se convierte completamente a cosenos mediante la identidad $\sin^2 x = 1 - \cos^2 x$.
+\textbf{Caso 1: $m$ impar.} Separar $\sin^m x = \sin^{m-1}\!x\cdot\sin x$,
+reservar $\sin x\,dx$ para la sustitución $u = \cos x$ ($du = -\sin x\,dx$),
+y convertir $\sin^{m-1}\!x$ a cosenos con $\sin^2 x = 1-\cos^2 x$.
 
-\textbf{Caso 2: $n$ impar.} Se escribe $\cos^n x = \cos^{n-1} x \cdot \cos x$ y se reserva $\cos x \, dx$ para la sustitución $u = \sin x$ (pues $du = \cos x \, dx$). El factor $\cos^{n-1} x$ se convierte a senos mediante $\cos^2 x = 1 - \sin^2 x$.
+\textbf{Caso 2: $n$ impar.} Separar $\cos^n x = \cos^{n-1}\!x\cdot\cos x$,
+reservar $\cos x\,dx$ para $u = \sin x$ ($du = \cos x\,dx$), y convertir
+$\cos^{n-1}\!x$ a senos con $\cos^2 x = 1-\sin^2 x$.
 
-\textbf{Caso 3: $m$ y $n$ ambos pares.} No existe un factor diferencial natural para sustitución algebraica. Se aplican las identidades de reducción de potencia para disminuir los exponentes, posiblemente de forma iterativa, hasta obtener integrales de senos y cosenos de ángulos múltiples, que se integran directamente.
+\textbf{Caso 3: $m$ y $n$ ambos pares.} No hay sustitución algebraica
+directa. Aplicar las identidades de reducción de potencia para disminuir
+los exponentes hasta obtener integrales de ángulos múltiples.
 \end{pasos}
 
 \begin{example}
@@ -101,17 +443,16 @@ Calcular $\displaystyle\int \sin^3 x \cos^2 x \, dx$.
 \end{example}
 
 \begin{myproof}
-El exponente de $\sin x$ es impar ($m = 3$), así que aplicamos el Caso 1. Separamos:
+El exponente de $\sin x$ es impar ($m=3$): aplicamos el Caso 1.
 \[
-\int \sin^3 x \cos^2 x \, dx = \int \sin^2 x \cos^2 x \cdot \sin x \, dx.
+\int \sin^3 x \cos^2 x \, dx
+= \int \sin^2 x \cos^2 x \cdot \sin x \, dx.
 \]
-Sustituimos $u = \cos x$, $du = -\sin x \, dx$, y reemplazamos $\sin^2 x = 1 - \cos^2 x = 1 - u^2$:
+Sea $u = \cos x$, $du = -\sin x\,dx$; reemplazamos $\sin^2 x = 1-u^2$:
 \[
-= -\int (1 - u^2)\, u^2 \, du = -\int (u^2 - u^4)\, du = -\frac{u^3}{3} + \frac{u^5}{5} + C.
-\]
-Volviendo a la variable original:
-\[
-\int \sin^3 x \cos^2 x \, dx = -\frac{\cos^3 x}{3} + \frac{\cos^5 x}{5} + C. \qquad \square
+= -\int (1-u^2)u^2\, du = -\int(u^2 - u^4)\, du
+= -\frac{u^3}{3} + \frac{u^5}{5} + C
+= -\frac{\cos^3 x}{3} + \frac{\cos^5 x}{5} + C. \qquad \square
 \]
 \end{myproof}
 
@@ -120,42 +461,53 @@ Calcular $\displaystyle\int \sin^2 x \cos^2 x \, dx$.
 \end{example}
 
 \begin{myproof}
-Ambos exponentes son pares ($m = n = 2$). Aplicamos el Caso 3. Usamos $\sin x \cos x = \frac{\sin 2x}{2}$, de modo que:
+Ambos exponentes son pares: Caso 3. Usamos $\sin x\cos x = \frac{\sin 2x}{2}$:
 \[
-\sin^2 x \cos^2 x = \left(\frac{\sin 2x}{2}\right)^2 = \frac{\sin^2 2x}{4} = \frac{1 - \cos 4x}{8}.
+\sin^2 x\cos^2 x = \frac{\sin^2 2x}{4} = \frac{1-\cos 4x}{8}.
 \]
-Por tanto:
 \[
-\int \sin^2 x \cos^2 x \, dx = \int \frac{1 - \cos 4x}{8}\, dx = \frac{x}{8} - \frac{\sin 4x}{32} + C. \qquad \square
+\int \sin^2 x\cos^2 x\, dx = \frac{x}{8} - \frac{\sin 4x}{32} + C.
+\qquad \square
 \]
 \end{myproof}
 
-\begin{theorem}[Fórmula de reducción para $\sin^n x$]
+\begin{theorem}[Fórmulas de reducción]
+Para $n \geq 2$ entero:
 \[
-\int \sin^n x \, dx = -\frac{\sin^{n-1} x \cos x}{n} + \frac{n-1}{n} \int \sin^{n-2} x \, dx.
+\int \sin^n x \, dx
+= -\frac{\sin^{n-1}\!x\cos x}{n} + \frac{n-1}{n}\int \sin^{n-2}\!x\, dx,
 \]
-\end{theorem}
-
-\begin{theorem}[Fórmula de reducción para $\cos^n x$]
 \[
-\int \cos^n x \, dx = \frac{\cos^{n-1} x \sin x}{n} + \frac{n-1}{n} \int \cos^{n-2} x \, dx.
+\int \cos^n x \, dx
+= \frac{\cos^{n-1}\!x\sin x}{n} + \frac{n-1}{n}\int \cos^{n-2}\!x\, dx.
 \]
 \end{theorem}
 
 \begin{rem}
-Las fórmulas de reducción permiten calcular $\int \sin^n x \, dx$ o $\int \cos^n x \, dx$ para cualquier entero $n \geq 2$, reduciendo iterativamente el exponente hasta llegar a $\int \sin x \, dx = -\cos x + C$ (si $n$ es impar) o a $\int dx = x + C$ (si $n$ es par, tras la reducción final). Estas fórmulas se demuestran por integración por partes.
+Las fórmulas de reducción se demuestran por integración por partes. Permiten
+bajar el exponente dos unidades en cada aplicación hasta llegar a $\int
+\sin x\,dx$ o $\int \cos x\,dx$ (si $n$ es impar), o a $\int dx$ (si $n$
+es par). Son especialmente útiles para potencias altas y para establecer
+identidades recursivas.
 \end{rem}
 
 \subsection{Integrales de la forma $\int \tan^m x \sec^n x \, dx$}
 
-El tratamiento de estas integrales es análogo al caso anterior, pero usando el par de identidades $1 + \tan^2 x = \sec^2 x$ y la relación diferencial $\frac{d}{dx}(\sec x) = \sec x \tan x$, $\frac{d}{dx}(\tan x) = \sec^2 x$.
+El tratamiento es análogo al caso anterior, utilizando la identidad
+$1+\tan^2 x = \sec^2 x$ y las derivadas $(\sec x)' = \sec x\tan x$,
+$(\tan x)' = \sec^2 x$.
 
 \begin{pasos}
-\textbf{Caso 1: $n$ par.} Se reserva el factor $\sec^2 x \, dx$ como diferencial de $u = \tan x$ (pues $du = \sec^2 x \, dx$). El factor restante $\sec^{n-2} x$ se convierte a tangentes mediante $\sec^2 x = 1 + \tan^2 x$.
+\textbf{Caso 1: $n$ par.} Reservar $\sec^2 x\,dx$ para $u = \tan x$
+($du = \sec^2 x\,dx$); convertir $\sec^{n-2}\!x$ a tangentes con
+$\sec^2 x = 1+\tan^2 x$.
 
-\textbf{Caso 2: $m$ impar.} Se reserva el factor $\sec x \tan x \, dx$ como diferencial de $u = \sec x$ (pues $du = \sec x \tan x \, dx$). El factor restante $\tan^{m-1} x$ se convierte a secantes mediante $\tan^2 x = \sec^2 x - 1$.
+\textbf{Caso 2: $m$ impar.} Reservar $\sec x\tan x\,dx$ para $u = \sec x$
+($du = \sec x\tan x\,dx$); convertir $\tan^{m-1}\!x$ a secantes con
+$\tan^2 x = \sec^2 x - 1$.
 
-\textbf{Caso 3: $m$ par y $n$ impar.} No existe sustitución directa conveniente. Se convierte todo a secantes usando $\tan^2 x = \sec^2 x - 1$, y se recurre a fórmulas de reducción o integración por partes.
+\textbf{Caso 3: $m$ par, $n$ impar.} Convertir todo a secantes y usar
+fórmulas de reducción o integración por partes.
 \end{pasos}
 
 \begin{example}
@@ -163,111 +515,160 @@ Calcular $\displaystyle\int \tan^3 x \sec^4 x \, dx$.
 \end{example}
 
 \begin{myproof}
-El exponente de $\sec x$ es par ($n=4$), así que aplicamos el Caso 1. Reservamos $\sec^2 x\,dx$ y convertimos el resto:
+$n=4$ es par: Caso 1. Reservamos $\sec^2 x\,dx$ y escribimos
+$\sec^2 x = 1+\tan^2 x$:
 \[
-\int \tan^3 x \sec^4 x\, dx = \int \tan^3 x \sec^2 x \cdot \sec^2 x\, dx = \int \tan^3 x (1 + \tan^2 x)\sec^2 x\, dx.
+\int \tan^3 x(1+\tan^2 x)\sec^2 x\, dx.
 \]
-Con $u = \tan x$, $du = \sec^2 x\, dx$:
+Sea $u = \tan x$, $du = \sec^2 x\,dx$:
 \[
-= \int u^3(1 + u^2)\, du = \int (u^3 + u^5)\, du = \frac{u^4}{4} + \frac{u^6}{6} + C = \frac{\tan^4 x}{4} + \frac{\tan^6 x}{6} + C. \qquad \square
+= \int u^3(1+u^2)\, du = \frac{u^4}{4} + \frac{u^6}{6} + C
+= \frac{\tan^4 x}{4} + \frac{\tan^6 x}{6} + C. \qquad \square
 \]
 \end{myproof}
 
-\subsection{Integrales de productos cruzados: $\int \sin(mx)\cos(nx)\, dx$}
+\begin{example}
+Calcular $\displaystyle\int \sec^3 x\, dx$.
+\end{example}
 
-Cuando el integrando es un producto de seno y coseno de distintos ángulos, ninguna de las estrategias anteriores aplica directamente. En este caso se utilizan las fórmulas de producto a suma para convertir el producto en una suma de funciones trigonométricas simples, que se integran directamente término a término.
+\begin{myproof}
+Este es el caso arquetípico del Caso 3 con $m=0$, $n=3$ (impar). Escribimos
+$\sec^3 x = \sec x \cdot \sec^2 x$ e integramos por partes:
+$u = \sec x$, $dv = \sec^2 x\,dx$; $du = \sec x\tan x\,dx$, $v = \tan x$:
+\[
+\int \sec^3 x\, dx = \sec x\tan x - \int \sec x\tan^2 x\, dx.
+\]
+Usamos $\tan^2 x = \sec^2 x - 1$:
+\[
+= \sec x\tan x - \int \sec^3 x\, dx + \int \sec x\, dx.
+\]
+La integral original reaparece. Sumándola a ambos lados y usando
+$\int \sec x\,dx = \ln|\sec x + \tan x|$:
+\[
+2\int \sec^3 x\, dx = \sec x\tan x + \ln|\sec x+\tan x| + C,
+\]
+\[
+\int \sec^3 x\, dx = \frac{\sec x\tan x + \ln|\sec x+\tan x|}{2} + C.
+\qquad \square
+\]
+\end{myproof}
+
+\begin{rem}
+El resultado $\int\sec^3 x\,dx$ es un estándar del Cálculo que reaparece
+frecuentemente como subproblema ---por ejemplo, en el cálculo de la longitud
+de arco de la parábola y en la integración de $\int\sec^5 x\,dx$ mediante
+la fórmula de reducción para secantes.
+\end{rem}
+
+\subsection{Integrales de productos $\sin(mx)\cos(nx)$, $\sin(mx)\sin(nx)$,
+$\cos(mx)\cos(nx)$}
+
+Cuando el integrando es un producto de trigonométricas con distintos ángulos,
+se utilizan las fórmulas de producto a suma para convertirlo en una suma de
+funciones simples integrable término a término.
 
 \begin{example}
 Calcular $\displaystyle\int \sin(3x)\cos(5x)\, dx$.
 \end{example}
 
 \begin{myproof}
-Aplicamos la fórmula $\sin A \cos B = \frac{1}{2}[\sin(A+B) + \sin(A-B)]$ con $A = 3x$, $B = 5x$:
+Aplicamos $\sin A\cos B = \frac{1}{2}[\sin(A+B)+\sin(A-B)]$ con $A=3x$,
+$B=5x$:
 \[
-\sin(3x)\cos(5x) = \tfrac{1}{2}[\sin(8x) + \sin(-2x)] = \tfrac{1}{2}[\sin(8x) - \sin(2x)].
+\sin(3x)\cos(5x) = \tfrac{1}{2}[\sin 8x + \sin(-2x)]
+= \tfrac{1}{2}[\sin 8x - \sin 2x].
 \]
-Integrando:
 \[
-\int \sin(3x)\cos(5x)\, dx = \frac{1}{2}\left[-\frac{\cos 8x}{8} + \frac{\cos 2x}{2}\right] + C = -\frac{\cos 8x}{16} + \frac{\cos 2x}{4} + C. \qquad \square
+\int\sin(3x)\cos(5x)\,dx
+= \frac{1}{2}\!\left(-\frac{\cos 8x}{8}+\frac{\cos 2x}{2}\right)+C
+= -\frac{\cos 8x}{16}+\frac{\cos 2x}{4}+C. \qquad \square
 \]
 \end{myproof}
 
+%----------------------------------------------------------
 \section{Sustitución Trigonométrica}
+%----------------------------------------------------------
 
-\subsection{Idea Geométrica y Fundamento}
+\subsection{Idea geométrica y fundamento}
 
-La sustitución trigonométrica es una técnica que permite eliminar radicales del integrando mediante la introducción de un ángulo $\theta$ como nueva variable de integración. El fundamento geométrico de la técnica reside en las identidades pitagóricas: si se identifica la expresión bajo el radical con uno de los lados de un triángulo rectángulo, la relación entre los lados del triángulo permite simplificar el radical a una función trigonométrica simple.
+La sustitución trigonométrica permite eliminar radicales del integrando
+mediante la introducción de un ángulo $\theta$ como nueva variable. El
+fundamento es geométrico: si se identifica la expresión bajo el radical con
+un lado de un triángulo rectángulo, las identidades pitagóricas simplifican
+el radical a una función trigonométrica sin raíz.
 
-La técnica opera en tres fases: (1) se elige la sustitución trigonométrica apropiada según la forma del radical; (2) se transforma la integral completa ---incluyendo el diferencial $dx$--- a la variable $\theta$; (3) una vez evaluada la integral en términos de $\theta$, se utiliza el triángulo de referencia para regresar a la variable original $x$.
+La técnica opera en tres fases: (1) elegir la sustitución apropiada según la
+forma del radical; (2) transformar el integrando y el diferencial completo
+a la variable $\theta$; (3) evaluar la integral trigonométrica resultante y
+utilizar el \textbf{triángulo de referencia} para regresar a $x$.
 
 \begin{rem}
-Al usar sustitución trigonométrica en integrales definidas, se puede trabajar de dos maneras equivalentes: transformar los límites de integración a valores de $\theta$ al momento de hacer la sustitución (y no regresar a $x$), o evaluar la antiderivada en términos de $x$ y luego aplicar los límites originales. La primera estrategia es generalmente más eficiente.
+En integrales definidas es más eficiente transformar los límites al hacer la
+sustitución y no regresar a $x$. En integrales indefinidas, el triángulo de
+referencia es indispensable para expresar $\theta$ y todas las funciones
+trigonométricas en términos de $x$.
 \end{rem}
 
 \subsection{Caso 1: Radical $\sqrt{a^2 - u^2}$}
 
-Cuando el integrando contiene $\sqrt{a^2 - u^2}$ con $a > 0$, se utiliza la sustitución $u = a\sin\theta$, con $\theta \in \left[-\frac{\pi}{2}, \frac{\pi}{2}\right]$. Bajo esta sustitución, $du = a\cos\theta\, d\theta$ y:
-\[
-\sqrt{a^2 - u^2} = \sqrt{a^2 - a^2\sin^2\theta} = a\sqrt{1 - \sin^2\theta} = a\cos\theta,
-\]
-donde el signo positivo es válido porque $\cos\theta \geq 0$ en el intervalo restringido. El triángulo de referencia asociado tiene hipotenusa $a$, cateto opuesto a $\theta$ igual a $u$, y cateto adyacente $\sqrt{a^2 - u^2}$.
+Sustitución: $u = a\sin\theta$, $\theta \in \left[-\frac{\pi}{2},
+\frac{\pi}{2}\right]$; $du = a\cos\theta\,d\theta$;
+$\sqrt{a^2-u^2} = a\cos\theta$.
 
 \begin{center}
 \begin{tikzpicture}[scale=1.5]
-    % Triángulo
     \draw[thick] (0,0) -- (2,0) -- (2,1.5) -- cycle;
-    % Ángulo recto
     \draw (1.8,0) -- (1.8,0.2) -- (2,0.2);
-    % Etiquetas de lados
-    \node[below] at (1,0) {$\sqrt{a^2 - u^2}$};
+    \node[below] at (1,0) {$\sqrt{a^2-u^2}$};
     \node[right] at (2,0.75) {$u$};
     \node[above left] at (1,0.75) {$a$};
-    % Ángulo theta
     \draw (0.4,0) arc (0:36.87:0.4);
     \node at (0.65,0.15) {$\theta$};
 \end{tikzpicture}
 \end{center}
 
 \begin{example}
-Calcular $\displaystyle\int \frac{dx}{\sqrt{9 - x^2}}$.
+Calcular $\displaystyle\int \frac{dx}{\sqrt{9-x^2}}$.
 \end{example}
 
 \begin{myproof}
-Identificamos $a = 3$ y sustituimos $x = 3\sin\theta$, $dx = 3\cos\theta\, d\theta$:
+Con $a=3$: $x=3\sin\theta$, $dx=3\cos\theta\,d\theta$,
+$\sqrt{9-x^2}=3\cos\theta$:
 \[
-\sqrt{9 - x^2} = \sqrt{9 - 9\sin^2\theta} = 3\cos\theta.
-\]
-La integral se transforma en:
-\[
-\int \frac{3\cos\theta\, d\theta}{3\cos\theta} = \int d\theta = \theta + C = \arcsin\!\left(\frac{x}{3}\right) + C. \qquad \square
+\int\frac{3\cos\theta\,d\theta}{3\cos\theta}=\int d\theta=\theta+C
+=\arcsin\!\left(\frac{x}{3}\right)+C. \qquad\square
 \]
 \end{myproof}
 
 \begin{example}
-Calcular $\displaystyle\int x^2\sqrt{4 - x^2}\, dx$.
+Calcular $\displaystyle\int x^2\sqrt{4-x^2}\,dx$.
 \end{example}
 
 \begin{myproof}
-Con $a = 2$: $x = 2\sin\theta$, $dx = 2\cos\theta\, d\theta$, $\sqrt{4 - x^2} = 2\cos\theta$. Entonces:
+Con $a=2$: $x=2\sin\theta$, $dx=2\cos\theta\,d\theta$,
+$\sqrt{4-x^2}=2\cos\theta$, $x^2=4\sin^2\theta$:
 \[
-\int (4\sin^2\theta)(2\cos\theta)(2\cos\theta)\, d\theta = 16\int \sin^2\theta\cos^2\theta\, d\theta = 16\int \frac{\sin^2 2\theta}{4}\, d\theta = 4\int \frac{1 - \cos 4\theta}{2}\, d\theta.
+\int 4\sin^2\!\theta\cdot 2\cos\theta\cdot 2\cos\theta\,d\theta
+= 16\int\sin^2\!\theta\cos^2\!\theta\,d\theta
+= 16\int\frac{\sin^2\!2\theta}{4}\,d\theta
+= 4\int\frac{1-\cos 4\theta}{2}\,d\theta
+= 2\theta - \frac{\sin 4\theta}{2}+C.
 \]
+Del triángulo: $\theta=\arcsin\!\left(\frac{x}{2}\right)$,
+$\sin\theta=\frac{x}{2}$, $\cos\theta=\frac{\sqrt{4-x^2}}{2}$.
+Usando $\sin 4\theta=4\sin\theta\cos\theta(1-2\sin^2\theta)$:
 \[
-= 2\theta - \frac{\sin 4\theta}{2} + C.
-\]
-Para regresar a $x$: del triángulo, $\theta = \arcsin\!\left(\frac{x}{2}\right)$, $\sin\theta = \frac{x}{2}$, $\cos\theta = \frac{\sqrt{4-x^2}}{2}$. Usando $\sin 4\theta = 2\sin 2\theta\cos 2\theta = 4\sin\theta\cos\theta(1 - 2\sin^2\theta)$:
-\[
-\int x^2\sqrt{4-x^2}\, dx = 2\arcsin\!\left(\frac{x}{2}\right) - \frac{x(4-x^2)^{1/2}(4 - 2x^2)}{8} + C. \qquad \square
+\int x^2\sqrt{4-x^2}\,dx
+= 2\arcsin\!\left(\frac{x}{2}\right)
+- \frac{x\sqrt{4-x^2}(4-2x^2)}{8}+C. \qquad\square
 \]
 \end{myproof}
 
-\subsection{Caso 2: Radical $\sqrt{a^2 + u^2}$}
+\subsection{Caso 2: Radical $\sqrt{a^2+u^2}$}
 
-Cuando el integrando contiene $\sqrt{a^2 + u^2}$, se usa $u = a\tan\theta$ con $\theta \in \left(-\frac{\pi}{2}, \frac{\pi}{2}\right)$, de modo que $du = a\sec^2\theta\, d\theta$ y:
-\[
-\sqrt{a^2 + u^2} = \sqrt{a^2 + a^2\tan^2\theta} = a\sqrt{1 + \tan^2\theta} = a\sec\theta.
-\]
-El triángulo de referencia tiene cateto adyacente $a$, cateto opuesto $u$, e hipotenusa $\sqrt{a^2 + u^2}$.
+Sustitución: $u=a\tan\theta$, $\theta\in\left(-\frac{\pi}{2},
+\frac{\pi}{2}\right)$; $du=a\sec^2\theta\,d\theta$;
+$\sqrt{a^2+u^2}=a\sec\theta$.
 
 \begin{center}
 \begin{tikzpicture}[scale=1.5]
@@ -275,41 +676,44 @@ El triángulo de referencia tiene cateto adyacente $a$, cateto opuesto $u$, e hi
     \draw (1.8,0) -- (1.8,0.2) -- (2,0.2);
     \node[below] at (1,0) {$a$};
     \node[right] at (2,0.75) {$u$};
-    \node[above left] at (1,0.75) {$\sqrt{a^2 + u^2}$};
+    \node[above left] at (1,0.75) {$\sqrt{a^2+u^2}$};
     \draw (0.4,0) arc (0:36.87:0.4);
     \node at (0.65,0.15) {$\theta$};
 \end{tikzpicture}
 \end{center}
 
 \begin{example}
-Calcular $\displaystyle\int \frac{dx}{\sqrt{x^2 + 16}}$.
+Calcular $\displaystyle\int\frac{dx}{\sqrt{x^2+16}}$.
 \end{example}
 
 \begin{myproof}
-Con $a = 4$: $x = 4\tan\theta$, $dx = 4\sec^2\theta\, d\theta$, $\sqrt{x^2 + 16} = 4\sec\theta$:
+Con $a=4$: $x=4\tan\theta$, $dx=4\sec^2\theta\,d\theta$,
+$\sqrt{x^2+16}=4\sec\theta$:
 \[
-\int \frac{4\sec^2\theta\, d\theta}{4\sec\theta} = \int \sec\theta\, d\theta = \ln\abs{\sec\theta + \tan\theta} + C.
+\int\frac{4\sec^2\theta\,d\theta}{4\sec\theta}=\int\sec\theta\,d\theta
+=\ln|\sec\theta+\tan\theta|+C.
 \]
-Del triángulo: $\tan\theta = \frac{x}{4}$, $\sec\theta = \frac{\sqrt{x^2+16}}{4}$. Entonces:
+Del triángulo: $\tan\theta=\frac{x}{4}$,
+$\sec\theta=\frac{\sqrt{x^2+16}}{4}$:
 \[
-\int \frac{dx}{\sqrt{x^2+16}} = \ln\left|\frac{\sqrt{x^2+16}}{4} + \frac{x}{4}\right| + C = \ln\abs{\sqrt{x^2+16} + x} + C_1. \qquad \square
+\int\frac{dx}{\sqrt{x^2+16}}
+=\ln\left|\frac{\sqrt{x^2+16}+x}{4}\right|+C
+=\ln\left|\sqrt{x^2+16}+x\right|+C_1. \qquad\square
 \]
 \end{myproof}
 
-\subsection{Caso 3: Radical $\sqrt{u^2 - a^2}$}
+\subsection{Caso 3: Radical $\sqrt{u^2-a^2}$}
 
-Cuando el integrando contiene $\sqrt{u^2 - a^2}$, se usa $u = a\sec\theta$ con $\theta \in \left[0, \frac{\pi}{2}\right) \cup \left(\frac{\pi}{2}, \pi\right]$, de modo que $du = a\sec\theta\tan\theta\, d\theta$ y:
-\[
-\sqrt{u^2 - a^2} = \sqrt{a^2\sec^2\theta - a^2} = a\sqrt{\sec^2\theta - 1} = a\tan\theta.
-\]
-El triángulo de referencia tiene hipotenusa $u$, cateto adyacente $a$, y cateto opuesto $\sqrt{u^2 - a^2}$.
+Sustitución: $u=a\sec\theta$, $\theta\in\left[0,\frac{\pi}{2}\right)\cup
+\left(\frac{\pi}{2},\pi\right]$; $du=a\sec\theta\tan\theta\,d\theta$;
+$\sqrt{u^2-a^2}=a\tan\theta$.
 
 \begin{center}
 \begin{tikzpicture}[scale=1.5]
     \draw[thick] (0,0) -- (2,0) -- (2,1.5) -- cycle;
     \draw (1.8,0) -- (1.8,0.2) -- (2,0.2);
     \node[below] at (1,0) {$a$};
-    \node[right] at (2,0.75) {$\sqrt{u^2 - a^2}$};
+    \node[right] at (2,0.75) {$\sqrt{u^2-a^2}$};
     \node[above left] at (1,0.75) {$u$};
     \draw (0.4,0) arc (0:36.87:0.4);
     \node at (0.65,0.15) {$\theta$};
@@ -317,308 +721,346 @@ El triángulo de referencia tiene hipotenusa $u$, cateto adyacente $a$, y cateto
 \end{center}
 
 \begin{example}
-Calcular $\displaystyle\int \frac{\sqrt{x^2 - 9}}{x}\, dx$.
+Calcular $\displaystyle\int\frac{\sqrt{x^2-9}}{x}\,dx$.
 \end{example}
 
 \begin{myproof}
-Con $a = 3$: $x = 3\sec\theta$, $dx = 3\sec\theta\tan\theta\, d\theta$, $\sqrt{x^2-9} = 3\tan\theta$:
+Con $a=3$: $x=3\sec\theta$, $dx=3\sec\theta\tan\theta\,d\theta$,
+$\sqrt{x^2-9}=3\tan\theta$:
 \[
-\int \frac{3\tan\theta \cdot 3\sec\theta\tan\theta\, d\theta}{3\sec\theta} = 3\int \tan^2\theta\, d\theta = 3\int(\sec^2\theta - 1)\, d\theta = 3\tan\theta - 3\theta + C.
+\int\frac{3\tan\theta\cdot 3\sec\theta\tan\theta\,d\theta}{3\sec\theta}
+=3\int\tan^2\!\theta\,d\theta
+=3\int(\sec^2\theta-1)\,d\theta
+=3\tan\theta-3\theta+C.
 \]
-Del triángulo: $\tan\theta = \frac{\sqrt{x^2-9}}{3}$, $\theta = \text{arcsec}\!\left(\frac{x}{3}\right)$:
+Del triángulo: $\tan\theta=\frac{\sqrt{x^2-9}}{3}$,
+$\theta=\operatorname{arcsec}\!\!\left(\frac{x}{3}\right)$:
 \[
-\int \frac{\sqrt{x^2-9}}{x}\, dx = \sqrt{x^2-9} - 3\,\text{arcsec}\!\left(\frac{x}{3}\right) + C. \qquad \square
+\int\frac{\sqrt{x^2-9}}{x}\,dx
+=\sqrt{x^2-9}-3\operatorname{arcsec}\!\!\left(\frac{x}{3}\right)+C.
+\qquad\square
 \]
 \end{myproof}
 
-\subsection{Tabla Resumen de Sustituciones}
+\subsection{Tabla resumen de sustituciones}
 
 \begin{center}
-\begin{tabular}{>{\bfseries}c c c c}
+\begin{tabular}{>{$}c<{$} >{$}c<{$} >{$}c<{$} >{$}c<{$}}
 \toprule
-Radical & Sustitución & Diferencial & Simplificación \\
+\text{Radical} & \text{Sustitución} & \text{Diferencial}
+& \text{Simplificación} \\
 \midrule
-$\sqrt{a^2 - u^2}$ & $u = a\sin\theta$ & $du = a\cos\theta\,d\theta$ & $\sqrt{a^2 - u^2} = a\cos\theta$ \\[4pt]
-$\sqrt{a^2 + u^2}$ & $u = a\tan\theta$ & $du = a\sec^2\theta\,d\theta$ & $\sqrt{a^2 + u^2} = a\sec\theta$ \\[4pt]
-$\sqrt{u^2 - a^2}$ & $u = a\sec\theta$ & $du = a\sec\theta\tan\theta\,d\theta$ & $\sqrt{u^2 - a^2} = a\tan\theta$ \\
+\sqrt{a^2-u^2} & u=a\sin\theta & du=a\cos\theta\,d\theta
+& \sqrt{a^2-u^2}=a\cos\theta \\[4pt]
+\sqrt{a^2+u^2} & u=a\tan\theta & du=a\sec^2\theta\,d\theta
+& \sqrt{a^2+u^2}=a\sec\theta \\[4pt]
+\sqrt{u^2-a^2} & u=a\sec\theta & du=a\sec\theta\tan\theta\,d\theta
+& \sqrt{u^2-a^2}=a\tan\theta \\
 \bottomrule
 \end{tabular}
 \end{center}
 
 \begin{rem}
-Cuando el radical involucra una expresión cuadrática general de la forma $\sqrt{ax^2 + bx + c}$, el primer paso siempre es completar el cuadrado para reducirla a una de las tres formas estándar anteriores. Por ejemplo, $\sqrt{x^2 + 4x + 5} = \sqrt{(x+2)^2 + 1}$, que corresponde al Caso 2 con $u = x+2$ y $a = 1$.
+Cuando el radical involucra una cuadrática general $\sqrt{ax^2+bx+c}$,
+el primer paso es \textbf{completar el cuadrado} para reducirla a una de
+las tres formas estándar. Por ejemplo,
+$\sqrt{x^2+4x+5}=\sqrt{(x+2)^2+1}$ corresponde al Caso 2 con $u=x+2$,
+$a=1$.
 \end{rem}
 
-\section{Problemas Propuestos}
+%----------------------------------------------------------
+\section{Integración por Fracciones Parciales}
+%----------------------------------------------------------
+
+\subsection{Fundamento algebraico}
+
+Una \textbf{función racional} es un cociente de polinomios
+$\frac{P(x)}{Q(x)}$. El teorema de descomposición en fracciones parciales,
+basado en el \textbf{teorema fundamental del álgebra}, establece que todo
+polinomio real $Q(x)$ se factoriza completamente en factores lineales
+$(ax+b)^k$ y factores cuadráticos irreducibles $(ax^2+bx+c)^k$ (con
+discriminante negativo). Sobre esta factorización se construye la
+descomposición, que expresa $\frac{P(x)}{Q(x)}$ como suma de fracciones
+más simples, cada una directamente integrable.
+
+\begin{rem}
+Toda función racional es integrable en términos de funciones elementales:
+el resultado siempre es combinación de logaritmos y arcotangentes. El
+obstáculo práctico suele ser la factorización de $Q(x)$, que para
+polinomios de grado alto puede ser difícil o algebraicamente imposible
+en forma cerrada.
+\end{rem}
+
+\subsection{Procedimiento}
+
+\begin{pasos}
+\begin{enumerate}
+    \item \textbf{Verificar propicidad.} Si $\deg P \geq \deg Q$, realizar
+    división polinómica larga hasta obtener residuo con $\deg(\text{res})
+    < \deg Q$.
+    \item \textbf{Factorizar $Q(x)$} en factores lineales y cuadráticos
+    irreducibles sobre $\R$.
+    \item \textbf{Escribir la descomposición parcial} según los casos
+    siguientes.
+    \item \textbf{Determinar las constantes} multiplicando por $Q(x)$ y
+    evaluando en las raíces de $Q$, o comparando coeficientes.
+    \item \textbf{Integrar} cada fracción usando las fórmulas básicas.
+\end{enumerate}
+\end{pasos}
+
+\subsection{Casos de descomposición}
+
+\begin{definition}
+Sea $\frac{P(x)}{Q(x)}$ una fracción propia:
+
+\textbf{Caso I --- Factores lineales distintos.}
+$Q(x)=(x-a_1)\cdots(x-a_n)$, $a_i$ distintos:
+\[
+\frac{P(x)}{Q(x)}=\frac{A_1}{x-a_1}+\cdots+\frac{A_n}{x-a_n}.
+\]
+
+\textbf{Caso II --- Factor lineal repetido.} Por cada $(x-a)^k$:
+\[
+\frac{A_1}{x-a}+\frac{A_2}{(x-a)^2}+\cdots+\frac{A_k}{(x-a)^k}.
+\]
+
+\textbf{Caso III --- Factor cuadrático irreducible simple.}
+Por cada $x^2+bx+c$ ($\Delta<0$):
+\[
+\frac{Ax+B}{x^2+bx+c}.
+\]
+
+\textbf{Caso IV --- Factor cuadrático irreducible repetido.}
+Por cada $(x^2+bx+c)^k$:
+\[
+\frac{A_1 x+B_1}{x^2+bx+c}+\frac{A_2 x+B_2}{(x^2+bx+c)^2}+\cdots+
+\frac{A_k x+B_k}{(x^2+bx+c)^k}.
+\]
+\end{definition}
+
+\subsection{Fórmulas de integración para cada fracción}
+
+\[
+\int\frac{A}{x-a}\,dx = A\ln|x-a|+C, \qquad
+\int\frac{A}{(x-a)^k}\,dx = \frac{A}{(1-k)(x-a)^{k-1}}+C \;\;(k\neq 1),
+\]
+\[
+\int\frac{A}{x^2+a^2}\,dx = \frac{A}{a}\arctan\!\left(\frac{x}{a}\right)+C,
+\qquad
+\int\frac{2x+b}{x^2+bx+c}\,dx = \ln|x^2+bx+c|+C.
+\]
+Para el Caso III general $\frac{Ax+B}{x^2+bx+c}$, se separa el numerador en
+un múltiplo de la derivada del denominador más una constante residual, y
+luego se completa el cuadrado para usar la fórmula de la arcotangente.
+
+\subsection{Ejemplos}
 
 \begin{example}
-Calcular $\displaystyle \int \sin x \cos x \, dx$.
+Calcular $\displaystyle\int\frac{dx}{x^2-5x+6}$.
 \end{example}
 
 \begin{myproof}
-Usamos la identidad $\sin x \cos x = \dfrac{1}{2}\sin(2x)$. Entonces
+$x^2-5x+6=(x-2)(x-3)$. Caso I:
 \[
-\int \sin x \cos x \, dx = \int \frac{1}{2}\sin(2x)\, dx = -\frac{1}{4}\cos(2x) + C.
+\frac{1}{(x-2)(x-3)}=\frac{A}{x-2}+\frac{B}{x-3}
+\implies 1=A(x-3)+B(x-2).
 \]
-Alternativamente, podemos usar sustitución. Sea $u = \sin x$, de modo que $du = \cos x\, dx$. Entonces
+Con $x=3$: $B=1$; con $x=2$: $A=-1$. Integrando:
 \[
-\int \sin x \cos x \, dx = \int u\, du = \frac{u^2}{2} + C = \frac{\sin^2 x}{2} + C.
+\int\frac{dx}{x^2-5x+6}
+=-\ln|x-2|+\ln|x-3|+C
+=\ln\left|\frac{x-3}{x-2}\right|+C. \qquad\square
 \]
-Las dos expresiones difieren sólo en una constante aditiva, así que ambas son primitivas válidas. \qquad $\square$
 \end{myproof}
 
-
-
 \begin{example}
-Calcular $\displaystyle \int \frac{dx}{\sqrt{9 - x^2}}$.
+Calcular $\displaystyle\int\frac{x^2+2x-1}{2x^3+3x^2-2x}\,dx$.
 \end{example}
 
 \begin{myproof}
-La presencia de $\sqrt{9 - x^2}$ sugiere una sustitución trigonométrica del tipo $x = a\sin\theta$ con $a = 3$. Tomamos
+$2x^3+3x^2-2x=x(2x-1)(x+2)$. Caso I:
 \[
-x = 3\sin\theta, \qquad dx = 3\cos\theta\, d\theta.
+\frac{x^2+2x-1}{x(2x-1)(x+2)}=\frac{A}{x}+\frac{B}{2x-1}+\frac{C}{x+2}.
 \]
-Entonces
+Multiplicando: $x^2+2x-1=A(2x-1)(x+2)+Bx(x+2)+Cx(2x-1)$.
+Con $x=0$: $A=\frac{1}{2}$; con $x=\frac{1}{2}$: $B=\frac{1}{5}$;
+con $x=-2$: $C=-\frac{1}{10}$. Integrando:
 \[
-\sqrt{9 - x^2} = \sqrt{9 - 9\sin^2\theta} = 3\sqrt{1 - \sin^2\theta} = 3\cos\theta,
-\]
-donde usamos la identidad pitagórica. Sustituyendo en la integral:
-\[
-\int \frac{dx}{\sqrt{9 - x^2}} = \int \frac{3\cos\theta\, d\theta}{3\cos\theta} = \int d\theta = \theta + C.
-\]
-Para regresar a la variable $x$, observamos que $x = 3\sin\theta$ implica $\theta = \arcsin\!\left(\dfrac{x}{3}\right)$. Por lo tanto,
-\[
-\int \frac{dx}{\sqrt{9 - x^2}} = \arcsin\!\left(\frac{x}{3}\right) + C. \qquad \square
+\int\frac{x^2+2x-1}{2x^3+3x^2-2x}\,dx
+=\frac{1}{2}\ln|x|+\frac{1}{10}\ln|2x-1|-\frac{1}{10}\ln|x+2|+C.
+\qquad\square
 \]
 \end{myproof}
 
-
-
 \begin{example}
-Calcular $\displaystyle \int \sec^5 x \, dx$.
+Calcular $\displaystyle\int\frac{2x+2}{x^2-4x+8}\,dx$.
 \end{example}
 
 \begin{myproof}
-Escribimos $\sec^5 x = \sec^3 x\, \sec^2 x$ y usamos la identidad $\sec^2 x = 1 + \tan^2 x$ junto con una integración por partes clásica. Primero, reescribimos:
+$\Delta = 16-32=-16<0$: denominador irreducible, Caso III. Separamos:
 \[
-\int \sec^5 x\, dx = \int \sec^3 x \sec^2 x\, dx.
+2x+2=(2x-4)+6.
 \]
-Recordemos que $\sec^3 x$ admite la descomposición $\sec^3 x = \sec x (\sec^2 x) = \sec x(1 + \tan^2 x)$. Una estrategia estándar consiste en separar la integral como
 \[
-\int \sec^5 x\, dx = \int \sec^3 x \sec^2 x\, dx = \int \sec^3 x (1 + \tan^2 x)\, dx,
+\int\frac{2x+2}{x^2-4x+8}\,dx
+=\int\frac{2x-4}{x^2-4x+8}\,dx+6\int\frac{dx}{x^2-4x+8}
+=\ln(x^2-4x+8)+6\int\frac{dx}{(x-2)^2+4}.
 \]
-y realizar integración por partes con
+Completando el cuadrado y usando la arcotangente:
 \[
-u = \sec^3 x, \qquad dv = \sec^2 x\, dx.
+6\cdot\frac{1}{2}\arctan\!\left(\frac{x-2}{2}\right)+C
+=3\arctan\!\left(\frac{x-2}{2}\right)+C.
 \]
-Entonces
+Resultado:
 \[
-du = 3\sec^2 x \sec x \tan x\, dx \quad \text{y} \quad v = \tan x.
+\int\frac{2x+2}{x^2-4x+8}\,dx
+=\ln(x^2-4x+8)+3\arctan\!\left(\frac{x-2}{2}\right)+C.
+\qquad\square
 \]
-Aplicando integración por partes:
-\[
-\int \sec^5 x\, dx = \sec^3 x \tan x - \int \tan x \cdot 3\sec^2 x \sec x \tan x\, dx
-= \sec^3 x \tan x - 3\int \sec^3 x \sec^2 x \tan^2 x\, dx.
-\]
-Usando $\tan^2 x = \sec^2 x - 1$:
-\[
-\int \sec^5 x\, dx = \sec^3 x \tan x - 3\int \sec^3 x \sec^2 x(\sec^2 x - 1)\, dx
-= \sec^3 x \tan x - 3\int \sec^5 x \sec^2 x\, dx + 3\int \sec^3 x \sec^2 x\, dx.
-\]
-Es más eficiente proceder con el enfoque clásico: separar un factor $\sec x \tan x$ y usar sustitución. Escribimos
-\[
-\sec^5 x = \sec^3 x \sec^2 x = \sec^3 x (1 + \tan^2 x)
-= \sec^3 x + \sec^3 x \tan^2 x.
-\]
-Trabajamos con la forma estándar siguiente (resultado conocido que puede comprobarse por integración por partes cuidada):
-\[
-\int \sec^5 x\, dx = \frac{\sec^3 x \tan x}{4} + \frac{3}{4}\int \sec^3 x\, dx.
-\]
-La integral de $\sec^3 x$ también es clásica:
-\[
-\int \sec^3 x\, dx = \frac{1}{2}\sec x \tan x + \frac{1}{2}\ln\abs{\sec x + \tan x} + C.
-\]
-Sustituyendo este resultado:
-\[
-\int \sec^5 x\, dx = \frac{\sec^3 x \tan x}{4} + \frac{3}{4}\left[\frac{1}{2}\sec x \tan x + \frac{1}{2}\ln\abs{\sec x + \tan x}\right] + C.
-\]
-Es decir,
-\[
-\boxed{\int \sec^5 x\, dx = \frac{\sec^3 x \tan x}{4} + \frac{3}{8}\sec x \tan x + \frac{3}{8}\ln\abs{\sec x + \tan x} + C.}
-\]
-Cualquier forma algebraicamente equivalente de esta expresión se considera respuesta correcta. \qquad \square
 \end{myproof}
 
+\begin{example}
+Calcular $\displaystyle\int\frac{x^3+x}{x^2-1}\,dx$ (fracción impropia).
+\end{example}
 
+\begin{myproof}
+$\deg P=3>\deg Q=2$: división larga. $x^3+x=(x^2-1)\cdot x+2x$, así que
+$\frac{x^3+x}{x^2-1}=x+\frac{2x}{x^2-1}$. Factorizamos $x^2-1=(x-1)(x+1)$;
+Caso I sobre el residuo: $\frac{2x}{(x-1)(x+1)}=\frac{A}{x-1}+\frac{B}{x+1}$,
+$A=B=1$. Integrando:
+\[
+\int\frac{x^3+x}{x^2-1}\,dx
+=\frac{x^2}{2}+\ln|x-1|+\ln|x+1|+C. \qquad\square
+\]
+\end{myproof}
 
+\begin{example}
+Calcular $\displaystyle\int\frac{dx}{x^2(x-1)}$ (factor lineal repetido).
+\end{example}
 
+\begin{myproof}
+Casos I y II combinados:
+\[
+\frac{1}{x^2(x-1)}=\frac{A}{x}+\frac{B}{x^2}+\frac{C}{x-1}
+\implies 1=Ax(x-1)+B(x-1)+Cx^2.
+\]
+Con $x=0$: $B=-1$; con $x=1$: $C=1$; con $x=-1$: $A=-1$. Integrando:
+\[
+\int\frac{dx}{x^2(x-1)}
+=-\ln|x|+\frac{1}{x}+\ln|x-1|+C
+=\ln\left|\frac{x-1}{x}\right|+\frac{1}{x}+C. \qquad\square
+\]
+\end{myproof}
+
+\begin{rem}
+Las cinco técnicas de este capítulo no son independientes: en muchos
+problemas se aplican de forma combinada. Una integral puede requerir primero
+completar el cuadrado (reducción algebraica), luego sustitución
+trigonométrica (que produce una potencia de secante), y finalmente
+integración por partes (para reducir esa potencia). La integración es
+esencialmente un arte de reconocimiento de patrones cuya destreza se
+desarrolla mediante la resolución sistemática de una variedad amplia de
+ejercicios.
+\end{rem}
+
+%----------------------------------------------------------
+\section{Ejercicios propuestos}
+%----------------------------------------------------------
 
 \begin{prob}
-$\displaystyle \int \sin^3 x \cos^2 x \, dx$
+Calcule las siguientes integrales usando sustitución simple, integración
+por partes o fracciones parciales según corresponda:
+\begin{multicols}{2}
+\begin{enumerate}
+\item $\displaystyle\int\sqrt{1-4y}\,dy$
+\item $\displaystyle\int x^4\sqrt{3x^5-5}\,dx$
+\item $\displaystyle\int y^2\sec^2(y^3)\,dy$
+\item $\displaystyle\int\frac{x^2-4x+6}{x^3-6x^2+18x}\,dx$
+\item $\displaystyle\int x^2 e^x\cos x\,dx$
+\item $\displaystyle\int\frac{x^2+2x}{\sqrt{x^3+3x^2+1}}\,dx$
+\item $\displaystyle\int\sec x\tan x\cos(\sec x)\,dx$
+\item $\displaystyle\int x^2 e^x\,dx$
+\item $\displaystyle\int\cos^2 x\,dx$
+\item $\displaystyle\int\frac{xe^x}{(x+1)^2}\,dx$
+\item $\displaystyle\int\sin t\ln(\cos t)\,dt$
+\item $\displaystyle\int x\sec^2 x\,dx$
+\item $\displaystyle\int x\arctan x\,dx$
+\item $\displaystyle\int e^x\cos x\,dx$
+\item $\displaystyle\int\sqrt{20-8x-x^2}\,dx$
+\item $\displaystyle\int\frac{5x-1}{x^2-1}\,dx$
+\item $\displaystyle\int\frac{3x-13}{(x+2)(x-5)}\,dx$
+\item $\displaystyle\int\cos x\sqrt{4-\sin^2 x}\,dx$
+\item $\displaystyle\int\frac{2x^2+3x+2}{x^3+4x^2+6x+4}\,dx$
+\item $\displaystyle\int\frac{1}{9x^4+x^2}\,dx$
+\item $\displaystyle\int\frac{e^{5x}}{(e^{2x}+1)^2}\,dx$
+\item $\displaystyle\int\frac{\ln x}{x^2}\,dx$
+\item $\displaystyle\int\frac{2x^2-x-20}{x^2+x-6}\,dx$
+\item $\displaystyle\int\frac{2x^2-5x+1}{x^3-2x^2-x+2}\,dx$
+\item $\displaystyle\int\frac{x^3+2x^2-3x+1}{x^2-1}\,dx$
+\item $\displaystyle\int\frac{x^2}{(x-1)^2(x^2+4)}\,dx$
+\item $\displaystyle\int\frac{2x^3-5x^2+4x-1}{(x^2+1)^2}\,dx$
+\item $\displaystyle\int\frac{x^2\ln x}{x^2+1}\,dx$
+\end{enumerate}
+\end{multicols}
 \end{prob}
 
 \begin{prob}
-$\displaystyle \int \sec^4(5x) \, dx$
+Calcule las siguientes integrales de potencias trigonométricas:
+\begin{multicols}{2}
+\begin{enumerate}
+\item $\displaystyle\int\sin^2(5x)\,dx$
+\item $\displaystyle\int\cos^3 x\,dx$
+\item $\displaystyle\int\sin^3 x\cos^2 x\,dx$
+\item $\displaystyle\int\sec^4(5x)\,dx$
+\item $\displaystyle\int\tan^2 x\,dx$
+\item $\displaystyle\int\sec(7x)\,dx$
+\item $\displaystyle\int\sin x\cos x\,dx$
+\item $\displaystyle\int\sin^4(6x)\,dx$
+\item $\displaystyle\int\tan^3\!\left(\tfrac{x}{2}\right)\sec^2\!\left(\tfrac{x}{2}\right)dx$
+\item $\displaystyle\int\frac{\tan^3 x}{\sqrt{\sec x}}\,dx$
+\item $\displaystyle\int\tan^3(2x)\sec(2x)\,dx$
+\item $\displaystyle\int\sin^3 x\cos^4 x\,dx$
+\item $\displaystyle\int\sec^5 x\,dx$
+\item $\displaystyle\int\sin^4 x\cos^2 x\,dx$
+\item $\displaystyle\int\tan^2 x\sec^5 x\,dx$
+\end{enumerate}
+\end{multicols}
 \end{prob}
 
 \begin{prob}
-$\displaystyle \int \tan^2 x \, dx$
+Calcule las siguientes integrales usando sustitución trigonométrica:
+\begin{multicols}{2}
+\begin{enumerate}
+\item $\displaystyle\int\frac{dx}{\sqrt{9-x^2}}$
+\item $\displaystyle\int\frac{dx}{x^2+4}$
+\item $\displaystyle\int\sqrt{1-4x^2}\,dx$
+\item $\displaystyle\int\frac{x^2}{\sqrt{16-x^2}}\,dx$
+\item $\displaystyle\int\frac{dx}{\sqrt{x^2-7}}$
+\item $\displaystyle\int\frac{dt}{t^2\sqrt{t^2-16}}$
+\item $\displaystyle\int\frac{dx}{(x^2+4)^{3/2}}$
+\item $\displaystyle\int\sqrt{a^2-x^2}\,dx$
+\item $\displaystyle\int\frac{x^2}{\sqrt{2x-x^2}}\,dx$
+\item $\displaystyle\int\frac{x}{\sqrt{x^2+6x+12}}\,dx$
+\item $\displaystyle\int\frac{dx}{x\sqrt{4x^2+9}}$
+\item $\displaystyle\int\frac{\cos x}{\sqrt{1+\sin^2 x}}\,dx$
+\item $\displaystyle\int\sqrt{x^2+2x}\,dx$
+\item $\displaystyle\int\frac{dz}{z\sqrt{25-4z^2}}$
+\item $\displaystyle\int\frac{x^2}{\sqrt{5-4x^2}}\,dx$
+\end{enumerate}
+\end{multicols}
 \end{prob}
 
-\begin{prob}
-$\displaystyle \int \frac{dx}{\sqrt{9 - x^2}}$
+\begin{prob}[Problemas de referencia \emph{--- Spivak, Cap.~19 y Larson}]
+\begin{multicols}{2}
+\begin{enumerate}
+\item $\displaystyle\int\sqrt{\tan x}\,dx$
+\item $\displaystyle\int\frac{dx}{x^6+1}$
+\item $\displaystyle\int\frac{dx}{1+\sin^2 x}$
+\item $\displaystyle\int\frac{dx}{x\sqrt{x^n+1}}$
+\item $\displaystyle\int\frac{x^2}{(2x-x^2)^{3/2}}\,dx$
+\item $\displaystyle\int\frac{dx}{x^4\sqrt{x^2-9}}$
+\item $\displaystyle\int\frac{dx}{2-\sin x}$
+\item $\displaystyle\int_0^{\pi/2}\sin^n x\,dx$
+\end{enumerate}
+\end{multicols}
 \end{prob}
-
-\begin{prob}
-$\displaystyle \int \sec(7x) \, dx$
-\end{prob}
-
-\begin{prob}
-$\displaystyle \int \sin x \cos x \, dx$
-\end{prob}
-
-\begin{prob}
-$\displaystyle \int \frac{dx}{x^2 + 4}$
-\end{prob}
-
-\begin{prob}
-$\displaystyle \int \sqrt{1 - 4x^2}\, dx$
-\end{prob}
-
- 
-
-\begin{prob}
-$\displaystyle \int \sin^4(6x)\, dx$
-\end{prob}
-
-\begin{prob}
-$\displaystyle \int \tan^3\!\left(\frac{x}{2}\right)\sec^2\!\left(\frac{x}{2}\right)\, dx$
-\end{prob}
-
-\begin{prob}
-$\displaystyle \int \frac{\tan^3 x}{\sqrt{\sec x}} \, dx$
-\end{prob}
-
-\begin{prob}
-$\displaystyle \int \frac{x^2}{\sqrt{16 - x^2}} \, dx$
-\end{prob}
-
-\begin{prob}
-$\displaystyle \int \frac{dx}{\sqrt{x^2 - 7}}$
-\end{prob}
-
-\begin{prob}
-$\displaystyle \int \frac{dt}{t^2\sqrt{t^2 - 16}}$
-\end{prob}
-
-\begin{prob}
-$\displaystyle \int \tan^3(2x)\sec(2x)\, dx$
-\end{prob}
-
-\begin{prob}
-$\displaystyle \int \frac{dx}{(x^2 + 4)^{3/2}}$
-\end{prob}
-
-\begin{prob}
-$\displaystyle \int \sin^3 x \cos^4 x \, dx$
-\end{prob}
-
-\begin{prob}
-$\displaystyle \int \sqrt{a^2 - x^2}\, dx$
-\end{prob}
-
- 
-
-\begin{prob}
-$\displaystyle \int \sec^5 x \, dx$
-\end{prob}
-
-\begin{prob}
-$\displaystyle \int \frac{x^2}{\sqrt{2x - x^2}} \, dx$
-\end{prob}
-
-\begin{prob}
-$\displaystyle \int \frac{x}{\sqrt{x^2 + 6x + 12}} \, dx$
-\end{prob}
-
-\begin{prob}
-$\displaystyle \int \sin^4 x \cos^2 x \, dx$
-\end{prob}
-
-\begin{prob}
-$\displaystyle \int \frac{dx}{x\sqrt{4x^2 + 9}}$
-\end{prob}
-
-\begin{prob}
-$\displaystyle \int \tan^2 x \sec^5 x \, dx$
-\end{prob}
-
-\begin{prob}
-$\displaystyle \int \frac{\cos x}{\sqrt{1 + \sin^2 x}} \, dx$
-\end{prob}
-
-\begin{prob}
-$\displaystyle \int \sqrt{x^2 + 2x}\, dx$
-\end{prob}
-
-\begin{prob}
-$\displaystyle \int \frac{dz}{z \sqrt{25 - 4z^2}}$
-\end{prob}
-
-\begin{prob}
-$\displaystyle \int \frac{x^2}{\sqrt{5 - 4x^2}} \, dx$
-\end{prob}
-
-\begin{prob}
-$\displaystyle \int \sqrt{\tan x} \, dx$  
-\end{prob}
-
-\begin{prob}
-$\displaystyle \int \frac{dx}{x^6 + 1}$  
-\end{prob}
-
-\begin{prob}
-$\displaystyle \int \frac{dx}{1 + \sin^2 x}$  
-\end{prob}
-
-\begin{prob}
-$\displaystyle \int \sec^5 x \, dx$  
-\end{prob}
-
-\begin{prob}
-$\displaystyle \int \frac{dx}{x \sqrt{x^n + 1}}$  
-\end{prob}
-
-\begin{prob}
-$\displaystyle \int \frac{x^2}{(2x - x^2)^{3/2}} \, dx$  
-\end{prob}
-
-\begin{prob}
-$\displaystyle \int \frac{dx}{x^4 \sqrt{x^2 - 9}}$  
-\end{prob}
-
-\begin{prob}
-$\displaystyle \int \frac{\cos x}{\sqrt{1 + \sin^2 x}} \, dx$  
-\end{prob}
-
-\begin{prob}
-$\displaystyle \int \frac{dx}{2 - \sin x}$  
-\end{prob}
-
-\begin{prob}
-$\displaystyle \int_{0}^{\pi/2} \sin^n x \, dx$  
-\end{prob}
- 
-
-\begin{prob}
-$\displaystyle \int \sin^2(5x)\, dx$
-\end{prob}
-
-\begin{prob}
-$\displaystyle \int \cos^3 x \, dx$
-\end{prob}
-
-
-
-
-
