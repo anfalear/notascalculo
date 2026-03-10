@@ -1,0 +1,1334 @@
+\chapter{Aplicaciones de la Derivada}
+
+%%==========================================================
+\section{Panorama General}
+%%==========================================================
+
+La derivada no es únicamente un objeto teórico: es el instrumento
+central para analizar el comportamiento de funciones y resolver
+problemas cuantitativos en física, ingeniería, economía y geometría.
+Este capítulo desarrolla las aplicaciones más importantes, organizadas
+en un orden pedagógico natural: primero el análisis del comportamiento
+local (extremos, monotonía, concavidad), luego las aplicaciones al
+trazado sistemático de curvas y a la optimización, y finalmente las
+herramientas analíticas transversales (Teorema del Valor Medio, regla
+de L'Hôpital) y numéricas (Newton-Raphson, bisección).
+
+\begin{rem}
+El hilo conductor de este capítulo es el siguiente principio: la
+derivada mide la \textbf{tasa de variación instantánea}. Según el
+contexto, esta idea adquiere formas distintas ---velocidad, pendiente,
+crecimiento marginal, tasa de llenado--- pero el aparato matemático
+es siempre el mismo. Reconocer esta unidad subyacente facilita la
+transferencia de las técnicas entre contextos aparentemente dispares.
+\end{rem}
+
+%%==========================================================
+\section{Razones de Cambio Relacionadas}
+%%==========================================================
+
+\subsection{Fundamento}
+
+Si una cantidad $y$ depende del tiempo $t$, su derivada $\frac{dy}{dt}$
+es su \textbf{razón de cambio respecto al tiempo}. Cuando dos o más
+cantidades están ligadas por una ecuación geométrica o física, sus
+derivadas temporales también están ligadas: son las llamadas
+\textbf{razones de cambio relacionadas}. La clave es que la ecuación
+que relaciona las cantidades vale para \emph{todo instante} $t$, por
+lo que puede derivarse implícitamente respecto a $t$.
+
+\begin{pasos}
+\begin{enumerate}
+    \item \textbf{Diagrama y variables.} Dibujar un esquema de la
+    situación y asignar variables a las cantidades que cambian con $t$.
+    \item \textbf{Identificar razones.} Listar las derivadas temporales
+    conocidas y la que se desea encontrar.
+    \item \textbf{Ecuación fundamental.} Escribir una ecuación que
+    relacione las variables y que sea válida para todo $t$.
+    \item \textbf{Derivación implícita.} Derivar ambos lados respecto
+    a $t$ aplicando la regla de la cadena.
+    \item \textbf{Sustitución y despeje.} Solo \emph{después} de derivar,
+    sustituir los valores del instante particular y despejar la razón
+    buscada.
+\end{enumerate}
+\end{pasos}
+
+\begin{rem}
+El error más frecuente consiste en sustituir los valores numéricos
+\emph{antes} de derivar. Al hacerlo, las variables se convierten en
+constantes y sus derivadas desaparecen, destruyendo la información
+que se busca. Los valores numéricos solo entran en el paso 5.
+\end{rem}
+
+\subsection{Ejemplos}
+
+\begin{example}
+Un tanque cónico invertido tiene altura $12$ m y radio basal $6$ m.
+El agua entra a razón de $2$ m$^3$/min. ¿A qué rapidez sube el nivel
+cuando el agua tiene $4$ m de profundidad?
+\end{example}
+
+\begin{myproof}
+\textbf{Paso 1.} Variables: $h$ = profundidad del agua, $r$ = radio
+de la superficie libre, $V$ = volumen. Se conoce $\frac{dV}{dt}=2$
+m$^3$/min y se busca $\frac{dh}{dt}$ cuando $h=4$.
+
+\textbf{Paso 3.} Por semejanza de triángulos,
+$\frac{r}{h}=\frac{6}{12}=\frac{1}{2}$, de modo que $r=\frac{h}{2}$.
+Sustituyendo en la fórmula del cono:
+\[
+V = \frac{1}{3}\pi r^2 h = \frac{1}{3}\pi\left(\frac{h}{2}\right)^2 h
+= \frac{\pi h^3}{12}.
+\]
+
+\textbf{Paso 4.} Derivando respecto a $t$:
+\[
+\frac{dV}{dt} = \frac{\pi h^2}{4}\cdot\frac{dh}{dt}.
+\]
+
+\textbf{Paso 5.} Con $h=4$ y $\frac{dV}{dt}=2$:
+\[
+2 = \frac{\pi(16)}{4}\cdot\frac{dh}{dt}
+\implies \frac{dh}{dt} = \frac{2}{4\pi} = \frac{1}{2\pi}
+\approx 0.159 \text{ m/min}. \qquad\square
+\]
+\end{myproof}
+
+\begin{example}
+Una escalera de $10$ m de largo se apoya en una pared vertical. La base
+se aleja de la pared a $0.5$ m/s. ¿A qué velocidad desciende el extremo
+superior cuando la base está a $6$ m de la pared?
+\end{example}
+
+\begin{myproof}
+Sea $x$ la distancia de la base a la pared y $y$ la altura del extremo
+superior. La restricción es $x^2+y^2=100$.
+
+Derivando respecto a $t$:
+\[
+2x\frac{dx}{dt}+2y\frac{dy}{dt}=0
+\implies \frac{dy}{dt} = -\frac{x}{y}\cdot\frac{dx}{dt}.
+\]
+Cuando $x=6$: $y=\sqrt{100-36}=8$. Con $\frac{dx}{dt}=0.5$:
+\[
+\frac{dy}{dt} = -\frac{6}{8}\cdot 0.5 = -\frac{3}{8} \text{ m/s}.
+\]
+El signo negativo indica que el extremo superior \emph{desciende} a
+$\frac{3}{8}$ m/s. $\square$
+\end{myproof}
+
+\begin{example}
+Un globo esférico se infla a razón de $100\pi$ cm$^3$/s.
+¿A qué rapidez crece el radio cuando el radio mide $5$ cm?
+\end{example}
+
+\begin{myproof}
+$V=\frac{4}{3}\pi r^3$. Derivando: $\frac{dV}{dt}=4\pi r^2\frac{dr}{dt}$.
+Con $r=5$ y $\frac{dV}{dt}=100\pi$:
+\[
+100\pi = 4\pi(25)\frac{dr}{dt}
+\implies \frac{dr}{dt} = 1 \text{ cm/s}. \qquad\square
+\]
+\end{myproof}
+
+%%==========================================================
+\section{Valores Extremos}
+%%==========================================================
+
+\subsection{Extremos absolutos y puntos críticos}
+
+\begin{definition}
+Sea $f$ definida en un conjunto $S$. Se dice que:
+\begin{itemize}
+    \item $f(c)$ es el \textbf{máximo absoluto} de $f$ en $S$ si
+    $f(c)\geq f(x)$ para todo $x\in S$.
+    \item $f(c)$ es el \textbf{mínimo absoluto} de $f$ en $S$ si
+    $f(c)\leq f(x)$ para todo $x\in S$.
+    \item $c$ es un \textbf{punto crítico} de $f$ si es un punto interior
+    del dominio donde $f'(c)=0$ (\textbf{punto estacionario}) o donde
+    $f'(c)$ no existe (\textbf{punto singular}).
+\end{itemize}
+\end{definition}
+
+\begin{theorem}[Weierstrass --- Teorema del Valor Extremo]
+Si $f$ es continua en el intervalo cerrado $[a,b]$, entonces $f$ alcanza
+un máximo absoluto y un mínimo absoluto en $[a,b]$.
+\end{theorem}
+
+\begin{rem}
+El Teorema de Weierstrass es un resultado de existencia que descansa
+sobre la completitud de $\R$ y la compacidad de $[a,b]$: en un conjunto
+abierto o en una función discontinua, el extremo puede no alcanzarse.
+La función $f(x)=x$ en $(0,1)$ es el ejemplo elemental: está acotada
+pero no tiene ni máximo ni mínimo en el intervalo abierto.
+\end{rem}
+
+\begin{theorem}[Fermat]
+Si $f$ tiene un extremo local en un punto interior $c$ del dominio, y
+$f'(c)$ existe, entonces $f'(c)=0$.
+\end{theorem}
+
+\begin{pasos}[Localización de extremos absolutos en $\lbrack a,b\rbrack$]
+\begin{enumerate}
+    \item Encontrar todos los puntos críticos de $f$ en $(a,b)$.
+    \item Evaluar $f$ en cada punto crítico y en los extremos $a$, $b$.
+    \item El mayor valor es el máximo absoluto; el menor, el mínimo
+    absoluto.
+\end{enumerate}
+\end{pasos}
+
+\begin{example}
+Encontrar los extremos absolutos de $f(x)=x^3-3x^2+1$ en $[-\tfrac{1}{2},4]$.
+\end{example}
+
+\begin{myproof}
+$f'(x)=3x^2-6x=3x(x-2)$. Puntos críticos en el interior: $x=0$ y $x=2$.
+Evaluamos $f$ en los puntos críticos y extremos del intervalo:
+\begin{center}
+\begin{tabular}{c c}
+\toprule
+$x$ & $f(x)$ \\
+\midrule
+$-\frac{1}{2}$ & $\frac{1}{8}+\frac{3}{4}+1 = \frac{15}{8}$ \\
+$0$ & $1$ \\
+$2$ & $8-12+1=-3$ \\
+$4$ & $64-48+1=17$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+Máximo absoluto: $f(4)=17$. Mínimo absoluto: $f(2)=-3$. $\square$
+\end{myproof}
+
+%%==========================================================
+\section{Monotonía y Concavidad}
+%%==========================================================
+
+\subsection{Intervalos de crecimiento y decrecimiento}
+
+\begin{theorem}[Criterio de monotonía]
+Sea $f$ continua en $[a,b]$ y derivable en $(a,b)$:
+\begin{itemize}
+    \item Si $f'(x)>0$ para todo $x\in(a,b)$, entonces $f$ es
+    \textbf{estrictamente creciente} en $[a,b]$.
+    \item Si $f'(x)<0$ para todo $x\in(a,b)$, entonces $f$ es
+    \textbf{estrictamente decreciente} en $[a,b]$.
+    \item Si $f'(x)=0$ para todo $x\in(a,b)$, entonces $f$ es
+    \textbf{constante} en $[a,b]$.
+\end{itemize}
+\end{theorem}
+
+\subsection{Concavidad y puntos de inflexión}
+
+\begin{definition}
+La gráfica de $f$ es \textbf{cóncava hacia arriba} en $(a,b)$ si $f'$
+es creciente en ese intervalo, y \textbf{cóncava hacia abajo} si $f'$
+es decreciente. Equivalentemente:
+\[
+f''(x)>0 \implies \text{cóncava hacia arriba}, \qquad
+f''(x)<0 \implies \text{cóncava hacia abajo}.
+\]
+Un punto $c$ es un \textbf{punto de inflexión} de $f$ si $f$ es continua
+en $c$ y la concavidad cambia de signo en $c$.
+\end{definition}
+
+\begin{rem}
+Un punto donde $f''(c)=0$ no es necesariamente un punto de inflexión:
+se requiere que $f''$ \emph{cambie de signo} en $c$. La función
+$f(x)=x^4$ satisface $f''(0)=0$, pero la concavidad no cambia en $x=0$
+(es cóncava hacia arriba en todo $\R$), por lo que $x=0$ no es punto de
+inflexión.
+\end{rem}
+
+%%==========================================================
+\section{Extremos Locales}
+%%==========================================================
+
+\begin{definition}
+$f(c)$ es un \textbf{máximo local} si existe un intervalo abierto
+$(a,b)$ que contiene a $c$ tal que $f(c)\geq f(x)$ para todo
+$x\in(a,b)$. Análogamente se define el \textbf{mínimo local}.
+\end{definition}
+
+\begin{theorem}[Criterio de la primera derivada]
+Sea $c$ un punto crítico de $f$:
+\begin{itemize}
+    \item Si $f'$ cambia de $+$ a $-$ en $c$: \textbf{máximo local}.
+    \item Si $f'$ cambia de $-$ a $+$ en $c$: \textbf{mínimo local}.
+    \item Si $f'$ no cambia de signo en $c$: no hay extremo local.
+\end{itemize}
+\end{theorem}
+
+\begin{theorem}[Criterio de la segunda derivada]
+Si $f'(c)=0$ y $f''(c)$ existe:
+\begin{itemize}
+    \item $f''(c)<0$: \textbf{máximo local}.
+    \item $f''(c)>0$: \textbf{mínimo local}.
+    \item $f''(c)=0$: el criterio es \textbf{inconcluso}; puede haber
+    máximo, mínimo o punto de inflexión.
+\end{itemize}
+\end{theorem}
+
+\begin{rem}
+El caso $f''(c)=0$ ilustra la importancia de no abandonar el análisis
+prematuramente. Para $f(x)=x^4$, $f'(0)=0$ y $f''(0)=0$, pero $x=0$
+es un mínimo local (verificable con el criterio de la primera derivada).
+Para $f(x)=x^3$, $f'(0)=0$ y $f''(0)=0$, pero $x=0$ es un punto de
+inflexión. El criterio de la segunda derivada no distingue estos casos;
+siempre se debe recurrir al de la primera derivada cuando la segunda es
+cero.
+\end{rem}
+
+\begin{example}
+Analizar completamente $f(x)=x^4-4x^3$.
+\end{example}
+
+\begin{myproof}
+$f'(x)=4x^3-12x^2=4x^2(x-3)$. Puntos críticos: $x=0$ y $x=3$.
+
+$f''(x)=12x^2-24x=12x(x-2)$. En $x=3$: $f''(3)=36>0$ $\Rightarrow$
+mínimo local $f(3)=-27$. En $x=0$: $f''(0)=0$, inconcluso.
+Analizando signo de $f'$: para $x<0$, $f'<0$; para $0<x<3$, $f'<0$;
+para $x>3$, $f'>0$. Como $f'$ no cambia de signo en $x=0$, no hay
+extremo local allí.
+
+Puntos de inflexión ($f''=0$): $x=0$ y $x=2$.
+En $x=0$: $f''$ cambia de $+$ a $-$... verificar: $f''(-1)=36>0$,
+$f''(1)=-12<0$. Sí cambia $\Rightarrow$ inflexión en $(0,0)$.
+En $x=2$: $f''(1)=-12<0$, $f''(3)=36>0$. Cambia $\Rightarrow$
+inflexión en $(2,-16)$. $\square$
+\end{myproof}
+
+%%==========================================================
+\section{Trazado Sistemático de Curvas}
+%%==========================================================
+
+El análisis completo de una función antes de graficarla integra todas
+las herramientas previas en un procedimiento organizado.
+
+\begin{pasos}
+\begin{enumerate}
+    \item \textbf{Análisis previo.} Determinar dominio, rango (si es
+    posible), simetría (par/impar/periódica), intersecciones con los
+    ejes y comportamiento asintótico ($x\to\pm\infty$, puntos
+    singulares).
+    \item \textbf{Primera derivada.} Calcular $f'$, hallar puntos
+    críticos, determinar intervalos de crecimiento y decrecimiento,
+    clasificar extremos locales.
+    \item \textbf{Segunda derivada.} Calcular $f''$, determinar
+    intervalos de concavidad y localizar puntos de inflexión.
+    \item \textbf{Tabla y bosquejo.} Resumir toda la información en
+    una tabla de puntos clave. Trazar primero las asíntotas, luego
+    los puntos especiales, y conectarlos respetando la monotonía y la
+    concavidad.
+\end{enumerate}
+\end{pasos}
+
+\begin{example}
+Trazar la curva $f(x)=\dfrac{x^2}{x^2-4}$.
+\end{example}
+
+\begin{myproof}
+\textbf{Paso 1.}
+\emph{Dominio:} $\R\setminus\{-2,2\}$.
+\emph{Simetría:} $f(-x)=f(x)$, la función es par.
+\emph{Intersecciones:} $f(0)=0$; $f(x)=0\Rightarrow x=0$.
+\emph{Asíntotas verticales:} $x=\pm 2$ (denominador se anula).
+\emph{Asíntota horizontal:} $\lim_{x\to\infty}f(x)=1$, i.e., $y=1$.
+
+\textbf{Paso 2.}
+\[
+f'(x) = \frac{2x(x^2-4)-x^2\cdot 2x}{(x^2-4)^2}
+= \frac{-8x}{(x^2-4)^2}.
+\]
+$f'(x)=0\Rightarrow x=0$; $f''(0)=?$ Signo de $f'$: para $x<0$,
+$f'>0$ (creciente); para $x>0$, $f'<0$ (decreciente). Máximo local
+en $x=0$: $f(0)=0$.
+
+\textbf{Paso 3.}
+\[
+f''(x) = \frac{-8(x^2-4)^2-(-8x)\cdot 2(x^2-4)\cdot 2x}{(x^2-4)^4}
+= \frac{8(3x^2+4)}{(x^2-4)^3}.
+\]
+$f''(x)=0$ no tiene solución real ($3x^2+4>0$ siempre). En
+$(-2,2)$: denominador $<0$ y numerador $>0$, luego $f''<0$ (cóncava
+hacia abajo). Fuera de $(-2,2)$: $f''>0$ (cóncava hacia arriba).
+No hay puntos de inflexión.
+
+\textbf{Resumen:}
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{c c c c}
+\toprule
+Intervalo & $f'$ & $f''$ & Comportamiento \\
+\midrule
+$(-\infty,-2)$ & $+$ & $+$ & creciente, cóncava $\uparrow$ \\
+$(-2,0)$ & $+$ & $-$ & creciente, cóncava $\downarrow$ \\
+$(0,2)$ & $-$ & $-$ & decreciente, cóncava $\downarrow$ \\
+$(2,+\infty)$ & $-$ & $+$ & decreciente, cóncava $\uparrow$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+$\square$
+\end{myproof}
+
+%%==========================================================
+\section{Optimización}
+%%==========================================================
+
+\subsection{Metodología}
+
+La optimización consiste en encontrar el valor de una variable que
+maximiza o minimiza una cantidad de interés (la \textbf{función
+objetivo}), sujeto a ciertas restricciones geométricas o físicas.
+
+\begin{pasos}
+\begin{enumerate}
+    \item \textbf{Diagrama y variables.} Asignar símbolos a todas las
+    cantidades relevantes.
+    \item \textbf{Función objetivo.} Escribir la fórmula de la cantidad
+    $Q$ que se desea optimizar.
+    \item \textbf{Reducción a una variable.} Usar las restricciones para
+    expresar $Q$ en función de una sola variable y determinar su dominio.
+    \item \textbf{Localizar puntos críticos.} Resolver $\frac{dQ}{dx}=0$
+    y verificar singularidades o extremos del dominio.
+    \item \textbf{Clasificar el extremo.} Usar el criterio de la primera
+    o segunda derivada para confirmar que se trata de un máximo o mínimo.
+\end{enumerate}
+\end{pasos}
+
+\subsection{Ejemplos}
+
+\begin{example}
+De una hoja rectangular de $24\times 9$ cm se recortan cuadrados iguales
+en las esquinas y se doblan los bordes para formar una caja abierta.
+¿Qué tamaño deben tener los cuadrados para maximizar el volumen?
+\end{example}
+
+\begin{myproof}
+Sea $x$ el lado del cuadrado recortado. La caja resultante tiene
+dimensiones $(24-2x)\times(9-2x)\times x$, con $0<x<\frac{9}{2}$.
+Función objetivo:
+\[
+V(x) = x(24-2x)(9-2x) = x(216-48x-18x+4x^2) = 4x^3-66x^2+216x.
+\]
+\[
+V'(x) = 12x^2-132x+216 = 12(x^2-11x+18) = 12(x-2)(x-9).
+\]
+En $(0,\frac{9}{2})$, el único punto crítico es $x=2$.
+
+$V''(x)=24x-132$; $V''(2)=48-132=-84<0$: máximo local. Verificando
+en los extremos: $V(0)=V(4.5)=0$. Concluimos que el volumen máximo
+se obtiene con $x=2$ cm, y vale $V(2)=2(20)(5)=200$ cm$^3$. $\square$
+\end{myproof}
+
+\begin{example}
+Se desea construir una lata cilíndrica (sin tapa) de volumen $V_0$.
+Encontrar las dimensiones que minimizan el área de material.
+\end{example}
+
+\begin{myproof}
+Variables: radio $r$, altura $h$. Restricción: $\pi r^2 h = V_0$,
+de donde $h=\frac{V_0}{\pi r^2}$.
+
+Función objetivo (área lateral + base):
+\[
+A = \pi r^2 + 2\pi r h = \pi r^2 + \frac{2V_0}{r}.
+\]
+\[
+A'(r) = 2\pi r - \frac{2V_0}{r^2} = 0
+\implies r^3 = \frac{V_0}{\pi}
+\implies r = \left(\frac{V_0}{\pi}\right)^{1/3}.
+\]
+Con ese valor, $h = \frac{V_0}{\pi r^2} = r$, es decir, la altura
+iguala el radio. $A''(r)=2\pi+\frac{4V_0}{r^3}>0$: mínimo. $\square$
+\end{myproof}
+
+\begin{example}
+Una tubería debe ir desde el punto $A$ en una orilla de un río de
+$3$ km de ancho hasta el punto $B$, situado $8$ km aguas abajo en la
+orilla opuesta. Tender tubería por el río cuesta \$200/km y por tierra
+\$100/km. ¿Dónde debe cruzar el río para minimizar el costo total?
+\end{example}
+
+\begin{myproof}
+Sea $x$ la distancia (en km) medida desde el punto directamente opuesto
+a $A$ hasta el punto de cruce $C$ en la orilla de $B$, con
+$0\leq x\leq 8$.
+
+Longitud por el río: $\sqrt{9+x^2}$ km. Longitud por tierra: $(8-x)$ km.
+\[
+C(x) = 200\sqrt{9+x^2}+100(8-x).
+\]
+\[
+C'(x) = \frac{200x}{\sqrt{9+x^2}}-100 = 0
+\implies \frac{2x}{\sqrt{9+x^2}} = 1
+\implies 4x^2 = 9+x^2
+\implies x = \sqrt{3} \approx 1.73 \text{ km}.
+\]
+$C''(x)=\frac{200\cdot 9}{(9+x^2)^{3/2}}>0$: mínimo.
+El costo mínimo es $C(\sqrt{3})=200\sqrt{12}+100(8-\sqrt{3})
+\approx 1292.8$ USD. $\square$
+\end{myproof}
+
+%%==========================================================
+\section{El Teorema del Valor Medio}
+%%==========================================================
+
+\begin{theorem}[Rolle]
+Si $f$ es continua en $[a,b]$, derivable en $(a,b)$ y $f(a)=f(b)$,
+entonces existe al menos un $c\in(a,b)$ tal que $f'(c)=0$.
+\end{theorem}
+
+\begin{theorem}[Valor Medio --- Lagrange]
+Si $f$ es continua en $[a,b]$ y derivable en $(a,b)$, existe al menos
+un $c\in(a,b)$ tal que
+\[
+f'(c) = \frac{f(b)-f(a)}{b-a}.
+\]
+\end{theorem}
+
+Geométricamente, el Teorema del Valor Medio (TVM) garantiza que existe
+un punto en la curva donde la recta tangente es \textbf{paralela} a la
+recta secante que une los extremos del intervalo. Físicamente: si un
+automóvil recorre $120$ km en $2$ horas (velocidad promedio $60$ km/h),
+entonces en algún instante exacto su velocidad instantánea fue
+exactamente $60$ km/h.
+
+\begin{myproof}[Demostración del TVM a partir de Rolle]
+Definir la función auxiliar
+\[
+h(x) = f(x) - f(a) - \frac{f(b)-f(a)}{b-a}(x-a).
+\]
+$h$ es continua en $[a,b]$ y derivable en $(a,b)$. Además
+$h(a)=h(b)=0$. Por el Teorema de Rolle, existe $c\in(a,b)$ con
+$h'(c)=0$, es decir:
+\[
+f'(c) - \frac{f(b)-f(a)}{b-a} = 0
+\implies f'(c) = \frac{f(b)-f(a)}{b-a}. \qquad\square
+\]
+\end{myproof}
+
+\begin{coro}
+Si $F'(x)=G'(x)$ para todo $x\in(a,b)$, entonces $F(x)=G(x)+C$
+para alguna constante $C$.
+\end{coro}
+
+\begin{rem}
+Este corolario es el fundamento de la unicidad de la antiderivada:
+dos funciones con la misma derivada solo pueden diferir en una
+constante aditiva. Es la base teórica del ``$+C$'' en la integración
+indefinida.
+\end{rem}
+
+\begin{example}
+Verificar el TVM para $f(x) = x^3-x$ en $[0,2]$ y encontrar $c$.
+\end{example}
+
+\begin{myproof}
+$f(0)=0$, $f(2)=6$. Pendiente de la secante: $\frac{6-0}{2-0}=3$.
+$f'(x)=3x^2-1=3 \Rightarrow x^2=\frac{4}{3}
+\Rightarrow c=\frac{2}{\sqrt{3}}\approx 1.155\in(0,2)$. $\square$
+\end{myproof}
+
+%%==========================================================
+\section{Regla de L'Hôpital}
+%%==========================================================
+
+\begin{theorem}[L'Hôpital]
+Supóngase que $\lim_{x\to a}f(x)=0$ y $\lim_{x\to a}g(x)=0$ (forma
+$\frac{0}{0}$), o que ambos tienden a $\pm\infty$ (forma
+$\frac{\infty}{\infty}$). Si $f$ y $g$ son derivables cerca de $a$,
+$g'(x)\neq 0$ allí, y el límite $\lim_{x\to a}\frac{f'(x)}{g'(x)}$
+existe (o es $\pm\infty$), entonces
+\[
+\lim_{x\to a}\frac{f(x)}{g(x)} = \lim_{x\to a}\frac{f'(x)}{g'(x)}.
+\]
+El resultado también vale para $a=\pm\infty$ y para límites laterales.
+\end{theorem}
+
+\begin{rem}
+La regla de L'Hôpital se aplica derivando \textbf{numerador y denominador
+por separado}, no usando la regla del cociente. Dos errores frecuentes:
+(1) aplicarla cuando el límite \emph{no} es una forma indeterminada,
+obteniendo un resultado incorrecto; (2) aplicarla indefinidamente sin
+verificar que el nuevo límite sea más simple. Si después de una
+aplicación el límite sigue siendo indeterminado, puede aplicarse de
+nuevo; si oscila, la regla no es útil y se debe buscar otro método.
+\end{rem}
+
+\subsection{Reducción de otras formas indeterminadas}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{l l l}
+\toprule
+\textbf{Forma} & \textbf{Transformación} & \textbf{Reduce a} \\
+\midrule
+$0\cdot\infty$ & $f\cdot g = \dfrac{f}{1/g}$ o $\dfrac{g}{1/f}$
+    & $0/0$ o $\infty/\infty$ \\
+$\infty-\infty$ & denominador común o racionalización
+    & $0/0$ \\
+$0^0,\;1^\infty,\;\infty^0$ & $y=f^g \Rightarrow \ln y = g\ln f$,
+    luego hallar $\lim\ln y = L$
+    & $0/0$ o $\infty/\infty$; resultado: $e^L$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Ejemplos}
+
+\begin{example}
+Calcular $\displaystyle\lim_{x\to 0}\frac{e^x-1-x}{x^2}$.
+\end{example}
+
+\begin{myproof}
+Forma $\frac{0}{0}$. Primera aplicación:
+$\lim_{x\to 0}\frac{e^x-1}{2x}$, sigue $\frac{0}{0}$.
+Segunda aplicación:
+$\lim_{x\to 0}\frac{e^x}{2} = \frac{1}{2}$. $\square$
+\end{myproof}
+
+\begin{example}
+Calcular $\displaystyle\lim_{x\to\infty}x\,e^{-x}$.
+\end{example}
+
+\begin{myproof}
+Forma $\infty\cdot 0$. Reescribimos: $\lim_{x\to\infty}\frac{x}{e^x}$,
+forma $\frac{\infty}{\infty}$. L'Hôpital: $\lim_{x\to\infty}\frac{1}{e^x}=0$.
+$\square$
+\end{myproof}
+
+\begin{example}
+Calcular $\displaystyle\lim_{x\to 0^+}x^x$.
+\end{example}
+
+\begin{myproof}
+Forma $0^0$. Sea $y=x^x$; $\ln y = x\ln x$.
+$\lim_{x\to 0^+}x\ln x = \lim_{x\to 0^+}\frac{\ln x}{1/x}$,
+forma $\frac{-\infty}{\infty}$. L'Hôpital:
+$\lim_{x\to 0^+}\frac{1/x}{-1/x^2}=\lim_{x\to 0^+}(-x)=0$.
+Por tanto $\lim\ln y=0$, así que $\lim x^x = e^0=1$. $\square$
+\end{myproof}
+
+\begin{example}
+Calcular $\displaystyle\lim_{x\to\infty}\left(1+\frac{a}{x}\right)^x$.
+\end{example}
+
+\begin{myproof}
+Forma $1^\infty$. $\ln y = x\ln\!\left(1+\frac{a}{x}\right)$.
+\[
+\lim_{x\to\infty} x\ln\!\left(1+\frac{a}{x}\right)
+= \lim_{x\to\infty}\frac{\ln(1+a/x)}{1/x}
+\;\overset{\text{L'H}}{=}\;
+\lim_{x\to\infty}\frac{\frac{-a/x^2}{1+a/x}}{-1/x^2}
+= \lim_{x\to\infty}\frac{a}{1+a/x} = a.
+\]
+Por tanto $\lim y = e^a$. Para $a=1$ se recupera el límite notable
+$\lim_{x\to\infty}(1+1/x)^x=e$. $\square$
+\end{myproof}
+
+%%==========================================================
+\section{Métodos Numéricos para la Localización de Raíces}
+%%==========================================================
+
+\subsection{Bisección}
+
+El método de bisección es una aplicación directa del Teorema de Bolzano.
+Si $f$ es continua en $[a,b]$ y $f(a)\cdot f(b)<0$, se evalúa el punto
+medio $m=\frac{a+b}{2}$. Según el signo de $f(m)$, la raíz queda en
+$[a,m]$ o en $[m,b]$; se actualiza el intervalo y se repite. Tras $n$
+iteraciones, el error de aproximación es menor que $\frac{b-a}{2^n}$.
+
+\begin{rem}
+La bisección es el método más \textbf{robusto}: converge siempre que
+se cumplan las hipótesis, independientemente de la forma de $f$.
+Su desventaja es la velocidad: la convergencia es \textbf{lineal}
+(el número de cifras decimales correctas crece linealmente con el
+número de iteraciones). Para obtener $k$ cifras adicionales se
+necesitan aproximadamente $3.32\,k$ iteraciones.
+\end{rem}
+
+\subsection{Método de Newton-Raphson}
+
+Dada una aproximación inicial $x_0$, el método de Newton construye la
+recta tangente a la curva en $(x_n, f(x_n))$ y toma su intersección
+con el eje $x$ como nueva aproximación:
+\[
+x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}.
+\]
+
+\begin{myproof}[Derivación geométrica]
+La recta tangente en $(x_n, f(x_n))$ tiene ecuación
+$y - f(x_n) = f'(x_n)(x-x_n)$. Igualando $y=0$:
+$x = x_n - \frac{f(x_n)}{f'(x_n)}$, que es $x_{n+1}$. $\square$
+\end{myproof}
+
+La convergencia de Newton-Raphson es \textbf{cuadrática}: el número de
+cifras decimales correctas se \emph{duplica} en cada iteración cuando
+se está suficientemente cerca de la raíz. Sin embargo, el método puede
+fallar si $f'(x_n)=0$ (división por cero), si la aproximación inicial
+está lejos de la raíz, o si $f$ tiene oscilaciones que alejan las
+iteraciones de la solución.
+
+\begin{example}
+Aproximar $\sqrt{2}$ usando Newton-Raphson con $x_0=1$.
+\end{example}
+
+\begin{myproof}
+$f(x)=x^2-2$, $f'(x)=2x$. La iteración es
+$x_{n+1}=x_n-\frac{x_n^2-2}{2x_n}=\frac{x_n+2/x_n}{2}$.
+\begin{center}
+\begin{tabular}{c c}
+\toprule
+$n$ & $x_n$ \\
+\midrule
+$0$ & $1$ \\
+$1$ & $1.5$ \\
+$2$ & $1.41\overline{6}$ \\
+$3$ & $1.41421356\ldots$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+Tres iteraciones dan $8$ cifras correctas. $\square$
+\end{myproof}
+
+\subsection{Método de punto fijo}
+
+Se reescribe $f(x)=0$ como $x=g(x)$ y se itera $x_{n+1}=g(x_n)$.
+
+\begin{theorem}[Convergencia del punto fijo]
+Si $|g'(x)|<1$ en un intervalo que contiene a la raíz, las iteraciones
+convergen a ella desde cualquier punto inicial en ese intervalo.
+\end{theorem}
+
+\begin{rem}
+La condición $|g'(x)|<1$ se denomina \textbf{condición de contracción}:
+la función $g$ ``acerca'' los puntos entre sí en cada iteración. Si
+$|g'(x)|>1$, las iteraciones se alejan de la raíz. La elección de la
+reescritura $x=g(x)$ no es única, y una misma ecuación puede tener
+reescrituras convergentes y divergentes; elegir la adecuada es parte
+del arte del método.
+\end{rem}
+
+\subsection{Comparación de métodos}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{l l l l}
+\toprule
+\textbf{Método} & \textbf{Convergencia} & \textbf{Robustez}
+& \textbf{Requisitos} \\
+\midrule
+Bisección & Lineal & Alta & $f$ continua, cambio de signo \\
+Newton-Raphson & Cuadrática & Media & $f$ derivable, buen $x_0$ \\
+Punto fijo & Lineal/variable & Baja & $|g'|<1$ cerca de la raíz \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+%%==========================================================
+\section{Problemas Propuestos}
+%%==========================================================
+
+
+
+\begin{prob}
+El radio de un círculo crece a razón de $3$ cm/s. ¿A qué tasa crece
+el área cuando el radio mide $10$ cm?
+\end{prob}
+
+\begin{prob}
+Dos autos parten desde una intersección: uno hacia el norte a $60$
+km/h y otro hacia el este a $80$ km/h. ¿A qué velocidad se separan
+$2$ horas después?
+\end{prob}
+
+\begin{prob}
+Un globo esférico pierde aire a razón de $2$ cm$^3$/min. ¿A qué tasa
+decrece el radio cuando $r=5$ cm?
+\end{prob}
+
+\begin{prob}
+Una cámara está situada $500$ m de la base de un cohete en lanzamiento
+vertical. ¿A qué velocidad angular debe girar la cámara para seguir
+al cohete cuando este ha alcanzado $500$ m de altura y sube a $300$ m/s?
+\end{prob}
+
+\begin{prob}
+Un depósito tiene forma de tronco de cono: radio inferior $2$ m,
+radio superior $4$ m y altura $6$ m. Se llena con agua a $3$ m$^3$/min.
+¿A qué velocidad sube el nivel cuando $h=3$ m?
+\end{prob}
+
+
+
+\begin{prob}
+Encuentre los extremos absolutos de cada función en el intervalo dado:
+\begin{enumerate}[a)]
+    \item $f(x)=x^3-3x+1$ en $[-2,2]$
+    \item $f(x)=\dfrac{x}{x^2+1}$ en $[-2,2]$
+    \item $f(x)=\sin x + \cos x$ en $[0,2\pi]$
+    \item $f(x)=x^{2/3}(x-1)$ en $[-1,2]$
+\end{enumerate}
+\end{prob}
+
+\begin{prob}
+Determine si la función $f(x)=x^{2/3}$ tiene extremos locales en
+$x=0$. Justifique aunque la segunda derivada no exista en ese punto.
+\end{prob}
+
+
+
+\begin{prob}
+Para cada función, determine los intervalos de crecimiento, los
+intervalos de concavidad y los puntos de inflexión:
+\begin{multicols}{2}
+\begin{enumerate}
+    \item $f(x)=x^4-6x^2$
+    \item $f(x)=xe^{-x}$
+    \item $f(x)=\ln(x^2+1)$
+    \item $f(x)=x-\arctan x$
+    \item $f(x)=x^{2/3}(6-x)$
+    \item $f(x)=e^{-x^2}$
+\end{enumerate}
+\end{multicols}
+\end{prob}
+
+
+
+\begin{prob}
+Trace la curva usando el método de 4 pasos:
+\begin{enumerate}[a)]
+    \item $f(x)=\dfrac{x^2-1}{x^2+1}$
+    \item $f(x)=x+\dfrac{1}{x}$
+    \item $f(x)=x\ln x$ en $(0,+\infty)$
+    \item $f(x)=e^x-x$
+    \item $f(x)=\dfrac{x^2+2x+4}{x+2}$
+\end{enumerate}
+\end{prob}
+
+
+\begin{prob}
+Encuentre las dimensiones del rectángulo de área máxima que puede
+inscribirse en un círculo de radio $r$.
+\end{prob}
+
+\begin{prob}
+Una lata cilíndrica con tapa debe contener $500$ cm$^3$. Encuentre
+las dimensiones que minimizan el área total de material.
+\end{prob}
+
+\begin{prob}
+Un terreno rectangular debe cercarse con $200$ m de malla. Un lado
+del rectángulo es un muro existente (no necesita cerca). ¿Qué
+dimensiones maximizan el área del terreno?
+\end{prob}
+
+\begin{prob}
+Se desea construir un canal de sección trapezoidal con tres lados de
+material (la cuarta parte es la tierra). El perímetro de metal es
+$\ell$ metros. Determine los ángulos y dimensiones que maximizan el
+caudal (máxima área transversal).
+\end{prob}
+
+\begin{prob}
+Un rectángulo está inscrito bajo la parábola $y=8-x^2$ con su base
+sobre el eje $x$. Encuentre las dimensiones del rectángulo de área
+máxima.
+\end{prob}
+
+\begin{prob}
+El costo de construir la pared frontal de un edificio es el triple del
+costo de las demás paredes. El edificio debe tener volumen $V_0$ m$^3$
+y planta rectangular. Encuentre la relación entre largo y ancho de la
+base que minimiza el costo total.
+\end{prob}
+
+
+\begin{prob}
+Verifique el TVM para $f(x)=\sqrt{x}$ en $[1,4]$ y encuentre el valor
+de $c$ garantizado por el teorema.
+\end{prob}
+
+\begin{prob}
+Use el TVM para demostrar que $|\sin a - \sin b| \leq |a-b|$ para
+todo $a,b\in\R$.
+\end{prob}
+
+\begin{prob}
+Demuestre que la ecuación $x^5+10x+3=0$ tiene exactamente una raíz
+real. \textit{Sugerencia:} use el TVI para existencia y el TVM para
+unicidad.
+\end{prob}
+
+\begin{prob}
+Un automóvil sale de un semáforo en rojo y, $60$ s después, pasa
+frente a un radar que registra $80$ km/h. Demuestre que en algún
+momento entre los $0$ y $60$ s su aceleración fue positiva.
+\end{prob}
+
+
+
+\begin{prob}
+Calcule cada límite:
+\begin{multicols}{2}
+\begin{enumerate}
+    \item $\displaystyle\lim_{x\to 0}\frac{x-\sin x}{x^3}$
+    \item $\displaystyle\lim_{x\to\infty}\frac{\ln x}{x^p}$, $p>0$
+    \item $\displaystyle\lim_{x\to 0^+}x^p\ln x$, $p>0$
+    \item $\displaystyle\lim_{x\to\infty}x^{1/x}$
+    \item $\displaystyle\lim_{x\to 0}\frac{e^x-e^{-x}-2x}{x-\sin x}$
+    \item $\displaystyle\lim_{x\to 0}(\csc x - \cot x)$
+    \item $\displaystyle\lim_{x\to 0}\left(\frac{1}{x^2}-\cot^2 x\right)$
+    \item $\displaystyle\lim_{x\to 1}\frac{x^x-x}{1-x+\ln x}$
+    \item $\displaystyle\lim_{x\to\infty}\left(\sqrt{x^2+x}-x\right)$
+    \item $\displaystyle\lim_{x\to 0^+}(\tan x)^{\sin x}$
+\end{enumerate}
+\end{multicols}
+\end{prob}
+
+\begin{prob}
+Deduzca si cada afirmación es verdadera o falsa y justifique:
+\begin{enumerate}[a)]
+    \item Si $\lim_{x\to a}\frac{f(x)}{g(x)}$ es de la forma $\frac{0}{0}$,
+    entonces $\lim_{x\to a}\frac{f(x)}{g(x)} = \lim_{x\to a}
+    \frac{f'(x)}{g'(x)}$.
+    \item Si $\lim_{x\to a}f(x)=2$ y $\lim_{x\to a}g(x)=0$, puede
+    aplicarse L'Hôpital a $\lim_{x\to a}\frac{f(x)}{g(x)}$.
+    \item Si L'Hôpital se aplica y el nuevo límite no existe, entonces
+    el límite original tampoco existe.
+\end{enumerate}
+\end{prob}
+
+
+
+\begin{prob}
+Use la bisección para aproximar la raíz de $f(x)=x^3+x-1$ en $[0,1]$
+con un error menor que $0.01$. Construya una tabla de iteraciones.
+\end{prob}
+
+\begin{prob}
+Aplique el método de Newton-Raphson a $f(x)=\cos x - x$ con $x_0=1$
+hasta obtener $5$ cifras decimales correctas. Verifique la convergencia
+cuadrática comparando los errores en cada iteración.
+\end{prob}
+
+\begin{prob}
+La ecuación $x = \cos x$ puede reescribirse como punto fijo de dos
+maneras distintas: $g_1(x)=\cos x$ y $g_2(x)=\arccos x$. Para cada
+una, analice si la condición $|g'|<1$ se cumple cerca de la raíz
+$c\approx 0.739$ y prediga cuál convergerá.
+\end{prob}
+
+\begin{prob}
+Demuestre que la iteración de Newton-Raphson aplicada a $f(x)=x^2-a$
+(con $a>0$) produce la sucesión $x_{n+1}=\frac{1}{2}\left(x_n+
+\frac{a}{x_n}\right)$, conocida como \textbf{algoritmo babilónico}
+de la raíz cuadrada. Verifique que converge cuadráticamente.
+\end{prob}
+
+
+
+\begin{prob}
+Determine el valor de verdad de las siguientes afirmaciones.
+Justifique su respuesta.
+\begin{enumerate}
+    \item La función $f(x)=\dfrac{x+1}{x-1}$ en el intervalo
+    $[-2,-1]$ satisface las hipótesis del Teorema del Valor
+    Medio.
+
+    \item La recta tangente a $f(x)=5-x^2+e^{2x-2}$ es
+    horizontal en el punto $(1,5)$.
+
+    \item Si $f$ es derivable y $f(-1)=f(1)$, entonces existe
+    $c\in(-1,1)$ tal que $f'(c)=0$.
+
+    \item Si $f$ es creciente y positiva en $I$, entonces
+    $g(x)=\dfrac{1}{f(x)}$ es positiva y decreciente en $I$.
+
+    \item El valor de
+    $\displaystyle\lim_{x\to\infty}\frac{\sqrt{1+x^2}}{x+1}$
+    es $1$.
+
+    \item El dominio de $f(x)=\sqrt{2x+5}+\ln(6-8x)$ es
+    $\left[-\dfrac{5}{2},\,\dfrac{3}{4}\right)$.
+\end{enumerate}
+\end{prob}
+
+\begin{prob}
+Considere la gráfica de la función $f$ dada a continuación:
+\begin{center}
+\begin{tikzpicture}[scale=2.3]
+    \draw[->] (0,0) -- (2.6,0);
+    \draw[->] (0,0) -- (0,2);
+    \draw[thick,domain=0:2.4,smooth,samples=40]
+        plot(\x,{0.5+sin((\x-0.6)*180/1.6)/2
+             +0.7*\x-0.15*\x^2});
+    \draw (2,1.4) circle (0.06);
+    \filldraw (2,0.65) circle (0.04);
+    \node[below] at (2,-0.07) {\textbf{2}};
+    \node[left] at (0,1.5) {\small $\frac{3}{2}$};
+    \node[left] at (0,1.0) {\small $1$};
+    \node[left] at (0,0.5) {\small $\frac{1}{2}$};
+    \node[left] at (0,0.05) {$0$};
+\end{tikzpicture}
+\end{center}
+De lo anterior se puede afirmar que:
+\begin{itemize}
+    \item[a.] $\displaystyle\lim_{x\to 2}f(x)$ no existe.
+    \item[b.] $\displaystyle\lim_{x\to 2}f(x)=f(2)$.
+    \item[c.] $f(2)$ no existe.
+    \item[d.] Ninguna de las opciones es verdadera.
+\end{itemize}
+\end{prob}
+
+\begin{prob}
+Teniendo en cuenta que
+\[
+\lim_{x\to 2}(5x^2-3x+5)=27,\quad
+\lim_{x\to 2}(x^2-x-2)=0,\quad
+\lim_{x\to 2}(x^3+2x^2-5x+7)=23,
+\]
+encuentre los valores de:
+\begin{enumerate}
+    \item $\displaystyle\lim_{x\to 2}
+    \frac{5x^2-3x+5}{x^2-x-2}$
+    \item $\displaystyle\lim_{x\to 2}
+    \frac{x^3+2x^2-5x+7}{x^2-x-2}$
+\end{enumerate}
+\end{prob}
+
+\begin{prob}
+Observe que en el límite
+\[
+\lim_{x\to 0}\frac{\sqrt{12-x^2}-\sqrt{12}}{x^2}
+\]
+el numerador es cero en $x=0$. ¿Cuál de las condiciones de
+la regla de L'Hôpital no se satisface? Determine el valor
+del límite y justifique.
+\end{prob}
+
+\begin{prob}
+¿Puede existir una función diferenciable $f$ tal que
+$f(2)=1$ y $f'(2)=0$, pero
+$\displaystyle\lim_{x\to 2}\frac{f(x)}{x-2}=1$?
+Justifique.
+\end{prob}
+
+\begin{prob}
+Conteste las siguientes interrogantes con justificación
+completa:
+\begin{enumerate}
+    \item[(a)] ¿Existe un número real que sea exactamente
+    su doble más uno?
+    \item[(b)] ¿Cuál es el valor de
+    $\displaystyle\lim_{x\to 1}\frac{x+7}{x-1}$?
+    \item[(c)] La función $f(x)=x^2-1$ no satisface las
+    hipótesis del TVM en $[-1,8]$; sin embargo, ¿es posible
+    encontrar $c\in(-1,8)$ tal que $f'(c)=10$? Explique.
+    \item[(d)] Usando trigonometría, ¿por qué para
+    $x\neq\pi/2$ es posible encontrar $c\in(-1,8)$ tal que
+    $\cos x=1$? ¿Contradice esto el TVM?
+\end{enumerate}
+\end{prob}
+
+\begin{prob}
+Considere la función $f(x)=x^3-6x^2+9x$. Responda cada
+apartado:
+\begin{enumerate}
+    \item[(a)] Calcule los interceptos con los ejes.
+    \item[(b)] Encuentre los números críticos de $f$.
+    \item[(c)] Establezca y clasifique los extremos locales
+    de $f$, si existen.
+    \item[(d)] Determine los intervalos de crecimiento y
+    decrecimiento.
+    \item[(e)] Determine los intervalos de concavidad hacia
+    arriba y hacia abajo.
+    \item[(f)] Encuentre los puntos de inflexión.
+    \item[(g)] Realice un bosquejo de la gráfica usando la
+    información anterior.
+\end{enumerate}
+\end{prob}
+
+\begin{prob}
+Considere la función $y=f(x)=x^4+x+1$. Responda:
+\begin{enumerate}
+    \item[(a)] Halle los interceptos con los ejes y determine
+    las simetrías.
+    \item[(b)] Halle todas las asíntotas, si existen.
+    \item[(c)] Determine los intervalos de crecimiento y los
+    extremos locales.
+    \item[(d)] Encuentre los intervalos de concavidad y los
+    puntos de inflexión.
+    \item[(e)] Con la información anterior, trace la gráfica.
+\end{enumerate}
+\end{prob}
+
+\begin{prob}
+La gráfica a continuación es la de la derivada $f'$ de una
+cierta función $f$. A partir de ella determine los intervalos
+de crecimiento y decrecimiento de $f$, sus extremos locales,
+sus intervalos de concavidad y realice un bosquejo de $f$.
+\begin{center}
+\begin{tikzpicture}[scale=0.8]
+  \draw[step=1cm,gray!40,very thin] (-4,-2) grid (3,8);
+  \draw[thick,->] (-4,0) -- (3.5,0) node[right] {$x$};
+  \draw[thick,->] (0,-2) -- (0,8.5) node[above] {$y$};
+  \node[above right] at (1,6) {$y=f'(x)$};
+  \draw[thick,smooth]
+    plot coordinates {(-4,0)(-3,2)(-2,7)(-1,4)
+                      (0,0)(1,-1.5)(2,2.5)(3,8)};
+  \foreach \x in {-4,-3,...,3}
+    \draw (\x,0.1)--(\x,-0.1) node[below]{\x};
+  \foreach \y in {-2,0,...,8}
+    \draw (0.1,\y)--(-0.1,\y) node[left]{\y};
+\end{tikzpicture}
+\end{center}
+\end{prob}
+
+\begin{prob}
+Traza la gráfica de una función que cumpla con todas las
+siguientes condiciones simultáneamente:
+\begin{itemize}
+    \item $f$ es par.
+    \item $f(0)=1$.
+    \item $f(x)>0$ para $x\in(1,2)\cup(3,5)$.
+    \item $f(x)<0$ para $x\in(2,3)\cup(5,+\infty)$.
+    \item $\displaystyle\lim_{x\to\infty}f(x)=2$.
+\end{itemize}
+\end{prob}
+
+\begin{prob}
+Se desea construir una pecera sin tapa, con base cuadrada y
+paredes verticales, de capacidad $2000$ m$^3$. La base es
+de concreto y las paredes de vidrio. El costo por m$^2$ del
+vidrio es el doble del del concreto. ¿Cuál debe ser la
+altura de la pecera para que el costo total sea mínimo?
+\end{prob}
+
+\begin{prob}
+En una hoja rectangular se deben dejar márgenes laterales
+de $2$ pulgadas y márgenes superior e inferior de $1$
+pulgada. El área impresa es de $32$ pulg$^2$. Encuentre
+las dimensiones de la hoja que minimicen el área total
+del papel.
+\end{prob}
+
+\begin{prob}
+El equipo Alianza Petrolera juega en un estadio con
+capacidad de $12\,000$ espectadores. Con entrada a
+\$$20\,000$ la asistencia promedio es de $4\,000$. Un
+estudio estima que si el precio baja \$$2\,000$, la
+asistencia sube $1\,000$ espectadores. ¿Qué precio de
+entrada y cuántos espectadores maximizan los ingresos
+por boletería?
+\end{prob}
+
+\begin{prob}
+Se proyecta construir un jardín en forma de sector circular
+de radio $r$ y ángulo central $\theta$. El área del jardín
+ha de ser $10\,000$ m$^2$. Encuentre los valores de $r$ y
+$\theta$ que minimizan el perímetro del jardín.
+\end{prob}
+
+\begin{prob}
+Un hombre debe escapar desde un punto $A$ en la costa hasta
+un helicóptero en el punto $B$, ubicado a $13$ km de la
+costa. El hombre puede trotar a $15$ km/h y nadar a $3$
+km/h. El helicóptero solo puede esperar $3$ horas.
+\begin{enumerate}
+    \item[(a)] ¿A qué distancia de $A$ debe abandonar la
+    tierra para minimizar el tiempo total de viaje?
+    \item[(b)] ¿Llegará al helicóptero antes de que deba
+    partir?
+\end{enumerate}
+\begin{center}
+\begin{tikzpicture}[scale=0.85]
+\fill[cyan!10] (0,0) rectangle (10,6);
+\draw[very thick,brown!60!black] (0,0) -- (10,0)
+  node[right] {Costa};
+\filldraw[red] (0,0) circle (3pt)
+  node[below=3pt] {$A$};
+\filldraw[black] (3,0) circle (2pt)
+  node[below=3pt] {$C$};
+\filldraw[blue] (7,5.2) circle (3pt)
+  node[above=2pt] {$B$};
+\draw[dashed,gray] (7,5.2) -- (7,0);
+\draw[<->,thick] (7.3,0) -- (7.3,5.2)
+  node[midway,right] {$13$ km};
+\draw[->,very thick,red!70!black] (0,0) -- (2.8,0)
+  node[midway,above] {Trotar};
+\draw[->,very thick,blue!70!black] (3,0) -- (6.8,5)
+  node[midway,above left] {Nadar};
+\draw[<->,thick] (0,-0.6) -- (3,-0.6)
+  node[midway,below] {$x$};
+\draw (7,0) -- (7,0.3) -- (6.7,0.3);
+\end{tikzpicture}
+\end{center}
+\end{prob}
+
+\begin{prob}
+Ana desea sentarse en el cine frente a una pantalla de $2$ m
+de alto ubicada a $1$ m del piso. Las filas están sobre la
+recta $y=0$. ¿A qué distancia $x$ de la pantalla debe
+sentarse para maximizar el ángulo de visión $\theta$?
+
+\textit{Sugerencia:} Use la identidad
+$\tan(\alpha+\theta)=
+\dfrac{\tan\alpha+\tan\theta}{1-\tan\alpha\tan\theta}$.
+\begin{center}
+\begin{tikzpicture}[scale=1.1]
+\fill[gray!20] (-0.5,-0.2) rectangle (5.5,0);
+\draw[very thick] (-0.5,0) -- (5.5,0)
+  node[right] {$y=0$};
+\draw[thick,->] (-0.3,-0.3) -- (-0.3,3.8) node[above] {$y$};
+\fill[white] (4.4,1) rectangle (4.6,3);
+\draw[very thick,blue!50!black] (4.5,1) -- (4.5,3);
+\node[right,blue!50!black] at (4.65,2) {Pantalla};
+\draw[<->,thick,red!70!black] (5,1)--(5,3)
+  node[midway,right] {$2$ m};
+\draw[<->,thick,red!70!black] (5,0)--(5,1)
+  node[midway,right] {$1$ m};
+\draw[dashed,gray] (-0.3,1)--(4.4,1);
+\draw[dashed,gray] (-0.3,3)--(4.4,3);
+\node[left] at (-0.3,1) {$1$};
+\node[left] at (-0.3,3) {$3$};
+\filldraw[purple!70!black] (1.5,0) circle (3pt)
+  node[below=3pt] {Ana};
+\draw[thick,purple!50,->] (1.5,0)--(4.4,1);
+\draw[thick,purple!50,->] (1.5,0)--(4.4,3);
+\draw[thick,green!50!black]
+  (1.5,0)++(0.5,0) arc(0:21:0.5);
+\draw[thick,green!50!black]
+  (1.5,0)++(0.5,0) arc(0:46.4:0.5);
+\node[green!50!black] at (2.15,0.38) {$\theta$};
+\node[orange!70!black] at (2.05,0.15) {$\alpha$};
+\draw[<->,thick] (1.5,-0.5)--(4.5,-0.5)
+  node[midway,below] {$x$};
+\end{tikzpicture}
+\end{center}
+\end{prob}
+
+\begin{prob}
+Una embarcación parte al mediodía hacia el Norte a $30$
+km/h. Una hora después, una segunda embarcación parte del
+mismo lugar hacia el Este a $40$ km/h. ¿Con qué rapidez
+se separan las dos embarcaciones a la $1{:}30$ pm?
+\end{prob}
+
+\begin{prob}
+Un tanque lleno de agua tiene forma de cilindro recto de
+bases con diámetro $2$ m y altura $6$ m. Dentro hay un
+sólido cónico invertido cuya base coincide con la tapa
+superior del cilindro. Si el agua sale a razón de
+$\dfrac{1}{3}$ m$^3$/hr, ¿con qué rapidez desciende el
+nivel del agua cuando la profundidad es de $3$ m?
+\end{prob}
+
+\begin{prob}
+Un vaso de papel tiene forma cónica de altura $12$ cm y
+radio $4$ cm en la parte superior. Si el agua se vierte a
+razón de $3$ cm$^3$/s, ¿qué tan rápido sube el nivel
+cuando la profundidad es de $6$ cm?
+\end{prob}
+
+\begin{prob}
+Un recipiente cónico invertido tiene altura $16$ cm y radio
+$5$ cm en la parte superior. Un líquido escurre por las
+paredes a una tasa proporcional al área lateral en contacto
+con el líquido. Si se vierte líquido a razón de $2$
+cm$^3$/min, el nivel desciende a $0.3$ cm/min cuando la
+altura del líquido es $10$ cm. ¿Con qué rapidez debe
+verterse líquido para mantener una altura constante de
+$10$ cm? \[\text{Área lateral del cono: }A=\pi r\ell.\]
+\end{prob}
+
+\begin{prob}
+De un tanque hemisférico de radio $10$ m entra agua a razón
+de $1$ m$^3$/min y sale por un orificio inferior a razón de
+$\dfrac{1}{5}$ m$^3$/min. ¿A qué razón cambia la altura $h$
+del agua cuando la profundidad es de $5$ m?
+\end{prob}
+
+\begin{prob}
+Un cono de radio $r$ cm y altura $h$ cm es introducido punta
+abajo a $2$ cm/s dentro de un cilindro de radio $R$ cm que
+contiene agua a altura $h_2$. ¿Qué tan rápido sube el nivel
+del agua en el instante en que el cono queda totalmente
+sumergido?
+\end{prob}
+
+\begin{prob}
+Un cuadrado está inscrito en un círculo de radio $r$.
+¿A qué razón cambia el área del cuadrado cuando el radio
+del círculo crece a razón de $4$ pulg/min?
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+  \draw[thick] (0,0) circle (2);
+  \draw[thick] (-1.414,-1.414) rectangle (1.414,1.414);
+  \draw[<->,dashed] (0,0)--(2,0) node[midway,above]{$r$};
+\end{tikzpicture}
+\end{center}
+\end{prob}
+
+\begin{prob}
+Un triángulo está inscrito en un círculo de radio $r=1$.
+La base crece a razón de $3$ pulg/min. ¿A qué razón cambia
+la altura cuando la altura mide $8$ pulg y la base mide
+$4$ pulg?
+\end{prob}
+
+\begin{prob}
+Un niño va en bicicleta por un camino recto a $15$ pies/s.
+A $45$ pies del camino hay un globo que asciende
+verticalmente a $5$ pies/s. Si el niño pasa bajo el globo,
+¿qué tan rápido incrementa la distancia entre ellos $3$
+segundos después?
+\end{prob}
+
+\begin{prob}
+El dispositivo de la figura consiste en dos ruedas
+conectadas por una cadena y un brazo excéntrico desde $O$
+hasta la cadena. $AO$ y $OP$ son perpendiculares. La rueda
+$A$ da una vuelta por segundo e inicialmente $T$ está entre
+$O$ y $P$. ¿Con qué rapidez cambia $x$ cuando $\theta=60°$?
+\begin{center}
+\begin{tikzpicture}[scale=1.3]
+\draw[thick] (-3,0) circle (1);
+\filldraw (-3,0) circle (1.5pt) node[left=4pt]{$A$};
+\draw[thick] (3,0) circle (2);
+\filldraw (3,0) circle (1.5pt) node[right=4pt]{$O$};
+\draw[thick] (-2.134,0.743)--(1.268,1.486);
+\draw[thick] (-2.134,-0.743)--(1.268,-1.486);
+\filldraw (3,4.5) circle (2pt) node[above]{$P$};
+\draw[very thick] (2,4.8)--(4,4.8);
+\fill[pattern=north east lines] (2,4.8) rectangle (4,5);
+\draw[thick] (3,4.5)--(3,0);
+\node[right] at (3.15,2.2){$OP$};
+\filldraw (1.268,1) circle (2pt) node[left]{$T$};
+\draw[thin,dashed] (3,0)--(1.268,1);
+\draw[thick,blue!60] (3,4.5)--(1.268,1)--(3,0)--cycle;
+\draw[thick,red] (3,0.7) arc(90:150:0.7);
+\node[red] at (2.3,1.3){$60^\circ$};
+\draw (3,0.2)--(2.8,0.2)--(2.8,0);
+\end{tikzpicture}
+\end{center}
+\end{prob}
+
+\begin{prob}
+Dos escaladores están asegurados con cables a un único
+punto $P$. ¿Puede elegirse la posición de $P$ para minimizar
+la longitud total del cable? Plantee y resuelva el problema
+de optimización.
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+  \draw[thick] (-1,0)--(6,0);
+  \filldraw (1,0) circle (2pt) node[below]{Escalador $A$};
+  \filldraw (5,0) circle (2pt) node[below]{Escalador $B$};
+  \filldraw (3,4) circle (2pt) node[above]{$P$};
+  \draw[thick] (1,0)--(3,4);
+  \draw[thick] (5,0)--(3,4);
+  \draw[dashed] (3,4)--(3,0) node[below]{pie};
+\end{tikzpicture}
+\end{center}
+\end{prob}

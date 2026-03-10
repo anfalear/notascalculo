@@ -1,33 +1,1041 @@
-\chapter{Derivadas}
+\chapter{La Derivada}
 
+%%==========================================================
+\section{Los Dos Problemas Fundacionales}
+%%==========================================================
 
-\section{La Regla de L'Hôpital}
+El cálculo diferencial nació de la convergencia histórica de dos problemas
+aparentemente distintos: uno geométrico y uno mecánico. Ambos conducen,
+de manera sorprendente, a la misma operación matemática.
 
-Una de las situaciones más frecuentes al calcular límites es la aparición de \emph{formas indeterminadas}: expresiones del tipo $\frac{0}{0}$ o $\frac{\infty}{\infty}$ que por sí solas no determinan el valor del límite. Para resolverlas, existe una herramienta poderosa debida a Guillaume de l'Hôpital ---aunque frecuentemente atribuida a Johann Bernoulli, quien la descubrió y la comunicó a l'Hôpital---: el criterio que lleva su nombre.
+\textbf{El problema de la recta tangente.} Euclides definía la tangente
+a un círculo como la recta que lo toca en un solo punto, definición que
+resulta insuficiente para curvas generales. Para la parábola $y=x^2$, por
+ejemplo, la recta $x=0$ la toca en un solo punto pero no es tangente en
+ningún sentido útil, mientras que $y=-1$ no la toca pero se comporta
+``tangencialmente'' cerca del vértice. La definición correcta es dinámica:
+la \textbf{recta tangente en $P$} es la posición límite de las rectas
+secantes que pasan por $P$ y un punto móvil $Q$ cuando $Q\to P$ a lo largo
+de la curva. La pendiente de esta recta límite es precisamente la derivada.
 
-\begin{theorem}[Regla de L'Hôpital]
-Sea $\lim_{x \to c} f(x) = 0$ y $\lim_{x \to c} g(x) = 0$ (o ambos infinitos). Si $f$ y $g$ son diferenciables en un entorno de $c$ (salvo posiblemente en $c$), $g'(x) \neq 0$ en ese entorno, y $\lim_{x \to c} \frac{f'(x)}{g'(x)}$ existe, entonces
+\textbf{El problema de la velocidad instantánea.} Si un objeto ocupa la
+posición $s(t)$ en el instante $t$, su \textbf{velocidad promedio} en el
+intervalo $[t, t+h]$ es el cociente
 \[
-\lim_{x \to c} \frac{f(x)}{g(x)} = \lim_{x \to c} \frac{f'(x)}{g'(x)}.
+v_{\text{prom}} = \frac{s(t+h)-s(t)}{h}.
 \]
-\end{theorem}
+La \textbf{velocidad instantánea} en $t$ es el límite de este cociente
+cuando $h\to 0$, es decir, la derivada $s'(t)$.
+
+\begin{rem}
+La escuela rusa de análisis, representada por Piskunov, subraya que la
+derivada no debe concebirse como un objeto puramente formal, sino como la
+\textbf{tasa de variación instantánea} de una cantidad respecto a otra.
+Este punto de vista físico ---la derivada como razón entre incrementos
+infinitamente pequeños $\Delta y / \Delta x$--- complementa la definición
+abstracta de límite y facilita la intuición en problemas aplicados.
+\end{rem}
+
+%%==========================================================
+\section{Definición Formal de la Derivada}
+%%==========================================================
+
+\begin{definition}
+Sea $f$ una función definida en un intervalo abierto que contiene a $c$.
+La \textbf{derivada de $f$ en $c$} se define como
+\[
+f'(c) = \lim_{h \to 0} \frac{f(c+h)-f(c)}{h},
+\]
+siempre que este límite exista y sea finito. Si existe, se dice que $f$ es
+\textbf{derivable} (o \textbf{diferenciable}) en $c$.
+\end{definition}
+
+Una forma equivalente, obtenida mediante la sustitución $x = c+h$
+(de modo que $h\to 0$ equivale a $x\to c$), es:
+\[
+f'(c) = \lim_{x \to c} \frac{f(x)-f(c)}{x-c}.
+\]
+Esta segunda presentación resalta la naturaleza de la derivada como la
+pendiente de la recta secante cuando un punto se desplaza hacia el otro
+a lo largo de la curva. Ambas son expresiones del mismo concepto y se
+usan indistintamente según conveniencia.
+
+Cuando la derivada existe en \emph{todo} punto de un intervalo, se obtiene
+una nueva función $f'$ llamada la \textbf{función derivada} de $f$:
+\[
+f'(x) = \lim_{h \to 0} \frac{f(x+h)-f(x)}{h}.
+\]
 
 \begin{example}
-Calcular $\lim_{x \to 0} \frac{x - \sin x}{x^3}$.
+Calcular $f'(x)$ para $f(x) = x^2$ usando la definición.
 \end{example}
 
 \begin{myproof}
-La sustitución directa produce $\frac{0}{0}$, una forma indeterminada. Aplicamos la regla de L'Hôpital repetidamente:
 \[
-\lim_{x \to 0} \frac{x - \sin x}{x^3} = \lim_{x \to 0} \frac{1 - \cos x}{3x^2} = \lim_{x \to 0} \frac{\sin x}{6x} = \frac{1}{6} \lim_{x \to 0} \frac{\sin x}{x} = \frac{1}{6} \cdot 1 = \frac{1}{6}.
+f'(x) = \lim_{h\to 0}\frac{(x+h)^2 - x^2}{h}
+= \lim_{h\to 0}\frac{x^2+2xh+h^2-x^2}{h}
+= \lim_{h\to 0}\frac{2xh+h^2}{h}
+= \lim_{h\to 0}(2x+h) = 2x. \qquad\square
+\]
+\end{myproof}
+
+\begin{example}
+Calcular $f'(x)$ para $f(x) = \sqrt{x}$ usando la definición.
+\end{example}
+
+\begin{myproof}
+Racionalizamos el numerador multiplicando por el conjugado:
+\[
+f'(x) = \lim_{h\to 0}\frac{\sqrt{x+h}-\sqrt{x}}{h}
+= \lim_{h\to 0}\frac{(\sqrt{x+h}-\sqrt{x})(\sqrt{x+h}+\sqrt{x})}
+  {h(\sqrt{x+h}+\sqrt{x})}
+= \lim_{h\to 0}\frac{h}{h(\sqrt{x+h}+\sqrt{x})}
+= \frac{1}{2\sqrt{x}}. \qquad\square
+\]
+\end{myproof}
+
+%%==========================================================
+\section{Notaciones de la Derivada}
+%%==========================================================
+
+El cálculo heredó notaciones de distintas escuelas históricas, cada una
+con ventajas propias:
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{l l l}
+\toprule
+\textbf{Notación} & \textbf{Símbolo} & \textbf{Énfasis} \\
+\midrule
+Lagrange (prima) & $f'(x)$, $y'$
+    & La derivada como nueva función \\
+Leibniz (fracción) & $\dfrac{dy}{dx}$, $\dfrac{df}{dx}$
+    & Cociente de diferenciales; útil en regla de la cadena \\
+Newton (punto) & $\dot{y}$
+    & Derivada respecto al tiempo (mecánica) \\
+Operador & $D_x f$, $Df$
+    & La derivación como operador lineal \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Para $y = x^3$, las cuatro notaciones expresan el mismo resultado:
+\[
+f'(x) = 3x^2, \qquad \frac{dy}{dx} = 3x^2, \qquad
+\dot{y} = 3x^2, \qquad D_x(x^3) = 3x^2.
+\]
+
+\begin{rem}
+La notación de Leibniz $\frac{dy}{dx}$ no es una fracción en el sentido
+usual, pero se comporta como tal en la regla de la cadena y en los cambios
+de variable. Esta ambigüedad es pedagógicamente útil pero requiere cuidado:
+$\frac{dy}{dx}$ es el \emph{límite} de un cociente, no el cociente de dos
+cantidades independientes. Será en el estudio de las diferenciales donde
+$dy$ y $dx$ adquirirán significado autónomo preciso.
+\end{rem}
+
+%%==========================================================
+\section{Derivabilidad y Continuidad}
+%%==========================================================
+
+\begin{theorem}
+Si $f$ es derivable en $c$, entonces $f$ es continua en $c$.
+\end{theorem}
+
+\begin{myproof}
+Debemos mostrar que $\lim_{x\to c}f(x) = f(c)$, es decir, que
+$\lim_{x\to c}[f(x)-f(c)] = 0$. Para $x\neq c$:
+\[
+f(x)-f(c) = \frac{f(x)-f(c)}{x-c}\cdot(x-c).
+\]
+Tomando el límite cuando $x\to c$ y usando que el primer factor converge
+a $f'(c)$ y el segundo a $0$:
+\[
+\lim_{x\to c}[f(x)-f(c)] = f'(c)\cdot 0 = 0. \qquad\square
 \]
 \end{myproof}
 
 \begin{rem}
-La regla de L'Hôpital es aplicable también a formas indeterminadas del tipo $0 \cdot \infty$, $\infty - \infty$, $0^0$, $1^\infty$ e $\infty^0$, tras una reescritura algebraica adecuada que las reduzca a la forma $\frac{0}{0}$ o $\frac{\infty}{\infty}$.
+\textbf{El recíproco es falso}: la continuidad no implica derivabilidad.
+La función $f(x)=|x|$ es continua en $x=0$, pero no derivable allí. En
+efecto:
+\[
+\lim_{h\to 0^+}\frac{|h|-0}{h} = 1, \qquad
+\lim_{h\to 0^-}\frac{|h|-0}{h} = -1.
+\]
+Como los límites laterales difieren, la derivada no existe en $x=0$.
+Geométricamente, los puntos de no derivabilidad corresponden a
+\textbf{esquinas} (como en $|x|$), \textbf{cúspides} (como en
+$x^{2/3}$) o puntos con tangente vertical (como en $x^{1/3}$).
 \end{rem}
 
-\section{Ejercicios}
+\begin{wow}
+La función de Weierstrass (1872) fue el primer ejemplo de una función
+continua en \emph{todos} los puntos pero derivable en \emph{ninguno}.
+Se define como $W(x) = \sum_{n=0}^{\infty} a^n \cos(b^n\pi x)$, con
+$0<a<1$ y $b$ un entero impar tal que $ab > 1+\frac{3\pi}{2}$. Este
+descubrimiento sacudió la intuición geométrica de la época y subrayó que
+la continuidad y la derivabilidad son conceptos genuinamente distintos.
+\end{wow}
+
+%%==========================================================
+\section{Reglas Algebraicas de Derivación}
+%%==========================================================
+
+Las siguientes reglas se demuestran a partir de la definición de límite
+y permiten derivar cualquier función elemental de manera mecánica.
+
+\begin{theorem}[Reglas fundamentales de derivación]
+Sean $f$ y $g$ funciones derivables, $k,n\in\R$:
+\begin{enumerate}
+    \item \textbf{Constante:} $D_x(k) = 0$.
+    \item \textbf{Potencia:} $D_x(x^n) = nx^{n-1}$.
+    \item \textbf{Múltiplo escalar:} $D_x[kf(x)] = k\,f'(x)$.
+    \item \textbf{Suma / Resta:} $D_x[f(x)\pm g(x)] = f'(x)\pm g'(x)$.
+    \item \textbf{Producto:} $D_x[f(x)g(x)] = f(x)g'(x)+g(x)f'(x)$.
+    \item \textbf{Cociente:} $D_x\!\left[\dfrac{f(x)}{g(x)}\right]
+    = \dfrac{g(x)f'(x)-f(x)g'(x)}{[g(x)]^2}$, \; con $g(x)\neq 0$.
+\end{enumerate}
+\end{theorem}
+
+\begin{rem}
+Las reglas 3 y 4 expresan que $D_x$ es un \textbf{operador lineal}:
+$D_x(af+bg) = aD_x f + bD_x g$ para constantes $a,b$. Esta propiedad
+implica que la derivada de cualquier polinomio se obtiene
+derivando término a término, lo cual justifica el procedimiento estándar
+de sustitución directa de la regla de la potencia.
+\end{rem}
+
+\subsection{Demostración de la regla del producto}
+
+\begin{myproof}
+Sea $F(x) = f(x)g(x)$. Sumando y restando $f(x)g(x+h)$ en el numerador
+del cociente incremental:
+\begin{align*}
+F'(x) &= \lim_{h\to 0}\frac{f(x+h)g(x+h)-f(x)g(x)}{h} \\
+&= \lim_{h\to 0}\frac{f(x+h)g(x+h)-f(x)g(x+h)+f(x)g(x+h)-f(x)g(x)}{h}\\
+&= \lim_{h\to 0}\left[g(x+h)\cdot\frac{f(x+h)-f(x)}{h}
+   + f(x)\cdot\frac{g(x+h)-g(x)}{h}\right].
+\end{align*}
+Como $g$ es derivable y por tanto continua, $\lim_{h\to 0}g(x+h)=g(x)$.
+Tomando el límite:
+\[
+F'(x) = g(x)f'(x) + f(x)g'(x). \qquad\square
+\]
+\end{myproof}
+
+\subsection{Ejemplos}
+
+\begin{example}
+Derivar $f(x) = (3x^2-5x+1)(2x^3+x)$.
+\end{example}
+
+\begin{myproof}
+Por la regla del producto con $u=3x^2-5x+1$, $v=2x^3+x$:
+\[
+f'(x) = (6x-5)(2x^3+x)+(3x^2-5x+1)(6x^2+1).
+\]
+Expandiendo y simplificando:
+\[
+f'(x) = 12x^4+6x^2-10x^3-5x+18x^4+3x^2-30x^3-5x+6x^2+1
+= 30x^4-40x^3+15x^2-10x+1. \qquad\square
+\]
+\end{myproof}
+
+\begin{example}
+Derivar $f(x) = \dfrac{x^2+3}{x^3-1}$.
+\end{example}
+
+\begin{myproof}
+Por la regla del cociente:
+\[
+f'(x) = \frac{(x^3-1)(2x)-(x^2+3)(3x^2)}{(x^3-1)^2}
+= \frac{2x^4-2x-3x^4-9x^2}{(x^3-1)^2}
+= \frac{-x^4-9x^2-2x}{(x^3-1)^2}. \qquad\square
+\]
+\end{myproof}
+
+%%==========================================================
+\section{Derivadas de las Funciones Trigonométricas}
+%%==========================================================
+
+\begin{theorem}[Derivadas de las funciones trigonométricas básicas]
+\[
+D_x(\sin x) = \cos x, \qquad D_x(\cos x) = -\sin x,
+\]
+\[
+D_x(\tan x) = \sec^2 x, \qquad D_x(\cot x) = -\csc^2 x,
+\]
+\[
+D_x(\sec x) = \sec x\tan x, \qquad D_x(\csc x) = -\csc x\cot x.
+\]
+\end{theorem}
+
+\subsection{Demostración de $D_x(\sin x) = \cos x$}
+
+\begin{myproof}
+Por definición y la identidad de suma del seno:
+\begin{align*}
+D_x(\sin x)
+&= \lim_{h\to 0}\frac{\sin(x+h)-\sin x}{h}
+= \lim_{h\to 0}\frac{\sin x\cos h+\cos x\sin h-\sin x}{h}\\
+&= \lim_{h\to 0}\left[\sin x\cdot\frac{\cos h-1}{h}
+  +\cos x\cdot\frac{\sin h}{h}\right].
+\end{align*}
+Aplicando los límites trigonométricas fundamentales
+$\lim_{h\to 0}\frac{\sin h}{h}=1$ y $\lim_{h\to 0}\frac{\cos h-1}{h}=0$:
+\[
+D_x(\sin x) = \sin x\cdot 0 + \cos x\cdot 1 = \cos x. \qquad\square
+\]
+\end{myproof}
+
+\begin{rem}
+Las cuatro derivadas restantes se obtienen combinando los dos resultados
+básicos con las identidades trigonométricas y la regla del cociente.
+Por ejemplo, $D_x(\tan x) = D_x\!\left(\frac{\sin x}{\cos x}\right)
+= \frac{\cos^2 x+\sin^2 x}{\cos^2 x} = \sec^2 x$.
+\end{rem}
+
+%%==========================================================
+\section{Regla de la Cadena}
+%%==========================================================
+
+\begin{theorem}[Regla de la cadena]
+Si $g$ es derivable en $x$ y $f$ es derivable en $g(x)$, entonces la
+función compuesta $h = f\circ g$ es derivable en $x$ y
+\[
+h'(x) = f'(g(x))\cdot g'(x).
+\]
+En notación de Leibniz, si $y=f(u)$ y $u=g(x)$:
+\[
+\frac{dy}{dx} = \frac{dy}{du}\cdot\frac{du}{dx}.
+\]
+\end{theorem}
+
+\begin{myproof}
+Definimos la función auxiliar
+\[
+\phi(k) =
+\begin{cases}
+\dfrac{f(g(x)+k)-f(g(x))}{k} & k\neq 0, \\[6pt]
+f'(g(x)) & k = 0,
+\end{cases}
+\]
+de modo que $\phi$ es continua en $k=0$ y satisface $f(g(x)+k)-f(g(x))
+= \phi(k)\cdot k$ para todo $k$. Sea $k = g(x+h)-g(x)$; entonces:
+\[
+\frac{h(x+h)-h(x)}{h} = \frac{f(g(x+h))-f(g(x))}{h}
+= \phi(k)\cdot\frac{g(x+h)-g(x)}{h}.
+\]
+Cuando $h\to 0$, $k\to 0$ (por continuidad de $g$), así que
+$\phi(k)\to\phi(0)=f'(g(x))$ y el segundo factor tiende a $g'(x)$:
+\[
+h'(x) = f'(g(x))\cdot g'(x). \qquad\square
+\]
+\end{myproof}
+
+\begin{rem}
+La demostración directa con el cociente $\frac{\Delta y}{\Delta x}=
+\frac{\Delta y}{\Delta u}\cdot\frac{\Delta u}{\Delta x}$ es tentadora pero
+incorrecta: $\Delta u$ puede ser cero para valores arbitrariamente pequeños
+de $\Delta x$, generando una división por cero. La función auxiliar $\phi$
+corrige exactamente este problema al redefinir el cociente cuando el
+denominador se anula.
+\end{rem}
+
+\begin{pasos}
+Protocolo para aplicar la regla de la cadena:
+\begin{enumerate}
+    \item Identificar la función \textbf{exterior} $f$ y la función
+    \textbf{interior} $g$, de modo que el integrando sea $f(g(x))$.
+    \item Derivar $f$ \emph{sin tocar} el argumento interno: $f'(g(x))$.
+    \item Multiplicar por la derivada de la función interior: $g'(x)$.
+\end{enumerate}
+\end{pasos}
+
+\subsection{Ejemplos}
+
+\begin{example}
+Derivar $y = \sin(x^2)$.
+\end{example}
+
+\begin{myproof}
+$f(u)=\sin u$, $g(x)=x^2$; $f'(u)=\cos u$, $g'(x)=2x$:
+\[
+y' = \cos(x^2)\cdot 2x = 2x\cos(x^2). \qquad\square
+\]
+\end{myproof}
+
+\begin{example}
+Derivar $y = (3x^2+5)^{10}$.
+\end{example}
+
+\begin{myproof}
+$f(u)=u^{10}$, $g(x)=3x^2+5$:
+\[
+y' = 10(3x^2+5)^9\cdot 6x = 60x(3x^2+5)^9. \qquad\square
+\]
+\end{myproof}
+
+\begin{example}
+Derivar $y = \sqrt{\sin(e^x)}$.
+\end{example}
+
+\begin{myproof}
+Tres capas: $f(u)=\sqrt{u}$, $g(v)=\sin v$, $p(x)=e^x$:
+\[
+y' = \frac{1}{2\sqrt{\sin(e^x)}}\cdot\cos(e^x)\cdot e^x
+= \frac{e^x\cos(e^x)}{2\sqrt{\sin(e^x)}}. \qquad\square
+\]
+\end{myproof}
+
+\begin{example}
+Derivar $y = \tan^3(5x)$.
+\end{example}
+
+\begin{myproof}
+Reescribimos $y = [\tan(5x)]^3$; tres capas: potencia, tangente, lineal:
+\[
+y' = 3\tan^2(5x)\cdot\sec^2(5x)\cdot 5 = 15\tan^2(5x)\sec^2(5x).
+\qquad\square
+\]
+\end{myproof}
+
+%%==========================================================
+\section{Derivadas de Funciones Exponenciales y Logarítmicas}
+%%==========================================================
+
+\begin{theorem}[Derivadas exponenciales y logarítmicas]
+\[
+D_x(e^x) = e^x, \qquad D_x(a^x) = a^x\ln a \quad (a>0,\, a\neq 1),
+\]
+\[
+D_x(\ln x) = \frac{1}{x} \;(x>0), \qquad
+D_x(\ln|x|) = \frac{1}{x} \;(x\neq 0),
+\]
+\[
+D_x(\log_a x) = \frac{1}{x\ln a}.
+\]
+\end{theorem}
+
+\begin{myproof}[Demostración de $D_x(\ln x) = \frac{1}{x}$]
+\begin{align*}
+D_x(\ln x) &= \lim_{h\to 0}\frac{\ln(x+h)-\ln x}{h}
+= \lim_{h\to 0}\frac{1}{h}\ln\!\left(\frac{x+h}{x}\right)
+= \lim_{h\to 0}\frac{1}{x}\cdot\frac{x}{h}\ln\!\left(1+\frac{h}{x}\right).
+\end{align*}
+Sea $t = \frac{h}{x}$; cuando $h\to 0$, $t\to 0$:
+\[
+= \frac{1}{x}\lim_{t\to 0}\frac{\ln(1+t)}{t} = \frac{1}{x}\cdot 1
+= \frac{1}{x},
+\]
+donde se usó la equivalencia $\ln(1+t)\sim t$ demostrada en el capítulo
+anterior. $\square$
+\end{myproof}
+
+\subsection{Ejemplos}
+
+\begin{example}
+Derivar $f(x) = e^{3x^2-1}$.
+\end{example}
+
+\begin{myproof}
+Regla de la cadena con $u=3x^2-1$:
+$f'(x) = e^{3x^2-1}\cdot 6x = 6xe^{3x^2-1}$. $\square$
+\end{myproof}
+
+\begin{example}
+Derivar $f(x) = \ln(\sin x)$.
+\end{example}
+
+\begin{myproof}
+$f'(x) = \dfrac{1}{\sin x}\cdot\cos x = \cot x$. $\square$
+\end{myproof}
+
+\begin{example}
+Derivar $f(x) = x^2\cdot 3^x$.
+\end{example}
+
+\begin{myproof}
+Regla del producto:
+$f'(x) = 2x\cdot 3^x + x^2\cdot 3^x\ln 3 = x\,3^x(2+x\ln 3)$. $\square$
+\end{myproof}
+
+%%==========================================================
+\section{Derivadas de las Funciones Trigonométricas Inversas}
+%%==========================================================
+
+\begin{theorem}[Derivadas de las inversas trigonométricas]
+\[
+D_x(\arcsin x) = \frac{1}{\sqrt{1-x^2}}, \qquad
+D_x(\arccos x) = \frac{-1}{\sqrt{1-x^2}},
+\]
+\[
+D_x(\arctan x) = \frac{1}{1+x^2}, \qquad
+D_x(\text{arccot}\, x) = \frac{-1}{1+x^2},
+\]
+\[
+D_x(\text{arcsec}\, x) = \frac{1}{|x|\sqrt{x^2-1}}, \qquad
+D_x(\text{arccsc}\, x) = \frac{-1}{|x|\sqrt{x^2-1}}.
+\]
+\end{theorem}
+
+\begin{myproof}[Demostración de $D_x(\arcsin x) = \frac{1}{\sqrt{1-x^2}}$]
+Sea $y=\arcsin x$, de modo que $\sin y = x$ con $y\in\left[-\frac{\pi}{2},
+\frac{\pi}{2}\right]$. Derivando implícitamente respecto a $x$:
+\[
+\cos y\cdot\frac{dy}{dx} = 1 \implies \frac{dy}{dx} = \frac{1}{\cos y}.
+\]
+En el intervalo considerado, $\cos y \geq 0$, por lo que
+$\cos y = \sqrt{1-\sin^2 y} = \sqrt{1-x^2}$. Sustituyendo:
+\[
+D_x(\arcsin x) = \frac{1}{\sqrt{1-x^2}}. \qquad\square
+\]
+\end{myproof}
+
+\begin{rem}
+El mismo argumento ---derivar la relación $f(y)=x$ implícitamente y
+usar una identidad pitagórica para eliminar $y$--- produce todas las
+demás fórmulas de la tabla. Nótese que $D_x(\arcsin x) = -D_x(\arccos x)$
+y $D_x(\arctan x) = -D_x(\text{arccot}\,x)$: este hecho refleja la
+identidad $\arcsin x + \arccos x = \frac{\pi}{2}$, cuya derivada es cero.
+\end{rem}
+
+\subsection{Ejemplos}
+
+\begin{example}
+Derivar $f(x)=\arctan(x^2)$.
+\end{example}
+
+\begin{myproof}
+Regla de la cadena:
+$f'(x) = \dfrac{1}{1+(x^2)^2}\cdot 2x = \dfrac{2x}{1+x^4}$. $\square$
+\end{myproof}
+
+\begin{example}
+Derivar $f(x) = x\arcsin x + \sqrt{1-x^2}$.
+\end{example}
+
+\begin{myproof}
+\[
+f'(x) = \arcsin x + \frac{x}{\sqrt{1-x^2}} + \frac{-2x}{2\sqrt{1-x^2}}
+= \arcsin x + \frac{x}{\sqrt{1-x^2}} - \frac{x}{\sqrt{1-x^2}}
+= \arcsin x. \qquad\square
+\]
+\end{myproof}
+
+%%==========================================================
+\section{Derivadas de Orden Superior}
+%%==========================================================
+
+Si $f'$ es a su vez derivable, se puede calcular su derivada, llamada
+la \textbf{segunda derivada} de $f$. El proceso puede repetirse
+indefinidamente.
+
+\begin{definition}
+La \textbf{derivada de orden $n$} de $f$, denotada $f^{(n)}(x)$,
+$\dfrac{d^n y}{dx^n}$ o $D^n_x f$, se define inductivamente como la
+derivada de $f^{(n-1)}$.
+\end{definition}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{l l l}
+\toprule
+\textbf{Orden} & \textbf{Notación prima} & \textbf{Notación Leibniz} \\
+\midrule
+Primera & $f'(x)$ & $\dfrac{dy}{dx}$ \\
+Segunda & $f''(x)$ & $\dfrac{d^2y}{dx^2}$ \\
+Tercera & $f'''(x)$ & $\dfrac{d^3y}{dx^3}$ \\
+$n$-ésima & $f^{(n)}(x)$ & $\dfrac{d^ny}{dx^n}$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{Interpretación física.} Si $s(t)$ es la posición de un objeto,
+entonces $s'(t)$ es la \textbf{velocidad}, $s''(t)$ es la
+\textbf{aceleración} y $s'''(t)$ es el \textbf{tirón} (\emph{jerk}),
+que mide la variación de la aceleración y es relevante en ingeniería de
+confort (diseño de vehículos y elevadores).
+
+\begin{example}
+Sea $y = x^4 - 3x^3 + 2x$. Calcular todas las derivadas no nulas.
+\end{example}
+
+\begin{myproof}
+\[
+y' = 4x^3-9x^2+2, \quad y'' = 12x^2-18x, \quad y''' = 24x-18,
+\quad y^{(4)} = 24, \quad y^{(5)} = 0. \qquad\square
+\]
+\end{myproof}
+
+\begin{example}
+Demostrar que $y = e^x\sin x$ satisface $y''-2y'+2y=0$.
+\end{example}
+
+\begin{myproof}
+$y' = e^x\sin x + e^x\cos x = e^x(\sin x+\cos x)$.
+$y'' = e^x(\sin x+\cos x)+e^x(\cos x-\sin x) = 2e^x\cos x$.
+Sustituyendo:
+\[
+y''-2y'+2y = 2e^x\cos x - 2e^x(\sin x+\cos x) + 2e^x\sin x
+= 2e^x\cos x - 2e^x\cos x = 0. \qquad\square
+\]
+\end{myproof}
+
+\begin{theorem}[Fórmula de Leibniz para el producto]
+Si $f$ y $g$ tienen derivadas hasta el orden $n$:
+\[
+(fg)^{(n)} = \sum_{k=0}^{n}\binom{n}{k}f^{(k)}g^{(n-k)}.
+\]
+\end{theorem}
+
+\begin{rem}
+La fórmula de Leibniz es formalmente análoga al binomio de Newton, con
+potencias reemplazadas por derivadas. Es especialmente útil cuando uno de
+los factores es un polinomio, pues sus derivadas se anulan a partir de
+cierto orden.
+\end{rem}
+
+%%==========================================================
+\section{Diferenciación Implícita}
+%%==========================================================
+
+Cuando una relación entre $x$ e $y$ está dada por $F(x,y)=0$ y despejar
+$y$ explícitamente es difícil o imposible, se utiliza la
+\textbf{diferenciación implícita}: se derivan ambos lados respecto a $x$,
+aplicando la regla de la cadena cada vez que se derive un término en $y$
+(pues $y$ es una función de $x$).
+
+\begin{pasos}
+\begin{enumerate}
+    \item Derivar ambos lados de $F(x,y)=0$ respecto a $x$.
+    \item Aplicar la regla de la cadena a cada término en $y$:
+    $D_x[f(y)] = f'(y)\cdot\frac{dy}{dx}$.
+    \item Agrupar todos los términos con $\frac{dy}{dx}$ en un lado.
+    \item Factorizar $\frac{dy}{dx}$ y despejar.
+\end{enumerate}
+\end{pasos}
+
+\begin{example}
+Encontrar $\dfrac{dy}{dx}$ para $x^3+y^3 = 6xy$ (folio de Descartes).
+\end{example}
+
+\begin{myproof}
+Derivando implícitamente:
+\[
+3x^2 + 3y^2\frac{dy}{dx} = 6y + 6x\frac{dy}{dx}.
+\]
+Agrupando y factorizando:
+\[
+(3y^2-6x)\frac{dy}{dx} = 6y-3x^2
+\implies
+\frac{dy}{dx} = \frac{6y-3x^2}{3y^2-6x} = \frac{2y-x^2}{y^2-2x}.
+\qquad\square
+\]
+\end{myproof}
+
+\begin{example}
+Encontrar $\dfrac{dy}{dx}$ para $y^4+xy = 1$.
+\end{example}
+
+\begin{myproof}
+\[
+4y^3\frac{dy}{dx} + y + x\frac{dy}{dx} = 0
+\implies
+(4y^3+x)\frac{dy}{dx} = -y
+\implies
+\frac{dy}{dx} = \frac{-y}{4y^3+x}. \qquad\square
+\]
+\end{myproof}
+
+\begin{example}
+Encontrar la ecuación de la recta tangente a $x^2+y^2=25$ en el punto
+$(3,4)$.
+\end{example}
+
+\begin{myproof}
+Derivando: $2x+2y\frac{dy}{dx}=0$, así que $\frac{dy}{dx}=-\frac{x}{y}$.
+En $(3,4)$: pendiente $= -\frac{3}{4}$. Ecuación de la tangente:
+\[
+y-4 = -\frac{3}{4}(x-3) \implies 3x+4y = 25. \qquad\square
+\]
+\end{myproof}
+
+%%==========================================================
+\section{Diferenciación Logarítmica}
+%%==========================================================
+
+La \textbf{diferenciación logarítmica} combina las propiedades del
+logaritmo con la diferenciación implícita. Es la técnica más eficiente
+para derivar funciones que son productos o cocientes de muchos factores,
+o funciones de la forma $[f(x)]^{g(x)}$ (potencias con exponente variable).
+
+\begin{pasos}
+\begin{enumerate}
+    \item Tomar logaritmo natural en ambos lados: $\ln y = \ln f(x)$.
+    \item Simplificar con las propiedades del logaritmo
+    ($\ln(AB)=\ln A+\ln B$, $\ln(A/B)=\ln A-\ln B$, $\ln(A^k)=k\ln A$).
+    \item Derivar implícitamente: $\dfrac{y'}{y} = [\text{lado derecho}]'$.
+    \item Despejar $y' = y\cdot[\text{lado derecho}]'$ y sustituir $y$.
+\end{enumerate}
+\end{pasos}
+
+\begin{example}
+Derivar $y = \dfrac{x^{3/4}\sqrt{x^2+1}}{(3x+2)^5}$.
+\end{example}
+
+\begin{myproof}
+Tomamos $\ln y = \frac{3}{4}\ln x + \frac{1}{2}\ln(x^2+1) - 5\ln(3x+2)$.
+Derivando implícitamente:
+\[
+\frac{y'}{y} = \frac{3}{4x} + \frac{x}{x^2+1} - \frac{15}{3x+2}.
+\]
+Multiplicando por $y$:
+\[
+y' = \frac{x^{3/4}\sqrt{x^2+1}}{(3x+2)^5}
+\left(\frac{3}{4x} + \frac{x}{x^2+1} - \frac{15}{3x+2}\right).
+\qquad\square
+\]
+\end{myproof}
+
+\begin{example}
+Derivar $y = x^x$ \quad $(x>0)$.
+\end{example}
+
+\begin{myproof}
+$\ln y = x\ln x$. Derivando implícitamente:
+\[
+\frac{y'}{y} = \ln x + x\cdot\frac{1}{x} = \ln x+1.
+\]
+\[
+y' = x^x(\ln x+1). \qquad\square
+\]
+\end{myproof}
+
+\begin{example}
+Derivar $y = (\sin x)^{\cos x}$.
+\end{example}
+
+\begin{myproof}
+$\ln y = \cos x\cdot\ln(\sin x)$. Derivando:
+\[
+\frac{y'}{y} = -\sin x\ln(\sin x)+\cos x\cdot\frac{\cos x}{\sin x}
+= -\sin x\ln(\sin x)+\frac{\cos^2 x}{\sin x}.
+\]
+\[
+y' = (\sin x)^{\cos x}\!\left(\frac{\cos^2 x}{\sin x}
+-\sin x\ln(\sin x)\right). \qquad\square
+\]
+\end{myproof}
+
+\begin{wow}
+La diferenciación logarítmica revela la derivada de $a^x$ de manera
+natural: si $y=a^x$, entonces $\ln y = x\ln a$, y derivando
+$\frac{y'}{y}=\ln a$, es decir, $y'=a^x\ln a$. Este resultado explica
+por qué $e^x$ es la función exponencial con derivada más simple: es la
+única base para la que $\ln a = 1$.
+\end{wow}
+
+%%==========================================================
+\section{Tabla de Derivadas}
+%%==========================================================
+
+\begin{center}
+\renewcommand{\arraystretch}{1.7}
+\begin{tabular}{>{$}l<{$} @{\quad$=$\quad} >{$}l<{$}}
+\toprule
+D_x f(x) & \text{Resultado} \\
+\midrule
+D_x(k) & 0 \\
+D_x(x^n) & nx^{n-1} \\
+D_x(e^x) & e^x \\
+D_x(a^x) & a^x\ln a \\
+D_x(\ln x) & \dfrac{1}{x} \\
+D_x(\log_a x) & \dfrac{1}{x\ln a} \\[4pt]
+\midrule
+D_x(\sin x) & \cos x \\
+D_x(\cos x) & -\sin x \\
+D_x(\tan x) & \sec^2 x \\
+D_x(\cot x) & -\csc^2 x \\
+D_x(\sec x) & \sec x\tan x \\
+D_x(\csc x) & -\csc x\cot x \\[4pt]
+\midrule
+D_x(\arcsin x) & \dfrac{1}{\sqrt{1-x^2}} \\[4pt]
+D_x(\arccos x) & \dfrac{-1}{\sqrt{1-x^2}} \\[4pt]
+D_x(\arctan x) & \dfrac{1}{1+x^2} \\[4pt]
+D_x(\text{arccot}\,x) & \dfrac{-1}{1+x^2} \\[4pt]
+D_x(\text{arcsec}\,x) & \dfrac{1}{|x|\sqrt{x^2-1}} \\[4pt]
+D_x(\text{arccsc}\,x) & \dfrac{-1}{|x|\sqrt{x^2-1}} \\[4pt]
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{rem}
+Toda fórmula de la tabla admite una versión general por la regla de la
+cadena: reemplazando $x$ por una función derivable $u(x)$, se multiplica
+por $u'(x)$. Por ejemplo, $D_x(\sin u) = \cos u\cdot u'$ o
+$D_x(\ln u) = \frac{u'}{u}$.
+\end{rem}
+
+%%==========================================================
+\section{Problemas Propuestos}
+%%==========================================================
+
+
+\begin{prob}
+Use la definición de derivada para calcular $f'(x)$ en cada caso:
+\begin{multicols}{2}
+\begin{enumerate}
+    \item $f(x) = 3x^2 - 2x + 1$
+    \item $f(x) = \dfrac{1}{x+1}$
+    \item $f(x) = \sqrt{3x-1}$
+    \item $f(x) = x^3$
+    \item $f(x) = \dfrac{x}{x+2}$
+    \item $f(x) = \sqrt[3]{x}$
+\end{enumerate}
+\end{multicols}
+\end{prob}
+
+\begin{prob}
+Determine si $f(x) = |x^2-4|$ es derivable en $x=2$ y en $x=-2$.
+Justifique calculando los límites laterales del cociente incremental.
+\end{prob}
+
+\begin{prob}
+Encuentre los valores de $a$ y $b$ para que
+\[
+f(x) = \begin{cases} ax^2+1 & x\leq 1 \\ bx+2 & x>1 \end{cases}
+\]
+sea derivable en $x=1$.
+\end{prob}
+
+
+
+\begin{prob}
+Derive cada función. No simplifique.
+\begin{multicols}{2}
+\begin{enumerate}
+    \item $f(x) = 5x^4 - 3x^3 + 7x - 2$
+    \item $g(x) = (2x^3-1)(x^2+3x)$
+    \item $h(x) = \dfrac{x^2-1}{x^2+1}$
+    \item $p(x) = (3x-1)^5$
+    \item $q(x) = \dfrac{(x+1)^3}{x^2}$
+    \item $r(x) = \sqrt{x^2+2x+5}$
+    \item $s(x) = x^2\sin x - 3\cos x$
+    \item $t(x) = \dfrac{\tan x}{1+\sec x}$
+    \item $u(x) = \ln(x^2+1)$
+    \item $v(x) = e^{x^2}\cos x$
+    \item $w(x) = \sec^2(3x)$
+    \item $z(x) = \arctan\!\sqrt{x}$
+\end{enumerate}
+\end{multicols}
+\end{prob}
+
+\begin{prob}
+Derive usando la regla de la cadena con tres o más capas:
+\begin{multicols}{2}
+\begin{enumerate}
+    \item $f(x) = \cos^3(\sin x)$
+    \item $g(x) = e^{\sqrt{\ln x}}$
+    \item $h(x) = \ln\!\left(\frac{\sqrt{1+x^2}}{1-x}\right)$
+    \item $k(x) = \arcsin(e^{-x^2})$
+\end{enumerate}
+\end{multicols}
+\end{prob}
+
+
+
+\begin{prob}
+Calcule $f''(x)$ para cada función:
+\begin{multicols}{2}
+\begin{enumerate}
+    \item $f(x) = x^5 - 2x^3 + x$
+    \item $f(x) = \sin(2x)$
+    \item $f(x) = xe^x$
+    \item $f(x) = \ln x$
+    \item $f(x) = \arctan x$
+    \item $f(x) = x\cos x$
+\end{enumerate}
+\end{multicols}
+\end{prob}
+
+\begin{prob}
+Demuestre que $y = A\sin(\omega t) + B\cos(\omega t)$ satisface
+$y'' + \omega^2 y = 0$.
+\end{prob}
+
+\begin{prob}
+Si $f(x) = x^n$, pruebe por inducción que $f^{(k)}(x) = \dfrac{n!}{(n-k)!}x^{n-k}$
+para $k \leq n$, y $f^{(k)}(x) = 0$ para $k > n$.
+\end{prob}
+
+\begin{prob}
+Encuentre una fórmula cerrada para la $n$-ésima derivada de:
+\begin{enumerate}[a)]
+    \item $f(x) = e^{ax}$
+    \item $f(x) = \sin x$
+    \item $f(x) = \ln x$
+    \item $f(x) = \dfrac{1}{1-x}$
+\end{enumerate}
+\end{prob}
+
+
+
+\begin{prob}
+Encuentre $\dfrac{dy}{dx}$ mediante diferenciación implícita:
+\begin{multicols}{2}
+\begin{enumerate}
+    \item $x^2+y^2 = r^2$
+    \item $x^3+y^3 = 1$
+    \item $\sin(x+y) = xy$
+    \item $e^{xy} = x+y$
+    \item $\ln(x^2+y^2) = \arctan\!\dfrac{y}{x}$
+    \item $\sqrt{x}+\sqrt{y} = \sqrt{a}$
+    \item $y\sin x = x\cos y$
+    \item $x^{2/3}+y^{2/3} = 1$
+\end{enumerate}
+\end{multicols}
+\end{prob}
+
+\begin{prob}
+Para la elipse $\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1$, encuentre la
+ecuación de la recta tangente en el punto $(x_0, y_0)$ y verifique que
+tiene la forma $\dfrac{x_0 x}{a^2}+\dfrac{y_0 y}{b^2}=1$.
+\end{prob}
+
+\begin{prob}
+Encuentre los puntos de la curva $x^2+xy+y^2=7$ donde la recta tangente
+es horizontal y donde es vertical.
+\end{prob}
+
+\begin{prob}
+Si $g(x) = f^{-1}(x)$ y $f(3)=5$, $f'(3)=4$, calcule $g'(5)$.
+Enuncie el teorema de la derivada de la función inversa que utiliza.
+\end{prob}
+
+
+
+\begin{prob}
+Use diferenciación logarítmica para derivar:
+\begin{multicols}{2}
+\begin{enumerate}
+    \item $y = x^{\sin x}$
+    \item $y = (\ln x)^x$
+    \item $y = \dfrac{x^2\sqrt{x+1}}{(2x-1)^3}$
+    \item $y = \left(\dfrac{x+1}{x-1}\right)^{3/2}$
+    \item $y = (\cos x)^x$
+    \item $y = x^{x^2}$
+    \item $y = \dfrac{x^5\sin^2 x}{\sqrt{1+x^2}}$
+    \item $y = (1+x)^{1/x}$
+\end{enumerate}
+\end{multicols}
+\end{prob}
+
+\begin{prob}
+Demuestre que $\displaystyle\lim_{x\to\infty}(1+x)^{1/x} = 1$ usando
+diferenciación logarítmica para analizar el comportamiento de $\ln y$.
+Compare con el límite $\lim_{n\to\infty}\!\left(1+\frac{1}{n}\right)^n = e$.
+\end{prob}
+
+
+\begin{prob}
+Una partícula se mueve según $s(t) = t^3 - 6t^2 + 9t + 2$ (metros,
+segundos).
+\begin{enumerate}[a)]
+    \item Encuentre la velocidad y aceleración en función de $t$.
+    \item ¿Cuándo está en reposo la partícula?
+    \item ¿Cuándo se mueve en sentido positivo?
+    \item Calcule la aceleración cuando la velocidad es cero.
+\end{enumerate}
+\end{prob}
+
+\begin{prob}
+La posición de un objeto oscilante está dada por $s(t) = A\cos(\omega t+\phi)$.
+Demuestre que la aceleración es proporcional al negativo de la posición,
+es decir, $s''(t) = -\omega^2 s(t)$ (ley de Hooke para oscilación armónica).
+\end{prob}
+
+\begin{prob}
+Encuentre la ecuación de la recta tangente y la recta normal a la curva
+$y = x^3 - 4x$ en el punto $(2, 0)$.
+\end{prob}
+
+\begin{prob}
+Dado el polinomio $f(x) = x^3-3x^2-9x+5$:
+\begin{enumerate}[a)]
+    \item Verifique que $(-1, 10)$ y $(3, -22)$ pertenecen a la curva.
+    \item Demuestre que la recta tangente a $f$ en cada uno de esos puntos
+    es horizontal.
+    \item Grafique el polinomio e indique las rectas tangentes horizontales.
+\end{enumerate}
+\end{prob}
+
+\begin{prob}
+Sea $y = \sqrt{x}$.
+\begin{enumerate}[a)]
+    \item Halle la pendiente de la recta tangente en un punto genérico
+    $x=a$.
+    \item Encuentre las ecuaciones de las tangentes en $(1,1)$ y $(4,2)$.
+\end{enumerate}
+\end{prob}
+
+\begin{prob}
+Un círculo de radio $r$ y centro $(0,c)$ está inscrito en la parábola
+$y=x^2$. En el punto de tangencia, las pendientes del círculo y la
+parábola coinciden. Muestre que en el punto de tangencia $y=c-\frac{r^2}{2}$,
+y use las ecuaciones de ambas curvas para demostrar que $c=r^2+\frac{1}{4}$.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.4]
+  \draw[->] (-2.3,0) -- (2.3,0) node[anchor=west] {$x$};
+  \draw[->] (0,-0.5) -- (0,3.9) node[anchor=south] {$y$};
+  \draw[blue,thick,domain=-2:2,samples=100] plot (\x,{\x*\x})
+    node[above right] {$y=x^2$};
+  \draw[thick] (0,1.3) circle [radius=1.3];
+  \filldraw (0,1.3) circle (0.04) node[right] {$(0,c)$};
+  \filldraw[red] (1.1,{1.1*1.1}) circle (0.05);
+  \filldraw[red] (-1.1,{1.1*1.1}) circle (0.05);
+\end{tikzpicture}
+\end{center}
+\end{prob}
+
+\begin{prob}
+Se lanza una roca hacia arriba en Marte con velocidad inicial $10$ m/s.
+La altura es $H(t) = 10t - 1.86t^2$.
+\begin{enumerate}[a)]
+    \item Encuentre la velocidad en $t=1$ s.
+    \item Encuentre la velocidad en el instante $t=a$.
+    \item ¿Cuándo cae la roca al suelo?
+    \item ¿Con qué velocidad impacta?
+\end{enumerate}
+\end{prob}
+
+
+
+\begin{prob}
+Determine si cada afirmación es verdadera o falsa y justifique:
+\begin{enumerate}[a)]
+    \item Si $f$ es continua en $c$, entonces $f$ es derivable en $c$.
+    \item Si $f$ es derivable en $c$, entonces $f$ es continua en $c$.
+    \item Si $f'(c)=0$, entonces $f$ tiene un extremo local en $c$.
+    \item $D_x[f(x)g(x)] = f'(x)g'(x)$.
+    \item Si $f(x)=g(x)$ para todo $x$, entonces $f'(x)=g'(x)$.
+    \item $\dfrac{d}{dx}[\sin^2 x + \cos^2 x] = 2\sin x\cos x -
+    2\cos x\sin x = 0$. La derivada es cero porque la función es
+    constante.
+    \item Si $f'(x) = g'(x)$ para todo $x$, entonces $f=g$.
+    \item $(f\circ g)'(x) = f'(g(x))\cdot g'(x)$.
+    \item Si $f$ es par, entonces $f'$ es impar.
+    \item Si $f$ es impar, entonces $f'$ es par.
+\end{enumerate}
+\end{prob}
+
+
+
+
+
+
 
 \begin{prob}
 Encuentre la ecuación de la recta perpendicular a la recta tangente en el punto $(1, 2)$ sobre la gráfica de $f(x) = -4x^2 + 6x$.
@@ -85,4 +1093,229 @@ Suponga que un círculo de radio $r$ y centro $(0, c)$ está inscrito en la par�
 
 \textit{Figura: Un círculo de radio $r$ inscrito en la parábola $y = x^2$.}
 \end{center}
+\end{prob}
+
+
+\begin{prob}
+Suponiendo que cada una de las ecuaciones define una función
+derivable de $x$, encuentre $\dfrac{dy}{dx}$. Exprese cada
+derivada en su forma más simplificada posible.
+\begin{enumerate}
+    \item $y = \tan^2 x + \ln(\cos x)$.
+    \item $xy + \arctan\!\left(\dfrac{x}{y}\right) = 0$.
+    \item $y = x^{x^{x^3}}$.
+    \item $y = \dfrac{1}{\sin^4 x+1}
+          +\ln\!\left(\dfrac{\sin^4 x}{\sin^4 x+1}\right)$.
+    \item $\arctan\!\left(\dfrac{x}{y}\right)
+          = \dfrac{1}{2}\ln(x^2+y^2)$.
+    \item $y = x^{x^{3^x}}$.
+    \item $y = \ln\!\left(\dfrac{\sqrt{3}-\sqrt{2}\cos x}
+          {\sqrt{3}+\sqrt{2}\cos x}\right)$.
+    \item $\sqrt[3]{x^2}+\sqrt[3]{y^2}=\sqrt[3]{a^2}$.
+    \item $y = 3^{x^{x^x}}$.
+\end{enumerate}
+\end{prob}
+
+\begin{prob}
+Determine el valor de verdad de las siguientes afirmaciones.
+Justifique completamente su respuesta.
+\begin{enumerate}
+    \item La expresión
+    $\displaystyle\lim_{x\to\frac{\pi}{2}}
+    \frac{\sin x-1}{x-\frac{\pi}{2}}$
+    es la derivada de $f(x)=\sin x$ en $x=\dfrac{\pi}{2}$.
+
+    \item Si $y=f(x)g(x)$, entonces
+    $\dfrac{d^2y}{dx^2}=f(x)g''(x)+g(x)f''(x)$.
+
+    \item Una ecuación de la recta tangente a la parábola
+    $y=x^2$ en $(-2,4)$ es $y-4=2x(x+2)$.
+
+    \item Si $f$ es derivable, entonces
+    $\dfrac{d}{dx}\sqrt{f(x)}=\dfrac{f'(x)}{2\sqrt{f(x)}}$.
+
+    \item $\dfrac{d}{dx}\ln\pi=\dfrac{1}{\pi}$.
+
+    \item Sea $f$ una función diferenciable, $c$ una
+    constante, $g(x)=f(x+c)$ y $h(x)=f(x)+c$.
+    Entonces $f'(x)=g'(x)=h'(x)$.
+
+    \item Si $f'(r)$ existe, entonces
+    $\displaystyle\lim_{x\to r}f(x)=f(r)$.
+
+    \item Si $f$ es continua en $a$, entonces $f$ es
+    derivable en $a$.
+
+    \item La única función para la cual $f'(x)=f(x)$
+    es $f(x)=e^x$.
+
+    \item La función $y=x^2-x-2$ es continua en $\R$.
+
+    \item Una ecuación de la recta tangente a la gráfica de
+    $y=x^2-x-2$ en el punto $(3,4)$ es $4y+6=5x$.
+\end{enumerate}
+\end{prob}
+
+\begin{prob}
+Lea cuidadosamente cada pregunta y seleccione la opción
+correcta. Las respuestas múltiples o sin marcar no serán
+valoradas.
+\begin{enumerate}
+    \item La recta tangente a la gráfica de
+    $y+\ln y - xy=1$ en el punto $(0,1)$ tiene pendiente:
+    \begin{itemize}
+        \item[a.] $0$
+        \item[b.] $\dfrac{1}{2}$
+        \item[c.] $1$
+        \item[d.] No existe recta tangente en ese punto.
+    \end{itemize}
+
+    \item Si $f(x)=\cos\!\left(\sqrt{\sin(\tan(\pi x))}\right)$,
+    entonces $f'(x)$ es:
+    \begin{itemize}
+        \item[a.] $\dfrac{\pi\sec^2(\pi x)
+        \cos(\tan(\pi x))
+        \sin\!\left(\sqrt{\sin(\tan(\pi x))}\right)}
+        {2\sqrt{\sin(\tan(\pi x))}}$
+
+        \item[b.] $\dfrac{\pi\sec^2(\pi x)
+        \cos(\tan(\pi x))
+        \sin\!\left(\sqrt{\sin(\tan(\pi x))}\right)}
+        {2\sqrt{\cos(\tan(\pi x))}}$
+
+        \item[c.] $-\dfrac{\pi\sec^2(\pi x)
+        \cos(\tan(\pi x))
+        \sin\!\left(\sqrt{\sin(\tan(\pi x))}\right)}
+        {2\sqrt{\sin(\tan(\pi x))}}$
+
+        \item[d.] Ninguna de las anteriores.
+    \end{itemize}
+
+    \item El valor del límite
+    $\displaystyle\lim_{x\to 0}\frac{\sqrt{1+2x}-1}{x}$
+    es:
+    \begin{itemize}
+        \item[a.] $2$
+        \item[b.] $1$
+        \item[c.] $\dfrac{1}{3}$
+        \item[d.] $0$
+    \end{itemize}
+\end{enumerate}
+\end{prob}
+
+\begin{prob}
+Compruebe que la función $y=\dfrac{1}{2}x^2 e^x$ satisface
+la ecuación diferencial
+\[
+\frac{d^2y}{dx^2}-2\,\frac{dy}{dx}+y=e^x.
+\]
+\end{prob}
+
+\begin{prob}
+Determine la ecuación de la recta normal (perpendicular a la
+tangente) a la curva $8(x^2+y^2)^2=100(x^2-y^2)$ en el
+punto $(3,1)$.
+\end{prob}
+
+\begin{prob}
+Sean $p$ y $q$ dos números reales. Calcule las ecuaciones de
+las rectas tangentes a la curva $y=ax^2+bx+c$ en los puntos
+de abscisas $p$ y $q$. Compruebe que estas rectas se cortan
+en el punto de abscisa $\dfrac{p+q}{2}$.
+\end{prob}
+
+\begin{prob}
+Sea $f(x)=\alpha x^2+\beta x+\gamma$ con $\alpha\neq 0$.
+Demuestre que el número $c$ garantizado por el Teorema del
+Valor Medio en cualquier intervalo $[a,b]$ es siempre el
+punto medio $\dfrac{a+b}{2}$.
+\end{prob}
+
+\begin{prob}
+Encuentre los puntos $P$ y $Q$ sobre la parábola $y=1-x^2$
+de modo que el triángulo formado por el eje $x$ y las rectas
+tangentes en $P$ y $Q$ sea equilátero.
+\begin{center}
+\begin{tikzpicture}[scale=1.2]
+  \draw[->] (-2,0) -- (2,0) node[right] {$x$};
+  \draw[->] (0,-0.5) -- (0,1.5) node[above] {$y$};
+  \draw[thick,domain=-1.2:1.2,smooth,samples=60]
+    plot (\x,{1-\x*\x});
+  \draw[dashed]
+    (-1.155,0) -- (0,1) -- (1.155,0) -- cycle;
+  \filldraw (-0.577,{1-0.577^2}) circle (1.5pt)
+    node[above left] {$P$};
+  \filldraw (0.577,{1-0.577^2}) circle (1.5pt)
+    node[above right] {$Q$};
+\end{tikzpicture}
+\end{center}
+\end{prob}
+
+\begin{prob}
+Se trazan las rectas tangentes $T_1$ y $T_2$ en dos puntos
+$P_1$ y $P_2$ sobre la parábola $y=x^2$, y se llama $P$ a
+su intersección. Una tercera tangente $T$, trazada en un
+punto entre $P_1$ y $P_2$, corta a $T_1$ en $Q_1$ y a
+$T_2$ en $Q_2$. Demuestre que
+\[
+\frac{|PQ_1|}{|PP_1|}+\frac{|PQ_2|}{|PP_2|}=1.
+\]
+\end{prob}
+
+\begin{prob}
+Suponga que tres puntos sobre la parábola $y=x^2$ tienen la
+propiedad de que sus rectas normales se intersecan en un
+punto común. Demuestre que la suma de sus abscisas es cero.
+\end{prob}
+
+\begin{prob}
+En la figura se muestra una lámpara colocada tres unidades a
+la derecha del eje $y$ y una sombra creada por la región
+elíptica $x^2+4y^2=5$. Si el punto $(-5,0)$ está en el
+borde de la sombra, ¿a qué altura sobre el eje $x$ está
+colocada la lámpara?
+\begin{center}
+\begin{tikzpicture}[scale=1.1]
+  \draw[->] (-3,0) -- (4,0) node[right] {$x$};
+  \draw[->] (0,-1.5) -- (0,2.5) node[above] {$y$};
+  \draw[thick] (0,0) ellipse ({sqrt(5)} and {sqrt(5)/2});
+  \filldraw[red] (3,1.5) circle (2pt)
+    node[right] {Lámpara $(3,h)$};
+  \filldraw[blue] (-{sqrt(5)},0) circle (2pt)
+    node[below] {$(-5,0)$};
+  \draw[dashed,gray] (3,1.5) -- (-{sqrt(5)},0);
+\end{tikzpicture}
+\end{center}
+\end{prob}
+
+\begin{prob}
+Una banda elástica cuelga de un gancho con una masa sujeta
+en su extremo inferior. Al jalarse y soltarse, la masa vibra
+con movimiento armónico descrito por
+$s(t)=2\cos t+3\sin t$, $t\geq 0$, donde $s$ está en
+centímetros y $t$ en segundos (positivo hacia abajo).
+\begin{enumerate}
+    \item[(a)] Encuentre la velocidad y la aceleración en
+    el instante $t$.
+    \item[(b)] Dibuje las gráficas de velocidad y aceleración.
+    \item[(c)] ¿Para qué valor de $t$ ocurre por primera vez
+    que $s(t)=0$? ¿Qué significa físicamente?
+    \item[(d)] ¿Para qué $t$ es cero por primera vez la
+    velocidad? Determine la elongación máxima de la banda.
+\end{enumerate}
+\textit{Sugerencia:} Use la función arcotangente para
+encontrar los valores de $t$.
+\end{prob}
+
+\begin{prob}
+Una piedra se suelta desde un edificio de $256$ ft de altura.
+(Aceleración de la gravedad: $32$ ft/s$^2$.)
+\begin{enumerate}
+    \item[(a)] Determine la ecuación del movimiento de la
+    piedra.
+    \item[(b)] Determine la velocidad instantánea en función
+    de $t$.
+    \item[(c)] Determine cuándo llega al suelo y con qué
+    rapidez lo hace.
+\end{enumerate}
 \end{prob}

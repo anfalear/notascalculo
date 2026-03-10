@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (MiKTeX 25.4) (format=lualatex 2025.7.7)  10 MAR 2026 11:01
+This is LuaHBTeX, Version 1.22.0 (MiKTeX 25.4) (format=lualatex 2025.7.7)  10 MAR 2026 17:16
  restricted system commands enabled.
 **anfalearNotasCalculo.tex
 (./anfalearNotasCalculo.tex
@@ -1030,6 +1030,14 @@ File: pgflibrarygraphdrawing.code.tex 2023-01-15 v3.1.10 (3.1.10)
 tikz/libraries/tikzlibrarymatrix.code.tex
 File: tikzlibrarymatrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
+(C:/Users/anfalear/AppData/Local/Programs/MiKTeX/tex/generic/pgf/frontendlayer/
+tikz/libraries/tikzlibrarypatterns.code.tex
+File: tikzlibrarypatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(C:/Users/anfalear/AppData/Local/Programs/MiKTeX/tex/generic/pgf/libraries/pgfl
+ibrarypatterns.code.tex
+File: pgflibrarypatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))
 (C:/Users/anfalear/AppData/Local/Programs/MiKTeX/tex/latex/circuitikz/circuitik
 z.sty
 Package: circuitikz 2025/06/15{} The CircuiTikz circuit drawing package version
@@ -1794,7 +1802,13 @@ LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 
 
-[4])
+[4]
+
+LaTeX Info: Redefining \. on input line 99.
+LaTeX Info: Redefining \% on input line 99.
+Package babel Info: 'spanish' activates 'spanish' shorthands.
+(babel)             Reported  on input line 99.
+[5])
 \tf@toc=\write6
 
 \openout6 = anfalearNotasCalculo.toc
@@ -1802,27 +1816,37 @@ LaTeX Info: Redefining \% on input line 1.
 
 LaTeX Info: Redefining \. on input line 419.
 LaTeX Info: Redefining \% on input line 419.
-Package babel Info: 'spanish' activates 'spanish' shorthands.
-(babel)             Reported  on input line 419.
-[5] (./anfalearNotasCalculo.loe
+[6] (./anfalearNotasCalculo.loe
 
-[6]
+[7]
 
 LaTeX Info: Redefining \. on input line 108.
 LaTeX Info: Redefining \% on input line 108.
-[7]
+[8]
 
 LaTeX Info: Redefining \. on input line 165.
 LaTeX Info: Redefining \% on input line 165.
-[8]
+[9]
 
 LaTeX Info: Redefining \. on input line 222.
 LaTeX Info: Redefining \% on input line 222.
-[9])
+[10]
+
+LaTeX Info: Redefining \. on input line 279.
+LaTeX Info: Redefining \% on input line 279.
+[11]
+
+LaTeX Info: Redefining \. on input line 336.
+LaTeX Info: Redefining \% on input line 336.
+[12]
+
+LaTeX Info: Redefining \. on input line 393.
+LaTeX Info: Redefining \% on input line 393.
+[13])
 
 LaTeX Info: Redefining \. on input line 421.
 LaTeX Info: Redefining \% on input line 421.
-[10] (./anfalearNotasCalculo.lof
+[14] (./anfalearNotasCalculo.lof
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 )
@@ -1831,11 +1855,11 @@ LaTeX Info: Redefining \% on input line 1.
 \openout7 = anfalearNotasCalculo.lof
  (./politicas.tex
 
-[11]
+[15]
 
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-[12
+[16
 
 ]
 Capítulo 1.
@@ -1846,19 +1870,19 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 3--6
 
 
 
-[13]
+[17]
 
 LaTeX Info: Redefining \. on input line 94.
 LaTeX Info: Redefining \% on input line 94.
-[14]) (./preliminares.tex
+[18]) (./preliminares.tex
 
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-[15]
+[19]
 
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-[16
+[20
 
 ]
 Capítulo 2.
@@ -1866,7 +1890,7 @@ Package hyperref Info: bookmark level for unknown theorem defaults to 0 on inpu
 t line 17.
 
 
-[17]
+[21]
 Package hyperref Info: bookmark level for unknown example defaults to 0 on inpu
 t line 60.
 Package hyperref Info: bookmark level for unknown definition defaults to 0 on i
@@ -1875,15 +1899,15 @@ nput line 71.
 
 LaTeX Info: Redefining \. on input line 86.
 LaTeX Info: Redefining \% on input line 86.
-[18]
+[22]
 
 LaTeX Info: Redefining \. on input line 152.
 LaTeX Info: Redefining \% on input line 152.
-[19]
+[23]
 
 LaTeX Info: Redefining \. on input line 225.
 LaTeX Info: Redefining \% on input line 225.
-[20]
+[24]
 Missing character: There is no ≠ (U+2260) in font [lmroman12-regular]:+tlig;!
 Missing character: There is no ≥ (U+2265) in font [lmroman12-regular]:+tlig;!
 Missing character: There is no ≠ (U+2260) in font [lmroman12-regular]:+tlig;!
@@ -1898,7 +1922,7 @@ ine 276.
 
 LaTeX Info: Redefining \. on input line 296.
 LaTeX Info: Redefining \% on input line 296.
-[21
+[25
 Missing character: There is no ≠ (U+2260) in font [lmroman12-regular]:+tlig;!
 Missing character: There is no ≥ (U+2265) in font [lmroman12-regular]:+tlig;!
 ]
@@ -1911,14 +1935,14 @@ Missing character: There is no ≥ (U+2265) in font [lmroman12-regular]:+tlig;!
 
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-[22]
+[26]
 Capítulo 3.
 
 Underfull \vbox (badness 1231) has occurred while \output is active []
 
 
 
-[23
+[27
 
 ]
 Package hyperref Info: bookmark level for unknown rem defaults to 0 on input li
@@ -1927,14 +1951,14 @@ ne 56.
 
 LaTeX Info: Redefining \. on input line 177.
 LaTeX Info: Redefining \% on input line 177.
-[24]
+[28]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
 LaTeX Info: Redefining \. on input line 201.
 LaTeX Info: Redefining \% on input line 201.
-[25]
+[29]
 warning  (pdf backend): ignoring duplicate destination with the name 'example.8'
 
 
@@ -1944,64 +1968,64 @@ Underfull \vbox (badness 4608) has occurred while \output is active []
 
 LaTeX Info: Redefining \. on input line 272.
 LaTeX Info: Redefining \% on input line 272.
-[26]
+[30]
 warning  (pdf backend): ignoring duplicate destination with the name 'definition
 .9'
 
 
 LaTeX Info: Redefining \. on input line 333.
 LaTeX Info: Redefining \% on input line 333.
-[27]
+[31]
 
 LaTeX Info: Redefining \. on input line 398.
 LaTeX Info: Redefining \% on input line 398.
-[28]
+[32]
 
 LaTeX Info: Redefining \. on input line 461.
 LaTeX Info: Redefining \% on input line 461.
-[29]
+[33]
 
 LaTeX Info: Redefining \. on input line 526.
 LaTeX Info: Redefining \% on input line 526.
-[30]
+[34]
 
 LaTeX Info: Redefining \. on input line 597.
 LaTeX Info: Redefining \% on input line 597.
-[31]
+[35]
 
 LaTeX Info: Redefining \. on input line 654.
 LaTeX Info: Redefining \% on input line 654.
-[32]
+[36]
 
 LaTeX Info: Redefining \. on input line 708.
 LaTeX Info: Redefining \% on input line 708.
-[33]
+[37]
 
 LaTeX Info: Redefining \. on input line 800.
 LaTeX Info: Redefining \% on input line 800.
-[34]
+[38]
 
 LaTeX Info: Redefining \. on input line 860.
 LaTeX Info: Redefining \% on input line 860.
-[35]
+[39]
 
 LaTeX Info: Redefining \. on input line 946.
 LaTeX Info: Redefining \% on input line 946.
-[36]
+[40]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
 LaTeX Info: Redefining \. on input line 1006.
 LaTeX Info: Redefining \% on input line 1006.
-[37]
+[41]
 Underfull \vbox (badness 4792) has occurred while \output is active []
 
 
 
 LaTeX Info: Redefining \. on input line 1071.
 LaTeX Info: Redefining \% on input line 1071.
-[38]
+[42]
 
 
 
@@ -2009,7 +2033,7 @@ LaTeX Info: Redefining \% on input line 1071.
 
 LaTeX Info: Redefining \. on input line 1130.
 LaTeX Info: Redefining \% on input line 1130.
-[39]
+[43]
 
 
 
@@ -2022,11 +2046,11 @@ Underfull \vbox (badness 1584) has occurred while \output is active []
 
 LaTeX Info: Redefining \. on input line 1235.
 LaTeX Info: Redefining \% on input line 1235.
-[40]
+[44]
 
 LaTeX Info: Redefining \. on input line 1290.
 LaTeX Info: Redefining \% on input line 1290.
-[41]
+[45]
 
 
 
@@ -2036,7 +2060,7 @@ LaTeX Info: Redefining \% on input line 1290.
 
 LaTeX Info: Redefining \. on input line 1341.
 LaTeX Info: Redefining \% on input line 1341.
-[42]
+[46]
 
 
 
@@ -2046,17 +2070,17 @@ LaTeX Info: Redefining \% on input line 1341.
 
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-[43]
+[47]
 
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-[44
+[48
 
 ]
 Capítulo 4.
 
 
-[45]
+[49]
 warning  (pdf backend): ignoring duplicate destination with the name 'rem.3'
 
 warning  (pdf backend): ignoring duplicate destination with the name 'example.4'
@@ -2065,7 +2089,7 @@ warning  (pdf backend): ignoring duplicate destination with the name 'example.4'
 
 LaTeX Info: Redefining \. on input line 125.
 LaTeX Info: Redefining \% on input line 125.
-[46]
+[50]
 warning  (pdf backend): ignoring duplicate destination with the name 'theorem.6'
 
 
@@ -2075,11 +2099,11 @@ warning  (pdf backend): ignoring duplicate destination with the name 'example.10
 
 LaTeX Info: Redefining \. on input line 185.
 LaTeX Info: Redefining \% on input line 185.
-[47]
+[51]
 
 LaTeX Info: Redefining \. on input line 253.
 LaTeX Info: Redefining \% on input line 253.
-[48]
+[52]
 warning  (pdf backend): ignoring duplicate destination with the name 'definition
 .17'
 
@@ -2088,7 +2112,7 @@ warning  (pdf backend): ignoring duplicate destination with the name 'rem.18'
 
 LaTeX Info: Redefining \. on input line 317.
 LaTeX Info: Redefining \% on input line 317.
-[49]
+[53]
 Package hyperref Info: bookmark level for unknown coro defaults to 0 on input l
 ine 318.
 
@@ -2098,7 +2122,7 @@ warning  (pdf backend): ignoring duplicate destination with the name 'example.22
 
 LaTeX Info: Redefining \. on input line 385.
 LaTeX Info: Redefining \% on input line 385.
-[50]
+[54]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 395.
@@ -2117,7 +2141,7 @@ ne 428.
 
 LaTeX Info: Redefining \. on input line 460.
 LaTeX Info: Redefining \% on input line 460.
-[51]
+[55]
 warning  (pdf backend): ignoring duplicate destination with the name 'prob.40'
 
 warning  (pdf backend): ignoring duplicate destination with the name 'prob.41'
@@ -2127,7 +2151,7 @@ warning  (pdf backend): ignoring duplicate destination with the name 'prob.42'
 
 LaTeX Info: Redefining \. on input line 535.
 LaTeX Info: Redefining \% on input line 535.
-[52]
+[56]
 warning  (pdf backend): ignoring duplicate destination with the name 'prob.43'
 
 warning  (pdf backend): ignoring duplicate destination with the name 'prob.44'
@@ -2147,56 +2171,560 @@ warning  (pdf backend): ignoring duplicate destination with the name 'prob.50'
 
 LaTeX Info: Redefining \. on input line 640.
 LaTeX Info: Redefining \% on input line 640.
-[53]
+[57]
 
 LaTeX Info: Redefining \. on input line 746.
 LaTeX Info: Redefining \% on input line 746.
-[54]) (./derivadas.tex
+[58]) (./derivadas.tex
 
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-[55]
+[59]
 
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-[56
+[60
 
 ]
 Capítulo 5.
 
-warning  (pdf backend): ignoring duplicate destination with the name 'theorem.1'
+warning  (pdf backend): ignoring duplicate destination with the name 'rem.1'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'definition
+.2'
 
 
-warning  (pdf backend): ignoring duplicate destination with the name 'rem.3'
+[61]
+warning  (pdf backend): ignoring duplicate destination with the name 'example.3'
 
 
-[57]
-warning  (pdf backend): ignoring duplicate destination with the name 'prob.10'
-) (./tecintegracion.tex
+warning  (pdf backend): ignoring duplicate destination with the name 'example.4'
+
+
+Overfull \hbox (29.78865pt too wide) detected at line 94
+ $\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) = []
+ [] = [] [] = [] [] = []\OML/cmm/m/it/12 : \U/msa/m/n/12 $ 
+ []
+
+
+warning  (pdf backend): ignoring duplicate destination with the name 'rem.5'
+
+
+LaTeX Info: Redefining \. on input line 138.
+LaTeX Info: Redefining \% on input line 138.
+[62]
+warning  (pdf backend): ignoring duplicate destination with the name 'theorem.6'
+
+
+warning  (pdf backend): ignoring duplicate destination with the name 'rem.7'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'theorem.9'
+
+
+
+LaTeX Info: Redefining \. on input line 207.
+LaTeX Info: Redefining \% on input line 207.
+[63]
+warning  (pdf backend): ignoring duplicate destination with the name 'example.12
+'
+
+
+LaTeX Info: Redefining \. on input line 265.
+LaTeX Info: Redefining \% on input line 265.
+[64]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 274.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 274.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\sin' on input line 274.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\cos' on input line 274.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 274.
+
+
+
+LaTeX Info: Redefining \. on input line 335.
+LaTeX Info: Redefining \% on input line 335.
+[65]
+Package hyperref Info: bookmark level for unknown pasos defaults to 0 on input 
+line 347.
+
+warning  (pdf backend): ignoring duplicate destination with the name 'example.20
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'example.21
+'
+
+
+LaTeX Info: Redefining \. on input line 405.
+LaTeX Info: Redefining \% on input line 405.
+[66]
+
+LaTeX Info: Redefining \. on input line 472.
+LaTeX Info: Redefining \% on input line 472.
+[67]
+warning  (pdf backend): ignoring duplicate destination with the name 'example.28
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'example.29
+'
+
+
+LaTeX Info: Redefining \. on input line 536.
+LaTeX Info: Redefining \% on input line 536.
+[68]
+warning  (pdf backend): ignoring duplicate destination with the name 'definition
+.30'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'example.31
+'
+
+
+LaTeX Info: Redefining \. on input line 616.
+LaTeX Info: Redefining \% on input line 616.
+[69]
+
+LaTeX Info: Redefining \. on input line 700.
+LaTeX Info: Redefining \% on input line 700.
+[70]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+LaTeX Info: Redefining \. on input line 772.
+LaTeX Info: Redefining \% on input line 772.
+[71]
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.45'
+
+Overfull \vbox (1.75705pt too high) has occurred while \output is active []
+
+
+
+
+
+
+
+
+
+LaTeX Info: Redefining \. on input line 797.
+LaTeX Info: Redefining \% on input line 797.
+[72]
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.46'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.47'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.48'
+
+
+
+
+
+
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.49'
+
+
+
+
+
+
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.50'
+
+
+
+
+
+
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.51'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.52'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.53'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.54'
+
+
+
+
+
+
+LaTeX Info: Redefining \. on input line 897.
+LaTeX Info: Redefining \% on input line 897.
+[73]
+
+
+
+
+
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.55'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.56'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.57'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.58'
+
+
+
+
+
+
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.59'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.60'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.61'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.62'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.63'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.64'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.65'
+
+
+LaTeX Info: Redefining \. on input line 1000.
+LaTeX Info: Redefining \% on input line 1000.
+[74]
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.66'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.67'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.68'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.69'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.70'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.71'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.72'
+
+
+LaTeX Info: Redefining \. on input line 1067.
+LaTeX Info: Redefining \% on input line 1067.
+[75]
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.73'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.74'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.75'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.76'
+
+
+LaTeX Info: Redefining \. on input line 1123.
+LaTeX Info: Redefining \% on input line 1123.
+[76]
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.77'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.78'
+
+
+LaTeX Info: Redefining \. on input line 1211.
+LaTeX Info: Redefining \% on input line 1211.
+[77]
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.79'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.80'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.81'
+
+
+LaTeX Info: Redefining \. on input line 1314.
+LaTeX Info: Redefining \% on input line 1314.
+[78]) (./apderivadas.tex
 
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-[58]
+[79]
+
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+[80
+
+]
 Capítulo 6.
 
 warning  (pdf backend): ignoring duplicate destination with the name 'rem.1'
 
 
-[59
+[81]
+warning  (pdf backend): ignoring duplicate destination with the name 'rem.3'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'example.4'
+
+
+warning  (pdf backend): ignoring duplicate destination with the name 'example.5'
+
+
+
+LaTeX Info: Redefining \. on input line 123.
+LaTeX Info: Redefining \% on input line 123.
+[82]
+warning  (pdf backend): ignoring duplicate destination with the name 'definition
+.7'
+
+Overfull \hbox (7.43874pt too wide) in paragraph at lines 173--174
+[][]\TU/lmr/m/n/12 En-con-trar to-dos los pun-tos crí-
+ []
+
+
+warning  (pdf backend): ignoring duplicate destination with the name 'example.12
+'
+
+Underfull \vbox (badness 1609) has occurred while \output is active []
+
+
+
+LaTeX Info: Redefining \. on input line 200.
+LaTeX Info: Redefining \% on input line 200.
+[83]
+warning  (pdf backend): ignoring duplicate destination with the name 'theorem.13
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'definition
+.14'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'rem.15'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'definition
+.16'
+
+
+LaTeX Info: Redefining \. on input line 255.
+LaTeX Info: Redefining \% on input line 255.
+[84]
+warning  (pdf backend): ignoring duplicate destination with the name 'example.20
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'example.22
+'
+
+
+LaTeX Info: Redefining \. on input line 372.
+LaTeX Info: Redefining \% on input line 372.
+[85]
+
+LaTeX Info: Redefining \. on input line 399.
+LaTeX Info: Redefining \% on input line 399.
+[86]
+warning  (pdf backend): ignoring duplicate destination with the name 'example.24
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'example.25
+'
+
+Underfull \vbox (badness 1087) has occurred while \output is active []
+
+
+
+LaTeX Info: Redefining \. on input line 480.
+LaTeX Info: Redefining \% on input line 480.
+[87]
+warning  (pdf backend): ignoring duplicate destination with the name 'example.31
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'rem.33'
+
+
+LaTeX Info: Redefining \. on input line 557.
+LaTeX Info: Redefining \% on input line 557.
+[88]
+warning  (pdf backend): ignoring duplicate destination with the name 'example.34
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'example.36
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'example.37
+'
+
+
+LaTeX Info: Redefining \. on input line 631.
+LaTeX Info: Redefining \% on input line 631.
+[89]
+
+LaTeX Info: Redefining \. on input line 693.
+LaTeX Info: Redefining \% on input line 693.
+[90]
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.42'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.43'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.44'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.45'
+
+
+LaTeX Info: Redefining \. on input line 758.
+LaTeX Info: Redefining \% on input line 758.
+[91]
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.46'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.47'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.48'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.49'
+
+
+
+
+
+
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.50'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.51'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.52'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.53'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.54'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.55'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.56'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.57'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.58'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.59'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.60'
+
+
+LaTeX Info: Redefining \. on input line 868.
+LaTeX Info: Redefining \% on input line 868.
+[92]
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.61'
+
+
+
+
+
+
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.62'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.63'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.64'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.65'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.66'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.67'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.68'
+
+
+LaTeX Info: Redefining \. on input line 975.
+LaTeX Info: Redefining \% on input line 975.
+[93]
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.69'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.70'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.71'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.72'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.73'
+
+
+LaTeX Info: Redefining \. on input line 1048.
+LaTeX Info: Redefining \% on input line 1048.
+[94]
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.74'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.75'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.76'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.77'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.78'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.79'
+
+
+LaTeX Info: Redefining \. on input line 1128.
+LaTeX Info: Redefining \% on input line 1128.
+[95]
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.80'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.81'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.82'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.83'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.84'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.85'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.86'
+
+
+LaTeX Info: Redefining \. on input line 1247.
+LaTeX Info: Redefining \% on input line 1247.
+[96]
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.87'
+Missing character: There is no ° (U+00B0) in font cmr12!
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+LaTeX Info: Redefining \. on input line 1333.
+LaTeX Info: Redefining \% on input line 1333.
+[97]) (./tecintegracion.tex
+
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+[98]
+Capítulo 7.
+
+warning  (pdf backend): ignoring duplicate destination with the name 'rem.1'
+
+
+[99
 
 ]
 warning  (pdf backend): ignoring duplicate destination with the name 'theorem.2'
 
-Package hyperref Info: bookmark level for unknown pasos defaults to 0 on input 
-line 65.
 
 warning  (pdf backend): ignoring duplicate destination with the name 'theorem.5'
+
+
+warning  (pdf backend): ignoring duplicate destination with the name 'example.6'
 
 
 
 LaTeX Info: Redefining \. on input line 112.
 LaTeX Info: Redefining \% on input line 112.
-[60]
+[100]
 warning  (pdf backend): ignoring duplicate destination with the name 'example.7'
 
 
@@ -2212,25 +2740,31 @@ warning  (pdf backend): ignoring duplicate destination with the name 'theorem.11
 
 LaTeX Info: Redefining \. on input line 181.
 LaTeX Info: Redefining \% on input line 181.
-[61]
+[101]
 warning  (pdf backend): ignoring duplicate destination with the name 'example.14
 '
 
 
 LaTeX Info: Redefining \. on input line 246.
 LaTeX Info: Redefining \% on input line 246.
-[62]
+[102]
 warning  (pdf backend): ignoring duplicate destination with the name 'example.16
 '
 
 
 LaTeX Info: Redefining \. on input line 328.
 LaTeX Info: Redefining \% on input line 328.
-[63]
+[103]
+warning  (pdf backend): ignoring duplicate destination with the name 'example.18
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'theorem.22
+'
+
 
 LaTeX Info: Redefining \. on input line 400.
 LaTeX Info: Redefining \% on input line 400.
-[64]
+[104]
 warning  (pdf backend): ignoring duplicate destination with the name 'rem.23'
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -2274,10 +2808,18 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 421.
 
 
+warning  (pdf backend): ignoring duplicate destination with the name 'example.25
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'example.26
+'
+
 
 LaTeX Info: Redefining \. on input line 472.
 LaTeX Info: Redefining \% on input line 472.
-[65]
+[105]
+warning  (pdf backend): ignoring duplicate destination with the name 'theorem.27
+'
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 494.
@@ -2329,7 +2871,7 @@ warning  (pdf backend): ignoring duplicate destination with the name 'example.31
 
 LaTeX Info: Redefining \. on input line 554.
 LaTeX Info: Redefining \% on input line 554.
-[66]
+[106]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 564.
@@ -2385,7 +2927,8 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 LaTeX Info: Redefining \. on input line 592.
 LaTeX Info: Redefining \% on input line 592.
-[67]
+[107]
+warning  (pdf backend): ignoring duplicate destination with the name 'rem.34'
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 612.
@@ -2407,6 +2950,12 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 612.
 
 
+warning  (pdf backend): ignoring duplicate destination with the name 'example.35
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'example.36
+'
+
 Overfull \hbox (26.32167pt too wide) detected at line 656
  $[] \OT1/cmr/m/n/12 4 [][]  \OML/cmm/m/it/12  \OMS/cmsy/m/n/12  \OT1/cmr/m/n
 /12 2 [] \OML/cmm/m/it/12  \OMS/cmsy/m/n/12  \OT1/cmr/m/n/12 2 [] \OML/cmm/m/
@@ -2420,7 +2969,7 @@ n/12 + \OML/cmm/m/it/12 C:$
 
 LaTeX Info: Redefining \. on input line 665.
 LaTeX Info: Redefining \% on input line 665.
-[68]
+[108]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 667.
@@ -2442,6 +2991,9 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 667.
 
 
+warning  (pdf backend): ignoring duplicate destination with the name 'example.37
+'
+
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 705.
 
@@ -2462,22 +3014,25 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 705.
 
 
+warning  (pdf backend): ignoring duplicate destination with the name 'example.38
+'
+
 
 LaTeX Info: Redefining \. on input line 743.
 LaTeX Info: Redefining \% on input line 743.
-[69]
+[109]
 
 LaTeX Info: Redefining \. on input line 794.
 LaTeX Info: Redefining \% on input line 794.
-[70]
+[110]
 
 LaTeX Info: Redefining \. on input line 855.
 LaTeX Info: Redefining \% on input line 855.
-[71]
+[111]
 
 LaTeX Info: Redefining \. on input line 924.
 LaTeX Info: Redefining \% on input line 924.
-[72]
+[112]
 warning  (pdf backend): ignoring duplicate destination with the name 'prob.49'
 
 
@@ -2487,7 +3042,7 @@ warning  (pdf backend): ignoring duplicate destination with the name 'prob.49'
 
 LaTeX Info: Redefining \. on input line 989.
 LaTeX Info: Redefining \% on input line 989.
-[73]
+[113]
 
 
 
@@ -2511,7 +3066,7 @@ warning  (pdf backend): ignoring duplicate destination with the name 'prob.51'
 
 LaTeX Info: Redefining \. on input line 1046.
 LaTeX Info: Redefining \% on input line 1046.
-[74]
+[114]
 
 
 
@@ -2534,19 +3089,19 @@ Overfull \hbox (151.64769pt too wide) in paragraph at lines 1056--1057
 
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-[75]
+[115]
 
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-[76
+[116
 
 ]
-Capítulo 7.
+Capítulo 8.
 
 warning  (pdf backend): ignoring duplicate destination with the name 'rem.1'
 
 
-[77]
+[117]
 warning  (pdf backend): ignoring duplicate destination with the name 'theorem.2'
 
 
@@ -2563,9 +3118,14 @@ warning  (pdf backend): ignoring duplicate destination with the name 'example.6'
 
 LaTeX Info: Redefining \. on input line 91.
 LaTeX Info: Redefining \% on input line 91.
-[78]
+[118]
 warning  (pdf backend): ignoring duplicate destination with the name 'definition
 .7'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'theorem.8'
+
+
+warning  (pdf backend): ignoring duplicate destination with the name 'rem.9'
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -2573,7 +3133,10 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 LaTeX Info: Redefining \. on input line 153.
 LaTeX Info: Redefining \% on input line 153.
-[79]
+[119]
+warning  (pdf backend): ignoring duplicate destination with the name 'theorem.10
+'
+
 warning  (pdf backend): ignoring duplicate destination with the name 'theorem.11
 '
 
@@ -2585,18 +3148,24 @@ warning  (pdf backend): ignoring duplicate destination with the name 'rem.13'
 
 LaTeX Info: Redefining \. on input line 194.
 LaTeX Info: Redefining \% on input line 194.
-[80]
+[120]
 warning  (pdf backend): ignoring duplicate destination with the name 'example.15
 '
 
 warning  (pdf backend): ignoring duplicate destination with the name 'definition
 .16'
 
+warning  (pdf backend): ignoring duplicate destination with the name 'theorem.17
+'
+
 
 LaTeX Info: Redefining \. on input line 245.
 LaTeX Info: Redefining \% on input line 245.
-[81]
+[121]
 warning  (pdf backend): ignoring duplicate destination with the name 'example.18
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'example.19
 '
 
 warning  (pdf backend): ignoring duplicate destination with the name 'theorem.21
@@ -2605,10 +3174,13 @@ warning  (pdf backend): ignoring duplicate destination with the name 'theorem.21
 warning  (pdf backend): ignoring duplicate destination with the name 'example.22
 '
 
+warning  (pdf backend): ignoring duplicate destination with the name 'example.23
+'
+
 
 LaTeX Info: Redefining \. on input line 308.
 LaTeX Info: Redefining \% on input line 308.
-[82]
+[122]
 warning  (pdf backend): ignoring duplicate destination with the name 'definition
 .24'
 
@@ -2617,16 +3189,19 @@ warning  (pdf backend): ignoring duplicate destination with the name 'theorem.25
 
 warning  (pdf backend): ignoring duplicate destination with the name 'rem.26'
 
+warning  (pdf backend): ignoring duplicate destination with the name 'theorem.28
+'
+
 
 LaTeX Info: Redefining \. on input line 375.
 LaTeX Info: Redefining \% on input line 375.
-[83])
+[123])
 No file anfalearNotasCalculo.bbl.
 
 
-LaTeX Info: Redefining \. on input line 438.
-LaTeX Info: Redefining \% on input line 438.
-[84]
+LaTeX Info: Redefining \. on input line 439.
+LaTeX Info: Redefining \% on input line 439.
+[124]
 \tf@loe=\write8
 
 \openout8 = anfalearNotasCalculo.loe
@@ -2639,19 +3214,19 @@ LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-06-09>
  ***********
 Package rerunfilecheck Info: File `anfalearNotasCalculo.out' has not changed.
-(rerunfilecheck)             Checksum: 7F59B4E9587FC99B99F9C6785778BB19;15008.
+(rerunfilecheck)             Checksum: 3A27263B114A744948F459EBF17D91C3;23098.
 )
 
 Here is how much of LuaTeX's memory you used:
- 70862 strings out of 470205
+ 71861 strings out of 470205
  125003,2848258 words of node,token memory allocated
- 2682 words of node memory still in use:
-   32 hlist, 2 vlist, 14 rule, 2 glue, 4 kern, 1 glyph, 457 attribute, 101 glue_
-spec, 266 attribute_list, 2 write, 24 pdf_literal, 3 pdf_action, 24 pdf_colorsta
+ 3192 words of node memory still in use:
+   32 hlist, 2 vlist, 14 rule, 2 glue, 4 kern, 1 glyph, 627 attribute, 101 glue_
+spec, 351 attribute_list, 2 write, 24 pdf_literal, 3 pdf_action, 24 pdf_colorsta
 ck nodes
-   avail lists: 1:25,2:9035,3:4271,4:238,5:662,6:180,7:8120,8:87,9:1347,10:23,11
+   avail lists: 1:26,2:8780,3:4271,4:242,5:707,6:183,7:8120,8:94,9:1348,10:23,11
 :898
- 96907 multiletter control sequences out of 65536+600000
+ 97432 multiletter control sequences out of 65536+600000
  94 fonts using 7085951 bytes
  76i,21n,95p,1148b,2830s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/users/anfalear/appdata/local/programs/miktex/fonts/opentype/public/lm/lmroma
@@ -2682,9 +3257,9 @@ c/amsfonts/cm/cmsy6.pfb><C:/Users/anfalear/AppData/Local/Programs/MiKTeX/fonts/t
 ype1/public/amsfonts/cm/cmsy8.pfb><C:/Users/anfalear/AppData/Local/Programs/MiKT
 eX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/anfalear/AppData/Loc
 al/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on anfalearNotasCalculo.pdf (84 pages, 831922 bytes).
+Output written on anfalearNotasCalculo.pdf (124 pages, 1145151 bytes).
 
-PDF statistics: 1917 PDF objects out of 2073 (max. 8388607)
- 866 named destinations out of 1000 (max. 131072)
- 864 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 2861 PDF objects out of 2984 (max. 8388607)
+ 1321 named destinations out of 1440 (max. 131072)
+ 1213 words of extra memory for PDF output out of 10000 (max. 100000000)
 
