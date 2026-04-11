@@ -1,9 +1,5 @@
 \chapter{Aplicaciones de la Derivada}
 
-%%==========================================================
-\section{Panorama General}
-%%==========================================================
-
 La derivada no es únicamente un objeto teórico: es el instrumento
 central para analizar el comportamiento de funciones y resolver
 problemas cuantitativos en física, ingeniería, economía y geometría.
@@ -17,8 +13,8 @@ de L'Hôpital) y numéricas (Newton-Raphson, bisección).
 \begin{rem}
 El hilo conductor de este capítulo es el siguiente principio: la
 derivada mide la \textbf{tasa de variación instantánea}. Según el
-contexto, esta idea adquiere formas distintas ---velocidad, pendiente,
-crecimiento marginal, tasa de llenado--- pero el aparato matemático
+contexto, esta idea adquiere formas distintas como lo son la velocidad, pendiente de la recta tangente, el
+crecimiento marginal y la tasa de llenado pero el aparato matemático
 es siempre el mismo. Reconocer esta unidad subyacente facilita la
 transferencia de las técnicas entre contextos aparentemente dispares.
 \end{rem}
@@ -26,8 +22,6 @@ transferencia de las técnicas entre contextos aparentemente dispares.
 %%==========================================================
 \section{Razones de Cambio Relacionadas}
 %%==========================================================
-
-\subsection{Fundamento}
 
 Si una cantidad $y$ depende del tiempo $t$, su derivada $\frac{dy}{dt}$
 es su \textbf{razón de cambio respecto al tiempo}. Cuando dos o más
@@ -37,7 +31,7 @@ derivadas temporales también están ligadas: son las llamadas
 que relaciona las cantidades vale para \emph{todo instante} $t$, por
 lo que puede derivarse implícitamente respecto a $t$.
 
-\begin{pasos}
+\begin{pasos} Las razones de cambio relacionadas pueden resolverse siguiendo el siguiente protocolo:
 \begin{enumerate}
     \item \textbf{Diagrama y variables.} Dibujar un esquema de la
     situación y asignar variables a las cantidades que cambian con $t$.
@@ -60,8 +54,6 @@ constantes y sus derivadas desaparecen, destruyendo la información
 que se busca. Los valores numéricos solo entran en el paso 5.
 \end{rem}
 
-\subsection{Ejemplos}
-
 \begin{example}
 Un tanque cónico invertido tiene altura $12$ m y radio basal $6$ m.
 El agua entra a razón de $2$ m$^3$/min. ¿A qué rapidez sube el nivel
@@ -69,30 +61,124 @@ cuando el agua tiene $4$ m de profundidad?
 \end{example}
 
 \begin{myproof}
-\textbf{Paso 1.} Variables: $h$ = profundidad del agua, $r$ = radio
-de la superficie libre, $V$ = volumen. Se conoce $\frac{dV}{dt}=2$
-m$^3$/min y se busca $\frac{dh}{dt}$ cuando $h=4$.
 
-\textbf{Paso 3.} Por semejanza de triángulos,
-$\frac{r}{h}=\frac{6}{12}=\frac{1}{2}$, de modo que $r=\frac{h}{2}$.
-Sustituyendo en la fórmula del cono:
+\begin{figure}[H]
+\centering
+
+% ============================================================
+% GRÁFICA 1: Corte transversal del tanque cónico invertido
+% ============================================================
+\begin{tikzpicture}[>=stealth, scale=0.55]
+
+  % --- Cono completo (contorno) ---
+  % El tanque: vértice abajo en (0,0), boca arriba en y=12, radio 6
+  \draw[thick] (0,0) -- (-6,12) -- (6,12) -- cycle;
+
+  % --- Nivel del agua h=4, r=2 ---
+  \fill[blue!20] (-2,0) -- (0,0) -- (2,0) --  (2,4) -- (-2,4) -- cycle;
+  \fill[blue!20] (0,0) -- (-2,4) -- (2,4) -- cycle;
+  \draw[blue!60!black, thick] (-2,4) -- (2,4);   % superficie libre
+
+  % --- Semejanza de triángulos: triángulo del agua ---
+  \draw[blue!70!black, dashed, thick] (0,0) -- (-2,4) -- (2,4) -- cycle;
+
+  % --- Cotas del tanque completo ---
+  % Altura H=12 (lado derecho)
+  \draw[<->, gray] (6.6,0) -- (6.6,12)
+        node[midway, right] {$H=12$ m};
+  % Radio R=6 (parte superior)
+  \draw[<->, gray] (0,12.6) -- (6,12.6)
+        node[midway, above] {$R=6$ m};
+
+  % --- Cotas del agua ---
+  % Altura h (lado izquierdo, interior)
+  \draw[<->, blue!70!black] (-2.6,0) -- (-2.6,4)
+        node[midway, left] {$h$};
+  % Radio r (superficie libre)
+  \draw[<->, blue!70!black] (0,4.5) -- (2,4.5)
+        node[midway, above] {$r=\tfrac{h}{2}$};
+
+  % --- Vértice ---
+  \filldraw[black] (0,0) circle (2pt);
+  \node[below] at (0,0) {vértice};
+
+  % --- Línea de eje ---
+  \draw[dotted, gray] (0,0) -- (0,12.8);
+
+  % --- Anotación semejanza ---
+  \node[align=center, font=\small] at (5.5, 2.5)
+        {$\dfrac{r}{h}=\dfrac{R}{H}=\dfrac{1}{2}$};
+
+  % --- Flecha dV/dt ---
+  \draw[->, thick, red!70!black] (-1,10) -- (-1, 8)
+        node[left, font=\small] {$\dfrac{dV}{dt}=2\ \text{m}^3/\text{min}$};
+
+  % --- Flecha dh/dt ---
+  \draw[->, thick, orange!80!black] (3,3.2) -- (3,4.8)
+        node[right, font=\small] {$\dfrac{dh}{dt}=?$};
+
+\end{tikzpicture}
+\end{figure}
+\textbf{Paso 1. Diagrama y variables.}
+Se tiene un cono invertido de altura total $H=12$ m y radio basal
+$R=6$ m. En el instante $t$, el agua ocupa un cono similar de altura
+$h(t)$ y radio superficial $r(t)$. Las cantidades que cambian con el
+tiempo son:
+
+
+\(h = h(t): \text{ profundidad del agua (m)},\) 
+
+
+\(r = r(t): \text{ radio de la superficie libre (m)}, \) 
+
+
+\(V = V(t): \text{ volumen de agua $(m^{3})$}.\)
+
+\textbf{Paso 2. Identificar razones.}
+\begin{itemize}
+    \item Razón conocida: $\dfrac{dV}{dt} = 2$ m$^3$/min (el agua entra).
+    \item Razón buscada: $\dfrac{dh}{dt}$ en el instante en que $h = 4$ m.
+\end{itemize}
+
+\textbf{Paso 3. Ecuación fundamental.}
+El volumen de un cono es $V = \dfrac{1}{3}\pi r^2 h$.
+Para eliminar la variable $r$ y trabajar con una sola variable
+geométrica, se usa semejanza de triángulos entre el cono de agua y el
+cono del tanque:
 \[
-V = \frac{1}{3}\pi r^2 h = \frac{1}{3}\pi\left(\frac{h}{2}\right)^2 h
-= \frac{\pi h^3}{12}.
+\frac{r}{h} = \frac{R}{H} = \frac{6}{12} = \frac{1}{2}
+\implies r = \frac{h}{2}.
+\]
+Sustituyendo en la fórmula del cono se obtiene la ecuación fundamental,
+válida para todo $t$:
+\[
+V = \frac{1}{3}\pi \left(\frac{h}{2}\right)^2 h
+  = \frac{1}{3}\pi \cdot \frac{h^2}{4} \cdot h
+  = \frac{\pi h^3}{12}.
 \]
 
-\textbf{Paso 4.} Derivando respecto a $t$:
+\textbf{Paso 4. Derivación implícita.}
+Se deriva ambos lados respecto a $t$, aplicando la regla de la cadena
+al lado derecho:
 \[
-\frac{dV}{dt} = \frac{\pi h^2}{4}\cdot\frac{dh}{dt}.
+\frac{dV}{dt} = \frac{\pi}{12} \cdot 3h^2 \cdot \frac{dh}{dt}
+              = \frac{\pi h^2}{4}\cdot\frac{dh}{dt}.
 \]
 
-\textbf{Paso 5.} Con $h=4$ y $\frac{dV}{dt}=2$:
+\textbf{Paso 5. Sustitución y despeje.}
+Se sustituyen $h = 4$ m y $\dfrac{dV}{dt} = 2$ m$^3$/min:
 \[
-2 = \frac{\pi(16)}{4}\cdot\frac{dh}{dt}
-\implies \frac{dh}{dt} = \frac{2}{4\pi} = \frac{1}{2\pi}
-\approx 0.159 \text{ m/min}. \qquad\square
+2 = \frac{\pi (4)^2}{4}\cdot\frac{dh}{dt}
+  = \frac{16\pi}{4}\cdot\frac{dh}{dt}
+  = 4\pi\,\frac{dh}{dt}.
+\]
+Despejando:
+\[
+\frac{dh}{dt} = \frac{2}{4\pi} = \frac{1}{2\pi} \approx 0.159 \text{ m/min.}
+\qquad\square
 \]
 \end{myproof}
+
 
 \begin{example}
 Una escalera de $10$ m de largo se apoya en una pared vertical. La base
@@ -101,21 +187,100 @@ superior cuando la base está a $6$ m de la pared?
 \end{example}
 
 \begin{myproof}
-Sea $x$ la distancia de la base a la pared y $y$ la altura del extremo
-superior. La restricción es $x^2+y^2=100$.
+\textbf{Paso 1. Diagrama y variables.}
 
-Derivando respecto a $t$:
+\begin{figure}[H]
+\centering
+% ============================================================
+% GRÁFICA 2: Escalera apoyada en la pared (triángulo rectángulo)
+% ============================================================
+\begin{tikzpicture}[>=stealth, scale=0.6]
+
+  % --- Suelo y pared ---
+  \draw[very thick] (-0.3,0) -- (7,0);          % suelo
+  \draw[very thick] (0,-0.3) -- (0,9.5);        % pared
+  \draw[thick] (-0.15,0) -- (-0.15,-0.15) -- (0,-0.15); % ángulo recto suelo-pared
+
+  % --- Triángulo rectángulo (x=6, y=8, escalera=10) ---
+  \draw[brown!70!black, very thick, line width=1.4pt]
+        (6,0) -- (0,8) node[midway, right=4pt] {escalera $= 10$ m};
+
+  % --- Catetos ---
+  % x = 6 (horizontal)
+  \draw[<->, blue!70!black, thick] (0,-0.7) -- (6,-0.7)
+        node[midway, below] {$x = 6$ m};
+  % y = 8 (vertical)
+  \draw[<->, blue!70!black, thick] (-0.8,0) -- (-0.8,8)
+        node[midway, left] {$y = 8$ m};
+
+  % --- Ángulo recto en la base (x,0) ---
+  \draw (5.7,0) -- (5.7,0.3) -- (6,0.3);
+
+  % --- Puntos ---
+  \filldraw[black] (6,0) circle (2.5pt) node[below right] {base};
+  \filldraw[black] (0,8) circle (2.5pt) node[left]  {extremo superior};
+
+  % --- Flecha dx/dt (base alejándose) ---
+  \draw[->, thick, red!70!black] (6.3,0.4) -- (7.3,0.4)
+        node[right, font=\small] {$\dfrac{dx}{dt}=0.5\ \text{m/s}$};
+
+  % --- Flecha dy/dt (extremo bajando) ---
+  \draw[->, thick, orange!80!black] (-0.5,7.7) -- (-0.5,6.5)
+        node[left, font=\small] {$\dfrac{dy}{dt}=?$};
+
+  % --- Restricción geométrica ---
+  \node[align=center, font=\small] at (4.5, 5.5)
+        {$x^2+y^2=100$};
+
+\end{tikzpicture}
+
+\end{figure}
+La escalera, la pared y el suelo forman un triángulo rectángulo. Las
+cantidades que cambian con el tiempo son:
+$x = x(t): \text{ distancia horizontal de la base a la pared (m)}, $
+
+
+$y = y(t): \text{ altura del extremo superior sobre el suelo (m)}.$
+
+
+La longitud de la escalera, $10$ m, permanece constante.
+
+\textbf{Paso 2. Identificar razones.}
+\begin{itemize}
+    \item Razón conocida: $\dfrac{dx}{dt} = 0.5$ m/s (la base se aleja).
+    \item Razón buscada: $\dfrac{dy}{dt}$ en el instante en que $x = 6$ m.
+\end{itemize}
+
+\textbf{Paso 3. Ecuación fundamental.}
+Por el teorema de Pitágoras, para todo instante $t$:
 \[
-2x\frac{dx}{dt}+2y\frac{dy}{dt}=0
-\implies \frac{dy}{dt} = -\frac{x}{y}\cdot\frac{dx}{dt}.
+x^2 + y^2 = 10^2 = 100.
 \]
-Cuando $x=6$: $y=\sqrt{100-36}=8$. Con $\frac{dx}{dt}=0.5$:
+
+\textbf{Paso 4. Derivación implícita.}
+Se deriva ambos lados respecto a $t$:
 \[
-\frac{dy}{dt} = -\frac{6}{8}\cdot 0.5 = -\frac{3}{8} \text{ m/s}.
+2x\,\frac{dx}{dt} + 2y\,\frac{dy}{dt} = 0.
 \]
-El signo negativo indica que el extremo superior \emph{desciende} a
-$\frac{3}{8}$ m/s. $\square$
+Dividiendo entre $2$ y despejando $\dfrac{dy}{dt}$:
+\[
+\frac{dy}{dt} = -\frac{x}{y}\cdot\frac{dx}{dt}.
+\]
+
+\textbf{Paso 5. Sustitución y despeje.}
+Primero se obtiene $y$ cuando $x = 6$ m usando la ecuación fundamental:
+\[
+y = \sqrt{100 - x^2} = \sqrt{100 - 36} = \sqrt{64} = 8 \text{ m}.
+\]
+Sustituyendo $x=6$, $y=8$ y $\dfrac{dx}{dt}=0.5$:
+\[
+\frac{dy}{dt} = -\frac{6}{8}\cdot 0.5 = -\frac{6}{16} = -\frac{3}{8}
+\text{ m/s.}
+\]
+El signo negativo indica que el extremo superior \emph{desciende}; su
+rapidez de descenso es $\dfrac{3}{8}$ m/s. $\square$
 \end{myproof}
+
 
 \begin{example}
 Un globo esférico se infla a razón de $100\pi$ cm$^3$/s.
@@ -123,19 +288,47 @@ Un globo esférico se infla a razón de $100\pi$ cm$^3$/s.
 \end{example}
 
 \begin{myproof}
-$V=\frac{4}{3}\pi r^3$. Derivando: $\frac{dV}{dt}=4\pi r^2\frac{dr}{dt}$.
-Con $r=5$ y $\frac{dV}{dt}=100\pi$:
+\textbf{Paso 1. Diagrama y variables.}
+El globo es una esfera de radio $r(t)$ y volumen $V(t)$, ambos
+funciones del tiempo $t$.
+
+\textbf{Paso 2. Identificar razones.}
+\begin{itemize}
+    \item Razón conocida: $\dfrac{dV}{dt} = 100\pi$ cm$^3$/s (el globo
+    se infla).
+    \item Razón buscada: $\dfrac{dr}{dt}$ en el instante en que $r = 5$ cm.
+\end{itemize}
+
+\textbf{Paso 3. Ecuación fundamental.}
+El volumen de una esfera de radio $r$ es, para todo $t$:
 \[
-100\pi = 4\pi(25)\frac{dr}{dt}
-\implies \frac{dr}{dt} = 1 \text{ cm/s}. \qquad\square
+V = \frac{4}{3}\pi r^3.
+\]
+
+\textbf{Paso 4. Derivación implícita.}
+Se deriva ambos lados respecto a $t$, aplicando la regla de la cadena:
+\[
+\frac{dV}{dt} = \frac{4}{3}\pi \cdot 3r^2 \cdot \frac{dr}{dt}
+              = 4\pi r^2\,\frac{dr}{dt}.
+\]
+
+\textbf{Paso 5. Sustitución y despeje.}
+Se sustituyen $r = 5$ cm y $\dfrac{dV}{dt} = 100\pi$ cm$^3$/s:
+\[
+100\pi = 4\pi (5)^2\,\frac{dr}{dt}
+       = 4\pi \cdot 25\,\frac{dr}{dt}
+       = 100\pi\,\frac{dr}{dt}.
+\]
+Despejando:
+\[
+\frac{dr}{dt} = \frac{100\pi}{100\pi} = 1 \text{ cm/s.}
+\qquad\square
 \]
 \end{myproof}
-
 %%==========================================================
 \section{Valores Extremos}
 %%==========================================================
-
-\subsection{Extremos absolutos y puntos críticos}
+Una de las aplicaciones más importantes de la derivada es la localización de los extremos de una función, a continuación su definición.
 
 \begin{definition}
 Sea $f$ definida en un conjunto $S$. Se dice que:
@@ -144,13 +337,15 @@ Sea $f$ definida en un conjunto $S$. Se dice que:
     $f(c)\geq f(x)$ para todo $x\in S$.
     \item $f(c)$ es el \textbf{mínimo absoluto} de $f$ en $S$ si
     $f(c)\leq f(x)$ para todo $x\in S$.
-    \item $c$ es un \textbf{punto crítico} de $f$ si es un punto interior
+    \end{itemize}
+  \end{definition}
+  \begin{definition} Se dice que $c$ es un \textbf{punto crítico} de $f$ si es un punto interior
     del dominio donde $f'(c)=0$ (\textbf{punto estacionario}) o donde
     $f'(c)$ no existe (\textbf{punto singular}).
-\end{itemize}
 \end{definition}
 
-\begin{theorem}[Weierstrass --- Teorema del Valor Extremo]
+
+\begin{theorem}[Teorema del Valor Extremo de Weierstrass]
 Si $f$ es continua en el intervalo cerrado $[a,b]$, entonces $f$ alcanza
 un máximo absoluto y un mínimo absoluto en $[a,b]$.
 \end{theorem}
@@ -168,7 +363,7 @@ Si $f$ tiene un extremo local en un punto interior $c$ del dominio, y
 $f'(c)$ existe, entonces $f'(c)=0$.
 \end{theorem}
 
-\begin{pasos}[Localización de extremos absolutos en $\lbrack a,b\rbrack$]
+\begin{pasos} El siguiente protocolo permite realizar la Localización de extremos absolutos en $\lbrack a,b\rbrack$
 \begin{enumerate}
     \item Encontrar todos los puntos críticos de $f$ en $(a,b)$.
     \item Evaluar $f$ en cada punto crítico y en los extremos $a$, $b$.
@@ -178,32 +373,74 @@ $f'(c)$ existe, entonces $f'(c)=0$.
 \end{pasos}
 
 \begin{example}
-Encontrar los extremos absolutos de $f(x)=x^3-3x^2+1$ en $[-\tfrac{1}{2},4]$.
+Encontrar los extremos absolutos de $f(x)=x^3-3x^2+1$ en
+$\left[-\tfrac{1}{2},\,4\right]$.
 \end{example}
 
 \begin{myproof}
-$f'(x)=3x^2-6x=3x(x-2)$. Puntos críticos en el interior: $x=0$ y $x=2$.
-Evaluamos $f$ en los puntos críticos y extremos del intervalo:
+\textbf{Paso 1. Encontrar todos los puntos críticos de $f$ en
+$\left(-\tfrac{1}{2},\,4\right)$.}
+
+Se calcula la derivada de $f$:
+\[
+f'(x) = 3x^2 - 6x = 3x(x-2).
+\]
+Como $f$ es un polinomio, $f'$ existe en todo punto, de modo que los
+únicos puntos críticos son aquellos donde $f'(x)=0$:
+\[
+3x(x-2)=0 \implies x=0 \quad \text{o} \quad x=2.
+\]
+Ambos valores pertenecen al intervalo abierto
+$\left(-\tfrac{1}{2},\,4\right)$, por lo que los dos son puntos críticos
+válidos.
+
+\textbf{Paso 2. Evaluar $f$ en cada punto crítico y en los extremos
+del intervalo.}
+
+Se evalúa $f$ en los puntos críticos $x=0$, $x=2$ y en los extremos
+$x=-\tfrac{1}{2}$, $x=4$:
+
 \begin{center}
-\begin{tabular}{c c}
+\begin{tabular}{c l c}
 \toprule
-$x$ & $f(x)$ \\
+$x$ & \multicolumn{1}{c}{Cálculo} & $f(x)$ \\
 \midrule
-$-\frac{1}{2}$ & $\frac{1}{8}+\frac{3}{4}+1 = \frac{15}{8}$ \\
-$0$ & $1$ \\
-$2$ & $8-12+1=-3$ \\
-$4$ & $64-48+1=17$ \\
+$-\dfrac{1}{2}$ &
+  $\left(-\tfrac{1}{2}\right)^3 - 3\left(-\tfrac{1}{2}\right)^2+1
+   = -\tfrac{1}{8}-\tfrac{3}{4}+1
+   = -\tfrac{1}{8}-\tfrac{6}{8}+\tfrac{8}{8}$ &
+  $\dfrac{1}{8}$ \\[10pt]
+$0$ & $0 - 0 + 1$ & $1$ \\[6pt]
+$2$ & $8 - 12 + 1$ & $-3$ \\[6pt]
+$4$ & $64 - 48 + 1$ & $17$ \\
 \bottomrule
 \end{tabular}
 \end{center}
-Máximo absoluto: $f(4)=17$. Mínimo absoluto: $f(2)=-3$. $\square$
+
+\textbf{Paso 3. Identificar el máximo y el mínimo absolutos.}
+
+Comparando los cuatro valores obtenidos,
+\[
+-3 \;<\; \tfrac{1}{8} \;<\; 1 \;<\; 17,
+\]
+se concluye:
+\begin{itemize}
+    \item \textbf{Máximo absoluto:} $f(4)=17$, alcanzado en el extremo
+    derecho del intervalo.
+    \item \textbf{Mínimo absoluto:} $f(2)=-3$, alcanzado en el punto
+    crítico interior $x=2$.
+\end{itemize}
 \end{myproof}
 
-%%==========================================================
-\section{Monotonía y Concavidad}
-%%==========================================================
-
-\subsection{Intervalos de crecimiento y decrecimiento}
+En ocasiones, una función mantiene un comportamiento uniforme a lo largo
+de un intervalo: siempre sube, siempre baja o permanece constante. Esta
+regularidad se conoce como \textbf{monotonía} y constituye una de las
+propiedades cualitativas más importantes de una función, pues permite
+anticipar su comportamiento global sin necesidad de evaluar cada punto.
+El cálculo diferencial ofrece una herramienta precisa para detectarla:
+el signo de la derivada. Si $f'(x)>0$, la función crece; si $f'(x)<0$,
+decrece. Este vínculo entre la derivada y el comportamiento de $f$ queda
+formalizado en el siguiente criterio.
 
 \begin{theorem}[Criterio de monotonía]
 Sea $f$ continua en $[a,b]$ y derivable en $(a,b)$:
@@ -217,7 +454,123 @@ Sea $f$ continua en $[a,b]$ y derivable en $(a,b)$:
 \end{itemize}
 \end{theorem}
 
-\subsection{Concavidad y puntos de inflexión}
+\begin{example}
+Determinar los intervalos de crecimiento y decrecimiento de
+$f(x)=x^3-3x$.
+\end{example}
+
+\begin{myproof}
+\textbf{Paso 1. Calcular $f'$ y encontrar los puntos críticos.}
+
+\[
+f'(x) = 3x^2 - 3 = 3(x^2-1) = 3(x-1)(x+1).
+\]
+Los puntos críticos se obtienen igualando $f'(x)=0$:
+\[
+3(x-1)(x+1)=0 \implies x=-1 \quad \text{o} \quad x=1.
+\]
+Estos dos valores dividen la recta real en tres intervalos:
+$(-\infty,-1)$, $(-1,1)$ y $(1,+\infty)$.
+
+\textbf{Paso 2. Analizar el signo de $f'$ en cada intervalo.}
+
+\begin{center}
+\begin{tabular}{c c c c}
+\toprule
+Intervalo & Signo de $(x+1)$ & Signo de $(x-1)$ & Signo de $f'(x)$ \\
+\midrule
+$(-\infty,-1)$ & $-$ & $-$ & $+$ \\
+$(-1,\;1)$     & $+$ & $-$ & $-$ \\
+$(1,+\infty)$  & $+$ & $+$ & $+$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{Paso 3. Concluir la monotonía.}
+
+\begin{itemize}
+    \item $f'(x)>0$ en $(-\infty,-1)$: $f$ es \textbf{estrictamente
+    creciente}.
+    \item $f'(x)<0$ en $(-1,1)$: $f$ es \textbf{estrictamente
+    decreciente}.
+    \item $f'(x)>0$ en $(1,+\infty)$: $f$ es \textbf{estrictamente
+    creciente}.
+\end{itemize}
+
+Los valores $f(-1)=2$ y $f(1)=-2$ corresponden respectivamente a un
+máximo local y un mínimo local de $f$. $\square$
+
+
+% ============================================================
+% GRÁFICA: Monotonía de f(x) = x^3 - 3x
+% ============================================================
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[>=stealth, scale=0.9]
+
+  % --- Ejes ---
+  \draw[->] (-3.2,0) -- (3.2,0) node[right] {$x$};
+  \draw[->] (0,-4.5) -- (0,4.5) node[above] {$y$};
+
+  % --- Marcas en el eje x ---
+  \foreach \x in {-2,-1,1,2}
+    \draw (\x,0.07) -- (\x,-0.07) node[below, font=\small] {$\x$};
+
+  % --- Marcas en el eje y ---
+  \foreach \y in {-3,-2,-1,1,2,3}
+    \draw (0.07,\y) -- (-0.07,\y) node[left, font=\small] {$\y$};
+
+  % --- Curva f(x)=x^3-3x por tramos con color según monotonía ---
+  % Tramo creciente: x in [-2, -1]  (verde)
+  \draw[green!55!black, very thick, domain=-2:-1, samples=60]
+        plot (\x, {\x*\x*\x - 3*\x});
+
+  % Tramo decreciente: x in [-1, 1]  (red)
+  \draw[red!70!black, very thick, domain=-1:1, samples=60]
+        plot (\x, {\x*\x*\x - 3*\x});
+
+  % Tramo creciente: x in [1, 2]  (verde)
+  \draw[green!55!black, very thick, domain=1:2, samples=60]
+        plot (\x, {\x*\x*\x - 3*\x});
+
+  % --- Puntos críticos ---
+  \filldraw[black] (-1, 2) circle (2.5pt)
+        node[above right] {$(-1,\,2)$ máx. local};
+  \filldraw[black] ( 1,-2) circle (2.5pt)
+        node[below left]  {$(1,\,-2)$ mín. local};
+
+  % --- Líneas de referencia punteadas ---
+  \draw[dotted, gray] (-1,0) -- (-1,2) -- (0,2);
+  \draw[dotted, gray] ( 1,0) -- ( 1,-2) -- (0,-2);
+
+  % --- Flechas de monotonía sobre la curva ---
+  % Creciente izquierda
+  \draw[->, green!55!black, thick] (-2.2, 1.55) -- (-2.0, 2.0);
+  % Decreciente centro
+  \draw[->, red!70!black,   thick] (-0.2, 0.6)  -- ( 0.2,-0.6);
+  % Creciente derecha
+  \draw[->, green!55!black, thick] ( 2.0,-2.0)  -- ( 2.2,-1.55);
+
+  % --- Leyenda ---
+  \draw[green!55!black, very thick] (1.6, 4.0) -- (2.2, 4.0)
+        node[right, black, font=\small] {creciente ($f'>0$)};
+  \draw[red!70!black,   very thick] (1.6, 3.4) -- (2.2, 3.4)
+        node[right, black, font=\small] {decreciente ($f'<0$)};
+
+\end{tikzpicture}
+\caption{Monotonía de $f(x)=x^3-3x$: la curva se colorea según el signo
+de $f'$.}
+\end{figure}
+\end{myproof}
+
+
+La \textbf{concavidad} describe hacia qué lado «abre» la curva de $f$
+en cada intervalo: como una taza ($\smile$) o como una cúpula ($\frown$).
+Geométricamente, una figura es \emph{convexa} si el segmento que une
+cualquier par de puntos interiores permanece dentro de ella, y
+\emph{cóncava} en caso contrario. En el análisis de funciones, este
+comportamiento lo detecta la segunda derivada: su signo indica si la
+pendiente $f'$ crece o decrece a medida que $x$ avanza.
 
 \begin{definition}
 La gráfica de $f$ es \textbf{cóncava hacia arriba} en $(a,b)$ si $f'$
@@ -238,6 +591,124 @@ $f(x)=x^4$ satisface $f''(0)=0$, pero la concavidad no cambia en $x=0$
 (es cóncava hacia arriba en todo $\R$), por lo que $x=0$ no es punto de
 inflexión.
 \end{rem}
+
+% ============================================================
+\begin{example}
+Determinar los intervalos de concavidad y los puntos de inflexión de
+$f(x)=x^4-4x^3$.
+\end{example}
+
+\begin{myproof}
+\textbf{Paso 1. Calcular $f''$ y encontrar los puntos candidatos a
+inflexión.}
+
+
+\(
+f'(x)  = 4x^3-12x^2, \qquad
+f''(x) = 12x^2-24x  = 12x(x-2).
+\)
+Los ceros de $f''$ son los candidatos a puntos de inflexión: \(
+12x(x-2)=0 \implies x=0 \quad\text{o}\quad x=2.
+\)
+Estos valores dividen la recta real en tres intervalos:
+$(-\infty,0)$, $(0,2)$ y $(2,+\infty)$.
+
+\textbf{Paso 2. Analizar el signo de $f''$ en cada intervalo.}
+
+\begin{center}
+\begin{tabular}{c c c c c}
+\toprule
+Intervalo & Signo de $12x$ & Signo de $(x-2)$ & Signo de $f''(x)$
+& Concavidad \\
+\midrule
+$(-\infty,0)$ & $-$ & $-$ & $+$ & hacia arriba $\smile$ \\
+$(0,\;2)$     & $+$ & $-$ & $-$ & hacia abajo  $\frown$ \\
+$(2,+\infty)$ & $+$ & $+$ & $+$ & hacia arriba $\smile$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{Paso 3. Identificar los puntos de inflexión.}
+
+En $x=0$ y $x=2$ la concavidad cambia de signo, por lo que ambos son
+puntos de inflexión. Sus imágenes son: \(
+f(0)=0, \qquad f(2)=16-32=-16.
+\) Los puntos de inflexión son $(0,\,0)$ y $(2,\,-16)$. 
+\end{myproof}
+% ============================================================
+% GRÁFICA: Concavidad de f(x) = x^4 - 4x^3
+% ============================================================
+\begin{figure}[H]
+\centering
+% ============================================================
+% AJUSTE DE PROPORCIONES:
+%   xscale → controla el ancho  (súbelo para más ancho)
+%   yscale → controla el alto   (bájalo para menos alto)
+%   Relación actual ≈ 2:1  (xscale=1.1, yscale=0.45)
+% ============================================================
+\begin{tikzpicture}[>=stealth, xscale=2.5, yscale=0.5]
+
+  % --- Ejes ---
+  \draw[->] (-1.5,0) -- (4.5,0) node[right] {$x$};
+  \draw[->] (0,-18)  -- (0,6)   node[above] {$y$};
+
+  % --- Marcas eje x ---
+  \foreach \x in {-1,1,2,3,4}
+    \draw (\x,0.25) -- (\x,-0.25) node[below, font=\small] {$\x$};
+
+  % --- Marcas eje y ---
+  \foreach \y in {-15,-10,-5,5}
+    \draw (0.15,\y) -- (-0.15,\y) node[left, font=\small] {$\y$};
+
+  % --- Curva por tramos coloreados según concavidad ---
+  % Cóncava arriba: x in [-1.2, 0]
+  \draw[blue!70!black, very thick, domain=-1:0, samples=60]
+    plot (\x, {\x*\x*\x*\x - 4*\x*\x*\x});
+
+  % Cóncava abajo: x in [0, 2]
+  \draw[red!70!black, very thick, domain=0:2, samples=60]
+    plot (\x, {\x*\x*\x*\x - 4*\x*\x*\x});
+
+  % Cóncava arriba: x in [2, 4.2]
+  \draw[blue!70!black, very thick, domain=2:3.5, samples=80]
+    plot (\x, {\x*\x*\x*\x - 4*\x*\x*\x});
+
+  % --- Puntos de inflexión ---
+  % NOTA: circle necesita un radio proporcional; con escalas distintas
+  % se usa "circle[radius=...]" para que no quede elipse
+  \filldraw[black] (0,  0) circle[radius=3pt]
+    node[above right, font=\small] {$(0,\,0)$ infl.};
+  \filldraw[black] (2,-16) circle[radius=3pt]
+    node[right, font=\small] {$(2,\,-16)$ infl.};
+
+  % --- Líneas de referencia punteadas ---
+  \draw[dotted, gray] (2,0) -- (2,-16) -- (0,-16);
+  \node[left, font=\small, gray] at (0,-16) {$-16$};
+
+  % --- Anotaciones de concavidad ---
+  \node[blue!70!black, font=\small] at (-0.7,  4.5) {$f''>0$};
+  \node[red!70!black,  font=\small] at ( 1.0, -5.5) {$f''<0$};
+  \node[blue!70!black, font=\small] at ( 3.6, -5.0) {$f''>0$};
+
+  % --- Símbolos de curvatura ---
+  \node[blue!70!black] at (-0.6,  2.5) {$\smile$};
+  \node[red!70!black]  at ( 1.0, -9.0) {$\frown$};
+  \node[blue!70!black] at ( 3.5,-10.0) {$\smile$};
+
+  % --- Leyenda ---
+  \draw[blue!70!black, very thick] (2.8, 5.5) -- (3.3, 5.5)
+    node[right, black, font=\small] {cóncava hacia arriba ($f''>0$)};
+  \draw[red!70!black,  very thick] (2.8, 4.0) -- (3.3, 4.0)
+    node[right, black, font=\small] {cóncava hacia abajo ($f''<0$)};
+
+\end{tikzpicture}
+\caption{Concavidad de $f(x)=x^4-4x^3$: en azul los tramos donde
+$f''>0$ (curva abre hacia arriba) y en rojo donde $f''<0$ (curva abre
+hacia abajo). Los puntos negros señalan los puntos de inflexión.}
+\end{figure}
+
+
+
 
 %%==========================================================
 \section{Extremos Locales}

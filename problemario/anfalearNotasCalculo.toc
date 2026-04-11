@@ -45,67 +45,60 @@
 \contentsline {section}{\numberline {5.9}Derivadas de las Funciones Trigonométricas Inversas}{71}{section.5.9}%
 \contentsline {section}{\numberline {5.10}Problemas Propuestos}{73}{section.5.10}%
 \contentsline {chapter}{\numberline {6}Aplicaciones de la Derivada}{79}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Panorama General}{79}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Razones de Cambio Relacionadas}{79}{section.6.2}%
-\contentsline {subsection}{\numberline {6.2.1}Fundamento}{79}{subsection.6.2.1}%
-\contentsline {subsection}{\numberline {6.2.2}Ejemplos}{80}{subsection.6.2.2}%
-\contentsline {section}{\numberline {6.3}Valores Extremos}{81}{section.6.3}%
-\contentsline {subsection}{\numberline {6.3.1}Extremos absolutos y puntos críticos}{81}{subsection.6.3.1}%
-\contentsline {section}{\numberline {6.4}Monotonía y Concavidad}{82}{section.6.4}%
-\contentsline {subsection}{\numberline {6.4.1}Intervalos de crecimiento y decrecimiento}{82}{subsection.6.4.1}%
-\contentsline {subsection}{\numberline {6.4.2}Concavidad y puntos de inflexión}{82}{subsection.6.4.2}%
-\contentsline {section}{\numberline {6.5}Extremos Locales}{82}{section.6.5}%
-\contentsline {section}{\numberline {6.6}Trazado Sistemático de Curvas}{83}{section.6.6}%
-\contentsline {section}{\numberline {6.7}Optimización}{84}{section.6.7}%
-\contentsline {subsection}{\numberline {6.7.1}Metodología}{84}{subsection.6.7.1}%
-\contentsline {subsection}{\numberline {6.7.2}Ejemplos}{85}{subsection.6.7.2}%
-\contentsline {section}{\numberline {6.8}El Teorema del Valor Medio}{86}{section.6.8}%
-\contentsline {section}{\numberline {6.9}Regla de L'Hôpital}{86}{section.6.9}%
-\contentsline {subsection}{\numberline {6.9.1}Reducción de otras formas indeterminadas}{87}{subsection.6.9.1}%
-\contentsline {subsection}{\numberline {6.9.2}Ejemplos}{87}{subsection.6.9.2}%
-\contentsline {section}{\numberline {6.10}Métodos Numéricos para la Localización de Raíces}{88}{section.6.10}%
-\contentsline {subsection}{\numberline {6.10.1}Bisección}{88}{subsection.6.10.1}%
-\contentsline {subsection}{\numberline {6.10.2}Método de Newton-Raphson}{88}{subsection.6.10.2}%
-\contentsline {subsection}{\numberline {6.10.3}Método de punto fijo}{89}{subsection.6.10.3}%
-\contentsline {subsection}{\numberline {6.10.4}Comparación de métodos}{89}{subsection.6.10.4}%
-\contentsline {section}{\numberline {6.11}Problemas Propuestos}{89}{section.6.11}%
-\contentsline {chapter}{\numberline {7}Técnicas de Integración}{97}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Panorama General}{97}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Sustitución Simple}{97}{section.7.2}%
-\contentsline {subsection}{\numberline {7.2.1}Fundamento teórico}{98}{subsection.7.2.1}%
-\contentsline {subsection}{\numberline {7.2.2}Sustitución en integrales definidas}{98}{subsection.7.2.2}%
-\contentsline {subsection}{\numberline {7.2.3}Ejemplos}{98}{subsection.7.2.3}%
-\contentsline {section}{\numberline {7.3}Integración por Partes}{99}{section.7.3}%
-\contentsline {subsection}{\numberline {7.3.1}Fundamento teórico}{99}{subsection.7.3.1}%
-\contentsline {subsection}{\numberline {7.3.2}La regla LIATE}{100}{subsection.7.3.2}%
-\contentsline {subsection}{\numberline {7.3.3}Ejemplos}{100}{subsection.7.3.3}%
-\contentsline {section}{\numberline {7.4}Identidades Trigonométricas Esenciales}{102}{section.7.4}%
-\contentsline {section}{\numberline {7.5}Integración de Potencias Trigonométricas}{103}{section.7.5}%
-\contentsline {subsection}{\numberline {7.5.1}Integrales de la forma $\DOTSI \intop \ilimits@ \sin ^m x \cos ^n x \, dx$}{103}{subsection.7.5.1}%
-\contentsline {subsection}{\numberline {7.5.2}Integrales de la forma $\DOTSI \intop \ilimits@ \tan ^m x \sec ^n x \, dx$}{104}{subsection.7.5.2}%
-\contentsline {subsection}{\numberline {7.5.3}Integrales de productos $\sin (mx)\cos (nx)$, $\sin (mx)\sin (nx)$, $\cos (mx)\cos (nx)$}{105}{subsection.7.5.3}%
-\contentsline {section}{\numberline {7.6}Sustitución Trigonométrica}{106}{section.7.6}%
-\contentsline {subsection}{\numberline {7.6.1}Idea geométrica y fundamento}{106}{subsection.7.6.1}%
-\contentsline {subsection}{\numberline {7.6.2}Caso 1: Radical $\sqrt {a^2 - u^2}$}{106}{subsection.7.6.2}%
-\contentsline {subsection}{\numberline {7.6.3}Caso 2: Radical $\sqrt {a^2+u^2}$}{107}{subsection.7.6.3}%
-\contentsline {subsection}{\numberline {7.6.4}Caso 3: Radical $\sqrt {u^2-a^2}$}{107}{subsection.7.6.4}%
-\contentsline {subsection}{\numberline {7.6.5}Tabla resumen de sustituciones}{108}{subsection.7.6.5}%
-\contentsline {section}{\numberline {7.7}Integración por Fracciones Parciales}{108}{section.7.7}%
-\contentsline {subsection}{\numberline {7.7.1}Fundamento algebraico}{108}{subsection.7.7.1}%
-\contentsline {subsection}{\numberline {7.7.2}Procedimiento}{109}{subsection.7.7.2}%
-\contentsline {subsection}{\numberline {7.7.3}Casos de descomposición}{109}{subsection.7.7.3}%
-\contentsline {subsection}{\numberline {7.7.4}Fórmulas de integración para cada fracción}{109}{subsection.7.7.4}%
-\contentsline {subsection}{\numberline {7.7.5}Ejemplos}{110}{subsection.7.7.5}%
-\contentsline {section}{\numberline {7.8}Ejercicios propuestos}{111}{section.7.8}%
-\contentsline {chapter}{\numberline {8}La Integral Definida}{115}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Antecedentes Históricos: De Arquímedes a Leibniz}{115}{section.8.1}%
-\contentsline {section}{\numberline {8.2}Notación Sigma y Fórmulas de Sumatorias}{116}{section.8.2}%
-\contentsline {section}{\numberline {8.3}Sumas de Riemann}{116}{section.8.3}%
-\contentsline {section}{\numberline {8.4}La Integral Definida}{117}{section.8.4}%
-\contentsline {section}{\numberline {8.5}Propiedades de la Integral Definida}{118}{section.8.5}%
-\contentsline {section}{\numberline {8.6}Los Teoremas Fundamentales del Cálculo}{119}{section.8.6}%
-\contentsline {subsection}{\numberline {8.6.1}Primer Teorema Fundamental}{119}{subsection.8.6.1}%
-\contentsline {subsection}{\numberline {8.6.2}Segundo Teorema Fundamental}{120}{subsection.8.6.2}%
-\contentsline {section}{\numberline {8.7}Teorema del Valor Medio para Integrales}{121}{section.8.7}%
-\contentsline {chapter}{Bibliografía}{123}{chapter*.2}%
+\contentsline {section}{\numberline {6.1}Razones de Cambio Relacionadas}{79}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Valores Extremos}{82}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Extremos Locales}{86}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Trazado Sistemático de Curvas}{86}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Optimización}{87}{section.6.5}%
+\contentsline {subsection}{\numberline {6.5.1}Metodología}{87}{subsection.6.5.1}%
+\contentsline {subsection}{\numberline {6.5.2}Ejemplos}{88}{subsection.6.5.2}%
+\contentsline {section}{\numberline {6.6}El Teorema del Valor Medio}{89}{section.6.6}%
+\contentsline {section}{\numberline {6.7}Regla de L'Hôpital}{89}{section.6.7}%
+\contentsline {subsection}{\numberline {6.7.1}Reducción de otras formas indeterminadas}{90}{subsection.6.7.1}%
+\contentsline {subsection}{\numberline {6.7.2}Ejemplos}{90}{subsection.6.7.2}%
+\contentsline {section}{\numberline {6.8}Métodos Numéricos para la Localización de Raíces}{91}{section.6.8}%
+\contentsline {subsection}{\numberline {6.8.1}Bisección}{91}{subsection.6.8.1}%
+\contentsline {subsection}{\numberline {6.8.2}Método de Newton-Raphson}{91}{subsection.6.8.2}%
+\contentsline {subsection}{\numberline {6.8.3}Método de punto fijo}{92}{subsection.6.8.3}%
+\contentsline {subsection}{\numberline {6.8.4}Comparación de métodos}{92}{subsection.6.8.4}%
+\contentsline {section}{\numberline {6.9}Problemas Propuestos}{92}{section.6.9}%
+\contentsline {chapter}{\numberline {7}Técnicas de Integración}{101}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Panorama General}{101}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Sustitución Simple}{101}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}Fundamento teórico}{102}{subsection.7.2.1}%
+\contentsline {subsection}{\numberline {7.2.2}Sustitución en integrales definidas}{102}{subsection.7.2.2}%
+\contentsline {subsection}{\numberline {7.2.3}Ejemplos}{102}{subsection.7.2.3}%
+\contentsline {section}{\numberline {7.3}Integración por Partes}{103}{section.7.3}%
+\contentsline {subsection}{\numberline {7.3.1}Fundamento teórico}{103}{subsection.7.3.1}%
+\contentsline {subsection}{\numberline {7.3.2}La regla LIATE}{104}{subsection.7.3.2}%
+\contentsline {subsection}{\numberline {7.3.3}Ejemplos}{104}{subsection.7.3.3}%
+\contentsline {section}{\numberline {7.4}Identidades Trigonométricas Esenciales}{106}{section.7.4}%
+\contentsline {section}{\numberline {7.5}Integración de Potencias Trigonométricas}{107}{section.7.5}%
+\contentsline {subsection}{\numberline {7.5.1}Integrales de la forma $\DOTSI \intop \ilimits@ \sin ^m x \cos ^n x \, dx$}{107}{subsection.7.5.1}%
+\contentsline {subsection}{\numberline {7.5.2}Integrales de la forma $\DOTSI \intop \ilimits@ \tan ^m x \sec ^n x \, dx$}{108}{subsection.7.5.2}%
+\contentsline {subsection}{\numberline {7.5.3}Integrales de productos $\sin (mx)\cos (nx)$, $\sin (mx)\sin (nx)$, $\cos (mx)\cos (nx)$}{109}{subsection.7.5.3}%
+\contentsline {section}{\numberline {7.6}Sustitución Trigonométrica}{110}{section.7.6}%
+\contentsline {subsection}{\numberline {7.6.1}Idea geométrica y fundamento}{110}{subsection.7.6.1}%
+\contentsline {subsection}{\numberline {7.6.2}Caso 1: Radical $\sqrt {a^2 - u^2}$}{110}{subsection.7.6.2}%
+\contentsline {subsection}{\numberline {7.6.3}Caso 2: Radical $\sqrt {a^2+u^2}$}{111}{subsection.7.6.3}%
+\contentsline {subsection}{\numberline {7.6.4}Caso 3: Radical $\sqrt {u^2-a^2}$}{111}{subsection.7.6.4}%
+\contentsline {subsection}{\numberline {7.6.5}Tabla resumen de sustituciones}{112}{subsection.7.6.5}%
+\contentsline {section}{\numberline {7.7}Integración por Fracciones Parciales}{112}{section.7.7}%
+\contentsline {subsection}{\numberline {7.7.1}Fundamento algebraico}{112}{subsection.7.7.1}%
+\contentsline {subsection}{\numberline {7.7.2}Procedimiento}{113}{subsection.7.7.2}%
+\contentsline {subsection}{\numberline {7.7.3}Casos de descomposición}{113}{subsection.7.7.3}%
+\contentsline {subsection}{\numberline {7.7.4}Fórmulas de integración para cada fracción}{113}{subsection.7.7.4}%
+\contentsline {subsection}{\numberline {7.7.5}Ejemplos}{114}{subsection.7.7.5}%
+\contentsline {section}{\numberline {7.8}Ejercicios propuestos}{115}{section.7.8}%
+\contentsline {chapter}{\numberline {8}La Integral Definida}{119}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Antecedentes Históricos: De Arquímedes a Leibniz}{119}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Notación Sigma y Fórmulas de Sumatorias}{120}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Sumas de Riemann}{120}{section.8.3}%
+\contentsline {section}{\numberline {8.4}La Integral Definida}{121}{section.8.4}%
+\contentsline {section}{\numberline {8.5}Propiedades de la Integral Definida}{122}{section.8.5}%
+\contentsline {section}{\numberline {8.6}Los Teoremas Fundamentales del Cálculo}{123}{section.8.6}%
+\contentsline {subsection}{\numberline {8.6.1}Primer Teorema Fundamental}{123}{subsection.8.6.1}%
+\contentsline {subsection}{\numberline {8.6.2}Segundo Teorema Fundamental}{124}{subsection.8.6.2}%
+\contentsline {section}{\numberline {8.7}Teorema del Valor Medio para Integrales}{125}{section.8.7}%
+\contentsline {chapter}{Bibliografía}{127}{chapter*.2}%
 \contentsfinish 
