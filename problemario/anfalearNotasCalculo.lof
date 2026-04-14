@@ -1,42 +1,49 @@
 \babel@toc {spanish}{}\relax 
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Recta numérica o eje real}}{22}{figure.2.1}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Representación trigonométrica en el círculo unitario: $x = \cos \theta $, $y = \sin \theta $, donde $(x,y)$ satisface $x^2 + y^2 = 1$}}{24}{figure.2.2}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Intervalo abierto $(x_0 - \varepsilon , x_0 + \varepsilon )$ representado como línea centrada en $x_0$ de radio $\varepsilon $ en el eje real.}}{24}{figure.2.3}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Recta numérica o eje real}}{24}{figure.2.1}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Representación trigonométrica en el círculo unitario: $x = \cos \theta $, $y = \sin \theta $, donde $(x,y)$ satisface $x^2 + y^2 = 1$}}{26}{figure.2.2}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Intervalo abierto $(x_0 - \varepsilon , x_0 + \varepsilon )$ representado como línea centrada en $x_0$ de radio $\varepsilon $ en el eje real.}}{26}{figure.2.3}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Figura del ejemplo \ref {funcioncosto}}}{29}{figure.3.1}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Circunferencia unitaria fallando la prueba de la recta vertical.}}{30}{figure.3.2}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Bosquejo de $y=x^2.$}}{30}{figure.3.3}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Gráfica de la función $f(x)$ definida por partes.}}{31}{figure.3.4}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces $f(x)=x$: $\operatorname {Dom} = \mathbb {R}$.}}{32}{figure.3.5}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Función cuadrática $f(x)=x^2$: $\operatorname {Dom} = \mathbb {R}$.}}{32}{figure.3.6}%
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Función cúbica $f(x)=x^3$: $\operatorname {Dom} = \mathbb {R}$.}}{32}{figure.3.7}%
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Función $f(x)=x^4$: $\operatorname {Dom} = \mathbb {R}$, par.}}{33}{figure.3.8}%
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Función recíproca $f(x)=1/x$: $\operatorname {Dom} = \mathbb {R} \setminus \{0\}$}}{33}{figure.3.9}%
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Función $x^{2/3}$: $\operatorname {Dom} = \mathbb {R}$.}}{33}{figure.3.10}%
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Exponenciales: $f(x)=2^x$ ($\operatorname {Dom}=\mathbb {R}, y>0$), $g(x)=(1/2)^x$ (asíntota $y=0$).}}{33}{figure.3.11}%
-\contentsline {figure}{\numberline {3.12}{\ignorespaces $\log _2 x$: $\operatorname {Dom}=(0,+\infty )$, pasa por $(1,0)$, creciente.}}{34}{figure.3.12}%
-\contentsline {figure}{\numberline {3.13}{\ignorespaces $\sin x$, $\cos x$: período $2\pi $, rango $[-1,1]$.}}{35}{figure.3.13}%
-\contentsline {figure}{\numberline {3.14}{\ignorespaces $\tan x$, $\cot x$: período $\pi $, rango $\mathbb {R}$, asíntotas verticales en $\pi /2.$}}{35}{figure.3.14}%
-\contentsline {figure}{\numberline {3.15}{\ignorespaces $\sec x = 1/\cos x$, $\csc x = 1/\sin x$: rango $\mathbb {R}\setminus (-1,1)$, asíntotas verticales.}}{35}{figure.3.15}%
-\contentsline {figure}{\numberline {3.16}{\ignorespaces Traslaciones de $y=x^2$: vértice se desplaza de $(0,0)$ a $(h,k)=(1,2)$.}}{38}{figure.3.16}%
-\contentsline {figure}{\numberline {3.17}{\ignorespaces Transformaciones superpuestas de $y=\sin x$: amplitud, compresiones y reflexión.}}{38}{figure.3.17}%
-\contentsline {figure}{\numberline {3.18}{\ignorespaces Componentes de la forma amplitud-fase.}}{39}{figure.3.18}%
-\contentsline {figure}{\numberline {3.19}{\ignorespaces Función arcoseno: dominio $[-1,1]$, rango $[-\pi /2, \pi /2]$}}{42}{figure.3.19}%
-\contentsline {figure}{\numberline {3.20}{\ignorespaces Función arcocoseno: dominio $[-1,1]$, rango $[0, \pi ]$}}{42}{figure.3.20}%
-\contentsline {figure}{\numberline {3.21}{\ignorespaces Función arcotangente: dominio $(-\infty , \infty )$, rango $(-\pi /2, \pi /2)$}}{42}{figure.3.21}%
-\contentsline {figure}{\numberline {3.22}{\ignorespaces Ventana normanda}}{44}{figure.3.22}%
-\contentsline {figure}{\numberline {3.23}{\ignorespaces Caja sin tapa: Hoja de cartón de $20 \times 12$ cm con cuadrados de lado $x$ recortados en las esquinas}}{45}{figure.3.23}%
-\contentsline {figure}{\numberline {3.24}{\ignorespaces Caja armada con pestañas laterales}}{45}{figure.3.24}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Figura del ejemplo \ref {funcioncosto}}}{31}{figure.3.1}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Circunferencia unitaria fallando la prueba de la recta vertical.}}{32}{figure.3.2}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Bosquejo de $y=x^2.$}}{32}{figure.3.3}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Gráfica de la función $f(x)$ definida por partes.}}{33}{figure.3.4}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces $f(x)=x$: $\operatorname {Dom} = \mathbb {R}$.}}{34}{figure.3.5}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Función cuadrática $f(x)=x^2$: $\operatorname {Dom} = \mathbb {R}$.}}{34}{figure.3.6}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Función cúbica $f(x)=x^3$: $\operatorname {Dom} = \mathbb {R}$.}}{34}{figure.3.7}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Función $f(x)=x^4$: $\operatorname {Dom} = \mathbb {R}$, par.}}{35}{figure.3.8}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Función recíproca $f(x)=1/x$: $\operatorname {Dom} = \mathbb {R} \setminus \{0\}$}}{35}{figure.3.9}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Función $x^{2/3}$: $\operatorname {Dom} = \mathbb {R}$.}}{35}{figure.3.10}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Exponenciales: $f(x)=2^x$ ($\operatorname {Dom}=\mathbb {R}, y>0$), $g(x)=(1/2)^x$ (asíntota $y=0$).}}{35}{figure.3.11}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces $\log _2 x$: $\operatorname {Dom}=(0,+\infty )$, pasa por $(1,0)$, creciente.}}{36}{figure.3.12}%
+\contentsline {figure}{\numberline {3.13}{\ignorespaces $\sin x$, $\cos x$: período $2\pi $, rango $[-1,1]$.}}{37}{figure.3.13}%
+\contentsline {figure}{\numberline {3.14}{\ignorespaces $\tan x$, $\cot x$: período $\pi $, rango $\mathbb {R}$, asíntotas verticales en $\pi /2.$}}{37}{figure.3.14}%
+\contentsline {figure}{\numberline {3.15}{\ignorespaces $\sec x = 1/\cos x$, $\csc x = 1/\sin x$: rango $\mathbb {R}\setminus (-1,1)$, asíntotas verticales.}}{37}{figure.3.15}%
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Traslaciones de $y=x^2$: vértice se desplaza de $(0,0)$ a $(h,k)=(1,2)$.}}{40}{figure.3.16}%
+\contentsline {figure}{\numberline {3.17}{\ignorespaces Transformaciones superpuestas de $y=\sin x$: amplitud, compresiones y reflexión.}}{40}{figure.3.17}%
+\contentsline {figure}{\numberline {3.18}{\ignorespaces Componentes de la forma amplitud-fase.}}{41}{figure.3.18}%
+\contentsline {figure}{\numberline {3.19}{\ignorespaces Función arcoseno: dominio $[-1,1]$, rango $[-\pi /2, \pi /2]$}}{44}{figure.3.19}%
+\contentsline {figure}{\numberline {3.20}{\ignorespaces Función arcocoseno: dominio $[-1,1]$, rango $[0, \pi ]$}}{44}{figure.3.20}%
+\contentsline {figure}{\numberline {3.21}{\ignorespaces Función arcotangente: dominio $(-\infty , \infty )$, rango $(-\pi /2, \pi /2)$}}{44}{figure.3.21}%
+\contentsline {figure}{\numberline {3.22}{\ignorespaces Ventana normanda}}{46}{figure.3.22}%
+\contentsline {figure}{\numberline {3.23}{\ignorespaces Caja sin tapa: Hoja de cartón de $20 \times 12$ cm con cuadrados de lado $x$ recortados en las esquinas}}{47}{figure.3.23}%
+\contentsline {figure}{\numberline {3.24}{\ignorespaces Caja armada con pestañas laterales}}{47}{figure.3.24}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Representación gráfica de la discontinuidad evitable en $x=1$.}}{51}{figure.4.1}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Interpretación geométrica del límite}}{52}{figure.4.2}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Comparación de áreas: triángulo inscrito $\subset $ sector $\subset $ triángulo circunscrito.}}{54}{figure.4.3}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Un círculo de radio $r$ inscrito en la parábola $y = x^2$.}}{77}{figure.5.1}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Triángulo equilátero formado por el eje $x$ y las rectas tangentes.}}{79}{figure.5.2}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Lámpara en $(3,h)$, elipse $x^2+4y^2=5$ y borde de sombra en $(-5,0)$.}}{80}{figure.5.3}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Monotonía de $f(x)=x^3-3x$: la curva se colorea según el signo de $f'$.}}{86}{figure.6.1}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Concavidad de $f(x)=x^4-4x^3$: en azul los tramos donde $f''>0$ (curva abre hacia arriba) y en rojo donde $f''<0$ (curva abre hacia abajo). Los puntos negros señalan los puntos de inflexión.}}{87}{figure.6.2}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Bosquejo de $f(x)=\dfrac {x^2}{x^2-4}$. Las ramas azules son cóncavas hacia arriba y las rojas hacia abajo. Las líneas grises punteadas indican las asíntotas $x=\pm 2$ e $y=1$.}}{91}{figure.6.3}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Un círculo de radio $r$ inscrito en la parábola $y = x^2$.}}{75}{figure.5.1}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Triángulo equilátero formado por el eje $x$ y las rectas tangentes.}}{77}{figure.5.2}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Lámpara en $(3,h)$, elipse $x^2+4y^2=5$ y borde de sombra en $(-5,0)$.}}{78}{figure.5.3}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Monotonía de $f(x)=x^3-3x$: la curva se colorea según el signo de $f'$.}}{84}{figure.6.1}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Concavidad de $f(x)=x^4-4x^3$: en azul los tramos donde $f''>0$ (curva abre hacia arriba) y en rojo donde $f''<0$ (curva abre hacia abajo). Los puntos negros señalan los puntos de inflexión.}}{85}{figure.6.2}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsfinish 

@@ -1,0 +1,1073 @@
+% ============================================================
+%  CAPÍTULO: Sucesiones y series de números
+% ============================================================
+\chapter{Sucesiones y series de números}
+
+Una parte fundamental del análisis real es el estudio de las sucesiones y series. Este tema
+abarca desde series numéricas hasta series de funciones, permitiendo expresar funciones complejas
+de manera más manejable y transformar cálculos analíticos en procesos más sistemáticos. Por
+ejemplo, una calculadora no almacena en memoria el valor de $\sin(1)$; lo aproxima numéricamente
+evaluando los primeros términos de la serie de Taylor de la función seno en $x = 1$. Para
+comprender este tipo de herramientas, es necesario establecer definiciones precisas y resultados
+básicos. En este capítulo se presentarán los aspectos esenciales, priorizando la claridad
+conceptual y la aplicación práctica sin perder rigor matemático.
+
+% ------------------------------------------------------------
+\section{Sucesiones de números reales}
+
+El estudio de las series comienza con el concepto de sucesión.
+
+\begin{definition}[Sucesión de números reales]
+Una \textbf{sucesión infinita} de números reales es una función $a : \mathbb{N} \to \mathbb{R}$,
+donde $\mathbb{N} = \{1, 2, 3, \ldots\}$ (o un subconjunto de la forma
+$\{n \in \mathbb{Z} : n \geq n_0\}$). Se denota como $\{a_n\}_{n=1}^\infty$, o simplemente
+$\{a_n\}$, donde $a_n = a(n)$ recibe el nombre de \textbf{término general}.
+\end{definition}
+
+\begin{example}[Formas de definir una sucesión]
+Las sucesiones pueden especificarse de distintas maneras:
+\begin{itemize}
+    \item \textbf{Fórmula explícita:} $a_n = 1 - \dfrac{1}{n}$ genera
+          $0,\,\dfrac{1}{2},\,\dfrac{2}{3},\,\dfrac{3}{4}, \ldots$, que se aproxima
+          progresivamente a $1$.
+    \item \textbf{Fórmula recursiva:} $a_1 = 1,\; a_{n+1} = a_n + 3$ genera
+          $1, 4, 7, 10, \ldots$ (sucesión aritmética de razón $3$).
+    \item \textbf{Recurrencia de segundo orden:} $f_1 = 1,\; f_2 = 1,\;
+          f_{n+2} = f_n + f_{n+1}$ define la sucesión de Fibonacci:
+          $1, 1, 2, 3, 5, 8, 13, 21, \ldots$
+    \item \textbf{Definición implícita:} $a_n = \lfloor \sqrt{n} \rfloor$ da
+          $1, 1, 1, 2, 2, 2, 2, 2, 3, 3, \ldots$, donde $\lfloor\,\cdot\,\rfloor$
+          denota la función piso.
+\end{itemize}
+\end{example}
+
+El comportamiento asintótico de una sucesión se formaliza mediante el concepto de límite.
+
+\begin{definition}[Límite de una sucesión]
+Se dice que la sucesión $\{a_n\}$ \textbf{converge} al número real $L$, y se escribe
+$\lim_{n \to \infty} a_n = L$, si para cada $\varepsilon > 0$ existe $N = N(\varepsilon) \in
+\mathbb{N}$ tal que
+\[
+    n > N \implies |a_n - L| < \varepsilon.
+\]
+Si no existe tal $L$, la sucesión \textbf{diverge}.
+\end{definition}
+
+\begin{rem}
+Geométricamente, $\lim_{n \to \infty} a_n = L$ significa que, a partir de algún índice $N$,
+\emph{todos} los términos de la sucesión quedan dentro de la banda
+$(L - \varepsilon,\, L + \varepsilon)$, sin importar cuán pequeña sea $\varepsilon > 0$.
+\end{rem}
+
+\begin{theorem}[Unicidad del límite]
+Si una sucesión converge, su límite es único.
+\end{theorem}
+
+\begin{myproof}
+Suponga que $a_n \to L$ y $a_n \to M$ con $L \neq M$. Sea $\varepsilon = |L - M|/2 > 0$.
+Existen $N_1, N_2$ tales que $|a_n - L| < \varepsilon$ para $n > N_1$ y
+$|a_n - M| < \varepsilon$ para $n > N_2$. Para $n > \max(N_1, N_2)$:
+\[
+    |L - M| \leq |a_n - L| + |a_n - M| < 2\varepsilon = |L - M|,
+\]
+una contradicción. Luego $L = M$.
+\end{myproof}
+
+Las propiedades algebraicas de los límites de funciones se trasladan directamente a sucesiones.
+
+\begin{theorem}[Propiedades aritméticas de los límites]
+Si $\lim_{n \to \infty} a_n = A$ y $\lim_{n \to \infty} b_n = B$, entonces:
+\begin{enumerate}
+    \item $\lim_{n \to \infty} (a_n \pm b_n) = A \pm B$.
+    \item $\lim_{n \to \infty} (k\,a_n) = kA$ para todo $k \in \mathbb{R}$.
+    \item $\lim_{n \to \infty} (a_n b_n) = AB$.
+    \item $\lim_{n \to \infty} \dfrac{a_n}{b_n} = \dfrac{A}{B}$, siempre que $B \neq 0$
+          y $b_n \neq 0$ para $n$ suficientemente grande.
+    \item Si $f$ es continua en $A$, entonces
+          $\lim_{n \to \infty} f(a_n) = f(A)$.
+\end{enumerate}
+\end{theorem}
+
+\begin{theorem}[Teorema del emparedado]
+Si existen $N_0 \in \mathbb{N}$ y sucesiones $\{a_n\}$, $\{b_n\}$ tales que
+$a_n \leq c_n \leq b_n$ para todo $n > N_0$, y
+$\lim_{n \to \infty} a_n = \lim_{n \to \infty} b_n = L$, entonces
+$\lim_{n \to \infty} c_n = L$.
+\end{theorem}
+
+\begin{example}
+Calcule $\lim_{n \to \infty} \dfrac{\sin n}{n}$. Como $-1 \leq \sin n \leq 1$, se tiene
+$-\dfrac{1}{n} \leq \dfrac{\sin n}{n} \leq \dfrac{1}{n}$ para todo $n \geq 1$. Puesto que
+ambas cotas tienden a $0$, por el emparedado $\lim_{n \to \infty} \dfrac{\sin n}{n} = 0$.
+\end{example}
+
+% --  Monotonía, acotación y convergencia  --
+\subsection{Monotonía, acotación y convergencia}
+
+\begin{definition}[Sucesión monótona]
+Una sucesión $\{a_n\}$ es \textbf{no decreciente} si $a_n \leq a_{n+1}$ para todo $n$, y
+\textbf{no creciente} si $a_n \geq a_{n+1}$ para todo $n$. Se dice \textbf{monótona} si
+satisface alguna de las dos condiciones.
+\end{definition}
+
+\begin{definition}[Sucesión acotada]
+Una sucesión $\{a_n\}$ está \textbf{acotada superiormente} si existe $M$ tal que
+$a_n \leq M$ para todo $n$; está \textbf{acotada inferiormente} si existe $m$ con
+$a_n \geq m$ para todo $n$; y está \textbf{acotada} si existe $M > 0$ con
+$|a_n| \leq M$ para todo $n$.
+\end{definition}
+
+\begin{rem}
+Toda sucesión convergente es acotada. El recíproco es falso: $a_n = (-1)^n$ es acotada
+pero diverge.
+\end{rem}
+
+\begin{theorem}[Teorema de convergencia monótona]
+Toda sucesión monótona y acotada converge. Más precisamente:
+\begin{itemize}
+    \item Si $\{a_n\}$ es no decreciente y acotada superiormente, converge a
+          $\sup_n a_n$.
+    \item Si $\{a_n\}$ es no creciente y acotada inferiormente, converge a
+          $\inf_n a_n$.
+\end{itemize}
+\end{theorem}
+
+\begin{rem}
+Este teorema es consecuencia directa de la completitud de $\mathbb{R}$ (propiedad del
+supremo). Es uno de los resultados más usados para demostrar convergencia sin calcular
+el límite explícitamente.
+\end{rem}
+
+\begin{example}
+Sea $a_1 = 1$ y $a_{n+1} = \sqrt{2 + a_n}$. Verifiquemos que converge.
+
+\textit{Acotación.} Por inducción: si $a_n \leq 2$, entonces
+$a_{n+1} = \sqrt{2 + a_n} \leq \sqrt{4} = 2$. Como $a_1 = 1 \leq 2$, la
+sucesión está acotada superiormente por $2$.
+
+\textit{Monotonía.} Para $0 \leq a_n \leq 2$, la desigualdad $a_{n+1} \geq a_n$
+equivale a $\sqrt{2 + a_n} \geq a_n$, es decir $2 + a_n \geq a_n^2$, o sea
+$(a_n - 2)(a_n + 1) \leq 0$, que se cumple en $[0, 2]$. Luego $\{a_n\}$ es
+no decreciente.
+
+Por el teorema, existe $L = \lim_{n\to\infty} a_n$. Tomando límite en la
+recurrencia: $L = \sqrt{2 + L}$, de donde $L^2 - L - 2 = 0$, con raíces
+$L = 2$ y $L = -1$. Como $a_n > 0$, concluimos $L = 2$.
+\end{example}
+
+\begin{example}
+Considere $a_n = \dfrac{n^2}{2^n}$. El cociente
+$\dfrac{a_{n+1}}{a_n} = \dfrac{(n+1)^2}{2n^2}$
+es menor que $1$ para $n \geq 3$, luego $\{a_n\}$ es decreciente a partir de $n = 3$.
+Como $a_n > 0$, está acotada inferiormente. Por el teorema de convergencia monótona,
+$\{a_n\}$ converge. (Su límite es $0$, verificable con el criterio del cociente.)
+\end{example}
+
+% --  Completitud y compacidad  --
+\subsection{Completitud y compacidad}
+
+\begin{theorem}[Teorema de Bolzano-Weierstrass]
+Toda sucesión acotada en $\mathbb{R}$ posee al menos una subsucesión convergente.
+\end{theorem}
+
+\begin{rem}
+Este resultado tiene profundas implicaciones: garantiza que los subconjuntos cerrados y
+acotados de $\mathbb{R}$ son compactos, y es la base de numerosas demostraciones de
+existencia en análisis y optimización.
+\end{rem}
+
+\begin{definition}[Sucesión de Cauchy]
+La sucesión $\{a_n\}$ es de \textbf{Cauchy} si para todo $\varepsilon > 0$ existe
+$N \in \mathbb{N}$ tal que $|a_n - a_m| < \varepsilon$ para todo $n, m > N$.
+\end{definition}
+
+\begin{theorem}[Criterio de Cauchy]
+En $\mathbb{R}$, una sucesión converge si y solo si es de Cauchy.
+\end{theorem}
+
+\begin{rem}
+El criterio de Cauchy es poderoso porque permite demostrar convergencia
+\emph{sin conocer el valor del límite}. Su validez en $\mathbb{R}$ es equivalente a la
+\textbf{completitud} de los números reales; en $\mathbb{Q}$, en cambio, existen sucesiones
+de Cauchy que no convergen (por ejemplo, las aproximaciones decimales de $\sqrt{2}$).
+\end{rem}
+
+% --  Límites fundamentales y herramientas  --
+\subsection{Límites fundamentales y herramientas de cálculo}
+
+\begin{example}[Límites fundamentales]
+Los siguientes límites son herramientas estándar:
+\begin{itemize}
+    \item $\displaystyle\lim_{n \to \infty} r^n = 0$ si $|r| < 1$; diverge si
+          $|r| > 1$.
+    \item $\displaystyle\lim_{n \to \infty} \sqrt[n]{n} = 1$.
+    \item $\displaystyle\lim_{n \to \infty} \sqrt[n]{c} = 1$ para todo $c > 0$.
+    \item $\displaystyle\lim_{n \to \infty} \frac{n^k}{a^n} = 0$ para $a > 1$ y
+          $k \in \mathbb{R}$ (la exponencial domina al polinomio).
+    \item $\displaystyle\lim_{n \to \infty} \frac{a^n}{n!} = 0$ para todo
+          $a \in \mathbb{R}$ (el factorial domina a cualquier exponencial).
+    \item $\displaystyle\lim_{n \to \infty} \!\left(1 + \frac{x}{n}\right)^{\!n}
+          = e^x$ para todo $x \in \mathbb{R}$.
+    \item $\displaystyle\lim_{n \to \infty} \frac{\ln n}{n} = 0$.
+\end{itemize}
+\end{example}
+
+\begin{rem}
+La jerarquía de crecimiento de sucesiones habituales es:
+\[
+    \ln n \;\ll\; n^\alpha \;\ll\; a^n \;\ll\; n! \;\ll\; n^n
+    \qquad (n \to \infty),
+\]
+para $\alpha > 0$ y $a > 1$. Esta jerarquía es inmediatamente útil para evaluar límites
+de cocientes sin necesidad de cálculos adicionales.
+\end{rem}
+
+\begin{theorem}[Teorema de Stolz-Cesàro]
+Sea $\{a_n\}$ una sucesión cualquiera y $\{b_n\}$ estrictamente creciente con
+$\lim_{n \to \infty} b_n = +\infty$. Si existe
+\[
+    \lim_{n \to \infty} \frac{a_{n+1} - a_n}{b_{n+1} - b_n} = L
+    \in \mathbb{R} \cup \{\pm\infty\},
+\]
+entonces $\lim_{n \to \infty} \dfrac{a_n}{b_n} = L$.
+\end{theorem}
+
+\begin{rem}
+El teorema de Stolz-Cesàro es el análogo discreto de la regla de L'Hôpital para
+indeterminaciones del tipo $\infty/\infty$. Es especialmente útil para límites de promedios
+y sumas de potencias.
+\end{rem}
+
+\begin{example}[Potencias y Stolz-Cesàro]
+Calculemos $\displaystyle\lim_{n \to \infty}
+\frac{1^k + 2^k + \cdots + n^k}{n^{k+1}}$, $k \in \mathbb{N}$. Tomamos
+$a_n = \sum_{i=1}^n i^k$ y $b_n = n^{k+1}$. Aplicando el teorema:
+\[
+    \frac{a_{n+1}-a_n}{b_{n+1}-b_n}
+    = \frac{(n+1)^k}{(n+1)^{k+1}-n^{k+1}}
+    = \frac{\bigl(1+\tfrac{1}{n}\bigr)^k}{n\bigl[\bigl(1+\tfrac{1}{n}
+      \bigr)^{k+1}-1\bigr]}
+    \;\xrightarrow{n\to\infty}\;
+    \frac{1}{k+1},
+\]
+donde se usó que $(1+t)^{k+1} - 1 \sim (k+1)t$ cuando $t \to 0$.
+\end{example}
+
+\begin{example}[Logaritmo del factorial]
+Calcule $\displaystyle\lim_{n \to \infty} \frac{\ln(n!)}{n \ln n}$. Con
+$a_n = \ln(n!) = \sum_{k=1}^n \ln k$ y $b_n = n \ln n$, el teorema de Stolz-Cesàro da:
+\[
+    \frac{a_{n+1} - a_n}{b_{n+1} - b_n}
+    = \frac{\ln(n+1)}{(n+1)\ln(n+1) - n\ln n}.
+\]
+El denominador es $\ln(n+1) + n\ln\!\bigl(\tfrac{n+1}{n}\bigr) \sim \ln n + 1$,
+así que el cociente $\to 1$. El límite buscado es $\mathbf{1}$, resultado
+consistente con la aproximación de Stirling $\ln(n!) \approx n\ln n - n$.
+\end{example}
+
+% --  Infinitesimales equivalentes  --
+\subsection{Infinitesimales equivalentes}
+
+\begin{definition}[Infinitesimales equivalentes]
+Dos sucesiones infinitesimales $\alpha_n \to 0$ y $\beta_n \to 0$ son
+\textbf{equivalentes}, escrito $\alpha_n \sim \beta_n$, si
+$\lim_{n \to \infty} \dfrac{\alpha_n}{\beta_n} = 1$.
+\end{definition}
+
+\begin{example}
+Para $n \to \infty$ (con $\tfrac{1}{n} \to 0$):
+\[
+    \sin\!\tfrac{1}{n} \sim \tfrac{1}{n}, \quad
+    \tan\!\tfrac{1}{n} \sim \tfrac{1}{n}, \quad
+    \ln\!\bigl(1+\tfrac{1}{n}\bigr) \sim \tfrac{1}{n}, \quad
+    e^{1/n}-1 \sim \tfrac{1}{n}, \quad
+    1-\cos\!\tfrac{1}{n} \sim \tfrac{1}{2n^2}.
+\]
+Por ejemplo: $\lim_{n\to\infty} n\sin\!\tfrac{1}{n}
+= \lim_{n\to\infty} n\cdot\tfrac{1}{n} = 1$.
+\end{example}
+
+\begin{rem}
+Los infinitesimales equivalentes solo pueden sustituirse directamente en
+\emph{factores} de un producto o cociente; en una \emph{suma} la sustitución puede
+ser inválida. Si $\alpha_n \sim \beta_n$ y $\gamma_n \sim \delta_n$, entonces
+$\alpha_n\gamma_n \sim \beta_n\delta_n$, pero no necesariamente
+$\alpha_n + \gamma_n \sim \beta_n + \delta_n$.
+\end{rem}
+
+% ------------------------------------------------------------
+\section{Series de números reales}
+
+\begin{definition}[Serie numérica]
+Dada una sucesión $\{a_n\}_{n=1}^\infty$, la \textbf{serie} asociada es la expresión formal:
+\[
+    \sum_{n=1}^{\infty} a_n = a_1 + a_2 + a_3 + \cdots
+\]
+\end{definition}
+
+\begin{definition}[Sumas parciales y convergencia]
+La $n$-ésima \textbf{suma parcial} es $S_n = \displaystyle\sum_{k=1}^n a_k$.
+\begin{itemize}
+    \item Si $\lim_{n \to \infty} S_n = S \in \mathbb{R}$, la serie
+          \textbf{converge} con suma $S$.
+    \item Si el límite no existe o es $\pm\infty$, la serie
+          \textbf{diverge}.
+\end{itemize}
+\end{definition}
+
+\begin{rem}
+Una serie \emph{no} es una suma aritmética usual, sino el \emph{límite de una sucesión
+de sumas parciales}. Esta distinción es crucial para evitar manipulaciones algebraicas
+inválidas con cantidades infinitas.
+\end{rem}
+
+\begin{theorem}[Criterio del término $n$-ésimo]
+Si $\sum a_n$ converge, entonces $\lim_{n \to \infty} a_n = 0$. Por contrarrecíproco:
+si $\lim_{n\to\infty} a_n \neq 0$ (o el límite no existe), la serie diverge.
+\end{theorem}
+
+\begin{rem}
+La condición $a_n \to 0$ es \textbf{necesaria pero no suficiente} para la convergencia.
+El ejemplo más célebre que ilustra esta sutileza es la serie armónica.
+\end{rem}
+
+\begin{example}[Serie armónica]
+La serie $\displaystyle\sum_{n=1}^\infty \frac{1}{n}$ diverge aunque $1/n \to 0$.
+Una demostración elemental agrupa los términos en bloques de potencias de $2$:
+\[
+    1 + \frac{1}{2} +
+    \underbrace{\frac{1}{3}+\frac{1}{4}}_{>\,1/2} +
+    \underbrace{\frac{1}{5}+\cdots+\frac{1}{8}}_{>\,1/2} + \cdots
+\]
+Cada bloque de $2^k$ términos suma más de $\tfrac{1}{2}$, y como hay infinitos bloques,
+$S_n \to +\infty$.
+\end{example}
+
+% --  Series clásicas  --
+\subsection{Series clásicas}
+
+\begin{theorem}[Serie geométrica]
+Para $a \neq 0$ y $r \in \mathbb{R}$, la serie $\displaystyle\sum_{n=0}^\infty ar^n$
+diverge si $|r| \geq 1$, y converge a $\dfrac{a}{1-r}$ si $|r| < 1$.
+\end{theorem}
+
+\begin{myproof}
+La suma parcial es $S_n = a\dfrac{1-r^{n+1}}{1-r}$ para $r \neq 1$. Si $|r| < 1$,
+entonces $r^{n+1} \to 0$, luego $S_n \to \dfrac{a}{1-r}$. Si $|r| \geq 1$, los
+términos $ar^n$ no tienden a $0$, así que la serie diverge.
+\end{myproof}
+
+\begin{example}
+\begin{enumerate}
+    \item $\displaystyle\sum_{n=0}^\infty \frac{1}{2^n} = \frac{1}{1-1/2} = 2$.
+    \item $\displaystyle\sum_{n=1}^\infty \left(-\frac{1}{3}\right)^n
+          = \frac{-1/3}{1-(-1/3)} = -\frac{1}{4}$.
+    \item El decimal periódico $0.\overline{3} = \displaystyle\sum_{n=1}^\infty
+          \frac{3}{10^n} = \frac{3/10}{1-1/10} = \frac{1}{3}$.
+\end{enumerate}
+\end{example}
+
+\begin{theorem}[Series $p$]
+La serie $\displaystyle\sum_{n=1}^\infty \frac{1}{n^p}$ converge si y solo si $p > 1$.
+\end{theorem}
+
+\begin{rem}
+Para $p = 2$, Euler demostró que $\displaystyle\sum_{n=1}^\infty \frac{1}{n^2} =
+\frac{\pi^2}{6}$ (problema de Basilea, 1734), estableciendo una conexión sorprendente
+entre los enteros positivos y el número $\pi$. Para $p = 4$ se obtiene
+$\displaystyle\sum \frac{1}{n^4} = \frac{\pi^4}{90}$, y así sucesivamente para potencias
+pares.
+\end{rem}
+
+\begin{example}[Serie telescópica]
+La serie $\displaystyle\sum_{n=1}^\infty \frac{1}{n(n+1)}$. Con fracciones parciales,
+$\dfrac{1}{n(n+1)} = \dfrac{1}{n} - \dfrac{1}{n+1}$, de modo que:
+\[
+    S_N = \sum_{n=1}^N \left(\frac{1}{n} - \frac{1}{n+1}\right)
+        = 1 - \frac{1}{N+1} \;\xrightarrow{N\to\infty}\; 1.
+\]
+El nombre ``telescópica'' alude a que los términos intermedios se cancelan al expandir
+la suma.
+\end{example}
+
+\begin{example}
+Calcule $\displaystyle\sum_{n=1}^\infty \frac{1}{n(n+2)}$. Fracciones parciales:
+$\dfrac{1}{n(n+2)} = \dfrac{1}{2}\!\left(\dfrac{1}{n}-\dfrac{1}{n+2}\right)$.
+Entonces
+\[
+    S_N = \frac{1}{2}\left(1 + \frac{1}{2}
+        - \frac{1}{N+1} - \frac{1}{N+2}\right)
+    \;\xrightarrow{N\to\infty}\; \frac{3}{4}.
+\]
+\end{example}
+
+\begin{rem}
+Una serie telescópica no siempre converge; depende de si el término diferenciado tiende
+a una constante finita. Por ejemplo, $\sum_{n=1}^\infty \ln\bigl(\tfrac{n+1}{n}\bigr)
+= \ln(N+1) \to +\infty$, así que la serie diverge.
+\end{rem}
+
+% ------------------------------------------------------------
+\section{Criterios de convergencia para series de términos positivos}
+
+Cuando $a_n \geq 0$ para todo $n$, la sucesión de sumas parciales es monótona no
+decreciente. Por el teorema de convergencia monótona, la serie converge si y solo si
+$\{S_n\}$ está acotada superiormente.
+
+\begin{theorem}[Criterio de la integral]
+Sea $f : [1, +\infty) \to \mathbb{R}$ continua, positiva y decreciente con $f(n) = a_n$.
+Entonces $\displaystyle\sum_{n=1}^\infty a_n$ converge si y solo si
+$\displaystyle\int_1^\infty f(x)\,dx$ converge.
+\end{theorem}
+
+\begin{rem}
+El criterio de la integral proporciona también cotas para el error al aproximar la
+serie por su $N$-ésima suma parcial:
+\[
+    \int_{N+1}^\infty f(x)\,dx
+    \leq \sum_{n=N+1}^\infty a_n
+    \leq \int_N^\infty f(x)\,dx.
+\]
+Estas cotas permiten determinar cuántos términos se necesitan para una aproximación
+con precisión prefijada.
+\end{rem}
+
+\begin{example}
+Para la serie $\displaystyle\sum_{n=2}^\infty \frac{1}{n(\ln n)^p}$ con $p > 0$, la
+integral correspondiente es $\displaystyle\int_2^\infty \frac{dx}{x(\ln x)^p}$.
+La sustitución $u = \ln x$ conduce a $\displaystyle\int_{\ln 2}^\infty u^{-p}\,du$,
+que converge si y solo si $p > 1$. Luego la serie converge $\iff p > 1$.
+En particular, $\displaystyle\sum_{n=2}^\infty \frac{1}{n\ln n}$ diverge.
+\end{example}
+
+\begin{theorem}[Criterios de comparación]
+Sean $\sum a_n$ y $\sum b_n$ con $a_n, b_n \geq 0$.
+\begin{itemize}
+    \item \textbf{Comparación directa:} Si $a_n \leq b_n$ para $n \geq N$ y
+          $\sum b_n$ converge, entonces $\sum a_n$ converge. Si $\sum a_n$
+          diverge, entonces $\sum b_n$ diverge.
+    \item \textbf{Comparación en el límite:} Si
+          $\lim_{n \to \infty} \dfrac{a_n}{b_n} = L \in (0, +\infty)$, ambas
+          series convergen o divergen simultáneamente.
+\end{itemize}
+\end{theorem}
+
+\begin{example}
+Determine la convergencia de $\displaystyle\sum_{n=1}^\infty \frac{1}{\sqrt{n^3+1}}$.
+Comparando con $b_n = n^{-3/2}$:
+\[
+    \lim_{n\to\infty} \frac{a_n}{b_n}
+    = \lim_{n\to\infty} \frac{n^{3/2}}{\sqrt{n^3+1}}
+    = 1 \in (0,\infty).
+\]
+Como $\sum n^{-3/2}$ converge ($p = 3/2 > 1$), la serie original también converge.
+\end{example}
+
+\begin{example}
+Determine la convergencia de $\displaystyle\sum_{n=1}^\infty \sin\!\left(\frac{1}{n}
+\right)$. Como $\sin(1/n) \sim 1/n$ cuando $n \to \infty$:
+\[
+    \lim_{n\to\infty} \frac{\sin(1/n)}{1/n} = 1.
+\]
+Como $\sum 1/n$ diverge, por comparación en el límite $\sum \sin(1/n)$ también diverge.
+\end{example}
+
+\begin{theorem}[Criterio del cociente --- D'Alembert]
+Sea $a_n > 0$ y $L = \displaystyle\lim_{n \to \infty} \dfrac{a_{n+1}}{a_n}$. Entonces:
+\begin{enumerate}
+    \item $L < 1 \implies$ la serie converge absolutamente.
+    \item $L > 1 \implies$ la serie diverge.
+    \item $L = 1 \implies$ criterio \textbf{inconcluso}.
+\end{enumerate}
+\end{theorem}
+
+\begin{example}
+Determine la convergencia de $\displaystyle\sum_{n=1}^\infty \frac{n^3}{3^n}$:
+\[
+    \frac{a_{n+1}}{a_n} = \frac{(n+1)^3}{3^{n+1}} \cdot \frac{3^n}{n^3}
+    = \frac{1}{3}\!\left(\frac{n+1}{n}\right)^3 \;\to\; \frac{1}{3} < 1.
+\]
+La serie converge.
+\end{example}
+
+\begin{example}
+Para la serie de $e^x$: $\displaystyle\sum_{n=0}^\infty \frac{x^n}{n!}$ con $x$
+fijo.
+\[
+    \frac{a_{n+1}}{a_n} = \frac{|x|^{n+1}}{(n+1)!} \cdot \frac{n!}{|x|^n}
+    = \frac{|x|}{n+1} \to 0 < 1.
+\]
+La serie converge absolutamente para todo $x \in \mathbb{R}$.
+\end{example}
+
+\begin{theorem}[Criterio de la raíz --- Cauchy]
+Sea $R = \displaystyle\lim_{n \to \infty} \sqrt[n]{|a_n|}$. Entonces:
+\begin{enumerate}
+    \item $R < 1 \implies$ la serie converge absolutamente.
+    \item $R > 1 \implies$ la serie diverge.
+    \item $R = 1 \implies$ criterio \textbf{inconcluso}.
+\end{enumerate}
+\end{theorem}
+
+\begin{example}
+Determine la convergencia de $\displaystyle\sum_{n=1}^\infty
+\!\left(\frac{2n+1}{3n+2}\right)^{\!n}$:
+\[
+    \sqrt[n]{a_n} = \frac{2n+1}{3n+2} \to \frac{2}{3} < 1.
+\]
+La serie converge.
+\end{example}
+
+\begin{rem}
+El criterio de la raíz es en general \textbf{más fino} que el del cociente: siempre
+que el cociente dé límite $L$, la raíz dará el mismo $L$; pero existen series para las
+que el cociente falla ($L = 1$) y la raíz decide. Sin embargo, el cociente suele ser
+más sencillo de calcular cuando los términos involucran factoriales o productos.
+\end{rem}
+
+\begin{theorem}[Criterio de condensación de Cauchy]
+Si $\{a_n\}$ es no negativa y no creciente, entonces $\displaystyle\sum_{n=1}^\infty
+a_n$ converge si y solo si $\displaystyle\sum_{k=0}^\infty 2^k\,a_{2^k}$ converge.
+\end{theorem}
+
+\begin{example}
+Con $a_n = n^{-p}$, el criterio de condensación da $\sum 2^k \cdot 2^{-kp}
+= \sum 2^{k(1-p)}$, serie geométrica de razón $2^{1-p}$, que converge iff
+$p > 1$. Esto recupera el resultado de las series-$p$.
+\end{example}
+
+% ------------------------------------------------------------
+\section{Convergencia absoluta y series de signo variable}
+
+\begin{definition}[Convergencia absoluta y condicional]
+\begin{itemize}
+    \item $\sum a_n$ converge \textbf{absolutamente} si $\sum |a_n|$ converge.
+    \item $\sum a_n$ converge \textbf{condicionalmente} si $\sum a_n$ converge
+          pero $\sum |a_n|$ diverge.
+\end{itemize}
+Toda serie absolutamente convergente es convergente, pero no al revés.
+\end{definition}
+
+\begin{theorem}[Criterio de Leibniz para series alternadas]
+Sea $\displaystyle\sum_{n=1}^\infty (-1)^{n+1} a_n$ con $a_n > 0$. Si $\{a_n\}$ es
+decreciente y $\lim_{n \to \infty} a_n = 0$, entonces la serie converge. Además, el error
+al truncar en $N$ satisface $|S - S_N| \leq a_{N+1}$.
+\end{theorem}
+
+\begin{example}
+La serie alternada armónica $\displaystyle\sum_{n=1}^\infty \frac{(-1)^{n+1}}{n}$
+converge por Leibniz, pero $\sum 1/n$ diverge: la convergencia es
+\textbf{condicional}. Su suma es $\ln 2$, verificable con la serie de Taylor de
+$\ln(1+x)$ en $x = 1$.
+\end{example}
+
+\begin{example}
+La serie $\displaystyle\sum_{n=1}^\infty \frac{(-1)^{n+1}}{n^2}$ converge
+\textbf{absolutamente} (pues $\sum 1/n^2$ converge). Su suma es $\pi^2/12$.
+\end{example}
+
+\begin{theorem}[Criterios de Dirichlet y Abel]
+Para series de la forma $\displaystyle\sum a_n b_n$:
+\begin{itemize}
+    \item \textbf{Dirichlet:} Si las sumas parciales de $\sum b_n$ están acotadas
+          y $\{a_n\}$ tiende monótonamente a $0$, la serie converge.
+    \item \textbf{Abel:} Si $\sum b_n$ converge y $\{a_n\}$ es monótona y acotada,
+          la serie converge.
+\end{itemize}
+\end{theorem}
+
+\begin{example}
+Para $\displaystyle\sum_{n=1}^\infty \frac{\cos(n\theta)}{n}$ con
+$\theta \neq 2k\pi$: las sumas parciales de $\sum\cos(n\theta)$ están acotadas
+(suma de progresión geométrica compleja) y $1/n \searrow 0$. Por Dirichlet, la
+serie converge.
+\end{example}
+
+% ------------------------------------------------------------
+\section{Propiedades estructurales y operaciones con series}
+
+\begin{theorem}[Propiedad asociativa]
+En una serie convergente, se pueden agrupar términos consecutivos sin alterar la suma.
+En series divergentes, el agrupamiento puede crear falsas convergencias. Por ejemplo,
+la serie de Grandi $\sum_{n=0}^\infty (-1)^n$ diverge, pero con agrupaciones distintas
+produce $0$ o $1$.
+\end{theorem}
+
+\begin{theorem}[Teorema de reordenamiento de Riemann]
+\begin{enumerate}
+    \item Si $\sum a_n$ converge \textbf{absolutamente}, cualquier reordenamiento
+          converge a la misma suma.
+    \item Si $\sum a_n$ converge \textbf{condicionalmente}, para cualquier
+          $r \in \mathbb{R} \cup \{\pm\infty\}$ existe un reordenamiento de la serie que
+          converge a $r$.
+\end{enumerate}
+\end{theorem}
+
+\begin{rem}
+Este resultado es profundamente contraintuitivo: reordenar los términos de una serie
+condicionalmente convergente puede cambiar su suma a \emph{cualquier} valor real.
+Solo las series absolutamente convergentes se comportan como sumas finitas bajo
+permutaciones de sus términos.
+\end{rem}
+
+\begin{definition}[Producto de Cauchy]
+Dadas $\sum_{n=0}^\infty a_n$ y $\sum_{n=0}^\infty b_n$, su \textbf{producto de
+Cauchy} es $\sum_{n=0}^\infty c_n$ donde $c_n = \displaystyle\sum_{k=0}^n a_k
+b_{n-k}$. Si ambas series convergen absolutamente, o si una converge absolutamente y la
+otra converge, entonces $\sum c_n$ converge a $\bigl(\sum a_n\bigr)\bigl(\sum
+b_n\bigr)$.
+\end{definition}
+
+% ------------------------------------------------------------
+\section{Criterios de refinamiento}
+
+Cuando los criterios básicos son inconcluso ($L = 1$ o $R = 1$), se recurre a pruebas
+más sensibles.
+
+\begin{theorem}[Criterio de Raabe]
+Si $\displaystyle\lim_{n \to \infty} n\!\left(\frac{a_n}{a_{n+1}} - 1\right) = \rho$,
+entonces:
+\begin{itemize}
+    \item $\rho > 1 \implies$ converge.
+    \item $\rho < 1 \implies$ diverge.
+    \item $\rho = 1 \implies$ inconcluso.
+\end{itemize}
+\end{theorem}
+
+\begin{theorem}[Criterio de Bertrand]
+Si $\displaystyle\lim_{n \to \infty} \ln n\left[n\!\left(\frac{a_n}{a_{n+1}}-1\right)
+-1\right] = B$, entonces:
+\begin{itemize}
+    \item $B > 1 \implies$ converge.
+    \item $B < 1 \implies$ diverge.
+\end{itemize}
+\end{theorem}
+
+\begin{theorem}[Criterio de Kummer]
+Sea $\{d_n\}$ con $d_n > 0$ y $\sum 1/d_n$ divergente. Si
+$K_n = d_n\dfrac{a_n}{a_{n+1}} - d_{n+1}$ satisface $\lim K_n = K$, entonces:
+\begin{itemize}
+    \item $K > 0 \implies$ converge.
+    \item $K < 0 \implies$ diverge.
+\end{itemize}
+Los criterios de D'Alembert ($d_n = 1$) y Raabe ($d_n = n$) son casos particulares.
+\end{theorem}
+
+\begin{rem}
+Estos criterios son de interés principalmente teórico o para series frontera
+patológicas. En la práctica universitaria, los criterios de comparación, integral,
+cociente y raíz cubren la gran mayoría de los casos.
+\end{rem}
+
+
+% ============================================================
+%  CAPÍTULO: Sucesiones y series de funciones
+% ============================================================
+\chapter{Sucesiones y series de funciones}
+
+El estudio de sucesiones y series de funciones extiende el análisis numérico al espacio
+funcional. A diferencia de las series numéricas, aquí la convergencia depende del punto
+$x$ en el dominio, lo que introduce dos nociones fundamentalmente distintas: convergencia
+\emph{puntual} y convergencia \emph{uniforme}. Esta distinción es crucial, pues solo la
+convergencia uniforme garantiza que propiedades analíticas esenciales ---continuidad,
+integrabilidad, derivabilidad--- se preserven al pasar al límite.
+
+% ------------------------------------------------------------
+\section{Sucesiones de funciones}
+
+\begin{definition}[Sucesión de funciones]
+Sea $X \subset \mathbb{R}$. Una \textbf{sucesión de funciones} $\{f_n\}_{n=1}^\infty$ en
+$X$ es una familia de funciones $f_n : X \to \mathbb{R}$ indexada por $n \in \mathbb{N}$.
+\end{definition}
+
+\begin{definition}[Convergencia puntual y uniforme]
+Sea $\{f_n\}$ una sucesión de funciones en $X$ y $f : X \to \mathbb{R}$.
+\begin{enumerate}
+    \item $\{f_n\}$ \textbf{converge puntualmente} a $f$ en $X$ si para cada
+          $x_0 \in X$ fijo se tiene $\lim_{n \to \infty} f_n(x_0) = f(x_0)$, es decir:
+          \[
+              \forall x \in X,\;\forall\varepsilon > 0,\;
+              \exists N(\varepsilon,x) \in \mathbb{N}:\;
+              n > N \implies |f_n(x) - f(x)| < \varepsilon.
+          \]
+    \item $\{f_n\}$ \textbf{converge uniformemente} a $f$ en $X$ si la convergencia es
+          simultánea en todo $X$:
+          \[
+              \forall\varepsilon > 0,\;
+              \exists N(\varepsilon) \in \mathbb{N}:\;
+              n > N \implies \sup_{x\in X}|f_n(x) - f(x)| < \varepsilon.
+          \]
+\end{enumerate}
+\end{definition}
+
+\begin{rem}
+La diferencia técnica clave reside en el \emph{orden de los cuantificadores}:
+\begin{align*}
+    \text{Puntual:}  &\quad \forall x\;\forall\varepsilon\;\exists N(x,\varepsilon)\colon\ldots\\
+    \text{Uniforme:} &\quad \forall\varepsilon\;\exists N(\varepsilon)\;\forall x\colon\ldots
+\end{align*}
+En la convergencia uniforme, \textbf{un solo $N$ sirve para todos los $x \in X$
+simultáneamente}, lo que tiene consecuencias analíticas profundas.
+\end{rem}
+
+\begin{example}[Convergencia puntual sin uniforme: $f_n(x) = x^n$]
+En $X = [0,1]$, la función límite de $f_n(x) = x^n$ es
+\[
+    f(x) = \begin{cases} 0 & 0 \leq x < 1, \\ 1 & x = 1. \end{cases}
+\]
+Cada $f_n$ es continua, pero $f$ es discontinua en $x = 1$. Por el
+Teorema~\ref{thm:prop_uniforme}, la convergencia no puede ser uniforme. Directamente:
+\[
+    \sup_{x\in[0,1]} |x^n - f(x)| = \sup_{x\in[0,1)} x^n = 1 \not\to 0.
+\]
+Sin embargo, para $0 < r < 1$ fijo, $\sup_{x\in[0,r]} x^n = r^n \to 0$, de modo que
+la convergencia \textbf{sí} es uniforme en $[0, r]$.
+\end{example}
+
+\begin{example}[Convergencia uniforme]
+Sea $f_n(x) = x/n$ en $[0,1]$. Entonces $f(x) = 0$ y
+$\sup_{x\in[0,1]}|x/n| = 1/n \to 0$. La convergencia es uniforme en $[0,1]$.
+\end{example}
+
+\begin{example}[Desplazamiento del máximo]
+Sea $f_n(x) = nxe^{-nx}$ en $[0,+\infty)$. Para cada $x > 0$ fijo, $f_n(x) \to 0$;
+y $f_n(0) = 0$, luego la convergencia es puntual a $0$. Sin embargo, el máximo se
+alcanza en $x = 1/n$ con $f_n(1/n) = e^{-1}$, de modo que
+$\sup_{x \geq 0} |f_n(x)| = e^{-1} \not\to 0$: la convergencia
+\textbf{no} es uniforme en $[0, +\infty)$.
+\end{example}
+
+\begin{theorem}[Criterio de Cauchy para convergencia uniforme]
+$\{f_n\}$ converge uniformemente en $X$ si y solo si para todo $\varepsilon > 0$ existe
+$N \in \mathbb{N}$ tal que $|f_n(x) - f_m(x)| < \varepsilon$ para todo $n, m > N$ y
+todo $x \in X$.
+\end{theorem}
+
+\begin{theorem}[Propiedades de la convergencia uniforme]
+\label{thm:prop_uniforme}
+Sea $\{f_n\}$ una sucesión que converge uniformemente a $f$ en $[a,b]$.
+\begin{enumerate}
+    \item \textbf{Continuidad.} Si cada $f_n$ es continua en $[a,b]$, entonces $f$ es
+          continua en $[a,b]$. En particular,
+          $\lim_{n\to\infty}\lim_{x\to x_0} f_n(x)
+          = \lim_{x\to x_0}\lim_{n\to\infty} f_n(x)$.
+    \item \textbf{Integrabilidad.} Si cada $f_n$ es Riemann-integrable en $[a,b]$,
+          entonces $f$ es integrable y
+          \[
+              \lim_{n \to \infty} \int_a^b f_n(x)\,dx
+              = \int_a^b \lim_{n\to\infty} f_n(x)\,dx
+              = \int_a^b f(x)\,dx.
+          \]
+    \item \textbf{Derivabilidad.} Si cada $f_n \in C^1[a,b]$, $\{f_n(x_0)\}$
+          converge para algún $x_0 \in [a,b]$ y $\{f_n'\}$ converge uniformemente
+          en $[a,b]$, entonces $f$ es derivable y
+          $f'(x) = \lim_{n \to \infty} f_n'(x)$ para todo $x \in [a,b]$.
+\end{enumerate}
+\end{theorem}
+
+\begin{rem}
+Estos resultados pueden resumirse así: \emph{la convergencia uniforme conmuta con los
+límites, integrales y derivadas}. La mera convergencia puntual no garantiza ninguna de
+estas propiedades. El ejemplo $f_n(x) = x^n$ en $[0,1]$ ilustra la pérdida de
+continuidad; $g_n(x) = \sin(nx)/\sqrt{n}$ ilustra la pérdida de derivabilidad en el
+límite.
+\end{rem}
+
+\begin{example}[Intercambio inválido de derivada y límite]
+Sea $f_n(x) = \dfrac{\sin(nx)}{n}$ en $\mathbb{R}$. Entonces $f_n \to 0$
+uniformemente (pues $|f_n(x)| \leq 1/n$), con $f \equiv 0$. Sin embargo,
+$f_n'(x) = \cos(nx)$, que no converge en ningún $x$ genérico. El Teorema
+\ref{thm:prop_uniforme}.3 no se aplica porque $\{f_n'\}$ no converge uniformemente.
+\end{example}
+
+\begin{theorem}[Teorema de Dini]
+Sea $K \subset \mathbb{R}$ compacto y $\{f_n\}$ una sucesión de funciones continuas en
+$K$ que converge puntualmente a una función continua $f$. Si la sucesión es monótona
+(es decir, $f_n \leq f_{n+1}$ en $K$ para todo $n$, o al revés), entonces la
+convergencia es uniforme en $K$.
+\end{theorem}
+
+\begin{rem}
+Las hipótesis del teorema de Dini son todas necesarias: existen contraejemplos si se
+omite la compacidad, la monotonía o la continuidad del límite.
+\end{rem}
+
+\begin{theorem}[Teorema de aproximación de Weierstrass]
+Sea $f \in C[a,b]$. Para todo $\varepsilon > 0$ existe un polinomio $P(x)$ tal que
+$\sup_{x\in[a,b]}|f(x) - P(x)| < \varepsilon$.
+\end{theorem}
+
+\begin{rem}
+El teorema garantiza que los polinomios son densos en $C[a,b]$ con la norma del supremo,
+lo que fundamenta métodos de aproximación como la interpolación de Lagrange, los
+polinomios de Bernstein y los splines.
+\end{rem}
+
+% ------------------------------------------------------------
+\section{Series de funciones}
+
+\begin{definition}[Serie de funciones]
+Dada $\{u_n(x)\}$ en $X$, la \textbf{serie de funciones}
+$\displaystyle\sum_{n=1}^\infty u_n(x)$ se define por sus sumas parciales
+$S_N(x) = \displaystyle\sum_{n=1}^N u_n(x)$. La serie converge puntual (resp.
+uniformemente) a $S(x)$ si $\{S_N(x)\}$ converge puntual (resp. uniformemente) a
+$S(x)$.
+\end{definition}
+
+\begin{theorem}[Prueba M de Weierstrass]
+Si existe una sucesión numérica $\{M_n\}$ tal que $|u_n(x)| \leq M_n$ para todo
+$x \in X$ y $\displaystyle\sum_{n=1}^\infty M_n < \infty$, entonces
+$\displaystyle\sum_{n=1}^\infty u_n(x)$ converge \textbf{absoluta y uniformemente}
+en $X$.
+\end{theorem}
+
+\begin{example}
+La serie $\displaystyle\sum_{n=1}^\infty \frac{\cos(nx)}{n^2}$ en $\mathbb{R}$:
+$\left|\dfrac{\cos(nx)}{n^2}\right| \leq \dfrac{1}{n^2}$ y $\sum 1/n^2$ converge.
+Por la prueba M, la serie converge absoluta y uniformemente en $\mathbb{R}$.
+En particular, su suma es una función continua.
+\end{example}
+
+\begin{example}
+La serie $\displaystyle\sum_{n=1}^\infty \frac{x^n}{n^2}$ en $[-1,1]$:
+$\left|\dfrac{x^n}{n^2}\right| \leq \dfrac{1}{n^2}$ para $|x| \leq 1$.
+La prueba M da convergencia uniforme en $[-1,1]$ y permite derivar e integrar
+término a término en $(-1,1)$.
+\end{example}
+
+\begin{rem}
+La prueba M es suficiente pero no necesaria para convergencia uniforme. Una serie puede
+converger uniformemente sin admitir una mayorante $\sum M_n$ convergente.
+\end{rem}
+
+\begin{theorem}[Criterios de Dirichlet y Abel para convergencia uniforme]
+Sean $\{a_n(x)\}$ y $\{b_n(x)\}$ funciones en $X$.
+\begin{itemize}
+    \item \textbf{Dirichlet:} Si las sumas parciales de $\sum b_n(x)$ están
+          uniformemente acotadas en $X$ y $\{a_n(x)\}$ tiende a $0$ uniformemente
+          y es monótona en $n$ para cada $x$, entonces
+          $\sum a_n(x)b_n(x)$ converge uniformemente en $X$.
+    \item \textbf{Abel:} Si $\sum b_n(x)$ converge uniformemente y
+          $\{a_n(x)\}$ es uniformemente acotada y monótona en $n$ para cada $x$,
+          entonces $\sum a_n(x)b_n(x)$ converge uniformemente.
+\end{itemize}
+\end{theorem}
+
+\begin{theorem}[Integración y derivación término a término]
+Si $\sum u_n(x)$ converge uniformemente en $[a,b]$ y cada $u_n$ es continua:
+\[
+    \int_a^b \sum_{n=1}^\infty u_n(x)\,dx
+    = \sum_{n=1}^\infty \int_a^b u_n(x)\,dx.
+\]
+Si además $\sum u_n'(x)$ converge uniformemente en $[a,b]$ y $\sum u_n(x_0)$ converge
+para algún $x_0$:
+\[
+    \frac{d}{dx}\sum_{n=1}^\infty u_n(x) = \sum_{n=1}^\infty u_n'(x).
+\]
+\end{theorem}
+
+\begin{example}[La función de Weierstrass]
+La función $W(x) = \displaystyle\sum_{n=0}^\infty a^n\cos(b^n\pi x)$, con $0 < a < 1$,
+$b$ entero impar y $ab > 1 + \dfrac{3\pi}{2}$, es continua en $\mathbb{R}$ (prueba M:
+$|a^n\cos(\cdot)| \leq a^n$ y $\sum a^n < \infty$) pero \textbf{no es derivable en
+ningún punto}. Publicada por Weierstrass en 1872, demolió la creencia de que toda
+función continua es derivable salvo en un conjunto excepcional.
+\end{example}
+
+% ------------------------------------------------------------
+\section{Series de potencias}
+
+\begin{definition}[Serie de potencias]
+Una \textbf{serie de potencias} centrada en $a \in \mathbb{R}$ tiene la forma:
+\[
+    \sum_{n=0}^\infty c_n(x-a)^n
+    = c_0 + c_1(x-a) + c_2(x-a)^2 + \cdots
+\]
+donde $\{c_n\}$ son constantes reales.
+\end{definition}
+
+\begin{theorem}[Radio e intervalo de convergencia]
+Para toda serie de potencias existe un único $R \in [0, +\infty]$ (el
+\textbf{radio de convergencia}) tal que:
+\begin{itemize}
+    \item La serie converge absolutamente si $|x - a| < R$.
+    \item La serie diverge si $|x - a| > R$.
+    \item En $|x - a| = R$ el comportamiento debe analizarse por separado.
+\end{itemize}
+El radio se obtiene mediante la \textbf{fórmula de Cauchy-Hadamard}:
+\[
+    R = \frac{1}{\displaystyle\limsup_{n \to \infty} \sqrt[n]{|c_n|}},
+\]
+o bien, si el límite existe, $R = \displaystyle\lim_{n \to \infty}
+\left|\dfrac{c_n}{c_{n+1}}\right|$.
+\end{theorem}
+
+\begin{example}[Cálculo del radio de convergencia]
+\begin{enumerate}
+    \item $\displaystyle\sum_{n=0}^\infty \frac{x^n}{n!}$:\;
+          $R = \lim \dfrac{1/n!}{1/(n+1)!} = \lim(n+1) = +\infty$.
+          Converge para todo $x \in \mathbb{R}$.
+    \item $\displaystyle\sum_{n=0}^\infty n!\,x^n$:\;
+          $R = \lim \dfrac{n!}{(n+1)!} = 0$.
+          Converge solo en $x = 0$.
+    \item $\displaystyle\sum_{n=1}^\infty \frac{x^n}{n}$:\;
+          $R = 1$. En $x = 1$: serie armónica (diverge). En $x = -1$: serie alternada
+          armónica (converge). Intervalo: $[-1, 1)$.
+    \item $\displaystyle\sum_{n=0}^\infty (-1)^n\frac{x^{2n}}{(2n)!}$:\;
+          $R = +\infty$ (serie del coseno).
+\end{enumerate}
+\end{example}
+
+\begin{theorem}[Convergencia uniforme en compactos]
+Si $\sum c_n(x-a)^n$ tiene radio $R > 0$, entonces converge \textbf{absoluta y
+uniformemente} en todo intervalo cerrado $[a-r, a+r]$ con $0 < r < R$.
+\end{theorem}
+
+\begin{rem}
+La convergencia uniforme no está garantizada en el intervalo abierto completo $(-R+a,\,
+R+a)$. Por ejemplo, $\sum x^n/n$ tiene $R = 1$ y converge uniformemente en $[-r, r]$
+para cada $r < 1$, pero no uniformemente en $(-1, 1)$. En los extremos $x = a \pm R$
+la convergencia debe verificarse por separado.
+\end{rem}
+
+\begin{theorem}[Analiticidad: derivación e integración término a término]
+Dentro del intervalo $|x - a| < R$, la suma $f(x) = \sum_{n=0}^\infty c_n(x-a)^n$ es
+infinitamente diferenciable y:
+\[
+    f'(x) = \sum_{n=1}^\infty n\,c_n(x-a)^{n-1},
+    \qquad
+    \int_a^x f(t)\,dt = \sum_{n=0}^\infty \frac{c_n}{n+1}(x-a)^{n+1}.
+\]
+Ambas series tienen el mismo radio de convergencia $R$.
+\end{theorem}
+
+\begin{theorem}[Serie de Taylor]
+Si $f$ tiene representación en serie de potencias en un entorno de $a$, dicha
+representación es única y sus coeficientes son $c_n = \dfrac{f^{(n)}(a)}{n!}$. La
+\textbf{serie de Taylor} de $f$ en $a$ es:
+\[
+    \sum_{n=0}^\infty \frac{f^{(n)}(a)}{n!}(x-a)^n.
+\]
+La serie converge a $f(x)$ si y solo si el resto de Lagrange
+$R_n(x) = \dfrac{f^{(n+1)}(\xi)}{(n+1)!}(x-a)^{n+1}$ satisface $R_n(x) \to 0$
+cuando $n \to \infty$ (para algún $\xi$ entre $a$ y $x$).
+\end{theorem}
+
+\begin{example}[Expansiones estándar]
+\begin{itemize}
+    \item $e^x = \displaystyle\sum_{n=0}^\infty \frac{x^n}{n!},\quad x \in \mathbb{R}$.
+    \item $\sin x = \displaystyle\sum_{n=0}^\infty \frac{(-1)^n x^{2n+1}}{(2n+1)!},
+          \quad \cos x = \displaystyle\sum_{n=0}^\infty \frac{(-1)^n x^{2n}}{(2n)!},
+          \quad x \in \mathbb{R}$.
+    \item $\ln(1+x) = \displaystyle\sum_{n=1}^\infty \frac{(-1)^{n-1}x^n}{n},
+          \quad x \in (-1,1]$.
+    \item $\dfrac{1}{1-x} = \displaystyle\sum_{n=0}^\infty x^n, \quad |x| < 1$.
+    \item $\arctan x = \displaystyle\sum_{n=0}^\infty \frac{(-1)^n x^{2n+1}}{2n+1},
+          \quad |x| \leq 1$.
+    \item $(1+x)^\alpha = \displaystyle\sum_{n=0}^\infty \binom{\alpha}{n}x^n,
+          \quad |x| < 1$, \quad donde
+          $\binom{\alpha}{n} = \dfrac{\alpha(\alpha-1)\cdots(\alpha-n+1)}{n!}$.
+\end{itemize}
+\end{example}
+
+\begin{example}[Aplicaciones de las series de Taylor]
+\begin{enumerate}
+    \item \textbf{Límites indeterminados:}
+    \[
+        \lim_{x \to 0} \frac{\sin x - x}{x^3}
+        = \lim_{x \to 0}
+          \frac{\bigl(x - \tfrac{x^3}{6} + O(x^5)\bigr) - x}{x^3}
+        = -\frac{1}{6}.
+    \]
+    \item \textbf{Indeterminación $1^\infty$:}
+    \[
+        \lim_{x \to 0}(\cos x)^{1/x^2}
+        = \lim_{x \to 0} e^{\,\ln(\cos x)/x^2}.
+    \]
+    Como $\ln(\cos x) = \ln\!\bigl(1 - \tfrac{x^2}{2} + O(x^4)\bigr)
+    \sim -\tfrac{x^2}{2}$, el exponente tiende a $-1/2$ y el límite es
+    $e^{-1/2}$.
+    \item \textbf{Integral sin primitiva elemental:}
+    \[
+        \int_0^1 e^{-x^2}\,dx
+        = \sum_{n=0}^\infty \frac{(-1)^n}{n!\,(2n+1)}
+        \approx 0{,}7468\ldots
+    \]
+    \item \textbf{Estimación del error:} Aproximar $e$ con error $< 10^{-4}$.
+    El resto de la serie de $e^1$ satisface
+    $R_N < \dfrac{3}{(N+1)!}$. Para $N = 8$:
+    $3/9! \approx 8\times 10^{-6} < 10^{-5}$.
+    \item \textbf{Ecuaciones diferenciales:} La ecuación de Airy $y'' = xy$
+    se resuelve sustituyendo $y = \sum_{n=0}^\infty a_n x^n$ y determinando
+    los coeficientes por recurrencia: $a_{n+3} = \dfrac{a_n}{(n+2)(n+3)}$,
+    con condiciones iniciales $a_0 = y(0)$ y $a_1 = y'(0)$.
+\end{enumerate}
+\end{example}
+
+% ------------------------------------------------------------
+\section{Complementos avanzados}
+
+\begin{theorem}[Irracionalidad de $e$]
+El número $e = \sum_{n=0}^\infty 1/n!$ es irracional. Si $e = p/q$, entonces
+\[
+    0 < q!\!\left(e - \sum_{n=0}^q \frac{1}{n!}\right)
+    = \sum_{k=1}^\infty \frac{1}{(q+1)(q+2)\cdots(q+k)}
+    < \sum_{k=1}^\infty \frac{1}{(q+1)^k} = \frac{1}{q} \leq 1,
+\]
+contradiciendo que la expresión de la izquierda sería un entero positivo.
+\end{theorem}
+
+\begin{theorem}[Teorema de Borel]
+Dada cualquier sucesión $\{a_n\}_{n=0}^\infty$ de números reales, existe una función
+$f \in C^\infty(\mathbb{R})$ tal que $f^{(n)}(0) = a_n$ para todo $n$. Es decir,
+cualquier sucesión puede ser la sucesión de coeficientes de Taylor de alguna función
+infinitamente diferenciable.
+\end{theorem}
+
+\begin{rem}
+El teorema de Borel muestra que la clase $C^\infty$ es mucho más amplia que la de las
+funciones analíticas. Tener derivadas de todos los órdenes \textbf{no} implica que la
+serie de Taylor converja a la función.
+\end{rem}
+
+\begin{example}[Función $C^\infty$ no analítica]
+Defínase
+\[
+    \varphi(x) = \begin{cases} e^{-1/x^2} & x \neq 0, \\ 0 & x = 0. \end{cases}
+\]
+Por inducción se demuestra que $\varphi^{(n)}(0) = 0$ para todo $n \in \mathbb{N}_0$.
+Luego su serie de Taylor en $0$ es la serie nula, que converge a $0$ para todo $x$,
+pero $\varphi(x) \neq 0$ para $x \neq 0$. Así, $\varphi \in C^\infty(\mathbb{R})$
+pero \textbf{no es analítica en $0$}.
+
+Esta función es la piedra de toque con la que se construyen las funciones meseta y las
+particiones de la unidad, herramientas indispensables en análisis diferencial y teoría
+de distribuciones.
+\end{example}
+
+\begin{rem}
+La condición $R_n(x) \to 0$ (convergencia del resto de Taylor) es una hipótesis
+adicional, no automática para funciones de clase $C^\infty$. La
+\textbf{analiticidad} es una propiedad más restrictiva y ``rígida'' que la
+diferenciabilidad infinita.
+\end{rem}
+
+\begin{theorem}[Unicidad y álgebra de series de potencias]
+Si $\sum a_n(x-c)^n = \sum b_n(x-c)^n$ en algún intervalo con centro $c$, entonces
+$a_n = b_n$ para todo $n$. Dentro del radio de convergencia, las series de potencias
+pueden:
+\begin{itemize}
+    \item \textbf{Sumarse:} con radio $\geq \min(R_1,R_2)$.
+    \item \textbf{Multiplicarse} (producto de Cauchy): con radio $\geq \min(R_1,R_2)$.
+    \item \textbf{Componerse:} si $g(0) = 0$ (o más generalmente $|g(x)| < R_f$),
+          entonces $f(g(x))$ se puede expandir en serie de potencias con radio
+          positivo.
+\end{itemize}
+\end{theorem}
+
+\begin{rem}
+La teoría de series de potencias cierra un ciclo conceptual que une la aritmética de los
+reales, el análisis de funciones y los métodos de aproximación. Estas herramientas son
+la base del análisis complejo, la teoría de ecuaciones diferenciales ordinarias, la
+física matemática y los métodos numéricos modernos.
+\end{rem}

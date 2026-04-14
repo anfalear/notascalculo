@@ -1,0 +1,866 @@
+% ============================================================
+%  CAPÍTULO: APLICACIONES DE LA INTEGRAL
+%  Versión enriquecida y complementada
+% ============================================================
+
+\chapter{Aplicaciones de la integral}
+
+La integral definida, más allá de su interpretación como área bajo una curva,
+es una herramienta fundamental para modelar y resolver problemas geométricos,
+físicos y de ingeniería. En este capítulo desarrollaremos las aplicaciones
+clásicas: cálculo de áreas de regiones planas, volúmenes de sólidos de
+revolución, longitud de arco, áreas de superficies de revolución y
+aplicaciones físicas como trabajo, centro de masa y momento de inercia. El
+hilo conductor de todo el capítulo es el método de
+\textbf{rebanar, aproximar e integrar}: identificar la cantidad diferencial
+$dQ$ apropiada, sumar infinitesimalmente las contribuciones y reconocer la
+suma límite como una integral definida.
+
+% ============================================================
+\section{Cálculo de áreas de regiones planas}
+% ============================================================
+
+\subsection{Área bajo una curva y área geométrica}
+
+\begin{definition}[Área bajo una curva]
+Sea $f:[a,b]\to\mathbb{R}$ una función continua y no negativa. El
+\textbf{área} de la región acotada por la gráfica de $f$, el eje $x$ y las
+rectas verticales $x=a$, $x=b$ se define como
+\[
+  A = \int_a^b f(x)\,dx.
+\]
+Si $f(x)\le 0$ en $[a,b]$, el área geométrica es
+$A = -\int_a^b f(x)\,dx = \int_a^b |f(x)|\,dx$.
+\end{definition}
+
+\begin{rem}
+La integral definida calcula el \textbf{área algebraica} (con signo),
+mientras que el área geométrica siempre es no negativa. Para obtener el
+área real entre una curva y el eje $x$ cuando $f$ cambia de signo, debe
+dividirse el intervalo en partes donde $f$ no cambie de signo e integrar
+el valor absoluto en cada parte:
+\[
+  A = \int_a^b |f(x)|\,dx
+      = \int_{\{f\ge 0\}} f(x)\,dx \;-\; \int_{\{f\le 0\}} f(x)\,dx.
+\]
+\end{rem}
+
+\begin{example}[Área entre la curva y el eje $x$ con cambio de signo]
+Calcule el área de la región acotada por $y = x^3 - x$ y el eje $x$ en
+$[-1, 1]$.
+
+\textbf{Solución.} Las raíces de $x^3-x = x(x-1)(x+1)$ en $[-1,1]$ son
+$x=-1, 0, 1$. En $[-1,0]$ se tiene $f(x)\ge 0$ y en $[0,1]$ se tiene
+$f(x)\le 0$. Por tanto
+\begin{align*}
+  A &= \int_{-1}^{0}(x^3-x)\,dx + \left|\int_{0}^{1}(x^3-x)\,dx\right| \\
+    &= \left[\frac{x^4}{4}-\frac{x^2}{2}\right]_{-1}^{0}
+       + \left|\left[\frac{x^4}{4}-\frac{x^2}{2}\right]_{0}^{1}\right| \\
+    &= \frac{1}{4} + \frac{1}{4} = \boxed{\frac{1}{2}}.
+\end{align*}
+\end{example}
+
+% -----------------------------------------------------------
+\subsection{Área entre dos curvas (integración respecto a $x$)}
+% -----------------------------------------------------------
+
+\begin{theorem}[Área entre dos curvas]
+Sean $f$ y $g$ funciones continuas en $[a,b]$ tales que $f(x)\ge g(x)$
+para todo $x\in[a,b]$. El área de la región acotada por ambas gráficas y
+las rectas $x=a$, $x=b$ es
+\[
+  A = \int_a^b \bigl[f(x)-g(x)\bigr]\,dx.
+\]
+\end{theorem}
+
+\begin{proof}
+Dividimos $[a,b]$ en $n$ subintervalos de ancho $\Delta x=(b-a)/n$.
+En cada subintervalo $[x_{i-1},x_i]$ se toma $x_i^*$ y se aproxima la
+porción de la región por un rectángulo de altura $f(x_i^*)-g(x_i^*)$ y
+base $\Delta x$. La suma de Riemann asociada es
+\[
+  S_n = \sum_{i=1}^n\bigl[f(x_i^*)-g(x_i^*)\bigr]\Delta x.
+\]
+Tomando el límite cuando $n\to\infty$ y usando la continuidad de $f-g$:
+\[
+  A = \lim_{n\to\infty} S_n
+    = \int_a^b\bigl[f(x)-g(x)\bigr]\,dx.\qedhere
+\]
+\end{proof}
+
+\begin{example}[Área entre parábola y recta]
+\label{ex:parabola-recta}
+Calcule el área de la región acotada por $y=x^2$ e $y=x+2$.
+
+\textbf{Solución.} Intersecciones: $x^2=x+2\Rightarrow x^2-x-2=0
+\Rightarrow(x-2)(x+1)=0$, luego $x=-1$ y $x=2$. En $[-1,2]$ se verifica
+$x+2\ge x^2$. Por tanto
+\begin{align*}
+  A &= \int_{-1}^{2}\bigl[(x+2)-x^2\bigr]\,dx
+     = \int_{-1}^{2}(-x^2+x+2)\,dx \\
+    &= \left[-\frac{x^3}{3}+\frac{x^2}{2}+2x\right]_{-1}^{2}
+     = \left(-\frac{8}{3}+2+4\right)-\left(\frac{1}{3}+\frac{1}{2}-2\right) \\
+    &= \frac{10}{3}+\frac{7}{6} = \frac{20}{6}+\frac{7}{6}
+     = \boxed{\dfrac{9}{2}}.
+\end{align*}
+\end{example}
+
+\begin{rem}
+Cuando las curvas se intersectan en más de dos puntos, el área total se
+obtiene sumando las integrales en cada subintervalo donde una función
+domina a la otra. Es crucial graficar primero para identificar correctamente
+los límites y el orden de resta en cada tramo.
+\end{rem}
+
+\begin{example}[Múltiples intersecciones]
+Halle el área de la región acotada por $f(x)=\sin x$ y $g(x)=\cos x$ en
+$[0,2\pi]$.
+
+\textbf{Solución.} En $[0,2\pi]$ las curvas se cruzan en $x=\pi/4$ y
+$x=5\pi/4$. Analizando signos:
+\begin{itemize}
+  \item En $[0,\pi/4]$: $\cos x\ge\sin x$.
+  \item En $[\pi/4,5\pi/4]$: $\sin x\ge\cos x$.
+  \item En $[5\pi/4,2\pi]$: $\cos x\ge\sin x$.
+\end{itemize}
+Luego
+\begin{align*}
+  A &= \int_0^{\pi/4}(\cos x-\sin x)\,dx
+     + \int_{\pi/4}^{5\pi/4}(\sin x-\cos x)\,dx
+     + \int_{5\pi/4}^{2\pi}(\cos x-\sin x)\,dx \\
+    &= \bigl[\sin x+\cos x\bigr]_0^{\pi/4}
+     + \bigl[-\cos x-\sin x\bigr]_{\pi/4}^{5\pi/4}
+     + \bigl[\sin x+\cos x\bigr]_{5\pi/4}^{2\pi} \\
+    &= (\sqrt{2}-1)+2\sqrt{2}+(\sqrt{2}+1) = \boxed{4\sqrt{2}}.
+\end{align*}
+\end{example}
+
+% -----------------------------------------------------------
+\subsection{Área con integración respecto a $y$}
+% -----------------------------------------------------------
+
+\begin{definition}[Área respecto al eje $y$]
+Si la región está acotada por curvas de la forma $x=p(y)$ y $x=q(y)$,
+con $p(y)\ge q(y)$ para $y\in[c,d]$, entonces el área es
+\[
+  A = \int_c^d\bigl[p(y)-q(y)\bigr]\,dy.
+\]
+\end{definition}
+
+\begin{rem}
+Se prefiere integrar respecto a $y$ cuando las curvas se expresan
+naturalmente como $x=h(y)$ (por ejemplo, parábolas horizontales) o cuando
+la integración respecto a $x$ obligaría a dividir el intervalo en varios
+tramos con distintas funciones superiores e inferiores.
+\end{rem}
+
+\begin{example}[Área con integración respecto a $y$]
+Halle el área acotada por $x=y^2$ y $x=y+2$.
+
+\textbf{Solución.} Intersecciones: $y^2=y+2\Rightarrow y=-1,\,2$.
+En $[-1,2]$ se tiene $y+2\ge y^2$. Entonces
+\[
+  A = \int_{-1}^{2}\bigl[(y+2)-y^2\bigr]\,dy
+    = \left[\frac{y^2}{2}+2y-\frac{y^3}{3}\right]_{-1}^{2}
+    = \frac{9}{2},
+\]
+el mismo resultado que en el Ejemplo~\ref{ex:parabola-recta}, como debe ser.
+\end{example}
+
+\begin{example}[Ventaja de integrar respecto a $y$]
+Halle el área entre $y=\sqrt{x}$, $y=x-2$ y el eje $y$ (primera cuadrante).
+
+\textbf{Solución.} Las intersecciones son $(1,1)$ y $(4,2)$. Si
+integráramos respecto a $x$ necesitaríamos dos integrales. En cambio,
+despejando $x$: curva izquierda $x=y^2$ y curva derecha $x=y+2$, con
+$y\in[0,2]$:
+\[
+  A = \int_0^2\bigl[(y+2)-y^2\bigr]\,dy
+    = \left[\frac{y^2}{2}+2y-\frac{y^3}{3}\right]_0^2
+    = 2+4-\frac{8}{3} = \boxed{\dfrac{10}{3}}.
+\]
+\end{example}
+
+% ============================================================
+\section{Volumen de sólidos de revolución}
+% ============================================================
+
+Un \textbf{sólido de revolución} se genera al rotar una región plana
+alrededor de una recta llamada \emph{eje de revolución}. Presentamos tres
+métodos fundamentales, cada uno adecuado para distintas configuraciones.
+
+% -----------------------------------------------------------
+\subsection{Método de los discos}
+% -----------------------------------------------------------
+
+\begin{theorem}[Volumen por discos --- eje $x$]
+Sea $R$ la región acotada por $y=f(x)\ge 0$, $x=a$, $x=b$ y el eje $x$.
+Al rotar $R$ alrededor del eje $x$, el volumen del sólido generado es
+\[
+  V = \pi\int_a^b\bigl[f(x)\bigr]^2\,dx.
+\]
+\end{theorem}
+
+\begin{proof}
+Dividimos $[a,b]$ en $n$ subintervalos de ancho $\Delta x$. La porción del
+sólido sobre $[x_{i-1},x_i]$ se aproxima por un disco circular de radio
+$f(x_i^*)$ y grosor $\Delta x$, cuyo volumen es $\pi[f(x_i^*)]^2\Delta x$.
+Sumando y tomando límite:
+\[
+  V = \lim_{n\to\infty}\sum_{i=1}^n\pi[f(x_i^*)]^2\Delta x
+    = \pi\int_a^b[f(x)]^2\,dx.\qedhere
+\]
+\end{proof}
+
+\begin{example}[Volumen de un cono]
+Demuestre que el volumen de un cono de radio $R$ y altura $h$ es
+$V=\frac{1}{3}\pi R^2 h$.
+
+\textbf{Solución.} La recta que genera el cono es $y=\frac{R}{h}x$,
+$x\in[0,h]$. Aplicando discos:
+\[
+  V = \pi\int_0^h\!\left(\frac{R}{h}x\right)^{\!2}dx
+    = \frac{\pi R^2}{h^2}\cdot\frac{h^3}{3}
+    = \frac{1}{3}\pi R^2 h.\qedhere
+\]
+\end{example}
+
+\begin{example}[Volumen de una esfera]
+Demuestre que el volumen de una esfera de radio $R$ es
+$V = \frac{4}{3}\pi R^3$.
+
+\textbf{Solución.} Rotamos la semicircunferencia $y=\sqrt{R^2-x^2}$,
+$x\in[-R,R]$, alrededor del eje $x$:
+\[
+  V = \pi\int_{-R}^{R}(R^2-x^2)\,dx
+    = \pi\left[R^2 x-\frac{x^3}{3}\right]_{-R}^{R}
+    = \pi\cdot\frac{4R^3}{3}
+    = \boxed{\dfrac{4}{3}\pi R^3}.\qedhere
+\]
+\end{example}
+
+% -----------------------------------------------------------
+\subsection{Método de las arandelas (\emph{washers})}
+% -----------------------------------------------------------
+
+\begin{theorem}[Volumen por arandelas]
+Sea $R$ la región acotada por $y=f(x)$ (superior) e $y=g(x)$ (inferior),
+con $f(x)\ge g(x)\ge 0$, $x\in[a,b]$. Al rotar $R$ alrededor del eje $x$,
+el volumen es
+\[
+  V = \pi\int_a^b\Bigl(\bigl[f(x)\bigr]^2-\bigl[g(x)\bigr]^2\Bigr)\,dx.
+\]
+\end{theorem}
+
+\begin{rem}
+La arandela en la posición $x$ tiene radio externo $R(x)=f(x)$ y radio
+interno $r(x)=g(x)$. Su área transversal es
+$\pi R(x)^2-\pi r(x)^2$, de donde se obtiene la fórmula integrando sobre
+$[a,b]$.
+\end{rem}
+
+\begin{example}[Sólido con hueco]
+La región entre $y=\sqrt{x}$ e $y=x^2$ en $[0,1]$ gira alrededor del eje
+$x$. Calcule el volumen.
+
+\textbf{Solución.} En $[0,1]$: $\sqrt{x}\ge x^2$. Radio externo
+$R(x)=\sqrt{x}$, radio interno $r(x)=x^2$.
+\begin{align*}
+  V &= \pi\int_0^1\bigl[(\sqrt{x})^2-(x^2)^2\bigr]\,dx
+     = \pi\int_0^1(x-x^4)\,dx \\
+    &= \pi\left[\frac{x^2}{2}-\frac{x^5}{5}\right]_0^1
+     = \pi\!\left(\frac{1}{2}-\frac{1}{5}\right)
+     = \boxed{\dfrac{3\pi}{10}}.
+\end{align*}
+\end{example}
+
+\begin{example}[Rotación alrededor de una recta distinta de los ejes]
+La región acotada por $y=x^2$ e $y=1$ gira alrededor de la recta $y=2$.
+Calcule el volumen.
+
+\textbf{Solución.} Intersecciones: $x^2=1\Rightarrow x=\pm 1$.
+El radio externo de cada arandela es la distancia de $y=2$ a la curva
+$y=x^2$: $R(x)=2-x^2$. El radio interno es la distancia de $y=2$ a $y=1$:
+$r(x)=2-1=1$.
+\begin{align*}
+  V &= \pi\int_{-1}^{1}\bigl[(2-x^2)^2-1^2\bigr]\,dx
+     = \pi\int_{-1}^{1}(3-4x^2+x^4)\,dx \\
+    &= 2\pi\int_0^1(3-4x^2+x^4)\,dx
+     = 2\pi\left[3x-\frac{4x^3}{3}+\frac{x^5}{5}\right]_0^1
+     = 2\pi\!\left(3-\frac{4}{3}+\frac{1}{5}\right)
+     = \boxed{\dfrac{56\pi}{15}}.
+\end{align*}
+\end{example}
+
+% -----------------------------------------------------------
+\subsection{Método de los cascarones cilíndricos (\emph{shells})}
+% -----------------------------------------------------------
+
+\begin{theorem}[Volumen por cascarones --- eje $y$]
+Sea $R$ la región acotada por $y=f(x)\ge 0$, $x=a$, $x=b$
+($0\le a<b$) y el eje $x$. Al rotar $R$ alrededor del eje $y$, el volumen
+es
+\[
+  V = 2\pi\int_a^b x\,f(x)\,dx,
+\]
+donde $x$ es el radio promedio del cascarón y $f(x)$ su altura.
+\end{theorem}
+
+\begin{proof}
+Un rectángulo vertical de ancho $\Delta x$, altura $f(x_i^*)$ y distancia
+$x_i^*$ al eje $y$ genera, al rotar, un cascarón cilíndrico cuyo volumen
+es aproximadamente
+\[
+  2\pi x_i^*\cdot f(x_i^*)\cdot\Delta x
+  \quad\bigl(\text{circunferencia}\times\text{altura}\times\text{grosor}\bigr).
+\]
+Sumando y tomando límite se obtiene la fórmula. \qedhere
+\end{proof}
+
+\begin{rem}
+El método de cascarones es especialmente útil cuando:
+\begin{itemize}
+  \item El eje de revolución es paralelo al rectángulo representativo.
+  \item Despejar $x$ en términos de $y$ es algebraicamente complejo.
+  \item El sólido tiene huecos que complican el método de arandelas.
+\end{itemize}
+Como regla práctica: si el eje de rotación es el eje $y$ (o una recta
+vertical), pruebe primero con cascarones integrando respecto a $x$.
+Si el eje de rotación es el eje $x$ (o una recta horizontal), pruebe
+primero con discos/arandelas.
+\end{rem}
+
+\begin{example}[Comparación de métodos]
+Calcule el volumen generado al rotar la región bajo $y=\sqrt{x}$ en $[0,4]$
+alrededor del eje $y$.
+
+\textbf{Solución (cascarones):}
+\[
+  V = 2\pi\int_0^4 x\sqrt{x}\,dx
+    = 2\pi\int_0^4 x^{3/2}\,dx
+    = 2\pi\left[\frac{2}{5}x^{5/2}\right]_0^4
+    = \frac{4\pi}{5}\cdot 32
+    = \boxed{\dfrac{128\pi}{5}}.
+\]
+
+\textbf{Solución (arandelas respecto a $y$):}
+Despejamos $x=y^2$, con $y\in[0,2]$. El sólido tiene radio externo $4$ y
+radio interno $y^2$:
+\[
+  V = \pi\int_0^2\bigl(4^2-(y^2)^2\bigr)\,dy
+    = \pi\int_0^2(16-y^4)\,dy
+    = \pi\left[16y-\frac{y^5}{5}\right]_0^2
+    = \pi\!\left(32-\frac{32}{5}\right)
+    = \frac{128\pi}{5}.\qedhere
+\]
+Ambos métodos coinciden, como debe ser.
+\end{example}
+
+\begin{example}[Cascarón alrededor de eje vertical desplazado]
+La región acotada por $y=4x-x^2$ e $y=0$ gira alrededor de la recta
+$x=5$. Calcule el volumen.
+
+\textbf{Solución.} La parábola toca el eje $x$ en $x=0$ y $x=4$. El radio
+de cada cascarón es la distancia de un punto $x$ al eje $x=5$: radio
+$= 5-x$. La altura del cascarón es $f(x)=4x-x^2$.
+\begin{align*}
+  V &= 2\pi\int_0^4(5-x)(4x-x^2)\,dx
+     = 2\pi\int_0^4(5-x)\,x(4-x)\,dx \\
+    &= 2\pi\int_0^4(20x-5x^2-4x^2+x^3)\,dx
+     = 2\pi\int_0^4(20x-9x^2+x^3)\,dx \\
+    &= 2\pi\left[10x^2-3x^3+\frac{x^4}{4}\right]_0^4
+     = 2\pi(160-192+64)
+     = \boxed{64\pi}.
+\end{align*}
+\end{example}
+
+% ============================================================
+\section{Longitud de arco}
+% ============================================================
+
+\begin{definition}[Longitud de una curva suave]
+Sea $f$ una función con derivada continua en $[a,b]$. La
+\textbf{longitud de arco} de la gráfica de $f$ desde $x=a$ hasta $x=b$ es
+\[
+  s = \int_a^b\sqrt{1+\bigl[f'(x)\bigr]^2}\,dx.
+\]
+\end{definition}
+
+\begin{proof}[Esquema de demostración]
+Dividimos $[a,b]$ en $n$ subintervalos. La longitud del segmento que une
+$(x_{i-1},f(x_{i-1}))$ con $(x_i,f(x_i))$ es, por el teorema de Pitágoras,
+\[
+  \Delta s_i = \sqrt{(\Delta x_i)^2+(\Delta y_i)^2}
+             = \sqrt{1+\!\left(\frac{\Delta y_i}{\Delta x_i}\right)^{\!2}}
+               \,\Delta x_i.
+\]
+Por el Teorema del Valor Medio, $\dfrac{\Delta y_i}{\Delta x_i}=f'(c_i)$
+para algún $c_i\in(x_{i-1},x_i)$. Sumando y tomando límite:
+\[
+  s = \lim_{n\to\infty}\sum_{i=1}^n\sqrt{1+[f'(c_i)]^2}\,\Delta x_i
+    = \int_a^b\sqrt{1+[f'(x)]^2}\,dx.\qedhere
+\]
+\end{proof}
+
+\begin{rem}
+El elemento diferencial de longitud de arco es
+$ds=\sqrt{1+[f'(x)]^2}\,dx = \sqrt{dx^2+dy^2}$, que corresponde
+geométricamente a la hipotenusa del triángulo diferencial de catetos $dx$
+y $dy=f'(x)\,dx$. Esta interpretación facilita recordar y derivar la
+fórmula en distintos contextos (paramétrico, polar, etc.).
+\end{rem}
+
+\begin{example}[Longitud de una parábola]
+Calcule la longitud de arco de $y=x^2$ en $[0,1]$.
+
+\textbf{Solución.} $f'(x)=2x$, luego
+\[
+  s = \int_0^1\sqrt{1+4x^2}\,dx.
+\]
+Con la sustitución trigonométrica $2x=\tan\theta$, $dx=\frac{1}{2}\sec^2\theta\,d\theta$:
+\begin{align*}
+  s &= \frac{1}{2}\int_0^{\arctan 2}\sec^3\theta\,d\theta
+     = \frac{1}{4}\Bigl[\sec\theta\tan\theta+\ln|\sec\theta+\tan\theta|\Bigr]_0^{\arctan 2} \\
+    &= \frac{1}{4}\bigl(\sqrt{5}\cdot 2+\ln(2+\sqrt{5})\bigr)
+     = \boxed{\dfrac{\sqrt{5}}{2}+\dfrac{1}{4}\ln(2+\sqrt{5})\approx 1.479}.
+\end{align*}
+\end{example}
+
+\begin{example}[Longitud del arco de la catenaria]
+Calcule la longitud de arco de $y=\cosh x = \dfrac{e^x+e^{-x}}{2}$ en
+$[0,\ln 2]$.
+
+\textbf{Solución.} $f'(x)=\sinh x$, y se usa la identidad
+$\cosh^2 x-\sinh^2 x=1$:
+\[
+  s = \int_0^{\ln 2}\sqrt{1+\sinh^2 x}\,dx
+    = \int_0^{\ln 2}\cosh x\,dx
+    = \bigl[\sinh x\bigr]_0^{\ln 2}
+    = \sinh(\ln 2)
+    = \frac{2-\frac{1}{2}}{1}
+    = \boxed{\dfrac{3}{4}}.
+\]
+\end{example}
+
+% -----------------------------------------------------------
+\subsection{Longitud de arco en forma paramétrica y polar}
+% -----------------------------------------------------------
+
+\begin{theorem}[Longitud de arco paramétrica]
+Si una curva está dada por $x=x(t)$, $y=y(t)$, con $x',y'$ continuas en
+$[\alpha,\beta]$, entonces su longitud es
+\[
+  s = \int_{\alpha}^{\beta}\sqrt{[x'(t)]^2+[y'(t)]^2}\,dt.
+\]
+\end{theorem}
+
+\begin{example}[Circunferencia vía parámetros]
+Para $x=R\cos t$, $y=R\sin t$, $t\in[0,2\pi]$:
+$\sqrt{(x')^2+(y')^2}=\sqrt{R^2\sin^2 t+R^2\cos^2 t}=R$, luego
+$s=\int_0^{2\pi}R\,dt=2\pi R$.
+\end{example}
+
+\begin{theorem}[Longitud de arco en coordenadas polares]
+Si la curva está dada por $r=r(\theta)$, con $r'$ continua en
+$[\alpha,\beta]$, entonces su longitud es
+\[
+  s = \int_{\alpha}^{\beta}\sqrt{r(\theta)^2+[r'(\theta)]^2}\,d\theta.
+\]
+\end{theorem}
+
+\begin{example}[Longitud de la espiral de Arquímedes]
+Para $r=\theta$, $\theta\in[0,2\pi]$: $r'=1$, luego
+\[
+  s = \int_0^{2\pi}\sqrt{\theta^2+1}\,d\theta.
+\]
+Esta integral se resuelve con sustitución trigonométrica ($\theta=\tan\phi$)
+y da $s = \pi\sqrt{4\pi^2+1}+\frac{1}{2}\ln(2\pi+\sqrt{4\pi^2+1})
+\approx 21.26$.
+\end{example}
+
+% ============================================================
+\section{Áreas de superficies de revolución}
+% ============================================================
+
+\begin{definition}[Área superficial de revolución --- eje $x$]
+Sea $f$ una función no negativa con derivada continua en $[a,b]$. El área
+de la superficie generada al rotar la gráfica de $f$ alrededor del eje $x$
+es
+\[
+  S = 2\pi\int_a^b f(x)\sqrt{1+[f'(x)]^2}\,dx.
+\]
+\end{definition}
+
+\begin{proof}[Idea de demostración]
+Un pequeño arco de longitud $ds=\sqrt{1+[f'(x)]^2}\,dx$, al rotar alrededor
+del eje $x$, genera una banda (frustum de cono) cuya área aproximada es
+\[
+  dS = 2\pi f(x)\,ds = 2\pi f(x)\sqrt{1+[f'(x)]^2}\,dx.
+\]
+Integrando: $S = 2\pi\int_a^b f(x)\sqrt{1+[f'(x)]^2}\,dx$. \qedhere
+\end{proof}
+
+\begin{rem}
+El factor $2\pi f(x)$ es la circunferencia del círculo descrito por el
+punto $(x,f(x))$ al rotar. El factor $ds$ es el elemento de longitud de
+arco, que ``estira'' la banda según la inclinación de la curva. Si se
+tomara $ds=dx$ en lugar de $ds=\sqrt{1+[f'(x)]^2}\,dx$ se obtendría la
+fórmula incorrecta para un cilindro, no para la superficie real.
+\end{rem}
+
+\begin{example}[Superficie de una esfera]
+Demuestre que el área de una esfera de radio $R$ es $4\pi R^2$.
+
+\textbf{Solución.} Rotamos $y=\sqrt{R^2-x^2}$, $x\in[-R,R]$, alrededor
+del eje $x$:
+\[
+  y' = \frac{-x}{\sqrt{R^2-x^2}} \implies
+  1+(y')^2 = \frac{R^2}{R^2-x^2}.
+\]
+Entonces
+\[
+  S = 2\pi\int_{-R}^{R}\sqrt{R^2-x^2}\cdot\frac{R}{\sqrt{R^2-x^2}}\,dx
+    = 2\pi R\int_{-R}^{R}dx
+    = \boxed{4\pi R^2}.\qedhere
+\]
+\end{example}
+
+\begin{example}[Superficie de un paraboloide]
+Halle el área de la superficie generada al rotar $y=x^2$ en $[0,1]$
+alrededor del eje $y$.
+
+\textbf{Solución.} Al rotar alrededor del eje $y$, el radio de cada banda
+es $x$ (no $f(x)$). Usamos la fórmula para el eje $y$:
+\[
+  S = 2\pi\int_0^1 x\sqrt{1+(2x)^2}\,dx
+    = 2\pi\int_0^1 x\sqrt{1+4x^2}\,dx.
+\]
+Con $u=1+4x^2$, $du=8x\,dx$:
+\[
+  S = 2\pi\int_1^5\sqrt{u}\,\frac{du}{8}
+    = \frac{\pi}{4}\cdot\frac{2}{3}\bigl[u^{3/2}\bigr]_1^5
+    = \frac{\pi}{6}(5\sqrt{5}-1)
+    = \boxed{\dfrac{\pi(5\sqrt{5}-1)}{6}}.
+\]
+\end{example}
+
+\begin{theorem}[Superficie alrededor del eje $y$]
+Si la gráfica de $y=f(x)$, $x\in[a,b]$, con $f\ge 0$ y $f'$ continua,
+gira alrededor del eje $y$, el área superficial es
+\[
+  S = 2\pi\int_a^b x\sqrt{1+[f'(x)]^2}\,dx.
+\]
+\end{theorem}
+
+% ============================================================
+\section{Aplicaciones físicas}
+% ============================================================
+
+\subsection{Trabajo mecánico}
+
+\begin{definition}[Trabajo de una fuerza variable]
+Si una fuerza $F(x)$ actúa en la dirección del movimiento a lo largo del
+eje $x$, el trabajo realizado al mover un objeto desde $x=a$ hasta $x=b$
+es
+\[
+  W = \int_a^b F(x)\,dx.
+\]
+\end{definition}
+
+\begin{rem}
+Cuando la fuerza es constante, $W=F\cdot(b-a)$, que recupera la fórmula
+elemental $W=Fd$. La integral generaliza este concepto a fuerzas variables.
+Las unidades del trabajo son joules ($\text{N}\cdot\text{m}$) en el
+Sistema Internacional.
+\end{rem}
+
+\begin{example}[Ley de Hooke --- resorte]
+Un resorte requiere $10\,\text{N}$ para estirarse $0.1\,\text{m}$ desde
+su longitud natural. Calcule el trabajo para estirarlo $0.3\,\text{m}$.
+
+\textbf{Solución.} $F(x)=kx$; de $10=k(0.1)$ obtenemos $k=100\,\text{N/m}$.
+\[
+  W = \int_0^{0.3}100x\,dx
+    = 100\left[\frac{x^2}{2}\right]_0^{0.3}
+    = 50\cdot 0.09
+    = \boxed{4.5\,\text{J}}.
+\]
+\end{example}
+
+\begin{example}[Trabajo para comprimir un resorte]
+El mismo resorte del ejemplo anterior está comprimido $0.05\,\text{m}$.
+¿Cuánto trabajo adicional se requiere para comprimirlo $0.15\,\text{m}$
+más?
+
+\textbf{Solución.} El resorte está en $x=-0.05\,\text{m}$ y lo llevamos
+a $x=-0.20\,\text{m}$ (la fuerza es $F(x)=100|x|$ oponiéndose a la
+compresión):
+\[
+  W = \int_{0.05}^{0.20}100x\,dx
+    = 50\left[x^2\right]_{0.05}^{0.20}
+    = 50(0.04-0.0025)
+    = \boxed{1.875\,\text{J}}.
+\]
+\end{example}
+
+\begin{example}[Bombeo de líquido desde un tanque cónico]
+Un tanque en forma de cono invertido tiene radio superior $3\,\text{m}$
+y altura $6\,\text{m}$, y está lleno de agua
+($\rho=1000\,\text{kg/m}^3$, $g=9.8\,\text{m/s}^2$). Calcule el trabajo
+para bombear toda el agua hasta el borde.
+
+\textbf{Solución.} Situamos el vértice del cono en el origen. A altura $y$,
+el radio de la sección transversal es $r(y)=\frac{3}{6}y=\frac{y}{2}$.
+Una rebanada horizontal de espesor $dy$ a altura $y$ tiene:
+\begin{itemize}
+  \item Volumen: $dV=\pi\!\left(\dfrac{y}{2}\right)^{\!2}dy=\dfrac{\pi y^2}{4}\,dy$.
+  \item Peso: $dF=\rho g\,dV=\dfrac{9800\pi y^2}{4}\,dy$.
+  \item Distancia al borde: $6-y$.
+\end{itemize}
+\begin{align*}
+  W &= \int_0^6\frac{9800\pi y^2}{4}(6-y)\,dy
+     = \frac{9800\pi}{4}\int_0^6(6y^2-y^3)\,dy \\
+    &= \frac{9800\pi}{4}\left[2y^3-\frac{y^4}{4}\right]_0^6
+     = \frac{9800\pi}{4}\!\left(432-324\right)
+     = \frac{9800\pi\cdot 108}{4}
+     = \boxed{264600\pi\approx 8.31\times 10^5\,\text{J}}.
+\end{align*}
+\end{example}
+
+\begin{example}[Bombeo en un tanque cilíndrico]
+Un tanque cilíndrico de radio $2\,\text{m}$ y altura $5\,\text{m}$ está
+lleno de agua. Calcule el trabajo para bombear toda el agua hasta el borde.
+
+\textbf{Solución.} Una rebanada a altura $y$ tiene peso
+$dF=\rho g\,\pi(2)^2\,dy=4000\cdot 9.8\pi\,dy$ y debe subir $5-y$:
+\[
+  W = \int_0^5 39200\pi(5-y)\,dy
+    = 39200\pi\left[5y-\frac{y^2}{2}\right]_0^5
+    = 39200\pi\cdot\frac{25}{2}
+    = \boxed{490000\pi\approx 1.54\times 10^6\,\text{J}}.
+\]
+\end{example}
+
+% -----------------------------------------------------------
+\subsection{Centro de masa y centroide}
+% -----------------------------------------------------------
+
+\begin{definition}[Momentos y centro de masa de una lámina plana]
+Sea $R$ una región plana de densidad constante $\rho$, acotada por
+$y=f(x)\ge 0$, $x=a$ y $x=b$. Sus \textbf{momentos} respecto a los ejes
+son
+\[
+  M_y = \rho\int_a^b x\,f(x)\,dx, \qquad
+  M_x = \frac{\rho}{2}\int_a^b [f(x)]^2\,dx.
+\]
+La \textbf{masa} es $m=\rho\int_a^b f(x)\,dx$ y el
+\textbf{centro de masa} $(\bar x,\bar y)$ satisface
+\[
+  \bar{x} = \frac{M_y}{m}, \qquad \bar{y} = \frac{M_x}{m}.
+\]
+Cuando $\rho=1$ (o se cancela), $(\bar x,\bar y)$ se llama
+\textbf{centroide} de la región.
+\end{definition}
+
+\begin{rem}
+El centro de masa es el punto donde se equilibraría perfectamente la lámina
+si se apoyara en él. Para regiones con densidad variable $\rho=\rho(x,y)$,
+los momentos se calculan mediante integrales dobles, que se estudiarán en
+Cálculo Multivariable.
+\end{rem}
+
+\begin{theorem}[Teorema de Pappus --- volumen]
+Si una región plana $R$ de área $A$ se hace girar alrededor de un eje
+exterior (que no la cruza), el volumen del sólido de revolución generado
+es
+\[
+  V = 2\pi\,\bar{d}\cdot A,
+\]
+donde $\bar{d}$ es la distancia del centroide de $R$ al eje de rotación.
+\end{theorem}
+
+\begin{rem}
+El Teorema de Pappus permite calcular volúmenes de revolución a partir del
+centroide (a veces más sencillo), o bien determinar el centroide de una
+región a partir de un volumen conocido.
+\end{rem}
+
+\begin{example}[Centroide de un triángulo rectángulo]
+Halle el centroide de la región acotada por $y=1-x$, $x=0$ e $y=0$.
+
+\textbf{Solución.} Tomamos $\rho=1$. Masa: $m=\int_0^1(1-x)\,dx=\frac{1}{2}$.
+\begin{align*}
+  M_y &= \int_0^1 x(1-x)\,dx
+       = \left[\frac{x^2}{2}-\frac{x^3}{3}\right]_0^1
+       = \frac{1}{6}, \\
+  M_x &= \frac{1}{2}\int_0^1(1-x)^2\,dx
+       = \frac{1}{2}\cdot\frac{1}{3}
+       = \frac{1}{6}.
+\end{align*}
+Luego $\bar{x}=\dfrac{1/6}{1/2}=\dfrac{1}{3}$,
+$\bar{y}=\dfrac{1}{3}$. El centroide es
+$\boxed{\!\left(\dfrac{1}{3},\dfrac{1}{3}\right)\!}$,
+resultado consistente con la propiedad general de que el centroide de un
+triángulo se ubica en el tercio de cada cateto.
+\end{example}
+
+\begin{example}[Centroide de un semicírculo]
+Halle el centroide de la región semicircular $x^2+y^2\le R^2$, $y\ge 0$.
+
+\textbf{Solución.} Por simetría, $\bar{x}=0$. El área es $A=\frac{\pi R^2}{2}$
+y
+\[
+  M_x = \frac{1}{2}\int_{-R}^{R}(R^2-x^2)\,dx
+      = \frac{1}{2}\left[R^2 x-\frac{x^3}{3}\right]_{-R}^{R}
+      = \frac{2R^3}{3}.
+\]
+Luego $\bar{y}=\dfrac{2R^3/3}{\pi R^2/2}=\boxed{\dfrac{4R}{3\pi}}$.
+\end{example}
+
+% -----------------------------------------------------------
+\subsection{Momento de inercia}
+% -----------------------------------------------------------
+
+\begin{definition}[Momento de inercia de una lámina]
+El \textbf{momento de inercia} de una lámina de densidad $\rho$ respecto
+a un eje mide su resistencia a la rotación. Para los ejes coordenados:
+\[
+  I_x = \rho\int_a^b\frac{[f(x)]^3}{3}\,dx, \qquad
+  I_y = \rho\int_a^b x^2 f(x)\,dx.
+\]
+El \textbf{momento polar} respecto al origen es $I_0=I_x+I_y$.
+\end{definition}
+
+\begin{rem}
+El momento de inercia aparece en:
+\begin{itemize}
+  \item Energía cinética rotacional: $K=\frac{1}{2}I\omega^2$.
+  \item Segunda ley de Newton para rotación: $\tau=I\alpha$.
+\end{itemize}
+A diferencia de la masa, el momento de inercia depende de \emph{cómo} está
+distribuida la masa: puntos más lejanos al eje contribuyen más (factor
+$r^2$). Por ello, reducir $I$ sin cambiar la masa (distribuyendo la masa
+más cerca del eje) mejora la eficiencia en sistemas rotativos.
+\end{rem}
+
+\begin{example}[Momento de inercia de una varilla]
+Una varilla delgada de longitud $L$ y masa $M$ gira alrededor de un
+extremo. Calcule $I$.
+
+\textbf{Solución.} Densidad lineal $\lambda=M/L$. Un elemento $dx$ a
+distancia $x$ del eje tiene masa $dm=\lambda\,dx$ y contribuye
+$dI=x^2\,dm=\lambda x^2\,dx$:
+\[
+  I = \int_0^L\lambda x^2\,dx
+    = \frac{M}{L}\cdot\frac{L^3}{3}
+    = \boxed{\dfrac{1}{3}ML^2}.
+\]
+\end{example}
+
+\begin{example}[Momento de inercia respecto al centro]
+Calcule el momento de inercia de la misma varilla respecto a su centro.
+
+\textbf{Solución.} Situamos el origen en el centro: $x\in[-L/2,L/2]$.
+\[
+  I_{\text{centro}} = \int_{-L/2}^{L/2}\frac{M}{L}x^2\,dx
+    = \frac{M}{L}\cdot\frac{2}{3}\!\left(\frac{L}{2}\right)^{\!3}
+    = \frac{M}{L}\cdot\frac{L^3}{12}
+    = \boxed{\dfrac{1}{12}ML^2}.
+\]
+Nótese que $I_{\text{extremo}}=I_{\text{centro}}+M\!\left(\dfrac{L}{2}\right)^{\!2}
+=\frac{1}{12}ML^2+\frac{1}{4}ML^2=\frac{1}{3}ML^2$, lo que ilustra el
+\textbf{Teorema de Steiner (ejes paralelos):}
+$I=I_{\text{cm}}+M d^2$, donde $d$ es la distancia entre los ejes.
+\end{example}
+
+% ============================================================
+\section{Presión y fuerza hidrostática}
+% ============================================================
+
+\begin{definition}[Fuerza hidrostática sobre una placa plana]
+La presión hidrostática a profundidad $h$ en un fluido de densidad $\rho$
+es $P=\rho g h$. La fuerza total sobre una placa plana sumergida
+verticalmente, con anchura $w(h)$ a profundidad $h$, entre profundidades
+$h=a$ y $h=b$, es
+\[
+  F = \int_a^b\rho g h\,w(h)\,dh.
+\]
+\end{definition}
+
+\begin{example}[Fuerza sobre una compuerta rectangular]
+Una compuerta rectangular de $4\,\text{m}$ de ancho y $3\,\text{m}$ de
+alto está sumergida verticalmente, con su borde superior a $2\,\text{m}$
+de la superficie del agua ($\rho=1000\,\text{kg/m}^3$). Halle la fuerza
+total sobre la compuerta.
+
+\textbf{Solución.} La compuerta ocupa profundidades $h\in[2,5]$ con
+anchura constante $w(h)=4\,\text{m}$:
+\[
+  F = \int_2^5 1000\cdot 9.8\cdot h\cdot 4\,dh
+    = 39200\left[\frac{h^2}{2}\right]_2^5
+    = 39200\cdot\frac{25-4}{2}
+    = 39200\cdot 10.5
+    = \boxed{411600\,\text{N}\approx 411.6\,\text{kN}}.
+\]
+\end{example}
+
+% ============================================================
+\section{Resumen y estrategias de aplicación}
+% ============================================================
+
+\begin{rem}[Guía práctica para elegir método]
+\begin{description}
+  \item[Áreas.] Grafique primero. Si las curvas se expresan mejor como
+    $x=g(y)$, integre respecto a $y$. Cuando haya varios cruces, sume
+    integrales en subintervalos.
+
+  \item[Volúmenes.]~
+    \begin{itemize}
+      \item \emph{Discos/arandelas:} el rectángulo representativo es
+        \textbf{perpendicular} al eje de rotación.
+      \item \emph{Cascarones:} el rectángulo representativo es
+        \textbf{paralelo} al eje de rotación.
+      \item Para ejes desplazados, ajuste el radio sumando o restando el
+        desplazamiento.
+    \end{itemize}
+
+  \item[Longitud de arco.] Verifique que $f'$ sea continua; si la integral
+    resultante no es elemental, use integración numérica (Simpson, Gauss).
+
+  \item[Superficies.] Recuerde el factor $2\pi\times\text{radio}\times ds$;
+    el radio es la distancia del punto al eje de rotación.
+
+  \item[Trabajo.] Identifique $F(x)$ e integre. Para bombeo, exprese la
+    distancia de elevación en función de la variable de integración.
+
+  \item[Centro de masa.] Para regiones entre dos curvas:
+    $M_y=\rho\int_a^b x[f(x)-g(x)]\,dx$ y
+    $M_x=\frac{\rho}{2}\int_a^b([f(x)]^2-[g(x)]^2)\,dx$.
+
+  \item[Fuerza hidrostática.] Use $F=\int\rho g h\,w(h)\,dh$; exprese la
+    anchura $w(h)$ en función de la profundidad $h$.
+\end{description}
+\end{rem}
+
+\begin{theorem}[Principio unificador de las aplicaciones de la integral]
+Cualquier cantidad acumulativa $Q$ que satisfaga:
+\begin{enumerate}
+  \item Puede aproximarse en subintervalos: $Q\approx\sum g(x_i^*)\Delta x$.
+  \item La aproximación converge cuando $\Delta x\to 0$.
+\end{enumerate}
+puede calcularse exactamente como $Q=\int_a^b g(x)\,dx$. Este principio
+unifica todas las aplicaciones presentadas en el capítulo: el área, el
+volumen, la longitud de arco, el trabajo, los momentos y la fuerza
+hidrostática son, en esencia, límites de sumas de Riemann con distintos
+integrandos $g(x)$.
+\end{theorem}
+
+\begin{rem}
+La potencia del cálculo integral radica en transformar problemas
+geométricos y físicos complejos en operaciones algebraicas sistemáticas.
+Dominar estas aplicaciones requiere práctica en tres pasos fundamentales:
+(1)~identificar el elemento diferencial $dQ$ adecuado para el problema,
+(2)~expresar $dQ$ en términos de una sola variable de integración, y
+(3)~determinar los límites de integración a partir de la geometría del
+problema.
+\end{rem}

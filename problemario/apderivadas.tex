@@ -634,11 +634,11 @@ En $x=0$ y $x=2$ la concavidad cambia de signo, por lo que ambos son
 puntos de inflexión. Sus imágenes son: \(
 f(0)=0, \qquad f(2)=16-32=-16.
 \) Los puntos de inflexión son $(0,\,0)$ y $(2,\,-16)$. 
-\end{myproof}
+
 % ============================================================
 % GRÁFICA: Concavidad de f(x) = x^4 - 4x^3
 % ============================================================
-\begin{figure}[H]
+\begin{figure}[H]\label{x4+3x3}
 \centering
 % ============================================================
 % AJUSTE DE PROPORCIONES:
@@ -706,13 +706,15 @@ f(0)=0, \qquad f(2)=16-32=-16.
 $f''>0$ (curva abre hacia arriba) y en rojo donde $f''<0$ (curva abre
 hacia abajo). Los puntos negros señalan los puntos de inflexión.}
 \end{figure}
-
-
-
-
-%%==========================================================
-\section{Extremos Locales}
-%%==========================================================
+\end{myproof}
+Las herramientas desarrolladas hasta ahora de monotonía y concavidad
+permiten caracterizar puntos especiales que son máximos o mínimos, no
+en el dominio completo de $f$, sino en una vecindad reducida alrededor
+de un punto. Estos se denominan \textbf{extremos locales} y representan
+los \textit{picos} y \textit{valles} de la gráfica. Su localización se apoya en los
+puntos críticos y puede abordarse mediante dos criterios: uno basado en
+el cambio de signo de $f'$ y otro, más ágil cuando es aplicable, basado
+en el signo de $f''$.
 
 \begin{definition}
 $f(c)$ es un \textbf{máximo local} si existe un intervalo abierto
@@ -732,8 +734,10 @@ Sea $c$ un punto crítico de $f$:
 \begin{theorem}[Criterio de la segunda derivada]
 Si $f'(c)=0$ y $f''(c)$ existe:
 \begin{itemize}
-    \item $f''(c)<0$: \textbf{máximo local}.
-    \item $f''(c)>0$: \textbf{mínimo local}.
+    \item $f''(c)<0$: \textbf{máximo local} (la curva es cóncava hacia
+    abajo en $c$).
+    \item $f''(c)>0$: \textbf{mínimo local} (la curva es cóncava hacia
+    arriba en $c$).
     \item $f''(c)=0$: el criterio es \textbf{inconcluso}; puede haber
     máximo, mínimo o punto de inflexión.
 \end{itemize}
@@ -741,12 +745,11 @@ Si $f'(c)=0$ y $f''(c)$ existe:
 
 \begin{rem}
 El caso $f''(c)=0$ ilustra la importancia de no abandonar el análisis
-prematuramente. Para $f(x)=x^4$, $f'(0)=0$ y $f''(0)=0$, pero $x=0$
-es un mínimo local (verificable con el criterio de la primera derivada).
-Para $f(x)=x^3$, $f'(0)=0$ y $f''(0)=0$, pero $x=0$ es un punto de
-inflexión. El criterio de la segunda derivada no distingue estos casos;
-siempre se debe recurrir al de la primera derivada cuando la segunda es
-cero.
+prematuramente. Para $f(x)=x^4$, se tiene $f'(0)=0$ y $f''(0)=0$,
+pero $x=0$ es un mínimo local; para $f(x)=x^3$, las mismas condiciones
+se cumplen en $x=0$, pero se trata de un punto de inflexión. El criterio
+de la segunda derivada no distingue estos casos, por lo que siempre debe
+recurrirse al de la primera derivada cuando $f''(c)=0$.
 \end{rem}
 
 \begin{example}
@@ -754,29 +757,118 @@ Analizar completamente $f(x)=x^4-4x^3$.
 \end{example}
 
 \begin{myproof}
-$f'(x)=4x^3-12x^2=4x^2(x-3)$. Puntos críticos: $x=0$ y $x=3$.
+\textbf{Paso 1. Dominio e información básica.}
 
-$f''(x)=12x^2-24x=12x(x-2)$. En $x=3$: $f''(3)=36>0$ $\Rightarrow$
-mínimo local $f(3)=-27$. En $x=0$: $f''(0)=0$, inconcluso.
-Analizando signo de $f'$: para $x<0$, $f'<0$; para $0<x<3$, $f'<0$;
-para $x>3$, $f'>0$. Como $f'$ no cambia de signo en $x=0$, no hay
-extremo local allí.
+$f$ es un polinomio, por lo que su dominio es $\mathbb{R}$, es continua
+y derivable en todo punto. Como el término dominante es $x^4>0$, la
+función tiende a $+\infty$ en ambos extremos.
 
-Puntos de inflexión ($f''=0$): $x=0$ y $x=2$.
-En $x=0$: $f''$ cambia de $+$ a $-$... verificar: $f''(-1)=36>0$,
-$f''(1)=-12<0$. Sí cambia $\Rightarrow$ inflexión en $(0,0)$.
-En $x=2$: $f''(1)=-12<0$, $f''(3)=36>0$. Cambia $\Rightarrow$
-inflexión en $(2,-16)$. $\square$
+\textbf{Paso 2. Puntos críticos y monotonía.}
+
+Se calcula la primera derivada y se factoriza:
+\[
+f'(x) = 4x^3 - 12x^2 = 4x^2(x-3).
+\]
+Los puntos críticos, donde $f'(x)=0$, son $x=0$ y $x=3$. Estos dos
+valores dividen la recta real en tres intervalos. Se analiza el signo
+de cada factor en cada uno de ellos:
+
+\begin{center}
+\begin{tabular}{c c c c c}
+\toprule
+Intervalo & Signo de $4x^2$ & Signo de $(x-3)$ & Signo de $f'(x)$
+& Monotonía \\
+\midrule
+$(-\infty,\,0)$ & $+$ & $-$ & $-$ & decreciente \\
+$(0,\,3)$       & $+$ & $-$ & $-$ & decreciente \\
+$(3,\,+\infty)$ & $+$ & $+$ & $+$ & creciente   \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Nótese que $f'$ mantiene el signo negativo a ambos lados de $x=0$: la
+función sigue decreciendo sin interrupciones al pasar por ese punto, de
+modo que \textbf{no hay extremo local en $x=0$}. En cambio, en $x=3$
+la derivada cambia de $-$ a $+$, lo que por el criterio de la primera
+derivada confirma un \textbf{mínimo local}:
+\[
+f(3) = 81 - 108 = -27.
+\]
+
+\textbf{Paso 3. Concavidad y puntos de inflexión.}
+
+Se calcula la segunda derivada:
+\[
+f''(x) = 12x^2 - 24x = 12x(x-2).
+\]
+Los candidatos a puntos de inflexión son $x=0$ y $x=2$. Se analiza el
+signo de $f''$ en los tres intervalos resultantes:
+
+\begin{center}
+\begin{tabular}{c c c c c}
+\toprule
+Intervalo & Signo de $12x$ & Signo de $(x-2)$ & Signo de $f''(x)$
+& Concavidad \\
+\midrule
+$(-\infty,\,0)$ & $-$ & $-$ & $+$ & hacia arriba $\smile$ \\
+$(0,\,2)$       & $+$ & $-$ & $-$ & hacia abajo  $\frown$ \\
+$(2,\,+\infty)$ & $+$ & $+$ & $+$ & hacia arriba $\smile$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Como $f''$ cambia de signo en $x=0$ (de $+$ a $-$) y en $x=2$ (de $-$
+a $+$), ambos son \textbf{puntos de inflexión}. Sus imágenes son:
+\[
+f(0) = 0, \qquad f(2) = 16 - 32 = -16.
+\]
+
+Se puede aplicar también el criterio de la segunda derivada en $x=3$
+para confirmar el mínimo: $f''(3)=12(3)(1)=36>0$, lo que indica
+concavidad hacia arriba, consistente con un mínimo local. En $x=0$,
+en cambio, $f''(0)=0$, por lo que el criterio de la segunda derivada
+es inconcluso allí; fue el análisis de la primera derivada el que
+permitió concluir que no hay extremo en ese punto.
+
+\textbf{Resumen del análisis completo.}
+
+\begin{center}
+\begin{tabular}{c l}
+\toprule
+Punto & Clasificación \\
+\midrule
+$x=0$ & Punto de inflexión en $(0,\,0)$; no es extremo local. \\
+$x=2$ & Punto de inflexión en $(2,\,-16)$. \\
+$x=3$ & Mínimo local en $(3,\,-27)$. \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+La función decrece en $(-\infty,3)$, alcanza su único mínimo local en
+$x=3$, y crece en $(3,+\infty)$. La concavidad cambia en $x=0$ y
+$x=2$, que son los únicos puntos de inflexión. El bosquejo de la función puede revisarse nuevamente en la figura \ref{x4+3x3}.
 \end{myproof}
 
 %%==========================================================
 \section{Trazado Sistemático de Curvas}
 %%==========================================================
 
-El análisis completo de una función antes de graficarla integra todas
-las herramientas previas en un procedimiento organizado.
+El análisis desarrollado en las secciones anteriores no es un fin en sí
+mismo: monotonía, concavidad, extremos locales y puntos de inflexión son
+piezas de un mismo rompecabezas cuyo resultado final es la comprensión
+global del comportamiento de una función. Reunir todas estas herramientas
+en un procedimiento ordenado permite \textbf{bosquejar la gráfica de
+cualquier función} de manera rigurosa, sin depender de tablas de valores
+construidas punto a punto. La ventaja de este enfoque es doble: por un
+lado, la gráfica resultante refleja fielmente la estructura matemática de
+$f$; por el otro, el proceso mismo de análisis obliga a comprender la
+función antes de representarla. El protocolo que se presenta a
+continuación organiza ese proceso en cuatro etapas progresivas, donde
+cada paso alimenta al siguiente.
 
 \begin{pasos}
+Para bosquejar la gráfica de una función es posible seguir el siguiente
+proceso sistemático:
 \begin{enumerate}
     \item \textbf{Análisis previo.} Determinar dominio, rango (si es
     posible), simetría (par/impar/periódica), intersecciones con los
@@ -799,33 +891,98 @@ Trazar la curva $f(x)=\dfrac{x^2}{x^2-4}$.
 \end{example}
 
 \begin{myproof}
-\textbf{Paso 1.}
-\emph{Dominio:} $\R\setminus\{-2,2\}$.
-\emph{Simetría:} $f(-x)=f(x)$, la función es par.
-\emph{Intersecciones:} $f(0)=0$; $f(x)=0\Rightarrow x=0$.
-\emph{Asíntotas verticales:} $x=\pm 2$ (denominador se anula).
-\emph{Asíntota horizontal:} $\lim_{x\to\infty}f(x)=1$, i.e., $y=1$.
+\textbf{Paso 1. Análisis previo.}
 
-\textbf{Paso 2.}
+\emph{Dominio.} El denominador $x^2-4=(x-2)(x+2)$ se anula en $x=\pm2$,
+de modo que el dominio es $\mathbb{R}\setminus\{-2,\,2\}$.
+
+\emph{Simetría.} Como $f(-x)=\dfrac{(-x)^2}{(-x)^2-4}=\dfrac{x^2}{x^2-4}=f(x)$,
+la función es \textbf{par}: su gráfica es simétrica respecto al eje $y$.
+Esto permite analizar $x\geq 0$ y reflejar.
+
+\emph{Intersecciones.} En $x=0$: $f(0)=0$, luego la curva pasa por el
+origen. La ecuación $f(x)=0$ implica $x^2=0$, es decir, $x=0$ es la
+única intersección con ambos ejes.
+
+\emph{Asíntotas verticales.} En $x=2$ y $x=-2$ el denominador se anula
+y el numerador no, por lo que existen asíntotas verticales en ambos
+puntos. Analizando los límites laterales en $x=2$:
 \[
-f'(x) = \frac{2x(x^2-4)-x^2\cdot 2x}{(x^2-4)^2}
+\lim_{x\to 2^-}f(x)=-\infty, \qquad \lim_{x\to 2^+}f(x)=+\infty,
+\]
+y por simetría los comportamientos en $x=-2$ son opuestos.
+
+\emph{Asíntota horizontal.} Dividiendo numerador y denominador entre
+$x^2$:
+\[
+\lim_{x\to\pm\infty}f(x)=\lim_{x\to\pm\infty}\frac{1}{1-4/x^2}=1,
+\]
+de modo que $y=1$ es asíntota horizontal. Nótese además que $f(x)=1$
+no tiene solución ($x^2=x^2-4$ es imposible), así que la curva nunca
+toca su propia asíntota horizontal.
+
+\textbf{Paso 2. Primera derivada: monotonía y extremos locales.}
+
+Aplicando la regla del cociente:
+\[
+f'(x)
+= \frac{2x(x^2-4)-x^2\cdot 2x}{(x^2-4)^2}
+= \frac{2x^3-8x-2x^3}{(x^2-4)^2}
 = \frac{-8x}{(x^2-4)^2}.
 \]
-$f'(x)=0\Rightarrow x=0$; $f''(0)=?$ Signo de $f'$: para $x<0$,
-$f'>0$ (creciente); para $x>0$, $f'<0$ (decreciente). Máximo local
-en $x=0$: $f(0)=0$.
+El único punto crítico interior al dominio es $x=0$, pues $f'(x)=0$
+implica $x=0$. Como $(x^2-4)^2>0$ siempre, el signo de $f'$ queda
+determinado únicamente por $-8x$:
 
-\textbf{Paso 3.}
+\begin{center}
+\begin{tabular}{c c c}
+\toprule
+Intervalo & Signo de $f'(x)$ & Monotonía \\
+\midrule
+$(-\infty,-2)$ & $+$ & creciente \\
+$(-2,\;0)$     & $+$ & creciente \\
+$(0,\;2)$      & $-$ & decreciente \\
+$(2,+\infty)$  & $-$ & decreciente \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+En $x=0$ la derivada cambia de $+$ a $-$, lo que indica un
+\textbf{máximo local} con valor $f(0)=0$. Obsérvese que, aunque la
+función crece en $(-\infty,-2)$ y en $(-2,0)$, estos son intervalos
+separados por la discontinuidad en $x=-2$; no se puede afirmar que $f$
+crece en $(-\infty,0)$ en su conjunto.
+
+\textbf{Paso 3. Segunda derivada: concavidad y puntos de inflexión.}
+
+Derivando $f'(x)=\dfrac{-8x}{(x^2-4)^2}$ mediante la regla del cociente:
 \[
-f''(x) = \frac{-8(x^2-4)^2-(-8x)\cdot 2(x^2-4)\cdot 2x}{(x^2-4)^4}
+f''(x)
+= \frac{-8(x^2-4)^2 - (-8x)\cdot 2(x^2-4)\cdot 2x}{(x^2-4)^4}
+= \frac{-8(x^2-4)+32x^2}{(x^2-4)^3}
 = \frac{8(3x^2+4)}{(x^2-4)^3}.
 \]
-$f''(x)=0$ no tiene solución real ($3x^2+4>0$ siempre). En
-$(-2,2)$: denominador $<0$ y numerador $>0$, luego $f''<0$ (cóncava
-hacia abajo). Fuera de $(-2,2)$: $f''>0$ (cóncava hacia arriba).
-No hay puntos de inflexión.
+El numerador $8(3x^2+4)>0$ para todo $x\in\mathbb{R}$, de modo que el
+signo de $f''$ depende exclusivamente del denominador $(x^2-4)^3$:
 
-\textbf{Resumen:}
+\begin{center}
+\begin{tabular}{c c c c}
+\toprule
+Intervalo & Signo de $(x^2-4)^3$ & Signo de $f''(x)$ & Concavidad \\
+\midrule
+$(-\infty,-2)$ & $+$ & $+$ & hacia arriba $\smile$ \\
+$(-2,\;2)$     & $-$ & $-$ & hacia abajo  $\frown$ \\
+$(2,+\infty)$  & $+$ & $+$ & hacia arriba $\smile$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Como $f''(x)=0$ no tiene solución real, \textbf{no hay puntos de
+inflexión}. La concavidad cambia únicamente en las asíntotas verticales,
+que no pertenecen al dominio.
+
+\textbf{Paso 4. Tabla resumen y bosquejo.}
+
 \begin{center}
 \renewcommand{\arraystretch}{1.3}
 \begin{tabular}{c c c c}
@@ -833,124 +990,452 @@ No hay puntos de inflexión.
 Intervalo & $f'$ & $f''$ & Comportamiento \\
 \midrule
 $(-\infty,-2)$ & $+$ & $+$ & creciente, cóncava $\uparrow$ \\
-$(-2,0)$ & $+$ & $-$ & creciente, cóncava $\downarrow$ \\
-$(0,2)$ & $-$ & $-$ & decreciente, cóncava $\downarrow$ \\
-$(2,+\infty)$ & $-$ & $+$ & decreciente, cóncava $\uparrow$ \\
+$(-2,\;0)$     & $+$ & $-$ & creciente, cóncava $\downarrow$ \\
+$(0,\;2)$      & $-$ & $-$ & decreciente, cóncava $\downarrow$ \\
+$(2,+\infty)$  & $-$ & $+$ & decreciente, cóncava $\uparrow$ \\
 \bottomrule
 \end{tabular}
 \end{center}
-$\square$
-\end{myproof}
 
-%%==========================================================
+Puntos clave: máximo local en $(0,\,0)$; asíntotas verticales $x=\pm2$;
+asíntota horizontal $y=1$. $\square$
+
+
+% ============================================================
+% BOSQUEJO: f(x) = x^2 / (x^2 - 4)
+% ============================================================
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[>=stealth, xscale=1.0, yscale=0.9]
+
+  % --- Asíntotas ---
+  \draw[gray, dashed, thin] (-2,-4.5) -- (-2, 4.5)
+        node[above, font=\small] {$x=-2$};
+  \draw[gray, dashed, thin] ( 2,-4.5) -- ( 2, 4.5)
+        node[above, font=\small] {$x=2$};
+  \draw[gray, dashed, thin] (-5.2, 1) -- ( 5.2, 1)
+        node[right, font=\small] {$y=1$};
+
+  % --- Ejes ---
+  \draw[->] (-5.3,0) -- (5.3,0) node[right] {$x$};
+  \draw[->] (0,-4.5) -- (0,4.8) node[above] {$y$};
+
+  % --- Marcas eje x ---
+  \foreach \x in {-4,-3,-2,-1,1,2,3,4}
+    \draw (\x,0.08) -- (\x,-0.08)
+          node[below, font=\scriptsize] {$\x$};
+
+  % --- Marcas eje y ---
+  \foreach \y in {-4,-3,-2,-1,2,3,4}
+    \draw (0.08,\y) -- (-0.08,\y)
+          node[left, font=\scriptsize] {$\y$};
+
+  % --- Rama izquierda: x in (-inf, -2)  -> creciente, cóncava arriba ---
+  \draw[blue!70!black, very thick, domain=-5.2:-2.18, samples=100]
+    plot (\x, {\x*\x/(\x*\x-4)});
+
+  % --- Rama central: x in (-2, 2)  -> cóncava abajo, máx en (0,0) ---
+  \draw[red!70!black, very thick, domain=-1.8:1.8, samples=100]
+    plot (\x, {\x*\x/(\x*\x-4)});
+
+  % --- Rama derecha: x in (2, inf)  -> decreciente, cóncava arriba ---
+  \draw[blue!70!black, very thick, domain=2.18:5.2, samples=100]
+    plot (\x, {\x*\x/(\x*\x-4)});
+
+  % --- Máximo local en (0,0) ---
+  \filldraw[black] (0,0) circle[radius=2.3pt]
+    node[below right, font=\small] {$(0,\,0)$ máx.};
+
+  % --- Leyenda ---
+  \draw[blue!70!black, very thick] (2.8, 4.2) -- (3.4, 4.2)
+    node[right, black, font=\small] {cóncava $\uparrow$};
+  \draw[red!70!black,  very thick] (2.8, 3.6) -- (3.4, 3.6)
+    node[right, black, font=\small] {cóncava $\downarrow$};
+
+\end{tikzpicture}
+\caption{Bosquejo de $f(x)=\dfrac{x^2}{x^2-4}$. Las ramas azules son
+cóncavas hacia arriba y las rojas hacia abajo. Las líneas grises
+punteadas indican las asíntotas $x=\pm2$ e $y=1$.}
+\end{figure}
+\end{myproof}
+%%%==========================================================
 \section{Optimización}
 %%==========================================================
 
-\subsection{Metodología}
-
-La optimización consiste en encontrar el valor de una variable que
-maximiza o minimiza una cantidad de interés (la \textbf{función
-objetivo}), sujeto a ciertas restricciones geométricas o físicas.
+El trazado sistemático de curvas muestra que el cálculo diferencial
+permite entender el comportamiento global de una función: dónde crece,
+dónde decrece, dónde alcanza sus picos y valles. Este mismo aparato
+puede orientarse hacia una pregunta de enorme utilidad práctica:
+¿cuál es el \emph{mejor} valor posible de una cantidad? Diseñar un
+envase con el menor material posible, determinar el precio que maximiza
+los ingresos de una empresa, o encontrar la trayectoria de menor tiempo
+entre dos puntos son problemas que, en apariencia, pertenecen a dominios
+muy distintos. Sin embargo, todos comparten la misma estructura
+matemática: existe una \textbf{función objetivo} que se desea maximizar
+o minimizar, y una o varias \textbf{restricciones} que acotan los
+valores admisibles de las variables. El cálculo diferencial resuelve
+esta clase de problemas de forma exacta, localizando los puntos críticos
+de la función objetivo y clasificándolos mediante los criterios de la
+primera o la segunda derivada. El procedimiento sistemático es el
+siguiente.
 
 \begin{pasos}
+El siguiente es un procedimiento sistemático para resolver problemas
+de optimización:
 \begin{enumerate}
     \item \textbf{Diagrama y variables.} Asignar símbolos a todas las
-    cantidades relevantes.
+    cantidades relevantes y realizar un diagrama representativo.
     \item \textbf{Función objetivo.} Escribir la fórmula de la cantidad
     $Q$ que se desea optimizar.
     \item \textbf{Reducción a una variable.} Usar las restricciones para
     expresar $Q$ en función de una sola variable y determinar su dominio.
-    \item \textbf{Localizar puntos críticos.} Resolver $\frac{dQ}{dx}=0$
+    \item \textbf{Localizar puntos críticos.} Resolver $\dfrac{dQ}{dx}=0$
     y verificar singularidades o extremos del dominio.
     \item \textbf{Clasificar el extremo.} Usar el criterio de la primera
     o segunda derivada para confirmar que se trata de un máximo o mínimo.
 \end{enumerate}
 \end{pasos}
 
-\subsection{Ejemplos}
 
+
+% ============================================================
 \begin{example}
-De una hoja rectangular de $24\times 9$ cm se recortan cuadrados iguales
-en las esquinas y se doblan los bordes para formar una caja abierta.
-¿Qué tamaño deben tener los cuadrados para maximizar el volumen?
+De una hoja rectangular de $24\times 9$ cm se recortan cuadrados
+iguales en las esquinas y se doblan los bordes para formar una caja
+abierta. ¿Qué tamaño deben tener los cuadrados para maximizar el
+volumen?
 \end{example}
 
 \begin{myproof}
-Sea $x$ el lado del cuadrado recortado. La caja resultante tiene
-dimensiones $(24-2x)\times(9-2x)\times x$, con $0<x<\frac{9}{2}$.
-Función objetivo:
-\[
-V(x) = x(24-2x)(9-2x) = x(216-48x-18x+4x^2) = 4x^3-66x^2+216x.
-\]
-\[
-V'(x) = 12x^2-132x+216 = 12(x^2-11x+18) = 12(x-2)(x-9).
-\]
-En $(0,\frac{9}{2})$, el único punto crítico es $x=2$.
+\textbf{Paso 1. Diagrama y variables.}
 
-$V''(x)=24x-132$; $V''(2)=48-132=-84<0$: máximo local. Verificando
-en los extremos: $V(0)=V(4.5)=0$. Concluimos que el volumen máximo
-se obtiene con $x=2$ cm, y vale $V(2)=2(20)(5)=200$ cm$^3$. $\square$
+Sea $x$ el lado (en cm) de cada cuadrado recortado en las esquinas.
+Al doblar los bordes, la caja resultante tiene:
+base de $(24-2x)\times(9-2x)$ cm y altura $x$ cm.
+
+\begin{center}
+\begin{tikzpicture}[>=stealth, xscale=0.38, yscale=0.38]
+  % Hoja completa
+  \draw[thick] (0,0) rectangle (24,9);
+
+  % Cuadrados recortados (sombreados)
+  \fill[gray!30] (0,0)  rectangle (2,2);
+  \fill[gray!30] (22,0) rectangle (24,2);
+  \fill[gray!30] (0,7)  rectangle (2,9);
+  \fill[gray!30] (22,7) rectangle (24,9);
+
+  % Bordes de los cuadrados
+  \draw[dashed] (2,0)--(2,9);
+  \draw[dashed] (22,0)--(22,9);
+  \draw[dashed] (0,2)--(24,2);
+  \draw[dashed] (0,7)--(24,7);
+
+  % Cotas externas
+  \draw[<->, gray] (0,-1.2) -- (24,-1.2)
+        node[midway, below, font=\small] {$24$ cm};
+  \draw[<->, gray] (25.2,0) -- (25.2,9)
+        node[midway, right, font=\small] {$9$ cm};
+
+  % Cotas internas
+  \draw[<->] (2,9.9) -- (22,9.9)
+        node[midway, above, font=\small] {$24-2x$};
+  \draw[<->] (26.8,2) -- (26.8,7)
+        node[midway, right, font=\small] {$9-2x$};
+  \draw[<->] (0.1,2.2) -- (1.9,2.2)
+        node[midway, above, font=\scriptsize] {$x$};
+
+  % Etiqueta cuadrado
+  \node[font=\scriptsize] at (1,1) {$x$};
+\end{tikzpicture}
+\hspace{1.5cm}
+% Caja 3D
+\begin{tikzpicture}[>=stealth,
+    x={(0.7cm,0.25cm)}, y={(0cm,0.7cm)}, z={(-0.4cm,0.2cm)},
+    scale=0.55]
+  % Base
+  \draw[thick,fill=blue!10]
+    (0,0,0)--(10,0,0)--(10,0,5)--(0,0,5)--cycle;
+  % Frente
+  \draw[thick,fill=blue!15]
+    (0,0,0)--(10,0,0)--(10,2,0)--(0,2,0)--cycle;
+  % Lado derecho
+  \draw[thick,fill=blue!20]
+    (10,0,0)--(10,0,5)--(10,2,5)--(10,2,0)--cycle;
+  % Aristas superiores
+  \draw[thick]
+    (0,2,0)--(10,2,0)--(10,2,5)--(0,2,5)--(0,2,0);
+  \draw[thick] (0,0,5)--(0,2,5);
+
+  % Cotas
+  \draw[<->] (0,-0.7,0)--(10,-0.7,0)
+        node[midway,below,font=\small]{$24-2x$};
+  \draw[<->] (10.8,0,0)--(10.8,0,5)
+        node[midway,right,font=\small]{$9-2x$};
+  \draw[<->] (11.5,0,0)--(11.5,2,0)
+        node[midway,right,font=\small]{$x$};
+\end{tikzpicture}
+\end{center}
+
+\textbf{Paso 2. Función objetivo.}
+
+La cantidad a maximizar es el volumen de la caja:
+\[
+V = \text{base} \times \text{altura}
+  = (24-2x)(9-2x)\cdot x.
+\]
+
+\textbf{Paso 3. Reducción a una variable y dominio.}
+
+Expandiendo el producto:
+\[
+V(x) = x(24-2x)(9-2x)
+      = x\bigl(216 - 48x - 18x + 4x^2\bigr)
+      = 4x^3 - 66x^2 + 216x.
+\]
+Para que la caja exista se necesita $x>0$ y $9-2x>0$, de modo que
+el dominio es $x\in\!\left(0,\,\tfrac{9}{2}\right)$.
+
+\textbf{Paso 4. Localizar puntos críticos.}
+
+\[
+V'(x) = 12x^2 - 132x + 216 = 12(x^2 - 11x + 18) = 12(x-2)(x-9).
+\]
+Las raíces son $x=2$ y $x=9$. Como $x=9\notin\!\left(0,\tfrac{9}{2}\right)$,
+el único punto crítico interior es $\boldsymbol{x=2}$.
+
+\textbf{Paso 5. Clasificar el extremo.}
+
+Se aplica el criterio de la segunda derivada:
+\[
+V''(x) = 24x - 132 \implies V''(2) = 48 - 132 = -84 < 0.
+\]
+El signo negativo confirma un \textbf{máximo local} en $x=2$.
+Comparando con los extremos del dominio, donde $V(0)=V\!\left(\tfrac{9}{2}\right)=0$,
+se concluye que $x=2$ produce el \textbf{máximo absoluto} en el
+intervalo. El volumen máximo es:
+\[
+V(2) = 2(24-4)(9-4) = 2\cdot 20\cdot 5 = \boxed{200 \text{ cm}^3}.
+\]
+Los cuadrados deben tener \textbf{2 cm de lado}. $\square$
 \end{myproof}
 
+
+% ============================================================
 \begin{example}
-Se desea construir una lata cilíndrica (sin tapa) de volumen $V_0$.
-Encontrar las dimensiones que minimizan el área de material.
+Se desea construir una lata cilíndrica sin tapa de volumen $V_0$.
+Encontrar las dimensiones que minimizan el área total de material
+utilizado.
 \end{example}
 
 \begin{myproof}
-Variables: radio $r$, altura $h$. Restricción: $\pi r^2 h = V_0$,
-de donde $h=\frac{V_0}{\pi r^2}$.
+\textbf{Paso 1. Diagrama y variables.}
 
-Función objetivo (área lateral + base):
+Sean $r$ el radio de la base y $h$ la altura del cilindro.
+
+\begin{center}
+\begin{tikzpicture}[>=stealth, scale=0.8]
+  % Cilindro abierto
+  % Base inferior (elipse)
+  \draw[thick, fill=blue!10]
+    (0,0) ellipse (1.5 and 0.4);
+  % Paredes laterales
+  \draw[thick, fill=blue!8]
+    (-1.5,0) -- (-1.5,3) arc(180:360:1.5 and 0.4) -- (1.5,0)
+    arc(0:180:1.5 and 0.4);
+  % Borde superior (abierto)
+  \draw[thick, dashed] (-1.5,3) arc(180:360:1.5 and 0.4);
+  \draw[thick] (-1.5,3) arc(180:0:1.5 and 0.4);
+
+  % Cota radio
+  \draw[<->] (0,0) -- (1.5,0)
+        node[midway, above, font=\small] {$r$};
+  % Cota altura
+  \draw[<->] (1.8,0) -- (1.8,3)
+        node[midway, right, font=\small] {$h$};
+
+  % Etiquetas de áreas
+  \node[font=\scriptsize, blue!60!black] at (0,-0.9)
+        {Base: $\pi r^2$};
+  \node[font=\scriptsize, blue!60!black] at (2.9,1)
+        {Lateral: $2\pi r h$};
+\end{tikzpicture}
+\end{center}
+
+\textbf{Paso 2. Función objetivo.}
+
+El área total de material (base circular más pared lateral) es:
 \[
-A = \pi r^2 + 2\pi r h = \pi r^2 + \frac{2V_0}{r}.
+A = \pi r^2 + 2\pi r h.
 \]
+
+\textbf{Paso 3. Reducción a una variable y dominio.}
+
+La restricción de volumen es $\pi r^2 h = V_0$, de donde
+$h = \dfrac{V_0}{\pi r^2}$.
+Sustituyendo en $A$:
+\[
+A(r) = \pi r^2 + 2\pi r \cdot \frac{V_0}{\pi r^2}
+      = \pi r^2 + \frac{2V_0}{r}, \qquad r\in(0,+\infty).
+\]
+
+\textbf{Paso 4. Localizar puntos críticos.}
+
 \[
 A'(r) = 2\pi r - \frac{2V_0}{r^2} = 0
+\implies 2\pi r = \frac{2V_0}{r^2}
 \implies r^3 = \frac{V_0}{\pi}
-\implies r = \left(\frac{V_0}{\pi}\right)^{1/3}.
+\implies \boldsymbol{r = \left(\frac{V_0}{\pi}\right)^{1/3}}.
 \]
-Con ese valor, $h = \frac{V_0}{\pi r^2} = r$, es decir, la altura
-iguala el radio. $A''(r)=2\pi+\frac{4V_0}{r^3}>0$: mínimo. $\square$
+
+\textbf{Paso 5. Clasificar el extremo.}
+
+\[
+A''(r) = 2\pi + \frac{4V_0}{r^3} > 0 \quad \text{para todo } r>0,
+\]
+lo que confirma un \textbf{mínimo}. La altura óptima vale:
+\[
+h = \frac{V_0}{\pi r^2}
+  = \frac{\pi r^3}{\pi r^2} = r.
+\]
+La lata de menor material se obtiene cuando \textbf{la altura iguala
+al radio}: $h = r = \left(\dfrac{V_0}{\pi}\right)^{1/3}$. $\square$
 \end{myproof}
 
+
+% ============================================================
 \begin{example}
 Una tubería debe ir desde el punto $A$ en una orilla de un río de
 $3$ km de ancho hasta el punto $B$, situado $8$ km aguas abajo en la
-orilla opuesta. Tender tubería por el río cuesta \$200/km y por tierra
-\$100/km. ¿Dónde debe cruzar el río para minimizar el costo total?
+orilla opuesta. Tender tubería por el río cuesta \$200/km y por
+tierra \$100/km. ¿Dónde debe cruzar el río para minimizar el costo
+total?
 \end{example}
 
 \begin{myproof}
-Sea $x$ la distancia (en km) medida desde el punto directamente opuesto
-a $A$ hasta el punto de cruce $C$ en la orilla de $B$, con
-$0\leq x\leq 8$.
+\textbf{Paso 1. Diagrama y variables.}
 
-Longitud por el río: $\sqrt{9+x^2}$ km. Longitud por tierra: $(8-x)$ km.
+Sea $C$ el punto de cruce en la orilla de $B$, y sea $x$ la distancia
+horizontal desde el punto directamente opuesto a $A$ hasta $C$, con
+$x\in[0,8]$.
+
+\begin{center}
+\begin{tikzpicture}[>=stealth, xscale=1.0, yscale=1.0]
+  % Orillas del río
+  \fill[blue!12] (0,-0.1) rectangle (8.5,1.5);
+  \draw[blue!50!black, thick] (0,0)   -- (8.5,0);   % orilla inferior (B)
+  \draw[blue!50!black, thick] (0,1.5) -- (8.5,1.5); % orilla superior (A)
+
+  % Etiquetas orillas
+  \node[left, font=\small] at (0,1.5) {orilla $A$};
+  \node[left, font=\small] at (0,0)   {orilla $B$};
+
+  % Punto A
+  \filldraw[black] (0,1.5) circle (2pt) node[above right]{$A$};
+
+  % Punto directamente opuesto a A
+  \filldraw[gray]  (0,0)   circle (1.5pt) node[below]{$P$};
+
+  % Punto C (cruce)
+  \filldraw[black] (2.2,0) circle (2pt) node[below]{$C$};
+
+  % Punto B
+  \filldraw[black] (8,0)   circle (2pt) node[below right]{$B$};
+
+  % Tubería submarina A -> C
+  \draw[red!70!black, very thick] (0,1.5) -- (2.2,0)
+        node[midway, right, font=\small]{$\sqrt{9+x^2}$};
+
+  % Tubería terrestre C -> B
+  \draw[green!55!black, very thick] (2.2,0) -- (8,0)
+        node[midway, below, font=\small]{$8-x$};
+
+  % Cota ancho río
+  \draw[<->, gray] (-0.8,0) -- (-0.8,1.5)
+        node[midway, left, font=\small]{$3$ km};
+
+  % Cota x
+  \draw[<->] (0,-0.6) -- (2.2,-0.6)
+        node[midway, below, font=\small]{$x$};
+
+  % Cota 8
+  \draw[<->] (0,-1.1) -- (8,-1.1)
+        node[midway, below, font=\small]{$8$ km};
+
+  % Ángulo recto P
+  \draw (0.2,0) -- (0.2,0.2) -- (0,0.2);
+\end{tikzpicture}
+\end{center}
+
+\textbf{Paso 2. Función objetivo.}
+
+El costo total combina el tramo subacuático $A\to C$ y el tramo
+terrestre $C\to B$:
 \[
-C(x) = 200\sqrt{9+x^2}+100(8-x).
+\text{Costo}(x)
+= 200\sqrt{9+x^2} + 100(8-x), \qquad x\in[0,8].
 \]
-\[
-C'(x) = \frac{200x}{\sqrt{9+x^2}}-100 = 0
-\implies \frac{2x}{\sqrt{9+x^2}} = 1
-\implies 4x^2 = 9+x^2
+
+\textbf{Paso 3. Reducción a una variable y dominio.}
+
+La función ya depende de una sola variable $x$. El dominio es el
+intervalo cerrado $[0,8]$, lo que garantiza la existencia del mínimo
+absoluto por el Teorema del Valor Extremo.
+
+\textbf{Paso 4. Localizar puntos críticos.}
+
+\begin{align*}
+\text{Costo}'(x)
+= \frac{200x}{\sqrt{9+x^2}} - 100 = 0
+&\implies \frac{2x}{\sqrt{9+x^2}} = 1\\
+&\implies 4x^2 = 9+x^2\\
+&\implies 3x^2 = 9
 \implies x = \sqrt{3} \approx 1.73 \text{ km}.
-\]
-$C''(x)=\frac{200\cdot 9}{(9+x^2)^{3/2}}>0$: mínimo.
-El costo mínimo es $C(\sqrt{3})=200\sqrt{12}+100(8-\sqrt{3})
-\approx 1292.8$ USD. $\square$
-\end{myproof}
+\end{align*}
+El valor negativo $x=-\sqrt{3}$ queda fuera del dominio y se descarta.
 
+\textbf{Paso 5. Clasificar el extremo.}
+
+\[
+\text{Costo}''(x)
+= \frac{200\cdot 9}{(9+x^2)^{3/2}} > 0
+\quad \text{para todo } x\in[0,8],
+\]
+lo que confirma un \textbf{mínimo}. Comparando con los extremos del
+intervalo:
+\begin{align*}
+\text{Costo}(0)      &= 200(3)+100(8) = 1400 \text{ USD}\\
+\text{Costo}(8)      &= 200\sqrt{73}  \approx 1709 \text{ USD}\\
+\text{Costo}(\sqrt{3}) &= 200(2\sqrt{3})+100(8-\sqrt{3})\approx \boxed{1292.8 \text{ USD}}.
+\end{align*}
+El cruce óptimo se ubica \textbf{a $\sqrt{3}\approx 1.73$ km} del
+punto $P$ directamente opuesto a $A$, produciendo el costo mínimo
+de aproximadamente $\$1292.8$ USD. $\square$
+\end{myproof}
 %%==========================================================
 \section{El Teorema del Valor Medio}
 %%==========================================================
 
-\begin{theorem}[Rolle]
+Los criterios de monotonía y optimización desarrollados en las secciones
+anteriores descansan sobre una garantía más profunda: si una función es
+suficientemente regular en un intervalo, su derivada no puede comportarse
+de forma arbitraria. El resultado que formaliza esta idea es el
+\textbf{Teorema del Valor Medio}, uno de los teoremas más importantes
+del cálculo diferencial. Su punto de partida es un caso particular
+elemental, conocido como el Lema de Rolle, que captura una observación
+geométrica sencilla: si una curva comienza y termina a la misma altura,
+en algún punto intermedio debe ser horizontal.
+
+\begin{lemma}[Rolle]
 Si $f$ es continua en $[a,b]$, derivable en $(a,b)$ y $f(a)=f(b)$,
 entonces existe al menos un $c\in(a,b)$ tal que $f'(c)=0$.
-\end{theorem}
+\end{lemma}
 
-\begin{theorem}[Valor Medio --- Lagrange]
+El Teorema del Valor Medio generaliza esta idea eliminando la exigencia
+de que los extremos tengan la misma imagen: ahora se garantiza la
+existencia de un punto donde la pendiente de la tangente coincide con
+la pendiente de la recta que une los dos extremos de la curva.
+
+\begin{theorem}[del Valor Medio de Lagrange]
 Si $f$ es continua en $[a,b]$ y derivable en $(a,b)$, existe al menos
 un $c\in(a,b)$ tal que
 \[
@@ -958,26 +1443,51 @@ f'(c) = \frac{f(b)-f(a)}{b-a}.
 \]
 \end{theorem}
 
-Geométricamente, el Teorema del Valor Medio (TVM) garantiza que existe
-un punto en la curva donde la recta tangente es \textbf{paralela} a la
-recta secante que une los extremos del intervalo. Físicamente: si un
-automóvil recorre $120$ km en $2$ horas (velocidad promedio $60$ km/h),
-entonces en algún instante exacto su velocidad instantánea fue
-exactamente $60$ km/h.
+Geométricamente, el TVM garantiza que existe un punto en la curva donde
+la recta tangente es \textbf{paralela} a la recta secante que une los
+extremos del intervalo. La interpretación física es igualmente
+iluminadora: si un automóvil recorre $120$ km en $2$ horas (velocidad
+promedio $60$ km/h), en algún instante exacto su velocidad instantánea
+fue exactamente $60$ km/h. El siguiente ejemplo muestra que el TVM no
+es un resultado independiente, sino una consecuencia directa del Lema
+de Rolle.
 
-\begin{myproof}[Demostración del TVM a partir de Rolle]
-Definir la función auxiliar
+\begin{example}
+Demostrar el Teorema del Valor Medio a partir del Lema de Rolle.
+\end{example}
+
+\begin{myproof}
+La idea es construir una función auxiliar que «aplane» la secante,
+transformando el problema general en uno al que Rolle puede aplicarse.
+Se define:
 \[
 h(x) = f(x) - f(a) - \frac{f(b)-f(a)}{b-a}(x-a).
 \]
-$h$ es continua en $[a,b]$ y derivable en $(a,b)$. Además
-$h(a)=h(b)=0$. Por el Teorema de Rolle, existe $c\in(a,b)$ con
-$h'(c)=0$, es decir:
+Geométricamente, $h(x)$ mide la distancia vertical entre la curva $f$
+y la recta secante que une $(a,f(a))$ con $(b,f(b))$. Se verifican
+las hipótesis del Lema de Rolle:
+
+\begin{itemize}
+    \item $h$ es continua en $[a,b]$ y derivable en $(a,b)$, pues $f$
+    lo es y la función lineal restada también.
+    \item $h(a) = f(a)-f(a)-0 = 0$.
+    \item $h(b) = f(b)-f(a)-\dfrac{f(b)-f(a)}{b-a}(b-a) = f(b)-f(a)-(f(b)-f(a)) = 0$.
+\end{itemize}
+
+Como $h(a)=h(b)=0$, el Lema de Rolle garantiza la existencia de
+$c\in(a,b)$ con $h'(c)=0$. Calculando $h'$:
+\[
+h'(x) = f'(x) - \frac{f(b)-f(a)}{b-a},
+\]
+de modo que $h'(c)=0$ equivale exactamente a:
 \[
 f'(c) - \frac{f(b)-f(a)}{b-a} = 0
 \implies f'(c) = \frac{f(b)-f(a)}{b-a}. \qquad\square
 \]
 \end{myproof}
+
+Una consecuencia inmediata del TVM es el siguiente corolario, que
+constituye el fundamento teórico de la integración indefinida.
 
 \begin{coro}
 Si $F'(x)=G'(x)$ para todo $x\in(a,b)$, entonces $F(x)=G(x)+C$
@@ -985,30 +1495,70 @@ para alguna constante $C$.
 \end{coro}
 
 \begin{rem}
-Este corolario es el fundamento de la unicidad de la antiderivada:
-dos funciones con la misma derivada solo pueden diferir en una
-constante aditiva. Es la base teórica del ``$+C$'' en la integración
-indefinida.
+Este corolario justifica el ``$+C$'' que aparece en toda antiderivada:
+dos funciones que tienen la misma derivada en un intervalo solo pueden
+diferir en una constante aditiva. Sin el TVM, esta afirmación, que
+parece obvia, carecería de demostración rigurosa.
 \end{rem}
 
 \begin{example}
-Verificar el TVM para $f(x) = x^3-x$ en $[0,2]$ y encontrar $c$.
+Verificar el Teorema del Valor Medio para $f(x)=x^3-x$ en $[0,2]$
+y encontrar el valor $c$ garantizado por el teorema.
 \end{example}
 
 \begin{myproof}
-$f(0)=0$, $f(2)=6$. Pendiente de la secante: $\frac{6-0}{2-0}=3$.
-$f'(x)=3x^2-1=3 \Rightarrow x^2=\frac{4}{3}
-\Rightarrow c=\frac{2}{\sqrt{3}}\approx 1.155\in(0,2)$. $\square$
+Como $f$ es un polinomio, es continua en $[0,2]$ y derivable en
+$(0,2)$, por lo que el TVM es aplicable.
+
+\textbf{Paso 1. Calcular la pendiente de la recta secante.} \(
+f(0) = 0, \qquad f(2) = 8-2 = 6.
+\)
+La pendiente de la secante que une los extremos del intervalo es:
+\[
+m = \frac{f(2)-f(0)}{2-0} = \frac{6-0}{2} = 3.
+\]
+
+\textbf{Paso 2. Igualar la derivada a dicha pendiente.} \(
+f'(x) = 3x^2 - 1.
+\) El TVM garantiza que existe $c\in(0,2)$ tal que $f'(c)=3$:
+\[
+3c^2 - 1 = 3 \implies c^2 = \frac{4}{3} \implies c = \frac{2}{\sqrt{3}}
+= \frac{2\sqrt{3}}{3} \approx 1.155.
+\]
+La raíz negativa $c=-\dfrac{2}{\sqrt{3}}$ queda fuera de $(0,2)$ y
+se descarta.
+
+\textbf{Paso 3. Verificar.}
+
+El valor $c=\dfrac{2\sqrt{3}}{3}\approx 1.155$ pertenece efectivamente
+a $(0,2)$, lo que confirma la conclusión del TVM: en ese punto la
+tangente a la curva es paralela a la recta secante de pendiente $3$.
+$\square$
 \end{myproof}
 
 %%==========================================================
 \section{Regla de L'Hôpital}
 %%==========================================================
 
-\begin{theorem}[L'Hôpital]
-Supóngase que $\lim_{x\to a}f(x)=0$ y $\lim_{x\to a}g(x)=0$ (forma
-$\frac{0}{0}$), o que ambos tienden a $\pm\infty$ (forma
-$\frac{\infty}{\infty}$). Si $f$ y $g$ son derivables cerca de $a$,
+Al calcular límites, es frecuente encontrar expresiones donde numerador
+y denominador tienden simultáneamente a cero o a infinito. En estos
+casos, la forma del cociente no permite determinar directamente el valor
+del límite, pues se obtienen expresiones sin significado algebraico
+definido como $\frac{0}{0}$ o $\frac{\infty}{\infty}$: se habla
+entonces de \textbf{formas indeterminadas}. La Regla de L'Hôpital
+ofrece una herramienta sistemática para resolver esta clase de límites
+recurriendo a las derivadas del numerador y del denominador. Su
+potencia radica en que convierte un problema de límites en un nuevo
+problema de límites (generalmente más sencillo)
+ sin alterar el valor
+buscado. Sin embargo, debe aplicarse con precisión: solo es válida
+bajo condiciones específicas, y su uso incorrecto conduce a resultados
+erróneos.
+
+\begin{theorem}[Regla de L'Hôpital]
+Supóngase que $\lim_{x\to a}f(x)=0$ y $\lim_{x\to a}g(x)=0$ tiene forma
+$\frac{0}{0}$, o que ambos tienden a $\pm\infty$ tiene forma
+$\frac{\infty}{\infty}$. Si $f$ y $g$ son derivables cerca de $a$,
 $g'(x)\neq 0$ allí, y el límite $\lim_{x\to a}\frac{f'(x)}{g'(x)}$
 existe (o es $\pm\infty$), entonces
 \[
@@ -1018,140 +1568,272 @@ El resultado también vale para $a=\pm\infty$ y para límites laterales.
 \end{theorem}
 
 \begin{rem}
-La regla de L'Hôpital se aplica derivando \textbf{numerador y denominador
-por separado}, no usando la regla del cociente. Dos errores frecuentes:
-(1) aplicarla cuando el límite \emph{no} es una forma indeterminada,
-obteniendo un resultado incorrecto; (2) aplicarla indefinidamente sin
-verificar que el nuevo límite sea más simple. Si después de una
-aplicación el límite sigue siendo indeterminado, puede aplicarse de
-nuevo; si oscila, la regla no es útil y se debe buscar otro método.
+La regla exige derivar \textbf{numerador y denominador por separado},
+no aplicar la regla del cociente. Dos errores frecuentes merecen
+atención especial: el primero es aplicarla cuando el límite \emph{no} es una
+forma indeterminada, lo que produce resultados incorrectos; y el segundo aplicarla
+repetidamente sin verificar que el nuevo cociente siga siendo
+indeterminado. Si tras una aplicación el límite permanece indeterminado,
+la regla puede reiterarse; si el cociente de derivadas oscila sin
+converger, conviene buscar un método alternativo.
 \end{rem}
 
-\subsection{Reducción de otras formas indeterminadas}
+Además de $\frac{0}{0}$ y $\frac{\infty}{\infty}$, existen otras formas
+indeterminadas que no son cocientes directos. La tabla siguiente muestra
+cómo reducirlas a una de las dos formas en que L'Hôpital es aplicable.
 
 \begin{center}
-\renewcommand{\arraystretch}{1.5}
+\renewcommand{\arraystretch}{1.6}
 \begin{tabular}{l l l}
 \toprule
 \textbf{Forma} & \textbf{Transformación} & \textbf{Reduce a} \\
 \midrule
-$0\cdot\infty$ & $f\cdot g = \dfrac{f}{1/g}$ o $\dfrac{g}{1/f}$
-    & $0/0$ o $\infty/\infty$ \\
-$\infty-\infty$ & denominador común o racionalización
-    & $0/0$ \\
-$0^0,\;1^\infty,\;\infty^0$ & $y=f^g \Rightarrow \ln y = g\ln f$,
-    luego hallar $\lim\ln y = L$
-    & $0/0$ o $\infty/\infty$; resultado: $e^L$ \\
+$0\cdot\infty$ &
+  $f\cdot g = \dfrac{f}{1/g}$ \ o \ $\dfrac{g}{1/f}$ &
+  $0/0$ \ o \ $\infty/\infty$ \\
+$\infty-\infty$ &
+  denominador común o racionalización &
+  $0/0$ \\
+$0^0,\;1^\infty,\;\infty^0$ &
+  $y=f^g \Rightarrow \ln y = g\ln f$; hallar $\lim\ln y = L$ &
+  $0/0$ \ o \ $\infty/\infty$; resultado: $e^L$ \\
 \bottomrule
 \end{tabular}
 \end{center}
 
-\subsection{Ejemplos}
+Los cuatro ejemplos que siguen ilustran cada tipo de forma indeterminada.
 
+% ============================================================
 \begin{example}
 Calcular $\displaystyle\lim_{x\to 0}\frac{e^x-1-x}{x^2}$.
 \end{example}
 
 \begin{myproof}
-Forma $\frac{0}{0}$. Primera aplicación:
-$\lim_{x\to 0}\frac{e^x-1}{2x}$, sigue $\frac{0}{0}$.
-Segunda aplicación:
-$\lim_{x\to 0}\frac{e^x}{2} = \frac{1}{2}$. $\square$
+\textbf{Identificación de la forma.} Al sustituir $x=0$ se obtiene
+$\frac{e^0-1-0}{0^2}=\frac{0}{0}$: forma indeterminada, L'Hôpital
+es aplicable.
+
+\textbf{Primera aplicación.} Se derivan numerador y denominador:
+\[
+\lim_{x\to 0}\frac{e^x-1-x}{x^2}
+\overset{\text{L'H}}{=}
+\lim_{x\to 0}\frac{e^x-1}{2x}.
+\]
+Al sustituir $x=0$: $\frac{0}{0}$. La forma sigue siendo indeterminada,
+por lo que se puede aplicar la regla una segunda vez.
+
+\textbf{Segunda aplicación.}
+\[
+\lim_{x\to 0}\frac{e^x-1}{2x}
+\overset{\text{L'H}}{=}
+\lim_{x\to 0}\frac{e^x}{2}
+= \frac{e^0}{2} = \frac{1}{2}.
+\]
+Esta vez el límite existe y es finito. Concluimos:
+\[
+\lim_{x\to 0}\frac{e^x-1-x}{x^2} = \frac{1}{2}. \qquad\square
+\]
 \end{myproof}
 
+% ============================================================
 \begin{example}
 Calcular $\displaystyle\lim_{x\to\infty}x\,e^{-x}$.
 \end{example}
 
 \begin{myproof}
-Forma $\infty\cdot 0$. Reescribimos: $\lim_{x\to\infty}\frac{x}{e^x}$,
-forma $\frac{\infty}{\infty}$. L'Hôpital: $\lim_{x\to\infty}\frac{1}{e^x}=0$.
-$\square$
+\textbf{Identificación de la forma.} Cuando $x\to\infty$, el factor
+$x\to\infty$ y el factor $e^{-x}\to 0$: forma indeterminada
+$\infty\cdot 0$. L'Hôpital no se aplica directamente a productos, por
+lo que se reescribe como cociente. Se elige poner $e^{-x}$ en el
+denominador:
+\[
+\lim_{x\to\infty} x\,e^{-x}
+= \lim_{x\to\infty}\frac{x}{e^{x}}.
+\]
+Ahora la forma es $\frac{\infty}{\infty}$, sobre la que L'Hôpital
+sí actúa.
+
+\textbf{Aplicación de la regla.}
+\[
+\lim_{x\to\infty}\frac{x}{e^{x}}
+\overset{\text{L'H}}{=}
+\lim_{x\to\infty}\frac{1}{e^{x}} = 0.
+\]
+El exponencial domina al polinomio, y el límite vale:
+\[
+\lim_{x\to\infty}x\,e^{-x} = 0. \qquad\square
+\]
 \end{myproof}
 
+% ============================================================
 \begin{example}
 Calcular $\displaystyle\lim_{x\to 0^+}x^x$.
 \end{example}
 
 \begin{myproof}
-Forma $0^0$. Sea $y=x^x$; $\ln y = x\ln x$.
-$\lim_{x\to 0^+}x\ln x = \lim_{x\to 0^+}\frac{\ln x}{1/x}$,
-forma $\frac{-\infty}{\infty}$. L'Hôpital:
-$\lim_{x\to 0^+}\frac{1/x}{-1/x^2}=\lim_{x\to 0^+}(-x)=0$.
-Por tanto $\lim\ln y=0$, así que $\lim x^x = e^0=1$. $\square$
+\textbf{Identificación de la forma.} Cuando $x\to 0^+$, la base tiende
+a $0$ y el exponente también: forma indeterminada $0^0$. Se aplica la
+estrategia logarítmica. Sea $y=x^x$; tomando logaritmo natural:
+\[
+\ln y = x\ln x.
+\]
+Cuando $x\to 0^+$, esto es una forma $0\cdot(-\infty)$, que se
+convierte en cociente:
+\[
+\lim_{x\to 0^+} x\ln x
+= \lim_{x\to 0^+}\frac{\ln x}{1/x}.
+\]
+Ahora la forma es $\frac{-\infty}{+\infty}$, a la que se aplica
+L'Hôpital:
+\[
+\lim_{x\to 0^+}\frac{\ln x}{1/x}
+\overset{\text{L'H}}{=}
+\lim_{x\to 0^+}\frac{1/x}{-1/x^2}
+= \lim_{x\to 0^+}(-x) = 0.
+\]
+Luego $\lim_{x\to 0^+}\ln y = 0$. Como la función exponencial es
+continua, se puede pasar el límite al exponente:
+\[
+\lim_{x\to 0^+} y = e^{\,\lim\ln y} = e^0 = 1.
+\]
+Por tanto:
+\[
+\lim_{x\to 0^+}x^x = 1. \qquad\square
+\]
 \end{myproof}
 
+% ============================================================
 \begin{example}
-Calcular $\displaystyle\lim_{x\to\infty}\left(1+\frac{a}{x}\right)^x$.
+Calcular $\displaystyle\lim_{x\to\infty}\!\left(1+\frac{a}{x}\right)^{\!x}$.
 \end{example}
 
 \begin{myproof}
-Forma $1^\infty$. $\ln y = x\ln\!\left(1+\frac{a}{x}\right)$.
+\textbf{Identificación de la forma.} Cuando $x\to\infty$, la base
+tiende a $1$ y el exponente a $\infty$: forma indeterminada $1^\infty$.
+Se aplica de nuevo la estrategia logarítmica. Sea
+$y=\!\left(1+\dfrac{a}{x}\right)^{\!x}$; entonces:
+\[
+\ln y = x\ln\!\left(1+\frac{a}{x}\right).
+\]
+Cuando $x\to\infty$, esto es $\infty\cdot 0$. Se reescribe como
+cociente para aplicar L'Hôpital:
 \[
 \lim_{x\to\infty} x\ln\!\left(1+\frac{a}{x}\right)
-= \lim_{x\to\infty}\frac{\ln(1+a/x)}{1/x}
-\;\overset{\text{L'H}}{=}\;
-\lim_{x\to\infty}\frac{\frac{-a/x^2}{1+a/x}}{-1/x^2}
-= \lim_{x\to\infty}\frac{a}{1+a/x} = a.
+= \lim_{x\to\infty}\frac{\ln(1+a/x)}{1/x}.
 \]
-Por tanto $\lim y = e^a$. Para $a=1$ se recupera el límite notable
-$\lim_{x\to\infty}(1+1/x)^x=e$. $\square$
+La forma es $\frac{0}{0}$. Derivando numerador y denominador respecto
+a $x$:
+\[
+\overset{\text{L'H}}{=}
+\lim_{x\to\infty}
+\frac{\dfrac{1}{1+a/x}\cdot\dfrac{-a}{x^2}}{-\,\dfrac{1}{x^2}}
+= \lim_{x\to\infty}\frac{a}{1+a/x}
+= \frac{a}{1+0} = a.
+\]
+Luego $\lim_{x\to\infty}\ln y = a$, y por continuidad del exponencial:
+\[
+\lim_{x\to\infty}\!\left(1+\frac{a}{x}\right)^{\!x} = e^a.
+\]
+En particular, para $a=1$ se recupera el célebre límite notable
+$\lim_{x\to\infty}\!\left(1+\dfrac{1}{x}\right)^{\!x}=e$. $\square$
 \end{myproof}
 
 %%==========================================================
 \section{Métodos Numéricos para la Localización de Raíces}
 %%==========================================================
 
-\subsection{Bisección}
+Las herramientas del cálculo diferencial permiten analizar y graficar
+funciones con precisión, pero no siempre garantizan expresiones cerradas
+para sus raíces. Ecuaciones como $e^x = 3x$ o $\cos x = x$ no admiten
+solución algebraica exacta, y sin embargo sus raíces tienen plena
+existencia y significado. En estos casos se recurre a los
+\textbf{métodos numéricos}: algoritmos iterativos que construyen
+sucesiones de aproximaciones cada vez más próximas a la raíz buscada.
+En esta sección se estudian tres métodos clásicos, los métodos de bisección,
+Newton-Raphson y punto fijo, cada uno con distintos requisitos,
+velocidad de convergencia y grado de robustez. La tabla al final de la
+sección permite compararlos de un vistazo.
 
-El método de bisección es una aplicación directa del Teorema de Bolzano.
-Si $f$ es continua en $[a,b]$ y $f(a)\cdot f(b)<0$, se evalúa el punto
-medio $m=\frac{a+b}{2}$. Según el signo de $f(m)$, la raíz queda en
-$[a,m]$ o en $[m,b]$; se actualiza el intervalo y se repite. Tras $n$
-iteraciones, el error de aproximación es menor que $\frac{b-a}{2^n}$.
+%%----------------------------------------------------------
+\subsection{Bisección}
+%%----------------------------------------------------------
+
+El método de bisección es una aplicación directa del Teorema del Valor
+Intermedio (Bolzano): si $f$ es continua en $[a,b]$ y $f(a)\cdot
+f(b)<0$, la función cambia de signo en el intervalo y, por tanto,
+tiene al menos una raíz en su interior. El método explota esta
+garantía de forma sistemática: en cada paso se evalúa el punto medio
+$m=\dfrac{a+b}{2}$ y se determina en cuál de los dos subintervalos
+$[a,m]$ o $[m,b]$ persiste el cambio de signo; ese subintervalo se
+convierte en el nuevo intervalo de búsqueda y el proceso se repite.
+Tras $n$ iteraciones, la raíz está acotada con un error menor que
+\[
+\varepsilon_n < \frac{b-a}{2^n},
+\]
+lo que permite estimar de antemano cuántas iteraciones son necesarias
+para alcanzar una precisión dada.
 
 \begin{rem}
 La bisección es el método más \textbf{robusto}: converge siempre que
-se cumplan las hipótesis, independientemente de la forma de $f$.
-Su desventaja es la velocidad: la convergencia es \textbf{lineal}
-(el número de cifras decimales correctas crece linealmente con el
-número de iteraciones). Para obtener $k$ cifras adicionales se
-necesitan aproximadamente $3.32\,k$ iteraciones.
+se cumplan las hipótesis de continuidad y cambio de signo, sin importar
+la forma de $f$. Su desventaja es la velocidad: la convergencia es
+\textbf{lineal}, es decir, el número de cifras decimales correctas
+crece a razón de una cifra cada $\log_2 10 \approx 3.32$ iteraciones.
+Para obtener $k$ cifras adicionales de precisión se requieren
+aproximadamente $3.32\,k$ iteraciones.
 \end{rem}
 
+%%----------------------------------------------------------
 \subsection{Método de Newton-Raphson}
+%%----------------------------------------------------------
 
-Dada una aproximación inicial $x_0$, el método de Newton construye la
-recta tangente a la curva en $(x_n, f(x_n))$ y toma su intersección
-con el eje $x$ como nueva aproximación:
+El método de Newton-Raphson parte de una idea geométrica: si se conoce
+una aproximación $x_n$ a la raíz, la recta tangente a la curva en el
+punto $(x_n, f(x_n))$ suele cruzar el eje $x$ en un punto $x_{n+1}$
+más próximo a la raíz verdadera. Repitiendo este proceso se construye
+la sucesión:
 \[
 x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}.
 \]
-
-\begin{myproof}[Derivación geométrica]
-La recta tangente en $(x_n, f(x_n))$ tiene ecuación
-$y - f(x_n) = f'(x_n)(x-x_n)$. Igualando $y=0$:
-$x = x_n - \frac{f(x_n)}{f'(x_n)}$, que es $x_{n+1}$. $\square$
+\begin{example} Construya geométricamente el método de Newton-Raphson
+\begin{myproof} 
+La recta tangente a $f$ en el punto $(x_n,f(x_n))$ tiene ecuación
+\[
+y - f(x_n) = f'(x_n)(x - x_n).
+\]
+Igualando $y=0$ para hallar su intersección con el eje $x$:
+\[
+x = x_n - \frac{f(x_n)}{f'(x_n)} =: x_{n+1}. \qquad\square
+\]
 \end{myproof}
-
+\end{example}
 La convergencia de Newton-Raphson es \textbf{cuadrática}: el número de
 cifras decimales correctas se \emph{duplica} en cada iteración cuando
-se está suficientemente cerca de la raíz. Sin embargo, el método puede
-fallar si $f'(x_n)=0$ (división por cero), si la aproximación inicial
-está lejos de la raíz, o si $f$ tiene oscilaciones que alejan las
-iteraciones de la solución.
+la aproximación es suficientemente cercana a la raíz. Esta velocidad
+lo convierte en el método preferido en la práctica. Sin embargo,
+presenta limitaciones importantes: falla si $f'(x_n)=0$ en algún paso
+(división por cero), puede diverger si la aproximación inicial $x_0$
+está lejos de la raíz, y es sensible a oscilaciones de $f$ que desvíen
+las iteraciones. La elección de un buen punto de partida, guiada por
+el análisis previo de la función, es parte esencial de su uso correcto.
 
 \begin{example}
-Aproximar $\sqrt{2}$ usando Newton-Raphson con $x_0=1$.
+Aproximar $\sqrt{2}$ resolviendo $f(x)=x^2-2=0$ con Newton-Raphson
+y valor inicial $x_0=1$.
 \end{example}
 
 \begin{myproof}
-$f(x)=x^2-2$, $f'(x)=2x$. La iteración es
-$x_{n+1}=x_n-\frac{x_n^2-2}{2x_n}=\frac{x_n+2/x_n}{2}$.
+Con $f(x)=x^2-2$ y $f'(x)=2x$, la iteración se simplifica a:
+\[
+x_{n+1} = x_n - \frac{x_n^2-2}{2x_n} = \frac{x_n + 2/x_n}{2},
+\]
+que es la media aritmética de $x_n$ y $2/x_n$. Aplicando la fórmula
+repetidamente:
+
 \begin{center}
-\begin{tabular}{c c}
+\begin{tabular}{c l}
 \toprule
-$n$ & $x_n$ \\
+$n$ & \multicolumn{1}{c}{$x_n$} \\
 \midrule
 $0$ & $1$ \\
 $1$ & $1.5$ \\
@@ -1160,39 +1842,55 @@ $3$ & $1.41421356\ldots$ \\
 \bottomrule
 \end{tabular}
 \end{center}
-Tres iteraciones dan $8$ cifras correctas. $\square$
+
+Con apenas tres iteraciones se obtienen ocho cifras decimales correctas,
+ilustrando la velocidad cuadrática del método. $\square$
 \end{myproof}
 
-\subsection{Método de punto fijo}
+%%----------------------------------------------------------
+\subsection{Método de Punto Fijo}
+%%----------------------------------------------------------
 
-Se reescribe $f(x)=0$ como $x=g(x)$ y se itera $x_{n+1}=g(x_n)$.
+El método de punto fijo aborda la ecuación $f(x)=0$ desde una
+perspectiva distinta: se reescribe algebraicamente en la forma
+$x=g(x)$ y se itera la sucesión $x_{n+1}=g(x_n)$. Un
+\textbf{punto fijo} de $g$ es un valor $x^*$ tal que $g(x^*)=x^*$; si
+la reescritura es correcta, todo punto fijo de $g$ es raíz de $f$.
+La convergencia de la sucesión depende de qué tan fuertemente $g$
+«contrae» el espacio en torno a $x^*$.
 
 \begin{theorem}[Convergencia del punto fijo]
-Si $|g'(x)|<1$ en un intervalo que contiene a la raíz, las iteraciones
-convergen a ella desde cualquier punto inicial en ese intervalo.
+Si $|g'(x)|<1$ para todo $x$ en un intervalo que contiene a la raíz,
+las iteraciones $x_{n+1}=g(x_n)$ convergen a ella desde cualquier
+punto inicial en ese intervalo.
 \end{theorem}
 
 \begin{rem}
-La condición $|g'(x)|<1$ se denomina \textbf{condición de contracción}:
-la función $g$ ``acerca'' los puntos entre sí en cada iteración. Si
-$|g'(x)|>1$, las iteraciones se alejan de la raíz. La elección de la
-reescritura $x=g(x)$ no es única, y una misma ecuación puede tener
-reescrituras convergentes y divergentes; elegir la adecuada es parte
-del arte del método.
+La condición $|g'(x)|<1$ se denomina \textbf{condición de
+contracción}: garantiza que $g$ acerca entre sí los puntos sucesivos
+en cada iteración. Si $|g'(x)|>1$, las iteraciones se alejan de la
+raíz. La reescritura $x=g(x)$ no es única: una misma ecuación puede
+admitir versiones convergentes y divergentes, por lo que elegir la
+adecuada es parte esencial del método. En la práctica, Newton-Raphson
+es un caso particular de punto fijo con $g(x)=x-\dfrac{f(x)}{f'(x)}$,
+cuya condición de contracción se satisface automáticamente cerca de
+raíces simples.
 \end{rem}
 
-\subsection{Comparación de métodos}
-
+Finalmente se realiza una comparación de los tres métodos
 \begin{center}
-\renewcommand{\arraystretch}{1.5}
+\renewcommand{\arraystretch}{1.6}
 \begin{tabular}{l l l l}
 \toprule
 \textbf{Método} & \textbf{Convergencia} & \textbf{Robustez}
 & \textbf{Requisitos} \\
 \midrule
-Bisección & Lineal & Alta & $f$ continua, cambio de signo \\
-Newton-Raphson & Cuadrática & Media & $f$ derivable, buen $x_0$ \\
-Punto fijo & Lineal/variable & Baja & $|g'|<1$ cerca de la raíz \\
+Bisección      & Lineal      & Alta  &
+  $f$ continua y cambio de signo en $[a,b]$ \\
+Newton-Raphson & Cuadrática  & Media &
+  $f$ derivable y buena aproximación $x_0$ \\
+Punto fijo     & Lineal/variable & Baja  &
+  $|g'|<1$ en un entorno de la raíz \\
 \bottomrule
 \end{tabular}
 \end{center}
