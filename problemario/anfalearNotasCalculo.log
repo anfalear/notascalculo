@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (MiKTeX 25.4) (format=lualatex 2025.7.7)  16 APR 2026 09:36
+This is LuaHBTeX, Version 1.22.0 (MiKTeX 25.4) (format=lualatex 2025.7.7)  16 APR 2026 09:46
  restricted system commands enabled.
 **anfalearNotasCalculo.tex
 (./anfalearNotasCalculo.tex
@@ -2191,17 +2191,17 @@ Capítulo 5.
 
 warning  (pdf backend): ignoring duplicate destination with the name 'rem.1'
 
+warning  (pdf backend): ignoring duplicate destination with the name 'example.3'
+
+
 
 [63
 
 ]
-warning  (pdf backend): ignoring duplicate destination with the name 'example.3'
-
-
 warning  (pdf backend): ignoring duplicate destination with the name 'example.4'
 
 
-Overfull \hbox (29.78865pt too wide) detected at line 91
+Overfull \hbox (29.78865pt too wide) detected at line 88
  $\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) = []
  [] = [] [] = [] [] = []\OML/cmm/m/it/12 : \U/msa/m/n/12 $ 
  []
@@ -2212,22 +2212,22 @@ warning  (pdf backend): ignoring duplicate destination with the name 'rem.5'
 warning  (pdf backend): ignoring duplicate destination with the name 'theorem.6'
 
 
-
-LaTeX Info: Redefining \. on input line 155.
-LaTeX Info: Redefining \% on input line 155.
-[64]
 warning  (pdf backend): ignoring duplicate destination with the name 'rem.8'
 
+
+LaTeX Info: Redefining \. on input line 161.
+LaTeX Info: Redefining \% on input line 161.
+[64]
 warning  (pdf backend): ignoring duplicate destination with the name 'example.11
 '
 
-
-LaTeX Info: Redefining \. on input line 208.
-LaTeX Info: Redefining \% on input line 208.
-[65]
 warning  (pdf backend): ignoring duplicate destination with the name 'example.12
 '
 
+
+LaTeX Info: Redefining \. on input line 230.
+LaTeX Info: Redefining \% on input line 230.
+[65]
 warning  (pdf backend): ignoring duplicate destination with the name 'theorem.13
 '
 
@@ -2237,8 +2237,8 @@ warning  (pdf backend): ignoring duplicate destination with the name 'example.14
 warning  (pdf backend): ignoring duplicate destination with the name 'rem.15'
 
 
-LaTeX Info: Redefining \. on input line 286.
-LaTeX Info: Redefining \% on input line 286.
+LaTeX Info: Redefining \. on input line 309.
+LaTeX Info: Redefining \% on input line 309.
 [66]
 warning  (pdf backend): ignoring duplicate destination with the name 'rem.17'
 
@@ -2250,6 +2250,9 @@ warning  (pdf backend): ignoring duplicate destination with the name 'example.20
 warning  (pdf backend): ignoring duplicate destination with the name 'example.22
 '
 
+Underfull \vbox (badness 1087) has occurred while \output is active []
+
+
 
 LaTeX Info: Redefining \. on input line 378.
 LaTeX Info: Redefining \% on input line 378.
@@ -2257,53 +2260,50 @@ LaTeX Info: Redefining \% on input line 378.
 warning  (pdf backend): ignoring duplicate destination with the name 'example.24
 '
 
-
-LaTeX Info: Redefining \. on input line 451.
-LaTeX Info: Redefining \% on input line 451.
-[68]
 warning  (pdf backend): ignoring duplicate destination with the name 'definition
 .28'
 
+
+LaTeX Info: Redefining \. on input line 465.
+LaTeX Info: Redefining \% on input line 465.
+[68]
 warning  (pdf backend): ignoring duplicate destination with the name 'example.30
 '
 
 warning  (pdf backend): ignoring duplicate destination with the name 'rem.33'
 
-
-LaTeX Info: Redefining \. on input line 521.
-LaTeX Info: Redefining \% on input line 521.
-[69]
 warning  (pdf backend): ignoring duplicate destination with the name 'example.34
 '
 
+
+LaTeX Info: Redefining \. on input line 539.
+LaTeX Info: Redefining \% on input line 539.
+[69]
 warning  (pdf backend): ignoring duplicate destination with the name 'theorem.37
 '
 
 
-LaTeX Info: Redefining \. on input line 595.
-LaTeX Info: Redefining \% on input line 595.
+LaTeX Info: Redefining \. on input line 599.
+LaTeX Info: Redefining \% on input line 599.
 [70]
 
-LaTeX Info: Redefining \. on input line 676.
-LaTeX Info: Redefining \% on input line 676.
+LaTeX Info: Redefining \. on input line 673.
+LaTeX Info: Redefining \% on input line 673.
 [71]
 
-LaTeX Info: Redefining \. on input line 724.
-LaTeX Info: Redefining \% on input line 724.
+LaTeX Info: Redefining \. on input line 737.
+LaTeX Info: Redefining \% on input line 737.
 [72]
 
-LaTeX Info: Redefining \. on input line 797.
-LaTeX Info: Redefining \% on input line 797.
+LaTeX Info: Redefining \. on input line 806.
+LaTeX Info: Redefining \% on input line 806.
 [73]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-LaTeX Info: Redefining \. on input line 850.
-LaTeX Info: Redefining \% on input line 850.
-[74]
 warning  (pdf backend): ignoring duplicate destination with the name 'prob.51'
 
+
+LaTeX Info: Redefining \. on input line 854.
+LaTeX Info: Redefining \% on input line 854.
+[74]
 
 
 
@@ -2344,12 +2344,12 @@ warning  (pdf backend): ignoring duplicate destination with the name 'prob.58'
 
 warning  (pdf backend): ignoring duplicate destination with the name 'prob.59'
 
-
-LaTeX Info: Redefining \. on input line 941.
-LaTeX Info: Redefining \% on input line 941.
-[75]
 warning  (pdf backend): ignoring duplicate destination with the name 'prob.60'
 
+
+LaTeX Info: Redefining \. on input line 947.
+LaTeX Info: Redefining \% on input line 947.
+[75]
 
 
 
@@ -2380,19 +2380,19 @@ warning  (pdf backend): ignoring duplicate destination with the name 'prob.68'
 
 warning  (pdf backend): ignoring duplicate destination with the name 'prob.69'
 
-
-LaTeX Info: Redefining \. on input line 1033.
-LaTeX Info: Redefining \% on input line 1033.
-[76]
 warning  (pdf backend): ignoring duplicate destination with the name 'prob.70'
 
+
+LaTeX Info: Redefining \. on input line 1043.
+LaTeX Info: Redefining \% on input line 1043.
+[76]
 warning  (pdf backend): ignoring duplicate destination with the name 'prob.71'
 
 warning  (pdf backend): ignoring duplicate destination with the name 'prob.72'
 
 
-LaTeX Info: Redefining \. on input line 1099.
-LaTeX Info: Redefining \% on input line 1099.
+LaTeX Info: Redefining \. on input line 1111.
+LaTeX Info: Redefining \% on input line 1111.
 [77]
 warning  (pdf backend): ignoring duplicate destination with the name 'prob.73'
 
@@ -2405,8 +2405,8 @@ warning  (pdf backend): ignoring duplicate destination with the name 'prob.76'
 warning  (pdf backend): ignoring duplicate destination with the name 'prob.77'
 
 
-LaTeX Info: Redefining \. on input line 1178.
-LaTeX Info: Redefining \% on input line 1178.
+LaTeX Info: Redefining \. on input line 1185.
+LaTeX Info: Redefining \% on input line 1185.
 [78]
 warning  (pdf backend): ignoring duplicate destination with the name 'prob.78'
 
@@ -2419,8 +2419,8 @@ warning  (pdf backend): ignoring duplicate destination with the name 'prob.81'
 warning  (pdf backend): ignoring duplicate destination with the name 'prob.82'
 
 
-LaTeX Info: Redefining \. on input line 1290.
-LaTeX Info: Redefining \% on input line 1290.
+LaTeX Info: Redefining \. on input line 1287.
+LaTeX Info: Redefining \% on input line 1287.
 [79]) (./apderivadas.tex
 
 LaTeX Info: Redefining \. on input line 1.
@@ -3719,36 +3719,22 @@ LaTeX Info: Redefining \% on input line 11.
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-06-09>
  ***********
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `anfalearNotasCalculo.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `anfalearNotasCalculo.out':
-(rerunfilecheck)             Before: C8837325C7D04C219A0991E152EACA19;25801
-(rerunfilecheck)             After:  7734CC969BAA23E30D84A111519091B4;26491.
+Package rerunfilecheck Info: File `anfalearNotasCalculo.out' has not changed.
+(rerunfilecheck)             Checksum: A5D4D27A3542D764BABF9C6A6D19A737;26270.
 )
 
 Here is how much of LuaTeX's memory you used:
- 74903 strings out of 470205
- 156260,2848258 words of node,token memory allocated
+ 74898 strings out of 470205
+ 156264,2848258 words of node,token memory allocated
  4776 words of node memory still in use:
    32 hlist, 2 vlist, 14 rule, 2 glue, 4 kern, 1 glyph, 1151 attribute, 101 glue
 _spec, 613 attribute_list, 2 write, 24 pdf_literal, 5 pdf_action, 24 pdf_colorst
 ack nodes
-   avail lists: 1:26,2:8001,3:4271,4:242,5:832,6:181,7:10946,8:87,9:1347,10:29,1
+   avail lists: 1:24,2:8000,3:4271,4:243,5:837,6:181,7:10946,8:87,9:1347,10:29,1
 1:1168
- 100112 multiletter control sequences out of 65536+600000
+ 100110 multiletter control sequences out of 65536+600000
  104 fonts using 7777191 bytes
  76i,21n,95p,1148b,2942s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-warning  (pdf backend): unreferenced destination with name 'prob.98'
-
-warning  (pdf backend): unreferenced destination with name 'prob.97'
 <c:/users/anfalear/appdata/local/programs/miktex/fonts/opentype/public/lm/lmsans
 10-boldoblique.otf><c:/users/anfalear/appdata/local/programs/miktex/fonts/openty
 pe/public/lm/lmroman10-regular.otf><c:/users/anfalear/appdata/local/programs/mik
@@ -3783,9 +3769,9 @@ m/cmsy6.pfb><C:/Users/anfalear/AppData/Local/Programs/MiKTeX/fonts/type1/public/
 amsfonts/cm/cmsy8.pfb><C:/Users/anfalear/AppData/Local/Programs/MiKTeX/fonts/typ
 e1/public/amsfonts/symbols/msam10.pfb><C:/Users/anfalear/AppData/Local/Programs/
 MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on anfalearNotasCalculo.pdf (163 pages, 1531181 bytes).
+Output written on anfalearNotasCalculo.pdf (163 pages, 1531245 bytes).
 
-PDF statistics: 3573 PDF objects out of 3580 (max. 8388607)
- 1649 named destinations out of 1728 (max. 131072)
- 1269 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 3577 PDF objects out of 3580 (max. 8388607)
+ 1646 named destinations out of 1728 (max. 131072)
+ 1285 words of extra memory for PDF output out of 10000 (max. 100000000)
 
