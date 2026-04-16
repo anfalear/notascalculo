@@ -1,20 +1,156 @@
-\chapter{Técnicas de Integración}
+\chapter{Integrales indefinidas y técnicas de integración}
 
-%----------------------------------------------------------
-\section{Panorama General}
-%----------------------------------------------------------
+Múltiples operaciones matemáticas vienen en pares de inversas: la suma y la
+resta, la multiplicación y la división, la potenciación y la radicación. Para
+el caso de la derivada, su operación inversa es la \textbf{antiderivada} o
+\textbf{integral indefinida}. Así como la derivada responde a la pregunta
+\emph{«¿cómo cambia esta función?»}, la integral indefinida responde a la
+pregunta \emph{«¿qué función tiene esta derivada?»}. La definimos a
+continuación:
 
-El Segundo Teorema Fundamental del Cálculo convierte el problema de calcular
-una integral definida en el problema de encontrar una antiderivada. Sin
-embargo, mientras que la diferenciación es un proceso completamente
-algorítmico ---la regla de la cadena, el producto y el cociente bastan para
-diferenciar cualquier función elemental---, la integración carece de un
-algoritmo universal. Existen funciones perfectamente continuas, como
-$e^{-x^2}$ o $\frac{\sin x}{x}$, cuya antiderivada no puede expresarse en
-términos de funciones elementales. Esta asimetría profunda entre derivación
-e integración motivó el desarrollo histórico de un repertorio de
-\textbf{técnicas de transformación} que permiten reducir integrales
-complicadas a formas conocidas.
+\begin{definition}
+Se dice que $F$ es una \textbf{antiderivada} de $f$ en un intervalo $I$ si
+$D_{x}F(x)=f(x)$ para todo $x\in I$, es decir, $F^{\prime}(x)=f(x)$ para
+toda $x$ en $I$.
+\end{definition}
+
+Generalmente, la antiderivada tiene un símbolo especial que obtendrá sentido
+completo para nosotros en el próximo capítulo:
+\[
+  \int f(x)\,\ dx,
+\]
+notación introducida por Leibniz en la que $\int$ es una $S$ estilizada que
+alude a una \emph{suma}, $f(x)$ recibe el nombre de \textbf{integrando} y
+$\ dx$ indica la variable de integración.
+
+Antes de cualquier cálculo de antiderivadas, recordemos un resultado
+importante sobre derivación:
+
+\begin{coro}
+Si $F'(x)=G'(x)$ para todo $x\in(a,b)$, entonces
+\[
+  F(x)=G(x)+C
+\]
+para alguna constante $C$.
+\end{coro}
+
+Esto implica que no existe una única antiderivada: en realidad existen
+infinitas, pues para cada valor de $C$ la función $F(x)+C$ sigue siendo
+antiderivada de $f$. Por esta razón, al calcular integrales indefinidas
+siempre se añade $+C$ —la llamada \textbf{constante de integración}— al
+resultado.
+
+Al ser operaciones inversas, es natural pensar que si
+$D_{x}(\sen x)=\cos x$ entonces $\int \cos x\,\ dx=\sen x +C$. Esto nos
+proporciona, en general, una lista básica de antiderivadas que se obtiene
+simplemente «leyendo al revés» la tabla de derivadas:
+
+\begin{table}[ht]
+\centering
+\renewcommand{\arraystretch}{2}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Función} $f(x)$ & \textbf{Antiderivada} $\displaystyle\int f(x)\,\ dx$ \\
+\hline
+$k$ \quad ($k$ constante)             & $kx + C$ \\
+$x^{r}$ \quad ($r\neq -1$)            & $\dfrac{x^{r+1}}{r+1} + C$ \\
+$\dfrac{1}{x}$                        & $\ln|x| + C$ \\
+$e^{x}$                               & $e^{x} + C$ \\
+$a^{x}$ \quad ($a>0,\,a\neq 1$)       & $\dfrac{a^{x}}{\ln a} + C$ \\
+$\sen x$                              & $-\cos x + C$ \\
+$\cos x$                              & $\sen x + C$ \\
+$\sec^{2}x$                           & $\tan x + C$ \\
+$\csc^{2}x$                           & $-\cot x + C$ \\
+$\sec x\tan x$                        & $\sec x + C$ \\
+$\csc x\cot x$                        & $-\csc x + C$ \\
+$\dfrac{1}{\sqrt{1-x^{2}}}$           & $\arcsen x + C$ \\
+$\dfrac{1}{1+x^{2}}$                  & $\arctan x + C$ \\
+$\dfrac{1}{x\sqrt{x^{2}-1}}$          & $\text{arcsec}\,x + C$ \\
+\hline
+\end{tabular}
+\caption{Integrales indefinidas básicas.}
+\label{tab:integrales-basicas}
+\end{table}
+
+Además, la integral indefinida es un operador lineal, por lo cual cumple las
+siguientes propiedades:
+
+\begin{theorem}[Linealidad de la integral indefinida]
+\label{teo:linealidad}
+Suponga que $f$ y $g$ tienen antiderivadas (integrales indefinidas) y sea
+$k$ una constante. Entonces:
+\begin{enumerate}[(i)]
+  \item $\displaystyle\int k\,f(x)\,\ dx = k\int f(x)\,\ dx$;
+  \item $\displaystyle\int \bigl[f(x)+g(x)\bigr]\,\ dx
+         = \int f(x)\,\ dx + \int g(x)\,\ dx$;
+  \item $\displaystyle\int \bigl[f(x)-g(x)\bigr]\,\ dx
+         = \int f(x)\,\ dx - \int g(x)\,\ dx$.
+\end{enumerate}
+\end{theorem}
+
+\begin{myproof}
+Sean $F$ y $G$ antiderivadas de $f$ y $g$ respectivamente, es decir,
+$F'(x)=f(x)$ y $G'(x)=g(x)$.
+
+\textbf{(i)} Calculamos la derivada de $kF(x)$:
+\[
+  D_{x}\bigl[kF(x)\bigr] = kF'(x) = k\,f(x).
+\]
+Por definición de antiderivada, $kF(x)$ es antiderivada de $k\,f(x)$, luego
+$\int k\,f(x)\,\ dx = kF(x)+C = k\int f(x)\,\ dx$.
+
+\textbf{(ii)} Calculamos la derivada de $F(x)+G(x)$:
+\[
+  D_{x}\bigl[F(x)+G(x)\bigr] = F'(x)+G'(x) = f(x)+g(x).
+\]
+Entonces $F(x)+G(x)$ es antiderivada de $f(x)+g(x)$, es decir,
+\[
+  \int \bigl[f(x)+g(x)\bigr]\,\ dx = F(x)+G(x)+C
+  = \int f(x)\,\ dx + \int g(x)\,\ dx.
+\]
+
+\textbf{(iii)} Análogamente, como
+\[
+  D_{x}\bigl[F(x)-G(x)\bigr] = F'(x)-G'(x) = f(x)-g(x),
+\]
+se concluye que
+\[
+  \int \bigl[f(x)-g(x)\bigr]\,\ dx = F(x)-G(x)+C
+  = \int f(x)\,\ dx - \int g(x)\,\ dx. \qedhere
+\]
+\end{myproof}
+
+\begin{theorem}[Regla generalizada de la potencia]
+\label{teo:potencia-generalizada}
+Sean $g$ una función derivable y $r$ un número racional con $r\neq -1$.
+Entonces
+\[
+  \int \bigl[g(x)\bigr]^{r}g'(x)\,\ dx
+  = \frac{\bigl[g(x)\bigr]^{r+1}}{r+1} + C.
+\]
+\end{theorem}
+
+\begin{myproof}
+Basta verificar que la derivada del lado derecho coincide con el integrando.
+Aplicando la regla de la cadena:
+\[
+  D_{x}\!\left[\frac{\bigl[g(x)\bigr]^{r+1}}{r+1}+C\right]
+  = \frac{1}{r+1}\cdot(r+1)\bigl[g(x)\bigr]^{r}\cdot g'(x)
+  = \bigl[g(x)\bigr]^{r}g'(x). \qedhere
+\]
+\end{myproof}
+
+El Segundo Teorema Fundamental del Cálculo, el cual estudiaremos en el
+próximo capítulo, convierte el problema de calcular una integral definida en
+el problema de encontrar una antiderivada. Sin embargo, mientras que la
+diferenciación es un proceso completamente algorítmico —pues la regla de la
+cadena, del producto y del cociente bastan para diferenciar cualquier función
+elemental—, la integración carece de un algoritmo universal. Existen
+funciones perfectamente continuas, como $e^{-x^{2}}$ o $\dfrac{\sen x}{x}$,
+cuya antiderivada no puede expresarse en términos de funciones elementales.
+Esta asimetría profunda entre derivación e integración motivó el desarrollo
+histórico de un repertorio de \textbf{técnicas de transformación} que
+permiten reducir integrales complicadas a formas conocidas.
 
 En este capítulo se estudian cinco técnicas fundamentales: la
 \textbf{sustitución simple}, contraparte de la regla de la cadena; la
@@ -23,14 +159,14 @@ En este capítulo se estudian cinco técnicas fundamentales: la
 pitagóricas; la \textbf{sustitución trigonométrica}, para eliminar radicales
 mediante geometría del triángulo; y la \textbf{descomposición en fracciones
 parciales}, herramienta algebraica para integrar funciones racionales.
-Dominar estas técnicas requiere práctica sistemática: el reconocimiento de
-la forma adecuada en cada situación se desarrolla con la experiencia.
+Dominar estas técnicas requiere práctica sistemática: el reconocimiento de la
+forma adecuada en cada situación se desarrolla con la experiencia.
 
 \begin{rem}
-El matemático inglés Joseph Liouville (1809--1882) desarrolló la teoría que
+El matemático francés Joseph Liouville (1809--1882) desarrolló la teoría que
 determina con precisión cuándo una función elemental tiene antiderivada
-elemental. El resultado central (teorema de Liouville, formalizado
-algorítmicamente por Risch en 1969) establece que la integrabilidad en
+elemental. El resultado central —teorema de Liouville, formalizado
+algorítmicamente por Risch en 1969— establece que la integrabilidad en
 términos de funciones elementales es la excepción, no la regla. Este hecho
 justifica tanto la importancia de las técnicas algebraicas de este capítulo
 como la de los métodos numéricos de integración que se abordan más adelante.
