@@ -1898,9 +1898,32 @@ Punto fijo     & Lineal/variable & Baja  &
 %%==========================================================
 \section{Problemas Propuestos}
 %%==========================================================
+\begin{prob}
+Determine el valor de verdad de las siguientes afirmaciones.
+Justifique su respuesta.
+\begin{enumerate}
+    \item La función $f(x)=\dfrac{x+1}{x-1}$ en el intervalo
+    $[-2,-1]$ satisface las hipótesis del Teorema del Valor Medio.
+
+    \item La recta tangente a $f(x)=5-x^2+e^{2x-2}$ es horizontal
+    en el punto $(1,5)$.
+
+    \item Si $f$ es derivable y $f(-1)=f(1)$, entonces existe
+    $c\in(-1,1)$ tal que $f'(c)=0$.
+
+    \item Si $f$ es creciente y positiva en $I$, entonces
+    $g(x)=\dfrac{1}{f(x)}$ es positiva y decreciente en $I$.
+
+    \item El valor de
+    $\displaystyle\lim_{x\to\infty}\frac{\sqrt{1+x^2}}{x+1}$ es $1$.
+
+    \item El dominio de $f(x)=\sqrt{2x+5}+\ln(6-8x)$ es
+    $\left[-\dfrac{5}{2},\,\dfrac{3}{4}\right)$.
+\end{enumerate}
+\end{prob}
 
 
-
+\subsection{Razones de cambio relacionadas}
 \begin{prob}
 El radio de un círculo crece a razón de $3$ cm/s. ¿A qué tasa crece
 el área cuando el radio mide $10$ cm?
@@ -1924,12 +1947,145 @@ al cohete cuando este ha alcanzado $500$ m de altura y sube a $300$ m/s?
 \end{prob}
 
 \begin{prob}
-Un depósito tiene forma de tronco de cono: radio inferior $2$ m,
-radio superior $4$ m y altura $6$ m. Se llena con agua a $3$ m$^3$/min.
+Un depósito tiene forma de tronco de cono, su radio inferior mide $2$ m mientras que el radio superior mide $4$ m y su altura mide $6$ m. Este depósito se está llenando con agua a $3$ m$^3$/min.
 ¿A qué velocidad sube el nivel cuando $h=3$ m?
 \end{prob}
 
+\begin{prob}
+Una embarcación parte al mediodía hacia el Norte a $30$ km/h. Una hora
+después, una segunda embarcación parte del mismo lugar hacia el Este a
+$40$ km/h. ¿Con qué rapidez se separan las dos embarcaciones a la
+$1{:}30$ pm?
+\end{prob}
 
+\begin{prob}
+Un tanque lleno de agua tiene forma de cilindro recto de bases con
+diámetro $2$ m y altura $6$ m. Dentro hay un sólido cónico invertido
+cuya base coincide con la tapa superior del cilindro. Si el agua sale
+a razón de $\dfrac{1}{3}$ m$^3$/hr, ¿con qué rapidez desciende el
+nivel del agua cuando la profundidad es de $3$ m?
+\end{prob}
+
+\begin{prob}
+Un vaso de papel tiene forma cónica de altura $12$ cm y radio $4$ cm
+en la parte superior. Si se vierte agua a razón de $3$ cm$^3$/s,
+¿qué tan rápido sube el nivel cuando la profundidad es de $6$ cm?
+\end{prob}
+
+\begin{prob}
+Un recipiente cónico invertido tiene altura $16$ cm y radio $5$ cm en
+la parte superior. Un líquido escurre por las paredes a una tasa
+proporcional al área lateral en contacto con el líquido. Si se vierte
+líquido a razón de $2$ cm$^3$/min, el nivel desciende a $0.3$ cm/min
+cuando la altura del líquido es $10$ cm. ¿Con qué rapidez debe
+verterse líquido para mantener una altura constante de $10$ cm? Recuerde que el área lateral de un cono es \(A=\pi r\ell.\)
+\end{prob}
+
+\begin{prob}
+De un tanque hemisférico de radio $10$ m entra agua a razón de
+$1$ m$^3$/min y sale por un orificio inferior a razón de
+$\dfrac{1}{5}$ m$^3$/min. ¿A qué razón cambia la altura $h$ del agua
+cuando la profundidad es de $5$ m?
+\end{prob}
+
+\begin{prob}
+Un cono de radio $r$ cm y altura $h$ cm es introducido punta abajo a
+$2$ cm/s dentro de un cilindro de radio $R$ cm que contiene agua a
+altura $h_2$. ¿Qué tan rápido sube el nivel del agua en el instante
+en que el cono queda totalmente sumergido?
+\end{prob}
+
+\begin{prob}
+Un cuadrado está inscrito en un círculo de radio $r$. ¿A qué razón
+cambia el área del cuadrado cuando el radio del círculo crece a razón
+de $4$ pulg/min? Vea la figura:
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+  \draw[thick] (0,0) circle (2);
+  \draw[thick] (-1.414,-1.414) rectangle (1.414,1.414);
+  \draw[<->,dashed] (0,0)--(2,0) node[midway,above]{$r$};
+\end{tikzpicture}
+\end{center}
+\end{prob}
+
+\begin{prob}
+Un triángulo está inscrito en un círculo de radio $r=1$. La base
+crece a razón de $3$ pulg/min. ¿A qué razón cambia la altura cuando
+la altura mide $8$ pulg y la base mide $4$ pulg?
+\end{prob}
+
+\begin{prob}
+Un niño va en bicicleta por un camino recto a $15$ pies/s. A $45$
+pies del camino hay un globo que asciende verticalmente a $5$ pies/s.
+Si el niño pasa bajo el globo, ¿qué tan rápido incrementa la distancia
+entre ellos $3$ segundos después?
+\end{prob}
+
+% Requiere en el preámbulo: \usepackage{amsmath,amssymb,float,tikz}
+% \usetikzlibrary{calc,angles,quotes}
+
+\begin{prob}
+  El dispositivo mostrado en la figura consta de dos ruedas dentadas, $A$ y $B$, conectadas por una cadena que no desliza. Un brazo extendible une un punto fijo $P$ con un punto $T$ situado sobre el borde de la rueda $B$. El segmento $PO$ mide $4$ dm, y los radios de las ruedas $A$ y $B$ son $1$ dm y $2$ dm, respectivamente. Los segmentos $AO$ y $OP$ son perpendiculares. La rueda $A$ gira a razón de una vuelta por segundo en sentido antihorario. Si inicialmente el punto $T$ se encuentra sobre el segmento $OP$, ¿con qué rapidez cambia la longitud $x = PT$ cuando el ángulo $\theta = \angle POT$ es de $60^\circ$?
+
+  \begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[scale=0.85, every node/.style={font=\small}, >=stealth]
+      % Parámetros geométricos
+      \def\thetaVal{60}
+      \def\chainAngle{7.18} % asin((r_B-r_A)/AO) = asin(1/8) en grados
+
+      % Coordenadas principales
+      \coordinate (A) at (0,0);
+      \coordinate (O) at (8,0);
+      \coordinate (P) at (8,4);
+      \coordinate (T) at ($(O) + (90+\thetaVal:2)$);
+
+      % Puntos de tangencia para la cadena externa
+      \coordinate (At) at ($(A) + (90+\chainAngle:1)$);
+      \coordinate (Ab) at ($(A) + (270-\chainAngle:1)$);
+      \coordinate (Ot) at ($(O) + (90+\chainAngle:2)$);
+      \coordinate (Ob) at ($(O) + (270-\chainAngle:2)$);
+
+      % Ruedas y cadena
+      \draw[thick] (A) circle[radius=1];
+      \draw[thick] (O) circle[radius=2];
+      \draw[thick] (At) -- (Ot);
+      \draw[thick] (Ab) -- (Ob);
+       % Arcos de contacto de la cadena (CORREGIDO)
+      \draw[thick] (Ot) arc[start angle=90+\chainAngle, end angle=270-\chainAngle, radius=2];
+      \draw[thick] (Ab) arc[start angle=270-\chainAngle, end angle=90+\chainAngle, radius=1];
+
+      % Segmentos geométricos
+      \draw[thick] (A) -- (O) node[midway, below] {$h$};
+      \draw[thick] (O) -- (P) node[midway, above] {$4$ dm};
+      \draw[thick] (O) -- (T);
+      \draw[thick] (P) -- (T) node[midway, above left] {$x$};
+
+      % Ángulo theta
+      \pic[draw, fill=gray!20, "$\theta=60^\circ$", angle eccentricity=1.4, angle radius=12mm] {angle = P--O--T};
+
+      % Indicadores de rotación (antihorario)
+      \draw[->, thick, blue!70!black] ($(A) + (30:1.3)$) arc[start angle=30, end angle=150, radius=1.3];
+      \draw[->, thick, blue!70!black] ($(O) + (30:2.3)$) arc[start angle=30, end angle=150, radius=2.3];
+      \draw[->, thick, blue!70!black] ($(At)!0.5!(Ot) + (0,0.3)$) -- ++(-0.8,0) node[left, font=\footnotesize] {cadena};
+
+      % Etiquetas de puntos y radios
+      \fill (A) circle(2pt) node[above right] {$A$};
+      \fill (O) circle(2pt) node[above right] {$O$};
+      \fill (P) circle(2pt) node[above] {$P$};
+      \fill (T) circle(2pt) node[above right] {$T$};
+      \node[below left] at ($(A)+(225:1.1)$) {$r_A=1$ dm};
+      \node[below right] at ($(O)+(315:2.1)$) {$r_B=2$ dm};
+    \end{tikzpicture}
+    \caption{Disposición geométrica del mecanismo y definición de variables.}
+    \label{fig:mecanismo}
+  \end{figure}
+\end{prob}
+
+
+%%----------------------------------------------------------
+\subsection{Valores extremos y trazado de curvas}
+%%----------------------------------------------------------
 
 \begin{prob}
 Encuentre los extremos absolutos de cada función en el intervalo dado:
@@ -1946,8 +2102,6 @@ Determine si la función $f(x)=x^{2/3}$ tiene extremos locales en
 $x=0$. Justifique aunque la segunda derivada no exista en ese punto.
 \end{prob}
 
-
-
 \begin{prob}
 Para cada función, determine los intervalos de crecimiento, los
 intervalos de concavidad y los puntos de inflexión:
@@ -1963,19 +2117,58 @@ intervalos de concavidad y los puntos de inflexión:
 \end{multicols}
 \end{prob}
 
-
-
 \begin{prob}
-Trace la curva usando el método de 4 pasos:
+Use el protocolo de trazado sistemático de curvas para las siguientes funciones:
 \begin{enumerate}[a)]
     \item $f(x)=\dfrac{x^2-1}{x^2+1}$
     \item $f(x)=x+\dfrac{1}{x}$
     \item $f(x)=x\ln x$ en $(0,+\infty)$
     \item $f(x)=e^x-x$
     \item $f(x)=\dfrac{x^2+2x+4}{x+2}$
+    \item $f(x)=x^3-6x^2+9x$
+    $y=f(x)=x^4+x+1$
 \end{enumerate}
 \end{prob}
 
+
+\begin{prob}
+Traza la gráfica de una función que cumpla con todas las siguientes
+condiciones simultáneamente:
+\begin{itemize}
+    \item $f$ es par.
+    \item $f(0)=1$.
+    \item $f(x)>0$ para $x\in(1,2)\cup(3,5)$.
+    \item $f(x)<0$ para $x\in(2,3)\cup(5,+\infty)$.
+    \item $\displaystyle\lim_{x\to\infty}f(x)=2$.
+\end{itemize}
+\end{prob}
+
+\begin{prob}
+La gráfica a continuación es la de la derivada $f'$ de una cierta
+función $f$. A partir de ella determine los intervalos de crecimiento
+y decrecimiento de $f$, sus extremos locales, sus intervalos de
+concavidad y realice un bosquejo de $f$.
+\begin{center}
+\begin{tikzpicture}[scale=0.8]
+  \draw[step=1cm,gray!40,very thin] (-4,-2) grid (3,8);
+  \draw[thick,->] (-4,0) -- (3.5,0) node[right] {$x$};
+  \draw[thick,->] (0,-2) -- (0,8.5) node[above] {$y$};
+  \node[above right] at (1,6) {$y=f'(x)$};
+  \draw[thick,smooth]
+    plot coordinates {(-4,0)(-3,2)(-2,7)(-1,4)
+                      (0,0)(1,-1.5)(2,2.5)(3,8)};
+  \foreach \x in {-4,-3,...,3}
+    \draw (\x,0.1)--(\x,-0.1) node[below]{\x};
+  \foreach \y in {-2,0,...,8}
+    \draw (0.1,\y)--(-0.1,\y) node[left]{\y};
+\end{tikzpicture}
+\end{center}
+\end{prob}
+
+
+%%----------------------------------------------------------
+\subsection{Optimización}
+%%----------------------------------------------------------
 
 \begin{prob}
 Encuentre las dimensiones del rectángulo de área máxima que puede
@@ -1989,15 +2182,8 @@ las dimensiones que minimizan el área total de material.
 
 \begin{prob}
 Un terreno rectangular debe cercarse con $200$ m de malla. Un lado
-del rectángulo es un muro existente (no necesita cerca). ¿Qué
+del rectángulo es un muro existente el cual no necesita cerca. ¿Qué
 dimensiones maximizan el área del terreno?
-\end{prob}
-
-\begin{prob}
-Se desea construir un canal de sección trapezoidal con tres lados de
-material (la cuarta parte es la tierra). El perímetro de metal es
-$\ell$ metros. Determine los ángulos y dimensiones que maximizan el
-caudal (máxima área transversal).
 \end{prob}
 
 \begin{prob}
@@ -2007,12 +2193,325 @@ máxima.
 \end{prob}
 
 \begin{prob}
+Sea $\ell > 0$ una constante dada. Se quiere diseñar un canal de sección transversal
+trapezoidal isósceles en el que el fondo y los dos taludes se recubren con material
+impermeable, quedando la superficie superior abierta al terreno. La longitud total
+revestida por metro lineal de canal es fija:
+\[
+  b + 2s = \ell, \qquad b > 0,\quad s > 0,
+\]
+donde $b$ es el ancho del fondo y $s$ la longitud de cada talud inclinado. El ángulo
+de inclinación de los taludes respecto a la horizontal es $\theta\in\bigl(0,\tfrac{\pi}{2}\bigr)$.
+
+La profundidad del canal es $h = s\sin\theta$, y el área de la sección
+transversal mojada es
+\[
+  A \;=\; (b + s\cos\theta)\,s\sin\theta.
+\]
+Como el caudal es proporcional a $A$, maximizar el caudal equivale a maximizar $A$. Se pide resolver los siguientes ítem:
+\begin{enumerate}
+  \item Usando la restricción $b = \ell - 2s$, exprese $A$ únicamente en función
+        de $s$ y $\theta$.
+  \item Determine los valores óptimos $b^{*}$, $s^{*}$ y $\theta^{*}$ en términos
+        de $\ell$.
+  \item Interprete geométricamente la configuración óptima.
+\end{enumerate}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.25, >=stealth, line join=round,
+                    every node/.style={font=\small}]
+
+  %--- parámetros visuales ---------------------------------------------------
+  \def\b{3.0}          % ancho del fondo
+  \def\s{2.0}          % longitud del talud
+  \def\th{60}          % ángulo en grados
+  \def\h{1.7321}       % h = s*sin(60°)
+  \pgfmathsetmacro{\dx}{\s*cos(\th)}   % proyección horizontal = s*cos(θ)
+
+  %--- vértices del trapecio --------------------------------------------------
+  \coordinate (A) at (0, 0);
+  \coordinate (B) at (\b, 0);
+  \coordinate (C) at (\b+\dx, \h);
+  \coordinate (D) at (-\dx, \h);
+
+  %--- área mojada ------------------------------------------------------------
+  \fill[blue!10] (A) -- (B) -- (C) -- (D) -- cycle;
+
+  %--- terreno natural --------------------------------------------------------
+  \fill[pattern=north east lines, pattern color=brown!50]
+    (-\dx-0.6, -0.3) rectangle (\b+\dx+0.6, 0);
+  \draw[brown!70, thick]
+    (-\dx-0.6, 0) -- (\b+\dx+0.6, 0);
+  \node[brown!80!black, below] at (0.5*\b, -0.18) {\footnotesize Terreno natural};
+
+  %--- lados revestidos (perímetro mojado = ℓ) --------------------------------
+  \draw[blue!70!black, line width=1.8pt] (D) -- (A) -- (B) -- (C);
+
+  %--- superficie libre (abierta) ---------------------------------------------
+  \draw[blue!40, dashed, thick] (D) -- (C);
+
+  %--- etiquetas de los taludes -----------------------------------------------
+  \node[blue!70!black, left=2pt]  at ($(D)!0.5!(A)$) {$s$};
+  \node[blue!70!black, right=2pt] at ($(B)!0.5!(C)$) {$s$};
+
+  %--- etiqueta del fondo -----------------------------------------------------
+  \node[blue!70!black, below=4pt] at (0.5*\b, 0) {$b$};
+
+  %--- ancho superior ---------------------------------------------------------
+  \draw[<->, gray, thin] (D) ++(0, 0.35) -- ++(\b+2*\dx, 0)
+        node[midway, above, gray] {$b + 2s\cos\theta$};
+
+  %--- altura h ---------------------------------------------------------------
+  \draw[<->, red!70!black, thin]
+    (-\dx-0.35, 0) -- (-\dx-0.35, \h)
+    node[midway, left] {$h = s\sin\theta$};
+
+  %--- línea auxiliar horizontal (para el ángulo) -----------------------------
+  \draw[gray, dashed, thin] (A) -- ++(-0.5, 0);
+
+  %--- ángulo θ ---------------------------------------------------------------
+  \draw[->, thin] (A) ++(-0.4, 0) arc (180:{180-\th}:0.4);
+  \node at (-0.18, 0.28) {$\theta$};
+
+  %--- nota del perímetro revestido -------------------------------------------
+  \node[anchor=north west, align=left, font=\footnotesize, text=blue!60!black]
+    at (-\dx-0.6, -0.55)
+    {$\ell = b + 2s$ \ (perímetro revestido por metro lineal)};
+
+\end{tikzpicture}
+\end{figure}
+\end{prob}
+
+
+
+\begin{prob}
 El costo de construir la pared frontal de un edificio es el triple del
 costo de las demás paredes. El edificio debe tener volumen $V_0$ m$^3$
 y planta rectangular. Encuentre la relación entre largo y ancho de la
 base que minimiza el costo total.
 \end{prob}
 
+\begin{prob}
+Se desea construir una pecera sin tapa, con base cuadrada y paredes
+verticales, de capacidad $2000$ m$^3$. La base es de concreto y las
+paredes de vidrio. El costo por m$^2$ del vidrio es el doble del del
+concreto. ¿Cuál debe ser la altura de la pecera para que el costo
+total sea mínimo?
+\end{prob}
+
+\begin{prob}
+En una hoja rectangular se deben dejar márgenes laterales de $2$
+pulgadas y márgenes superior e inferior de $1$ pulgada. El área
+impresa es de $32$ pulg$^2$. Encuentre las dimensiones de la hoja
+que minimicen el área total del papel.
+\end{prob}
+
+\begin{prob}
+El equipo Alianza Petrolera juega en un estadio con capacidad de
+$12\,000$ espectadores. Con entrada a \$$20\,000$ la asistencia
+promedio es de $4\,000$. Un estudio estima que si el precio baja
+\$$2\,000$, la asistencia sube $1\,000$ espectadores. ¿Qué precio de
+entrada y cuántos espectadores maximizan los ingresos por boletería?
+\end{prob}
+
+\begin{prob}
+Se proyecta construir un jardín en forma de sector circular de radio
+$r$ y ángulo central $\theta$. El área del jardín ha de ser
+$10\,000$ m$^2$. Encuentre los valores de $r$ y $\theta$ que
+minimizan el perímetro del jardín.
+\end{prob}
+
+\begin{prob}
+Un hombre debe escapar desde el punto $A$, ubicado en la costa de una isla, hasta
+el punto $B$ en una isla vecina, donde un helicóptero lo espera hasta máximo
+$4$~horas. La distancia de $A$ a $B$ es de $13$~km y el punto $B$ se encuentra
+a $5$~km de la costa de manera perpendicular. El hombre puede trotar a $5$~km/h
+a lo largo de la costa y nadar a $3$~km/h. Planea trotar desde $A$ hasta un
+punto~$C$ en la costa y luego nadar en línea recta desde $C$ hasta $B$.
+
+\begin{enumerate}[(a)]
+  \item ¿A qué distancia de $A$ debe ubicarse el punto~$C$ para minimizar el
+        tiempo total de viaje?
+  \item ¿Llegará al helicóptero antes de que deba partir?
+\end{enumerate}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.72, >=stealth, line join=round,
+                    every node/.style={font=\small}]
+
+  %--- parámetros (escala visual) ---
+  % Distancia A-D a lo largo de la costa: 12 km  → 6 unidades
+  % Altura de B sobre la costa:            5 km  → 2.5 unidades
+  % Escala: 1 unidad = 2 km
+  \def\D{6}      % posición x de D (pie de perpendicular desde B)
+  \def\H{2.5}    % altura de B
+
+  %--- agua y costa ---
+  \fill[cyan!15] (-0.5,0) rectangle (7.5,4.5);
+  \fill[brown!25] (-0.5,-1.2) rectangle (7.5,0);
+  \draw[very thick, brown!70!black] (-0.5,0) -- (7.5,0);
+  \node[brown!60!black] at (3.5,-0.65) {Costa (Isla 1)};
+
+  %--- punto A ---
+  \filldraw[red] (0,0) circle (3pt) node[below=5pt] {$A$};
+
+  %--- punto C (genérico, a distancia x de A) ---
+  \filldraw[black] (3.2,0) circle (2pt) node[below=5pt] {$C$};
+
+  %--- punto D (pie de la perpendicular desde B, a 12 km de A) ---
+  \filldraw[gray!60] (\D,0) circle (2pt) node[below=5pt] {$D$};
+
+  %--- punto B ---
+  \filldraw[blue!80!black] (\D,\H) circle (3pt)
+      node[above right=2pt] {$B$ \footnotesize(helicóptero)};
+
+  %--- línea punteada de referencia: A hasta D (costa) ---
+  \draw[dashed, gray!60] (0,0) -- (\D,0);
+
+  %--- perpendicular de D a B ---
+  \draw[dashed, gray!60] (\D,0) -- (\D,\H);
+  \draw (\D,0) -- ++(0,0.22) -- ++(-0.22,0) -- ++(0,-0.22); % ángulo recto
+
+  %--- cotas ---
+  % cota vertical: 5 km (D a B)
+  \draw[<->, thin] (\D+0.35,0) -- (\D+0.35,\H)
+      node[midway, right=2pt] {$5$ km};
+
+  % cota horizontal: 12 km (A a D)
+  \draw[<->, thin] (0,-0.55) -- (\D,-0.55)
+      node[midway, below=2pt] {$12$ km};
+
+  % cota x (A a C)
+  \draw[<->, thin, red!70!black] (0,0.45) -- (3.2,0.45)
+      node[midway, above=2pt] {$x$};
+
+  %--- hipotenusa de referencia A-B: 13 km ---
+  \draw[dotted, gray] (0,0) -- (\D,\H)
+      node[midway, above left=1pt, gray] {$13$ km};
+
+  %--- trayectorias ---
+  % Trotar: A -> C
+  \draw[->, very thick, red!80!black] (0,0) -- (3.0,0)
+      node[midway, above=6pt] {trotar};
+
+  % Nadar: C -> B
+  \draw[->, very thick, blue!70!black] (3.2,0) -- (\D,\H)
+      node[midway, left=2pt] {nadar};
+
+  %--- isla 2 (fondo) ---
+  \fill[brown!20] (-0.5,4.0) rectangle (7.5,4.5);
+  \draw[brown!60!black, thick] (-0.5,4.0) -- (7.5,4.0);
+  \node[brown!60!black] at (3.5,4.28) {\footnotesize Costa (Isla 2)};
+
+\end{tikzpicture}
+\end{center}
+\end{prob}
+
+\begin{prob}
+Ana asiste a una sala de cine cuya pantalla se modela como un segmento vertical de $2$ m de altura, ubicado sobre el eje $y$ entre los puntos $A(0,1)$ y $B(0,3)$ (todas las distancias están dadas en metros). Las butacas están distribuidas sobre la recta $y=x$ con $x>0$. Ana desea ocupar un lugar sobre dicha recta que maximice su ángulo de visión $\theta$ de la pantalla.
+
+\begin{enumerate}
+  \item Exprese $\theta$ en función de la coordenada $x$ de la posición de Ana.
+  \item Determine el punto exacto $(x,x)$ donde debe sentarse para maximizar $\theta$.
+  \item Calcule la distancia horizontal desde la pantalla hasta dicho punto óptimo.
+\end{enumerate}
+
+\textit{Sugerencia:} Use la identidad trigonométrica
+\[
+\tan(\alpha+\theta)=\frac{\tan\alpha+\tan\theta}{1-\tan\alpha\tan\theta}
+\]
+aplicada a los ángulos que forman las líneas de visión con la horizontal.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.1, >=stealth, line join=round, every node/.style={font=\small}]
+  % Ejes coordenados
+  \draw[->] (-0.5,0) -- (3.5,0) node[below] {$x$};
+  \draw[->] (0,-0.5) -- (0,3.5) node[left] {$y$};
+  
+  % Marcas y etiquetas en los ejes
+  \foreach \i in {0.5,1,...,3} {
+    \draw (\i,0.05) -- (\i,-0.05) node[below] {\i};
+    \draw (0.05,\i) -- (-0.05,\i) node[left] {\i};
+  }
+  
+  % Recta y = x
+  \draw[thick, teal!70!black] (-0.3,-0.3) -- (3.5,3.5) node[above left] {$y=x$};
+  
+  % Pantalla (segmento en el eje y)
+  \draw[very thick] (0,1) -- (0,3);
+  \fill[blue!70!black] (0,1) circle (2.2pt) node[above right] {A};
+  \fill[blue!70!black] (0,3) circle (2.2pt) node[above right] {B};
+  \node at (0.45, 2.15) {Pantalla};
+  
+  % Punto de Ana (C) sobre y=x
+  \coordinate (C) at (2,2);
+  \fill[blue!70!black] (C) circle (2.2pt) node[above right] {C};
+  \node[below right] at (C) {Ana};
+  
+  % Líneas de visión (trazado discontinuo)
+  \draw[dashed, thick, gray!60!black] (C) -- (0,1);
+  \draw[dashed, thick, gray!60!black] (C) -- (0,3);
+  
+
+  
+  % Ángulo θ en C
+  \path (0,1) coordinate (A) (0,3) coordinate (B);
+  \pic [draw, thick, angle radius=0.6cm, angle eccentricity=1.3, "$\theta$"] {angle = B--C--A};
+  
+\end{tikzpicture}
+\end{center}
+\end{prob}
+
+\begin{prob}[Optimización de la longitud del cable]
+Dos astas de bandera se encuentran instaladas verticalmente sobre un terreno plano. La distancia entre las bases de las astas es de $3$ metros. Se desea sujetar ambas astas con un cable que parte de la parte superior de cada asta y se ancla en un único punto sobre el suelo situado entre ambas.
+
+Se conoce que la altura de la primera asta es de $2$ metros y la altura de la segunda es de $1$ metro. Determine la distancia $x$ desde la base de la asta más alta hasta el punto de anclaje en el suelo, de modo que la longitud total del cable ($d_1 + d_2$) sea mínima.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.2, >=stealth, line join=round]
+  % Definición de puntos geométricos
+  \coordinate (Top1) at (0,2);
+  \coordinate (Base1) at (0,0);
+  \coordinate (Top2) at (3,1);
+  \coordinate (Base2) at (3,0);
+  % Punto de anclaje en el suelo (x=2, y=1 es la solución óptima matemática)
+  \coordinate (Anchor) at (2,0);
+
+  % Estilos para las líneas gruesas (postes y cables)
+  \tikzset{thicklines/.style={line width=2pt, color=gray!80!black}}
+  
+  % Dibujar postes y cables
+  \draw[thicklines] (Base1) -- (Top1); % Asta 1
+  \draw[thicklines] (Base2) -- (Top2); % Asta 2
+  \draw[thicklines] (Base1) -- (Base2); % Suelo
+  \draw[thicklines] (Top1) -- (Anchor); % Cable d1
+  \draw[thicklines] (Top2) -- (Anchor); % Cable d2
+
+  % Puntos (nodos circulares)
+  % Puntos azules (extremos activos y punto de unión)
+  \fill[blue!80!black] (Top1) circle (3pt);
+  \fill[blue!80!black] (Top2) circle (3pt);
+  \fill[blue!80!black] (Anchor) circle (3pt);
+  
+  % Puntos grises (bases fijas)
+  \fill[gray!60!black] (Base1) circle (2.5pt);
+  \fill[gray!60!black] (Base2) circle (2.5pt);
+
+  % Etiquetas de distancias
+  \node[above, font=\large, color=black!80!black] at (1, 1.5) {$d_1$};
+  \node[above, font=\large, color=black!80!black] at (2.5, 0.75) {$d_2$};
+  \node[below, font=\large, color=black!80!black] at (1, 0) {$x$};
+  \node[below, font=\large, color=black!80!black] at (2.5, 0) {$y$};
+
+\end{tikzpicture}
+\end{center}
+\end{prob}
+
+
+%%----------------------------------------------------------
+\subsection{Teorema del Valor Medio}
+%%----------------------------------------------------------
 
 \begin{prob}
 Verifique el TVM para $f(x)=\sqrt{x}$ en $[1,4]$ y encuentre el valor
@@ -2036,7 +2535,26 @@ frente a un radar que registra $80$ km/h. Demuestre que en algún
 momento entre los $0$ y $60$ s su aceleración fue positiva.
 \end{prob}
 
+\begin{prob}
+Sea $f(x)=\alpha x^2+\beta x+\gamma$ con $\alpha\neq 0$. Demuestre que
+el número $c$ garantizado por el Teorema del Valor Medio en cualquier
+intervalo $[a,b]$ es siempre el punto medio $\dfrac{a+b}{2}$.
+\end{prob}
 
+\begin{prob}
+La función $f(x)=x^2-1$ no satisface las hipótesis del TVM
+    en $[-1,8]$; sin embargo, ¿es posible encontrar $c\in(-1,8)$ tal
+    que $f'(c)=10$?
+    \end{prob}
+    \begin{prob}
+Usando trigonometría, ¿por qué para $x\neq\pi/2$ es posible
+    encontrar $c\in(-1,8)$ tal que $\cos c=1$? ¿Contradice esto el TVM?
+\end{prob}
+
+
+%%----------------------------------------------------------
+\subsection{ Regla de L'Hôpital}
+%%----------------------------------------------------------
 
 \begin{prob}
 Calcule cada límite:
@@ -2057,19 +2575,38 @@ Calcule cada límite:
 \end{prob}
 
 \begin{prob}
+Observe que en el límite
+\[
+\lim_{x\to 0}\frac{\sqrt{12-x^2}-\sqrt{12}}{x^2}
+\]
+el numerador y el denominador se anulan en $x=0$. ¿Cuál de las
+condiciones de la regla de L'Hôpital no se satisface? Determine el
+valor del límite y justifique.
+\end{prob}
+
+\begin{prob}
 Deduzca si cada afirmación es verdadera o falsa y justifique:
 \begin{enumerate}[a)]
-    \item Si $\lim_{x\to a}\frac{f(x)}{g(x)}$ es de la forma $\frac{0}{0}$,
-    entonces $\lim_{x\to a}\frac{f(x)}{g(x)} = \lim_{x\to a}
-    \frac{f'(x)}{g'(x)}$.
+    \item Si $\lim_{x\to a}\dfrac{f(x)}{g(x)}$ es de la forma
+    $\dfrac{0}{0}$, entonces $\lim_{x\to a}\dfrac{f(x)}{g(x)}
+    = \lim_{x\to a}\dfrac{f'(x)}{g'(x)}$.
     \item Si $\lim_{x\to a}f(x)=2$ y $\lim_{x\to a}g(x)=0$, puede
-    aplicarse L'Hôpital a $\lim_{x\to a}\frac{f(x)}{g(x)}$.
+    aplicarse L'Hôpital a $\lim_{x\to a}\dfrac{f(x)}{g(x)}$.
     \item Si L'Hôpital se aplica y el nuevo límite no existe, entonces
     el límite original tampoco existe.
 \end{enumerate}
 \end{prob}
 
+\begin{prob}
+Demuestre que $\displaystyle\lim_{x\to\infty}(1+x)^{1/x} = 1$ usando
+diferenciación logarítmica para analizar el comportamiento de $\ln y$.
+Compare con el límite $\lim_{n\to\infty}\!\left(1+\dfrac{1}{n}\right)^n = e$.
+\end{prob}
 
+
+%%----------------------------------------------------------
+\subsection{Métodos numéricos para la localización de raíces}
+%%----------------------------------------------------------
 
 \begin{prob}
 Use la bisección para aproximar la raíz de $f(x)=x^3+x-1$ en $[0,1]$
@@ -2091,419 +2628,20 @@ $c\approx 0.739$ y prediga cuál convergerá.
 
 \begin{prob}
 Demuestre que la iteración de Newton-Raphson aplicada a $f(x)=x^2-a$
-(con $a>0$) produce la sucesión $x_{n+1}=\frac{1}{2}\left(x_n+
-\frac{a}{x_n}\right)$, conocida como \textbf{algoritmo babilónico}
-de la raíz cuadrada. Verifique que converge cuadráticamente.
-\end{prob}
-
-
-
-\begin{prob}
-Determine el valor de verdad de las siguientes afirmaciones.
-Justifique su respuesta.
-\begin{enumerate}
-    \item La función $f(x)=\dfrac{x+1}{x-1}$ en el intervalo
-    $[-2,-1]$ satisface las hipótesis del Teorema del Valor
-    Medio.
-
-    \item La recta tangente a $f(x)=5-x^2+e^{2x-2}$ es
-    horizontal en el punto $(1,5)$.
-
-    \item Si $f$ es derivable y $f(-1)=f(1)$, entonces existe
-    $c\in(-1,1)$ tal que $f'(c)=0$.
-
-    \item Si $f$ es creciente y positiva en $I$, entonces
-    $g(x)=\dfrac{1}{f(x)}$ es positiva y decreciente en $I$.
-
-    \item El valor de
-    $\displaystyle\lim_{x\to\infty}\frac{\sqrt{1+x^2}}{x+1}$
-    es $1$.
-
-    \item El dominio de $f(x)=\sqrt{2x+5}+\ln(6-8x)$ es
-    $\left[-\dfrac{5}{2},\,\dfrac{3}{4}\right)$.
-\end{enumerate}
-\end{prob}
-
-\begin{prob}
-Considere la gráfica de la función $f$ dada a continuación:
-\begin{center}
-\begin{tikzpicture}[scale=2.3]
-    \draw[->] (0,0) -- (2.6,0);
-    \draw[->] (0,0) -- (0,2);
-    \draw[thick,domain=0:2.4,smooth,samples=40]
-        plot(\x,{0.5+sin((\x-0.6)*180/1.6)/2
-             +0.7*\x-0.15*\x^2});
-    \draw (2,1.4) circle (0.06);
-    \filldraw (2,0.65) circle (0.04);
-    \node[below] at (2,-0.07) {\textbf{2}};
-    \node[left] at (0,1.5) {\small $\frac{3}{2}$};
-    \node[left] at (0,1.0) {\small $1$};
-    \node[left] at (0,0.5) {\small $\frac{1}{2}$};
-    \node[left] at (0,0.05) {$0$};
-\end{tikzpicture}
-\end{center}
-De lo anterior se puede afirmar que:
-\begin{itemize}
-    \item[a.] $\displaystyle\lim_{x\to 2}f(x)$ no existe.
-    \item[b.] $\displaystyle\lim_{x\to 2}f(x)=f(2)$.
-    \item[c.] $f(2)$ no existe.
-    \item[d.] Ninguna de las opciones es verdadera.
-\end{itemize}
-\end{prob}
-
-\begin{prob}
-Teniendo en cuenta que
+(con $a>0$) produce la sucesión
 \[
-\lim_{x\to 2}(5x^2-3x+5)=27,\quad
-\lim_{x\to 2}(x^2-x-2)=0,\quad
-\lim_{x\to 2}(x^3+2x^2-5x+7)=23,
+x_{n+1}=\frac{1}{2}\!\left(x_n+\frac{a}{x_n}\right),
 \]
-encuentre los valores de:
-\begin{enumerate}
-    \item $\displaystyle\lim_{x\to 2}
-    \frac{5x^2-3x+5}{x^2-x-2}$
-    \item $\displaystyle\lim_{x\to 2}
-    \frac{x^3+2x^2-5x+7}{x^2-x-2}$
-\end{enumerate}
+conocida como \textbf{algoritmo babilónico} de la raíz cuadrada.
+Verifique que converge cuadráticamente.
 \end{prob}
 
-\begin{prob}
-Observe que en el límite
-\[
-\lim_{x\to 0}\frac{\sqrt{12-x^2}-\sqrt{12}}{x^2}
-\]
-el numerador es cero en $x=0$. ¿Cuál de las condiciones de
-la regla de L'Hôpital no se satisface? Determine el valor
-del límite y justifique.
-\end{prob}
 
-\begin{prob}
-¿Puede existir una función diferenciable $f$ tal que
-$f(2)=1$ y $f'(2)=0$, pero
-$\displaystyle\lim_{x\to 2}\frac{f(x)}{x-2}=1$?
-Justifique.
-\end{prob}
 
-\begin{prob}
-Conteste las siguientes interrogantes con justificación
-completa:
-\begin{enumerate}
-    \item[(a)] ¿Existe un número real que sea exactamente
-    su doble más uno?
-    \item[(b)] ¿Cuál es el valor de
-    $\displaystyle\lim_{x\to 1}\frac{x+7}{x-1}$?
-    \item[(c)] La función $f(x)=x^2-1$ no satisface las
-    hipótesis del TVM en $[-1,8]$; sin embargo, ¿es posible
-    encontrar $c\in(-1,8)$ tal que $f'(c)=10$? Explique.
-    \item[(d)] Usando trigonometría, ¿por qué para
-    $x\neq\pi/2$ es posible encontrar $c\in(-1,8)$ tal que
-    $\cos x=1$? ¿Contradice esto el TVM?
-\end{enumerate}
-\end{prob}
 
-\begin{prob}
-Considere la función $f(x)=x^3-6x^2+9x$. Responda cada
-apartado:
-\begin{enumerate}
-    \item[(a)] Calcule los interceptos con los ejes.
-    \item[(b)] Encuentre los números críticos de $f$.
-    \item[(c)] Establezca y clasifique los extremos locales
-    de $f$, si existen.
-    \item[(d)] Determine los intervalos de crecimiento y
-    decrecimiento.
-    \item[(e)] Determine los intervalos de concavidad hacia
-    arriba y hacia abajo.
-    \item[(f)] Encuentre los puntos de inflexión.
-    \item[(g)] Realice un bosquejo de la gráfica usando la
-    información anterior.
-\end{enumerate}
-\end{prob}
 
-\begin{prob}
-Considere la función $y=f(x)=x^4+x+1$. Responda:
-\begin{enumerate}
-    \item[(a)] Halle los interceptos con los ejes y determine
-    las simetrías.
-    \item[(b)] Halle todas las asíntotas, si existen.
-    \item[(c)] Determine los intervalos de crecimiento y los
-    extremos locales.
-    \item[(d)] Encuentre los intervalos de concavidad y los
-    puntos de inflexión.
-    \item[(e)] Con la información anterior, trace la gráfica.
-\end{enumerate}
-\end{prob}
 
-\begin{prob}
-La gráfica a continuación es la de la derivada $f'$ de una
-cierta función $f$. A partir de ella determine los intervalos
-de crecimiento y decrecimiento de $f$, sus extremos locales,
-sus intervalos de concavidad y realice un bosquejo de $f$.
-\begin{center}
-\begin{tikzpicture}[scale=0.8]
-  \draw[step=1cm,gray!40,very thin] (-4,-2) grid (3,8);
-  \draw[thick,->] (-4,0) -- (3.5,0) node[right] {$x$};
-  \draw[thick,->] (0,-2) -- (0,8.5) node[above] {$y$};
-  \node[above right] at (1,6) {$y=f'(x)$};
-  \draw[thick,smooth]
-    plot coordinates {(-4,0)(-3,2)(-2,7)(-1,4)
-                      (0,0)(1,-1.5)(2,2.5)(3,8)};
-  \foreach \x in {-4,-3,...,3}
-    \draw (\x,0.1)--(\x,-0.1) node[below]{\x};
-  \foreach \y in {-2,0,...,8}
-    \draw (0.1,\y)--(-0.1,\y) node[left]{\y};
-\end{tikzpicture}
-\end{center}
-\end{prob}
 
-\begin{prob}
-Traza la gráfica de una función que cumpla con todas las
-siguientes condiciones simultáneamente:
-\begin{itemize}
-    \item $f$ es par.
-    \item $f(0)=1$.
-    \item $f(x)>0$ para $x\in(1,2)\cup(3,5)$.
-    \item $f(x)<0$ para $x\in(2,3)\cup(5,+\infty)$.
-    \item $\displaystyle\lim_{x\to\infty}f(x)=2$.
-\end{itemize}
-\end{prob}
 
-\begin{prob}
-Se desea construir una pecera sin tapa, con base cuadrada y
-paredes verticales, de capacidad $2000$ m$^3$. La base es
-de concreto y las paredes de vidrio. El costo por m$^2$ del
-vidrio es el doble del del concreto. ¿Cuál debe ser la
-altura de la pecera para que el costo total sea mínimo?
-\end{prob}
 
-\begin{prob}
-En una hoja rectangular se deben dejar márgenes laterales
-de $2$ pulgadas y márgenes superior e inferior de $1$
-pulgada. El área impresa es de $32$ pulg$^2$. Encuentre
-las dimensiones de la hoja que minimicen el área total
-del papel.
-\end{prob}
 
-\begin{prob}
-El equipo Alianza Petrolera juega en un estadio con
-capacidad de $12\,000$ espectadores. Con entrada a
-\$$20\,000$ la asistencia promedio es de $4\,000$. Un
-estudio estima que si el precio baja \$$2\,000$, la
-asistencia sube $1\,000$ espectadores. ¿Qué precio de
-entrada y cuántos espectadores maximizan los ingresos
-por boletería?
-\end{prob}
-
-\begin{prob}
-Se proyecta construir un jardín en forma de sector circular
-de radio $r$ y ángulo central $\theta$. El área del jardín
-ha de ser $10\,000$ m$^2$. Encuentre los valores de $r$ y
-$\theta$ que minimizan el perímetro del jardín.
-\end{prob}
-
-\begin{prob}
-Un hombre debe escapar desde un punto $A$ en la costa hasta
-un helicóptero en el punto $B$, ubicado a $13$ km de la
-costa. El hombre puede trotar a $15$ km/h y nadar a $3$
-km/h. El helicóptero solo puede esperar $3$ horas.
-\begin{enumerate}
-    \item[(a)] ¿A qué distancia de $A$ debe abandonar la
-    tierra para minimizar el tiempo total de viaje?
-    \item[(b)] ¿Llegará al helicóptero antes de que deba
-    partir?
-\end{enumerate}
-\begin{center}
-\begin{tikzpicture}[scale=0.85]
-\fill[cyan!10] (0,0) rectangle (10,6);
-\draw[very thick,brown!60!black] (0,0) -- (10,0)
-  node[right] {Costa};
-\filldraw[red] (0,0) circle (3pt)
-  node[below=3pt] {$A$};
-\filldraw[black] (3,0) circle (2pt)
-  node[below=3pt] {$C$};
-\filldraw[blue] (7,5.2) circle (3pt)
-  node[above=2pt] {$B$};
-\draw[dashed,gray] (7,5.2) -- (7,0);
-\draw[<->,thick] (7.3,0) -- (7.3,5.2)
-  node[midway,right] {$13$ km};
-\draw[->,very thick,red!70!black] (0,0) -- (2.8,0)
-  node[midway,above] {Trotar};
-\draw[->,very thick,blue!70!black] (3,0) -- (6.8,5)
-  node[midway,above left] {Nadar};
-\draw[<->,thick] (0,-0.6) -- (3,-0.6)
-  node[midway,below] {$x$};
-\draw (7,0) -- (7,0.3) -- (6.7,0.3);
-\end{tikzpicture}
-\end{center}
-\end{prob}
-
-\begin{prob}
-Ana desea sentarse en el cine frente a una pantalla de $2$ m
-de alto ubicada a $1$ m del piso. Las filas están sobre la
-recta $y=0$. ¿A qué distancia $x$ de la pantalla debe
-sentarse para maximizar el ángulo de visión $\theta$?
-
-\textit{Sugerencia:} Use la identidad
-$\tan(\alpha+\theta)=
-\dfrac{\tan\alpha+\tan\theta}{1-\tan\alpha\tan\theta}$.
-\begin{center}
-\begin{tikzpicture}[scale=1.1]
-\fill[gray!20] (-0.5,-0.2) rectangle (5.5,0);
-\draw[very thick] (-0.5,0) -- (5.5,0)
-  node[right] {$y=0$};
-\draw[thick,->] (-0.3,-0.3) -- (-0.3,3.8) node[above] {$y$};
-\fill[white] (4.4,1) rectangle (4.6,3);
-\draw[very thick,blue!50!black] (4.5,1) -- (4.5,3);
-\node[right,blue!50!black] at (4.65,2) {Pantalla};
-\draw[<->,thick,red!70!black] (5,1)--(5,3)
-  node[midway,right] {$2$ m};
-\draw[<->,thick,red!70!black] (5,0)--(5,1)
-  node[midway,right] {$1$ m};
-\draw[dashed,gray] (-0.3,1)--(4.4,1);
-\draw[dashed,gray] (-0.3,3)--(4.4,3);
-\node[left] at (-0.3,1) {$1$};
-\node[left] at (-0.3,3) {$3$};
-\filldraw[purple!70!black] (1.5,0) circle (3pt)
-  node[below=3pt] {Ana};
-\draw[thick,purple!50,->] (1.5,0)--(4.4,1);
-\draw[thick,purple!50,->] (1.5,0)--(4.4,3);
-\draw[thick,green!50!black]
-  (1.5,0)++(0.5,0) arc(0:21:0.5);
-\draw[thick,green!50!black]
-  (1.5,0)++(0.5,0) arc(0:46.4:0.5);
-\node[green!50!black] at (2.15,0.38) {$\theta$};
-\node[orange!70!black] at (2.05,0.15) {$\alpha$};
-\draw[<->,thick] (1.5,-0.5)--(4.5,-0.5)
-  node[midway,below] {$x$};
-\end{tikzpicture}
-\end{center}
-\end{prob}
-
-\begin{prob}
-Una embarcación parte al mediodía hacia el Norte a $30$
-km/h. Una hora después, una segunda embarcación parte del
-mismo lugar hacia el Este a $40$ km/h. ¿Con qué rapidez
-se separan las dos embarcaciones a la $1{:}30$ pm?
-\end{prob}
-
-\begin{prob}
-Un tanque lleno de agua tiene forma de cilindro recto de
-bases con diámetro $2$ m y altura $6$ m. Dentro hay un
-sólido cónico invertido cuya base coincide con la tapa
-superior del cilindro. Si el agua sale a razón de
-$\dfrac{1}{3}$ m$^3$/hr, ¿con qué rapidez desciende el
-nivel del agua cuando la profundidad es de $3$ m?
-\end{prob}
-
-\begin{prob}
-Un vaso de papel tiene forma cónica de altura $12$ cm y
-radio $4$ cm en la parte superior. Si el agua se vierte a
-razón de $3$ cm$^3$/s, ¿qué tan rápido sube el nivel
-cuando la profundidad es de $6$ cm?
-\end{prob}
-
-\begin{prob}
-Un recipiente cónico invertido tiene altura $16$ cm y radio
-$5$ cm en la parte superior. Un líquido escurre por las
-paredes a una tasa proporcional al área lateral en contacto
-con el líquido. Si se vierte líquido a razón de $2$
-cm$^3$/min, el nivel desciende a $0.3$ cm/min cuando la
-altura del líquido es $10$ cm. ¿Con qué rapidez debe
-verterse líquido para mantener una altura constante de
-$10$ cm? \[\text{Área lateral del cono: }A=\pi r\ell.\]
-\end{prob}
-
-\begin{prob}
-De un tanque hemisférico de radio $10$ m entra agua a razón
-de $1$ m$^3$/min y sale por un orificio inferior a razón de
-$\dfrac{1}{5}$ m$^3$/min. ¿A qué razón cambia la altura $h$
-del agua cuando la profundidad es de $5$ m?
-\end{prob}
-
-\begin{prob}
-Un cono de radio $r$ cm y altura $h$ cm es introducido punta
-abajo a $2$ cm/s dentro de un cilindro de radio $R$ cm que
-contiene agua a altura $h_2$. ¿Qué tan rápido sube el nivel
-del agua en el instante en que el cono queda totalmente
-sumergido?
-\end{prob}
-
-\begin{prob}
-Un cuadrado está inscrito en un círculo de radio $r$.
-¿A qué razón cambia el área del cuadrado cuando el radio
-del círculo crece a razón de $4$ pulg/min?
-\begin{center}
-\begin{tikzpicture}[scale=0.9]
-  \draw[thick] (0,0) circle (2);
-  \draw[thick] (-1.414,-1.414) rectangle (1.414,1.414);
-  \draw[<->,dashed] (0,0)--(2,0) node[midway,above]{$r$};
-\end{tikzpicture}
-\end{center}
-\end{prob}
-
-\begin{prob}
-Un triángulo está inscrito en un círculo de radio $r=1$.
-La base crece a razón de $3$ pulg/min. ¿A qué razón cambia
-la altura cuando la altura mide $8$ pulg y la base mide
-$4$ pulg?
-\end{prob}
-
-\begin{prob}
-Un niño va en bicicleta por un camino recto a $15$ pies/s.
-A $45$ pies del camino hay un globo que asciende
-verticalmente a $5$ pies/s. Si el niño pasa bajo el globo,
-¿qué tan rápido incrementa la distancia entre ellos $3$
-segundos después?
-\end{prob}
-
-\begin{prob}
-El dispositivo de la figura consiste en dos ruedas
-conectadas por una cadena y un brazo excéntrico desde $O$
-hasta la cadena. $AO$ y $OP$ son perpendiculares. La rueda
-$A$ da una vuelta por segundo e inicialmente $T$ está entre
-$O$ y $P$. ¿Con qué rapidez cambia $x$ cuando $\theta=60°$?
-\begin{center}
-\begin{tikzpicture}[scale=1.3]
-\draw[thick] (-3,0) circle (1);
-\filldraw (-3,0) circle (1.5pt) node[left=4pt]{$A$};
-\draw[thick] (3,0) circle (2);
-\filldraw (3,0) circle (1.5pt) node[right=4pt]{$O$};
-\draw[thick] (-2.134,0.743)--(1.268,1.486);
-\draw[thick] (-2.134,-0.743)--(1.268,-1.486);
-\filldraw (3,4.5) circle (2pt) node[above]{$P$};
-\draw[very thick] (2,4.8)--(4,4.8);
-\fill[pattern=north east lines] (2,4.8) rectangle (4,5);
-\draw[thick] (3,4.5)--(3,0);
-\node[right] at (3.15,2.2){$OP$};
-\filldraw (1.268,1) circle (2pt) node[left]{$T$};
-\draw[thin,dashed] (3,0)--(1.268,1);
-\draw[thick,blue!60] (3,4.5)--(1.268,1)--(3,0)--cycle;
-\draw[thick,red] (3,0.7) arc(90:150:0.7);
-\node[red] at (2.3,1.3){$60^\circ$};
-\draw (3,0.2)--(2.8,0.2)--(2.8,0);
-\end{tikzpicture}
-\end{center}
-\end{prob}
-
-\begin{prob}
-Dos escaladores están asegurados con cables a un único
-punto $P$. ¿Puede elegirse la posición de $P$ para minimizar
-la longitud total del cable? Plantee y resuelva el problema
-de optimización.
-\begin{center}
-\begin{tikzpicture}[scale=0.9]
-  \draw[thick] (-1,0)--(6,0);
-  \filldraw (1,0) circle (2pt) node[below]{Escalador $A$};
-  \filldraw (5,0) circle (2pt) node[below]{Escalador $B$};
-  \filldraw (3,4) circle (2pt) node[above]{$P$};
-  \draw[thick] (1,0)--(3,4);
-  \draw[thick] (5,0)--(3,4);
-  \draw[dashed] (3,4)--(3,0) node[below]{pie};
-\end{tikzpicture}
-\end{center}
-\end{prob}
-
-\begin{prob}
-Sea $f(x)=\alpha x^2+\beta x+\gamma$ con $\alpha\neq 0$. Demuestre que
-el número $c$ garantizado por el Teorema del Valor Medio en cualquier
-intervalo $[a,b]$ es siempre el punto medio $\dfrac{a+b}{2}$.
-\end{prob}
