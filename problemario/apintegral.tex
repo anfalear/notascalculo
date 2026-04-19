@@ -1,8 +1,3 @@
-% ============================================================
-%  CAPÍTULO: APLICACIONES DE LA INTEGRAL
-%  Versión enriquecida y complementada
-% ============================================================
-
 \chapter{Aplicaciones de la integral}
 
 La integral definida, más allá de su interpretación como área bajo una curva,
@@ -16,11 +11,71 @@ hilo conductor de todo el capítulo es el método de
 $dQ$ apropiada, sumar infinitesimalmente las contribuciones y reconocer la
 suma límite como una integral definida.
 
+En general, un protocolo práctico puede resumirse así para cada aplicación:
+
+\begin{rem}
+\begin{description}
+  \item[Áreas.] Grafique primero. Si las curvas se expresan mejor como
+    $x=g(y)$, integre respecto a $y$. Cuando haya varios cruces, sume
+    integrales en subintervalos.
+
+  \item[Volúmenes.]
+    \begin{itemize}
+      \item \emph{Discos/arandelas:} el rectángulo representativo es
+        \textbf{perpendicular} al eje de rotación.
+      \item \emph{Cascarones:} el rectángulo representativo es
+        \textbf{paralelo} al eje de rotación.
+      \item Para ejes desplazados, ajuste el radio sumando o restando el
+        desplazamiento.
+    \end{itemize}
+
+  \item[Longitud de arco.] Verifique que $f'$ sea continua; si la integral
+    resultante no es elemental, use integración numérica (Simpson, Trapecios
+    o Riemann).
+
+  \item[Superficies.] Recuerde el factor $2\pi\times\text{radio}\times ds$;
+    el radio es la distancia del punto al eje de rotación.
+
+  \item[Trabajo.] Identifique $F(x)$ e integre. Para bombeo, exprese la
+    distancia de elevación en función de la variable de integración.
+
+  \item[Centro de masa.] Para regiones entre dos curvas:
+    $M_y=\rho\int_a^b x[f(x)-g(x)]\,dx$ y
+    $M_x=\frac{\rho}{2}\int_a^b([f(x)]^2-[g(x)]^2)\,dx$.
+
+  \item[Fuerza hidrostática.] Use $F=\int\rho g h\,w(h)\,dh$; exprese la
+    anchura $w(h)$ en función de la profundidad $h$.
+\end{description}
+\end{rem}
+
+\begin{theorem}[Principio unificador de las aplicaciones de la integral]
+Cualquier cantidad acumulativa $Q$ que satisfaga:
+\begin{enumerate}
+  \item Puede aproximarse en subintervalos: $Q\approx\sum g(x_i^*)\Delta x$.
+  \item La aproximación converge cuando $\Delta x\to 0$.
+\end{enumerate}
+puede calcularse exactamente como $Q=\int_a^b g(x)\,dx$. Este principio
+unifica todas las aplicaciones presentadas en el capítulo: el área, el
+volumen, la longitud de arco, el trabajo, los momentos y la fuerza
+hidrostática son, en esencia, límites de sumas de Riemann con distintos
+integrandos $g(x)$.
+\end{theorem}
+
+\begin{rem}
+La potencia del cálculo integral radica en transformar problemas
+geométricos y físicos complejos en operaciones algebraicas sistemáticas.
+Dominar estas aplicaciones requiere práctica en tres pasos fundamentales:
+\begin{enumerate}
+\item Identificar el elemento diferencial $dQ$ adecuado para el problema,
+\item Expresar $dQ$ en términos de una sola variable de integración, y
+\item Determinar los límites de integración a partir de la geometría del
+problema.
+\end{enumerate}
+\end{rem}
+
 % ============================================================
 \section{Cálculo de áreas de regiones planas}
 % ============================================================
-
-\subsection{Área bajo una curva y área geométrica}
 
 \begin{definition}[Área bajo una curva]
 Sea $f:[a,b]\to\mathbb{R}$ una función continua y no negativa. El
@@ -29,7 +84,7 @@ rectas verticales $x=a$, $x=b$ se define como
 \[
   A = \int_a^b f(x)\,dx.
 \]
-Si $f(x)\le 0$ en $[a,b]$, el área geométrica es
+Si $f(x)\leq 0$ en $[a,b]$, el área geométrica es
 $A = -\int_a^b f(x)\,dx = \int_a^b |f(x)|\,dx$.
 \end{definition}
 
@@ -49,23 +104,68 @@ el valor absoluto en cada parte:
 Calcule el área de la región acotada por $y = x^3 - x$ y el eje $x$ en
 $[-1, 1]$.
 
-\textbf{Solución.} Las raíces de $x^3-x = x(x-1)(x+1)$ en $[-1,1]$ son
-$x=-1, 0, 1$. En $[-1,0]$ se tiene $f(x)\ge 0$ y en $[0,1]$ se tiene
-$f(x)\le 0$. Por tanto
+\begin{myproof}
+\textbf{Paso 1: Análisis gráfico y región.}
+Las raíces de $x^3-x = x(x-1)(x+1)$ en $[-1,1]$ son $x=-1, 0, 1$.
+La función es positiva en $(-1,0)$ (región azul) y negativa en $(0,1)$
+(región roja). Para obtener el área geométrica debemos integrar el valor
+absoluto en cada subintervalo.
+\begin{center}
+% ---------------------------------------------------------------
+% CORRECCIÓN: se usan trayectorias nombradas + fillbetween para
+%   evitar que los rellenos se superpongan o tapen entre sí.
+%   Región positiva en azul, región negativa en rojo.
+% ---------------------------------------------------------------
+\begin{tikzpicture}[scale=0.9]
+\begin{axis}[
+  axis lines  = middle,
+  xmin = -1.4,  xmax = 1.4,
+  ymin = -0.52, ymax = 0.52,
+  xlabel = {$x$}, ylabel = {$y$},
+  xtick = {-1, -0.5, 0, 0.5, 1},
+  ytick = {-0.4, -0.2, 0, 0.2, 0.4},
+  grid  = major,
+  grid style = {line width=0.3pt, draw=gray!25},
+  tick style = {thick},
+  tick label style = {font=\small},
+  every axis/.append style = {font=\small}
+]
+%--- trayectorias invisibles para el relleno ---
+\addplot[name path=fpos, domain=-1:0, samples=80, draw=none] {x^3 - x};
+\addplot[name path=ejep, domain=-1:0, samples=2,  draw=none] {0};
+\addplot[name path=fneg, domain= 0:1, samples=80, draw=none] {x^3 - x};
+\addplot[name path=ejen, domain= 0:1, samples=2,  draw=none] {0};
+%--- rellenos sin superposición ---
+\addplot[fill=blue!25, opacity=0.80] fill between[of=fpos and ejep];
+\addplot[fill=red!25,  opacity=0.80] fill between[of=ejen and fneg];
+%--- curva visible encima del relleno ---
+\addplot[domain=-1.3:1.3, samples=200, blue!80!black, thick] {x^3 - x};
+%--- etiquetas de signo ---
+\node[blue!70!black, font=\footnotesize\bfseries]
+     at (axis cs:-0.5,  0.20) {$f>0$};
+\node[red!70!black,  font=\footnotesize\bfseries]
+     at (axis cs: 0.5, -0.20) {$f<0$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\textbf{Paso 2: Elemento diferencial.} $dA = |f(x)|\,dx$.
+
+\textbf{Paso 3: Límites de integración.} Dividimos en $[-1,0]$ y $[0,1]$.
+
+\textbf{Paso 4: Evaluación.}
 \begin{align*}
   A &= \int_{-1}^{0}(x^3-x)\,dx + \left|\int_{0}^{1}(x^3-x)\,dx\right| \\
     &= \left[\frac{x^4}{4}-\frac{x^2}{2}\right]_{-1}^{0}
        + \left|\left[\frac{x^4}{4}-\frac{x^2}{2}\right]_{0}^{1}\right| \\
-    &= \frac{1}{4} + \frac{1}{4} = \boxed{\frac{1}{2}}.
+    &= \left(0 - \Bigl(\tfrac{1}{4}-\tfrac{1}{2}\Bigr)\right)
+       + \left|\tfrac{1}{4}-\tfrac{1}{2}\right| \\
+    &= \tfrac{1}{4} + \tfrac{1}{4} = \boxed{\tfrac{1}{2}}.
 \end{align*}
+\end{myproof}
 \end{example}
 
-% -----------------------------------------------------------
-\subsection{Área entre dos curvas (integración respecto a $x$)}
-% -----------------------------------------------------------
-
 \begin{theorem}[Área entre dos curvas]
-Sean $f$ y $g$ funciones continuas en $[a,b]$ tales que $f(x)\ge g(x)$
+Sean $f$ y $g$ funciones continuas en $[a,b]$ tales que $f(x)\geq g(x)$
 para todo $x\in[a,b]$. El área de la región acotada por ambas gráficas y
 las rectas $x=a$, $x=b$ es
 \[
@@ -88,21 +188,62 @@ Tomando el límite cuando $n\to\infty$ y usando la continuidad de $f-g$:
 \]
 \end{proof}
 
-\begin{example}[Área entre parábola y recta]
+\begin{example}
 \label{ex:parabola-recta}
 Calcule el área de la región acotada por $y=x^2$ e $y=x+2$.
+\begin{myproof}
+\textbf{Paso 1: Análisis gráfico y región.}
+Intersecciones: $x^2=x+2\Rightarrow x^2-x-2=0 \Rightarrow(x-2)(x+1)=0$,
+luego $x=-1$ y $x=2$. En $[-1,2]$ se verifica $x+2\ge x^2$.
+\begin{center}
+% ---------------------------------------------------------------
+% CORRECCIÓN: se nombran las dos trayectorias de la región
+%   [a,b] = [-1, 2] y se rellena entre ellas. Luego se redibujan
+%   las curvas completas (fuera de [a,b]) encima del relleno.
+% ---------------------------------------------------------------
+\begin{tikzpicture}[scale=0.9]
+\begin{axis}[
+  axis lines = middle,
+  xmin = -1.8, xmax = 2.8,
+  ymin = -0.6, ymax = 5.4,
+  xlabel = {$x$}, ylabel = {$y$},
+  grid  = major,
+  grid style = {line width=0.3pt, draw=gray!25},
+  tick label style = {font=\small}
+]
+%--- trayectorias de relleno (sólo en [-1, 2]) ---
+\addplot[name path=sup, domain=-1:2, samples= 40, draw=none] {x+2};
+\addplot[name path=inf, domain=-1:2, samples=100, draw=none] {x^2};
+%--- región entre las dos curvas ---
+\addplot[fill=violet!22, opacity=0.80] fill between[of=sup and inf];
+%--- curvas completas encima del relleno ---
+\addplot[domain=-1.8:2.8, samples=200, blue!80!black, thick] {x^2}
+        node[pos=0.92, above left, font=\small] {$y=x^2$};
+\addplot[domain=-1.8:2.8, samples=  2, red!80!black,  thick] {x+2}
+        node[pos=0.85, below right, font=\small] {$y=x+2$};
+%--- puntos de intersección ---
+\addplot[only marks, mark=*, mark options={fill=black, scale=1.1}]
+        coordinates {(-1,1)(2,4)};
+\node[font=\small, above left]  at (axis cs:-1,1) {$(-1,\,1)$};
+\node[font=\small, above left]  at (axis cs: 2,4) {$(2,\,4)$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\textbf{Paso 2: Elemento diferencial.}
+$dA = [\text{curva superior} - \text{curva inferior}]\,dx
+     = \bigl[(x+2)-x^2\bigr]\,dx$.
 
-\textbf{Solución.} Intersecciones: $x^2=x+2\Rightarrow x^2-x-2=0
-\Rightarrow(x-2)(x+1)=0$, luego $x=-1$ y $x=2$. En $[-1,2]$ se verifica
-$x+2\ge x^2$. Por tanto
+\textbf{Paso 3: Límites.} $a=-1$, $b=2$.
+
+\textbf{Paso 4: Evaluación.}
 \begin{align*}
-  A &= \int_{-1}^{2}\bigl[(x+2)-x^2\bigr]\,dx
+  A &= \int_{-1}^{2}\left[(x+2)-x^2\right]\,dx
      = \int_{-1}^{2}(-x^2+x+2)\,dx \\
-    &= \left[-\frac{x^3}{3}+\frac{x^2}{2}+2x\right]_{-1}^{2}
-     = \left(-\frac{8}{3}+2+4\right)-\left(\frac{1}{3}+\frac{1}{2}-2\right) \\
-    &= \frac{10}{3}+\frac{7}{6} = \frac{20}{6}+\frac{7}{6}
-     = \boxed{\dfrac{9}{2}}.
+    &= \left[-\frac{x^3}{3}+\frac{x^2}{2}+2x\right]_{-1}^{2} \\
+    &= \left(-\frac{8}{3}+2+4\right) - \left(\frac{1}{3}+\frac{1}{2}-2\right) \\
+    &= \frac{10}{3}+\frac{7}{6} = \frac{27}{6} = \boxed{\dfrac{9}{2}}.
 \end{align*}
+\end{myproof}
 \end{example}
 
 \begin{rem}
@@ -112,18 +253,79 @@ domina a la otra. Es crucial graficar primero para identificar correctamente
 los límites y el orden de resta en cada tramo.
 \end{rem}
 
-\begin{example}[Múltiples intersecciones]
+\begin{example}
 Halle el área de la región acotada por $f(x)=\sin x$ y $g(x)=\cos x$ en
 $[0,2\pi]$.
 
-\textbf{Solución.} En $[0,2\pi]$ las curvas se cruzan en $x=\pi/4$ y
-$x=5\pi/4$. Analizando signos:
+\begin{myproof}
+\textbf{Paso 1: Análisis gráfico y región.}
+En $[0,2\pi]$ las curvas se cruzan en $x=\pi/4$ y $x=5\pi/4$.
+Analizando signos:
 \begin{itemize}
-  \item En $[0,\pi/4]$: $\cos x\ge\sin x$.
-  \item En $[\pi/4,5\pi/4]$: $\sin x\ge\cos x$.
-  \item En $[5\pi/4,2\pi]$: $\cos x\ge\sin x$.
+  \item En $\bigl[0,\tfrac{\pi}{4}\bigr]$: $\cos x\geq\sin x$.
+  \item En $\bigl[\tfrac{\pi}{4},\tfrac{5\pi}{4}\bigr]$: $\sin x\geq\cos x$.
+  \item En $\bigl[\tfrac{5\pi}{4},2\pi\bigr]$: $\cos x\geq\sin x$.
 \end{itemize}
-Luego
+\begin{center}
+% ---------------------------------------------------------------
+% CORRECCIÓN: tres pares de trayectorias (una por subintervalo)
+%   con fillbetween. El mismo color en los tres tramos deja claro
+%   que todos contribuyen positivamente al área total.
+%   Se eliminan los \closedcycle que producían solapamientos.
+% ---------------------------------------------------------------
+\begin{tikzpicture}[scale=0.9]
+\begin{axis}[
+  axis lines = middle,
+  xmin = -0.3, xmax = 6.6,
+  ymin = -1.35, ymax = 1.35,
+  xlabel = {$x$}, ylabel = {$y$},
+  xtick      = {0, 0.7854, 3.1416, 3.9270, 6.2832},
+  xticklabels= {$0$, $\tfrac{\pi}{4}$, $\pi$,
+                $\tfrac{5\pi}{4}$, $2\pi$},
+  ytick = {-1, -0.5, 0, 0.5, 1},
+  grid  = major,
+  grid style = {line width=0.3pt, draw=gray!25},
+  tick label style = {font=\small}
+]
+%--- Tramo 1: [0, pi/4]  –  cos >= sin  (relleno naranja) ---
+\addplot[name path=c1, domain=0:0.7854,      samples=30, draw=none]
+        {cos(deg(x))};
+\addplot[name path=s1, domain=0:0.7854,      samples=30, draw=none]
+        {sin(deg(x))};
+\addplot[fill=orange!30, opacity=0.80] fill between[of=c1 and s1];
+%--- Tramo 2: [pi/4, 5pi/4]  –  sin >= cos  (relleno naranja) ---
+\addplot[name path=s2, domain=0.7854:3.9270, samples=80, draw=none]
+        {sin(deg(x))};
+\addplot[name path=c2, domain=0.7854:3.9270, samples=80, draw=none]
+        {cos(deg(x))};
+\addplot[fill=orange!30, opacity=0.80] fill between[of=s2 and c2];
+%--- Tramo 3: [5pi/4, 2pi]  –  cos >= sin  (relleno naranja) ---
+\addplot[name path=c3, domain=3.9270:6.2832, samples=50, draw=none]
+        {cos(deg(x))};
+\addplot[name path=s3, domain=3.9270:6.2832, samples=50, draw=none]
+        {sin(deg(x))};
+\addplot[fill=orange!30, opacity=0.80] fill between[of=c3 and s3];
+%--- curvas encima del relleno ---
+\addplot[domain=0:6.2832, samples=300, blue!80!black, thick]
+        {sin(deg(x))}
+        node[pos=0.28, above, font=\small] {$\sin x$};
+\addplot[domain=0:6.2832, samples=300, red!80!black,  thick]
+        {cos(deg(x))}
+        node[pos=0.10, above right, font=\small] {$\cos x$};
+%--- puntos de cruce ---
+\addplot[only marks, mark=*, mark options={fill=black, scale=0.9}]
+        coordinates {(0.7854,0.7071)(3.9270,-0.7071)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\textbf{Paso 2: Elemento diferencial.}
+$dA = |\sin x - \cos x|\,dx$, dividido en tres tramos.
+
+\textbf{Paso 3: Límites.}
+$\bigl[0,\tfrac\pi4\bigr]$, $\bigl[\tfrac\pi4,\tfrac{5\pi}4\bigr]$,
+$\bigl[\tfrac{5\pi}4,2\pi\bigr]$.
+
+\textbf{Paso 4: Evaluación.}
 \begin{align*}
   A &= \int_0^{\pi/4}(\cos x-\sin x)\,dx
      + \int_{\pi/4}^{5\pi/4}(\sin x-\cos x)\,dx
@@ -131,17 +333,18 @@ Luego
     &= \bigl[\sin x+\cos x\bigr]_0^{\pi/4}
      + \bigl[-\cos x-\sin x\bigr]_{\pi/4}^{5\pi/4}
      + \bigl[\sin x+\cos x\bigr]_{5\pi/4}^{2\pi} \\
+    &= \!\left(\tfrac{\sqrt2}{2}+\tfrac{\sqrt2}{2}-(0+1)\right)
+      +\!\left(\tfrac{\sqrt2}{2}+\tfrac{\sqrt2}{2}
+          -\!\left(-\tfrac{\sqrt2}{2}-\tfrac{\sqrt2}{2}\right)\right)
+      +\!\left((0+1)-\!\left(-\tfrac{\sqrt2}{2}-\tfrac{\sqrt2}{2}\right)\right)\\
     &= (\sqrt{2}-1)+2\sqrt{2}+(\sqrt{2}+1) = \boxed{4\sqrt{2}}.
 \end{align*}
+\end{myproof}
 \end{example}
 
-% -----------------------------------------------------------
-\subsection{Área con integración respecto a $y$}
-% -----------------------------------------------------------
-
-\begin{definition}[Área respecto al eje $y$]
+\begin{definition}
 Si la región está acotada por curvas de la forma $x=p(y)$ y $x=q(y)$,
-con $p(y)\ge q(y)$ para $y\in[c,d]$, entonces el área es
+con $p(y)\geq q(y)$ para $y\in[c,d]$, entonces el área es
 \[
   A = \int_c^d\bigl[p(y)-q(y)\bigr]\,dy.
 \]
@@ -157,32 +360,134 @@ tramos con distintas funciones superiores e inferiores.
 \begin{example}[Área con integración respecto a $y$]
 Halle el área acotada por $x=y^2$ y $x=y+2$.
 
-\textbf{Solución.} Intersecciones: $y^2=y+2\Rightarrow y=-1,\,2$.
-En $[-1,2]$ se tiene $y+2\ge y^2$. Entonces
+\begin{myproof}
+\textbf{Paso 1: Análisis gráfico y región.}
+Intersecciones: $y^2=y+2\Rightarrow y=-1,\,2$.
+En $[-1,2]$ se tiene $y+2\geq y^2$ (la recta queda a la derecha).
+\begin{center}
+% ---------------------------------------------------------------
+% CORRECCIÓN: curvas paramétricas x=h(y) trazadas con variable=\y.
+%   fillbetween rellena entre la trayectoria derecha (x=y+2) y la
+%   izquierda (x=y²) sin solapamientos.
+% ---------------------------------------------------------------
+\begin{tikzpicture}[scale=0.9]
+\begin{axis}[
+  axis lines = middle,
+  xmin = -0.4, xmax = 4.6,
+  ymin = -1.6, ymax = 2.6,
+  xlabel = {$x$}, ylabel = {$y$},
+  grid  = major,
+  grid style = {line width=0.3pt, draw=gray!25},
+  tick label style = {font=\small}
+]
+%--- trayectorias paramétricas invisibles para el relleno ---
+\addplot[name path=der,
+         variable=\y, domain=-1:2, samples=60, draw=none]
+        ({\y+2}, {\y});                   % x = y+2  (derecha)
+\addplot[name path=izq,
+         variable=\y, domain=-1:2, samples=120, draw=none]
+        ({\y^2}, {\y});                   % x = y²   (izquierda)
+%--- región entre las dos curvas ---
+\addplot[fill=violet!22, opacity=0.80] fill between[of=der and izq];
+%--- curvas completas encima del relleno ---
+\addplot[variable=\y, domain=-1.6:2.6, samples=200,
+         blue!80!black, thick]
+        ({\y^2}, {\y})
+        node[pos=0.82, right, font=\small] {$x=y^2$};
+\addplot[variable=\y, domain=-1.6:2.6, samples=2,
+         red!80!black, thick]
+        ({\y+2}, {\y})
+        node[pos=0.85, below right, font=\small] {$x=y+2$};
+%--- puntos de intersección ---
+\addplot[only marks, mark=*, mark options={fill=black, scale=1.1}]
+        coordinates {(1,-1)(4,2)};
+\node[font=\small, left]  at (axis cs:1,-1) {$(-1)$};
+\node[font=\small, above left] at (axis cs:4, 2) {$(2)$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\textbf{Paso 2: Elemento diferencial.}
+$dA = [\text{curva derecha} - \text{curva izquierda}]\,dy
+     = \bigl[(y+2)-y^2\bigr]\,dy$.
+
+\textbf{Paso 3: Límites.} $y\in[-1,2]$.
+
+\textbf{Paso 4: Evaluación.}
 \[
   A = \int_{-1}^{2}\bigl[(y+2)-y^2\bigr]\,dy
     = \left[\frac{y^2}{2}+2y-\frac{y^3}{3}\right]_{-1}^{2}
-    = \frac{9}{2},
+    = \left(2+4-\frac{8}{3}\right) - \left(\frac{1}{2}-2+\frac{1}{3}\right)
+    = \boxed{\dfrac{9}{2}},
 \]
-el mismo resultado que en el Ejemplo~\ref{ex:parabola-recta}, como debe ser.
+coincidiendo con el Ejemplo~\ref{ex:parabola-recta}, como debe ser.
+\end{myproof}
 \end{example}
 
-\begin{example}[Ventaja de integrar respecto a $y$]
-Halle el área entre $y=\sqrt{x}$, $y=x-2$ y el eje $y$ (primera cuadrante).
+\begin{example}
+Halle el área entre $y=\sqrt{x}$, $y=x-2$ y el eje $y$ en el primer
+cuadrante.
 
-\textbf{Solución.} Las intersecciones son $(1,1)$ y $(4,2)$. Si
-integráramos respecto a $x$ necesitaríamos dos integrales. En cambio,
-despejando $x$: curva izquierda $x=y^2$ y curva derecha $x=y+2$, con
-$y\in[0,2]$:
+\begin{myproof}
+\textbf{Paso 1: Análisis gráfico y región.}
+Las curvas se cortan cuando $\sqrt{x}=x-2 \Rightarrow x=4 \Rightarrow y=2$.
+Despejando: $x=y^2$ (parábola, izquierda) y $x=y+2$ (recta, derecha),
+con $y\in[0,2]$.
+\begin{center}
+% ---------------------------------------------------------------
+% CORRECCIÓN: misma técnica paramétrica variable=\y.
+%   El eje y (x=0) actúa de límite izquierdo implícito: como
+%   y+2 > y² para y∈[0,2], basta con la región entre las dos
+%   curvas sobre ese intervalo.
+% ---------------------------------------------------------------
+\begin{tikzpicture}[scale=0.9]
+\begin{axis}[
+  axis lines = middle,
+  xmin = -0.3, xmax = 4.8,
+  ymin = -0.3, ymax = 2.6,
+  xlabel = {$x$}, ylabel = {$y$},
+  grid  = major,
+  grid style = {line width=0.3pt, draw=gray!25},
+  tick label style = {font=\small}
+]
+%--- trayectorias invisibles ---
+\addplot[name path=der,
+         variable=\y, domain=0:2, samples=50, draw=none]
+        ({\y+2}, {\y});
+\addplot[name path=izq,
+         variable=\y, domain=0:2, samples=100, draw=none]
+        ({\y^2}, {\y});
+%--- relleno ---
+\addplot[fill=violet!22, opacity=0.80] fill between[of=der and izq];
+%--- curvas completas ---
+\addplot[variable=\y, domain=0:2.5, samples=200, blue!80!black, thick]
+        ({\y^2}, {\y})
+        node[pos=0.75, right, font=\small] {$x=y^2$};
+\addplot[variable=\y, domain=0:2.5, samples=2,   red!80!black,  thick]
+        ({\y+2}, {\y})
+        node[pos=0.80, below right, font=\small] {$x=y+2$};
+%--- punto de intersección ---
+\addplot[only marks, mark=*, mark options={fill=black, scale=1.1}]
+        coordinates {(4,2)};
+\node[font=\small, above left] at (axis cs:4,2) {$(4,\,2)$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\textbf{Paso 2: Elemento diferencial.}
+$dA = \bigl[(y+2)-y^2\bigr]\,dy$.
+
+\textbf{Paso 3: Límites.} $y\in[0,2]$.
+
+\textbf{Paso 4: Evaluación.}
 \[
   A = \int_0^2\bigl[(y+2)-y^2\bigr]\,dy
     = \left[\frac{y^2}{2}+2y-\frac{y^3}{3}\right]_0^2
     = 2+4-\frac{8}{3} = \boxed{\dfrac{10}{3}}.
 \]
+\end{myproof}
 \end{example}
 
 % ============================================================
-\section{Volumen de sólidos de revolución}
+\section{Volúmenes de sólidos de revolución}
 % ============================================================
 
 Un \textbf{sólido de revolución} se genera al rotar una región plana
@@ -193,8 +498,8 @@ métodos fundamentales, cada uno adecuado para distintas configuraciones.
 \subsection{Método de los discos}
 % -----------------------------------------------------------
 
-\begin{theorem}[Volumen por discos --- eje $x$]
-Sea $R$ la región acotada por $y=f(x)\ge 0$, $x=a$, $x=b$ y el eje $x$.
+\begin{theorem}[Volumen por discos respecto al eje $x$]
+Sea $R$ la región acotada por $y=f(x)\geq 0$, $x=a$, $x=b$ y el eje $x$.
 Al rotar $R$ alrededor del eje $x$, el volumen del sólido generado es
 \[
   V = \pi\int_a^b\bigl[f(x)\bigr]^2\,dx.
@@ -212,31 +517,51 @@ Sumando y tomando límite:
 \]
 \end{proof}
 
-\begin{example}[Volumen de un cono]
+\begin{example}
 Demuestre que el volumen de un cono de radio $R$ y altura $h$ es
 $V=\frac{1}{3}\pi R^2 h$.
 
-\textbf{Solución.} La recta que genera el cono es $y=\frac{R}{h}x$,
-$x\in[0,h]$. Aplicando discos:
+\begin{myproof}
+\textbf{Paso 1: Generatriz y región.} La recta que genera el cono es
+$y=\frac{R}{h}x$, $x\in[0,h]$.
+
+\textbf{Paso 2: Elemento diferencial.} Disco de radio $f(x)$ y grosor $dx$:
+$dV = \pi [f(x)]^2 dx$.
+
+\textbf{Paso 3: Límites.} $x$ va de $0$ a $h$.
+
+\textbf{Paso 4: Evaluación.}
 \[
   V = \pi\int_0^h\!\left(\frac{R}{h}x\right)^{\!2}dx
+    = \frac{\pi R^2}{h^2}\int_0^h x^2\,dx
     = \frac{\pi R^2}{h^2}\cdot\frac{h^3}{3}
-    = \frac{1}{3}\pi R^2 h.\qedhere
+    = \boxed{\frac{1}{3}\pi R^2 h}.
 \]
+\end{myproof}
 \end{example}
 
-\begin{example}[Volumen de una esfera]
+\begin{example}
 Demuestre que el volumen de una esfera de radio $R$ es
 $V = \frac{4}{3}\pi R^3$.
 
-\textbf{Solución.} Rotamos la semicircunferencia $y=\sqrt{R^2-x^2}$,
-$x\in[-R,R]$, alrededor del eje $x$:
+\begin{myproof}
+\textbf{Paso 1: Generatriz y región.} Rotamos la semicircunferencia
+$y=\sqrt{R^2-x^2}$, $x\in[-R,R]$, alrededor del eje $x$.
+
+\textbf{Paso 2: Elemento diferencial.}
+$dV = \pi y^2 dx = \pi(R^2-x^2)dx$.
+
+\textbf{Paso 3: Límites.} $x\in[-R,R]$. Por simetría par,
+$V = 2\pi\int_0^R (R^2-x^2)dx$.
+
+\textbf{Paso 4: Evaluación.}
 \[
-  V = \pi\int_{-R}^{R}(R^2-x^2)\,dx
-    = \pi\left[R^2 x-\frac{x^3}{3}\right]_{-R}^{R}
-    = \pi\cdot\frac{4R^3}{3}
+  V = 2\pi\left[R^2 x-\frac{x^3}{3}\right]_0^R
+    = 2\pi\left(R^3-\frac{R^3}{3}\right)
+    = 2\pi\cdot\frac{2R^3}{3}
     = \boxed{\dfrac{4}{3}\pi R^3}.\qedhere
 \]
+\end{myproof}
 \end{example}
 
 % -----------------------------------------------------------
@@ -245,7 +570,7 @@ $x\in[-R,R]$, alrededor del eje $x$:
 
 \begin{theorem}[Volumen por arandelas]
 Sea $R$ la región acotada por $y=f(x)$ (superior) e $y=g(x)$ (inferior),
-con $f(x)\ge g(x)\ge 0$, $x\in[a,b]$. Al rotar $R$ alrededor del eje $x$,
+con $f(x)\geq g(x)\geq 0$, $x\in[a,b]$. Al rotar $R$ alrededor del eje $x$,
 el volumen es
 \[
   V = \pi\int_a^b\Bigl(\bigl[f(x)\bigr]^2-\bigl[g(x)\bigr]^2\Bigr)\,dx.
@@ -259,46 +584,149 @@ $\pi R(x)^2-\pi r(x)^2$, de donde se obtiene la fórmula integrando sobre
 $[a,b]$.
 \end{rem}
 
-\begin{example}[Sólido con hueco]
+\begin{example}
 La región entre $y=\sqrt{x}$ e $y=x^2$ en $[0,1]$ gira alrededor del eje
 $x$. Calcule el volumen.
 
-\textbf{Solución.} En $[0,1]$: $\sqrt{x}\ge x^2$. Radio externo
-$R(x)=\sqrt{x}$, radio interno $r(x)=x^2$.
+\begin{myproof}
+\textbf{Paso 1: Región y eje.}
+En $[0,1]$: $\sqrt{x}\geq x^2$.
+Radio externo $R(x)=\sqrt{x}$, radio interno $r(x)=x^2$.
+\begin{center}
+% ---------------------------------------------------------------
+% CORRECCIÓN: fillbetween entre la curva superior y la inferior.
+%   Se anotan los radios para reforzar el concepto de arandela.
+% ---------------------------------------------------------------
+\begin{tikzpicture}[scale=0.9]
+\begin{axis}[
+  axis lines = middle,
+  xmin = -0.1, xmax = 1.15,
+  ymin = -0.1, ymax = 1.15,
+  xlabel = {$x$}, ylabel = {$y$},
+  xtick = {0, 0.25, 0.5, 0.75, 1},
+  ytick = {0, 0.25, 0.5, 0.75, 1},
+  grid  = major,
+  grid style = {line width=0.3pt, draw=gray!25},
+  tick label style = {font=\small}
+]
+%--- trayectorias invisibles ---
+\addplot[name path=sup, domain=0:1, samples=120, draw=none] {sqrt(x)};
+\addplot[name path=inf, domain=0:1, samples=120, draw=none] {x^2};
+%--- región entre curvas ---
+\addplot[fill=violet!22, opacity=0.80] fill between[of=sup and inf];
+%--- curvas encima del relleno ---
+\addplot[domain=0:1.1, samples=200, blue!80!black, thick] {sqrt(x)}
+        node[pos=0.80, above left, font=\small] {$y=\sqrt{x}$};
+\addplot[domain=0:1.1, samples=200, red!80!black,  thick] {x^2}
+        node[pos=0.85, below right, font=\small] {$y=x^2$};
+%--- radio externo e interno en x=0.5 ---
+\draw[<->, thick, blue!60!black]
+     (axis cs:0.5,0) -- (axis cs:0.5,{sqrt(0.5)})
+     node[midway, right, font=\scriptsize] {$R(x)$};
+\draw[<->, thick, red!60!black]
+     (axis cs:0.5,0) -- (axis cs:0.5,{0.5^2})
+     node[midway, left, font=\scriptsize] {$r(x)$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\textbf{Paso 2: Elemento diferencial.}
+Arandela: $dV = \pi\bigl[R(x)^2 - r(x)^2\bigr]dx = \pi\bigl[x - x^4\bigr]dx$.
+
+\textbf{Paso 3: Límites.} $x\in[0,1]$.
+
+\textbf{Paso 4: Evaluación.}
 \begin{align*}
-  V &= \pi\int_0^1\bigl[(\sqrt{x})^2-(x^2)^2\bigr]\,dx
-     = \pi\int_0^1(x-x^4)\,dx \\
-    &= \pi\left[\frac{x^2}{2}-\frac{x^5}{5}\right]_0^1
-     = \pi\!\left(\frac{1}{2}-\frac{1}{5}\right)
+  V &= \pi\int_0^1(x-x^4)\,dx
+     = \pi\left[\frac{x^2}{2}-\frac{x^5}{5}\right]_0^1
+     = \pi\left(\frac{1}{2}-\frac{1}{5}\right)
      = \boxed{\dfrac{3\pi}{10}}.
 \end{align*}
+\end{myproof}
 \end{example}
 
-\begin{example}[Rotación alrededor de una recta distinta de los ejes]
+\begin{example}
 La región acotada por $y=x^2$ e $y=1$ gira alrededor de la recta $y=2$.
 Calcule el volumen.
 
-\textbf{Solución.} Intersecciones: $x^2=1\Rightarrow x=\pm 1$.
-El radio externo de cada arandela es la distancia de $y=2$ a la curva
-$y=x^2$: $R(x)=2-x^2$. El radio interno es la distancia de $y=2$ a $y=1$:
-$r(x)=2-1=1$.
+\begin{myproof}
+\textbf{Paso 1: Región y eje.}
+Intersecciones: $x^2=1\Rightarrow x=\pm 1$.
+El eje de rotación $y=2$ queda por encima de toda la región.
+\begin{center}
+% ---------------------------------------------------------------
+% CORRECCIÓN: la región de integración (entre y=x² e y=1) se
+%   rellena limpiamente con fillbetween. El eje de rotación y=2
+%   se traza como línea punteada con etiqueta. Los radios se
+%   anotan en x=0.6 para reforzar el concepto de arandela.
+% ---------------------------------------------------------------
+\begin{tikzpicture}[scale=0.9]
+\begin{axis}[
+  axis lines = middle,
+  xmin = -1.6, xmax = 1.6,
+  ymin = -0.2, ymax = 2.4,
+  xlabel = {$x$}, ylabel = {$y$},
+  xtick = {-1, -0.5, 0, 0.5, 1},
+  ytick = {0, 0.5, 1, 1.5, 2},
+  grid  = major,
+  grid style = {line width=0.3pt, draw=gray!25},
+  tick label style = {font=\small}
+]
+%--- eje de rotación y=2 ---
+\draw[dashed, gray!60, thick]
+     (axis cs:-1.6,2) -- (axis cs:1.6,2)
+     node[right, font=\small, gray!70!black] {eje $y=2$};
+%--- trayectorias invisibles en [-1,1] ---
+\addplot[name path=Rsup, domain=-1:1, samples=2,   draw=none] {1};
+\addplot[name path=Rinf, domain=-1:1, samples=100, draw=none] {x^2};
+%--- región entre y=x² e y=1 ---
+\addplot[fill=violet!22, opacity=0.80] fill between[of=Rsup and Rinf];
+%--- curvas encima del relleno ---
+\addplot[domain=-1.5:1.5, samples=200, blue!80!black, thick] {x^2}
+        node[pos=0.93, above left, font=\small] {$y=x^2$};
+\draw[red!80!black, thick]
+     (axis cs:-1.5,1) -- (axis cs:1.5,1)
+     node[right, font=\small] {$y=1$};
+%--- radios en x=0.6 ---
+\draw[<->, thick, blue!60!black]
+     (axis cs:0.6,{0.6^2}) -- (axis cs:0.6,2)
+     node[midway, right, font=\scriptsize] {$R(x)$};
+\draw[<->, thick, red!60!black]
+     (axis cs:-0.6,1) -- (axis cs:-0.6,2)
+     node[midway, left, font=\scriptsize] {$r(x)$};
+%--- puntos de intersección ---
+\addplot[only marks, mark=*, mark options={fill=black, scale=0.9}]
+        coordinates {(-1,1)(1,1)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\textbf{Paso 2: Radios y elemento diferencial.}
+Radio externo (de $y=2$ a $y=x^2$): $R(x)=2-x^2$.
+Radio interno (de $y=2$ a $y=1$): $r(x)=2-1=1$.
+\[
+  dV = \pi\bigl[R(x)^2 - r(x)^2\bigr]dx
+     = \pi\bigl[(2-x^2)^2 - 1\bigr]dx.
+\]
+\textbf{Paso 3: Límites.} $x\in[-1,1]$. Por simetría,
+$V = 2\pi\int_0^1 \bigl[(2-x^2)^2-1\bigr]dx$.
+
+\textbf{Paso 4: Evaluación.}
 \begin{align*}
-  V &= \pi\int_{-1}^{1}\bigl[(2-x^2)^2-1^2\bigr]\,dx
-     = \pi\int_{-1}^{1}(3-4x^2+x^4)\,dx \\
-    &= 2\pi\int_0^1(3-4x^2+x^4)\,dx
-     = 2\pi\left[3x-\frac{4x^3}{3}+\frac{x^5}{5}\right]_0^1
-     = 2\pi\!\left(3-\frac{4}{3}+\frac{1}{5}\right)
+  V &= \pi\int_{-1}^{1}\left[(2-x^2)^2-1\right]\,dx
+     = 2\pi\int_0^1(3-4x^2+x^4)\,dx \\
+    &= 2\pi\left[3x-\frac{4x^3}{3}+\frac{x^5}{5}\right]_0^1
+     = 2\pi\left(3-\frac{4}{3}+\frac{1}{5}\right)
      = \boxed{\dfrac{56\pi}{15}}.
 \end{align*}
+\end{myproof}
 \end{example}
 
 % -----------------------------------------------------------
 \subsection{Método de los cascarones cilíndricos (\emph{shells})}
 % -----------------------------------------------------------
 
-\begin{theorem}[Volumen por cascarones --- eje $y$]
-Sea $R$ la región acotada por $y=f(x)\ge 0$, $x=a$, $x=b$
-($0\le a<b$) y el eje $x$. Al rotar $R$ alrededor del eje $y$, el volumen
+\begin{theorem}[Volumen por cascarones girando respecto al eje $y$]
+Sea $R$ la región acotada por $y=f(x)\geq 0$, $x=a$, $x=b$
+($0\leq a<b$) y el eje $x$. Al rotar $R$ alrededor del eje $y$, el volumen
 es
 \[
   V = 2\pi\int_a^b x\,f(x)\,dx,
@@ -314,7 +742,7 @@ es aproximadamente
   2\pi x_i^*\cdot f(x_i^*)\cdot\Delta x
   \quad\bigl(\text{circunferencia}\times\text{altura}\times\text{grosor}\bigr).
 \]
-Sumando y tomando límite se obtiene la fórmula. \qedhere
+Sumando y tomando límite se obtiene la fórmula.
 \end{proof}
 
 \begin{rem}
@@ -330,20 +758,69 @@ Si el eje de rotación es el eje $x$ (o una recta horizontal), pruebe
 primero con discos/arandelas.
 \end{rem}
 
-\begin{example}[Comparación de métodos]
+\begin{example}
 Calcule el volumen generado al rotar la región bajo $y=\sqrt{x}$ en $[0,4]$
 alrededor del eje $y$.
 
-\textbf{Solución (cascarones):}
+\begin{myproof}
+\begin{center}
+% ---------------------------------------------------------------
+% CORRECCIÓN: se dibuja la región bajo y=√x con fillbetween y se
+%   muestra un cascarón representativo (rectángulo vertical) para
+%   ilustrar el método, en lugar de una flecha circular ambigua.
+% ---------------------------------------------------------------
+\begin{tikzpicture}[scale=0.9]
+\begin{axis}[
+  axis lines = middle,
+  xmin = -0.3, xmax = 4.6,
+  ymin = -0.3, ymax = 2.4,
+  xlabel = {$x$}, ylabel = {$y$},
+  xtick = {0, 1, 2, 3, 4},
+  ytick = {0, 0.5, 1, 1.5, 2},
+  grid  = major,
+  grid style = {line width=0.3pt, draw=gray!25},
+  tick label style = {font=\small}
+]
+%--- trayectorias invisibles ---
+\addplot[name path=cur,  domain=0:4, samples=200, draw=none] {sqrt(x)};
+\addplot[name path=base, domain=0:4, samples=  2, draw=none] {0};
+%--- región bajo la curva ---
+\addplot[fill=violet!22, opacity=0.80] fill between[of=cur and base];
+%--- cascarón representativo en x=2.5, ancho dx=0.3 ---
+\addplot[fill=orange!40, opacity=0.70, draw=none]
+        coordinates {(2.5,0)(2.8,0)(2.8,{sqrt(2.8)})(2.5,{sqrt(2.5)})(2.5,0)};
+\draw[orange!70!black, thick]
+     (axis cs:2.5,0) rectangle (axis cs:2.8,{sqrt(2.65)});
+%--- anotación de radio y altura ---
+\draw[<->, thick, gray!70!black]
+     (axis cs:0,-0.15) -- (axis cs:2.65,-0.15)
+     node[midway, below, font=\scriptsize] {$x$};
+\draw[<->, thick, blue!60!black]
+     (axis cs:4.35,0) -- (axis cs:4.35,{sqrt(4)})
+     node[midway, right, font=\scriptsize] {$\sqrt{x}$};
+%--- curva encima ---
+\addplot[domain=0:4.5, samples=200, blue!80!black, thick] {sqrt(x)}
+        node[pos=0.95, above left, font=\small] {$y=\sqrt{x}$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\textbf{Solución por cascarones:}
+
+\textbf{Paso 1: Elemento diferencial.}
+Cascarón vertical: $dV = 2\pi\,(\text{radio})\,(\text{altura})\,dx
+= 2\pi x \sqrt{x}\,dx = 2\pi x^{3/2}dx$.
+
+\textbf{Paso 2: Límites.} $x\in[0,4]$.
+
+\textbf{Paso 3: Evaluación.}
 \[
-  V = 2\pi\int_0^4 x\sqrt{x}\,dx
-    = 2\pi\int_0^4 x^{3/2}\,dx
+  V = 2\pi\int_0^4 x^{3/2}\,dx
     = 2\pi\left[\frac{2}{5}x^{5/2}\right]_0^4
     = \frac{4\pi}{5}\cdot 32
     = \boxed{\dfrac{128\pi}{5}}.
 \]
 
-\textbf{Solución (arandelas respecto a $y$):}
+\textbf{Verificación por arandelas respecto a $y$:}
 Despejamos $x=y^2$, con $y\in[0,2]$. El sólido tiene radio externo $4$ y
 radio interno $y^2$:
 \[
@@ -353,25 +830,32 @@ radio interno $y^2$:
     = \pi\!\left(32-\frac{32}{5}\right)
     = \frac{128\pi}{5}.\qedhere
 \]
-Ambos métodos coinciden, como debe ser.
+\end{myproof}
 \end{example}
 
-\begin{example}[Cascarón alrededor de eje vertical desplazado]
+\begin{example}
 La región acotada por $y=4x-x^2$ e $y=0$ gira alrededor de la recta
 $x=5$. Calcule el volumen.
+\begin{myproof}
+\textbf{Paso 1: Región y eje.}
+La parábola toca el eje $x$ en $x=0$ y $x=4$. El eje de rotación es $x=5$.
 
-\textbf{Solución.} La parábola toca el eje $x$ en $x=0$ y $x=4$. El radio
-de cada cascarón es la distancia de un punto $x$ al eje $x=5$: radio
-$= 5-x$. La altura del cascarón es $f(x)=4x-x^2$.
+\textbf{Paso 2: Elemento diferencial.}
+Cascarón cilíndrico. Radio $= 5-x$. Altura $= 4x-x^2$.
+\[
+  dV = 2\pi (5-x)(4x-x^2)\,dx.
+\]
+\textbf{Paso 3: Límites.} $x\in[0,4]$.
+
+\textbf{Paso 4: Evaluación.}
 \begin{align*}
   V &= 2\pi\int_0^4(5-x)(4x-x^2)\,dx
-     = 2\pi\int_0^4(5-x)\,x(4-x)\,dx \\
-    &= 2\pi\int_0^4(20x-5x^2-4x^2+x^3)\,dx
      = 2\pi\int_0^4(20x-9x^2+x^3)\,dx \\
     &= 2\pi\left[10x^2-3x^3+\frac{x^4}{4}\right]_0^4
      = 2\pi(160-192+64)
      = \boxed{64\pi}.
 \end{align*}
+\end{myproof}
 \end{example}
 
 % ============================================================
@@ -413,69 +897,46 @@ fórmula en distintos contextos (paramétrico, polar, etc.).
 \begin{example}[Longitud de una parábola]
 Calcule la longitud de arco de $y=x^2$ en $[0,1]$.
 
-\textbf{Solución.} $f'(x)=2x$, luego
-\[
-  s = \int_0^1\sqrt{1+4x^2}\,dx.
-\]
-Con la sustitución trigonométrica $2x=\tan\theta$, $dx=\frac{1}{2}\sec^2\theta\,d\theta$:
+\begin{myproof}
+\textbf{Paso 1: Derivada e integrando.}
+$f'(x)=2x \Rightarrow ds = \sqrt{1+4x^2}\,dx$.
+
+\textbf{Paso 2: Límites.} $x\in[0,1]$.
+
+\textbf{Paso 3: Evaluación.}
+Con la sustitución trigonométrica $2x=\tan\theta$,
+$dx=\frac{1}{2}\sec^2\theta\,d\theta$:
 \begin{align*}
   s &= \frac{1}{2}\int_0^{\arctan 2}\sec^3\theta\,d\theta
-     = \frac{1}{4}\Bigl[\sec\theta\tan\theta+\ln|\sec\theta+\tan\theta|\Bigr]_0^{\arctan 2} \\
+     = \frac{1}{4}\Bigl[\sec\theta\tan\theta
+       +\ln|\sec\theta+\tan\theta|\Bigr]_0^{\arctan 2} \\
     &= \frac{1}{4}\bigl(\sqrt{5}\cdot 2+\ln(2+\sqrt{5})\bigr)
      = \boxed{\dfrac{\sqrt{5}}{2}+\dfrac{1}{4}\ln(2+\sqrt{5})\approx 1.479}.
 \end{align*}
+\end{myproof}
 \end{example}
 
 \begin{example}[Longitud del arco de la catenaria]
 Calcule la longitud de arco de $y=\cosh x = \dfrac{e^x+e^{-x}}{2}$ en
 $[0,\ln 2]$.
 
-\textbf{Solución.} $f'(x)=\sinh x$, y se usa la identidad
-$\cosh^2 x-\sinh^2 x=1$:
+\begin{myproof}
+\textbf{Paso 1: Derivada e integrando.}
+$f'(x)=\sinh x$. Usando $\cosh^2 x-\sinh^2 x=1$:
+$ds = \sqrt{1+\sinh^2 x}\,dx = \cosh x\,dx$.
+
+\textbf{Paso 2: Límites.} $x\in[0,\ln 2]$.
+
+\textbf{Paso 3: Evaluación.}
 \[
-  s = \int_0^{\ln 2}\sqrt{1+\sinh^2 x}\,dx
-    = \int_0^{\ln 2}\cosh x\,dx
+  s = \int_0^{\ln 2}\cosh x\,dx
     = \bigl[\sinh x\bigr]_0^{\ln 2}
     = \sinh(\ln 2)
-    = \frac{2-\frac{1}{2}}{1}
+    = \frac{e^{\ln 2} - e^{-\ln 2}}{2}
+    = \frac{2 - \frac{1}{2}}{2}
     = \boxed{\dfrac{3}{4}}.
 \]
-\end{example}
-
-% -----------------------------------------------------------
-\subsection{Longitud de arco en forma paramétrica y polar}
-% -----------------------------------------------------------
-
-\begin{theorem}[Longitud de arco paramétrica]
-Si una curva está dada por $x=x(t)$, $y=y(t)$, con $x',y'$ continuas en
-$[\alpha,\beta]$, entonces su longitud es
-\[
-  s = \int_{\alpha}^{\beta}\sqrt{[x'(t)]^2+[y'(t)]^2}\,dt.
-\]
-\end{theorem}
-
-\begin{example}[Circunferencia vía parámetros]
-Para $x=R\cos t$, $y=R\sin t$, $t\in[0,2\pi]$:
-$\sqrt{(x')^2+(y')^2}=\sqrt{R^2\sin^2 t+R^2\cos^2 t}=R$, luego
-$s=\int_0^{2\pi}R\,dt=2\pi R$.
-\end{example}
-
-\begin{theorem}[Longitud de arco en coordenadas polares]
-Si la curva está dada por $r=r(\theta)$, con $r'$ continua en
-$[\alpha,\beta]$, entonces su longitud es
-\[
-  s = \int_{\alpha}^{\beta}\sqrt{r(\theta)^2+[r'(\theta)]^2}\,d\theta.
-\]
-\end{theorem}
-
-\begin{example}[Longitud de la espiral de Arquímedes]
-Para $r=\theta$, $\theta\in[0,2\pi]$: $r'=1$, luego
-\[
-  s = \int_0^{2\pi}\sqrt{\theta^2+1}\,d\theta.
-\]
-Esta integral se resuelve con sustitución trigonométrica ($\theta=\tan\phi$)
-y da $s = \pi\sqrt{4\pi^2+1}+\frac{1}{2}\ln(2\pi+\sqrt{4\pi^2+1})
-\approx 21.26$.
+\end{myproof}
 \end{example}
 
 % ============================================================
@@ -511,30 +972,43 @@ fórmula incorrecta para un cilindro, no para la superficie real.
 \begin{example}[Superficie de una esfera]
 Demuestre que el área de una esfera de radio $R$ es $4\pi R^2$.
 
-\textbf{Solución.} Rotamos $y=\sqrt{R^2-x^2}$, $x\in[-R,R]$, alrededor
-del eje $x$:
+\begin{myproof}
+\textbf{Paso 1: Generatriz y derivada.}
+Rotamos $y=\sqrt{R^2-x^2}$, $x\in[-R,R]$, alrededor del eje $x$:
 \[
   y' = \frac{-x}{\sqrt{R^2-x^2}} \implies
-  1+(y')^2 = \frac{R^2}{R^2-x^2}.
+  1+(y')^2 = 1 + \frac{x^2}{R^2-x^2} = \frac{R^2}{R^2-x^2}.
 \]
-Entonces
+\textbf{Paso 2: Elemento diferencial.}
 \[
-  S = 2\pi\int_{-R}^{R}\sqrt{R^2-x^2}\cdot\frac{R}{\sqrt{R^2-x^2}}\,dx
-    = 2\pi R\int_{-R}^{R}dx
+  dS = 2\pi y \sqrt{1+(y')^2}\,dx
+     = 2\pi \sqrt{R^2-x^2}\cdot\frac{R}{\sqrt{R^2-x^2}}\,dx
+     = 2\pi R\,dx.
+\]
+\textbf{Paso 3: Límites.} $x\in[-R,R]$.
+
+\textbf{Paso 4: Evaluación.}
+\[
+  S = 2\pi R\int_{-R}^{R}dx
+    = 2\pi R \cdot 2R
     = \boxed{4\pi R^2}.\qedhere
 \]
+\end{myproof}
 \end{example}
 
 \begin{example}[Superficie de un paraboloide]
 Halle el área de la superficie generada al rotar $y=x^2$ en $[0,1]$
 alrededor del eje $y$.
 
-\textbf{Solución.} Al rotar alrededor del eje $y$, el radio de cada banda
-es $x$ (no $f(x)$). Usamos la fórmula para el eje $y$:
+\begin{myproof}
+\textbf{Paso 1: Elemento diferencial.}
+Al rotar alrededor del eje $y$, el radio de cada banda es $x$.
 \[
-  S = 2\pi\int_0^1 x\sqrt{1+(2x)^2}\,dx
-    = 2\pi\int_0^1 x\sqrt{1+4x^2}\,dx.
+  dS = 2\pi x \sqrt{1+(2x)^2}\,dx = 2\pi x \sqrt{1+4x^2}\,dx.
 \]
+\textbf{Paso 2: Límites.} $x\in[0,1]$.
+
+\textbf{Paso 3: Evaluación.}
 Con $u=1+4x^2$, $du=8x\,dx$:
 \[
   S = 2\pi\int_1^5\sqrt{u}\,\frac{du}{8}
@@ -542,10 +1016,11 @@ Con $u=1+4x^2$, $du=8x\,dx$:
     = \frac{\pi}{6}(5\sqrt{5}-1)
     = \boxed{\dfrac{\pi(5\sqrt{5}-1)}{6}}.
 \]
+\end{myproof}
 \end{example}
 
 \begin{theorem}[Superficie alrededor del eje $y$]
-Si la gráfica de $y=f(x)$, $x\in[a,b]$, con $f\ge 0$ y $f'$ continua,
+Si la gráfica de $y=f(x)$, $x\in[a,b]$, con $f\geq 0$ y $f'$ continua,
 gira alrededor del eje $y$, el área superficial es
 \[
   S = 2\pi\int_a^b x\sqrt{1+[f'(x)]^2}\,dx.
@@ -574,71 +1049,102 @@ Las unidades del trabajo son joules ($\text{N}\cdot\text{m}$) en el
 Sistema Internacional.
 \end{rem}
 
-\begin{example}[Ley de Hooke --- resorte]
+\begin{example}[Ley de Hooke para la longitud de un resorte]
 Un resorte requiere $10\,\text{N}$ para estirarse $0.1\,\text{m}$ desde
 su longitud natural. Calcule el trabajo para estirarlo $0.3\,\text{m}$.
 
-\textbf{Solución.} $F(x)=kx$; de $10=k(0.1)$ obtenemos $k=100\,\text{N/m}$.
+\begin{myproof}
+\textbf{Paso 1: Modelo de fuerza.}
+Ley de Hooke: $F(x)=kx$. De $10=k(0.1)$ obtenemos $k=100\,\text{N/m}$.
+
+\textbf{Paso 2: Elemento diferencial.} $dW = F(x)\,dx = 100x\,dx$.
+
+\textbf{Paso 3: Límites.} Desde $x=0$ hasta $x=0.3$.
+
+\textbf{Paso 4: Evaluación.}
 \[
   W = \int_0^{0.3}100x\,dx
     = 100\left[\frac{x^2}{2}\right]_0^{0.3}
     = 50\cdot 0.09
     = \boxed{4.5\,\text{J}}.
 \]
+\end{myproof}
 \end{example}
 
-\begin{example}[Trabajo para comprimir un resorte]
+\begin{example}
 El mismo resorte del ejemplo anterior está comprimido $0.05\,\text{m}$.
 ¿Cuánto trabajo adicional se requiere para comprimirlo $0.15\,\text{m}$
 más?
 
-\textbf{Solución.} El resorte está en $x=-0.05\,\text{m}$ y lo llevamos
-a $x=-0.20\,\text{m}$ (la fuerza es $F(x)=100|x|$ oponiéndose a la
-compresión):
+\begin{myproof}
+\textbf{Paso 1: Límites.}
+El resorte ya está en $x=-0.05\,\text{m}$ y lo llevamos a
+$x=-0.20\,\text{m}$. Como el trabajo depende de la magnitud del
+desplazamiento y la fuerza se opone, usamos coordenadas positivas para
+la compresión: de $0.05$ a $0.20$.
+
+\textbf{Paso 2: Evaluación.}
 \[
   W = \int_{0.05}^{0.20}100x\,dx
     = 50\left[x^2\right]_{0.05}^{0.20}
     = 50(0.04-0.0025)
     = \boxed{1.875\,\text{J}}.
 \]
+\end{myproof}
 \end{example}
 
-\begin{example}[Bombeo de líquido desde un tanque cónico]
+\begin{example}
 Un tanque en forma de cono invertido tiene radio superior $3\,\text{m}$
 y altura $6\,\text{m}$, y está lleno de agua
 ($\rho=1000\,\text{kg/m}^3$, $g=9.8\,\text{m/s}^2$). Calcule el trabajo
 para bombear toda el agua hasta el borde.
 
-\textbf{Solución.} Situamos el vértice del cono en el origen. A altura $y$,
-el radio de la sección transversal es $r(y)=\frac{3}{6}y=\frac{y}{2}$.
-Una rebanada horizontal de espesor $dy$ a altura $y$ tiene:
-\begin{itemize}
-  \item Volumen: $dV=\pi\!\left(\dfrac{y}{2}\right)^{\!2}dy=\dfrac{\pi y^2}{4}\,dy$.
-  \item Peso: $dF=\rho g\,dV=\dfrac{9800\pi y^2}{4}\,dy$.
-  \item Distancia al borde: $6-y$.
-\end{itemize}
+\begin{myproof}
+\textbf{Paso 1: Geometría y rebanada.}
+Situamos el vértice en el origen. A altura $y$, por semejanza de
+triángulos, el radio es $r(y)=\frac{3}{6}y=\frac{y}{2}$.
+
+\textbf{Paso 2: Elemento diferencial.}
+\begin{alignat*}{2}
+  dV  &= \pi r(y)^2 dy &&= \frac{\pi y^2}{4}\,dy. \\
+  dF  &= \rho g\,dV   &&= \frac{9800\pi y^2}{4}\,dy. \\
+  dW  &= dF \cdot (6-y) &&= \frac{9800\pi}{4}\,y^2(6-y)\,dy.
+\end{alignat*}
+\textbf{Paso 3: Límites.} $y\in[0,6]$.
+
+\textbf{Paso 4: Evaluación.}
 \begin{align*}
-  W &= \int_0^6\frac{9800\pi y^2}{4}(6-y)\,dy
-     = \frac{9800\pi}{4}\int_0^6(6y^2-y^3)\,dy \\
-    &= \frac{9800\pi}{4}\left[2y^3-\frac{y^4}{4}\right]_0^6
-     = \frac{9800\pi}{4}\!\left(432-324\right)
-     = \frac{9800\pi\cdot 108}{4}
+  W &= \frac{9800\pi}{4}\int_0^6(6y^2-y^3)\,dy
+     = 2450\pi\left[2y^3-\frac{y^4}{4}\right]_0^6 \\
+    &= 2450\pi\left(2\cdot 216 - 324\right)
+     = 2450\pi(108)
      = \boxed{264600\pi\approx 8.31\times 10^5\,\text{J}}.
 \end{align*}
+\end{myproof}
 \end{example}
 
-\begin{example}[Bombeo en un tanque cilíndrico]
+\begin{example}
 Un tanque cilíndrico de radio $2\,\text{m}$ y altura $5\,\text{m}$ está
 lleno de agua. Calcule el trabajo para bombear toda el agua hasta el borde.
 
-\textbf{Solución.} Una rebanada a altura $y$ tiene peso
-$dF=\rho g\,\pi(2)^2\,dy=4000\cdot 9.8\pi\,dy$ y debe subir $5-y$:
+\begin{myproof}
+\textbf{Paso 1: Geometría.}
+Área transversal constante $A=\pi(2)^2=4\pi$.
+
+\textbf{Paso 2: Elemento diferencial.}
+Peso de rebanada: $dF = \rho g A\,dy = 1000\cdot 9.8\cdot 4\pi\,dy
+= 39200\pi\,dy$. Distancia: $5-y$.
+
+\textbf{Paso 3: Límites.} $y\in[0,5]$.
+
+\textbf{Paso 4: Evaluación.}
 \[
   W = \int_0^5 39200\pi(5-y)\,dy
     = 39200\pi\left[5y-\frac{y^2}{2}\right]_0^5
     = 39200\pi\cdot\frac{25}{2}
     = \boxed{490000\pi\approx 1.54\times 10^6\,\text{J}}.
 \]
+\end{myproof}
 \end{example}
 
 % -----------------------------------------------------------
@@ -647,7 +1153,7 @@ $dF=\rho g\,\pi(2)^2\,dy=4000\cdot 9.8\pi\,dy$ y debe subir $5-y$:
 
 \begin{definition}[Momentos y centro de masa de una lámina plana]
 Sea $R$ una región plana de densidad constante $\rho$, acotada por
-$y=f(x)\ge 0$, $x=a$ y $x=b$. Sus \textbf{momentos} respecto a los ejes
+$y=f(x)\geq 0$, $x=a$ y $x=b$. Sus \textbf{momentos} respecto a los ejes
 son
 \[
   M_y = \rho\int_a^b x\,f(x)\,dx, \qquad
@@ -669,7 +1175,7 @@ los momentos se calculan mediante integrales dobles, que se estudiarán en
 Cálculo Multivariable.
 \end{rem}
 
-\begin{theorem}[Teorema de Pappus --- volumen]
+\begin{theorem}[Teorema de Pappus para el volumen]
 Si una región plana $R$ de área $A$ se hace girar alrededor de un eje
 exterior (que no la cruza), el volumen del sólido de revolución generado
 es
@@ -688,33 +1194,49 @@ región a partir de un volumen conocido.
 \begin{example}[Centroide de un triángulo rectángulo]
 Halle el centroide de la región acotada por $y=1-x$, $x=0$ e $y=0$.
 
-\textbf{Solución.} Tomamos $\rho=1$. Masa: $m=\int_0^1(1-x)\,dx=\frac{1}{2}$.
-\begin{align*}
-  M_y &= \int_0^1 x(1-x)\,dx
-       = \left[\frac{x^2}{2}-\frac{x^3}{3}\right]_0^1
-       = \frac{1}{6}, \\
-  M_x &= \frac{1}{2}\int_0^1(1-x)^2\,dx
-       = \frac{1}{2}\cdot\frac{1}{3}
-       = \frac{1}{6}.
-\end{align*}
-Luego $\bar{x}=\dfrac{1/6}{1/2}=\dfrac{1}{3}$,
-$\bar{y}=\dfrac{1}{3}$. El centroide es
-$\boxed{\!\left(\dfrac{1}{3},\dfrac{1}{3}\right)\!}$,
-resultado consistente con la propiedad general de que el centroide de un
-triángulo se ubica en el tercio de cada cateto.
+\begin{myproof}
+\textbf{Paso 1: Geometría y masa.}
+Tomamos $\rho=1$. Área/Masa: $m=\int_0^1(1-x)\,dx=\frac{1}{2}$.
+
+\textbf{Paso 2: Momentos.}
+\[
+  M_y = \int_0^1 x(1-x)\,dx
+      = \left[\frac{x^2}{2}-\frac{x^3}{3}\right]_0^1 = \frac{1}{6}, \quad
+  M_x = \frac{1}{2}\int_0^1(1-x)^2\,dx = \frac{1}{2}\cdot\frac{1}{3}
+      = \frac{1}{6}.
+\]
+\textbf{Paso 3: Coordenadas.}
+$\bar{x}=\dfrac{1/6}{1/2}=\dfrac{1}{3}$,
+$\bar{y}=\dfrac{1/6}{1/2}=\dfrac{1}{3}$.
+\[
+  \boxed{\left(\dfrac{1}{3},\dfrac{1}{3}\right)}
+\]
+Resultado consistente con la propiedad geométrica de que el centroide de
+un triángulo se ubica en el tercio de la altura desde cada base.
+\end{myproof}
 \end{example}
 
 \begin{example}[Centroide de un semicírculo]
-Halle el centroide de la región semicircular $x^2+y^2\le R^2$, $y\ge 0$.
+Halle el centroide de la región semicircular $x^2+y^2\leq R^2$, $y\geq 0$.
 
-\textbf{Solución.} Por simetría, $\bar{x}=0$. El área es $A=\frac{\pi R^2}{2}$
-y
+\begin{myproof}
+\textbf{Paso 1: Simetría y área.}
+Por simetría respecto al eje $y$, $\bar{x}=0$.
+El área es $A=\frac{\pi R^2}{2}$.
+
+\textbf{Paso 2: Momento $M_x$.}
 \[
   M_x = \frac{1}{2}\int_{-R}^{R}(R^2-x^2)\,dx
       = \frac{1}{2}\left[R^2 x-\frac{x^3}{3}\right]_{-R}^{R}
       = \frac{2R^3}{3}.
 \]
-Luego $\bar{y}=\dfrac{2R^3/3}{\pi R^2/2}=\boxed{\dfrac{4R}{3\pi}}$.
+\textbf{Paso 3: Coordenada $\bar{y}$.}
+\[
+  \bar{y}=\frac{M_x}{A}
+         = \frac{2R^3/3}{\pi R^2/2}
+         = \boxed{\dfrac{4R}{3\pi}}.
+\]
+\end{myproof}
 \end{example}
 
 % -----------------------------------------------------------
@@ -747,30 +1269,45 @@ más cerca del eje) mejora la eficiencia en sistemas rotativos.
 Una varilla delgada de longitud $L$ y masa $M$ gira alrededor de un
 extremo. Calcule $I$.
 
-\textbf{Solución.} Densidad lineal $\lambda=M/L$. Un elemento $dx$ a
-distancia $x$ del eje tiene masa $dm=\lambda\,dx$ y contribuye
-$dI=x^2\,dm=\lambda x^2\,dx$:
+\begin{myproof}
+\textbf{Paso 1: Densidad lineal.}
+$\lambda=M/L$. Un elemento $dx$ a distancia $x$ del eje tiene masa
+$dm=\lambda\,dx$.
+
+\textbf{Paso 2: Elemento diferencial.}
+$dI = x^2\,dm = \lambda x^2\,dx$.
+
+\textbf{Paso 3: Límites.} $x\in[0,L]$.
+
+\textbf{Paso 4: Evaluación.}
 \[
-  I = \int_0^L\lambda x^2\,dx
+  I = \int_0^L\frac{M}{L} x^2\,dx
     = \frac{M}{L}\cdot\frac{L^3}{3}
     = \boxed{\dfrac{1}{3}ML^2}.
 \]
+\end{myproof}
 \end{example}
 
 \begin{example}[Momento de inercia respecto al centro]
 Calcule el momento de inercia de la misma varilla respecto a su centro.
 
-\textbf{Solución.} Situamos el origen en el centro: $x\in[-L/2,L/2]$.
+\begin{myproof}
+\textbf{Paso 1: Sistema de coordenadas.}
+Situamos el origen en el centro: $x\in[-L/2,L/2]$.
+
+\textbf{Paso 2: Evaluación.}
 \[
   I_{\text{centro}} = \int_{-L/2}^{L/2}\frac{M}{L}x^2\,dx
-    = \frac{M}{L}\cdot\frac{2}{3}\!\left(\frac{L}{2}\right)^{\!3}
+    = \frac{M}{L}\cdot\frac{2}{3}\left(\frac{L}{2}\right)^{\!3}
     = \frac{M}{L}\cdot\frac{L^3}{12}
     = \boxed{\dfrac{1}{12}ML^2}.
 \]
-Nótese que $I_{\text{extremo}}=I_{\text{centro}}+M\!\left(\dfrac{L}{2}\right)^{\!2}
-=\frac{1}{12}ML^2+\frac{1}{4}ML^2=\frac{1}{3}ML^2$, lo que ilustra el
-\textbf{Teorema de Steiner (ejes paralelos):}
+Nótese que
+$I_{\text{extremo}}=I_{\text{centro}}+M\!\left(\dfrac{L}{2}\right)^{\!2}
+=\frac{1}{12}ML^2+\frac{1}{4}ML^2=\frac{1}{3}ML^2$,
+lo que ilustra el \textbf{Teorema de Steiner (ejes paralelos):}
 $I=I_{\text{cm}}+M d^2$, donde $d$ es la distancia entre los ejes.
+\end{myproof}
 \end{example}
 
 % ============================================================
@@ -793,74 +1330,245 @@ alto está sumergida verticalmente, con su borde superior a $2\,\text{m}$
 de la superficie del agua ($\rho=1000\,\text{kg/m}^3$). Halle la fuerza
 total sobre la compuerta.
 
-\textbf{Solución.} La compuerta ocupa profundidades $h\in[2,5]$ con
-anchura constante $w(h)=4\,\text{m}$:
+\begin{myproof}
+\textbf{Paso 1: Geometría y anchura.}
+La compuerta ocupa profundidades $h\in[2,5]$ con anchura constante
+$w(h)=4\,\text{m}$.
+
+\textbf{Paso 2: Elemento diferencial.}
+$dF = P(h)\cdot w(h)\,dh = (\rho g h)(4)\,dh = 39200\,h\,dh$.
+
+\textbf{Paso 3: Límites.} $h\in[2,5]$.
+
+\textbf{Paso 4: Evaluación.}
 \[
-  F = \int_2^5 1000\cdot 9.8\cdot h\cdot 4\,dh
+  F = \int_2^5 39200\,h\,dh
     = 39200\left[\frac{h^2}{2}\right]_2^5
     = 39200\cdot\frac{25-4}{2}
     = 39200\cdot 10.5
     = \boxed{411600\,\text{N}\approx 411.6\,\text{kN}}.
 \]
+\end{myproof}
 \end{example}
 
-% ============================================================
-\section{Resumen y estrategias de aplicación}
-% ============================================================
+\section{Problemas propuestos}
 
-\begin{rem}[Guía práctica para elegir método]
-\begin{description}
-  \item[Áreas.] Grafique primero. Si las curvas se expresan mejor como
-    $x=g(y)$, integre respecto a $y$. Cuando haya varios cruces, sume
-    integrales en subintervalos.
+% Requisitos mínimos en el preámbulo de tu documento:
+% \usepackage{pgfplots}
+% \pgfplotsset{compat=1.18}
+% \usepackage{amsmath, amssymb}
+% \newenvironment{prob}{\begin{trivlist}\item[\hskip \labelsep \textbf{Problema.}]}{\end{trivlist}} 
+% (Ajusta la definición de `prob` según tu clase/base de plantilla)
 
-  \item[Volúmenes.]~
-    \begin{itemize}
-      \item \emph{Discos/arandelas:} el rectángulo representativo es
-        \textbf{perpendicular} al eje de rotación.
-      \item \emph{Cascarones:} el rectángulo representativo es
-        \textbf{paralelo} al eje de rotación.
-      \item Para ejes desplazados, ajuste el radio sumando o restando el
-        desplazamiento.
-    \end{itemize}
+Resuelva los siguientes problemas aplicando los protocolos establecidos en este capítulo. Revise cuidadosamente los ejemplos resueltos de cada tema antes de comenzar.
 
-  \item[Longitud de arco.] Verifique que $f'$ sea continua; si la integral
-    resultante no es elemental, use integración numérica (Simpson, Gauss).
+\begin{prob}
+Calcule el área de la región delimitada por la gráfica de $f(x) = x^2$, el eje $x$ y la recta vertical $x = 2$.
+\end{prob}
 
-  \item[Superficies.] Recuerde el factor $2\pi\times\text{radio}\times ds$;
-    el radio es la distancia del punto al eje de rotación.
+\begin{prob}
+Determine el área bajo la curva $y = \sqrt{x}$ en el intervalo $[0, 4]$.
+\end{prob}
 
-  \item[Trabajo.] Identifique $F(x)$ e integre. Para bombeo, exprese la
-    distancia de elevación en función de la variable de integración.
+\begin{prob}
+Encuentre el área de la región delimitada por $y = x^3 - x^2 - 6x$ y el eje $x$.
+\end{prob}
 
-  \item[Centro de masa.] Para regiones entre dos curvas:
-    $M_y=\rho\int_a^b x[f(x)-g(x)]\,dx$ y
-    $M_x=\frac{\rho}{2}\int_a^b([f(x)]^2-[g(x)]^2)\,dx$.
+\begin{prob}
+Encuentre el área de la región delimitada por las parábolas $y = x^2$ y $y = \sqrt{8x}$.
+\end{prob}
 
-  \item[Fuerza hidrostática.] Use $F=\int\rho g h\,w(h)\,dh$; exprese la
-    anchura $w(h)$ en función de la profundidad $h$.
-\end{description}
-\end{rem}
+\begin{prob}
+Determine el área de la región acotada por las gráficas de $f(x) = x^2 + 2x - 3$ y $g(x) = -x + 1$.
+\end{prob}
 
-\begin{theorem}[Principio unificador de las aplicaciones de la integral]
-Cualquier cantidad acumulativa $Q$ que satisfaga:
-\begin{enumerate}
-  \item Puede aproximarse en subintervalos: $Q\approx\sum g(x_i^*)\Delta x$.
-  \item La aproximación converge cuando $\Delta x\to 0$.
+\begin{prob}
+Calcule el área de la región encerrada entre $y = \sin x$ y $y = \frac{1}{2}$ para $0 \leq x \leq \frac{17\pi}{6}$.
+\end{prob}
+
+\begin{prob}
+Calcule el área de la región entre la parábola $y^2 = 4x$ y la recta $4x - 3y = 4$.
+\end{prob}
+
+\begin{prob}
+Encuentre el área de la región acotada por $x = 3 - y^2$ y $y = x - 1$.
+\end{prob}
+
+\begin{prob}
+Determine el área de la región acotada por $x = y^2$ y $x = y + 2$.
+\end{prob}
+
+\begin{prob}
+Considere la región $R$ limitada por las curvas $y=x+6$, $y=-x^2-6x-6$ y $x=0$. Plantee y evalúe la integral que permite calcular el área encerrada. Determine explícitamente los límites de integración y el diferencial correspondiente.
+\begin{center}
+\begin{tikzpicture}
+  \begin{axis}[axis lines=middle, xlabel=$x$, ylabel=$y$, xmin=-4, xmax=1, ymin=-7, ymax=7, grid=major, width=8cm, height=7cm, axis on top]
+    % Trazado de funciones con nombres para relleno
+    \addplot[name path=f, domain=-3.5:0.5, samples=100, blue, thick] {x+6};
+    \addplot[name path=g, domain=-3.5:0.5, samples=100, red, thick] {-x^2-6*x-6};
+    % Relleno entre curvas solo en el dominio de interés [-3, 0]
+    \addplot[purple!20, opacity=0.5] fill between[of=f and g, soft clip={domain=-3:0}];
+    % Etiquetas
+    \node at (axis cs:-2.5, 5.2) {\small $y=x+6$};
+    \node at (axis cs:-2.2, -3.5) {\small $y=-x^2-6x-6$};
+  \end{axis}
+\end{tikzpicture}
+\end{center}
+\end{prob}
+
+\begin{prob}
+Calcule el volumen del sólido generado al girar la región bajo $y = \sqrt{x}$ desde $x = 0$ hasta $x = 4$ alrededor del eje $x$ (método de discos).
+\end{prob}
+
+\begin{prob}
+Determine el volumen del sólido de revolución obtenido al girar la región acotada por $y = \cos x$ y el eje $x$ en $[0, \pi/2]$ alrededor del eje $x$.
+\end{prob}
+
+\begin{prob}
+Calcule el volumen del sólido generado al girar la región acotada por $y = x^2$ y $y^2 = 8x$ en torno al eje $x$ (método de arandelas).
+\end{prob}
+
+\begin{prob}
+Use el método de los discos (o arandelas) para calcular el volumen del sólido de revolución generado al girar el área encerrada por $y=2x+4$, $y=-2x^2-4x$ y $x=0$ respecto al eje $x$. Determine explícitamente los límites y el diferencial.
+\begin{center}
+\begin{tikzpicture}
+  \begin{axis}[axis lines=middle, xlabel=$x$, ylabel=$y$, xmin=-2.5, xmax=0.5, ymin=-4, ymax=5, grid=major, width=8cm, height=7cm, axis on top]
+    \addplot[name path=f, domain=-1.5:0.5, samples=100, blue, thick] {2*x+4};
+    \addplot[name path=g, domain=-1.5:0.5, samples=100, red, thick] {-2*x^2-4*x};
+    \addplot[purple!20, opacity=0.5] fill between[of=f and g, soft clip={domain=-1:0}];
+    \node at (axis cs:-0.8, 4.2) {\small $y=2x+4$};
+    \node at (axis cs:-0.8, 1.5) {\small $y=-2x^2-4x$};
+  \end{axis}
+\end{tikzpicture}
+\end{center}
+\end{prob}
+
+\begin{prob}
+La región acotada por $y = x^2$ y $y = 4x$ se gira alrededor del eje $x$. Use el método de las arandelas para calcular su volumen.
+\end{prob}
+
+\begin{prob}
+Encuentre el volumen del sólido generado al girar la región semicircular $x = \sqrt{4-y^2}$ alrededor de la recta $x = -1$.
+\end{prob}
+
+\begin{prob}
+Use el método de los cascarones cilíndricos para calcular el volumen del sólido generado al girar la región acotada por $y = 3 + 2x - x^2$ y $y = 0$ alrededor del eje $y$.
+\end{prob}
+
+\begin{prob}
+Determine el volumen del sólido obtenido al girar la región acotada por $y = x$, $y = 0$ y $x = 2$ alrededor del eje $y$.
+\end{prob}
+
+\begin{prob}
+Considere las funciones $f(x)=-x^2+4x-3$ y $g(x)=x^2-6x+9$.
+\begin{enumerate} 
+  \item Calcule el área entre las dos curvas.
+  \item Calcule el volumen del sólido de revolución al girar la región respecto al eje $y=2$.
+  \item Calcule el volumen del sólido de revolución al girar la región respecto al eje $x=3$.
 \end{enumerate}
-puede calcularse exactamente como $Q=\int_a^b g(x)\,dx$. Este principio
-unifica todas las aplicaciones presentadas en el capítulo: el área, el
-volumen, la longitud de arco, el trabajo, los momentos y la fuerza
-hidrostática son, en esencia, límites de sumas de Riemann con distintos
-integrandos $g(x)$.
-\end{theorem}
+\end{prob}
 
-\begin{rem}
-La potencia del cálculo integral radica en transformar problemas
-geométricos y físicos complejos en operaciones algebraicas sistemáticas.
-Dominar estas aplicaciones requiere práctica en tres pasos fundamentales:
-(1)~identificar el elemento diferencial $dQ$ adecuado para el problema,
-(2)~expresar $dQ$ en términos de una sola variable de integración, y
-(3)~determinar los límites de integración a partir de la geometría del
-problema.
-\end{rem}
+\begin{prob}
+Calcule el volumen del sólido generado al girar la región acotada por $y = e^{-x^2}$, $y = 0$, $x = 0$ y $x = 1$ alrededor del eje $y$.
+\end{prob}
+
+\begin{prob}
+Calcule la longitud de la curva $y = x^{3/2}$ desde el punto $(1, 1)$ hasta el punto $(4, 8)$.
+\end{prob}
+
+\begin{prob}
+Determine la longitud de arco de la curva $y = \ln(\cos x)$ desde $x = 0$ hasta $x = \pi/4$.
+\end{prob}
+
+\begin{prob}
+Encuentre el área de la superficie generada al girar la curva $y = \sqrt{x}$ para $0 \leq x \leq 4$ alrededor del eje $x$.
+\end{prob}
+
+\begin{prob}
+Demuestre que el área de la superficie de una esfera de radio $r$ es $4\pi r^2$ mediante el giro de una semicircunferencia.
+\end{prob}
+
+\begin{prob}
+Un módulo espacial pesa 15 toneladas en la superficie terrestre. ¿Cuánto trabajo se requiere para propulsarlo a una altura de 800 millas? (Radio de la Tierra $\approx 4000$ millas).
+\end{prob}
+
+\begin{prob}
+Un cable que pesa $2$ libras por pie se usa para levantar una carga de $200$ libras hasta la parte superior de un pozo que tiene $500$ pies de profundidad. ¿Cuánto trabajo se realiza?
+\end{prob}
+
+\begin{prob}
+Un tanque tiene forma de cono circular recto invertido (altura $10$ pies, radio de la base $4$ pies). Si el tanque está lleno de agua, calcule el trabajo necesario para bombearla hasta el borde superior.
+\end{prob}
+
+\begin{prob}
+Se requieren $0.09$ joules de trabajo para estirar un resorte desde $15$ a $17$ cm, y otros $0.10$ joules para estirarlo de $17$ a $20$ cm. Determine la constante del resorte y encuentre su longitud natural.
+\end{prob}
+
+\begin{prob}
+Un tanque con forma de cono circular recto se usa para almacenar agua ($\rho=997\,\text{kg/m}^3$). El tanque tiene altura $10\,\text{m}$ y diámetro $16\,\text{m}$. Calcule el trabajo necesario para bombear el agua hasta una altura de $15\,\text{m}$ por encima del borde.
+\end{prob}
+
+
+\begin{prob}
+Encuentre el centroide de la región acotada por las curvas $y = x^3$ y $y = \sqrt{x}$.
+\end{prob}
+
+\begin{prob}
+Determine el centro de masa de una lámina con densidad $\rho(x,y) = xy$ acotada por $y = x^{2/3}$, $x = 8$ y el eje $x$.
+\end{prob}
+
+\begin{prob}
+Encuentre el centroide del triángulo con vértices $(-a, 0)$, $(a, 0)$ y $(b, c)$.
+\end{prob}
+
+\begin{prob}
+Calcule el momento de inercia $I_x$ de una lámina homogénea de densidad constante $k$ acotada por $y = x^2$ y $y = 4$.
+\end{prob}
+
+\begin{prob}
+Determine el momento de inercia respecto al eje $y$ de un alambre delgado con forma de semicircunferencia de radio $a$.
+\end{prob}
+
+
+\begin{prob}
+Una lámina de metal rectangular de $3 \times 4$ pies se sumerge verticalmente en agua a una profundidad de 6 pies (borde superior). Calcule la fuerza total ejercida por el fluido.
+\end{prob}
+
+\begin{prob}
+Una compuerta en un canal tiene forma de trapezoide (3 pies de ancho abajo, 5 pies arriba, 2 pies de alto). Calcule la fuerza hidrostática si el nivel del agua coincide con la parte superior.
+\end{prob}
+
+\begin{prob}
+Encuentre la fuerza de un fluido contra el extremo vertical de un depósito que tiene forma de región parabólica de 8 pies de ancho y 4 pies de profundidad.
+\end{prob}
+
+\begin{prob}[Desafío Putnam] Sea $f: [0, 1] \to \mathbb{R}$ una función continua. Se definen las siguientes integrales:
+\[
+I(f) = \int_{0}^{1} x^2 f(x) \, dx, \quad J(f) = \int_{0}^{1} x [f(x)]^2 \, dx
+\]
+Encuentre el valor máximo posible de la diferencia $I(f) - J(f)$ sobre todas las funciones $f$ posibles.
+\end{prob}
+
+\begin{prob}[Geometría de Curvas] Considere la hipocicloide de cuatro cúspides definida por la ecuación: $x^{2/3} + y^{2/3} = 1$.
+\begin{enumerate} 
+  \item Use la derivación implícita para encontrar $dy/dx$.
+  \item Formule la integral de longitud de arco para el primer cuadrante. Observe que el integrando tiende a infinito cuando $x \to 0$.
+  \item Demuestre que el perímetro total de la figura es exactamente $6$.
+\end{enumerate}
+\end{prob}
+
+
+
+\begin{prob}[Integrabilidad y Composición] Encuentre dos funciones $f$ y $g$, ambas integrables en el intervalo $[0,1]$, tales que su composición $g \circ f$ \textbf{no} sea integrable en dicho intervalo. \textit{Sugerencia: Considere la función de Dirichlet y una modificación de la función de Thomae.}
+\end{prob}
+
+\begin{prob}[Aplicaciones de Densidad Variable] Una varilla tiene una densidad dada por $\delta(x) = e^{-x^2}$ para $x > 0$. 
+\begin{enumerate} 
+  \item Formule la integral que representa la masa total desde $x=0$ hasta un punto $x=a$.
+  \item Dado que la antiderivada de $e^{-x^2}$ no es elemental, use el \textbf{método de bisección} o la \textbf{regla de Simpson} para determinar el punto de corte $a$ tal que la masa sea exactamente igual a $1$.
+\end{enumerate}
+\end{prob}
+
+
+
+

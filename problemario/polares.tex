@@ -1,0 +1,62 @@
+\chapter{Ecuaciones paramétricas y coordenadas polares}
+
+% -----------------------------------------------------------
+\subsection{Longitud de arco en forma paramétrica y polar}
+% -----------------------------------------------------------
+
+\begin{theorem}[Longitud de arco paramétrica]
+Si una curva está dada por $x=x(t)$, $y=y(t)$, con $x',y'$ continuas en
+$[\alpha,\beta]$, entonces su longitud es
+\[
+  s = \int_{\alpha}^{\beta}\sqrt{[x'(t)]^2+[y'(t)]^2}\,dt.
+\]
+\end{theorem}
+
+\begin{example}[Circunferencia vía parámetros]
+Para $x=R\cos t$, $y=R\sin t$, $t\in[0,2\pi]$:
+$\sqrt{(x')^2+(y')^2}=\sqrt{R^2\sin^2 t+R^2\cos^2 t}=R$, luego
+$s=\int_0^{2\pi}R\,dt=2\pi R$.
+\end{example}
+
+\begin{theorem}[Longitud de arco en coordenadas polares]
+Si la curva está dada por $r=r(\theta)$, con $r'$ continua en
+$[\alpha,\beta]$, entonces su longitud es
+\[
+  s = \int_{\alpha}^{\beta}\sqrt{r(\theta)^2+[r'(\theta)]^2}\,d\theta.
+\]
+\end{theorem}
+
+\begin{example}[Longitud de la espiral de Arquímedes]
+Para $r=\theta$, $\theta\in[0,2\pi]$: $r'=1$, luego
+\[
+  s = \int_0^{2\pi}\sqrt{\theta^2+1}\,d\theta.
+\]
+Esta integral se resuelve con sustitución trigonométrica ($\theta=\tan\phi$)
+y da $s = \pi\sqrt{4\pi^2+1}+\frac{1}{2}\ln(2\pi+\sqrt{4\pi^2+1})
+\approx 21.26$.
+\end{example}
+
+\section{Problemas propuestos}
+\begin{prob}
+Encuentre la longitud de un arco de la cicloide definida por $x = a(t - \sin t)$ y $y = a(1 - \cos t)$.
+\end{prob}
+
+\begin{prob}
+Calcule la longitud de arco de la curva paramétrica $x = 3t^2$, $y = 2t^3$ para $0 \leq t \leq 1$.
+\end{prob}
+
+\begin{prob}
+Determine la longitud de la cardioide definida en coordenadas polares por $r = a(1 - \cos \theta)$.
+\end{prob}
+
+\begin{prob}
+Dada la curva paramétrica $x(t)=3\cos t$, $y(t)=3\sin t$, haga un bosquejo en el intervalo $\pi \leq t \leq 2\pi$ y calcule su longitud de arco.
+\end{prob}
+
+\begin{prob}
+Calcule el área de la superficie obtenida al girar el arco de la cicloide $x = a(t - \sin t)$, $y = a(1 - \cos t)$ para $0 \leq t \leq 2\pi$ alrededor del eje $x$.
+\end{prob}
+
+\begin{prob}
+Calcule la longitud de la curva paramétrica $x=\sqrt{10}\sin(4t)-8$, $y=\sqrt{10}\cos(4t)-15$ en el intervalo $\left[0,\dfrac{\pi}{4}\right]$.
+\end{prob}
