@@ -13,7 +13,7 @@ suma límite como una integral definida.
 
 En general, un protocolo práctico puede resumirse así para cada aplicación:
 
-\begin{rem}
+\begin{rem} Según cada aplicación, es posible aplicar el siguiente protocolo:
 \begin{description}
   \item[Áreas.] Grafique primero. Si las curvas se expresan mejor como
     $x=g(y)$, integre respecto a $y$. Cuando haya varios cruces, sume
@@ -522,20 +522,52 @@ Demuestre que el volumen de un cono de radio $R$ y altura $h$ es
 $V=\frac{1}{3}\pi R^2 h$.
 
 \begin{myproof}
-\textbf{Paso 1: Generatriz y región.} La recta que genera el cono es
-$y=\frac{R}{h}x$, $x\in[0,h]$.
+\textbf{Paso 1: Generatriz y región.}
+El cono se obtiene al girar alrededor del eje $x$ la recta que pasa por el origen y el punto $(h,R)$.
+Su ecuación es $y=\frac{R}{h}x$, con $x\in[0,h]$. Al aplicar el método de discos, cada sección transversal
+perpendicular al eje de rotación es un círculo de radio $r(x)=\frac{R}{h}x$.
+\begin{center}
+% Nota: el gráfico usa R=2, h=3 solo con fines ilustrativos.
+\begin{tikzpicture}[scale=0.9]
+\begin{axis}[
+  axis lines = middle,
+  xmin = -0.3, xmax = 3.8,
+  ymin = -0.3, ymax = 2.4,
+  xlabel = {$x$}, ylabel = {$y$},
+  grid  = major,
+  grid style = {line width=0.3pt, draw=gray!25},
+  tick label style = {font=\small}
+]
+% Recta generatriz
+\addplot[blue!80!black, thick, domain=0:3, samples=100] { (2/3)*x }
+  node[pos=0.6, above left, font=\small] {$y=\tfrac{R}{h}x$};
+% Región a rotar (sombreada)
+\addplot[violet!22, opacity=0.7, domain=0:3, samples=100] { (2/3)*x } \closedcycle;
+% Disco diferencial representativo
+\draw[dashed, red!80!black, thick] (axis cs:1.5,0) -- (axis cs:1.5,1);
+\draw[dashed, red!80!black] (axis cs:1.5,1) arc[start angle=90, end angle=270, x radius=0.3, y radius=1];
+\node[red!80!black, font=\small] at (axis cs:1.5, -0.2) {$r(x)$};
+% Punto final
+\addplot[only marks, mark=*, mark options={fill=black}] coordinates {(3,2)};
+\node[font=\small, above right] at (axis cs:3,2) {$(h,R)$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
 
-\textbf{Paso 2: Elemento diferencial.} Disco de radio $f(x)$ y grosor $dx$:
-$dV = \pi [f(x)]^2 dx$.
+\textbf{Paso 2: Elemento diferencial.}
+El volumen de un disco infinitesimal de radio $r(x)$ y espesor $dx$ es
+\[ dV = \pi [r(x)]^2\,dx = \pi\left(\frac{R}{h}x\right)^2 dx. \]
 
-\textbf{Paso 3: Límites.} $x$ va de $0$ a $h$.
+\textbf{Paso 3: Límites.}
+La variable de integración $x$ recorre la altura del cono, desde la cúspide ($x=0$) hasta la base ($x=h$).
 
 \textbf{Paso 4: Evaluación.}
 \[
-  V = \pi\int_0^h\!\left(\frac{R}{h}x\right)^{\!2}dx
+  V = \int_0^h \pi\left(\frac{R}{h}x\right)^2 dx
     = \frac{\pi R^2}{h^2}\int_0^h x^2\,dx
+    = \frac{\pi R^2}{h^2}\left[\frac{x^3}{3}\right]_0^h
     = \frac{\pi R^2}{h^2}\cdot\frac{h^3}{3}
-    = \boxed{\frac{1}{3}\pi R^2 h}.
+    = \boxed{\frac{1}{3}\pi R^2 h}.\qedhere
 \]
 \end{myproof}
 \end{example}
@@ -545,19 +577,52 @@ Demuestre que el volumen de una esfera de radio $R$ es
 $V = \frac{4}{3}\pi R^3$.
 
 \begin{myproof}
-\textbf{Paso 1: Generatriz y región.} Rotamos la semicircunferencia
-$y=\sqrt{R^2-x^2}$, $x\in[-R,R]$, alrededor del eje $x$.
+\textbf{Paso 1: Generatriz y región.}
+La esfera se genera al rotar la semicircunferencia superior $y=\sqrt{R^2-x^2}$ alrededor del eje $x$,
+con $x\in[-R,R]$. Cada corte perpendicular al eje $x$ produce un disco de radio $r(x)=y=\sqrt{R^2-x^2}$.
+\begin{center}
+% Nota: el gráfico usa R=2 solo con fines ilustrativos.
+\begin{tikzpicture}[scale=0.9]
+\begin{axis}[
+  axis lines = middle,
+  xmin = -2.4, xmax = 2.4,
+  ymin = -0.3, ymax = 2.4,
+  xlabel = {$x$}, ylabel = {$y$},
+  grid  = major,
+  grid style = {line width=0.3pt, draw=gray!25},
+  tick label style = {font=\small}
+]
+% Semicircunferencia
+\addplot[blue!80!black, thick, domain=-2:2, samples=200] {sqrt(4-x^2)}
+  node[pos=0.7, above left, font=\small] {$y=\sqrt{R^2-x^2}$};
+% Región a rotar (sombreada)
+\addplot[violet!22, opacity=0.7, domain=-2:2, samples=200] {sqrt(4-x^2)} \closedcycle;
+% Disco diferencial representativo
+\draw[dashed, red!80!black, thick] (axis cs:-0.6,0) -- (axis cs:-0.6,{sqrt(4-0.36)});
+\draw[dashed, red!80!black] (axis cs:-0.6,{sqrt(4-0.36)}) arc[start angle=90, end angle=270, x radius=0.25, y radius={sqrt(4-0.36)}];
+\node[red!80!black, font=\small] at (axis cs:-0.6, -0.2) {$r(x)$};
+% Puntos extremos
+\addplot[only marks, mark=*, mark options={fill=black}] coordinates {(-2,0) (2,0)};
+\node[font=\small, below left] at (axis cs:-2,0) {$-R$};
+\node[font=\small, below right] at (axis cs:2,0) {$R$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
 
 \textbf{Paso 2: Elemento diferencial.}
-$dV = \pi y^2 dx = \pi(R^2-x^2)dx$.
+El volumen diferencial es
+\[ dV = \pi [r(x)]^2\,dx = \pi\bigl(\sqrt{R^2-x^2}\bigr)^2 dx = \pi(R^2-x^2)\,dx. \]
 
-\textbf{Paso 3: Límites.} $x\in[-R,R]$. Por simetría par,
-$V = 2\pi\int_0^R (R^2-x^2)dx$.
+\textbf{Paso 3: Límites.}
+La integración se realiza en $x\in[-R,R]$. Dado que el integrando $R^2-x^2$ es una función par,
+podemos calcular la mitad del volumen y multiplicar por $2$:
+\[ V = 2\pi\int_0^R (R^2-x^2)\,dx. \]
 
 \textbf{Paso 4: Evaluación.}
 \[
-  V = 2\pi\left[R^2 x-\frac{x^3}{3}\right]_0^R
-    = 2\pi\left(R^3-\frac{R^3}{3}\right)
+  V = 2\pi\int_0^R (R^2-x^2)\,dx
+    = 2\pi\left[R^2 x - \frac{x^3}{3}\right]_0^R
+    = 2\pi\left(R^3 - \frac{R^3}{3}\right)
     = 2\pi\cdot\frac{2R^3}{3}
     = \boxed{\dfrac{4}{3}\pi R^3}.\qedhere
 \]
@@ -836,24 +901,70 @@ radio interno $y^2$:
 \begin{example}
 La región acotada por $y=4x-x^2$ e $y=0$ gira alrededor de la recta
 $x=5$. Calcule el volumen.
+
 \begin{myproof}
-\textbf{Paso 1: Región y eje.}
-La parábola toca el eje $x$ en $x=0$ y $x=4$. El eje de rotación es $x=5$.
+\textbf{Paso 1: Análisis gráfico y región.}
+La parábola $y=4x-x^2=x(4-x)$ abre hacia abajo, con intersecciones en $x=0$ y $x=4$.
+Su vértice está en $x=2$, con $y=4$. La región a rotar es el área encerrada entre
+la curva y el eje $x$ en $[0,4]$. El eje de rotación es la recta vertical $x=5$,
+ubicada a la derecha de la región. Usaremos el \emph{método de cascarones cilíndricos}:
+cada franja vertical en $x$ genera un cascarón de radio $r(x)=5-x$ y altura $h(x)=4x-x^2$.
+\begin{center}
+% Gráfico ilustrativo: región y eje de rotación x=5
+\begin{tikzpicture}[scale=0.9]
+\begin{axis}[
+  axis lines = middle,
+  xmin = -0.5, xmax = 5.8,
+  ymin = -1.5, ymax = 4.8,
+  xlabel = {$x$}, ylabel = {$y$},
+  grid  = major,
+  grid style = {line width=0.3pt, draw=gray!25},
+  tick label style = {font=\small}
+]
+% Parábola y = 4x - x^2
+\addplot[blue!80!black, thick, domain=0:4, samples=100] {4*x - x^2}
+  node[pos=0.5, above, font=\small] {$y=4x-x^2$};
+% Región sombreada entre curva y eje x
+\addplot[violet!22, opacity=0.7, domain=0:4, samples=100] {4*x - x^2} \closedcycle;
+% Eje de rotación x = 5
+\addplot[red!80!black, dashed, thick] coordinates {(5,-0.5) (5,4.8)}
+  node[pos=0.95, right, font=\small] {$x=5$};
+% Franja vertical representativa (cascarón)
+\draw[green!70!black, thick] (axis cs:1.2,0) -- (axis cs:1.2,{4*1.2-1.2^2});
+\draw[<->, green!70!black] (axis cs:1.2,{-0.3}) -- (axis cs:5,{-0.3})
+  node[midway, below, font=\small] {$r(x)=5-x$};
+\node[green!70!black, font=\small] at (axis cs:1.2, {0.5*(4*1.2-1.2^2)}) {$h(x)$};
+% Puntos de intersección
+\addplot[only marks, mark=*, mark options={fill=black}] coordinates {(0,0) (4,0)};
+\node[font=\small, below] at (axis cs:0,0) {$0$};
+\node[font=\small, below] at (axis cs:4,0) {$4$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
 
 \textbf{Paso 2: Elemento diferencial.}
-Cascarón cilíndrico. Radio $= 5-x$. Altura $= 4x-x^2$.
+Para el método de cascarones, el volumen diferencial es
 \[
-  dV = 2\pi (5-x)(4x-x^2)\,dx.
+  dV = 2\pi\,(\text{radio})\,(\text{altura})\,dx
+     = 2\pi\,(5-x)\,(4x-x^2)\,dx.
 \]
-\textbf{Paso 3: Límites.} $x\in[0,4]$.
+
+\textbf{Paso 3: Límites.}
+La variable $x$ recorre la base de la región, desde la intersección izquierda ($x=0$)
+hasta la derecha ($x=4$): \quad $x\in[0,4]$.
 
 \textbf{Paso 4: Evaluación.}
+Primero expandimos el integrando:
+\[
+  (5-x)(4x-x^2) = 20x - 5x^2 - 4x^2 + x^3 = 20x - 9x^2 + x^3.
+\]
+Luego integramos:
 \begin{align*}
-  V &= 2\pi\int_0^4(5-x)(4x-x^2)\,dx
-     = 2\pi\int_0^4(20x-9x^2+x^3)\,dx \\
-    &= 2\pi\left[10x^2-3x^3+\frac{x^4}{4}\right]_0^4
-     = 2\pi(160-192+64)
-     = \boxed{64\pi}.
+  V &= 2\pi\int_0^4 (20x - 9x^2 + x^3)\,dx \\
+    &= 2\pi\left[10x^2 - 3x^3 + \frac{x^4}{4}\right]_0^4 \\
+    &= 2\pi\left(10\cdot 16 - 3\cdot 64 + \frac{256}{4}\right) \\
+    &= 2\pi\left(160 - 192 + 64\right) \\
+    &= 2\pi\cdot 32 = \boxed{64\pi}.\qedhere
 \end{align*}
 \end{myproof}
 \end{example}
@@ -898,20 +1009,55 @@ fórmula en distintos contextos (paramétrico, polar, etc.).
 Calcule la longitud de arco de $y=x^2$ en $[0,1]$.
 
 \begin{myproof}
-\textbf{Paso 1: Derivada e integrando.}
-$f'(x)=2x \Rightarrow ds = \sqrt{1+4x^2}\,dx$.
+\textbf{Paso 1: Análisis gráfico y fórmula.}
+La curva es una parábola que abre hacia arriba. Para calcular la longitud del arco
+utilizamos la fórmula diferencial $ds = \sqrt{1+[f'(x)]^2}\,dx$.
+\begin{center}
+% Gráfico ilustrativo: arco de y=x^2 en [0,1]
+\begin{tikzpicture}[scale=0.9]
+\begin{axis}[
+  axis lines = middle,
+  xmin = -0.1, xmax = 1.3,
+  ymin = -0.1, ymax = 1.3,
+  xlabel = {$x$}, ylabel = {$y$},
+  grid  = major,
+  grid style = {line width=0.3pt, draw=gray!25},
+  tick label style = {font=\small}
+]
+% Curva completa para contexto
+\addplot[blue!80!black, thick, domain=0:1.2, samples=100] {x^2}
+  node[pos=0.7, above right, font=\small] {$y=x^2$};
+% Resaltar el arco de interés
+\addplot[violet!80!black, line width=2.5pt, domain=0:1, samples=100] {x^2};
+% Elemento diferencial ds representativo
+\draw[red!80!black, dashed, thick] (axis cs:0.6,0.36) -- (axis cs:0.75,0.5625);
+\node[red!80!black, font=\small] at (axis cs:0.78, 0.58) {$ds$};
+% Puntos extremos
+\addplot[only marks, mark=*, mark options={fill=black}] coordinates {(0,0) (1,1)};
+\node[font=\small, below left] at (axis cs:0,0) {$(0,0)$};
+\node[font=\small, below right] at (axis cs:1,1) {$(1,1)$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
 
-\textbf{Paso 2: Límites.} $x\in[0,1]$.
+\textbf{Paso 2: Elemento diferencial.}
+Derivamos $f(x)=x^2$ para obtener $f'(x)=2x$. Sustituyendo en la fórmula:
+\[ ds = \sqrt{1+(2x)^2}\,dx = \sqrt{1+4x^2}\,dx. \]
 
-\textbf{Paso 3: Evaluación.}
-Con la sustitución trigonométrica $2x=\tan\theta$,
-$dx=\frac{1}{2}\sec^2\theta\,d\theta$:
+\textbf{Paso 3: Límites.}
+La variable $x$ recorre el intervalo dado: $x\in[0,1]$.
+
+\textbf{Paso 4: Evaluación.}
+\[ s = \int_0^1 \sqrt{1+4x^2}\,dx. \]
+Aplicamos la sustitución trigonométrica $2x=\tan\theta$, de modo que
+$dx=\frac{1}{2}\sec^2\theta\,d\theta$. Los límites cambian a
+$x=0\Rightarrow\theta=0$ y $x=1\Rightarrow\theta=\arctan 2$:
 \begin{align*}
-  s &= \frac{1}{2}\int_0^{\arctan 2}\sec^3\theta\,d\theta
-     = \frac{1}{4}\Bigl[\sec\theta\tan\theta
-       +\ln|\sec\theta+\tan\theta|\Bigr]_0^{\arctan 2} \\
+  s &= \frac{1}{2}\int_0^{\arctan 2}\sqrt{1+\tan^2\theta}\,\sec^2\theta\,d\theta
+     = \frac{1}{2}\int_0^{\arctan 2}\sec^3\theta\,d\theta \\
+    &= \frac{1}{4}\Bigl[\sec\theta\tan\theta+\ln|\sec\theta+\tan\theta|\Bigr]_0^{\arctan 2} \\
     &= \frac{1}{4}\bigl(\sqrt{5}\cdot 2+\ln(2+\sqrt{5})\bigr)
-     = \boxed{\dfrac{\sqrt{5}}{2}+\dfrac{1}{4}\ln(2+\sqrt{5})\approx 1.479}.
+     = \boxed{\dfrac{\sqrt{5}}{2}+\dfrac{1}{4}\ln(2+\sqrt{5})\approx 1.479}.\qedhere
 \end{align*}
 \end{myproof}
 \end{example}
@@ -921,20 +1067,59 @@ Calcule la longitud de arco de $y=\cosh x = \dfrac{e^x+e^{-x}}{2}$ en
 $[0,\ln 2]$.
 
 \begin{myproof}
-\textbf{Paso 1: Derivada e integrando.}
-$f'(x)=\sinh x$. Usando $\cosh^2 x-\sinh^2 x=1$:
-$ds = \sqrt{1+\sinh^2 x}\,dx = \cosh x\,dx$.
+\textbf{Paso 1: Análisis gráfico y fórmula.}
+La catenaria es una curva suave y simétrica respecto al eje $y$. Su derivada es
+inmediata gracias a las propiedades de las funciones hiperbólicas.
+\begin{center}
+% Gráfico ilustrativo: arco de y=cosh(x) en [0, ln2]
+\begin{tikzpicture}[scale=0.9]
+\begin{axis}[
+  axis lines = middle,
+  xmin = -0.2, xmax = 1.0,
+  ymin = 0.8, ymax = 1.5,
+  xlabel = {$x$}, ylabel = {$y$},
+  grid  = major,
+  grid style = {line width=0.3pt, draw=gray!25},
+  tick label style = {font=\small}
+]
+% Curva catenaria
+\addplot[blue!80!black, thick, domain=0:0.9, samples=100] {0.5*(exp(x)+exp(-x))}
+  node[pos=0.6, above right, font=\small] {$y=\cosh x$};
+% Resaltar el arco de interés
+\addplot[violet!80!black, line width=2.5pt, domain=0:0.693, samples=100] {0.5*(exp(x)+exp(-x))};
+% Elemento diferencial ds representativo
+\draw[red!80!black, dashed, thick] (axis cs:0.3, {0.5*(exp(0.3)+exp(-0.3))}) --
+     (axis cs:0.45, {0.5*(exp(0.45)+exp(-0.45))});
+\node[red!80!black, font=\small] at (axis cs:0.48, 1.18) {$ds$};
+% Puntos extremos
+\addplot[only marks, mark=*, mark options={fill=black}] coordinates {(0,1) (0.693,1.25)};
+\node[font=\small, below left] at (axis cs:0,1) {$(0,1)$};
+\node[font=\small, above right] at (axis cs:0.693,1.25) {$(\ln 2,\frac{5}{4})$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
 
-\textbf{Paso 2: Límites.} $x\in[0,\ln 2]$.
+\textbf{Paso 2: Elemento diferencial.}
+Dado que $f'(x)=\sinh x$, la identidad fundamental $\cosh^2 x - \sinh^2 x = 1$
+simplifica drásticamente el integrando:
+\[ ds = \sqrt{1+[f'(x)]^2}\,dx = \sqrt{1+\sinh^2 x}\,dx = \cosh x\,dx. \]
 
-\textbf{Paso 3: Evaluación.}
+\textbf{Paso 3: Límites.}
+La variable $x$ recorre el intervalo especificado: $x\in[0,\ln 2]$.
+
+\textbf{Paso 4: Evaluación.}
+\[ s = \int_0^{\ln 2} \cosh x\,dx. \]
+La integral de la coseno hiperbólica es la seno hiperbólica:
 \[
-  s = \int_0^{\ln 2}\cosh x\,dx
-    = \bigl[\sinh x\bigr]_0^{\ln 2}
-    = \sinh(\ln 2)
-    = \frac{e^{\ln 2} - e^{-\ln 2}}{2}
+  s = \bigl[\sinh x\bigr]_0^{\ln 2}
+    = \sinh(\ln 2) - \sinh(0).
+\]
+Usando la definición exponencial $\sinh t = \frac{e^t-e^{-t}}{2}$ y sabiendo que $\sinh(0)=0$:
+\[
+  s = \frac{e^{\ln 2} - e^{-\ln 2}}{2}
     = \frac{2 - \frac{1}{2}}{2}
-    = \boxed{\dfrac{3}{4}}.
+    = \frac{\frac{3}{2}}{2}
+    = \boxed{\dfrac{3}{4}}.\qedhere
 \]
 \end{myproof}
 \end{example}
@@ -943,7 +1128,7 @@ $ds = \sqrt{1+\sinh^2 x}\,dx = \cosh x\,dx$.
 \section{Áreas de superficies de revolución}
 % ============================================================
 
-\begin{definition}[Área superficial de revolución --- eje $x$]
+\begin{definition}[Área superficial de revolución respecto al eje $x$]
 Sea $f$ una función no negativa con derivada continua en $[a,b]$. El área
 de la superficie generada al rotar la gráfica de $f$ alrededor del eje $x$
 es
@@ -970,51 +1155,74 @@ fórmula incorrecta para un cilindro, no para la superficie real.
 \end{rem}
 
 \begin{example}[Superficie de una esfera]
-Demuestre que el área de una esfera de radio $R$ es $4\pi R^2$.
+Demuestre que el área de una esfera de radio $R$ es $S = 4\pi R^2$.
 
 \begin{myproof}
-\textbf{Paso 1: Generatriz y derivada.}
-Rotamos $y=\sqrt{R^2-x^2}$, $x\in[-R,R]$, alrededor del eje $x$:
-\[
-  y' = \frac{-x}{\sqrt{R^2-x^2}} \implies
-  1+(y')^2 = 1 + \frac{x^2}{R^2-x^2} = \frac{R^2}{R^2-x^2}.
-\]
+\textbf{Paso 1: Análisis gráfico y fórmula.}
+La esfera se genera al rotar la semicircunferencia superior $y=\sqrt{R^2-x^2}$, 
+con $x\in[-R,R]$, alrededor del eje $x$. Para el área de superficie de revolución 
+usamos $dS = 2\pi y \, ds$, donde $ds=\sqrt{1+(y')^2}\,dx$ es el elemento de arco.
+\begin{center}
+% Nota: el gráfico usa R=2 solo con fines ilustrativos.
+\begin{tikzpicture}[scale=0.9]
+\begin{axis}[
+  axis lines = middle,
+  xmin = -2.5, xmax = 2.5,
+  ymin = -0.3, ymax = 2.3,
+  xlabel = {$x$}, ylabel = {$y$},
+  grid  = major,
+  grid style = {line width=0.3pt, draw=gray!25},
+  tick label style = {font=\small}
+]
+% Semicircunferencia
+\addplot[blue!80!black, thick, domain=-2:2, samples=200] {sqrt(4-x^2)}
+  node[pos=0.2, above left, font=\small] {$y=\sqrt{R^2-x^2}$};
+% Arco de interés resaltado
+\addplot[violet!80!black, line width=2.5pt, domain=-1:1.5, samples=100] {sqrt(4-x^2)};
+% Elemento diferencial ds y radio y
+\draw[green!70!black, thick] (axis cs:0.6,0) -- (axis cs:0.6,{sqrt(4-0.36)})
+  node[midway, right, font=\small] {$y$};
+\draw[red!80!black, dashed, thick] (axis cs:0.6,{sqrt(4-0.36)}) -- 
+     (axis cs:0.75,{sqrt(4-0.5625)});
+\node[red!80!black, font=\small] at (axis cs:0.9, 1.95) {$ds$};
+% Puntos extremos
+\addplot[only marks, mark=*, mark options={fill=black}] coordinates {(-2,0) (2,0)};
+\node[font=\small, below] at (axis cs:-2,0) {$-R$};
+\node[font=\small, below] at (axis cs:2,0) {$R$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
 \textbf{Paso 2: Elemento diferencial.}
+Derivamos $y=\sqrt{R^2-x^2}$:
 \[
-  dS = 2\pi y \sqrt{1+(y')^2}\,dx
-     = 2\pi \sqrt{R^2-x^2}\cdot\frac{R}{\sqrt{R^2-x^2}}\,dx
-     = 2\pi R\,dx.
+  y' = \frac{-x}{\sqrt{R^2-x^2}}.
 \]
-\textbf{Paso 3: Límites.} $x\in[-R,R]$.
+Sustituimos en la raíz del elemento de arco:
+\[
+  1+(y')^2 = 1+\frac{x^2}{R^2-x^2} = \frac{R^2-x^2+x^2}{R^2-x^2} = \frac{R^2}{R^2-x^2}.
+\]
+Por tanto,
+\[
+  ds = \sqrt{1+(y')^2}\,dx = \frac{R}{\sqrt{R^2-x^2}}\,dx.
+\]
+El área diferencial es:
+\[
+  dS = 2\pi y \, ds = 2\pi \sqrt{R^2-x^2} \cdot \frac{R}{\sqrt{R^2-x^2}}\,dx = 2\pi R\,dx.
+\]
+\textit{(Nota cómo los radicales se cancelan elegantemente).}
+
+\textbf{Paso 3: Límites.}
+La variable $x$ recorre todo el diámetro de la semicircunferencia: $x\in[-R,R]$.
 
 \textbf{Paso 4: Evaluación.}
 \[
-  S = 2\pi R\int_{-R}^{R}dx
-    = 2\pi R \cdot 2R
+  S = \int_{-R}^{R} 2\pi R\,dx
+    = 2\pi R \int_{-R}^{R} dx
+    = 2\pi R \bigl[x\bigr]_{-R}^{R}
+    = 2\pi R (R - (-R))
+    = 2\pi R (2R)
     = \boxed{4\pi R^2}.\qedhere
-\]
-\end{myproof}
-\end{example}
-
-\begin{example}[Superficie de un paraboloide]
-Halle el área de la superficie generada al rotar $y=x^2$ en $[0,1]$
-alrededor del eje $y$.
-
-\begin{myproof}
-\textbf{Paso 1: Elemento diferencial.}
-Al rotar alrededor del eje $y$, el radio de cada banda es $x$.
-\[
-  dS = 2\pi x \sqrt{1+(2x)^2}\,dx = 2\pi x \sqrt{1+4x^2}\,dx.
-\]
-\textbf{Paso 2: Límites.} $x\in[0,1]$.
-
-\textbf{Paso 3: Evaluación.}
-Con $u=1+4x^2$, $du=8x\,dx$:
-\[
-  S = 2\pi\int_1^5\sqrt{u}\,\frac{du}{8}
-    = \frac{\pi}{4}\cdot\frac{2}{3}\bigl[u^{3/2}\bigr]_1^5
-    = \frac{\pi}{6}(5\sqrt{5}-1)
-    = \boxed{\dfrac{\pi(5\sqrt{5}-1)}{6}}.
 \]
 \end{myproof}
 \end{example}
@@ -1026,6 +1234,75 @@ gira alrededor del eje $y$, el área superficial es
   S = 2\pi\int_a^b x\sqrt{1+[f'(x)]^2}\,dx.
 \]
 \end{theorem}
+
+
+
+\begin{example}[Superficie de un paraboloide]
+Halle el área de la superficie generada al rotar $y=x^2$ en $[0,1]$
+alrededor del eje $y$.
+
+\begin{myproof}
+\textbf{Paso 1: Análisis gráfico y fórmula.}
+Al girar la parábola $y=x^2$ alrededor del eje $y$, cada franja vertical genera 
+una banda cilíndrica. El \emph{radio} de giro es la distancia horizontal al eje $y$, 
+es decir, $r(x)=x$. La longitud de arco sigue siendo $ds=\sqrt{1+(y')^2}\,dx$.
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+\begin{axis}[
+  axis lines = middle,
+  xmin = -0.2, xmax = 1.3,
+  ymin = -0.1, ymax = 1.3,
+  xlabel = {$x$}, ylabel = {$y$},
+  grid  = major,
+  grid style = {line width=0.3pt, draw=gray!25},
+  tick label style = {font=\small}
+]
+% Parábola
+\addplot[blue!80!black, thick, domain=0:1.2, samples=100] {x^2}
+  node[pos=0.7, above right, font=\small] {$y=x^2$};
+% Arco de interés
+\addplot[violet!80!black, line width=2.5pt, domain=0:1, samples=100] {x^2};
+% Radio de giro (distancia al eje y)
+\draw[green!70!black, thick, <->] (axis cs:0.6,0.36) -- (axis cs:0,0.36)
+  node[midway, above, font=\small] {$r(x)=x$};
+% Elemento ds
+\draw[red!80!black, dashed, thick] (axis cs:0.6,0.36) -- (axis cs:0.7,0.49);
+\node[red!80!black, font=\small] at (axis cs:0.75, 0.48) {$ds$};
+% Puntos extremos
+\addplot[only marks, mark=*, mark options={fill=black}] coordinates {(0,0) (1,1)};
+\node[font=\small, below left] at (axis cs:0,0) {$(0,0)$};
+\node[font=\small, below right] at (axis cs:1,1) {$(1,1)$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\textbf{Paso 2: Elemento diferencial.}
+Con $y'=2x$, el elemento de superficie es:
+\[
+  dS = 2\pi (\text{radio})\,ds = 2\pi x \sqrt{1+(2x)^2}\,dx = 2\pi x \sqrt{1+4x^2}\,dx.
+\]
+
+\textbf{Paso 3: Límites.}
+La variable $x$ recorre el intervalo dado: $x\in[0,1]$.
+
+\textbf{Paso 4: Evaluación.}
+\[
+  S = 2\pi\int_0^1 x\sqrt{1+4x^2}\,dx.
+\]
+Aplicamos la sustitución $u=1+4x^2 \Rightarrow du=8x\,dx \Rightarrow x\,dx=\frac{du}{8}$.
+Los límites cambian: $x=0 \to u=1$ y $x=1 \to u=5$:
+\begin{align*}
+  S &= 2\pi\int_1^5 \sqrt{u}\,\frac{du}{8}
+     = \frac{\pi}{4}\int_1^5 u^{1/2}\,du \\
+    &= \frac{\pi}{4}\left[\frac{2}{3}u^{3/2}\right]_1^5
+     = \frac{\pi}{6}\left(5^{3/2}-1^{3/2}\right) \\
+    &= \frac{\pi}{6}\left(5\sqrt{5}-1\right)
+     = \boxed{\dfrac{\pi(5\sqrt{5}-1)}{6}}.\qedhere
+\end{align*}
+\end{myproof}
+\end{example}
+
+
 
 % ============================================================
 \section{Aplicaciones físicas}
@@ -1049,50 +1326,157 @@ Las unidades del trabajo son joules ($\text{N}\cdot\text{m}$) en el
 Sistema Internacional.
 \end{rem}
 
+% ============================================================
+% EJEMPLO 1: Ley de Hooke — estiramiento
+% ============================================================
 \begin{example}[Ley de Hooke para la longitud de un resorte]
 Un resorte requiere $10\,\text{N}$ para estirarse $0.1\,\text{m}$ desde
 su longitud natural. Calcule el trabajo para estirarlo $0.3\,\text{m}$.
 
 \begin{myproof}
-\textbf{Paso 1: Modelo de fuerza.}
-Ley de Hooke: $F(x)=kx$. De $10=k(0.1)$ obtenemos $k=100\,\text{N/m}$.
+\textbf{Paso 1: Modelo de fuerza y diagrama.}
+La Ley de Hooke establece $F(x)=kx$, donde $x$ es la deformación respecto
+a la longitud natural. De la condición $10=k(0.1)$ se obtiene $k=100\,\text{N/m}$,
+de modo que $F(x)=100x$. Geométricamente, el trabajo buscado es el
+\emph{área bajo la recta} $F(x)=100x$ sobre el intervalo $[0,\,0.3]$.
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+\begin{axis}[
+  axis lines = middle,
+  xmin = -0.02, xmax = 0.40,
+  ymin = -2,    ymax = 35,
+  xlabel = {$x\;(\text{m})$},
+  ylabel = {$F\;(\text{N})$},
+  grid       = major,
+  grid style = {line width=0.3pt, draw=gray!25},
+  tick label style = {font=\small},
+  xtick = {0.1, 0.2, 0.3},
+  ytick = {10, 20, 30},
+]
+% Área sombreada = trabajo W
+\addplot[fill=blue!15, draw=none, domain=0:0.3, samples=2] {100*x} \closedcycle;
+\node[blue!70!black, font=\small] at (axis cs:0.11,5) {$W$};
+% Recta de fuerza
+\addplot[blue!80!black, thick, domain=0:0.37, samples=2] {100*x}
+  node[pos=0.88, above left, font=\small] {$F(x)=100x$};
+% Líneas de referencia punteadas
+\draw[dashed, gray!70] (axis cs:0.1,0) -- (axis cs:0.1,10);
+\draw[dashed, gray!70] (axis cs:0.3,0) -- (axis cs:0.3,30);
+% Anotación de la condición k
+\draw[green!60!black, thick, <->]
+  (axis cs:0,10) -- (axis cs:0.1,10)
+  node[midway, above, font=\tiny] {$0.1\,\text{m}$};
+\draw[green!60!black, thick, <->]
+  (axis cs:0.1,0) -- (axis cs:0.1,10)
+  node[midway, right, font=\tiny] {$10\,\text{N}$};
+% Elemento diferencial
+\draw[red!80!black, dashed, thick]
+  (axis cs:0.22,22) -- (axis cs:0.24,24);
+\node[red!80!black, font=\small] at (axis cs:0.265,23) {$dW$};
+% Puntos destacados
+\addplot[only marks, mark=*, mark options={fill=black, scale=0.7}]
+  coordinates {(0.1,10)(0.3,30)};
+\node[font=\small, right] at (axis cs:0.3,30) {$(0.3,\;30)$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
 
-\textbf{Paso 2: Elemento diferencial.} $dW = F(x)\,dx = 100x\,dx$.
+\textbf{Paso 2: Elemento diferencial.}
+Al desplazar el extremo libre del resorte un tramo infinitesimal $dx$ en
+la posición $x$, el trabajo elemental es:
+\[
+  dW = F(x)\,dx = 100x\,dx.
+\]
 
-\textbf{Paso 3: Límites.} Desde $x=0$ hasta $x=0.3$.
+\textbf{Paso 3: Límites.}
+El desplazamiento parte de la longitud natural $x=0$ y llega hasta
+$x=0.3\,\text{m}$.
 
 \textbf{Paso 4: Evaluación.}
 \[
   W = \int_0^{0.3}100x\,dx
     = 100\left[\frac{x^2}{2}\right]_0^{0.3}
-    = 50\cdot 0.09
-    = \boxed{4.5\,\text{J}}.
+    = 50\cdot(0.3)^2
+    = \boxed{4.5\,\text{J}}.\qedhere
 \]
 \end{myproof}
 \end{example}
 
+
+% ============================================================
+% EJEMPLO 2: Ley de Hooke — compresión adicional
+% ============================================================
 \begin{example}
 El mismo resorte del ejemplo anterior está comprimido $0.05\,\text{m}$.
-¿Cuánto trabajo adicional se requiere para comprimirlo $0.15\,\text{m}$
-más?
+¿Cuánto trabajo adicional se requiere para comprimirlo $0.15\,\text{m}$ más?
 
 \begin{myproof}
-\textbf{Paso 1: Límites.}
-El resorte ya está en $x=-0.05\,\text{m}$ y lo llevamos a
-$x=-0.20\,\text{m}$. Como el trabajo depende de la magnitud del
-desplazamiento y la fuerza se opone, usamos coordenadas positivas para
-la compresión: de $0.05$ a $0.20$.
+\textbf{Paso 1: Modelo y convenio de signos.}
+La fuerza sigue siendo $F(x)=100x$, donde $x$ mide la deformación en magnitud.
+Como la compresión es simétricamente equivalente a la extensión, usamos
+coordenadas positivas para la compresión: el resorte ya se encuentra en
+$x=0.05\,\text{m}$ y debe llevarse hasta $x=0.05+0.15=0.20\,\text{m}$.
+El trabajo adicional es el área sombreada (azul) bajo $F(x)=100x$
+entre esos dos límites; el trabajo previo (gris) ya fue realizado.
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+\begin{axis}[
+  axis lines = middle,
+  xmin = -0.01, xmax = 0.27,
+  ymin = -1.5,  ymax = 23,
+  xlabel = {$x\;(\text{m})$},
+  ylabel = {$F\;(\text{N})$},
+  grid       = major,
+  grid style = {line width=0.3pt, draw=gray!25},
+  tick label style = {font=\small},
+  xtick      = {0.05, 0.10, 0.15, 0.20},
+  xticklabels= {$0.05$, $0.10$, $0.15$, $0.20$},
+  ytick      = {5, 10, 15, 20},
+]
+% Trabajo ya realizado (0 a 0.05) — gris
+\addplot[fill=gray!20, draw=none, domain=0:0.05, samples=2] {100*x} \closedcycle;
+\node[gray!55, font=\tiny] at (axis cs:0.025,1.2) {hecho};
+% Trabajo adicional (0.05 a 0.20) — azul
+\addplot[fill=blue!20, draw=none, domain=0.05:0.20, samples=2] {100*x} \closedcycle;
+\node[blue!70!black, font=\small] at (axis cs:0.115,6) {$W$};
+% Recta de fuerza
+\addplot[blue!80!black, thick, domain=0:0.25, samples=2] {100*x}
+  node[pos=0.92, above left, font=\small] {$F(x)=100x$};
+% Líneas de referencia
+\draw[dashed, gray!70] (axis cs:0.05,0) -- (axis cs:0.05,5);
+\draw[dashed, gray!70] (axis cs:0.20,0) -- (axis cs:0.20,20);
+% Puntos
+\addplot[only marks, mark=*, mark options={fill=black, scale=0.7}]
+  coordinates {(0.05,5)(0.20,20)};
+\node[font=\small, above right] at (axis cs:0.05,5)  {$(0.05,\;5)$};
+\node[font=\small, above right] at (axis cs:0.20,20) {$(0.20,\;20)$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
 
-\textbf{Paso 2: Evaluación.}
+\textbf{Paso 2: Elemento diferencial.}
+\[
+  dW = F(x)\,dx = 100x\,dx.
+\]
+
+\textbf{Paso 3: Límites.}
+La deformación varía de $x=0.05\,\text{m}$ a
+$x=0.05+0.15=0.20\,\text{m}$.
+
+\textbf{Paso 4: Evaluación.}
 \[
   W = \int_{0.05}^{0.20}100x\,dx
-    = 50\left[x^2\right]_{0.05}^{0.20}
+    = 50\bigl[x^2\bigr]_{0.05}^{0.20}
     = 50(0.04-0.0025)
-    = \boxed{1.875\,\text{J}}.
+    = \boxed{1.875\,\text{J}}.\qedhere
 \]
 \end{myproof}
 \end{example}
 
+
+% ============================================================
+% EJEMPLO 3: Tanque cónico invertido
+% ============================================================
 \begin{example}
 Un tanque en forma de cono invertido tiene radio superior $3\,\text{m}$
 y altura $6\,\text{m}$, y está lleno de agua
@@ -1100,49 +1484,139 @@ y altura $6\,\text{m}$, y está lleno de agua
 para bombear toda el agua hasta el borde.
 
 \begin{myproof}
-\textbf{Paso 1: Geometría y rebanada.}
-Situamos el vértice en el origen. A altura $y$, por semejanza de
-triángulos, el radio es $r(y)=\frac{3}{6}y=\frac{y}{2}$.
+\textbf{Paso 1: Geometría y rebanada diferencial.}
+Situamos el vértice del cono en el origen y el eje de simetría sobre el
+eje $y$, de modo que el borde queda en $y=6$. Por semejanza de triángulos,
+la sección circular a altura $y$ tiene radio $r(y)=\frac{3}{6}y=\frac{y}{2}$.
+Para bombear el agua de una rebanada ubicada en $y$ hasta el borde, ésta
+debe elevarse la distancia $6-y$.
+\begin{center}
+\begin{tikzpicture}[scale=0.72]
+  % Relleno de agua
+  \fill[blue!10] (0,0) -- (-3,6) -- (3,6) -- cycle;
+  % Rebanada diferencial (y = 3.6)
+  \pgfmathsetmacro{\ys}{3.6}
+  \pgfmathsetmacro{\rs}{\ys/2}
+  \fill[blue!40] (-\rs,\ys) rectangle (\rs,\ys+0.38);
+  \draw[dashed, gray!60] (-\rs,\ys)        -- (\rs,\ys);
+  \draw[dashed, gray!60] (-\rs,\ys+0.38)   -- (\rs,\ys+0.38);
+  % Paredes del cono
+  \draw[blue!80!black, thick] (0,0) -- (-3,6) -- (3,6) -- cycle;
+  % Eje y
+  \draw[->, thick, gray!60] (0,-0.5) -- (0,7.4) node[above] {$y$};
+  % Marcas y etiquetas del eje
+  \foreach \yi in {0,2,4,6}{
+    \draw[gray!60] (-0.10,\yi) -- (0.10,\yi);
+    \node[left, font=\small] at (-0.15,\yi) {$\yi$};
+  }
+  % Radio r(y)
+  \draw[green!60!black, thick, <->]
+    (0,\ys) -- (\rs,\ys)
+    node[midway, above, font=\small] {$r(y)=\dfrac{y}{2}$};
+  % Distancia de bombeo (6 - y)
+  \draw[red!70!black, thick, <->]
+    (3.5, \ys+0.19) -- (3.5, 6)
+    node[midway, right, font=\small] {$6-y$};
+  % dy
+  \draw[red!80!black, thick, <->]
+    (\rs+0.25,\ys) -- (\rs+0.25,\ys+0.38)
+    node[midway, right, font=\small] {$dy$};
+  % Origen
+  \node[below left, font=\small] at (0,0) {$O$};
+\end{tikzpicture}
+\end{center}
 
 \textbf{Paso 2: Elemento diferencial.}
+El volumen, peso y trabajo de la rebanada de grosor $dy$ son:
 \begin{alignat*}{2}
-  dV  &= \pi r(y)^2 dy &&= \frac{\pi y^2}{4}\,dy. \\
-  dF  &= \rho g\,dV   &&= \frac{9800\pi y^2}{4}\,dy. \\
-  dW  &= dF \cdot (6-y) &&= \frac{9800\pi}{4}\,y^2(6-y)\,dy.
+  dV &= \pi\,r(y)^2\,dy &&= \frac{\pi y^2}{4}\,dy, \\[4pt]
+  dF &= \rho g\,dV       &&= \frac{9800\pi y^2}{4}\,dy, \\[4pt]
+  dW &= dF\cdot(6-y)     &&= \frac{9800\pi}{4}\,y^2(6-y)\,dy.
 \end{alignat*}
-\textbf{Paso 3: Límites.} $y\in[0,6]$.
+
+\textbf{Paso 3: Límites.}
+La variable $y$ recorre desde el vértice hasta el borde: $y\in[0,6]$.
 
 \textbf{Paso 4: Evaluación.}
 \begin{align*}
   W &= \frac{9800\pi}{4}\int_0^6(6y^2-y^3)\,dy
      = 2450\pi\left[2y^3-\frac{y^4}{4}\right]_0^6 \\
-    &= 2450\pi\left(2\cdot 216 - 324\right)
+    &= 2450\pi\!\left(2\cdot216 - 324\right)
      = 2450\pi(108)
-     = \boxed{264600\pi\approx 8.31\times 10^5\,\text{J}}.
+     = \boxed{264600\pi\approx 8.31\times10^5\,\text{J}}.\qedhere
 \end{align*}
 \end{myproof}
 \end{example}
 
+
+% ============================================================
+% EJEMPLO 4: Tanque cilíndrico
+% ============================================================
 \begin{example}
 Un tanque cilíndrico de radio $2\,\text{m}$ y altura $5\,\text{m}$ está
 lleno de agua. Calcule el trabajo para bombear toda el agua hasta el borde.
 
 \begin{myproof}
-\textbf{Paso 1: Geometría.}
-Área transversal constante $A=\pi(2)^2=4\pi$.
+\textbf{Paso 1: Geometría y rebanada diferencial.}
+Situamos la base del cilindro en $y=0$ y el borde en $y=5$. A diferencia
+del caso cónico, la sección transversal es \emph{constante}: un disco de
+radio $2\,\text{m}$ con área $A=\pi(2)^2=4\pi\,\text{m}^2$. La rebanada
+en la posición $y$ debe elevarse la distancia $5-y$ hasta el borde.
+\begin{center}
+\begin{tikzpicture}[scale=0.78]
+  % Relleno de agua
+  \fill[blue!10] (-2,0) rectangle (2,5);
+  % Rebanada diferencial (y = 2.6)
+  \pgfmathsetmacro{\ys}{2.6}
+  \fill[blue!40] (-2,\ys) rectangle (2,\ys+0.38);
+  \draw[dashed, gray!60] (-2,\ys)        -- (2,\ys);
+  \draw[dashed, gray!60] (-2,\ys+0.38)   -- (2,\ys+0.38);
+  % Paredes del cilindro
+  \draw[blue!80!black, thick] (-2,0) rectangle (2,5);
+  % Eje y
+  \draw[->, thick, gray!60] (0,-0.5) -- (0,6.5) node[above] {$y$};
+  % Marcas y etiquetas del eje
+  \foreach \yi in {0,1,2,3,4,5}{
+    \draw[gray!60] (-0.10,\yi) -- (0.10,\yi);
+    \node[left, font=\small] at (-0.15,\yi) {$\yi$};
+  }
+  % Radio
+  \draw[green!60!black, thick, <->]
+    (0,0) -- (2,0)
+    node[midway, below, font=\small] {$r=2$};
+  % Área de la sección
+  \node[green!50!black, font=\small] at (0,0.7) {$A=4\pi$};
+  % Distancia de bombeo (5 - y)
+  \draw[red!70!black, thick, <->]
+    (2.6, \ys+0.19) -- (2.6, 5)
+    node[midway, right, font=\small] {$5-y$};
+  % dy
+  \draw[red!80!black, thick, <->]
+    (-2.6,\ys) -- (-2.6,\ys+0.38)
+    node[midway, left, font=\small] {$dy$};
+  % Origen
+  \node[below left, font=\small] at (0,0) {$O$};
+\end{tikzpicture}
+\end{center}
 
 \textbf{Paso 2: Elemento diferencial.}
-Peso de rebanada: $dF = \rho g A\,dy = 1000\cdot 9.8\cdot 4\pi\,dy
-= 39200\pi\,dy$. Distancia: $5-y$.
+El peso de la rebanada de grosor $dy$ en la posición $y$ es constante en
+radio, y el trabajo que requiere es:
+\[
+  dF = \rho g A\,dy = 1000\cdot9.8\cdot4\pi\,dy = 39200\pi\,dy,
+  \qquad
+  dW = dF\cdot(5-y) = 39200\pi(5-y)\,dy.
+\]
 
-\textbf{Paso 3: Límites.} $y\in[0,5]$.
+\textbf{Paso 3: Límites.}
+La variable $y$ recorre desde la base hasta el borde: $y\in[0,5]$.
 
 \textbf{Paso 4: Evaluación.}
 \[
   W = \int_0^5 39200\pi(5-y)\,dy
     = 39200\pi\left[5y-\frac{y^2}{2}\right]_0^5
     = 39200\pi\cdot\frac{25}{2}
-    = \boxed{490000\pi\approx 1.54\times 10^6\,\text{J}}.
+    = \boxed{490000\pi\approx 1.54\times10^6\,\text{J}}.\qedhere
 \]
 \end{myproof}
 \end{example}
@@ -1196,18 +1670,62 @@ Halle el centroide de la región acotada por $y=1-x$, $x=0$ e $y=0$.
 
 \begin{myproof}
 \textbf{Paso 1: Geometría y masa.}
-Tomamos $\rho=1$. Área/Masa: $m=\int_0^1(1-x)\,dx=\frac{1}{2}$.
+Tomamos $\rho=1$. La región es un triángulo rectángulo con vértices en 
+$(0,0)$, $(1,0)$ y $(0,1)$.
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+\begin{axis}[
+  axis lines = middle,
+  xmin = -0.2, xmax = 1.4,
+  ymin = -0.2, ymax = 1.4,
+  xlabel = {$x$}, ylabel = {$y$},
+  grid  = major,
+  grid style = {line width=0.3pt, draw=gray!25},
+  tick label style = {font=\small}
+]
+% Región sombreada
+\addplot[fill=blue!15, draw=none, domain=0:1, samples=100] 
+  {1-x} \closedcycle;
+% Frontera
+\addplot[blue!80!black, thick, domain=0:1, samples=100] {1-x}
+  node[pos=0.5, above right, font=\small] {$y=1-x$};
+% Centroide
+\addplot[only marks, mark=*, mark options={fill=red, scale=1.2}] 
+  coordinates {(1/3, 1/3)};
+\node[red, font=\small, above right] at (axis cs:1/3,1/3) 
+  {$\!\left(\tfrac{1}{3},\tfrac{1}{3}\right)$};
+% Vértices
+\addplot[only marks, mark=*, mark options={fill=black}] 
+  coordinates {(0,0) (1,0) (0,1)};
+\node[font=\small, below left]  at (axis cs:0,0) {$(0,0)$};
+\node[font=\small, below right] at (axis cs:1,0) {$(1,0)$};
+\node[font=\small, above left]  at (axis cs:0,1) {$(0,1)$};
+% Franja vertical representativa
+\draw[green!70!black, thick] (axis cs:0.5,0) -- (axis cs:0.5,0.5);
+\node[green!60!black, font=\small, right] at (axis cs:0.5,0.25) {$1-x$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
 
-\textbf{Paso 2: Momentos.}
+\textbf{Paso 2: Masa.}
+\[
+  m = \int_0^1(1-x)\,dx
+    = \left[x - \frac{x^2}{2}\right]_0^1 = \frac{1}{2}.
+\]
+
+\textbf{Paso 3: Momentos.}
 \[
   M_y = \int_0^1 x(1-x)\,dx
-      = \left[\frac{x^2}{2}-\frac{x^3}{3}\right]_0^1 = \frac{1}{6}, \quad
-  M_x = \frac{1}{2}\int_0^1(1-x)^2\,dx = \frac{1}{2}\cdot\frac{1}{3}
-      = \frac{1}{6}.
+      = \left[\frac{x^2}{2}-\frac{x^3}{3}\right]_0^1 = \frac{1}{6}, \qquad
+  M_x = \frac{1}{2}\int_0^1(1-x)^2\,dx 
+      = \frac{1}{2}\cdot\frac{1}{3} = \frac{1}{6}.
 \]
-\textbf{Paso 3: Coordenadas.}
-$\bar{x}=\dfrac{1/6}{1/2}=\dfrac{1}{3}$,
-$\bar{y}=\dfrac{1/6}{1/2}=\dfrac{1}{3}$.
+
+\textbf{Paso 4: Coordenadas del centroide.}
+\[
+  \bar{x}=\frac{M_y}{m}=\frac{1/6}{1/2}=\frac{1}{3}, \qquad
+  \bar{y}=\frac{M_x}{m}=\frac{1/6}{1/2}=\frac{1}{3}.
+\]
 \[
   \boxed{\left(\dfrac{1}{3},\dfrac{1}{3}\right)}
 \]
@@ -1216,28 +1734,73 @@ un triángulo se ubica en el tercio de la altura desde cada base.
 \end{myproof}
 \end{example}
 
+% ─────────────────────────────────────────────────────────────────────────────
+
 \begin{example}[Centroide de un semicírculo]
 Halle el centroide de la región semicircular $x^2+y^2\leq R^2$, $y\geq 0$.
 
 \begin{myproof}
 \textbf{Paso 1: Simetría y área.}
 Por simetría respecto al eje $y$, $\bar{x}=0$.
-El área es $A=\frac{\pi R^2}{2}$.
+El área es $A=\dfrac{\pi R^2}{2}$.
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+\begin{axis}[
+  axis lines = middle,
+  xmin = -2.5, xmax = 2.5,
+  ymin = -0.3, ymax = 2.3,
+  xlabel = {$x$}, ylabel = {$y$},
+  grid  = major,
+  grid style = {line width=0.3pt, draw=gray!25},
+  tick label style = {font=\small}
+]
+% Región sombreada (R=2 ilustrativo)
+\addplot[fill=blue!15, draw=none, domain=-2:2, samples=200] 
+  {sqrt(4-x^2)} \closedcycle;
+% Semicircunferencia
+\addplot[blue!80!black, thick, domain=-2:2, samples=200] {sqrt(4-x^2)}
+  node[pos=0.2, above left, font=\small] {$y=\sqrt{R^2-x^2}$};
+% Eje de simetría
+\draw[dashed, gray] (axis cs:0,0) -- (axis cs:0,2.1);
+% Franja representativa
+\draw[green!70!black, thick] (axis cs:0.8,0) -- (axis cs:0.8,{sqrt(4-0.64)});
+\node[green!60!black, font=\small, right] at (axis cs:0.8,0.9) {$\sqrt{R^2-x^2}$};
+% Centroide
+\addplot[only marks, mark=*, mark options={fill=red, scale=1.2}] 
+  coordinates {(0, 0.849)};
+\node[red, font=\small, right] at (axis cs:0.05,0.849) 
+  {$\bar{y}=\dfrac{4R}{3\pi}$};
+% Puntos extremos
+\addplot[only marks, mark=*, mark options={fill=black}] 
+  coordinates {(-2,0) (2,0)};
+\node[font=\small, below] at (axis cs:-2,0) {$-R$};
+\node[font=\small, below] at (axis cs:2,0)  {$R$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
 
 \textbf{Paso 2: Momento $M_x$.}
+Cada franja horizontal de anchura $2\sqrt{R^2-x^2}$ contribuye; integrando
+con franjas verticales y usando $\frac{1}{2}[f(x)]^2$:
 \[
   M_x = \frac{1}{2}\int_{-R}^{R}(R^2-x^2)\,dx
       = \frac{1}{2}\left[R^2 x-\frac{x^3}{3}\right]_{-R}^{R}
+      = \frac{1}{2}\cdot\frac{4R^3}{3}
       = \frac{2R^3}{3}.
 \]
+
 \textbf{Paso 3: Coordenada $\bar{y}$.}
 \[
   \bar{y}=\frac{M_x}{A}
          = \frac{2R^3/3}{\pi R^2/2}
+         = \frac{2R^3}{3}\cdot\frac{2}{\pi R^2}
          = \boxed{\dfrac{4R}{3\pi}}.
 \]
 \end{myproof}
 \end{example}
+
+% ─────────────────────────────────────────────────────────────────────────────
+
 
 % -----------------------------------------------------------
 \subsection{Momento de inercia}
@@ -1265,50 +1828,135 @@ $r^2$). Por ello, reducir $I$ sin cambiar la masa (distribuyendo la masa
 más cerca del eje) mejora la eficiencia en sistemas rotativos.
 \end{rem}
 
-\begin{example}[Momento de inercia de una varilla]
-Una varilla delgada de longitud $L$ y masa $M$ gira alrededor de un
-extremo. Calcule $I$.
+
+\begin{example}[Momento de inercia de una varilla (extremo)]
+Una varilla delgada de longitud $L$ y masa $M$ gira alrededor de uno de
+sus extremos. Calcule el momento de inercia $I$.
 
 \begin{myproof}
-\textbf{Paso 1: Densidad lineal.}
-$\lambda=M/L$. Un elemento $dx$ a distancia $x$ del eje tiene masa
-$dm=\lambda\,dx$.
+\textbf{Paso 1: Geometría y densidad lineal.}
+Situamos el eje de rotación en $x=0$ y la varilla a lo largo de
+$x\in[0,L]$. La densidad lineal uniforme es $\lambda=M/L$.
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+\begin{axis}[
+  axis lines = middle,
+  xmin = -0.3, xmax = 1.5,
+  ymin = -0.5, ymax = 0.5,
+  xlabel = {$x$}, ylabel = {},
+  ytick = \empty,
+  xtick = {0, 0.6, 1.2},
+  xticklabels = {$0$, $x$, $L$},
+  grid  = major,
+  grid style = {line width=0.3pt, draw=gray!25},
+  tick label style = {font=\small},
+  height = 4.5cm, width = 9cm
+]
+% Varilla
+\draw[blue!80!black, line width=5pt, line cap=round] 
+  (axis cs:0,0) -- (axis cs:1.2,0);
+% Eje de rotación
+\draw[red!80!black, dashed, thick] (axis cs:0,-0.4) -- (axis cs:0,0.4)
+  node[above, font=\small] {eje};
+% Elemento dm
+\draw[green!70!black, line width=4pt, line cap=round]
+  (axis cs:0.58,0) -- (axis cs:0.65,0);
+\draw[<->, green!60!black] (axis cs:0.58,-0.2) -- (axis cs:0.65,-0.2)
+  node[midway, below, font=\small] {$dx$};
+% Flecha de distancia x
+\draw[<->, violet] (axis cs:0,0.3) -- (axis cs:0.6,0.3)
+  node[midway, above, font=\small] {$x$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
 
 \textbf{Paso 2: Elemento diferencial.}
-$dI = x^2\,dm = \lambda x^2\,dx$.
+Un segmento de longitud $dx$ a distancia $x$ del eje tiene masa
+$dm = \lambda\,dx$, por lo que su contribución al momento de inercia es:
+\[
+  dI = x^2\,dm = \frac{M}{L}\,x^2\,dx.
+\]
 
 \textbf{Paso 3: Límites.} $x\in[0,L]$.
 
 \textbf{Paso 4: Evaluación.}
 \[
-  I = \int_0^L\frac{M}{L} x^2\,dx
+  I = \int_0^L\frac{M}{L}\,x^2\,dx
+    = \frac{M}{L}\left[\frac{x^3}{3}\right]_0^L
     = \frac{M}{L}\cdot\frac{L^3}{3}
     = \boxed{\dfrac{1}{3}ML^2}.
 \]
 \end{myproof}
 \end{example}
 
-\begin{example}[Momento de inercia respecto al centro]
+% ─────────────────────────────────────────────────────────────────────────────
+
+\begin{example}[Momento de inercia de una varilla (centro)]
 Calcule el momento de inercia de la misma varilla respecto a su centro.
 
 \begin{myproof}
 \textbf{Paso 1: Sistema de coordenadas.}
-Situamos el origen en el centro: $x\in[-L/2,L/2]$.
+Situamos el origen en el centro de la varilla: $x\in[-L/2,\,L/2]$.
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+\begin{axis}[
+  axis lines = middle,
+  xmin = -0.9, xmax = 0.9,
+  ymin = -0.5, ymax = 0.5,
+  xlabel = {$x$}, ylabel = {},
+  ytick = \empty,
+  xtick = {-0.6, 0, 0.6},
+  xticklabels = {$-L/2$, $0$, $L/2$},
+  grid  = major,
+  grid style = {line width=0.3pt, draw=gray!25},
+  tick label style = {font=\small},
+  height = 4.5cm, width = 9cm
+]
+% Varilla
+\draw[blue!80!black, line width=5pt, line cap=round]
+  (axis cs:-0.6,0) -- (axis cs:0.6,0);
+% Eje de rotación (centro)
+\draw[red!80!black, dashed, thick] (axis cs:0,-0.4) -- (axis cs:0,0.4)
+  node[above, font=\small] {eje};
+% Elemento dm (lado positivo)
+\draw[green!70!black, line width=4pt, line cap=round]
+  (axis cs:0.35,0) -- (axis cs:0.42,0);
+\draw[<->, green!60!black] (axis cs:0.35,-0.2) -- (axis cs:0.42,-0.2)
+  node[midway, below, font=\small] {$dx$};
+% Flecha de distancia x (positiva)
+\draw[<->, violet] (axis cs:0,0.3) -- (axis cs:0.38,0.3)
+  node[midway, above, font=\small] {$x$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
 
 \textbf{Paso 2: Evaluación.}
 \[
-  I_{\text{centro}} = \int_{-L/2}^{L/2}\frac{M}{L}x^2\,dx
+  I_{\text{centro}} 
+    = \int_{-L/2}^{L/2}\frac{M}{L}\,x^2\,dx
+    = \frac{M}{L}\left[\frac{x^3}{3}\right]_{-L/2}^{L/2}
     = \frac{M}{L}\cdot\frac{2}{3}\left(\frac{L}{2}\right)^{\!3}
     = \frac{M}{L}\cdot\frac{L^3}{12}
     = \boxed{\dfrac{1}{12}ML^2}.
 \]
-Nótese que
-$I_{\text{extremo}}=I_{\text{centro}}+M\!\left(\dfrac{L}{2}\right)^{\!2}
-=\frac{1}{12}ML^2+\frac{1}{4}ML^2=\frac{1}{3}ML^2$,
-lo que ilustra el \textbf{Teorema de Steiner (ejes paralelos):}
-$I=I_{\text{cm}}+M d^2$, donde $d$ es la distancia entre los ejes.
+
+\textbf{Verificación con el Teorema de Steiner.}
+La distancia entre el eje del extremo y el eje del centro es $d=L/2$:
+\[
+  I_{\text{extremo}}
+    = I_{\text{centro}} + M d^2
+    = \frac{1}{12}ML^2 + M\!\left(\frac{L}{2}\right)^{\!2}
+    = \frac{1}{12}ML^2 + \frac{1}{4}ML^2
+    = \frac{1}{3}ML^2,
+\]
+lo que coincide con el resultado anterior e ilustra el
+\textbf{Teorema de Steiner (ejes paralelos):}
+$I = I_{\text{cm}} + Md^2$, donde $d$ es la distancia entre los ejes.
 \end{myproof}
 \end{example}
+
+% ─────────────────────────────────────────────────────────────────────────────
+
 
 % ============================================================
 \section{Presión y fuerza hidrostática}
@@ -1324,30 +1972,74 @@ $h=a$ y $h=b$, es
 \]
 \end{definition}
 
-\begin{example}[Fuerza sobre una compuerta rectangular]
+
+\begin{example}[Fuerza hidrostática sobre una compuerta rectangular]
 Una compuerta rectangular de $4\,\text{m}$ de ancho y $3\,\text{m}$ de
 alto está sumergida verticalmente, con su borde superior a $2\,\text{m}$
-de la superficie del agua ($\rho=1000\,\text{kg/m}^3$). Halle la fuerza
-total sobre la compuerta.
+de la superficie del agua ($\rho=1000\,\text{kg/m}^3$, $g=9{,}8\,\text{m/s}^2$).
+Halle la fuerza hidrostática total sobre la compuerta.
 
 \begin{myproof}
-\textbf{Paso 1: Geometría y anchura.}
-La compuerta ocupa profundidades $h\in[2,5]$ con anchura constante
-$w(h)=4\,\text{m}$.
+\textbf{Paso 1: Geometría.}
+La compuerta ocupa profundidades $h\in[2,5]\,\text{m}$ con anchura
+constante $w=4\,\text{m}$.
+\begin{center}
+\begin{tikzpicture}[scale=0.85]
+\begin{axis}[
+  axis lines = middle,
+  xmin = -0.5, xmax = 5.0,
+  ymin = -0.5, ymax = 5.5,
+  xlabel = {ancho (m)}, ylabel = {$h$ (m)},
+  y dir  = reverse,
+  xtick = {0,4},
+  ytick = {0,2,5},
+  yticklabels = {superficie, $2$, $5$},
+  grid  = major,
+  grid style = {line width=0.3pt, draw=gray!25},
+  tick label style = {font=\small},
+  height = 7cm, width = 8cm
+]
+% Superficie del agua
+\addplot[cyan!60!black, thick, dashed, domain=-0.5:5.0] {0}
+  node[pos=0.95, above, font=\small] {superficie};
+% Compuerta (rectángulo)
+\fill[blue!20] (axis cs:0,2) rectangle (axis cs:4,5);
+\draw[blue!70!black, thick] (axis cs:0,2) rectangle (axis cs:4,5);
+\node[blue!70!black, font=\small] at (axis cs:2,3.5) {Compuerta};
+% Franja diferencial
+\fill[red!30] (axis cs:0,3.2) rectangle (axis cs:4,3.5);
+\draw[red!80!black] (axis cs:0,3.2) rectangle (axis cs:4,3.5);
+\node[red!80!black, font=\small, right] at (axis cs:4.05,3.35) {$dh$};
+% Flecha de presión
+\draw[<-, violet!80!black, thick] (axis cs:4.0,3.35) -- (axis cs:4.6,3.35)
+  node[right, font=\small] {$P(h)=\rho g h$};
+% Cotas
+\draw[<->, gray] (axis cs:-0.3,2) -- (axis cs:-0.3,5)
+  node[midway, left, font=\small] {$3\,\text{m}$};
+\draw[<->, gray] (axis cs:0,5.4) -- (axis cs:4,5.4)
+  node[midway, below, font=\small] {$4\,\text{m}$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
 
 \textbf{Paso 2: Elemento diferencial.}
-$dF = P(h)\cdot w(h)\,dh = (\rho g h)(4)\,dh = 39200\,h\,dh$.
+La presión a profundidad $h$ es $P(h)=\rho g h$. La fuerza sobre una
+franja horizontal de altura $dh$ es:
+\[
+  dF = P(h)\cdot w\,dh = (1000)(9{,}8)(h)(4)\,dh = 39200\,h\,dh\;\text{(N)}.
+\]
 
-\textbf{Paso 3: Límites.} $h\in[2,5]$.
+\textbf{Paso 3: Límites.} $h\in[2,5]\,\text{m}$.
 
 \textbf{Paso 4: Evaluación.}
-\[
-  F = \int_2^5 39200\,h\,dh
-    = 39200\left[\frac{h^2}{2}\right]_2^5
-    = 39200\cdot\frac{25-4}{2}
-    = 39200\cdot 10.5
-    = \boxed{411600\,\text{N}\approx 411.6\,\text{kN}}.
-\]
+\begin{align*}
+  F &= \int_2^5 39200\,h\,dh
+     = 39200\left[\frac{h^2}{2}\right]_2^5
+     = 39200\cdot\frac{5^2-2^2}{2} \\
+    &= 39200\cdot\frac{25-4}{2}
+     = 39200\times 10{,}5
+     = \boxed{411600\,\text{N} \approx 411{,}6\,\text{kN}}.\qedhere
+\end{align*}
 \end{myproof}
 \end{example}
 
