@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (MiKTeX 25.4) (format=lualatex 2025.7.7)  22 APR 2026 11:23
+This is LuaHBTeX, Version 1.22.0 (MiKTeX 25.4) (format=lualatex 2025.7.7)  27 APR 2026 16:27
  restricted system commands enabled.
 **anfalearNotasCalculo.tex
 (./anfalearNotasCalculo.tex
@@ -2423,8 +2423,8 @@ warning  (pdf backend): ignoring duplicate destination with the name 'prob.76'
 warning  (pdf backend): ignoring duplicate destination with the name 'prob.77'
 
 
-LaTeX Info: Redefining \. on input line 1185.
-LaTeX Info: Redefining \% on input line 1185.
+LaTeX Info: Redefining \. on input line 1191.
+LaTeX Info: Redefining \% on input line 1191.
 [80]
 warning  (pdf backend): ignoring duplicate destination with the name 'prob.78'
 
@@ -2437,8 +2437,8 @@ warning  (pdf backend): ignoring duplicate destination with the name 'prob.81'
 warning  (pdf backend): ignoring duplicate destination with the name 'prob.82'
 
 
-LaTeX Info: Redefining \. on input line 1287.
-LaTeX Info: Redefining \% on input line 1287.
+LaTeX Info: Redefining \. on input line 1295.
+LaTeX Info: Redefining \% on input line 1295.
 [81]) (./apderivadas.tex
 
 LaTeX Info: Redefining \. on input line 1.
@@ -4070,6 +4070,10 @@ LaTeX Info: Redefining \% on input line 11.
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-06-09>
  ***********
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `anfalearNotasCalculo.out' has not changed.
 (rerunfilecheck)             Checksum: EEF775EB31271D23D1E64542CBDCC3C7;25927.
 )
@@ -4121,7 +4125,7 @@ e1/public/amsfonts/cm/cmsy6.pfb><C:/Users/anfalear/AppData/Local/Programs/MiKTeX
 /fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/anfalear/AppData/Local/Progr
 ams/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/anfalear/App
 Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on anfalearNotasCalculo.pdf (183 pages, 1723472 bytes).
+Output written on anfalearNotasCalculo.pdf (183 pages, 1723173 bytes).
 
 PDF statistics: 3799 PDF objects out of 4296 (max. 8388607)
  1745 named destinations out of 2073 (max. 131072)
