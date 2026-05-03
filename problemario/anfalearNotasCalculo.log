@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (MiKTeX 25.4) (format=lualatex 2025.7.7)  27 APR 2026 16:57
+This is LuaHBTeX, Version 1.22.0 (MiKTeX 25.4) (format=lualatex 2025.7.7)  3 MAY 2026 18:55
  restricted system commands enabled.
 **anfalearNotasCalculo.tex
 (./anfalearNotasCalculo.tex
@@ -1870,17 +1870,21 @@ LaTeX Info: Redefining \. on input line 507.
 LaTeX Info: Redefining \% on input line 507.
 [15]
 
-LaTeX Info: Redefining \. on input line 565.
-LaTeX Info: Redefining \% on input line 565.
+LaTeX Info: Redefining \. on input line 564.
+LaTeX Info: Redefining \% on input line 564.
 [16]
 
-LaTeX Info: Redefining \. on input line 622.
-LaTeX Info: Redefining \% on input line 622.
-[17])
+LaTeX Info: Redefining \. on input line 621.
+LaTeX Info: Redefining \% on input line 621.
+[17]
+
+LaTeX Info: Redefining \. on input line 678.
+LaTeX Info: Redefining \% on input line 678.
+[18])
 
 LaTeX Info: Redefining \. on input line 423.
 LaTeX Info: Redefining \% on input line 423.
-[18] (./anfalearNotasCalculo.lof
+[19] (./anfalearNotasCalculo.lof
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 )
@@ -1889,13 +1893,7 @@ LaTeX Info: Redefining \% on input line 1.
 \openout7 = anfalearNotasCalculo.lof
  (./politicas.tex
 
-[19]
-
-LaTeX Info: Redefining \. on input line 1.
-LaTeX Info: Redefining \% on input line 1.
-[20
-
-]
+[20]
 Capítulo 1.
 
 Overfull \hbox (6.79999pt too wide) in paragraph at lines 3--6
@@ -1904,7 +1902,9 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 3--6
 
 
 
-[21]
+[21
+
+]
 
 LaTeX Info: Redefining \. on input line 94.
 LaTeX Info: Redefining \% on input line 94.
@@ -3712,67 +3712,389 @@ LaTeX Info: Redefining \. on input line 2259.
 LaTeX Info: Redefining \% on input line 2259.
 [161]) (./impropias.tex
 
-LaTeX Info: Redefining \. on input line 1.
-LaTeX Info: Redefining \% on input line 1.
+LaTeX Info: Redefining \. on input line 14.
+LaTeX Info: Redefining \% on input line 14.
 [162]
 Capítulo 10.
 
-warning  (pdf backend): ignoring duplicate destination with the name 'prob.2'
+warning  (pdf backend): ignoring duplicate destination with the name 'definition
+.1'
 
-Overfull \hbox (9.72513pt too wide) in paragraph at lines 10--12
-[][]\TU/lmr/bx/n/12 Pro-ble-ma 10.2 \TU/lmr/m/n/12 (Fun-ción gam-ma)\TU/lmr/bx
-/n/12 . []\TU/lmr/m/n/12 La fun-ción Gam-ma se de-fi-ne pa-ra $\OML/cmm/m/it/1
-2 n > \OT1/cmr/m/n/12 0$ \TU/lmr/m/n/12 co-mo: $\OT1/cmr/m/n/12 ^^@(\OML/cmm/m/
-it/12 n\OT1/cmr/m/n/12 ) = [][] \OML/cmm/m/it/12 x[]e[] dx$\TU/lmr/m/n/12 . 
- []
+warning  (pdf backend): ignoring duplicate destination with the name 'theorem.2'
 
-) (./polares.tex
+
+warning  (pdf backend): ignoring duplicate destination with the name 'rem.3'
+
 
 [163
 
 ]
+warning  (pdf backend): ignoring duplicate destination with the name 'example.4'
 
-LaTeX Info: Redefining \. on input line 1.
-LaTeX Info: Redefining \% on input line 1.
-[164
+Package pgfplots info on input line 114: fill between: activating layered graph
+ics
+Package pgfplots info on input line 114: Setting layers 'axis background,axis g
+rid,axis ticks,axis lines,axis tick labels,pre main,main,axis descriptions,axis
+ foreground'...
 
-]
-Capítulo 11.
-
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 4.
-
-
-warning  (pdf backend): ignoring duplicate destination with the name 'theorem.1'
+warning  (pdf backend): ignoring duplicate destination with the name 'example.5'
 
 
-warning  (pdf backend): ignoring duplicate destination with the name 'example.2'
+Underfull \vbox (badness 1609) has occurred while \output is active []
 
 
-Overfull \hbox (6.69827pt too wide) in paragraph at lines 16--19
-[][]\TU/lmr/bx/n/12 Ejem-plo 11.2 \TU/lmr/m/n/12 (Cir-cun-fe-ren-cia vía pa-r
-á-me-tros)\TU/lmr/bx/n/12 . []\TU/lmr/m/n/12 Pa-ra $\OML/cmm/m/it/12 x \OT1/cm
-r/m/n/12 = \OML/cmm/m/it/12 R [] t$\TU/lmr/m/n/12 , $\OML/cmm/m/it/12 y \OT1/cm
-r/m/n/12 = \OML/cmm/m/it/12 R [] t$\TU/lmr/m/n/12 , $\OML/cmm/m/it/12 t \OMS/cm
-sy/m/n/12 2 \OT1/cmr/m/n/12 [0\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 2\OML/cmm/m/it
-/12 \OT1/cmr/m/n/12 ]$\TU/lmr/m/n/12 : $[] \OT1/cmr/m/n/12 =
+
+LaTeX Info: Redefining \. on input line 152.
+LaTeX Info: Redefining \% on input line 152.
+[164]
+Package pgfplots info on input line 178: fill between: activating layered graph
+ics
+Package pgfplots info on input line 178: Setting layers 'axis background,axis g
+rid,axis ticks,axis lines,axis tick labels,pre main,main,axis descriptions,axis
+ foreground'...
+
+
+LaTeX Info: Redefining \. on input line 220.
+LaTeX Info: Redefining \% on input line 220.
+[165]
+warning  (pdf backend): ignoring duplicate destination with the name 'definition
+.6'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'rem.7'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'example.8'
+
+Package pgfplots info on input line 287: fill between: activating layered graph
+ics
+Package pgfplots info on input line 287: Setting layers 'axis background,axis g
+rid,axis ticks,axis lines,axis tick labels,pre main,main,axis descriptions,axis
+ foreground'...
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+LaTeX Info: Redefining \. on input line 312.
+LaTeX Info: Redefining \% on input line 312.
+[166]
+warning  (pdf backend): ignoring duplicate destination with the name 'theorem.9'
+
+
+warning  (pdf backend): ignoring duplicate destination with the name 'rem.10'
+
+
+LaTeX Info: Redefining \. on input line 348.
+LaTeX Info: Redefining \% on input line 348.
+[167]
+warning  (pdf backend): ignoring duplicate destination with the name 'example.11
+'
+Package pgfplots info on input line 388: fill between: activating layered graph
+ics
+Package pgfplots info on input line 388: Setting layers 'axis background,axis g
+rid,axis ticks,axis lines,axis tick labels,pre main,main,axis descriptions,axis
+ foreground'...
+
+
+LaTeX Info: Redefining \. on input line 437.
+LaTeX Info: Redefining \% on input line 437.
+[168]
+warning  (pdf backend): ignoring duplicate destination with the name 'theorem.13
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'example.15
+'
+Package pgfplots info on input line 511: Using 'lua backend=false' for plot 0 (
+type 'pgfplothandlerlineto'): LUA does not support y filter (yet).
+Package pgfplots info on input line 518: fill between: activating layered graph
+ics
+Package pgfplots info on input line 518: Setting layers 'axis background,axis g
+rid,axis ticks,axis lines,axis tick labels,pre main,main,axis descriptions,axis
+ foreground'...
+
+
+LaTeX Info: Redefining \. on input line 540.
+LaTeX Info: Redefining \% on input line 540.
+[169]
+warning  (pdf backend): ignoring duplicate destination with the name 'example.16
+'
+Package pgfplots info on input line 569: Using 'lua backend=false' for plot 0 (
+type 'pgfplothandlerlineto'): LUA does not support y filter (yet).
+Package pgfplots info on input line 572: Using 'lua backend=false' for plot 1 (
+type 'pgfplothandlerlineto'): LUA does not support y filter (yet).
+Package pgfplots info on input line 584: fill between: activating layered graph
+ics
+Package pgfplots info on input line 584: Setting layers 'axis background,axis g
+rid,axis ticks,axis lines,axis tick labels,pre main,main,axis descriptions,axis
+ foreground'...
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+LaTeX Info: Redefining \. on input line 616.
+LaTeX Info: Redefining \% on input line 616.
+[170]
+warning  (pdf backend): ignoring duplicate destination with the name 'rem.17'
+
+
+LaTeX Info: Redefining \. on input line 632.
+LaTeX Info: Redefining \% on input line 632.
+[171]
+warning  (pdf backend): ignoring duplicate destination with the name 'example.18
+'
+Package pgfplots info on input line 674: fill between: activating layered graph
+ics
+Package pgfplots info on input line 674: Setting layers 'axis background,axis g
+rid,axis ticks,axis lines,axis tick labels,pre main,main,axis descriptions,axis
+ foreground'...
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+LaTeX Info: Redefining \. on input line 717.
+LaTeX Info: Redefining \% on input line 717.
+[172]
+
+LaTeX Info: Redefining \. on input line 770.
+LaTeX Info: Redefining \% on input line 770.
+[173]
+
+LaTeX Info: Redefining \. on input line 840.
+LaTeX Info: Redefining \% on input line 840.
+[174]
+Overfull \hbox (10.62016pt too wide) in paragraph at lines 910--912
+[]\TU/lmr/m/n/12 Ve-ri-fi-que que $\OML/cmm/m/it/12 f$ \TU/lmr/m/n/12 es efec-ti
+-va-men-te una fun-ción de den-si-dad de pro-ba-bi-li-dad, es de-cir, que $[][
+] \OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) \OML/c
+mm/m/it/12 dx \OT1/cmr/m/n/12 =
  []
 
 
+
+LaTeX Info: Redefining \. on input line 912.
+LaTeX Info: Redefining \% on input line 912.
+[175]
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.34'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.35'
+) (./polares.tex
+
+LaTeX Info: Redefining \. on input line 3.
+LaTeX Info: Redefining \% on input line 3.
+[176]
+Capítulo 11.
+
+warning  (pdf backend): ignoring duplicate destination with the name 'definition
+.1'
+
+
+[177
+
+]
 warning  (pdf backend): ignoring duplicate destination with the name 'theorem.3'
 
 
-warning  (pdf backend): ignoring duplicate destination with the name 'example.4'
+warning  (pdf backend): ignoring duplicate destination with the name 'rem.4'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'example.5'
 
 
 
-[165]
-warning  (pdf backend): ignoring duplicate destination with the name 'prob.10'
+LaTeX Info: Redefining \. on input line 149.
+LaTeX Info: Redefining \% on input line 149.
+[178]
+warning  (pdf backend): ignoring duplicate destination with the name 'example.6'
+
+Package pgfplots info on input line 211: fill between: activating layered graph
+ics
+Package pgfplots info on input line 211: Setting layers 'axis background,axis g
+rid,axis ticks,axis lines,axis tick labels,pre main,main,axis descriptions,axis
+ foreground'...
+
+
+LaTeX Info: Redefining \. on input line 242.
+LaTeX Info: Redefining \% on input line 242.
+[179]
+warning  (pdf backend): ignoring duplicate destination with the name 'theorem.7'
+
+
+warning  (pdf backend): ignoring duplicate destination with the name 'example.8'
+
+
+
+LaTeX Info: Redefining \. on input line 353.
+LaTeX Info: Redefining \% on input line 353.
+[180]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+LaTeX Info: Redefining \. on input line 426.
+LaTeX Info: Redefining \% on input line 426.
+[181]
+warning  (pdf backend): ignoring duplicate destination with the name 'rem.10'
+
+Underfull \vbox (badness 2846) has occurred while \output is active []
+
+
+
+LaTeX Info: Redefining \. on input line 448.
+LaTeX Info: Redefining \% on input line 448.
+[182]
+warning  (pdf backend): ignoring duplicate destination with the name 'definition
+.11'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'rem.12'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'rem.13'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'rem.14'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'example.15
+'
+Package pgfplots info on input line 569: Deactivating LUA version of plot expre
+ssion for plot 0 (type 'pgfplothandlerlineto'): x expression '(1+cos(\x ))*cos(
+\x )' contains a TeX macro.
+Package pgfplots info on input line 569: Deactivating LUA version of plot expre
+ssion for plot 0 (type 'pgfplothandlerlineto'): y expression ' {(1+cos(\x ))*si
+n(\x )}' contains a TeX macro.
+Package pgfplots info on input line 618: Deactivating LUA version of plot expre
+ssion for plot 0 (type 'pgfplothandlerlineto'): x expression 'cos(3*\x )*cos(\x
+ )' contains a TeX macro.
+Package pgfplots info on input line 618: Deactivating LUA version of plot expre
+ssion for plot 0 (type 'pgfplothandlerlineto'): y expression ' {cos(3*\x )*sin(
+\x )}' contains a TeX macro.
+Package pgfplots info on input line 620: Deactivating LUA version of plot expre
+ssion for plot 1 (type 'pgfplothandlerlineto'): x expression 'cos(3*\x )*cos(\x
+ )' contains a TeX macro.
+Package pgfplots info on input line 620: Deactivating LUA version of plot expre
+ssion for plot 1 (type 'pgfplothandlerlineto'): y expression ' {cos(3*\x )*sin(
+\x )}' contains a TeX macro.
+Package pgfplots info on input line 636: Deactivating LUA version of plot expre
+ssion for plot 0 (type 'pgfplothandlerlineto'): x expression 'cos(2*\x )*cos(\x
+ )' contains a TeX macro.
+Package pgfplots info on input line 636: Deactivating LUA version of plot expre
+ssion for plot 0 (type 'pgfplothandlerlineto'): y expression ' {cos(2*\x )*sin(
+\x )}' contains a TeX macro.
+Package pgfplots info on input line 686: Deactivating LUA version of plot expre
+ssion for plot 0 (type 'pgfplothandlerlineto'): x expression 'sqrt(cos(2*\x ))*
+cos(\x )' contains a TeX macro.
+Package pgfplots info on input line 686: Deactivating LUA version of plot expre
+ssion for plot 0 (type 'pgfplothandlerlineto'): y expression ' {sqrt(cos(2*\x )
+)*sin(\x )}' contains a TeX macro.
+Package pgfplots info on input line 691: Deactivating LUA version of plot expre
+ssion for plot 1 (type 'pgfplothandlerlineto'): x expression 'sqrt(cos(2*\x ))*
+cos(\x )' contains a TeX macro.
+Package pgfplots info on input line 691: Deactivating LUA version of plot expre
+ssion for plot 1 (type 'pgfplothandlerlineto'): y expression ' {sqrt(cos(2*\x )
+)*sin(\x )}' contains a TeX macro.
+
+
+LaTeX Info: Redefining \. on input line 776.
+LaTeX Info: Redefining \% on input line 776.
+[183]
+
+LaTeX Info: Redefining \. on input line 776.
+LaTeX Info: Redefining \% on input line 776.
+[184]
+
+LaTeX Info: Redefining \. on input line 776.
+LaTeX Info: Redefining \% on input line 776.
+[185]
+warning  (pdf backend): ignoring duplicate destination with the name 'theorem.16
+'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'example.17
+'
+Package pgfplots info on input line 837: fill between: activating layered graph
+ics
+Package pgfplots info on input line 837: Setting layers 'axis background,axis g
+rid,axis ticks,axis lines,axis tick labels,pre main,main,axis descriptions,axis
+ foreground'...
+
+Package pgf Warning: fill between skipped: the soft-clipped second input path i
+s empty. on input line 837.
+
+
+
+LaTeX Info: Redefining \. on input line 864.
+LaTeX Info: Redefining \% on input line 864.
+[186]
+warning  (pdf backend): ignoring duplicate destination with the name 'example.18
+'
+Package pgfplots info on input line 892: Deactivating LUA version of plot expre
+ssion for plot 0 (type 'pgfplothandlerlineto'): x expression '(1+cos(\x ))*cos(
+\x )' contains a TeX macro.
+Package pgfplots info on input line 892: Deactivating LUA version of plot expre
+ssion for plot 0 (type 'pgfplothandlerlineto'): y expression ' {(1+cos(\x ))*si
+n(\x )}' contains a TeX macro.
+Package pgfplots info on input line 895: Deactivating LUA version of plot expre
+ssion for plot 1 (type 'pgfplothandlerlineto'): x expression '(1-sin(\x ))*cos(
+\x )' contains a TeX macro.
+Package pgfplots info on input line 895: Deactivating LUA version of plot expre
+ssion for plot 1 (type 'pgfplothandlerlineto'): y expression ' {(1-sin(\x ))*si
+n(\x )}' contains a TeX macro.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+LaTeX Info: Redefining \. on input line 953.
+LaTeX Info: Redefining \% on input line 953.
+[187]
+warning  (pdf backend): ignoring duplicate destination with the name 'example.20
+'
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+LaTeX Info: Redefining \. on input line 1101.
+LaTeX Info: Redefining \% on input line 1101.
+[188]
+
+LaTeX Info: Redefining \. on input line 1101.
+LaTeX Info: Redefining \% on input line 1101.
+[189]
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.21'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.22'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.23'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.24'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.25'
+
+
+LaTeX Info: Redefining \. on input line 1156.
+LaTeX Info: Redefining \% on input line 1156.
+[190]
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.26'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.27'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.28'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.29'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.30'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.31'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'prob.32'
 ) (./sucesionesyseries.tex
 
 LaTeX Info: Redefining \. on input line 4.
 LaTeX Info: Redefining \% on input line 4.
-[166]
+[191]
+
+LaTeX Info: Redefining \. on input line 4.
+LaTeX Info: Redefining \% on input line 4.
+[192
+
+]
 Capítulo 12.
 
 warning  (pdf backend): ignoring duplicate destination with the name 'definition
@@ -3787,9 +4109,7 @@ warning  (pdf backend): ignoring duplicate destination with the name 'definition
 warning  (pdf backend): ignoring duplicate destination with the name 'rem.4'
 
 
-[167
-
-]
+[193]
 warning  (pdf backend): ignoring duplicate destination with the name 'theorem.6'
 
 
@@ -3813,7 +4133,7 @@ warning  (pdf backend): ignoring duplicate destination with the name 'example.14
 
 LaTeX Info: Redefining \. on input line 152.
 LaTeX Info: Redefining \% on input line 152.
-[168]
+[194]
 warning  (pdf backend): ignoring duplicate destination with the name 'example.15
 '
 
@@ -3825,6 +4145,9 @@ warning  (pdf backend): ignoring duplicate destination with the name 'rem.17'
 warning  (pdf backend): ignoring duplicate destination with the name 'definition
 .18'
 
+warning  (pdf backend): ignoring duplicate destination with the name 'theorem.19
+'
+
 warning  (pdf backend): ignoring duplicate destination with the name 'rem.20'
 
 warning  (pdf backend): ignoring duplicate destination with the name 'example.21
@@ -3835,7 +4158,7 @@ warning  (pdf backend): ignoring duplicate destination with the name 'rem.22'
 
 LaTeX Info: Redefining \. on input line 223.
 LaTeX Info: Redefining \% on input line 223.
-[169]
+[195]
 warning  (pdf backend): ignoring duplicate destination with the name 'theorem.23
 '
 
@@ -3859,7 +4182,7 @@ warning  (pdf backend): ignoring duplicate destination with the name 'definition
 
 LaTeX Info: Redefining \. on input line 305.
 LaTeX Info: Redefining \% on input line 305.
-[170]
+[196]
 warning  (pdf backend): ignoring duplicate destination with the name 'rem.32'
 
 warning  (pdf backend): ignoring duplicate destination with the name 'theorem.33
@@ -3879,7 +4202,7 @@ warning  (pdf backend): ignoring duplicate destination with the name 'example.37
 
 LaTeX Info: Redefining \. on input line 372.
 LaTeX Info: Redefining \% on input line 372.
-[171]
+[197]
 warning  (pdf backend): ignoring duplicate destination with the name 'example.40
 '
 
@@ -3899,7 +4222,7 @@ warning  (pdf backend): ignoring duplicate destination with the name 'example.45
 
 LaTeX Info: Redefining \. on input line 449.
 LaTeX Info: Redefining \% on input line 449.
-[172]
+[198]
 warning  (pdf backend): ignoring duplicate destination with the name 'example.47
 '
 
@@ -3915,7 +4238,7 @@ warning  (pdf backend): ignoring duplicate destination with the name 'example.51
 
 LaTeX Info: Redefining \. on input line 526.
 LaTeX Info: Redefining \% on input line 526.
-[173]
+[199]
 Overfull \hbox (21.36761pt too wide) in paragraph at lines 544--545
 [][]$[] \OML/cmm/m/it/12 a[]$ \TU/lmr/m/n/12 con-ver-ge \TU/lmr/bx/n/12 ab-so-lu
 -ta-men-te \TU/lmr/m/n/12 si $[] \OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 a[]\OMS/cms
@@ -3926,15 +4249,15 @@ y/m/n/12 j$
 
 LaTeX Info: Redefining \. on input line 594.
 LaTeX Info: Redefining \% on input line 594.
-[174]
+[200]
 
 LaTeX Info: Redefining \. on input line 666.
 LaTeX Info: Redefining \% on input line 666.
-[175]
+[201]
 
 LaTeX Info: Redefining \. on input line 666.
 LaTeX Info: Redefining \% on input line 666.
-[176
+[202
 
 ]
 Capítulo 13.
@@ -3951,7 +4274,7 @@ warning  (pdf backend): ignoring duplicate destination with the name 'example.4'
 
 
 
-[177]
+[203]
 warning  (pdf backend): ignoring duplicate destination with the name 'example.5'
 
 
@@ -3977,13 +4300,15 @@ warning  (pdf backend): ignoring duplicate destination with the name 'rem.12'
 warning  (pdf backend): ignoring duplicate destination with the name 'theorem.13
 '
 
+warning  (pdf backend): ignoring duplicate destination with the name 'rem.14'
+
 warning  (pdf backend): ignoring duplicate destination with the name 'definition
 .15'
 
 
 LaTeX Info: Redefining \. on input line 815.
 LaTeX Info: Redefining \% on input line 815.
-[178]
+[204]
 warning  (pdf backend): ignoring duplicate destination with the name 'theorem.16
 '
 
@@ -4007,7 +4332,7 @@ warning  (pdf backend): ignoring duplicate destination with the name 'example.22
 
 LaTeX Info: Redefining \. on input line 885.
 LaTeX Info: Redefining \% on input line 885.
-[179]
+[205]
 warning  (pdf backend): ignoring duplicate destination with the name 'theorem.24
 '
 
@@ -4025,7 +4350,7 @@ warning  (pdf backend): ignoring duplicate destination with the name 'theorem.28
 
 LaTeX Info: Redefining \. on input line 954.
 LaTeX Info: Redefining \% on input line 954.
-[180]
+[206]
 warning  (pdf backend): ignoring duplicate destination with the name 'example.30
 '
 
@@ -4035,7 +4360,7 @@ warning  (pdf backend): ignoring duplicate destination with the name 'example.31
 
 LaTeX Info: Redefining \. on input line 1018.
 LaTeX Info: Redefining \% on input line 1018.
-[181]
+[207]
 warning  (pdf backend): ignoring duplicate destination with the name 'theorem.33
 '
 
@@ -4054,9 +4379,9 @@ warning  (pdf backend): ignoring duplicate destination with the name 'rem.38'
 
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-[182])
+[208])
 
-[183
+[209
 
 ]
 \tf@loe=\write8
@@ -4070,22 +4395,42 @@ LaTeX Info: Redefining \% on input line 11.
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-06-09>
  ***********
-Package rerunfilecheck Info: File `anfalearNotasCalculo.out' has not changed.
-(rerunfilecheck)             Checksum: EEF775EB31271D23D1E64542CBDCC3C7;25927.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `anfalearNotasCalculo.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `anfalearNotasCalculo.out':
+(rerunfilecheck)             Before: CF464C663D5AAC927D9481E7781CE5C5;29321
+(rerunfilecheck)             After:  75047A24F43D187AB27541C4B91CC23B;28032.
 )
 
 Here is how much of LuaTeX's memory you used:
- 75709 strings out of 470205
- 156260,2848258 words of node,token memory allocated
- 5268 words of node memory still in use:
-   32 hlist, 2 vlist, 14 rule, 2 glue, 4 kern, 1 glyph, 1315 attribute, 101 glue
-_spec, 695 attribute_list, 2 write, 24 pdf_literal, 5 pdf_action, 24 pdf_colorst
+ 76460 strings out of 470205
+ 195327,2848258 words of node,token memory allocated
+ 6390 words of node memory still in use:
+   32 hlist, 2 vlist, 14 rule, 2 glue, 4 kern, 1 glyph, 1689 attribute, 101 glue
+_spec, 882 attribute_list, 2 write, 24 pdf_literal, 5 pdf_action, 24 pdf_colorst
 ack nodes
-   avail lists: 1:27,2:9260,3:4271,4:242,5:822,6:181,7:10946,8:87,9:1966,10:29,1
-1:1168
- 100780 multiletter control sequences out of 65536+600000
+   avail lists: 1:26,2:19442,3:6336,4:281,5:959,6:181,7:11566,8:87,9:2005,10:29,
+11:1168
+ 101320 multiletter control sequences out of 65536+600000
  107 fonts using 8171135 bytes
- 76i,21n,95p,1148b,2945s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 76i,21n,95p,1148b,3554s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+warning  (pdf backend): unreferenced destination with name 'subsection.10.4.5'
+
+warning  (pdf backend): unreferenced destination with name 'subsection.10.4.4'
+
+warning  (pdf backend): unreferenced destination with name 'subsection.10.4.3'
+
+warning  (pdf backend): unreferenced destination with name 'subsection.10.4.2'
+
+warning  (pdf backend): unreferenced destination with name 'subsection.10.4.1'
 <c:/users/anfalear/appdata/local/programs/miktex/fonts/opentype/public/lm/lmsans
 10-boldoblique.otf><c:/users/anfalear/appdata/local/programs/miktex/fonts/openty
 pe/public/lm/lmromancaps10-oblique.otf><c:/users/anfalear/appdata/local/programs
@@ -4121,9 +4466,9 @@ e1/public/amsfonts/cm/cmsy6.pfb><C:/Users/anfalear/AppData/Local/Programs/MiKTeX
 /fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/anfalear/AppData/Local/Progr
 ams/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/anfalear/App
 Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on anfalearNotasCalculo.pdf (183 pages, 1723150 bytes).
+Output written on anfalearNotasCalculo.pdf (209 pages, 1992087 bytes).
 
-PDF statistics: 3799 PDF objects out of 4296 (max. 8388607)
- 1745 named destinations out of 2073 (max. 131072)
- 1277 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 4209 PDF objects out of 4296 (max. 8388607)
+ 1956 named destinations out of 2073 (max. 131072)
+ 1389 words of extra memory for PDF output out of 10000 (max. 100000000)
 

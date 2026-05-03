@@ -1,23 +1,967 @@
-\chapter{Integrales impropias}
 
-\begin{prob}[Trompeta de Gabriel] Dada la región acotada por la gráfica de $f(x) = 1/x$, el eje $x$ y la recta $x=1$, para $x \geq 1$.
-\begin{enumerate}
-  \item Demuestre que el volumen del sólido generado al girar esta región alrededor del eje $x$ es finito e igual a $\pi$.
-  \item Demuestre que el área de la superficie de revolución resultante es infinita comparándola con la integral divergente $\int_{1}^{\infty} \frac{1}{x} dx$.
-\end{enumerate}
-\end{prob}
 
-\begin{prob}[Función gamma] La función Gamma se define para $n > 0$ como: $\Gamma(n) = \int_{0}^{\infty} x^{n-1} e^{-x} \, dx$.
-\begin{enumerate} 
-  \item Use integración por partes para demostrar la relación de recurrencia $\Gamma(n+1) = n\Gamma(n)$.
-  \item Demuestre que si $n$ es un entero positivo, $\Gamma(n) = (n-1)!$.
-  \item Evalúe $\Gamma(1), \Gamma(2)$ y $\Gamma(3)$.
-\end{enumerate}
-\end{prob}
+% ============================================================
+%  CAPÍTULO: INTEGRALES IMPROPIAS
+%  Libro: Notas de Cálculo — anfalearNotasCalculo
+%  Requiere en el preámbulo del libro:
+%    \usepackage{pgfplots}
+%    \pgfplotsset{compat=1.18}
+%    \usepgfplotslibrary{fillbetween}
+%    \usetikzlibrary{patterns,arrows.meta}
+%    \usepackage{enumerate}   % para [(a)]
+% ============================================================
 
-\begin{prob}[Convergencia de Intervalos Infinitos] Determine si la siguiente integral converge y, de ser así, encuentre su valor:
+\chapter{Integrales Impropias}
+
+
+En el marco del cálculo de Riemann, la integral definida $\int_{a}^{b} f(x)\,dx$ se construye
+sobre intervalos cerrados y acotados $[a, b]$. Sin embargo, el hilo conductor que conecta
+la geometría con el análisis nos invita a extender esta noción: si el área bajo una curva es la
+suma de infinitos rectángulos infinitesimales, ¿qué ocurre cuando la región de integración se
+prolonga indefinidamente hacia la derecha o hacia la izquierda? Para dar sentido matemático a
+fenómenos físicos, modelos probabilísticos y problemas de ingeniería donde el dominio no está
+acotado, introducimos el concepto de \textbf{integral impropia de primer tipo}.
+
+\begin{definition}[Integral impropia con límite infinito]
+Sea $f(x)$ una función continua en $[a, \infty)$. Definimos la integral impropia con límite
+superior infinito como el límite de integrales propias:
 \[
-\int_{-\infty}^{\infty} \frac{e^x}{1 + e^{2x}} \, dx
+  \int_{a}^{\infty} f(x)\,dx = \lim_{b \to \infty} \int_{a}^{b} f(x)\,dx.
 \]
-\textit{Sugerencia: Divida la integral en dos intervalos $(-\infty, 0]$ y $[0, \infty)$ y use la sustitución $u = e^x$.}
+De manera análoga, si el límite inferior es infinito:
+\[
+  \int_{-\infty}^{b} f(x)\,dx = \lim_{a \to -\infty} \int_{a}^{b} f(x)\,dx.
+\]
+Si el intervalo es $(-\infty,\infty)$, la integral se define separando en un punto arbitrario
+$c$ (frecuentemente $c=0$):
+\[
+  \int_{-\infty}^{\infty} f(x)\,dx
+  = \int_{-\infty}^{c} f(x)\,dx + \int_{c}^{\infty} f(x)\,dx.
+\]
+\end{definition}
+
+\begin{theorem}[Criterio de convergencia]
+Las integrales impropias de límite infinito \textbf{convergen} si y solo si los límites
+involucrados en su definición existen y son números reales finitos. Si el límite es $\pm\infty$
+o no existe, se dice que la integral \textbf{diverge}.
+\begin{proof}
+La integral propia $\int_{a}^{b} f(x)\,dx$ define una función continua de $b$. El límite
+$\lim_{b\to\infty}$ existe si y solo si la sucesión de sumas de Riemann parciales está acotada y
+tiende a un valor finito. La divergencia ocurre cuando el crecimiento acumulado del área supera
+cualquier cota finita, o cuando hay oscilaciones no amortiguadas que impiden la existencia del
+límite.
+\end{proof}
+\end{theorem}
+
+\begin{rem}Es importante tener en cuenta algunas observaciones básicas:
+\begin{itemize}
+    \item \textbf{Jerarquía de crecimiento:} Las funciones exponenciales con exponente negativo
+          ($e^{-kx}$, $k>0$) decaen mucho más rápido que cualquier función racional $1/x^p$. Esto
+          garantiza la convergencia de integrales como $\int_0^\infty x^n e^{-x}\,dx$.
+
+    \item \textbf{Criterio $p$ para límites infinitos:}
+          $\displaystyle\int_{1}^{\infty}\frac{dx}{x^p}$ converge
+          $\iff p>1$.
+
+    \item \textbf{Error frecuente:} No evalúe directamente $F(\infty)-F(a)$. Siempre plantee el
+          límite formal. La expresión $\infty - \infty$ es una \emph{forma indeterminada} que
+          requiere tratamiento analítico riguroso; en particular, aplique la regla de L'Hôpital o
+          la jerarquía de crecimiento antes de concluir.
+\end{itemize}
+\end{rem}
+
+A continuación ilustramos el procedimiento paso a paso, desde el caso más sencillo hasta el
+que involucra límites en ambos extremos.
+
+% ------------------------------------------------------------
+\begin{example}[Área bajo una campana exponencial decreciente]
+Calcule el valor de la integral impropia
+$\displaystyle\int_{0}^{\infty} x\,e^{-x}\,dx$.
+\end{example}
+\begin{myproof}
+\textbf{Paso 1: Análisis gráfico y región.}
+
+La función $f(x)=xe^{-x}$ es positiva para $x>0$, parte del origen, alcanza su máximo en
+$x=1$ (pues $f'(x)=e^{-x}(1-x)=0\Rightarrow x=1$, con $f(1)=e^{-1}$) y decae asintóticamente a
+$0$ cuando $x\to\infty$. La región de integración es el área infinita bajo la curva desde $x=0$
+hacia la derecha; visualizamos el límite superior $b$ como una \textbf{frontera móvil} que avanza
+indefinidamente.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=0.62\textwidth, height=0.38\textheight,
+    axis lines=middle,
+    xlabel={$x$}, ylabel={$y$},
+    xmin=-0.4, xmax=6.3, ymin=-0.04, ymax=0.44,
+    domain=0:6, samples=150,
+    xtick={0,1,2,3,4,5},
+    ytick={0,0.1,0.2,0.3},
+    legend pos=north east
+]
+\addplot[name path=f, thick, blue!80!black] {x*exp(-x)};
+\addlegendentry{$y=xe^{-x}$}
+\path[name path=eje] (axis cs:0,0) -- (axis cs:6,0);
+\addplot[blue!20, opacity=0.85]
+    fill between[of=f and eje, soft clip={domain=0:4.6}];
+\draw[dashed, red!70!black, thick]
+    (axis cs:4.6,0) node[below] {$b$}
+    -- (axis cs:4.6,{4.6*exp(-4.6)});
+\filldraw[red!80!black]
+    (axis cs:1,{exp(-1)}) circle (1.8pt)
+    node[above right] {\small Máx.\ $\bigl(1,\,e^{-1}\bigr)$};
+\node[blue!70!black] at (axis cs:2.2,0.16) {Región $[0,b]$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\textbf{Paso 2: Elemento diferencial.}
+Considerando franjas verticales de altura $f(x)$ y base $dx$:
+\[
+  dA = xe^{-x}\,dx.
+\]
+
+\textbf{Paso 3: Límites de integración.}
+El intervalo de integración es $[0,b]$; se toma el límite $b\to\infty$ para barrer toda la región.
+
+\textbf{Paso 4: Evaluación.}
+Aplicamos integración por partes con $u=x$ y $dv=e^{-x}\,dx$, lo que da $du=dx$ y $v=-e^{-x}$:
+\begin{align*}
+\int_{0}^{b} xe^{-x}\,dx
+  &= \Bigl[-xe^{-x}\Bigr]_0^b + \int_0^b e^{-x}\,dx \\
+  &= \bigl(-be^{-b}+0\bigr) + \Bigl[-e^{-x}\Bigr]_0^b \\
+  &= -be^{-b} - e^{-b} + 1
+   = 1 - e^{-b}(b+1).
+\end{align*}
+Tomando el límite (la forma $\infty/\infty$ se resuelve con L'Hôpital):
+\begin{align*}
+\lim_{b\to\infty}\bigl[1-e^{-b}(b+1)\bigr]
+  &= 1 - \lim_{b\to\infty}\frac{b+1}{e^{b}}
+   \;\stackrel{\text{L'H}}{=}\;
+   1 - \lim_{b\to\infty}\frac{1}{e^{b}} = 1 - 0 = 1.
+\end{align*}
+\[
+  \boxed{\int_{0}^{\infty} xe^{-x}\,dx = 1.}
+\]
+\end{myproof}
+
+% ------------------------------------------------------------
+\begin{example}[Integral con límites infinitos en ambos extremos]
+Determine si $\displaystyle\int_{-\infty}^{\infty}\frac{dx}{1+x^2}$ converge y, en caso
+afirmativo, calcule su valor.
+\end{example}
+\begin{myproof}
+\textbf{Paso 1: Análisis gráfico y región.}
+
+La función $f(x)=\tfrac{1}{1+x^2}$ es \textbf{par}, positiva en todo $\mathbb{R}$, alcanza su
+máximo $f(0)=1$ y posee asíntota horizontal $y=0$. La región bajo la curva se extiende
+infinitamente a ambos lados del eje $y$.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=0.62\textwidth, height=0.38\textheight,
+    axis lines=middle,
+    xlabel={$x$}, ylabel={$y$},
+    xmin=-6.2, xmax=6.2, ymin=-0.08, ymax=1.18,
+    domain=-6:6, samples=150,
+    xtick={-5,-3,-1,0,1,3,5},
+    ytick={0,0.5,1},
+    legend pos=north east
+]
+\addplot[name path=f, thick, purple!80!black] {1/(1+x^2)};
+\addlegendentry{$y=\tfrac{1}{1+x^2}$}
+\path[name path=eje] (axis cs:-6,0) -- (axis cs:6,0);
+\addplot[purple!18, opacity=0.90]
+    fill between[of=f and eje, soft clip={domain=-5.5:5.5}];
+\filldraw[black] (axis cs:0,1) circle (1.8pt) node[right] {\small $(0,1)$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\textbf{Paso 2: Elemento diferencial.}
+\[
+  dA = \frac{dx}{1+x^2}.
+\]
+
+\textbf{Paso 3: Límites de integración.}
+Separamos en $c=0$ para manejar los dos infinitos de forma \emph{independiente}:
+\[
+  \int_{-\infty}^{\infty}\frac{dx}{1+x^2}
+  = \int_{-\infty}^{0}\frac{dx}{1+x^2}
+  + \int_{0}^{\infty}\frac{dx}{1+x^2}.
+\]
+
+\textbf{Paso 4: Evaluación.}
+Usando $\int\tfrac{dx}{1+x^2}=\arctan(x)+C$:
+\begin{align*}
+\int_{-\infty}^{\infty}\frac{dx}{1+x^2}
+  &= \lim_{a\to -\infty}\Bigl[\arctan x\Bigr]_a^{0}
+   + \lim_{b\to\infty}\Bigl[\arctan x\Bigr]_0^{b} \\
+  &= \Bigl(0-\bigl(-\tfrac{\pi}{2}\bigr)\Bigr)
+   + \Bigl(\tfrac{\pi}{2}-0\Bigr)
+   = \frac{\pi}{2}+\frac{\pi}{2}.
+\end{align*}
+\[
+  \boxed{\int_{-\infty}^{\infty}\frac{dx}{1+x^2} = \pi.}
+\]
+\end{myproof}
+
+% ============================================================
+\section{Funciones de densidad de probabilidad}
+% ============================================================
+
+El hilo conductor entre el cálculo integral y la estadística reside en la interpretación
+geométrica del área: mientras que en geometría el área representa una magnitud espacial, en
+probabilidad representa la \textbf{certeza total}. Las variables aleatorias continuas, como la vida
+útil de un componente electrónico o la resistencia de un material, modelan sus distribuciones
+mediante funciones no negativas cuya área total bajo la curva debe ser exactamente $1$. Toda
+integral que aparezca en este marco es, en esencia, una integral impropia de primer tipo.
+
+\begin{definition}[Función de densidad de probabilidad]
+Una función $f(x)$ es una \textbf{función de densidad de probabilidad} (FDP) para una variable
+aleatoria continua $X$ si satisface:
+\begin{enumerate}
+    \item $f(x)\geq 0$ para todo $x\in\mathbb{R}$.
+    \item $\displaystyle\int_{-\infty}^{\infty} f(x)\,dx = 1$.
+\end{enumerate}
+La probabilidad de que $X$ tome valores en el intervalo $[a,b]$ es:
+\[
+  P(a\leq X\leq b) = \int_{a}^{b} f(x)\,dx.
+\]
+\end{definition}
+
+\begin{rem} 
+Antes de utilizar una función como FDP, realice siempre las siguientes comprobaciones:
+\begin{enumerate}
+ \item \textbf{no negatividad:}
+          Compruebe analíticamente que $f(x)\geq 0$ en todo su dominio. Basta con inspeccionar el
+          signo del numerador y del denominador.
+    \item \textbf{normalización:}
+          Calcule $\int_{-\infty}^{\infty}f(x)\,dx$. Si el resultado es $1$, la función es válida.
+          Si es una constante $C\neq 1$, multiplique por $1/C$ para obtener la FDP normalizada.
+    \item \textbf{Advertencia fundamental:}
+          $f(x)$ \textbf{no} es una probabilidad puntual; puede tomar valores mayores que $1$.
+          Solo la integral $\int_a^b f(x)\,dx$ tiene significado probabilístico. En particular,
+          $P(X=c)=0$ para todo valor fijo $c$, pues la integral sobre un conjunto de medida cero
+          es cero.
+\end{enumerate}
+   
+
+\end{rem}
+
+% -- Ejemplo adicional: normalización ----------------------------
+\begin{example}[Determinación de la constante de normalización]
+Encuentre el valor de la constante $k>0$ para que la función
+\[
+  f(x) = \begin{cases} ke^{-3x} & x\geq 0 \\ 0 & x<0 \end{cases}
+\]
+sea una función de densidad de probabilidad. Luego, dibuje la función resultante.
+\end{example}
+\begin{myproof}
+\textbf{Paso 1: Análisis gráfico y región.}
+
+Para cualquier $k>0$, la función $ke^{-3x}$ es positiva y estrictamente decreciente sobre
+$[0,\infty)$, por lo que la \emph{Verificación 1} se cumple automáticamente. La condición de
+normalización (Verificación 2) es la ecuación que determina $k$: exigimos que el área total bajo
+la curva sea exactamente $1$.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=0.58\textwidth, height=0.36\textheight,
+    axis lines=middle,
+    xlabel={$x$}, ylabel={$f(x)$},
+    xmin=-0.3, xmax=2.2, ymin=-0.12, ymax=3.4,
+    domain=0:2, samples=120,
+    xtick={0,0.5,1,1.5,2}, ytick={0,1,2,3}
+]
+\addplot[name path=f, thick, orange!85!red] {3*exp(-3*x)};
+\addlegendentry{$f(x)=3e^{-3x}$}
+\path[name path=eje] (axis cs:0,0) -- (axis cs:2,0);
+\addplot[orange!22, opacity=0.9]
+    fill between[of=f and eje, soft clip={domain=0:2}];
+\filldraw[black] (axis cs:0,3) circle (1.8pt)
+    node[right] {\small $(0,\,k)$};
+\node[orange!70!red] at (axis cs:0.85,0.90) {Área$=1$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\textbf{Paso 2: Elemento diferencial.}
+\[
+  dA = ke^{-3x}\,dx.
+\]
+
+\textbf{Paso 3: Límites de integración.}
+La función es no nula únicamente sobre $[0,\infty)$, así que la condición de normalización es
+$\int_0^{\infty}ke^{-3x}\,dx = 1$.
+
+\textbf{Paso 4: Evaluación.}
+\begin{align*}
+\int_0^{\infty} ke^{-3x}\,dx
+  &= k\lim_{b\to\infty}\int_0^b e^{-3x}\,dx
+   = k\lim_{b\to\infty}\Bigl[-\tfrac{1}{3}e^{-3x}\Bigr]_0^b \\
+  &= k\lim_{b\to\infty}\Bigl(-\tfrac{1}{3}e^{-3b}+\tfrac{1}{3}\Bigr)
+   = k\cdot\frac{1}{3} = 1.
+\end{align*}
+Por tanto $k=3$, y la FDP normalizada es:
+\[
+  \boxed{f(x)=3e^{-3x},\quad x\geq 0.}
+\]
+\end{myproof}
+
+\begin{theorem}[Media y varianza de una variable aleatoria continua]
+La \textbf{media} $\mu$ (valor esperado) y la \textbf{varianza} $\sigma^2$ de una variable
+aleatoria continua con FDP $f(x)$ se definen como:
+\[
+  \mu = E(X) = \int_{-\infty}^{\infty} x\,f(x)\,dx,
+  \qquad
+  \sigma^2 = V(X) = \int_{-\infty}^{\infty}(x-\mu)^2 f(x)\,dx.
+\]
+Existe además la \textbf{fórmula computacional}: $\sigma^2 = E(X^2)-[E(X)]^2$.
+\begin{proof}
+Aplicando la linealidad de la esperanza a $g(X)=(X-\mu)^2$ y expandiendo el cuadrado:
+\begin{align*}
+\sigma^2
+  &= E\bigl[(X-\mu)^2\bigr]
+   = E\bigl[X^2 - 2\mu X + \mu^2\bigr] \\
+  &= E(X^2) - 2\mu\,E(X) + \mu^2
+   = E(X^2) - 2\mu^2 + \mu^2
+   = E(X^2) - \mu^2.
+\end{align*}
+La convergencia de estas integrales está garantizada si los momentos de orden 1 y 2 son finitos.
+\end{proof}
+\end{theorem}
+
+\begin{rem}La Interpretación geométrica y estadística de estas integrales son:
+\begin{itemize}
+    \item \textbf{Centro de masa:} $\mu$ actúa como el punto de equilibrio (centro de gravedad)
+          de la distribución. Si la FDP es simétrica respecto a $x=\mu$, la media coincide con el
+          eje de simetría.
+    \item \textbf{Dispersión:} $\sigma^2$ cuantifica la «anchura» de la distribución. Una
+          $\sigma^2$ pequeña indica alta concentración alrededor de $\mu$; una grande indica alta
+          dispersión.
+    \item \textbf{Preferencia computacional:} Use siempre $\sigma^2=E(X^2)-\mu^2$ para cálculos
+          algebraicos; evita desarrollar el cuadrado $(x-\mu)^2$ bajo el signo integral, lo que
+          simplifica notablemente la integración por partes.
+\end{itemize}
+\end{rem}
+
+% ------------------------------------------------------------
+\begin{example}[Distribución exponencial: vida útil de un sensor]
+La vida útil $X$ (en miles de horas) de un sensor de presión sigue la FDP
+\[
+  f(x) = \begin{cases} 2e^{-2x} & x\geq 0 \\ 0 & x<0. \end{cases}
+\]
+\begin{enumerate}[(a)]
+  \item Calcule la probabilidad de que el sensor falle antes de las $500$ horas ($X<0.5$).
+  \item Determine la vida útil media $\mu$ y la varianza $\sigma^2$.
+\end{enumerate}
+\end{example}
+\begin{myproof}
+\textbf{Paso 1: Análisis gráfico y región.}
+
+La función parte de $f(0)=2$, decrece exponencialmente y tiende a $0$. La región azul representa
+$P(X<0.5)$; la totalidad del área bajo la curva es $1$.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=0.60\textwidth, height=0.37\textheight,
+    axis lines=middle,
+    xlabel={$x$}, ylabel={$f(x)$},
+    xmin=-0.2, xmax=2.5, ymin=-0.10, ymax=2.25,
+    domain=0:2.3, samples=130,
+    xtick={0,0.5,1,1.5,2}, ytick={0,0.5,1,1.5,2}
+]
+\addplot[name path=f, thick, blue!75!black] {2*exp(-2*x)};
+\addlegendentry{$f(x)=2e^{-2x}$}
+\path[name path=eje] (axis cs:0,0) -- (axis cs:2.3,0);
+\addplot[blue!22, opacity=0.90]
+    fill between[of=f and eje, soft clip={domain=0:0.5}];
+\draw[dashed, red!70!black, thick]
+    (axis cs:0.5,0) node[below] {$0.5$}
+    -- (axis cs:0.5,{2*exp(-1)});
+\node[blue!65!black] at (axis cs:0.22,0.5)
+    {\small $P(X{<}0.5)$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\textbf{Paso 2: Elemento diferencial.}
+\[
+  dP = f(x)\,dx = 2e^{-2x}\,dx.
+\]
+
+\textbf{Paso 3: Límites de integración.}
+\begin{enumerate}[(a)]
+  \item Probabilidad: intervalo $[0,\,0.5]$.
+  \item Media: $\int_0^\infty x\cdot 2e^{-2x}\,dx$.\quad
+        Segundo momento: $\int_0^\infty x^2\cdot 2e^{-2x}\,dx$.
+\end{enumerate}
+
+\textbf{Paso 4: Evaluación.}
+
+\textit{(a) Probabilidad de falla temprana:}
+\begin{align*}
+P(X<0.5) &= \int_0^{0.5} 2e^{-2x}\,dx
+           = \Bigl[-e^{-2x}\Bigr]_0^{0.5}
+           = -e^{-1}+e^{0} = 1-e^{-1}.
+\end{align*}
+
+\textit{(b) Media} (por partes: $u=x$, $dv=2e^{-2x}\,dx \Rightarrow v=-e^{-2x}$):
+\begin{align*}
+\mu &= \int_0^{\infty} x\cdot 2e^{-2x}\,dx
+     = \Bigl[-xe^{-2x}\Bigr]_0^{\infty}+\int_0^\infty e^{-2x}\,dx
+     = 0 + \Bigl[-\tfrac{1}{2}e^{-2x}\Bigr]_0^\infty = \frac{1}{2}.
+\end{align*}
+
+\textit{Segundo momento} (por partes dos veces, con $u=x^2$, $dv=2e^{-2x}\,dx$):
+\begin{align*}
+E(X^2)
+  &= \int_0^\infty x^2\cdot 2e^{-2x}\,dx
+   = \Bigl[-x^2 e^{-2x}\Bigr]_0^\infty + \int_0^\infty 2xe^{-2x}\,dx
+   = 0 + \frac{1}{2} = \frac{1}{2}.
+\end{align*}
+
+\textit{Varianza} (fórmula computacional):
+\begin{align*}
+\sigma^2 &= E(X^2)-\mu^2 = \frac{1}{2}-\frac{1}{4} = \frac{1}{4}.
+\end{align*}
+\[
+  \boxed{P(X<0.5)=1-e^{-1}\approx 0.6321,\qquad
+         \mu=\tfrac{1}{2}\text{ (mil horas)},\qquad
+         \sigma^2=\tfrac{1}{4}.}
+\]
+\end{myproof}
+
+% ============================================================
+\section{Integrandos no acotados y discontinuidades}
+% ============================================================
+
+Hasta ahora hemos extendido los \emph{límites} de integración hacia el infinito. Ahora abordaremos
+la segunda clase de integrales impropias: aquellas donde la función $f(x)$ \textbf{no está acotada}
+dentro del intervalo de integración. \textbf{El hilo conductor} aquí es la ruptura del Teorema
+Fundamental del Cálculo (TFC): el TFC requiere continuidad de $f$ en $[a,b]$. Si $f$ tiende a
+infinito en un extremo o en un punto interior, las sumas de Riemann pueden diverger o requerir un
+tratamiento por límites laterales.
+
+\begin{definition}[Integral impropia de tipo II]
+Sea $f$ continua en $[a,b)$ con $\lim_{x\to b^-}|f(x)|=\infty$. Definimos:
+\[
+  \int_{a}^{b} f(x)\,dx = \lim_{t\to b^-}\int_{a}^{t} f(x)\,dx.
+\]
+Si la discontinuidad está en el extremo izquierdo $x=a$:
+\[
+  \int_{a}^{b} f(x)\,dx = \lim_{t\to a^+}\int_{t}^{b} f(x)\,dx.
+\]
+\end{definition}
+
+\begin{theorem}[Convergencia con discontinuidad interior]
+Si $f$ tiene una discontinuidad infinita en $c\in(a,b)$, entonces:
+\[
+  \int_{a}^{b} f(x)\,dx = \int_{a}^{c} f(x)\,dx + \int_{c}^{b} f(x)\,dx,
+\]
+y la integral total converge si y solo si \textbf{ambas} integrales del lado derecho convergen.
+\begin{proof}
+Por la aditividad del intervalo de integración y la independencia de los límites laterales
+$t\to c^-$ y $s\to c^+$. Si uno de ellos diverge, la suma no puede asignarse un valor finito,
+destruyendo la definición de convergencia.
+\end{proof}
+\end{theorem}
+
+\begin{rem} Al intentar resolver cualquier tipo de integral, debe seguirse el siguiente protocolo de verificación antes de aplicar el TFC
+\begin{enumerate}
+    \item  Antes de escribir $F(b)-F(a)$, verifique si $f(x)$ tiene
+          \textbf{asíntotas verticales} en $[a,b]$. Busque los ceros del denominador y los puntos
+          donde el exponente es negativo.
+    \item \textbf{Criterio $p$ para integrandos infinitos:}
+          $\displaystyle\int_0^1\frac{dx}{x^p}$ converge $\iff p<1$.
+          \textbf{Note la inversión} respecto al criterio de límites infinitos.
+    \item \textbf{Trampa clásica:}
+          $\displaystyle\int_{-1}^{1}\frac{dx}{x^2}\neq -2$.
+          La función es \emph{positiva}; obtener un resultado negativo o finito sin plantear el
+          límite en $x=0$ indica aplicación incorrecta del TFC.
+\end{enumerate}
+\end{rem}
+
+% ------------------------------------------------------------
+\begin{example}[Discontinuidad en el extremo inferior]
+Analice la convergencia de $\displaystyle\int_{0}^{1}\frac{dx}{\sqrt{x}}$.
+\end{example}
+\begin{myproof}
+\textbf{Paso 1: Análisis gráfico y región.}
+
+La función $f(x)=x^{-1/2}$ crece sin cota cuando $x\to 0^+$, pero decrece rápidamente. La región
+es infinita en \emph{altura} pero confinada horizontalmente al intervalo $(0,1]$; la intuición
+visual sugiere que el área podría ser finita porque la función cae muy rápido.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=0.56\textwidth, height=0.37\textheight,
+    axis lines=middle,
+    xlabel={$x$}, ylabel={$y$},
+    xmin=-0.08, xmax=1.25, ymin=-0.18, ymax=4.1,
+    restrict y to domain=0:4.1,
+    domain=0.006:1.18, samples=180,
+    xtick={0,0.25,0.5,0.75,1}, ytick={0,1,2,3,4}
+]
+\addplot[name path=f, thick, teal!80!black] {1/sqrt(x)};
+\addlegendentry{$y=x^{-1/2}$}
+\path[name path=eje] (axis cs:0,0) -- (axis cs:1.18,0);
+\addplot[teal!22, opacity=0.90]
+    fill between[of=f and eje, soft clip={domain=0.006:1}];
+\draw[dashed, red!70!black, thick] (axis cs:0,0.1) -- (axis cs:0,3.8);
+\node[teal!75!black] at (axis cs:0.55,1.85) {Área $=2$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\textbf{Paso 2: Elemento diferencial.}
+\[
+  dA = x^{-1/2}\,dx.
+\]
+
+\textbf{Paso 3: Límites de integración.}
+El punto problemático es $x=0$. Introducimos $t\to 0^+$ e integramos sobre $[t,1]$.
+
+\textbf{Paso 4: Evaluación.}
+\begin{align*}
+\int_0^1 x^{-1/2}\,dx
+  &= \lim_{t\to 0^+}\int_t^1 x^{-1/2}\,dx
+   = \lim_{t\to 0^+}\Bigl[2\sqrt{x}\Bigr]_t^1
+   = \lim_{t\to 0^+}(2-2\sqrt{t}) = 2.
+\end{align*}
+\[
+  \boxed{\int_0^1\frac{dx}{\sqrt{x}} = 2 \quad (\text{converge}).}
+\]
+\end{myproof}
+
+% ------------------------------------------------------------
+\begin{example}[Discontinuidad en un punto interior]
+Evalúe, si converge,
+$\displaystyle\int_{0}^{3}\frac{dx}{(x-1)^{2/3}}$.
+\end{example}
+\begin{myproof}
+\textbf{Paso 1: Análisis gráfico y región.}
+
+El denominador se anula en $x=1\in(0,3)$; allí $f(x)\to+\infty$. La función es positiva a ambos
+lados de $x=1$ y exhibe una \textbf{cúspide vertical asintótica}. Es \emph{obligatorio} separar la
+integral en $[0,1)$ y $(1,3]$; de lo contrario se aplica el TFC a una función discontinua y se
+obtiene un valor erróneo.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=0.62\textwidth, height=0.39\textheight,
+    axis lines=middle,
+    xlabel={$x$}, ylabel={$y$},
+    xmin=-0.2, xmax=3.3, ymin=-0.28, ymax=5.1,
+    restrict y to domain=0:5.1,
+    samples=250,
+    xtick={0,1,2,3}, ytick={0,1,2,3,4}
+]
+%--- Rama izquierda: x en [0, 0.94]
+%    Usamos exp(-2/3*ln(|x-1|)) para evitar logaritmo de negativo
+\addplot[name path=fL, thick, violet!80!black, domain=0:0.92]
+    {exp(-2/3 * ln(1-x))};
+%--- Rama derecha: x en [1.08, 3]
+\addplot[name path=fR, thick, violet!80!black, domain=1.08:3.1]
+    {exp(-2/3 * ln(x-1))};
+%--- Rellenos
+\path[name path=ejeL] (axis cs:0,0) -- (axis cs:0.92,0);
+\path[name path=ejeR] (axis cs:1.08,0) -- (axis cs:3.1,0);
+\addplot[violet!18, opacity=0.88] fill between[of=fL and ejeL];
+\addplot[violet!18, opacity=0.88] fill between[of=fR and ejeR];
+%--- Asíntota vertical
+\draw[dashed, red!70!black, thick]
+    (axis cs:1,-0.2) -- (axis cs:1,4.8)
+    node[above] {$x=1$};
+\node[violet!80!black] at (axis cs:0.38,2.0) {\small Izq.};
+\node[violet!80!black] at (axis cs:2.0,1.5) {\small Der.};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\textbf{Paso 2: Elemento diferencial.}
+\[
+  dA = (x-1)^{-2/3}\,dx.
+\]
+
+\textbf{Paso 3: Límites de integración.}
+Usando $t\to 1^-$ y $s\to 1^+$:
+\[
+  \int_0^3(x-1)^{-2/3}\,dx
+  = \lim_{t\to 1^-}\int_0^t(x-1)^{-2/3}\,dx
+  + \lim_{s\to 1^+}\int_s^3(x-1)^{-2/3}\,dx.
+\]
+
+\textbf{Paso 4: Evaluación.}
+Recordando $\int(x-1)^{-2/3}\,dx = 3(x-1)^{1/3}+C$ (con $(x-1)^{1/3}$ para $x<1$ interpretado
+como $-|x-1|^{1/3}$):
+\begin{align*}
+\lim_{t\to 1^-}\Bigl[3(x-1)^{1/3}\Bigr]_0^t
+  &= \lim_{t\to 1^-}\bigl(3(t-1)^{1/3} - 3(-1)^{1/3}\bigr)
+   = 0 - (-3) = 3. \\[4pt]
+\lim_{s\to 1^+}\Bigl[3(x-1)^{1/3}\Bigr]_s^3
+  &= \lim_{s\to 1^+}\bigl(3\cdot 2^{1/3} - 3(s-1)^{1/3}\bigr)
+   = 3\sqrt[3]{2} - 0 = 3\sqrt[3]{2}.
+\end{align*}
+Ambos límites son finitos, por lo tanto la integral \textbf{converge} y:
+\[
+  \boxed{\int_0^3\frac{dx}{(x-1)^{2/3}} = 3 + 3\sqrt[3]{2} \approx 6.78.}
+\]
+\end{myproof}
+
+% ============================================================
+\section{La paradoja de la trompeta de Gabriel}
+% ============================================================
+
+Una de las aplicaciones más fascinantes del cálculo integral surge al combinar sólidos de revolución
+con integrales impropias. La \textbf{trompeta de Gabriel} se genera al rotar la curva $y=1/x$ para
+$x\geq 1$ alrededor del eje $x$. Esta figura desafía la intuición geométrica clásica: su volumen es
+\textbf{finito}, pero su área superficial es \textbf{infinita}.
+
+\begin{rem}[Resolución de la paradoja]
+La aparente contradicción se resuelve analizando la velocidad de decaimiento de cada integrando:
+\begin{itemize}
+    \item \textbf{Volumen:} el integrando es $\pi/x^2$, con $p=2>1$, por lo que
+          $\int_1^\infty x^{-2}\,dx$ converge.
+    \item \textbf{Superficie:} el integrando es esencialmente $2\pi/x$, con $p=1$, por lo que
+          $\int_1^\infty x^{-1}\,dx$ diverge.
+\end{itemize}
+La paradoja surge de intentar aplicar intuición física de «grosor uniforme» a un objeto matemático
+abstracto. En el modelo teórico, «llenar» la trompeta equivale a adelgazar la pintura exactamente
+como $1/x^2$ a medida que $x\to\infty$, lo cual es perfectamente consistente.
+\end{rem}
+
+% ------------------------------------------------------------
+\begin{example}[Volumen finito y área superficial infinita de la trompeta]
+Demuestre que el volumen de la trompeta de Gabriel es $V=\pi$ (finito), pero que su área
+superficial es infinita.
+\end{example}
+\begin{myproof}
+\textbf{Paso 1: Análisis gráfico y región.}
+
+La curva $y=1/x$ rota alrededor del eje $x$ para $x\geq 1$. Los discos perpendiculares al eje
+tienen radio $R(x)=1/x$. La región generatriz es el área entre la curva, el eje $x$ y la recta
+$x=1$.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=0.65\textwidth, height=0.40\textheight,
+    axis lines=middle,
+    xlabel={$x$}, ylabel={$y$},
+    xmin=0.5, xmax=5.1, ymin=-0.12, ymax=1.22,
+    domain=1:4.9, samples=130,
+    xtick={1,2,3,4}, ytick={0,0.25,0.5,0.75,1}
+]
+\addplot[name path=f, thick, blue!80!black] {1/x};
+\addlegendentry{$y=1/x$}
+\path[name path=eje] (axis cs:1,0) -- (axis cs:4.9,0);
+\addplot[blue!18, opacity=0.85]
+    fill between[of=f and eje, soft clip={domain=1:4.9}];
+\draw[dashed, red!70!black, thick]
+    (axis cs:1,0) -- (axis cs:1,1) node[left] {$(1,1)$};
+%--- Indicador de radio en x=2.5
+\draw[gray!70!black, <->, thick]
+    (axis cs:2.5,0) -- (axis cs:2.5,{1/2.5})
+    node[midway, right] {\small $R(x)=\tfrac{1}{x}$};
+\node[blue!60!black] at (axis cs:3.4,0.18) {Región generatriz};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\textbf{Paso 2: Elemento diferencial.}
+\begin{itemize}
+    \item \textbf{Volumen} (método del disco):
+          $dV = \pi[R(x)]^2\,dx = \pi x^{-2}\,dx$.
+    \item \textbf{Superficie} (fórmula de área de superficie de revolución, con $f'(x)=-x^{-2}$):
+          $dS = 2\pi f(x)\sqrt{1+[f'(x)]^2}\,dx
+              = \dfrac{2\pi}{x}\sqrt{1+\dfrac{1}{x^4}}\,dx$.
+\end{itemize}
+
+\textbf{Paso 3: Límites de integración.}
+Ambas integrales se evalúan sobre $[1,\infty)$.
+
+\textbf{Paso 4: Evaluación.}
+
+\textit{Volumen:}
+\begin{align*}
+V &= \pi\int_1^\infty x^{-2}\,dx
+   = \pi\lim_{b\to\infty}\Bigl[-x^{-1}\Bigr]_1^b
+   = \pi\lim_{b\to\infty}\Bigl(1-\frac{1}{b}\Bigr)
+   = \pi.
+\end{align*}
+
+\textit{Superficie} (criterio de comparación directa, usando que
+$\sqrt{1+x^{-4}}>1$ para todo $x\geq 1$):
+\begin{align*}
+A = 2\pi\int_1^\infty\frac{\sqrt{1+x^{-4}}}{x}\,dx
+  &> 2\pi\int_1^\infty\frac{dx}{x}
+   = 2\pi\lim_{b\to\infty}[\ln x]_1^b
+   = +\infty.
+\end{align*}
+Por el criterio de comparación directa, la integral del área \textbf{diverge}. Concluimos:
+\[
+  \boxed{V = \pi \quad \text{(finito)} \qquad \text{y} \qquad A = +\infty \quad \text{(diverge).}}
+\]
+\end{myproof}
+
+% ============================================================
+%  PROBLEMAS PROPUESTOS — INTEGRALES IMPROPIAS
+% ============================================================
+\section{Problemas Propuestos}
+
+Recuerde aplicar los criterios de convergencia y las definiciones de límite
+estudiadas en clase para justificar la existencia de cada valor en las
+integrales impropias. En todos los casos, el desarrollo analítico completo
+constituye parte esencial de la solución.
+
+
+\begin{prob}
+Determine si las siguientes integrales impropias de Tipo~I (con al menos
+un límite de integración infinito) convergen o divergen. En caso de
+convergencia, calcule su valor exacto.
+\begin{enumerate}
+    \item $\displaystyle \int_{0}^{\infty} \frac{dx}{1 + x^2}$
+    \item $\displaystyle \int_{-\infty}^{0} e^{3x} \, dx$
+    \item $\displaystyle \int_{0}^{\infty} x e^{-x} \, dx$
+    \item $\displaystyle \int_{1}^{\infty} \frac{\ln x}{x} \, dx$
+    \item $\displaystyle \int_{-\infty}^{\infty} \frac{x}{x^2 + 1} \, dx$
+    \item $\displaystyle \int_{0}^{\infty} \frac{e^{x}}{e^{2x} + 1} \, dx$
+\end{enumerate}
 \end{prob}
+
+\begin{prob}
+Evalúe cada una de las siguientes integrales impropias, o demuestre que
+divergen.
+\begin{enumerate}
+    \item $\displaystyle \int_{1}^{\infty} \frac{1}{x^3} \, dx$
+    \item $\displaystyle \int_{0}^{\infty} e^{-2x} \, dx$
+    \item $\displaystyle \int_{-\infty}^{\infty} \frac{1}{x^2 + 4} \, dx$
+    \item $\displaystyle \int_{0}^{\infty} x^2 e^{-x} \, dx$
+    \item $\displaystyle \int_{2}^{\infty} \frac{1}{x \ln x} \, dx$
+    \item $\displaystyle \int_{0}^{\infty} \cos x \, dx$
+\end{enumerate}
+\end{prob}
+
+\begin{prob}
+Determine si la siguiente integral converge y, de ser así, encuentre su
+valor exacto:
+\[
+    \int_{-\infty}^{\infty} \frac{e^x}{1 + e^{2x}} \, dx.
+\]
+\textit{Sugerencia: divida la integral en los intervalos $(-\infty, 0]$ y
+$[0, +\infty)$, y utilice la sustitución $u = e^x$ en cada parte.}
+\end{prob}
+
+\begin{prob}
+Analice la convergencia de las siguientes integrales impropias de Tipo~II,
+cuyo integrando presenta una discontinuidad infinita en uno o ambos
+extremos del intervalo de integración. Si la integral converge, determine
+su valor exacto.
+\begin{enumerate}
+    \item $\displaystyle \int_{0}^{16} \frac{1}{\sqrt{x}} \, dx$
+    \item $\displaystyle \int_{0}^{1} \ln x \, dx$
+    \item $\displaystyle \int_{0}^{2} \frac{dx}{\sqrt{4 - x^2}}$
+    \item $\displaystyle \int_{0}^{\pi/2} \tan x \, dx$
+    \item $\displaystyle \int_{1}^{e} \frac{dx}{x\sqrt{\ln x}}$
+    \item $\displaystyle \int_{0}^{1} \frac{x}{\sqrt{1 - x^2}} \, dx$
+\end{enumerate}
+\end{prob}
+
+\begin{prob}
+Evalúe las siguientes integrales impropias, en las cuales el integrando
+presenta una discontinuidad infinita en un punto interior $c$ del intervalo
+$[a, b]$ (con $a < c < b$), o demuestre que divergen.
+\begin{enumerate}
+    \item $\displaystyle \int_{0}^{3} \frac{dx}{(x-1)^{2/3}}$
+    \item $\displaystyle \int_{0}^{2} \frac{dx}{x - 1}$
+    \item $\displaystyle \int_{-3}^{3} \frac{x}{\sqrt{9 - x^2}} \, dx$
+    \item $\displaystyle \int_{-1}^{2} \frac{1}{x^3} \, dx$
+    \item $\displaystyle \int_{-1}^{1} \frac{1}{\sqrt{|x|}} \, dx$
+\end{enumerate}
+\end{prob}
+
+
+\begin{prob}
+La siguiente integral es impropia por dos razones simultáneas: el
+integrando presenta una singularidad en $x = 0$ y el intervalo de
+integración no está acotado. Descomponga el intervalo en $x = 1$,
+justifique la convergencia de cada parte por separado mediante la
+evaluación del límite correspondiente y, si ambas subintegrales convergen,
+determine el valor exacto de la integral completa:
+\[
+    \int_{0}^{\infty} \frac{dx}{\sqrt{x}\,(1 + x)}.
+\]
+\end{prob}
+
+\begin{prob}
+Analice la convergencia de la siguiente integral, que es impropia tanto
+por la singularidad del integrando en $x = 0$ como por el límite superior
+de integración infinito. Descomponga el intervalo en $x = 1$, estudie
+cada parte por separado y, si ambas convergen, calcule el valor exacto:
+\[
+    \int_{0}^{\infty} x^{-1/3} e^{-x} \, dx.
+\]
+\end{prob}
+
+\begin{prob}
+Considere la integral
+\[
+    \int_{0}^{\infty} \frac{\ln x}{1 + x^2} \, dx.
+\]
+\begin{enumerate}
+    \item Identifique con precisión las dos fuentes de impropie\-dad de esta
+          integral.
+    \item Descomponga el dominio en $x = 1$ y estudie la convergencia de
+          cada parte por separado.
+    \item Utilice la sustitución $x = 1/t$ en la integral sobre $(0,1]$
+          para demostrar que esa parte es el negativo de la integral sobre
+          $[1, \infty)$ y concluya el valor de la integral completa.
+\end{enumerate}
+\end{prob}
+
+\begin{prob}
+Considere la integral de tipo $p$ definida sobre un intervalo no acotado.
+Demuestre formalmente, mediante la evaluación explícita del límite
+correspondiente, que la integral
+\[
+    \int_{1}^{\infty} \frac{1}{x^p} \, dx
+\]
+\begin{enumerate}
+    \item diverge si $p \leq 1$, y
+    \item converge si $p > 1$; en este caso, determine su valor exacto
+          en función del parámetro $p$.
+\end{enumerate}
+\end{prob}
+
+\begin{prob}
+De manera análoga al problema anterior, demuestre formalmente que la
+integral
+\[
+    \int_{0}^{1} \frac{1}{x^p} \, dx
+\]
+\begin{enumerate}
+    \item converge si $p < 1$; en este caso, calcule su valor exacto en
+          función de $p$, y
+    \item diverge si $p \geq 1$.
+\end{enumerate}
+\end{prob}
+
+\begin{prob}
+Utilice el Teorema de Comparación Directa o el Teorema de Comparación en
+el Límite para determinar la convergencia o divergencia de cada integral.
+No es necesario calcular el valor exacto; es suficiente identificar con
+precisión la función de comparación y justificar rigurosamente la
+conclusión.
+\begin{enumerate}
+    \item $\displaystyle \int_{1}^{\infty} e^{-x^2} \, dx$
+    \item $\displaystyle \int_{1}^{\infty} \frac{\sin^2 x}{x^2} \, dx$
+    \item $\displaystyle \int_{2}^{\infty} \frac{dx}{\sqrt{x^4 - 1}}$
+    \item $\displaystyle \int_{1}^{\infty} \frac{x + 1}{\sqrt{x^4 + x}} \, dx$
+    \item $\displaystyle \int_{1}^{\infty} \frac{\arctan x}{1 + x^2} \, dx$
+\end{enumerate}
+\end{prob}
+
+\begin{prob}
+Para cada una de las siguientes integrales, determine si converge o
+diverge. Justifique su respuesta mediante un criterio de comparación
+apropiado, identificando explícitamente la función auxiliar utilizada y
+verificando las hipótesis del criterio elegido.
+\begin{enumerate}
+    \item $\displaystyle \int_{0}^{1} \frac{\sin x}{x^{3/2}} \, dx$
+    \item $\displaystyle \int_{1}^{\infty} \frac{x^2 + 1}{x^4 + x^2 + 1} \, dx$
+    \item $\displaystyle \int_{1}^{\infty} \frac{\ln x}{x^{3/2}} \, dx$
+    \item $\displaystyle \int_{0}^{1} \frac{e^x - 1}{x^{1/2}} \, dx$
+    \item $\displaystyle \int_{2}^{\infty} \frac{1}{\ln x} \, dx$
+\end{enumerate}
+\end{prob}
+
+\begin{prob}[Función Gamma]
+La función Gamma se define para $n > 0$ como:
+\[
+    \Gamma(n) = \int_{0}^{\infty} x^{n-1} e^{-x} \, dx.
+\]
+\begin{enumerate}
+    \item Use integración por partes para demostrar la relación de
+          recurrencia $\Gamma(n+1) = n\,\Gamma(n)$.
+    \item Deduzca que si $n$ es un entero positivo, entonces
+          $\Gamma(n) = (n-1)!$
+    \item Calcule explícitamente $\Gamma(1)$, $\Gamma(2)$ y $\Gamma(3)$.
+\end{enumerate}
+\end{prob}
+
+\begin{prob}[Probabilidad]
+Sea $X$ una variable aleatoria continua con función de densidad de
+probabilidad
+\[
+    f(x) =
+    \begin{cases}
+        0.01\,e^{-0.01x} & \text{si } x \geq 0, \\
+        0 & \text{si } x < 0.
+    \end{cases}
+\]
+\begin{enumerate}
+    \item Verifique que $f$ es efectivamente una función de densidad de
+          probabilidad, es decir, que $\displaystyle\int_{-\infty}^{\infty} f(x)\,dx = 1$.
+    \item Calcule $P(X > 20)$ mediante la evaluación de la integral
+          impropia pertinente.
+    \item Determine el valor esperado $E[X] = \displaystyle\int_{0}^{\infty} x\,f(x)\,dx$.
+\end{enumerate}
+\end{prob}
+
+\begin{prob}[Geometría Analítica]
+El piloto de un automóvil de carreras recorre una pista elíptica modelada
+por la ecuación
+\[
+    \frac{x^2}{400} + \frac{y^2}{100} = 1.
+\]
+Al perder el control en el punto $(16,\,6)$, el vehículo continúa en línea
+recta sobre la recta tangente a la elipse en ese punto.
+\begin{enumerate}
+    \item Verifique que el punto $(16,\,6)$ pertenece a la elipse.
+    \item Determine la ecuación de la recta tangente a la elipse en dicho
+          punto.
+    \item Si el automóvil impacta contra un árbol ubicado en la coordenada
+          $(14,\, k)$, determine el valor exacto de la constante $k$.
+\end{enumerate}
+\end{prob}
+
+\begin{prob}[Longitud de arco]
+La longitud de arco de una curva $y = f(x)$ sobre el intervalo $[a, b]$
+está dada por la integral
+\[
+    L = \int_{a}^{b} \sqrt{1 + \left[f'(x)\right]^2} \, dx.
+\]
+\begin{enumerate}
+    \item Muestre que la longitud de la curva $y = \sqrt{1 - x^2}$ sobre
+          $[0,1)$ está dada por una integral impropia de Tipo~II y evalúe
+          dicha integral.
+    \item Interprete geométricamente el resultado obtenido.
+\end{enumerate}
+\end{prob}
+
+\begin{prob}[Física — Trabajo gravitacional]
+La fuerza de atracción gravitacional entre la Tierra (masa $M$) y un objeto
+de masa $m$ situado a una distancia $r$ de su centro es
+\[
+    F(r) = \frac{GMm}{r^2},
+\]
+donde $G$ es la constante de gravitación universal y $R$ denota el radio
+de la Tierra.
+\begin{enumerate}
+    \item Plantee la integral impropia que representa el trabajo necesario
+          para trasladar el objeto desde la superficie terrestre ($r = R$)
+          hasta el infinito.
+    \item Evalúe dicha integral y exprese el resultado en términos de $G$,
+          $M$, $m$ y $R$.
+    \item Explique por qué la convergencia de esta integral implica que
+          existe una velocidad de escape finita.
+\end{enumerate}
+\end{prob}
+
