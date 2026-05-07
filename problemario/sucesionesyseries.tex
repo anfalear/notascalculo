@@ -62,7 +62,7 @@ Las sucesiones pueden especificarse de distintas maneras:
 \end{itemize}
 \end{example}
 
-\section{El Principio de Inducción Matemática}
+\subsection{El Principio de Inducción Matemática}
 
 Antes de avanzar hacia el límite, necesitamos una herramienta robusta para demostrar propiedades que dependen de los números naturales, especialmente en fórmulas de sumatorias y recurrencias.
 
@@ -233,7 +233,7 @@ $\lim_{n\to\infty} 0 = 0$ y $\lim_{n\to\infty} \dfrac{n}{n^2+1} = 0$.
 
 
 % ------------------------------------------------------------
-\section{Monotonía, acotación y convergencia}
+\subsection{Monotonía, acotación y convergencia}
 % ------------------------------------------------------------
 
 \begin{definition}[Sucesión monótona y acotada]
@@ -322,13 +322,6 @@ Como el límite del cociente es $1/2 < 1$, por los criterios de convergencia:
 \end{myproof}
 \end{example}
 
-
-
-
-% ------------------------------------------------------------
-\subsection{Criterio de Cauchy y completitud}
-% ------------------------------------------------------------
-
 \begin{definition}[Sucesión de Cauchy]
 La sucesión $\{a_n\}$ es de \textbf{Cauchy} si para todo $\varepsilon > 0$
 existe $N \in \mathbb{N}$ tal que $|a_n - a_m| < \varepsilon$ para todo
@@ -353,8 +346,7 @@ decimales de $\sqrt{2}$). El protocolo de aplicación es:
 \end{description}
 \end{rem}
 
-\begin{example}[Sucesión recurrente — trayectoria de cobweb]
-Sea $a_1 = \tfrac{1}{2}$ y $a_{n+1} = 1 - \tfrac{a_n^2}{2}$. Demuestre que
+\begin{example} Sea $a_1 = \tfrac{1}{2}$ y $a_{n+1} = 1 - \tfrac{a_n^2}{2}$. Demuestre que
 converge y calcule su límite.
 \begin{myproof}
 \textbf{Paso 1: Análisis de términos y comportamiento.}
@@ -419,12 +411,9 @@ Como $a_n \in [0,1]$ para todo $n$, descartamos la raíz negativa:
 \end{example}
 
 % ============================================================
-\section{Herramientas avanzadas para límites de sucesiones}
+\subsection{Herramientas avanzadas para límites de sucesiones}
 % ============================================================
-
-% ------------------------------------------------------------
-\subsection{Infinitesimales equivalentes}
-% ------------------------------------------------------------
+El cálculo de límites usando infinitesimales puede extenderse de manera natural a sucesiones:
 
 \begin{definition}[Infinitesimales equivalentes]
 Dos sucesiones infinitesimales $\alpha_n \to 0$ y $\beta_n \to 0$ son
@@ -444,74 +433,73 @@ de oro: si aparece una diferencia, conserve al menos dos términos del
 desarrollo de Taylor.
 \end{rem}
 
-\begin{example}[Sustitución asintótica — diferencia de funciones]
-Calcule $\displaystyle L = \lim_{n\to\infty} n^3
-\!\left(e^{1/n} - \sqrt[n]{n}\right)$.
+\begin{example}
+Calcule $\displaystyle L = \lim_{n\to\infty} n^3\!\left(e^{1/n}-\sqrt[n]{n}\right)$.
+
 \begin{myproof}
-\textbf{Paso 1: Análisis de términos y comportamiento.}
-Definimos $x = 1/n \to 0^+$. Los primeros valores numéricos de
-$n^3(e^{1/n}-n^{1/n})$ son aproximadamente: $n=2$: $1.28$; $n=5$:
-$0.77$; $n=10$: $0.68$; $n=50$: $0.52$; $n=100$: $0.51$, sugiriendo
-convergencia hacia $1/2$.
-
-\textbf{Paso 2: Elección del criterio.}
-Reescribimos en términos de $x = 1/n$:
+\textbf{Paso 1: Sustitución.}
+Sea $x = 1/n \to 0^+$. Como $n^{1/n} = e^{(\ln n)/n} = e^{-x\ln x}$,
 \[
-  L = \lim_{x\to 0^+} \frac{e^x - e^{x\ln(1/x)^{-1}}}{x^3}
-    = \lim_{x \to 0^+} \frac{e^x - e^{x \ln(1+\dots)}}{x^3}.
-\]
-Es más directo utilizar \textbf{desarrollos de Taylor} de orden~$2$ en
-$x=0$:
-\[
-  e^x = 1 + x + \frac{x^2}{2} + O(x^3),
-  \qquad
-  n^{1/n} = e^{\frac{\ln n}{n}} = e^{x(-\ln x)}.
+  L = \lim_{x\to 0^+} \frac{e^x - e^{-x\ln x}}{x^3}.
 \]
 
-\textbf{Paso 3: Verificación de hipótesis.}
-Cuando $x = 1/n \to 0^+$, se tiene $-x\ln x = \frac{\ln n}{n} \to 0$,
-por lo que podemos expandir:
+\textbf{Paso 2: Por qué no se aplican equivalencias directamente.}
+Podría parecer tentador escribir $e^x - 1 \sim x$ y
+$e^{-x\ln x} - 1 \sim {-x\ln x}$ y restar; pero la regla de oro
+prohíbe sustituir infinitesimales equivalentes en una \emph{diferencia}:
+los errores de orden superior pueden dominar el resultado.
+Es necesario convertir la diferencia en un producto.
+
+\textbf{Paso 3: Factorización para crear un producto.}
+Extraemos $e^{-x\ln x}$ como factor común:
 \[
-  n^{1/n} = e^{x(-\ln x)}
-  = 1 + x(-\ln x) + \frac{x^2 \ln^2 x}{2} + O\!\left(x^3 \ln^3 x\right).
+  e^x - e^{-x\ln x}
+  = e^{-x\ln x}\!\left(e^{\,x + x\ln x} - 1\right)
+  = e^{-x\ln x}\!\left(e^{\,x(1+\ln x)} - 1\right).
 \]
 
-\textbf{Paso 4: Evaluación.}
-\begin{align*}
-  e^x - n^{1/n}
-  &= \Bigl(1 + x + \tfrac{x^2}{2}\Bigr)
-     - \Bigl(1 + x(-\ln x) + \tfrac{x^2\ln^2 x}{2}\Bigr)
-     + O(x^3\ln^3 x) \\
-  &= x(1 + \ln x) + \frac{x^2(1-\ln^2 x)}{2} + O(x^3 \ln^3 x).
-\end{align*}
-Dividiendo por $x^3 = 1/n^3$:
+\textbf{Paso 4: Aplicación legítima de infinitesimales equivalentes.}
+Ahora tenemos un \emph{producto}, no una diferencia. Verificamos las
+condiciones:
+\begin{itemize}
+  \item $e^{-x\ln x} \to e^0 = 1$ (factor que no es infinitesimal,
+        pero sí acotado con límite conocido).
+  \item El exponente $x(1+\ln x) = x + x\ln x \to 0$ cuando
+        $x\to 0^+$, pues $x\ln x \to 0$.
+\end{itemize}
+Aplicando $e^t - 1 \sim t$ con $t = x(1+\ln x) \to 0$
+\emph{(válido: es un factor en un producto)},
 \[
-  L = \lim_{x \to 0^+} \frac{x(1+\ln x)}{x^3}
-    + \frac{1-\ln^2 x}{2x} + \cdots
+  e^{x(1+\ln x)} - 1 \;\sim\; x(1+\ln x).
 \]
-El término dominante proviene de la expansión a primer orden. Recordando
-que $x\ln x \to 0$ cuando $x \to 0^+$, la contribución de orden $x$ en
-el numerador es $x \cdot 1 = x$, de modo que la razón $x/x^3 = 1/x^2
-\to \infty$ si no hay cancelación. Retomando con más cuidado: el
-objetivo real es $n^3(e^{1/n} - n^{1/n})$ donde la diferencia es de
-orden $O(x \cdot |\ln x|)$, luego $n^3 \cdot O(1/(n \cdot \ln n))
-= O(n^2/\ln n) \to \infty$. La sucesión \textbf{diverge} a $+\infty$.
+Por tanto,
+\[
+  \frac{e^x - e^{-x\ln x}}{x^3}
+  \;\sim\;
+  \frac{e^{-x\ln x}\cdot x(1+\ln x)}{x^3}
+  \;\xrightarrow[\;x\to 0^+\;]{}\;
+  1\cdot\frac{1+\ln x}{x^2}.
+\]
+
+\textbf{Paso 5: Evaluación del límite resultante.}
+Cuando $x \to 0^+$, el numerador $1 + \ln x \to -\infty$ mientras
+que el denominador $x^2 \to 0^+$, de modo que
+\[
+  \lim_{x\to 0^+}\frac{1+\ln x}{x^2} = -\infty.
+\]
 
 \begin{center}
-  \textit{(El ejemplo ilustra cómo la comparación de tasas de
-  crecimiento mediante Taylor previene conclusiones erróneas:
-  $e^{1/n}$ y $n^{1/n}$ difieren en un infinitésimo de orden
-  $\ln n/n$, no de orden $1/n^2$.)}
+  \textit{(El signo negativo refleja que $n^{1/n} > e^{1/n}$ para
+  todo $n \geq 3$, ya que $\ln n > 1$ implica que la tasa
+  $(\ln n)/n$ supera a $1/n$.)}
 \end{center}
 \[
-  \lim_{n\to\infty} n^3\!\left(e^{1/n} - n^{1/n}\right) = \boxed{+\infty.}
+  \lim_{n\to\infty} n^3\!\left(e^{1/n} - \sqrt[n]{n}\right)
+  = \boxed{-\infty.}
 \]
 \end{myproof}
 \end{example}
 
-% ------------------------------------------------------------
-\subsection{Teorema de Stolz-Cesàro}
-% ------------------------------------------------------------
 
 \begin{theorem}[Stolz-Cesàro]
 Sea $\{b_n\}$ estrictamente creciente con $\lim_{n\to\infty} b_n = +\infty$.
@@ -531,7 +519,7 @@ $\{b_n\}$ sea estrictamente creciente y no acotada; no hay un análogo
 inmediato para $0/0$.
 \end{rem}
 
-\begin{example}[Media aritmética de raíces — Stolz-Cesàro]
+\begin{example}
 Calcule $\displaystyle L = \lim_{n \to \infty}
 \frac{\sqrt[3]{1} + \sqrt[3]{2} + \cdots + \sqrt[3]{n}}{n^{4/3}}$.
 \begin{myproof}
@@ -716,7 +704,7 @@ La serie $\displaystyle\sum_{n=1}^\infty \frac{1}{n^p}$ converge si y
 solo si $p > 1$.
 \end{theorem}
 
-\begin{example}[Serie telescópica — patrón de cancelación]
+\begin{example}[Serie telescópica]
 Calcule la suma de $\displaystyle\sum_{n=1}^\infty \frac{3}{n(n+3)}$.
 \begin{myproof}
 \textbf{Paso 1: Análisis de términos y comportamiento.}
@@ -771,7 +759,7 @@ Verificación: $\frac{1}{n}-\frac{1}{n+3}=\frac{n+3-n}{n(n+3)}=
 \end{example}
 
 % ============================================================
-\section{Criterios de convergencia para series de términos positivos}
+\subsection{Criterios de convergencia para series de términos positivos}
 % ============================================================
 
 Cuando $a_n \geq 0$, la sucesión $\{S_N\}$ es monótona no decreciente.
@@ -779,9 +767,6 @@ Por el Teorema~\ref{thm:mono}, la serie converge si y solo si $\{S_N\}$ está
 acotada superiormente. Este principio es la base de todos los criterios
 analíticos que siguen.
 
-% ------------------------------------------------------------
-\subsection{Criterio de la integral}
-% ------------------------------------------------------------
 
 \begin{theorem}[Criterio de la integral]
 Sea $f : [1,+\infty) \to \mathbb{R}$ continua, positiva y decreciente con
@@ -794,7 +779,7 @@ solo si $\displaystyle\int_1^\infty f(x)\,dx$ converge. Además:
 \]
 \end{theorem}
 
-\begin{example}[Criterio de la integral — familia de logaritmos]
+\begin{example} 
 Determine si $\displaystyle\sum_{n=2}^\infty \frac{1}{n(\ln n)^2}$ converge.
 \begin{myproof}
 \textbf{Paso 1: Análisis de términos y comportamiento.}
@@ -849,9 +834,6 @@ La integral converge, luego la serie \textbf{converge}:
 \end{myproof}
 \end{example}
 
-% ------------------------------------------------------------
-\subsection{Criterios de comparación}
-% ------------------------------------------------------------
 
 \begin{theorem}[Comparación directa y en el límite]
 Sean $\sum a_n$ y $\sum b_n$ con $a_n, b_n \geq 0$.
@@ -865,7 +847,7 @@ Sean $\sum a_n$ y $\sum b_n$ con $a_n, b_n \geq 0$.
 \end{itemize}
 \end{theorem}
 
-\begin{example}[Comparación en el límite — detección de la $p$-serie oculta]
+\begin{example}
 Estudie la convergencia de $\displaystyle\sum_{n=1}^\infty
 \frac{2n^2+1}{n^4-n+2}$.
 \begin{myproof}
@@ -896,10 +878,6 @@ comparación en el límite:
 \end{myproof}
 \end{example}
 
-% ------------------------------------------------------------
-\subsection{Criterios del cociente y de la raíz}
-% ------------------------------------------------------------
-
 \begin{theorem}[Criterio del cociente — D'Alembert]
 Sea $a_n > 0$ y $L = \displaystyle\lim_{n\to\infty}\dfrac{a_{n+1}}{a_n}$.
 \begin{itemize}
@@ -927,7 +905,7 @@ productos iterados, mientras que la raíz es óptima para series de la
 forma $a_n = f(n)^n$.
 \end{rem}
 
-\begin{example}[Criterio del cociente — factorial vs.\ potencia]
+\begin{example}
 Determine la convergencia de $\displaystyle\sum_{n=1}^\infty
 \frac{3^n \cdot n!}{n^n}$.
 \begin{myproof}
@@ -986,7 +964,7 @@ Como $L > 1$, la serie \textbf{diverge}:
 \end{myproof}
 \end{example}
 
-\begin{example}[Criterio de la raíz — potencia de función de $n$]
+\begin{example}
 Determine la convergencia de $\displaystyle\sum_{n=1}^\infty
 \left(\frac{\ln n}{n}\right)^n$.
 \begin{myproof}
@@ -1016,10 +994,10 @@ Como $R = 0 < 1$, la serie \textbf{converge absolutamente}:
 \end{example}
 
 % ============================================================
-\section{Convergencia absoluta y series de signo variable}
+\subsection{Convergencia absoluta y series de signo variable}
 % ============================================================
 
-\begin{definition}[Convergencia absoluta y condicional]
+\begin{definition}[Convergencia absoluta y condicional] Dada la serie $\sum a_n$ diremos que:
 \begin{itemize}
   \item $\sum a_n$ es \textbf{absolutamente convergente} si $\sum|a_n|$
         converge.
@@ -1047,7 +1025,7 @@ condicional: solo la primera garantiza estabilidad algebraica bajo
 permutaciones de términos.
 \end{rem}
 
-\begin{example}[Serie alternada con estimación de error]
+\begin{example} 
 Demuestre que $\displaystyle\sum_{n=1}^\infty \frac{(-1)^{n+1}}{\sqrt{n}}$
 converge condicionalmente y estime el error al tomar $N=9$ términos.
 \begin{myproof}
@@ -1105,9 +1083,6 @@ es decir, $N+1 > 10000$, luego $N \geq 10000$.
 \end{myproof}
 \end{example}
 
-% ============================================================
-\section{Criterio de Raabe y refinamientos}
-% ============================================================
 
 \begin{theorem}[Criterio de Raabe]
 Si $a_n > 0$ y $\displaystyle\rho = \lim_{n\to\infty} n\!\left(
@@ -1126,7 +1101,7 @@ $\frac{a_{n+1}}{a_n} = 1 - \frac{c}{n} + O(n^{-2})$. En ese caso,
 $\rho = c$, y el comportamiento depende del signo de $c-1$.
 \end{rem}
 
-\begin{example}[Raabe — serie límite del cociente igual a $1$]
+\begin{example} 
 Determine la convergencia de
 $\displaystyle\sum_{n=1}^\infty\frac{(2n-1)!!}{(2n)!!}\cdot\frac{1}{2n+1}$,
 donde $(2n-1)!! = 1\cdot 3\cdots(2n-1)$ y $(2n)!! = 2\cdot 4\cdots(2n)$.
@@ -1169,10 +1144,9 @@ Como $\rho = 3/2 > 1$, la serie \textbf{converge}:
 \end{example}
 
 % ============================================================
-\section{Problemas propuestos — Series infinitas}
+\subsection{Problemas propuestos — Series infinitas}
 % ============================================================
 
-\subsection{Series telescópicas, criterio del $n$-ésimo y series clásicas}
 
 \begin{prob}
 \begin{enumerate}
@@ -1205,7 +1179,7 @@ Para la serie $\displaystyle\sum_{n=0}^\infty \left(\frac{2}{3}\right)^n
 \end{enumerate}
 \end{prob}
 
-\subsection{Criterios de la integral y comparación}
+
 
 \begin{prob}
 \begin{enumerate}
@@ -1224,7 +1198,7 @@ $p$-serie adecuada. Identifique el exponente $p$ que captura el
 comportamiento asintótico del término general.
 \end{prob}
 
-\subsection{Criterios del cociente, raíz y series alternadas}
+
 
 \begin{prob}
 Determine la convergencia de las siguientes series:
@@ -1248,7 +1222,7 @@ Para la serie $\displaystyle\sum_{n=1}^\infty \frac{(-1)^{n-1}}{n^{3/2}}$:
 \end{enumerate}
 \end{prob}
 
-\subsection{Raabe y refinamientos}
+
 
 \begin{prob}
 El criterio del cociente es inconcluso para $\displaystyle\sum_{n=1}^\infty

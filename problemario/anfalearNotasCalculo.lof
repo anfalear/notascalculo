@@ -1,47 +1,39 @@
 \babel@toc {spanish}{}\relax 
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Recta numérica o eje real}}{26}{figure.2.1}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Representación trigonométrica en el círculo unitario: $x = \cos \theta $, $y = \sin \theta $, donde $(x,y)$ satisface $x^2 + y^2 = 1$}}{28}{figure.2.2}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Intervalo abierto $(x_0 - \varepsilon , x_0 + \varepsilon )$ representado como línea centrada en $x_0$ de radio $\varepsilon $ en el eje real.}}{28}{figure.2.3}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Recta numérica o eje real. La distancia de cada punto al origen es su valor absoluto.}}{28}{figure.2.1}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Representación en el círculo unitario: $x = \cos \theta $, $y = \sin \theta $, con $x^2 + y^2 = 1$.}}{31}{figure.2.2}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Vecindad abierta $V_\varepsilon (x_0) = (x_0-\varepsilon ,\, x_0+\varepsilon )$: intervalo centrado en $x_0$ de radio $\varepsilon $.}}{32}{figure.2.3}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces El supremo y el ínfimo}}{33}{figure.2.4}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Figura del ejemplo \ref {funcioncosto}}}{33}{figure.3.1}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Circunferencia unitaria fallando la prueba de la recta vertical.}}{34}{figure.3.2}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Bosquejo de $y=x^2.$}}{34}{figure.3.3}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Gráfica de la función $f(x)$ definida por partes.}}{35}{figure.3.4}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces $f(x)=x$: $\operatorname {Dom} = \mathbb {R}$.}}{36}{figure.3.5}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Función cuadrática $f(x)=x^2$: $\operatorname {Dom} = \mathbb {R}$.}}{36}{figure.3.6}%
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Función cúbica $f(x)=x^3$: $\operatorname {Dom} = \mathbb {R}$.}}{36}{figure.3.7}%
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Función $f(x)=x^4$: $\operatorname {Dom} = \mathbb {R}$, par.}}{37}{figure.3.8}%
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Función recíproca $f(x)=1/x$: $\operatorname {Dom} = \mathbb {R} \setminus \{0\}$}}{37}{figure.3.9}%
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Función $x^{2/3}$: $\operatorname {Dom} = \mathbb {R}$.}}{37}{figure.3.10}%
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Exponenciales: $f(x)=2^x$ ($\operatorname {Dom}=\mathbb {R}, y>0$), $g(x)=(1/2)^x$ (asíntota $y=0$).}}{37}{figure.3.11}%
-\contentsline {figure}{\numberline {3.12}{\ignorespaces $\log _2 x$: $\operatorname {Dom}=(0,+\infty )$, pasa por $(1,0)$, creciente.}}{38}{figure.3.12}%
-\contentsline {figure}{\numberline {3.13}{\ignorespaces $\sin x$, $\cos x$: período $2\pi $, rango $[-1,1]$.}}{39}{figure.3.13}%
-\contentsline {figure}{\numberline {3.14}{\ignorespaces $\tan x$, $\cot x$: período $\pi $, rango $\mathbb {R}$, asíntotas verticales en $\pi /2.$}}{39}{figure.3.14}%
-\contentsline {figure}{\numberline {3.15}{\ignorespaces $\sec x = 1/\cos x$, $\csc x = 1/\sin x$: rango $\mathbb {R}\setminus (-1,1)$, asíntotas verticales.}}{39}{figure.3.15}%
-\contentsline {figure}{\numberline {3.16}{\ignorespaces Traslaciones de $y=x^2$: vértice se desplaza de $(0,0)$ a $(h,k)=(1,2)$.}}{42}{figure.3.16}%
-\contentsline {figure}{\numberline {3.17}{\ignorespaces Transformaciones superpuestas de $y=\sin x$: amplitud, compresiones y reflexión.}}{42}{figure.3.17}%
-\contentsline {figure}{\numberline {3.18}{\ignorespaces Componentes de la forma amplitud-fase.}}{43}{figure.3.18}%
-\contentsline {figure}{\numberline {3.19}{\ignorespaces Función arcoseno: dominio $[-1,1]$, rango $[-\pi /2, \pi /2]$}}{46}{figure.3.19}%
-\contentsline {figure}{\numberline {3.20}{\ignorespaces Función arcocoseno: dominio $[-1,1]$, rango $[0, \pi ]$}}{46}{figure.3.20}%
-\contentsline {figure}{\numberline {3.21}{\ignorespaces Función arcotangente: dominio $(-\infty , \infty )$, rango $(-\pi /2, \pi /2)$}}{46}{figure.3.21}%
-\contentsline {figure}{\numberline {3.22}{\ignorespaces Ventana normanda}}{48}{figure.3.22}%
-\contentsline {figure}{\numberline {3.23}{\ignorespaces Caja sin tapa: Hoja de cartón de $20 \times 12$ cm con cuadrados de lado $x$ recortados en las esquinas}}{49}{figure.3.23}%
-\contentsline {figure}{\numberline {3.24}{\ignorespaces Caja armada con pestañas laterales}}{49}{figure.3.24}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Gráfica de $C(x)$ del Ejemplo \ref {ex:costo-contenedor}: el mínimo ocurre aproximadamente en $x \approx 1.65\,\mathrm {m}$.}}{40}{figure.3.1}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces La circunferencia unitaria falla la prueba de la recta vertical.}}{40}{figure.3.2}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Función por tramos con salto en $x=2$.}}{42}{figure.3.3}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces \emph {Izquierda:} potencias pares (simétricas respecto al eje $y$; $x^4$ más \emph {achatada} cerca del origen que $x^2$). \emph {Derecha:} potencias impares (simétricas respecto al origen).}}{43}{figure.3.4}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces $f(x)=1/x$ con asíntota en $x=0$ ($D_f=\mathbb {R}\setminus \{0\}$); $g(x)=x^{2/3}$ con cúspide en el origen ($D_g=\mathbb {R}$).}}{43}{figure.3.5}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces $f(x)=2^x$ creciente; $g(x)=(1/2)^x$ decreciente. Ambas pasan por $(0,1)$ y tienen asíntota $y=0$.}}{43}{figure.3.6}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces $\log _2 x$ y $\ln x$ comparten el punto $(1,0)$; $\log _2 x > \ln x$ para $x > 1$ pues $\log _2 x = \ln x / \ln 2 \approx 1.44\ln x$.}}{44}{figure.3.7}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces $\sin x$ (azul) y $\cos x$ (naranja): período $2\pi $, amplitud 1. Observe que $\cos x = \sin (x+\pi /2)$.}}{44}{figure.3.8}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces $\tan x$: período $\pi $, asíntotas verticales en $x = \pi /2 + k\pi $.}}{45}{figure.3.9}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Traslaciones de $y=x^2$: el vértice se desplaza de $(0,0)$ a $(h,k)$.}}{46}{figure.3.10}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Parámetros de la forma amplitud-fase en $y=C+A\sin [a(t-b)]$.}}{47}{figure.3.11}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Las tres inversas trigonométricas principales. Las líneas punteadas indican las asíntotas del rango.}}{49}{figure.3.12}%
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Ventana normanda}}{52}{figure.3.13}%
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Caja sin tapa: Hoja de cartón de $20 \times 12$ cm con cuadrados de lado $x$ recortados en las esquinas}}{53}{figure.3.14}%
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Caja armada con pestañas laterales}}{54}{figure.3.15}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Representación gráfica de la discontinuidad evitable en $x=1$.}}{53}{figure.4.1}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Interpretación geométrica del límite}}{54}{figure.4.2}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Comparación de áreas: triángulo inscrito $\subset $ sector $\subset $ triángulo circunscrito.}}{56}{figure.4.3}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Representación gráfica de la discontinuidad evitable en $x=1$.}}{55}{figure.4.1}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Interpretación geométrica del límite}}{56}{figure.4.2}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Comparación de áreas: triángulo inscrito $\subset $ sector $\subset $ triángulo circunscrito.}}{58}{figure.4.3}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Un círculo de radio $r$ inscrito en la parábola $y = x^2$.}}{79}{figure.5.1}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Triángulo equilátero formado por el eje $x$ y las rectas tangentes.}}{81}{figure.5.2}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Lámpara en $(3,h)$, elipse $x^2+4y^2=5$ y borde de sombra en $(-5,0)$.}}{81}{figure.5.3}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Un círculo de radio $r$ inscrito en la parábola $y = x^2$.}}{81}{figure.5.1}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Triángulo equilátero formado por el eje $x$ y las rectas tangentes.}}{83}{figure.5.2}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Lámpara en $(3,h)$, elipse $x^2+4y^2=5$ y borde de sombra en $(-5,0)$.}}{83}{figure.5.3}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Monotonía de $f(x)=x^3-3x$: la curva se colorea según el signo de $f'$.}}{88}{figure.6.1}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Concavidad de $f(x)=x^4-4x^3$: en azul los tramos donde $f''>0$ (curva abre hacia arriba) y en rojo donde $f''<0$ (curva abre hacia abajo). Los puntos negros señalan los puntos de inflexión.}}{89}{figure.6.2}%
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Bosquejo de $f(x)=\dfrac {x^2}{x^2-4}$. Las ramas azules son cóncavas hacia arriba y las rojas hacia abajo. Las líneas grises punteadas indican las asíntotas $x=\pm 2$ e $y=1$.}}{93}{figure.6.3}%
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Disposición geométrica del mecanismo y definición de variables.}}{104}{figure.6.4}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Monotonía de $f(x)=x^3-3x$: la curva se colorea según el signo de $f'$.}}{90}{figure.6.1}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Concavidad de $f(x)=x^4-4x^3$: en azul los tramos donde $f''>0$ (curva abre hacia arriba) y en rojo donde $f''<0$ (curva abre hacia abajo). Los puntos negros señalan los puntos de inflexión.}}{91}{figure.6.2}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Bosquejo de $f(x)=\dfrac {x^2}{x^2-4}$. Las ramas azules son cóncavas hacia arriba y las rojas hacia abajo. Las líneas grises punteadas indican las asíntotas $x=\pm 2$ e $y=1$.}}{95}{figure.6.3}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Disposición geométrica del mecanismo y definición de variables.}}{106}{figure.6.4}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

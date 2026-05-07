@@ -96,10 +96,6 @@
 \newcommand{\abs}[1]{\left\vert#1\right\vert}
 
 
-% ==========================================
-% CONFIGURACIÓN DE TIEMPO
-% ==========================================
-\newcommand{\tiempo}{1.5~horas}
 
 % ==========================================
 % COLORES PERSONALIZADOS
@@ -314,6 +310,50 @@
     #1
     \end{tcolorbox}%
   }
+  
+  
+  
+\titleformat{\subsubsection}[display]
+  {\normalfont\bfseries}
+  {}
+  {1pt}
+  {%
+    \begin{tcolorbox}[
+      enhanced,
+      colback=uiscolor!5!white,
+      boxrule=0.1cm,
+      colframe=uiscolor!75!black,
+      arc=0pt,
+      outer arc=0pt,
+      leftrule=0.0cm,
+      rightrule=0.0cm,
+      fontupper=\color{red!85!black}\centering\sffamily\bfseries\normalsize,
+      enlarge left by=-1in-\hoffset-\oddsidemargin, 
+      enlarge right by=-\paperwidth+1in+\hoffset+\oddsidemargin+\textwidth,
+      width=\paperwidth, 
+      left=1in+\hoffset+\oddsidemargin, 
+      right=\paperwidth-1in-\hoffset-\oddsidemargin-\textwidth,
+      top=0.5cm, 
+      bottom=0.1cm,
+      overlay={
+        \node[fill=uiscolor!5!white,
+          draw=uiscolor!75!black,
+          line width=0.1cm,
+          inner sep=0pt,
+          text width=2.5cm,
+          minimum height=1.2cm,
+          align=center,
+          font=\color{red!85!black}\sffamily\bfseries\fontsize{11}{13}\selectfont
+        ] 
+        (chapname)
+        at ([xshift=-0.5\paperwidth]frame.north east)
+        {\thesubsubsection};
+      }
+    ]
+    #1
+    \end{tcolorbox}%
+  }
+\titlespacing*{\subsubsection}{0pt}{0pt}{1pt}
 
 % ==========================================
 % CONFIGURACIÓN DE REGLAS COLOREADAS

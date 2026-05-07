@@ -1,327 +1,798 @@
+% ==============================================================
+%  CAPÍTULO 1 – PRELIMINARES: LOS NÚMEROS REALES
+%  anfalearNotasCalculo
+%  Andres Fabian Leal Archila
+% ==============================================================
+
 \chapter{Preliminares}
 
-En esta sección introductoria se abordarán algunas propiedades fundamentales de los números reales, cuyo estudio resulta esencial para la comprensión rigurosa de los principios del cálculo. A partir del análisis del concepto de número real, del plano cartesiano y de otras nociones preliminares, se pretende establecer una base conceptual sólida que facilite la transición hacia el estudio formal del cálculo diferencial e integral, estructurado desde la noción de función.
+En esta sección introductoria se abordarán algunas propiedades fundamentales
+de los números reales, cuyo estudio resulta esencial para la comprensión
+rigurosa de los principios del cálculo. A partir del análisis del concepto de
+número real, del plano cartesiano y de otras nociones preliminares, se pretende
+establecer una base conceptual sólida que facilite la transición hacia el
+estudio formal del cálculo diferencial e integral, estructurado desde la noción
+de función.
 
+El hilo conductor de este capítulo es la siguiente idea central: $\mathbb{R}$
+no es simplemente una colección de símbolos con los que se operan cuentas, sino
+una \emph{estructura algebraica y geométrica completa}. Comprender esta
+estructura, es decir, sus axiomas de campo, su orden y, muy especialmente, su completitud, es la condición de posibilidad para todo el análisis que vendrá.
+
+% ----------------------------------------------------------------
 \section{Números reales}
+% ----------------------------------------------------------------
 
-Uno de los conceptos más fundamentales en las matemáticas es el de número, cuya noción se remonta a la antigüedad y cuya generalización se ha desarrollado a lo largo de la historia. La estructura numérica básica se origina en el conjunto de los \textit{números naturales}, que posteriormente se amplió al incorporar los números negativos, dando lugar a los \textit{números enteros}. Más adelante, al considerar la posibilidad de expresar un número como una fracción de la forma $\dfrac{a}{b}$, donde $a$ y $b$ son enteros con $b \neq 0$, surge el conjunto de los \textit{números racionales}, los cuales pueden representarse mediante expresiones decimales finitas o periódicas infinitas. 
+Uno de los conceptos más fundamentales en la matemática es el de número, cuya
+noción se remonta a la antigüedad y cuya generalización se ha desarrollado a lo
+largo de la historia. La estructura numérica básica se origina en el conjunto de
+los \textit{números naturales} $(\mathbb{N})$, que posteriormente se amplió al
+incorporar los números negativos, dando lugar a los \textit{números enteros}
+$(\mathbb{Z})$. Más adelante, al considerar la posibilidad de expresar un número
+como una fracción $\dfrac{a}{b}$ con $a,b \in \mathbb{Z}$ y $b \neq 0$, surge el
+conjunto de los \textit{números racionales} $(\mathbb{Q})$, los cuales pueden
+representarse mediante expresiones decimales finitas o periódicas infinitas.
 
-Desde la época de los pitagóricos, se reconoce la existencia de los \textit{números irracionales}, aquellos que no pueden expresarse como cociente de dos números enteros; un ejemplo clásico es $\sqrt{2}$. La unión de los números racionales e irracionales da origen al conjunto de los \textbf{números reales}, que constituirá el objeto principal de estudio en esta sección.
+Desde la época de los pitagóricos se reconoce la existencia de los
+\textit{números irracionales}: aquellos que no pueden expresarse como cociente
+de dos enteros, como $\sqrt{2}$ o $\pi$. La unión de los racionales e
+irracionales origina el conjunto de los \textbf{números reales} $(\mathbb{R})$,
+que constituirá el objeto central de estudio en este capítulo. Esta jerarquía se
+resume en la cadena de inclusiones
+\[
+   \mathbb{N} \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R}.
+\]
 
-El descubrimiento de los números irracionales, atribuido a la escuela pitagórica en la antigua Grecia (siglo V a.\,C.), representó una crisis intelectual para la concepción aritmética de la época, pues reveló la existencia de magnitudes inconmensurables. Este hallazgo marcó un punto de inflexión en el pensamiento matemático, impulsando el desarrollo posterior de la teoría de los números y la formalización del concepto de continuidad numérica.
+\begin{rem}
+El descubrimiento de los números irracionales, atribuido a la escuela pitagórica
+en la antigua Grecia (siglo~V~a.\,C.), representó una crisis intelectual para
+la concepción aritmética de la época, pues reveló la existencia de magnitudes
+\emph{inconmensurables}. Este hallazgo marcó un punto de inflexión en el
+pensamiento matemático, impulsando el desarrollo posterior de la teoría de los
+números y la formalización del concepto de continuidad numérica.
+\end{rem}
 
-A continuación se presentan algunas propiedades fundamentales de los números reales, cuya comprensión resulta esencial para el estudio riguroso del análisis matemático.
+% ----------------------------------------------------------------
+\subsection{Axiomas de campo y orden}
+% ----------------------------------------------------------------
 
-\subsection{Propiedades de los números reales}
+La estructura de $\mathbb{R}$ se sustenta en dos pilares axiomáticos
+inseparables: su estructura de \emph{campo} (que codifica las operaciones de
+suma y producto) y su estructura de \emph{orden} (que formaliza la relación
+``ser menor que''). A continuación se recogen los axiomas esenciales que
+gobiernan estas dos estructuras.
 
-\begin{theorem}[Propiedad de tricotomía]
-El conjunto de los números reales forma un cuerpo ordenado. En particular, dados $x$ y $y$ números reales, existe una y solo una de las siguientes relaciones: $x < y$, $x = y$ o $x > y.$
+\begin{theorem}[Axiomas de campo de $\mathbb{R}$]\label{thm:campo}
+El conjunto $\mathbb{R}$, dotado de las operaciones de adición $(+)$ y
+multiplicación $(\cdot)$, satisface los siguientes axiomas para todo
+$x, y, z \in \mathbb{R}$:
+\begin{enumerate}
+   \item \textbf{Clausura.} $x + y \in \mathbb{R}$ y $x \cdot y \in \mathbb{R}$.
+   \item \textbf{Conmutatividad.} $x + y = y + x$ y $x \cdot y = y \cdot x$.
+   \item \textbf{Asociatividad.} $(x+y)+z = x+(y+z)$ y $(x \cdot y)\cdot z = x
+         \cdot(y \cdot z)$.
+   \item \textbf{Distributividad.} $x\cdot(y+z) = x\cdot y + x\cdot z$.
+   \item \textbf{Elementos neutros.} Existen $0, 1 \in \mathbb{R}$, con
+         $0 \neq 1$, tales que $x + 0 = x$ y $x \cdot 1 = x$.
+   \item \textbf{Inverso aditivo.} Para todo $x$ existe $-x \in \mathbb{R}$ tal
+         que $x + (-x) = 0$.
+   \item \textbf{Inverso multiplicativo.} Para todo $x \neq 0$ existe $x^{-1}
+         \in \mathbb{R}$ tal que $x \cdot x^{-1} = 1$.
+\end{enumerate}
 \end{theorem}
 
-Los números reales pueden representarse sobre la \textbf{recta numérica infinita} (o \textit{eje real}) de acuerdo con la siguiente convención (figura \ref{rectanumerica}): se define un punto $O$, denominado \textit{origen}, que representa al número $0$; una flecha orientada hacia la derecha indica la dirección positiva, mientras que una flecha orientada hacia la izquierda representa los valores negativos. 
+\begin{theorem}[Axiomas de orden de $\mathbb{R}$]\label{thm:orden}
+En $\mathbb{R}$ existe una relación de orden $<$ que satisface, para todo
+$x, y, z \in \mathbb{R}$:
+\begin{enumerate}
+   \item \textbf{Tricotomía.} Se cumple exactamente una de las tres relaciones:
+         $x < y$, \; $x = y$, \; $x > y$.
+   \item \textbf{Transitividad.} Si $x < y$ e $y < z$, entonces $x < z$.
+   \item \textbf{Compatibilidad con la adición.} Si $x < y$, entonces
+         $x + z < y + z$.
+   \item \textbf{Compatibilidad con la multiplicación.} Si $x < y$ y $z > 0$,
+         entonces $x \cdot z < y \cdot z$.
+\end{enumerate}
+\end{theorem}
 
-Por ejemplo, si un número $x_1$ es positivo, se ubica en la recta como un punto a la derecha del origen, a una distancia proporcional a su valor. De manera análoga, si un número $x_2$ es negativo, se representa como un punto a la izquierda del origen, también a una distancia proporcional a $|x_2|$. 
+\begin{rem}
+Un conjunto que satisface simultáneamente los axiomas de campo y de orden se
+denomina \textbf{campo ordenado}. $\mathbb{Q}$ también es un campo ordenado;
+lo que distingue a $\mathbb{R}$ de $\mathbb{Q}$ es el \emph{Axioma del Supremo}
+(véase la sección~\ref{subsec:supremo}), que otorga a $\mathbb{R}$ la propiedad
+de \emph{completitud}.
+\end{rem}
 
-\begin{figure}[H] \label{rectanumerica}
+% ----------------------------------------------------------------
+\subsection{La recta numérica y la propiedad de densidad}
+% ----------------------------------------------------------------
 
+Los axiomas enunciados tienen una interpretación geométrica natural. Los
+números reales pueden representarse sobre la \textbf{recta numérica}
+(o \textit{eje real}) de acuerdo con la siguiente convención: se fija un punto
+$O$, denominado \textit{origen}, que representa al número $0$; la dirección
+positiva apunta hacia la derecha y la negativa hacia la izquierda. Por el
+axioma de tricotomía, si $x_1 > 0$ entonces $x_1$ se ubica a la derecha del
+origen, y si $x_2 < 0$ se ubica a la izquierda.
 
-
-\begin{tikzpicture}[>=stealth, scale=1.1]
-  % Eje real
-  \draw[->] (-4,0) -- (4,0) node[below right] {$x$};
-  
-  % Origen
-  \draw[fill] (0,0) circle (1.5pt) node[below] {$0$};
-  
-  % Marca y etiqueta de un número positivo x_1
-  \draw[fill] (2,0) circle (1.5pt) node[above] {$x_1>0$};
-  
-  % Marca y etiqueta de un número negativo x_2
-  \draw[fill] (-2,0) circle (1.5pt) node[above] {$x_2<0$};
-  
-  % Indicaciones de direcciones positiva y negativa
-  \node[below] at (3.6,0) {dirección positiva};
-  \node[below] at (-3.6,0) {dirección negativa};
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[>=latex, scale=1.1]
+   % Eje real
+   \draw[latex-latex, thick] (-4.5,0) -- (4.5,0) node[below right] {$x$};
+   % Origen
+   \filldraw[black] (0,0) circle (2pt) node[below=4pt] {$0$};
+   % Positivo
+   \filldraw[blue!70!black] (2.5,0) circle (2pt)
+      node[above=4pt] {$x_1 > 0$};
+   % Negativo
+   \filldraw[red!70!black] (-2.5,0) circle (2pt)
+      node[above=4pt] {$x_2 < 0$};
+   % Distancias
+   \draw[blue!60, |-|, thick] (0,-0.55) -- (2.5,-0.55)
+      node[midway, below=2pt, font=\small] {$|x_1|$};
+   \draw[red!60, |-|, thick] (-2.5,-0.55) -- (0,-0.55)
+      node[midway, below=2pt, font=\small] {$|x_2|$};
+   % Indicaciones
+   \node[below=14pt, blue!70!black, font=\small] at (3.8,0)
+      {dirección positiva};
+   \node[below=14pt, red!70!black, font=\small] at (-3.8,0)
+      {dirección negativa};
 \end{tikzpicture}
-\caption{Recta numérica o eje real}
-
+\caption{Recta numérica o eje real. La distancia de cada punto al origen
+es su valor absoluto.}
+\label{fig:rectanumerica}
 \end{figure}
 
-Existe así una correspondencia biunívoca entre los números reales y los puntos de la recta numérica: a cada número real le corresponde un punto único, y a cada punto, un número real. Además, debido a una propiedad denominada \textbf{completitud de los números reales} —cuyo tratamiento formal excede los alcances de este curso—, se cumple que entre dos números reales cualesquiera siempre es posible encontrar otros números, sean racionales o irracionales. Esta idea se resume en el siguiente teorema clásico.
+Existe una correspondencia biunívoca entre los números reales y los puntos de
+la recta numérica: a cada número real le corresponde exactamente un punto, y a
+cada punto, un número real. Esta correspondencia no es trivial: gracias a la
+\emph{completitud} de $\mathbb{R}$, no quedan «huecos» en la recta (como sí
+los habría si trabajásemos solo con $\mathbb{Q}$).
 
-\begin{theorem}
-Para todo número irracional $\alpha$, existen infinitos números racionales que lo aproximan con cualquier grado deseado de precisión.
+Una consecuencia inmediata de la densidad de $\mathbb{R}$ es el siguiente
+resultado clásico.
+
+\begin{theorem}[Aproximación de irracionales por racionales]
+\label{thm:densidad}
+Para todo número irracional $\alpha$ y para todo $\varepsilon > 0$, existe un
+número racional $r \in \mathbb{Q}$ tal que $|\alpha - r| < \varepsilon$. En
+particular, existen infinitos racionales que aproximan $\alpha$ con cualquier
+grado de precisión deseado.
 \begin{proof}
-Sea $\alpha > 0$ un número irracional. Queremos calcular una aproximación con un error menor que $\dfrac{1}{n}$. Note que, para cualquier $\alpha$, existe un número entero $N$ tal que $N < \alpha < N + 1$. Si se divide el segmento comprendido entre $N$ y $N + 1$ en $n$ partes iguales, entonces $\alpha$ se encontrará entre $N + \dfrac{m}{n}$ y $N + \dfrac{m + 1}{n}$ para algún entero $m$. La diferencia entre ambos extremos es $\dfrac{1}{n}$, de modo que se puede alcanzar cualquier precisión deseada disminuyendo el valor de $\dfrac{1}{n}$.
+Sea $\alpha > 0$ irracional y sea $n \in \mathbb{N}$ con $n > 1/\varepsilon$.
+Por el axioma de Arquímedes, existe $N \in \mathbb{Z}$ tal que
+$N < \alpha < N+1$. Dividiendo el intervalo $[N, N+1]$ en $n$ subintervalos
+iguales de longitud $1/n$, el número $\alpha$ cae en alguno de ellos:
+\[
+   N + \frac{m}{n} \;\leq\; \alpha \;<\; N + \frac{m+1}{n}
+   \quad \text{para algún entero } m \in \{0,1,\ldots,n-1\}.
+\]
+Entonces $r = N + m/n \in \mathbb{Q}$ y
+$|\alpha - r| < \dfrac{1}{n} < \varepsilon$.
+Como $n$ puede elegirse arbitrariamente grande, la cantidad de tales
+racionales es infinita.
 \end{proof}
 \end{theorem}
 
 \begin{example}
-El número irracional $\sqrt{2}$ puede aproximarse de la siguiente manera:
+El número irracional $\sqrt{2}$ puede acotarse con precisión creciente:
 \begin{align*}
-1.4 &< \sqrt{2} < 1.5,\\
-1.41 &< \sqrt{2} < 1.42,\\
-1.414 &< \sqrt{2} < 1.415,
+   1{,}4   & < \sqrt{2} < 1{,}5,   & \text{precisión } 10^{-1},\\
+   1{,}41  & < \sqrt{2} < 1{,}42,  & \text{precisión } 10^{-2},\\
+   1{,}414 & < \sqrt{2} < 1{,}415, & \text{precisión } 10^{-3}.
 \end{align*}
-según precisiones de $\dfrac{1}{10}$, $\dfrac{1}{100}$ y $\dfrac{1}{1000}$, respectivamente.
+En cada caso, el racional de la izquierda es una aproximación de $\sqrt{2}$
+con el error señalado.
 \end{example}
 
-\subsection{Valor absoluto de los números reales}
+% ----------------------------------------------------------------
+\subsection{Valor absoluto}
+% ----------------------------------------------------------------
 
-\begin{definition}[Valor absoluto]
-El \textbf{valor absoluto} (o módulo) de un número real $x$, denotado por $|x|$, se define como:
-\begin{align*}
-|x| &= x & \text{si } x \geq 0,\\
-|x| &= -x & \text{si } x < 0.
-\end{align*}
-Por esta definición, $|x|$ representa siempre un número real no negativo ($|x| \geq 0$) y mide la distancia de $x$ al origen en la recta numérica.
+Antes de introducir la definición formal del valor absoluto, conviene motivarla
+geométricamente: dado un punto $x$ en la recta numérica, su \emph{distancia al
+origen} es siempre una cantidad no negativa, independientemente de si $x$ está
+a la derecha o a la izquierda del cero. Esta distancia es precisamente lo que
+codifica el valor absoluto.
+
+\begin{definition}[Valor absoluto]\label{def:valorabsoluto}
+El \textbf{valor absoluto} (o módulo) de un número real $x$, denotado $|x|$,
+se define como:
+\[
+   |x| \;=\;
+   \begin{cases}
+      x  & \text{si } x \geq 0,\\
+      -x & \text{si } x < 0.
+   \end{cases}
+\]
+Geométricamente, $|x|$ representa la distancia de $x$ al origen en la recta
+numérica. En consecuencia, $|x| \geq 0$ para todo $x \in \mathbb{R}$, y
+$|x| = 0$ si y solo si $x = 0$.
 \end{definition}
 
 \begin{example}
-Para $x = 2$, se tiene $|2| = 2 \geq 0$. Para $x = -3$, se verifica $|-3| = 3 > 0$. En ambos casos, el valor absoluto produce un número no negativo.
+Para $x = 2$, se tiene $|2| = 2$. Para $x = -3$, se verifica $|-3| = -(-3)
+= 3$. En ambos casos el resultado es un número no negativo.
 \end{example}
 
-A continuación se enuncian las propiedades fundamentales del valor absoluto:
+Las propiedades fundamentales del valor absoluto se recogen en el siguiente
+teorema, cuyas demostraciones ilustran el uso conjunto de la Definición
+\ref{def:valorabsoluto} y los axiomas de orden.
 
-\begin{theorem}[Propiedades del valor absoluto]
+\begin{theorem}[Propiedades del valor absoluto]\label{thm:valorabsoluto}
 Dados $x, y \in \mathbb{R}$, se cumplen las siguientes propiedades:
 \begin{enumerate}
-\item $|x + y| \leq |x| + |y|$ (Desigualdad triangular).
-\item $|x - y| \geq \bigl||x| - |y|\bigr|$ (Segunda desigualdad triangular).
-\item $|xy| = |x| \cdot |y|$ para todo $x, y \in \mathbb{R}$.
-\item $\left|\dfrac{x}{y}\right| = \dfrac{|x|}{|y|}$ siempre que $y \neq 0$.
+   \item \textbf{Desigualdad triangular:} $|x + y| \leq |x| + |y|$.
+   \item \textbf{Segunda desigualdad triangular:}
+         $\bigl||x| - |y|\bigr| \leq |x - y|$.
+   \item \textbf{Multiplicatividad:} $|x \cdot y| = |x| \cdot |y|$.
+   \item \textbf{Cociente:} $\left|\dfrac{x}{y}\right| = \dfrac{|x|}{|y|}$,
+         siempre que $y \neq 0$.
 \end{enumerate}
 \end{theorem}
 
-\begin{proof}
-
-
+\begin{proof} Se realizará la prueba de las desigualdades triangulares, las demás se siguen directamente de la Definición~\ref{def:valorabsoluto} analizando los cuatro casos posibles de signos para $x$ e $y$, y se dejan como ejercicio al lector.
 \begin{enumerate}
-\item \textbf{Caso $1$:} $x + y \geq 0$. Entonces $|x + y| = x + y \leq |x| + |y|$, pues $|x| \geq x$ y $|y| \geq y$.
+\item
+   \textbf{Caso 1:} $x + y \geq 0$. Entonces $|x+y| = x+y \leq |x|+|y|$,
+   pues $|x| \geq x$ y $|y| \geq y$ (por definición).
 
-\textbf{Caso $2$:} $x + y < 0$. Entonces $|x + y| = -(x + y) = (-x) + (-y) \leq |x| + |y|$, ya que $|x| \geq -x$ y $|y| \geq -y$.
+   \textbf{Caso 2:} $x + y < 0$. Entonces $|x+y| = -(x+y) = (-x)+(-y) \leq
+   |x|+|y|$, ya que $|x| \geq -x$ y $|y| \geq -y$.
 
-\item Sea $z = x - y$. Entonces $x = y + z$, y por la desigualdad triangular:
-\[
-|x| = |y + z| \leq |y| + |z| = |y| + |x - y|.
-\]
-Restando $|y|$ de ambos lados: $
-|x| - |y| \leq |x - y|.$ 
-
-Dado que la desigualdad es simétrica, también se tiene $|y| - |x| \leq |x - y|$, lo que equivale a:
-\[
-|x - y| \geq \bigl||x| - |y|\bigr|.
-\]
-
-Las propiedades $3$ y $4$ se siguen directamente de la definición del valor absoluto.
+\item
+   Sea $z = x - y$. Entonces $x = y + z$, y por la desigualdad triangular:
+   \[
+      |x| = |y + z| \leq |y| + |z| = |y| + |x-y|,
+   \]
+   lo que da $|x| - |y| \leq |x-y|$. Por simetría, $|y| - |x| \leq |x-y|$, y
+   ambas desigualdades equivalen a $\bigl||x|-|y|\bigr| \leq |x-y|$.
 \end{enumerate}
 \end{proof}
 
+\begin{example} Resolver $|2x - 3| = 5$.
 
+\begin{myproof}
+\textbf{Paso 1 – Análisis gráfico y planteamiento.}
+La ecuación $|2x-3| = 5$ pide los puntos de la recta cuya distancia a $3/2$
+(el cero del argumento) es $5/2$. Geométricamente esperamos exactamente dos
+soluciones simétricas respecto a $x = 3/2$.
 
-\subsection{Magnitudes variables y constantes e intervalos de variación}
+\textbf{Paso 2 – Fundamentación teórica.}
+Por la Definición~\ref{def:valorabsoluto}, $|u| = c$ con $c > 0$ equivale a
+$u = c$ o $u = -c$.
 
-Las \textbf{magnitudes variables}, tales como el tiempo, longitud, área, volumen, masa, velocidad y temperatura, obtienen sus valores mediante el hábito de la medición y se presentan en sucesión constante. Para el caso del movimiento uniforme, podemos observar el desplazamiento de un punto a lo largo del tiempo.
+\textbf{Paso 3 – Procedimiento técnico.}
+Aplicamos la equivalencia con $u = 2x-3$ y $c = 5$:
+\begin{align*}
+   2x - 3 &= 5 & &\Rightarrow & 2x &= 8 & &\Rightarrow & x &= 4,\\
+   2x - 3 &= -5 & &\Rightarrow & 2x &= -2 & &\Rightarrow & x &= -1.
+\end{align*}
 
-Por contraste, las \textbf{magnitudes constantes} son aquellas que no sufren variación; una magnitud variable cuyo valor permanece invariable se denomina constante. La distinción entre magnitudes variables y constantes resulta fundamental en el análisis matemático. De esto, por ejemplo $\pi\approx 3.14159$ es una constante mientras $t$ vista como el tiempo es variable.
+\textbf{Paso 4 – Conclusión y formalización.}
+\[
+   \boxed{x = -1 \quad \text{o} \quad x = 4.}
+\]
 
-Una magnitud variable puede tomar diferentes valores numéricos. Se considera el problema de la temperatura del agua al calentarla en condiciones normales, variará desde $15^\circ$C hasta el punto de ebullición: $100^\circ$C.
+\begin{center}
+\begin{tikzpicture}[>=latex, scale=1.1]
+   \draw[latex-latex, thick] (-2.5,0) -- (5.5,0);
+   \filldraw[red!70!black] (-1,0) circle (2.5pt) node[above=4pt] {$-1$};
+   \filldraw[red!70!black]  (4,0) circle (2.5pt) node[above=4pt] {$4$};
+   \filldraw[blue!60!black] (1.5,0) circle (2pt)
+      node[below=4pt,font=\small] {$\tfrac{3}{2}$};
+   \draw[blue!60, |-|] (-1,-0.5) -- (1.5,-0.5)
+      node[midway,below,font=\small]{$5/2$};
+   \draw[blue!60, |-|] (1.5,-0.5) -- (4,-0.5)
+      node[midway,below,font=\small]{$5/2$};
+\end{tikzpicture}
+\end{center}
+\end{myproof}
+\end{example}
+
+\begin{example} Resolver $|3x + 1| \leq 4$.
+
+\begin{myproof}
+\textbf{Paso 1 – Análisis gráfico y planteamiento.}
+La desigualdad pide los puntos $x$ cuya distancia a $-1/3$ (cero del argumento)
+sea a lo sumo $4/3$; es decir, una \emph{vecindad cerrada} de radio $4/3$
+centrada en $-1/3$.
+
+\textbf{Paso 2 – Fundamentación teórica.}
+Para $c > 0$, la equivalencia $|u| \leq c \iff -c \leq u \leq c$ se deduce
+de los axiomas de orden (Teorema~\ref{thm:orden}).
+
+\textbf{Paso 3 – Procedimiento técnico.}
+Con $u = 3x+1$ y $c = 4$:
+\[
+   -4 \leq 3x + 1 \leq 4
+   \;\Rightarrow\;
+   -5 \leq 3x \leq 3
+   \;\Rightarrow\;
+   -\frac{5}{3} \leq x \leq 1.
+\]
+
+\textbf{Paso 4 – Conclusión y formalización.}
+\[
+   \boxed{x \in \left[-\tfrac{5}{3},\;1\right].}
+\]
+
+\begin{center}
+\begin{tikzpicture}[>=latex, scale=1.2]
+   \draw[latex-latex, thick] (-3,0) -- (2.5,0);
+   % Intervalo solución
+   \draw[blue!70!black, very thick] (-5/3,0) -- (1,0);
+   \filldraw[blue!70!black] (-5/3,0) circle (2.5pt)
+      node[below=4pt,font=\small]{$-\tfrac{5}{3}$};
+   \filldraw[blue!70!black] (1,0) circle (2.5pt)
+      node[below=4pt,font=\small]{$1$};
+   % Centro
+   \filldraw[red!70!black] (-1/3,0) circle (2pt)
+      node[above=4pt,font=\small]{$-\tfrac{1}{3}$};
+\end{tikzpicture}
+\end{center}
+\end{myproof}
+\end{example}
+
+% ----------------------------------------------------------------
+\subsection{Magnitudes variables y constantes. Intervalos}
+% ----------------------------------------------------------------
+
+Las \textbf{magnitudes variables}, tales como el tiempo, longitud, área,
+volumen, masa, velocidad y temperatura, toman sus valores mediante el proceso
+de medición y se presentan en sucesión continua. Por contraste, una
+\textbf{magnitud constante} es aquella cuyo valor no cambia a lo largo del
+proceso que se estudia. La distinción entre ambas es fundamental en el análisis
+matemático: por ejemplo, $\pi \approx 3{,}14159$ es una constante, mientras
+que $t$ interpretado como el tiempo transcurrido es una variable.
+
+Consideremos el problema de la temperatura del agua al calentarla a presión
+normal: su valor variará desde los $15\,^\circ\text{C}$ iniciales hasta el
+punto de ebullición, $100\,^\circ\text{C}$. Esta situación introduce
+naturalmente la noción de \emph{intervalo de variación}.
+
+Otro ejemplo clásico proviene de la trigonometría: en el círculo unitario
+(figura~\ref{fig:circulo}), la variable $z = \cos\theta$ puede tomar todos los
+valores comprendidos entre $-1$ y $+1$ a medida que $\theta$ recorre la recta.
+El \textbf{campo de variación} (o \emph{rango}) de $z$ es, en este caso, el
+intervalo cerrado $[-1,1]$.
 
 \begin{figure}[H]
 \centering
 \begin{tikzpicture}[scale=1.5]
-  % Círculo unitario
-  \draw[thick] (0,0) circle (1cm);
-  % Ejes
-  \draw[->] (-1.3,0) -- (1.3,0) node[right] {$x$};
-  \draw[->] (0,-1.3) -- (0,1.3) node[above] {$y$};
-  % Puntos cardinales
-  \fill (-1,0) circle (1.5pt) node[below left] {$(-1,0)$};
-  \fill (1,0) circle (1.5pt) node[below right] {$(1,0)$};
-  \fill (0,1) circle (1.5pt) node[above] {$(0,1)$};
-  % Punto genérico (x,y) en el primer cuadrante
-  \fill[red] (0.707,0.707) circle (2pt) node[above right] {$(x,y)$};
-  % Ángulo theta desde origen al punto (x,y)
-  \draw[blue, thick] (0,0) -- (0.707,0.707) node[midway, sloped, above, font=\small] {$\theta$};
-  % Arco para enfatizar el ángulo
-  \draw[blue, dashed] (0.707,0) arc (0:45:0.707cm);
+   \draw[thick] (0,0) circle (1cm);
+   \draw[latex-latex] (-1.4,0) -- (1.4,0) node[right] {$x$};
+   \draw[latex-latex] (0,-1.4) -- (0,1.4) node[above] {$y$};
+   \filldraw (-1,0) circle (1.5pt) node[below left,font=\small] {$(-1,0)$};
+   \filldraw (1,0)  circle (1.5pt) node[below right,font=\small] {$(1,0)$};
+   \filldraw (0,1)  circle (1.5pt) node[above right,font=\small] {$(0,1)$};
+   \filldraw[red!80!black] (0.707,0.707) circle (2pt)
+      node[above right,font=\small]{$(x,y)$};
+   \draw[blue!70!black, thick] (0,0) -- (0.707,0.707);
+   \node[blue!70!black, font=\small] at (0.22,0.42) {$\theta$};
+   \draw[blue!60, dashed] (0.35,0) arc (0:45:0.35);
+   \draw[gray, dashed, thin] (0.707,0) -- (0.707,0.707)
+      node[right,font=\small,gray]{$\sin\theta$};
+   \draw[gray, dashed, thin] (0,0.707) -- (0.707,0.707);
+   \node[below,font=\small,gray] at (0.354,0) {$\cos\theta$};
 \end{tikzpicture}
-\caption{Representación trigonométrica en el círculo unitario: $x = \cos\theta$, $y = \sin\theta$, donde $(x,y)$ satisface $x^2 + y^2 = 1$}
+\caption{Representación en el círculo unitario: $x = \cos\theta$,
+$y = \sin\theta$, con $x^2 + y^2 = 1$.}
 \label{fig:circulo}
 \end{figure}
 
+El vocabulario preciso para describir los conjuntos de valores posibles de una
+variable se introduce mediante la noción de \emph{intervalo}.
 
-La variable $z = \cos\theta$ puede tomar todos los valores comprendidos entre $-1$ y $+1$. El conjunto de todos los valores posibles que puede tomar la variable independiente $\theta$ se denomina \textbf{campo de variación} de la variable independiente, el cual determina el conjunto de valores posibles de la función dependiente. 
+\begin{definition}[Intervalos]\label{def:intervalos}
+Un \textbf{intervalo} es el conjunto de valores $x \in \mathbb{R}$ comprendidos
+entre dos reales $a < b$. Los intervalos se clasifican según la inclusión o
+exclusión de sus extremos:
 
-Por ejemplo, en la función $z = \cos\theta$, el \textbf{campo de variación} de $z$ es el intervalo cerrado $[-1,1]$. Posteriormente, este concepto se denominará formalmente \textit{rango} (o \textit{imagen}) de una función.
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{llll}
+\hline
+\textbf{Tipo} & \textbf{Notación} & \textbf{Definición} & \textbf{Extremos}\\\hline
+Abierto        & $(a,b)$     & $\{x \in \mathbb{R} : a < x < b\}$    & excluidos\\
+Cerrado        & $[a,b]$     & $\{x \in \mathbb{R} : a \leq x \leq b\}$ & incluidos\\
+Semiabierto    & $(a,b]$     & $\{x \in \mathbb{R} : a < x \leq b\}$ & $a$ excl., $b$ incl.\\
+Semiabierto    & $[a,b)$     & $\{x \in \mathbb{R} : a \leq x < b\}$ & $a$ incl., $b$ excl.\\
+Infinito       & $(c,+\infty)$ & $\{x \in \mathbb{R} : x > c\}$      & $c$ excluido\\
+Infinito       & $(-\infty,c]$ & $\{x \in \mathbb{R} : x \leq c\}$   & $c$ incluido\\
+Recta real     & $(-\infty,+\infty)$ & $\mathbb{R}$                 & sin extremos\\\hline
+\end{tabular}
+\end{center}
 
-Observe que hemos introducido la notación de intervalo $[-1,1]$. Esta notación se define de la siguiente manera:
-
-
-\begin{definition}[Intervalos]
-Un \textbf{intervalo} es el conjunto de valores numéricos $x \in \mathbb{R}$ comprendidos entre dos números reales dados $a$ y $b$ ($a < b$). Los intervalos se clasifican según los extremos incluidos:
-
-\begin{itemize}
-\item \textbf{Intervalo abierto}: $(a,b) = \{ x \in \mathbb{R} \mid a < x < b \}$. \textit{No se incluyen los extremos $a$ ni $b$.}
-\item \textbf{Intervalo cerrado}: $[a,b] = \{ x \in \mathbb{R} \mid a \leq x \leq b \}$. \textit{Se incluyen ambos extremos.}
-\item \textbf{Intervalos semicerrados (o semiabiertos)}:
-  \begin{itemize}
-  \item $(a,b] = \{ x \in \mathbb{R} \mid a < x \leq b \}$
-  \item $[a,b) = \{ x \in \mathbb{R} \mid a \leq x < b \}$
-  \end{itemize}
-\item \textbf{Intervalos infinitos}:
-  \begin{itemize}
-  \item $(-\infty,c) = \{ x \in \mathbb{R} \mid x < c \}$
-  \item $(c,+\infty) = \{ x \in \mathbb{R} \mid x > c \}$
-  \item $(-\infty,+\infty) = \mathbb{R}$
-  \end{itemize}
-\end{itemize}
-
-Existen combinaciones adicionales de estas definiciones, como por ejemplo $(-\infty,b]$, que se interpretan de manera análoga.
+Gráficamente, un extremo \emph{incluido} se representa con un círculo
+\textbf{relleno} ($\bullet$) y un extremo \emph{excluido} con un círculo
+\textbf{vacío} ($\circ$).
 \end{definition}
 
 \begin{example}
-Ejemplos de intervalos: $(-1,1)$, $[-2,3)$, $(0,+\infty)$, $\mathbb{R} = (-\infty,+\infty)$.
+Los conjuntos $(-1,1)$, $[-2,3)$ y $(0,+\infty)$ son intervalos de los tipos
+abierto, semiabierto y abierto infinito, respectivamente. En la recta real:
+
+\begin{center}
+\begin{tikzpicture}[>=latex, scale=1.1]
+   \draw[latex-latex, thick] (-3.2,0) -- (3.2,0);
+   \draw[blue!70!black, very thick] (-1,0) -- (1,0);
+   \draw[blue!70!black, thick] (-1,0) circle (2.5pt);
+   \draw[blue!70!black, thick]  (1,0) circle (2.5pt);
+   \node[below=6pt, font=\small] at (-1,0) {$-1$};
+   \node[below=6pt, font=\small] at  (1,0) {$1$};
+   \node[above=6pt, blue!70!black, font=\small] at (0,0) {$(-1,1)$};
+\end{tikzpicture}
+\end{center}
 \end{example}
 
-Las definiciones de intervalos abiertos y cerrados se utilizan para múltiples aspectos de las funciones. Gráficamente se considera el concepto de vecindad, que está representada por un centro y un radio, el cual resulta ser un intervalo: 
+% ----------------------------------------------------------------
+\subsection{Vecindades}
+% ----------------------------------------------------------------
+
+La noción de vecindad es la pieza geométrica que conecta los intervalos con los
+conceptos topológicos que son base del cálculo: límites, continuidad y
+derivadas. Intuitivamente, una vecindad de un punto $x_0$ es un intervalo
+abierto que lo contiene y cuya ``anchura'' queda determinada por el radio
+$\varepsilon$.
+
+\begin{definition}[Vecindad abierta]\label{def:vecindad}
+Dados $x_0 \in \mathbb{R}$ y $\varepsilon > 0$, la \textbf{vecindad de radio
+$\varepsilon$ centrada en $x_0$} es el intervalo abierto
+\[
+   V_\varepsilon(x_0) \;=\; (x_0 - \varepsilon,\; x_0 + \varepsilon)
+   \;=\; \{x \in \mathbb{R} : |x - x_0| < \varepsilon\}.
+\]
+El punto $x_0$ se denomina \textbf{centro} de la vecindad y $\varepsilon$ su
+\textbf{radio}.
+\end{definition}
+
+\begin{rem}
+La equivalencia $x \in V_\varepsilon(x_0) \iff |x - x_0| < \varepsilon$ es
+fundamental: traduce la condición geométrica de «estar a distancia menor que
+$\varepsilon$ de $x_0$» al lenguaje algebraico del valor absoluto. Esta
+equivalencia es el corazón de la definición épsilon-delta de límite.
+\end{rem}
 
 \begin{figure}[H]
 \centering
-\begin{tikzpicture}[scale=1.2]
-  % Eje real
-  \draw[thick, ->] (-3,0) -- (3,0) node[below right] {$x$};
-  
-  % Límites de la vecindad (puntos extremos)
-  \filldraw (-1.5,0) circle (1.5pt) node[above] {$x_0-\varepsilon$};
-  \filldraw (1.5,0) circle (1.5pt) node[above] {$x_0+\varepsilon$};
-  
-  % Centro x_0
-  \filldraw[red] (0,0) circle (2pt) node[below] {$x_0$};
-  
-  % Línea horizontal superior para representar el intervalo abierto
-  \draw[thick, blue] (-1.5,0.3) -- (1.5,0.3);
-  
-  % Flechas verticales en los extremos para mostrar apertura
-  \draw[thick, gray] (-1.5,0) -- (-1.5,0.3);
-  \draw[thick, gray] (1.5,0) -- (1.5,0.3);
-  
-  % Doble flecha para radio \varepsilon (simétrica)
-  \draw[thick, |<->|] (0,1) -- (1.5,1) node[above] {$\varepsilon$};
-  
-  % Etiqueta opcional para el intervalo
-  \node[above, blue] at (0,0.3) {$(x_0 - \varepsilon, x_0 + \varepsilon)$};
+\begin{tikzpicture}[>=latex, scale=1.3]
+   \draw[latex-latex, thick] (-3.5,0) -- (3.5,0);
+   % Intervalo sombreado
+   \fill[blue!12] (-2,0.15) rectangle (2,0.45);
+   \draw[blue!70!black, very thick] (-2,0.3) -- (2,0.3);
+   % Extremos abiertos
+   \draw[blue!70!black, thick] (-2,0.3) circle (2pt);
+   \draw[blue!70!black, thick]  (2,0.3) circle (2pt);
+   % Etiquetas extremos
+   \draw[gray, thin] (-2,0) -- (-2,0.3);
+   \draw[gray, thin]  (2,0) -- (2,0.3);
+   \filldraw[black] (-2,0) circle (1.5pt)
+      node[below=4pt,font=\small]{$x_0-\varepsilon$};
+   \filldraw[black]  (2,0) circle (1.5pt)
+      node[below=4pt,font=\small]{$x_0+\varepsilon$};
+   % Centro
+   \filldraw[red!80!black] (0,0) circle (2.5pt)
+      node[below=4pt, font=\small]{$x_0$};
+   % Radio doble flecha
+   \draw[red!70, |<->|, thick] (0,0.7) -- (2,0.7)
+      node[midway,above,font=\small]{$\varepsilon$};
+   % Etiqueta vecindad
+   \node[blue!70!black, above=2pt, font=\small] at (0,0.45)
+      {$V_\varepsilon(x_0)$};
 \end{tikzpicture}
-\caption{Intervalo abierto $(x_0 - \varepsilon, x_0 + \varepsilon)$ representado como línea centrada en $x_0$ de radio $\varepsilon$ en el eje real.}
+\caption{Vecindad abierta $V_\varepsilon(x_0) = (x_0-\varepsilon,\,
+x_0+\varepsilon)$: intervalo centrado en $x_0$ de radio $\varepsilon$.}
 \label{fig:vecindad}
 \end{figure}
 
+% ----------------------------------------------------------------
+\subsection{Conjuntos acotados: cotas, supremo e ínfimo}
+\label{subsec:supremo}
+% ----------------------------------------------------------------
 
+La noción de completitud de $\mathbb{R}$, la que distingue a los reales de los
+racionales, se captura con precisión mediante el concepto de supremo. Antes de
+enunciarlo, es necesario introducir la idea de conjunto acotado.
 
-
-
-\begin{definition}[Vecindad]
-Dados un número real $x_0 \in \mathbb{R}$ y un número positivo $\varepsilon > 0$, el conjunto $(x_0 - \varepsilon, x_0 + \varepsilon)$ se denomina \textbf{vecindad} de $x_0$ de \textbf{radio} $\varepsilon$, o simplemente vecindad de radio $\varepsilon$ centrada en $x_0$. En este caso, el punto $x_0$ se llama \textbf{centro} de la vecindad, y la magnitud $\dfrac{\varepsilon}{2}$ denomina \textbf{radio de la vecindad}. La Figura \ref{fig:vecindad} representa la vecindad $(x_0 - \varepsilon, x_0 + \varepsilon)$ del punto $x_0$, cuyo radio es $\varepsilon$.
+\begin{definition}[Conjunto acotado, cota superior e inferior]
+\label{def:cotado}
+Sea $S \subseteq \mathbb{R}$, $S \neq \emptyset$.
+\begin{itemize}
+   \item $S$ está \textbf{acotado superiormente} si existe $M \in \mathbb{R}$
+         tal que $x \leq M$ para todo $x \in S$. Todo tal $M$ se denomina
+         \textbf{cota superior} de $S$.
+   \item $S$ está \textbf{acotado inferiormente} si existe $m \in \mathbb{R}$
+         tal que $m \leq x$ para todo $x \in S$. Todo tal $m$ se denomina
+         \textbf{cota inferior} de $S$.
+   \item $S$ está \textbf{acotado} si está acotado superior e inferiormente.
+\end{itemize}
 \end{definition}
 
-\subsection{Problemas propuestos}
+\begin{definition}[Supremo e ínfimo]\label{def:supremo}
+Sea $S \subseteq \mathbb{R}$, $S \neq \emptyset$ y acotado superiormente.
+\begin{itemize}
+   \item El \textbf{supremo} (o \textit{mínimo de las cotas superiores}) de
+         $S$, denotado $\sup S$, es el número $\alpha \in \mathbb{R}$ tal que:
+         \begin{enumerate}
+            \item $x \leq \alpha$ para todo $x \in S$ ($\alpha$ es cota
+                  superior);
+            \item si $\beta < \alpha$, entonces existe $x \in S$ con $x > \beta$
+                  ($\alpha$ es la \emph{menor} cota superior).
+         \end{enumerate}
+   \item Si $S$ está acotado inferiormente, el \textbf{ínfimo} $\inf S$ es la
+         \emph{mayor} de las cotas inferiores, definido análogamente.
+\end{itemize}
+\end{definition}
 
-Siga estos pasos ordenados para resolver los problemas algebraicos. Estos pasos son útiles tanto para su resolución manual como para generar prompts efectivos con inteligencia artificial.
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[>=latex, scale=1.15]
+   % Eje
+   \draw[latex-latex, thick] (-0.8,0) -- (6.2,0);
+   % Conjunto S (relleno de color)
+   \fill[green!20] (1,0.12) rectangle (3.5,0.5);
+   \draw[green!60!black, very thick] (1,0.3) -- (3.5,0.3);
+   \draw[green!60!black, thick] (1,0.3)   circle (2.5pt); % abierto
+   \draw[green!60!black, thick] (3.5,0.3) circle (2.5pt); % abierto
+   \node[green!50!black, above, font=\small] at (2.25,0.5) {$S$};
+   % sup S
+   \filldraw[red!80!black] (3.5,0) circle (3pt)
+      node[below=5pt, font=\small, red!80!black]{$\sup S$};
+   \draw[red!60, dashed, thin] (3.5,0) -- (3.5,0.3);
+   % cotas superiores
+   \filldraw[blue!60] (4.3,0) circle (2pt)
+      node[below=5pt, font=\small, blue!60]{$M_1$};
+   \filldraw[blue!60] (5.3,0) circle (2pt)
+      node[below=5pt, font=\small, blue!60]{$M_2$};
+   \draw[blue!40, decorate, decoration={brace,amplitude=5pt}]
+      (3.5,0.65) -- (5.8,0.65)
+      node[midway,above=5pt,font=\small,blue!60]{cotas superiores};
+   % inf S
+   \filldraw[orange!80!black] (1,0) circle (3pt)
+      node[below=5pt, font=\small, orange!80!black]{$\inf S$};
+\end{tikzpicture}
+\caption{El supremo y el ínfimo}
+\label{fig:supremo}
+\end{figure}
 
-\textbf{PROCESO SISTEMÁTICO DE RESOLUCIÓN}
+El siguiente axioma es el que, a nivel más profundo, distingue a $\mathbb{R}$
+de $\mathbb{Q}$ y garantiza la «ausencia de huecos» en la recta numérica.
+
+\begin{theorem}[Axioma del Supremo]
+\label{thm:supremo}
+Todo subconjunto no vacío $S \subseteq \mathbb{R}$ acotado superiormente posee
+supremo en $\mathbb{R}$:
+\[
+   \exists\, \alpha \in \mathbb{R} \;\text{ tal que }\; \alpha = \sup S.
+\]
+\end{theorem}
+
+\begin{rem}
+Este axioma falla en $\mathbb{Q}$: el conjunto
+$S = \{q \in \mathbb{Q} : q^2 < 2\}$ está acotado superiormente en
+$\mathbb{Q}$ (por ejemplo, por $2$), pero su supremo $\sqrt{2}$ no
+pertenece a $\mathbb{Q}$. En $\mathbb{R}$, el Axioma del Supremo garantiza que
+$\sqrt{2} \in \mathbb{R}$. Esta es la razón profunda por la que el cálculo se
+desarrolla sobre $\mathbb{R}$ y no sobre $\mathbb{Q}$.
+\end{rem}
+
+\begin{example} Determinar $\sup S$ e $\inf S$ para $S = \left\{\dfrac{n}{n+1} : n \in
+\mathbb{N}\right\}$.
+
+\begin{myproof}
+\textbf{Paso 1 – Análisis gráfico y planteamiento.}
+Los primeros valores son $\tfrac{1}{2}, \tfrac{2}{3}, \tfrac{3}{4},
+\tfrac{4}{5},\ldots$; la sucesión es creciente y se acerca a $1$ sin
+alcanzarlo.
+
+\begin{center}
+\begin{tikzpicture}[>=latex, scale=5]
+   \draw[latex-latex, thick] (-0.3,0) -- (2,0);
+   \foreach \n/\x in {1/0.5, 2/0.667, 3/0.75, 4/0.8, 5/0.833}{
+      \filldraw[blue!60!black] (\x,0) circle (1pt)
+         node[above=3pt,font=\tiny]{$\frac{\n}{\n+1}$};
+   }
+   \draw[red!70!black, dashed, thick] (1,0.3) -- (1,-0.2)
+      node[below,font=\small,red!80!black]{$1 = \sup S$};
+   \filldraw[green!50!black] (0.5,0) circle (1pt)
+      node[below=5pt,font=\small,green!50!black]{$\tfrac{1}{2} = \inf S$};
+\end{tikzpicture}
+\end{center}
+
+\textbf{Paso 2 – Fundamentación teórica.}
+Se usará la Definición~\ref{def:supremo} con la propiedad de tricotomía
+(Teorema~\ref{thm:orden}).
+
+\textbf{Paso 3 – Procedimiento técnico.}
+
+\emph{Supremo:} Nótese que $\dfrac{n}{n+1} = 1 - \dfrac{1}{n+1} < 1$ para
+todo $n \in \mathbb{N}$, luego $1$ es cota superior. Si $\beta < 1$,
+entonces $\beta < 1 - \dfrac{1}{n+1}$ para $n$ suficientemente grande
+(por la propiedad arquimediana), lo que significa que hay elementos de $S$
+mayores que $\beta$. Luego $\sup S = 1$. Como $1 \notin S$, el supremo no
+se alcanza.
+
+\emph{Ínfimo:} El mínimo valor es $\dfrac{1}{2}$ (con $n=1$), que sí
+pertenece a $S$, luego $\inf S = \min S = \dfrac{1}{2}$.
+
+\textbf{Paso 4 – Conclusión y formalización.}
+\[
+   \boxed{\inf S = \frac{1}{2} \in S, \qquad \sup S = 1 \notin S.}
+\]
+\end{myproof}
+\end{example}
+
+% ----------------------------------------------------------------
+\section{Problemas propuestos}
+% ----------------------------------------------------------------
+
+Los problemas que siguen están organizados en tres bloques temáticos, de menor
+a mayor complejidad conceptual, siguiendo el hilo conductor del capítulo:
+axiomas de campo y orden, desigualdades y valor absoluto, y topología de la
+recta real. Para cada problema se recomienda aplicar el Proceso Sistemático de
+Resolución (análisis, plan, ejecución y validación) descrito a continuación.
+
+\textbf{Proceso Sistemático de Resolución}
 
 \begin{enumerate}
-\item \textbf{ANÁLISIS INICIAL}
-   \begin{itemize}
-   \item Lea todo el problema cuidadosamente.
-   \item Identifique: ¿Qué datos se dan? ¿Qué se pide?
-   \item Clasifique el problema: ecuación, desigualdad, simplificación, o aplicado.
-   \end{itemize}
-
-\item \textbf{PLAN DE SOLUCIÓN}
-   \begin{itemize}
-   \item Liste las técnicas necesarias: factorización, valor absoluto, despeje, etc.
-   \item Si es aplicado, asigne variables a las incógnitas.
-   \end{itemize}
-
-\item \textbf{EJECUCIÓN ALGEBRAICA}
-   \begin{itemize}
-   \item Organice la ecuación/desigualdad claramente.
-   \item Identifique simplificaciones: fracciones, factorización, radicales.
-   \item Realice operaciones paso a paso, explicando cada acción:
-     \begin{itemize}
-     \item ``Multiplico por $x-2\neq 0$ para eliminar denominador''
-     \item ``Factorizo numerador: $x^2-4=(x-2)(x+2)$''
-     \end{itemize}
-   \end{itemize}
-
-\item \textbf{VALIDACIÓN DE SOLUCIONES}
-   \begin{itemize}
-   \item Verifique soluciones extraviadas (raíces, valor absoluto).
-   \item Determine dominio: denominadores ≠0, radicales ≥0.
-   \item Sustituya en la expresión original.
-   \end{itemize}
-
-\item \textbf{PRESENTACIÓN FINAL}
-   \begin{itemize}
-   \item Expresión simplificada o intervalo solución.
-   \item Dominio completo.
-   \item Contexto físico (si aplica).
-   \end{itemize}
+   \item \textbf{Análisis inicial.} Identifique datos y objetivos; clasifique
+         el problema (ecuación, desigualdad, estimación, topología).
+   \item \textbf{Plan de solución.} Enumere las propiedades o axiomas que
+         usará (tricotomía, valor absoluto, supremo, etc.).
+   \item \textbf{Ejecución algebraica.} Desarrolle paso a paso, justificando
+         cada operación.
+   \item \textbf{Validación.} Verifique la solución en la expresión original;
+         determine el dominio; represente gráficamente en la recta real.
 \end{enumerate}
 
 
+\begin{prob}
+Utilizando los axiomas de campo y de orden (Teoremas~\ref{thm:campo}
+y~\ref{thm:orden}), demuestre o refute cada afirmación:
+\begin{enumerate}
+   \item Si $a < b$ y $c < 0$, entonces $ac > bc$.
+   \item Para todo $x \in \mathbb{R}$, $x^2 \geq 0$.
+   \item Si $a > 0$ y $b > 0$, entonces $\dfrac{a+b}{2} > \sqrt{ab}$
+         (desigualdad aritmético-geométrica). \emph{Sugerencia:} considere
+         $(\sqrt{a}-\sqrt{b})^2 \geq 0$.
+   \item Para todo $x \in \mathbb{R}$, $x^2 + x + 1 > 0$.
+   \item Si $0 < a < b$, entonces $\dfrac{1}{b} < \dfrac{1}{a}$.
+   \item Si $a, b > 0$, entonces $\dfrac{a}{b} + \dfrac{b}{a} \geq 2$.
+\end{enumerate}
+\end{prob}
 
 \begin{prob}
-Encuentre los valores de $x \in \mathbb{R}$ que resuelven las siguientes ecuaciones o desigualdades. Expresa las soluciones en notación de intervalo cuando corresponda y represente gráficamente cada conjunto solución como vecindad abierta en el eje real (incluya la figura con centro y radio $\varepsilon$ apropiados).
+Demuestre las siguientes identidades y desigualdades algebraicas:
+\begin{enumerate}
+   \item $(a-b)(a+b) = a^2 - b^2$ para todo $a, b \in \mathbb{R}$.
+   \item $(a+b)^3 = a^3 + 3a^2b + 3ab^2 + b^3$.
+   \item Para $n \in \mathbb{N}$ y $x \neq 1$:
+         $1 + x + x^2 + \cdots + x^n = \dfrac{x^{n+1}-1}{x-1}$.
+   \item \textbf{Desigualdad de Bernoulli:} Para $x > -1$ y $n \in
+         \mathbb{N}$, $(1+x)^n \geq 1 + nx$.
+   \item Para todo $a, b \in \mathbb{R}$:
+         $2(a^2+b^2) \geq (a+b)^2$.
+\end{enumerate}
+\end{prob}
+
+
+\begin{prob}
+Resuelva cada ecuación y desigualdad. Exprese las soluciones en notación de
+intervalo y represente el conjunto solución como vecindad en la recta real,
+indicando centro $x_0$ y radio $\varepsilon$.
 
 \begin{multicols}{2}
 \begin{enumerate}
+   % Ecuaciones racionales
+   \item $\dfrac{3x+1}{5x+7} = \dfrac{6x+11}{10x-3}$
+   \item $2 - \dfrac{1}{x} = 1 + \dfrac{3}{x}$
+   \item $\dfrac{2}{x+5} = \dfrac{3}{2x+1} - \dfrac{5}{6x+3}$
+   \item $\dfrac{4}{x-5} - \dfrac{2}{x+4} = \dfrac{3}{2x-4}$
+   \item $\dfrac{1}{\sqrt{x}} = 3 - \dfrac{1-3\sqrt{x}}{\sqrt{x}}$
 
-% I. Ecuaciones Racionales y Radicales (5)
-\item \(\displaystyle \frac{3x + 1}{5x + 7} = \frac{6x + 11}{10x - 3}\)
-\item \(\displaystyle 2 - \frac{1}{x} = 1 + \frac{3}{x}\)
-\item \(\displaystyle \frac{2}{x+5} = \frac{3}{2x + 1} - \frac{5}{6x + 3}\)
-\item \(\displaystyle \frac{4}{x - 5} - \frac{2}{x + 4} = \frac{3}{2x - 4}\)
-\item \(\displaystyle \frac{1}{\sqrt{x}} = 3 - \frac{1 - 3\sqrt{x}}{\sqrt{x}}\)
+   % Ecuaciones cuadráticas
+   \item $2x^2 + 7x - 15 = 0$
+   \item $(x-2)(x+1) - 6 = 0$
+   \item $x^2 - 2x - 15 = 0$
+   \item $4x^3 - 37x^2 + 75 = 0$\quad (raíz racional)
+   \item $20x^3 + 8x^2 - 55x - 22 = 0$
 
-% II. Ecuaciones Cuadráticas y Polinómicas (5)
-\item \(2x^{2} + 7x - 15 = 0\)
-\item \((x - 2)(x + 1) - 6 = 0\)
-\item \(4x^{2} - 37x^{2} + 75 = 0\)
-\item \(x^{2} - 2x - 15 = 0\)
-\item \(20x^{2} + 8x^{2} - 55x - 22 = 0\)
-
-% III. Operaciones Algebraicas con Fracciones (5)
-\item \(\displaystyle \frac{6xy^{2}}{7} \times \frac{21x^{2}}{y} \div \frac{32xy^{2}}{91}\)
-\item \(\displaystyle \frac{12p^{2}q^{2}}{5} \times \frac{15}{4pq} \div 3\)
-\item \(\displaystyle \frac{3}{pq} \times \frac{4p}{p+1}\)
-\item \(\displaystyle \frac{x^{2} - x - 6}{2xy} \times \frac{2x^{2}y}{x^{2} - 9}\)
-\item \(\frac{4}{\sqrt{2} - 1} + \frac{4 + \sqrt{3}}{\sqrt{2} - 3}\)
-
-% IV. Desigualdades Lineales y Polinómicas (5)
-\item \(3x - 2 > 12\)
-\item \(2x + 5 \leq 8\)
-\item \(-2 - 3x \geq 2\)
-\item \(3 - 5x < 11\)
-\item \(2x + 5 < 6x - 7\)
-
-% V. Ecuaciones y Desigualdades con Valor Absoluto (5)
-\item \(|4x - 1| = 7\)
-\item \(|2x + 1| + 1 = 15\)
-\item \(\left| \frac{2 - 3x}{5} \right| = 2\)
-\item \(\left| \frac{2x + 5}{3} \right| < 1\)
-\item \(\frac{3}{|5 - 2x|} < 2\)
-
-% VI. Desigualdades Racionales y Polinómicas (5)
-\item \(\displaystyle \frac{x^{2}(x + 2)}{x + 2(x + 1)} \leq 0\)
-\item \(\displaystyle \frac{(x^{2} + 1)(x - 3)}{x^{2} - 9} \geq 0\)
-\item \(\displaystyle \frac{x^{2} - x}{x^{2} + 2x} \leq 0\)
-\item \(\displaystyle \frac{(x + 3)(2 - x)}{(x + 4)(x^{2} - 4)} \leq 0\)
-\item \(\displaystyle \frac{x - 2}{3x - 10} \geq 0\)
-
+   % Desigualdades lineales
+   \item $3x - 2 > 12$
+   \item $2x + 5 \leq 8$
+   \item $-2 - 3x \geq 2$
+   \item $3 - 5x < 11$
+   \item $2x + 5 < 6x - 7$
 \end{enumerate}
 \end{multicols}
 \end{prob}
 
+\begin{prob}
+Resuelva cada ecuación y desigualdad con valor absoluto. Para cada solución,
+identifique la vecindad $V_\varepsilon(x_0)$ equivalente e ilustre en la recta
+real.
 
+\begin{multicols}{2}
+\begin{enumerate}
+   \item $|4x - 1| = 7$
+   \item $|2x + 1| + 1 = 15$
+   \item $\left|\dfrac{2-3x}{5}\right| = 2$
+   \item $\left|\dfrac{2x+5}{3}\right| < 1$
+   \item $\dfrac{3}{|5-2x|} < 2$
+   \item $|x-2| + |x+1| = 5$
+\end{enumerate}
+\end{multicols}
+\end{prob}
+
+\begin{prob}
+Resuelva cada desigualdad racional o polinómica. Determine el dominio,
+descomponga en factores, analice el signo en cada subintervalo y exprese la
+solución en notación de intervalo.
+
+\begin{multicols}{2}
+\begin{enumerate}
+   \item $\dfrac{x^2(x+2)}{x+2(x+1)} \leq 0$
+   \item $\dfrac{(x^2+1)(x-3)}{x^2-9} \geq 0$
+   \item $\dfrac{x^2-x}{x^2+2x} \leq 0$
+   \item $\dfrac{(x+3)(2-x)}{(x+4)(x^2-4)} \leq 0$
+   \item $\dfrac{x-2}{3x-10} \geq 0$
+   \item $\dfrac{12p^2q^2}{5} \cdot \dfrac{15}{4pq} \div 3$ \;
+         (simplifique)
+\end{enumerate}
+\end{multicols}
+\end{prob}
+
+\begin{prob}
+Para cada conjunto, determine si está acotado (superior o inferiormente),
+calcule $\sup S$ e $\inf S$ cuando existan, e indique si el supremo o el
+ínfimo pertenecen al conjunto. Represente $S$ en la recta real e ilustre las
+cotas con la figura correspondiente al estilo de la Figura~\ref{fig:supremo}.
+
+\begin{enumerate}
+   \item $S = \left\{\dfrac{(-1)^n}{n} : n \in \mathbb{N}\right\}$.
+   \item $S = \{x \in \mathbb{R} : x^2 < 3\}$.
+   \item $S = \left\{1 - \dfrac{1}{2^n} : n \in \mathbb{N}\right\}$.
+   \item $S = \{x \in \mathbb{Q} : x^2 \leq 5\}$.
+   \item $S = (-\infty, \sqrt{7})$.
+   \item $S = \left\{\dfrac{2n+1}{n} : n \in \mathbb{N}\right\}$.
+\end{enumerate}
+\end{prob}
+
+\begin{prob}
+Problemas de demostración sobre supremo e ínfimo.
+
+\begin{enumerate}
+   \item Demuestre que si $\alpha = \sup S$ y $\varepsilon > 0$, entonces
+         existe $x \in S$ tal que $\alpha - \varepsilon < x \leq \alpha$.
+   \item Demuestre que si $A \subseteq B$ y $B$ está acotado superiormente,
+         entonces $\sup A \leq \sup B$.
+   \item Sea $A \subseteq \mathbb{R}$ acotado superiormente y sea
+         $c \in \mathbb{R}$. Demuestre que $\sup(A + c) = \sup A + c$,
+         donde $A + c = \{a + c : a \in A\}$.
+   \item Demuestre que $\sup\{x \in \mathbb{Q} : x < \sqrt{2}\} = \sqrt{2}$
+         usando el Teorema~\ref{thm:densidad}.
+   \item Sea $A, B \subseteq \mathbb{R}$ no vacíos y acotados. Si $a \leq b$
+         para todo $a \in A$ y $b \in B$, demuestre que $\sup A \leq \inf B$.
+\end{enumerate}
+\end{prob}
+
+\begin{prob}
+Problemas de aplicación: vecindades y la estructura topológica de $\mathbb{R}$.
+
+\begin{enumerate}
+   \item Demuestre que $|x - x_0| < \varepsilon$ si y solo si
+         $x \in V_\varepsilon(x_0)$.
+   \item Encuentre todos los valores de $\varepsilon > 0$ tales que
+         $V_\varepsilon(3) \subseteq (1, 6)$.
+   \item Sea $V_\varepsilon(a)$ y $V_\delta(b)$ dos vecindades. Determine una
+         condición necesaria y suficiente sobre $|a-b|$, $\varepsilon$ y
+         $\delta$ para que $V_\varepsilon(a) \cap V_\delta(b) \neq \emptyset$.
+   \item Demuestre que para todo $x_0 \in \mathbb{R}$ y para todo $r > 0$,
+         la vecindad $V_r(x_0)$ contiene infinitos racionales e infinitos
+         irracionales.
+   \item Si $x \in V_\varepsilon(x_0)$ y $y \in V_\delta(y_0)$, demuestre
+         que $x + y \in V_{\varepsilon+\delta}(x_0+y_0)$.
+\end{enumerate}
+\end{prob}

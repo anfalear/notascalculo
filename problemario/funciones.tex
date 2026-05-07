@@ -1,189 +1,207 @@
 \chapter{Funciones}\label{funciones}
 
-La función es, tal vez, uno de los conceptos más importantes en matemáticas, pues gran parte de los demás conceptos matemáticos se basan en el conocimiento de las funciones y sus propiedades. Aunque existen muchos tipos de funciones —por ejemplo, el área de un círculo que depende de su radio, el costo de un envío que depende de su peso, o la velocidad que depende del tiempo \(t\) transcurrido—, las funciones no siempre dependen de una sola variable. Por ejemplo, el volumen de un cilindro depende tanto de su altura como de su radio. 
+La función es, sin duda, el concepto más omnipresente en las matemáticas: toda la arquitectura del cálculo diferencial e integral descansa sobre él. Antes de precisar la definición formal, conviene cultivar la intuición correcta. Imagine una \emph{máquina procesadora de números}: se introduce un valor $x$ en la ranura de entrada, la máquina ejecuta una operación interna y devuelve un único resultado $f(x)$ por la ranura de salida. Esta metáfora captura la esencia de la dependencia funcional: el valor de salida \emph{depende} del valor de entrada, y a cada entrada le corresponde exactamente una salida.
 
-En esta sección nos enfocaremos inicialmente en las funciones de una variable real y desarrollaremos con detalle este concepto fundamental.
+En la práctica, esta dependencia aparece en todas partes: el área de un círculo depende de su radio, el costo de un envío depende de su peso, la temperatura de un cuerpo depende del tiempo transcurrido. En este capítulo desarrollaremos con rigor y detalle este concepto fundamental, explorando sus propiedades algebraicas y su comportamiento gráfico.
 
 
 \section{Propiedades básicas}
 
 \begin{definition}[Función]
-Una función \( f \) es una regla de correspondencia que asigna a cada elemento \( x \) de un conjunto denominado \textbf{dominio}, un único valor \( f(x) \) en otro conjunto, llamado \textbf{codominio}. 
+Una \textbf{función} $f$ es una regla de correspondencia que asigna a cada elemento $x$ de un conjunto denominado \textbf{dominio} $D_f$, un \emph{único} valor $f(x)$ en otro conjunto llamado \textbf{codominio}. 
 
-El conjunto de todos los valores \( f(x) \) obtenidos se denomina \textbf{rango} o \textbf{imagen} de \( f \). Es común decir que $x$ es la variable independiente y $f(x)$ es la variable dependiente además de usar la notación $y=f(x)$ de manera indistinta.
-\end{definition}
-\begin{prob} \label{ejdominio}
-Calcule el dominio de las siguientes funciones
-\begin{enumerate}
-\item $f(x)=x^2-8x+5.$
-\item $f(x)=\sqrt{1-x^2}.$
-\item $f(x)=\sqrt{3+x}+\sqrt[4]{7-x}.$
-\item $f(x)=\dfrac{x+5}{x-3}$
-\end{enumerate}
-\begin{myproof}
-\begin{enumerate}
-\item La función es un polinomio de grado $2$. Los polinomios están definidos para todo $x \in \mathbb{R}$, sin restricciones. Por tanto, \(
-\operatorname{Dom}(f) = \mathbb{R}.
-\)
-
-\item La raíz cuadrada requiere $1 - x^2 \geq 0$. Factorizamos:
+El conjunto de todos los valores efectivamente alcanzados,
 \[
-1 - x^2 = (1 - x)(1 + x) \geq 0.
+  R_f = \{\, f(x) : x \in D_f \,\},
 \]
+se denomina \textbf{rango} o \textbf{imagen} de $f$, y satisface $R_f \subseteq \text{codominio}$. Escribimos $f: D_f \to \mathbb{R}$ para indicar que $f$ va del dominio al conjunto de los números reales. Es convención llamar a $x$ la \textbf{variable independiente} y a $y = f(x)$ la \textbf{variable dependiente}.
+\end{definition}
+
+\begin{rem}[La regla del único valor de salida]
+La unicidad del valor de salida es la condición definitoria de una función. Si a un valor $x$ le correspondieran dos salidas distintas $y_1 \neq y_2$, la regla no sería una función. Esta unicidad se verifica gráficamente mediante la \emph{prueba de la recta vertical}.
+\end{rem}
+
+% -----------------------------------------------------------
+\subsection{Dominio natural de una función}
+% -----------------------------------------------------------
+
+Cuando una función se presenta mediante una fórmula algebraica sin restricciones explícitas sobre su dominio, el \textbf{dominio natural} (o dominio implícito) es el conjunto más amplio de números reales para los cuales la expresión está definida. Las dos fuentes principales de restricción son:
+
+\begin{itemize}
+  \item \textbf{Denominadores:} se excluyen los valores que anulan el denominador.
+  \item \textbf{Radicales de índice par:} se requiere que el radicando sea no negativo.
+\end{itemize}
+
+
+
+\begin{prob}\label{prob:dominio-basico}
+Calcule el dominio natural de cada función y expréselo en notación de intervalos.
+\begin{enumerate}
+  \item $f(x) = x^2 - 8x + 5$
+  \item $f(x) = \sqrt{1 - x^2}$
+  \item $f(x) = \sqrt{3+x} + \sqrt[4]{7-x}$
+  \item $f(x) = \dfrac{x+5}{x-3}$
+\end{enumerate}
+
+\begin{myproof}
+\textbf{1.} \emph{Análisis:} los polinomios no tienen restricciones.
+
+\emph{Fundamentación:} la función es un polinomio de grado $2$; los polinomios están definidos para todo $x \in \mathbb{R}$.
+
+\emph{Conclusión:}
+\[
+  \boxed{D_f = \mathbb{R} = (-\infty,+\infty).}
+\]
+
+\medskip
+\textbf{2.} \emph{Análisis:} la raíz cuadrada requiere radicando no negativo, lo que acotará $x$ a un intervalo finito.
+
+\emph{Fundamentación:} necesitamos $1 - x^2 \geq 0$. Factorizando:
+\[
+  1 - x^2 = (1-x)(1+x) \geq 0.
+\]
+
+\emph{Procedimiento:} construimos la tabla de signos:
+
 \begin{table}[H]
 \centering
 \begin{tabular}{|c|c|c|c|}
 \hline
 Intervalo & $1+x$ & $1-x$ & $(1-x)(1+x)$ \\
-\hline $(-\infty,-1)$ & $-$ & $+$ & $-$ \\
-\hline $(-1,1)$ & $+$ & $+$ & $+$ \\
-\hline $(1,+\infty)$ & $+$ & $-$ & $-$ \\
+\hline
+$(-\infty,-1)$ & $-$ & $+$ & $-$ \\
+\hline
+$[-1,\,1]$      & $+$ & $+$ & $+$ \\
+\hline
+$(1,+\infty)$   & $+$ & $-$ & $-$ \\
 \hline
 \end{tabular}
-\caption{Tabla de signos para el problema \ref{ejdominio} }
+\caption{Tabla de signos para el ítem 2 del Problema \ref{prob:dominio-basico}.}
 \end{table}
 
+\emph{Conclusión:}
+\[
+  \boxed{D_f = [-1,\,1].}
+\]
 
+\medskip
+\textbf{3.} \emph{Análisis:} dos radicales de índice par imponen dos condiciones simultáneas.
 
-\item Analizamos cada radical por separado. Para $\sqrt{3+x}$ se cumple que $3 + x \geq 0 \iff x \geq -3$ y para $\sqrt[4]{7-x}$ se tiene que las raíces de índice par requieren radicando $\geq 0$. Así, $7 - x \geq 0 \iff x \leq 7$. Finalmente la suma está definida cuando ambas lo están, por tanto 
-\(\operatorname{Dom}(f) = [-3, 7].\)
-\item La función está definida para todo número real excepto donde el denominador sea 0. De esta manera, \(\operatorname{Dom}(f) = \mathbb{R}-\lbrace 3 \rbrace.\)
-\end{enumerate}
+\emph{Procedimiento:} la raíz cuarta tiene índice par, por lo que también requiere radicando no negativo.
+\begin{align*}
+  \sqrt{3+x}:   &\quad 3 + x \geq 0 \;\Rightarrow\; x \geq -3, \\
+  \sqrt[4]{7-x}:&\quad 7 - x \geq 0 \;\Rightarrow\; x \leq 7.
+\end{align*}
+La suma está definida cuando \emph{ambas} condiciones se cumplen.
+
+\emph{Conclusión:}
+\[
+  \boxed{D_f = [-3,\,7].}
+\]
+
+\medskip
+\textbf{4.} \emph{Análisis:} el denominador no puede ser cero.
+
+\emph{Procedimiento:} el denominador se anula en $x = 3$.
+
+\emph{Conclusión:}
+\[
+  \boxed{D_f = \mathbb{R} \setminus \{3\} = (-\infty, 3)\cup(3,+\infty).}
+\]
 \end{myproof}
 \end{prob}
 
 
+
+% -----------------------------------------------------------
+\subsection{Cuatro formas de representar una función}
+% -----------------------------------------------------------
+
 \begin{rem}[Formas de representar una función]
-Existen básicamente cuatro formas de representar una función: verbalmente, describiendo en palabras la relación entre variables; numéricamente, mediante una tabla de valores; visualmente, a través de una gráfica; y algebraicamente, por medio de una fórmula explícita. Aclararemos estas formas en el siguiente ejemplo.
+Existen cuatro formas complementarias de representar una función:
+\begin{enumerate}
+  \item \textbf{Verbal:} descripción en palabras de la relación entre variables.
+  \item \textbf{Numérica:} tabla de valores $(x, f(x))$.
+  \item \textbf{Algebraica:} fórmula explícita $y = f(x)$.
+  \item \textbf{Visual:} gráfica en el plano $xy$.
+\end{enumerate}
+Cada representación revela aspectos distintos del comportamiento de la función; la habilidad del matemático consiste en elegir la más conveniente para cada situación.
 \end{rem}
 
-\begin{example}\label{funcioncosto}
-Un contenedor rectangular sin tapa tiene un volumen de \(10\,\text{m}^3\). La longitud de su base es dos veces su ancho. El material para la base cuesta \$10 por metro cuadrado y el material para los lados cuesta \$6 por metro cuadrado. Exprese el costo de los materiales como una función del ancho de la base. Dé una representación verbal, numérica, visual y algebraica.
+
+\begin{example}\label{ex:costo-contenedor}
+Un contenedor rectangular sin tapa tiene un volumen de $10\,\mathrm{m}^3$. La longitud de su base es el doble de su ancho. El material para la base cuesta \$10 por metro cuadrado y el material para los cuatro lados cuesta \$6 por metro cuadrado. Exprese el costo de los materiales como función del ancho de la base, proporcionando las cuatro representaciones.
 
 \begin{myproof}
-Primero introducimos las variables geométricas del problema. Sea \(x\) el ancho de la base (en metros), \(2x\) la longitud de la base (en metros) y \(h\) la altura del contenedor (en metros). Como el contenedor no tiene tapa, solo hay base y cuatro lados.
+\textbf{Paso 1 — Análisis gráfico y tabular.} Sea $x > 0$ el ancho de la base (en metros). Entonces la longitud es $2x$ y la altura $h$ se determinará por la condición de volumen. Anticipamos que $C(x)$ crecerá cuando $x \to 0^+$ (los lados se vuelven muy altos) y cuando $x \to +\infty$ (la base domina el costo), por lo que tendrá un mínimo.
 
-La condición de volumen se escribe como
-\[
-V = (\text{ancho})\cdot(\text{longitud})\cdot(\text{altura}) = x \cdot 2x \cdot h = 2x^{2}h = 10.
-\]
-Despejamos la altura en función del ancho:
-\[
-h = \frac{10}{2x^{2}} = \frac{5}{x^{2}}.
-\]
+\textbf{Paso 2 — Fundamentación.} Las áreas de las superficies determinan el costo; la condición de volumen fija $h$ en función de $x$.
 
-Ahora calculamos el área de cada parte para expresar el costo total. 
-El área de la base es
+\textbf{Paso 3 — Procedimiento algebraico.} De la condición de volumen:
 \[
-A_{\text{base}} = x \cdot 2x = 2x^{2},
+  V = x \cdot 2x \cdot h = 2x^2 h = 10 \;\Rightarrow\; h = \frac{5}{x^2}.
 \]
-y su costo es
-\[
-C_{\text{base}} = 10 \cdot A_{\text{base}} = 10 \cdot 2x^{2} = 20x^{2}.
-\]
+Áreas y costos parciales:
+\begin{align*}
+  A_{\text{base}} &= 2x^2, & C_{\text{base}} &= 10 \cdot 2x^2 = 20x^2,\\
+  A_{\text{lados}} &= 2(xh) + 2(2xh) = 6xh = \frac{30}{x}, & C_{\text{lados}} &= 6 \cdot \frac{30}{x} = \frac{180}{x}.
+\end{align*}
 
-El contenedor tiene cuatro lados rectangulares: dos lados de dimensiones \(x \times h\) y dos de dimensiones \(2x \times h\). El área total de los lados es
+\textbf{Paso 4 — Conclusión y representaciones.}
+
+\textbf{Algebraica:}
 \[
-A_{\text{lados}} = 2(xh) + 2(2xh) = 2xh + 4xh = 6xh.
-\]
-Sustituimos \(h = \dfrac{5}{x^{2}}\):
-\[
-A_{\text{lados}} = 6x \cdot \frac{5}{x^{2}} = \frac{30}{x}.
-\]
-El costo de los lados es entonces
-\[
-C_{\text{lados}} = 6 \cdot A_{\text{lados}} = 6 \cdot \frac{30}{x} = \frac{180}{x}.
+  \boxed{C(x) = 20x^2 + \frac{180}{x},\quad x > 0.}
 \]
 
-Sumando ambos aportes obtenemos el costo total como función del ancho \(x\):
-\[
-C(x) = C_{\text{base}} + C_{\text{lados}} = 20x^{2} + \frac{180}{x}.
-\]
+\textbf{Verbal:} A cada ancho positivo $x$ de la base se asocia el costo total de construir el contenedor, sumando el aporte de la base cuadrada (que crece con $x^2$) y el de los cuatro lados (que decrecen con $x$).
 
-Podemos ahora presentar las cuatro representaciones de la función costo:
-
-\textbf{Representación verbal:} A cada valor positivo del ancho \(x\) se le asigna el costo total de construir el contenedor, sumando el costo de la base y el de los cuatro lados, donde la longitud es \(2x\) y la altura se ajusta para que el volumen sea \(10\,\text{m}^3\).
-
-\textbf{Representación algebraica:} La función costo en términos del ancho \(x\) está dada por
-\[
-C(x) = 20x^{2} + \frac{180}{x}, \quad x > 0.
-\]
-
-\textbf{Representación numérica:} Podemos elaborar una tabla de valores, eligiendo algunos anchos \(x\) (en metros) y calculando el costo \(C(x)\) (en dólares). Por ejemplo:
+\textbf{Numérica:}
 \[
 \begin{array}{c|c}
-x & C(x) \\
-\hline
-1   & 20(1)^{2} + \dfrac{180}{1}   = 200 \\
-1.5 & 20(1.5)^{2} + \dfrac{180}{1.5} = 20\cdot 2.25 + 120 = 165 \\
-2   & 20(2)^{2} + \dfrac{180}{2}   = 80 + 90 = 170 \\
-2.5 & 20(2.5)^{2} + \dfrac{180}{2.5} = 20\cdot 6.25 + 72 = 197 \\
+x\,(\mathrm{m}) & C(x)\,(\$) \\\hline
+1   & 200 \\
+1.5 & 165 \\
+2   & 170 \\
+2.5 & 197 \\
 \end{array}
 \]
 
-\textbf{Representación visual:} La representación gráfica consiste en dibujar la curva de la función
-\[
-y = C(x) = 20x^{2} + \frac{180}{x}, \quad x > 0,
-\]
-en el plano \(xy\), donde el eje horizontal representa el ancho \(x\) y el eje vertical representa el costo \(C(x)\). Esta gráfica muestra cómo varía el costo total según el ancho de la base.
+\textbf{Visual:}
 \begin{figure}[H]
 \centering
-\begin{tikzpicture}[scale=0.8]
-% Definir la función
+\begin{tikzpicture}[scale=0.85]
 \begin{axis}[
-    width=12cm,
-    height=8cm,
+    axis lines = left,
     xlabel={$x$ (ancho en metros)},
-    ylabel={$C(x)$ (costo en dólares)},
+    ylabel={$C(x)$ (costo en \$)},
     xmin=0.5, xmax=4,
-    ymin=100, ymax=300,
+    ymin=100, ymax=310,
     grid=major,
-    axis lines=left,
-    xtick={1,1.5,2,2.5,3},
-    ytick={150,200,250},
+    xtick={1,1.5,2,2.5,3,3.5},
+    ytick={150,200,250,300},
+    domain=0.55:3.9,
+    samples=120,
+    width=11cm, height=7cm,
     legend pos=north east,
-    domain=0.5:4,
-    samples=100,
-    thick
 ]
-
-% Graficar la función C(x)
 \addplot[blue, ultra thick] {20*x^2 + 180/x};
 \addlegendentry{$C(x)=20x^2+\frac{180}{x}$}
-
-% Marcar los puntos de la tabla numérica
-\addplot[red, mark=*, only marks] coordinates {
-    (1,200)
-    (1.5,165)
-    (2,170)
-    (2.5,197)
-};
+\addplot[red, mark=*, only marks, mark size=2.5pt] coordinates {
+    (1,200)(1.5,165)(2,170)(2.5,197)};
 \addlegendentry{Puntos de la tabla}
-
-% Etiquetas de los puntos clave
-\node[pin=90:{$(1,200)$}] at (axis cs:1,200) {};
-\node[pin=120:{$(1.5,165)$}] at (axis cs:1.5,165) {};
-\node[pin=60:{$(2,170)$}] at (axis cs:2,170) {};
-
-% Línea vertical en x=0 (asíntota)
-\draw[dashed, gray] (axis cs:0.5,100) -- (axis cs:0.5,300) node[above right] {asíntota};
-
+\node[pin=80:{$(1.5,165)$}] at (axis cs:1.5,165) {};
 \end{axis}
 \end{tikzpicture}
-\caption{Figura del ejemplo \ref{funcioncosto}}
-
+\caption{Gráfica de $C(x)$ del Ejemplo \ref{ex:costo-contenedor}: el mínimo ocurre aproximadamente en $x \approx 1.65\,\mathrm{m}$.}
 \end{figure}
-Con esto hemos descrito el costo como función del ancho en sus cuatro formas: verbal, numérica, visual y algebraica.
 \end{myproof}
 \end{example}
+
 Aunque conocer las cuatro representaciones de una función (verbal, numérica, algebraica y gráfica) es fundamental, en ocasiones una resulta más conveniente que las demás según el contexto. Por ello, es esencial seleccionar la representación más adecuada para cada situación particular. La siguiente es una propiedad clave para identificar gráficas de funciones:
 
 \begin{rem}[Prueba de la recta vertical]
-
-
-Una curva en el plano $XY$ es la gráfica de una función $y=f(x)$ si y solo si ninguna recta vertical se interseca con la curva en más de un punto. 
-
-Por ejemplo, la circunferencia de radio $1$ centrada en el origen, dada por $x^2 + y^2 = 1$, no representa una función de $x$, ya que una recta vertical como $x=0.5$ la interseca dos veces.
+Una curva en el plano $xy$ es la gráfica de una función $y = f(x)$ \emph{si y solo si} ninguna recta vertical interseca la curva en más de un punto. Por ejemplo, la circunferencia $x^2 + y^2 = 1$ no es la gráfica de una función: la recta $x = 0.5$ la corta en dos puntos, $(0.5,\,\sqrt{3}/2)$ y $(0.5,\,-\sqrt{3}/2)$.
 
 \begin{figure}[H]
 \centering
@@ -191,948 +209,831 @@ Por ejemplo, la circunferencia de radio $1$ centrada en el origen, dada por $x^2
 \draw[->] (-1.5,0) -- (1.5,0) node[right] {$x$};
 \draw[->] (0,-1.5) -- (0,1.5) node[above] {$y$};
 \draw[thick] (0,0) circle (1cm);
-\draw[red, very thick] (0.5, -1.5) -- (0.5,1.5) node[above right] {Recta vertical};
-\filldraw (0.5, 0.866) circle (2pt) node[above right] {};
-\filldraw (0.5, -0.866) circle (2pt) node[below right] {};
+\draw[red, very thick] (0.5,-1.4) -- (0.5,1.4) node[above right, font=\small] {$x=0.5$};
+\filldraw[red] (0.5,{sqrt(3)/2}) circle (2pt) node[right, font=\small] {$(0.5,\frac{\sqrt{3}}{2})$};
+\filldraw[red] (0.5,{-sqrt(3)/2}) circle (2pt) node[right, font=\small] {$(0.5,-\frac{\sqrt{3}}{2})$};
 \end{tikzpicture}
-\caption{Circunferencia unitaria fallando la prueba de la recta vertical.}
-\label{fig:circulo-vertical}
+\caption{La circunferencia unitaria falla la prueba de la recta vertical.}
 \end{figure}
-
 \end{rem}
 
-\begin{definition}[Funciones crecientes y decrecientes] Una función $f$ se denomina \textbf{creciente} sobre un intervalo $I$ si $f(x_1)<f(x_2)$ siempre que $x_1<x_2$ para todo $x\in I.$ De manera análoga, $f$ se denomina \textbf{decreciente} sobre un intervalo $I$ si $f(x_1)>f(x_2)$ siempre que $x_1<x_2\in I.$
+
+% -----------------------------------------------------------
+\subsection{Funciones crecientes, decrecientes, pares e impares}
+% -----------------------------------------------------------
+
+\begin{definition}[Funciones monótonas]
+Sea $f$ una función definida en un intervalo $I$.
+\begin{itemize}
+  \item $f$ es \textbf{creciente} en $I$ si $x_1 < x_2 \Rightarrow f(x_1) < f(x_2)$ para todo $x_1, x_2 \in I$.
+  \item $f$ es \textbf{decreciente} en $I$ si $x_1 < x_2 \Rightarrow f(x_1) > f(x_2)$ para todo $x_1, x_2 \in I$.
+\end{itemize}
 \end{definition}
 
-\begin{example} 
-Determine los intervalos donde la función $f(x)=x^2$ es creciente o decreciente.
-\begin{myproof} Hagamos inicialmente un bosquejo de la función
+\begin{example}
+Determine los intervalos de crecimiento y decrecimiento de $f(x) = x^2$.
 
-\begin{figure}[H]
-\centering
-\begin{tikzpicture}[scale=1.2]
-% Ejes
-\draw[->] (-1.6,0) -- (1.6,0) node[right] {$x$};
-\draw[->] (0,-0.2) -- (0,2.6) node[above] {$y$};
+\begin{myproof}
+\textbf{Paso 1 — Análisis gráfico.} La parábola tiene vértice en el origen y es simétrica respecto al eje $y$; se anticipa crecimiento en $[0,+\infty)$ y decrecimiento en $(-\infty,0]$.
 
-% Malla ligera cerca de cero
-\draw[help lines, step=0.5cm, opacity=0.3] (-1.5,-0.1) grid (1.5,2.5);
+\textbf{Paso 2 — Fundamentación.} Usaremos la definición: analizamos el signo de $f(x_2) - f(x_1)$ para $x_1 < x_2$.
 
-% Bosquejo de y = x^2 cerca de cero
-\draw[thick, blue, domain=-1.5:1.5, samples=100] plot (\x, {\x*\x}) 
-    node[above right] {$y = x^2$};
+\textbf{Paso 3 — Procedimiento.}
+\[
+  f(x_2) - f(x_1) = x_2^2 - x_1^2 = (x_2 - x_1)(x_2 + x_1).
+\]
+Como $x_1 < x_2$, se tiene $x_2 - x_1 > 0$. El signo de la diferencia depende de $x_2 + x_1$:
+\begin{itemize}
+  \item Si $x_1, x_2 \geq 0$: $x_2 + x_1 \geq 0$, luego $f(x_2) - f(x_1) \geq 0$. ($f$ es creciente.)
+  \item Si $x_1, x_2 \leq 0$: $x_2 + x_1 \leq 0$, luego $f(x_2) - f(x_1) \leq 0$. ($f$ es decreciente.)
+\end{itemize}
 
-% Puntos clave cerca de cero
-\filldraw (0,0) circle (2pt) node[below left] {$O(0,0)$};
-\filldraw (1,1) circle (2pt) node[above right] {};
-\filldraw (-1,1) circle (2pt) node[above left] {};
-
-\end{tikzpicture}
-\caption{Bosquejo de $y=x^2.$}
-\label{fig:parabola-cero}
-\end{figure}
-
-
-Visualmente se observa que la función tiene forma de parábola y vértice en $x=0$, sugiriendo comportamiento diferente a cada lado. Analizamos por casos.
-
-\textbf{Caso 1: $x \geq 0$ (intervalo $[0, +\infty)$).} Sean $x_1, x_2 \geq 0$ con $x_1 < x_2$. Entonces $x_2 - x_1 > 0$.
-
-Calculamos:
-\begin{align*}
-f(x_2) - f(x_1) &= x_2^2 - x_1^2 = (x_2 - x_1)(x_2 + x_1).
-\end{align*}
-Como $x_2 - x_1 > 0$ y $x_2 + x_1 \geq x_1 + x_1 = 2x_1 \geq 0$, se tiene $f(x_2) - f(x_1) > 0 \iff f(x_2) > f(x_1)$.
-
-Por tanto, $f$ es estrictamente creciente en $[0, +\infty)$.
-
-
-\textbf{Caso 2: $x \leq 0$ (intervalo $(-\infty, 0]$).} Sean $x_1, x_2 \leq 0$ con $x_1 < x_2 \leq 0$. Entonces $x_2 - x_1 > 0$.
-
-Ahora:
-\begin{align*}
-f(x_2) - f(x_1) &= x_2^2 - x_1^2 = (x_2 - x_1)(x_2 + x_1).
-\end{align*}
-Como $x_2 - x_1 > 0$ pero $x_2 + x_1 \leq x_2 + x_2 = 2x_2 \leq 0$, se tiene $f(x_2) - f(x_1) < 0 \iff f(x_2) < f(x_1)$.
-
-Por tanto, $f$ es estrictamente decreciente en $(-\infty, 0]$.
-
+\textbf{Paso 4 — Conclusión:}
+\[
+  \boxed{f \text{ es decreciente en } (-\infty, 0] \text{ y creciente en } [0,+\infty).}
+\]
 \end{myproof}
 \end{example}
 
 El ejemplo anterior se resolverá con mayor facilidad más adelante, luego de estudiar la derivada. Mientras tanto, observe que hay algunas formas adicionales de representar funciones:
 
-\begin{example}[Función definida por partes] 
-A veces las funciones se describen mediante diferentes fórmulas o expresiones en distintas partes de sus dominios. Trace la gráfica de la siguiente función definida por partes: 
-\[
-f(x) = 
-\begin{cases}
-3-\dfrac{1}{2}x & \text{si } x < 2 \\
-2x-5 & \text{si } x \geq 2 \\
-\end{cases}
-\]
+\begin{definition}[Funciones pares e impares]
+Sea $f: D_f \to \mathbb{R}$ con $D_f$ simétrico respecto al origen (es decir, $x \in D_f \Rightarrow -x \in D_f$).
+\begin{itemize}
+  \item $f$ es \textbf{par} si $f(-x) = f(x)$ para todo $x \in D_f$. Su gráfica es simétrica respecto al eje $y$.
+  \item $f$ es \textbf{impar} si $f(-x) = -f(x)$ para todo $x \in D_f$. Su gráfica es simétrica respecto al origen.
+\end{itemize}
+\end{definition}
+
+\begin{example}
+Clasifique $f(x) = x^2$ y $g(x) = x^3$ según paridad.
+
 \begin{myproof}
-El dominio de la función es $\mathbb{R}$. Graficamos cada pieza por separado: Para $x<2$: $y=3 - \frac{1}{2}x$ es recta decreciente con pendiente $-\frac{1}{2}$, círculo \textbf{abierto} en $x=2$ ($y=2$) y para $x \geq 2$: $y=2x-5$ es recta creciente con pendiente $2$, círculo \textbf{lleno} en $x=2$ ($y=-1$).
+Para $f$: $f(-x) = (-x)^2 = x^2 = f(x)$, luego $f$ es \textbf{par}. \quad
+Para $g$: $g(-x) = (-x)^3 = -x^3 = -g(x)$, luego $g$ es \textbf{impar}. \qed
+\end{myproof}
+\end{example}
+
+
+
+% -----------------------------------------------------------
+\subsection{Función definida por partes}
+% -----------------------------------------------------------
+
+\begin{example}[Función por tramos]
+Trace la gráfica de
+\[
+  f(x) = \begin{cases} 3 - \dfrac{1}{2}x & \text{si } x < 2, \\ 2x - 5 & \text{si } x \geq 2. \end{cases}
+\]
+
+\begin{myproof}
+\textbf{Paso 1 — Análisis:} dos rectas que se empalman en $x=2$; verificamos continuidad:
+\[
+  \lim_{x\to 2^-} f(x) = 3 - 1 = 2, \qquad f(2) = 2(2)-5 = -1.
+\]
+Hay un salto en $x = 2$.
+
+\textbf{Paso 2:} Para $x < 2$: recta decreciente (pendiente $-\tfrac{1}{2}$), \emph{círculo abierto} en $(2, 2)$. Para $x \geq 2$: recta creciente (pendiente $2$), \emph{punto sólido} en $(2,-1)$.
 
 \begin{figure}[H]
 \centering
 \begin{tikzpicture}[scale=1.2]
-\draw[->] (0, -2) -- (0, 4) node[right] {$y$};
-\draw[->] (-0.5, 0) -- (4.5, 0) node[right] {$x$};
-\node at (2, -0.3) {$2$};
-
-% Rama 1: x < 2, 3 - 0.5x (círculo abierto en x=2)
-\draw[thick, blue, domain=-0.5:1.99, samples=50] plot (\x, {3 - 0.5*\x});
-\fill[white, opacity=1] (2,2) circle (3pt); % Círculo abierto
-\draw[blue] (2,2) circle (3pt);
-
-% Rama 2: x >= 2, 2x-5 (círculo lleno en x=2)
-\draw[thick, red, domain=2:4.5, samples=50] plot (\x, {2*\x - 5});
+\draw[->] (-0.5,0) -- (4.5,0) node[right] {$x$};
+\draw[->] (0,-2) -- (0,4) node[above] {$y$};
+\draw[thick, blue, domain=-0.5:1.99, samples=80] plot (\x,{3-0.5*\x});
+\fill[white] (2,2) circle (3pt); \draw[blue,thick] (2,2) circle (3pt);
+\draw[thick, red, domain=2:4.2, samples=60] plot (\x,{2*\x-5});
 \filldraw[red] (2,-1) circle (3pt);
-
-\node[blue] at (1,3.2) {$3 - \frac{1}{2}x$ ($x<2$)};
-\node[red] at (3.5,2) {$2x-5$ ($x \geq 2$)};
+\node[blue, above left, font=\small] at (0.5,2.8) {$3-\tfrac{1}{2}x\ (x<2)$};
+\node[red, right, font=\small] at (3.5,2.2) {$2x-5\ (x\geq2)$};
+\draw[dashed, gray] (2,-2) -- (2,3.5);
+\node[below, font=\small] at (2,0) {$2$};
 \end{tikzpicture}
-\caption{Gráfica de la función $f(x)$ definida por partes.}
+\caption{Función por tramos con salto en $x=2$.}
 \end{figure}
+
+\textbf{Conclusión:} $D_f = \mathbb{R}$; la función tiene un salto en $x = 2$ de magnitud $|{-1} - 2| = 3$. \qed
 \end{myproof}
 \end{example}
 
-\begin{definition}[Funciones pares e impares]
-Una función $f: D \to \mathbb{R}$ se clasifica como \textbf{par} si satisface la simetría respecto al eje $y$:
-\[
-f(-x) = f(x) \quad \forall x \in D \cap (-D),
-\]
-donde $D \cap (-D) \neq \emptyset$ asegura que el dominio contenga pares simétricos respecto al origen. 
+% ============================================================
+\section{Catálogo de funciones elementales fundamentales}
+% ============================================================
 
-Análogamente, se clasifica como \textbf{impar} si exhibe simetría puntual respecto al origen:
-\[
-f(-x) = -f(x) \quad \forall x \in D \cap (-D).
-\]
-\end{definition}
+Existe un puñado de funciones básicas ---las herramientas fundamentales del cálculo--- a partir de las cuales se construyen virtualmente todos los modelos matemáticos. Las estudiaremos sistemáticamente.
 
-
-\begin{example}
-La función $f(x) = x^2$ es par, ya que:
-\[
-f(-x) = (-x)^2 = x^2 = f(x) \quad \forall x \in \mathbb{R}.
-\]
-Asimismo, la función $f(x) = x^3$ es impar, pues:
-\[
-f(-x) = (-x)^3 = -x^3 = -f(x) \quad \forall x \in \mathbb{R}.
-\]
-Estas identidades algebraicas verifican las respectivas simetrías geométricas en sus gráficas.
-\end{example}
-
-En la sección subsiguiente se presentará un catálogo más completo de funciones elementales, permitiendo explorar sistemáticamente estas propiedades simétricas y otras características relevantes del análisis funcional.
-
-
-
-\section{Funciones elementales fundamentales}
-
-Existe un catálogo básico de funciones elementales fundamentales ---conocidas también como \emph{modelos matemáticos esenciales}---, que incluye la función potencia, la exponencial, la logarítmica, las trigonométricas y las trigonométricas inversas. Estas constituyen la base para la construcción de modelos matemáticos más complejos, y en este capítulo se analizarán detalladamente sus dominios, rangos y gráficas.
-
+% -----------------------------------------------------------
+\subsection{Función potencia}
+% -----------------------------------------------------------
 
 \begin{definition}[Función potencia]
-Sea $r \in \mathbb{Q}$ un número racional escrito en su forma reducida $r = \frac{p}{q}$, donde $p \in \mathbb{Z}$ es un entero y $q \in \mathbb{N}^+$ es un entero positivo con $\gcd(p,q)=1$. La función potencia $f(x) = x^r = \sqrt[q]{x^p}$ tiene dominio que depende de la paridad del denominador $q$ y la señal de $r$:
-
+Sea $r \in \mathbb{Q}$, $r = p/q$ en forma reducida con $q \in \mathbb{N}^+$. La \textbf{función potencia} es $f(x) = x^r = \sqrt[q]{x^p}$. Su dominio depende de la paridad de $q$ y el signo de $r$:
 \begin{itemize}
-\item Si $q$ es \textbf{impar}, la raíz $q$-ésima está definida para todo $x \in \mathbb{R}$, por lo que $\operatorname{Dom}(f) = \mathbb{R}$.
-\item Si $q$ es \textbf{par}, la raíz $q$-ésima de números negativos no está definida en reales, requiriendo $x^p \geq 0$. Para $p$ impar esto equivale a $x \geq 0$, dando $\operatorname{Dom}(f) = [0, +\infty)$.
-\item Si $r < 0$, la expresión involucra división por $x^{-r}$, requiriendo excluir $x=0$: $\operatorname{Dom}(f) = \mathbb{R} \setminus \{0\}$ (o $(0,+\infty)$ si $q$ par).
+  \item $q$ \textbf{impar}: $D_f = \mathbb{R}$.
+  \item $q$ \textbf{par}: requiere $x^p \geq 0$; para $p$ impar, $D_f = [0,+\infty)$.
+  \item $r < 0$: se excluye $x = 0$: $D_f = \mathbb{R}\setminus\{0\}$ (o $(0,+\infty)$ si $q$ par).
 \end{itemize}
+\end{definition}
 
+\begin{rem}
 Como casos particulares, para enteros positivos $n \in \mathbb{N}$, $f(x) = x^n$ es un polinomio definido en todo $\mathbb{R}$. Para enteros negativos $n < 0$, $f(x) = x^n = \frac{1}{x^{-n}}$ está definida en $\mathbb{R} \setminus \{0\}$.
 
 Estas reglas garantizan que $x^r$ produzca valores reales para todo $x$ en su dominio respectivo.
-\end{definition}
+\end{rem}
 
-
-
-
-
-\begin{example}[Ejemplos de funciones potencia elementales] Listamos algunos ejemplos representativos
-\begin{figure}[h]
-\centering
-\begin{tikzpicture}[scale=0.8]
-\draw[->] (-2,0) -- (2,0) node[right] {$x$};
-\draw[->] (0,-1.5) -- (0,2) node[above] {$y$};
-\draw[thick, domain=-1.8:1.8, samples=100] plot (\x, {\x});
-\node[above right] at (1.5,1.5) {$f(x)=x$};
-\end{tikzpicture}
-\caption{$f(x)=x$: $\operatorname{Dom} = \mathbb{R}$.}
-\end{figure}
-
+\begin{example}[Galería de funciones potencia]
+Las siguientes gráficas ilustran las funciones potencia más representativas:
 
 \begin{figure}[H]
 \centering
-\begin{tikzpicture}[scale=0.8]
-\draw[->] (-1.5,0) -- (1.5,0) node[right] {$x$};
-\draw[->] (0,-0.2) -- (0,1.8) node[above] {$y$};
-\draw[thick, domain=-1.4:1.4, samples=100] plot (\x, {\x*\x});
-\node[above right] at (1,1) {$f(x)=x^2$};
+\begin{tikzpicture}[scale=0.75]
+\begin{axis}[
+    axis lines=middle, xlabel={$x$}, ylabel={$y$},
+    xmin=-1.6, xmax=1.6, ymin=-0.2, ymax=2,
+    width=7cm, height=5cm, samples=100,
+    legend pos=north west,
+]
+\addplot[blue, thick, domain=-1.5:1.5] {x^2};
+\addlegendentry{$x^2$}
+\addplot[red, thick, domain=-1.5:1.5] {x^4};
+\addlegendentry{$x^4$}
+\end{axis}
 \end{tikzpicture}
-\caption{Función cuadrática $f(x)=x^2$: $\operatorname{Dom} = \mathbb{R}$.}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\begin{tikzpicture}[scale=0.8]
-\draw[->] (-1.5,0) -- (1.5,0) node[right] {$x$};
-\draw[->] (0,-1.2) -- (0,1.8) node[above] {$y$};
-\draw[thick, domain=-1.4:1.4, samples=100] plot (\x, {\x*\x*\x});
-\node[above right] at (1,1) {$f(x)=x^3$};
+\hfill
+\begin{tikzpicture}[scale=0.75]
+\begin{axis}[
+    axis lines=middle, xlabel={$x$}, ylabel={$y$},
+    xmin=-1.6, xmax=1.6, ymin=-1.5, ymax=1.5,
+    width=7cm, height=5cm, samples=100,
+    legend pos=north west,
+]
+\addplot[blue, thick, domain=-1.5:1.5] {x^3};
+\addlegendentry{$x^3$}
+\addplot[red, thick, domain=-1.5:1.5] {x^5};
+\addlegendentry{$x^5$}
+\end{axis}
 \end{tikzpicture}
-\caption{Función cúbica $f(x)=x^3$: $\operatorname{Dom} = \mathbb{R}$.}
+\caption{\emph{Izquierda:} potencias pares (simétricas respecto al eje $y$; $x^4$ más \emph{achatada} cerca del origen que $x^2$). \emph{Derecha:} potencias impares (simétricas respecto al origen).}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\begin{tikzpicture}[scale=0.8]
-\draw[->] (-1.5,0) -- (1.5,0) node[right] {$x$};
-\draw[->] (0,-0.2) -- (0,2) node[above] {$y$};
-\draw[thick, domain=-1.4:1.4, samples=100] plot (\x, {\x*\x*\x*\x});
-\node[above right] at (1,1) {$f(x)=x^4$};
+\begin{tikzpicture}[scale=0.75]
+\begin{axis}[
+    axis lines=middle, xlabel={$x$}, ylabel={$y$},
+    xmin=-2, xmax=2, ymin=-3, ymax=3,
+    width=7cm, height=5.5cm, samples=200,
+    legend pos=north east,
+    restrict y to domain=-3:3,
+]
+\addplot[blue, thick, domain=-2:-0.05] {1/x};
+\addplot[blue, thick, domain=0.05:2] {1/x};
+\addlegendentry{$1/x$}
+\addplot[red, thick, domain=-1.6:1.6, samples=200] {abs(x)^(2/3)};
+\addlegendentry{$x^{2/3}$}
+\end{axis}
 \end{tikzpicture}
-\caption{Función $f(x)=x^4$: $\operatorname{Dom} = \mathbb{R}$, par.}
+\caption{$f(x)=1/x$ con asíntota en $x=0$ ($D_f=\mathbb{R}\setminus\{0\}$); $g(x)=x^{2/3}$ con cúspide en el origen ($D_g=\mathbb{R}$).}
 \end{figure}
-
-\begin{figure}[H]
-\centering
-\begin{tikzpicture}[scale=0.4]
-\draw[->] (-2,0) -- (2,0) node[right] {$x$};
-\draw[->] (0,-2) -- (0,3) node[above] {$y$};
-\draw[thick, blue, domain=-1.8:-0.1, samples=100] plot (\x, {1/\x});
-\draw[thick, blue, domain=0.1:1.8, samples=100] plot (\x, {1/\x});
-\node[blue, above right] at (1.2,1) {$f(x)=1/x$};
-\end{tikzpicture}
-\caption{Función recíproca $f(x)=1/x$: $\operatorname{Dom} = \mathbb{R} \setminus \{0\}$}
-\end{figure}
-
-
-
-\begin{figure}[H]
-\centering
-\begin{tikzpicture}[scale=0.8]
-\draw[->] (-2,0) -- (2,0) node[right] {$x$};
-\draw[->] (0,-0.2) -- (0,1.6) node[above] {$y$};
-\draw[thick, domain=-1.8:1.8, samples=200] plot (\x, {abs(\x)^(2/3)});
-\filldraw (0,0) circle (2pt) node[below] {$O$};
-\node[above right] at (1.2,1) {$f(x)=x^{2/3}$};
-\end{tikzpicture}
-\caption{Función $x^{2/3}$: $\operatorname{Dom} = \mathbb{R}$.}
-\end{figure}
-
 \end{example}
 
 
-\begin{definition}[Función exponencial] Sea $a$ un número real tal que $a>0$ y $a\neq 1.$ Se define la función exponencial como $f(x)=a^{x}.$ El dominio serán todos los números reales.
+
+% -----------------------------------------------------------
+\subsection{Funciones exponenciales y logarítmicas}
+% -----------------------------------------------------------
+
+\begin{definition}[Función exponencial]
+Sea $a > 0$, $a \neq 1$. La \textbf{función exponencial} de base $a$ es $f(x) = a^x$, con $D_f = \mathbb{R}$ y $R_f = (0,+\infty)$. Es estrictamente creciente si $a > 1$ y estrictamente decreciente si $0 < a < 1$. Tiene asíntota horizontal $y = 0$ y pasa por $(0,1)$.
+
+El número $e \approx 2.71828\ldots$ (base de Euler) ocupa un lugar privilegiado: la función $e^x$ es la única cuya pendiente en $(0,1)$ es exactamente $1$, propiedad que se demostrará formalmente al estudiar la derivada.
 \end{definition}
 
-\begin{example}[Ejemplos de funciones exponenciales]
-Los siguientes son ejemplos de funciones exponenciales:
-
- \begin{figure}[H]
+\begin{example}[Exponenciales creciente y decreciente]
+\begin{figure}[H]
 \centering
-\begin{tikzpicture}[scale=1.1]
-% Ejes comunes
-\draw[->] (-2.2,0) -- (2.2,0) node[right] {$x$};
-\draw[->] (0,0) -- (0,4) node[above] {$y$};
-
-% f(x) = 3^x (creciente, base >1)
-\draw[thick, blue, domain=-2:2, samples=100] plot (\x, {2^\x});
-\node[blue, above right] at (1.5,2) {$f(x)=2^x$};
-
-% g(x) = (1/2)^x = 2^{-x} (decreciente, 0<base<1)
-\draw[thick, red, domain=-2:2, samples=100] plot (\x, {(1/2)^\x});
-\node[red, above left] at (-1.5,2) {$g(x)=\left(\frac{1}{2}\right)^x$};
-
-% Puntos clave
-\filldraw (0,1) circle (2pt) node[below] {$f(0)=g(0)=1$};
-\node at (2,-0.3) [below] {$2$};
-\node at (-2,-0.3) [below] {$-2$};
+\begin{tikzpicture}[scale=1.0]
+\begin{axis}[
+    axis lines=middle,
+    xlabel={$x$}, ylabel={$y$},
+    xmin=-2.2, xmax=2.2, ymin=-0.2, ymax=4.5,
+    width=10cm, height=7cm,
+    samples=120,
+    legend pos=north west,
+]
+\addplot[blue, ultra thick, domain=-2.1:2.1] {2^x};
+\addlegendentry{$f(x)=2^x$}
+\addplot[red, ultra thick, domain=-2.1:2.1] {(0.5)^x};
+\addlegendentry{$g(x)=(1/2)^x$}
+\addplot[dashed, gray, domain=-2.2:2.2] {1};
+\filldraw (axis cs:0,1) circle (2pt) node[below right, font=\small] {$(0,1)$};
+\end{axis}
 \end{tikzpicture}
-\caption{Exponenciales: $f(x)=2^x$ ($\operatorname{Dom}=\mathbb{R}, y>0$), $g(x)=(1/2)^x$ (asíntota $y=0$).}
-\label{fig:exp-3-1/5}
+\caption{$f(x)=2^x$ creciente; $g(x)=(1/2)^x$ decreciente. Ambas pasan por $(0,1)$ y tienen asíntota $y=0$.}
 \end{figure}
 \end{example}
+
 
 \begin{definition}[Función logarítmica]
-Sea $a > 0$, $a \neq 1$ una base válida. La \textbf{función logarítmica} $f(x) = \log_a x$ se define como la función inversa de la exponencial $a^x$, satisfaciendo la propiedad fundamental:
+Sea $a > 0$, $a \neq 1$. La \textbf{función logarítmica} de base $a$ es $f(x) = \log_a x$, definida como la inversa de $a^x$:
 \[
-a^{\log_a x} = x = \log_a (a^x) \quad \forall x > 0.
+  a^{\log_a x} = x \quad (x > 0) \qquad \text{y} \qquad \log_a(a^x) = x \quad (x \in \mathbb{R}).
 \]
-Su dominio natural es $(0, +\infty)$ y su rango es $\mathbb{R}$, siendo estrictamente creciente si $a > 1$ y estrictamente decreciente si $0 < a < 1$.
+$D_f = (0,+\infty)$, $R_f = \mathbb{R}$. Pasa por $(1,0)$ y tiene asíntota vertical $x = 0$. Es creciente si $a > 1$ y decreciente si $0 < a < 1$.
 \end{definition}
 
-\begin{example}[Funciones logarítmicas elementales]
-Consideremos dos casos representativos:
-
-\textbf{a)} $f(x) = \log_2 x$ (base $>1$, creciente):
-
+\begin{example}[Logarítmica base 2 vs.\ logarítmica natural]
 \begin{figure}[H]
 \centering
-\begin{tikzpicture}[scale=1.1]
-\draw[->] (-0.5,0) -- (3.5,0) node[right] {$x$};
-\draw[->] (0,-2) -- (0,2.5) node[above] {$y$};
-\draw[thick, blue, domain=0.1:3.2, samples=100] plot (\x, {log2(\x)});
-\filldraw (1,0) circle (2pt) node[below] {$1$};
-\node[blue, above right] at (2,1.2) {$\log_2 x$};
+\begin{tikzpicture}[scale=1.0]
+\begin{axis}[
+    axis lines=middle,
+    xlabel={$x$}, ylabel={$y$},
+    xmin=-0.3, xmax=4, ymin=-2.5, ymax=2.5,
+    width=10cm, height=7cm,
+    samples=150,
+    legend pos=north west,
+    restrict y to domain=-3:3,
+]
+\addplot[blue, ultra thick, domain=0.05:3.9] {log2(x)};
+\addlegendentry{$\log_2 x$}
+\addplot[red, ultra thick, domain=0.05:3.9] {ln(x)};
+\addlegendentry{$\ln x$}
+\draw[dashed, gray] (axis cs:0,-2.5) -- (axis cs:0,2.5);
+\filldraw (axis cs:1,0) circle (2pt) node[above right, font=\small] {$(1,0)$};
+\end{axis}
 \end{tikzpicture}
-\caption{$\log_2 x$: $\operatorname{Dom}=(0,+\infty)$, pasa por $(1,0)$, creciente.}
+\caption{$\log_2 x$ y $\ln x$ comparten el punto $(1,0)$; $\log_2 x > \ln x$ para $x > 1$ pues $\log_2 x = \ln x / \ln 2 \approx 1.44\ln x$.}
 \end{figure}
 \end{example}
 
-Antes de seguir con el siguiente tipo de funciones, es necesaria la siguiente definición 
+
+% -----------------------------------------------------------
+\subsection{Funciones trigonométricas}
+% -----------------------------------------------------------
 
 \begin{definition}[Función periódica]
-Una función $f: D \to \mathbb{R}$ se denomina \textbf{periódica} si existe un número real positivo $T > 0$, llamado \textbf{período} de $f$, tal que:
-\[
-f(x + T) = f(x) \quad \forall x \in D \text{ con } x + T \in D.
-\]
-
-El menor número positivo $T$ que satisface esta condición se conoce como \textbf{período fundamental}. Equivalentemente, $f(x + nT) = f(x)$ para todo entero $n \in \mathbb{Z}$ tal que $x + nT \in D$. 
+$f: D_f \to \mathbb{R}$ es \textbf{periódica} si existe $T > 0$ tal que $f(x+T) = f(x)$ para todo $x \in D_f$ con $x+T \in D_f$. El menor $T$ se llama \textbf{período fundamental}.
 \end{definition}
-\begin{rem}
-Las funciones periódicas presentan la propiedad geométrica de que su gráfica se compone de copias trasladas del segmento básico correspondiente a un período. Ejemplos clásicos incluyen las funciones trigonométricas, donde $\sin x$ y $\cos x$ tienen período fundamental $2\pi$, mientras que $\tan x$ tiene período $\pi$.
-\end{rem}
-
 
 \begin{definition}[Funciones trigonométricas fundamentales]
-Las \textbf{funciones trigonométricas fundamentales} se definen para $x \in \mathbb{R}$ medido en radianes, originadas en las razones trigonométricas de un ángulo en el círculo unitario. Se distinguen seis funciones periódicas con período fundamental $2\pi$ (excepto las secantes y cosecantes), cuyos dominios, rangos y comportamientos se detallan a continuación:
-
-\begin{itemize}
-\item $\sin x$: $\operatorname{Dom} = \mathbb{R}$, $\operatorname{Rango} = [-1,1]$, paridad impar.
-\item $\cos x$: $\operatorname{Dom} = \mathbb{R}$, $\operatorname{Rango} = [-1,1]$, paridad par.
-\item $\tan x$: $\operatorname{Dom} = \mathbb{R} \setminus \left\{\frac{\pi}{2} + k\pi \mid k \in \mathbb{Z}\right\}$, $\operatorname{Rango} = \mathbb{R}$, período $\pi$, paridad impar.
-\item $\cot x$: $\operatorname{Dom} = \mathbb{R} \setminus \{k\pi \mid k \in \mathbb{Z}\}$, $\operatorname{Rango} = \mathbb{R}$, período $\pi$, paridad impar.
-\item $\sec x = \frac{1}{\cos x}$: $\operatorname{Dom} = \mathbb{R} \setminus \left\{\frac{\pi}{2} + k\pi \mid k \in \mathbb{Z}\right\}$, $\operatorname{Rango} = (-\infty,-1] \cup [1,+\infty)$.
-\item $\csc x = \frac{1}{\sin x}$: $\operatorname{Dom} = \mathbb{R} \setminus \{k\pi \mid k \in \mathbb{Z}\}$, $\operatorname{Rango} = (-\infty,-1] \cup [1,+\infty)$.
-\end{itemize}
-\end{definition}
-
-\begin{example}[Gráficas de las funciones trigonométricas fundamentales] Se presentan a continuación las gráficas de las funciones trigonométricas fundamentales:
-\begin{figure}[H]
-\centering
-% sin x y cos x
-\begin{tikzpicture}[scale=0.5]
-\draw[->] (-0.5,0) -- (7,0) node[right] {$x$};
-\draw[->] (0,-1.5) -- (0,2) node[above] {$y$};
-\draw[thick, blue, domain=0:6.28, samples=150] plot (\x, {sin(\x r)});
-\draw[thick, orange, domain=0:6.28, samples=150] plot (\x, {cos(\x r)});
-\node[blue, above] at (3.5,0.8) {$\sin x$};
-\node[orange, right] at (1,1) {$\cos x$};
-\end{tikzpicture}
-\caption{$\sin x$, $\cos x$: período $2\pi$, rango $[-1,1]$.}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-% tan x y cot x
-\begin{tikzpicture}[scale=0.5]
-\draw[->] (-4,0) -- (4,0) node[right] {$x$};
-\draw[->] (0,-4) -- (0,4) node[above] {$y$};
-\draw[thick, red, domain=-1.4:1.4, samples=100] plot (\x, {tan(\x r)});
-\draw[dashed] (1.57,-2.5) -- (1.57,2.5);
-\draw[dashed] (-1.57,-2.5) -- (-1.57,2.5);
-\draw[dashed] (4.71,-2.5) -- (4.71,2.5);
-\draw[thick, purple, domain=0.2:3, samples=100] plot (\x, {1/tan(\x r)});
-\node[red, above right] at (0.8,1.8) {$\tan x$};
-\node[purple, below right] at (2.5,-1.8) {$\cot x$};
-\end{tikzpicture}
-\caption{$\tan x$, $\cot x$: período $\pi$, rango $\mathbb{R}$, asíntotas verticales en $\pi/2.$}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-% sec x y csc x
-\begin{tikzpicture}[scale=0.5]
-\draw[->] (-5,0) -- (5,0) node[right] {$x$};
-\draw[->] (0,-2) -- (0,3) node[above] {$y$};
-\draw[thick, teal, domain=-1.3:1.3, samples=100] plot (\x, {1/cos(\x r)});
-\draw[thick, teal, domain=1.9:4.3, samples=100] plot (\x, {1/cos(\x r)});
-\draw[dashed] (1.57,-2) -- (1.57,3);
-\draw[dashed] (4.71,-2) -- (4.71,3);
-\draw[thick, magenta, domain=0.3:1.3, samples=100] plot (\x, {1/sin(\x r)});
-\draw[thick, magenta, domain=1.7:2.8, samples=100] plot (\x, {1/sin(\x r)});
-\draw[thick, magenta, domain=-2.9:-0.5, samples=100] plot (\x, {1/sin(\x r)});
-\draw[dashed] (3.14,-2) -- (3.14,3);
-\draw[dashed] (3.14,-1) -- (3.14,1);
-\draw[dashed] (3.14,1) -- (3.14,1);
-\node[teal, above] at (0.8,2.2) {$\sec x$};
-\node[magenta, above] at (2.5,2.2) {$\csc x$};
-\end{tikzpicture}
-\caption{$\sec x = 1/\cos x$, $\csc x = 1/\sin x$: rango $\mathbb{R}\setminus(-1,1)$, asíntotas verticales.}
-\end{figure}
-\end{example}
-
-\begin{definition}[Función compuesta]
-Sean $f$ y $g$ dos funciones tales que $g$ está definida en un conjunto $D_g$ y $f$ está definida en un conjunto $D_f$. Si para todo $x \in D_g$ se tiene que $g(x) \in D_f$, se puede definir la \textbf{función compuesta} de $f$ con $g$ como
-\[
-(f \circ g)(x) = f(g(x)).
-\]
-El dominio de la función compuesta $f \circ g$ está formado por todos aquellos $x \in D_g$ tales que la imagen $g(x)$ pertenece al dominio de $f$, es decir:
-\[
-\operatorname{Dom}(f \circ g) = \{\, x \in D_g : g(x) \in D_f \,\}.
-\]
-\end{definition}
-
-\begin{example}
-La función \(
-y = \sqrt{1 - x^2}
-\) puede interpretarse como una función compuesta de la siguiente manera:
-\[
-f(u) = \sqrt{u}, \qquad u = g(x) = 1 - x^2.
-\]
-Aquí, la función interior es $g(x) = 1 - x^2$ y la función exterior es $f(u) = \sqrt{u}$.
-
-El dominio de $g$ es todo $\mathbb{R}$, mientras que el dominio de $f$ es $[0,+\infty)$, pues la raíz cuadrada sólo está definida para argumentos no negativos. Para que la función compuesta $f(g(x)) = \sqrt{1 - x^2}$ esté definida, se requiere que
-\[
-g(x) = 1 - x^2 \geq 0.
-\]
-Resolvemos la desigualdad:
-\[
-1 - x^2 \geq 0 
-\iff x^2 \leq 1 
-\iff -1 \leq x \leq 1.
-\]
-Por lo tanto,
-\[
-\operatorname{Dom}(f \circ g) = [-1,1].
-\]
-En conclusión, $y = \sqrt{1 - x^2}$ es una función compuesta de $f(u)=\sqrt{u}$ y $g(x)=1-x^2$, cuyo dominio está dado por el intervalo cerrado $[-1,1]$.
-\end{example}
-\begin{rem}[Composiciones múltiples]
-Es posible componer una función múltiples veces formando cadenas de funciones. Por ejemplo, la función
-\[
-f(x) = \ln(\sin(x^2 + 1))
-\]
-puede descomponerse en la composición sucesiva de tres funciones elementales:
-\[
-f(x) = \ln \circ \sin \circ p(x),
-\]
-donde:
-\begin{itemize}
-\item $p(x) = x^2 + 1$ (función potencia desplazada),
-\item $u = \sin(v)$ con $v = p(x)$, 
-\item $y = \ln(u)$ con $u = \sin(p(x))$.
-\end{itemize}
-
-Para determinar su dominio, se analizan las restricciones de cada función desde la exterior hacia la interior:
-\begin{enumerate}
-\item $\ln(u)$ requiere $u > 0$,
-\item $\sin(v) \in [-1,1]$, pero debe satisfacer $\sin(v) > 0$,
-\item $v = x^2 + 1 \geq 1 > 0$ (siempre definido).
-\end{enumerate}
-Así, $\operatorname{Dom}(f) = \{x \in \mathbb{R} : \sin(x^2 + 1) > 0\}$, equivalente a los intervalos donde el seno es positivo.
-\end{rem}
-
-
-\begin{definition}[Función elemental]
-Una función $f: D \to \mathbb{R}$ se denomina \textbf{elemental} si puede obtenerse a partir de funciones elementales básicas (potencias, exponenciales, logarítmicas, trigonométricas y sus inversas) y constantes reales, mediante un número \emph{finito} de las siguientes operaciones:
-\begin{itemize}
-\item Suma, resta, multiplicación y división entre funciones,
-\item Composición de funciones.
-\end{itemize}
-
-Formalmente, el conjunto de funciones elementales $\mathcal{E}$ se define recursivamente como el menor conjunto que contiene:
-\begin{itemize}
-\item Las funciones potencia $x \mapsto x^r$ ($r \in \mathbb{Q}$),
-\item Las exponenciales $x \mapsto a^x$ ($a > 0$, $a \neq 1$),
-\item Las logarítmicas $x \mapsto \log_a x$ ($a > 0$, $a \neq 1$), 
-\item Las funciones trigonométricas $\sin x$, $\cos x$, $\tan x$, etc.,
-\item Las constantes $x \mapsto c$ ($c \in \mathbb{R}$),
-\item Y está cerrado bajo suma, producto, cociente y composición.
-\end{itemize}
-
-Las expresiones analíticas usuales en cálculo (polinomios, racionales, exponenciales-trigonométricas, etc.) son funciones elementales.
-\end{definition}
-
-Un tipo particular de funciones elementales son las \textbf{funciones algebraicas}, que se obtienen únicamente mediante operaciones algebraicas (suma, resta, multiplicación, división y raíces) sobre la variable independiente $x$. Se definen detalladamente a continuación:
-
-\begin{definition}[Función algebraica]
-Una función $f: D \to \mathbb{R}$ es \textbf{algebraica} si puede expresarse mediante una expresión finita que involucre únicamente la variable $x$, números reales y las operaciones de suma, resta, multiplicación, división y extracción de raíces $n$-ésimas (con $n \in \mathbb{N}^+$). Equivalentemente, satisface una ecuación polinómica con coeficientes reales:
-\[
-P(x, f(x)) = 0,
-\]
-donde $P$ es un polinomio en dos variables.
-\end{definition}
-
-\begin{definition}[Función lineal]
-Una función $f: \mathbb{R} \to \mathbb{R}$ es \textbf{lineal} si tiene la forma
-\[
-f(x) = mx + b,
-\]
-donde $m, b \in \mathbb{R}$ son constantes. Aquí $m$ es la \textbf{pendiente} y $b$ el \textbf{intercepto} con el eje $y$. Su dominio y rango son $\mathbb{R}$, y es inyectiva si $m \neq 0$.
-\end{definition}
-
-\begin{definition}[Función polinómica]
-Una función $f: \mathbb{R} \to \mathbb{R}$ es \textbf{polinómica} si se expresa como
-\[
-f(x) = a_n x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a_0,
-\]
-donde $n \in \mathbb{N} \cup \{0\}$ es el \textbf{grado}, $a_i \in \mathbb{R}$ y $a_n \neq 0$. Su dominio es $\mathbb{R}$. Cuando $n \geq 2$, se clasifican según su grado (cuadrática $n=2$, cúbica $n=3$, etc.).
-\end{definition}
-
-\begin{definition}[Función racional]
-Una función $f: D \to \mathbb{R}$ es \textbf{racional} si es un cociente de dos polinomios:
-\[
-f(x) = \frac{P(x)}{Q(x)},
-\]
-donde $P, Q$ son polinomios con $Q \not\equiv 0$. Su dominio es
-\[
-D = \mathbb{R} \setminus \{x \in \mathbb{R} : Q(x) = 0\}.
-\]
-Las asíntotas y discontinuidades se determinan por los ceros del denominador.
-\end{definition}
-
-\begin{definition}[Función irracional]
-Una función $f: D \to \mathbb{R}$ es \textbf{irracional} (o radical) si en su expresión analítica aparece al menos una raíz $n$-ésima con $n \geq 2$. El dominio se restringe por las condiciones de definición de las raíces:
-\[
-\sqrt[n]{P(x)} \quad \text{requiere } P(x) \geq 0 \text{ si } n \text{ par}.
-\]
-Ejemplos: $f(x) = \sqrt{x}$, $g(x) = \sqrt[3]{x^2 + 1}$.
-\end{definition}
-
-Las funciones que no son algebraicas se denominan \textbf{trascendentes}. Ejemplos incluyen las funciones trigonométricas ($y = \cos x$), exponenciales ($y = 10^x$) y logarítmicas ($y = \ln x$), cuya definición trasciende las operaciones algebraicas elementales.
-
-
-\section{Transformaciones de funciones}
-
-A partir de las funciones básicas estudiadas previamente, las combinaciones de funciones se producen de manera natural: $(f+g)(x)=f(x)+g(x),$ $(f-g)(x)=f(x)-g(x),$ $(fg)(x)=f(x)g(x),$ y $(\dfrac{f}{g})(x)=\dfrac{f(x)}{g(x)}$ con $g(x)\neq 0.$  Ahora, es posible generar nuevas funciones mediante \textbf{transformaciones geométricas} de sus gráficas: traslaciones, dilataciones, compresiones y reflexiones. Estas operaciones preservan las propiedades fundamentales de la función original, modificando únicamente su posición y escala. 
-
-Dados $h, k \in \mathbb{R}$ y $y = f(x)$, las siguientes transformaciones desplazan la gráfica de $f$:
-
-\begin{itemize}
-\item $y = f(x - h)$: \textbf{Traslación horizontal} de $h$ unidades ($h > 0$ hacia la derecha, $h < 0$ hacia la izquierda).
-\item $y = f(x) + k$: \textbf{Traslación vertical} de $k$ unidades ($k > 0$ hacia arriba, $k < 0$ hacia abajo).
-\item $y = f(x - h) + k$: \textbf{Traslación combinada} (horizontal $h$, vertical $k$).
-\end{itemize}
-
-\begin{figure}[H]
-\centering
-\begin{tikzpicture}[scale=0.8]
-% Original: y = (x)^2 = x^2
-
-\draw[->] (-2.5,0) -- (2.5,0) node[right] {$x$};
-\draw[->] (0,-0.5) -- (0,5) node[above] {$y$};
-\draw[blue,thick, domain=-2.2:2.2, samples=100] plot (\x, {\x*\x});
-\node[blue, above right] at (-4,1.5) {$y = f(x) = x^2$};
-
-
-% f(x-h) = (x-1)^2, h=1
-
-\draw[red,thick, domain=-1.2:3.2, samples=100] plot (\x, {(\x-1)^2});
-\node[red, above right] at (2,2.5) {$y = f(x-1) = (x-1)^2$};
-
-
-% f(x)+k = x^2 + 2, k=2
-
-
-\draw[green,thick, domain=-2.2:2.2, samples=100] plot (\x, {\x*\x + 2});
-\node[green, above right] at (1.5,6) {$y = f(x)+2 = x^2+2$};
-
-
-% f(x-h)+k = (x-1)^2 + 2
-
-\draw[magenta,thick, domain=-1.2:3.2, samples=100] plot (\x, {(\x-1)^2 + 2});
-\node[magenta, above right] at (2,3.5) {$y = f(x-1)+2 = (x-1)^2+2$};
-
-\end{tikzpicture}
-\caption{Traslaciones de $y=x^2$: vértice se desplaza de $(0,0)$ a $(h,k)=(1,2)$.}
-\label{fig:traslaciones-parabola}
-\end{figure}
-
-
-Suponga que $c > 0$, $c \neq 1$. Las siguientes transformaciones modifican la escala y orientación:
-
-\begin{itemize}
-\item $y = c \cdot f(x)$ ($c > 1$): \textbf{Dilatación vertical} por factor $c$.
-\item $y = \frac{1}{c} \cdot f(x)$ ($c > 1$): \textbf{Compresión vertical} por factor $c$.
-\item $y = f(c \cdot x)$ ($c > 1$): \textbf{Compresión horizontal} por factor $c$.
-\item $y = f\left(\frac{x}{c}\right)$ ($c > 1$): \textbf{Dilatación horizontal} por factor $c$.
-\item $y = -f(x)$: \textbf{Reflexión respecto al eje $x$}.
-\item $y = f(-x)$: \textbf{Reflexión respecto al eje $y$} (preserva paridad).
-\end{itemize}
-
-\begin{figure}[H]
-\centering
-\begin{tikzpicture}[scale=1.1]
-
-% Ejes compartidos
-\draw[->] (-0.5,0) -- (7,0) node[right] {$x$};
-\draw[->] (0,-3) -- (0,3.2) node[above] {$y$};
-
-% Líneas referencia y=±1
-\draw[gray!40,dashed] (0,1) -- (7,1);
-\draw[gray!40,dashed] (0,-1) -- (7,-1);
-
-% 1. Original: sin(x)
-\draw[thick, blue, domain=0:6.3, samples=120] plot (\x, {sin((\x) r)});
-\node[blue, font=\small, above right] at (1.8,1.2) {$\sin x$};
-
-% 2. Amplitud 2: 2sin(x)
-\draw[thick, red, domain=0:6.3, samples=120] plot (\x, {2*sin((\x-3.8) r)});
-\node[red, font=\small, above] at (1.8,2.5) {$2\sin x$};
-
-% 3. Compresión vertical: 0.5sin(x)
-\draw[thick, orange, domain=0:6.3, samples=120] plot (\x, {0.5*sin((\x-7.3) r)});
-\node[orange, font=\small, above right] at (1.8,0.8) {$0.5\sin x$};
-
-% 4. Compresión horizontal: sin(2x)
-\draw[thick, green!70!black, domain=0:6.3, samples=120] plot (\x, {sin(2*(\x-10.8) r)});
-\node[green!70!black, font=\small, above] at (1.8,2) {$\sin 2x$};
-
-% 5. Reflexión vertical: -sin(x)
-\draw[thick, magenta, domain=0:6.8, samples=120] plot (\x, {-sin((\x-14.3) r)});
-\node[magenta, font=\small, below] at (1.8,-0.8) {$-\sin x$};
-\end{tikzpicture}
-\caption{Transformaciones superpuestas de $y=\sin x$: amplitud, compresiones y reflexión.}
-\label{fig:transformaciones-seno}
-\end{figure}
-
-
-
-Estas transformaciones permiten sistematizar el análisis gráfico de funciones complejas a partir de funciones básicas conocidas. Para las funciones trigonométricas periódicas $\sin x$ y $\cos x$, cuya forma canónica tiene amplitud $1$, línea media $y=0$ y período $2\pi$, la forma generalizada es $y = C + A \sin \bigl[ a(t + b) \bigr]$ o $y = C + A \cos \bigl[ a(t + b) \bigr],$ donde los parámetros tienen interpretación geométrica precisa:
-
-\begin{itemize}
-\item \textbf{Amplitud} $|A|$: distancia máxima desde la línea central hasta los valores extremos.
-\item \textbf{Período fundamental} $T = \dfrac{2\pi}{|a|}$: longitud del ciclo completo ($a > 0$ implica compresión, $0 < a < 1$ dilatación horizontal).
-\item \textbf{Línea central (desfase vertical)} $C$: valor medio alrededor del cual oscila la función.
-\item \textbf{Desfase horizontal} $-b$: desplazamiento lateral del ciclo básico ($\phi = -b$ comúnmente denotado).
-\end{itemize}
-
-\begin{figure}[H]
-\centering
-\begin{tikzpicture}[scale=1.1]
-% Ejes
-\draw[->] (-0.3,0) -- (7.5,0) node[right] {$t$};
-\draw[->] (0,-2.8) -- (0,3) node[above] {$y$};
-
-% Función: y = 0.5 + 1.5 sin(1.2(t + 0.3))
-\draw[thick,blue,domain=0:6.5,samples=200,smooth] plot (\x, {0.5 + 1.5*sin(1.2*(\x + 0.3) r)});
-
-% Línea central C=0.5
-\draw[dashed,gray,thick] (0,0.5) -- (6.5,0.5) node[right,font=\small] {$y=C=0.5$};
-
-% Amplitud A=1.5
-\draw[<->,red,thick] (5.8,0.5) -- (5.8,2) node[midway,right,font=\small] {$|A|=1.5$};
-
-% Período T=2π/1.2 ≈ 5.24
-\draw[<->,purple,thick] (0.5,-2.5) -- (5.74,-2.5) node[midway,below,font=\small] {$T=\frac{2\pi}{|1.2|}\approx5.24$};
-
-% Máximos/mínimos para referencia
-\filldraw (2.1,2) circle (1.5pt) node[above,font=\tiny] {máx};
-\filldraw (4.8,-1) circle (1.5pt) node[below,font=\tiny] {mín};
-
-% Etiqueta función
-\node[below=0.1cm,font=\footnotesize] at (3.5,-3.5) {$y = 0.5 + 1.5\sin[1.2(t+0.3)]$};
-
-\end{tikzpicture}
-\caption{Componentes de la forma amplitud-fase.}
-\label{fig:forma-amplitud-fase}
-\end{figure}
-
-Esta parametrización es fundamental para modelar fenómenos oscilatorios (resortes, ondas, circuitos AC) donde la amplitud, frecuencia y fase determinan el comportamiento físico observado.
-
-\section{Funciones inversas}
-
-Muchos fenómenos físicos y matemáticos admiten dos perspectivas complementarias. Considere, por ejemplo, el proceso productivo de una planta de muebles: dada una cantidad de tiempo $t$, podemos determinar la cantidad de muebles producidos $f(t)$; alternativamente, dada una cantidad específica de muebles $y$, podríamos determinar el tiempo necesario para producirlos $t = f^{-1}(y)$. 
-
-En este contexto, si $y = f(t)$ describe la producción acumulada en función del tiempo, la función inversa $f^{-1}$ responde a la pregunta ``¿en cuánto tiempo se producen $y$ muebles?''. Para que esta operación inversa sea bien definida matemáticamente, es necesario garantizar que cada valor $y$ en el rango de $f$ corresponda a un único $x$ en el dominio, condición que formalizamos mediante el concepto de inyectividad.
-
-\begin{definition}[Función inyectiva]
-Una función $f: D \to \mathbb{R}$ es \textbf{inyectiva} si para todo par de elementos distintos $x_1, x_2 \in D$ se cumple:
-\[
-x_1 \neq x_2 \implies f(x_1) \neq f(x_2).
-\]
-Equivalentemente, $f(a) = f(b)$ implica $a = b$ para todo $a, b \in D$.
-\end{definition}
-
-\begin{rem}[Prueba de la recta horizontal]
-Una función $f$ es inyectiva si y solo si ninguna recta horizontal $y = k$ (con $k \in \mathbb{R}$) interseca su gráfica en más de un punto. Esta condición geométrica es equivalente a la definición algebraica anterior y proporciona un criterio visual directo para verificar la inyectividad.
-\end{rem}
-
-La inyectividad garantiza que cada valor en el rango de $f$ proviene de exactamente un elemento del dominio, condición necesaria y suficiente para que exista una función inversa bien definida $f^{-1}: \operatorname{Ran}(f) \to D$ tal que:
-\(
-f(f^{-1}(y)) = y \quad \text{y} \quad f^{-1}(f(x)) = x.
-\)
-
-Este contexto nos permite introducir rigurosamente el concepto de función inversa.
-
-\begin{definition}[Función inversa]
-Sea $f: D \to R$ una función inyectiva, con dominio $D$ y rango (imagen) $R = f(D)$. La \textbf{función inversa} de $f$, denotada por $f^{-1}: R \to D$, se define mediante la relación
-\[
-f^{-1}(y) = x \;\Longleftrightarrow\; f(x) = y,
-\]
-para todo $y \in R$ y el único $x \in D$ que satisface dicha igualdad. En otras palabras, $f^{-1}$ “deshace” la acción de $f$.
-\end{definition}
-
-\begin{rem}
-En general, $f^{-1} \neq \dfrac{1}{f}$: la notación $f^{-1}$ no denota recíproco, sino \emph{función inversa}. Además, cuando $f$ es inyectiva se satisfacen las identidades de composición
-\[
-f^{-1}(f(x)) = x \quad \text{para todo } x \in D,
-\]
-\[
-f(f^{-1}(y)) = y \quad \text{para todo } y \in R.
-\]
-Estas igualdades permiten calcular analíticamente la función inversa: dada la ecuación $y = f(x)$, se despeja $x$ en términos de $y$ y, finalmente, se intercambian los roles de las variables ($y$ se renombra como $x$).
-\end{rem}
-
-\begin{example}
-Determine una fórmula para la inversa de las funciones
-\(
-y = \frac{4x - 1}{2x + 3} \) y \( y = 2x - 3.\)
-
-\begin{myproof}
-\textbf{1. Inversa de } $\displaystyle y = \frac{4x - 1}{2x + 3}$.
-
-Partimos de la ecuación
-\[
-y = \frac{4x - 1}{2x + 3}.
-\]
-Paso 1: Intercambiamos $x$ e $y$ para reflejar la inversión:
-\[
-x = \frac{4y - 1}{2y + 3}.
-\]
-Paso 2: Despejamos $y$ en términos de $x$. Multiplicamos ambos lados por $2y + 3$:
-\[
-x(2y + 3) = 4y - 1.
-\]
-Distribuimos:
-\[
-2xy + 3x = 4y - 1.
-\]
-Paso 3: Reagrupamos los términos que contienen $y$ en un lado:
-\[
-2xy - 4y = -1 - 3x.
-\]
-Factorizamos $y$:
-\[
-y(2x - 4) = -1 - 3x.
-\]
-Paso 4: Despejamos $y$:
-\[
-y = \frac{-1 - 3x}{2x - 4}.
-\]
-Podemos multiplicar numerador y denominador por $-1$ para simplificar:
-\[
-y = \frac{3x + 1}{4 - 2x}.
-\]
-Por lo tanto,
-\[
-f^{-1}(x) = \frac{3x + 1}{4 - 2x}.
-\]
-
-\textbf{2. Inversa de } $\displaystyle y = 2x - 3$.
-
-Partimos de
-\[
-y = 2x - 3.
-\]
-Paso 1: Intercambiamos $x$ e $y$:
-\[
-x = 2y - 3.
-\]
-Paso 2: Despejamos $y$ en términos de $x$:
-\[
-x + 3 = 2y \quad \Longrightarrow \quad y = \frac{x + 3}{2}.
-\]
-Por tanto,
-\[
-f^{-1}(x) = \frac{x + 3}{2}.
-\]
-
-En ambos casos, puede verificarse la corrección comprobando que $f^{-1}(f(x)) = x$ y $f(f^{-1}(x)) = x$ en los dominios correspondientes.
-\end{myproof}
-\end{example}
-
-Después del contexto establecido sobre funciones inversas, las funciones trigonométricas básicas ($\sin x$, $\cos x$, etc.) no son globalmente inyectivas debido a su periodicidad. Para definir sus inversas, se restringen a intervalos \emph{principales} donde cada una es biyectiva (inyectiva y sobreyectiva) sobre su rango. Estas funciones trigonométricas inversas se definen a continuación:
-
-\begin{definition}[Funciones trigonométricas inversas]
-Las seis funciones trigonométricas inversas fundamentales se definen con dominios y rangos específicos que garantizan su inyectividad:
+Las seis funciones trigonométricas fundamentales se definen con $x \in \mathbb{R}$ en radianes:
 
 \begin{center}
-\begin{tabular}{|c|l|l|}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|l|l|l|l|l|}
 \hline
-\textbf{Función} & \textbf{Dominio (principal)} & \textbf{Rango} \\
+\textbf{Función} & \textbf{Dominio} & \textbf{Rango} & \textbf{Período} & \textbf{Paridad} \\
 \hline
-$\operatorname{arcsin} x$ & $[-1, 1]$ & $\left[-\frac{\pi}{2}, \frac{\pi}{2}\right]$ \\
-\hline
-$\operatorname{arccos} x$ & $[-1, 1]$ & $[0, \pi]$ \\
-\hline
-$\operatorname{arctan} x$ & $\mathbb{R}$ & $\left(-\frac{\pi}{2}, \frac{\pi}{2}\right)$ \\
-\hline
-$\operatorname{arccot} x$ & $\mathbb{R}$ & $(0, \pi)$ \\
-\hline
-$\operatorname{arcsec} x$ & $(-\infty, -1] \cup [1, +\infty)$ & $[0, \pi] \setminus \{\frac{\pi}{2}\}$ \\
-\hline
-$\operatorname{arccsc} x$ & $(-\infty, -1] \cup [1, +\infty)$ & $\left[-\frac{\pi}{2}, \frac{\pi}{2}\right] \setminus \{0\}$ \\
+$\sin x$ & $\mathbb{R}$ & $[-1,1]$ & $2\pi$ & impar \\
+$\cos x$ & $\mathbb{R}$ & $[-1,1]$ & $2\pi$ & par \\
+$\tan x$ & $\mathbb{R}\setminus\{\pi/2+k\pi\}$ & $\mathbb{R}$ & $\pi$ & impar \\
+$\cot x$ & $\mathbb{R}\setminus\{k\pi\}$ & $\mathbb{R}$ & $\pi$ & impar \\
+$\sec x$ & $\mathbb{R}\setminus\{\pi/2+k\pi\}$ & $(-\infty,-1]\cup[1,+\infty)$ & $2\pi$ & par \\
+$\csc x$ & $\mathbb{R}\setminus\{k\pi\}$ & $(-\infty,-1]\cup[1,+\infty)$ & $2\pi$ & impar \\
 \hline
 \end{tabular}
 \end{center}
-
+donde $k \in \mathbb{Z}$.
 \end{definition}
 
+\begin{example}[Gráficas de las funciones trigonométricas]
 \begin{figure}[H]
 \centering
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=0.85]
 \begin{axis}[
-    axis lines = center,
-    xlabel = {$x$},
-    ylabel = {$y$},
-    title = {$y = \arcsin(x)$},
-    domain = -1:1,
-    samples = 100,
-    ymin = -2,
-    ymax = 2,
-    xmin = -1.5,
-    xmax = 1.5,
-    grid = major,
-    legend pos = north west,
-    width = 10cm,
-    height = 8cm,
-    ytick = {-1.5708, 0, 1.5708},
-    yticklabels = {$-\pi/2$, $0$, $\pi/2$},
-    trig format plots=rad
+    axis lines=middle, xlabel={$x$}, ylabel={$y$},
+    xmin=-0.3, xmax=6.6, ymin=-1.4, ymax=1.4,
+    width=12cm, height=5cm, samples=200,
+    xtick={1.5708,3.14159,4.71239,6.28318},
+    xticklabels={$\pi/2$,$\pi$,$3\pi/2$,$2\pi$},
+    legend pos=north east,
 ]
-\addplot[blue, thick] {asin(x)};
-\addlegendentry{$\arcsin(x)$}
-\addplot[red, dashed, domain=-1.5:1.5] {pi/2};
-\addplot[red, dashed, domain=-1.5:1.5] {-pi/2};
+\addplot[blue, thick] {sin(deg(x))};
+\addlegendentry{$\sin x$}
+\addplot[orange, thick] {cos(deg(x))};
+\addlegendentry{$\cos x$}
 \end{axis}
 \end{tikzpicture}
-\caption{Función arcoseno: dominio $[-1,1]$, rango $[-\pi/2, \pi/2]$}
+\caption{$\sin x$ (azul) y $\cos x$ (naranja): período $2\pi$, amplitud 1. Observe que $\cos x = \sin(x+\pi/2)$.}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=0.85]
 \begin{axis}[
-    axis lines = center,
-    xlabel = {$x$},
-    ylabel = {$y$},
-    title = {$y = \arccos(x)$},
-    domain = -1:1,
-    samples = 100,
-    ymin = -0.5,
-    ymax = 3.5,
-    xmin = -1.5,
-    xmax = 1.5,
-    grid = major,
-    legend pos = north east,
-    width = 10cm,
-    height = 8cm,
-    ytick = {0, 1.5708, 3.14159},
-    yticklabels = {$0$, $\pi/2$, $\pi$},
-    trig format plots=rad
+    axis lines=middle, 
+    xlabel={$x$}, ylabel={$y$},
+    xmin=-4.2, xmax=4.2, ymin=-3.5, ymax=3.5,
+    width=10cm, height=6cm, 
+    samples=300,
+    restrict y to domain*=-3.5:3.5,
+    unbounded coords=jump,
+    xtick={-3.1416,-1.5708,1.5708,3.1416},
+    xticklabels={$-\pi$,$-\pi/2$,$\pi/2$,$\pi$},
+    legend pos=north west,
+    lua backend=false, % Silences the harmless Lua backend warnings
 ]
-\addplot[blue, thick] {acos(x)};
-\addlegendentry{$\arccos(x)$}
-\addplot[red, dashed, domain=-1.5:1.5] {pi};
-\addplot[red, dashed, domain=-1.5:1.5] {0};
+\addplot[red, thick] {tan(deg(x))};
+\addlegendentry{$\tan x$}
+
+% Vertical asymptotes (explicit coordinates avoid parser errors)
+\draw[dashed,gray] (-1.5708, -3.5) -- (-1.5708, 3.5);
+\draw[dashed,gray] (1.5708, -3.5) -- (1.5708, 3.5);
 \end{axis}
 \end{tikzpicture}
-\caption{Función arcocoseno: dominio $[-1,1]$, rango $[0, \pi]$}
+\caption{$\tan x$: período $\pi$, asíntotas verticales en $x = \pi/2 + k\pi$.}
 \end{figure}
+\end{example}
+
+
+% -----------------------------------------------------------
+\subsection{Función compuesta y función elemental}
+% -----------------------------------------------------------
+
+\begin{definition}[Función compuesta]
+Sean $f: D_f \to \mathbb{R}$ y $g: D_g \to \mathbb{R}$. La \textbf{composición} $f \circ g$ se define por
+\[
+  (f \circ g)(x) = f(g(x)),
+\]
+con dominio $D_{f \circ g} = \{\, x \in D_g : g(x) \in D_f \,\}$.
+\end{definition}
+
+\begin{example}
+Identifique la composición en $y = \sqrt{1-x^2}$ y halle su dominio.
+
+\begin{myproof}
+\textbf{Paso 1:} La función exterior es $f(u) = \sqrt{u}$ (requiere $u \geq 0$); la interior es $g(x) = 1-x^2$.
+
+\textbf{Paso 2:} Para $f\circ g$ se necesita $g(x) \in D_f = [0,+\infty)$.
+
+\textbf{Paso 3:} $1-x^2 \geq 0 \Leftrightarrow x^2 \leq 1 \Leftrightarrow -1 \leq x \leq 1$.
+
+\textbf{Paso 4:}
+\[
+  \boxed{D_{f\circ g} = [-1,\,1].}
+\]
+\end{myproof}
+\end{example}
+
+\begin{rem}[Composiciones múltiples]
+La función $h(x) = \ln(\sin(x^2+1))$ es la composición $h = \ln \circ \sin \circ p$, donde $p(x)=x^2+1$. Para hallar su dominio se imponen las restricciones de adentro hacia afuera: $p(x)=x^2+1 \geq 1 > 0$ (sin restricción); $\sin(p(x))$ debe ser positivo para que $\ln$ esté definido. Luego
+\[
+  D_h = \{\, x \in \mathbb{R} : \sin(x^2+1) > 0 \,\}.
+\]
+\end{rem}
+
+\begin{definition}[Función elemental]
+Una función $f$ es \textbf{elemental} si se obtiene a partir de funciones potencia, exponenciales, logarítmicas, trigonométricas (y sus inversas) y constantes reales mediante un número \emph{finito} de sumas, restas, multiplicaciones, divisiones y composiciones.
+
+Las \textbf{funciones algebraicas} son el subconjunto de funciones elementales que solo involucran operaciones algebraicas (sin exponenciales ni trigonométricas). Se subdividen en:
+\begin{itemize}
+  \item \textbf{Polinomios:} $f(x) = a_n x^n + \cdots + a_0$, $D_f = \mathbb{R}$.
+  \item \textbf{Racionales:} $f(x) = P(x)/Q(x)$, $D_f = \{x : Q(x)\neq 0\}$.
+  \item \textbf{Irracionales:} contienen raíces $\sqrt[n]{\cdot}$ con $n \geq 2$.
+\end{itemize}
+Las funciones no algebraicas (senos, cosenos, exponenciales, logaritmos) se denominan \textbf{trascendentes}.
+\end{definition}
+
+
+% ============================================================
+\section{Transformaciones de funciones}
+% ============================================================
+
+A partir de una función base $y = f(x)$, podemos generar una familia entera de funciones mediante \textbf{transformaciones geométricas} que modifican la posición y escala de la gráfica sin alterar su forma esencial.
+
+% -----------------------------------------------------------
+\subsection{Traslaciones}
+% -----------------------------------------------------------
+
+Dados $h, k \in \mathbb{R}$:
+\begin{itemize}
+  \item $y = f(x-h)$: \textbf{traslación horizontal} $h$ unidades ($h>0$: derecha; $h<0$: izquierda).
+  \item $y = f(x)+k$: \textbf{traslación vertical} $k$ unidades ($k>0$: arriba; $k<0$: abajo).
+  \item $y = f(x-h)+k$: \textbf{traslación combinada}.
+\end{itemize}
 
 \begin{figure}[H]
 \centering
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=0.85]
 \begin{axis}[
-    axis lines = center,
-    xlabel = {$x$},
-    ylabel = {$y$},
-    title = {$y = \arctan(x)$},
-    domain = -10:10,
-    samples = 200,
-    ymin = -2,
-    ymax = 2,
-    xmin = -10,
-    xmax = 10,
-    grid = major,
-    legend pos = north west,
-    width = 10cm,
-    height = 8cm,
-    ytick = {-1.5708, 0, 1.5708},
-    yticklabels = {$-\pi/2$, $0$, $\pi/2$},
-    trig format plots=rad
+    axis lines=middle, xlabel={$x$}, ylabel={$y$},
+    xmin=-2.5, xmax=3.5, ymin=-0.5, ymax=5.5,
+    width=11cm, height=7cm, samples=100,
+    legend pos=north west,
 ]
-\addplot[blue, thick] {atan(x)};
-\addlegendentry{$\arctan(x)$}
-\addplot[red, dashed, domain=-10:10] {pi/2};
-\addplot[red, dashed, domain=-10:10] {-pi/2};
+\addplot[blue, dashed, thick, domain=-2.2:2.2] {x^2};
+\addlegendentry{$x^2$ (original)}
+\addplot[red, thick, domain=-1.2:3.2] {(x-1)^2};
+\addlegendentry{$(x-1)^2$ ($h=1$)}
+\addplot[green!60!black, thick, domain=-2.2:2.2] {x^2+2};
+\addlegendentry{$x^2+2$ ($k=2$)}
+\addplot[magenta, thick, domain=-1.2:3.2] {(x-1)^2+2};
+\addlegendentry{$(x-1)^2+2$}
 \end{axis}
 \end{tikzpicture}
-\caption{Función arcotangente: dominio $(-\infty, \infty)$, rango $(-\pi/2, \pi/2)$}
+\caption{Traslaciones de $y=x^2$: el vértice se desplaza de $(0,0)$ a $(h,k)$.}
+\end{figure}
+
+% -----------------------------------------------------------
+\subsection{Dilataciones, compresiones y reflexiones}
+% -----------------------------------------------------------
+
+Sea $c > 0$, $c \neq 1$:
+\begin{itemize}
+  \item $y = c\,f(x)$, $c>1$: \textbf{dilatación vertical} (estira hacia arriba).
+  \item $y = \tfrac{1}{c}\,f(x)$, $c>1$: \textbf{compresión vertical}.
+  \item $y = f(cx)$, $c>1$: \textbf{compresión horizontal} (acorta el período).
+  \item $y = f(x/c)$, $c>1$: \textbf{dilatación horizontal} (alarga el período).
+  \item $y = -f(x)$: \textbf{reflexión respecto al eje $x$}.
+  \item $y = f(-x)$: \textbf{reflexión respecto al eje $y$} (no altera paridad).
+\end{itemize}
+
+Para $\sin$ y $\cos$, la forma generalizada
+\[
+  y = C + A\sin\bigl[a(t - b)\bigr] \quad \text{o} \quad y = C + A\cos\bigl[a(t - b)\bigr]
+\]
+tiene los siguientes parámetros geométricos:
+\begin{itemize}
+  \item \textbf{Amplitud:} $|A|$ (distancia desde la línea central hasta los extremos).
+  \item \textbf{Período fundamental:} $T = 2\pi/|a|$.
+  \item \textbf{Línea central (nivel medio):} $y = C$.
+  \item \textbf{Desfase horizontal:} $b$ (desplaza el ciclo).
+\end{itemize}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.0]
+\begin{axis}[
+    axis lines=left, xlabel={$t$}, ylabel={$y$},
+    xmin=0, xmax=6.5, ymin=-1.5, ymax=2.5,
+    width=12cm, height=7cm, samples=200,
+]
+\addplot[blue, ultra thick, domain=0:6.3] {0.5 + 1.5*sin(deg(1.2*(x+0.3)))};
+\draw[dashed, gray, thick] (axis cs:0,0.5) -- (axis cs:6.5,0.5)
+    node[right, font=\small] {$y=C=0.5$};
+\draw[<->, red, thick] (axis cs:5.8,0.5) -- (axis cs:5.8,2)
+    node[midway, right, font=\small] {$|A|=1.5$};
+\draw[<->, purple, thick] (axis cs:0.5,-1.2) -- (axis cs:5.74,-1.2)
+    node[midway, below, font=\small] {$T=2\pi/1.2\approx5.24$};
+\node[below, font=\small] at (axis cs:3.5,-1.6)
+    {$y=0.5+1.5\sin[1.2(t+0.3)]$};
+\end{axis}
+\end{tikzpicture}
+\caption{Parámetros de la forma amplitud-fase en $y=C+A\sin[a(t-b)]$.}
 \end{figure}
 
 
+Esta parametrización es fundamental para modelar fenómenos oscilatorios (resortes, ondas, circuitos AC) donde la amplitud, frecuencia y fase determinan el comportamiento físico observado.
 
-\section{Operaciones con logaritmos y exponenciales naturales}
+% ============================================================
+\section{Funciones inversas}
+% ============================================================
 
-Concluimos este capítulo presentando las propiedades fundamentales de las funciones exponenciales y logarítmicas, esenciales para el desarrollo del cálculo diferencial. En particular, se destaca el número \( e \approx 2.71828 \), cuya función asociada \( y = e^x \) tiene pendiente igual a \(1\) en el punto \((0,1)\). Esta característica se demostrará formalmente en el capítulo de límites. Por ahora, estudiaremos las leyes algebraicas que gobiernan las operaciones con potencias, exponentes y logaritmos.
+Muchos fenómenos físicos admiten dos perspectivas complementarias: dada la producción de una fábrica en función del tiempo, podríamos querer saber en cuánto tiempo se alcanza cierta producción. Esto motiva el concepto de función inversa.
+
+\begin{definition}[Función inyectiva]
+$f: D_f \to \mathbb{R}$ es \textbf{inyectiva} (uno a uno) si
+\[
+  x_1 \neq x_2 \;\Rightarrow\; f(x_1) \neq f(x_2) \quad \forall\, x_1, x_2 \in D_f.
+\]
+Equivalentemente: $f(a) = f(b) \Rightarrow a = b$.
+\end{definition}
+
+\begin{rem}[Prueba de la recta horizontal]
+$f$ es inyectiva si y solo si ninguna recta horizontal interseca su gráfica en más de un punto. Esta condición es necesaria y suficiente para que exista $f^{-1}$.
+\end{rem}
+
+\begin{definition}[Función inversa]
+Sea $f: D_f \to R_f$ inyectiva. Su \textbf{función inversa} $f^{-1}: R_f \to D_f$ se define por
+\[
+  f^{-1}(y) = x \;\Longleftrightarrow\; f(x) = y,
+\]
+y satisface las identidades de composición:
+\[
+  f^{-1}(f(x)) = x \quad \forall\, x \in D_f, \qquad f(f^{-1}(y)) = y \quad \forall\, y \in R_f.
+\]
+\textbf{Advertencia:} $f^{-1} \neq 1/f$. La notación $f^{-1}$ denota la función inversa, \emph{no} el recíproco.
+\end{definition}
+
+\begin{rem}[Algoritmo para calcular $f^{-1}$]
+Dado $y = f(x)$:
+\begin{enumerate}
+  \item Verificar que $f$ es inyectiva (prueba de la recta horizontal).
+  \item Intercambiar los roles de $x$ e $y$: escribir $x = f(y)$.
+  \item Despejar $y$ en términos de $x$.
+  \item El resultado es $y = f^{-1}(x)$.
+\end{enumerate}
+La gráfica de $f^{-1}$ es la reflexión de la gráfica de $f$ respecto a la recta $y = x$.
+\end{rem}
+
+\begin{example}
+Determine la función inversa de
+\[
+  f(x) = \frac{4x-1}{2x+3} \qquad \text{y} \qquad g(x) = 2x - 3.
+\]
+
+\begin{myproof} Calculemos detalladamente la funciones inversas:
+\textbf{Paso 1:} $f$ es racional de grado $1/1$; puede verificarse que es inyectiva en su dominio $\mathbb{R}\setminus\{-3/2\}$.
+
+\textbf{Paso 2:} Escribimos $x = \dfrac{4y-1}{2y+3}$ y despejamos $y$:
+\[
+  x(2y+3) = 4y-1 \;\Rightarrow\; 2xy - 4y = -1-3x \;\Rightarrow\; y(2x-4)=-(1+3x).
+\]
+
+\textbf{Paso 3:} 
+\[
+  y = \frac{-(1+3x)}{2x-4} = \frac{3x+1}{4-2x}.
+\]
+
+\textbf{Paso 4:}
+\[
+  \boxed{f^{-1}(x) = \frac{3x+1}{4-2x}, \quad x \neq 2.}
+\]
+
+\medskip
+\textbf{Inversión de $g$:}
+
+\textbf{Pasos 1--3:} $x = 2y-3 \Rightarrow y = \dfrac{x+3}{2}$.
+
+\textbf{Paso 4:}
+\[
+  \boxed{g^{-1}(x) = \frac{x+3}{2}.}
+\]
+\end{myproof}
+\end{example}
+
+% -----------------------------------------------------------
+\subsection{Funciones trigonométricas inversas}
+% -----------------------------------------------------------
+
+Las funciones trigonométricas no son globalmente inyectivas (son periódicas), por lo que se restringe su dominio a un \textbf{intervalo principal} para definir sus inversas.
+
+\begin{definition}[Funciones trigonométricas inversas]
+\begin{center}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Función} & \textbf{Dominio} & \textbf{Rango (intervalo principal)} \\
+\hline
+$\arcsin x$ & $[-1,1]$ & $[-\pi/2,\,\pi/2]$ \\
+$\arccos x$ & $[-1,1]$ & $[0,\,\pi]$ \\
+$\arctan x$ & $\mathbb{R}$ & $(-\pi/2,\,\pi/2)$ \\
+$\text{arccot}\, x$ & $\mathbb{R}$ & $(0,\,\pi)$ \\
+$\text{arcsec}\, x$ & $(-\infty,-1]\cup[1,+\infty)$ & $[0,\pi]\setminus\{\pi/2\}$ \\
+$\text{arccsc}\, x$ & $(-\infty,-1]\cup[1,+\infty)$ & $[-\pi/2,\pi/2]\setminus\{0\}$ \\
+\hline
+\end{tabular}
+\end{center}
+\end{definition}
+
+\begin{example}[Gráficas de $\arcsin$, $\arccos$ y $\arctan$]
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=0.85]
+\begin{axis}[
+    axis lines=middle, xlabel={$x$}, ylabel={$y$},
+    title={$y=\arcsin x$},
+    xmin=-1.4, xmax=1.4, ymin=-1.8, ymax=1.8,
+    width=6.5cm, height=6.5cm, samples=100,
+    ytick={-1.5708,0,1.5708},
+    yticklabels={$-\pi/2$,$0$,$\pi/2$},
+]
+\addplot[blue, ultra thick, domain=-1:1] {asin(x)*pi/180};
+\addplot[dashed, red, domain=-1.4:1.4] {pi/2};
+\addplot[dashed, red, domain=-1.4:1.4] {-pi/2};
+\end{axis}
+\end{tikzpicture}
+\hfill
+\begin{tikzpicture}[scale=0.85]
+\begin{axis}[
+    axis lines=middle, xlabel={$x$}, ylabel={$y$},
+    title={$y=\arccos x$},
+    xmin=-1.4, xmax=1.4, ymin=-0.3, ymax=3.5,
+    width=6.5cm, height=6.5cm, samples=100,
+    ytick={0,1.5708,3.14159},
+    yticklabels={$0$,$\pi/2$,$\pi$},
+]
+\addplot[red, ultra thick, domain=-1:1] {acos(x)*pi/180};
+\addplot[dashed, gray, domain=-1.4:1.4] {pi};
+\end{axis}
+\end{tikzpicture}
+
+\vspace{0.4cm}
+\begin{tikzpicture}[scale=0.85]
+\begin{axis}[
+    axis lines=middle, xlabel={$x$}, ylabel={$y$},
+    title={$y=\arctan x$},
+    xmin=-8, xmax=8, ymin=-1.8, ymax=1.8,
+    width=10cm, height=5.5cm, samples=200,
+    ytick={-1.5708,0,1.5708},
+    yticklabels={$-\pi/2$,$0$,$\pi/2$},
+]
+\addplot[green!60!black, ultra thick, domain=-8:8] {atan(x)*pi/180};
+\addplot[dashed, red, domain=-8:8] {pi/2};
+\addplot[dashed, red, domain=-8:8] {-pi/2};
+\end{axis}
+\end{tikzpicture}
+\caption{Las tres inversas trigonométricas principales. Las líneas punteadas indican las asíntotas del rango.}
+\end{figure}
+\end{example}
+
+% ============================================================
+\section{Operaciones con exponenciales y logaritmos}
+% ============================================================
+
+Las leyes que gobiernan las operaciones con potencias y logaritmos son la base del álgebra del cálculo. Las resumimos en los siguientes teoremas.
 
 \begin{theorem}[Leyes de los exponentes]
-Sean \( a, b > 0 \) y \( x, y \in \mathbb{R} \). Se cumplen las siguientes propiedades:
+Sean $a, b > 0$ y $x, y \in \mathbb{R}$. Entonces:
 \begin{enumerate}
-    \item \( b^{x+y} = b^x \, b^y \)
-    \item \( b^{x-y} = \dfrac{b^x}{b^y} \)
-    \item \( (b^x)^y = b^{xy} \)
-    \item \( (ab)^x = a^x \, b^x \)
+  \item $b^{x+y} = b^x \cdot b^y$
+  \item $b^{x-y} = b^x / b^y$
+  \item $(b^x)^y = b^{xy}$
+  \item $(ab)^x = a^x b^x$
 \end{enumerate}
 \end{theorem}
 
 \begin{theorem}[Leyes de los logaritmos]
-Sea \( b > 0 \) con \( b \neq 1 \), y sean \( x, y > 0 \) y \( r \in \mathbb{R} \). Entonces se verifican las siguientes propiedades:
+Sea $b > 0$, $b \neq 1$, y $x, y > 0$, $r \in \mathbb{R}$. Entonces:
 \begin{enumerate}
-    \item \( \log_b(xy) = \log_b x + \log_b y \)
-    \item \( \log_b\!\left(\dfrac{x}{y}\right) = \log_b x - \log_b y \)
-    \item \( \log_b(x^r) = r\,\log_b x \)
+  \item $\log_b(xy) = \log_b x + \log_b y$
+  \item $\log_b(x/y) = \log_b x - \log_b y$
+  \item $\log_b(x^r) = r\log_b x$
 \end{enumerate}
-Además, la definición de logaritmo establece la equivalencia \(
-\log_b x = y \quad \Longleftrightarrow \quad b^y = x.
-\)
+Además: $\log_b x = y \Leftrightarrow b^y = x$.
 \end{theorem}
 
-\begin{definition}[Función logaritmo natural]
-El logaritmo natural \(\ln x\) es el logaritmo de base \(e\), es decir \(
-\ln x = \log_e x.
-\)
-Para todo \( x > 0 \) y \( y \in \mathbb{R} \) se cumple 
-\(
-\ln x = y \iff e^y = x,$ $\ln(e^x) = x, $ y $e^{\ln x} = x.$ En particular, en \(x = 1\), se obtiene \(
-\ln e = 1.
-\)
+\begin{definition}[Logaritmo natural]
+$\ln x = \log_e x$ donde $e \approx 2.71828$. Satisface $\ln(e^x) = x$ y $e^{\ln x} = x$ para $x > 0$. En particular, $\ln e = 1$ y $\ln 1 = 0$.
 \end{definition}
 
-\begin{theorem}[Cambio de base a logaritmos naturales]
-Sea \( b > 0 \) y \( b \neq 1 \). Se cumple que \(
-\log_b x = \frac{\ln x}{\ln b}.
-\)
+\begin{theorem}[Fórmula de cambio de base]
+Sea $b > 0$, $b \neq 1$. Entonces
+\[
+  \log_b x = \frac{\ln x}{\ln b}.
+\]
 \end{theorem}
-
 \begin{proof}
-Sea \( y = \log_b x \). Por definición, \( b^y = x \). Al aplicar logaritmos naturales a ambos lados \(
-y \ln b = \ln x.
-\) Despejando \( y \), se obtiene \(
-y = \frac{\ln x}{\ln b},
-\) lo que establece la fórmula de cambio de base.
+Sea $y = \log_b x$, es decir $b^y = x$. Aplicando $\ln$ a ambos lados: $y \ln b = \ln x$. Despejando: $y = \ln x / \ln b$. \qed
 \end{proof}
 
 
 
 
-\section{Ejercicios del capítulo}
+\section{Problemas propuestos}
 
-\begin{prob} Calcule el dominio de las siguientes funciones, exprese este dominio en forma de conjunto, en forma de intervalo y realice la gráfica de este intervalo:
+\begin{prob}
+Calcule el dominio natural de cada función. Exprese el resultado en notación de conjuntos, en notación de intervalos y represéntelo gráficamente en la recta real.
 \begin{multicols}{2}
 \begin{enumerate}
-\item $\dfrac{x+4}{x^2-9}$ \item $\dfrac{2x^3-5}{x^2+x-6}$ \item $\dfrac{x+1}{1+\dfrac{1}{x+1}}$ \item $\sqrt{4-x^2}$ \item $\sqrt{\dfrac{(x^2+1)(x-3)}{x^2-9}}$ \item $\sqrt{\dfrac{x^2-x}{x^2-2x}}$ \item $x^2+8x+1.$ \item $\dfrac{\cos x}{1-\sin x}.$ \item $\dfrac{1}{1-\tan x}.$ 
+  \item $\dfrac{x+4}{x^2-9}$
+  \item $\dfrac{2x^3-5}{x^2+x-6}$
+  \item $\dfrac{x+1}{1+\dfrac{1}{x+1}}$
+  \item $\sqrt{4-x^2}$
+  \item $\sqrt{\dfrac{(x^2+1)(x-3)}{x^2-9}}$
+  \item $\sqrt{\dfrac{x^2-x}{x^2-2x}}$
+  \item $x^2+8x+1$
+  \item $\dfrac{\cos x}{1-\sin x}$
+  \item $\dfrac{1}{1-\tan x}$
+  \item $\sqrt{\ln(x-1)}$
+  \item $\arcsin(2x-1)$
+  \item $\dfrac{\sqrt{x+3}}{x^2-4}$
 \end{enumerate}
 \end{multicols}
 \end{prob}
 
-\begin{prob} Construya una representación algebraica, es decir, una fórmula explícita para los siguientes problemas. Calcule el dominio de esa representación.
+\begin{prob}
+Determine si las siguientes funciones son par, impar o ninguna de las dos. Justifique su respuesta algebraicamente y describa la simetría geométrica correspondiente.
+\begin{multicols}{2}
+\begin{enumerate}
+  \item $f(x)=\dfrac{x^2}{x^4+1}$
+  \item $f(x)=1+3x^3-x^5$
+  \item $f(x)=x^3+x^2$
+  \item $f(x)=\dfrac{\sin x}{x}$
+  \item $f(x)=e^{x^2}$
+  \item $f(x)=x|x|$
+\end{enumerate}
+\end{multicols}
+\end{prob}
+
+\begin{prob}
+Para cada función, evalúe $f(a+h)$, $f(a+h)-f(a)$ y $\dfrac{f(a+h)-f(a)}{h}$ (con $h \neq 0$). Simplifique.
+\begin{enumerate}
+  \item $f(x) = 3x - 7$
+  \item $f(x) = x^2 - 2x + 1$
+  \item $f(x) = \dfrac{1}{x}$
+  \item $f(x) = \sqrt{x}$
+\end{enumerate}
+\end{prob}
+
+\begin{prob}
+¿Qué tienen en común todos los miembros de la familia $f(x) = 1 + m(x+3)$? Trace la gráfica de al menos cuatro funciones de esta familia y describa geométricamente la familia completa.
+\end{prob}
+
+\begin{prob}
+¿Qué tienen en común todos los miembros de la familia $f(x) = c - x$? Trace la gráfica de varias funciones de esta familia.
+\end{prob}
+
+\begin{prob}
+Encuentre una expresión para la función cúbica $f$ sabiendo que $f(1) = 6$ y $f(-1) = f(0) = f(2) = 0$.
+\end{prob}
+
+
+\begin{prob}
+Comenzando con la gráfica de $y = e^x$, encuentre la ecuación de la gráfica que resulta de:
+\begin{enumerate}
+  \item desplazarla $2$ unidades hacia abajo.
+  \item desplazarla $2$ unidades a la derecha.
+  \item reflejarla respecto al eje $x$.
+  \item reflejarla respecto al eje $y$.
+  \item reflejarla respecto al eje $x$ y luego respecto al eje $y$.
+\end{enumerate}
+\end{prob}
+
+\begin{prob}
+Trace la gráfica de cada función por tramos y determine su dominio y rango.
+\begin{enumerate}
+  \item $f(x) = \begin{cases} x+1 & x \leq -1 \\ x^2 & -1 < x < 1 \\ 2-x & x \geq 1 \end{cases}$
+  \item $g(x) = \begin{cases} |x| & x < 2 \\ 4-x & x \geq 2 \end{cases}$
+  \item $h(x) = \begin{cases} \sin x & 0 \leq x \leq \pi \\ e^{x-\pi} & x > \pi \end{cases}$
+\end{enumerate}
+\end{prob}
+
+\begin{prob}
+Las mareas más altas del mundo ocurren en la bahía de Fundy (Canadá). En Hopewell Cape, la profundidad mínima es $2.0\,\mathrm{m}$ y la máxima es $12.0\,\mathrm{m}$; el período de oscilación es de aproximadamente $12$ horas; el 30 de junio de 2009, la marea alta se produjo a las 6:45\,h. Determine una función $D(t)$ ---utilizando la función coseno--- que modele la profundidad del agua (en metros) en función del tiempo $t$ (horas después de la medianoche).
+\end{prob}
+
+\begin{prob}
+Grafique las siguientes funciones especificando transformaciones respecto a la función elemental más cercana. Para cada una, indique amplitud, período, dominio y rango.
+\begin{enumerate}
+  \item $f(x) = 3\sin(2x - \pi)$
+  \item $g(x) = -2\cos\!\bigl(\tfrac{x}{3}\bigr) + 1$
+  \item $h(x) = \tan(x + \pi/4)$
+  \item $k(x) = 2^{-x} - 1$
+\end{enumerate}
+\end{prob}
+
+
+\begin{prob}
+Sean $f(x) = x^2-1$ y $g(x) = 2x+3$. Calcule y simplifique:
+\begin{multicols}{2}
+\begin{enumerate}
+  \item $(f+g)(x)$
+  \item $(f\cdot g)(x)$
+  \item $(f\circ g)(x)$
+  \item $(g\circ f)(x)$
+  \item $(f\circ f)(x)$
+  \item $D_{f\circ g}$ y $D_{g\circ f}$
+\end{enumerate}
+\end{multicols}
+\end{prob}
+
+\begin{prob}
+Para cada función compuesta, descompóngala en funciones elementales $f$ y $g$ tales que $h = f\circ g$. Calcule el dominio de $h$.
+\begin{multicols}{2}
+\begin{enumerate}
+  \item $h(x) = \sqrt{x^2-4}$
+  \item $h(x) = e^{\sin x}$
+  \item $h(x) = \ln(1+e^x)$
+  \item $h(x) = \cos^3(2x)$
+  \item $h(x) = \arctan\!\bigl(\sqrt{x}\bigr)$
+  \item $h(x) = \dfrac{1}{\sqrt{1-x^2}}$
+\end{enumerate}
+\end{multicols}
+\end{prob}
+
+\begin{prob}
+Si $f(x) = x^5 + x^3 + x$, determine $f^{-1}(3)$ y $f(f^{-1}(2))$. Además, si $g(x) = 3 + x + e^x$, determine $g^{-1}(4)$.
+\end{prob}
+
+\begin{prob}
+Sea $f(x) = \sqrt{1-x^2}$, $0 \leq x \leq 1$. 
+\begin{enumerate}
+  \item Encuentre $f^{-1}$. 
+  \item ¿Cómo se relaciona $f^{-1}$ con $f$? 
+  \item Identifique geométricamente la gráfica de $f$ y explique la relación hallada.
+\end{enumerate}
+\end{prob}
+
+\begin{prob}
+Resuelva cada ecuación para $x$.
+\begin{multicols}{2}
+\begin{enumerate}
+  \item $e^{7-4x} = 6$
+  \item $\ln(3x-10) = 2$
+  \item $\ln(x^2-1) = 3$
+  \item $e^{2x} - 3e^x + 2 = 0$
+  \item $2^{x-5} = 3$
+  \item $\ln x + \ln(x-1) = 1$
+  \item $\ln(\ln x) = 1$
+  \item $e^{ax} = Ce^{bx}$, $a \neq b$
+\end{enumerate}
+\end{multicols}
+\end{prob}
+
+
+\begin{prob} Construya una fórmula explícita para cada situación. Calcule y justifique el dominio.
 
 \begin{enumerate}
 \item Un rectángulo tiene 16 m\(^2\) de área. Exprese el perímetro del rectángulo en función de la longitud de uno de sus lados.
@@ -1168,16 +1069,13 @@ y = \frac{\ln x}{\ln b},
 \caption{Ventana normanda}
 \end{figure}
 
-\item En un determinado país, el impuesto sobre la renta se calcula como sigue. No hay impuesto sobre la renta para ingresos de hasta \$10\,000. Los ingresos de más de \$10\,000 se gravan con una tasa de 10\%, hasta un ingreso de \$20\,000. Los ingresos superiores a \$20\,000 se gravan en 15\%.
+\item En un país, el impuesto sobre la renta se calcula así: no hay impuesto para ingresos hasta \$10\,000; los ingresos entre \$10\,000 y \$20\,000 se gravan al 10\%; los ingresos superiores a \$20\,000 al 15\%.
+    \begin{enumerate}
+      \item Trace la gráfica de la tasa impositiva $R$ en función del ingreso $I$.
+      \item ¿Qué impuesto corresponde a \$14\,000 y a \$26\,000?
+      \item Trace la gráfica del impuesto total $T$ en función de $I$.
+    \end{enumerate}
 
-\begin{enumerate}
-\item Trace la gráfica de la tasa de impuestos \(R\) en función del ingreso \(I\).
-
-\item ¿Qué impuesto corresponde a un ingreso de \$14\,000?  
-¿Y de \$26\,000?
-
-\item Trace la gráfica del impuesto total \(T\) en función del ingreso \(I\).
-\end{enumerate}
 \item A un campo de forma rectangular se le colocaron 240 m de cerca. Encuentre un modelo matemático que exprese el área del terreno como una función de su longitud. ¿Cuál es el dominio de esta función?
 
 \item Una página impresa contiene una región de impresión de 50 \(cm^2\), un margen de $1.5 cm$  en las partes superior e inferior y un margen de  $1.5 cm$ en los lados. Encuentre un modelo matemático que exprese el área total de la página como una función del ancho de la región de impresión. ¿Cuál es el dominio de esta función?
@@ -1286,75 +1184,24 @@ y = \frac{\ln x}{\ln b},
 
 \textit{Sugerencia:} La fórmula para el volumen de una pirámide es $V=\dfrac{1}{3}Bh,$ donde $V,\ B$ y $h$ son, respectivamente, la medida del volumen, el área de la base y la altura. Esta altura se define como la medida del segmento perpendicular del vértice de la pirámide al plano de la base.  
 
-\item El volumen de una esfera es función de su radio. Si el radio de una esfera mide $r$ centímetros y $V(r)$ centímetros cúbicos es su volumen, entonces $V(r)=\dfrac{4}{3}\pi r^3.$ Suponga que una bola de nieve de $70$  centímetros de radio comenzó a derretirse a una tasa constante de $5\ cm/min.$ Si $f(t)$ es el radio de la bola de nieve después de $t$ minutos:
-\begin{enumerate}[$a.$]
-\item Calcule $\left(V\circ f\right)(t),$ interprete su resultado y calcule su dominio.
-\item Determine el volumen de la bola de nieve después de $10$ minutos.
+ \item Una bola de nieve de radio inicial $70\,\mathrm{cm}$ se derrite a razón constante de $5\,\mathrm{cm/min}$. Sea $f(t)$ el radio tras $t$ minutos.
+    \begin{enumerate}
+      \item Calcule $(V \circ f)(t)$, interprete el resultado y calcule su dominio.
+      \item Determine el volumen tras $10$ minutos.
+    \end{enumerate}
+
+ \item En un ambiente limitado con capacidad $A = 1\,000\,000$ bacterias, la tasa de crecimiento es conjuntamente proporcional al número presente y a $(A - \text{número presente})$. Si la tasa es $60\,\mathrm{bact/min}$ cuando hay $1000$ bacterias, exprese la tasa como función del número de bacterias presentes. ¿Cuál es la tasa cuando hay $100\,000$ bacterias?
+
+  \item La población de una especie está modelada por
+    \[
+      P(t) = \frac{100\,000}{100 + 900e^{-2t}},
+    \]
+    donde $t$ se mide en años.
+    \begin{enumerate}
+      \item Grafique $P$ y estime el tiempo para que la población llegue a $900$.
+      \item Encuentre $P^{-1}$ y explique su significado.
+      \item Use $P^{-1}$ para encontrar exactamente el tiempo en que $P = 900$.
+    \end{enumerate}
 \end{enumerate}
-
-\item En un ambiente limitado donde $A$ es el número óptimo de bacterias soportado por el ambiente, la tasa de crecimiento bacteriano es conjuntamente proporcional al número presente de bacterias y a la diferencia entre $A$ y el número presente. Suponga que el número óptimo soportable por un ambiente particular es 1 millón de bacterias, y que la tasa de crecimiento es de 60 bacterias por minuto cuando se tienen 1000 bacterias presentes. Encuentre un modelo matemático que exprese la tasa de crecimiento bacteriano en función del número de bacterias presentes. ¿Cuál es la tasa de crecimiento cuando están presentes 100000 bacterias?
-
-\item La población de ciertas especies en un ambiente limitado con una población inicial de 100 y capacidad de carga de 1000 es
-$$P(t) = \dfrac{100000}{100 + 900e^{-2t}}$$
-donde $t$ se mide en años.
-\begin{enumerate} 
-    \item Grafique esta función y estime cuánto tiempo le toma a la población llegar a 900.
-    \item Encuentre la inversa de esta función y explique su significado.
-    \item Utilice la función inversa para encontrar el tiempo necesario para que la población llegue a 900. Compare con el resultado del inciso (a).
-\end{enumerate}
-\end{enumerate}
 \end{prob}
 
-\begin{prob} Determine si las siguientes funciones son par, impar o ninguna de las dos. 
-\begin{multicols}{2}
-\begin{enumerate}
-\item $f(x)=\dfrac{x^2}{x^4+1}$ \item $f(x)=1+3x^3-x^5$
-\end{enumerate}
-\end{multicols}
-\end{prob}
-
-\begin{prob} ¿Qué tienen en común todos los miembros de la familia de funciones lineales $f(x)=1+m(x+3)$? Trace la gráfica de varias funciones de esta familia.
-\end{prob}
-
-\begin{prob} ¿Qué tienen en común todos los miembros de la familia de funciones lineales $f(x)=c-x$? Trace la gráfica de varias funciones de esta familia.
-\end{prob}
-
-\begin{prob} Encuentre una expresión para función cúbica $f$ si $f(1)=6$ y $f(-1)=f(0)=f(2)=0.$
-\end{prob}
-
-\begin{prob} Algunas de las mareas más altas en el mundo ocurren en la bahía de Fundy en la costa atlántica de Canadá. En Hopewell Cape la profundidad del agua durante la marea baja es de 2.0 m y con la marea alta es de aproximadamente 12.0 m. El período natural de oscilación es de alrededor de 12 horas y el 30 de junio de 2009 la marea alta se produjo a las 6:45. Determine una función que involucre la función coseno que modele la profundidad $D(t)$ (en metros) en función del tiempo $t$ (en horas después de la medianoche) en ese día. \end{prob} 
-
-\begin{prob}  Comenzando con la gráfica de $y = e^x$, encuentre la ecuación de la gráfica que resulta de:
-\begin{enumerate} 
-    \item desplazarla 2 unidades hacia abajo.
-    \item desplazarla 2 unidades a la derecha.
-    \item reflejarla con respecto al eje $x$.
-    \item reflejarla con respecto al eje $y$.
-    \item reflejarla con respecto al eje $x$ y luego reflejarla con respecto al eje $y$.
-\end{enumerate} 
-\end{prob}
-
-\begin{prob} Si $f(x) = x^5 + x^3 + x$, determine $f^{-1}(3)$ y $f(f^{-1}(2))$. Además, si $g(x) = 3 + x + e^x$, determine $g^{-1}(4)$.
-\end{prob}
-
-\begin{prob} Sea $f(x) = \sqrt{1 - x^2}$, $0 \leq x \leq 1$. Encuentre $f^{-1}$. ¿Cómo se relaciona con $f$? Identifique la gráfica de $f$ y complemente su respuesta anterior.
-\end{prob}
-
-\begin{prob} Resuelva cada ecuación para $x$.
-
-\begin{multicols}{2}
-\begin{enumerate} 
-    \item $e^{7-4x} = 6$
-    \item $\ln(3x - 10) = 2$
- 
-    \item $\ln(x^2 - 1) = 3$
-    \item $e^{2x} - 3e^x + 2 = 0$
- 
-    \item $2^{x-5} = 3$
-    \item $\ln x + \ln(x - 1) = 1$
- 
-    \item $\ln(\ln x) = 1$
-    \item $e^{ax} = Ce^{bx}$, donde $a \neq b$
-\end{enumerate}
-\end{multicols}
-\end{prob} 
