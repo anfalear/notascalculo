@@ -346,7 +346,8 @@ decimales de $\sqrt{2}$). El protocolo de aplicación es:
 \end{description}
 \end{rem}
 
-\begin{example} Sea $a_1 = \tfrac{1}{2}$ y $a_{n+1} = 1 - \tfrac{a_n^2}{2}$. Demuestre que
+\begin{example}
+Sea $a_1 = \tfrac{1}{2}$ y $a_{n+1} = 1 - \tfrac{a_n^2}{2}$. Demuestre que
 converge y calcule su límite.
 \begin{myproof}
 \textbf{Paso 1: Análisis de términos y comportamiento.}
@@ -375,37 +376,122 @@ en torno a un valor que parece estabilizarse en $[0.6,0.9]$.
   (13,0.728) (14,0.735)
 };
 \addplot[blue, thick, domain=0:14, samples=2, dashed] {0.7320508};
-\node[blue, font=\small] at (axis cs:8, 0.77) {$L = \sqrt{2}-1$};
+\node[blue, font=\small] at (axis cs:8, 0.77) {$L = \sqrt{3}-1$};
 \addlegendentry{Región $[0,1]$}
 \addlegendentry{$a_n$}
 \end{axis}
 \end{tikzpicture}
 \end{center}
 
-\textbf{Paso 2: Elección del criterio.}
-La oscilación sugiere que la sucesión no es monótona; sin embargo, podemos
-mostrar que $\{a_n\}$ permanece en $[0,1]$ y aplicar el criterio de Cauchy,
-o bien verificar convergencia usando la ecuación de punto fijo
-$L = 1 - L^2/2$.
-
-\textbf{Paso 3: Verificación de hipótesis — acotación.}
-Por inducción: $a_1 = 0.5 \in [0,1]$. Si $a_k \in [0,1]$, entonces
-$a_{k+1} = 1 - a_k^2/2 \in [1-1/2, 1] = [1/2, 1] \subseteq [0,1]$.
-Luego $\{a_n\} \subset [1/2,1]$ para $n \geq 1$, y en particular está
-acotada.
-
-\textbf{Paso 4: Evaluación del límite.}
-Admitiendo la convergencia (que se verifica formalmente aplicando el
-criterio de Cauchy, pues $|a_{n+1}-a_n| \leq \frac{1}{2}|a_n^2 -
-a_{n-1}^2| \leq |a_n - a_{n-1}|$ para $a_n \in [0,1]$, de modo que la
-diferencia decrece geométricamente), tomamos límite en la recurrencia:
-\begin{align*}
-  L &= 1 - \frac{L^2}{2} \implies L^2 + 2L - 2 = 0
-     \implies L = \frac{-2 \pm \sqrt{12}}{2} = -1 \pm \sqrt{3}.
-\end{align*}
-Como $a_n \in [0,1]$ para todo $n$, descartamos la raíz negativa:
+\textbf{Paso 2: Acotación precisa de la sucesión.}
+Probemos por inducción que $\frac{1}{2} \le a_n \le \frac{7}{8}$ para todo $n \in \mathbb{N}$.
+\begin{itemize}
+  \item $a_1 = \frac{1}{2}$ cumple la cota.
+  \item Supongamos $\frac{1}{2} \le a_n \le \frac{7}{8}$.
+  La función $f(x) = 1 - \frac{x^2}{2}$ es decreciente en $[0,\infty)$,
+  por lo que
+  \[
+  f\Bigl(\frac{7}{8}\Bigr) \le a_{n+1} \le f\Bigl(\frac{1}{2}\Bigr).
+  \]
+  Evaluando:
+  \[
+  f\Bigl(\frac{1}{2}\Bigr) = 1 - \frac{1/4}{2} = \frac{7}{8},
+  \qquad
+  f\Bigl(\frac{7}{8}\Bigr) = 1 - \frac{49/64}{2} = \frac{79}{128} \approx 0.617 > \frac{1}{2}.
+  \]
+  Así $\frac{1}{2} < \frac{79}{128} \le a_{n+1} \le \frac{7}{8}$,
+  completando la inducción.
+\end{itemize}
+Además, para cualquier $x \in [\frac{1}{2}, \frac{7}{8}]$,
+$x + f(x) = 1 + x - \frac{x^2}{2}$ es creciente en $[0,1]$ y su máximo
+en el intervalo se alcanza en $x = \frac{7}{8}$:
 \[
-  \lim_{n \to \infty} a_n = \boxed{\sqrt{3} - 1 \approx 0.7321.}
+\frac{7}{8} + f\Bigl(\frac{7}{8}\Bigr) = \frac{7}{8} + \frac{79}{128}
+= \frac{191}{128} < \frac{192}{128} = \frac{3}{2}.
+\]
+Por tanto, para todo $n \ge 1$,
+\[
+a_n + a_{n+1} < \frac{3}{2}.
+\]
+
+\textbf{Paso 3: Contractividad de la sucesión.}
+Para $n \ge 2$,
+\[
+|a_{n+1} - a_n|
+= \Bigl| \Bigl(1 - \frac{a_n^2}{2}\Bigr) - \Bigl(1 - \frac{a_{n-1}^2}{2}\Bigr) \Bigr|
+= \frac{1}{2}\,|a_n^2 - a_{n-1}^2|
+= \frac{1}{2}\,(a_n + a_{n-1})\,|a_n - a_{n-1}|.
+\]
+Usando la cota del Paso 2, $\frac{1}{2}(a_n + a_{n-1}) \le \frac{1}{2}\cdot\frac{3}{2} = \frac{3}{4}$.
+Así,
+\[
+|a_{n+1} - a_n| \le \frac{3}{4}\,|a_n - a_{n-1}| \quad \text{para todo } n \ge 2.
+\]
+Iterando esta desigualdad obtenemos
+\[
+|a_{n+1} - a_n|
+\le \Bigl(\frac{3}{4}\Bigr)^{n-1} |a_2 - a_1|
+= \Bigl(\frac{3}{4}\Bigr)^{n-1} \cdot \frac{3}{8}.
+\]
+
+\textbf{Paso 4: La sucesión es de Cauchy.}
+Sean $m > n \ge N$. Por la desigualdad triangular aplicada en forma telescópica,
+\begin{align*}
+|a_m - a_n|
+&= \bigl| (a_m - a_{m-1}) + (a_{m-1} - a_{m-2}) + \dots + (a_{n+1} - a_n) \bigr| \\
+&\le \sum_{k=n}^{m-1} |a_{k+1} - a_k|.
+\end{align*}
+Acotamos cada sumando con la estimación del Paso 3 y extendemos la suma hasta infinito:
+\[
+|a_m - a_n|
+\le \sum_{k=n}^{m-1} \Bigl(\frac{3}{4}\Bigr)^{k-1} \frac{3}{8}
+\le \frac{3}{8} \sum_{k=n}^{\infty} \Bigl(\frac{3}{4}\Bigr)^{k-1}.
+\]
+Cambiamos el índice $j = k-n$:
+\[
+\sum_{k=n}^{\infty} \Bigl(\frac{3}{4}\Bigr)^{k-1}
+= \sum_{j=0}^{\infty} \Bigl(\frac{3}{4}\Bigr)^{j+n-1}
+= \Bigl(\frac{3}{4}\Bigr)^{n-1} \sum_{j=0}^{\infty} \Bigl(\frac{3}{4}\Bigr)^{j}.
+\]
+La serie geométrica de razón $\frac{3}{4}<1$ converge a $\frac{1}{1-3/4}=4$.
+Por lo tanto,
+\[
+|a_m - a_n|
+\le \frac{3}{8} \cdot \Bigl(\frac{3}{4}\Bigr)^{n-1} \cdot 4
+= \frac{3}{2} \Bigl(\frac{3}{4}\Bigr)^{n-1}.
+\]
+
+Dado $\varepsilon > 0$, buscamos $N$ tal que si $n \ge N$ entonces
+$\frac{3}{2} (\frac{3}{4})^{n-1} < \varepsilon$. Resolviendo:
+\[
+\Bigl(\frac{3}{4}\Bigr)^{n-1} < \frac{2\varepsilon}{3}
+\;\Longleftrightarrow\;
+(n-1)\ln\Bigl(\frac{3}{4}\Bigr) < \ln\Bigl(\frac{2\varepsilon}{3}\Bigr).
+\]
+Como $\ln(3/4) < 0$, la desigualdad se invierte al dividir:
+\[
+n-1 > \frac{\ln(2\varepsilon/3)}{\ln(3/4)}.
+\]
+Basta elegir
+\[
+N = 1 + \max\Bigl\{ 0,\, \Bigl\lceil \frac{\ln(2\varepsilon/3)}{\ln(3/4)} \Bigr\rceil \Bigr\}.
+\]
+Entonces, para todo $n,m \ge N$ se cumple $|a_m - a_n| < \varepsilon$.
+La sucesión es de Cauchy y, por completitud de $\mathbb{R}$, converge.
+
+\textbf{Paso 5: Cálculo del límite.}
+Sea $L = \lim_{n\to\infty} a_n$. Tomando límite en la recurrencia,
+\[
+L = 1 - \frac{L^2}{2}
+\;\Longrightarrow\;
+L^2 + 2L - 2 = 0
+\;\Longrightarrow\;
+L = \frac{-2 \pm \sqrt{4 + 8}}{2} = -1 \pm \sqrt{3}.
+\]
+Como $a_n \in [\frac{1}{2}, \frac{7}{8}]$ para todo $n$, el límite debe ser no negativo.
+Descartamos la raíz negativa y concluimos
+\[
+\lim_{n\to\infty} a_n = \sqrt{3} - 1 \approx 0.73205.
 \]
 \end{myproof}
 \end{example}
