@@ -2013,10 +2013,54 @@ Se deja caer una pelota desde una altura de $100$ pies. Un segundo después, se 
 \end{prob}
 
 \begin{prob}
-Un niño va en bicicleta por un camino recto a $15$ pies/s. A $45$
-pies del camino hay un globo que asciende verticalmente a $5$ pies/s.
-Si el niño pasa bajo el globo, ¿qué tan rápido incrementa la distancia
-entre ellos $3$ segundos después?
+Un niño viaja en bicicleta a una velocidad constante de $15$ pies/s a lo largo
+de un camino recto (Eje $x$). Un globo aerostático asciende verticalmente a
+$5$ pies/s, manteniendo siempre una distancia lateral fija de $45$ pies
+respecto al camino (Eje $y$). Si en el tiempo $t=0$ el niño se encuentra en
+el punto del camino más cercano al globo, ¿con qué rapidez incrementa la
+distancia entre ellos $3$ segundos después?
+
+\begin{center}
+\tdplotsetmaincoords{70}{110}
+\begin{tikzpicture}[tdplot_main_coords, scale=0.08, >=stealth]
+
+    % --- Ejes de Coordenadas ---
+    \draw[->, thick] (0,0,0) -- (80,0,0) node[anchor=north east]{$x$ (Camino)};
+    \draw[->, thick] (0,0,0) -- (0,70,0) node[anchor=west]{$y$ (Separación)};
+    \draw[->, thick] (0,0,0) -- (0,0,60) node[anchor=south]{$z$ (Altura)};
+
+    % --- Puntos Clave ---
+    \coordinate (O)    at (0,0,0);
+    \coordinate (N)    at (45,0,0);   % Niño a t=3s: x = 15*3 = 45
+    \coordinate (P)    at (0,45,0);   % Proyección del globo en el suelo
+    \coordinate (G)    at (0,45,15);  % Globo a t=3s: y=45, z=5*3=15
+    \coordinate (Base) at (45,45,0);  % Esquina del triángulo base
+
+    % --- Líneas de construcción ---
+    \draw[dashed, blue!60] (O)    -- (P)    node[midway, sloped, above]{45 ft};
+    \draw[dashed, blue!60] (P)    -- (Base);
+    \draw[dashed, blue!60] (N)    -- (Base) node[midway, sloped, below]{45 ft};
+    \draw[dashed, red!60]  (Base) -- (G)    node[midway, right]{$z=15$ ft};
+
+    % --- Vector de distancia L ---
+    \draw[ultra thick, red, ->] (N) -- (G)
+        node[midway, above, sloped]{$L(t)$};
+
+    % --- El Niño ---
+    \filldraw[black] (N) circle (1.5pt);
+    \node[anchor=north] at (45,0,-2) {Niño ($x=45$)};
+
+    % --- El Globo ---
+    \shade[ball color=blue!40, opacity=0.8] (G) circle (4pt);
+    \draw (G) -- (0,45,10);
+    \node[anchor=south] at (0,45,20) {Globo ($z=15$)};
+
+    % --- Ángulos rectos ---
+    \draw[thin] (0,2,0)  -- (2,2,0)   -- (2,0,0);   % en plano x-y
+    \draw[thin] (45,45,2)-- (45,43,2) -- (45,43,0);  % en elevación
+
+\end{tikzpicture}
+\end{center}
 \end{prob}
 
 % Requiere en el preámbulo: \usepackage{amsmath,amssymb,float,tikz}
@@ -2137,7 +2181,7 @@ condiciones simultáneamente:
     \item $f(0)=1$.
     \item $f(x)>0$ para $x\in(1,2)\cup(3,5)$.
     \item $f(x)<0$ para $x\in(2,3)\cup(5,+\infty)$.
-    \item $\displaystyle\lim_{x\to\infty}f(x)=2$.
+    \item $\displaystyle\lim_{x\to\infty}f(x)=-2$.
 \end{itemize}
 \end{prob}
 
@@ -2190,105 +2234,100 @@ sobre el eje $x$. Encuentre las dimensiones del rectángulo de área
 máxima.
 \end{prob}
 
-\begin{prob}
-Sea $\ell > 0$ una constante dada. Se quiere diseñar un canal de sección transversal
-trapezoidal isósceles en el que el fondo y los dos taludes se recubren con material
-impermeable, quedando la superficie superior abierta al terreno. La longitud total
-revestida por metro lineal de canal es fija:
-\[
-  b + 2s = \ell, \qquad b > 0,\quad s > 0,
-\]
-donde $b$ es el ancho del fondo y $s$ la longitud de cada talud inclinado. El ángulo
-de inclinación de los taludes respecto a la horizontal es $\theta\in\bigl(0,\tfrac{\pi}{2}\bigr)$.
-
-La profundidad del canal es $h = s\sin\theta$, y el área de la sección
-transversal mojada es
-\[
-  A \;=\; (b + s\cos\theta)\,s\sin\theta.
-\]
-Como el caudal es proporcional a $A$, maximizar el caudal equivale a maximizar $A$. Se pide resolver los siguientes ítem:
-\begin{enumerate}
-  \item Usando la restricción $b = \ell - 2s$, exprese $A$ únicamente en función
-        de $s$ y $\theta$.
-  \item Determine los valores óptimos $b^{*}$, $s^{*}$ y $\theta^{*}$ en términos
-        de $\ell$.
-  \item Interprete geométricamente la configuración óptima.
-\end{enumerate}
-
-\begin{figure}[H]
-\centering
-\begin{tikzpicture}[scale=1.25, >=stealth, line join=round,
-                    every node/.style={font=\small}]
-
-  %--- parámetros visuales ---------------------------------------------------
-  \def\b{3.0}          % ancho del fondo
-  \def\s{2.0}          % longitud del talud
-  \def\th{60}          % ángulo en grados
-  \def\h{1.7321}       % h = s*sin(60°)
-  \pgfmathsetmacro{\dx}{\s*cos(\th)}   % proyección horizontal = s*cos(θ)
-
-  %--- vértices del trapecio --------------------------------------------------
-  \coordinate (A) at (0, 0);
-  \coordinate (B) at (\b, 0);
-  \coordinate (C) at (\b+\dx, \h);
-  \coordinate (D) at (-\dx, \h);
-
-  %--- área mojada ------------------------------------------------------------
-  \fill[blue!10] (A) -- (B) -- (C) -- (D) -- cycle;
-
-  %--- terreno natural --------------------------------------------------------
-  \fill[pattern=north east lines, pattern color=brown!50]
-    (-\dx-0.6, -0.3) rectangle (\b+\dx+0.6, 0);
-  \draw[brown!70, thick]
-    (-\dx-0.6, 0) -- (\b+\dx+0.6, 0);
-  \node[brown!80!black, below] at (0.5*\b, -0.18) {\footnotesize Terreno natural};
-
-  %--- lados revestidos (perímetro mojado = ℓ) --------------------------------
-  \draw[blue!70!black, line width=1.8pt] (D) -- (A) -- (B) -- (C);
-
-  %--- superficie libre (abierta) ---------------------------------------------
-  \draw[blue!40, dashed, thick] (D) -- (C);
-
-  %--- etiquetas de los taludes -----------------------------------------------
-  \node[blue!70!black, left=2pt]  at ($(D)!0.5!(A)$) {$s$};
-  \node[blue!70!black, right=2pt] at ($(B)!0.5!(C)$) {$s$};
-
-  %--- etiqueta del fondo -----------------------------------------------------
-  \node[blue!70!black, below=4pt] at (0.5*\b, 0) {$b$};
-
-  %--- ancho superior ---------------------------------------------------------
-  \draw[<->, gray, thin] (D) ++(0, 0.35) -- ++(\b+2*\dx, 0)
-        node[midway, above, gray] {$b + 2s\cos\theta$};
-
-  %--- altura h ---------------------------------------------------------------
-  \draw[<->, red!70!black, thin]
-    (-\dx-0.35, 0) -- (-\dx-0.35, \h)
-    node[midway, left] {$h = s\sin\theta$};
-
-  %--- línea auxiliar horizontal (para el ángulo) -----------------------------
-  \draw[gray, dashed, thin] (A) -- ++(-0.5, 0);
-
-  %--- ángulo θ ---------------------------------------------------------------
-  \draw[->, thin] (A) ++(-0.4, 0) arc (180:{180-\th}:0.4);
-  \node at (-0.18, 0.28) {$\theta$};
-
-  %--- nota del perímetro revestido -------------------------------------------
-  \node[anchor=north west, align=left, font=\footnotesize, text=blue!60!black]
-    at (-\dx-0.6, -0.55)
-    {$\ell = b + 2s$ \ (perímetro revestido por metro lineal)};
-
-\end{tikzpicture}
-\end{figure}
-\end{prob}
+%\begin{prob}
+%Sea $\ell > 0$ una constante dada. Se quiere diseñar un canal de sección transversal trapezoidal isósceles en el que el fondo y los dos taludes se recubren con material impermeable, quedando la superficie superior abierta al terreno. La longitud total revestida por metro lineal de canal es fija:
+%\[
+%  b + 2s = \ell, \qquad b > 0,\quad s > 0,
+%\]
+%donde $b$ es el ancho del fondo y $s$ la longitud de cada talud inclinado. El ángulo de inclinación de los taludes respecto a la horizontal es $\theta\in\bigl(0,\tfrac{\pi}{2}\bigr)$.
+%
+%La profundidad del canal es $h = s\sin\theta$, y el área de la sección
+%transversal mojada es \[
+%  A \;=\; (b + s\cos\theta)\,s\sin\theta.
+%\]
+%Como el caudal es proporcional a $A$, maximizar el caudal equivale a maximizar $A$. Se pide resolver los siguientes ítem:
+%\begin{enumerate}
+%  \item Usando la restricción $b = \ell - 2s$, exprese $A$ únicamente en función
+%        de $s$ y $\theta$.
+%  \item Determine los valores óptimos $b^{*}$, $s^{*}$ y $\theta^{*}$ en términos
+%        de $\ell$.
+%  \item Interprete geométricamente la configuración óptima.
+%\end{enumerate}
+%
+%\begin{figure}[H]
+%\centering
+%\begin{tikzpicture}[scale=1.25, >=stealth, line join=round,
+%                    every node/.style={font=\small}]
+%
+%  %--- parámetros visuales ---------------------------------------------------
+%  \def\b{3.0}          % ancho del fondo
+%  \def\s{2.0}          % longitud del talud
+%  \def\th{60}          % ángulo en grados
+%  \def\h{1.7321}       % h = s*sin(60°)
+%  \pgfmathsetmacro{\dx}{\s*cos(\th)}   % proyección horizontal = s*cos(θ)
+%
+%  %--- vértices del trapecio --------------------------------------------------
+%  \coordinate (A) at (0, 0);
+%  \coordinate (B) at (\b, 0);
+%  \coordinate (C) at (\b+\dx, \h);
+%  \coordinate (D) at (-\dx, \h);
+%
+%  %--- área mojada ------------------------------------------------------------
+%  \fill[blue!10] (A) -- (B) -- (C) -- (D) -- cycle;
+%
+%  %--- terreno natural --------------------------------------------------------
+%  \fill[pattern=north east lines, pattern color=brown!50]
+%    (-\dx-0.6, -0.3) rectangle (\b+\dx+0.6, 0);
+%  \draw[brown!70, thick]
+%    (-\dx-0.6, 0) -- (\b+\dx+0.6, 0);
+%  \node[brown!80!black, below] at (0.5*\b, -0.18) {\footnotesize Terreno natural};
+%
+%  %--- lados revestidos (perímetro mojado = ℓ) --------------------------------
+%  \draw[blue!70!black, line width=1.8pt] (D) -- (A) -- (B) -- (C);
+%
+%  %--- superficie libre (abierta) ---------------------------------------------
+%  \draw[blue!40, dashed, thick] (D) -- (C);
+%
+%  %--- etiquetas de los taludes -----------------------------------------------
+%  \node[blue!70!black, left=2pt]  at ($(D)!0.5!(A)$) {$s$};
+%  \node[blue!70!black, right=2pt] at ($(B)!0.5!(C)$) {$s$};
+%
+%  %--- etiqueta del fondo -----------------------------------------------------
+%  \node[blue!70!black, below=4pt] at (0.5*\b, 0) {$b$};
+%
+%  %--- ancho superior ---------------------------------------------------------
+%  \draw[<->, gray, thin] (D) ++(0, 0.35) -- ++(\b+2*\dx, 0)
+%        node[midway, above, gray] {$b + 2s\cos\theta$};
+%
+%  %--- altura h ---------------------------------------------------------------
+%  \draw[<->, red!70!black, thin]
+%    (-\dx-0.35, 0) -- (-\dx-0.35, \h)
+%    node[midway, left] {$h = s\sin\theta$};
+%
+%  %--- línea auxiliar horizontal (para el ángulo) -----------------------------
+%  \draw[gray, dashed, thin] (A) -- ++(-0.5, 0);
+%
+%  %--- ángulo θ ---------------------------------------------------------------
+%  \draw[->, thin] (A) ++(-0.4, 0) arc (180:{180-\th}:0.4);
+%  \node at (-0.18, 0.28) {$\theta$};
+%
+%  %--- nota del perímetro revestido -------------------------------------------
+%  \node[anchor=north west, align=left, font=\footnotesize, text=blue!60!black]
+%    at (-\dx-0.6, -0.55)
+%    {$\ell = b + 2s$ \ (perímetro revestido por metro lineal)};
+%
+%\end{tikzpicture}
+%\end{figure}
+%\end{prob}
 
 
 
-\begin{prob}
-El costo de construir la pared frontal de un edificio es el triple del
-costo de las demás paredes. El edificio debe tener volumen $V_0$ m$^3$
-y planta rectangular. Encuentre la relación entre largo y ancho de la
-base que minimiza el costo total.
-\end{prob}
+%\begin{prob}
+%El costo de construir la pared frontal de un edificio es el triple del
+%costo de las demás paredes. El edificio debe tener volumen $V_0$ m$^3$
+%y planta rectangular. Encuentre la relación entre largo y ancho de la
+%base que minimiza el costo total.
+%\end{prob}
 
 \begin{prob}
 Se desea construir una pecera sin tapa, con base cuadrada y paredes
