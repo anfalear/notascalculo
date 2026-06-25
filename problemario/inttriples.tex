@@ -329,6 +329,27 @@ I_z = \int_{0}^{1}\int_{0}^{1} (x^2+y^2)\,dy\,dx
 
 \begin{prob}
 Calcular el volumen del sólido limitado por los planos \(x=0\), \(x=1\), \(y=0\), \(y=1\), \(z=0\) y el plano \(z = 2 - x - y\).
+\begin{myproof}
+\textbf{Paso 1. Integral iterada.} El sólido es $0\le x\le1$, $0\le y\le1$, $0\le z\le 2-x-y$ (la cota es positiva pues $x+y\le2$ en la región). Orden $dz\,dy\,dx$:
+\[
+V = \int_0^1\int_0^1\int_0^{2-x-y} dz\,dy\,dx.
+\]
+\textbf{Paso 2. Integrar en $z$.}
+\[
+\int_0^{2-x-y} dz = 2-x-y.
+\]
+\textbf{Paso 3. Integrar en $y$.}
+\[
+\int_0^1(2-x-y)\,dy
+= \Bigl[2y-xy-\tfrac{y^2}{2}\Bigr]_0^1 = \tfrac{3}{2}-x.
+\]
+\textbf{Paso 4. Integrar en $x$.}
+\[
+V = \int_0^1\!\Bigl(\tfrac{3}{2}-x\Bigr)dx
+= \Bigl[\tfrac{3x}{2}-\tfrac{x^2}{2}\Bigr]_0^1
+= \tfrac{3}{2}-\tfrac{1}{2} = \boxed{1}.
+\]
+\end{myproof}
 \end{prob}
 
 \begin{prob}
@@ -353,6 +374,25 @@ en el orden \(dz\,dx\,dy\).
 
 \begin{prob}
 Un sólido \(D\) ocupa la región limitada por \(x=0\), \(x=2\), \(y=0\), \(y=3\), \(z=0\) y \(z=5\). Su densidad es \(\rho(x,y,z) = xyz\). Calcular la masa total.
+\begin{myproof}
+\textbf{Paso 1. Plantear.}
+\[
+M = \int_0^2\int_0^3\int_0^5 xyz\,dz\,dy\,dx.
+\]
+\textbf{Paso 2. Integrar en $z$.}
+\[
+\int_0^5 xyz\,dz = xy\cdot\frac{z^2}{2}\Big|_0^5 = \frac{25xy}{2}.
+\]
+\textbf{Paso 3. Integrar en $y$.}
+\[
+\int_0^3 \frac{25xy}{2}\,dy = \frac{25x}{2}\cdot\frac{y^2}{2}\Big|_0^3 = \frac{225x}{4}.
+\]
+\textbf{Paso 4. Integrar en $x$.}
+\[
+M = \int_0^2 \frac{225x}{4}\,dx
+= \frac{225}{4}\cdot\frac{x^2}{2}\Big|_0^2 = \frac{225}{4}\cdot 2 = \boxed{\dfrac{225}{2}}.
+\]
+\end{myproof}
 \end{prob}
 
 \begin{prob}
@@ -522,24 +562,32 @@ $\displaystyle\boxed{V = 2\pi\cdot 2\cdot \frac{a^3}{3} = \frac{4\pi a^3}{3}}$.
 
 % [Original: líneas 1722-1726 | sin verificar | sin figura | 6 variante(s) de parámetro (se descartaron 5)]
 \begin{prob}
-Use coordenadas cilíndricas para evaluar la integral 
+Use coordenadas cilíndricas para evaluar la integral
 \[ \displaystyle\int_{0}^{4}\int_{0}^{6}\int_{0}^{\sqrt{36-x^2}}\ \left(x^2+y^2\right)\ dy\ dx\ dz\]
 Exprese claramente los límites de integración correspondientes y la solución de la integral.
+\begin{myproof}
+\textbf{Paso 1. Identificar la región.} La región en $xy$ es $x\ge0$, $0\le y\le\sqrt{36-x^2}$: el cuarto de disco (primer cuadrante) con $x^2+y^2\le36$. Pasamos a coordenadas cilíndricas: $x=r\cos\theta$, $y=r\sen\theta$, $dV=r\,dr\,d\theta\,dz$.
+
+\textbf{Paso 2. Nuevos límites.} $\theta\in[0,\pi/2]$ (primer cuadrante), $r\in[0,6]$, $z\in[0,4]$. Además $x^2+y^2=r^2$.
+
+\textbf{Paso 3. Integral en cilíndricas.}
+\[
+I = \int_0^4\!\int_0^{\pi/2}\!\int_0^6 r^2\cdot r\,dr\,d\theta\,dz
+= \underbrace{\int_0^4 dz}_{4}\cdot
+  \underbrace{\int_0^{\pi/2}d\theta}_{\pi/2}\cdot
+  \underbrace{\int_0^6 r^3\,dr}_{324}.
+\]
+
+\textbf{Paso 4. Resultado.}
+\[
+\int_0^6 r^3\,dr = \frac{r^4}{4}\Big|_0^6 = \frac{1296}{4}=324.
+\qquad
+I = 4\cdot\frac{\pi}{2}\cdot 324 = \boxed{648\pi}.
+\]
+\end{myproof}
 \end{prob}
 
-% [Original: líneas 1766-1770 | sin verificar | sin figura | 2 variante(s) de parámetro (se descartaron 1)]
-\begin{prob}
-Use coordenadas cilíndricas para evaluar la integral 
-\[ \displaystyle\int_{0}^{4}\int_{0}^{2}\int_{0}^{\sqrt{4-x^2}}\ \left(x^2+y^2\right)\ dy\ dx\ dz\]
-Exprese claramente los límites de integración correspondientes y la solución de la integral.
-\end{prob}
 
-% [Original: líneas 1876-1880 | sin verificar | sin figura]
-\begin{prob}
-Use coordenadas cilíndricas para evaluar la integral 
-\[ \displaystyle\int_{0}^{2}\int_{0}^{10}\int_{0}^{\sqrt{100-x^2}}\ \left(x^2+y^2\right)\ dy\ dx\ dz\]
-Exprese claramente los límites de integración correspondientes y la solución de la integral.
-\end{prob}
 
 % [Original: líneas 2335-2337 | solo respuesta final | sin figura | 3 variante(s) de parámetro (se descartaron 2)]
 \begin{prob}
@@ -562,7 +610,38 @@ Use coordenadas cilíndricas para determinar el valor de la integral triple $$\d
 
 % [Original: líneas 2339-2341 | solo respuesta final | sin figura | 2 variante(s) de parámetro (se descartaron 1)]
 \begin{prob}
-Use coordenadas esféricas para determinar el valor de la integral triple $$\displaystyle\int\int\int_{\Omega}5z\  dV,$$ donde $\Omega$ es la región $$\Omega=\left\lbrace (x,y,z)\in \mathbb{R}^3 : x^2+y^2+z^2 \leq 4,\ z\geq 0,\ z^2\geq x^2+y^2 \right\rbrace.$$ \textbf{Respuesta:} $\approx 31.41592$.
+Use coordenadas esféricas para determinar el valor de la integral triple $$\displaystyle\int\int\int_{\Omega}5z\  dV,$$ donde $\Omega$ es la región $$\Omega=\left\lbrace (x,y,z)\in \mathbb{R}^3 : x^2+y^2+z^2 \leq 4,\ z\geq 0,\ z^2\geq x^2+y^2 \right\rbrace.$$
+\begin{myproof}
+\textbf{Paso 1. Región en esféricas.} La esfera da $\rho\le2$. La condición del cono $z\ge\sqrt{x^2+y^2}$ equivale, en esféricas, a $\cos\varphi\ge\sen\varphi$, es decir $\varphi\le\pi/4$. Así: $\rho\in[0,2]$, $\varphi\in[0,\pi/4]$, $\theta\in[0,2\pi]$.
+
+\textbf{Paso 2. Plantear.} Con $z=\rho\cos\varphi$ y $dV=\rho^2\sen\varphi\,d\rho\,d\varphi\,d\theta$:
+\[
+\iiint_\Omega 5z\,dV
+= 5\int_0^{2\pi}\!\int_0^{\pi/4}\!\int_0^2
+  \rho^3\cos\varphi\sen\varphi\,d\rho\,d\varphi\,d\theta.
+\]
+
+\textbf{Paso 3. Separar los tres factores.}
+\[
+= 5\underbrace{\int_0^{2\pi}d\theta}_{2\pi}
+  \cdot\underbrace{\int_0^{\pi/4}\cos\varphi\sen\varphi\,d\varphi}_{I_\varphi}
+  \cdot\underbrace{\int_0^2\rho^3\,d\rho}_{4}.
+\]
+
+\textbf{Paso 4. Calcular $I_\varphi$.} Usando $\cos\varphi\sen\varphi=\frac12\sen2\varphi$:
+\[
+I_\varphi = \frac12\!\int_0^{\pi/4}\!\sen2\varphi\,d\varphi
+= \frac12\Bigl[-\frac{\cos2\varphi}{2}\Bigr]_0^{\pi/4}
+= \frac12\cdot\frac12(1-0) = \frac14.
+\]
+
+\textbf{Paso 5. Resultado.}
+\[
+\iiint_\Omega 5z\,dV
+= 5\cdot2\pi\cdot\frac14\cdot4 = \boxed{10\pi}\approx 31.416.\;
+\checkmark
+\]
+\end{myproof}
 \end{prob}
 
 % [Original: líneas 2391-2393 | solo respuesta final | sin figura]
@@ -719,15 +798,6 @@ Una lámina cuya densidad está determinada por la función $\rho(x,y)=5x+1$ tie
 \end{enumerate}
 \end{prob}
 
-% [Original: líneas 1757-1764 | sin verificar | sin figura | 2 variante(s) de parámetro (se descartaron 1)]
-\begin{prob}
-Una lámina cuya densidad está determinada por la función $\rho(x,y)=13x+5y+3$ tiene la forma de una región triangular cuyos vértices son los puntos $(0,0),$ $(4,4)$ y $(4,0).$ De acuerdo a la información dada:
-\begin{enumerate}[(a)] 
-\item Realice la gráfica de la lámina.
-\item Use integrales dobles para determinar la masa de la lámina. Exprese claramente los límites de integración correspondientes y la solución de la integral.
-\item Use integrales dobles para determinar el centro de masa de la lámina. Exprese claramente los límites de integración correspondientes y la solución de la integral.
-\end{enumerate}
-\end{prob}
 
 % [Original: líneas 1779-1786 | sin verificar | sin figura]
 \begin{prob}
@@ -739,35 +809,8 @@ Una lámina cuya densidad está determinada por la función $\rho(x,y)=5y+3$ tie
 \end{enumerate}
 \end{prob}
 
-% [Original: líneas 1823-1830 | sin verificar | sin figura]
-\begin{prob}
-Una lámina cuya densidad está determinada por la función $\rho(x,y)=14y+2$ tiene la forma de una región triangular cuyos vértices son los puntos $(0,0),$ $(2,2)$ y $(2,0).$ De acuerdo a la información dada:    
-\begin{enumerate}[(a)] 
-\item Realice la gráfica de la lámina.
-\item Use integrales dobles para determinar la masa de la lámina. Exprese claramente los límites de integración correspondientes y la solución de la integral.
-\item Use integrales dobles para determinar el centro de masa de la lámina. Exprese claramente los límites de integración correspondientes y la solución de la integral.
-\end{enumerate}
-\end{prob}
 
-% [Original: líneas 1845-1852 | sin verificar | sin figura]
-\begin{prob}
-Una lámina cuya densidad está determinada por la función $\rho(x,y)=2x+y+13$ tiene la forma de una región triangular cuyos vértices son los puntos $(0,0),$ $(2,2)$ y $(2,0).$ De acuerdo a la información dada:
-\begin{enumerate}[(a)] 
-\item Realice la gráfica de la lámina.
-\item Use integrales dobles para determinar la masa de la lámina. Exprese claramente los límites de integración correspondientes y la solución de la integral.
-\item Use integrales dobles para determinar el centro de masa de la lámina. Exprese claramente los límites de integración correspondientes y la solución de la integral.
-\end{enumerate}
-\end{prob}
 
-% [Original: líneas 1867-1874 | sin verificar | sin figura]
-\begin{prob}
-Una lámina cuya densidad está determinada por la función $\rho(x,y)=2x+13$ tiene la forma de una región triangular cuyos vértices son los puntos $(0,0),$ $(10,10)$ y $(10,0).$ De acuerdo a la información dada:
-\begin{enumerate}[(a)] 
-\item Realice la gráfica de la lámina.
-\item Use integrales dobles para determinar la masa de la lámina. Exprese claramente los límites de integración correspondientes y la solución de la integral.
-\item Use integrales dobles para determinar el centro de masa de la lámina. Exprese claramente los límites de integración correspondientes y la solución de la integral.
-\end{enumerate}
-\end{prob}
 
 % [Original: líneas 1882-1884 | sin verificar | sin figura]
 \begin{prob}
@@ -803,15 +846,6 @@ Calcule el centro de masa y los radios de giro respecto al eje $x$ y $y$ de la l
 Calcule el centro de masa y los radios de giro respecto al eje $x$ y $y$ de la lámina acotada por la curva $y=\cos x$ y la recta $y=1-\dfrac{2x}{\pi}$ cuya densidad está dada por $\rho(x,y)=3+x+y.$ Construya la gráfica de la región que determina la lámina.
 \end{prob}
 
-% [Original: líneas 2280-2287 | sin verificar | sin figura]
-\begin{prob}
-Una lámina cuya densidad está determinada por la función $\rho(x,y)=5x+2y$ tiene la forma de una región triangular cuyos vértices son los puntos $(0,0),$ $(6,6)$ y $(6,0).$ De acuerdo a la información dada:
-\begin{enumerate}[(a)] 
-\item Realice la gráfica de la lámina.
-\item Use integrales dobles para determinar la masa de la lámina. Exprese claramente los límites de integración correspondientes y la solución de la integral.
-\item Use integrales dobles para determinar el centro de masa de la lámina. Exprese claramente los límites de integración correspondientes y la solución de la integral.
-\end{enumerate}
-\end{prob}
 
 % [Original: líneas 2327-2329 | sin verificar | sin figura]
 \begin{prob}
@@ -992,10 +1026,6 @@ Use integrales dobles o triples para calcular el volumen del sólido acotado por
 Demuestre que las áreas superficiales de los paraboloides $x^2+y^2=6z$ y $x^2-y^2=6z$ sobre la región $R=\left\lbrace (x,y):\ x^2+y^2=16 \right\rbrace$ miden lo mismo. Calcule tal área.
 \end{prob}
 
-% [Original: líneas 2323-2325 | sin verificar | sin figura]
-\begin{prob}
-Demuestre que las áreas superficiales de los paraboloides $x^2+y^2=8z$ y $x^2-y^2=8z$ sobre la región $R=\left\lbrace (x,y):\ x^2+y^2\leq 25 \right\rbrace$ miden lo mismo. Calcule tal área. 
-\end{prob}
 
 % [Original: líneas 2347-2349 | solo respuesta final | sin figura]
 \begin{prob}
@@ -1051,77 +1081,7 @@ Considere la región $R$ (ver figura \ref{fig1.1}), la cual está limitada por l
 Respuesta: 41/6.
 \end{prob}
 
-% [Original: líneas 1496-1520 | sin verificar | PSTRICKS - pendiente convertir a tikz | 2 variante(s) de parámetro (se descartaron 1)]
-\begin{prob}
-Considere la región $R$ (ver figura \ref{fig2.1}), la cual está limitada por las curvas $y=x+4,$ $y=-(x+3)^2+1,$ $y=-8+4x,$ $y=(x-2)^2.$ Plantee la integral doble que permite calcular el área encerrada por estas curvas y determine el valor de esta área.
-\begin{figure}[H]\centering
-\begin{tikzpicture}[scale=0.55]
-  \draw[->] (-6.4,0) -- (6.4,0) node[right] {$x$};
-  \draw[->] (0,-9.3) -- (0,5.7) node[above] {$y$};
-  \foreach \gx in {-6,-4,-2,2,4,6} \draw[lightgray, dashed, thin] (\gx,-9.3) -- (\gx,5.7);
-  \foreach \gy in {-8,-6,-4,-2,2,4} \draw[lightgray, dashed, thin] (-6.4,\gy) -- (6.4,\gy);
-  \fill[red!20]
-    plot[domain=-3:0, samples=30] (\x,{-(\x+3)*(\x+3)+1})
-    -- (0,4)
-    -- plot[domain=0:-3, samples=30] (\x,{\x+4})
-    -- cycle;
-  \fill[red!20]
-    plot[domain=0:2, samples=20] (\x,{4*\x-8})
-    -- plot[domain=2:0, samples=20] (\x,{(\x-2)*(\x-2)})
-    -- (0,-8)
-    -- cycle;
-  \draw[thick, red] plot[domain=-4.5:0.2, samples=60] (\x,{-(\x+3)*(\x+3)+1});
-  \draw[thick, red] plot[domain=-4:1, samples=60] (\x,{\x+4});
-  \draw[thick, red] plot[domain=-0.5:2.5, samples=40] (\x,{(\x-2)*(\x-2)});
-  \draw[thick, red] plot[domain=-0.3:3.5, samples=40] (\x,{4*\x-8});
-  \node[left, font=\tiny] at (-4.7,-1.5) {$y{=}{-}(x{+}3)^2{+}1$};
-  \node[right, font=\tiny] at (-3.5,3.7) {$y{=}x{+}4$};
-  \node[right, font=\tiny] at (1.2,2.5) {$y{=}(x{-}2)^2$};
-  \node[right, font=\tiny] at (1.2,-3) {$y{=}4x{-}8$};
-  \foreach \x in {-6,-4,-2,2,4,6} \draw (\x,2pt) -- (\x,-2pt) node[below, font=\tiny] {$\x$};
-  \foreach \y in {-8,-6,-4,-2,2,4} \draw (2pt,\y) -- (-2pt,\y) node[left, font=\tiny] {$\y$};
-  \fill[red] (-3,1) circle (3pt); \fill[red] (0,4) circle (3pt);
-  \fill[red] (0,-8) circle (3pt); \fill[red] (2,0) circle (3pt);
-\end{tikzpicture}
-\caption{Región del primer ejercicio}\label{fig2.1}
-\end{figure}
-\end{prob}
 
-% [Original: líneas 1538-1562 | sin verificar | PSTRICKS - pendiente convertir a tikz | 2 variante(s) de parámetro (se descartaron 1)]
-\begin{prob}
-Considere la región $R$ (ver figura \ref{fig3.1}), la cual está limitada por las curvas $y=2(x+2)^2,$ $y=-4-2x,$ $y=-8+4x,$ $y=-(x-2)^2.$ Plantee la integral doble que permite calcular el área encerrada por estas curvas y determine el valor de esta área.
-\begin{figure}[H]\centering
-\begin{tikzpicture}[scale=0.45]
-  \draw[->] (-5.7,0) -- (4.9,0) node[right] {$x$};
-  \draw[->] (0,-4.7) -- (0,8.8) node[above] {$y$};
-  \foreach \gx in {-4,-2,2,4} \draw[lightgray, dashed, thin] (\gx,-4.7) -- (\gx,8.8);
-  \foreach \gy in {-4,-2,2,4,6,8} \draw[lightgray, dashed, thin] (-5.7,\gy) -- (4.9,\gy);
-  \fill[red!20]
-    plot[domain=-2:0, samples=20] (\x,{-4-2*\x})
-    -- (0,8)
-    -- plot[domain=0:-2, samples=20] (\x,{2*(\x+2)*(\x+2)})
-    -- cycle;
-  \fill[red!20]
-    plot[domain=0:2, samples=20] (\x,{-(\x-2)*(\x-2)})
-    -- plot[domain=2:0, samples=20] (\x,{-4*\x+8})
-    -- (0,-4)
-    -- cycle;
-  \draw[thick, red] plot[domain=-3.5:0.2, samples=60] (\x,{-4-2*\x});
-  \draw[thick, red] plot[domain=-3.5:0.2, samples=60] (\x,{2*(\x+2)*(\x+2)});
-  \draw[thick, red] plot[domain=-0.5:2.5, samples=40] (\x,{-(\x-2)*(\x-2)});
-  \draw[thick, red] plot[domain=-0.5:3, samples=40] (\x,{-4*\x+8});
-  \node[left, font=\tiny] at (-2.5,3) {$2(x{+}2)^2$};
-  \node[right, font=\tiny] at (1,-1.5) {$-(x{-}2)^2$};
-  \node[left, font=\tiny] at (-3,-1.5) {$2x{+}y{=}{-}4$};
-  \node[right, font=\tiny] at (0.5,5.5) {$4x{+}y{=}8$};
-  \foreach \x in {-4,-2,2,4} \draw (\x,2pt) -- (\x,-2pt) node[below, font=\tiny] {$\x$};
-  \foreach \y in {-4,-2,2,4,6,8} \draw (2pt,\y) -- (-2pt,\y) node[left, font=\tiny] {$\y$};
-  \fill[red] (-2,0) circle (3pt); \fill[red] (0,-4) circle (3pt);
-  \fill[red] (0,8) circle (3pt); \fill[red] (2,0) circle (3pt);
-\end{tikzpicture}
-\caption{Región del primer ejercicio}\label{fig3.1}
-\end{figure}
-\end{prob}
 
 % [Original: líneas 1925-1947 | sin verificar | PSTRICKS - pendiente convertir a tikz]
 \begin{prob}
@@ -1162,44 +1122,6 @@ Considere la región $R$ (ver la figura), la cual está limitada por las curvas 
 \end{figure}
 \end{prob}
 
-% [Original: líneas 1964-1986 | sin verificar | PSTRICKS - pendiente convertir a tikz]
-\begin{prob}
-Considere la región $R$ (ver la figura), la cual está limitada por las curvas $y=x+6,$ $y=-x^2-4x,$ $y=x,$ $y=-x^2+6.$ 
-\begin{enumerate}[(a)]
-\item Plantee la integral doble que permite calcular el área encerrada por estas curvas. Defina claramente los límites de integración.
-\item Evalúe la integral que obtuvo en el paso anterior. Muestre explícitamente todos los cálculos necesarios para obtener el área.
-\end{enumerate}
-\begin{figure}[H]
-\centering
-\begin{tikzpicture}[scale=0.85]
-  \draw[->] (-4.5,0) -- (4.7,0) node[right] {$x$};
-  \draw[->] (0,-1.4) -- (0,6.5) node[above] {$y$};
-  \foreach \gx in {-4,-3,-2,-1,1,2,3,4} \draw[lightgray, dashed, thin] (\gx,-1.4) -- (\gx,6.5);
-  \foreach \gy in {-1,1,2,3,4,5,6} \draw[lightgray, dashed, thin] (-4.5,\gy) -- (4.7,\gy);
-  \fill[gray!25]
-    plot[domain=-2:0, samples=20] (\x,{\x+6})
-    -- (0,0)
-    -- plot[domain=0:-2, samples=20] (\x,{-\x*\x-4*\x})
-    -- cycle;
-  \fill[gray!25]
-    plot[domain=0:2, samples=20] (\x,{\x})
-    -- plot[domain=2:0, samples=20] (\x,{-\x*\x+6})
-    -- (0,0)
-    -- cycle;
-  \draw[thick] plot[domain=-3.5:0.3, samples=60] (\x,{\x+6});
-  \draw[thick] plot[domain=-4.1:0.2, samples=60] (\x,{-\x*\x-4*\x});
-  \draw[thick] plot[domain=-0.3:2.7, samples=60] (\x,{-\x*\x+6});
-  \draw[thick] plot[domain=-0.5:2.5, samples=30] (\x,{\x});
-  \node[above, font=\small] at (-2.5,5) {$f{=}x{+}6$};
-  \node[left, font=\small] at (-3.6,2.2) {$g{=}{-}x^2{-}4x$};
-  \node[right, font=\small] at (1.4,5.4) {$h{=}{-}x^2{+}6$};
-  \node[right, font=\small] at (1.2,1.1) {$p{=}x$};
-  \foreach \x in {-4,-3,-2,-1,1,2,3,4} \draw (\x,2pt) -- (\x,-2pt) node[below, font=\tiny] {$\x$};
-  \foreach \y in {-1,1,2,3,4,5,6} \draw (2pt,\y) -- (-2pt,\y) node[left, font=\tiny] {$\y$};
-\end{tikzpicture}
-\caption{Figura para el problema 1.}
-\end{figure}
-\end{prob}
 
 % --- Subtema: Verdadero o falso (6 problemas) ---
 
@@ -1267,35 +1189,13 @@ Calcule  la  integral triple $$\displaystyle\int\int\int_{\Omega}x^2\  dV,$$ don
 Calcule  la  integral triple $$\displaystyle\int\int\int_{\Omega}z\  dV,$$ donde $\Omega$ es la región acotada por las curvas $x^2+z=1,$  $y^2+z=1$ y el plano $xy$.
 \end{prob}
 
-% [Original: líneas 1898-1900 | sin verificar | sin figura]
-\begin{prob}
-Considere el campo vectorial ${\bf F}=\left( 6xy^3+2z^2  \right){\bf i}+\left( 9x^2y^2 \right){\bf j}+\left( 4xz+1  \right){\bf k}.$ Determine si es un campo vectorial conservativo, y si lo es calcule su función potencial.
-\end{prob}
-
-% [Original: líneas 1902-1904 | sin verificar | sin figura]
-\begin{prob}
-Calcule la integral $\displaystyle\int_{C}(8x+36z)\ ds$ donde $C$ es la curva $x=t,$ $y=t^2,$ $z=t^3$ con $0\leq t\leq 2.$
-\end{prob}
-
-% [Original: líneas 1906-1908 | sin verificar | sin figura]
-\begin{prob}
-Calcule la integral $\displaystyle\int_{C} (\cos x+2yz)dx+(\sen y +2xz)dy+(z+2xy)dz$ en el segmento de recta del punto $(0,0,0)$ a $(\pi,\pi,0).$
-\end{prob}
 
 % [Original: líneas 1917-1919 | sin verificar | sin figura | 2 variante(s) de parámetro (se descartaron 1)]
 \begin{prob}
 Considere la región triangular $S$ con vértices $(0,0),$ $(3,0),$ y $(3,6).$ Haga una gráfica de la región descrita y calcule el valor de la integral $\displaystyle\iint_{S}8\ dA.$
 \end{prob}
 
-% [Original: líneas 2343-2345 | solo respuesta final | sin figura]
-\begin{prob}
-Calcule  la  integral triple $$\displaystyle\int\int\int_{\Omega}x^2\  dV,$$ donde $\Omega$ es la región acotada por las curvas $x^2+z=1,$  $y^2+z=1$ y el plano $xy$. \textbf{Respuesta:} $\approx 0.6667$.
-\end{prob}
 
-% [Original: líneas 2369-2371 | solo respuesta final | sin figura]
-\begin{prob}
-Calcule  la  integral triple $$\displaystyle\int\int\int_{\Omega}z\  dV,$$ donde $\Omega$ es la región acotada por las curvas $x^2+z=1,$  $y^2+z=1$ y el plano $xy$. \textbf{Respuesta:} $\approx 0.66667$.
-\end{prob}
 
 % [Original: líneas 2395-2397 | solo respuesta final | sin figura]
 \begin{prob}

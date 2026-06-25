@@ -590,6 +590,40 @@ tangente es paralelo al plano $2x + 4y - z = 0$.
 
 \begin{prob}[Hessiano limitado]
 Para el problema de minimizar $f(x,y)=x^2+y^2$ sujeto a $g(x,y)=x+y-1=0$, encuentre el candidato y utilice el hessiano limitado para confirmar que es un mínimo.
+\begin{myproof}
+\textbf{Paso 1. Condiciones de Lagrange.} $\nabla f=\lambda\nabla g$:
+\[
+2x=\lambda,\qquad 2y=\lambda \quad\Rightarrow\quad x=y.
+\]
+
+\textbf{Paso 2. Candidato.} Con $x=y$ y $x+y=1$: $x=y=\frac{1}{2}$, $\lambda=1$.
+\[
+f\!\left(\tfrac{1}{2},\tfrac{1}{2}\right)=\tfrac{1}{4}+\tfrac{1}{4}=\tfrac{1}{2}.
+\]
+
+\textbf{Paso 3. Hessiano bordeado.} Sea $L=f-\lambda g$; entonces
+$L_{xx}=2$, $L_{yy}=2$, $L_{xy}=0$ y $g_x=g_y=1$:
+\[
+\bar{H}=
+\begin{vmatrix}
+0 & 1 & 1\\
+1 & 2 & 0\\
+1 & 0 & 2
+\end{vmatrix}
+=0(4-0)-1(2-0)+1(0-2)=-4.
+\]
+
+\textbf{Paso 4. Criterio.} Con $m=1$ restricción y $n=2$ variables,
+el candidato es mínimo si $(-1)^{m}\bar{H}>0$:
+\[
+(-1)^{1}(-4)=4>0.\quad\checkmark
+\]
+
+\textbf{Conclusión.}
+\[
+\boxed{f_{\min}=\tfrac{1}{2}\;\text{ en }\;\left(\tfrac{1}{2},\tfrac{1}{2}\right).}
+\]
+\end{myproof}
 \end{prob}
 
 % Cap. 22 — Optimización: extremos y multiplicadores de Lagrange
@@ -806,10 +840,6 @@ Encuentre las dimensiones de una caja rectangular cerrada (con tapa) con volumen
 Encuentre el área máxima de un triángulo rectángulo cuyo perímetro es $16$.
 \end{prob}
 
-% [Original: líneas 941-943 | sin verificar | sin figura]
-\begin{prob}
-El voltaje en los extremos de un conductor aumenta a una tasa de $9\  V/min$ y la resistencia disminuye a razón de $0.5\ \Omega/min.$ Si $I=\dfrac{V}{R}$ calcule la tasa a la cual circula la corriente $I$ en el instante cuando $R=70\ \Omega$ y $V=60\ V.$
-\end{prob}
 
 % [Original: líneas 993-995 | sin verificar | sin figura]
 \begin{prob}
@@ -931,7 +961,3 @@ De donde se puede concluir que los puntos donde la temperatura es más alta son 
 Encuentre las dimensiones de una caja rectangular abierta (sin tapa) con volumen máximo si su área superficial es igual a $75\ cm^2$ .
 \end{prob}
 
-% [Original: líneas 1404-1406 | sin verificar | sin figura]
-\begin{prob}
-El voltaje en los extremos de un conductor aumenta a una tasa de $5\  V/min$ y la resistencia disminuye a razón de $1\ \Omega/min.$ Si $I=\dfrac{V}{R}$ calcule la tasa a la cual circula la corriente $I$ en el instante cuando $R=60\ \Omega$ y $V=75\ V.$
-\end{prob}

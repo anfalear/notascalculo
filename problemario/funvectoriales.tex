@@ -25,7 +25,7 @@ múltiples y el cálculo vectorial.
 
 \section{Funciones vectoriales}
 \label{sec:vector-functions}
-
+\begin{definition}[Función vectorial]
 Una \textbf{función vectorial} es una regla que asigna a cada número
 real $t$ de su dominio un único vector $\mathbf{r}(t)$ en
 $\mathbb{R}^2$ o en $\mathbb{R}^3$. Mientras que una función escalar
@@ -50,7 +50,7 @@ y en el espacio tridimensional,
 \[
 \mathbf{r}(t) = f(t)\,\mathbf{i} + g(t)\,\mathbf{j} + h(t)\,\mathbf{k}.
 \]
-
+\end{definition}
 El dominio de $\mathbf{r}$ es la intersección de los dominios de sus
 funciones componentes; es decir, $t$ debe pertenecer al dominio de
 $f$, de $g$ y de $h$ simultáneamente. La imagen de $\mathbf{r}$ es una
@@ -772,6 +772,64 @@ Calcular el límite de cada función vectorial:
   \item $\displaystyle \lim_{t \to 1} \left\langle t^2-1,\; \ln t,\; \frac{t^2-1}{t-1} \right\rangle$.
   \item $\displaystyle \lim_{t \to \infty} \left\langle \frac{t}{t+1},\; \frac{1}{t^2+1},\; \arctan t \right\rangle$.
 \end{enumerate}
+\begin{myproof}
+El límite de una función vectorial se calcula componente a componente.
+
+\textbf{Apartado a)} $\displaystyle\lim_{t\to 0}\!\left\langle\frac{\sen t}{t},\;e^t,\;\frac{1-\cos t}{t}\right\rangle$.
+
+\textbf{Paso 1: Primera componente.} Límite trigonométrico fundamental:
+\[
+  \lim_{t\to 0}\frac{\sen t}{t} = 1.
+\]
+
+\textbf{Paso 2: Segunda componente.} $e^t$ es continua en $t=0$:
+\[
+  \lim_{t\to 0}e^t = e^0 = 1.
+\]
+
+\textbf{Paso 3: Tercera componente.} Forma $0/0$; se aplica L'Hôpital:
+\[
+  \lim_{t\to 0}\frac{1-\cos t}{t} = \lim_{t\to 0}\frac{\sen t}{1} = 0.
+\]
+\[
+  \boxed{\lim_{t\to 0}\!\left\langle\frac{\sen t}{t},\;e^t,\;\frac{1-\cos t}{t}\right\rangle = \langle 1,\;1,\;0\rangle.}
+\]
+
+\textbf{Apartado b)} $\displaystyle\lim_{t\to 1}\!\left\langle t^2-1,\;\ln t,\;\frac{t^2-1}{t-1}\right\rangle$.
+
+\textbf{Paso 1: Primeras dos componentes.} Son continuas en $t=1$:
+\[
+  \lim_{t\to 1}(t^2-1)=0,\qquad \lim_{t\to 1}\ln t = 0.
+\]
+
+\textbf{Paso 2: Tercera componente.} Forma $0/0$; se factoriza el numerador:
+\[
+  \lim_{t\to 1}\frac{t^2-1}{t-1}=\lim_{t\to 1}\frac{(t-1)(t+1)}{t-1}=\lim_{t\to 1}(t+1)=2.
+\]
+\[
+  \boxed{\lim_{t\to 1}\!\left\langle t^2-1,\;\ln t,\;\frac{t^2-1}{t-1}\right\rangle = \langle 0,\;0,\;2\rangle.}
+\]
+
+\textbf{Apartado c)} $\displaystyle\lim_{t\to\infty}\!\left\langle\frac{t}{t+1},\;\frac{1}{t^2+1},\;\arctan t\right\rangle$.
+
+\textbf{Paso 1: Primera componente.} Dividir por $t$:
+\[
+  \lim_{t\to\infty}\frac{t}{t+1}=\lim_{t\to\infty}\frac{1}{1+1/t}=1.
+\]
+
+\textbf{Paso 2: Segunda componente.} El denominador crece sin cota:
+\[
+  \lim_{t\to\infty}\frac{1}{t^2+1}=0.
+\]
+
+\textbf{Paso 3: Tercera componente.} Límite estándar de la arctangente:
+\[
+  \lim_{t\to\infty}\arctan t = \frac{\pi}{2}.
+\]
+\[
+  \boxed{\lim_{t\to\infty}\!\left\langle\frac{t}{t+1},\;\frac{1}{t^2+1},\;\arctan t\right\rangle = \left\langle 1,\;0,\;\frac{\pi}{2}\right\rangle.}
+\]
+\end{myproof}
 \end{prob}
 
 \begin{prob}
@@ -792,6 +850,41 @@ Calcular la derivada de las siguientes funciones vectoriales:
   \item $\mathbf{r}(t) = \langle \ln(t+1),\; \arctan t,\; \sqrt{t+1} \rangle$.
   \item $\mathbf{r}(t) = \langle \sen(2t),\; \cos(2t),\; e^{-t} \rangle$.
 \end{enumerate}
+\begin{myproof}
+La derivada de una función vectorial se obtiene derivando componente a componente.
+
+\textbf{Apartado a)} $\mathbf{r}(t)=\langle t^2+1,\;e^{2t},\;\cos(3t)\rangle$.
+
+Regla de la cadena en la segunda y tercera componente:
+\[
+  \mathbf{r}'(t)=\langle 2t,\;2e^{2t},\;-3\sen(3t)\rangle.
+\]
+\[
+  \boxed{\mathbf{r}'(t) = \langle 2t,\;2e^{2t},\;-3\sen(3t)\rangle.}
+\]
+
+\textbf{Apartado b)} $\mathbf{r}(t)=\langle \ln(t+1),\;\arctan t,\;\sqrt{t+1}\rangle$.
+
+Derivando cada componente por separado:
+\begin{align*}
+  \frac{d}{dt}\ln(t+1)   &= \frac{1}{t+1}, \\[4pt]
+  \frac{d}{dt}\arctan t  &= \frac{1}{1+t^2}, \\[4pt]
+  \frac{d}{dt}\sqrt{t+1} &= \frac{1}{2\sqrt{t+1}}.
+\end{align*}
+\[
+  \boxed{\mathbf{r}'(t) = \left\langle \frac{1}{t+1},\;\frac{1}{1+t^2},\;\frac{1}{2\sqrt{t+1}}\right\rangle.}
+\]
+
+\textbf{Apartado c)} $\mathbf{r}(t)=\langle \sen(2t),\;\cos(2t),\;e^{-t}\rangle$.
+
+Regla de la cadena en las tres componentes:
+\[
+  \mathbf{r}'(t)=\langle 2\cos(2t),\;-2\sen(2t),\;-e^{-t}\rangle.
+\]
+\[
+  \boxed{\mathbf{r}'(t)=\langle 2\cos(2t),\;-2\sen(2t),\;-e^{-t}\rangle.}
+\]
+\end{myproof}
 \end{prob}
 
 \begin{prob}
@@ -814,6 +907,69 @@ dado:
   \item $\mathbf{r}(t) = \langle e^t \cos t,\; e^t \sen t \rangle$,
         $0 \leq t \leq \pi$.
 \end{enumerate}
+\begin{myproof}
+La longitud de arco se calcula con la fórmula $L=\displaystyle\int_a^b|\mathbf{r}'(t)|\,dt$.
+
+\textbf{Apartado a)} $\mathbf{r}(t)=\langle t,\;t^2\rangle$, $0\le t\le 1$.
+
+\textbf{Paso 1: Derivada.} $\mathbf{r}'(t)=\langle 1,\;2t\rangle$.
+
+\textbf{Paso 2: Módulo.} $|\mathbf{r}'(t)|=\sqrt{1+4t^2}$.
+
+\textbf{Paso 3: Integración.} Con la sustitución $u=2t$, $du=2\,dt$:
+\begin{align*}
+L &= \int_0^1\sqrt{1+4t^2}\,dt
+   = \frac{1}{2}\int_0^2\sqrt{1+u^2}\,du \\
+  &= \frac{1}{2}\left[\frac{u\sqrt{1+u^2}}{2}+\frac{1}{2}\ln\!\left(u+\sqrt{1+u^2}\right)\right]_0^2 \\
+  &= \frac{1}{2}\!\left[\sqrt{5}+\frac{1}{2}\ln(2+\sqrt{5})\right].
+\end{align*}
+\[
+  \boxed{L = \frac{\sqrt{5}}{2}+\frac{1}{4}\ln\!\left(2+\sqrt{5}\right)\approx 1.479.}
+\]
+
+\textbf{Apartado b)} $\mathbf{r}(t)=\langle 3\cos t,\;3\sen t,\;4t\rangle$, $0\le t\le 2\pi$ (hélice circular).
+
+\textbf{Paso 1: Derivada.} $\mathbf{r}'(t)=\langle -3\sen t,\;3\cos t,\;4\rangle$.
+
+\textbf{Paso 2: Módulo.}
+\[
+  |\mathbf{r}'(t)|=\sqrt{9\sen^2 t+9\cos^2 t+16}=\sqrt{9+16}=5.
+\]
+El módulo es constante: la hélice tiene velocidad constante.
+
+\textbf{Paso 3: Integración.}
+\[
+  L = \int_0^{2\pi}5\,dt = 5\cdot 2\pi.
+\]
+\[
+  \boxed{L = 10\pi.}
+\]
+
+\textbf{Apartado c)} $\mathbf{r}(t)=\langle e^t\cos t,\;e^t\sen t\rangle$, $0\le t\le\pi$.
+
+\textbf{Paso 1: Derivada.} Regla del producto en cada componente:
+\[
+  \mathbf{r}'(t)=\langle e^t(\cos t-\sen t),\;e^t(\sen t+\cos t)\rangle.
+\]
+
+\textbf{Paso 2: Módulo.}
+\begin{align*}
+  |\mathbf{r}'(t)|^2
+  &= e^{2t}(\cos t-\sen t)^2+e^{2t}(\sen t+\cos t)^2 \\
+  &= e^{2t}\bigl[(\cos^2t-2\sen t\cos t+\sen^2t)
+                +(\sen^2t+2\sen t\cos t+\cos^2t)\bigr] \\
+  &= 2e^{2t},
+\end{align*}
+por tanto $|\mathbf{r}'(t)|=\sqrt{2}\,e^t$.
+
+\textbf{Paso 3: Integración.}
+\[
+  L = \int_0^{\pi}\sqrt{2}\,e^t\,dt = \sqrt{2}\bigl[e^t\bigr]_0^{\pi}=\sqrt{2}(e^{\pi}-1).
+\]
+\[
+  \boxed{L=\sqrt{2}(e^{\pi}-1).}
+\]
+\end{myproof}
 \end{prob}
 
 \begin{prob}
