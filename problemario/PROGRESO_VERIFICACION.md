@@ -1,6 +1,6 @@
 # PROGRESO_VERIFICACION.md — Verificación Matemática del Problemario
 
-Última actualización: 2026-06-25 (Ej/Teo muestreo V1–V3 completado; 11/12 ítems sin errores; V1.3 pendiente decisión del autor — ver sección deuda técnica cerrada abajo)
+Última actualización: 2026-06-25 (Ej/Teo muestreo V1–V3 completado; 12/12 ítems cerrados; V1.3 corregido y confirmado — ver sección deuda técnica cerrada abajo)
 
 Este archivo se actualiza al cierre de cada sesión, siguiendo el protocolo de `PLAN_VERIFICACION_MATEMATICA.md` Sección 5. No se elimina ningún contenido del problemario durante este proceso — ver regla heredada en el plan, Sección 3.
 
@@ -68,7 +68,7 @@ Estado: `Pendiente` / `En progreso` / `Completo` / `Bloqueado` (requiere decisi�
 - Fase V4: 13/13 ítems completos (V4.1–V4.10d) ✓
 - **Total: 27/27 ítems completos ✓**
 
-**PLAN DE VERIFICACIÓN COMPLETADO.** Ej/Teo muestreo V1–V3 completado el 2026-06-25 (11/12 sin errores; 1 error en V1.3 pendiente decisión). Pendiente: cierre formal del plan en `PLAN_VERIFICACION_MATEMATICA.md`, decisión del autor sobre Prob14 (cap30), corrección V1.3 (det Hessiano orlado), y decisiones arquitectónicas A-D en `DIAGNOSTICO_PROBLEMARIO.md`.
+**PLAN DE VERIFICACIÓN COMPLETADO.** 27/27 ítems cerrados. Ej/Teo muestreo V1–V3 completado y cerrado el 2026-06-25 (12/12 ítems; 1 error en V1.3 corregido y confirmado). Decisiones arquitectónicas A-D resueltas. Documento compila limpio: 724 páginas, 0 errores. Obs. abierta sin bloqueo: Prob14 (`cap30`) — paso intermedio Hermite n=1 posiblemente incorrecto; documentado para decisión del autor en sesión futura.
 
 ---
 
@@ -80,7 +80,7 @@ Protocolo: entornos `\begin{example}`, `\begin{theorem}`, `\begin{lemma}`, `\beg
 |---|---|---|---|---|---|
 | V1.1 | funvectoriales.tex | 31 | 7 | Sin errores | Envs en l.132,184,290,376,494,584,703 — todos correctos |
 | V1.2 | gradientes.tex | 24 | 5 | Sin errores | Envs en l.81,199,305,437,589 — todos correctos |
-| V1.3 | multiplicadoresintdobles.tex | 24 | 5 | **1 ERROR — PENDIENTE** | Env #24 (l.~514): det(H̄)=6d²+d√2 → correcto es 8d² (verificado SymPy+NumPy). Corrección atómica: `= 6d^2+d\sqrt{2} > 0.` → `= 8d^2 > 0.` Conclusión matemática (H̄>0 → máx. restricto) sigue válida pues 8d²>0 |
+| V1.3 | multiplicadoresintdobles.tex | 24 | 5 | **1 ERROR — CERRADO** | Env #24 (l.514): det(H̄)=6d²+d√2 → correcto es 8d² (verificado SymPy+NumPy). Corrección aplicada: `= 6d^2+d\sqrt{2} > 0.` → `= 8d^2 > 0.` Confirmado en archivo el 2026-06-25. Conclusión matemática (H̄>0 → máx. restricto) sigue válida pues 8d²>0 |
 | V1.4 | limvariasvariables.tex | 23 | 5 | Sin errores | Envs en l.161,276,324,391,441 — todos correctos |
 | V1.5 | planostangentes.tex | 25 | 5 | Sin errores | Envs en l.89,229,520,603,635 — todos correctos |
 | V2.1 | intdefinida.tex | 28 | 6 | Sin errores | Envs en l.121,179,250,298,332,424 — todos correctos |
@@ -91,9 +91,9 @@ Protocolo: entornos `\begin{example}`, `\begin{theorem}`, `\begin{lemma}`, `\beg
 | V3.3 | prodinterno.tex | 59 | 12 | Sin errores | Envs en l.38,84,167,225,342,397,424,484,636,688,808,995 — todos correctos (incl. Gram-Schmidt P₂, mínimos cuadrados, Euler) |
 | V3.4 | apintdobles.tex | 24 | 5 | Sin errores | Envs en l.81,141,422,567,621 — todos correctos |
 
-**Resultado global: 11/12 ítems sin errores; 1 error en V1.3 (det Hessiano orlado) pendiente decisión del autor.**
+**Resultado global: 12/12 ítems sin errores o con error corregido. Muestreo Ej/Teo V1–V3 completamente cerrado al 2026-06-25.**
 
-**Decisión pendiente (V1.3):** ¿Aplicar corrección `= 6d^2+d\sqrt{2} > 0.` → `= 8d^2 > 0.` en el ejemplo de Multiplicadores de Lagrange (rectángulo inscrito) dentro de `multiplicadoresintdobles.tex`?
+**V1.3 — CERRADO:** corrección `= 6d^2+d\sqrt{2} > 0.` → `= 8d^2 > 0.` aplicada en `multiplicadoresintdobles.tex` l.514 y confirmada en archivo el 2026-06-25.
 
 ---
 

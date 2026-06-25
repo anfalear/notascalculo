@@ -40,6 +40,8 @@
 | 36 | Cap. 30 (`cap30_Sol EDOs Series Potencias.tex`) | Revisión y corrección de borrador (Fase 7, ítem 36) | completo | 2026-06-19 | 42 `Paso N:` → `Paso N.`. Ya usaba `\sen`. Ejemplos correctamente anidados. 15 probs. Contenido: puntos ordinarios, Frobenius, funciones especiales (Bessel cilíndrico, Legendre esférico, Hermite, Airy). |
 | 37 | Cap. 31 (`cap31_Transformada de Laplace.tex`) | Revisión y corrección de borrador (Fase 7, ítem 37) | completo | 2026-06-19 | 153 `Paso N:` → `Paso N.`. 96 `\sin` → `\sen`. Bug corregido: ejemplo `cos(bt)` usaba `b` como límite de integración y como frecuencia simultáneamente → límite renombrado `T`. 17 probs. Contenido: definición, propiedades, inversa (fracciones parciales), escalón Heaviside, delta Dirac, convolución, PVI, sistemas. |
 
+| 38 | Cap. 22 (`multiplicadoresintdobles.tex`) + cierre total | Corrección V1.3 confirmada; cierre de todos los pendientes; compilación final 724 pp. | completo | 2026-06-25 | V1.3: `= 6d^2+d\sqrt{2} > 0.` → `= 8d^2 > 0.` (l.514) aplicada y verificada en archivo. Decisiones A–D resueltas: politicas.tex unificado; caps. 19–22 reorganizados; cap34 partido en cap33+cap34; EDOs caps. 27–31 creados. Directorio limpio: `_auxiliar/` con 44 archivos auxiliares. Compilación limpia: 724 páginas, 0 errores. Todos los .md actualizados sin pendientes. |
+
 ## Decisiones y hallazgos fuera del plan original
 
 - 2026-06-16: Figuras de círculos en `complejos.tex` verificadas — todas en `tikzpicture` puro con escala uniforme, sin distorsión real. No se requirió intervención de `axis equal` (el aviso del diagnóstico aplica con más fuerza a `vectoresrn.tex`, revisión pendiente en ítem 4).

@@ -400,5 +400,8 @@ Se creó la carpeta `_auxiliar/` con 43 archivos de trabajo ya no necesarios en 
 12 archivos muestreados (totalez 331 entornos, 70 revisados). 1 error encontrado y corregido:
 - `multiplicadoresintdobles.tex` ~l.514: det(Hessiano orlado) = 6d²+d√2 → **corregido a 8d²** (verificado SymPy + NumPy).
 
-### Próximo paso
-Todas las decisiones arquitectónicas A–D están resueltas. Estructura de 34 capítulos completa y limpia. El documento compila con 715 páginas (estado al 2026-06-25).
+### Corrección V1.3 confirmada (2026-06-25)
+`multiplicadoresintdobles.tex` l.514: `= 6d^2+d\sqrt{2} > 0.` → `= 8d^2 > 0.` aplicada y verificada en archivo.
+
+### Estado final
+Todas las decisiones arquitectónicas A–D están resueltas. Muestreo Ej/Teo V1–V3 cerrado sin pendientes. Estructura de 34 capítulos completa y limpia. El documento compila con 724 páginas, 0 errores (estado al 2026-06-25). No hay tareas editoriales ni estructurales pendientes.
