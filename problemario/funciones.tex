@@ -265,12 +265,26 @@ Sea $f: D_f \to \mathbb{R}$ con $D_f$ simétrico respecto al origen (es decir, $
 \end{itemize}
 \end{definition}
 
-\begin{example}
+\begin{example}[Clasificación por paridad]
 Clasifique $f(x) = x^2$ y $g(x) = x^3$ según paridad.
 
 \begin{myproof}
-Para $f$: $f(-x) = (-x)^2 = x^2 = f(x)$, luego $f$ es \textbf{par}. \quad
-Para $g$: $g(-x) = (-x)^3 = -x^3 = -g(x)$, luego $g$ es \textbf{impar}. \qed
+\textbf{Paso 1 — Análisis de $f(x)=x^2$:}
+\[
+  f(-x) = (-x)^2 = x^2 = f(x).
+\]
+Como $f(-x)=f(x)$, la función $f$ es \textbf{par}.
+
+\textbf{Paso 2 — Análisis de $g(x)=x^3$:}
+\[
+  g(-x) = (-x)^3 = -x^3 = -g(x).
+\]
+Como $g(-x)=-g(x)$, la función $g$ es \textbf{impar}.
+
+\textbf{Paso 3 — Conclusión:}
+\[
+  \boxed{f(x)=x^2 \text{ es par}; \quad g(x)=x^3 \text{ es impar.}}
+\]
 \end{myproof}
 \end{example}
 
@@ -293,7 +307,7 @@ Trace la gráfica de
 \]
 Hay un salto en $x = 2$.
 
-\textbf{Paso 2:} Para $x < 2$: recta decreciente (pendiente $-\tfrac{1}{2}$), \emph{círculo abierto} en $(2, 2)$. Para $x \geq 2$: recta creciente (pendiente $2$), \emph{punto sólido} en $(2,-1)$.
+\textbf{Paso 2 — Trazado por tramos:} Para $x < 2$: recta decreciente (pendiente $-\tfrac{1}{2}$), \emph{círculo abierto} en $(2, 2)$. Para $x \geq 2$: recta creciente (pendiente $2$), \emph{punto sólido} en $(2,-1)$.
 
 \begin{figure}[H]
 \centering
@@ -312,7 +326,10 @@ Hay un salto en $x = 2$.
 \caption{Función por tramos con salto en $x=2$.}
 \end{figure}
 
-\textbf{Conclusión:} $D_f = \mathbb{R}$; la función tiene un salto en $x = 2$ de magnitud $|{-1} - 2| = 3$. \qed
+\textbf{Paso 3 — Conclusión:}
+\[
+  \boxed{D_f = \mathbb{R}; \text{ la función tiene un salto en } x = 2 \text{ de magnitud } |{-1} - 2| = 3.}
+\]
 \end{myproof}
 \end{example}
 
@@ -1137,7 +1154,7 @@ Resuelva cada ecuación para $x$.
 
 \item Un almacén que tiene un piso rectangular de \(15\,000\ \text{m}^2\) se construye de modo que tenga pasillos de \(2\ m\) de ancho en el frente y en el fondo del almacén, y pasillos de \(1.5\ m\) de ancho en los lados.  Encuentre un modelo matemático que exprese el área total del terreno donde se construirá el almacén y los pasillos como una función de la longitud del frente y del fondo del almacén.  ¿Cuál es el dominio de esta función?
  
-\item Una tienda de acampar (llamada también carpa para \textit{camping}) con forma de pirámide de base cuadrada se construye a partir de una pieza cuadrada de material de $5\ cm$ de lado. En la base de la pirámide sea $x$ metros la distancia del centro a uno de sus lados como se muestra en la figura.   Encuentre un modelo matemático que exprese el volumen de la tienda de acampar como función de $x$ y calcule su dominio.
+\item Una tienda de acampar (llamada también carpa para \textit{camping}) con forma de pirámide de base cuadrada se construye a partir de una pieza cuadrada de material de $5\ \text{m}$ de lado. En la base de la pirámide sea $x$ metros la distancia del centro a uno de sus lados como se muestra en la figura.   Encuentre un modelo matemático que exprese el volumen de la tienda de acampar como función de $x$ y calcule su dominio.
 
 \begin{figure}[H]
 \begin{center}
@@ -1178,7 +1195,7 @@ Resuelva cada ecuación para $x$.
     
 \end{tikzpicture}
 \end{center}
-\caption{Caja armada con pestañas laterales}
+\caption{Patrón para la tienda de acampar (pirámide de base cuadrada): cuadrado de $5\,\mathrm{m}$ de lado; $x$ es la distancia del centro al lado de la base.}
 \label{fig:caja-3d}
 \end{figure}
 

@@ -1,0 +1,857 @@
+% ============================================================
+% CAPITULO 21: REGLA DE LA CADENA, DERIVADA DIRECCIONAL Y GRADIENTE
+% ============================================================
+
+\chapter{Regla de la cadena, derivada direccional y gradiente}
+
+\section{Regla de la cadena y derivación implícita}
+
+\subsection{Regla de la cadena (Caso 1: una variable independiente)}
+
+\begin{theorem}[Regla de la cadena, Caso 1]
+Si $z = f(x, y)$ es diferenciable y $x = g(t)$, $y = h(t)$ son funciones diferenciables de $t$, entonces $z$ es una función diferenciable de $t$ y
+\[
+\frac{dz}{dt} = \frac{\partial z}{\partial x}\frac{dx}{dt} + \frac{\partial z}{\partial y}\frac{dy}{dt}.
+\]
+\end{theorem}
+
+\begin{pasos}[Protocolo para la regla de la cadena (Caso 1)]
+\begin{enumerate}
+    \item \textbf{Identificar las dependencias}: Determinar cómo $z$ depende de $t$ a través de $x(t)$ e $y(t)$.
+    \item \textbf{Calcular las derivadas parciales}: Calcular $\partial z/\partial x$ y $\partial z/\partial y$ en términos de $x$ e $y$.
+    \item \textbf{Calcular las derivadas ordinarias}: Calcular $dx/dt$ y $dy/dt$.
+    \item \textbf{Sustituir y sumar}: Sustituir $x(t)$ e $y(t)$ en las derivadas parciales y luego sustituir todos los términos en la fórmula de la regla de la cadena, sumando los productos.
+\end{enumerate}
+\end{pasos}
+
+\begin{example}[Regla de la cadena, Caso 1]
+Use la regla de la cadena para hallar $dz/dt$ para
+\[
+z = x^2 y - \sin y, \quad x = \sqrt{t^2 + 1}, \quad y = e^t.
+\]
+\begin{myproof}
+Seguimos el protocolo para la regla de la cadena (Caso 1).
+\begin{enumerate}
+    \item \textbf{Identificar dependencias}: $z$ depende de $t$ a través de $x(t) = \sqrt{t^2+1}$ y $y(t) = e^t$.
+    \item \textbf{Calcular derivadas parciales}:
+    \[
+    \frac{\partial z}{\partial x} = 2xy, \quad \frac{\partial z}{\partial y} = x^2 - \cos y.
+    \]
+    \item \textbf{Calcular derivadas ordinarias}:
+    \[
+    \frac{dx}{dt} = \frac{t}{\sqrt{t^2+1}}, \quad \frac{dy}{dt} = e^t.
+    \]
+    \item \textbf{Sustituir y sumar}:
+    \[
+    \frac{dz}{dt} = (2xy)\frac{dx}{dt} + (x^2 - \cos y)\frac{dy}{dt}.
+    \]
+    Sustituyendo $x$ e $y$:
+    \[
+    \frac{dz}{dt} = 2\left(\sqrt{t^2+1}\right)(e^t)\left(\frac{t}{\sqrt{t^2+1}}\right) + \left((t^2+1) - \cos(e^t)\right)(e^t).
+    \]
+    Simplificando:
+    \[
+    \frac{dz}{dt} = 2t e^t + \left(t^2 + 1 - \cos(e^t)\right)e^t = \boxed{\left(t^2 + 2t + 1 - \cos(e^t)\right)e^t}.
+    \]
+\end{enumerate}
+\end{myproof}
+\end{example}
+
+\subsection{Regla de la cadena (Caso 2: dos variables independientes)}
+
+\begin{theorem}[Regla de la cadena, Caso 2]
+Si $z = f(x, y)$ es diferenciable y $x = g(s, t)$, $y = h(s, t)$ son diferenciables, entonces $z$ es una función diferenciable de $s$ y $t$, y
+\[
+\frac{\partial z}{\partial s} = \frac{\partial z}{\partial x}\frac{\partial x}{\partial s} + \frac{\partial z}{\partial y}\frac{\partial y}{\partial s},
+\]
+\[
+\frac{\partial z}{\partial t} = \frac{\partial z}{\partial x}\frac{\partial x}{\partial t} + \frac{\partial z}{\partial y}\frac{\partial y}{\partial t}.
+\]
+\end{theorem}
+
+\begin{pasos}[Protocolo para la regla de la cadena (Caso 2)]
+\begin{enumerate}
+    \item \textbf{Identificar las dependencias}: Determinar cómo $z$ depende de $s$ y $t$ a través de $x(s,t)$ e $y(s,t)$.
+    \item \textbf{Calcular las derivadas parciales}: Calcular $\partial z/\partial x$ y $\partial z/\partial y$ en términos de $x$ e $y$.
+    \item \textbf{Calcular las derivadas de las variables intermedias}: Calcular $\partial x/\partial s$, $\partial x/\partial t$, $\partial y/\partial s$, $\partial y/\partial t$.
+    \item \textbf{Sustituir y sumar}: Sustituir y sumar para encontrar $\partial z/\partial s$ y $\partial z/\partial t$ siguiendo las fórmulas.
+\end{enumerate}
+\end{pasos}
+
+\begin{example}[Regla de la cadena, Caso 2]
+Si $z = \sin(xy)$, donde $x = s^2 + t$ e $y = \ln(s t)$, calcule $\partial z/\partial s$ y $\partial z/\partial t$.
+\begin{myproof}
+Seguimos el protocolo para la regla de la cadena (Caso 2).
+\begin{enumerate}
+    \item \textbf{Identificar dependencias}: $z$ depende de $s$ y $t$ a través de $x(s,t) = s^2 + t$ e $y(s,t) = \ln(st)$.
+    \item \textbf{Calcular derivadas parciales de $z$}:
+    \[
+    \frac{\partial z}{\partial x} = y \cos(xy), \quad \frac{\partial z}{\partial y} = x \cos(xy).
+    \]
+    \item \textbf{Calcular derivadas de $x$ e $y$}:
+    \[
+    \frac{\partial x}{\partial s} = 2s, \quad \frac{\partial x}{\partial t} = 1,
+    \]
+    \[
+    \frac{\partial y}{\partial s} = \frac{1}{s}, \quad \frac{\partial y}{\partial t} = \frac{1}{t}.
+    \]
+    \item \textbf{Sustituir y sumar}:
+    \[
+    \frac{\partial z}{\partial s} = (y \cos(xy))(2s) + (x \cos(xy))\left(\frac{1}{s}\right)
+    \]
+    \[
+    \frac{\partial z}{\partial t} = (y \cos(xy))(1) + (x \cos(xy))\left(\frac{1}{t}\right).
+    \]
+    Sustituyendo $x$ e $y$:
+    \[
+    \frac{\partial z}{\partial s} = \boxed{\cos((s^2+t)\ln(st))\left(2s \ln(st) + \frac{s^2+t}{s}\right)},
+    \]
+    \[
+    \frac{\partial z}{\partial t} = \boxed{\cos((s^2+t)\ln(st))\left(\ln(st) + \frac{s^2+t}{t}\right)}.
+    \]
+\end{enumerate}
+\end{myproof}
+\end{example}
+
+\subsection{Derivación implícita}
+
+Cuando una función $z = f(x, y)$ no se da explícitamente, sino que está definida implícitamente por una ecuación $F(x, y, z) = 0$, podemos hallar sus derivadas parciales utilizando la regla de la cadena.
+
+\begin{theorem}[Derivación implícita para funciones de varias variables]
+Si una ecuación $F(x, y, z) = 0$ define implícitamente a $z$ como una función diferenciable de $x$ e $y$, entonces
+\[
+\frac{\partial z}{\partial x} = -\frac{F_x}{F_z}, \quad \frac{\partial z}{\partial y} = -\frac{F_y}{F_z}, \quad \text{siempre que } F_z \neq 0.
+\]
+\end{theorem}
+
+\begin{pasos}[Protocolo para derivación implícita de $z$ definida por $F(x, y, z) = 0$]
+\begin{enumerate}
+    \item \textbf{Definir la función $F$}: Reordenar la ecuación para que un lado sea $0$ y definir $F(x, y, z)$ como el otro lado.
+    \item \textbf{Calcular las derivadas parciales de $F$}: Calcular $F_x$, $F_y$ y $F_z$.
+    \item \textbf{Aplicar las fórmulas}: Sustituir las derivadas en las fórmulas $\partial z/\partial x = -F_x/F_z$ y $\partial z/\partial y = -F_y/F_z$.
+    \item \textbf{Simplificar (opcional)}: Simplificar la expresión resultante.
+\end{enumerate}
+\end{pasos}
+
+\begin{example}[Derivación implícita]
+Dada la ecuación $3yz^2 - e^{4x}\cos(4z) - 3y^2 = 4$, calcule $\partial z/\partial x$ y $\partial z/\partial y$.
+\begin{myproof}
+Seguimos el protocolo para derivación implícita.
+\begin{enumerate}
+    \item \textbf{Definir $F$}:
+    \[
+    F(x, y, z) = 3yz^2 - e^{4x}\cos(4z) - 3y^2 - 4.
+    \]
+    \item \textbf{Calcular las derivadas parciales de $F$}:
+    \[
+    F_x = -4e^{4x}\cos(4z),
+    \]
+    \[
+    F_y = 3z^2 - 6y,
+    \]
+    \[
+    F_z = 6yz + 4e^{4x}\sin(4z).
+    \]
+    \item \textbf{Aplicar las fórmulas}:
+    \[
+    \frac{\partial z}{\partial x} = -\frac{F_x}{F_z} = -\frac{-4e^{4x}\cos(4z)}{6yz + 4e^{4x}\sin(4z)} = \frac{4e^{4x}\cos(4z)}{6yz + 4e^{4x}\sin(4z)},
+    \]
+    \[
+    \frac{\partial z}{\partial y} = -\frac{F_y}{F_z} = -\frac{3z^2 - 6y}{6yz + 4e^{4x}\sin(4z)} = \frac{6y - 3z^2}{6yz + 4e^{4x}\sin(4z)}.
+    \]
+\end{enumerate}
+Por lo tanto, $\boxed{\frac{\partial z}{\partial x} = \frac{4e^{4x}\cos(4z)}{6yz + 4e^{4x}\sin(4z)}}$ y $\boxed{\frac{\partial z}{\partial y} = \frac{6y - 3z^2}{6yz + 4e^{4x}\sin(4z)}}$.
+\end{myproof}
+\end{example}
+
+
+\section*{Problemas: regla de la cadena y derivación implícita}
+
+\begin{prob}
+Use la regla de la cadena para hallar $dz/dt$ si $z = \cos(x + 2y)$, $x = t^2$ e $y = \sin t$.
+\end{prob}
+
+\begin{prob}
+Si $z = e^{xy}$, $x = s t$, $y = s + t$, encuentre $\partial z/\partial s$ y $\partial z/\partial t$.
+\end{prob}
+
+\begin{prob}
+Calcule $\partial z/\partial x$ y $\partial z/\partial y$ para la función $z$ definida implícitamente por $x^2 y - y^2 z + z^3 = 1$.
+\end{prob}
+
+\section{Gradiente y derivada direccional de una función multivariable}
+%%==========================================================
+
+Recordemos que las derivadas parciales de una función $f(x,y)$,
+denotadas $f_x(x,y)$ y $f_y(x,y)$, indican cómo cambia la función
+cuando nos movemos a lo largo de los ejes $x$ e $y$, respectivamente.
+Es decir, muestran la pendiente de la recta tangente a la superficie
+$z=f(x,y)$ en esas direcciones específicas. El objetivo de esta sección
+es extender esta idea y aprender a medir cómo cambia la función en
+\emph{cualquier} dirección, no solo a lo largo de los ejes. Esta medida
+se llama \textbf{derivada direccional}. Antes de definirla,
+necesitamos conocer un concepto clave: el \textbf{vector gradiente}.
+
+%%----------------------------------------------------------
+\subsection{Gradiente}
+%%----------------------------------------------------------
+
+\begin{definition}[Gradiente de una función escalar]
+Sea $f$ una función escalar de dos o tres variables.
+\begin{itemize}
+    \item Si $f(x,y)$ es una función de dos variables, el \textbf{gradiente}
+    de $f$ es el campo vectorial $\nabla f$ definido por:
+    \[
+    \nabla f(x,y) = \langle f_x(x,y),\, f_y(x,y) \rangle
+                  = \frac{\partial f}{\partial x}\,\mathbf{i}
+                    + \frac{\partial f}{\partial y}\,\mathbf{j}.
+    \]
+    \item Si $f(x,y,z)$ es una función de tres variables, su gradiente es:
+    \[
+    \nabla f(x,y,z) = \langle f_x(x,y,z),\, f_y(x,y,z),\,
+    f_z(x,y,z) \rangle
+    = \frac{\partial f}{\partial x}\,\mathbf{i}
+      + \frac{\partial f}{\partial y}\,\mathbf{j}
+      + \frac{\partial f}{\partial z}\,\mathbf{k}.
+    \]
+\end{itemize}
+\end{definition}
+
+\begin{rem}
+El símbolo $\nabla$ se lee \emph{nabla} o \emph{del}. El gradiente
+transforma una función escalar en un campo vectorial: en cada punto del
+dominio, asigna un vector cuyas componentes son las derivadas parciales
+de $f$. Este vector contiene toda la información de primer orden sobre
+el comportamiento de $f$ en ese punto.
+\end{rem}
+
+\begin{example}[Cálculo del gradiente]
+Encuentre el gradiente de $f(x,y) = x^2 \sen y + e^{xy}$.
+\begin{myproof}
+\textbf{Paso 1. Derivadas parciales.}
+\[
+f_x(x,y) = 2x \sen y + y e^{xy}, \qquad
+f_y(x,y) = x^2 \cos y + x e^{xy}.
+\]
+
+\textbf{Paso 2. Gradiente.}
+\[
+\boxed{\nabla f(x,y) = (2x \sen y + y e^{xy})\,\mathbf{i}
+              + (x^2 \cos y + x e^{xy})\,\mathbf{j}}
+\]
+\end{myproof}
+\end{example}
+
+El operador gradiente satisface propiedades algebraicas que lo convierten
+en una herramienta flexible. Estas propiedades se deducen directamente de
+la linealidad de la derivación parcial y de las reglas del producto y
+cociente para funciones escalares.
+
+\begin{theorem}[Propiedades del gradiente]
+Sean $f$ y $g$ funciones escalares diferenciables de dos o tres
+variables, y sea $k\in\mathbb{R}$ una constante. Entonces:
+\begin{enumerate}
+    \item \textbf{Linealidad:}
+    $\nabla(f \pm g) = \nabla f \pm \nabla g$.
+    \item \textbf{Multiplicación por constante:}
+    $\nabla(kf) = k\,\nabla f$.
+    \item \textbf{Regla del producto:}
+    $\nabla(fg) = f\,\nabla g + g\,\nabla f$.
+    \item \textbf{Regla del cociente:}
+    $\nabla\left(\dfrac{f}{g}\right) =
+    \dfrac{g\,\nabla f - f\,\nabla g}{g^2}$, siempre que $g\neq 0$.
+\end{enumerate}
+\end{theorem}
+
+%%----------------------------------------------------------
+\subsection{Interpretación geométrica del gradiente}
+%%----------------------------------------------------------
+
+El vector gradiente $\nabla f(x_0,y_0)$ en un punto posee tres
+propiedades geométricas fundamentales que lo convierten en el objeto
+central del análisis local de funciones de varias variables.
+
+\begin{enumerate}
+    \item \textbf{Dirección de mayor aumento:} $\nabla f(x_0,y_0)$
+    apunta en la dirección en la que la función $f$ crece más
+    rápidamente desde el punto $(x_0,y_0)$.
+    \item \textbf{Magnitud:} La longitud del vector gradiente,
+    $|\nabla f(x_0,y_0)|$, es la tasa máxima de cambio de $f$ en ese
+    punto.
+    \item \textbf{Perpendicularidad:} $\nabla f(x_0,y_0)$ es ortogonal
+    (perpendicular) a las curvas de nivel de $f$, es decir, a las curvas
+    donde $f(x,y) = k$ para alguna constante $k$.
+\end{enumerate}
+
+\begin{rem}
+La propiedad de perpendicularidad merece atención: si una curva de nivel
+está parametrizada por $\mathbf{r}(t) = (x(t), y(t))$ con
+$f(\mathbf{r}(t)) = k$, entonces derivando respecto a $t$ se obtiene
+$\nabla f(\mathbf{r}(t))\cdot \mathbf{r}'(t) = 0$, lo que prueba que el
+gradiente es normal a la curva de nivel en cada punto. Esta observación
+será clave más adelante para construir planos tangentes a superficies
+dadas en forma implícita.
+\end{rem}
+
+%%----------------------------------------------------------
+\subsection{Derivada direccional}
+%%----------------------------------------------------------
+
+Con el gradiente como herramienta auxiliar, se puede ahora definir la
+derivada direccional. Intuitivamente, la derivada direccional mide la
+tasa de cambio de $f$ cuando nos movemos desde un punto dado en una
+dirección específica, representada por un vector unitario.
+
+\begin{definition}[Derivada direccional]
+La \textbf{derivada direccional} de $f(x,y)$ en el punto
+$(x_0,y_0)$ y en la dirección del vector unitario
+$\mathbf{u} = \langle u_1, u_2 \rangle$ está dada por:
+\[
+D_{\mathbf{u}} f(x_0,y_0)
+= \lim_{h \to 0} \frac{f(x_0 + h u_1,\, y_0 + h u_2) - f(x_0,y_0)}{h},
+\]
+siempre que el límite exista.
+\end{definition}
+
+\begin{rem}
+La derivada direccional generaliza las derivadas parciales: si
+$\mathbf{u} = \mathbf{i} = \langle 1,0 \rangle$, entonces
+$D_{\mathbf{i}} f = f_x$; si $\mathbf{u} = \mathbf{j} = \langle 0,1
+\rangle$, entonces $D_{\mathbf{j}} f = f_y$. La exigencia de que
+$\mathbf{u}$ sea unitario es crucial: si no lo fuera, el cociente
+incremental no mediría tasa de cambio por unidad de longitud recorrida.
+\end{rem}
+
+Geométricamente, el vector $\mathbf{u}$ determina una recta $L$ que
+contiene al punto $(x_0,y_0)$. El plano que contiene a $L$ y es
+perpendicular al plano $xy$ corta a la superficie $z=f(x,y)$ en una
+curva $C$. La recta tangente a la curva $C$ en el punto
+$(x_0,y_0,f(x_0,y_0))$ tiene como pendiente la derivada direccional
+$D_{\mathbf{u}} f(x_0,y_0)$.
+
+El siguiente teorema proporciona la fórmula práctica para calcular la
+derivada direccional sin recurrir al límite.
+
+\begin{theorem}[Fórmula del gradiente para la derivada direccional]
+Sea $f$ una función diferenciable en el punto $p=(a,b)$, y sea
+$\mathbf{u}=\langle u_1,u_2\rangle$ un vector unitario. Entonces:
+\[
+D_{\mathbf{u}} f(p) = \nabla f(p) \cdot \mathbf{u}
+= f_x(a,b) u_1 + f_y(a,b) u_2.
+\]
+Si el vector unitario forma un ángulo $\theta$ con el eje $x$ positivo,
+entonces $\mathbf{u} = \langle \cos\theta, \sen\theta \rangle$ y la
+fórmula se convierte en:
+\[
+D_{\mathbf{u}} f(a,b) = f_x(a,b)\cos\theta + f_y(a,b)\sen\theta.
+\]
+\end{theorem}
+
+\begin{rem}
+La diferenciabilidad de $f$ en $p$ es una hipótesis suficiente pero no
+necesaria: la derivada direccional puede existir en todas las direcciones
+sin que la función sea diferenciable. Sin embargo, si las derivadas
+parciales existen y son continuas en una vecindad de $p$, entonces $f$ es
+diferenciable y la fórmula se aplica sin reservas.
+\end{rem}
+
+\begin{pasos}[Cálculo de la derivada direccional]
+Para calcular la derivada direccional de $f$ en el punto $p$ en la
+dirección del vector $\mathbf{v}$ (no necesariamente unitario):
+\begin{enumerate}
+    \item \textbf{Gradiente.} Calcular el gradiente $\nabla f(x,y)$.
+    \item \textbf{Evaluación.} Evaluar el gradiente en el punto $p$:
+    $\nabla f(p)$.
+    \item \textbf{Normalización.} Normalizar el vector dirección:
+    $\mathbf{u} = \dfrac{\mathbf{v}}{|\mathbf{v}|}$.
+    \item \textbf{Producto escalar.} Calcular
+    $D_{\mathbf{u}} f(p) = \nabla f(p)\cdot \mathbf{u}$.
+\end{enumerate}
+\end{pasos}
+
+\begin{example}[Derivada direccional]
+Encuentre la derivada direccional de $f(x,y) = e^x \sen y$ en el punto
+$p = (0, \pi/4)$ en la dirección del vector $\mathbf{v} = \mathbf{i} +
+\sqrt{3}\,\mathbf{j}$.
+\begin{myproof}
+Se siguen los pasos del protocolo de cálculo de la derivada direccional.
+
+\textbf{Paso 1. Gradiente.}
+\[
+\nabla f(x,y) = \langle e^x \sen y,\; e^x \cos y \rangle.
+\]
+
+\textbf{Paso 2. Evaluación en $p=(0,\pi/4)$.}
+\[
+\nabla f(0,\pi/4)
+= \left\langle \sen\left(\frac{\pi}{4}\right),\,
+         \cos\left(\frac{\pi}{4}\right) \right\rangle
+= \left\langle \frac{\sqrt{2}}{2},\, \frac{\sqrt{2}}{2} \right\rangle.
+\]
+
+\textbf{Paso 3. Normalización de $\mathbf{v}$.}
+\[
+|\mathbf{v}| = \sqrt{1^2 + (\sqrt{3})^2} = \sqrt{4} = 2,
+\]
+\[
+\mathbf{u} = \frac{\mathbf{v}}{|\mathbf{v}|}
+= \frac{1}{2}\mathbf{i} + \frac{\sqrt{3}}{2}\mathbf{j}
+= \left\langle \frac{1}{2},\, \frac{\sqrt{3}}{2} \right\rangle.
+\]
+
+\textbf{Paso 4. Producto escalar.}
+\[
+D_{\mathbf{u}} f(0,\pi/4)
+= \nabla f(0,\pi/4)\cdot \mathbf{u}
+= \frac{\sqrt{2}}{2}\cdot\frac{1}{2}
+  + \frac{\sqrt{2}}{2}\cdot\frac{\sqrt{3}}{2}
+= \frac{\sqrt{2}}{4} + \frac{\sqrt{6}}{4}
+= \frac{\sqrt{2}+\sqrt{6}}{4}.
+\]
+Por tanto:
+\[
+\boxed{D_{\mathbf{u}} f(0,\pi/4) = \frac{\sqrt{2}+\sqrt{6}}{4}}.
+\]
+\end{myproof}
+\end{example}
+
+%%----------------------------------------------------------
+\subsection{Maximización de la derivada direccional}
+%%----------------------------------------------------------
+
+Supongamos que tenemos una función $f$ de dos o tres variables y
+queremos saber cómo cambia su valor en distintas direcciones a partir de
+un punto. Surgen dos preguntas importantes: ¿en qué dirección cambia más
+rápido la función y cuál es esa máxima tasa de cambio? El siguiente
+teorema responde ambas preguntas.
+
+\begin{theorem}[Máximo de la derivada direccional]
+Supongamos que $f$ es una función diferenciable de dos o tres variables.
+El valor máximo de la derivada direccional $D_{\mathbf{u}} f(\mathbf{x})$
+es $|\nabla f(\mathbf{x})|$ y se presenta cuando $\mathbf{u}$ tiene la
+misma dirección que el vector gradiente $\nabla f(\mathbf{x})$. El valor
+mínimo es $-|\nabla f(\mathbf{x})|$ y ocurre en la dirección opuesta
+$-\nabla f(\mathbf{x})$.
+\end{theorem}
+
+\begin{proof}
+De la fórmula $D_{\mathbf{u}} f = \nabla f \cdot \mathbf{u}$ y la
+definición de producto escalar:
+\[
+D_{\mathbf{u}} f = |\nabla f|\,|\mathbf{u}|\cos\theta
+= |\nabla f|\cos\theta,
+\]
+donde $\theta$ es el ángulo entre $\nabla f$ y $\mathbf{u}$. Como
+$\mathbf{u}$ es unitario, $|\mathbf{u}|=1$. El máximo de $\cos\theta$ es
+$1$, que ocurre cuando $\theta=0$, es decir, cuando $\mathbf{u}$ apunta
+en la misma dirección que $\nabla f$. En ese caso
+$D_{\mathbf{u}} f = |\nabla f|$. El mínimo es $-1$, que ocurre cuando
+$\theta=\pi$, es decir, $\mathbf{u}$ en dirección opuesta al gradiente,
+y entonces $D_{\mathbf{u}} f = -|\nabla f|$.
+\end{proof}
+
+\begin{rem}
+El teorema tiene una consecuencia práctica importante: si se desea
+aumentar el valor de $f$ lo más rápidamente posible, hay que moverse en
+la dirección del gradiente; si se desea disminuirlo, en la dirección
+opuesta. Esta observación es la base de los métodos de optimización por
+descenso del gradiente, ampliamente utilizados en aprendizaje automático
+y en la resolución numérica de problemas de optimización.
+\end{rem}
+
+\begin{example}[Maximización de la derivada direccional]
+Sea $f(x,y) = x e^y$.
+\begin{enumerate}[a)]
+    \item Determine la razón de cambio de $f$ en el punto $P(2,0)$ en la
+    dirección del vector que va de $P$ a $Q\left(-\frac12,\,2\right)$.
+    \item ¿En qué dirección $f$ tiene la máxima razón de cambio?
+    ¿Cuál es esa máxima razón de cambio?
+\end{enumerate}
+\begin{myproof}
+\textbf{a) Primero se calcula el gradiente:}
+\[
+\nabla f(x,y) = \langle f_x, f_y \rangle = \langle e^y,\, x e^y \rangle.
+\]
+Evaluando en $P(2,0)$:
+\[
+\nabla f(2,0) = \langle e^0,\, 2e^0 \rangle = \langle 1, 2 \rangle.
+\]
+El vector que va de $P$ a $Q$ es:
+\[
+\overrightarrow{PQ} = Q - P = \left(-\frac12 - 2,\; 2 - 0\right)
+= \left(-\frac{5}{2},\, 2\right).
+\]
+Normalizando:
+\[
+\left|\overrightarrow{PQ}\right|
+= \sqrt{\left(-\frac{5}{2}\right)^2 + 2^2}
+= \sqrt{\frac{25}{4} + 4}
+= \sqrt{\frac{41}{4}}
+= \frac{\sqrt{41}}{2}.
+\]
+\[
+\mathbf{u} = \frac{\overrightarrow{PQ}}{\left|\overrightarrow{PQ}\right|}
+= \frac{2}{\sqrt{41}}\left(-\frac{5}{2},\, 2\right)
+= \left(-\frac{5}{\sqrt{41}},\, \frac{4}{\sqrt{41}}\right).
+\]
+La razón de cambio de $f$ en la dirección de $P$ a $Q$ es:
+\[
+D_{\mathbf{u}} f(2,0)
+= \nabla f(2,0)\cdot \mathbf{u}
+= \langle 1,2\rangle \cdot
+  \left\langle -\frac{5}{\sqrt{41}},\, \frac{4}{\sqrt{41}} \right\rangle
+= -\frac{5}{\sqrt{41}} + \frac{8}{\sqrt{41}}
+= \frac{3}{\sqrt{41}}.
+\]
+
+\textbf{b) Según el teorema, $f$ se incrementa más rápido en la dirección
+del vector gradiente $\nabla f(2,0) = \langle 1,2\rangle$. La razón de
+cambio máxima es:}
+\[
+|\nabla f(2,0)| = |\langle 1,2\rangle| = \sqrt{1^2 + 2^2} = \sqrt{5}.
+\]
+
+Por tanto:
+\[
+\boxed{D_{\mathbf{u}} f(2,0) = \frac{3}{\sqrt{41}},\qquad
+\text{dirección de máximo crecimiento: } \langle 1,2\rangle,\qquad
+\text{tasa máxima: } \sqrt{5}}.
+\]
+\end{myproof}
+\end{example}
+
+%%----------------------------------------------------------
+\subsection{Plano tangente y recta normal}
+%%----------------------------------------------------------
+
+En la lección anterior se introdujo el plano tangente a una superficie
+determinada por una función explícita $z=f(x,y)$. Ahora se extiende este
+concepto a superficies dadas en forma implícita $F(x,y,z)=k$. La
+observación clave es que el gradiente $\nabla F$ es normal a la
+superficie en cada punto.
+
+\begin{rem}
+Si la superficie está dada por $z=f(x,y)$, se puede expresar en forma
+implícita como $F(x,y,z) = f(x,y) - z = 0$. Entonces
+$\nabla F = \langle f_x, f_y, -1 \rangle$, que es un vector normal al
+plano tangente. La ecuación
+\[
+f_x(x_0,y_0)(x-x_0) + f_y(x_0,y_0)(y-y_0) - (z-z_0) = 0
+\]
+recupera la fórmula del plano tangente para funciones explícitas
+estudiada en la lección anterior.
+\end{rem}
+
+\begin{definition}[Plano tangente y recta normal para superficie implícita]
+Sea $F(x,y,z)=k$ una superficie y supóngase que $F$ es diferenciable en
+el punto $P(x_0,y_0,z_0)$, con $\nabla F(x_0,y_0,z_0) \neq \mathbf{0}$.
+El \textbf{plano tangente} a la superficie en $P$ es el plano que pasa
+por $P$ y es perpendicular a $\nabla F(P)$. La \textbf{recta normal} a
+la superficie en $P$ es la recta que pasa por $P$ y tiene como vector
+director $\nabla F(P)$.
+\end{definition}
+
+La ecuación del plano tangente en $(x_0,y_0,z_0)$ es:
+\[
+\nabla F(x_0,y_0,z_0) \cdot \langle x-x_0,\, y-y_0,\, z-z_0 \rangle = 0.
+\]
+Equivalentemente:
+\[
+F_x(x_0,y_0,z_0)(x-x_0)
++ F_y(x_0,y_0,z_0)(y-y_0)
++ F_z(x_0,y_0,z_0)(z-z_0) = 0.
+\]
+
+Las ecuaciones paramétricas de la recta normal son:
+\[
+x = x_0 + t\,F_x(x_0,y_0,z_0),\quad
+y = y_0 + t\,F_y(x_0,y_0,z_0),\quad
+z = z_0 + t\,F_z(x_0,y_0,z_0),\quad t\in\mathbb{R}.
+\]
+
+\begin{pasos}[Plano tangente a superficie implícita]
+Para hallar el plano tangente y la recta normal a la superficie
+$F(x,y,z)=k$ en el punto $P(x_0,y_0,z_0)$:
+\begin{enumerate}
+    \item \textbf{Función implícita.} Escribir la superficie en la forma
+    $F(x,y,z)=k$ (si es necesario, restando $k$ de ambos lados).
+    \item \textbf{Gradiente.} Calcular $\nabla F(x,y,z)$.
+    \item \textbf{Evaluación.} Evaluar $\nabla F$ en $P$.
+    \item \textbf{Ecuaciones.} Escribir la ecuación del plano usando
+    $\nabla F(P)$ como vector normal, y las ecuaciones paramétricas de la
+    recta usando $\nabla F(P)$ como vector director.
+\end{enumerate}
+\end{pasos}
+
+\begin{example}[Plano tangente y recta normal a superficie implícita]
+Halle las ecuaciones del plano tangente y la recta normal a la superficie
+$x e^{yz} = 1$ en el punto $(1,0,5)$.
+\begin{myproof}
+Se sigue el protocolo para el plano tangente a superficie implícita.
+
+\textbf{Paso 1. Función implícita.} Se define
+\[
+F(x,y,z) = x e^{yz} - 1 = 0.
+\]
+La superficie es $F(x,y,z)=0$.
+
+\textbf{Paso 2. Gradiente.}
+\[
+\nabla F(x,y,z)
+= \langle F_x, F_y, F_z \rangle
+= \langle e^{yz},\, xz e^{yz},\, xy e^{yz} \rangle.
+\]
+
+\textbf{Paso 3. Evaluación en $P(1,0,5)$.}
+\[
+\nabla F(1,0,5)
+= \langle e^{0\cdot 5},\, 1\cdot 5\cdot e^{0\cdot 5},\,
+  1\cdot 0\cdot e^{0\cdot 5} \rangle
+= \langle 1,\, 5,\, 0 \rangle.
+\]
+
+\textbf{Paso 4. Ecuaciones.}
+El plano tangente tiene vector normal $\mathbf{n} = \langle 1,5,0 \rangle$
+y pasa por $(1,0,5)$:
+\[
+1(x-1) + 5(y-0) + 0(z-5) = 0
+\implies x - 1 + 5y = 0
+\implies x + 5y = 1.
+\]
+La recta normal tiene vector director $\mathbf{v} = \langle 1,5,0 \rangle$
+y pasa por $(1,0,5)$:
+\[
+x = 1 + t,\qquad y = 5t,\qquad z = 5,\qquad t\in\mathbb{R}.
+\]
+Por tanto:
+\[
+\boxed{\text{Plano tangente: } x + 5y = 1,\qquad
+\text{Recta normal: } (x,y,z) = (1,0,5) + t\langle 1,5,0 \rangle}.
+\]
+\end{myproof}
+\end{example}
+
+%%==========================================================
+
+\section{Problemas propuestos}
+%%==========================================================
+
+\begin{prob}[Gradiente y derivada direccional]
+Calcule el gradiente de las siguientes funciones:
+\begin{multicols}{2}
+\begin{enumerate}
+    \item $f(x,y) = x^2 y + \sen(xy)$
+    \item $f(x,y) = \ln(x^2 + y^2)$
+    \item $f(x,y,z) = xyz + e^{xz}$
+    \item $f(x,y,z) = \arctan(x/y) + z^2$
+\end{enumerate}
+\end{multicols}
+\end{prob}
+
+\begin{prob}
+Encuentre la derivada direccional de $f$ en el punto $p$ en la dirección
+del vector $\mathbf{v}$:
+\begin{enumerate}[a)]
+    \item $f(x,y) = x^2 + y^2$, $p=(1,2)$, $\mathbf{v} = \langle 3,4 \rangle$
+    \item $f(x,y) = e^x \cos y$, $p=(0,\pi/3)$, $\mathbf{v} = \langle 1,-1 \rangle$
+    \item $f(x,y) = \sqrt{xy}$, $p=(4,9)$, $\mathbf{v} = \langle -1,2 \rangle$
+\end{enumerate}
+\end{prob}
+
+\begin{prob}
+Para cada función, determine la dirección de máximo crecimiento y la tasa
+máxima de cambio en el punto dado:
+\begin{enumerate}[a)]
+    \item $f(x,y) = 3x^2 - 2xy + y^2$, $p=(1,2)$
+    \item $f(x,y) = \sinh(xy)$, $p=(\pi/2,1)$
+    \item $f(x,y,z) = x^2 + y^2 + z^2 - xy$, $p=(1,1,1)$
+\end{enumerate}
+\end{prob}
+
+\begin{prob}
+Encuentre la ecuación del plano tangente y la recta normal a la
+superficie en el punto indicado:
+\begin{enumerate}[a)]
+    \item $x^2 + y^2 + z^2 = 14$, $(1,2,3)$
+    \item $x^2 + 2y^2 - z^2 = 4$, $(2,1,-1)$
+    \item $xy + yz + zx = 1$, $(1,0,1)$
+\end{enumerate}
+\end{prob}
+
+
+% Cap. 21 — Regla de la cadena y derivadas direccionales
+% 17 problemas unicos: 15 listos para integrar ahora, 2 esperan pasada Claude Code (pstricks)
+% ============================================================
+
+% >>> LISTOS PARA INTEGRAR AHORA <<<
+
+% [Original: líneas 448-457 | solución completa | sin figura]
+\begin{prob}
+El voltaje $V$ en un circuito eléctrico simple disminuye con lentitud a medida que la batería se gasta. La resistencia $R$ se incrementa lentamente cuando el resistor se calienta. Mediante la ley de Ohm, $V=IR$, determine cómo cambia la corriente $I$ en el momento en que $R=500\ \Omega$ , $I=0.06\  A$, $\frac{dV}{dt}=-0.02\ V/s$ y $\frac{dR}{dt}=0.04\ \Omega /s.$
+\begin{myproof}
+El voltaje es $V=IR.$ Se conoce que $\dfrac{dV}{dt}=-0.02 \ V/s$ y $\dfrac{dR}{dt}=0.04\ \Omega/s.$ Si $R=500\ \Omega$ e $I=0.06\ A$ al usar regla de la cadena se obtiene que,
+\begin{align*}
+\dfrac{dV}{dt}&=\dfrac{\partial V}{\partial I}\dfrac{dI}{dt}+\dfrac{\partial V}{\partial R}\dfrac{dR}{dt}\\&=\left(R\right)\left(\dfrac{dI}{dt}\right)+\left(I\right)\left(\dfrac{dR}{dt}\right),\\
+-0.02&=\left(500\right)\left(\dfrac{dI}{dt}\right)+\left(0.06\right)\left(0.04\right),\\-0.02&=\left( 500\dfrac{dI}{dt} \right)+\left( \dfrac{3}{1250}  \right)\\-0.02-\left( \dfrac{3}{1250}  \right)&=\left( 500\dfrac{dI}{dt} \right)\\-\dfrac{14}{625}&=\left( 500\dfrac{dI}{dt} \right)\\-\dfrac{14}{312500}\ A/s&=\dfrac{dI}{dt}\\\dfrac{dI}{dt}&\approx -0.0000448\ A/s.
+\end{align*}
+\end{myproof}
+\end{prob}
+
+% [Original: líneas 704-713 | solución completa | sin figura]
+\begin{prob}
+El radio de un cono circular recto se incrementa a una razón de $5\ m/s$, mientras su altura disminuye a razón de $10\ m/s$. ¿A qué razón cambia el volumen del cono cuando el radio es $800\ m$ y la altura es de $200\ m$? Construya una representación de la situación.
+\begin{myproof}
+El volumen del cono es $V=\dfrac{\pi}{3}r^2h.$ Se conoce que $\dfrac{dr}{dt}=5 \ m/s$ y $\dfrac{dh}{dt}=-10\ m/s.$ Si $h=200\ m$ y $r=800\ m$ al usar regla de la cadena se obtiene que,
+\begin{align*}
+\dfrac{dV}{dt}=\dfrac{\partial V}{\partial r}\dfrac{dr}{dt}+\dfrac{\partial V}{\partial h}\dfrac{dh}{dt}&=\left(\dfrac{2}{3}\pi r h\right)\left(5\right)+\left(\dfrac{1}{3}\pi r^2\right)\left(-10\right),\\
+&=\left(\dfrac{2}{3}\pi (800) (200)\right)\left(5\right)+\left(\dfrac{1}{3}\pi (800)^2\right)\left(-10\right),\\&=\left(\dfrac{1600000}{3}\pi\right)+\left(\dfrac{-6400000}{3}\pi\right)\\&=\left(\dfrac{-4800000}{3}\pi\right)\ m^3/s.
+\end{align*}
+\end{myproof}
+\end{prob}
+
+% [Original: líneas 865-874 | solución completa | sin figura]
+\begin{prob}
+La longitud $l$, ancho $a$ y altura $h$ de una caja cambia con el tiempo. En un cierto instante, las dimensiones son $l= 5\ m,$ $a=3\ m$ y $h= 9\ m$, y se conoce que $a$ y $h$ se incrementan a razón de $0.3\ m/s$, en tanto que $l$ disminuye a razón de $0.5\ m/s.$ Encuentre en ese instante las razones a las cuales el área superficial de la caja cambia.
+\begin{myproof}
+El área superficial de la caja es $S=2la+2ah+2hl.$ Se conoce que $\dfrac{da}{dt}=0.3=\dfrac{dh}{dt}$ y $\dfrac{dl}{dt}=-0.5\ m/s.$ Si $l=5\ m,$ $a=3\ m,$ y $h=9\ m$ al usar regla de la cadena se obtiene que,
+\begin{align*}
+\dfrac{dS}{dt}&=\dfrac{\partial S}{\partial l}\dfrac{dl}{dt}+\dfrac{\partial S}{\partial h}\dfrac{dh}{dt}+\dfrac{\partial S}{\partial a}\dfrac{da}{dt}\\&=\left( 2a+2h \right)\left(\dfrac{dl}{dt}\right)+\left(2a+2l\right)\left(\dfrac{dh}{dt}\right)+\left(2h+2l\right)\left(\dfrac{da}{dt}\right),\\
+\dfrac{dS}{dt}&=\left(24\right)\left(-0.5\right)+\left(16\right)\left(0.3\right)+\left(28\right)\left(0.3\right),\\\dfrac{dS}{dt}&=6/5\approx 1.2\ m^2/s.
+\end{align*}
+\end{myproof}
+\end{prob}
+
+% [Original: líneas 925-927 | sin verificar | sin figura | 2 variante(s) de parámetro (se descartaron 1)]
+\begin{prob}
+La longitud $l$, ancho $a$ y altura $h$ de una caja cambia con el tiempo. En un cierto instante, las dimensiones son $l= 15\ m,$ $a=12\ m$ y $h= 3\ m$, y se conoce que $a$ y $h$ se incrementan a razón de $0.2\ m/s$, en tanto que $l$ disminuye a razón de $0.1\ m/s.$ Encuentre en ese instante las razones a las cuales el volumen de la caja cambia.
+\end{prob}
+
+% [Original: líneas 1127-1129 | sin verificar | sin figura | 2 variante(s) de parámetro (se descartaron 1)]
+\begin{prob}
+La longitud $x,$ el ancho $y$ y la altura $z$ de una caja cambian con el tiempo. En cierto instante las dimensiones de la caja son $x=A\ cm,$ $y=2A\ cm$ y $z= 2A\ cm.$ Si $x$ y $y$ aumentan a una tasa de $2A\ cm/s$ mientras que $z$ disminuye a razón de $3A\ cm/s,$ emplee la regla de la cadena para determinar la tasa a la cual cambia el volumen de la caja en ese instante.
+\end{prob}
+
+% [Original: líneas 1131-1133 | sin verificar | sin figura | 2 variante(s) de parámetro (se descartaron 1)]
+\begin{prob}
+La temperatura de una colina en un punto $(x,y,z)$ está dada por la función $$T(x,y,z)=200e^{-x^2-3y^2-9z^2}$$ donde $T$ se mide en grados Celsius y $x,\ y, \ z$ en metros.  Determine la dirección que un insecto seguiría, empezando en el punto $(2A,-A,2A)$ con el fin de calentarse lo más rápido posible. Justifique su respuesta.
+\end{prob}
+
+% [Original: líneas 1139-1141 | sin verificar | sin figura | 2 variante(s) de parámetro (se descartaron 1)]
+\begin{prob}
+La longitud $x,$ el ancho $y$ y la altura $z$ de una caja cambian con el tiempo. En cierto instante las dimensiones de la caja son $x=7A\ cm,$ $y=13A\ cm$ y $z= 11A\ cm.$ Si $x$ y $y$ aumentan a una tasa de $2A\ cm/s$ mientras que $z$ disminuye a razón de $5A\ cm/s,$ emplee la regla de la cadena para determinar la tasa a la cual cambia el área superficial de la caja en ese instante (asuma que la caja tiene tapa).
+\end{prob}
+
+% [Original: líneas 1143-1145 | sin verificar | sin figura]
+\begin{prob}
+La temperatura de una colina en un punto $(x,y,z)$ está dada por la función $$T(x,y,z)=236e^{-13x^2-11y^2-17z^2}$$ donde $T$ se mide en grados Celsius y $x,\ y, \ z$ en metros.  Determine la dirección que un insecto seguiría, empezando en el punto $(3A,-7A,11A)$ con el fin de calentarse lo más rápido posible. Justifique su respuesta.
+\end{prob}
+
+% [Original: líneas 1156-1158 | sin verificar | sin figura]
+\begin{prob}
+En un instante dado, la longitud de un cateto de un triángulo rectángulo es de $10\ cm$ y crece a tasa de $1\ cm/min,$ y la longitud del otro cateto es de $12\ cm.$ Calcule la tasa de variación de la medida del ángulo opuesto al cateto de 10 cm en ese instante.
+\begin{myproof}
+Sea $a$ la longitud del cateto de $10\ cm$ con $\dfrac{da}{dt}=1\ cm/min$, y $b=12\ cm$ la longitud del otro cateto (constante en ese instante, $\dfrac{db}{dt}=0$). Sea $\alpha$ el ángulo opuesto al cateto $a$. De la trigonometría del triángulo rectángulo:
+\[
+\tan\alpha = \frac{a}{b}.
+\]
+Diferenciando ambos lados respecto a $t$ por la regla de la cadena:
+\[
+\sec^2\!\alpha\;\frac{d\alpha}{dt}
+= \frac{b\,\dfrac{da}{dt} - a\,\dfrac{db}{dt}}{b^2}
+= \frac{\dfrac{da}{dt}}{b}.
+\]
+En el instante dado, $a=10\ cm$ y $b=12\ cm$, por lo que
+\[
+\tan\alpha = \frac{10}{12} = \frac{5}{6}
+\implies
+\sec^2\!\alpha = 1+\tan^2\!\alpha = 1 + \frac{25}{36} = \frac{61}{36}.
+\]
+Sustituyendo $\dfrac{da}{dt}=1$ y $b=12$:
+\[
+\frac{61}{36}\;\frac{d\alpha}{dt} = \frac{1}{12}
+\implies
+\frac{d\alpha}{dt} = \frac{36}{12\cdot 61} = \frac{3}{61}\ \frac{\text{rad}}{\text{min}}.
+\]
+\[
+\boxed{\dfrac{d\alpha}{dt} = \dfrac{3}{61}\ \text{rad/min} \approx 0.049\ \text{rad/min}.}
+\]
+\end{myproof}
+\end{prob}
+
+% [Original: líneas 1160-1162 | sin verificar | sin figura]
+\begin{prob}
+Si $h(x,y)=2e^{-x^2}+3e^{-3y^2}$ representa la altura de una montaña, ¿en qué dirección desde $(1,0,2e^{-1}+3)$ se debería comenzar a caminar para escalar más rápidamente?
+\end{prob}
+
+% [Original: líneas 1188-1190 | sin verificar | sin figura]
+\begin{prob}
+La temperatura de una colina en un punto $(x,y,z)$ está dada por la función $$T(x,y,z)=258e^{-2x^2-5y^2-7z^2}$$ donde $T$ se mide en grados Celsius y $x,\ y, \ z$ en metros.  Determine la dirección que un insecto seguiría, empezando en el punto $(9A,-5A,13A)$ con el fin de calentarse lo más rápido posible. Justifique su respuesta.
+\end{prob}
+
+% [Original: líneas 1216-1218 | sin verificar | sin figura]
+\begin{prob}
+Considere una placa rectangular comprendida por el plano $xy$ cuya temperatura está determinada por  la función $T(x,y,z)=10+8x^2+25y^2$ donde $T$ se mide en grados Celsius y $x,\ y$ en metros.  Determine la dirección que un insecto seguiría, empezando en el punto $(A+1,A)$ con el fin de enfriarse lo más rápido posible. Justifique su respuesta.
+\end{prob}
+
+% [Original: líneas 1228-1230 | sin verificar | sin figura | 2 variante(s) de parámetro (se descartaron 1)]
+\begin{prob}
+La temperatura de una placa en un punto $(x,y)$ está dada por la función $$T(x,y)=10+5x^2-3y^2$$ donde $T$ se mide en grados Celsius y $x,\ y$ en metros.  Determine la dirección que un insecto seguiría, empezando en el punto $(3,-7)$ con el fin de calentarse lo más rápido posible. Justifique su respuesta.
+\end{prob}
+
+% [Original: líneas 1260-1262 | sin verificar | sin figura]
+\begin{prob}
+La temperatura de una placa en un punto $(x,y)$ está dada por la función $$T(x,y)=40+8x^2-25y^2$$ donde $T$ se mide en grados Celsius y $x,\ y$ en metros.  Determine la dirección que un insecto seguiría, empezando en el punto $(9,25)$ con el fin de calentarse lo más rápido posible. Justifique su respuesta.
+\end{prob}
+
+% [Original: líneas 1292-1294 | sin verificar | sin figura]
+\begin{prob}
+Considere una placa rectangular comprendida por el plano $xy$ cuya temperatura está dada por $T(x,y)=5+x^{2}+5y^{2}$ para cada punto $(x,y).$ Determine la dirección que un insecto seguiría, empezando en el punto $(A,A+1)$ con el fin de enfriarse lo más rápido posible. Justifique su respuesta.
+\end{prob}
+
+% >>> ESPERAN PASADA CON CLAUDE CODE (pstricks) <<<
+
+% [Original: líneas 965-987 | sin verificar | PSTRICKS - pendiente convertir a tikz | 2 variante(s) de parámetro (se descartaron 1)]
+\begin{prob}
+La longitud del lado marcado $x$ del triángulo de la figura (no está construído a escala) aumenta a una tasa de $0.5\ cm/s$, el lado marcado $y$ crece a una tasa de $0.3\ cm/s$ y el ángulo $\theta$ aumenta a una tasa de $0.2\ rad/s.$ Emplee la regla de la cadena para determinar la tasa a la cual el área del triángulo está cambiando en el instante $x=13\ cm,$ $y=8\ cm$ y $\theta= \dfrac{\pi}{4}.$
+\textit{Sugerencia: Determine cuál es la altura del triángulo en términos de $\theta$ tomando como base a $y.$}
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.0]
+  \coordinate (O) at (0,0);
+  \coordinate (A) at (3,0);
+  \coordinate (B) at (4,2);
+  \draw[thick] (O) -- (A) -- (B) -- cycle;
+  \draw (0.6,0) arc[start angle=0, end angle=26.57, radius=0.6];
+  \node[below] at (1.5,-0.15) {$y$};
+  \node[above left] at (2,1) {$x$};
+  \node at (1.0,0.2) {$\theta$};
+  \fill (O) circle (2pt);
+  \fill (A) circle (2pt);
+  \fill (B) circle (2pt);
+\end{tikzpicture}
+\end{figure}
+\end{prob}
+
+% [Original: líneas 1192-1214 | sin verificar | PSTRICKS - pendiente convertir a tikz | 2 variante(s) de parámetro (se descartaron 1)]
+\begin{prob}
+La longitud del lado marcado $x$ del triángulo de la figura aumenta a una tasa de $\dfrac{A}{8}\ cm/s$, el lado marcado $y$ crece a una tasa de $\dfrac{A}{12}\ cm/s$ y el ángulo $\theta$ aumenta a una tasa de $0.1\ rad/s.$ Emplee la regla de la cadena para determinar la tasa a la cual el área del triángulo está cambiando en el instante $x=A\ cm,$ $y=2A\ cm$ y $\theta= \dfrac{\pi}{6}.$
+\textit{Sugerencia: Determine cuál es la altura del triángulo en términos de $\theta$ tomando como base a $y.$}
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=0.8]
+  \coordinate (O) at (0,0);
+  \coordinate (P) at (1.87,2.35);
+  \coordinate (Q) at (5.58,2.20);
+  \draw[thick] (O) -- (P) -- (Q) -- cycle;
+  \filldraw[fill=gray!20, draw=black, thick]
+    (O) -- ({0.4*cos(21.5)},{0.4*sin(21.5)})
+    arc[start angle=21.5, end angle=51.5, radius=0.4] -- cycle;
+  \node at (0.52,0.40) {$\theta$};
+  \node[left] at (0.93,1.18) {$x$};
+  \node[below] at (2.93,0.90) {$y$};
+  \fill (O) circle (2.5pt);
+  \fill (P) circle (2.5pt);
+  \fill (Q) circle (2.5pt);
+\end{tikzpicture}
+\end{figure}
+\end{prob}

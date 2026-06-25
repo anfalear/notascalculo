@@ -1,0 +1,553 @@
+\chapter{Ecuaciones diferenciales de primer orden}
+
+\section{Definiciones básicas}
+
+\begin{definition}
+Una \textbf{ecuación diferencial ordinaria (EDO)} es una ecuación que involucra una función desconocida \(y(x)\) y algunas de sus derivadas. El \textbf{orden} de la EDO es el orden de la derivada más alta que aparece. El \textbf{grado} es el exponente al que está elevada la derivada de mayor orden, siempre que la ecuación sea polinómica en las derivadas.
+\end{definition}
+
+\begin{definition}
+Una EDO es \textbf{lineal} si puede escribirse como
+\[
+a_n(x)y^{(n)} + a_{n-1}(x)y^{(n-1)} + \cdots + a_1(x)y' + a_0(x)y = g(x),
+\]
+donde \(a_i(x)\) y \(g(x)\) son funciones de \(x\) únicamente. Si no es de esta forma, se dice \textbf{no lineal}.
+\end{definition}
+
+\begin{definition}
+Una \textbf{solución general} de una EDO de orden \(n\) es una familia de soluciones que depende de \(n\) constantes arbitrarias. Una \textbf{solución particular} se obtiene asignando valores específicos a dichas constantes, a menudo mediante condiciones iniciales.
+\end{definition}
+
+\begin{definition}
+Un \textbf{problema de valor inicial (PVI)} consiste en una EDO junto con condiciones que especifican el valor de la función y sus derivadas hasta el orden \(n-1\) en un punto dado \(x_0\):
+\[
+y(x_0)=y_0,\quad y'(x_0)=y_1,\quad \dots,\quad y^{(n-1)}(x_0)=y_{n-1}.
+\]
+\end{definition}
+
+\begin{rem}
+El teorema de existencia y unicidad de Picard–Lindelöf garantiza que, bajo condiciones de regularidad, un PVI de primer orden \(y'=f(x,y)\), \(y(x_0)=y_0\), tiene solución única en un entorno de \(x_0\).
+\end{rem}
+
+\section{Ecuaciones de variables separables}
+
+Una EDO de primer orden es de \textbf{variables separables} si puede escribirse como
+\[
+\frac{dy}{dx} = f(x)g(y).
+\]
+Para resolverla, separamos las variables:
+\[
+\frac{dy}{g(y)} = f(x)\,dx,
+\]
+e integramos ambos lados:
+\[
+\int \frac{dy}{g(y)} = \int f(x)\,dx + C.
+\]
+
+\begin{example}[Crecimiento poblacional de Malthus]
+La población \(P(t)\) de una especie en un entorno sin limitaciones de recursos satisface
+\[
+\frac{dP}{dt} = kP,
+\]
+donde \(k\) es la tasa de crecimiento constante. Resolver el PVI con \(P(0)=P_0\).
+
+\begin{myproof}
+\textbf{Paso 1.} Separar variables:
+\[
+\frac{dP}{P} = k\,dt.
+\]
+
+\textbf{Paso 2.} Integrar:
+\[
+\int \frac{dP}{P} = \int k\,dt \quad\Longrightarrow\quad \ln|P| = kt + C_1.
+\]
+
+\textbf{Paso 3.} Despejar \(P\):
+\[
+|P| = e^{kt+C_1} = e^{C_1}e^{kt} \quad\Longrightarrow\quad P = C e^{kt},
+\]
+con \(C = \pm e^{C_1}\).
+
+\textbf{Paso 4.} Usar la condición inicial \(P(0)=P_0\):
+\[
+P_0 = C e^{0} = C \quad\Longrightarrow\quad P(t) = P_0 e^{kt}.
+\]
+Por tanto, la solución del PVI es
+\[
+\boxed{P(t) = P_0 e^{kt}}.
+\]
+\end{myproof}
+\end{example}
+
+\begin{example}[Decaimiento radiactivo]
+Una sustancia radiactiva se desintegra a una tasa proporcional a la cantidad presente. Si inicialmente hay \(Q_0\) gramos y después de 10 años quedan \(0.8Q_0\), determinar la vida media.
+
+\begin{myproof}
+\textbf{Paso 1.} Modelo: \(\frac{dQ}{dt} = -kQ\), \(k>0\). Separando:
+\[
+\frac{dQ}{Q} = -k\,dt.
+\]
+
+\textbf{Paso 2.} Integrar:
+\[
+\ln|Q| = -kt + C \quad\Longrightarrow\quad Q(t) = Q_0 e^{-kt}.
+\]
+
+\textbf{Paso 3.} Usar \(Q(10)=0.8Q_0\):
+\[
+0.8Q_0 = Q_0 e^{-10k} \quad\Longrightarrow\quad e^{-10k}=0.8 \quad\Longrightarrow\quad k = \frac{\ln(1/0.8)}{10} = \frac{\ln 1.25}{10}.
+\]
+
+\textbf{Paso 4.} Vida media \(T\) tal que \(Q(T)=\frac{Q_0}{2}\):
+\[
+\frac{Q_0}{2} = Q_0 e^{-kT} \quad\Longrightarrow\quad T = \frac{\ln 2}{k} = \frac{10\ln 2}{\ln 1.25}.
+\]
+Por tanto,
+\[
+\boxed{T \approx 31.06 \text{ años}}.
+\]
+\end{myproof}
+\end{example}
+
+\section{Ecuaciones lineales de primer orden}
+
+La forma estándar de una EDO lineal de primer orden es
+\[
+y' + P(x)y = Q(x).
+\]
+El \textbf{factor integrante} es
+\[
+\mu(x) = \exp\left(\int P(x)\,dx\right).
+\]
+Multiplicando la EDO por \(\mu(x)\), el lado izquierdo se convierte en la derivada del producto \(\mu(x)y\):
+\[
+(\mu y)' = \mu Q.
+\]
+Integrando:
+\[
+y(x) = \frac{1}{\mu(x)}\left(\int \mu(x) Q(x)\,dx + C\right).
+\]
+
+\begin{example}[Circuito RL en serie]
+Un circuito RL en serie tiene una resistencia \(R\), una inductancia \(L\) y una fuente de voltaje \(E(t)\). La corriente \(i(t)\) satisface
+\[
+L\frac{di}{dt} + Ri = E(t).
+\]
+Resolver para \(E(t)=E_0\) constante, con \(i(0)=0\).
+
+\begin{myproof}
+\textbf{Paso 1.} Escribir en forma estándar:
+\[
+\frac{di}{dt} + \frac{R}{L}i = \frac{E_0}{L}.
+\]
+Aquí \(P(t)=\frac{R}{L}\), \(Q(t)=\frac{E_0}{L}\).
+
+\textbf{Paso 2.} Factor integrante:
+\[
+\mu(t) = \exp\left(\int \frac{R}{L}\,dt\right) = e^{(R/L)t}.
+\]
+
+\textbf{Paso 3.} Multiplicar y simplificar:
+\[
+(e^{(R/L)t} i)' = \frac{E_0}{L} e^{(R/L)t}.
+\]
+Integrar:
+\[
+e^{(R/L)t} i = \frac{E_0}{L}\cdot \frac{L}{R} e^{(R/L)t} + C = \frac{E_0}{R} e^{(R/L)t} + C.
+\]
+
+\textbf{Paso 4.} Despejar \(i\) y aplicar \(i(0)=0\):
+\[
+i(t) = \frac{E_0}{R} + C e^{-(R/L)t}, \quad 0 = \frac{E_0}{R} + C \Rightarrow C = -\frac{E_0}{R}.
+\]
+Por tanto,
+\[
+\boxed{i(t) = \frac{E_0}{R}\left(1 - e^{-(R/L)t}\right)}.
+\]
+\end{myproof}
+\end{example}
+
+\begin{example}[Problema de mezclas]
+Un tanque contiene inicialmente 100 L de agua con 5 kg de sal. Entra agua con 0.1 kg/L de sal a razón de 2 L/min, y la mezcla bien agitada sale a la misma razón. Encontrar la cantidad de sal en el tanque en cualquier instante \(t\).
+
+\begin{myproof}
+\textbf{Paso 1.} Sea \(x(t)\) la cantidad de sal (kg). Tasa de entrada de sal: \(2 \cdot 0.1 = 0.2\) kg/min. Tasa de salida: concentración \(\frac{x}{100}\) kg/L multiplicada por 2 L/min = \(\frac{x}{50}\) kg/min.
+Ecuación:
+\[
+\frac{dx}{dt} = 0.2 - \frac{x}{50}.
+\]
+
+\textbf{Paso 2.} Escribir en forma lineal:
+\[
+\frac{dx}{dt} + \frac{1}{50}x = 0.2.
+\]
+Factor integrante: \(\mu(t)=e^{t/50}\).
+
+\textbf{Paso 3.} Multiplicar:
+\[
+(e^{t/50} x)' = 0.2 e^{t/50}.
+\]
+Integrar:
+\[
+e^{t/50} x = 0.2\cdot 50 e^{t/50} + C = 10 e^{t/50} + C.
+\]
+
+\textbf{Paso 4.} Despejar y usar \(x(0)=5\):
+\[
+x(t) = 10 + C e^{-t/50}, \quad 5 = 10 + C \Rightarrow C = -5.
+\]
+Así,
+\[
+\boxed{x(t) = 10 - 5 e^{-t/50} \text{ kg}}.
+\]
+\end{myproof}
+\end{example}
+
+\section{Ecuaciones exactas}
+
+Una EDO de la forma
+\[
+M(x,y)\,dx + N(x,y)\,dy = 0
+\]
+es \textbf{exacta} si
+\[
+\frac{\partial M}{\partial y} = \frac{\partial N}{\partial x}.
+\]
+Entonces existe una función \(F(x,y)\) tal que \(F_x = M\) y \(F_y = N\), y la solución es \(F(x,y)=C\).
+
+Si no es exacta, a veces se puede multiplicar por un \textbf{factor integrante} \(\mu(x)\) o \(\mu(y)\) para hacerla exacta.
+
+\begin{example}[Ecuación exacta]
+Resolver
+\[
+(2xy + y^2)\,dx + (x^2 + 2xy)\,dy = 0.
+\]
+
+\begin{myproof}
+\textbf{Paso 1.} Identificar \(M=2xy+y^2\), \(N=x^2+2xy\). Verificar exactitud:
+\[
+M_y = 2x + 2y, \quad N_x = 2x + 2y \quad\Rightarrow\quad M_y = N_x.
+\]
+
+\textbf{Paso 2.} Buscar \(F\) tal que \(F_x = M = 2xy+y^2\). Integrar respecto a \(x\):
+\[
+F(x,y) = x^2 y + x y^2 + \phi(y).
+\]
+
+\textbf{Paso 3.} Derivar respecto a \(y\) y comparar con \(N\):
+\[
+F_y = x^2 + 2xy + \phi'(y) = x^2 + 2xy \quad\Rightarrow\quad \phi'(y)=0 \quad\Rightarrow\quad \phi(y)=C_1.
+\]
+
+\textbf{Paso 4.} La solución es \(F(x,y)=C\), es decir,
+\[
+x^2 y + x y^2 = C.
+\]
+Reescribimos como
+\[
+\boxed{xy(x+y)=C}.
+\]
+\end{myproof}
+\end{example}
+
+\begin{example}[Factor integrante dependiente de x]
+Resolver
+\[
+(3xy + y^2)\,dx + (x^2 + xy)\,dy = 0.
+\]
+
+\begin{myproof}
+\textbf{Paso 1.} \(M=3xy+y^2\), \(N=x^2+xy\). Calcular \(M_y = 3x+2y\), \(N_x = 2x+y\). No son iguales, así que no es exacta.
+
+\textbf{Paso 2.} Buscar factor integrante \(\mu(x)\) tal que \((\mu M)_y = (\mu N)_x\). Si \(\mu=\mu(x)\):
+\[
+\mu M_y = \mu' N + \mu N_x \quad\Rightarrow\quad \frac{\mu'}{\mu} = \frac{M_y - N_x}{N}.
+\]
+Calcular:
+\[
+\frac{M_y - N_x}{N} = \frac{(3x+2y) - (2x+y)}{x^2+xy} = \frac{x+y}{x(x+y)} = \frac{1}{x}.
+\]
+Entonces \(\mu'/\mu = 1/x\), luego \(\mu = x\).
+
+\textbf{Paso 3.} Multiplicar la EDO por \(x\):
+\[
+(3x^2 y + x y^2)\,dx + (x^3 + x^2 y)\,dy = 0.
+\]
+Ahora \(M' = 3x^2 y + x y^2\), \(N' = x^3 + x^2 y\). Verificar: \(M'_y = 3x^2+2xy\), \(N'_x = 3x^2+2xy\), exacta.
+
+\textbf{Paso 4.} Hallar \(F\): \(F_x = M' \Rightarrow F = x^3 y + \frac{x^2 y^2}{2} + \phi(y)\). Derivar respecto a \(y\): \(F_y = x^3 + x^2 y + \phi'(y) = N' = x^3 + x^2 y\), luego \(\phi'=0\). Solución:
+\[
+x^3 y + \frac{x^2 y^2}{2} = C.
+\]
+Por tanto,
+\[
+\boxed{x^2 y\left(x + \frac{y}{2}\right) = C}.
+\]
+\end{myproof}
+\end{example}
+
+\section{Ecuación de Bernoulli}
+
+La ecuación de Bernoulli tiene la forma
+\[
+y' + P(x)y = Q(x)y^n, \quad n \neq 0,1.
+\]
+Mediante el cambio de variable
+\[
+u = y^{1-n},
+\]
+se transforma en una ecuación lineal en \(u\).
+
+\begin{example}[Ecuación de Bernoulli]
+Resolver
+\[
+y' + \frac{2}{x} y = 3x^2 y^2.
+\]
+
+\begin{myproof}
+\textbf{Paso 1.} Identificar \(n=2\). Sea \(u = y^{1-2} = y^{-1}\). Entonces \(y = u^{-1}\), \(y' = -u^{-2}u'\).
+
+\textbf{Paso 2.} Sustituir en la EDO:
+\[
+-u^{-2}u' + \frac{2}{x} u^{-1} = 3x^2 u^{-2}.
+\]
+Multiplicar por \(-u^2\):
+\[
+u' - \frac{2}{x}u = -3x^2.
+\]
+
+\textbf{Paso 3.} Resolver la lineal: \(u' - \frac{2}{x}u = -3x^2\). Factor integrante:
+\[
+\mu(x) = \exp\left(\int -\frac{2}{x}\,dx\right) = e^{-2\ln x} = x^{-2}.
+\]
+Multiplicar:
+\[
+(x^{-2} u)' = -3.
+\]
+Integrar:
+\[
+x^{-2} u = -3x + C \quad\Rightarrow\quad u = -3x^3 + C x^2.
+\]
+
+\textbf{Paso 4.} Regresar a \(y = u^{-1}\):
+\[
+y = \frac{1}{-3x^3 + C x^2}.
+\]
+Por tanto,
+\[
+\boxed{y(x) = \frac{1}{x^2(C - 3x)}}.
+\]
+\end{myproof}
+\end{example}
+
+\section{Aplicaciones}
+
+\subsection{Ley de enfriamiento de Newton}
+La ley de Newton establece que la tasa de cambio de la temperatura de un cuerpo es proporcional a la diferencia entre su temperatura y la del medio ambiente:
+\[
+\frac{dT}{dt} = -k(T - T_a),
+\]
+donde \(T_a\) es la temperatura ambiente.
+
+\begin{example}[Enfriamiento de un objeto]
+Un objeto a \(100^\circ\)C se coloca en una habitación a \(20^\circ\)C. Después de 5 minutos su temperatura es \(80^\circ\)C. Encontrar el tiempo necesario para que alcance \(30^\circ\)C.
+
+\begin{myproof}
+\textbf{Paso 1.} Modelo: \(\frac{dT}{dt} = -k(T-20)\). Separar:
+\[
+\frac{dT}{T-20} = -k\,dt.
+\]
+
+\textbf{Paso 2.} Integrar:
+\[
+\ln|T-20| = -kt + C \quad\Rightarrow\quad T(t) = 20 + Ce^{-kt}.
+\]
+Con \(T(0)=100\): \(100 = 20 + C \Rightarrow C=80\). Luego \(T(t)=20+80e^{-kt}\).
+
+\textbf{Paso 3.} Usar \(T(5)=80\):
+\[
+80 = 20 + 80e^{-5k} \Rightarrow e^{-5k} = \frac{60}{80} = 0.75 \Rightarrow k = -\frac{\ln 0.75}{5}.
+\]
+
+\textbf{Paso 4.} Hallar \(t\) para \(T=30\):
+\[
+30 = 20 + 80e^{-kt} \Rightarrow e^{-kt} = \frac{10}{80} = 0.125 \Rightarrow t = \frac{\ln 0.125}{-k} = \frac{5\ln 0.125}{\ln 0.75}.
+\]
+Calculando:
+\[
+\boxed{t \approx 31.45 \text{ minutos}}.
+\]
+\end{myproof}
+\end{example}
+
+\subsection{Circuito RL con fuente senoidal}
+Consideremos ahora \(E(t)=E_0 \sen(\omega t)\). La ecuación es \(L i' + R i = E_0 \sen(\omega t)\). La solución particular se obtiene por coeficientes indeterminados o por factor integrante.
+
+\begin{example}[Respuesta forzada senoidal]
+Resolver \(i' + \frac{R}{L}i = \frac{E_0}{L}\sen(\omega t)\) con \(i(0)=0\).
+
+\begin{myproof}
+\textbf{Paso 1.} Factor integrante \(\mu(t)=e^{(R/L)t}\). Multiplicar:
+\[
+(e^{(R/L)t} i)' = \frac{E_0}{L} e^{(R/L)t}\sen(\omega t).
+\]
+
+\textbf{Paso 2.} Integrar. Usamos la fórmula:
+\[
+\int e^{at}\sen(\omega t)\,dt = \frac{e^{at}}{a^2+\omega^2}(a\sen\omega t - \omega\cos\omega t).
+\]
+Aquí \(a=R/L\). Entonces:
+\[
+e^{(R/L)t} i = \frac{E_0}{L}\cdot \frac{e^{(R/L)t}}{(R/L)^2+\omega^2}\left(\frac{R}{L}\sen\omega t - \omega\cos\omega t\right) + C.
+\]
+
+\textbf{Paso 3.} Despejar \(i\):
+\[
+i(t) = \frac{E_0}{L}\cdot \frac{1}{(R/L)^2+\omega^2}\left(\frac{R}{L}\sen\omega t - \omega\cos\omega t\right) + Ce^{-(R/L)t}.
+\]
+
+\textbf{Paso 4.} Aplicar \(i(0)=0\):
+\[
+0 = \frac{E_0}{L}\cdot \frac{1}{(R/L)^2+\omega^2}\left(-\omega\right) + C \Rightarrow C = \frac{E_0 \omega}{L}\cdot \frac{1}{(R/L)^2+\omega^2}.
+\]
+Por tanto,
+\[
+\boxed{i(t) = \frac{E_0}{L}\cdot \frac{1}{(R/L)^2+\omega^2}\left[\frac{R}{L}\sen\omega t - \omega\cos\omega t + \omega e^{-(R/L)t}\right]}.
+\]
+\end{myproof}
+\end{example}
+
+\section{Problemas propuestos}
+
+\begin{prob}
+Resolver \(y' = 2x y\) con \(y(0)=3\).
+\end{prob}
+\begin{myproof}
+Separando: \(\frac{dy}{y}=2x\,dx\). Integrar: \(\ln|y|=x^2+C\), \(y=Ce^{x^2}\). Usando \(y(0)=3\): \(C=3\). \(\boxed{y=3e^{x^2}}\).
+\end{myproof}
+
+\begin{prob}
+Resolver \(\frac{dy}{dx} = \frac{x}{y}\) con \(y(1)=2\).
+\end{prob}
+\begin{myproof}
+\(y\,dy = x\,dx\). Integrar: \(\frac{y^2}{2} = \frac{x^2}{2}+C \Rightarrow y^2 - x^2 = C\). Con \(x=1,y=2\): \(4-1=3\). \(\boxed{y^2 - x^2 = 3}\).
+\end{myproof}
+
+\begin{prob}
+Resolver \(y' + 3y = 6\).
+\end{prob}
+\begin{myproof}
+Factor integrante \(\mu=e^{3x}\). \((e^{3x}y)'=6e^{3x}\). Integrar: \(e^{3x}y=2e^{3x}+C \Rightarrow y=2+Ce^{-3x}\). \(\boxed{y=2+Ce^{-3x}}\).
+\end{myproof}
+
+\begin{prob}
+Resolver \(y' - y = e^x\).
+\end{prob}
+\begin{myproof}
+\(\mu=e^{-x}\). \((e^{-x}y)'=1\). Integrar: \(e^{-x}y=x+C \Rightarrow y=e^x(x+C)\). \(\boxed{y=e^x(x+C)}\).
+\end{myproof}
+
+\begin{prob}
+Resolver \((x^2+y^2)\,dx - 2xy\,dy = 0\).
+\end{prob}
+\begin{myproof}
+\(M=x^2+y^2\), \(N=-2xy\). \(M_y=2y\), \(N_x=-2y\) no son iguales. Buscamos factor integrante \(\mu(y)\): \(\frac{M_y-N_x}{M} = \frac{2y - (-2y)}{x^2+y^2} = \frac{4y}{x^2+y^2}\), no depende solo de y. Mejor reescribir: \(\frac{dy}{dx} = \frac{x^2+y^2}{2xy} = \frac{x}{2y}+\frac{y}{2x}\). Homogénea. Sea \(y=vx\): \(v+xv' = \frac{1}{2v}+\frac{v}{2} \Rightarrow xv' = \frac{1-v^2}{2v}\). Separar: \(\frac{2v}{1-v^2}dv = \frac{dx}{x}\). Integrar: \(-\ln|1-v^2| = \ln|x|+C \Rightarrow \ln|1-v^2| = -\ln|x|+C \Rightarrow 1-v^2 = \frac{C}{x}\). Sustituir \(v=y/x\): \(1 - \frac{y^2}{x^2} = \frac{C}{x} \Rightarrow x^2 - y^2 = Cx\). \(\boxed{x^2 - y^2 = Cx}\).
+\end{myproof}
+
+\begin{prob}
+Resolver \(y' + \frac{2}{x}y = 3x\).
+\end{prob}
+\begin{myproof}
+Lineal: \(\mu=x^2\). \((x^2 y)'=3x^3\). Integrar: \(x^2 y = \frac{3}{4}x^4 + C \Rightarrow y = \frac{3}{4}x^2 + Cx^{-2}\). \(\boxed{y = \frac{3}{4}x^2 + \frac{C}{x^2}}\).
+\end{myproof}
+
+\begin{prob}
+Resolver \(y' = \frac{y}{x} + x^2\).
+\end{prob}
+\begin{myproof}
+Lineal: \(y' - \frac{1}{x}y = x^2\). \(\mu = e^{-\ln x}=x^{-1}\). \((x^{-1}y)'=x\). Integrar: \(x^{-1}y = \frac{x^2}{2}+C \Rightarrow y = \frac{x^3}{2}+Cx\). \(\boxed{y = \frac{x^3}{2}+Cx}\).
+\end{myproof}
+
+\begin{prob}
+Resolver \(y' = e^{x-y}\).
+\end{prob}
+\begin{myproof}
+Separable: \(e^y dy = e^x dx\). Integrar: \(e^y = e^x + C \Rightarrow y = \ln(e^x+C)\). \(\boxed{y = \ln(e^x+C)}\).
+\end{myproof}
+
+\begin{prob}
+Resolver \(y' = y^2 \sen x\).
+\end{prob}
+\begin{myproof}
+\(\frac{dy}{y^2} = \sen x\,dx\). Integrar: \(-\frac{1}{y} = -\cos x + C \Rightarrow y = \frac{1}{\cos x - C}\). \(\boxed{y = \frac{1}{\cos x - C}}\).
+\end{myproof}
+
+\begin{prob}
+Resolver \(y' = \frac{2x}{y+x^2 y}\).
+\end{prob}
+\begin{myproof}
+Factor \(y+x^2 y = y(1+x^2)\). Entonces \(y' = \frac{2x}{y(1+x^2)}\). Separar: \(y\,dy = \frac{2x}{1+x^2}dx\). Integrar: \(\frac{y^2}{2} = \ln(1+x^2)+C \Rightarrow y^2 = 2\ln(1+x^2)+C\). \(\boxed{y^2 = 2\ln(1+x^2)+C}\).
+\end{myproof}
+
+\begin{prob}
+Resolver \(y' + y\tan x = \sec x\).
+\end{prob}
+\begin{myproof}
+\(\mu = e^{\int \tan x dx} = e^{-\ln|\cos x|} = \sec x\). \((\sec x \, y)' = \sec^2 x\). Integrar: \(\sec x \, y = \tan x + C \Rightarrow y = \sen x + C\cos x\). \(\boxed{y = \sen x + C\cos x}\).
+\end{myproof}
+
+\begin{prob}
+Resolver \(y' = \frac{x+y}{x-y}\).
+\end{prob}
+\begin{myproof}
+Homogénea. \(y=vx\): \(v+xv' = \frac{1+v}{1-v}\). \(xv' = \frac{1+v}{1-v} - v = \frac{1+v - v + v^2}{1-v} = \frac{1+v^2}{1-v}\). Separar: \(\frac{1-v}{1+v^2}dv = \frac{dx}{x}\). Integrar: \(\arctan v - \frac{1}{2}\ln(1+v^2) = \ln|x| + C\). Sustituir \(v=y/x\): \(\arctan(y/x) - \frac{1}{2}\ln\left(1+\frac{y^2}{x^2}\right) = \ln|x| + C\). \(\boxed{\arctan\left(\frac{y}{x}\right) = \frac{1}{2}\ln(x^2+y^2) + C}\).
+\end{myproof}
+
+\begin{prob}
+Resolver \(y' = \frac{2y}{x} + x^2\).
+\end{prob}
+\begin{myproof}
+Lineal: \(y' - \frac{2}{x}y = x^2\). \(\mu = x^{-2}\). \((x^{-2}y)' = 1\). Integrar: \(x^{-2}y = x + C \Rightarrow y = x^3 + Cx^2\). \(\boxed{y = x^3 + Cx^2}\).
+\end{myproof}
+
+\begin{prob}
+Resolver \(y' = \frac{y}{x} + \frac{x}{y}\).
+\end{prob}
+\begin{myproof}
+Homogénea. \(y=vx\): \(v+xv' = v + \frac{1}{v}\). \(xv' = \frac{1}{v}\). \(v\,dv = \frac{dx}{x}\). Integrar: \(\frac{v^2}{2} = \ln|x| + C \Rightarrow v^2 = 2\ln|x| + C\). Sustituir: \(\frac{y^2}{x^2} = 2\ln|x| + C \Rightarrow y^2 = x^2(2\ln|x| + C)\). \(\boxed{y^2 = x^2(2\ln|x| + C)}\).
+\end{myproof}
+
+\begin{prob}
+Resolver \(y' + 2xy = x\).
+\end{prob}
+\begin{myproof}
+\(\mu = e^{x^2}\). \((e^{x^2}y)' = x e^{x^2}\). Integrar: \(e^{x^2}y = \frac{1}{2}e^{x^2} + C \Rightarrow y = \frac{1}{2} + Ce^{-x^2}\). \(\boxed{y = \frac{1}{2} + Ce^{-x^2}}\).
+\end{myproof}
+
+\begin{prob}
+Resolver \(y' = \frac{1}{x+y}\).
+\end{prob}
+\begin{myproof}
+Invertir: \(\frac{dx}{dy} = x+y\), lineal en \(x(y)\): \(x' - x = y\). Factor integrante \(\mu = e^{-y}\). \((e^{-y}x)' = y e^{-y}\). Integrar: \(e^{-y}x = -y e^{-y} - e^{-y} + C \Rightarrow x = -y - 1 + C e^y\). \(\boxed{x = Ce^y - y - 1}\).
+\end{myproof}
+
+\begin{prob}
+Resolver \(y' = \frac{x^2}{y^2}\).
+\end{prob}
+\begin{myproof}
+\(y^2 dy = x^2 dx\). Integrar: \(\frac{y^3}{3} = \frac{x^3}{3} + C \Rightarrow y^3 = x^3 + C\). \(\boxed{y^3 = x^3 + C}\).
+\end{myproof}
+
+\begin{prob}
+Resolver \(y' = \frac{y}{x} - \tan\left(\frac{y}{x}\right)\).
+\end{prob}
+\begin{myproof}
+Homogénea: \(y=vx\): \(v+xv' = v - \tan v\). \(xv' = -\tan v\). \(\frac{dv}{\tan v} = -\frac{dx}{x}\). \(\cot v\, dv = -dx/x\). Integrar: \(\ln|\sen v| = -\ln|x| + C \Rightarrow \sen v = \frac{C}{x}\). Sustituir: \(\sen(y/x) = \frac{C}{x}\). \(\boxed{x \sen(y/x) = C}\).
+\end{myproof}
+
+\begin{prob}
+Resolver \(y' = \frac{3x^2 y}{x^3+1}\).
+\end{prob}
+\begin{myproof}
+Separable: \(\frac{dy}{y} = \frac{3x^2}{x^3+1}dx\). Integrar: \(\ln|y| = \ln|x^3+1| + C \Rightarrow y = C(x^3+1)\). \(\boxed{y = C(x^3+1)}\).
+\end{myproof}

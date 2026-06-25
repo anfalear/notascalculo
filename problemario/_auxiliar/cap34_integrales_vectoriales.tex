@@ -1,0 +1,1856 @@
+\chapter{Campos vectoriales, integrales de línea y de superficie}
+
+
+En este módulo se exploran dos conceptos fundamentales del cálculo
+vectorial. Primero, los \textbf{campos vectoriales} — funciones que
+asignan un vector a cada punto del espacio— y en particular los
+\textbf{campos conservativos}, que son aquellos que provienen del
+gradiente de una función escalar. Estos campos gozan de una propiedad
+notable: el trabajo realizado a lo largo de una trayectoria no depende
+del camino recorrido, sino únicamente de los puntos inicial y final.
+
+En segundo lugar, se introduce la \textbf{integral de línea de un campo
+escalar}, una herramienta que generaliza la integral definida a
+trayectorias curvas en el plano o en el espacio. Esta integral permite
+acumular cantidades como masa, carga o temperatura a lo largo de un
+camino, y su cálculo se reduce a una integral ordinaria mediante una
+parametrización adecuada de la curva.
+
+Ambos conceptos son pilares del cálculo multivariable y tienen
+aplicaciones directas en física, ingeniería y geometría. La conexión
+entre ellos aparece cuando el campo escalar es una función potencial:
+entonces la integral de línea del campo vectorial gradiente se evalúa
+simplemente como la diferencia de potencial entre los extremos.
+
+\section{Campos Vectoriales: Gradiente y Conservativos}
+
+\subsection*{Definición de Campo Vectorial}
+
+Un \textbf{campo vectorial} en \(\mathbb{R}^3\) es una función
+\(\mathbf{F}: D \subseteq \mathbb{R}^3 \to \mathbb{R}^3\) que asigna a
+cada punto \((x,y,z)\) de su dominio un vector tridimensional. Se
+escribe como
+\[
+\mathbf{F}(x,y,z) = M(x,y,z)\,\mathbf{i} + N(x,y,z)\,\mathbf{j}
++ P(x,y,z)\,\mathbf{k},
+\]
+donde \(M,N,P\) son funciones escalares llamadas \textbf{componentes}
+del campo. En \(\mathbb{R}^2\), un campo vectorial tiene la forma
+\[
+\mathbf{F}(x,y) = M(x,y)\,\mathbf{i} + N(x,y)\,\mathbf{j}.
+\]
+
+\begin{rem}
+Los campos vectoriales modelan magnitudes que tienen dirección y
+sentido en cada punto del espacio. Ejemplos físicos incluyen:
+\begin{itemize}
+  \item el campo de velocidades de un fluido (cada partícula se mueve
+  con la velocidad indicada por el campo),
+  \item el campo gravitacional (la fuerza que experimenta una masa
+  unitaria),
+  \item el campo eléctrico (la fuerza por unidad de carga),
+  \item el campo magnético.
+\end{itemize}
+\end{rem}
+
+\begin{definition}[Continuidad y diferenciabilidad de un campo vectorial]
+Un campo vectorial \(\mathbf{F} = M\mathbf{i}+N\mathbf{j}+P\mathbf{k}\)
+es \textbf{continuo} en una región \(D\) si cada una de sus funciones
+componentes \(M,N,P\) es continua en \(D\). Es \textbf{diferenciable}
+si cada componente tiene derivadas parciales continuas en \(D\).
+\end{definition}
+
+\subsection*{Campo Vectorial Gradiente}
+
+Dada una función escalar \(f: D \subseteq \mathbb{R}^n \to \mathbb{R}\)
+diferenciable, su \textbf{gradiente} es el campo vectorial definido por
+\[
+\nabla f(x,y) = f_x(x,y)\,\mathbf{i} + f_y(x,y)\,\mathbf{j}
+\quad \text{en } \mathbb{R}^2,
+\]
+y
+\[
+\nabla f(x,y,z) = f_x(x,y,z)\,\mathbf{i}
++ f_y(x,y,z)\,\mathbf{j}
++ f_z(x,y,z)\,\mathbf{k}
+\quad \text{en } \mathbb{R}^3.
+\]
+
+\begin{rem}[Interpretación geométrica del gradiente]
+El vector \(\nabla f(P)\) apunta en la dirección de \textbf{máximo
+crecimiento} de \(f\) en el punto \(P\), y su norma
+\(\|\nabla f(P)\|\) mide la tasa de cambio de \(f\) en esa dirección.
+Además, \(\nabla f(P)\) es perpendicular a las curvas (o superficies)
+de nivel de \(f\) que pasan por \(P\).
+\end{rem}
+
+\subsection*{Campos Vectoriales Conservativos}
+
+Un campo vectorial \(\mathbf{F}\) se dice \textbf{conservativo} si
+existe una función escalar \(\Phi\), llamada \textbf{función
+potencial}, tal que
+\[
+\mathbf{F} = \nabla \Phi.
+\]
+Es decir, un campo conservativo es el gradiente de alguna función
+escalar. En este caso, el campo se denomina \textbf{campo gradiente}.
+
+\begin{theorem}[Caracterización de campos conservativos en el plano]
+Sean \(M(x,y)\) y \(N(x,y)\) funciones con derivadas parciales continuas
+en una región abierta \(R\). El campo vectorial
+\(\mathbf{F}(x,y) = M(x,y)\mathbf{i} + N(x,y)\mathbf{j}\) es
+conservativo si y solo si
+\[
+\frac{\partial N}{\partial x} = \frac{\partial M}{\partial y}
+\quad \text{en } R.
+\]
+\end{theorem}
+
+\begin{rem}
+La condición \(\partial N/\partial x = \partial M/\partial y\) es
+necesaria y suficiente para la existencia de función potencial en
+regiones \emph{simplemente conexas} (es decir, sin agujeros). En
+regiones con agujeros, la igualdad de derivadas cruzadas no basta:
+puede haber campos con rotacional nulo que no sean conservativos.
+\end{rem}
+
+\begin{rem}[Propiedades de los campos conservativos]
+Si \(\mathbf{F} = \nabla \Phi\) es conservativo, entonces:
+\begin{enumerate}
+  \item La integral de línea de \(\mathbf{F}\) entre dos puntos
+  \emph{no depende del camino} seguido, sino solo de los puntos
+  inicial y final.
+  \item En regiones simplemente conexas, su rotacional es nulo:
+  \[
+  \nabla \times \mathbf{F} = \mathbf{0}.
+  \]
+  \item El trabajo realizado por \(\mathbf{F}\) a lo largo de una
+  curva cerrada es cero.
+\end{enumerate}
+\end{rem}
+
+\begin{example}[Verificación de campo conservativo en el plano]
+Determine si el campo
+\[
+\mathbf{F}(x,y) = (2x y)\,\mathbf{i} + (x^2 + 3y^2)\,\mathbf{j}
+\]
+es conservativo. En caso afirmativo, halle su función potencial.
+\begin{myproof}
+\textbf{Paso 1. Identificar componentes.}
+Aquí \(M(x,y) = 2xy\) y \(N(x,y) = x^2 + 3y^2\).
+
+\textbf{Paso 2. Verificar condición de igualdad de derivadas cruzadas.}
+Calculamos:
+\[
+\frac{\partial N}{\partial x} = 2x, \qquad
+\frac{\partial M}{\partial y} = 2x.
+\]
+Como \(\partial N/\partial x = \partial M/\partial y\), el campo
+cumple la condición necesaria en todo \(\mathbb{R}^2\), que es una
+región simplemente conexa. Por tanto, \(\mathbf{F}\) es conservativo.
+
+\textbf{Paso 3. Hallar la función potencial.}
+Buscamos \(\Phi(x,y)\) tal que \(\nabla \Phi = \mathbf{F}\):
+\[
+\Phi_x = 2xy, \qquad \Phi_y = x^2 + 3y^2.
+\]
+Integramos \(\Phi_x\) respecto a \(x\):
+\[
+\Phi(x,y) = \int 2xy \, dx = x^2 y + g(y).
+\]
+Derivamos respecto a \(y\):
+\[
+\Phi_y = x^2 + g'(y).
+\]
+Igualamos con la segunda componente:
+\[
+x^2 + g'(y) = x^2 + 3y^2 \implies g'(y) = 3y^2.
+\]
+Integrando: \(g(y) = y^3 + C\). Por tanto:
+\[
+\Phi(x,y) = x^2 y + y^3 + C.
+\]
+Verificamos: \(\nabla \Phi = (2xy)\,\mathbf{i} + (x^2+3y^2)\,\mathbf{j}
+= \mathbf{F}\). \(\boxed{\text{Es conservativo con } \Phi = x^2 y + y^3 + C}\).
+\end{myproof}
+\end{example}
+
+\section{Integral de Línea de un Campo Escalar}
+
+La integral de línea de un campo escalar generaliza la integral
+definida a curvas. En lugar de integrar sobre un intervalo en el eje
+\(x\), se integra sobre una curva \(C\) en el plano o en el espacio,
+acumulando los valores de una función escalar \(f\) a lo largo de la
+curva.
+
+\subsection*{Definición mediante suma de Riemann}
+
+Sea \(C\) una curva suave en \(\mathbb{R}^2\) parametrizada por
+\(\mathbf{r}(t) = (x(t), y(t))\), con \(a \le t \le b\). Dividimos
+el intervalo \([a,b]\) en \(n\) subintervalos, lo que induce una
+partición de la curva en pequeños segmentos de longitud \(\Delta s_i\).
+En cada segmento elegimos un punto \((x_i^*, y_i^*)\) y formamos la
+suma
+\[
+\sum_{i=1}^n f(x_i^*, y_i^*) \,\Delta s_i.
+\]
+La \textbf{integral de línea de \(f\) a lo largo de \(C\)} es el
+límite de estas sumas cuando la partición se refina:
+\[
+\int_C f(x,y)\,ds = \lim_{n\to\infty}
+\sum_{i=1}^n f(x_i^*, y_i^*) \,\Delta s_i.
+\]
+En \(\mathbb{R}^3\), la definición es análoga:
+\[
+\int_C f(x,y,z)\,ds = \lim_{n\to\infty}
+\sum_{i=1}^n f(x_i^*, y_i^*, z_i^*) \,\Delta s_i.
+\]
+
+\begin{rem}
+La notación \(ds\) representa el \textbf{elemento de longitud de
+arco}. Para una curva parametrizada \(\mathbf{r}(t)\),
+\[
+ds = \|\mathbf{r}'(t)\|\,dt.
+\]
+Esta relación es la clave para evaluar la integral de línea mediante
+una integral definida ordinaria.
+\end{rem}
+
+\begin{pasos}[Evaluación de una integral de línea de campo escalar]
+Para calcular \(\int_C f\,ds\), se sigue este protocolo:
+\begin{enumerate}
+  \item \textbf{Parametrizar la curva.} Obtener una parametrización
+  \(\mathbf{r}(t) = (x(t), y(t), z(t))\), \(a \le t \le b\), que
+  recorra la curva \(C\).
+  \item \textbf{Calcular la rapidez.} Hallar
+  \(\|\mathbf{r}'(t)\| = \sqrt{(x')^2 + (y')^2 + (z')^2}\).
+  \item \textbf{Sustituir en el integrando.} Reemplazar \(x,y,z\) por
+  \(x(t),y(t),z(t)\) en \(f\).
+  \item \textbf{Integrar.} Evaluar la integral definida
+  \[
+  \int_a^b f(x(t),y(t),z(t)) \,\|\mathbf{r}'(t)\|\,dt.
+  \]
+\end{enumerate}
+\end{pasos}
+
+\begin{theorem}[Teorema de evaluación para integral de línea de campo escalar]
+Sea \(C\) una curva suave en \(\mathbb{R}^2\) parametrizada por
+\(\mathbf{r}(t) = (x(t), y(t))\), \(a \le t \le b\), con \(x(t)\) y
+\(y(t)\) derivables con derivadas continuas. Sea \(f\) continua en
+una región que contiene a \(C\). Entonces
+\[
+\int_C f(x,y)\,ds =
+\int_a^b f(x(t), y(t)) \sqrt{[x'(t)]^2 + [y'(t)]^2}\,dt.
+\]
+Análogamente, en \(\mathbb{R}^3\):
+\[
+\int_C f(x,y,z)\,ds =
+\int_a^b f(x(t), y(t), z(t)) \sqrt{[x'(t)]^2 + [y'(t)]^2 + [z'(t)]^2}\,dt.
+\]
+\end{theorem}
+
+\begin{rem}[Curvas suaves por partes]
+Muchas curvas no son completamente suaves, pero pueden descomponerse en
+un número finito de curvas suaves \(C_1, C_2, \dots, C_n\). En tal caso,
+\[
+\int_C f\,ds = \int_{C_1} f\,ds + \int_{C_2} f\,ds + \cdots + \int_{C_n} f\,ds.
+\]
+Esta propiedad es consecuencia directa de la aditividad de la integral
+definida.
+\end{rem}
+
+\begin{rem}[Independencia de la orientación para campos escalares]
+A diferencia de las integrales de línea de campos vectoriales, la
+integral de línea de un campo escalar \emph{no} cambia de signo al
+recorrer la curva en sentido contrario:
+\[
+\int_{-C} f\,ds = \int_C f\,ds.
+\]
+Esto se debe a que \(ds\) es siempre positivo, independientemente de
+la orientación.
+\end{rem}
+
+\begin{example}[Integral de línea de un campo escalar en el plano]
+Calcule \(\displaystyle \int_C (x + y)\,ds\), donde \(C\) es el
+segmento de recta desde \((0,0)\) hasta \((1,2)\).
+\begin{myproof}
+\textbf{Paso 1. Parametrizar la curva.}
+El segmento se parametriza como
+\[
+\mathbf{r}(t) = (1-t)(0,0) + t(1,2) = (t, 2t), \qquad 0 \le t \le 1.
+\]
+
+\textbf{Paso 2. Calcular la rapidez.}
+\[
+\mathbf{r}'(t) = (1, 2) \implies
+\|\mathbf{r}'(t)\| = \sqrt{1^2 + 2^2} = \sqrt{5}.
+\]
+
+\textbf{Paso 3. Sustituir en el integrando.}
+\(f(x,y) = x + y\), luego
+\[
+f(x(t), y(t)) = t + 2t = 3t.
+\]
+
+\textbf{Paso 4. Integrar.}
+\[
+\int_C (x+y)\,ds =
+\int_0^1 3t \cdot \sqrt{5}\,dt =
+3\sqrt{5} \int_0^1 t\,dt =
+3\sqrt{5} \cdot \frac{1}{2}
+= \boxed{\frac{3\sqrt{5}}{2}}.
+\]
+\end{myproof}
+\end{example}
+
+\begin{example}[Integral de línea en el espacio]
+Calcule \(\displaystyle \int_C (x^2 + y^2 + z^2)\,ds\), donde \(C\) es
+la hélice circular \(\mathbf{r}(t) = (\cos t, \sin t, t)\),
+\(0 \le t \le 2\pi\).
+\begin{myproof}
+\textbf{Paso 1. Parametrización dada.}
+\(x(t) = \cos t,\; y(t) = \sin t,\; z(t) = t\).
+
+\textbf{Paso 2. Rapidez.}
+\[
+\mathbf{r}'(t) = (-\sin t, \cos t, 1) \implies
+\|\mathbf{r}'(t)\| = \sqrt{\sin^2 t + \cos^2 t + 1} = \sqrt{2}.
+\]
+
+\textbf{Paso 3. Sustitución.}
+\[
+f(x,y,z) = x^2 + y^2 + z^2 = \cos^2 t + \sin^2 t + t^2 = 1 + t^2.
+\]
+
+\textbf{Paso 4. Integrar.}
+\[
+\int_C (x^2 + y^2 + z^2)\,ds =
+\int_0^{2\pi} (1 + t^2)\sqrt{2}\,dt =
+\sqrt{2} \left[ t + \frac{t^3}{3} \right]_0^{2\pi}
+= \sqrt{2} \left( 2\pi + \frac{8\pi^3}{3} \right)
+= \boxed{2\sqrt{2}\,\pi \left(1 + \frac{4\pi^2}{3}\right)}.
+\]
+\end{myproof}
+\end{example}
+
+\begin{example}[Integral sobre una curva suave por partes]
+Calcule \(\displaystyle \int_C (x^2 + y^2)\,ds\), donde \(C\) es la
+frontera del cuadrado con vértices \((0,0)\), \((1,0)\), \((1,1)\),
+\((0,1)\), recorrida en sentido antihorario.
+\begin{myproof}
+La curva \(C\) es la unión de cuatro segmentos:
+\(C_1: (0,0)\to(1,0)\), \(C_2: (1,0)\to(1,1)\),
+\(C_3: (1,1)\to(0,1)\), \(C_4: (0,1)\to(0,0)\).
+
+Por aditividad:
+\[
+\int_C f\,ds = \int_{C_1} f\,ds + \int_{C_2} f\,ds
++ \int_{C_3} f\,ds + \int_{C_4} f\,ds.
+\]
+
+\textbf{Segmento \(C_1\):} \((t,0)\), \(0\le t\le 1\).
+\(\mathbf{r}'=(1,0)\), \(\|\mathbf{r}'\|=1\), \(f=t^2\).
+\[
+\int_{C_1} = \int_0^1 t^2\,dt = \frac{1}{3}.
+\]
+
+\textbf{Segmento \(C_2\):} \((1,t)\), \(0\le t\le 1\).
+\(\|\mathbf{r}'\|=1\), \(f=1+t^2\).
+\[
+\int_{C_2} = \int_0^1 (1+t^2)\,dt = 1 + \frac{1}{3} = \frac{4}{3}.
+\]
+
+\textbf{Segmento \(C_3\):} \((1-t,1)\), \(0\le t\le 1\).
+\(\|\mathbf{r}'\|=1\), \(f=(1-t)^2+1\).
+\[
+\int_{C_3} = \int_0^1 [(1-t)^2 + 1]\,dt
+= \int_0^1 (t^2 - 2t + 2)\,dt
+= \frac{1}{3} - 1 + 2 = \frac{4}{3}.
+\]
+
+\textbf{Segmento \(C_4\):} \((0,1-t)\), \(0\le t\le 1\).
+\(\|\mathbf{r}'\|=1\), \(f=(1-t)^2\).
+\[
+\int_{C_4} = \int_0^1 (1-t)^2\,dt = \frac{1}{3}.
+\]
+
+Sumando:
+\[
+\int_C f\,ds = \frac{1}{3} + \frac{4}{3} + \frac{4}{3} + \frac{1}{3}
+= \frac{10}{3}.
+\]
+\[
+\boxed{\int_C (x^2+y^2)\,ds = \frac{10}{3}}.
+\]
+\end{myproof}
+\end{example}
+
+\section{Problemas propuestos}
+
+\begin{prob}[Campos vectoriales conservativos]
+Determine si los siguientes campos son conservativos. En caso
+afirmativo, halle una función potencial.
+\begin{enumerate}[a)]
+  \item \(\mathbf{F}(x,y) = (e^x \cos y)\,\mathbf{i} - (e^x \sin y)\,\mathbf{j}\).
+  \item \(\mathbf{F}(x,y) = (y^2 + 2xy)\,\mathbf{i} + (x^2 + 2xy)\,\mathbf{j}\).
+  \item \(\mathbf{F}(x,y,z) = (yz, xz, xy)\).
+  \item \(\mathbf{F}(x,y) = \left(\dfrac{-y}{x^2+y^2},
+  \dfrac{x}{x^2+y^2}\right)\) en la región \(\mathbb{R}^2 \setminus \{(0,0)\}\).
+\end{enumerate}
+\end{prob}
+
+\begin{prob}[Cálculo de integrales de línea de campo escalar]
+Evalúe las siguientes integrales de línea:
+\begin{enumerate}[a)]
+  \item \(\displaystyle \int_C (2x + 3y)\,ds\), donde \(C\) es el
+  segmento de \((1,2)\) a \((4,6)\).
+  \item \(\displaystyle \int_C (x^2 + y^2 + z^2)\,ds\), donde \(C\) es
+  la curva \(\mathbf{r}(t) = (t, t^2, t^3)\), \(0\le t\le 1\).
+  \item \(\displaystyle \int_C x\,ds\), donde \(C\) es el arco de
+  la parábola \(y = x^2\) desde \((0,0)\) hasta \((2,4)\).
+  \item \(\displaystyle \int_C \sqrt{1 + 4x^2}\,ds\), donde \(C\) es
+  la curva \(y = x^2\), \(0\le x\le 1\). (Observe la relación con
+  la longitud de arco).
+\end{enumerate}
+\end{prob}
+
+\begin{prob}[Aplicación: masa de un alambre]
+Un alambre tiene la forma de la hélice \(\mathbf{r}(t) = (2\cos t,
+2\sin t, t)\), \(0 \le t \le 4\pi\). Su densidad lineal en cada punto
+es \(\rho(x,y,z) = x^2 + y^2 + z^2\). Calcule la masa total del alambre.
+\end{prob}
+
+\begin{prob}[Curvas suaves por partes]
+Calcule \(\displaystyle \int_C (xy)\,ds\), donde \(C\) es la frontera
+del triángulo con vértices \((0,0)\), \((2,0)\), \((0,1)\), recorrida
+en sentido antihorario.
+\end{prob}
+
+\begin{prob}[Análisis conceptual]
+Responda con verdadero o falso. Justifique.
+\begin{enumerate}[a)]
+  \item Si \(\mathbf{F}(x,y) = \nabla f(x,y)\), entonces
+  \(\mathbf{F}\) es conservativo.
+  \item Si \(\partial N/\partial x = \partial M/\partial y\) en
+  \(\mathbb{R}^2\), entonces \(\mathbf{F} = (M,N)\) es
+  automáticamente conservativo.
+  \item La integral de línea de un campo escalar cambia de signo
+  si se recorre la curva en sentido contrario.
+  \item Para una curva \(C\) suave por partes, la integral de línea
+  se calcula como la suma de las integrales en cada tramo suave.
+  \item El campo \(\mathbf{F}(x,y) = (y, -x)\) es conservativo en
+  \(\mathbb{R}^2\).
+\end{enumerate}
+\end{prob}
+
+\begin{prob}[Relación entre gradiente e integral de línea]
+Sea \(f(x,y) = x^2 y + e^x \cos y\). Calcule \(\nabla f\) y evalúe
+\(\displaystyle \int_C \nabla f \cdot d\mathbf{r}\) a lo largo de
+cualquier curva \(C\) que vaya de \((0,0)\) a \((1,\pi/2)\).
+¿Qué propiedad de los campos conservativos se está utilizando?
+\end{prob}
+
+\begin{prob}[Caso especial: integral de longitud de arco]
+Demuestre que si \(f(x,y,z) = 1\), entonces
+\[
+\int_C 1\,ds = \text{longitud de arco de } C.
+\]
+Utilice esta observación para calcular la longitud de la curva
+\(\mathbf{r}(t) = (t, t^2, t^3)\), \(0\le t\le 1\).
+\end{prob}
+
+La integral de línea de un campo escalar, estudiada en la lección anterior,
+permitía calcular la masa de un alambre o el área de una superficie curva,
+acumulando una función a lo largo de una trayectoria. Ahora se aborda un
+problema más sutil: la integral de línea de un \emph{campo vectorial}, que
+mide la tendencia del campo a empujar o girar a lo largo de la curva. En
+contextos físicos, esta integral se interpreta como el \emph{trabajo}
+realizado por una fuerza al desplazar una partícula a lo largo de una
+trayectoria, o como la \emph{circulación} de un fluido alrededor de un
+obstáculo. A diferencia del caso escalar, el resultado de esta integral
+depende críticamente de la orientación de la curva y, en general, del
+camino seguido.
+
+El objetivo de esta lección es doble. Por un lado, se estudian las
+condiciones bajo las cuales la integral de línea de un campo vectorial
+\emph{no depende} del camino, sino únicamente de los puntos inicial y
+final, lo que conduce al \textbf{teorema fundamental de las integrales
+de línea} y a la noción de \textbf{campo conservativo}. Por otro lado,
+cuando la curva es cerrada, se establece una conexión profunda entre la
+circulación a lo largo de la frontera y el comportamiento interno del
+campo en la región encerrada: esta conexión es el \textbf{teorema de
+Green}, que relaciona una integral de línea con una integral doble del
+rotacional. Este teorema es un caso particular en el plano de resultados
+más generales (Stokes, divergencia) que se estudiarán en la lección
+siguiente, y constituye una de las piedras angulares del cálculo
+vectorial.
+
+%%==========================================================
+\section{Integral de línea de un campo vectorial}
+%%==========================================================
+
+La definición de integral de línea de un campo vectorial se construye
+siguiendo el mismo principio de Riemann que ya se ha usado para
+integrales de funciones escalares: se divide la curva en segmentos
+pequeños, se multiplica la componente del campo en la dirección del
+desplazamiento por la longitud de cada segmento, y se suman todas las
+contribuciones. Al tomar el límite cuando los segmentos se hacen
+infinitamente pequeños, se obtiene la integral.
+
+\begin{definition}[Integral de línea de un campo vectorial]
+Sea $\mathbf{F}$ un campo vectorial continuo definido en una región que
+contiene una curva suave por partes $C$, parametrizada por
+\[
+\mathbf{r}(t) = \langle x(t), y(t), z(t) \rangle, \qquad a \le t \le b,
+\]
+con $\mathbf{r}'$ continua y no nula en cada subintervalo. La
+\textbf{integral de línea de $\mathbf{F}$ a lo largo de $C$} se define
+como
+\[
+\int_C \mathbf{F} \cdot d\mathbf{r}
+= \int_a^b \mathbf{F}(\mathbf{r}(t)) \cdot \mathbf{r}'(t) \, dt.
+\]
+Si $\mathbf{F} = \langle M, N, P \rangle$ y $d\mathbf{r} = \langle dx,
+dy, dz \rangle$, también se escribe
+\[
+\int_C M\,dx + N\,dy + P\,dz.
+\]
+La integral es independiente de la parametrización elegida, siempre que
+se mantenga la misma orientación de $C$.
+\end{definition}
+
+La integral puede interpretarse como la suma de las proyecciones del
+campo sobre la dirección tangente a la curva: si $\mathbf{T}(t)$ es el
+vector tangente unitario y $ds$ el elemento de longitud de arco,
+entonces
+\[
+\int_C \mathbf{F} \cdot d\mathbf{r}
+= \int_C \mathbf{F} \cdot \mathbf{T} \, ds.
+\]
+
+\begin{rem}
+Dos diferencias fundamentales con la integral de línea de un campo
+escalar:
+\begin{itemize}
+    \item La integral de línea de un campo vectorial \emph{cambia de
+    signo} si se invierte la orientación de la curva: $\int_{-C}
+    \mathbf{F}\cdot d\mathbf{r} = -\int_C \mathbf{F}\cdot d\mathbf{r}$.
+    La integral de un campo escalar no depende de la orientación.
+    \item La integral de línea de un campo vectorial mide una
+    \emph{circulación} o \emph{trabajo}; es sensible a la dirección en
+    que se recorre la curva.
+\end{itemize}
+\end{rem}
+
+\begin{pasos}[Cálculo de una integral de línea de un campo vectorial]
+Para evaluar $\displaystyle \int_C \mathbf{F} \cdot d\mathbf{r}$:
+\begin{enumerate}
+    \item \textbf{Parametrizar la curva.} Hallar una parametrización
+    suave por partes $\mathbf{r}(t)$, $a \le t \le b$, que recorra $C$
+    en la orientación dada.
+    \item \textbf{Calcular el vector tangente.} Derivar $\mathbf{r}' (t)$.
+    \item \textbf{Evaluar el campo sobre la curva.} Formar
+    $\mathbf{F}(\mathbf{r}(t))$.
+    \item \textbf{Calcular el producto punto.} Obtener
+    $\mathbf{F}(\mathbf{r}(t)) \cdot \mathbf{r}'(t)$, que es una
+    función escalar de $t$.
+    \item \textbf{Integrar.} Calcular $\displaystyle \int_a^b
+    \mathbf{F}(\mathbf{r}(t)) \cdot \mathbf{r}'(t) \, dt$.
+\end{enumerate}
+\end{pasos}
+
+%%==========================================================
+\begin{example}[Trabajo de una fuerza variable]
+Calcular el trabajo realizado por el campo de fuerzas
+$\mathbf{F}(x,y) = \langle y, x^2 \rangle$ al mover una partícula desde
+$(0,0)$ hasta $(1,1)$ a lo largo de la parábola $y=x^2$.
+\begin{myproof}
+\textbf{Paso 1. Parametrizar la curva.}
+La parábola $y=x^2$ se parametriza como
+\[
+\mathbf{r}(t) = \langle t, t^2 \rangle, \qquad 0 \le t \le 1,
+\]
+que recorre la curva desde $(0,0)$ hasta $(1,1)$ en la orientación
+correcta.
+
+\textbf{Paso 2. Calcular el vector tangente.}
+Derivando:
+\[
+\mathbf{r}'(t) = \langle 1, 2t \rangle.
+\]
+
+\textbf{Paso 3. Evaluar el campo sobre la curva.}
+Sustituyendo $x=t$, $y=t^2$ en $\mathbf{F}$:
+\[
+\mathbf{F}(\mathbf{r}(t)) = \langle t^2, t^2 \rangle.
+\]
+
+\textbf{Paso 4. Calcular el producto punto.}
+\[
+\mathbf{F}(\mathbf{r}(t)) \cdot \mathbf{r}'(t)
+= \langle t^2, t^2 \rangle \cdot \langle 1, 2t \rangle
+= t^2 + 2t^3.
+\]
+
+\textbf{Paso 5. Integrar.}
+\[
+\int_C \mathbf{F} \cdot d\mathbf{r}
+= \int_0^1 (t^2 + 2t^3) \, dt
+= \left[ \frac{t^3}{3} + \frac{t^4}{2} \right]_0^1
+= \frac{1}{3} + \frac{1}{2} = \frac{5}{6}.
+\]
+Por tanto, el trabajo realizado es $\boxed{\dfrac{5}{6}}$ unidades de
+trabajo (en las unidades correspondientes a $\mathbf{F}$ y la
+parametrización).
+\end{myproof}
+\end{example}
+
+\begin{rem}
+Si se hubiera recorrido la misma curva pero en sentido opuesto, la
+parametrización $\mathbf{r}(t)=\langle 1-t, (1-t)^2 \rangle$,
+$0\le t\le 1$, habría producido el valor $-\frac{5}{6}$. Esta
+dependencia de la orientación es característica de la integral de línea
+de campos vectoriales y refleja la diferencia entre el trabajo realizado
+por una fuerza y el trabajo realizado contra ella.
+\end{rem}
+
+%%==========================================================
+\section{Independencia de la trayectoria y campos conservativos}
+%%==========================================================
+
+En el ejemplo anterior, si se hubiera elegido otro camino entre los
+mismos puntos, por ejemplo la línea recta $\mathbf{r}(t)=\langle t,t
+\rangle$, el resultado habría sido
+\[
+\int_C \mathbf{F}\cdot d\mathbf{r}
+= \int_0^1 \langle t, t^2 \rangle \cdot \langle 1,1 \rangle \, dt
+= \int_0^1 (t+t^2) dt = \frac{5}{6}.
+\]
+En este caso particular, el resultado coincidió con el de la parábola.
+Sin embargo, \emph{no siempre ocurre así}. La pregunta fundamental es:
+¿bajo qué condiciones la integral de línea de un campo vectorial
+\emph{no depende} del camino elegido, sino únicamente de los puntos
+extremos?
+
+La respuesta conduce a la noción de \textbf{campo conservativo}, que
+es el análogo en varias variables de la antiderivada en una variable.
+
+\begin{definition}[Campo conservativo]
+Un campo vectorial $\mathbf{F}$ definido en una región $D$ se dice
+\textbf{conservativo} si existe una función escalar $f$ (llamada
+\textbf{función potencial}) tal que
+\[
+\mathbf{F} = \nabla f
+\]
+en todo punto de $D$. Es decir, $\mathbf{F}$ es el gradiente de $f$.
+\end{definition}
+
+\begin{theorem}[Independencia de la trayectoria]
+Sea $\mathbf{F}$ un campo vectorial continuo en una región abierta y
+conexa $D$. La integral de línea
+\[
+\int_C \mathbf{F} \cdot d\mathbf{r}
+\]
+es \textbf{independiente de la trayectoria} en $D$ (es decir, su valor
+solo depende de los puntos inicial y final, no de la curva que los une)
+si y solo si $\mathbf{F}$ es conservativo en $D$.
+\end{theorem}
+
+\begin{proof}
+(Esquema de la demostración.) Si $\mathbf{F}=\nabla f$, entonces,
+usando la regla de la cadena,
+\[
+\mathbf{F}(\mathbf{r}(t)) \cdot \mathbf{r}'(t)
+= \nabla f(\mathbf{r}(t)) \cdot \mathbf{r}'(t)
+= \frac{d}{dt} f(\mathbf{r}(t)).
+\]
+Por el teorema fundamental del cálculo,
+\[
+\int_C \mathbf{F} \cdot d\mathbf{r}
+= \int_a^b \frac{d}{dt} f(\mathbf{r}(t)) \, dt
+= f(\mathbf{r}(b)) - f(\mathbf{r}(a)),
+\]
+que solo depende de los extremos.
+
+Recíprocamente, si la integral es independiente de la trayectoria, se
+puede definir $f(P)$ como la integral de $\mathbf{F}$ desde un punto
+fijo $P_0$ hasta $P$, y se demuestra que $\nabla f = \mathbf{F}$.
+La demostración formal requiere verificar que las derivadas parciales
+de $f$ coinciden con las componentes de $\mathbf{F}$.
+\end{proof}
+
+\begin{theorem}[Teorema fundamental de las integrales de línea]
+Sea $C$ una curva suave por partes que une los puntos $A$ y $B$,
+contenida en una región $D$. Si $\mathbf{F} = \nabla f$ es un campo
+gradiente continuo en $D$, entonces
+\[
+\int_C \mathbf{F} \cdot d\mathbf{r} = f(B) - f(A).
+\]
+En particular, si $C$ es cerrada ($A=B$), entonces
+\[
+\oint_C \mathbf{F} \cdot d\mathbf{r} = 0.
+\]
+\end{theorem}
+
+\begin{rem}
+El teorema fundamental generaliza la regla de Barrow para integrales
+definidas: la integral del gradiente de $f$ a lo largo de una curva
+es simplemente la diferencia de $f$ en los extremos. Esto simplifica
+radicalmente el cálculo de integrales de línea: en lugar de parametrizar
+la curva, basta con encontrar la función potencial y evaluarla en los
+extremos. La dificultad se traslada entonces a determinar si el campo
+es conservativo y, en caso afirmativo, hallar $f$.
+\end{rem}
+
+\begin{pasos}[Determinación de un campo conservativo y su potencial]
+Para verificar si un campo $\mathbf{F}=\langle M,N,P \rangle$ es
+conservativo y encontrar su función potencial:
+\begin{enumerate}
+    \item \textbf{Verificar el dominio.} La región debe ser abierta y
+    conexa. En $\mathbb{R}^2$, si el dominio es simplemente conexo
+    (sin agujeros), basta comprobar la condición de simetría de las
+    derivadas cruzadas:
+    \[
+    \frac{\partial M}{\partial y} = \frac{\partial N}{\partial x}.
+    \]
+    En $\mathbb{R}^3$, se requiere $\nabla \times \mathbf{F} = \mathbf{0}$
+    (el rotacional es cero).
+    \item \textbf{Integrar una componente.} Si $\mathbf{F} = \nabla f$,
+    entonces $\partial f/\partial x = M$. Integrar $M$ respecto a $x$:
+    \[
+    f(x,y,z) = \int M\,dx + g(y,z),
+    \]
+    donde $g$ es una función que depende solo de las variables
+    restantes.
+    \item \textbf{Derivar y ajustar.} Derivar la expresión anterior
+    respecto a $y$ e igualar a $N$ para determinar $\partial g/\partial y$.
+    Repetir para $P$ si estamos en $\mathbb{R}^3$.
+    \item \textbf{Construir $f$.} Una vez determinadas todas las
+    constantes de integración, escribir $f$ explícitamente.
+\end{enumerate}
+\end{pasos}
+
+\begin{rem}
+La condición de simetría de las derivadas cruzadas ($\partial M/\partial
+y = \partial N/\partial x$ en $\mathbb{R}^2$) es necesaria para que el
+campo sea conservativo, pero solo es suficiente si el dominio es
+\emph{simplemente conexo}. En un dominio con agujeros, puede fallar:
+por ejemplo, el campo $\mathbf{F}(x,y) = \langle -y/(x^2+y^2),
+x/(x^2+y^2) \rangle$ satisface la condición de simetría en su dominio
+$\mathbb{R}^2\setminus\{(0,0)\}$, pero no es conservativo, ya que su
+integral alrededor de la circunferencia unidad es $2\pi \neq 0$.
+\end{rem}
+
+%%==========================================================
+\begin{example}[Aplicación del teorema fundamental]
+Verificar que el campo $\mathbf{F}(x,y) = \langle 2xy, x^2 + 2y \rangle$
+es conservativo, encontrar su función potencial, y calcular
+$\int_C \mathbf{F}\cdot d\mathbf{r}$ a lo largo de cualquier curva que
+una $(0,1)$ con $(1,2)$.
+\begin{myproof}
+\textbf{Paso 1. Verificar la condición de simetría.}
+Aquí $M=2xy$, $N=x^2+2y$. Se calcula:
+\[
+\frac{\partial M}{\partial y} = 2x, \qquad
+\frac{\partial N}{\partial x} = 2x.
+\]
+Como son iguales en todo $\mathbb{R}^2$ (que es simplemente conexo),
+el campo es conservativo.
+
+\textbf{Paso 2. Integrar una componente.}
+Se integra $M$ respecto a $x$:
+\[
+f(x,y) = \int 2xy \, dx = x^2 y + g(y),
+\]
+donde $g$ es una función de $y$ (la constante de integración en $x$).
+
+\textbf{Paso 3. Derivar y ajustar.}
+Derivando $f$ respecto a $y$ e igualando a $N$:
+\[
+\frac{\partial f}{\partial y} = x^2 + g'(y) = x^2 + 2y.
+\]
+Por tanto, $g'(y) = 2y$, de donde $g(y) = y^2 + C$. Tomando $C=0$,
+\[
+f(x,y) = x^2 y + y^2.
+\]
+
+\textbf{Paso 4. Construir $f$.}
+La función potencial es $f(x,y)=x^2 y + y^2$.
+
+\textbf{Paso 5. Aplicar el teorema fundamental.}
+Para cualquier curva que una $A=(0,1)$ y $B=(1,2)$:
+\[
+\int_C \mathbf{F}\cdot d\mathbf{r}
+= f(1,2) - f(0,1)
+= (1^2\cdot 2 + 2^2) - (0^2\cdot 1 + 1^2)
+= (2+4) - 1 = 5.
+\]
+La integral vale $\boxed{5}$, independientemente de la trayectoria.
+\end{myproof}
+\end{example}
+
+\begin{rem}
+Nótese que la función potencial no es única: si se añade una constante
+$C$, la diferencia $f(B)-f(A)$ no se altera. Por tanto, la constante
+de integración es irrelevante para el cálculo de la integral de línea.
+\end{rem}
+
+%%==========================================================
+\section{Teorema de Green}
+%%==========================================================
+
+El teorema de Green establece una conexión entre una integral de línea
+sobre una curva cerrada simple y una integral doble sobre la región
+encerrada por esa curva. Es el primer resultado que relaciona el
+comportamiento de un campo \emph{en el interior} de una región con su
+comportamiento \emph{en la frontera}, y constituye el germen de los
+teoremas de Stokes y de la divergencia que se estudiarán en la lección
+siguiente.
+
+\begin{definition}[Curva cerrada simple y orientación positiva]
+Una curva $C$ en el plano se dice \textbf{cerrada} si su punto inicial
+coincide con su punto final, y \textbf{simple} si no se intersecta a sí
+misma (excepto en los extremos). Su \textbf{orientación positiva} es
+aquella en la que la región encerrada queda siempre a la izquierda al
+recorrer la curva (sentido antihorario para una curva que encierra una
+región convexa).
+\end{definition}
+
+\begin{theorem}[Teorema de Green]
+Sea $C$ una curva suave por partes, cerrada simple, orientada
+positivamente en el plano, y sea $R$ la región encerrada por $C$.
+Si $M(x,y)$ y $N(x,y)$ son funciones con derivadas parciales continuas
+en una región abierta que contiene a $R$, entonces
+\[
+\oint_C M\,dx + N\,dy
+= \iint_R \left( \frac{\partial N}{\partial x} - \frac{\partial M}{\partial y} \right) dA.
+\]
+Equivalentemente, si $\mathbf{F} = \langle M, N \rangle$,
+\[
+\oint_{\partial R} \mathbf{F} \cdot d\mathbf{r}
+= \iint_R (\nabla \times \mathbf{F}) \cdot \mathbf{k} \, dA,
+\]
+donde $\nabla \times \mathbf{F} = \left( \frac{\partial N}{\partial x}
+- \frac{\partial M}{\partial y} \right) \mathbf{k}$ es la componente
+$z$ del rotacional.
+\end{theorem}
+
+\begin{proof}[Demostración pedagógica para regiones simples]
+Basta demostrar el teorema para una región que se pueda describir
+simultáneamente como una región de tipo I y de tipo II. Supóngase que
+$R = \{(x,y) \mid a \le x \le b,\ g_1(x) \le y \le g_2(x)\}$. La
+frontera se compone de cuatro curvas. Para la integral de $M\,dx$,
+se usa el teorema fundamental del cálculo:
+\[
+\oint_C M\,dx
+= \int_{C_1} M\,dx + \int_{C_2} M\,dx
+= \int_a^b M(x,g_1(x))\,dx - \int_a^b M(x,g_2(x))\,dx,
+\]
+donde $C_1$ es la frontera inferior y $C_2$ la superior (orientadas
+correctamente). Por el teorema fundamental,
+\[
+\int_{g_1(x)}^{g_2(x)} \frac{\partial M}{\partial y}\,dy
+= M(x,g_2(x)) - M(x,g_1(x)).
+\]
+Por tanto,
+\[
+\oint_C M\,dx = - \int_a^b \int_{g_1(x)}^{g_2(x)}
+\frac{\partial M}{\partial y}\,dy\,dx
+= -\iint_R \frac{\partial M}{\partial y}\,dA.
+\]
+De manera análoga, expresando $R$ como región de tipo II
+($c \le y \le d,\ h_1(y) \le x \le h_2(y)$), se obtiene
+\[
+\oint_C N\,dy = \iint_R \frac{\partial N}{\partial x}\,dA.
+\]
+Sumando ambas igualdades se obtiene la fórmula de Green.
+\end{proof}
+
+\begin{rem}
+La demostración anterior supone que la región es simple (se puede
+describir como tipo I y tipo II). Para regiones más generales (con
+agujeros o fronteras más complejas), se descomponen en subregiones
+simples y se aplica Green en cada una, sumando los resultados. Las
+integrales de línea sobre los cortes internos se cancelan, dejando
+únicamente la integral sobre la frontera exterior.
+\end{rem}
+
+\begin{pasos}[Aplicación del teorema de Green]
+Para usar el teorema de Green:
+\begin{enumerate}
+    \item \textbf{Identificar $M$ y $N$.} Escribir el campo vectorial
+    como $\mathbf{F}=\langle M,N \rangle$ y la integral de línea como
+    $\oint_C M\,dx + N\,dy$.
+    \item \textbf{Calcular el integrando de la integral doble.}
+    Hallar $\displaystyle \frac{\partial N}{\partial x} -
+    \frac{\partial M}{\partial y}$.
+    \item \textbf{Describir la región $R$.} Identificar la región
+    encerrada por $C$ y determinar sus límites de integración.
+    \item \textbf{Evaluar la integral doble.} Calcular
+    $\displaystyle \iint_R \left( \frac{\partial N}{\partial x} -
+    \frac{\partial M}{\partial y} \right) dA$.
+\end{enumerate}
+\end{pasos}
+
+%%==========================================================
+\begin{example}[Verificación de Green]
+Verificar el teorema de Green para el campo $\mathbf{F}(x,y) =
+\langle -y, x \rangle$ y la región $R$ encerrada por el círculo
+$x^2+y^2=4$.
+\begin{myproof}
+\textbf{Paso 1. Identificar $M$ y $N$.}
+Aquí $M=-y$, $N=x$.
+
+\textbf{Paso 2. Calcular el integrando de la integral doble.}
+\[
+\frac{\partial N}{\partial x} - \frac{\partial M}{\partial y}
+= \frac{\partial}{\partial x}(x) - \frac{\partial}{\partial y}(-y)
+= 1 - (-1) = 2.
+\]
+
+\textbf{Paso 3. Describir la región $R$.}
+$R$ es el disco de radio $2$ centrado en el origen:
+$R = \{(x,y) \mid x^2+y^2 \le 4\}$.
+
+\textbf{Paso 4. Evaluar la integral doble.}
+En coordenadas polares, $dA = r\,dr\,d\theta$, con $0 \le r \le 2$,
+$0 \le \theta \le 2\pi$:
+\[
+\iint_R 2\,dA = 2 \int_0^{2\pi} \int_0^2 r\,dr\,d\theta
+= 2 \cdot 2\pi \cdot \frac{4}{2} = 8\pi.
+\]
+Por el teorema de Green, la integral de línea sobre la frontera
+orientada positivamente debe ser $8\pi$.
+
+\textbf{Verificación directa.}
+Parametrizamos la circunferencia como $\mathbf{r}(t)=\langle 2\cos t,
+2\sin t \rangle$, $0 \le t \le 2\pi$. Entonces
+\[
+\mathbf{F}(\mathbf{r}(t)) = \langle -2\sin t, 2\cos t \rangle,
+\quad \mathbf{r}'(t) = \langle -2\sin t, 2\cos t \rangle.
+\]
+Por tanto,
+\[
+\oint_C \mathbf{F}\cdot d\mathbf{r}
+= \int_0^{2\pi} \langle -2\sin t, 2\cos t \rangle \cdot
+\langle -2\sin t, 2\cos t \rangle \, dt
+= \int_0^{2\pi} 4(\sin^2 t + \cos^2 t)\,dt
+= \int_0^{2\pi} 4\,dt = 8\pi.
+\]
+La igualdad se cumple: $\boxed{8\pi = 8\pi}$.
+\end{myproof}
+\end{example}
+
+%%==========================================================
+\section{Divergencia y rotacional}
+%%==========================================================
+
+El teorema de Green introduce la cantidad $\partial N/\partial x -
+\partial M/\partial y$, que es precisamente la componente $z$ del
+rotacional de $\mathbf{F}$ en dos dimensiones. Para campos en
+$\mathbb{R}^3$, el rotacional es un vector que mide la tendencia del
+campo a \emph{girar} alrededor de un punto, mientras que la divergencia
+mide la tendencia a \emph{fluir} hacia el exterior o el interior.
+
+\begin{definition}[Divergencia]
+La \textbf{divergencia} de un campo vectorial $\mathbf{F}(x,y,z) =
+\langle F_1, F_2, F_3 \rangle$ es el campo escalar
+\[
+\nabla \cdot \mathbf{F}
+= \frac{\partial F_1}{\partial x}
++ \frac{\partial F_2}{\partial y}
++ \frac{\partial F_3}{\partial z}.
+\]
+En $\mathbb{R}^2$, para $\mathbf{F} = \langle M, N \rangle$,
+\[
+\nabla \cdot \mathbf{F} = \frac{\partial M}{\partial x}
++ \frac{\partial N}{\partial y}.
+\]
+\end{definition}
+
+\begin{definition}[Rotacional]
+El \textbf{rotacional} de un campo vectorial $\mathbf{F}(x,y,z) =
+\langle F_1, F_2, F_3 \rangle$ es el campo vectorial
+\[
+\nabla \times \mathbf{F}
+= \begin{vmatrix}
+\mathbf{i} & \mathbf{j} & \mathbf{k} \\
+\partial_x & \partial_y & \partial_z \\
+F_1 & F_2 & F_3
+\end{vmatrix}
+= \left( \frac{\partial F_3}{\partial y} - \frac{\partial F_2}{\partial z} \right)
+\mathbf{i}
++ \left( \frac{\partial F_1}{\partial z} - \frac{\partial F_3}{\partial x} \right)
+\mathbf{j}
++ \left( \frac{\partial F_2}{\partial x} - \frac{\partial F_1}{\partial y} \right)
+\mathbf{k}.
+\]
+En $\mathbb{R}^2$, el rotacional se reduce al escalar (componente $z$)
+\[
+(\nabla \times \mathbf{F}) \cdot \mathbf{k}
+= \frac{\partial N}{\partial x} - \frac{\partial M}{\partial y},
+\]
+donde $\mathbf{F} = \langle M, N, 0 \rangle$.
+\end{definition}
+
+\begin{rem}[Interpretación física]
+\begin{itemize}
+    \item La \textbf{divergencia} mide la densidad de flujo neto que
+    sale de un punto. Si $\nabla\cdot\mathbf{F}>0$, el punto es una
+    \emph{fuente}; si es negativo, un \emph{sumidero}. Un campo
+    incompresible (como el flujo de un fluido a densidad constante)
+    tiene divergencia cero.
+    \item El \textbf{rotacional} mide la circulación local del campo
+    alrededor de un punto. Su dirección indica el eje de rotación, y
+    su magnitud, la intensidad del giro. Un campo con rotacional cero
+    se llama \emph{irrotacional}; si además el dominio es simplemente
+    conexo, el campo es conservativo.
+\end{itemize}
+\end{rem}
+
+En el contexto del teorema de Green, el integrando de la integral doble
+es precisamente la componente $z$ del rotacional de $\mathbf{F}$:
+\[
+\nabla \times \mathbf{F} = \left( \frac{\partial N}{\partial x}
+- \frac{\partial M}{\partial y} \right) \mathbf{k}.
+\]
+Por tanto, el teorema de Green se puede reescribir como
+\[
+\oint_{\partial R} \mathbf{F} \cdot d\mathbf{r}
+= \iint_R (\nabla \times \mathbf{F}) \cdot \mathbf{k} \, dA,
+\]
+que es un caso particular en el plano del teorema de Stokes en
+$\mathbb{R}^3$ (que se estudiará en la lección L4.2).
+
+\begin{rem}[Campos conservativos y rotacional]
+Un campo $\mathbf{F}$ definido en un dominio simplemente conexo es
+conservativo si y solo si $\nabla \times \mathbf{F} = \mathbf{0}$
+(en $\mathbb{R}^3$) o $\partial N/\partial x = \partial M/\partial y$
+(en $\mathbb{R}^2$). Esta es una reformulación práctica de la condición
+de simetría de las derivadas cruzadas.
+\end{rem}
+
+\begin{rem}[El teorema de Green como herramienta de cálculo]
+El teorema de Green no solo es un resultado teórico: permite convertir
+integrales de línea difíciles en integrales dobles más manejables, y
+viceversa. También se usa para calcular áreas de regiones planas
+eligiendo $\mathbf{F}$ tal que $\partial N/\partial x - \partial
+M/\partial y = 1$, por ejemplo $\mathbf{F} = \langle 0, x \rangle$ o
+$\mathbf{F} = \langle -y, 0 \rangle$, de modo que
+\[
+\text{Área}(R) = \oint_{\partial R} x\,dy = -\oint_{\partial R} y\,dx.
+\]
+Este es el principio del planímetro, un instrumento mecánico para medir
+áreas de regiones irregulares.
+\end{rem}
+
+%%==========================================================
+\section{Problemas propuestos}
+%%==========================================================
+
+\begin{prob}
+Calcule la integral de línea $\int_C \mathbf{F}\cdot d\mathbf{r}$ para
+$\mathbf{F}(x,y)=\langle x^2, y^2 \rangle$ a lo largo de los siguientes
+caminos que unen $(0,0)$ con $(1,1)$:
+\begin{enumerate}[(a)]
+    \item la línea recta $y=x$;
+    \item la parábola $x=t$, $y=t^2$;
+    \item la curva quebrada que va de $(0,0)$ a $(1,0)$ y luego a $(1,1)$.
+\end{enumerate}
+Compare los resultados y discuta si el campo es conservativo.
+\end{prob}
+
+\begin{prob}
+Determine si cada campo es conservativo. En caso afirmativo, halle su
+función potencial.
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+    \item $\mathbf{F}(x,y)=\langle 2x, 2y \rangle$
+    \item $\mathbf{F}(x,y)=\langle y^2, 2xy \rangle$
+    \item $\mathbf{F}(x,y)=\langle \cos y, -x\sin y \rangle$
+    \item $\mathbf{F}(x,y)=\langle e^x \cos y, -e^x \sin y \rangle$
+    \item $\mathbf{F}(x,y,z)=\langle 2x, 2y, 2z \rangle$
+    \item $\mathbf{F}(x,y,z)=\langle yz, xz, xy \rangle$
+\end{enumerate}
+\end{multicols}
+\end{prob}
+
+\begin{prob}
+Utilice el teorema fundamental de las integrales de línea para calcular
+$\int_C \mathbf{F}\cdot d\mathbf{r}$ donde $\mathbf{F}(x,y) =
+\langle 2xy^2, 2x^2y \rangle$ y $C$ es cualquier curva suave por partes
+que une $(0,0)$ con $(1,2)$.
+\end{prob}
+
+\begin{prob}
+Un campo de fuerzas $\mathbf{F}(x,y) = \langle e^x \cos y + y,
+-e^x \sin y + x \rangle$ actúa sobre una partícula.
+\begin{enumerate}[(a)]
+    \item Demuestre que $\mathbf{F}$ es conservativo.
+    \item Encuentre la función potencial $f$.
+    \item Calcule el trabajo realizado por $\mathbf{F}$ al mover una
+    partícula desde $(0,0)$ hasta $(1,\pi/2)$.
+\end{enumerate}
+\end{prob}
+
+\begin{prob}
+Verifique el teorema de Green para el campo $\mathbf{F}(x,y) =
+\langle x^2 y, x y^2 \rangle$ y el rectángulo $0\le x\le 2$,
+$0\le y\le 1$.
+\end{prob}
+
+\begin{prob}
+Use el teorema de Green para calcular
+\[
+\oint_C (x^2 + y^2)\,dx + (2xy)\,dy,
+\]
+donde $C$ es el cuadrado con vértices $(0,0)$, $(2,0)$, $(2,2)$,
+$(0,2)$ orientado positivamente.
+\end{prob}
+
+\begin{prob}
+Calcule la integral de línea
+\[
+\oint_C -y^3\,dx + x^3\,dy
+\]
+donde $C$ es el círculo $x^2+y^2=4$ orientado positivamente, usando
+el teorema de Green. Compare con la evaluación directa.
+\end{prob}
+
+\begin{prob}
+Sea $R$ una región plana con frontera $C$. Demuestre que el área de $R$
+está dada por
+\[
+A(R) = \frac{1}{2} \oint_C x\,dy - y\,dx.
+\]
+Use esta fórmula para calcular el área de la elipse $\frac{x^2}{a^2}
++\frac{y^2}{b^2}=1$.
+\end{prob}
+
+\begin{prob}
+Calcule la divergencia y el rotacional de los siguientes campos:
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+    \item $\mathbf{F}(x,y,z)=\langle x^2, y^2, z^2 \rangle$
+    \item $\mathbf{F}(x,y,z)=\langle yz, xz, xy \rangle$
+    \item $\mathbf{F}(x,y,z)=\langle e^x, \sin y, \cos z \rangle$
+    \item $\mathbf{F}(x,y,z)=\langle -y, x, 0 \rangle$
+\end{enumerate}
+\end{multicols}
+\end{prob}
+
+\begin{prob}
+Demuestre que para cualquier campo $\mathbf{F}$ con segundas derivadas
+parciales continuas, se cumple $\nabla \cdot (\nabla \times \mathbf{F})
+= 0$. Esto muestra que el rotacional de un campo siempre es
+\emph{solenoidal} (sin divergencia). Use un ejemplo concreto para
+verificar esta identidad.
+\end{prob}
+
+\begin{prob}
+Interprete físicamente el resultado del problema anterior:
+si $\mathbf{F}$ es el campo de velocidades de un fluido, ¿qué significa
+que $\nabla \cdot (\nabla \times \mathbf{F})=0$?
+\end{prob}
+
+\begin{prob}
+Determine si el campo $\mathbf{F}(x,y) = \langle -y/(x^2+y^2),
+x/(x^2+y^2) \rangle$ es conservativo en su dominio. Calcule su integral
+de línea alrededor de la circunferencia unidad y explique por qué el
+resultado no contradice el teorema fundamental de las integrales de
+línea.
+\end{prob}
+
+Las integrales de línea permitieron sumar campos a lo largo de curvas. Ahora elevamos esa idea una dimensión: en lugar de recorrer un camino, \emph{barremos} una superficie. Este cambio trae consigo dos novedades fundamentales. La primera es geométrica: una superficie tiene curvatura y orientación, y el elemento diferencial debe capturar su área verdadera, no su proyección plana. La segunda es física: si un campo vectorial representa el flujo de un fluido, la cantidad que atraviesa una superficie por unidad de tiempo es exactamente la integral de superficie del campo. Los teoremas de la divergencia y de Stokes cierran el círculo del cálculo vectorial: relacionan lo que ocurre en el interior de un volumen o sobre una superficie con lo que ocurre en su frontera, generalizando el Teorema Fundamental del Cálculo a dos y tres dimensiones.
+
+\begin{rem}
+El hilo conductor sigue siendo \emph{rebanar, aproximar e integrar}, pero ahora las ``rebanadas'' son parches infinitesimales de superficie. El elemento de área $dS$ sustituye al $dx$ o $dA$ de capítulos anteriores, y la orientación —hacia dónde apunta la normal a la superficie— pasa de ser un detalle técnico a una condición necesaria para que la integral tenga sentido físico.
+\end{rem}
+
+% ============================================================
+\section{Preliminares geométricos: superficies paramétricas y orientación}
+% ============================================================
+
+Para integrar sobre una superficie curva necesitamos una forma sistemática de describirla y de medir sus áreas infinitesimales. La parametrización cumple ese rol: convierte un problema geométrico en el plano de los parámetros $(u,v)$ en un problema de integración doble.
+
+\begin{definition}[Superficie paramétrica suave]
+Una \textbf{superficie paramétrica suave} es una función $\mathbf{r}: D \subset \mathbb{R}^2 \to \mathbb{R}^3$ de la forma
+\[
+\mathbf{r}(u,v) = \bigl( x(u,v),\; y(u,v),\; z(u,v) \bigr),
+\]
+donde $x,y,z$ tienen derivadas parciales continuas en el dominio abierto $D$, y los vectores tangentes
+\[
+\mathbf{r}_u = \frac{\partial \mathbf{r}}{\partial u}, \qquad
+\mathbf{r}_v = \frac{\partial \mathbf{r}}{\partial v}
+\]
+son linealmente independientes en cada punto de $D$ (es decir, $\mathbf{r}_u \times \mathbf{r}_v \neq \mathbf{0}$).
+\end{definition}
+
+El vector $\mathbf{r}_u \times \mathbf{r}_v$ es perpendicular al plano tangente en cada punto y su magnitud,
+\[
+\|\mathbf{r}_u \times \mathbf{r}_v\|,
+\]
+representa el área del paralelogramo infinitesimal generado por las variaciones $du$ y $dv$. Por tanto, el \textbf{elemento de área} sobre la superficie es
+\[
+dS = \|\mathbf{r}_u \times \mathbf{r}_v\|\,du\,dv.
+\]
+Este elemento es la llave que convierte cualquier integral de superficie en una integral doble sobre el dominio $D$.
+
+\begin{definition}[Orientación de una superficie]
+Una superficie orientable admite dos campos normales unitarios continuos, $\mathbf{n}$ y $-\mathbf{n}$. Elegir uno de ellos es \textbf{orientar} la superficie. Si la superficie está dada como gráfica $z = f(x,y)$, la elección natural es
+\[
+\mathbf{n} = \frac{\langle -f_x, -f_y, 1 \rangle}{\sqrt{1+f_x^2+f_y^2}},
+\]
+que apunta ``hacia arriba''. Para una superficie paramétrica, la orientación inducida por la parametrización es
+\[
+\mathbf{n} = \frac{\mathbf{r}_u \times \mathbf{r}_v}{\|\mathbf{r}_u \times \mathbf{r}_v\|}.
+\]
+Si cambiamos el orden de los parámetros ($u$ por $v$), el producto cruzado cambia de signo y la orientación se invierte.
+\end{definition}
+
+\begin{rem}
+No toda superficie es orientable. La banda de Möbius es el contraejemplo clásico: al recorrerla, la normal regresa con el signo opuesto. En este curso trabajaremos exclusivamente con superficies orientables (como gráficas de funciones, esferas, cilindros, conos y sus uniones por partes), que son las que aparecen en los teoremas de la divergencia y de Stokes.
+\end{rem}
+
+Cuando la superficie es la gráfica de una función $z = f(x,y)$ sobre una región $R\subset\mathbb{R}^2$, la parametrización natural es
+\[
+\mathbf{r}(x,y) = \langle x,\; y,\; f(x,y) \rangle,
+\]
+de donde
+\[
+\mathbf{r}_x \times \mathbf{r}_y = \langle -f_x,\; -f_y,\; 1 \rangle,
+\qquad
+dS = \sqrt{1+f_x^2+f_y^2}\,dx\,dy.
+\]
+Esta fórmula recupera el elemento de área que ya usamos en la sección de superficies de revolución (L2.3), pero ahora la integral no está restringida a superficies generadas por rotación.
+
+% ============================================================
+\section{Integral de superficie de un campo escalar}
+% ============================================================
+
+\begin{definition}[Integral de superficie escalar]
+Sea $f(x,y,z)$ una función continua definida sobre una superficie paramétrica suave $S$, dada por $\mathbf{r}(u,v)$ con $(u,v)\in D$. La \textbf{integral de superficie de $f$ sobre $S$} es
+\[
+\iint_S f(x,y,z)\,dS
+=
+\iint_D f\bigl(\mathbf{r}(u,v)\bigr)\,\|\mathbf{r}_u \times \mathbf{r}_v\|\,du\,dv.
+\]
+\end{definition}
+
+Esta integral no depende de la orientación de la superficie, pues $\| \mathbf{r}_u \times \mathbf{r}_v \|$ es siempre positivo.
+
+\begin{rem}
+Si $f\equiv 1$, la integral devuelve el área de la superficie:
+\[
+\text{Área}(S) = \iint_S dS = \iint_D \|\mathbf{r}_u \times \mathbf{r}_v\|\,du\,dv.
+\]
+Esta observación cierra el círculo con la fórmula de área superficial de revolución estudiada en el capítulo de Aplicaciones de la Integral, que ahora queda como un caso particular de esta definición general.
+\end{rem}
+
+\begin{pasos}
+Para calcular una integral de superficie escalar, siga estos pasos:
+\begin{enumerate}
+\item \textbf{Parametrizar o identificar la gráfica.} Si la superficie es $z=f(x,y)$, la parametrización es $\mathbf{r}(x,y)=\langle x,y,f(x,y)\rangle$. Si ya está parametrizada, use $\mathbf{r}(u,v)$.
+\item \textbf{Calcular el elemento de área $dS$.} Halle $\mathbf{r}_u \times \mathbf{r}_v$ (o $ \mathbf{r}_x \times \mathbf{r}_y$) y su norma.
+\item \textbf{Formar el integrando.} Sustituya $x,y,z$ por las componentes de $\mathbf{r}$ en $f$, y multiplique por el factor de área.
+\item \textbf{Reducir a una integral doble.} Plantee la integral sobre el dominio $D$ (o la región de proyección $R$).
+\item \textbf{Evaluar la integral doble.} Use coordenadas polares, simetrías o técnicas estándar de integración.
+\end{enumerate}
+\end{pasos}
+
+% -----------------------------------------------------------
+\begin{example}[Integral escalar sobre un paraboloide]
+Calcule $\displaystyle \iint_S (x+y^2)\,dS$, donde $S$ es la porción del paraboloide $z=4-x^2-y^2$ que se encuentra sobre el plano $xy$.
+\begin{myproof}
+\textbf{Paso 1: Parametrizar o identificar la gráfica.}
+La superficie está dada como gráfica $z=f(x,y)=4-x^2-y^2$. Su proyección sobre el plano $xy$ es el disco $R: x^2+y^2 \le 4$. Usamos $\mathbf{r}(x,y)=\langle x,y,4-x^2-y^2\rangle$.
+
+\textbf{Paso 2: Calcular el elemento de área $dS$.}
+Las derivadas parciales son $f_x=-2x$, $f_y=-2y$. Por tanto,
+\[
+dS = \sqrt{1+f_x^2+f_y^2}\,dx\,dy
+= \sqrt{1+4x^2+4y^2}\,dx\,dy.
+\]
+
+\textbf{Paso 3: Formar el integrando.}
+Sobre la superficie, $z=4-x^2-y^2$, pero la función integrando es $f(x,y,z)=x+y^2$. Así,
+\[
+(x+y^2)\,dS = (x+y^2)\sqrt{1+4x^2+4y^2}\,dx\,dy.
+\]
+
+\textbf{Paso 4: Reducir a una integral doble.}
+\[
+I = \iint_R (x+y^2)\sqrt{1+4x^2+4y^2}\,dA.
+\]
+
+\textbf{Paso 5: Evaluar la integral doble.}
+Pasamos a coordenadas polares: $x=r\cos\theta,\; y=r\sin\theta$, con $0\le r\le 2$, $0\le\theta\le 2\pi$. La región es $R$, así que $dA = r\,dr\,d\theta$. El integrando se convierte en
+\[
+\bigl(r\cos\theta + r^2\sin^2\theta\bigr)\sqrt{1+4r^2}\cdot r.
+\]
+La parte con $\cos\theta$ se anula al integrar en $\theta$:
+\[
+\int_0^{2\pi} r\cos\theta \, d\theta = 0.
+\]
+Queda
+\[
+I = \int_0^{2\pi}\sin^2\theta\,d\theta \int_0^2 r^3\sqrt{1+4r^2}\,dr.
+\]
+La primera integral es $\pi$. Para la segunda, hacemos $u=1+4r^2$, $du=8r\,dr$, y $r^2=(u-1)/4$:
+\[
+\int_0^2 r^3\sqrt{1+4r^2}\,dr
+= \int_1^{17} \frac{u-1}{4}\sqrt{u}\,\frac{du}{8}
+= \frac{1}{32}\int_1^{17} (u^{3/2}-u^{1/2})\,du.
+\]
+Calculando,
+\[
+\frac{1}{32}\left[\frac{2}{5}u^{5/2}-\frac{2}{3}u^{3/2}\right]_1^{17}
+= \frac{1}{32}\left[\frac{2}{5}(17^{5/2}-1)-\frac{2}{3}(17^{3/2}-1)\right].
+\]
+Simplificando,
+\[
+\frac{1}{16}\left[\frac{17^{5/2}-1}{5}-\frac{17^{3/2}-1}{3}\right]
+= \frac{1}{240}\bigl[3(289\sqrt{17}-1)-5(17\sqrt{17}-1)\bigr]
+= \frac{782\sqrt{17}+2}{240}.
+\]
+Por tanto,
+\[
+I = \pi \cdot \frac{782\sqrt{17}+2}{240}
+= \frac{\pi}{120}(391\sqrt{17}+1).
+\]
+\[
+\boxed{\displaystyle \iint_S (x+y^2)\,dS = \frac{\pi}{120}(391\sqrt{17}+1)}
+\]
+\end{myproof}
+\end{example}
+
+% -----------------------------------------------------------
+\begin{example}[Integral escalar sobre una esfera]
+Calcule $\displaystyle \iint_S (x^2+y^2)\,dS$, donde $S$ es la esfera $x^2+y^2+z^2=4$.
+\begin{myproof}
+\textbf{Paso 1: Parametrizar.}
+Usamos coordenadas esféricas:
+\[
+\mathbf{r}(\phi,\theta)=\langle 2\sin\phi\cos\theta,\; 2\sin\phi\sin\theta,\; 2\cos\phi \rangle,
+\]
+con $\phi\in[0,\pi]$, $\theta\in[0,2\pi]$.
+
+\textbf{Paso 2: Calcular el elemento de área.}
+Sabemos que para una esfera de radio $R$, $\|\mathbf{r}_\phi \times \mathbf{r}_\theta\| = R^2\sin\phi$. Aquí $R=2$, así que
+\[
+dS = 4\sin\phi\,d\phi\,d\theta.
+\]
+
+\textbf{Paso 3: Formar el integrando.}
+Sobre la esfera, $x^2+y^2 = 4\sin^2\phi$. Por tanto,
+\[
+(x^2+y^2)\,dS = (4\sin^2\phi)(4\sin\phi)\,d\phi\,d\theta = 16\sin^3\phi\,d\phi\,d\theta.
+\]
+
+\textbf{Paso 4: Reducir a integral doble.}
+\[
+I = \int_0^{2\pi}\int_0^\pi 16\sin^3\phi\,d\phi\,d\theta.
+\]
+
+\textbf{Paso 5: Evaluar.}
+\[
+I = 16(2\pi)\int_0^\pi \sin^3\phi\,d\phi
+= 32\pi \cdot \frac{4}{3}
+= \frac{128\pi}{3}.
+\]
+\[
+\boxed{\displaystyle \iint_S (x^2+y^2)\,dS = \frac{128\pi}{3}}
+\]
+\end{myproof}
+\end{example}
+
+% ============================================================
+\section{Masa, centro de masa y momentos de inercia sobre superficies}
+% ============================================================
+
+La integral de superficie escalar permite extender las aplicaciones físicas de las láminas planas a superficies curvas. Si $\rho(x,y,z)$ es la densidad superficial (masa por unidad de área) de una lámina delgada que tiene la forma de $S$, entonces:
+
+\begin{itemize}
+\item \textbf{Masa:} $\displaystyle m = \iint_S \rho\,dS$.
+\item \textbf{Primeros momentos:} 
+  $\displaystyle M_{yz} = \iint_S x\rho\,dS$, 
+  $\displaystyle M_{xz} = \iint_S y\rho\,dS$, 
+  $\displaystyle M_{xy} = \iint_S z\rho\,dS$.
+\item \textbf{Centro de masa:} 
+  $\displaystyle \bar{x} = \frac{M_{yz}}{m}$, 
+  $\displaystyle \bar{y} = \frac{M_{xz}}{m}$, 
+  $\displaystyle \bar{z} = \frac{M_{xy}}{m}$.
+\item \textbf{Momentos de inercia:} 
+  $\displaystyle I_x = \iint_S (y^2+z^2)\rho\,dS$, 
+  $\displaystyle I_y = \iint_S (x^2+z^2)\rho\,dS$, 
+  $\displaystyle I_z = \iint_S (x^2+y^2)\rho\,dS$.
+\end{itemize}
+
+\begin{example}[Centro de masa de una superficie esférica]
+Halle la masa y el centro de masa de la porción de la esfera $x^2+y^2+z^2=R^2$ situada en el primer octante ($x,y,z\ge 0$), si su densidad superficial es $\rho(x,y,z)=z$.
+\begin{myproof}
+\textbf{Paso 1.}
+Usamos $\mathbf{r}(\phi,\theta)=\langle R\sin\phi\cos\theta, R\sin\phi\sin\theta, R\cos\phi\rangle$, con $\phi,\theta\in[0,\pi/2]$. El elemento de área es $dS=R^2\sin\phi\,d\phi\,d\theta$.
+
+\textbf{Paso 2.}
+\[
+m = \iint_S z\,dS
+= \int_0^{\pi/2}\int_0^{\pi/2} (R\cos\phi)(R^2\sin\phi)\,d\phi\,d\theta
+= R^3 \cdot \frac{\pi}{2} \int_0^{\pi/2} \sin\phi\cos\phi\,d\phi
+= R^3 \cdot \frac{\pi}{2} \cdot \frac{1}{2}
+= \frac{\pi R^3}{4}.
+\]
+
+\textbf{Paso 3.}
+Por simetría $x\leftrightarrow y$ (el dominio y la densidad $\rho=z$ son invariantes bajo este intercambio), $\bar{x}=\bar{y}$. Calculemos $M_{xy}$ y $M_{yz}$:
+\[
+M_{xy} = \iint_S z\,\rho\,dS = \iint_S z^2\,dS.
+\]
+\[
+M_{xy} = \int_0^{\pi/2}\int_0^{\pi/2} (R^2\cos^2\phi)(R^2\sin\phi)\,d\phi\,d\theta
+= R^4 \cdot \frac{\pi}{2} \int_0^{\pi/2} \cos^2\phi\sin\phi\,d\phi.
+\]
+La integral en $\phi$ es $\dfrac{1}{3}$. Luego $M_{xy} = \dfrac{\pi R^4}{6}$.
+
+Para calcular $\bar{x}=\bar{y}$, se necesita $M_{yz} = \iint_S x\,\rho\,dS = \iint_S xz\,dS$:
+\[
+M_{yz}
+= \int_0^{\pi/2}\int_0^{\pi/2}(R\sin\phi\cos\theta)(R\cos\phi)(R^2\sin\phi)\,d\phi\,d\theta
+= R^4\!\int_0^{\pi/2}\!\cos\theta\,d\theta\cdot\int_0^{\pi/2}\!\sin^2\phi\cos\phi\,d\phi
+= R^4\cdot 1\cdot\frac{1}{3} = \frac{R^4}{3}.
+\]
+
+\textbf{Paso 4.}
+\[
+\bar{z} = \frac{M_{xy}}{m} = \frac{\pi R^4/6}{\pi R^3/4} = \frac{2R}{3}.
+\]
+\[
+\bar{x}=\bar{y} = \frac{M_{yz}}{m} = \frac{R^4/3}{\pi R^3/4} = \frac{4R}{3\pi}.
+\]
+\[
+\boxed{m = \frac{\pi R^3}{4}, \qquad (\bar{x},\bar{y},\bar{z}) = \left(\frac{4R}{3\pi},\frac{4R}{3\pi},\frac{2R}{3}\right)}
+\]
+\end{myproof}
+\end{example}
+
+% ============================================================
+\section{Integral de superficie de un campo vectorial (flujo)}
+% ============================================================
+
+Si un campo vectorial $\mathbf{F}$ representa la velocidad de un fluido, el volumen de fluido que atraviesa un elemento de superficie $dS$ por unidad de tiempo es la componente normal de $\mathbf{F}$ multiplicada por $dS$: $\mathbf{F}\cdot\mathbf{n}\,dS$. La integral de esta cantidad sobre toda la superficie es el \textbf{flujo}.
+
+\begin{definition}[Flujo de un campo vectorial]
+Sea $\mathbf{F}$ un campo vectorial continuo sobre una superficie orientada $S$ con normal unitaria $\mathbf{n}$. La \textbf{integral de superficie de $\mathbf{F}$ sobre $S$}, o \textbf{flujo} de $\mathbf{F}$ a través de $S$, es
+\[
+\iint_S \mathbf{F}\cdot\mathbf{n}\,dS.
+\]
+Si $S$ está parametrizada por $\mathbf{r}(u,v)$ con orientación compatible (es decir, tomando $\mathbf{n} = \frac{\mathbf{r}_u \times \mathbf{r}_v}{\|\mathbf{r}_u \times \mathbf{r}_v\|}$), entonces
+\[
+\iint_S \mathbf{F}\cdot\mathbf{n}\,dS
+=
+\iint_D \mathbf{F}\bigl(\mathbf{r}(u,v)\bigr)\cdot(\mathbf{r}_u \times \mathbf{r}_v)\,du\,dv.
+\]
+\end{definition}
+
+\begin{rem}
+El producto punto $\mathbf{F}\cdot\mathbf{n}$ mide cuánto del campo cruza la superficie en la dirección normal. Si es positivo, el flujo es saliente; si es negativo, entrante. La orientación de $S$ es esencial: al cambiar $\mathbf{n}$ por $-\mathbf{n}$, el flujo cambia de signo. Esta dependencia distingue a la integral vectorial de la escalar.
+\end{rem}
+
+\begin{pasos}
+Para calcular el flujo de un campo vectorial a través de una superficie orientada:
+\begin{enumerate}
+\item \textbf{Orientar la superficie.} Decidir cuál es la normal positiva (hacia arriba, hacia afuera, o según la regla de la mano derecha).
+\item \textbf{Parametrizar la superficie.} Obtener $\mathbf{r}(u,v)$ y su dominio $D$.
+\item \textbf{Calcular el vector normal (no unitario).} Hallar $\mathbf{r}_u \times \mathbf{r}_v$ y verificar que su dirección coincide con la orientación elegida; si no, multiplicar por $-1$.
+\item \textbf{Sustituir el campo.} Evaluar $\mathbf{F}$ en la parametrización y formar el integrando $\mathbf{F}(\mathbf{r}(u,v)) \cdot (\mathbf{r}_u \times \mathbf{r}_v)$.
+\item \textbf{Evaluar la integral doble.} Integrar sobre $D$.
+\end{enumerate}
+\end{pasos}
+
+% -----------------------------------------------------------
+\begin{example}[Flujo a través de un cilindro]
+Calcule el flujo de $\mathbf{F}(x,y,z)=\langle x,y,z\rangle$ a través de la superficie lateral del cilindro $x^2+y^2=1$, con $0\le z\le 2$, orientado hacia afuera.
+\begin{myproof}
+\textbf{Paso 1: Orientar la superficie.}
+La normal hacia afuera en un cilindro radial apunta en la dirección de $\langle x,y,0\rangle$.
+
+\textbf{Paso 2: Parametrizar.}
+\[
+\mathbf{r}(\theta,z)=\langle \cos\theta,\; \sin\theta,\; z \rangle,
+\quad 0\le\theta\le 2\pi,\; 0\le z\le 2.
+\]
+
+\textbf{Paso 3: Calcular el vector normal.}
+\[
+\mathbf{r}_\theta = \langle -\sin\theta,\; \cos\theta,\; 0 \rangle,\quad
+\mathbf{r}_z = \langle 0,\; 0,\; 1 \rangle.
+\]
+\[
+\mathbf{r}_\theta \times \mathbf{r}_z
+= \langle \cos\theta,\; \sin\theta,\; 0 \rangle.
+\]
+Este vector apunta hacia afuera, que es exactamente la orientación pedida.
+
+\textbf{Paso 4: Sustituir el campo.}
+Sobre el cilindro, $\mathbf{F}(\mathbf{r}(\theta,z)) = \langle \cos\theta, \sin\theta, z\rangle$. Entonces
+\[
+\mathbf{F}\cdot(\mathbf{r}_\theta \times \mathbf{r}_z)
+= \langle \cos\theta,\sin\theta,z\rangle \cdot \langle \cos\theta,\sin\theta,0\rangle
+= \cos^2\theta+\sin^2\theta = 1.
+\]
+
+\textbf{Paso 5: Evaluar la integral doble.}
+\[
+\iint_S \mathbf{F}\cdot\mathbf{n}\,dS
+= \int_0^{2\pi}\int_0^2 1\,dz\,d\theta = 2\cdot 2\pi = 4\pi.
+\]
+\[
+\boxed{\text{Flujo} = 4\pi}
+\]
+\end{myproof}
+\end{example}
+
+% -----------------------------------------------------------
+\begin{example}[Flujo a través de un cono]
+Calcule el flujo de $\mathbf{F}(x,y,z)=\langle 0,0,z\rangle$ a través de la superficie del cono $z=\sqrt{x^2+y^2}$, con $0\le z\le 1$, orientado hacia arriba (es decir, con componente normal positiva en $z$).
+\begin{myproof}
+\textbf{Paso 1: Orientar la superficie.}
+La superficie es gráfica de $z=f(x,y)=\sqrt{x^2+y^2}$, con dominio $R: x^2+y^2\le 1$. La normal hacia arriba es $\mathbf{n}$ con tercera componente positiva.
+
+\textbf{Paso 2: Parametrizar como gráfica.}
+\[
+\mathbf{r}(x,y)=\langle x,\; y,\; \sqrt{x^2+y^2} \rangle.
+\]
+
+\textbf{Paso 3: Calcular el vector normal.}
+Sea $r=\sqrt{x^2+y^2}$. $f_x = x/r$, $f_y = y/r$. Entonces
+\[
+\mathbf{r}_x \times \mathbf{r}_y = \langle -x/r,\; -y/r,\; 1 \rangle.
+\]
+La tercera componente es $1>0$, así que coincide con la orientación pedida.
+
+\textbf{Paso 4: Sustituir el campo.}
+Sobre el cono, $\mathbf{F} = \langle 0,0,r\rangle$. Luego
+\[
+\mathbf{F}\cdot(\mathbf{r}_x \times \mathbf{r}_y)
+= \langle 0,0,r\rangle \cdot \langle -x/r,-y/r,1\rangle = r.
+\]
+
+\textbf{Paso 5: Evaluar la integral doble.}
+\[
+\iint_S \mathbf{F}\cdot\mathbf{n}\,dS
+= \iint_R r\,dA
+= \int_0^{2\pi}\int_0^1 r\cdot r\,dr\,d\theta
+= 2\pi \int_0^1 r^2\,dr
+= \frac{2\pi}{3}.
+\]
+\[
+\boxed{\text{Flujo} = \frac{2\pi}{3}}
+\]
+\end{myproof}
+\end{example}
+
+% ============================================================
+\section{Teorema de la divergencia}
+% ============================================================
+
+El teorema de la divergencia (o teorema de Gauss) establece que el flujo total de un campo vectorial a través de la superficie cerrada que limita un sólido es igual a la integral triple de la divergencia del campo en el interior del sólido.
+
+\begin{theorem}[Teorema de la divergencia]
+Sea $Q\subset\mathbb{R}^3$ un sólido acotado con frontera suave por partes $\partial Q$, orientada con la normal unitaria exterior $\mathbf{n}$. Si $\mathbf{F}(x,y,z)$ es un campo vectorial cuyas componentes tienen derivadas parciales de primer orden continuas en $Q$, entonces
+\[
+\iint_{\partial Q} \mathbf{F}\cdot\mathbf{n}\,dS
+=
+\iiint_Q (\nabla\cdot\mathbf{F})\,dV,
+\]
+donde $\displaystyle \nabla\cdot\mathbf{F} = \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}$.
+\end{theorem}
+
+\begin{rem}
+La divergencia $\nabla\cdot\mathbf{F}$ mide la densidad de fuentes (positiva) o sumideros (negativa) del campo en cada punto. El teorema afirma que la cantidad neta que sale por la frontera es exactamente la suma de todas las fuentes internas. Si $\nabla\cdot\mathbf{F}=0$ en todo $Q$, el flujo neto a través de $\partial Q$ es cero: todo lo que entra, sale.
+\end{rem}
+
+\begin{proof}[Esquema de la demostración]
+La demostración rigurosa sigue la misma estrategia que el Teorema Fundamental del Cálculo en una variable, aplicada a cada componente. Se divide el sólido en celdas infinitesimales y se suman los flujos; los flujos a través de las caras interiores se cancelan por pares, quedando únicamente el flujo a través de la frontera exterior. Cada celda contribuye con $\nabla\cdot\mathbf{F}\,dV$, y al tomar el límite se obtiene la integral triple. 
+\par
+Para la componente $P$ del campo, se aplica el teorema de Fubini y el TFC en la dirección $x$; el resultado se suma con las otras dos componentes. La orientación exterior garantiza que los signos en la frontera coincidan con los de la integral de flujo.
+\end{proof}
+
+\begin{pasos}
+Para aplicar el teorema de la divergencia:
+\begin{enumerate}
+\item \textbf{Identificar el sólido $Q$ y su frontera $\partial Q$.} Asegurarse de que $\partial Q$ es cerrada y está orientada hacia afuera.
+\item \textbf{Calcular la divergencia.} Hallar $\nabla\cdot\mathbf{F}$.
+\item \textbf{Plantear la integral triple.} Escribir $\iiint_Q (\nabla\cdot\mathbf{F})\,dV$.
+\item \textbf{Evaluar la integral triple.} Usar coordenadas cartesianas, cilíndricas o esféricas según la simetría del sólido.
+\end{enumerate}
+Si se desea verificar el teorema, también se puede calcular el flujo por separado y comparar.
+\end{pasos}
+
+% -----------------------------------------------------------
+\begin{example}[Verificación del teorema de la divergencia para una esfera]
+Verifique el teorema de la divergencia para $\mathbf{F}(x,y,z)=\langle x,y,z\rangle$ sobre el sólido $Q$ limitado por la esfera $x^2+y^2+z^2\le R^2$.
+\begin{myproof}
+\textbf{Paso 1: Identificar el sólido y la frontera.}
+$Q$ es la esfera sólida de radio $R$. $\partial Q$ es la superficie esférica, orientada hacia afuera.
+
+\textbf{Paso 2: Calcular la divergencia.}
+\[
+\nabla\cdot\mathbf{F} = \frac{\partial x}{\partial x}+\frac{\partial y}{\partial y}+\frac{\partial z}{\partial z} = 1+1+1=3.
+\]
+
+\textbf{Paso 3: Plantear la integral triple.}
+\[
+\iiint_Q 3\,dV = 3\,\text{Vol}(Q) = 3\cdot\frac{4}{3}\pi R^3 = 4\pi R^3.
+\]
+
+\textbf{Paso 4: Calcular el flujo directamente (verificación).}
+Sobre la esfera, $\mathbf{n} = \frac{\langle x,y,z\rangle}{R}$ y $\mathbf{F}=\langle x,y,z\rangle$. Entonces $\mathbf{F}\cdot\mathbf{n} = \frac{x^2+y^2+z^2}{R} = R$. El flujo es
+\[
+\iint_{\partial Q} R\,dS = R\cdot 4\pi R^2 = 4\pi R^3.
+\]
+Ambos resultados coinciden.
+\[
+\boxed{\text{Flujo} = 4\pi R^3}
+\]
+\end{myproof}
+\end{example}
+
+% -----------------------------------------------------------
+\begin{example}[Aplicación del teorema de la divergencia]
+Calcule el flujo de $\mathbf{F}(x,y,z)=\langle y,\; xz,\; z^2\rangle$ a través de la superficie cerrada que limita el sólido $Q$ encerrado por el paraboloide $z=1-x^2-y^2$ y el plano $z=0$.
+\begin{myproof}
+\textbf{Paso 1: Identificar el sólido.}
+$Q$ está sobre el plano $z=0$ y bajo el paraboloide $z=1-x^2-y^2$. La proyección sobre el plano $xy$ es el disco $x^2+y^2\le 1$.
+
+\textbf{Paso 2: Calcular la divergencia.}
+\[
+\nabla\cdot\mathbf{F}
+= \frac{\partial}{\partial x}(y) + \frac{\partial}{\partial y}(xz) + \frac{\partial}{\partial z}(z^2)
+= 0 + 0 + 2z = 2z.
+\]
+
+\textbf{Paso 3: Plantear la integral triple.}
+Por el teorema de la divergencia,
+\[
+\iint_{\partial Q}\mathbf{F}\cdot\mathbf{n}\,dS
+= \iiint_Q 2z\,dV.
+\]
+
+\textbf{Paso 4: Evaluar la integral triple.}
+Usamos coordenadas cilíndricas: $x=r\cos\theta$, $y=r\sin\theta$, $z=z$. El paraboloide es $z=1-r^2$, con $0\le r\le 1$, $0\le\theta\le 2\pi$, $0\le z\le 1-r^2$. El elemento de volumen es $dV = r\,dz\,dr\,d\theta$.
+\[
+\iiint_Q 2z\,dV
+= 2\int_0^{2\pi}\int_0^1\int_0^{1-r^2} z\,r\,dz\,dr\,d\theta.
+\]
+Resolvemos:
+\[
+= 2(2\pi)\int_0^1 r\left[\frac{z^2}{2}\right]_0^{1-r^2} dr
+= 2\pi\int_0^1 r(1-r^2)^2\,dr.
+\]
+Sea $u=1-r^2$, $du=-2r\,dr$, $r\,dr=-du/2$. Cuando $r=0$, $u=1$; cuando $r=1$, $u=0$:
+\[
+2\pi\int_1^0 -\frac{u^2}{2}\,du = \pi\int_0^1 u^2\,du = \frac{\pi}{3}.
+\]
+\[
+\boxed{\text{Flujo} = \frac{\pi}{3}}
+\]
+\end{myproof}
+\end{example}
+
+% ============================================================
+\section{Teorema de Stokes}
+% ============================================================
+
+El teorema de Stokes generaliza el teorema de Green a superficies curvas en $\mathbb{R}^3$: relaciona la circulación de un campo vectorial a lo largo del borde de una superficie con el flujo de su rotacional a través de la superficie.
+
+\begin{theorem}[Teorema de Stokes]
+Sea $S$ una superficie orientada, suave por partes, con vector normal unitario $\mathbf{n}$, y sea $\partial S$ su curva frontera, cerrada y simple, orientada positivamente según la regla de la mano derecha (si los dedos siguen el borde, el pulgar apunta en la dirección de $\mathbf{n}$). Si $\mathbf{F}$ es un campo vectorial con derivadas parciales continuas en una región abierta que contiene a $S$, entonces
+\[
+\oint_{\partial S} \mathbf{F}\cdot d\mathbf{r}
+=
+\iint_S (\nabla\times\mathbf{F})\cdot\mathbf{n}\,dS,
+\]
+donde $\displaystyle \nabla\times\mathbf{F} = \left( \frac{\partial R}{\partial y}-\frac{\partial Q}{\partial z},\; \frac{\partial P}{\partial z}-\frac{\partial R}{\partial x},\; \frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y} \right)$.
+\end{theorem}
+
+\begin{rem}
+La interpretación física es clara: la circulación total del campo alrededor del borde de una superficie es igual a la suma de las ``micro-circulaciones'' (el rotacional) a través de la superficie. Si $\nabla\times\mathbf{F}=\mathbf{0}$ en toda la superficie, el campo es irrotacional y la integral de línea sobre cualquier curva cerrada que limite una porción de $S$ es cero (independencia de la trayectoria local).
+\end{rem}
+
+\begin{proof}[El teorema de Green como caso particular de Stokes]
+Si la superficie $S$ es una región plana en el plano $xy$, podemos parametrizarla como $\mathbf{r}(x,y)=\langle x,y,0\rangle$ con $(x,y)\in R$. Su normal es $\mathbf{n}=\mathbf{k}$, y el borde $\partial S$ es la curva cerrada que limita a $R$ en el plano. 
+\par
+El teorema de Stokes se convierte en
+\[
+\oint_{\partial S} \mathbf{F}\cdot d\mathbf{r}
+=
+\iint_R (\nabla\times\mathbf{F})\cdot\mathbf{k}\,dA.
+\]
+Escribamos $\mathbf{F}(x,y,z)=\langle P(x,y), Q(x,y), 0\rangle$. Entonces
+\[
+\nabla\times\mathbf{F}
+=
+\left\langle 0,\; 0,\; \frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y} \right\rangle.
+\]
+El producto con $\mathbf{k}$ da $\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}$. Por tanto,
+\[
+\oint_{\partial S} \mathbf{F}\cdot d\mathbf{r}
+=
+\iint_R \left( \frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y} \right)dA,
+\]
+que es exactamente la forma vectorial del teorema de Green estudiada en L4.1. Esta demostración muestra que Stokes es una generalización natural de Green al incorporar superficies curvas y campos tridimensionales.
+\end{proof}
+
+\begin{pasos}
+Para aplicar el teorema de Stokes:
+\begin{enumerate}
+\item \textbf{Identificar la superficie $S$ y su borde $\partial S$.} Asegurarse de que la orientación del borde es compatible con la normal de $S$ (regla de la mano derecha).
+\item \textbf{Calcular el rotacional.} Hallar $\nabla\times\mathbf{F}$.
+\item \textbf{Escoger el lado más simple.} Decidir si es más fácil calcular la integral de línea sobre $\partial S$ o la integral de superficie del rotacional.
+\item \textbf{Parametrizar y evaluar.} Si se usa la superficie, calcular $dS$ y $\mathbf{n}$; si se usa el borde, parametrizar la curva.
+\end{enumerate}
+\end{pasos}
+
+% -----------------------------------------------------------
+\begin{example}[Verificación de Stokes para un paraboloide]
+Verifique el teorema de Stokes para $\mathbf{F}(x,y,z)=\langle -y,\; x,\; z\rangle$ sobre la superficie $S: z=4-x^2-y^2$, con $z\ge 0$ (orientada hacia arriba).
+\begin{myproof}
+\textbf{Paso 1: Identificar superficie y borde.}
+La proyección de $S$ es el disco $x^2+y^2\le 4$. El borde $\partial S$ es la circunferencia $x^2+y^2=4$, $z=0$, orientada positivamente vista desde arriba (es decir, en sentido antihorario).
+
+\textbf{Paso 2: Calcular el rotacional.}
+\[
+\nabla\times\mathbf{F}
+=
+\left\langle
+\frac{\partial z}{\partial y}-\frac{\partial x}{\partial z},\;
+\frac{\partial (-y)}{\partial z}-\frac{\partial z}{\partial x},\;
+\frac{\partial x}{\partial x}-\frac{\partial (-y)}{\partial y}
+\right\rangle
+=
+\langle 0-0,\;0-0,\;1-(-1)\rangle
+=
+\langle 0,0,2\rangle.
+\]
+
+\textbf{Paso 3: Calcular la integral de superficie (lado izquierdo de Stokes).}
+Para la gráfica $z=f(x,y)$, $\mathbf{r}_x\times\mathbf{r}_y=\langle -f_x,-f_y,1\rangle$. Aquí $f_x=-2x, f_y=-2y$, así que la normal hacia arriba es $\langle 2x,2y,1\rangle$ (sin normalizar, pues $dS$ se combina con la norma). Entonces
+\[
+(\nabla\times\mathbf{F})\cdot(\mathbf{r}_x\times\mathbf{r}_y)
+= \langle 0,0,2\rangle\cdot\langle 2x,2y,1\rangle = 2.
+\]
+La integral es
+\[
+\iint_S (\nabla\times\mathbf{F})\cdot\mathbf{n}\,dS
+= \iint_R 2\,dA = 2\cdot \pi(2)^2 = 8\pi.
+\]
+
+\textbf{Paso 4: Calcular la integral de línea (verificación).}
+Parametrizamos el borde: $\mathbf{r}(t)=\langle 2\cos t, 2\sin t, 0\rangle$, $0\le t\le 2\pi$. Entonces $\mathbf{F}=\langle -2\sin t, 2\cos t, 0\rangle$, $d\mathbf{r}=\langle -2\sin t, 2\cos t, 0\rangle dt$. El producto punto es
+\[
+(-2\sin t)(-2\sin t) + (2\cos t)(2\cos t) = 4\sin^2 t + 4\cos^2 t = 4.
+\]
+Luego
+\[
+\oint_{\partial S}\mathbf{F}\cdot d\mathbf{r} = \int_0^{2\pi} 4\,dt = 8\pi.
+\]
+Ambos resultados coinciden.
+\[
+\boxed{8\pi}
+\]
+\end{myproof}
+\end{example}
+
+% -----------------------------------------------------------
+\begin{example}[Aplicación de Stokes a un hemisferio]
+Calcule $\displaystyle \oint_C \mathbf{F}\cdot d\mathbf{r}$, donde $\mathbf{F}(x,y,z)=\langle z,\; x,\; y\rangle$ y $C$ es la curva $x^2+y^2=1$, $z=0$, recorrida en sentido antihorario vista desde arriba.
+\begin{myproof}
+\textbf{Paso 1: Identificar superficie y borde.}
+La curva $C$ es el borde del hemisferio superior $S: x^2+y^2+z^2=1$, $z\ge 0$, orientado con normal hacia arriba (la normal exterior a la esfera tiene componente $z$ positiva en el hemisferio superior).
+
+\textbf{Paso 2: Calcular el rotacional.}
+\[
+\nabla\times\mathbf{F}
+=
+\left\langle
+\frac{\partial y}{\partial y}-\frac{\partial x}{\partial z},\;
+\frac{\partial z}{\partial z}-\frac{\partial y}{\partial x},\;
+\frac{\partial x}{\partial x}-\frac{\partial z}{\partial y}
+\right\rangle
+=
+\langle 1-0,\;1-0,\;1-0\rangle
+=
+\langle 1,1,1\rangle.
+\]
+
+\textbf{Paso 3: Calcular la integral de superficie.}
+Sobre el hemisferio, la normal exterior unitaria es $\mathbf{n}=\langle x,y,z\rangle$. Entonces
+\[
+(\nabla\times\mathbf{F})\cdot\mathbf{n} = \langle 1,1,1\rangle\cdot\langle x,y,z\rangle = x+y+z.
+\]
+Por simetría, $\iint_S x\,dS = \iint_S y\,dS = 0$ (la región es simétrica respecto a los planos $x=0$ e $y=0$, y los integrandos son impares). Queda
+\[
+\iint_S z\,dS.
+\]
+Usamos coordenadas esféricas para el hemisferio de radio 1: $z=\cos\phi$, $dS=\sin\phi\,d\phi\,d\theta$, con $\phi\in[0,\pi/2]$, $\theta\in[0,2\pi]$.
+\[
+\iint_S z\,dS
+= \int_0^{2\pi}\int_0^{\pi/2} \cos\phi\sin\phi\,d\phi\,d\theta
+= 2\pi \cdot \frac{1}{2} = \pi.
+\]
+Por tanto, el flujo del rotacional es $\pi$.
+
+\textbf{Paso 4: Conclusión por Stokes.}
+\[
+\oint_C \mathbf{F}\cdot d\mathbf{r} = \pi.
+\]
+\[
+\boxed{\pi}
+\]
+\end{myproof}
+\end{example}
+
+% ============================================================
+\section{Problemas propuestos}
+% ============================================================
+
+\begin{prob}
+Calcule $\displaystyle \iint_S xy\,dS$, donde $S$ es la porción del cilindro $x^2+z^2=1$ con $y\ge 0$, $z\ge 0$.
+\end{prob}
+
+\begin{prob}
+Halle el área de la superficie del toro generado al rotar la circunferencia $(x-2)^2+z^2=1$ alrededor del eje $z$.
+\end{prob}
+
+\begin{prob}
+Calcule el flujo de $\mathbf{F}(x,y,z)=\langle 2x, -y, 3z\rangle$ a través de la esfera $x^2+y^2+z^2=4$, orientada hacia afuera.
+\end{prob}
+
+\begin{prob}
+Una lámina tiene la forma de la superficie $z=xy$ sobre el cuadrado $0\le x\le 2$, $0\le y\le 2$. Su densidad superficial es $\rho=x^2+y^2$. Halle su masa y su centro de masa.
+\end{prob}
+
+\begin{prob}
+Use el teorema de la divergencia para calcular el flujo de $\mathbf{F}(x,y,z)=\langle x^3, y^3, z^3\rangle$ a través del cubo $0\le x,y,z\le 1$.
+\end{prob}
+
+\begin{prob}
+Verifique el teorema de Stokes para $\mathbf{F}(x,y,z)=\langle y, z, x\rangle$ sobre la superficie del cono $z=\sqrt{x^2+y^2}$ con $0\le z\le 1$, orientado hacia arriba.
+\end{prob}
+
+\begin{prob}
+Sea $\mathbf{F}(x,y,z)=\langle -y, x, 2z\rangle$. Calcule la circulación de $\mathbf{F}$ alrededor del cuadrado en el plano $z=1$ con vértices $(1,1,1),(-1,1,1),(-1,-1,1),(1,-1,1)$.
+\end{prob}
+
+\begin{prob}
+Encuentre el momento de inercia $I_z$ de una cáscara esférica homogénea de radio $R$ y masa $M$ (es decir, con densidad constante $\rho = M/(4\pi R^2)$) con respecto al eje $z$.
+\end{prob}
+
+\begin{prob}
+Demuestre que si $\mathbf{F}$ es un campo conservativo (es decir, $\mathbf{F}=\nabla f$), entonces $\nabla\times\mathbf{F}=0$ y su flujo a través de cualquier superficie cerrada es cero (por el teorema de la divergencia) y su circulación a través de cualquier borde cerrado es cero (por Stokes).
+\end{prob}
+
+\begin{prob}
+Calcule el flujo de $\mathbf{F}(x,y,z)=\langle x, y, z\rangle$ a través del sólido $Q$ limitado por el paraboloide $z=4-x^2-y^2$ y el plano $z=0$.
+\end{prob}

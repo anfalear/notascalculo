@@ -1,0 +1,707 @@
+\chapter{Integral de línea de un campo vectorial y teorema de Green}
+
+La integral de línea de un campo escalar, estudiada en la lección anterior,
+permitía calcular la masa de un alambre o el área de una superficie curva,
+acumulando una función a lo largo de una trayectoria. Ahora se aborda un
+problema más sutil: la integral de línea de un \emph{campo vectorial}, que
+mide la tendencia del campo a empujar o girar a lo largo de la curva. En
+contextos físicos, esta integral se interpreta como el \emph{trabajo}
+realizado por una fuerza al desplazar una partícula a lo largo de una
+trayectoria, o como la \emph{circulación} de un fluido alrededor de un
+obstáculo. A diferencia del caso escalar, el resultado de esta integral
+depende críticamente de la orientación de la curva y, en general, del
+camino seguido.
+
+El objetivo de esta lección es doble. Por un lado, se estudian las
+condiciones bajo las cuales la integral de línea de un campo vectorial
+\emph{no depende} del camino, sino únicamente de los puntos inicial y
+final, lo que conduce al \textbf{teorema fundamental de las integrales
+de línea} y a la noción de \textbf{campo conservativo}. Por otro lado,
+cuando la curva es cerrada, se establece una conexión profunda entre la
+circulación a lo largo de la frontera y el comportamiento interno del
+campo en la región encerrada: esta conexión es el \textbf{teorema de
+Green}, que relaciona una integral de línea con una integral doble del
+rotacional. Este teorema es un caso particular en el plano de resultados
+más generales (Stokes, divergencia) que se estudiarán en la lección
+siguiente, y constituye una de las piedras angulares del cálculo
+vectorial.
+
+%%==========================================================
+\section{Integral de línea de un campo vectorial}
+%%==========================================================
+
+La definición de integral de línea de un campo vectorial se construye
+siguiendo el mismo principio de Riemann que ya se ha usado para
+integrales de funciones escalares: se divide la curva en segmentos
+pequeños, se multiplica la componente del campo en la dirección del
+desplazamiento por la longitud de cada segmento, y se suman todas las
+contribuciones. Al tomar el límite cuando los segmentos se hacen
+infinitamente pequeños, se obtiene la integral.
+
+\begin{definition}[Integral de línea de un campo vectorial]
+Sea $\mathbf{F}$ un campo vectorial continuo definido en una región que
+contiene una curva suave por partes $C$, parametrizada por
+\[
+\mathbf{r}(t) = \langle x(t), y(t), z(t) \rangle, \qquad a \le t \le b,
+\]
+con $\mathbf{r}'$ continua y no nula en cada subintervalo. La
+\textbf{integral de línea de $\mathbf{F}$ a lo largo de $C$} se define
+como
+\[
+\int_C \mathbf{F} \cdot d\mathbf{r}
+= \int_a^b \mathbf{F}(\mathbf{r}(t)) \cdot \mathbf{r}'(t) \, dt.
+\]
+Si $\mathbf{F} = \langle M, N, P \rangle$ y $d\mathbf{r} = \langle dx,
+dy, dz \rangle$, también se escribe
+\[
+\int_C M\,dx + N\,dy + P\,dz.
+\]
+La integral es independiente de la parametrización elegida, siempre que
+se mantenga la misma orientación de $C$.
+\end{definition}
+
+La integral puede interpretarse como la suma de las proyecciones del
+campo sobre la dirección tangente a la curva: si $\mathbf{T}(t)$ es el
+vector tangente unitario y $ds$ el elemento de longitud de arco,
+entonces
+\[
+\int_C \mathbf{F} \cdot d\mathbf{r}
+= \int_C \mathbf{F} \cdot \mathbf{T} \, ds.
+\]
+
+\begin{rem}
+Dos diferencias fundamentales con la integral de línea de un campo
+escalar:
+\begin{itemize}
+    \item La integral de línea de un campo vectorial \emph{cambia de
+    signo} si se invierte la orientación de la curva: $\int_{-C}
+    \mathbf{F}\cdot d\mathbf{r} = -\int_C \mathbf{F}\cdot d\mathbf{r}$.
+    La integral de un campo escalar no depende de la orientación.
+    \item La integral de línea de un campo vectorial mide una
+    \emph{circulación} o \emph{trabajo}; es sensible a la dirección en
+    que se recorre la curva.
+\end{itemize}
+\end{rem}
+
+\begin{pasos}[Cálculo de una integral de línea de un campo vectorial]
+Para evaluar $\displaystyle \int_C \mathbf{F} \cdot d\mathbf{r}$:
+\begin{enumerate}
+    \item \textbf{Parametrizar la curva.} Hallar una parametrización
+    suave por partes $\mathbf{r}(t)$, $a \le t \le b$, que recorra $C$
+    en la orientación dada.
+    \item \textbf{Calcular el vector tangente.} Derivar $\mathbf{r}' (t)$.
+    \item \textbf{Evaluar el campo sobre la curva.} Formar
+    $\mathbf{F}(\mathbf{r}(t))$.
+    \item \textbf{Calcular el producto punto.} Obtener
+    $\mathbf{F}(\mathbf{r}(t)) \cdot \mathbf{r}'(t)$, que es una
+    función escalar de $t$.
+    \item \textbf{Integrar.} Calcular $\displaystyle \int_a^b
+    \mathbf{F}(\mathbf{r}(t)) \cdot \mathbf{r}'(t) \, dt$.
+\end{enumerate}
+\end{pasos}
+
+%%==========================================================
+\begin{example}[Trabajo de una fuerza variable]
+Calcular el trabajo realizado por el campo de fuerzas
+$\mathbf{F}(x,y) = \langle y, x^2 \rangle$ al mover una partícula desde
+$(0,0)$ hasta $(1,1)$ a lo largo de la parábola $y=x^2$.
+\end{example}
+
+\begin{myproof}
+\textbf{Paso 1. Parametrizar la curva.}
+La parábola $y=x^2$ se parametriza como
+\[
+\mathbf{r}(t) = \langle t, t^2 \rangle, \qquad 0 \le t \le 1,
+\]
+que recorre la curva desde $(0,0)$ hasta $(1,1)$ en la orientación
+correcta.
+
+\textbf{Paso 2. Calcular el vector tangente.}
+Derivando:
+\[
+\mathbf{r}'(t) = \langle 1, 2t \rangle.
+\]
+
+\textbf{Paso 3. Evaluar el campo sobre la curva.}
+Sustituyendo $x=t$, $y=t^2$ en $\mathbf{F}$:
+\[
+\mathbf{F}(\mathbf{r}(t)) = \langle t^2, t^2 \rangle.
+\]
+
+\textbf{Paso 4. Calcular el producto punto.}
+\[
+\mathbf{F}(\mathbf{r}(t)) \cdot \mathbf{r}'(t)
+= \langle t^2, t^2 \rangle \cdot \langle 1, 2t \rangle
+= t^2 + 2t^3.
+\]
+
+\textbf{Paso 5. Integrar.}
+\[
+\int_C \mathbf{F} \cdot d\mathbf{r}
+= \int_0^1 (t^2 + 2t^3) \, dt
+= \left[ \frac{t^3}{3} + \frac{t^4}{2} \right]_0^1
+= \frac{1}{3} + \frac{1}{2} = \frac{5}{6}.
+\]
+Por tanto, el trabajo realizado es $\boxed{\dfrac{5}{6}}$ unidades de
+trabajo (en las unidades correspondientes a $\mathbf{F}$ y la
+parametrización). $\square$
+\end{myproof}
+
+\begin{rem}
+Si se hubiera recorrido la misma curva pero en sentido opuesto, la
+parametrización $\mathbf{r}(t)=\langle 1-t, (1-t)^2 \rangle$,
+$0\le t\le 1$, habría producido el valor $-\frac{5}{6}$. Esta
+dependencia de la orientación es característica de la integral de línea
+de campos vectoriales y refleja la diferencia entre el trabajo realizado
+por una fuerza y el trabajo realizado contra ella.
+\end{rem}
+
+%%==========================================================
+\section{Independencia de la trayectoria y campos conservativos}
+%%==========================================================
+
+En el ejemplo anterior, si se hubiera elegido otro camino entre los
+mismos puntos, por ejemplo la línea recta $\mathbf{r}(t)=\langle t,t
+\rangle$, el resultado habría sido
+\[
+\int_C \mathbf{F}\cdot d\mathbf{r}
+= \int_0^1 \langle t, t^2 \rangle \cdot \langle 1,1 \rangle \, dt
+= \int_0^1 (t+t^2) dt = \frac{5}{6}.
+\]
+En este caso particular, el resultado coincidió con el de la parábola.
+Sin embargo, \emph{no siempre ocurre así}. La pregunta fundamental es:
+¿bajo qué condiciones la integral de línea de un campo vectorial
+\emph{no depende} del camino elegido, sino únicamente de los puntos
+extremos?
+
+La respuesta conduce a la noción de \textbf{campo conservativo}, que
+es el análogo en varias variables de la antiderivada en una variable.
+
+\begin{definition}[Campo conservativo]
+Un campo vectorial $\mathbf{F}$ definido en una región $D$ se dice
+\textbf{conservativo} si existe una función escalar $f$ (llamada
+\textbf{función potencial}) tal que
+\[
+\mathbf{F} = \nabla f
+\]
+en todo punto de $D$. Es decir, $\mathbf{F}$ es el gradiente de $f$.
+\end{definition}
+
+\begin{theorem}[Independencia de la trayectoria]
+Sea $\mathbf{F}$ un campo vectorial continuo en una región abierta y
+conexa $D$. La integral de línea
+\[
+\int_C \mathbf{F} \cdot d\mathbf{r}
+\]
+es \textbf{independiente de la trayectoria} en $D$ (es decir, su valor
+solo depende de los puntos inicial y final, no de la curva que los une)
+si y solo si $\mathbf{F}$ es conservativo en $D$.
+\end{theorem}
+
+\begin{proof}
+(Esquema de la demostración.) Si $\mathbf{F}=\nabla f$, entonces,
+usando la regla de la cadena,
+\[
+\mathbf{F}(\mathbf{r}(t)) \cdot \mathbf{r}'(t)
+= \nabla f(\mathbf{r}(t)) \cdot \mathbf{r}'(t)
+= \frac{d}{dt} f(\mathbf{r}(t)).
+\]
+Por el teorema fundamental del cálculo,
+\[
+\int_C \mathbf{F} \cdot d\mathbf{r}
+= \int_a^b \frac{d}{dt} f(\mathbf{r}(t)) \, dt
+= f(\mathbf{r}(b)) - f(\mathbf{r}(a)),
+\]
+que solo depende de los extremos.
+
+Recíprocamente, si la integral es independiente de la trayectoria, se
+puede definir $f(P)$ como la integral de $\mathbf{F}$ desde un punto
+fijo $P_0$ hasta $P$, y se demuestra que $\nabla f = \mathbf{F}$.
+La demostración formal requiere verificar que las derivadas parciales
+de $f$ coinciden con las componentes de $\mathbf{F}$.
+\end{proof}
+
+\begin{theorem}[Teorema fundamental de las integrales de línea]
+Sea $C$ una curva suave por partes que une los puntos $A$ y $B$,
+contenida en una región $D$. Si $\mathbf{F} = \nabla f$ es un campo
+gradiente continuo en $D$, entonces
+\[
+\int_C \mathbf{F} \cdot d\mathbf{r} = f(B) - f(A).
+\]
+En particular, si $C$ es cerrada ($A=B$), entonces
+\[
+\oint_C \mathbf{F} \cdot d\mathbf{r} = 0.
+\]
+\end{theorem}
+
+\begin{rem}
+El teorema fundamental generaliza la regla de Barrow para integrales
+definidas: la integral del gradiente de $f$ a lo largo de una curva
+es simplemente la diferencia de $f$ en los extremos. Esto simplifica
+radicalmente el cálculo de integrales de línea: en lugar de parametrizar
+la curva, basta con encontrar la función potencial y evaluarla en los
+extremos. La dificultad se traslada entonces a determinar si el campo
+es conservativo y, en caso afirmativo, hallar $f$.
+\end{rem}
+
+\begin{pasos}[Determinación de un campo conservativo y su potencial]
+Para verificar si un campo $\mathbf{F}=\langle M,N,P \rangle$ es
+conservativo y encontrar su función potencial:
+\begin{enumerate}
+    \item \textbf{Verificar el dominio.} La región debe ser abierta y
+    conexa. En $\mathbb{R}^2$, si el dominio es simplemente conexo
+    (sin agujeros), basta comprobar la condición de simetría de las
+    derivadas cruzadas:
+    \[
+    \frac{\partial M}{\partial y} = \frac{\partial N}{\partial x}.
+    \]
+    En $\mathbb{R}^3$, se requiere $\nabla \times \mathbf{F} = \mathbf{0}$
+    (el rotacional es cero).
+    \item \textbf{Integrar una componente.} Si $\mathbf{F} = \nabla f$,
+    entonces $\partial f/\partial x = M$. Integrar $M$ respecto a $x$:
+    \[
+    f(x,y,z) = \int M\,dx + g(y,z),
+    \]
+    donde $g$ es una función que depende solo de las variables
+    restantes.
+    \item \textbf{Derivar y ajustar.} Derivar la expresión anterior
+    respecto a $y$ e igualar a $N$ para determinar $\partial g/\partial y$.
+    Repetir para $P$ si estamos en $\mathbb{R}^3$.
+    \item \textbf{Construir $f$.} Una vez determinadas todas las
+    constantes de integración, escribir $f$ explícitamente.
+\end{enumerate}
+\end{pasos}
+
+\begin{rem}
+La condición de simetría de las derivadas cruzadas ($\partial M/\partial
+y = \partial N/\partial x$ en $\mathbb{R}^2$) es necesaria para que el
+campo sea conservativo, pero solo es suficiente si el dominio es
+\emph{simplemente conexo}. En un dominio con agujeros, puede fallar:
+por ejemplo, el campo $\mathbf{F}(x,y) = \langle -y/(x^2+y^2),
+x/(x^2+y^2) \rangle$ satisface la condición de simetría en su dominio
+$\mathbb{R}^2\setminus\{(0,0)\}$, pero no es conservativo, ya que su
+integral alrededor de la circunferencia unidad es $2\pi \neq 0$.
+\end{rem}
+
+%%==========================================================
+\begin{example}[Aplicación del teorema fundamental]
+Verificar que el campo $\mathbf{F}(x,y) = \langle 2xy, x^2 + 2y \rangle$
+es conservativo, encontrar su función potencial, y calcular
+$\int_C \mathbf{F}\cdot d\mathbf{r}$ a lo largo de cualquier curva que
+una $(0,1)$ con $(1,2)$.
+\end{example}
+
+\begin{myproof}
+\textbf{Paso 1. Verificar la condición de simetría.}
+Aquí $M=2xy$, $N=x^2+2y$. Se calcula:
+\[
+\frac{\partial M}{\partial y} = 2x, \qquad
+\frac{\partial N}{\partial x} = 2x.
+\]
+Como son iguales en todo $\mathbb{R}^2$ (que es simplemente conexo),
+el campo es conservativo.
+
+\textbf{Paso 2. Integrar una componente.}
+Se integra $M$ respecto a $x$:
+\[
+f(x,y) = \int 2xy \, dx = x^2 y + g(y),
+\]
+donde $g$ es una función de $y$ (la constante de integración en $x$).
+
+\textbf{Paso 3. Derivar y ajustar.}
+Derivando $f$ respecto a $y$ e igualando a $N$:
+\[
+\frac{\partial f}{\partial y} = x^2 + g'(y) = x^2 + 2y.
+\]
+Por tanto, $g'(y) = 2y$, de donde $g(y) = y^2 + C$. Tomando $C=0$,
+\[
+f(x,y) = x^2 y + y^2.
+\]
+
+\textbf{Paso 4. Construir $f$.}
+La función potencial es $f(x,y)=x^2 y + y^2$.
+
+\textbf{Paso 5. Aplicar el teorema fundamental.}
+Para cualquier curva que una $A=(0,1)$ y $B=(1,2)$:
+\[
+\int_C \mathbf{F}\cdot d\mathbf{r}
+= f(1,2) - f(0,1)
+= (1^2\cdot 2 + 2^2) - (0^2\cdot 1 + 1^2)
+= (2+4) - 1 = 5.
+\]
+La integral vale $\boxed{5}$, independientemente de la trayectoria.
+$\square$
+\end{myproof}
+
+\begin{rem}
+Nótese que la función potencial no es única: si se añade una constante
+$C$, la diferencia $f(B)-f(A)$ no se altera. Por tanto, la constante
+de integración es irrelevante para el cálculo de la integral de línea.
+\end{rem}
+
+%%==========================================================
+\section{Teorema de Green}
+%%==========================================================
+
+El teorema de Green establece una conexión entre una integral de línea
+sobre una curva cerrada simple y una integral doble sobre la región
+encerrada por esa curva. Es el primer resultado que relaciona el
+comportamiento de un campo \emph{en el interior} de una región con su
+comportamiento \emph{en la frontera}, y constituye el germen de los
+teoremas de Stokes y de la divergencia que se estudiarán en la lección
+siguiente.
+
+\begin{definition}[Curva cerrada simple y orientación positiva]
+Una curva $C$ en el plano se dice \textbf{cerrada} si su punto inicial
+coincide con su punto final, y \textbf{simple} si no se intersecta a sí
+misma (excepto en los extremos). Su \textbf{orientación positiva} es
+aquella en la que la región encerrada queda siempre a la izquierda al
+recorrer la curva (sentido antihorario para una curva que encierra una
+región convexa).
+\end{definition}
+
+\begin{theorem}[Teorema de Green]
+Sea $C$ una curva suave por partes, cerrada simple, orientada
+positivamente en el plano, y sea $R$ la región encerrada por $C$.
+Si $M(x,y)$ y $N(x,y)$ son funciones con derivadas parciales continuas
+en una región abierta que contiene a $R$, entonces
+\[
+\oint_C M\,dx + N\,dy
+= \iint_R \left( \frac{\partial N}{\partial x} - \frac{\partial M}{\partial y} \right) dA.
+\]
+Equivalentemente, si $\mathbf{F} = \langle M, N \rangle$,
+\[
+\oint_{\partial R} \mathbf{F} \cdot d\mathbf{r}
+= \iint_R (\nabla \times \mathbf{F}) \cdot \mathbf{k} \, dA,
+\]
+donde $\nabla \times \mathbf{F} = \left( \frac{\partial N}{\partial x}
+- \frac{\partial M}{\partial y} \right) \mathbf{k}$ es la componente
+$z$ del rotacional.
+\end{theorem}
+
+\begin{proof}[Demostración pedagógica para regiones simples]
+Basta demostrar el teorema para una región que se pueda describir
+simultáneamente como una región de tipo I y de tipo II. Supóngase que
+$R = \{(x,y) \mid a \le x \le b,\ g_1(x) \le y \le g_2(x)\}$. La
+frontera se compone de cuatro curvas. Para la integral de $M\,dx$,
+se usa el teorema fundamental del cálculo:
+\[
+\oint_C M\,dx
+= \int_{C_1} M\,dx + \int_{C_2} M\,dx
+= \int_a^b M(x,g_1(x))\,dx - \int_a^b M(x,g_2(x))\,dx,
+\]
+donde $C_1$ es la frontera inferior y $C_2$ la superior (orientadas
+correctamente). Por el teorema fundamental,
+\[
+\int_{g_1(x)}^{g_2(x)} \frac{\partial M}{\partial y}\,dy
+= M(x,g_2(x)) - M(x,g_1(x)).
+\]
+Por tanto,
+\[
+\oint_C M\,dx = - \int_a^b \int_{g_1(x)}^{g_2(x)}
+\frac{\partial M}{\partial y}\,dy\,dx
+= -\iint_R \frac{\partial M}{\partial y}\,dA.
+\]
+De manera análoga, expresando $R$ como región de tipo II
+($c \le y \le d,\ h_1(y) \le x \le h_2(y)$), se obtiene
+\[
+\oint_C N\,dy = \iint_R \frac{\partial N}{\partial x}\,dA.
+\]
+Sumando ambas igualdades se obtiene la fórmula de Green.
+\end{proof}
+
+\begin{rem}
+La demostración anterior supone que la región es simple (se puede
+describir como tipo I y tipo II). Para regiones más generales (con
+agujeros o fronteras más complejas), se descomponen en subregiones
+simples y se aplica Green en cada una, sumando los resultados. Las
+integrales de línea sobre los cortes internos se cancelan, dejando
+únicamente la integral sobre la frontera exterior.
+\end{rem}
+
+\begin{pasos}[Aplicación del teorema de Green]
+Para usar el teorema de Green:
+\begin{enumerate}
+    \item \textbf{Identificar $M$ y $N$.} Escribir el campo vectorial
+    como $\mathbf{F}=\langle M,N \rangle$ y la integral de línea como
+    $\oint_C M\,dx + N\,dy$.
+    \item \textbf{Calcular el integrando de la integral doble.}
+    Hallar $\displaystyle \frac{\partial N}{\partial x} -
+    \frac{\partial M}{\partial y}$.
+    \item \textbf{Describir la región $R$.} Identificar la región
+    encerrada por $C$ y determinar sus límites de integración.
+    \item \textbf{Evaluar la integral doble.} Calcular
+    $\displaystyle \iint_R \left( \frac{\partial N}{\partial x} -
+    \frac{\partial M}{\partial y} \right) dA$.
+\end{enumerate}
+\end{pasos}
+
+%%==========================================================
+\begin{example}[Verificación de Green]
+Verificar el teorema de Green para el campo $\mathbf{F}(x,y) =
+\langle -y, x \rangle$ y la región $R$ encerrada por el círculo
+$x^2+y^2=4$.
+\end{example}
+
+\begin{myproof}
+\textbf{Paso 1. Identificar $M$ y $N$.}
+Aquí $M=-y$, $N=x$.
+
+\textbf{Paso 2. Calcular el integrando de la integral doble.}
+\[
+\frac{\partial N}{\partial x} - \frac{\partial M}{\partial y}
+= \frac{\partial}{\partial x}(x) - \frac{\partial}{\partial y}(-y)
+= 1 - (-1) = 2.
+\]
+
+\textbf{Paso 3. Describir la región $R$.}
+$R$ es el disco de radio $2$ centrado en el origen:
+$R = \{(x,y) \mid x^2+y^2 \le 4\}$.
+
+\textbf{Paso 4. Evaluar la integral doble.}
+En coordenadas polares, $dA = r\,dr\,d\theta$, con $0 \le r \le 2$,
+$0 \le \theta \le 2\pi$:
+\[
+\iint_R 2\,dA = 2 \int_0^{2\pi} \int_0^2 r\,dr\,d\theta
+= 2 \cdot 2\pi \cdot \frac{4}{2} = 8\pi.
+\]
+Por el teorema de Green, la integral de línea sobre la frontera
+orientada positivamente debe ser $8\pi$.
+
+\textbf{Verificación directa.}
+Parametrizamos la circunferencia como $\mathbf{r}(t)=\langle 2\cos t,
+2\sin t \rangle$, $0 \le t \le 2\pi$. Entonces
+\[
+\mathbf{F}(\mathbf{r}(t)) = \langle -2\sin t, 2\cos t \rangle,
+\quad \mathbf{r}'(t) = \langle -2\sin t, 2\cos t \rangle.
+\]
+Por tanto,
+\[
+\oint_C \mathbf{F}\cdot d\mathbf{r}
+= \int_0^{2\pi} \langle -2\sin t, 2\cos t \rangle \cdot
+\langle -2\sin t, 2\cos t \rangle \, dt
+= \int_0^{2\pi} 4(\sin^2 t + \cos^2 t)\,dt
+= \int_0^{2\pi} 4\,dt = 8\pi.
+\]
+La igualdad se cumple: $\boxed{8\pi = 8\pi}$. $\square$
+\end{myproof}
+
+%%==========================================================
+\section{Divergencia y rotacional}
+%%==========================================================
+
+El teorema de Green introduce la cantidad $\partial N/\partial x -
+\partial M/\partial y$, que es precisamente la componente $z$ del
+rotacional de $\mathbf{F}$ en dos dimensiones. Para campos en
+$\mathbb{R}^3$, el rotacional es un vector que mide la tendencia del
+campo a \emph{girar} alrededor de un punto, mientras que la divergencia
+mide la tendencia a \emph{fluir} hacia el exterior o el interior.
+
+\begin{definition}[Divergencia]
+La \textbf{divergencia} de un campo vectorial $\mathbf{F}(x,y,z) =
+\langle F_1, F_2, F_3 \rangle$ es el campo escalar
+\[
+\nabla \cdot \mathbf{F}
+= \frac{\partial F_1}{\partial x}
++ \frac{\partial F_2}{\partial y}
++ \frac{\partial F_3}{\partial z}.
+\]
+En $\mathbb{R}^2$, para $\mathbf{F} = \langle M, N \rangle$,
+\[
+\nabla \cdot \mathbf{F} = \frac{\partial M}{\partial x}
++ \frac{\partial N}{\partial y}.
+\]
+\end{definition}
+
+\begin{definition}[Rotacional]
+El \textbf{rotacional} de un campo vectorial $\mathbf{F}(x,y,z) =
+\langle F_1, F_2, F_3 \rangle$ es el campo vectorial
+\[
+\nabla \times \mathbf{F}
+= \begin{vmatrix}
+\mathbf{i} & \mathbf{j} & \mathbf{k} \\
+\partial_x & \partial_y & \partial_z \\
+F_1 & F_2 & F_3
+\end{vmatrix}
+= \left( \frac{\partial F_3}{\partial y} - \frac{\partial F_2}{\partial z} \right)
+\mathbf{i}
++ \left( \frac{\partial F_1}{\partial z} - \frac{\partial F_3}{\partial x} \right)
+\mathbf{j}
++ \left( \frac{\partial F_2}{\partial x} - \frac{\partial F_1}{\partial y} \right)
+\mathbf{k}.
+\]
+En $\mathbb{R}^2$, el rotacional se reduce al escalar (componente $z$)
+\[
+(\nabla \times \mathbf{F}) \cdot \mathbf{k}
+= \frac{\partial N}{\partial x} - \frac{\partial M}{\partial y},
+\]
+donde $\mathbf{F} = \langle M, N, 0 \rangle$.
+\end{definition}
+
+\begin{rem}[Interpretación física]
+\begin{itemize}
+    \item La \textbf{divergencia} mide la densidad de flujo neto que
+    sale de un punto. Si $\nabla\cdot\mathbf{F}>0$, el punto es una
+    \emph{fuente}; si es negativo, un \emph{sumidero}. Un campo
+    incompresible (como el flujo de un fluido a densidad constante)
+    tiene divergencia cero.
+    \item El \textbf{rotacional} mide la circulación local del campo
+    alrededor de un punto. Su dirección indica el eje de rotación, y
+    su magnitud, la intensidad del giro. Un campo con rotacional cero
+    se llama \emph{irrotacional}; si además el dominio es simplemente
+    conexo, el campo es conservativo.
+\end{itemize}
+\end{rem}
+
+En el contexto del teorema de Green, el integrando de la integral doble
+es precisamente la componente $z$ del rotacional de $\mathbf{F}$:
+\[
+\nabla \times \mathbf{F} = \left( \frac{\partial N}{\partial x}
+- \frac{\partial M}{\partial y} \right) \mathbf{k}.
+\]
+Por tanto, el teorema de Green se puede reescribir como
+\[
+\oint_{\partial R} \mathbf{F} \cdot d\mathbf{r}
+= \iint_R (\nabla \times \mathbf{F}) \cdot \mathbf{k} \, dA,
+\]
+que es un caso particular en el plano del teorema de Stokes en
+$\mathbb{R}^3$ (que se estudiará en la lección L4.2).
+
+\begin{rem}[Campos conservativos y rotacional]
+Un campo $\mathbf{F}$ definido en un dominio simplemente conexo es
+conservativo si y solo si $\nabla \times \mathbf{F} = \mathbf{0}$
+(en $\mathbb{R}^3$) o $\partial N/\partial x = \partial M/\partial y$
+(en $\mathbb{R}^2$). Esta es una reformulación práctica de la condición
+de simetría de las derivadas cruzadas.
+\end{rem}
+
+\begin{rem}[El teorema de Green como herramienta de cálculo]
+El teorema de Green no solo es un resultado teórico: permite convertir
+integrales de línea difíciles en integrales dobles más manejables, y
+viceversa. También se usa para calcular áreas de regiones planas
+eligiendo $\mathbf{F}$ tal que $\partial N/\partial x - \partial
+M/\partial y = 1$, por ejemplo $\mathbf{F} = \langle 0, x \rangle$ o
+$\mathbf{F} = \langle -y, 0 \rangle$, de modo que
+\[
+\text{Área}(R) = \oint_{\partial R} x\,dy = -\oint_{\partial R} y\,dx.
+\]
+Este es el principio del planímetro, un instrumento mecánico para medir
+áreas de regiones irregulares.
+\end{rem}
+
+%%==========================================================
+\section{Problemas propuestos}
+%%==========================================================
+
+\begin{prob}
+Calcule la integral de línea $\int_C \mathbf{F}\cdot d\mathbf{r}$ para
+$\mathbf{F}(x,y)=\langle x^2, y^2 \rangle$ a lo largo de los siguientes
+caminos que unen $(0,0)$ con $(1,1)$:
+\begin{enumerate}[(a)]
+    \item la línea recta $y=x$;
+    \item la parábola $x=t$, $y=t^2$;
+    \item la curva quebrada que va de $(0,0)$ a $(1,0)$ y luego a $(1,1)$.
+\end{enumerate}
+Compare los resultados y discuta si el campo es conservativo.
+\end{prob}
+
+\begin{prob}
+Determine si cada campo es conservativo. En caso afirmativo, halle su
+función potencial.
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+    \item $\mathbf{F}(x,y)=\langle 2x, 2y \rangle$
+    \item $\mathbf{F}(x,y)=\langle y^2, 2xy \rangle$
+    \item $\mathbf{F}(x,y)=\langle \cos y, -x\sin y \rangle$
+    \item $\mathbf{F}(x,y)=\langle e^x \cos y, -e^x \sin y \rangle$
+    \item $\mathbf{F}(x,y,z)=\langle 2x, 2y, 2z \rangle$
+    \item $\mathbf{F}(x,y,z)=\langle yz, xz, xy \rangle$
+\end{enumerate}
+\end{multicols}
+\end{prob}
+
+\begin{prob}
+Utilice el teorema fundamental de las integrales de línea para calcular
+$\int_C \mathbf{F}\cdot d\mathbf{r}$ donde $\mathbf{F}(x,y) =
+\langle 2xy^2, 2x^2y \rangle$ y $C$ es cualquier curva suave por partes
+que une $(0,0)$ con $(1,2)$.
+\end{prob}
+
+\begin{prob}
+Un campo de fuerzas $\mathbf{F}(x,y) = \langle e^x \cos y + y,
+-e^x \sin y + x \rangle$ actúa sobre una partícula.
+\begin{enumerate}[(a)]
+    \item Demuestre que $\mathbf{F}$ es conservativo.
+    \item Encuentre la función potencial $f$.
+    \item Calcule el trabajo realizado por $\mathbf{F}$ al mover una
+    partícula desde $(0,0)$ hasta $(1,\pi/2)$.
+\end{enumerate}
+\end{prob}
+
+\begin{prob}
+Verifique el teorema de Green para el campo $\mathbf{F}(x,y) =
+\langle x^2 y, x y^2 \rangle$ y el rectángulo $0\le x\le 2$,
+$0\le y\le 1$.
+\end{prob}
+
+\begin{prob}
+Use el teorema de Green para calcular
+\[
+\oint_C (x^2 + y^2)\,dx + (2xy)\,dy,
+\]
+donde $C$ es el cuadrado con vértices $(0,0)$, $(2,0)$, $(2,2)$,
+$(0,2)$ orientado positivamente.
+\end{prob}
+
+\begin{prob}
+Calcule la integral de línea
+\[
+\oint_C -y^3\,dx + x^3\,dy
+\]
+donde $C$ es el círculo $x^2+y^2=4$ orientado positivamente, usando
+el teorema de Green. Compare con la evaluación directa.
+\end{prob}
+
+\begin{prob}
+Sea $R$ una región plana con frontera $C$. Demuestre que el área de $R$
+está dada por
+\[
+A(R) = \frac{1}{2} \oint_C x\,dy - y\,dx.
+\]
+Use esta fórmula para calcular el área de la elipse $\frac{x^2}{a^2}
++\frac{y^2}{b^2}=1$.
+\end{prob}
+
+\begin{prob}
+Calcule la divergencia y el rotacional de los siguientes campos:
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+    \item $\mathbf{F}(x,y,z)=\langle x^2, y^2, z^2 \rangle$
+    \item $\mathbf{F}(x,y,z)=\langle yz, xz, xy \rangle$
+    \item $\mathbf{F}(x,y,z)=\langle e^x, \sin y, \cos z \rangle$
+    \item $\mathbf{F}(x,y,z)=\langle -y, x, 0 \rangle$
+\end{enumerate}
+\end{multicols}
+\end{prob}
+
+\begin{prob}
+Demuestre que para cualquier campo $\mathbf{F}$ con segundas derivadas
+parciales continuas, se cumple $\nabla \cdot (\nabla \times \mathbf{F})
+= 0$. Esto muestra que el rotacional de un campo siempre es
+\emph{solenoidal} (sin divergencia). Use un ejemplo concreto para
+verificar esta identidad.
+\end{prob}
+
+\begin{prob}
+Interprete físicamente el resultado del problema anterior:
+si $\mathbf{F}$ es el campo de velocidades de un fluido, ¿qué significa
+que $\nabla \cdot (\nabla \times \mathbf{F})=0$?
+\end{prob}
+
+\begin{prob}
+Determine si el campo $\mathbf{F}(x,y) = \langle -y/(x^2+y^2),
+x/(x^2+y^2) \rangle$ es conservativo en su dominio. Calcule su integral
+de línea alrededor de la circunferencia unidad y explique por qué el
+resultado no contradice el teorema fundamental de las integrales de
+línea.
+\end{prob}

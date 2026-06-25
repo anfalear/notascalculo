@@ -1,0 +1,811 @@
+\chapter{Lección 2.2: Multiplicadores de Lagrange e integral doble rectangular}
+
+\section*{Introducción}
+
+Esta lección desarrolla dos herramientas fundamentales del cálculo multivariable: la optimización con restricciones mediante el método de los multiplicadores de Lagrange y la integral doble en coordenadas rectangulares. Ambas son extensiones naturales de conceptos ya conocidos en una variable —la búsqueda de extremos y el cálculo de áreas— pero adaptadas al contexto de funciones de dos o más variables.
+
+El método de Lagrange permite encontrar máximos o mínimos de una función cuando sus variables están sujetas a una o varias condiciones (restricciones). La idea geométrica es simple: en el punto óptimo, los gradientes de la función objetivo y de la restricción deben ser paralelos. Por otra parte, la integral doble extiende la noción de integral definida a funciones de dos variables, permitiendo calcular volúmenes, áreas de superficies curvas y otras magnitudes sobre regiones del plano.
+
+A lo largo de la lección se enfatiza el papel de las hipótesis: la regularidad de la restricción y la compacidad de la región garantizan que el método funcione, y cuando estas fallan aparecen contraejemplos que ilustran la necesidad de verificar las condiciones. El criterio de la segunda derivada restringida (hessiano limitado) —aunque marcado como no exigente en la evaluación coordinada— se presenta como una herramienta adicional para clasificar los candidatos.
+
+\section{Optimización restringida y multiplicadores de Lagrange}
+
+\subsection{Problema motivador: el rectángulo de área máxima}
+
+\begin{prob}[Rectángulo de diagonal fija]
+Determine el área máxima de un rectángulo cuya diagonal mide $d>0$.
+\end{prob}
+
+Colocamos un vértice en el origen y el opuesto en $(x,y)$ con $x,y>0$; la diagonal satisface $\sqrt{x^2+y^2}=d$. El problema es
+
+\[
+\text{Maximizar } f(x,y)=xy \quad \text{sujeta a } g(x,y)=x^2+y^2-d^2=0,\quad x,y>0.
+\]
+
+La pregunta que guía el desarrollo es: ¿cómo hallar el máximo \emph{sin} eliminar una variable? La respuesta la proporciona el método de Lagrange, que se apoya en la relación geométrica entre las curvas de nivel de $f$ y la restricción.
+
+\subsection{Definiciones básicas}
+
+\begin{definition}[Extremo local para funciones de varias variables]
+Sea $f\colon U\subseteq \mathbb{R}^n\to\mathbb{R}$ definida en un abierto $U$. Decimos que $f$ tiene un \textbf{máximo local} en $\mathbf{x}_0\in U$ si existe $\delta>0$ tal que $f(\mathbf{x}_0)\ge f(\mathbf{x})$ para todo $\mathbf{x}\in B(\mathbf{x}_0,\delta)$. Análogamente, $f$ tiene un \textbf{mínimo local} en $\mathbf{x}_0$ si $f(\mathbf{x}_0)\le f(\mathbf{x})$ para todo $\mathbf{x}$ en dicha bola.
+\end{definition}
+
+\begin{definition}[Punto crítico]
+Un punto $\mathbf{x}_0\in U$ se denomina \textbf{punto crítico} (o estacionario) de $f$ si todas sus derivadas parciales existen y se anulan en $\mathbf{x}_0$, esto es, $\nabla f(\mathbf{x}_0)=\mathbf{0}$.
+\end{definition}
+
+\begin{definition}[Punto de silla]
+Un punto crítico $\mathbf{x}_0$ es un \textbf{punto de silla} si no es ni máximo ni mínimo local: en toda bola $B(\mathbf{x}_0,\delta)$ existen puntos $\mathbf{x}$ con $f(\mathbf{x})>f(\mathbf{x}_0)$ y puntos $\mathbf{y}$ con $f(\mathbf{y})<f(\mathbf{x}_0)$.
+\end{definition}
+
+\subsection{Curvas de nivel, regularidad y ortogonalidad del gradiente}
+
+Volvamos al problema del rectángulo. Las curvas de nivel de $f(x,y)=xy$ son hipérbolas $xy=C$, y la restricción $g=0$ es una circunferencia. Si en un punto de la circunferencia se alcanza el máximo de $f$ restringido, la hipérbola que pasa por ese punto debe ser \textbf{tangente} a la circunferencia; de otro modo, moviéndonos ligeramente sobre la circunferencia podríamos aumentar el área. Para justificar esta tangencia necesitamos el concepto de curva regular y el teorema de la función implícita.
+
+\begin{definition}[Curva regular]
+Una \textbf{curva regular} en $\R^2$ es una función diferenciable $\mathbf{r}\colon I\subset\R\to\R^2$, $\mathbf{r}(t)=(x(t),y(t))$, tal que $\mathbf{r}'(t)\neq\mathbf{0}$ para todo $t\in I$.
+\end{definition}
+
+\begin{theorem}[Función implícita]
+Si $g\colon\R^2\to\R$ es de clase $\mathcal C^1$ y $\nabla g(x_0,y_0)\neq\mathbf{0}$ con $g(x_0,y_0)=0$, entonces en un abierto de $(x_0,y_0)$ la ecuación $g(x,y)=0$ define una curva regular (localmente expresable como $y=\varphi(x)$ o $x=\psi(y)$).
+\end{theorem}
+
+En el problema del rectángulo, $\nabla g=(2x,2y)$ se anula únicamente en el origen, que no pertenece a la restricción ($d>0$); por tanto, todos los puntos de la circunferencia son regulares y el teorema de la función implícita garantiza que la restricción es localmente una curva suave.
+
+\begin{prop}[Ortogonalidad del gradiente a las curvas de nivel]
+Sea $f$ diferenciable y sea $\mathbf{r}(t)$ una curva regular contenida en la curva de nivel $f(\mathbf{r}(t))=c$. Entonces $\nabla f(\mathbf{r}(t))$ es perpendicular a $\mathbf{r}'(t)$ para cada $t$.
+\end{prop}
+
+\begin{proof}
+Derivando $f(\mathbf{r}(t))=c$ respecto a $t$ mediante la regla de la cadena:
+\[
+\nabla f(\mathbf{r}(t))\cdot \mathbf{r}'(t)=0.
+\]
+El producto escalar nulo caracteriza la ortogonalidad.
+\end{proof}
+
+En particular, para la restricción $g=0$, el vector $\nabla g$ es perpendicular a la curva $\{g=0\}$ en cada punto regular.
+
+\subsection{Deducción de la condición de Lagrange}
+
+Parametricemos la restricción $g=0$ mediante una curva regular $\mathbf{r}(t)$ y definamos $h(t)=f(\mathbf{r}(t))$. Si en $t_0$ la función $h$ alcanza un extremo local (porque $\mathbf{r}(t_0)$ es extremo de $f$ sobre la restricción), entonces $h'(t_0)=0$, es decir,
+\[
+\nabla f(\mathbf{r}(t_0))\cdot \mathbf{r}'(t_0)=0.
+\]
+Así, $\nabla f$ es perpendicular al vector tangente $\mathbf{r}'(t_0)$. Por la proposición anterior, $\nabla g$ también es perpendicular a $\mathbf{r}'(t_0)$. En $\R^2$, dos vectores perpendiculares a una misma recta son paralelos; por tanto, existe $\lambda\in\R$ tal que
+\[
+\nabla f(\mathbf{r}(t_0)) = \lambda\,\nabla g(\mathbf{r}(t_0)).
+\]
+Este escalar $\lambda$ se denomina \textbf{multiplicador de Lagrange}. La igualdad vectorial equivale a un sistema de $n$ ecuaciones (más la restricción) en $n+1$ incógnitas.
+
+\subsection{Teorema de Lagrange y método}
+
+\begin{theorem}[Multiplicadores de Lagrange, condición necesaria]
+Sean $f$ y $g$ funciones de clase $\mathcal C^1$ en un abierto de $\R^n$. Si $\mathbf{x}_0$ es un extremo local de $f$ restringido a la superficie $g(\mathbf{x})=0$ y $\nabla g(\mathbf{x}_0)\neq \mathbf{0}$, entonces existe un escalar $\lambda$ tal que
+\[
+\nabla f(\mathbf{x}_0) = \lambda\,\nabla g(\mathbf{x}_0).
+\]
+Equivalentemente, definiendo la \textbf{función de Lagrange}
+\[
+F(\mathbf{x},\lambda)=f(\mathbf{x})+\lambda g(\mathbf{x}),
+\]
+la condición anterior junto con $g(\mathbf{x}_0)=0$ equivale a $\nabla F(\mathbf{x}_0,\lambda)=\mathbf{0}$.
+\end{theorem}
+
+\begin{rem}
+El teorema establece una condición \emph{necesaria, no suficiente}: los puntos que satisfacen $\nabla F=\mathbf{0}$ son solo candidatos a extremo. Se requiere un análisis adicional para determinar su naturaleza.
+\end{rem}
+
+El siguiente teorema garantiza la existencia de extremos cuando la restricción es compacta.
+
+\begin{theorem}[Weierstrass]
+Sea $K\subset\R^n$ compacto (cerrado y acotado) y $f\colon K\to\R$ continua. Entonces $f$ alcanza su máximo y su mínimo absolutos en $K$.
+\end{theorem}
+
+Si la restricción $S$ es compacta, el teorema de Weierstrass asegura la existencia de extremos absolutos; si además la regularidad se cumple en todos los puntos de $S$, todo extremo aparece como candidato de Lagrange, por lo que basta evaluar $f$ en todos los candidatos y comparar.
+
+\begin{pasos}[Método de los multiplicadores de Lagrange]
+\begin{enumerate}
+    \item \textbf{Función de Lagrange.} Definir $F(\mathbf{x},\lambda)=f(\mathbf{x})+\lambda g(\mathbf{x})$.
+    \item \textbf{Sistema.} Resolver el sistema $\nabla F=\mathbf{0}$, es decir,
+    \[
+    \nabla f(\mathbf{x})=\lambda\nabla g(\mathbf{x}),\qquad g(\mathbf{x})=0.
+    \]
+    \item \textbf{Candidatos.} Los puntos $\mathbf{x}$ que satisfacen el sistema son los candidatos a extremo.
+    \item \textbf{Clasificación.} Si $S$ es compacto, comparar los valores de $f$ en los candidatos; el mayor es el máximo absoluto y el menor el mínimo absoluto. Si $S$ no es compacto, usar el criterio de la segunda derivada restringida (hessiano limitado) o un análisis directo.
+\end{enumerate}
+\end{pasos}
+
+\subsection{Ejemplos}
+
+\begin{example}[Rectángulo de diagonal fija (continuación)]
+Retomamos el problema motivador. Para $f(x,y)=xy$ y $g(x,y)=x^2+y^2-d^2$, los gradientes son $\nabla f=(y,x)$, $\nabla g=(2x,2y)$. La función de Lagrange es
+\[
+F(x,y,\lambda)=xy+\lambda(x^2+y^2-d^2).
+\]
+El sistema $\nabla F=\mathbf{0}$ produce:
+\[
+\begin{cases}
+y+2\lambda x=0,\\
+x+2\lambda y=0,\\
+x^2+y^2=d^2.
+\end{cases}
+\]
+Multiplicando la primera por $x$ y la segunda por $y$ obtenemos $xy=-2\lambda x^2$ e $xy=-2\lambda y^2$, de donde $x^2=y^2$. Sustituyendo en la restricción: $2x^2=d^2$, luego $x=\pm d/\sqrt{2}$. Los cuatro candidatos son
+\[
+\left(\frac{d}{\sqrt2},\frac{d}{\sqrt2}\right),\quad
+\left(-\frac{d}{\sqrt2},-\frac{d}{\sqrt2}\right),\quad
+\left(-\frac{d}{\sqrt2},\frac{d}{\sqrt2}\right),\quad
+\left(\frac{d}{\sqrt2},-\frac{d}{\sqrt2}\right).
+\]
+Evaluando, los dos primeros dan $d^2/2$ y los dos últimos $-d^2/2$. Como la circunferencia es compacta, el máximo absoluto es $d^2/2$. Restringiendo a $x,y>0$, el punto óptimo es $\left(d/\sqrt2,d/\sqrt2\right)$.
+\end{example}
+
+A continuación mostramos dos situaciones críticas que ponen de manifiesto la importancia de las hipótesis del teorema de Lagrange.
+
+\subsubsection{Regularidad violada: el método no detecta el extremo}
+
+\begin{example}[Cúspide]
+Considere el problema de minimizar $f(x,y)=x^2+y^2$ sujeta a $g(x,y)=x^2-y^3=0$.
+\end{example}
+
+La restricción $y^3=x^2$ se puede escribir como $y=x^{2/3}$, que tiene una cúspide en $(0,0)$. El mínimo de $f$ (distancia al origen) se alcanza en $(0,0)$, ya que $f(0,0)=0$ y $f\ge0$. Sin embargo,
+\[
+\nabla g(x,y)=(2x,-3y^2),\quad \nabla g(0,0)=(0,0).
+\]
+La hipótesis de regularidad falla en el punto del extremo. El sistema de Lagrange no produce una solución significativa para ese punto: $\nabla f(0,0)=(0,0)$ y $\nabla g(0,0)=(0,0)$, por lo que la ecuación $\nabla f=\lambda\nabla g$ se reduce a $0=0$, y el método no puede localizar el extremo.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.2,>=stealth]
+  \draw[->] (-0.5,0) -- (2.5,0) node[right] {$x$};
+  \draw[->] (0,-0.5) -- (0,2.5) node[above] {$y$};
+  \draw[thick,blue,domain=0:2.2,samples=200] plot ({\x*\x},{\x*\x*\x});
+  \draw[thick,blue,domain=0:2.2,samples=200] plot ({\x*\x},{-\x*\x*\x});
+  \fill (0,0) circle (2pt) node[below left] {$(0,0)$};
+  \node[blue,right] at (1.5,2.2) {$y^3=x^2$};
+  \node at (1.8,0.5) {$\nabla g(0,0)=\mathbf{0}$};
+  \draw[dashed,red] (0,0) -- (2.5,0) node[midway,above] {$d_{\min}=0$};
+\end{tikzpicture}
+\caption{Curva $y^3=x^2$ con cúspide en $(0,0)$; el mínimo de la distancia al origen ocurre en ese punto, pero $\nabla g=\mathbf{0}$ y el método de Lagrange falla.}
+\end{figure}
+
+\subsubsection{Candidato que no es extremo}
+
+\begin{example}[Candidato falso]
+¿Tiene extremos condicionados $f(x,y)=y-x^5$ sujeta a $g(x,y)=y-x^3=0$?
+\end{example}
+
+La restricción es $y=x^3$; sobre ella, $h(x)=f(x,x^3)=x^3-x^5=x^3(1-x^2)$. El origen es un punto crítico de $h$ (pues $h'(0)=0$), pero no es extremo: para $x>0$ pequeño, $h(x)>0$, y para $x<0$ pequeño, $h(x)<0$ (ya que $x^3$ es negativo y $1-x^2>0$). Por tanto, $(0,0)$ no es extremo condicionado.
+
+Veamos qué ocurre con el método de Lagrange. $\nabla f=(-5x^4,1)$, $\nabla g=(-3x^2,1)$. La regularidad se cumple pues $\nabla g\neq\mathbf{0}$ para todo punto (la segunda componente es $1$). El sistema
+\[
+\begin{cases}
+-5x^4 = -3\lambda x^2,\\
+1 = \lambda,\\
+y=x^3
+\end{cases}
+\]
+da $\lambda=1$ y $5x^4=3x^2$, es decir, $x=0$ o $x=\pm\sqrt{3/5}$. El punto $(0,0)$ es un candidato de Lagrange, pero no es extremo. Esto confirma que la condición $\nabla F=\mathbf{0}$ es necesaria pero no suficiente.
+
+\subsection{Criterio de la segunda derivada restringida (hessiano limitado)}
+
+Cuando la regularidad se cumple y se ha identificado un candidato $\mathbf{p}=(x_0,y_0)$, se puede determinar su naturaleza mediante un criterio de segundo orden. La idea es analizar la segunda derivada de $f$ a lo largo de la curva de restricción. Para el caso de una restricción $g(x,y)=0$, se define el \textbf{hessiano limitado} como el determinante de la matriz de orden $3$:
+\[
+\mathcal{H} =
+\det\begin{bmatrix}
+0 & -\dfrac{\partial g}{\partial x} & -\dfrac{\partial g}{\partial y} \\[8pt]
+-\dfrac{\partial g}{\partial x} & \dfrac{\partial^2 F}{\partial x^2} & \dfrac{\partial^2 F}{\partial x\partial y} \\[8pt]
+-\dfrac{\partial g}{\partial y} & \dfrac{\partial^2 F}{\partial x\partial y} & \dfrac{\partial^2 F}{\partial y^2}
+\end{bmatrix},
+\]
+donde $F=f+\lambda g$ y el determinante se evalúa en el candidato $(x_0,y_0)$.
+
+\begin{theorem}[Criterio del hessiano limitado]
+Suponga que $(x_0,y_0)$ es un candidato de Lagrange para optimizar $f$ sujeta a $g=0$, con $\partial g/\partial y(x_0,y_0)\neq0$. Entonces:
+\begin{itemize}
+    \item Si $\mathcal{H}(x_0,y_0)>0$, el punto es un \textbf{máximo condicionado}.
+    \item Si $\mathcal{H}(x_0,y_0)<0$, el punto es un \textbf{mínimo condicionado}.
+    \item Si $\mathcal{H}(x_0,y_0)=0$, el criterio es no concluyente.
+\end{itemize}
+\end{theorem}
+
+\begin{example}[Aplicación al rectángulo]
+Para el problema del rectángulo, en el candidato $A=(d/\sqrt2,d/\sqrt2)$ con $\lambda=-1/2$ y $g=x^2+y^2-d^2$, tenemos
+\[
+\frac{\partial g}{\partial x}=2x,\quad \frac{\partial g}{\partial y}=2y,\quad
+\frac{\partial^2 F}{\partial x^2}=2\lambda=-1,\quad
+\frac{\partial^2 F}{\partial y^2}=2\lambda=-1,\quad
+\frac{\partial^2 F}{\partial x\partial y}=1.
+\]
+Evaluando en $A$: $\partial g/\partial x=d\sqrt2$, $\partial g/\partial y=d\sqrt2$. El hessiano limitado es
+\[
+\det\begin{bmatrix}
+0 & -d\sqrt2 & -d\sqrt2 \\
+-d\sqrt2 & -1 & 1 \\
+-d\sqrt2 & 1 & -1
+\end{bmatrix}
+= 6d^2+d\sqrt2 >0.
+\]
+Por tanto, $A$ es un máximo condicionado, confirmando el resultado obtenido por compacidad.
+\end{example}
+
+\section{Integrales dobles en coordenadas rectangulares}
+
+La integral definida de una variable permite calcular áreas bajo curvas y acumulaciones a lo largo de intervalos. La integral doble extiende esta idea a funciones de dos variables, permitiendo calcular volúmenes bajo superficies, áreas de regiones planas, masas, centros de masa y otras magnitudes sobre regiones del plano.
+
+\subsection{Integral doble sobre un rectángulo}
+
+Sea $R=[a,b]\times[c,d]$ un rectángulo en el plano. Una partición de $R$ consiste en dividir $[a,b]$ en $m$ subintervalos de longitudes $\Delta x_i$ y $[c,d]$ en $n$ subintervalos de longitudes $\Delta y_j$, formando $mn$ subrectángulos $R_{ij}$ de área $\Delta A_{ij}=\Delta x_i\Delta y_j$. Elegimos un punto muestra $(\bar{x}_{ij},\bar{y}_{ij})$ en cada subrectángulo y formamos la suma de Riemann
+\[
+\sum_{i=1}^m\sum_{j=1}^n f(\bar{x}_{ij},\bar{y}_{ij})\,\Delta A_{ij}.
+\]
+Si el límite de estas sumas existe cuando la norma de la partición tiende a cero, se dice que $f$ es integrable sobre $R$ y se define la integral doble
+\[
+\iint_R f(x,y)\,dA = \lim_{\|P\|\to0}\sum_{i,j} f(\bar{x}_{ij},\bar{y}_{ij})\,\Delta A_{ij}.
+\]
+
+\begin{theorem}[Integrabilidad]
+Si $f$ es continua en $R$, entonces $f$ es integrable en $R$. Más generalmente, si $f$ es acotada y continua excepto posiblemente en un número finito de curvas suaves, también es integrable.
+\end{theorem}
+
+\subsection{Teorema de Fubini}
+
+El cálculo directo de la integral doble a partir de sumas de Riemann es engorroso. El teorema de Fubini la reduce a dos integrales simples sucesivas.
+
+\begin{theorem}[Fubini]
+Si $f$ es continua en el rectángulo $R=[a,b]\times[c,d]$, entonces
+\[
+\iint_R f(x,y)\,dA = \int_a^b\left[\int_c^d f(x,y)\,dy\right]dx
+= \int_c^d\left[\int_a^b f(x,y)\,dx\right]dy.
+\]
+\end{theorem}
+
+La primera integral iterada indica que primero se integra respecto a $y$ (manteniendo $x$ fija) y luego respecto a $x$; la segunda invierte el orden.
+
+\subsection{Propiedades de la integral doble}
+
+\begin{itemize}
+    \item \textbf{Linealidad:} $\iint_R [\alpha f+\beta g]\,dA = \alpha\iint_R f\,dA + \beta\iint_R g\,dA$.
+    \item \textbf{Aditividad:} si $R=R_1\cup R_2$ y $R_1,R_2$ se solapan solo en sus fronteras, entonces $\iint_R f = \iint_{R_1} f + \iint_{R_2} f$.
+    \item \textbf{Comparación:} si $f(x,y)\le g(x,y)$ en $R$, entonces $\iint_R f\le \iint_R g$.
+\end{itemize}
+
+\begin{pasos}[Evaluación de una integral doble sobre un rectángulo]
+\begin{enumerate}
+    \item \textbf{Elegir orden de integración.} Decidir si se integra primero con respecto a $x$ o a $y$. La elección depende de la función; en general se busca que la integral interior sea sencilla.
+    \item \textbf{Integrar interiormente.} Mantener la otra variable fija y aplicar las técnicas de integración de una variable.
+    \item \textbf{Integrar exteriormente.} Integrar la función resultante respecto a la variable restante en el intervalo correspondiente.
+\end{enumerate}
+\end{pasos}
+
+\begin{example}
+Calcular $\displaystyle\iint_R (x^2 y + y^2)\,dA$, donde $R=[0,1]\times[0,2]$.
+\end{example}
+
+\begin{myproof}
+Usamos el orden $dy\,dx$ (primero en $y$):
+\[
+\iint_R (x^2 y + y^2)\,dA
+= \int_0^1\int_0^2 (x^2 y + y^2)\,dy\,dx.
+\]
+Interior:
+\[
+\int_0^2 (x^2 y + y^2)\,dy
+= \left[\frac{x^2 y^2}{2} + \frac{y^3}{3}\right]_0^2
+= \frac{x^2\cdot 4}{2} + \frac{8}{3}
+= 2x^2+\frac{8}{3}.
+\]
+Luego
+\[
+\int_0^1 \left(2x^2+\frac{8}{3}\right)dx
+= \left[\frac{2x^3}{3}+\frac{8x}{3}\right]_0^1
+= \frac{2}{3}+\frac{8}{3}=\frac{10}{3}.
+\]
+Por tanto, $\displaystyle\iint_R (x^2 y + y^2)\,dA = \frac{10}{3}$.
+\end{myproof}
+
+\subsection{Integrales dobles sobre regiones generales}
+
+No toda región de integración es un rectángulo. Consideramos regiones acotadas con fronteras suaves. Dos tipos básicos son:
+
+\begin{definition}[Región tipo I ($y$-simple)]
+Una región $D$ es de tipo I si puede expresarse como
+\[
+D=\{(x,y): a\le x\le b,\; g_1(x)\le y\le g_2(x)\},
+\]
+donde $g_1,g_2$ son funciones continuas en $[a,b]$.
+\end{definition}
+
+\begin{definition}[Región tipo II ($x$-simple)]
+Una región $D$ es de tipo II si puede expresarse como
+\[
+D=\{(x,y): c\le y\le d,\; h_1(y)\le x\le h_2(y)\},
+\]
+donde $h_1,h_2$ son funciones continuas en $[c,d]$.
+\end{definition}
+
+Para regiones tipo I, la integral doble se calcula como
+\[
+\iint_D f(x,y)\,dA = \int_a^b \int_{g_1(x)}^{g_2(x)} f(x,y)\,dy\,dx.
+\]
+Para regiones tipo II, se tiene
+\[
+\iint_D f(x,y)\,dA = \int_c^d \int_{h_1(y)}^{h_2(y)} f(x,y)\,dx\,dy.
+\]
+
+\begin{pasos}[Integral doble sobre una región general]
+\begin{enumerate}
+    \item \textbf{Identificar el tipo de región.} Determinar si $D$ es tipo I (y entre dos curvas) o tipo II (x entre dos curvas). Si es posible, elegir el orden que simplifique los límites.
+    \item \textbf{Establecer los límites.} Escribir los límites de integración según el tipo elegido.
+    \item \textbf{Evaluar la integral iterada.} Integrar primero respecto a la variable interior y luego respecto a la exterior.
+\end{enumerate}
+\end{pasos}
+
+\subsection{Ejemplos de regiones generales}
+
+\begin{example}[Región tipo I]
+Evalúe $\displaystyle\iint_D xy\,dA$, donde $D$ es la región acotada por $y=x^2$ y $y=x$, con $0\le x\le 1$.
+\end{example}
+
+\begin{myproof}
+La región es tipo I: para cada $x\in[0,1]$, $y$ varía entre $x^2$ y $x$. Por tanto,
+\[
+\iint_D xy\,dA = \int_0^1\int_{x^2}^{x} xy\,dy\,dx.
+\]
+Interior:
+\[
+\int_{x^2}^{x} xy\,dy = x\left[\frac{y^2}{2}\right]_{x^2}^{x}
+= \frac{x}{2}(x^2-x^4) = \frac{x^3}{2}-\frac{x^5}{2}.
+\]
+Luego
+\[
+\int_0^1 \left(\frac{x^3}{2}-\frac{x^5}{2}\right)dx
+= \frac{1}{2}\left[\frac{x^4}{4}-\frac{x^6}{6}\right]_0^1
+= \frac{1}{2}\left(\frac{1}{4}-\frac{1}{6}\right)
+= \frac{1}{2}\cdot\frac{1}{12}=\frac{1}{24}.
+\]
+Por tanto, $\displaystyle\iint_D xy\,dA = \frac{1}{24}$.
+\end{myproof}
+
+\begin{example}[Región tipo II]
+Evalúe $\displaystyle\iint_D (x+y)\,dA$, donde $D$ es la región acotada por $x=y^2$ y $x=y+2$.
+\end{example}
+
+\begin{myproof}
+Los puntos de intersección de $y^2$ y $y+2$ satisfacen $y^2=y+2$, es decir, $y^2-y-2=0$, cuyas soluciones son $y=-1$ y $y=2$. Para $y\in[-1,2]$, la curva de la izquierda es $x=y^2$ y la de la derecha es $x=y+2$ (ya que $y+2\ge y^2$ en ese intervalo). Luego $D$ es tipo II:
+\[
+D=\{(x,y): -1\le y\le 2,\; y^2\le x\le y+2\}.
+\]
+Entonces
+\[
+\iint_D (x+y)\,dA = \int_{-1}^{2}\int_{y^2}^{y+2} (x+y)\,dx\,dy.
+\]
+Interior:
+\[
+\int_{y^2}^{y+2} (x+y)\,dx
+= \left[\frac{x^2}{2}+yx\right]_{y^2}^{y+2}.
+\]
+Evaluando en $y+2$:
+\[
+\frac{(y+2)^2}{2}+y(y+2) = \frac{y^2+4y+4}{2}+y^2+2y
+= \frac{3y^2}{2}+4y+2.
+\]
+Evaluando en $y^2$:
+\[
+\frac{y^4}{2}+y^3.
+\]
+La diferencia es:
+\[
+\left(\frac{3y^2}{2}+4y+2\right) - \left(\frac{y^4}{2}+y^3\right)
+= -\frac{y^4}{2} - y^3 + \frac{3y^2}{2}+4y+2.
+\]
+Ahora integramos respecto a $y$:
+\[
+\int_{-1}^{2}\left(-\frac{y^4}{2} - y^3 + \frac{3y^2}{2}+4y+2\right)dy
+= \left[-\frac{y^5}{10} - \frac{y^4}{4} + \frac{y^3}{2} + 2y^2 + 2y\right]_{-1}^{2}.
+\]
+Evaluamos en $2$:
+\[
+-\frac{32}{10} - \frac{16}{4} + \frac{8}{2} + 8 + 4
+= -\frac{16}{5} - 4 + 4 + 8 + 4 = -\frac{16}{5} + 12 = \frac{44}{5}.
+\]
+Evaluamos en $-1$:
+\[
+-\frac{(-1)^5}{10} - \frac{(-1)^4}{4} + \frac{(-1)^3}{2} + 2(-1)^2 + 2(-1)
+= \frac{1}{10} - \frac{1}{4} - \frac{1}{2} + 2 - 2.
+\]
+Simplificando: $\frac{1}{10} - \frac{1}{4} - \frac{1}{2} = \frac{2}{20} - \frac{5}{20} - \frac{10}{20} = -\frac{13}{20}$.
+La diferencia es $\frac{44}{5} - \left(-\frac{13}{20}\right) = \frac{176}{20}+\frac{13}{20} = \frac{189}{20}$.
+Por tanto, $\displaystyle\iint_D (x+y)\,dA = \frac{189}{20}$.
+\end{myproof}
+
+\begin{rem}
+En regiones generales, elegir el orden de integración adecuado puede simplificar drásticamente los límites. A menudo, una región que no es tipo I puede ser tipo II, y viceversa. Si la región no es de ninguno de estos tipos, se puede descomponer en varias subregiones.
+\end{rem}
+
+\section{Problemas propuestos}
+
+\begin{prob}[Multiplicadores de Lagrange]
+\begin{enumerate}
+    \item Utilice multiplicadores de Lagrange para encontrar los extremos de $f(x,y)=x^2+y^2$ sujetos a $x^2+xy+y^2=1$.
+    \item Determine los valores máximo y mínimo de $f(x,y,z)=xyz$ sujetos a $x^2+y^2+z^2=1$.
+    \item (Regularidad violada) Considere $f(x,y)=x^2+y^2$ sujeta a $g(x,y)=x^3-y^2=0$. ¿Qué ocurre en el origen? ¿Por qué el método de Lagrange no lo detecta?
+    \item (Candidato falso) Para $f(x,y)=y-x^4$ y $g(x,y)=y-x^2=0$, muestre que el origen es un candidato de Lagrange pero no es extremo condicionado.
+\end{enumerate}
+\end{prob}
+
+\begin{prob}[Hessiano limitado]
+Para el problema de minimizar $f(x,y)=x^2+y^2$ sujeto a $g(x,y)=x+y-1=0$, encuentre el candidato y utilice el hessiano limitado para confirmar que es un mínimo.
+\end{prob}
+
+\begin{prob}[Integrales dobles sobre rectángulos]
+Calcule las siguientes integrales dobles:
+\begin{enumerate}
+    \item $\displaystyle\iint_R (x^2+2y)\,dA$, $R=[0,2]\times[0,3]$.
+    \item $\displaystyle\iint_R \cos(x+y)\,dA$, $R=[0,\pi/2]\times[0,\pi/2]$.
+\end{enumerate}
+\end{prob}
+
+\begin{prob}[Regiones generales]
+Evalúe:
+\begin{enumerate}
+    \item $\displaystyle\iint_D (x+y)\,dA$, donde $D$ es la región acotada por $y=x$ y $y=x^2$.
+    \item $\displaystyle\iint_D x\,dA$, donde $D$ es la región acotada por $y=x^2$ y $x=y^2$.
+    \item $\displaystyle\iint_D xy\,dA$, donde $D$ es la región acotada por $y=x$ y $x=4-y^2$ (sugerencia: determine los puntos de intersección).
+\end{enumerate}
+\end{prob}
+
+\begin{prob}[Cambio de orden de integración]
+Dibuje la región de integración y reescriba la integral invirtiendo el orden:
+\[
+\int_0^1\int_{x^2}^{x} f(x,y)\,dy\,dx.
+\]
+\end{prob}
+
+
+% ============================================================
+% Cap. 22 — Optimización: extremos y multiplicadores de Lagrange
+% 22 problemas unicos: 22 listos para integrar ahora, 0 esperan pasada Claude Code (pstricks)
+% ============================================================
+
+% >>> LISTOS PARA INTEGRAR AHORA <<<
+
+% [Original: líneas 480-513 | solución completa | sin figura]
+\begin{prob}
+Determine el punto sobre el plano $x-y+z=9$ que está más cerca al punto $(1,2,5).$
+\begin{myproof}
+La función de distancia es $s=(x-1)^2+(y-2)^2+(z-5)^2$ (recuerde que minimizar $s$ minimiza su cuadrado) pero se está calculando la distancia a un punto que pertenece al plano $x-y+z-9=0.$ Despejando a $z$ de la ecuación del plano se obtiene la función $s=(x-1)^2+(y-2)^2+(4-x+y)^2$ la cual se va a minimizar.
+Calculando las derivadas, $$\dfrac{\partial s}{\partial x}=2(x-1)-2(4-x+y)$$ y  $$\dfrac{\partial s}{\partial y}=2(y-2)+2(4-x+y).$$
+\begin{multicols}{2}
+Haciendo $\dfrac{\partial s}{\partial x}=0$ se obtiene:
+\begin{align*}
+0&=2x-2-8+2x-2y\\
+0&=4x-2y-10.
+\end{align*}
+\columnbreak
+Similarmente, si $\dfrac{\partial s}{\partial y}=0$ entonces:
+\begin{align*}
+0&=2y-4+8-2x+2y\\
+0&=4y-2x+4.
+\end{align*}
+\end{multicols}
+Lo cual lleva a resolver el siguiente sistema de ecuaciones
+\begin{align*}
+0&=4x-2y-10\\0&=4y-2x+4
+\end{align*}
+Cuya solución es $x=\dfrac{8}{3}$ y $y=\dfrac{1}{3}.$
+Por criterio de las segundas derivadas parciales, al calcular 
+\begin{multicols}{3}
+$$\dfrac{\partial^2 s}{\partial x^2}=4,$$ $$\dfrac{\partial^2 s}{\partial y^2}=4,$$ $$\dfrac{\partial^2 s}{\partial x\partial y}=-2.$$
+\end{multicols}
+Evaluando el valor de $D$ en el punto $\left( \dfrac{8}{3},\dfrac{1}{3}  \right)$:
+$D=\left(\dfrac{\partial^2 s}{\partial x^2}\right)\left(\dfrac{\partial^2 s}{\partial y^2}\right)-\left(\dfrac{\partial^2 s}{\partial x\partial y}\right)^2=\left(  4  \right)\left( 4 \right)-\left(-2 \right)^2 = 8>0$
+Finalmente,  $$\dfrac{\partial^2 s}{\partial x^2}=2>0$$
+Lo cual implica que $\left( \dfrac{8}{3},\dfrac{1}{3}  \right)$ es un mínimo. Así el punto más cercano es $\left(\dfrac{8}{3},\dfrac{1}{3},\dfrac{20}{3}\right)$
+La distancia mínima será $s=\sqrt{\left(\dfrac{8}{3}-1\right)^2+\left(\dfrac{1}{3}-1\right)^2+\left(4-\dfrac{8}{3}+\dfrac{1}{3}\right)^2}=\sqrt{12}.$
+\end{myproof}
+\end{prob}
+
+% [Original: líneas 515-517 | sin verificar | sin figura]
+\begin{prob}
+Determine el punto sobre el plano $x-y+z=9$ que está más cerca al punto $(0,0,0)$.
+\end{prob}
+
+% [Original: líneas 519-582 | solución completa | tikz - listo]
+\begin{prob}
+Se construirá un canal abierto con sección transversal en la forma de un  trapecio con ángulos iguales en la base, doblando franjas iguales a ambos lados de una larga pieza de metal de 50 centímetros de ancho tal como se muestra en la figura. Determine los ángulos en la base y el ancho de los lados para obtener la mayor capacidad de carga.
+\begin{myproof}
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-0.9631690910028438,-1.0185175531939794) rectangle (9.64234461356722,3.9917251304360035);
+\draw [shift={(6.,0.)},line width=2.pt] (0,0) -- (0.:0.4500217979308372) arc (0.:56.309932474020215:0.4500217979308372) -- cycle;
+\draw [shift={(2.,0.)},line width=2.pt] (0,0) -- (123.6900675259798:0.4500217979308372) arc (123.6900675259798:180.:0.4500217979308372) -- cycle;
+\draw [shift={(8.,3.)},line width=2.pt] (0,0) -- (180.:0.4500217979308372) arc (180.:236.3099324740202:0.4500217979308372) -- cycle;
+\draw [shift={(0.,3.)},line width=2.pt,] (0,0) -- (-56.309932474020215:0.4500217979308372) arc (-56.309932474020215:0.:0.4500217979308372) -- cycle;
+\draw [line width=5.2pt] (0.,3.)-- (2.,0.);
+\draw [line width=5.2pt] (2.,0.)-- (6.,0.);
+\draw [line width=5.2pt] (6.,0.)-- (8.,3.);
+\draw [line width=5.2pt] (8.,3.)-- (0.,3.);
+\draw [line width=2.pt] (2.,0.)-- (2.,3.);
+\draw [line width=2.pt] (6.,0.)-- (6.,3.);
+\draw (0.46189993577814065,1.5616074216094848) node[anchor=north west] {$x$};
+\draw (6.522193481246748,3.676709871884418) node[anchor=north west] {$x\cos \theta$};
+\draw (0.5969064751573918,3.7967156846659744) node[anchor=north west] {$x\cos \theta$};
+\draw (3.3420394425354987,-0.0734717775392221) node[anchor=north west] {$50-2x$};
+\draw (2.1419813147199327,1.936625586551849) node[anchor=north west] {$x \sin \theta$};
+\draw (4.5,1.9216248599541543) node[anchor=north west] {$x \sin \theta$};
+\draw (7.242228357936088,1.5766081482071794) node[anchor=north west] {$x$};
+\draw [line width=2.pt,domain=-0.9631690910028438:9.64234461356722] plot(\x,{(-0.-0.*\x)/6.});
+\draw[color=black] (6.8,0.38405038369046196) node {$\theta $};
+\draw[color=black] (1.3019406252490366,0.39905111028815654) node {$\theta $};
+\draw[color=black] (7.1,2.6) node {$\theta $};
+\draw[color=black] (0.7,2.6) node {$\theta$};
+\end{tikzpicture}
+ \end{figure}
+Para hallar el canal con volumen máximo basta con maximizar el área de la sección transversal, formado por el trapecio de la figura. Como el área de un trapecio está dada por la fórmula $A=\dfrac{B+b}{2}h$ donde $B$ es la base mayor, $b$ la base menor y $h$ la altura, se debe maximizar la función $A(x,\theta)=\dfrac{B+b}{2}h,$ donde $x$ es la longitud del canal que se dobla y $\theta$ es el ángulo desde la base del canal.
+Por la figura puede observarse que:
+\begin{multicols}{3}
+\begin{itemize}
+\item $B=2x\cos \theta + 50-2x.$
+\item $b=50-2x.$
+\item $h=x\sin \theta.$
+\end{itemize}
+\end{multicols}
+Lo cual implica que la función de área queda determinada por
+\begin{align*}
+A(x,\theta)&=\dfrac{1}{2}\left[ 2x\cos \theta+(50-2x)+(50-2x) \right]x\sin \theta,\\
+&=\left(x\cos \theta+(50-2x)\right)x\sin \theta,\\
+&=x^2\cos\theta \sin \theta+50x\sin \theta-2x^2\sin \theta.
+\end{align*}
+Como los puntos críticos de la función están donde las dos primeras derivadas parciales son cero, se hace el cálculo de estas derivadas y  después se encuentran los puntos donde son simultáneamente cero. Así,
+\begin{itemize}
+\item $\dfrac{\partial A}{\partial x}=2x\cos\theta\sin\theta +50\sin \theta -4x\sin \theta.$
+\item $\dfrac{\partial A}{\partial \theta}=50 x \cos \theta -2 x^2\cos \theta +x^2\left(cos^{2}\theta-\sin^{2}\theta\right)=50 x \cos \theta -2 x^2\cos \theta +x^2\left(2cos^{2}\theta-1\right).$  
+\end{itemize}
+Si $\dfrac{\partial A}{\partial x}=0$ entonces $\sin \theta \left( 2x\cos\theta +50-4x \right)=0.$ Como $\sin \theta=0$ si $\theta =0$ o $\theta =\pi$ se descartan esos puntos, por lo cual se tomará el caso cuando $2x\cos\theta +50-4x =0,$ lo cual implica que $\cos \theta=\dfrac{2x-25}{x}.$
+Como las primeras derivadas parciales deben ser cero simultáneamente, puede hacerse el reemplazo $\cos \theta=\dfrac{2x-25}{x}$ en la ecuación $\dfrac{\partial A}{\partial \theta}=0.$ 
+De esta manera, haciendo los cálculos correspondientes se obtiene que
+\begin{align*}
+0=\dfrac{\partial A}{\partial \theta}&=50x\left(\dfrac{2x-25}{x}\right)-2x^2\left(\dfrac{2x-25}{x}\right)+x^2\left(2\left(\dfrac{2x-25}{x}\right)^{2}-1\right),\\
+0&=50\left(2x-25\right)-2x\left(2x-25\right)+2\left( 2x-25 \right)^2-x^2,\\
+0&=3x^2-50x,\\
+0&=x(3x-50).\\
+\end{align*}
+Así, $x=0$  o $x=\dfrac{50}{3},$ como $x>0$ se toma el punto $x=\dfrac{50}{3},$ y esto determina que $\cos \theta =\dfrac{-2+2\left( \frac{50}{3} \right)}{\frac{50}{3}}=\dfrac{1}{2}$  y así $\theta=\frac{\pi}{3}.$ 
+Finalmente, el punto para el cual el volumen del canal es máximo son los puntos $(x,\theta)=\left(\dfrac{50}{3},\dfrac{\pi}{3}\right).$ 
+\end{myproof}
+\end{prob}
+
+% [Original: líneas 584-599 | solución completa | sin figura]
+\begin{prob}
+El material para construir la base de una caja cuya tapa es abierta cuesta $1.5$ veces más por unidad de área que el material para los lados. Si hay disponibles $\$ 1 000$, halle la caja de mayor volumen que puede ser fabricada.
+\begin{myproof}
+Sea $x,\ y,\ z$ la longitud de costo del ancho, el largo y la altura de la caja respectivamente. Note que el área superficial de la caja es $A_{s}=2xz+2yz+xy$ y el costo de su producción está dado por la función $C(x,y)=2xz+2yz+1.5xy.$ Como el valor destinado para su producción es $\$ 1000$, se tiene que, $1000=C(x,y)=2xz+2yz+1.5xy,$ donde se puede despejar $z$ obteniendo $z=\dfrac{1000-1.5xy}{2x+2y}.$  
+Así, el volumen de la caja está dado por $$V= xy   \left(\dfrac{1000-1.5xy}{2x+2y}\right)=\dfrac{1000xy-1.5x^2y^2}{2x+2y}.$$
+Al calcular las primeras derivadas parciales se tiene que
+\begin{itemize}
+\item $\dfrac{\partial V}{\partial x}=\dfrac{\left( 1000y-3xy^2 \right)\left( 2x+2y \right)-2\left( 1000xy-1.5x^2y^2 \right)}{\left(2x+2y\right)^{2}}=\dfrac{y^{2}\left(2000-3x^2-6xy\right)}{4\left(x+y\right)^{2}}.$
+\item $\dfrac{\partial V}{\partial y}=\dfrac{\left( 1000x-3x^2y \right)\left( 2x+2y \right)-2\left( 1000xy-1.5x^2y^2 \right)}{\left(2x+2y\right)^{2}}=\dfrac{x^{2}\left(2000-3y^2-6xy\right)}{4\left(x+y\right)^{2}}.$
+\end{itemize}
+Observe que las dos primeras derivadas parciales son iguales si $y=x,$ por lo tanto basta hacer este cambio en una de ellas para obtener los puntos críticos. 
+En efecto, $0=\dfrac{x^2\left( 2000-3x^2-6x^2 \right)}{4\left( 2x \right)^2}=\dfrac{x^2\left( 2000-9x^2 \right)}{16x^2}.$ 
+Es decir, $0=x^2\left( 2000-9x^2 \right).$ De ahí, $x=0,$ $x=\pm \sqrt{\dfrac{2000}{9}}=\pm \dfrac{20\sqrt{5}}{3},$ que determina el único valor $x=\dfrac{20\sqrt{5}}{3},$ el cual es un máximo (puede comprobarlo con el criterio de la segunda derivada), que determina las dimensiones de la caja como $x=\dfrac{20\sqrt{5}}{3},$ $y=\dfrac{20\sqrt{5}}{3},$ $z=5\sqrt{5}.$ 
+Finalmente, el volumen es aproximadamente $V=\left( \dfrac{20\sqrt{5}}{3} \right)\left( \dfrac{20\sqrt{5}}{3} \right)\left( 5\sqrt{5} \right)\approx 2484.52$ unidades cúbicas.
+\end{myproof}
+\end{prob}
+
+% [Original: líneas 725-761 | solución completa | sin figura]
+\begin{prob}
+Calcule el volumen de la caja rectangular más grande en el primer octante con tres caras en los planos coordenados y un vértice en el plano $x+5y+3z=6.$
+\begin{myproof}
+Como la caja está en el primer cuadrante, el volumen es $V=xyz,$ pero se conoce que un vértice de esta se encuentra sobre el plano $x+5y+3z=6.$ Despejando a $z$ de la ecuación del plano se obtiene la función $V=\dfrac{xy}{3}\left( 6-x-5y \right)$ la cual se va a maximizar.
+Calculando las derivadas, $$\dfrac{\partial V}{\partial x}=2y-\frac{2}{3}xy-\frac{5}{3}y^2$$ y  $$\dfrac{\partial V}{\partial y}=2x-\frac{10}{3}xy-\frac{1}{3}x^2.$$
+\begin{multicols}{2}
+Haciendo $\dfrac{\partial V}{\partial x}=0$ se obtiene:
+\begin{align*}
+0&=2y-\frac{2}{3}xy-\frac{5}{3}y^2\\
+&=y\left(2-\frac{2}{3}x-\frac{5}{3}y\right)\\
+&\Rightarrow y=0 \text{ o } y=\dfrac{6-2x}{5}.
+\end{align*}
+\columnbreak
+Similarmente, si $\dfrac{\partial V}{\partial y}=0$ entonces:
+\begin{align*}
+0&=2x-\frac{10}{3}xy-\frac{1}{3}x^2\\
+&=x\left(2-\frac{1}{3}x-\frac{10}{3}y\right)\\
+&\Rightarrow x=0 \text{ o } y=\dfrac{6-x}{10}.
+\end{align*}
+\end{multicols}
+Lo cual da dos puntos críticos: $(0,0)$ y el que resulta de igualar los valores de $y.$
+Así, 
+\begin{align*}
+\dfrac{6-2x}{5}&=\dfrac{6-x}{10}\\\dfrac{6}{5}-\dfrac{3}{5}&=\dfrac{4x}{10}-\dfrac{x}{10}\\\dfrac{3}{5}&=\dfrac{3x}{15}\\30&=15x\\x&=2.
+\end{align*}
+Como $x=2,$ entonces $y=\dfrac{2}{5}.$  
+Por criterio de las segundas derivadas parciales, al calcular 
+\begin{multicols}{3}
+$$\dfrac{\partial^2 V}{\partial x^2}=\dfrac{-2}{3}y,$$ $$\dfrac{\partial^2 V}{\partial y^2}=\dfrac{-10}{3}x,$$ $$\dfrac{\partial^2 V}{\partial x\partial y}=2-\dfrac{2x}{3}-\dfrac{10y}{3}.$$
+\end{multicols}
+Evaluando el valor de $D$ en el punto $\left( 2,\dfrac{2}{5}  \right)$:
+$D=\left(\dfrac{\partial^2 V}{\partial x^2}\right)\left(\dfrac{\partial^2 V}{\partial y^2}\right)-\left(\dfrac{\partial^2 V}{\partial x\partial y}\right)^2=\left(  \dfrac{-4}{15}  \right)\left(  \dfrac{-20}{3}  \right)-\left( -\dfrac{2}{3} \right)^2 = \dfrac{4}{3}>0$
+Finalmente,  $$\dfrac{\partial^2 V}{\partial x^2}=\dfrac{-2}{3}y=\dfrac{-4}{15}<0$$
+Lo cual implica que $\left( 2,\dfrac{2}{5}  \right)$ es un máximo.
+El volumen de la caja será $V=\dfrac{xy}{3}\left( 6-x-5y \right)=\dfrac{8}{15}\ u^3.$
+\end{myproof}
+\end{prob}
+
+% [Original: líneas 884-915 | solución completa | sin figura]
+\begin{prob}
+La base de un acuario de volumen $V$ está hecho de cerámica y los lados son de vidrio. Si la cerámica cuesta tres veces más por unidad de área que el vidrio, determine las dimensiones del acuario que minimizan el costo de los materiales.
+\begin{myproof}
+Sean $x,$ $y$ y $z$ las dimensiones del ancho, el largo y la altura del acuario. Por lo tanto, el área de la cerámica será $xy.$ Sea $V=xyz$ el volumen del acuario, entonces $z=\dfrac{V}{xy}$ y como el área superficial del acuario es $A=2(xz+yz)+xy$ la función de costo es $C=3xy+2xz+2yz$ la cual se convierte al reemplazar $z$ en $C=3xy+\dfrac{2V}{y}+\dfrac{2V}{x}.$ 
+Calculando las derivadas, $$\dfrac{\partial C}{\partial x}=3y-\dfrac{2V}{x^2}$$ y  $$\dfrac{\partial C}{\partial y}=3x-\dfrac{2V}{y^2}.$$
+\begin{multicols}{2}
+Haciendo $\dfrac{\partial C}{\partial x}=0$ se obtiene:
+\begin{align*}
+0&=3y-\dfrac{2V}{x^2}\\
+y&=\dfrac{2V}{3x^2}.
+\end{align*}
+\columnbreak
+Similarmente, si $\dfrac{\partial C}{\partial y}=0$ entonces:
+\begin{align*}
+0&=3x-\dfrac{2V}{y^2}\\
+x&=\dfrac{2V}{3y^2}.
+\end{align*}
+\end{multicols}
+Resolviendo,
+$$3x=\dfrac{2V}{y^2}\Leftrightarrow 3x=\dfrac{2V}{\left( \dfrac{2V}{3x^2} \right)^2} \Leftrightarrow 3x=\dfrac{2V(9x^4)}{4V^2}\Leftrightarrow x^3=\dfrac{2V}{3}\Leftrightarrow x=\sqrt[3]{\dfrac{2V}{3}}.$$
+Observando la otra ecuación, $y=\sqrt[3]{\dfrac{2V}{3}}.$
+ 
+Por criterio de las segundas derivadas parciales, al calcular 
+\begin{multicols}{3}
+$$\dfrac{\partial^2 C}{\partial x^2}=\dfrac{4V}{x^3},$$ $$\dfrac{\partial^2 C}{\partial y^2}=\dfrac{4V}{y^3},$$ $$\dfrac{\partial^2 C}{\partial x\partial y}=3.$$
+\end{multicols}
+Evaluando el valor de $D$ en el punto $\left( \sqrt[3]{\dfrac{2V}{3}},\sqrt[3]{\dfrac{2V}{3}} \right)$:
+$D=\left(\dfrac{\partial^2 s}{\partial x^2}\right)\left(\dfrac{\partial^2 s}{\partial y^2}\right)-\left(\dfrac{\partial^2 s}{\partial x\partial y}\right)^2=\left(  6  \right)\left( 6 \right)-\left(3 \right)^2 = 27>0$
+Finalmente,  $$\dfrac{\partial^2 s}{\partial x^2}=6>0$$
+Lo cual implica que $\left( \sqrt[3]{\dfrac{2V}{3}},\sqrt[3]{\dfrac{2V}{3}} \right)$ es un mínimo. Así las dimensiones son $\left( \sqrt[3]{\dfrac{2V}{3}},\sqrt[3]{\dfrac{2V}{3}},\left(\dfrac{3}{2}\right)^{2/3}\sqrt[3]{V} \right)=\left( \sqrt[3]{\dfrac{2V}{3}},\sqrt[3]{\dfrac{2V}{3}},\sqrt[3]{\left(\dfrac{9}{4}\right){V}} \right).$
+\end{myproof}
+\end{prob}
+
+% [Original: líneas 933-935 | sin verificar | sin figura]
+\begin{prob}
+Encuentre las dimensiones de una caja rectangular cerrada (con tapa) con volumen máximo si su área superficial es igual a $75\ cm^3$ .
+\end{prob}
+
+% [Original: líneas 937-939 | sin verificar | sin figura | 2 variante(s) de parámetro (se descartaron 1)]
+\begin{prob}
+Encuentre el área máxima de un triángulo rectángulo cuyo perímetro es $16$.
+\end{prob}
+
+% [Original: líneas 941-943 | sin verificar | sin figura]
+\begin{prob}
+El voltaje en los extremos de un conductor aumenta a una tasa de $9\  V/min$ y la resistencia disminuye a razón de $0.5\ \Omega/min.$ Si $I=\dfrac{V}{R}$ calcule la tasa a la cual circula la corriente $I$ en el instante cuando $R=70\ \Omega$ y $V=60\ V.$
+\end{prob}
+
+% [Original: líneas 993-995 | sin verificar | sin figura]
+\begin{prob}
+Determine el punto sobre el plano $x+y+z=9$ que está más cerca al punto $(0,0,0).$
+\end{prob}
+
+% [Original: líneas 1123-1125 | sin verificar | sin figura | 2 variante(s) de parámetro (se descartaron 1)]
+\begin{prob}
+Determine el punto sobre el plano $x+5y+4z=18$ que está más cerca al punto $(11A,7A,9A).$
+\end{prob}
+
+% [Original: líneas 1135-1137 | sin verificar | sin figura | 2 variante(s) de parámetro (se descartaron 1)]
+\begin{prob}
+Determine el punto sobre el plano $3x+8y+2z=-3$ que está más cerca al punto $(3A,2A,5A).$ Use multiplicadores de Lagrange o el método de máximos y mínimos para su solución.
+\end{prob}
+
+% [Original: líneas 1164-1166 | sin verificar | sin figura]
+\begin{prob}
+Determine las dimensiones de una lata cilíndrica con tapa que permita contener dos litros de agua usando la menor cantidad de metal.
+\end{prob}
+
+% [Original: líneas 1220-1222 | sin verificar | sin figura]
+\begin{prob}
+Use multiplicadores de Lagrange o el método de máximos y mínimos para determinar el punto sobre el plano $x-y+z=9$ que está más cerca al punto $(A,8A,9A).$
+\end{prob}
+
+% [Original: líneas 1232-1234 | sin verificar | sin figura | 3 variante(s) de parámetro (se descartaron 2)]
+\begin{prob}
+Determine la distancia mínima del punto $(6,4,10)$ al plano $3x+8y+z=5.$  Use multiplicadores de Lagrange o el método de máximos y mínimos para su solución.
+\end{prob}
+
+% [Original: líneas 1296-1298 | sin verificar | sin figura]
+\begin{prob}
+Determine el punto sobre el plano $x-y+z=9$ que está más cerca al punto $(A,8A,3A).$
+\end{prob}
+
+% [Original: líneas 1300-1317 | sin verificar | sin figura]
+\begin{prob}
+Defina tres números distintos $A$ $B$ y $C.$  
+\begin{parts}
+\part Considere la función $f(x,y)=A\left(\dfrac{x^4-y^4}{x^2+y^2}\right).$
+\begin{enumerate}[(a)]
+    \item Calcule el dominio de $f(x,y).$ Grafique este dominio.
+    \item Evalúe detalladamente la continuidad de la función. Si existen puntos donde la función sea discontinua, redefina si es posible para construir una función que sea continua.
+\end{enumerate}
+\part Se deposita arena en una pila cónica, de modo que, en cierto instante la altura es de $B$ metros y crece a razón de $\dfrac{B}{3}$ metros/minuto, mientras que el radio es de $C$ metros y crece a razón de $\dfrac{C}{4}$ metros/minuto. ¿Qué tan rápido aumenta el volumen en tal instante?
+\part La temperatura en un punto $(x,y,z)$ está dada por $T(x,y,z)=200e^{-x^2-3y^2-9z^2}$ donde $T$ se mide en centímetros y $x, y,  z$ en metros.
+\begin{enumerate}[$a)$]
+    \item Determine la razón de cambio de la temperatura en el punto $P(2,-1,2)$ en dirección del punto $Q(A,-B,C).$ \textbf{Sugerencia:} Construya el vector cuyo punto inicial es $(2,-1,2)$ y el punto final es $Q(A,-B,C).$
+    \item Determine la dirección de máximo incremento de la temperatura en $P$. 
+    \item ¿Cuál es la razón máxima de incremento en $P.$?
+\end{enumerate}
+\part Determine el punto sobre el plano $x-y+z=4$ que está más cerca al punto $(A,B,C).$  			
+\end{parts}
+\end{prob}
+
+% [Original: líneas 1319-1334 | solución completa | sin figura]
+\begin{prob}
+\textbf{Ley de Hardy-Weinberg} Los tipos sanguíneos son genéticamente determinados por tres alelos A, B y O. (Alelo es cualquiera de las posibles formas de mutación de un gen.) Una persona cuyo tipo sanguíneo es AA, BB u OO es homocigótica. Una persona cuyo tipo sanguíneo es AB, AO o BO es heterocigótica. La ley Hardy-Weinberg establece que la proporción $P$ de individuos heterocigótica en cualquier población dada es $P(p,q,r)=2pq+2pr+2qr,$  donde $p$ representa el porcentaje de alelos A en la población, $q$ representa el porcentaje de alelos B en la población y $r$ representa el porcentaje de alelos O en la población. Utilizar el hecho que $p+q+r=1$ para mostrar que la proporción máxima de individuos heterocigóticos en cualquier población es $\dfrac{2}{3}.$
+\begin{myproof}
+Sea $P(p,q,r)=2pq+2pr+2qr$ la proporción de individuos heterocigóticos. Como $p=1-q-r$ la función de proporción se reduce a $P(q,r)=2(1-q-r)q+2(1-q-r)r+2qr=-2q^2-2r^2-2qr+2q+2r.$ 
+Al calcular las primeras derivadas parciales,
+\begin{itemize}
+\item $\dfrac{\partial P}{\partial r}=-4r-2q+2.$
+\item $\dfrac{\partial P}{\partial q}=-4q-2r+2.$
+\end{itemize}
+Note que $\dfrac{\partial P}{\partial r}=-4r-2q+2=0$ implica que $4r+2q=2$ y de manera análoga $\dfrac{\partial P}{\partial q}=-4q-2r+2=0$ implica que $2r+4q=2.$
+La solución del sistema de ecuaciones $\left\lbrace \begin{array}{ccc} 2&=&4r+2q\\
+2&=&2r+4q \end{array} \right.$ determina a $\left(\dfrac{1}{3},\dfrac{1}{3}\right)$ como punto crítico.
+Al usar el criterio de las segundas derivadas parciales, como $P_{rr}=-4,\ P_{qq}=-2$ y $P_{qr}=-2,$ $D=\left(-4\right)\left(-2\right)-\left( -2 \right)^{2}=4>0.$ Lo cual dice que $\left( \dfrac{1}{3},\dfrac{1}{3} \right)$ es un máximo.
+Finalmente, al despejar,  $p= \dfrac{1}{3}.$ Esto lleva a que la proporción  $P\left(\dfrac{1}{3},\dfrac{1}{3},\dfrac{1}{3}  \right)=\dfrac{2}{3}$ tal como se quería demostrar.
+\end{myproof}
+\end{prob}
+
+% [Original: líneas 1336-1352 | solución completa | sin figura]
+\begin{prob}
+Determine el punto en el plano $2x+4y+3z=12$ que es más cercano al origen.
+\begin{myproof}
+Sea $P(x,y,z)$ un punto en el plano. Entonces el cuadrado de la distancia entre el origen y $P$ es $d^2=x^2+y^2+z^2.$ Como $P$ está en el plano, $z=\dfrac{12-2x-4y}{3},$ por lo cual se quiere minimizar  $d^2=f(x,y)=x^2+y^2+\left( \dfrac{12-2x-4y}{3} \right)^{2}.$
+Al calcular las derivadas parciales se obtiene que 
+\begin{itemize}
+\item $\dfrac{\partial f}{\partial x}=2x+\dfrac{2}{9}\left( 12-2x-4y \right)(-2)=\dfrac{-48+26x+16y}{9}.$
+\item $\dfrac{\partial f}{\partial x}=2y+\dfrac{2}{9}\left( 12-2x-4y \right)(-4)=\dfrac{-96+16x+50y}{9}.$
+\end{itemize}
+Así, $\dfrac{\partial f}{\partial x}=0=\dfrac{-48+26x+16y}{9}$ implica que $24=13x+8y.$ 
+Análogamente, $\dfrac{\partial f}{\partial y}=0=\dfrac{-96+16x+50y}{9}$ implica que $48=8x+25y.$ 
+Al resolver el sistema de ecuaciones $\left\lbrace \begin{array}{ccc} 24&=&13x+8y\\
+48&=&8x+25y \end{array} \right.$ se obtiene el punto crítico $\left( \dfrac{24}{29},\dfrac{48}{29} \right).$ 
+Al usar el criterio de las segundas derivadas parciales, como $f_{xx}=\dfrac{26}{9},\ f_{yy}=\dfrac{50}{9}$ y $f_{xy}=\dfrac{16}{9},$ $D=\left(\dfrac{26}{9}\right)\left(\dfrac{50}{9}\right)-\left( \dfrac{16}{9} \right)^{2}=\dfrac{116}{9}>0.$ Lo cual dice que $\left( \dfrac{24}{29},\dfrac{48}{29} \right)$ es un mínimo.
+Finalmente, al despejar,  $z=\dfrac{12-2\left( \frac{24}{29} \right)-4\left( \frac{48}{29} \right)}{3}=\dfrac{36}{29}, $ por lo cual el punto  cuya distancia es mínima es $\left(\dfrac{24}{29},\dfrac{48}{29},\dfrac{36}{29}  \right).$ 
+\end{myproof}
+\end{prob}
+
+% [Original: líneas 1354-1374 | solución completa | sin figura]
+\begin{prob}
+Suponga que la temperatura $T$ en la placa circular $\{  (x,y): x^2+y^2\leq 1 \}$ está dada por la función $T(x,y)=2x^2+y^2-y.$ Determine cuáles son los puntos más calientes y más fríos de la placa.
+\begin{myproof} 
+Para observar donde ocurre este fenómeno se calculan inicialmente los puntos críticos  donde las primeras derivadas parciales son cero. 
+Así, $\dfrac{\partial T}{\partial x}=4x$ y $\dfrac{\partial T}{\partial y}=2y-1,$ las cuales se anulan en el punto $(0,\frac{1}{2}),$ y este es el primer punto crítico. 
+Como los puntos de frontera  de la placa también son críticos, hay que verificar si son máximos o mínimos. La frontera está determinada por la ecuación $x^2+y^2=1$ entonces $x^2=1-y^2,$ y así $T(y)=2(1-y^2)+y^2-y=-y^2-y+2.$ Esta función tiene dominio $\left[-1,1\right],$ por lo cual dos de los puntos a evaluar como máximo o mínimo son $(0,-1)$ y $(0,1).$
+Observe que $T^{\prime}(y)=-2y-1,$ se obtienen sus puntos críticos haciendo  $T^{\prime}(y)=0,$ obteniendo el punto $y=\dfrac{-1}{2},$ y así otros posibles candidatos son los puntos $\left( \dfrac{\sqrt{3}}{2}, \dfrac{-1}{2} \right)$ y $\left( \dfrac{-\sqrt{3}}{2}, \dfrac{1}{-2} \right).$ 
+ 
+ Finalmente se evalúan todos los puntos para verificar cuál es máximo o mínimo.
+ \begin{multicols}{3}
+ \begin{itemize}
+ \item $T\left(0,\dfrac{1}{2}\right)=\dfrac{-1}{4}.$
+ \item $T\left(0,-1\right)=2.$
+ \item $T\left(0,1\right)=0.$
+ \item $T\left(\dfrac{\sqrt{3}}{2},\dfrac{1}{2}\right)=\dfrac{9}{4}.$
+  \item $T\left(\dfrac{-\sqrt{3}}{2},\dfrac{1}{2}\right)=\dfrac{9}{4}.$
+ \end{itemize}
+\end{multicols}
+De donde se puede concluir que los puntos donde la temperatura es más alta son $\left( \dfrac{\sqrt{3}}{2}, \dfrac{-1}{2} \right)$ y $\left( \dfrac{-\sqrt{3}}{2}, \dfrac{1}{-2} \right).$ El punto donde la temperatura es más baja es  $\left(0,\dfrac{1}{2}\right).$
+\end{myproof}
+\end{prob}
+
+% [Original: líneas 1392-1394 | sin verificar | sin figura]
+\begin{prob}
+Encuentre las dimensiones de una caja rectangular abierta (sin tapa) con volumen máximo si su área superficial es igual a $75\ cm^3$ .
+\end{prob}
+
+% [Original: líneas 1404-1406 | sin verificar | sin figura]
+\begin{prob}
+El voltaje en los extremos de un conductor aumenta a una tasa de $5\  V/min$ y la resistencia disminuye a razón de $1\ \Omega/min.$ Si $I=\dfrac{V}{R}$ calcule la tasa a la cual circula la corriente $I$ en el instante cuando $R=60\ \Omega$ y $V=75\ V.$
+\end{prob}
+

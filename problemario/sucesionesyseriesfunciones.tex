@@ -1047,12 +1047,10 @@ el radio sea finito.
     \fill[gray] (-1,0) circle (2pt);
     \draw[gray] (1,0) circle (2pt);
     \node[gray, above=3pt] at (0,0) {\small $R=1$ ($x^n/n$)};
-    % Caso 4: R = 1, [-1,1]
-    \draw[very thick, orange!80!black] (-1,-0.5) -- (1,-0.5);
-    \fill[orange!80!black] (-1,-0.5) circle (2pt);
-    \fill[orange!80!black] ( 1,-0.5) circle (2pt);
-    \node[orange!80!black, below=3pt] at (0,-0.5)
-        {\small $R=1$ ($(-1)^n x^{2n}/(2n)!$)};
+    % Caso 4: R = infty
+    \draw[very thick, orange!80!black, <->] (-3.2,-0.5) -- (3.2,-0.5);
+    \node[orange!80!black, right] at (3.2,-0.5) {\small $R=\infty$};
+    \node[orange!80!black, left]  at (-3.2,-0.5) {\small $\cos x$};
     % Marcas
     \foreach \x in {-1,0,1}{
         \draw (\x,0.05) -- (\x,-0.05) node[below] {\small$\x$};

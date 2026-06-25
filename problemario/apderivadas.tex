@@ -54,12 +54,10 @@ constantes y sus derivadas desaparecen, destruyendo la información
 que se busca. Los valores numéricos solo entran en el paso 5.
 \end{rem}
 
-\begin{example}
+\begin{example}[Tanque cónico invertido]
 Un tanque cónico invertido tiene altura $12$ m y radio basal $6$ m.
 El agua entra a razón de $2$ m$^3$/min. ¿A qué rapidez sube el nivel
 cuando el agua tiene $4$ m de profundidad?
-\end{example}
-
 \begin{myproof}
 
 \begin{figure}[H]
@@ -174,18 +172,16 @@ Se sustituyen $h = 4$ m y $\dfrac{dV}{dt} = 2$ m$^3$/min:
 \]
 Despejando:
 \[
-\frac{dh}{dt} = \frac{2}{4\pi} = \frac{1}{2\pi} \approx 0.159 \text{ m/min.}
-\qquad\square
+\frac{dh}{dt} = \frac{2}{4\pi} = \boxed{\frac{1}{2\pi} \approx 0.159 \text{ m/min.}}
 \]
 \end{myproof}
+\end{example}
 
 
-\begin{example}
+\begin{example}[Escalera apoyada en la pared]
 Una escalera de $10$ m de largo se apoya en una pared vertical. La base
 se aleja de la pared a $0.5$ m/s. ¿A qué velocidad desciende el extremo
 superior cuando la base está a $6$ m de la pared?
-\end{example}
-
 \begin{myproof}
 \textbf{Paso 1. Diagrama y variables.}
 
@@ -274,19 +270,17 @@ y = \sqrt{100 - x^2} = \sqrt{100 - 36} = \sqrt{64} = 8 \text{ m}.
 \]
 Sustituyendo $x=6$, $y=8$ y $\dfrac{dx}{dt}=0.5$:
 \[
-\frac{dy}{dt} = -\frac{6}{8}\cdot 0.5 = -\frac{6}{16} = -\frac{3}{8}
-\text{ m/s.}
+\frac{dy}{dt} = -\frac{6}{8}\cdot 0.5 = \boxed{-\frac{3}{8} \text{ m/s.}}
 \]
 El signo negativo indica que el extremo superior \emph{desciende}; su
-rapidez de descenso es $\dfrac{3}{8}$ m/s. $\square$
+rapidez de descenso es $\dfrac{3}{8}$ m/s.
 \end{myproof}
-
-
-\begin{example}
-Un globo esférico se infla a razón de $100\pi$ cm$^3$/s.
-¿A qué rapidez crece el radio cuando el radio mide $5$ cm?
 \end{example}
 
+
+\begin{example}[Globo esférico en inflado]
+Un globo esférico se infla a razón de $100\pi$ cm$^3$/s.
+¿A qué rapidez crece el radio cuando el radio mide $5$ cm?
 \begin{myproof}
 \textbf{Paso 1. Diagrama y variables.}
 El globo es una esfera de radio $r(t)$ y volumen $V(t)$, ambos
@@ -321,10 +315,10 @@ Se sustituyen $r = 5$ cm y $\dfrac{dV}{dt} = 100\pi$ cm$^3$/s:
 \]
 Despejando:
 \[
-\frac{dr}{dt} = \frac{100\pi}{100\pi} = 1 \text{ cm/s.}
-\qquad\square
+\frac{dr}{dt} = \frac{100\pi}{100\pi} = \boxed{1 \text{ cm/s.}}
 \]
 \end{myproof}
+\end{example}
 %%==========================================================
 \section{Valores Extremos}
 %%==========================================================
@@ -372,11 +366,9 @@ $f'(c)$ existe, entonces $f'(c)=0$.
 \end{enumerate}
 \end{pasos}
 
-\begin{example}
+\begin{example}[Extremos absolutos de un polinomio cúbico]
 Encontrar los extremos absolutos de $f(x)=x^3-3x^2+1$ en
 $\left[-\tfrac{1}{2},\,4\right]$.
-\end{example}
-
 \begin{myproof}
 \textbf{Paso 1. Encontrar todos los puntos críticos de $f$ en
 $\left(-\tfrac{1}{2},\,4\right)$.}
@@ -430,7 +422,11 @@ se concluye:
     \item \textbf{Mínimo absoluto:} $f(2)=-3$, alcanzado en el punto
     crítico interior $x=2$.
 \end{itemize}
+\[
+\boxed{\text{Máximo absoluto: }f(4)=17;\quad\text{mínimo absoluto: }f(2)=-3.}
+\]
 \end{myproof}
+\end{example}
 
 En ocasiones, una función mantiene un comportamiento uniforme a lo largo
 de un intervalo: siempre sube, siempre baja o permanece constante. Esta
@@ -454,11 +450,9 @@ Sea $f$ continua en $[a,b]$ y derivable en $(a,b)$:
 \end{itemize}
 \end{theorem}
 
-\begin{example}
+\begin{example}[Monotonía de $f(x)=x^3-3x$]
 Determinar los intervalos de crecimiento y decrecimiento de
 $f(x)=x^3-3x$.
-\end{example}
-
 \begin{myproof}
 \textbf{Paso 1. Calcular $f'$ y encontrar los puntos críticos.}
 
@@ -498,8 +492,10 @@ $(1,+\infty)$  & $+$ & $+$ & $+$ \\
 \end{itemize}
 
 Los valores $f(-1)=2$ y $f(1)=-2$ corresponden respectivamente a un
-máximo local y un mínimo local de $f$. $\square$
-
+máximo local y un mínimo local de $f$.
+\[
+\boxed{f\text{ crece en }(-\infty,-1)\cup(1,+\infty);\quad f\text{ decrece en }(-1,1).}
+\]
 
 % ============================================================
 % GRÁFICA: Monotonía de f(x) = x^3 - 3x
@@ -562,6 +558,7 @@ máximo local y un mínimo local de $f$. $\square$
 de $f'$.}
 \end{figure}
 \end{myproof}
+\end{example}
 
 
 La \textbf{concavidad} describe hacia qué lado «abre» la curva de $f$
@@ -593,11 +590,9 @@ inflexión.
 \end{rem}
 
 % ============================================================
-\begin{example}
+\begin{example}[Concavidad e inflexiones de $f(x)=x^4-4x^3$]
 Determinar los intervalos de concavidad y los puntos de inflexión de
 $f(x)=x^4-4x^3$.
-\end{example}
-
 \begin{myproof}
 \textbf{Paso 1. Calcular $f''$ y encontrar los puntos candidatos a
 inflexión.}
@@ -633,7 +628,10 @@ $(2,+\infty)$ & $+$ & $+$ & $+$ & hacia arriba $\smile$ \\
 En $x=0$ y $x=2$ la concavidad cambia de signo, por lo que ambos son
 puntos de inflexión. Sus imágenes son: \(
 f(0)=0, \qquad f(2)=16-32=-16.
-\) Los puntos de inflexión son $(0,\,0)$ y $(2,\,-16)$. 
+\) Los puntos de inflexión son $(0,\,0)$ y $(2,\,-16)$.
+\[
+\boxed{\text{Inflexiones: }(0,0)\text{ y }(2,-16);\quad f''>0\text{ en }(-\infty,0)\cup(2,+\infty);\quad f''<0\text{ en }(0,2).}
+\]
 
 % ============================================================
 % GRÁFICA: Concavidad de f(x) = x^4 - 4x^3
@@ -707,6 +705,7 @@ $f''>0$ (curva abre hacia arriba) y en rojo donde $f''<0$ (curva abre
 hacia abajo). Los puntos negros señalan los puntos de inflexión.}
 \end{figure}
 \end{myproof}
+\end{example}
 Las herramientas desarrolladas hasta ahora de monotonía y concavidad
 permiten caracterizar puntos especiales que son máximos o mínimos, no
 en el dominio completo de $f$, sino en una vecindad reducida alrededor
@@ -752,10 +751,8 @@ de la segunda derivada no distingue estos casos, por lo que siempre debe
 recurrirse al de la primera derivada cuando $f''(c)=0$.
 \end{rem}
 
-\begin{example}
+\begin{example}[Análisis completo de $f(x)=x^4-4x^3$]
 Analizar completamente $f(x)=x^4-4x^3$.
-\end{example}
-
 \begin{myproof}
 \textbf{Paso 1. Dominio e información básica.}
 
@@ -846,8 +843,13 @@ $x=3$ & Mínimo local en $(3,\,-27)$. \\
 
 La función decrece en $(-\infty,3)$, alcanza su único mínimo local en
 $x=3$, y crece en $(3,+\infty)$. La concavidad cambia en $x=0$ y
-$x=2$, que son los únicos puntos de inflexión. El bosquejo de la función puede revisarse nuevamente en la figura \ref{x4+3x3}.
+$x=2$, que son los únicos puntos de inflexión.
+\[
+\boxed{\text{Mínimo local: }(3,-27);\quad\text{inflexiones: }(0,0)\text{ y }(2,-16).}
+\]
+El bosquejo de la función puede revisarse nuevamente en la figura \ref{x4+3x3}.
 \end{myproof}
+\end{example}
 
 %%==========================================================
 \section{Trazado Sistemático de Curvas}
@@ -886,10 +888,8 @@ proceso sistemático:
 \end{enumerate}
 \end{pasos}
 
-\begin{example}
+\begin{example}[Trazado de $f(x)=x^2/(x^2-4)$]
 Trazar la curva $f(x)=\dfrac{x^2}{x^2-4}$.
-\end{example}
-
 \begin{myproof}
 \textbf{Paso 1. Análisis previo.}
 
@@ -997,9 +997,9 @@ $(2,+\infty)$  & $-$ & $+$ & decreciente, cóncava $\uparrow$ \\
 \end{tabular}
 \end{center}
 
-Puntos clave: máximo local en $(0,\,0)$; asíntotas verticales $x=\pm2$;
-asíntota horizontal $y=1$. $\square$
-
+\[
+\boxed{\text{Máx. local: }(0,0);\quad\text{asíntotas verticales: }x=\pm2;\quad\text{asíntota horizontal: }y=1.}
+\]
 
 % ============================================================
 % BOSQUEJO: f(x) = x^2 / (x^2 - 4)
@@ -1058,6 +1058,7 @@ cóncavas hacia arriba y las rojas hacia abajo. Las líneas grises
 punteadas indican las asíntotas $x=\pm2$ e $y=1$.}
 \end{figure}
 \end{myproof}
+\end{example}
 %%%==========================================================
 \section{Optimización}
 %%==========================================================
@@ -1099,13 +1100,11 @@ de optimización:
 
 
 % ============================================================
-\begin{example}
+\begin{example}[Caja abierta de volumen máximo]
 De una hoja rectangular de $24\times 9$ cm se recortan cuadrados
 iguales en las esquinas y se doblan los bordes para formar una caja
 abierta. ¿Qué tamaño deben tener los cuadrados para maximizar el
 volumen?
-\end{example}
-
 \begin{myproof}
 \textbf{Paso 1. Diagrama y variables.}
 
@@ -1216,17 +1215,16 @@ intervalo. El volumen máximo es:
 \[
 V(2) = 2(24-4)(9-4) = 2\cdot 20\cdot 5 = \boxed{200 \text{ cm}^3}.
 \]
-Los cuadrados deben tener \textbf{2 cm de lado}. $\square$
+Los cuadrados deben tener \textbf{2 cm de lado}.
 \end{myproof}
+\end{example}
 
 
 % ============================================================
-\begin{example}
+\begin{example}[Lata cilíndrica sin tapa de área mínima]
 Se desea construir una lata cilíndrica sin tapa de volumen $V_0$.
 Encontrar las dimensiones que minimizan el área total de material
 utilizado.
-\end{example}
-
 \begin{myproof}
 \textbf{Paso 1. Diagrama y variables.}
 
@@ -1298,19 +1296,21 @@ h = \frac{V_0}{\pi r^2}
   = \frac{\pi r^3}{\pi r^2} = r.
 \]
 La lata de menor material se obtiene cuando \textbf{la altura iguala
-al radio}: $h = r = \left(\dfrac{V_0}{\pi}\right)^{1/3}$. $\square$
+al radio}:
+\[
+\boxed{h = r = \left(\frac{V_0}{\pi}\right)^{1/3}.}
+\]
 \end{myproof}
+\end{example}
 
 
 % ============================================================
-\begin{example}
+\begin{example}[Tendido de tubería a mínimo costo]
 Una tubería debe ir desde el punto $A$ en una orilla de un río de
 $3$ km de ancho hasta el punto $B$, situado $8$ km aguas abajo en la
 orilla opuesta. Tender tubería por el río cuesta \$200/km y por
 tierra \$100/km. ¿Dónde debe cruzar el río para minimizar el costo
 total?
-\end{example}
-
 \begin{myproof}
 \textbf{Paso 1. Diagrama y variables.}
 
@@ -1405,12 +1405,13 @@ intervalo:
 \begin{align*}
 \text{Costo}(0)      &= 200(3)+100(8) = 1400 \text{ USD}\\
 \text{Costo}(8)      &= 200\sqrt{73}  \approx 1709 \text{ USD}\\
-\text{Costo}(\sqrt{3}) &= 200(2\sqrt{3})+100(8-\sqrt{3})\approx \boxed{1292.8 \text{ USD}}.
+\text{Costo}(\sqrt{3}) &= 400\sqrt{3}+100(8-\sqrt{3}) = 300\sqrt{3}+800\approx \boxed{1319.6 \text{ USD}}.
 \end{align*}
 El cruce óptimo se ubica \textbf{a $\sqrt{3}\approx 1.73$ km} del
 punto $P$ directamente opuesto a $A$, produciendo el costo mínimo
-de aproximadamente $\$1292.8$ USD. $\square$
+de aproximadamente $\$1319.6$ USD.
 \end{myproof}
+\end{example}
 %%==========================================================
 \section{El Teorema del Valor Medio}
 %%==========================================================
@@ -1452,39 +1453,43 @@ fue exactamente $60$ km/h. El siguiente ejemplo muestra que el TVM no
 es un resultado independiente, sino una consecuencia directa del Lema
 de Rolle.
 
-\begin{example}
+\begin{example}[Demostración del TVM a partir de Rolle]
 Demostrar el Teorema del Valor Medio a partir del Lema de Rolle.
-\end{example}
-
 \begin{myproof}
-La idea es construir una función auxiliar que «aplane» la secante,
-transformando el problema general en uno al que Rolle puede aplicarse.
-Se define:
+\textbf{Paso 1. Definir la función auxiliar.}
+
+La idea es «aplanar» la secante para reducir el problema al caso de
+Rolle. Se define:
 \[
 h(x) = f(x) - f(a) - \frac{f(b)-f(a)}{b-a}(x-a).
 \]
 Geométricamente, $h(x)$ mide la distancia vertical entre la curva $f$
-y la recta secante que une $(a,f(a))$ con $(b,f(b))$. Se verifican
-las hipótesis del Lema de Rolle:
+y la recta secante que une $(a,f(a))$ con $(b,f(b))$.
+
+\textbf{Paso 2. Verificar las hipótesis del Lema de Rolle para $h$.}
 
 \begin{itemize}
     \item $h$ es continua en $[a,b]$ y derivable en $(a,b)$, pues $f$
     lo es y la función lineal restada también.
     \item $h(a) = f(a)-f(a)-0 = 0$.
-    \item $h(b) = f(b)-f(a)-\dfrac{f(b)-f(a)}{b-a}(b-a) = f(b)-f(a)-(f(b)-f(a)) = 0$.
+    \item $h(b) = f(b)-f(a)-\dfrac{f(b)-f(a)}{b-a}(b-a) = 0$.
 \end{itemize}
 
-Como $h(a)=h(b)=0$, el Lema de Rolle garantiza la existencia de
-$c\in(a,b)$ con $h'(c)=0$. Calculando $h'$:
+Las tres hipótesis del Lema de Rolle se satisfacen.
+
+\textbf{Paso 3. Aplicar Rolle y concluir.}
+
+Como $h(a)=h(b)=0$, el Lema de Rolle garantiza $c\in(a,b)$ con
+$h'(c)=0$. Calculando $h'$:
 \[
 h'(x) = f'(x) - \frac{f(b)-f(a)}{b-a},
 \]
 de modo que $h'(c)=0$ equivale exactamente a:
 \[
-f'(c) - \frac{f(b)-f(a)}{b-a} = 0
-\implies f'(c) = \frac{f(b)-f(a)}{b-a}. \qquad\square
+\boxed{f'(c) = \frac{f(b)-f(a)}{b-a}.}
 \]
 \end{myproof}
+\end{example}
 
 Una consecuencia inmediata del TVM es el siguiente corolario, que
 constituye el fundamento teórico de la integración indefinida.
@@ -1501,11 +1506,9 @@ diferir en una constante aditiva. Sin el TVM, esta afirmación, que
 parece obvia, carecería de demostración rigurosa.
 \end{rem}
 
-\begin{example}
+\begin{example}[Verificación del TVM para $f(x)=x^3-x$]
 Verificar el Teorema del Valor Medio para $f(x)=x^3-x$ en $[0,2]$
 y encontrar el valor $c$ garantizado por el teorema.
-\end{example}
-
 \begin{myproof}
 Como $f$ es un polinomio, es continua en $[0,2]$ y derivable en
 $(0,2)$, por lo que el TVM es aplicable.
@@ -1533,8 +1536,11 @@ se descarta.
 El valor $c=\dfrac{2\sqrt{3}}{3}\approx 1.155$ pertenece efectivamente
 a $(0,2)$, lo que confirma la conclusión del TVM: en ese punto la
 tangente a la curva es paralela a la recta secante de pendiente $3$.
-$\square$
+\[
+\boxed{c = \frac{2\sqrt{3}}{3} \approx 1.155.}
+\]
 \end{myproof}
+\end{example}
 
 %%==========================================================
 \section{Regla de L'Hôpital}
@@ -1604,139 +1610,144 @@ $0^0,\;1^\infty,\;\infty^0$ &
 Los cuatro ejemplos que siguen ilustran cada tipo de forma indeterminada.
 
 % ============================================================
-\begin{example}
+\begin{example}[L'Hôpital: forma $0/0$ con doble aplicación]
 Calcular $\displaystyle\lim_{x\to 0}\frac{e^x-1-x}{x^2}$.
-\end{example}
-
 \begin{myproof}
-\textbf{Identificación de la forma.} Al sustituir $x=0$ se obtiene
-$\frac{e^0-1-0}{0^2}=\frac{0}{0}$: forma indeterminada, L'Hôpital
-es aplicable.
+\textbf{Paso 1. Identificar la forma indeterminada.}
 
-\textbf{Primera aplicación.} Se derivan numerador y denominador:
+Al sustituir $x=0$ se obtiene $\dfrac{e^0-1-0}{0^2}=\dfrac{0}{0}$:
+forma indeterminada; L'Hôpital es aplicable.
+
+\textbf{Paso 2. Primera aplicación de L'Hôpital.}
+
+Se derivan numerador y denominador por separado:
 \[
 \lim_{x\to 0}\frac{e^x-1-x}{x^2}
 \overset{\text{L'H}}{=}
 \lim_{x\to 0}\frac{e^x-1}{2x}.
 \]
-Al sustituir $x=0$: $\frac{0}{0}$. La forma sigue siendo indeterminada,
-por lo que se puede aplicar la regla una segunda vez.
+Al sustituir $x=0$: $\dfrac{0}{0}$. La forma sigue siendo indeterminada;
+se aplica la regla una segunda vez.
 
-\textbf{Segunda aplicación.}
+\textbf{Paso 3. Segunda aplicación y conclusión.}
+
 \[
 \lim_{x\to 0}\frac{e^x-1}{2x}
 \overset{\text{L'H}}{=}
 \lim_{x\to 0}\frac{e^x}{2}
 = \frac{e^0}{2} = \frac{1}{2}.
 \]
-Esta vez el límite existe y es finito. Concluimos:
 \[
-\lim_{x\to 0}\frac{e^x-1-x}{x^2} = \frac{1}{2}. \qquad\square
+\boxed{\lim_{x\to 0}\frac{e^x-1-x}{x^2} = \frac{1}{2}.}
 \]
 \end{myproof}
-
-% ============================================================
-\begin{example}
-Calcular $\displaystyle\lim_{x\to\infty}x\,e^{-x}$.
 \end{example}
 
+% ============================================================
+\begin{example}[L'Hôpital: forma $\infty\cdot 0$]
+Calcular $\displaystyle\lim_{x\to\infty}x\,e^{-x}$.
 \begin{myproof}
-\textbf{Identificación de la forma.} Cuando $x\to\infty$, el factor
-$x\to\infty$ y el factor $e^{-x}\to 0$: forma indeterminada
-$\infty\cdot 0$. L'Hôpital no se aplica directamente a productos, por
-lo que se reescribe como cociente. Se elige poner $e^{-x}$ en el
-denominador:
+\textbf{Paso 1. Identificar la forma e transformar en cociente.}
+
+Cuando $x\to\infty$, el factor $x\to\infty$ y el factor $e^{-x}\to 0$:
+forma indeterminada $\infty\cdot 0$. L'Hôpital no se aplica a productos;
+se reescribe poniendo $e^{-x}$ en el denominador:
 \[
 \lim_{x\to\infty} x\,e^{-x}
 = \lim_{x\to\infty}\frac{x}{e^{x}}.
 \]
-Ahora la forma es $\frac{\infty}{\infty}$, sobre la que L'Hôpital
-sí actúa.
+Ahora la forma es $\dfrac{\infty}{\infty}$, sobre la que L'Hôpital sí actúa.
 
-\textbf{Aplicación de la regla.}
+\textbf{Paso 2. Aplicar L'Hôpital y concluir.}
+
 \[
 \lim_{x\to\infty}\frac{x}{e^{x}}
 \overset{\text{L'H}}{=}
 \lim_{x\to\infty}\frac{1}{e^{x}} = 0.
 \]
-El exponencial domina al polinomio, y el límite vale:
+El exponencial domina al polinomio:
 \[
-\lim_{x\to\infty}x\,e^{-x} = 0. \qquad\square
+\boxed{\lim_{x\to\infty}x\,e^{-x} = 0.}
 \]
 \end{myproof}
-
-% ============================================================
-\begin{example}
-Calcular $\displaystyle\lim_{x\to 0^+}x^x$.
 \end{example}
 
+% ============================================================
+\begin{example}[L'Hôpital: forma $0^0$]
+Calcular $\displaystyle\lim_{x\to 0^+}x^x$.
 \begin{myproof}
-\textbf{Identificación de la forma.} Cuando $x\to 0^+$, la base tiende
-a $0$ y el exponente también: forma indeterminada $0^0$. Se aplica la
-estrategia logarítmica. Sea $y=x^x$; tomando logaritmo natural:
+\textbf{Paso 1. Identificar la forma e introducir la estrategia logarítmica.}
+
+Cuando $x\to 0^+$, la base tiende a $0$ y el exponente también: forma
+indeterminada $0^0$. Sea $y=x^x$; tomando logaritmo natural:
 \[
 \ln y = x\ln x.
 \]
-Cuando $x\to 0^+$, esto es una forma $0\cdot(-\infty)$, que se
-convierte en cociente:
+
+\textbf{Paso 2. Transformar en cociente y aplicar L'Hôpital.}
+
+Cuando $x\to 0^+$, $x\ln x$ es $0\cdot(-\infty)$. Se reescribe como cociente:
 \[
 \lim_{x\to 0^+} x\ln x
-= \lim_{x\to 0^+}\frac{\ln x}{1/x}.
-\]
-Ahora la forma es $\frac{-\infty}{+\infty}$, a la que se aplica
-L'Hôpital:
-\[
-\lim_{x\to 0^+}\frac{\ln x}{1/x}
+= \lim_{x\to 0^+}\frac{\ln x}{1/x}
 \overset{\text{L'H}}{=}
 \lim_{x\to 0^+}\frac{1/x}{-1/x^2}
 = \lim_{x\to 0^+}(-x) = 0.
 \]
-Luego $\lim_{x\to 0^+}\ln y = 0$. Como la función exponencial es
-continua, se puede pasar el límite al exponente:
+Luego $\lim_{x\to 0^+}\ln y = 0$.
+
+\textbf{Paso 3. Recuperar el límite original.}
+
+Como la función exponencial es continua, se pasa el límite al exponente:
 \[
 \lim_{x\to 0^+} y = e^{\,\lim\ln y} = e^0 = 1.
 \]
-Por tanto:
 \[
-\lim_{x\to 0^+}x^x = 1. \qquad\square
+\boxed{\lim_{x\to 0^+}x^x = 1.}
 \]
 \end{myproof}
-
-% ============================================================
-\begin{example}
-Calcular $\displaystyle\lim_{x\to\infty}\!\left(1+\frac{a}{x}\right)^{\!x}$.
 \end{example}
 
+% ============================================================
+\begin{example}[L'Hôpital: forma $1^\infty$]
+Calcular $\displaystyle\lim_{x\to\infty}\!\left(1+\frac{a}{x}\right)^{\!x}$.
 \begin{myproof}
-\textbf{Identificación de la forma.} Cuando $x\to\infty$, la base
-tiende a $1$ y el exponente a $\infty$: forma indeterminada $1^\infty$.
-Se aplica de nuevo la estrategia logarítmica. Sea
-$y=\!\left(1+\dfrac{a}{x}\right)^{\!x}$; entonces:
+\textbf{Paso 1. Identificar la forma e introducir la estrategia logarítmica.}
+
+Cuando $x\to\infty$, la base tiende a $1$ y el exponente a $\infty$:
+forma indeterminada $1^\infty$. Sea $y=\!\left(1+\dfrac{a}{x}\right)^{\!x}$;
+tomando logaritmo natural:
 \[
 \ln y = x\ln\!\left(1+\frac{a}{x}\right).
 \]
-Cuando $x\to\infty$, esto es $\infty\cdot 0$. Se reescribe como
-cociente para aplicar L'Hôpital:
+
+\textbf{Paso 2. Transformar en cociente y aplicar L'Hôpital.}
+
+Cuando $x\to\infty$, esto es $\infty\cdot 0$. Se reescribe como cociente:
 \[
 \lim_{x\to\infty} x\ln\!\left(1+\frac{a}{x}\right)
 = \lim_{x\to\infty}\frac{\ln(1+a/x)}{1/x}.
 \]
-La forma es $\frac{0}{0}$. Derivando numerador y denominador respecto
-a $x$:
+La forma es $\dfrac{0}{0}$. Derivando numerador y denominador respecto a $x$:
 \[
 \overset{\text{L'H}}{=}
 \lim_{x\to\infty}
 \frac{\dfrac{1}{1+a/x}\cdot\dfrac{-a}{x^2}}{-\,\dfrac{1}{x^2}}
 = \lim_{x\to\infty}\frac{a}{1+a/x}
-= \frac{a}{1+0} = a.
+= a.
 \]
-Luego $\lim_{x\to\infty}\ln y = a$, y por continuidad del exponencial:
+Luego $\lim_{x\to\infty}\ln y = a$.
+
+\textbf{Paso 3. Recuperar el límite original.}
+
+Por continuidad del exponencial:
 \[
-\lim_{x\to\infty}\!\left(1+\frac{a}{x}\right)^{\!x} = e^a.
+\boxed{\lim_{x\to\infty}\!\left(1+\frac{a}{x}\right)^{\!x} = e^a.}
 \]
-En particular, para $a=1$ se recupera el célebre límite notable
-$\lim_{x\to\infty}\!\left(1+\dfrac{1}{x}\right)^{\!x}=e$. $\square$
+En particular, para $a=1$ se recupera el límite notable
+$\lim_{x\to\infty}\!\left(1+\dfrac{1}{x}\right)^{\!x}=e$.
 \end{myproof}
+\end{example}
 
 %%==========================================================
 \section{Métodos Numéricos para la Localización de Raíces}
@@ -1795,15 +1806,24 @@ la sucesión:
 \[
 x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}.
 \]
-\begin{example} Construya geométricamente el método de Newton-Raphson
-\begin{myproof} 
-La recta tangente a $f$ en el punto $(x_n,f(x_n))$ tiene ecuación
+\begin{example}[Derivación geométrica de la fórmula de Newton-Raphson]
+Construir geométricamente la fórmula iterativa del método de Newton-Raphson.
+\begin{myproof}
+\textbf{Paso 1. Escribir la ecuación de la recta tangente en $(x_n,f(x_n))$.}
+
+La recta tangente a $f$ en el punto $(x_n,f(x_n))$ tiene ecuación:
 \[
 y - f(x_n) = f'(x_n)(x - x_n).
 \]
-Igualando $y=0$ para hallar su intersección con el eje $x$:
+
+\textbf{Paso 2. Hallar la intersección con el eje $x$ y definir $x_{n+1}$.}
+
+Se iguala $y=0$ para encontrar la intersección:
 \[
-x = x_n - \frac{f(x_n)}{f'(x_n)} =: x_{n+1}. \qquad\square
+x = x_n - \frac{f(x_n)}{f'(x_n)} =: x_{n+1}.
+\]
+\[
+\boxed{x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}.}
 \]
 \end{myproof}
 \end{example}
@@ -1817,18 +1837,21 @@ está lejos de la raíz, y es sensible a oscilaciones de $f$ que desvíen
 las iteraciones. La elección de un buen punto de partida, guiada por
 el análisis previo de la función, es parte esencial de su uso correcto.
 
-\begin{example}
+\begin{example}[Newton-Raphson: aproximación de $\sqrt{2}$]
 Aproximar $\sqrt{2}$ resolviendo $f(x)=x^2-2=0$ con Newton-Raphson
 y valor inicial $x_0=1$.
-\end{example}
-
 \begin{myproof}
-Con $f(x)=x^2-2$ y $f'(x)=2x$, la iteración se simplifica a:
+\textbf{Paso 1. Plantear la fórmula iterativa.}
+
+Con $f(x)=x^2-2$ y $f'(x)=2x$, la fórmula general se simplifica a la
+\emph{media aritmética de $x_n$ y $2/x_n$}:
 \[
-x_{n+1} = x_n - \frac{x_n^2-2}{2x_n} = \frac{x_n + 2/x_n}{2},
+x_{n+1} = x_n - \frac{x_n^2-2}{2x_n} = \frac{x_n + 2/x_n}{2}.
 \]
-que es la media aritmética de $x_n$ y $2/x_n$. Aplicando la fórmula
-repetidamente:
+
+\textbf{Paso 2. Aplicar la iteración y tabular los resultados.}
+
+Partiendo de $x_0=1$:
 
 \begin{center}
 \begin{tabular}{c l}
@@ -1843,9 +1866,15 @@ $3$ & $1.41421356\ldots$ \\
 \end{tabular}
 \end{center}
 
-Con apenas tres iteraciones se obtienen ocho cifras decimales correctas,
-ilustrando la velocidad cuadrática del método. $\square$
+\textbf{Paso 3. Interpretar la convergencia.}
+
+Con tres iteraciones se obtienen ocho cifras decimales correctas,
+ilustrando la convergencia cuadrática del método.
+\[
+\boxed{\sqrt{2} \approx x_3 = 1.41421356\ldots}
+\]
 \end{myproof}
+\end{example}
 
 %%----------------------------------------------------------
 \subsection{Método de Punto Fijo}
@@ -1894,6 +1923,106 @@ Punto fijo     & Lineal/variable & Baja  &
 \bottomrule
 \end{tabular}
 \end{center}
+
+%%==========================================================
+\section{Diferenciales y Aproximaciones Lineales}
+%%==========================================================
+
+Cuando $f'(a)$ existe, la recta tangente en $(a,f(a))$ es la mejor
+aproximación lineal de $f$ cerca de $a$. Esta idea se formaliza
+mediante el concepto de \textbf{diferencial} y la
+\textbf{linealización}, herramientas que permiten estimar cambios
+en los valores de $f$ sin calcular raíces ni integrales.
+
+\begin{definition}
+Sea $f$ derivable en $x$. El \textbf{diferencial de $f$} es la expresión
+\[
+df = f'(x)\,dx,
+\]
+donde $dx$ es un incremento arbitrario en $x$. El diferencial $df$
+aproxima el cambio real $\Delta f = f(x+dx)-f(x)$ cuando $|dx|$
+es pequeño.
+\end{definition}
+
+\begin{rem}
+La diferencia entre el cambio real $\Delta y$ y el diferencial $dy$
+es del orden de $(dx)^2$ para funciones suaves:
+$\Delta y = dy + \mathcal{O}\!\left((dx)^2\right)$.
+Cuando $|dx|\ll 1$, el error relativo $(\Delta y - dy)/\Delta y$
+también es pequeño, por lo que $dy$ es una aproximación práctica útil.
+\end{rem}
+
+\begin{theorem}[Aproximación lineal o linealización]
+Si $f$ es derivable en $a$, entonces para $x$ cerca de $a$:
+\[
+f(x) \approx L(x) = f(a) + f'(a)(x - a).
+\]
+$L(x)$ se denomina la \textbf{linealización de $f$ en $a$}; su gráfica
+es la recta tangente a $f$ en el punto $(a,f(a))$.
+\end{theorem}
+
+\begin{pasos}
+Para estimar $f(b)$ cuando $b$ está cerca de un punto $a$ conveniente:
+\begin{enumerate}
+    \item Elegir $a$ cercano a $b$ donde $f(a)$ sea exactamente
+    calculable.
+    \item Calcular $f'(a)$.
+    \item Aplicar: $f(b) \approx f(a) + f'(a)(b-a)$.
+\end{enumerate}
+\end{pasos}
+
+\begin{example}[Aproximación lineal de $\sqrt{4.02}$]
+Usar la aproximación lineal para estimar $\sqrt{4.02}$.
+\begin{myproof}
+\textbf{Paso 1. Elegir el punto base.}
+
+Se toma $f(x)=\sqrt{x}$ y $a=4$, pues $f(4)=\sqrt{4}=2$ es exacto.
+
+\textbf{Paso 2. Calcular $f'(a)$.}
+
+\[
+f'(x) = \frac{1}{2\sqrt{x}} \implies f'(4) = \frac{1}{4}.
+\]
+
+\textbf{Paso 3. Aplicar la aproximación lineal.}
+
+Con $b=4.02$ y $b-a=0.02$:
+\[
+\sqrt{4.02} \approx f(4) + f'(4)(4.02-4)
+= 2 + \frac{1}{4}(0.02) = \boxed{2.005}.
+\]
+El valor exacto es $\sqrt{4.02}\approx 2.00499\ldots$; el error
+absoluto es menor que $0.00001$.
+\end{myproof}
+\end{example}
+
+\begin{example}[Aproximación lineal de $\sin 31^\circ$]
+Usar la aproximación lineal para estimar $\sin 31^\circ$.
+\begin{myproof}
+\textbf{Paso 1. Elegir el punto base.}
+
+Se trabaja en radianes: $31^\circ = \dfrac{31\pi}{180}$ rad, cercano
+a $a=\dfrac{\pi}{6}$ ($=30^\circ$), para el que $\sin\dfrac{\pi}{6}=\dfrac{1}{2}$
+es exacto.
+
+\textbf{Paso 2. Calcular $f'(a)$.}
+
+Con $f(x)=\sin x$:
+\[
+f'(x)=\cos x \implies f'\!\left(\frac{\pi}{6}\right)=\cos\frac{\pi}{6}
+=\frac{\sqrt{3}}{2}.
+\]
+
+\textbf{Paso 3. Aplicar la aproximación lineal.}
+
+El incremento es $\Delta x=\dfrac{\pi}{180}$ rad ($=1^\circ$):
+\[
+\sin 31^\circ \approx \frac{1}{2}+\frac{\sqrt{3}}{2}\cdot\frac{\pi}{180}
+\approx 0.5000 + 0.0151 = \boxed{0.5151}.
+\]
+El valor exacto es $\sin 31^\circ\approx 0.5150\ldots$; error menor que $0.0001$.
+\end{myproof}
+\end{example}
 
 %%==========================================================
 \section{Problemas Propuestos}
@@ -2207,6 +2336,23 @@ concavidad y realice un bosquejo de $f$.
 \end{center}
 \end{prob}
 
+
+\begin{prob}[Geometría Analítica]
+El piloto de un automóvil de carreras recorre una pista elíptica modelada
+por la ecuación
+\[
+    \frac{x^2}{400} + \frac{y^2}{100} = 1.
+\]
+Al perder el control en el punto $(16,\,6)$, el vehículo continúa en línea
+recta sobre la recta tangente a la elipse en ese punto.
+\begin{enumerate}
+    \item Verifique que el punto $(16,\,6)$ pertenece a la elipse.
+    \item Determine la ecuación de la recta tangente a la elipse en dicho
+          punto.
+    \item Si el automóvil impacta contra un árbol ubicado en la coordenada
+          $(14,\, k)$, determine el valor exacto de la constante $k$.
+\end{enumerate}
+\end{prob}
 
 %%----------------------------------------------------------
 \subsection{Optimización}

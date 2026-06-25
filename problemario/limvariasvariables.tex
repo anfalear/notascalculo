@@ -1,0 +1,739 @@
+%% ============================================================
+%% LECCIÓN 1.2: LÍMITES, CONTINUIDAD Y DERIVADAS PARCIALES
+%% Cálculo III — UIS (20254)
+%% Contenido basado en LPS_L1.2.pdf y Constitución de lecciones
+%% Estilo: Apostol unificado, con entornos LaTeX personalizados
+%% ============================================================
+
+\chapter{Límites y continuidad en $\mathbb{R}^n$}
+
+La teoría de funciones de una variable nos enseñó que el comportamiento
+de una función cerca de un punto se captura mediante el límite, y que
+la regularidad de ese comportamiento se expresa con la continuidad.
+También aprendimos que la razón de cambio instantánea de una función
+es la derivada. En esta lección extenderemos estas tres nociones
+fundamentales —límite, continuidad y derivada— a funciones de dos o
+más variables. La extensión no es meramente formal: el hecho de que
+el dominio sea ahora un espacio de dimensión superior introduce una
+novedad cualitativa: el punto de aproximación puede alcanzarse a lo
+largo de infinitas trayectorias distintas. En una variable solo hay
+dos direcciones (izquierda y derecha); en dos variables hay infinitas
+curvas que convergen al mismo punto, y la existencia del límite exige
+que el valor límite sea el mismo a lo largo de \emph{todas} ellas.
+
+\begin{rem}
+El hilo conductor de esta lección es el siguiente principio: para
+funciones de varias variables, todo concepto que dependa de la
+``proximidad'' se formula en términos de la \textbf{distancia
+euclidiana} entre puntos. El límite exige que la función se acerque a
+un valor $L$ cuando la distancia entre $(x,y)$ y $(a,b)$ tiende a cero,
+\emph{independientemente de la dirección desde la que se aproxime}.
+Esta independencia direccional es la novedad central y la principal
+fuente de dificultad.
+\end{rem}
+
+% ============================================================
+% SECCIÓN 1.3: LÍMITE Y CONTINUIDAD DE UNA FUNCIÓN DE VARIAS VARIABLES
+% ============================================================
+
+\section{Límite y continuidad de una función de varias variables}
+
+Empezamos con el concepto de límite para funciones de dos variables,
+que luego extenderemos a tres o más.
+
+\begin{definition}[Límite de una función de dos variables]
+Sea $f$ una función definida en un disco abierto centrado en $(a,b)$,
+excepto posiblemente en $(a,b)$. Decimos que
+\[
+\lim_{(x,y)\to(a,b)} f(x,y) = L
+\]
+si para todo $\varepsilon>0$ existe $\delta>0$ tal que
+\[
+0 < \sqrt{(x-a)^2 + (y-b)^2} < \delta
+\quad\Longrightarrow\quad
+|f(x,y)-L| < \varepsilon.
+\]
+\end{definition}
+
+Esta definición es la análoga bidimensional de la definición
+$\varepsilon$-$\delta$ para una variable: la distancia entre $(x,y)$ y
+$(a,b)$ se mide ahora con la norma euclidiana en $\mathbb{R}^2$, y
+la condición $0<\sqrt{\cdots}$ excluye al punto $(a,b)$ del análisis,
+pues el límite no depende del valor de $f$ en ese punto.
+
+\begin{rem}
+La definición exige que la función esté definida en \emph{algún}
+disco perforado alrededor de $(a,b)$; no necesita estar definida
+exactamente en $(a,b)$. Esta es la misma convención que en una
+variable.
+\end{rem}
+
+\begin{rem}
+Para funciones de tres variables, la definición es idéntica
+sustituyendo la distancia en $\mathbb{R}^3$:
+\[
+\lim_{(x,y,z)\to(a,b,c)} f(x,y,z) = L
+\]
+si para todo $\varepsilon>0$ existe $\delta>0$ tal que
+$0<\sqrt{(x-a)^2+(y-b)^2+(z-c)^2}<\delta$ implica
+$|f(x,y,z)-L|<\varepsilon$.
+\end{rem}
+
+La diferencia fundamental con el caso unidimensional es que ahora el
+punto $(a,b)$ puede ser alcanzado por \emph{infinitas trayectorias}
+distintas en el plano. En una variable, solo hay dos caminos de
+aproximación: por la izquierda o por la derecha. En dos variables,
+hay infinitos: rectas de cualquier pendiente, curvas como parábolas,
+cúbicas, etc., que pasen por $(a,b)$. Para que el límite exista, el
+valor de $f$ debe tender al mismo $L$ a lo largo de \emph{todas}
+ellas. Si encontramos dos trayectorias que producen valores límite
+distintos, el límite no existe.
+
+\begin{rem}
+Este principio es análogo al de los límites laterales en una variable:
+$\lim_{x\to a}f(x)$ existe si y solo si $\lim_{x\to a^-}f(x)$ y
+$\lim_{x\to a^+}f(x)$ existen y coinciden. En varias variables, los
+límites laterales se reemplazan por límites a lo largo de trayectorias,
+y hay infinitas trayectorias posibles.
+\end{rem}
+
+\begin{pasos}[Para determinar si un límite de dos variables existe]
+\begin{enumerate}
+    \item \textbf{Prueba de trayectorias.} Si la función es sencilla,
+    intentar evaluar a lo largo de rectas $y=mx$ (o curvas $y=x^2$,
+    $x=y^2$, etc.) que pasen por el punto. Si dos trayectorias
+    conducen a valores distintos, el límite no existe.
+    \item \textbf{Sustitución directa.} Si la función es continua en el
+    punto (por ejemplo, polinómica), el límite es $f(a,b)$.
+    \item \textbf{Manipulación algebraica.} Factorizar, racionalizar o
+    simplificar para eliminar indeterminaciones.
+    \item \textbf{Coordenadas polares.} Si el punto de aproximación es
+    el origen, usar $x=r\cos\theta$, $y=r\sin\theta$. Si el límite
+    cuando $r\to 0$ es independiente de $\theta$, el límite existe; si
+    depende de $\theta$, no existe.
+    \item \textbf{Teorema del emparedado.} Acotar $|f(x,y)-L|$ por
+    una función que tiende a cero.
+\end{enumerate}
+\end{pasos}
+
+\begin{example}[Límite que no existe por trayectorias distintas]
+Sea
+\[
+f(x,y) = \frac{x^2 y}{x^4 + y^2}.
+\]
+Estudiar $\lim_{(x,y)\to(0,0)} f(x,y)$.
+\begin{myproof}
+\textbf{Paso 1. Prueba de trayectorias.} Evaluamos a lo largo de dos
+trayectorias distintas que pasan por el origen.
+
+\textit{Trayectoria 1:} $y=x$. Entonces
+\[
+f(x,x) = \frac{x^2\cdot x}{x^4+x^2} = \frac{x^3}{x^2(x^2+1)}
+        = \frac{x}{x^2+1}.
+\]
+Cuando $x\to 0$,
+\[
+\lim_{x\to 0} \frac{x}{x^2+1} = 0.
+\]
+
+\textit{Trayectoria 2:} $y=x^2$. Entonces
+\[
+f(x,x^2) = \frac{x^2\cdot x^2}{x^4+(x^2)^2}
+          = \frac{x^4}{x^4+x^4} = \frac{1}{2}.
+\]
+Cuando $x\to 0$,
+\[
+\lim_{x\to 0} \frac{1}{2} = \frac{1}{2}.
+\]
+
+\textbf{Conclusión.} Como las dos trayectorias producen límites
+distintos ($0$ y $\frac12$), el límite no existe en $(0,0)$.
+$\boxed{\text{No existe}}$
+\end{myproof}
+\end{example}
+
+\begin{example}[Límite que no existe por trayectorias paramétricas]
+Sea
+\[
+f(x,y) = \frac{x^3 y}{x^6 + y^2}.
+\]
+Estudiar $\lim_{(x,y)\to(0,0)} f(x,y)$.
+\begin{myproof}
+\textbf{Paso 1. Prueba de trayectorias.} Evaluamos a lo largo de dos
+trayectorias.
+
+\textit{Trayectoria 1:} $y=x^3$. Entonces
+\[
+f(x,x^3) = \frac{x^3\cdot x^3}{x^6+(x^3)^2}
+          = \frac{x^6}{x^6+x^6} = \frac{1}{2}.
+\]
+Así, $\lim_{x\to 0} f(x,x^3)=\frac12$.
+
+\textit{Trayectoria 2:} $y=x$. Entonces
+\[
+f(x,x) = \frac{x^3\cdot x}{x^6+x^2}
+        = \frac{x^4}{x^2(x^4+1)} = \frac{x^2}{x^4+1}.
+\]
+Cuando $x\to 0$,
+\[
+\lim_{x\to 0} \frac{x^2}{x^4+1} = 0.
+\]
+
+\textbf{Conclusión.} Las trayectorias $y=x^3$ e $y=x$ dan límites
+distintos ($\frac12$ y $0$), por lo que el límite no existe.
+$\boxed{\text{No existe}}$
+\end{myproof}
+\end{example}
+
+\begin{example}[Límite que existe mediante coordenadas polares]
+Sea
+\[
+f(x,y) = \frac{x^2 y}{x^2 + y^2}.
+\]
+Estudiar $\lim_{(x,y)\to(0,0)} f(x,y)$.
+\begin{myproof}
+\textbf{Paso 1. Coordenadas polares.} Hacemos $x=r\cos\theta$,
+$y=r\sin\theta$. Entonces
+\[
+f(r\cos\theta, r\sin\theta)
+= \frac{(r\cos\theta)^2(r\sin\theta)}
+       {(r\cos\theta)^2+(r\sin\theta)^2}
+= \frac{r^3\cos^2\theta\sin\theta}{r^2}
+= r\cos^2\theta\sin\theta.
+\]
+
+\textbf{Paso 2. Límite cuando $r\to 0$.}
+Para cualquier $\theta$ fijo,
+\[
+\lim_{r\to 0} r\cos^2\theta\sin\theta = 0,
+\]
+pues $|\cos^2\theta\sin\theta| \leq 1$ y $r\to 0$.
+
+\textbf{Paso 3. Conclusión.}
+El límite es $0$, independiente de $\theta$. Por tanto,
+$\displaystyle \lim_{(x,y)\to(0,0)} f(x,y) = 0$.
+$\boxed{0}$
+\end{myproof}
+\end{example}
+
+\begin{rem}
+El método de coordenadas polares es particularmente útil cuando la
+función contiene expresiones $x^2+y^2$ en el denominador, pues esa
+expresión se convierte en $r^2$, simplificando el álgebra. Sin
+embargo, hay que tener cuidado: que el límite cuando $r\to 0$ no
+dependa de $\theta$ \emph{para cada $\theta$ fijo} no siempre
+garantiza la existencia del límite; la definición $\varepsilon$-$\delta$
+exige que la convergencia sea uniforme en $\theta$. Para funciones
+continuas en $\theta$ y acotadas, como en el ejemplo anterior, la
+convergencia uniforme se sigue de manera inmediata. En casos más
+sutiles, puede ser necesario un análisis adicional.
+\end{rem}
+
+\begin{example}[Límite que no existe pese a ser constante en rectas]
+Sea
+\[
+f(x,y) = \frac{x^2 y^2}{x^4 + y^4}.
+\]
+Evaluar a lo largo de rectas $y=mx$:
+\[
+f(x,mx) = \frac{x^2(mx)^2}{x^4+(mx)^4}
+        = \frac{m^2 x^4}{x^4(1+m^4)}
+        = \frac{m^2}{1+m^4},
+\]
+que depende de $m$. Por tanto, el límite no existe.
+\end{example}
+
+\begin{rem}
+Este ejemplo muestra que la prueba de trayectorias puede ser más
+sensible que las rectas. En la función anterior, todas las rectas dan
+límites que dependen de la pendiente, lo que es suficiente para
+concluir la no existencia. Sin embargo, hay funciones donde todas las
+rectas dan el mismo límite, pero curvas no rectas dan otro; en ese
+caso, la prueba de rectas no es suficiente y hay que explorar
+trayectorias curvas.
+\end{rem}
+
+% ------------------------------------------------------------
+% PROPIEDADES DE LOS LÍMITES
+% ------------------------------------------------------------
+
+Las propiedades algebraicas de los límites se extienden naturalmente a
+varias variables: si $\lim f=L$ y $\lim g=K$, entonces
+\[
+\begin{aligned}
+\lim (f+g) &= L+K,\\
+\lim (f-g) &= L-K,\\
+\lim (f\cdot g) &= L\cdot K,\\
+\lim \frac{f}{g} &= \frac{L}{K} \quad (K\neq 0),\\
+\lim (k f) &= kL \quad (k\in\mathbb{R}).
+\end{aligned}
+\]
+Estas propiedades permiten evaluar límites de funciones que son
+combinaciones de funciones elementales mediante sustitución directa,
+siempre que la función esté definida en el punto y no haya
+indeterminación.
+
+\begin{example}[Límite por sustitución directa]
+Calcular
+\[
+\lim_{(x,y)\to(\pi,1)} \frac{\cos(xy)}{y^2+1}.
+\]
+\begin{myproof}
+\textbf{Paso 1:} La función $\dfrac{\cos(xy)}{y^2+1}$ es cociente de funciones
+continuas en $(\pi,1)$, y el denominador no se anula: $1^2+1=2\neq 0$.
+Por tanto, podemos evaluar por sustitución directa.
+
+\textbf{Paso 2:} Sustituimos $(x,y)=(\pi,1)$:
+\[
+\lim_{(x,y)\to(\pi,1)} \frac{\cos(xy)}{y^2+1}
+= \frac{\cos(\pi\cdot 1)}{1^2+1}
+= \frac{-1}{2}.
+\]
+
+El límite es $\displaystyle\boxed{-\frac{1}{2}}$.
+\end{myproof}
+\end{example}
+
+% ------------------------------------------------------------
+% TEOREMA DEL EMPAREDADO (SÁNDWICH) EN VARIAS VARIABLES
+% ------------------------------------------------------------
+
+\begin{theorem}[Teorema del emparedado para funciones de dos variables]
+Si existe un disco perforado centrado en $(a,b)$ donde
+\[
+|f(x,y)-L| \leq g(x,y)
+\]
+y además $\lim_{(x,y)\to(a,b)} g(x,y) = 0$, entonces
+\[
+\lim_{(x,y)\to(a,b)} f(x,y) = L.
+\]
+\end{theorem}
+
+\begin{proof}
+Dado $\varepsilon>0$, como $g\to 0$, existe $\delta>0$ tal que
+$0<\sqrt{(x-a)^2+(y-b)^2}<\delta$ implica $g(x,y)<\varepsilon$.
+Entonces $|f(x,y)-L|\leq g(x,y)<\varepsilon$. Luego el límite existe
+y es $L$.
+\end{proof}
+
+\begin{example}[Uso del teorema del emparedado]
+Calcular
+\[
+\lim_{(x,y)\to(0,0)} \frac{x^2 y^2}{x^2+y^2}.
+\]
+\begin{myproof}
+\textbf{Paso 1:} Establecemos una cota superior. Dado que $x^2 y^2 \leq (x^2+y^2)^2$
+(pues $(x^2+y^2)^2 = x^4+2x^2y^2+y^4 \geq x^2y^2$ para $x^2,y^2\geq 0$), se tiene:
+\[
+0 \leq \frac{x^2 y^2}{x^2+y^2} \leq \frac{(x^2+y^2)^2}{x^2+y^2} = x^2+y^2.
+\]
+
+\textbf{Paso 2:} Aplicamos el teorema del emparedado. Como
+$\lim_{(x,y)\to(0,0)}(x^2+y^2)=0$, concluimos
+\[
+\lim_{(x,y)\to(0,0)} \frac{x^2 y^2}{x^2+y^2} = \boxed{0}.
+\]
+\end{myproof}
+\end{example}
+
+% ------------------------------------------------------------
+% CONTINUIDAD
+% ------------------------------------------------------------
+
+\begin{definition}[Continuidad en un punto]
+Una función $f$ de dos variables es \textbf{continua en $(a,b)$} si:
+\begin{enumerate}
+    \item $f(a,b)$ está definida,
+    \item $\lim_{(x,y)\to(a,b)} f(x,y)$ existe,
+    \item $\lim_{(x,y)\to(a,b)} f(x,y) = f(a,b)$.
+\end{enumerate}
+Si alguna de estas condiciones falla, $f$ tiene una \textbf{discontinuidad}
+en $(a,b)$.
+\end{definition}
+
+La continuidad en varias variables conserva la idea intuitiva de que
+la gráfica no presenta saltos, huecos o interrupciones. En dos
+variables, la gráfica es una superficie; la continuidad en un punto
+significa que la superficie no se rompe en ese punto.
+
+\begin{rem}
+Como en una variable, todas las funciones polinómicas, racionales
+(con denominador no nulo), exponenciales, logarítmicas, trigonométricas
+y sus inversas son continuas en todo su dominio.
+\end{rem}
+
+\begin{definition}[Continuidad en conjuntos]
+\begin{itemize}
+    \item $f$ es continua en un \textbf{conjunto abierto} $R\subset\mathbb{R}^2$
+    si es continua en todo punto de $R$.
+    \item $f$ es continua en un \textbf{conjunto cerrado} $R$ si es
+    continua en todo punto interior y, en los puntos frontera, el
+    límite desde dentro de la región coincide con el valor de la
+    función.
+\end{itemize}
+\end{definition}
+
+\begin{rem}
+Las definiciones de conjunto abierto, cerrado, punto interior y punto
+frontera en $\mathbb{R}^2$ son las mismas que en $\mathbb{R}$, pero
+con discos (circunferencias) en lugar de intervalos. Un disco abierto
+es el interior de una circunferencia; un disco cerrado incluye su
+borde. Un punto es interior si existe un disco abierto centrado en él
+totalmente contenido en el conjunto. Un punto es frontera si todo
+disco centrado en él contiene puntos del conjunto y puntos fuera de él.
+\end{rem}
+
+\begin{theorem}[Composición de funciones continuas]
+Si $f$ es continua en $(a,b)$ y $g$ es continua en $f(a,b)$, entonces
+la composición $g(f(x,y))$ es continua en $(a,b)$.
+\end{theorem}
+
+\begin{proof}
+La demostración es análoga al caso unidimensional: se aplica la
+definición de continuidad de $g$ en $f(a,b)$ y luego la de $f$ en
+$(a,b)$ para controlar la proximidad.
+\end{proof}
+
+\begin{example}[Continuidad de una función definida por partes]
+Estudiar la continuidad de
+\[
+f(x,y)=
+\begin{cases}
+\dfrac{x^2 y}{x^2+y^2}, & (x,y)\neq (0,0),\\[8pt]
+0, & (x,y)=(0,0).
+\end{cases}
+\]
+\begin{myproof}
+\textbf{Paso 1:} Para $(x,y)\neq(0,0)$, $f$ es cociente de funciones continuas
+con denominador $x^2+y^2>0$, luego es continua en
+$\mathbb{R}^2\setminus\{(0,0)\}$.
+
+\textbf{Paso 2:} Verificamos la continuidad en $(0,0)$ con coordenadas polares
+($x=r\cos\theta$, $y=r\sin\theta$):
+\[
+\frac{x^2 y}{x^2+y^2} = \frac{r^3\cos^2\theta\sin\theta}{r^2}
+= r\cos^2\theta\sin\theta \;\xrightarrow{r\to 0}\; 0.
+\]
+Luego $\lim_{(x,y)\to(0,0)} f(x,y)=0=f(0,0)$, así que $f$ es continua en $(0,0)$.
+
+\textbf{Paso 3:} $f$ es continua en todo punto de $\mathbb{R}^2$, por tanto
+$\boxed{f \text{ es continua en todo } \mathbb{R}^2}$.
+\end{myproof}
+\end{example}
+
+% ------------------------------------------------------------
+% EXTENSIÓN A TRES VARIABLES
+% ------------------------------------------------------------
+
+\begin{definition}[Continuidad para tres variables]
+Una función $f$ de tres variables es continua en $(a,b,c)$ si
+\[
+\lim_{(x,y,z)\to(a,b,c)} f(x,y,z) = f(a,b,c).
+\]
+\end{definition}
+
+La definición de límite para tres variables es análoga usando la
+distancia en $\mathbb{R}^3$: $0<\sqrt{(x-a)^2+(y-b)^2+(z-c)^2}<\delta$.
+La continuidad de las funciones elementales se conserva.
+
+\begin{example}[Límite en tres variables]
+Calcular $\displaystyle\lim_{(x,y,z)\to(0,0,0)} \frac{x^2 - y^2}{x^2+y^2+z^2}$.
+\begin{myproof}
+\textbf{Paso 1. Prueba de trayectorias.}
+
+\textit{Trayectoria 1:} $x=y$, $z=0$. Entonces
+\[
+f(x,x,0) = \frac{x^2 - x^2}{x^2+x^2+0} = 0.
+\]
+
+\textit{Trayectoria 2:} $x=0$, $z=0$. Entonces
+\[
+f(0,y,0) = \frac{0 - y^2}{0+y^2+0} = -1.
+\]
+
+\textbf{Conclusión.} Como las trayectorias dan límites distintos,
+el límite no existe. $\boxed{\text{No existe}}$
+\end{myproof}
+\end{example}
+
+\section{Problemas propuestos}
+
+\begin{prob}
+Calcule los siguientes límites o demuestre que no existen:
+\begin{multicols}{2}
+\begin{enumerate}
+    \item $\displaystyle\lim_{(x,y)\to(0,0)} \frac{x^2 y}{x^2+y^2}$
+    \item $\displaystyle\lim_{(x,y)\to(0,0)} \frac{x^4 y^4}{(x^2+y^4)^3}$
+    \item $\displaystyle\lim_{(x,y)\to(0,0)} \frac{x^3+y^3}{x^2+y^2}$
+    \item $\displaystyle\lim_{(x,y)\to(0,0)} \frac{x^2 y^2}{x^4+y^4}$
+    \item $\displaystyle\lim_{(x,y)\to(0,0)} \frac{x^2 y}{x^4+y^2}$
+    \item $\displaystyle\lim_{(x,y)\to(0,0)} \frac{\sin(x^2+y^2)}{x^2+y^2}$
+    \item $\displaystyle\lim_{(x,y)\to(0,0)} \frac{1-\cos(xy)}{x^2 y^2}$
+    \item $\displaystyle\lim_{(x,y)\to(0,0)} \frac{x y}{\sqrt{x^2+y^2}}$
+\end{enumerate}
+\end{multicols}
+\end{prob}
+
+\begin{prob}
+Estudie la continuidad de las siguientes funciones en todo su dominio:
+\begin{enumerate}
+    \item $f(x,y)=\begin{cases}
+    \dfrac{x^2-y^2}{x^2+y^2}, & (x,y)\neq(0,0),\\
+    0, & (x,y)=(0,0).
+    \end{cases}$
+    \item $f(x,y)=\begin{cases}
+    \dfrac{x^2 y}{x^2+y^2}, & (x,y)\neq(0,0),\\
+    0, & (x,y)=(0,0).
+    \end{cases}$
+    \item $f(x,y)=\begin{cases}
+    \dfrac{x^3 y}{x^6+y^2}, & (x,y)\neq(0,0),\\
+    0, & (x,y)=(0,0).
+    \end{cases}$
+\end{enumerate}
+\end{prob}
+
+\begin{prob}
+Calcule $\displaystyle\lim_{(x,y)\to(0,0)} \frac{x^2+y^2}{\sqrt{x^2+y^2+1}-1}$
+usando coordenadas polares.
+\end{prob}
+
+\begin{prob}
+Demuestre que $\displaystyle\lim_{(x,y)\to(0,0)} \frac{x^2 y^2}{x^2+y^2}=0$
+usando el teorema del emparedado.
+\end{prob}
+
+\begin{prob}
+Sea $f(x,y)=\dfrac{x^3 y}{x^4+y^2}$ para $(x,y)\neq(0,0)$.
+\begin{enumerate}
+    \item Demuestre que a lo largo de cualquier recta $y=mx$, el límite
+    cuando $(x,y)\to(0,0)$ es $0$.
+    \item Demuestre que a lo largo de la parábola $y=x^2$, el límite
+    es distinto. Concluya que el límite no existe.
+\end{enumerate}
+\end{prob}
+
+
+% ============================================================
+% Cap. 19 — Límites y continuidad en Rⁿ
+% 16 problemas unicos: 16 listos para integrar ahora, 0 esperan pasada Claude Code (pstricks)
+% ============================================================
+
+% >>> LISTOS PARA INTEGRAR AHORA <<<
+
+% [Original: líneas 242-259 | solución completa | sin figura]
+\begin{prob}
+Sea $f(x,y)=\dfrac{x-y}{x+y}.$
+\begin{enumerate}[(a)]
+    \item Calcule $\displaystyle\lim_{(x,y)\to (0,0)}f(x)$ tomando la trayectoria $y=kx.$
+    \item ¿Qué conclusión puede extraer?
+\end{enumerate}
+\begin{myproof}
+Sea $f(x,y)=\dfrac{x-y}{x+y}.$ Observe que:
+\begin{enumerate}[$a)$]
+\item Tomando la trayectoria $y=kx$ el límite queda así:
+\begin{align*}
+\displaystyle\lim_{(x,y)\to (0,0)} \dfrac{x-y}{x+y} {{=}\atop {\begin{array}{c}
+\uparrow\\ \text{ si $y=kx$}\end{array}} } \displaystyle\lim_{x\to 0}\dfrac{x-kx}{x+kx}=\displaystyle\lim_{x\to 0}\dfrac{x(1-k)}{x(1+k)}=\dfrac{1-k}{1+k}.
+\end{align*}
+\item El límite no existe, pues depende del valor de $k\in \mathbb{R}$.
+\end{enumerate}
+\end{myproof}
+\end{prob}
+
+% [Original: líneas 285-308 | solución completa | sin figura]
+\begin{prob}
+Sea $f(x,y)=\dfrac{xy+y^3}{x^2+y^2}.$
+\begin{enumerate}[(a)]
+    \item Calcule $\displaystyle\lim_{(x,y)\to (0,0)}f(x)$ tomando la trayectoria $y=x.$
+    \item Calcule $\displaystyle\lim_{(x,y)\to (0,0)}f(x)$ tomando la trayectoria $y=0.$
+    \item ¿Qué conclusión puede extraer?
+\end{enumerate}
+\begin{myproof}
+Sea $f(x,y)=\dfrac{xy+y^3}{x^2+y^2}.$ Observe que:
+\begin{enumerate}[$a)$]
+\item Tomando la trayectoria $y=x$ el límite queda así:
+\begin{align*}
+\displaystyle\lim_{(x,y)\to (0,0)} \dfrac{xy+y^3}{x^2+y^2} {{=}\atop {\begin{array}{c}
+\uparrow\\ \text{ si $y=x$}\end{array}} } \displaystyle\lim_{x\to 0}\dfrac{x^2+x^3}{x^2+x^2}=\displaystyle\lim_{x\to 0}\dfrac{x^2(1+x)}{2x^2}=\dfrac{1}{2}\lim_{x\to 0}(1+x)=\dfrac{1}{2}.
+\end{align*}
+\item Tomando la trayectoria $y=0$ el límite queda así:
+\begin{align*}
+\displaystyle\lim_{(x,y)\to (0,0)} \dfrac{xy+y^3}{x^2+y^2} {{=}\atop {\begin{array}{c}
+\uparrow\\ \text{ si $y=0$}\end{array}} } \displaystyle\lim_{x\to 0}\dfrac{x(0)+0^3}{x^2+0^2}=\displaystyle\lim_{x\to 0}\dfrac{0}{x^2}=0.
+\end{align*}
+\item El límite no existe, pues dos trayectorias determinan un valor distinto.
+\end{enumerate}
+\end{myproof}
+\end{prob}
+
+% [Original: líneas 333-343 | solución completa | sin figura]
+\begin{prob}
+Sea $f(x,y)=\dfrac{\arctan(xy)}{xy}.$ Sobre esta función se conoce que $1-\dfrac{x^2y^3}{3}<\dfrac{\arctan (xy)}{xy}<1.$ Calcule $\displaystyle\lim_{(x,y)\to (0,0)}f(x,y).$
+\begin{myproof}
+Sea $f(x,y)=\dfrac{\arctan(xy)}{xy}.$ Observe que:
+\begin{enumerate}[$a)$]
+\item $\displaystyle\lim_{(x,y)\to (0,0)} 1-\dfrac{x^2y^3}{3} = 1-\displaystyle\lim_{(x,y)\to (0,0)} \dfrac{x^2y^3}{3}=1-0=1.$
+\item $\displaystyle\lim_{(x,y)\to (0,0)} 1=1.$
+\item Por medio del teorema del emparedado el límite de la función $f(x,y)=\dfrac{\arctan(xy)}{xy}$  existe y es igual a $1.$
+\end{enumerate}
+\end{myproof}
+\end{prob}
+
+% [Original: líneas 429-446 | solución completa | sin figura]
+\begin{prob}
+Sea $f(x,y)=\dfrac{x^4y}{x^8+y^2}.$
+\begin{enumerate}[(a)]
+    \item Determine los puntos donde la función es discontinua.
+    \item Exprese si es posible remover las discontinuidades encontradas en el primer punto. Si lo es, determine los valores que hacen que la función sea continua. 
+\end{enumerate}
+\begin{myproof}
+\begin{enumerate}[(a)]
+\item Observe que la función solo se indetermina cuando $x^8+y^2=0,$ lo cual ocurre cuando $(x,y)=(0,0).$ De esta manera, al calcular el límite:
+ \begin{align*}
+\displaystyle\lim_{(x,y)\to (0,0)} \dfrac{x^4y}{x^8+y^2} {{=}\atop {\begin{array}{c}
+\uparrow\\ \text{ si $y=mx^4$}\end{array}} } \displaystyle\lim_{x\to 0}\dfrac{x^4mx^4}{x^8+(mx^4)^2}=\displaystyle\lim_{x\to 0}\dfrac{x^8(m)}{x^8(1+m^2)}=\displaystyle\dfrac{m}{1+m^2}.
+\end{align*}
+Como este límite depende de $m,$ no existe.
+\item No es posible remover las discontinuidades, pues el límite cuando la función tiende a $(0,0)$ no existe.
+\end{enumerate}
+\end{myproof}
+\end{prob}
+
+% [Original: líneas 685-702 | solución completa | sin figura]
+\begin{prob}
+Sea $f(x,y)=\dfrac{2xy^4}{x^5+6y^5}.$
+\begin{enumerate}[(a)]
+    \item Determine los puntos donde la función es discontinua.
+    \item Exprese si es posible remover las discontinuidades encontradas en el primer punto. Si lo es, determine los valores que hacen que la función sea continua. 
+\end{enumerate}
+\begin{myproof}
+\begin{enumerate}[(a)]
+\item Observe que la función se indetermina cuando $x^5+6y^5=0.$ Esta ecuación no se reduce al origen: define la recta $x=-\sqrt[5]{6}\,y$ (pues $x^5=-6y^5$ implica $x=-6^{1/5}y$). En cualquier punto $(x_0,y_0)$ de esa recta con $y_0\neq 0$, el denominador es cero pero el numerador $2x_0y_0^4=-2\cdot 6^{1/5}y_0^5\neq 0$, produciendo una discontinuidad esencial (la función no está acotada). Adicionalmente, en el origen el límite no existe: tomando $y=mx$,
+ \begin{align*}
+\displaystyle\lim_{(x,y)\to (0,0)} \dfrac{2xy^4}{x^5+6y^5} {{=}\atop {\begin{array}{c}
+\uparrow\\ \text{ si $y=mx$}\end{array}} } \displaystyle\lim_{x\to 0}\dfrac{2xm^4x^4}{x^5+6(mx)^5}=\displaystyle\lim_{x\to 0}\dfrac{x^5(2m^4)}{x^5(1+6m^5)}=\displaystyle\dfrac{2m^4}{1+6m^5},
+\end{align*}
+que depende de $m$ (para $1+6m^5\neq 0$), por lo que el límite en el origen tampoco existe.
+\item No es posible remover ninguna de las discontinuidades: en los puntos de la recta $x=-\sqrt[5]{6}\,y$ con $y\neq 0$ la función diverge (discontinuidad esencial); en el origen el límite no existe.
+\end{enumerate}
+\end{myproof}
+\end{prob}
+
+% [Original: líneas 847-863 | solución completa | sin figura]
+\begin{prob}
+Sea $f(x,y)=\dfrac{8x^3y^2}{x^9+y^3}.$
+\begin{enumerate}[(a)]
+    \item Determine los puntos donde la función es discontinua.
+    \item Exprese si es posible remover las discontinuidades encontradas en el primer punto. Si lo es, determine los valores que hacen que la función sea continua. 
+\end{enumerate}
+\begin{myproof}
+\begin{enumerate}[(a)]
+\item Observe que la función solo se indetermina cuando $x^9+y^3=0,$ lo cual ocurre cuando $y=-x^3.$ Suponga así que  $x=k$ entonces $y=-k^3.$ Así, al calcular el límite:
+ \begin{align*}
+\displaystyle\lim_{(x,y)\to (k,-k^3)} \dfrac{8x^3y^2}{x^9+y^3} = \displaystyle\lim_{x\to k}\dfrac{8k^3(-k^3)^2}{k^9+(-k^3)^3}&=\displaystyle\lim_{x\to k}\dfrac{8k^3(k^6)}{k^9+(-k^3)^3}\\&=\displaystyle\lim_{x\to k}\dfrac{8k^9}{k^9-k^9}=\displaystyle\dfrac{8k^9}{0}.
+\end{align*}
+El cual es un límite que no existe.
+\item No es posible remover las discontinuidades sobre $y=-x^3$, pues el límite sobre los puntos de esta curva no existe.
+\end{enumerate}
+\end{myproof}
+\end{prob}
+
+% [Original: líneas 921-923 | sin verificar | sin figura]
+\begin{prob}
+Calcule $\displaystyle\lim_{(x,y)\to (0,0)}\left(\dfrac{x^4y^2+x^2y^4-5x^2-5y^2}{x^2+y^2}\right).$
+\end{prob}
+
+% [Original: líneas 945-947 | sin verificar | sin figura | 2 variante(s) de parámetro (se descartaron 1)]
+\begin{prob}
+Calcule $\displaystyle\lim_{(x,y)\to (5,9)}xy^2\left(\dfrac{x+4y}{x-y}\right).$
+\end{prob}
+
+% [Original: líneas 961-963 | sin verificar | sin figura]
+\begin{prob}
+Calcule $\displaystyle\lim_{(x,y)\to (2,1)}\ln\left(2x^2-3y^2\right).$
+\end{prob}
+
+% [Original: líneas 1020-1037 | solución completa | sin figura]
+\begin{prob}
+Sea $f(x,y)=\dfrac{x+y}{x-y}.$
+\begin{enumerate}[(a)]
+    \item Calcule $\displaystyle\lim_{(x,y)\to (0,0)}f(x)$ tomando la trayectoria $y=mx.$
+    \item ¿Qué conclusión puede extraer?
+\end{enumerate}
+\begin{myproof}
+Sea $f(x,y)=\dfrac{x+y}{x-y}.$ Observe que:
+\begin{enumerate}[$a)$]
+\item Tomando la trayectoria $y=mx$ el límite queda así:
+\begin{align*}
+\displaystyle\lim_{(x,y)\to (0,0)} \dfrac{x+y}{x-y} {{=}\atop {\begin{array}{c}
+\uparrow\\ \text{ si $y=mx$}\end{array}} } \displaystyle\lim_{x\to 0}\dfrac{x+kx}{x-kx}=\displaystyle\lim_{x\to 0}\dfrac{x(1+k)}{x(1-k)}=\dfrac{1+k}{1-k}.
+\end{align*}
+\item El límite no existe, pues depende del valor de $k\in \mathbb{R}$.
+\end{enumerate}
+\end{myproof}
+\end{prob}
+
+% [Original: líneas 1063-1086 | solución completa | sin figura]
+\begin{prob}
+Sea $f(x,y)=\dfrac{x^4-y^2}{x^4+y^2}.$
+\begin{enumerate}[(a)]
+    \item Calcule $\displaystyle\lim_{(x,y)\to (0,0)}f(x)$ tomando la trayectoria $y=mx^2.$
+    \item Calcule $\displaystyle\lim_{(x,y)\to (0,0)}f(x)$ tomando la trayectoria $y=0.$
+    \item ¿Qué conclusión puede extraer?
+\end{enumerate}
+\begin{myproof}
+Sea $f(x,y)=\dfrac{x^4-y^2}{x^4+y^2}.$ Observe que:
+\begin{enumerate}[$a)$]
+\item Tomando la trayectoria $y=mx^2$ el límite queda así:
+\begin{align*}
+\displaystyle\lim_{(x,y)\to (0,0)} \dfrac{x^4-y^2}{x^4+y^2} &{{=}\atop {\begin{array}{c}
+\uparrow\\ \text{ si $y=mx^2$}\end{array}} } \displaystyle\lim_{x\to 0}\dfrac{x^4-m^2x^4}{x^4+m^2x^4}=\displaystyle\lim_{x\to 0}\dfrac{x^4(1-m^2)}{x^4(1+m^2)}\\&=\lim_{x\to 0}\dfrac{1-m^2}{1+m^2}=\dfrac{1-m^2}{1+m^2}.
+\end{align*}
+\item Tomando la trayectoria $y=0$ el límite queda así:
+\begin{align*}
+\displaystyle\lim_{(x,y)\to (0,0)} \dfrac{x^4-y^2}{x^4+y^2} {{=}\atop {\begin{array}{c}
+\uparrow\\ \text{ si $y=0$}\end{array}} } \displaystyle\lim_{x\to 0}\dfrac{x^4}{x^4}=1.
+\end{align*}
+\item El límite no existe, pues dos trayectorias determinan un valor distinto.
+\end{enumerate}
+\end{myproof}
+\end{prob}
+
+% [Original: líneas 1111-1121 | solución completa | sin figura]
+\begin{prob}
+Sea $f(x,y)=x\cos\left(\dfrac{1}{y}\right).$ Sobre esta función se conoce que $-1\leq \cos\left(\dfrac{1}{y}\right)\leq 1$ Calcule $\displaystyle\lim_{(x,y)\to (0,0)}f(x,y).$
+\begin{myproof}
+Sea $f(x,y)=x\cos\left(\dfrac{1}{y}\right).$ Observe que:
+\begin{enumerate}[$a)$]
+\item $\displaystyle\lim_{(x,y)\to (0,0)} x = 0.$
+\item $\displaystyle\lim_{(x,y)\to (0,0)} -x = 0.$
+\item Por medio del teorema del emparedado el límite de la función $f(x,y)=x\cos\left(\dfrac{1}{y}\right)$  existe y es igual a $0.$
+\end{enumerate}
+\end{myproof}
+\end{prob}
+
+% [Original: líneas 1147-1154 | sin verificar | sin figura]
+\begin{prob}
+Dada la función $f(x,y)=\dfrac{x^3+y^3}{x^2+y^2}$ determine:
+\begin{enumerate}[(a)]
+\item El dominio de la función.
+\item De acuerdo al resultado obtenido en el anterior ítem, ¿es posible redefinir la función $f(x,y)$ para que sea continua en todo $\mathbb{R}^2$?
+\textit{Sugerencia:} Considere hacer una división de polinomios.
+\end{enumerate}
+\end{prob}
+
+% [Original: líneas 1248-1250 | sin verificar | sin figura]
+\begin{prob}
+Determine si $\displaystyle\lim_{(x,y)\to (0,0)} \dfrac{Axy}{x^2+y^2}$ existe. Justifique adecuadamente su respuesta.
+\end{prob}
+
+% [Original: líneas 1380-1382 | sin verificar | sin figura]
+\begin{prob}
+Calcule $\displaystyle\lim_{(x,y)\to (0,0)}\left(\dfrac{x^3y+xy^3-3x^2-3y^2}{x^2+y^2}\right).$
+\end{prob}
+
+% [Original: líneas 1420-1422 | sin verificar | sin figura]
+\begin{prob}
+Calcule $\displaystyle\lim_{(x,y)\to (1,1)}\ln\left(2x^2-y^2\right).$
+\end{prob}
+

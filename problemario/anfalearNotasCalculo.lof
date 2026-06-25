@@ -1,39 +1,131 @@
 \babel@toc {spanish}{}\relax 
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Recta numérica o eje real. La distancia de cada punto al origen es su valor absoluto.}}{28}{figure.2.1}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Representación en el círculo unitario: $x = \cos \theta $, $y = \sin \theta $, con $x^2 + y^2 = 1$.}}{31}{figure.2.2}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Vecindad abierta $V_\varepsilon (x_0) = (x_0-\varepsilon ,\, x_0+\varepsilon )$: intervalo centrado en $x_0$ de radio $\varepsilon $.}}{32}{figure.2.3}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces El supremo y el ínfimo}}{33}{figure.2.4}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Representación geométrica del complejo $-5-4i.$}}{21}{figure.2.1}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Representación gráfica en \texttt {matplotlib} del complejo $-5-4i.$}}{23}{figure.2.2}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Representación gráfica de la solución}}{24}{figure.2.3}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Figura del problema \ref {compsombreado}}}{29}{figure.2.4}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Representación de la región del problema \ref {comprepex}}}{30}{figure.2.5}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Figura del problema \ref {compubicacion}}}{31}{figure.2.6}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Solución del problema \ref {compubicacion}}}{31}{figure.2.7}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Gráfica de $C(x)$ del Ejemplo \ref {ex:costo-contenedor}: el mínimo ocurre aproximadamente en $x \approx 1.65\,\mathrm {m}$.}}{40}{figure.3.1}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces La circunferencia unitaria falla la prueba de la recta vertical.}}{40}{figure.3.2}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Función por tramos con salto en $x=2$.}}{42}{figure.3.3}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces \emph {Izquierda:} potencias pares (simétricas respecto al eje $y$; $x^4$ más \emph {achatada} cerca del origen que $x^2$). \emph {Derecha:} potencias impares (simétricas respecto al origen).}}{43}{figure.3.4}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces $f(x)=1/x$ con asíntota en $x=0$ ($D_f=\mathbb {R}\setminus \{0\}$); $g(x)=x^{2/3}$ con cúspide en el origen ($D_g=\mathbb {R}$).}}{43}{figure.3.5}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces $f(x)=2^x$ creciente; $g(x)=(1/2)^x$ decreciente. Ambas pasan por $(0,1)$ y tienen asíntota $y=0$.}}{43}{figure.3.6}%
-\contentsline {figure}{\numberline {3.7}{\ignorespaces $\log _2 x$ y $\ln x$ comparten el punto $(1,0)$; $\log _2 x > \ln x$ para $x > 1$ pues $\log _2 x = \ln x / \ln 2 \approx 1.44\ln x$.}}{44}{figure.3.7}%
-\contentsline {figure}{\numberline {3.8}{\ignorespaces $\sin x$ (azul) y $\cos x$ (naranja): período $2\pi $, amplitud 1. Observe que $\cos x = \sin (x+\pi /2)$.}}{44}{figure.3.8}%
-\contentsline {figure}{\numberline {3.9}{\ignorespaces $\tan x$: período $\pi $, asíntotas verticales en $x = \pi /2 + k\pi $.}}{45}{figure.3.9}%
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Traslaciones de $y=x^2$: el vértice se desplaza de $(0,0)$ a $(h,k)$.}}{46}{figure.3.10}%
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Parámetros de la forma amplitud-fase en $y=C+A\sin [a(t-b)]$.}}{47}{figure.3.11}%
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Las tres inversas trigonométricas principales. Las líneas punteadas indican las asíntotas del rango.}}{49}{figure.3.12}%
-\contentsline {figure}{\numberline {3.13}{\ignorespaces Ventana normanda}}{52}{figure.3.13}%
-\contentsline {figure}{\numberline {3.14}{\ignorespaces Caja sin tapa: Hoja de cartón de $20 \times 12$ cm con cuadrados de lado $x$ recortados en las esquinas}}{53}{figure.3.14}%
-\contentsline {figure}{\numberline {3.15}{\ignorespaces Caja armada con pestañas laterales}}{54}{figure.3.15}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Representación de un vector geométrico}}{41}{figure.3.1}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces La regla del paralelogramo}}{41}{figure.3.2}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Vector $\begin {pmatrix} 2\\1 \end {pmatrix}$ en el plano}}{41}{figure.3.3}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Vector $\begin {pmatrix} 2\\4\\5 \end {pmatrix}$ en el espacio}}{42}{figure.3.4}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Suma de vectores $\begin {pmatrix} 1\\2\\1 \end {pmatrix}$ y $\begin {pmatrix} 2\\-1\\3 \end {pmatrix}$}}{42}{figure.3.5}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Resta de vectores $\begin {pmatrix} 3\\2\\1 \end {pmatrix}$ y $\begin {pmatrix} 1\\1\\1 \end {pmatrix}$}}{42}{figure.3.6}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Multiplicación por escalar: $2\begin {pmatrix} 2\\1\\3 \end {pmatrix}$}}{43}{figure.3.7}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Vectores del problema \ref {probvectrigo}}}{43}{figure.3.8}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Norma del vector $\mathbf {u} = \begin {pmatrix} 2 \\ 3 \\ 6 \end {pmatrix}$}}{44}{figure.3.9}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Vector unitario con dirección de $\mathbf {u}$}}{44}{figure.3.10}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Ángulo entre vectores}}{45}{figure.3.11}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Producto cruz entre los vectores $(1,2,0)$ y $(3,4,0)$. El resultado es un vector perpendicular al plano $xy$ con dirección hacia el eje $z$ negativo.}}{45}{figure.3.12}%
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Representación geométrica de un plano: El vector normal $\vec {n}$ es perpendicular a cualquier vector contenido en el plano.}}{46}{figure.3.13}%
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Triángulo del problema \ref {probtrianguloperimetro}}}{47}{figure.3.14}%
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Proyección ortogonal del vector $\mathbf {u}$ sobre el vector $\mathbf {v}.$}}{49}{figure.3.15}%
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Representación bidimensional de una recta en el espacio tridimensional $\mathbb {R}^3$. El punto $P(x_0,y_0,z_0)$ es el punto de apoyo, $\vec {d}=(a,b,c)$ es el vector director, y el parámetro $t \in \mathbb {R}$ determina todos los puntos de la recta.}}{49}{figure.3.16}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Representación gráfica de la discontinuidad evitable en $x=1$.}}{55}{figure.4.1}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Interpretación geométrica del límite}}{56}{figure.4.2}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Comparación de áreas: triángulo inscrito $\subset $ sector $\subset $ triángulo circunscrito.}}{58}{figure.4.3}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Grafo del ejemplo \ref {ejgrafo01}}}{71}{figure.4.1}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Grafo del ejemplo \ref {ejgrafo02}}}{71}{figure.4.2}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Grafo del problema (a)}}{73}{figure.4.3}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Grafo del problema (b)}}{73}{figure.4.4}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Grafo del problema (c)}}{74}{figure.4.5}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Red de vuelos de la aerolínea}}{74}{figure.4.6}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Regla de Sarrus, método de extender columnas}}{91}{figure.4.7}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Regla de Sarrus, método de extender las filas}}{91}{figure.4.8}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Un círculo de radio $r$ inscrito en la parábola $y = x^2$.}}{81}{figure.5.1}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Triángulo equilátero formado por el eje $x$ y las rectas tangentes.}}{83}{figure.5.2}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Lámpara en $(3,h)$, elipse $x^2+4y^2=5$ y borde de sombra en $(-5,0)$.}}{83}{figure.5.3}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Intersección de las rectas $2x + 3y = 7$ y $x - y = 1$. La solución del sistema corresponde al punto donde ambas rectas se cruzan.}}{111}{figure.5.1}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Intersección de tres planos en el espacio. Cada ecuación lineal con tres incógnitas representa un plano, y la solución del sistema corresponde al punto donde los tres planos se intersectan.}}{112}{figure.5.2}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Interpretación geométrica de sistemas $2 \times 2$}}{112}{figure.5.3}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Parábola de interpolación}}{123}{figure.5.4}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Circunferencia del problema}}{124}{figure.5.5}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Triángulo del problema}}{135}{figure.5.6}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Curvas que cumplen la condición del problema \ref {problemapolinomios}}}{138}{figure.5.7}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Flujos en una refinería de petróleo}}{139}{figure.5.8}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Tráfico proyectado en el parque principal}}{143}{figure.5.9}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Monotonía de $f(x)=x^3-3x$: la curva se colorea según el signo de $f'$.}}{90}{figure.6.1}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Concavidad de $f(x)=x^4-4x^3$: en azul los tramos donde $f''>0$ (curva abre hacia arriba) y en rojo donde $f''<0$ (curva abre hacia abajo). Los puntos negros señalan los puntos de inflexión.}}{91}{figure.6.2}%
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Bosquejo de $f(x)=\dfrac {x^2}{x^2-4}$. Las ramas azules son cóncavas hacia arriba y las rojas hacia abajo. Las líneas grises punteadas indican las asíntotas $x=\pm 2$ e $y=1$.}}{95}{figure.6.3}%
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Disposición geométrica del mecanismo y definición de variables.}}{106}{figure.6.4}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Recta de mínimos cuadrados para los datos del resorte}}{185}{figure.7.1}%
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Altura de un triángulo}}{187}{figure.7.2}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {9.1}{\ignorespaces Reflexión respecto a la recta $y = x$.}}{226}{figure.9.1}%
+\contentsline {figure}{\numberline {9.2}{\ignorespaces Rotación de un punto respecto al origen.}}{226}{figure.9.2}%
+\contentsline {figure}{\numberline {9.3}{\ignorespaces Escalado de una región en el plano.}}{226}{figure.9.3}%
+\contentsline {figure}{\numberline {9.4}{\ignorespaces Reflexión de la casita respecto al eje $y$.}}{227}{figure.9.4}%
+\contentsline {figure}{\numberline {9.5}{\ignorespaces La casita ampliada al doble.}}{227}{figure.9.5}%
+\contentsline {figure}{\numberline {9.6}{\ignorespaces Reflexión de la casita respecto al eje $x$.}}{228}{figure.9.6}%
+\contentsline {figure}{\numberline {9.7}{\ignorespaces Figura original en el plano}}{245}{figure.9.7}%
+\contentsline {figure}{\numberline {9.8}{\ignorespaces Reflexión respecto a la recta $y = x$.}}{245}{figure.9.8}%
+\contentsline {figure}{\numberline {9.9}{\ignorespaces Estiramiento y reflexión respecto al eje $y$.}}{245}{figure.9.9}%
+\contentsline {figure}{\numberline {9.10}{\ignorespaces Proyección sobre el eje $x$.}}{246}{figure.9.10}%
+\contentsline {figure}{\numberline {9.11}{\ignorespaces Proyección sobre el eje $y$.}}{246}{figure.9.11}%
+\contentsline {figure}{\numberline {9.12}{\ignorespaces Transformación general invertible.}}{247}{figure.9.12}%
+\contentsline {figure}{\numberline {9.13}{\ignorespaces Escalado anisotrópico.}}{247}{figure.9.13}%
+\contentsline {figure}{\numberline {9.14}{\ignorespaces Rotación de $30^\circ $ respecto al origen.}}{248}{figure.9.14}%
+\contentsline {figure}{\numberline {9.15}{\ignorespaces Figura original (Sudoku 3D cube, \url {https://texample.net/tikz/examples/sudoku-3d-cube})}}{248}{figure.9.15}%
+\contentsline {figure}{\numberline {9.16}{\ignorespaces Reflexión respecto al plano $XY$ (inversión de $z$).}}{249}{figure.9.16}%
+\contentsline {figure}{\numberline {9.17}{\ignorespaces Reflejo y estiramiento en $x$, estiramiento en $z$.}}{249}{figure.9.17}%
+\contentsline {figure}{\numberline {9.18}{\ignorespaces Proyección sobre el plano $YZ$.}}{250}{figure.9.18}%
+\contentsline {figure}{\numberline {9.19}{\ignorespaces Rotación de $30^\circ $ en el plano $YZ$ alrededor del eje $x$.}}{250}{figure.9.19}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {10.1}{\ignorespaces Recta numérica o eje real. La distancia de cada punto al origen es su valor absoluto.}}{256}{figure.10.1}%
+\contentsline {figure}{\numberline {10.2}{\ignorespaces Representación en el círculo unitario: $x = \cos \theta $, $y = \sin \theta $, con $x^2 + y^2 = 1$.}}{259}{figure.10.2}%
+\contentsline {figure}{\numberline {10.3}{\ignorespaces Vecindad abierta $V_\varepsilon (x_0) = (x_0-\varepsilon ,\, x_0+\varepsilon )$: intervalo centrado en $x_0$ de radio $\varepsilon $.}}{260}{figure.10.3}%
+\contentsline {figure}{\numberline {10.4}{\ignorespaces El supremo y el ínfimo}}{261}{figure.10.4}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {11.1}{\ignorespaces Gráfica de $C(x)$ del Ejemplo \ref {ex:costo-contenedor}: el mínimo ocurre aproximadamente en $x \approx 1.65\,\mathrm {m}$.}}{268}{figure.11.1}%
+\contentsline {figure}{\numberline {11.2}{\ignorespaces La circunferencia unitaria falla la prueba de la recta vertical.}}{268}{figure.11.2}%
+\contentsline {figure}{\numberline {11.3}{\ignorespaces Función por tramos con salto en $x=2$.}}{270}{figure.11.3}%
+\contentsline {figure}{\numberline {11.4}{\ignorespaces \emph {Izquierda:} potencias pares (simétricas respecto al eje $y$; $x^4$ más \emph {achatada} cerca del origen que $x^2$). \emph {Derecha:} potencias impares (simétricas respecto al origen).}}{271}{figure.11.4}%
+\contentsline {figure}{\numberline {11.5}{\ignorespaces $f(x)=1/x$ con asíntota en $x=0$ ($D_f=\mathbb {R}\setminus \{0\}$); $g(x)=x^{2/3}$ con cúspide en el origen ($D_g=\mathbb {R}$).}}{271}{figure.11.5}%
+\contentsline {figure}{\numberline {11.6}{\ignorespaces $f(x)=2^x$ creciente; $g(x)=(1/2)^x$ decreciente. Ambas pasan por $(0,1)$ y tienen asíntota $y=0$.}}{271}{figure.11.6}%
+\contentsline {figure}{\numberline {11.7}{\ignorespaces $\log _2 x$ y $\ln x$ comparten el punto $(1,0)$; $\log _2 x > \ln x$ para $x > 1$ pues $\log _2 x = \ln x / \ln 2 \approx 1.44\ln x$.}}{272}{figure.11.7}%
+\contentsline {figure}{\numberline {11.8}{\ignorespaces $\sin x$ (azul) y $\cos x$ (naranja): período $2\pi $, amplitud 1. Observe que $\cos x = \sin (x+\pi /2)$.}}{272}{figure.11.8}%
+\contentsline {figure}{\numberline {11.9}{\ignorespaces $\tan x$: período $\pi $, asíntotas verticales en $x = \pi /2 + k\pi $.}}{273}{figure.11.9}%
+\contentsline {figure}{\numberline {11.10}{\ignorespaces Traslaciones de $y=x^2$: el vértice se desplaza de $(0,0)$ a $(h,k)$.}}{274}{figure.11.10}%
+\contentsline {figure}{\numberline {11.11}{\ignorespaces Parámetros de la forma amplitud-fase en $y=C+A\sin [a(t-b)]$.}}{275}{figure.11.11}%
+\contentsline {figure}{\numberline {11.12}{\ignorespaces Las tres inversas trigonométricas principales. Las líneas punteadas indican las asíntotas del rango.}}{277}{figure.11.12}%
+\contentsline {figure}{\numberline {11.13}{\ignorespaces Ventana normanda}}{280}{figure.11.13}%
+\contentsline {figure}{\numberline {11.14}{\ignorespaces Caja sin tapa: Hoja de cartón de $20 \times 12$ cm con cuadrados de lado $x$ recortados en las esquinas}}{281}{figure.11.14}%
+\contentsline {figure}{\numberline {11.15}{\ignorespaces Patrón para la tienda de acampar (pirámide de base cuadrada): cuadrado de $5\,\mathrm {m}$ de lado; $x$ es la distancia del centro al lado de la base.}}{282}{figure.11.15}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {12.1}{\ignorespaces Representación gráfica de la discontinuidad evitable en $x=1$.}}{284}{figure.12.1}%
+\contentsline {figure}{\numberline {12.2}{\ignorespaces Interpretación geométrica del límite}}{285}{figure.12.2}%
+\contentsline {figure}{\numberline {12.3}{\ignorespaces Comparación de áreas: triángulo inscrito $\subset $ sector $\subset $ triángulo circunscrito.}}{287}{figure.12.3}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {13.1}{\ignorespaces Un círculo de radio $r$ inscrito en la parábola $y = x^2$.}}{313}{figure.13.1}%
+\contentsline {figure}{\numberline {13.2}{\ignorespaces Triángulo equilátero formado por el eje $x$ y las rectas tangentes.}}{315}{figure.13.2}%
+\contentsline {figure}{\numberline {13.3}{\ignorespaces Lámpara en $(3,h)$, elipse $x^2+4y^2=5$ y borde de sombra en $(-5,0)$.}}{315}{figure.13.3}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {14.1}{\ignorespaces Monotonía de $f(x)=x^3-3x$: la curva se colorea según el signo de $f'$.}}{322}{figure.14.1}%
+\contentsline {figure}{\numberline {14.2}{\ignorespaces Concavidad de $f(x)=x^4-4x^3$: en azul los tramos donde $f''>0$ (curva abre hacia arriba) y en rojo donde $f''<0$ (curva abre hacia abajo). Los puntos negros señalan los puntos de inflexión.}}{324}{figure.14.2}%
+\contentsline {figure}{\numberline {14.3}{\ignorespaces Bosquejo de $f(x)=\dfrac {x^2}{x^2-4}$. Las ramas azules son cóncavas hacia arriba y las rojas hacia abajo. Las líneas grises punteadas indican las asíntotas $x=\pm 2$ e $y=1$.}}{328}{figure.14.3}%
+\contentsline {figure}{\numberline {14.4}{\ignorespaces Disposición geométrica del mecanismo y definición de variables.}}{341}{figure.14.4}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {24.1}{\ignorespaces Interpretación geométrica de las derivadas parciales como pendientes de tangentes a curvas de intersección con planos coordenados.}}{499}{figure.24.1}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {26.1}{\ignorespaces Curva $y^3=x^2$ con cúspide en $(0,0)$; el mínimo de la distancia al origen ocurre en ese punto, pero $\nabla g=\mathbf {0}$ y el método de Lagrange falla.}}{530}{figure.26.1}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {28.1}{\ignorespaces Región del segundo ejercicio}}{569}{figure.28.1}%
+\contentsline {figure}{\numberline {28.2}{\ignorespaces Región del segundo ejercicio}}{569}{figure.28.2}%
+\contentsline {figure}{\numberline {28.3}{\ignorespaces Región del primer ejercicio}}{575}{figure.28.3}%
+\contentsline {figure}{\numberline {28.4}{\ignorespaces Región del primer ejercicio}}{576}{figure.28.4}%
+\contentsline {figure}{\numberline {28.5}{\ignorespaces Región del primer ejercicio}}{576}{figure.28.5}%
+\contentsline {figure}{\numberline {28.6}{\ignorespaces Figura para el problema 1.}}{577}{figure.28.6}%
+\contentsline {figure}{\numberline {28.7}{\ignorespaces Figura para el problema 1.}}{577}{figure.28.7}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

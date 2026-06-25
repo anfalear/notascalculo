@@ -73,7 +73,7 @@
 \usepackage{listings}
 \usepackage{nameref, cancel}
 
-
+%%%%%%%%%%%%%%%%
 
 % ==========================================
 % PAQUETE TCOLORBOX
@@ -382,11 +382,31 @@
 \newtheorem{para}[theorem]{Detente!!!} 
 
 \theoremstyle{definition}
-\newtheorem{example}[theorem]{Ejemplo} 
-\newtheorem{prob}[theorem]{Problema} 
-\newtheorem{definition}[theorem]{Definición} 
-\newtheorem{pasos}[theorem]{Construcción} 
+\newtheorem{example}[theorem]{Ejemplo}
+\newtheorem{prob}[theorem]{Problema}
+\newtheorem{definition}[theorem]{Definición}
+\newtheorem{pasos}[theorem]{Construcción}
 \newtheorem{appt}[theorem]{Aplicación}
+
+% Cambiar el separador de capítulo y número de teorema para evitar el punto activo de Babel
+\renewcommand{\thetheorem}{\arabic{chapter}-\arabic{theorem}}
+\renewcommand{\theHtheorem}{\arabic{chapter}-\arabic{theorem}}
+
+% Anclas PDF únicas por capítulo (evita "duplicate destination" en hyperref)
+\renewcommand{\theHtheorem}{\thechapter.\arabic{theorem}}
+\renewcommand{\theHaxm}{\thechapter.\arabic{theorem}}
+\renewcommand{\theHcoro}{\thechapter.\arabic{theorem}}
+\renewcommand{\theHlemma}{\thechapter.\arabic{theorem}}
+\renewcommand{\theHprop}{\thechapter.\arabic{theorem}}
+\renewcommand{\theHaffir}{\thechapter.\arabic{theorem}}
+\renewcommand{\theHrem}{\thechapter.\arabic{theorem}}
+\renewcommand{\theHwow}{\thechapter.\arabic{theorem}}
+\renewcommand{\theHpara}{\thechapter.\arabic{theorem}}
+\renewcommand{\theHexample}{\thechapter.\arabic{theorem}}
+\renewcommand{\theHprob}{\thechapter.\arabic{theorem}}
+\renewcommand{\theHdefinition}{\thechapter.\arabic{theorem}}
+\renewcommand{\theHpasos}{\thechapter.\arabic{theorem}}
+\renewcommand{\theHappt}{\thechapter.\arabic{theorem}}
 
 % ==========================================
 % CONFIGURACIÓN MATEMÁTICA
@@ -401,6 +421,15 @@
 \addto\captionsspanish{\renewcommand{\listtheoremname}{Glosario}}
 \addto\captionsspanish{\renewcommand{\contentsname}{Contenido}}
 
+
+
+%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
 % ==========================================
 % CONFIGURACIÓN DE ENCABEZADOS Y PIES DE PÁGINA
 % ==========================================
@@ -409,19 +438,78 @@
 \fancyhead[LE,RO]{\sffamily\bfseries\thepage}
 \fancyhead[LO]{\sffamily\bfseries \rightmark}
 \fancyhead[RE]{\sffamily\bfseries\leftmark}
-\fancyfoot[CE]{\sffamily\bfseries\textbf{Problemario de Cálculo}}
+\fancyfoot[CE]{\sffamily\bfseries\textbf{Problemario de Ciclo Básico}}
 \fancyfoot[CO]{\sffamily\bfseries\textbf{Andrés Fabián Leal Archila}}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
+
+
+% ==========================================
+% PARCHE COMPLETO PARA BABEL ESPAÑOL
+% ==========================================
+\makeatletter
+
+% 1. Desactivar shorthands al escribir en archivos auxiliares mediante \addcontentsline
+\let\originaladdcontentsline\addcontentsline
+\renewcommand{\addcontentsline}[3]{%
+  \shorthandoff{.}\shorthandoff{"}\shorthandoff{<}\shorthandoff{>}%
+  \originaladdcontentsline{#1}{#2}{#3}%
+}
+
+% 2. Desactivar shorthands al escribir mediante \addtocontents (usado por thmtools para el .loe)
+\let\originaladdtocontents\addtocontents
+\renewcommand{\addtocontents}[2]{%
+  \shorthandoff{.}\shorthandoff{"}\shorthandoff{<}\shorthandoff{>}%
+  \originaladdtocontents{#1}{#2}%
+}
+
+% 3. Desactivar shorthands al leer los índices
+\let\originaltableofcontents\tableofcontents
+\renewcommand{\tableofcontents}{%
+  \shorthandoff{.}\shorthandoff{"}\shorthandoff{<}\shorthandoff{>}%
+  \originaltableofcontents
+}
+
+\let\originallistoffigures\listoffigures
+\renewcommand{\listoffigures}{%
+  \shorthandoff{.}\shorthandoff{"}\shorthandoff{<}\shorthandoff{>}%
+  \originallistoffigures
+}
+
+\let\originallistoftables\listoftables
+\renewcommand{\listoftables}{%
+  \shorthandoff{.}\shorthandoff{"}\shorthandoff{<}\shorthandoff{>}%
+  \originallistoftables
+}
+
+% 4. Parche específico para \listoftheorems (el que lee el .loe)
+\let\originallistoftheorems\listoftheorems
+\RenewDocumentCommand{\listoftheorems}{O{}}{%
+  \shorthandoff{.}\shorthandoff{"}\shorthandoff{<}\shorthandoff{>}%
+  \originallistoftheorems[#1]%
+}
+
+\makeatother
+
+% 5. Parche para los bookmarks de hyperref
+\pdfstringdefDisableCommands{%
+  \let\es@a\relax
+  \let\es@b\relax
+  \let\es@c\relax
+  \let\.\relax
+  \let\"\relax
+  \let\<\relax
+  \let\>\relax
+}
 \begin{document} 
 %\sf
 	\setlength{\headheight}{15pt}
 \begin{titlepage}
   \centering
   \vspace*{2cm}
-  {\LARGE Problemario de Cálculo \par}
+  {\LARGE Problemario de Ciclo Básico \par}
   \vspace{2cm}
-  {\large Andrés Fabián Leal Archila\\ \url{anfalear@correo.uis.edu.co}\\ Escuela de Matemáticas \\ Universidad Industrial de Santander \\ \url{aleal214@unab.edu.co}\\ Departamento de Ciencias Básicas \\ Universidad Autónoma de Bucaramanga\par} 
+  {\large Andrés Fabián Leal Archila\\ \url{anfalear@correo.uis.edu.co}\\ Escuela de Matemáticas \\ Universidad Industrial de Santander \par} 
   \vfill
  {\large Última actualización: \today \par}
  
@@ -452,20 +540,28 @@ Andrés Fabián Leal Archila\\
 Docente Escuela de Matemáticas\\
 Universidad Industrial de Santander\\
 Correo: \url{anfalear@correo.uis.edu.co}\\
-Docente Departamento de Ciencias Básicas\\
-Universidad Autónoma de Bucaramanga\\
-Correo: \url{aleal214@unab.edu.co}
 \end{flushright}
 
 
+
 \newpage
+
 \tableofcontents
-\newpage
-\listoftheorems [numwidth=3.5em]
-\newpage
-\listoffigures 
+
+\part{Álgebra Lineal}
 
 \input{politicas}
+\input{complejos}
+\input{vectoresrn}
+\input{matrices}
+\input{sel}
+\input{espaciosvectoriales}
+\input{prodinterno}
+\input{vvpropios}
+\input{translineales}
+
+\part{Cálculo}
+
 \input{preliminares}
 \input{funciones}
 \input{limites}
@@ -478,6 +574,26 @@ Correo: \url{aleal214@unab.edu.co}
 \input{polares}
 \input{sucesionesyseries}
 \input{sucesionesyseriesfunciones}
+\input{funvectoriales}
+\input{limvariasvariables}
+\input{planostangentes}
+\input{gradientes}
+\input{multiplicadoresintdobles}
+\input{apintdobles}
+\input{inttriples}
+\input{cap33}
+\input{cap34}
+\input{cap27_EDOs primer orden}
+\input{cap28_EDOs orden n}
+\input{cap29_Sistemas de EDOs}
+\input{cap30_Sol EDOs Series Potencias}
+\input{cap31_Transformada de Laplace}
+
+
+\newpage
+\listoftheorems [numwidth=3.5em]
+\newpage
+\listoffigures 
 %\chapter*{Bibliografía}
 
 \nocite{*} % Incluye todos los items del archivo BibTeX

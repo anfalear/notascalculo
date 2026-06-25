@@ -1,0 +1,368 @@
+% === LECCIÓN 1.3: PLANO TANGENTE, APROXIMACIÓN LINEAL, DIFERENCIALES, REGLA DE LA CADENA, DERIVACIÓN IMPLÍCITA ===
+
+\section{Plano tangente, aproximación lineal y diferenciales. Regla de la cadena y derivación implícita}
+
+\begin{rem}
+Esta lección extiende al contexto de funciones de varias variables los conceptos fundamentales de linealización y derivación que se estudiaron para funciones de una variable. La idea central es que una función suficientemente \emph{suave} (diferenciable) puede ser aproximada localmente por una función lineal (un plano, en el caso de dos variables), y las reglas de derivación, como la regla de la cadena, se adaptan para manejar las interdependencias entre múltiples variables.
+\end{rem}
+
+\subsection{Conocimientos previos requeridos}
+
+Para un óptimo aprovechamiento de esta lección, es esencial tener claros los siguientes conceptos:
+\begin{itemize}
+    \item El significado geométrico de la derivada de una función de una variable como la pendiente de la recta tangente y la mejor aproximación lineal.
+    \item El cálculo e interpretación de las derivadas parciales de una función de dos variables.
+    \item La representación gráfica de superficies en el espacio tridimensional.
+    \item La regla de la cadena y la derivación implícita para funciones de una variable.
+\end{itemize}
+
+\subsection{Plano tangente, aproximación lineal y diferenciales}
+
+\subsubsection{Plano tangente}
+
+Recordemos que, para una función de una variable $y=f(x)$, la recta tangente en $x_0$ es la mejor aproximación lineal a la curva cerca de ese punto. Su ecuación es
+\[
+y = f(x_0) + f'(x_0)(x-x_0).
+\]
+
+Para una función de dos variables $z=f(x,y)$, cuya gráfica es una superficie en $\mathbb{R}^3$, el análogo a la recta tangente es el \textbf{plano tangente}. Este plano es la mejor aproximación lineal a la superficie en un punto $(x_0, y_0, z_0)$.
+
+\begin{pasos}[Protocolo para hallar el plano tangente a una superficie $z=f(x,y)$ en un punto $(x_0, y_0, f(x_0, y_0))$]
+\begin{enumerate}
+    \item \textbf{Calcular las derivadas parciales}: Evaluar las derivadas parciales de primer orden en el punto $(x_0, y_0)$: $f_x(x_0, y_0)$ y $f_y(x_0, y_0)$.
+    \item \textbf{Construir la ecuación}: Sustituir estos valores en la fórmula del plano tangente:
+    \[
+    z - z_0 = f_x(x_0, y_0)(x - x_0) + f_y(x_0, y_0)(y - y_0).
+    \]
+    \item \textbf{Simplificar (opcional)}: Reordenar la ecuación para obtener una forma más compacta, como $z = L(x, y)$.
+\end{enumerate}
+\end{pasos}
+
+\begin{example}
+Calcule el plano tangente al paraboloide elíptico $z = 2x^2 + y^2$ en el punto $(1, 1, 3)$.
+\end{example}
+\begin{myproof}
+Definimos $f(x, y) = 2x^2 + y^2$. Seguimos el protocolo para hallar el plano tangente.
+
+\begin{enumerate}
+    \item \textbf{Calcular las derivadas parciales}:
+    \[
+    f_x(x, y) = 4x, \quad f_y(x, y) = 2y.
+    \]
+    Evaluando en el punto $(1, 1)$:
+    \[
+    f_x(1, 1) = 4, \quad f_y(1, 1) = 2.
+    \]
+
+    \item \textbf{Construir la ecuación}:
+    \[
+    z - 3 = 4(x - 1) + 2(y - 1).
+    \]
+
+    \item \textbf{Simplificar}:
+    \[
+    z = 4x + 2y - 3.
+    \]
+\end{enumerate}
+Por lo tanto, el plano tangente es $\boxed{z = 4x + 2y - 3}$.
+\end{myproof}
+
+\begin{rem}
+El plano tangente contiene las rectas tangentes a las curvas de intersección de la superficie con los planos verticales $x = x_0$ e $y = y_0$. Específicamente, $f_x(x_0, y_0)$ y $f_y(x_0, y_0)$ son las pendientes de estas rectas tangentes en las direcciones de los ejes $x$ e $y$, respectivamente.
+\end{rem}
+
+\subsubsection{Aproximación lineal y linealización}
+
+Así como la recta tangente se usa para aproximar la función de una variable cerca del punto de tangencia, el plano tangente se usa para aproximar la función de dos variables cerca del punto de tangencia.
+
+\begin{definition}[Linealización]
+La \textbf{linealización} de una función $z = f(x, y)$ en un punto $(x_0, y_0)$ donde $f$ es diferenciable es la función lineal
+\[
+L(x, y) = f(x_0, y_0) + f_x(x_0, y_0)(x - x_0) + f_y(x_0, y_0)(y - y_0).
+\]
+La \textbf{aproximación lineal} correspondiente es
+\[
+f(x, y) \approx L(x, y),
+\]
+la cual es válida para puntos $(x, y)$ cercanos a $(x_0, y_0)$.
+\end{definition}
+
+\begin{example}
+Encuentre la linealización de la función $f(x, y) = \sqrt{x^2 + y^2}$ en el punto $(3, 4)$ y úsela para aproximar $f(3.1, 3.9)$.
+\end{example}
+\begin{myproof}
+Seguimos el protocolo para hallar el plano tangente, que es equivalente a hallar la linealización.
+\begin{enumerate}
+    \item \textbf{Calcular las derivadas parciales}:
+    \[
+    f_x(x, y) = \frac{x}{\sqrt{x^2 + y^2}}, \quad f_y(x, y) = \frac{y}{\sqrt{x^2 + y^2}}.
+    \]
+    Evaluando en $(3, 4)$:
+    \[
+    f_x(3, 4) = \frac{3}{5}, \quad f_y(3, 4) = \frac{4}{5}, \quad f(3, 4) = \sqrt{9+16} = 5.
+    \]
+
+    \item \textbf{Construir la linealización}:
+    \[
+    L(x, y) = 5 + \frac{3}{5}(x - 3) + \frac{4}{5}(y - 4).
+    \]
+
+    \item \textbf{Simplificar}:
+    \[
+    L(x, y) = \frac{3x + 4y}{5}.
+    \]
+    \item \textbf{Aproximar}:
+    \[
+    f(3.1, 3.9) \approx L(3.1, 3.9) = \frac{3(3.1) + 4(3.9)}{5} = \frac{9.3 + 15.6}{5} = \frac{24.9}{5} = 4.98.
+    \]
+\end{enumerate}
+El valor real es $\sqrt{3.1^2 + 3.9^2} \approx \sqrt{9.61 + 15.21} = \sqrt{24.82} \approx 4.98197$. La aproximación $\boxed{4.98}$ es muy cercana.
+\end{myproof}
+
+\subsubsection{Diferenciales}
+
+\begin{definition}[Diferencial total]
+Para una función de dos variables $z = f(x, y)$, los diferenciales $dx$ y $dy$ son variables independientes. El \textbf{diferencial total} $dz$ (o $df$) se define como
+\[
+dz = f_x(x, y)\,dx + f_y(x, y)\,dy = \frac{\partial z}{\partial x}\,dx + \frac{\partial z}{\partial y}\,dy.
+\]
+Este diferencial representa el cambio en la \emph{linealización} $L(x,y)$ cuando las variables independientes cambian en $dx$ y $dy$. Si $dx = \Delta x$ y $dy = \Delta y$ son pequeños, entonces $\Delta z \approx dz$.
+\end{definition}
+
+\begin{rem}
+La definición de diferencial se extiende de manera natural a funciones de más variables. Por ejemplo, para $w = f(x, y, z)$,
+\[
+dw = f_x \, dx + f_y \, dy + f_z \, dz.
+\]
+\end{rem}
+
+\begin{rem}
+La noción de diferenciabilidad formaliza la condición bajo la cual un plano tangente existe y la aproximación lineal es buena. Una función es diferenciable en un punto si su incremento $\Delta z$ puede escribirse como la combinación lineal dada por el diferencial total más un error que tiende a cero más rápido que la distancia al punto.
+\end{rem}
+
+\begin{theorem}[Diferenciabilidad y continuidad]
+Si $f$ es diferenciable en un punto $(x_0, y_0)$, entonces $f$ es continua en ese punto.
+\end{theorem}
+\begin{proof}
+La demostración sigue la misma línea que para funciones de una variable: si $\Delta x$ y $\Delta y$ tienden a cero, el incremento $\Delta z$ también tiende a cero gracias a la definición de diferenciabilidad, lo que implica continuidad.
+\end{proof}
+
+\begin{theorem}[Criterio de diferenciabilidad]
+Si las derivadas parciales $f_x$ y $f_y$ existen en una región que contiene a $(x_0, y_0)$ y son continuas en $(x_0, y_0)$, entonces $f$ es diferenciable en $(x_0, y_0)$.
+\end{theorem}
+
+\begin{example}
+Demuestre que la función $f(x, y) = x e^{xy}$ es diferenciable en $(1, 0)$ y determine su linealización. Luego úsela para aproximar $f(1.1, -0.1)$.
+\end{example}
+\begin{myproof}
+\begin{enumerate}
+    \item \textbf{Calcular las derivadas parciales}:
+    \[
+    f_x(x, y) = e^{xy} + xy e^{xy}, \quad f_y(x, y) = x^2 e^{xy}.
+    \]
+    Estas funciones son continuas en todo $\mathbb{R}^2$ por ser combinaciones de funciones continuas ($e^{xy}$ es continua por ser composición de la exponencial con un polinomio). Por lo tanto, $f$ es diferenciable en $(1, 0)$.
+    Evaluando en $(1, 0)$:
+    \[
+    f(1, 0) = 1,\quad f_x(1, 0) = 1,\quad f_y(1, 0) = 1.
+    \]
+
+    \item \textbf{Construir la linealización}:
+    \[
+    L(x, y) = 1 + 1(x - 1) + 1(y - 0) = x + y.
+    \]
+
+    \item \textbf{Aproximar}:
+    \[
+    f(1.1, -0.1) \approx L(1.1, -0.1) = 1.0.
+    \]
+\end{enumerate}
+La linealización es $\boxed{L(x, y) = x + y}$ y la aproximación es $\boxed{f(1.1, -0.1) \approx 1.0}$.
+\end{myproof}
+
+\subsection{Regla de la cadena y derivación implícita}
+
+\subsubsection{Regla de la cadena (Caso 1: una variable independiente)}
+
+\begin{theorem}[Regla de la cadena, Caso 1]
+Si $z = f(x, y)$ es diferenciable y $x = g(t)$, $y = h(t)$ son funciones diferenciables de $t$, entonces $z$ es una función diferenciable de $t$ y
+\[
+\frac{dz}{dt} = \frac{\partial z}{\partial x}\frac{dx}{dt} + \frac{\partial z}{\partial y}\frac{dy}{dt}.
+\]
+\end{theorem}
+
+\begin{pasos}[Protocolo para la regla de la cadena (Caso 1)]
+\begin{enumerate}
+    \item \textbf{Identificar las dependencias}: Determinar cómo $z$ depende de $t$ a través de $x(t)$ e $y(t)$.
+    \item \textbf{Calcular las derivadas parciales}: Calcular $\partial z/\partial x$ y $\partial z/\partial y$ en términos de $x$ e $y$.
+    \item \textbf{Calcular las derivadas ordinarias}: Calcular $dx/dt$ y $dy/dt$.
+    \item \textbf{Sustituir y sumar}: Sustituir $x(t)$ e $y(t)$ en las derivadas parciales y luego sustituir todos los términos en la fórmula de la regla de la cadena, sumando los productos.
+\end{enumerate}
+\end{pasos}
+
+\begin{example}
+Use la regla de la cadena para hallar $dz/dt$ para
+\[
+z = x^2 y - \sin y, \quad x = \sqrt{t^2 + 1}, \quad y = e^t.
+\]
+\end{example}
+\begin{myproof}
+Seguimos el protocolo para la regla de la cadena (Caso 1).
+\begin{enumerate}
+    \item \textbf{Identificar dependencias}: $z$ depende de $t$ a través de $x(t) = \sqrt{t^2+1}$ y $y(t) = e^t$.
+    \item \textbf{Calcular derivadas parciales}:
+    \[
+    \frac{\partial z}{\partial x} = 2xy, \quad \frac{\partial z}{\partial y} = x^2 - \cos y.
+    \]
+    \item \textbf{Calcular derivadas ordinarias}:
+    \[
+    \frac{dx}{dt} = \frac{t}{\sqrt{t^2+1}}, \quad \frac{dy}{dt} = e^t.
+    \]
+    \item \textbf{Sustituir y sumar}:
+    \[
+    \frac{dz}{dt} = (2xy)\frac{dx}{dt} + (x^2 - \cos y)\frac{dy}{dt}.
+    \]
+    Sustituyendo $x$ e $y$:
+    \[
+    \frac{dz}{dt} = 2\left(\sqrt{t^2+1}\right)(e^t)\left(\frac{t}{\sqrt{t^2+1}}\right) + \left((t^2+1) - \cos(e^t)\right)(e^t).
+    \]
+    Simplificando:
+    \[
+    \frac{dz}{dt} = 2t e^t + \left(t^2 + 1 - \cos(e^t)\right)e^t = \boxed{\left(t^2 + 2t + 1 - \cos(e^t)\right)e^t}.
+    \]
+\end{enumerate}
+\end{myproof}
+
+\subsubsection{Regla de la cadena (Caso 2: dos variables independientes)}
+
+\begin{theorem}[Regla de la cadena, Caso 2]
+Si $z = f(x, y)$ es diferenciable y $x = g(s, t)$, $y = h(s, t)$ son diferenciables, entonces $z$ es una función diferenciable de $s$ y $t$, y
+\[
+\frac{\partial z}{\partial s} = \frac{\partial z}{\partial x}\frac{\partial x}{\partial s} + \frac{\partial z}{\partial y}\frac{\partial y}{\partial s},
+\]
+\[
+\frac{\partial z}{\partial t} = \frac{\partial z}{\partial x}\frac{\partial x}{\partial t} + \frac{\partial z}{\partial y}\frac{\partial y}{\partial t}.
+\]
+\end{theorem}
+
+\begin{pasos}[Protocolo para la regla de la cadena (Caso 2)]
+\begin{enumerate}
+    \item \textbf{Identificar las dependencias}: Determinar cómo $z$ depende de $s$ y $t$ a través de $x(s,t)$ e $y(s,t)$.
+    \item \textbf{Calcular las derivadas parciales}: Calcular $\partial z/\partial x$ y $\partial z/\partial y$ en términos de $x$ e $y$.
+    \item \textbf{Calcular las derivadas de las variables intermedias}: Calcular $\partial x/\partial s$, $\partial x/\partial t$, $\partial y/\partial s$, $\partial y/\partial t$.
+    \item \textbf{Sustituir y sumar}: Sustituir y sumar para encontrar $\partial z/\partial s$ y $\partial z/\partial t$ siguiendo las fórmulas.
+\end{enumerate}
+\end{pasos}
+
+\begin{example}
+Si $z = \sin(xy)$, donde $x = s^2 + t$ e $y = \ln(s t)$, calcule $\partial z/\partial s$ y $\partial z/\partial t$.
+\end{example}
+\begin{myproof}
+Seguimos el protocolo para la regla de la cadena (Caso 2).
+\begin{enumerate}
+    \item \textbf{Identificar dependencias}: $z$ depende de $s$ y $t$ a través de $x(s,t) = s^2 + t$ e $y(s,t) = \ln(st)$.
+    \item \textbf{Calcular derivadas parciales de $z$}:
+    \[
+    \frac{\partial z}{\partial x} = y \cos(xy), \quad \frac{\partial z}{\partial y} = x \cos(xy).
+    \]
+    \item \textbf{Calcular derivadas de $x$ e $y$}:
+    \[
+    \frac{\partial x}{\partial s} = 2s, \quad \frac{\partial x}{\partial t} = 1,
+    \]
+    \[
+    \frac{\partial y}{\partial s} = \frac{1}{s}, \quad \frac{\partial y}{\partial t} = \frac{1}{t}.
+    \]
+    \item \textbf{Sustituir y sumar}:
+    \[
+    \frac{\partial z}{\partial s} = (y \cos(xy))(2s) + (x \cos(xy))\left(\frac{1}{s}\right)
+    \]
+    \[
+    \frac{\partial z}{\partial t} = (y \cos(xy))(1) + (x \cos(xy))\left(\frac{1}{t}\right).
+    \]
+    Sustituyendo $x$ e $y$:
+    \[
+    \frac{\partial z}{\partial s} = \boxed{\cos((s^2+t)\ln(st))\left(2s \ln(st) + \frac{s^2+t}{s}\right)},
+    \]
+    \[
+    \frac{\partial z}{\partial t} = \boxed{\cos((s^2+t)\ln(st))\left(\ln(st) + \frac{s^2+t}{t}\right)}.
+    \]
+\end{enumerate}
+\end{myproof}
+
+\subsubsection{Derivación implícita}
+
+Cuando una función $z = f(x, y)$ no se da explícitamente, sino que está definida implícitamente por una ecuación $F(x, y, z) = 0$, podemos hallar sus derivadas parciales utilizando la regla de la cadena.
+
+\begin{theorem}[Derivación implícita para funciones de varias variables]
+Si una ecuación $F(x, y, z) = 0$ define implícitamente a $z$ como una función diferenciable de $x$ e $y$, entonces
+\[
+\frac{\partial z}{\partial x} = -\frac{F_x}{F_z}, \quad \frac{\partial z}{\partial y} = -\frac{F_y}{F_z}, \quad \text{siempre que } F_z \neq 0.
+\]
+\end{theorem}
+
+\begin{pasos}[Protocolo para derivación implícita de $z$ definida por $F(x, y, z) = 0$]
+\begin{enumerate}
+    \item \textbf{Definir la función $F$}: Reordenar la ecuación para que un lado sea $0$ y definir $F(x, y, z)$ como el otro lado.
+    \item \textbf{Calcular las derivadas parciales de $F$}: Calcular $F_x$, $F_y$ y $F_z$.
+    \item \textbf{Aplicar las fórmulas}: Sustituir las derivadas en las fórmulas $\partial z/\partial x = -F_x/F_z$ y $\partial z/\partial y = -F_y/F_z$.
+    \item \textbf{Simplificar (opcional)}: Simplificar la expresión resultante.
+\end{enumerate}
+\end{pasos}
+
+\begin{example}
+Dada la ecuación $3yz^2 - e^{4x}\cos(4z) - 3y^2 = 4$, calcule $\partial z/\partial x$ y $\partial z/\partial y$.
+\end{example}
+\begin{myproof}
+Seguimos el protocolo para derivación implícita.
+\begin{enumerate}
+    \item \textbf{Definir $F$}:
+    \[
+    F(x, y, z) = 3yz^2 - e^{4x}\cos(4z) - 3y^2 - 4.
+    \]
+    \item \textbf{Calcular las derivadas parciales de $F$}:
+    \[
+    F_x = -4e^{4x}\cos(4z),
+    \]
+    \[
+    F_y = 3z^2 - 6y,
+    \]
+    \[
+    F_z = 6yz + 4e^{4x}\sin(4z).
+    \]
+    \item \textbf{Aplicar las fórmulas}:
+    \[
+    \frac{\partial z}{\partial x} = -\frac{F_x}{F_z} = -\frac{-4e^{4x}\cos(4z)}{6yz + 4e^{4x}\sin(4z)} = \frac{4e^{4x}\cos(4z)}{6yz + 4e^{4x}\sin(4z)},
+    \]
+    \[
+    \frac{\partial z}{\partial y} = -\frac{F_y}{F_z} = -\frac{3z^2 - 6y}{6yz + 4e^{4x}\sin(4z)} = \frac{6y - 3z^2}{6yz + 4e^{4x}\sin(4z)}.
+    \]
+\end{enumerate}
+Por lo tanto, $\boxed{\frac{\partial z}{\partial x} = \frac{4e^{4x}\cos(4z)}{6yz + 4e^{4x}\sin(4z)}}$ y $\boxed{\frac{\partial z}{\partial y} = \frac{6y - 3z^2}{6yz + 4e^{4x}\sin(4z)}}$.
+\end{myproof}
+
+\subsection{Conclusión}
+
+Hemos extendido al contexto de funciones de varias variables los conceptos de aproximación lineal (plano tangente y linealización) y las reglas de derivación. El plano tangente y la linealización permiten simplificar el estudio del comportamiento local de una función, mientras que la regla de la cadena y la derivación implícita proporcionan las herramientas necesarias para calcular derivadas en situaciones donde las variables dependen unas de otras de manera compleja.
+
+\begin{prob}
+Calcule el plano tangente a la superficie $z = x^2 y^3$ en el punto $(1, 2)$.
+\end{prob}
+
+\begin{prob}
+Encuentre la linealización de la función $f(x, y) = \ln(1 + x + 2y)$ en el punto $(0, 0)$ y úsela para aproximar $f(0.1, -0.02)$.
+\end{prob}
+
+\begin{prob}
+Use la regla de la cadena para hallar $dz/dt$ si $z = \cos(x + 2y)$, $x = t^2$ e $y = \sin t$.
+\end{prob}
+
+\begin{prob}
+Si $z = e^{xy}$, $x = s t$, $y = s + t$, encuentre $\partial z/\partial s$ y $\partial z/\partial t$.
+\end{prob}
+
+\begin{prob}
+Calcule $\partial z/\partial x$ y $\partial z/\partial y$ para la función $z$ definida implícitamente por $x^2 y - y^2 z + z^3 = 1$.
+\end{prob}
+
+\section{Problemas propuestos} 
+
+

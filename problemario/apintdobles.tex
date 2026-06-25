@@ -1,0 +1,901 @@
+\chapter{Aplicaciones de la integral doble e integrales dobles en coordenadas polares}
+
+\section{Integrales dobles en coordenadas rectangulares}
+
+La integral definida de una variable permite calcular áreas bajo curvas y acumulaciones a lo largo de intervalos. La integral doble extiende esta idea a funciones de dos variables, permitiendo calcular volúmenes bajo superficies, áreas de regiones planas, masas, centros de masa y otras magnitudes sobre regiones del plano.
+
+\subsection{Integral doble sobre un rectángulo}
+
+Sea $R=[a,b]\times[c,d]$ un rectángulo en el plano. Una partición de $R$ consiste en dividir $[a,b]$ en $m$ subintervalos de longitudes $\Delta x_i$ y $[c,d]$ en $n$ subintervalos de longitudes $\Delta y_j$, formando $mn$ subrectángulos $R_{ij}$ de área $\Delta A_{ij}=\Delta x_i\Delta y_j$. Elegimos un punto muestra $(\bar{x}_{ij},\bar{y}_{ij})$ en cada subrectángulo y formamos la suma de Riemann
+\[
+\sum_{i=1}^m\sum_{j=1}^n f(\bar{x}_{ij},\bar{y}_{ij})\,\Delta A_{ij}.
+\]
+Si el límite de estas sumas existe cuando la norma de la partición tiende a cero, se dice que $f$ es integrable sobre $R$ y se define la integral doble
+\[
+\iint_R f(x,y)\,dA = \lim_{\|P\|\to0}\sum_{i,j} f(\bar{x}_{ij},\bar{y}_{ij})\,\Delta A_{ij}.
+\]
+
+\begin{theorem}[Integrabilidad]
+Si $f$ es continua en $R$, entonces $f$ es integrable en $R$. Más generalmente, si $f$ es acotada y continua excepto posiblemente en un número finito de curvas suaves, también es integrable.
+\end{theorem}
+
+\subsection{Teorema de Fubini}
+
+El cálculo directo de la integral doble a partir de sumas de Riemann es engorroso. El teorema de Fubini la reduce a dos integrales simples sucesivas.
+
+\begin{theorem}[Fubini]
+Si $f$ es continua en el rectángulo $R=[a,b]\times[c,d]$, entonces
+\[
+\iint_R f(x,y)\,dA = \int_a^b\left[\int_c^d f(x,y)\,dy\right]dx
+= \int_c^d\left[\int_a^b f(x,y)\,dx\right]dy.
+\]
+\end{theorem}
+
+La primera integral iterada indica que primero se integra respecto a $y$ (manteniendo $x$ fija) y luego respecto a $x$; la segunda invierte el orden.
+
+\subsection{Propiedades de la integral doble}
+
+\begin{itemize}
+    \item \textbf{Linealidad:} $\iint_R [\alpha f+\beta g]\,dA = \alpha\iint_R f\,dA + \beta\iint_R g\,dA$.
+    \item \textbf{Aditividad:} si $R=R_1\cup R_2$ y $R_1,R_2$ se solapan solo en sus fronteras, entonces $\iint_R f = \iint_{R_1} f + \iint_{R_2} f$.
+    \item \textbf{Comparación:} si $f(x,y)\le g(x,y)$ en $R$, entonces $\iint_R f\le \iint_R g$.
+\end{itemize}
+
+\begin{pasos}[Evaluación de una integral doble sobre un rectángulo]
+\begin{enumerate}
+    \item \textbf{Elegir orden de integración.} Decidir si se integra primero con respecto a $x$ o a $y$. La elección depende de la función; en general se busca que la integral interior sea sencilla.
+    \item \textbf{Integrar interiormente.} Mantener la otra variable fija y aplicar las técnicas de integración de una variable.
+    \item \textbf{Integrar exteriormente.} Integrar la función resultante respecto a la variable restante en el intervalo correspondiente.
+\end{enumerate}
+\end{pasos}
+
+\begin{example}[Integral doble sobre un rectángulo]
+Calcular $\displaystyle\iint_R (x^2 y + y^2)\,dA$, donde $R=[0,1]\times[0,2]$.
+\begin{myproof}
+\textbf{Paso 1. Integral iterada.} Usamos el orden $dy\,dx$:
+\[
+\iint_R (x^2 y + y^2)\,dA
+= \int_0^1\int_0^2 (x^2 y + y^2)\,dy\,dx.
+\]
+\textbf{Paso 2. Integral interior.}
+\[
+\int_0^2 (x^2 y + y^2)\,dy
+= \left[\frac{x^2 y^2}{2} + \frac{y^3}{3}\right]_0^2
+= \frac{x^2\cdot 4}{2} + \frac{8}{3}
+= 2x^2+\frac{8}{3}.
+\]
+\textbf{Paso 3. Integral exterior.}
+\[
+\int_0^1 \left(2x^2+\frac{8}{3}\right)dx
+= \left[\frac{2x^3}{3}+\frac{8x}{3}\right]_0^1
+= \frac{2}{3}+\frac{8}{3}=\frac{10}{3}.
+\]
+$\displaystyle\boxed{\iint_R (x^2 y + y^2)\,dA = \tfrac{10}{3}}$.
+\end{myproof}
+\end{example}
+
+\subsection{Integrales dobles sobre regiones generales}
+
+No toda región de integración es un rectángulo. Consideramos regiones acotadas con fronteras suaves. Dos tipos básicos son:
+
+\begin{definition}[Región tipo I ($y$-simple)]
+Una región $D$ es de tipo I si puede expresarse como
+\[
+D=\{(x,y): a\le x\le b,\; g_1(x)\le y\le g_2(x)\},
+\]
+donde $g_1,g_2$ son funciones continuas en $[a,b]$.
+\end{definition}
+
+\begin{definition}[Región tipo II ($x$-simple)]
+Una región $D$ es de tipo II si puede expresarse como
+\[
+D=\{(x,y): c\le y\le d,\; h_1(y)\le x\le h_2(y)\},
+\]
+donde $h_1,h_2$ son funciones continuas en $[c,d]$.
+\end{definition}
+
+Para regiones tipo I, la integral doble se calcula como
+\[
+\iint_D f(x,y)\,dA = \int_a^b \int_{g_1(x)}^{g_2(x)} f(x,y)\,dy\,dx.
+\]
+Para regiones tipo II, se tiene
+\[
+\iint_D f(x,y)\,dA = \int_c^d \int_{h_1(y)}^{h_2(y)} f(x,y)\,dx\,dy.
+\]
+
+\begin{pasos}[Integral doble sobre una región general]
+\begin{enumerate}
+    \item \textbf{Identificar el tipo de región.} Determinar si $D$ es tipo I (y entre dos curvas) o tipo II (x entre dos curvas). Si es posible, elegir el orden que simplifique los límites.
+    \item \textbf{Establecer los límites.} Escribir los límites de integración según el tipo elegido.
+    \item \textbf{Evaluar la integral iterada.} Integrar primero respecto a la variable interior y luego respecto a la exterior.
+\end{enumerate}
+\end{pasos}
+
+\subsection{Ejemplos de regiones generales}
+
+\begin{example}[Región tipo I]
+Evalúe $\displaystyle\iint_D xy\,dA$, donde $D$ es la región acotada por $y=x^2$ y $y=x$, con $0\le x\le 1$.
+\begin{myproof}
+\textbf{Paso 1. Región e integral iterada.} La región es tipo I: para cada $x\in[0,1]$, $y$ varía entre $x^2$ y $x$. Por tanto,
+\[
+\iint_D xy\,dA = \int_0^1\int_{x^2}^{x} xy\,dy\,dx.
+\]
+\textbf{Paso 2. Integral interior.}
+\[
+\int_{x^2}^{x} xy\,dy = x\left[\frac{y^2}{2}\right]_{x^2}^{x}
+= \frac{x}{2}(x^2-x^4) = \frac{x^3}{2}-\frac{x^5}{2}.
+\]
+\textbf{Paso 3. Integral exterior.}
+\[
+\int_0^1 \left(\frac{x^3}{2}-\frac{x^5}{2}\right)dx
+= \frac{1}{2}\left[\frac{x^4}{4}-\frac{x^6}{6}\right]_0^1
+= \frac{1}{2}\left(\frac{1}{4}-\frac{1}{6}\right)
+= \frac{1}{2}\cdot\frac{1}{12}=\frac{1}{24}.
+\]
+$\displaystyle\boxed{\iint_D xy\,dA = \tfrac{1}{24}}$.
+\end{myproof}
+\end{example}
+
+\begin{example}[Región tipo II]
+Evalúe $\displaystyle\iint_D (x+y)\,dA$, donde $D$ es la región acotada por $x=y^2$ y $x=y+2$.
+\begin{myproof}
+\textbf{Paso 1. Identificar la región.} Los puntos de intersección de $y^2$ y $y+2$ satisfacen $y^2=y+2$, es decir, $y^2-y-2=0$, cuyas soluciones son $y=-1$ y $y=2$. Para $y\in[-1,2]$, la curva de la izquierda es $x=y^2$ y la de la derecha es $x=y+2$ (ya que $y+2\ge y^2$ en ese intervalo). Luego $D$ es tipo II:
+\[
+D=\{(x,y): -1\le y\le 2,\; y^2\le x\le y+2\}.
+\]
+\textbf{Paso 2. Integral iterada.}
+\[
+\iint_D (x+y)\,dA = \int_{-1}^{2}\int_{y^2}^{y+2} (x+y)\,dx\,dy.
+\]
+\textbf{Paso 3. Integral interior.}
+\[
+\int_{y^2}^{y+2} (x+y)\,dx
+= \left[\frac{x^2}{2}+yx\right]_{y^2}^{y+2}.
+\]
+Evaluando en $y+2$:
+\[
+\frac{(y+2)^2}{2}+y(y+2) = \frac{y^2+4y+4}{2}+y^2+2y
+= \frac{3y^2}{2}+4y+2.
+\]
+Evaluando en $y^2$:
+\[
+\frac{y^4}{2}+y^3.
+\]
+La diferencia es:
+\[
+\left(\frac{3y^2}{2}+4y+2\right) - \left(\frac{y^4}{2}+y^3\right)
+= -\frac{y^4}{2} - y^3 + \frac{3y^2}{2}+4y+2.
+\]
+\textbf{Paso 4. Integral exterior.}
+\[
+\int_{-1}^{2}\left(-\frac{y^4}{2} - y^3 + \frac{3y^2}{2}+4y+2\right)dy
+= \left[-\frac{y^5}{10} - \frac{y^4}{4} + \frac{y^3}{2} + 2y^2 + 2y\right]_{-1}^{2}.
+\]
+Evaluamos en $2$:
+\[
+-\frac{32}{10} - \frac{16}{4} + \frac{8}{2} + 8 + 4
+= -\frac{16}{5} - 4 + 4 + 8 + 4 = -\frac{16}{5} + 12 = \frac{44}{5}.
+\]
+Evaluamos en $-1$:
+\[
+-\frac{(-1)^5}{10} - \frac{(-1)^4}{4} + \frac{(-1)^3}{2} + 2(-1)^2 + 2(-1)
+= \frac{1}{10} - \frac{1}{4} - \frac{1}{2} + 2 - 2.
+\]
+Simplificando: $\frac{1}{10} - \frac{1}{4} - \frac{1}{2} = \frac{2}{20} - \frac{5}{20} - \frac{10}{20} = -\frac{13}{20}$.
+La diferencia es $\frac{44}{5} - \left(-\frac{13}{20}\right) = \frac{176}{20}+\frac{13}{20} = \frac{189}{20}$.
+$\displaystyle\boxed{\iint_D (x+y)\,dA = \tfrac{189}{20}}$.
+\end{myproof}
+\end{example}
+
+\begin{rem}
+En regiones generales, elegir el orden de integración adecuado puede simplificar drásticamente los límites. A menudo, una región que no es tipo I puede ser tipo II, y viceversa. Si la región no es de ninguno de estos tipos, se puede descomponer en varias subregiones.
+\end{rem}
+
+
+\section*{Problemas propuestos}
+
+\begin{prob}[Integrales dobles sobre rectángulos]
+Calcule las siguientes integrales dobles:
+\begin{enumerate}
+    \item $\displaystyle\iint_R (x^2+2y)\,dA$, $R=[0,2]\times[0,3]$.
+    \item $\displaystyle\iint_R \cos(x+y)\,dA$, $R=[0,\pi/2]\times[0,\pi/2]$.
+\end{enumerate}
+\begin{myproof}
+\textbf{(1)} Integramos en el orden $dy\,dx$:
+
+\textbf{Paso 1. Integral interior en $y$.}
+\[
+\int_0^3 (x^2+2y)\,dy = \left[x^2 y + y^2\right]_0^3 = 3x^2 + 9.
+\]
+
+\textbf{Paso 2. Integral exterior en $x$.}
+\[
+\int_0^2 (3x^2+9)\,dx = \left[x^3+9x\right]_0^2 = 8+18 = 26.
+\]
+\[
+\boxed{\iint_R (x^2+2y)\,dA = 26.}
+\]
+
+\textbf{(2)} Integramos en el orden $dy\,dx$:
+
+\textbf{Paso 1. Integral interior en $y$.}
+\[
+\int_0^{\pi/2} \cos(x+y)\,dy = \bigl[\sin(x+y)\bigr]_0^{\pi/2} = \sin\!\left(x+\tfrac{\pi}{2}\right)-\sin x = \cos x - \sin x.
+\]
+
+\textbf{Paso 2. Integral exterior en $x$.}
+\[
+\int_0^{\pi/2}(\cos x - \sin x)\,dx = \bigl[\sin x + \cos x\bigr]_0^{\pi/2}
+= (1+0)-(0+1) = 0.
+\]
+\[
+\boxed{\iint_R \cos(x+y)\,dA = 0.}
+\]
+\end{myproof}
+\end{prob}
+
+\begin{prob}[Regiones generales]
+Evalúe:
+\begin{enumerate}
+    \item $\displaystyle\iint_D (x+y)\,dA$, donde $D$ es la región acotada por $y=x$ y $y=x^2$.
+    \item $\displaystyle\iint_D x\,dA$, donde $D$ es la región acotada por $y=x^2$ y $x=y^2$.
+    \item $\displaystyle\iint_D xy\,dA$, donde $D$ es la región acotada por $y=x$ y $x=4-y^2$ (sugerencia: determine los puntos de intersección).
+\end{enumerate}
+\begin{myproof}
+\textbf{(1)} Las curvas se intersectan en $x=x^2$, es decir, $x=0$ y $x=1$. Para $x\in[0,1]$ la región es tipo I con $x^2\le y\le x$.
+
+\textbf{Paso 1.}
+\[
+\int_{x^2}^{x}(x+y)\,dy = \left[xy+\frac{y^2}{2}\right]_{x^2}^{x}
+= \left(x^2+\frac{x^2}{2}\right)-\left(x^3+\frac{x^4}{2}\right)
+= \frac{3x^2}{2}-x^3-\frac{x^4}{2}.
+\]
+
+\textbf{Paso 2.}
+\[
+\int_0^1\!\left(\frac{3x^2}{2}-x^3-\frac{x^4}{2}\right)dx
+= \left[\frac{x^3}{2}-\frac{x^4}{4}-\frac{x^5}{10}\right]_0^1
+= \frac{1}{2}-\frac{1}{4}-\frac{1}{10}
+= \frac{10-5-2}{20} = \frac{3}{20}.
+\]
+\[
+\boxed{\iint_D (x+y)\,dA = \frac{3}{20}.}
+\]
+
+\textbf{(2)} Las curvas $y=x^2$ y $x=y^2$ (es decir, $y=\sqrt{x}$) se intersectan en $x=0$ y $x=1$. Para $x\in[0,1]$: $x^2\le y\le\sqrt{x}$.
+
+\textbf{Paso 1.}
+\[
+\int_{x^2}^{\sqrt{x}} x\,dy = x(\sqrt{x}-x^2) = x^{3/2}-x^3.
+\]
+
+\textbf{Paso 2.}
+\[
+\int_0^1(x^{3/2}-x^3)\,dx
+= \left[\frac{2x^{5/2}}{5}-\frac{x^4}{4}\right]_0^1
+= \frac{2}{5}-\frac{1}{4} = \frac{8-5}{20} = \frac{3}{20}.
+\]
+\[
+\boxed{\iint_D x\,dA = \frac{3}{20}.}
+\]
+
+\textbf{(3)} Las curvas $y=x$ y $x=4-y^2$ se intersectan cuando $y=4-y^2$, es decir, $y^2+y-4=0$, con raíces
+\[
+y_{1,2}=\frac{-1\pm\sqrt{17}}{2}.
+\]
+Para $y\in[y_1,y_2]$ la región es tipo II con $y\le x\le 4-y^2$.
+
+\textbf{Paso 1. Integral interior en $x$.}
+\[
+\int_{y}^{4-y^2} xy\,dx = \frac{y}{2}\bigl[(4-y^2)^2-y^2\bigr]
+= \frac{y}{2}(y^4-9y^2+16).
+\]
+
+\textbf{Paso 2. Integral exterior en $y$.}
+\[
+\iint_D xy\,dA = \frac{1}{2}\int_{y_1}^{y_2}(y^5-9y^3+16y)\,dy
+= \frac{1}{2}\left[\frac{y^6}{6}-\frac{9y^4}{4}+8y^2\right]_{y_1}^{y_2}.
+\]
+Usando la relación $y_i^2=4-y_i$ (de $y_i^2+y_i-4=0$) se obtiene que $F(y_i)=\dfrac{76+17y_i}{12}$, de modo que
+\[
+F(y_2)-F(y_1) = \frac{17(y_2-y_1)}{12} = \frac{17\sqrt{17}}{12}.
+\]
+\[
+\boxed{\iint_D xy\,dA = \frac{17\sqrt{17}}{24}.}
+\]
+\end{myproof}
+\end{prob}
+
+\begin{prob}[Cambio de orden de integración]
+Dibuje la región de integración y reescriba la integral invirtiendo el orden:
+\[
+\int_0^1\int_{x^2}^{x} f(x,y)\,dy\,dx.
+\]
+\begin{myproof}
+\textbf{Paso 1. Describir la región.} La región original es
+\[
+D = \{(x,y): 0\le x\le 1,\; x^2\le y\le x\}.
+\]
+Está acotada por la parábola $y=x^2$ (abajo) y la recta $y=x$ (arriba), con $x\in[0,1]$.
+
+\textbf{Paso 2. Redescribir en términos de $y$.} Para $y\in[0,1]$ fijo, $x$ varía entre $x=y$ (de la recta) y $x=\sqrt{y}$ (de la parábola, despejando $x$):
+\[
+D = \{(x,y): 0\le y\le 1,\; y\le x\le \sqrt{y}\}.
+\]
+
+\textbf{Paso 3. Integral con orden invertido.}
+\[
+\boxed{\int_0^1\int_{x^2}^{x} f(x,y)\,dy\,dx = \int_0^1\int_{y}^{\sqrt{y}} f(x,y)\,dx\,dy.}
+\]
+\end{myproof}
+\end{prob}
+
+\section{Área, volumen, centro de masa y momentos de inercia}
+
+\subsection{Volumen bajo una superficie y área de una región plana}
+
+Recordemos que si \(f(x,y)\ge 0\) es continua sobre una región \(D\subset\mathbb R^2\), el volumen del sólido comprendido entre la superficie \(z=f(x,y)\) y el plano \(xy\) (sobre \(D\)) es
+\[
+V = \iint_D f(x,y)\,dA.
+\]
+Si \(f(x,y)=1\) sobre \(D\), entonces el volumen es numéricamente igual al área de \(D\):
+\[
+\text{Área}(D)=\iint_D 1\,dA=\iint_D dA.
+\]
+Esta observación permite calcular áreas de regiones planas mediante una integral doble, aunque en la práctica suele ser más eficiente usar integrales simples.
+
+\subsection{Masa y centro de masa de una lámina plana}
+
+Consideremos una lámina delgada que ocupa la región \(D\) del plano, con densidad superficial de masa \(\rho(x,y)\) (masa por unidad de área). Si la densidad es variable, la masa total se obtiene sumando (integrando) la masa de cada elemento infinitesimal de área \(dA\):
+\[
+m = \iint_D \rho(x,y)\,dA.
+\]
+
+Para localizar el centro de masa, definimos los momentos estáticos respecto a los ejes:
+\[
+M_x = \iint_D y\,\rho(x,y)\,dA,\qquad
+M_y = \iint_D x\,\rho(x,y)\,dA.
+\]
+El centro de masa \((\bar{x},\bar{y})\) viene dado por
+\[
+\bar{x} = \frac{M_y}{m}, \qquad \bar{y} = \frac{M_x}{m}.
+\]
+
+\begin{rem}
+El momento \(M_y\) mide la tendencia de la lámina a girar alrededor del eje \(y\); por eso multiplicamos la densidad por la distancia \(x\) al eje. Análogamente, \(M_x\) mide el giro alrededor del eje \(x\). El centro de masa es el punto donde se concentraría toda la masa para producir los mismos momentos.
+\end{rem}
+
+\subsection{Momentos de inercia}
+
+El momento de inercia de una lámina respecto a un eje mide su resistencia a cambiar su velocidad angular alrededor de ese eje. Para una lámina con densidad \(\rho(x,y)\):
+\[
+I_x = \iint_D y^2 \rho(x,y)\,dA,\qquad
+I_y = \iint_D x^2 \rho(x,y)\,dA.
+\]
+El momento de inercia polar (respecto al origen) es
+\[
+I_0 = \iint_D (x^2+y^2)\rho(x,y)\,dA = I_x + I_y.
+\]
+
+\begin{pasos}[Cálculo de magnitudes de una lámina mediante integral doble]
+\begin{enumerate}
+    \item \textbf{Identificar la región y la densidad.} Dibujar \(D\) y escribir la función \(\rho(x,y)\) (o \(f(x,y)\) si se trata de volumen).
+    \item \textbf{Plantear las integrales.} Escribir la masa \(m=\iint_D \rho\,dA\), los momentos \(M_x, M_y\), y los momentos de inercia que se pidan.
+    \item \textbf{Elegir el orden de integración.} Determinar si la región es más sencilla de describir como tipo I o tipo II, y establecer los límites de integración.
+    \item \textbf{Evaluar las integrales iteradas.} Integrar primero respecto a la variable interior y luego respecto a la exterior. Si hay varias integrales, pueden resolverse una a una.
+    \item \textbf{Interpretar los resultados.} Calcular el centro de masa \((\bar{x},\bar{y})\) a partir de los momentos, y dar los momentos de inercia con sus unidades.
+\end{enumerate}
+\end{pasos}
+
+\subsection{Ejemplos}
+
+\begin{example}[Volumen bajo un paraboloide sobre un rectángulo]
+Calcule el volumen del sólido bajo el paraboloide \(z=4-x^2-y^2\) y sobre el rectángulo \(D=[0,1]\times[0,1]\).
+\begin{myproof}
+\textbf{Paso 1. Plantear el volumen.} El volumen está dado por
+\[
+V=\iint_D (4-x^2-y^2)\,dA.
+\]
+Elegimos el orden \(dy\,dx\). Para \(x\in[0,1]\), \(y\in[0,1]\):
+\[
+V=\int_0^1\int_0^1 (4-x^2-y^2)\,dy\,dx.
+\]
+\textbf{Paso 2. Integral interior en $y$.}
+\[
+\int_0^1 (4-x^2-y^2)\,dy
+= \left[4y-x^2 y-\frac{y^3}{3}\right]_0^1
+= 4-x^2-\frac{1}{3}.
+\]
+\textbf{Paso 3. Integral exterior en $x$.}
+\[
+V=\int_0^1 \left(4-\frac{1}{3}-x^2\right)dx
+= \int_0^1 \left(\frac{11}{3}-x^2\right)dx
+= \left[\frac{11x}{3}-\frac{x^3}{3}\right]_0^1
+= \frac{11}{3}-\frac{1}{3}=\frac{10}{3}.
+\]
+Por tanto, \(\boxed{V=\frac{10}{3}}\) unidades cúbicas.
+\end{myproof}
+\end{example}
+
+\begin{example}[Área de una región plana]
+Calcule el área de la región \(D\) acotada por las curvas \(y=x^2\) y \(y=x\).
+\begin{myproof}
+\textbf{Paso 1. Plantear e integrar el área.} El área es \(A=\iint_D 1\,dA\). La región es tipo I: para \(x\in[0,1]\), \(x^2\le y\le x\). Entonces
+\[
+A=\int_0^1\int_{x^2}^{x} 1\,dy\,dx
+= \int_0^1 (x-x^2)\,dx
+= \left[\frac{x^2}{2}-\frac{x^3}{3}\right]_0^1
+= \frac{1}{2}-\frac{1}{3}=\frac{1}{6}.
+\]
+Así, \(\boxed{A=\frac{1}{6}}\).
+\end{myproof}
+\end{example}
+
+\begin{example}[Masa y centro de masa de una lámina triangular]
+Una lámina ocupa la región triangular con vértices \((0,0)\), \((1,0)\) y \((0,1)\), y tiene densidad \(\rho(x,y)=xy\). Encuentre su masa y su centro de masa.
+\begin{myproof}
+La región es \(D=\{(x,y):0\le x\le 1,\;0\le y\le 1-x\}\).
+
+\textbf{Paso 1. Masa.}
+\[
+m=\iint_D xy\,dA
+= \int_0^1\int_0^{1-x} xy\,dy\,dx.
+\]
+Interior:
+\[
+\int_0^{1-x} xy\,dy = x\left[\frac{y^2}{2}\right]_0^{1-x}
+= \frac{x(1-x)^2}{2}.
+\]
+Luego
+\[
+m=\int_0^1 \frac{x(1-x)^2}{2}\,dx
+= \frac{1}{2}\int_0^1 (x-2x^2+x^3)\,dx
+= \frac{1}{2}\left(\frac{1}{2}-\frac{2}{3}+\frac{1}{4}\right)
+= \frac{1}{2}\left(\frac{6-8+3}{12}\right)
+= \frac{1}{2}\cdot\frac{1}{12}=\frac{1}{24}.
+\]
+
+\textbf{Paso 2. Momentos estáticos.}
+\[
+M_y = \iint_D x\cdot xy\,dA = \iint_D x^2 y\,dA
+= \int_0^1\int_0^{1-x} x^2 y\,dy\,dx
+= \int_0^1 x^2\frac{(1-x)^2}{2}\,dx.
+\]
+\[
+M_y = \frac{1}{2}\int_0^1 (x^2-2x^3+x^4)\,dx
+= \frac{1}{2}\left(\frac{1}{3}-\frac{2}{4}+\frac{1}{5}\right)
+= \frac{1}{2}\left(\frac{1}{3}-\frac{1}{2}+\frac{1}{5}\right)
+= \frac{1}{2}\left(\frac{10-15+6}{30}\right)
+= \frac{1}{2}\cdot\frac{1}{30}=\frac{1}{60}.
+\]
+
+\[
+M_x = \iint_D y\cdot xy\,dA = \iint_D x y^2\,dA
+= \int_0^1\int_0^{1-x} x y^2\,dy\,dx
+= \int_0^1 x\frac{(1-x)^3}{3}\,dx.
+\]
+\[
+M_x = \frac{1}{3}\int_0^1 (x-3x^2+3x^3-x^4)\,dx
+= \frac{1}{3}\left(\frac{1}{2}-1+\frac{3}{4}-\frac{1}{5}\right)
+= \frac{1}{3}\left(\frac{30-60+45-12}{60}\right)
+= \frac{1}{3}\cdot\frac{3}{60}=\frac{1}{60}.
+\]
+\textbf{Paso 3. Centro de masa.}
+\[
+\bar{x}=\frac{M_y}{m}=\frac{1/60}{1/24}=\frac{24}{60}=\frac{2}{5},\qquad
+\bar{y}=\frac{M_x}{m}=\frac{2}{5}.
+\]
+El centro de masa es \(\boxed{\left(\frac{2}{5},\frac{2}{5}\right)}\).
+\end{myproof}
+\end{example}
+
+\begin{example}[Momentos de inercia de una lámina rectangular]
+Determine los momentos de inercia \(I_x\), \(I_y\) e \(I_0\) de una lámina rectangular \(D=[0,2]\times[0,1]\) con densidad \(\rho(x,y)=x+y\).
+\begin{myproof}
+\textbf{Paso 1. Plantear las integrales.}
+\[
+I_x = \iint_D y^2(x+y)\,dA,\qquad
+I_y = \iint_D x^2(x+y)\,dA,\qquad
+I_0=I_x+I_y.
+\]
+La región es un rectángulo, elegimos \(dy\,dx\) (o \(dx\,dy\) indistintamente).
+
+\textbf{Paso 2. Calcular $I_x$.}
+\[
+I_x = \int_0^2\int_0^1 y^2(x+y)\,dy\,dx
+= \int_0^2\left[ x\frac{y^3}{3} + \frac{y^4}{4} \right]_0^1 dx
+= \int_0^2\left(\frac{x}{3}+\frac{1}{4}\right)dx
+= \left[\frac{x^2}{6}+\frac{x}{4}\right]_0^2
+= \frac{4}{6}+\frac{2}{4} = \frac{2}{3}+\frac{1}{2} = \frac{7}{6}.
+\]
+
+\textbf{Paso 3. Calcular $I_y$.}
+\[
+I_y = \int_0^2\int_0^1 x^2(x+y)\,dy\,dx
+= \int_0^2\left[ x^3 y + x^2\frac{y^2}{2} \right]_0^1 dx
+= \int_0^2\left(x^3+\frac{x^2}{2}\right)dx
+= \left[\frac{x^4}{4}+\frac{x^3}{6}\right]_0^2
+= \frac{16}{4}+\frac{8}{6} = 4+\frac{4}{3} = \frac{16}{3}.
+\]
+
+\textbf{Paso 4. Momento polar.}
+\[
+I_0 = I_x+I_y = \frac{7}{6}+\frac{16}{3} = \frac{7}{6}+\frac{32}{6} = \frac{39}{6} = \frac{13}{2}.
+\]
+Así,
+\[
+\boxed{I_x=\frac{7}{6}},\quad \boxed{I_y=\frac{16}{3}},\quad \boxed{I_0=\frac{13}{2}}.
+\]
+\end{myproof}
+\end{example}
+
+\section{Integrales dobles en coordenadas polares}
+
+Cuando la región de integración o la función presentan simetría circular, es conveniente usar coordenadas polares. Recordemos la relación:
+\[
+x = r\cos\theta,\qquad y = r\sin\theta,
+\]
+donde \(r\ge 0\) es la distancia al origen y \(\theta\in[0,2\pi)\) es el ángulo polar.
+
+El elemento de área en coordenadas polares es
+\[
+dA = r\,dr\,d\theta.
+\]
+Esta fórmula se obtiene del área de un sector circular infinitesimal: un rectángulo polar de lados \(\Delta r\) y \(\Delta\theta\) tiene área aproximadamente \(r\Delta r\Delta\theta\). (Véase la sección correspondiente del capítulo sobre curvas polares.)
+
+Una región \(D\) se dice \emph{\(r\)-simple} si puede expresarse como
+\[
+D = \{(r,\theta): \alpha\le \theta\le \beta,\; r_1(\theta)\le r\le r_2(\theta)\}.
+\]
+Entonces la integral doble se convierte en
+\[
+\iint_D f(x,y)\,dA = \int_{\alpha}^{\beta}\int_{r_1(\theta)}^{r_2(\theta)} f(r\cos\theta,r\sin\theta)\,r\,dr\,d\theta.
+\]
+
+\begin{pasos}[Evaluación de una integral doble en coordenadas polares]
+\begin{enumerate}
+    \item \textbf{Dibujar e identificar la región.} Reconocer si tiene forma circular, sectorial o radial. Determinar los límites de \(\theta\) y de \(r\).
+    \item \textbf{Convertir la función.} Sustituir \(x=r\cos\theta\), \(y=r\sin\theta\).
+    \item \textbf{Incluir el factor \(r\).} Reemplazar \(dA\) por \(r\,dr\,d\theta\).
+    \item \textbf{Establecer la integral iterada.} Escribir \(\int_\alpha^\beta \int_{r_1(\theta)}^{r_2(\theta)} F(r,\theta)\,r\,dr\,d\theta\).
+    \item \textbf{Integrar.} Primero en \(r\), luego en \(\theta\).
+\end{enumerate}
+\end{pasos}
+
+\subsection{Ejemplos}
+
+\begin{example}[Integral sobre un disco]
+Calcule \(\displaystyle \iint_D (x^2+y^2)\,dA\), donde \(D\) es el disco \(x^2+y^2\le 1\).
+\begin{myproof}
+\textbf{Paso 1. Conversión a polares y evaluación.} En polares, \(D: 0\le r\le 1,\; 0\le\theta\le2\pi\), y \(x^2+y^2=r^2\). Entonces
+\[
+\iint_D (x^2+y^2)\,dA
+= \int_0^{2\pi}\int_0^1 r^2\cdot r\,dr\,d\theta
+= \int_0^{2\pi}\left[\frac{r^4}{4}\right]_0^1 d\theta
+= \int_0^{2\pi}\frac{1}{4}\,d\theta
+= \frac{1}{4}\cdot 2\pi = \frac{\pi}{2}.
+\]
+Por tanto, \(\boxed{\displaystyle \iint_D (x^2+y^2)\,dA = \frac{\pi}{2}}\).
+\end{myproof}
+\end{example}
+
+\begin{example}[Área de una región dentro de una cardioide]
+Calcule el área de la región encerrada por la cardioide \(r=1+\cos\theta\).
+\begin{myproof}
+\textbf{Paso 1. Plantear el área.} El área está dada por \(\iint_D 1\,dA\), donde \(D\) es la región polar
+\[
+D: 0\le \theta\le 2\pi,\quad 0\le r\le 1+\cos\theta.
+\]
+Entonces
+\[
+A = \int_0^{2\pi}\int_0^{1+\cos\theta} r\,dr\,d\theta
+= \int_0^{2\pi} \frac{(1+\cos\theta)^2}{2}\,d\theta.
+\]
+\textbf{Paso 2. Simplificar $(1+\cos\theta)^2$.}
+\[
+(1+\cos\theta)^2 = 1+2\cos\theta+\cos^2\theta = 1+2\cos\theta+\frac{1+\cos2\theta}{2}
+= \frac{3}{2}+2\cos\theta+\frac{1}{2}\cos2\theta.
+\]
+\textbf{Paso 3. Integrar.}
+\[
+A = \frac{1}{2}\int_0^{2\pi}\left(\frac{3}{2}+2\cos\theta+\frac{1}{2}\cos2\theta\right)d\theta
+= \frac{1}{2}\left[\frac{3}{2}\theta+2\sin\theta+\frac{1}{4}\sin2\theta\right]_0^{2\pi}
+= \frac{1}{2}\left(\frac{3}{2}\cdot 2\pi\right)
+= \frac{3\pi}{2}.
+\]
+Así, \(\boxed{A=\frac{3\pi}{2}}\).
+\end{myproof}
+\end{example}
+
+\section{Área de una superficie}
+
+Sea \(S\) una superficie dada por la gráfica de una función \(z=f(x,y)\), donde \(f\) tiene derivadas parciales continuas sobre una región \(D\) en el plano \(xy\). El área de la superficie \(S\) es
+\[
+A(S) = \iint_D \sqrt{1+\left(\frac{\partial f}{\partial x}\right)^2+\left(\frac{\partial f}{\partial y}\right)^2}\,dA.
+\]
+
+La idea es aproximar la superficie por parches de planos tangentes: sobre cada pequeño rectángulo de área \(\Delta A_i\) en \(D\), el área correspondiente del plano tangente es \(\sqrt{1+f_x^2+f_y^2}\,\Delta A_i\). Al tomar el límite se obtiene la integral.
+
+\begin{example}[Área de un paraboloide]
+Calcule el área de la superficie \(z=x^2+y^2\) sobre el disco \(x^2+y^2\le 1\).
+\begin{myproof}
+\textbf{Paso 1. Derivadas parciales.} Tenemos \(f(x,y)=x^2+y^2\), luego
+\[
+\frac{\partial f}{\partial x}=2x,\qquad \frac{\partial f}{\partial y}=2y.
+\]
+\textbf{Paso 2. Área de la superficie.}
+\[
+A(S)=\iint_D \sqrt{1+4x^2+4y^2}\,dA.
+\]
+\textbf{Paso 3. Coordenadas polares.} Pasamos a polares: \(D:0\le r\le1,\;0\le\theta\le2\pi\), y \(x^2+y^2=r^2\).
+\[
+A(S)=\int_0^{2\pi}\int_0^1 \sqrt{1+4r^2}\,r\,dr\,d\theta.
+\]
+Sea \(u=1+4r^2\), \(du=8r\,dr\), \(r\,dr=du/8\). Los límites: \(r=0\Rightarrow u=1\), \(r=1\Rightarrow u=5\). Entonces
+\[
+\int_0^1 \sqrt{1+4r^2}\,r\,dr = \frac{1}{8}\int_1^5 u^{1/2}\,du
+= \frac{1}{8}\left[\frac{2}{3}u^{3/2}\right]_1^5
+= \frac{1}{12}(5^{3/2}-1) = \frac{1}{12}(5\sqrt5-1).
+\]
+Multiplicando por \(\int_0^{2\pi}d\theta=2\pi\):
+\[
+A(S)= \frac{2\pi}{12}(5\sqrt5-1) = \frac{\pi}{6}(5\sqrt5-1).
+\]
+Por tanto, \(\boxed{A(S)=\frac{\pi}{6}(5\sqrt5-1)}\).
+\end{myproof}
+\end{example}
+
+\begin{rem}
+Observe que si \(f\) es constante, \(f_x=f_y=0\), la fórmula da \(\iint_D 1\,dA\), que es el área de \(D\). Esto coincide con el hecho de que la superficie es un plano horizontal y su área es la misma que la de su proyección.
+\end{rem}
+
+\section{Problemas propuestos}
+
+\begin{prob}[Volumen]
+Calcule el volumen del sólido limitado por el plano \(z=2x+3y+1\), el cilindro \(x^2+y^2=1\) y los planos \(x=0\), \(y=0\), \(z=0\) (en el primer octante). (Sugerencia: use coordenadas polares.)
+\begin{myproof}
+La región es el cuarto de disco $D:\,0\le\theta\le\pi/2,\;0\le r\le1$. Como $z=2x+3y+1\ge1>0$ en el primer octante, el volumen del sólido entre $z=0$ y $z=2x+3y+1$ es
+\[
+V=\iint_D(2x+3y+1)\,dA.
+\]
+
+\textbf{Paso 1. Convertir a polares.}
+\[
+V=\int_0^{\pi/2}\int_0^1(2r\cos\theta+3r\sin\theta+1)\,r\,dr\,d\theta
+=\int_0^{\pi/2}\int_0^1(2r^2\cos\theta+3r^2\sin\theta+r)\,dr\,d\theta.
+\]
+
+\textbf{Paso 2. Integral interior en $r$.}
+\[
+\int_0^1(2r^2\cos\theta+3r^2\sin\theta+r)\,dr
+=\left[\frac{2r^3}{3}\cos\theta+r^3\sin\theta+\frac{r^2}{2}\right]_0^1
+=\frac{2\cos\theta}{3}+\sin\theta+\frac{1}{2}.
+\]
+
+\textbf{Paso 3. Integral exterior en $\theta$.}
+\[
+V=\int_0^{\pi/2}\!\left(\frac{2\cos\theta}{3}+\sin\theta+\frac{1}{2}\right)d\theta
+=\left[\frac{2\sin\theta}{3}-\cos\theta+\frac{\theta}{2}\right]_0^{\pi/2}
+=\left(\frac{2}{3}-0+\frac{\pi}{4}\right)-(0-1+0)
+=\frac{2}{3}+1+\frac{\pi}{4}.
+\]
+\[
+\boxed{V=\frac{5}{3}+\frac{\pi}{4}.}
+\]
+\end{myproof}
+\end{prob}
+
+\begin{prob}[Masa y centro de masa]
+Una lámina ocupa la región \(D\) limitada por \(y=x^2\) e \(y=2x\). Su densidad es \(\rho(x,y)=x+y\). Encuentre la masa y el centro de masa.
+\begin{myproof}
+Las curvas se intersectan en $x=0$ y $x=2$. Para $x\in[0,2]$: $x^2\le y\le 2x$.
+
+\textbf{Paso 1. Masa.}
+\[
+m=\int_0^2\int_{x^2}^{2x}(x+y)\,dy\,dx.
+\]
+Interior: $\bigl[xy+y^2/2\bigr]_{x^2}^{2x}=4x^2-x^3-x^4/2$.
+\[
+m=\int_0^2\!\left(4x^2-x^3-\frac{x^4}{2}\right)dx
+=\left[\frac{4x^3}{3}-\frac{x^4}{4}-\frac{x^5}{10}\right]_0^2
+=\frac{32}{3}-4-\frac{16}{5}=\frac{52}{15}.
+\]
+
+\textbf{Paso 2. Momento $M_y$.}
+Interior de $x(x+y)$: $x(4x^2-x^3-x^4/2)=4x^3-x^4-x^5/2$.
+\[
+M_y=\int_0^2\!\left(4x^3-x^4-\frac{x^5}{2}\right)dx
+=\left[x^4-\frac{x^5}{5}-\frac{x^6}{12}\right]_0^2
+=16-\frac{32}{5}-\frac{16}{3}=\frac{64}{15}.
+\]
+
+\textbf{Paso 3. Momento $M_x$.}
+Interior de $y(x+y)$: $\bigl[xy^2/2+y^3/3\bigr]_{x^2}^{2x}=14x^3/3-x^5/2-x^6/3$.
+\[
+M_x=\int_0^2\!\left(\frac{14x^3}{3}-\frac{x^5}{2}-\frac{x^6}{3}\right)dx
+=\left[\frac{7x^4}{6}-\frac{x^6}{12}-\frac{x^7}{21}\right]_0^2
+=\frac{112}{6}-\frac{64}{12}-\frac{128}{21}=\frac{152}{21}.
+\]
+
+\textbf{Paso 4. Centro de masa.}
+\[
+\bar{x}=\frac{M_y}{m}=\frac{64/15}{52/15}=\frac{16}{13},\qquad
+\bar{y}=\frac{M_x}{m}=\frac{152/21}{52/15}=\frac{190}{91}.
+\]
+\[
+\boxed{m=\frac{52}{15},\qquad (\bar{x},\bar{y})=\left(\frac{16}{13},\,\frac{190}{91}\right).}
+\]
+\end{myproof}
+\end{prob}
+
+\begin{prob}[Momentos de inercia]
+Calcule \(I_x\), \(I_y\) e \(I_0\) para la lámina del problema anterior.
+\begin{myproof}
+La región y la densidad son las del problema anterior ($D$: entre $y=x^2$ e $y=2x$, $\rho=x+y$).
+
+\textbf{Paso 1. $I_x$.}
+Interior de $y^2(x+y)$: $\bigl[xy^3/3+y^4/4\bigr]_{x^2}^{2x}=20x^4/3-x^7/3-x^8/4$.
+\[
+I_x=\int_0^2\!\left(\frac{20x^4}{3}-\frac{x^7}{3}-\frac{x^8}{4}\right)dx
+=\left[\frac{4x^5}{3}-\frac{x^8}{24}-\frac{x^9}{36}\right]_0^2
+=\frac{128}{3}-\frac{32}{3}-\frac{128}{9}=\frac{160}{9}.
+\]
+
+\textbf{Paso 2. $I_y$.}
+Interior de $x^2(x+y)$: $x^2(4x^2-x^3-x^4/2)=4x^4-x^5-x^6/2$.
+\[
+I_y=\int_0^2\!\left(4x^4-x^5-\frac{x^6}{2}\right)dx
+=\left[\frac{4x^5}{5}-\frac{x^6}{6}-\frac{x^7}{14}\right]_0^2
+=\frac{128}{5}-\frac{32}{3}-\frac{64}{7}=\frac{608}{105}.
+\]
+
+\textbf{Paso 3. Momento polar.}
+\[
+I_0=I_x+I_y=\frac{160}{9}+\frac{608}{105}=\frac{5600+1824}{315}=\frac{7424}{315}.
+\]
+\[
+\boxed{I_x=\frac{160}{9},\qquad I_y=\frac{608}{105},\qquad I_0=\frac{7424}{315}.}
+\]
+\end{myproof}
+\end{prob}
+
+\begin{prob}[Integral en polares]
+Evalúe \(\displaystyle \iint_D e^{x^2+y^2}\,dA\), donde \(D\) es el anillo \(1\le x^2+y^2\le 4\).
+\begin{myproof}
+\textbf{Paso 1. Coordenadas polares.} El anillo es $D:\,0\le\theta\le2\pi,\;1\le r\le2$, y $x^2+y^2=r^2$:
+\[
+\iint_D e^{x^2+y^2}\,dA=\int_0^{2\pi}\int_1^2 e^{r^2}\,r\,dr\,d\theta.
+\]
+
+\textbf{Paso 2. Integral interior.} Con $u=r^2$, $du=2r\,dr$:
+\[
+\int_1^2 r e^{r^2}\,dr=\frac{1}{2}\bigl[e^{r^2}\bigr]_1^2=\frac{e^4-e}{2}.
+\]
+
+\textbf{Paso 3. Integral exterior.}
+\[
+\int_0^{2\pi}\frac{e^4-e}{2}\,d\theta=\pi(e^4-e).
+\]
+\[
+\boxed{\iint_D e^{x^2+y^2}\,dA=\pi(e^4-e).}
+\]
+\end{myproof}
+\end{prob}
+
+\begin{prob}[Área en polares]
+Determine el área de la región que se encuentra dentro de la circunferencia \(r=2\cos\theta\) y fuera de la circunferencia \(r=1\).
+\begin{myproof}
+\textbf{Paso 1. Intersección.} $2\cos\theta=1\Rightarrow\cos\theta=1/2\Rightarrow\theta=\pm\pi/3$. Para $\theta\in[-\pi/3,\pi/3]$ se tiene $1\le r\le2\cos\theta$.
+
+\textbf{Paso 2. Área.}
+\[
+A=\int_{-\pi/3}^{\pi/3}\int_1^{2\cos\theta}r\,dr\,d\theta
+=\int_{-\pi/3}^{\pi/3}\frac{4\cos^2\theta-1}{2}\,d\theta.
+\]
+
+\textbf{Paso 3. Simplificar e integrar.} Con $\cos^2\theta=(1+\cos2\theta)/2$:
+\[
+\frac{4\cos^2\theta-1}{2}=\frac{1+2\cos2\theta}{2}.
+\]
+\[
+A=\frac{1}{2}\bigl[\theta+\sin2\theta\bigr]_{-\pi/3}^{\pi/3}
+=\frac{1}{2}\!\left(\frac{2\pi}{3}+2\sin\frac{2\pi}{3}\right)
+=\frac{1}{2}\!\left(\frac{2\pi}{3}+\sqrt{3}\right).
+\]
+\[
+\boxed{A=\frac{\pi}{3}+\frac{\sqrt{3}}{2}.}
+\]
+\end{myproof}
+\end{prob}
+
+\begin{prob}[Área superficial]
+Calcule el área de la superficie \(z=xy\) sobre el cuadrado \(0\le x\le 1,\;0\le y\le 1\).
+\begin{myproof}
+\textbf{Paso 1. Derivadas parciales.} $f_x=y$, $f_y=x$.
+
+\textbf{Paso 2. Plantear el área.}
+\[
+A(S)=\iint_D\sqrt{1+y^2+x^2}\,dA=\int_0^1\int_0^1\sqrt{1+x^2+y^2}\,dx\,dy.
+\]
+
+\textbf{Paso 3. Integral interior.} Con $a^2=1+y^2$:
+\[
+\int_0^1\sqrt{a^2+x^2}\,dx=\left[\frac{x\sqrt{a^2+x^2}}{2}+\frac{a^2}{2}\ln\!\left(x+\sqrt{a^2+x^2}\right)\right]_0^1
+=\frac{\sqrt{2+y^2}}{2}+\frac{1+y^2}{2}\ln\frac{1+\sqrt{2+y^2}}{\sqrt{1+y^2}}.
+\]
+
+\textbf{Paso 4.} La integral exterior no admite forma cerrada elemental. Evaluando numéricamente:
+\[
+\boxed{A(S)=\int_0^1\!\left[\frac{\sqrt{2+y^2}}{2}+\frac{1+y^2}{2}\ln\frac{1+\sqrt{2+y^2}}{\sqrt{1+y^2}}\right]dy\approx 1.208.}
+\]
+\end{myproof}
+\end{prob}
+
+\begin{prob}[Cambio a polares]
+Reescriba la integral \(\displaystyle \int_0^1\int_0^{\sqrt{1-x^2}} \sqrt{x^2+y^2}\,dy\,dx\) en coordenadas polares y evalúela.
+\begin{myproof}
+\textbf{Paso 1. Identificar la región.} La condición $0\le y\le\sqrt{1-x^2}$ con $x\in[0,1]$ describe el cuarto de disco unitario en el primer cuadrante: $D:\,0\le\theta\le\pi/2,\;0\le r\le1$.
+
+\textbf{Paso 2. Convertir a polares.} $\sqrt{x^2+y^2}=r$ y $dA=r\,dr\,d\theta$:
+\[
+\int_0^1\int_0^{\sqrt{1-x^2}}\sqrt{x^2+y^2}\,dy\,dx
+=\int_0^{\pi/2}\int_0^1 r\cdot r\,dr\,d\theta
+=\int_0^{\pi/2}\int_0^1 r^2\,dr\,d\theta.
+\]
+
+\textbf{Paso 3. Evaluar.}
+\[
+\int_0^1 r^2\,dr=\frac{1}{3},\qquad
+\int_0^{\pi/2}\frac{1}{3}\,d\theta=\frac{\pi}{6}.
+\]
+\[
+\boxed{\int_0^1\int_0^{\sqrt{1-x^2}}\sqrt{x^2+y^2}\,dy\,dx=\frac{\pi}{6}.}
+\]
+\end{myproof}
+\end{prob}
+
+\begin{prob}[Aplicación combinada]
+Una lámina tiene la forma de la región dentro de la cardioide \(r=1+\cos\theta\) y densidad \(\rho(x,y)=r\) (en polares). Encuentre su masa y su centro de masa. (Sugerencia: use la simetría para determinar \(\bar{x}\), \(\bar{y}\).)
+\begin{myproof}
+\textbf{Paso 1. Masa.}
+\[
+m=\int_0^{2\pi}\int_0^{1+\cos\theta}r\cdot r\,dr\,d\theta
+=\int_0^{2\pi}\frac{(1+\cos\theta)^3}{3}\,d\theta.
+\]
+Expandiendo $(1+\cos\theta)^3=1+3\cos\theta+3\cos^2\theta+\cos^3\theta$ e integrando sobre $[0,2\pi]$:
+\[
+\int_0^{2\pi}1\,d\theta=2\pi,\quad
+\int_0^{2\pi}3\cos\theta\,d\theta=0,\quad
+\int_0^{2\pi}3\cos^2\theta\,d\theta=3\pi,\quad
+\int_0^{2\pi}\cos^3\theta\,d\theta=0.
+\]
+\[
+m=\frac{1}{3}(2\pi+3\pi)=\frac{5\pi}{3}.
+\]
+
+\textbf{Paso 2. Simetría.} La región y la densidad son simétricas respecto al eje $x$, luego $\bar{y}=0$.
+
+\textbf{Paso 3. Momento $M_y$.}
+\[
+M_y=\int_0^{2\pi}\int_0^{1+\cos\theta}(r\cos\theta)\cdot r\cdot r\,dr\,d\theta
+=\int_0^{2\pi}\cos\theta\cdot\frac{(1+\cos\theta)^4}{4}\,d\theta.
+\]
+Solo los términos con $\cos^k\theta\cdot\cos\theta=\cos^{k+1}\theta$ de exponente par contribuyen ($k=1$ y $k=3$):
+\[
+\int_0^{2\pi}\cos\theta\cdot(1+\cos\theta)^4\,d\theta
+=\binom{4}{1}\int_0^{2\pi}\cos^2\theta\,d\theta+\binom{4}{3}\int_0^{2\pi}\cos^4\theta\,d\theta
+=4\pi+4\cdot\frac{3\pi}{4}=7\pi.
+\]
+\[
+M_y=\frac{7\pi}{4}.
+\]
+
+\textbf{Paso 4. Centro de masa.}
+\[
+\bar{x}=\frac{M_y}{m}=\frac{7\pi/4}{5\pi/3}=\frac{7}{4}\cdot\frac{3}{5}=\frac{21}{20}.
+\]
+\[
+\boxed{m=\frac{5\pi}{3},\qquad (\bar{x},\bar{y})=\left(\frac{21}{20},\,0\right).}
+\]
+\end{myproof}
+\end{prob}
