@@ -404,4 +404,4 @@ Se creó la carpeta `_auxiliar/` con 43 archivos de trabajo ya no necesarios en 
 `multiplicadoresintdobles.tex` l.514: `= 6d^2+d\sqrt{2} > 0.` → `= 8d^2 > 0.` aplicada y verificada en archivo.
 
 ### Estado final
-Todas las decisiones arquitectónicas A–D están resueltas. Muestreo Ej/Teo V1–V3 cerrado sin pendientes. Estructura de 34 capítulos completa y limpia. El documento compila con 724 páginas, 0 errores (estado al 2026-06-25). No hay tareas editoriales ni estructurales pendientes.
+Todas las decisiones arquitectónicas A–D están resueltas. Muestreo Ej/Teo V1–V3 cerrado. Prob14 (`cap30`, Hermite n=1) corregido: solución polinomial $y=a_1x$, $H_1(x)=2x$. Estructura de 34 capítulos completa y limpia. El documento compila con 724 páginas, 0 errores (estado al 2026-06-25). **No hay tareas editoriales, matemáticas ni estructurales pendientes.**

@@ -652,7 +652,26 @@ Estos polinomios son ortogonales en $[-1,1]$:
 \begin{prob}
   Dada la ecuación de Hermite con $n=1$, encuentre la solución polinomial.
   \begin{myproof}
-    Para $n=1$, $y''-2xy'+2y=0$. Recurrencia: $a_{k+2}=\frac{2(k-1)}{(k+2)(k+1)}a_k$. Con $a_0$ arbitrario y $a_1=0$ para polinomio, obtenemos $a_2=-a_0$, $a_4=0$, etc. Luego $y=a_0(1-2x^2)$. $\boxed{y=a_0(1-2x^2)}$ que es $H_1(x)=2x$? No, el polinomio de Hermite estándar es $H_1=2x$, pero la convención varía. Con nuestra recurrencia, es $1-2x^2$ para $n=1$? Revisando: para $n=1$, $a_2=-1\cdot a_0$? La recurrencia da $a_2 = \frac{2(1-1)}{...}=0$ si $k=1$? Para $k=1$, $a_3=0$; para $k=2$, $a_4=\frac{2(2-1)}{4\cdot3}a_2 = \frac{1}{6}a_2$. Si $a_2=-a_0$, entonces $a_4=-a_0/6$, no se trunca. Esto indica que la solución polinomial para $n=1$ se obtiene con $a_1\neq 0$? Mejor no dar el polinomio específico, solo mencionar que se reduce a un polinomio. $\boxed{\text{Se obtiene el polinomio de Hermite }H_1(x)}$.
+    \textbf{Paso 1.} Para $n=1$, la ecuación es $y''-2xy'+2y=0$. Con $y=\sum_{k=0}^{\infty}a_k x^k$, la recurrencia es:
+    \[
+      a_{k+2}=\frac{2(k-1)}{(k+2)(k+1)}\,a_k.
+    \]
+
+    \textbf{Paso 2.} Como $n=1$ es impar, el polinomio vive en la \emph{serie impar} ($a_0=0$, $a_1$ libre):
+    \[
+      k=1:\quad a_3=\frac{2(1-1)}{3\cdot 2}\,a_1=0
+      \implies a_3=a_5=a_7=\cdots=0.
+    \]
+    La serie trunca en $k=1$ y la solución polinomial es $y=a_1 x$.
+
+    \textbf{Verificación:} $y=x \Rightarrow y'=1,\; y''=0$, luego
+    $0-2x\cdot 1+2x=0$. $\checkmark$
+
+    \textbf{Paso 3.} Con la normalización $H_1(1/2)=1$, equivalente a $a_1=2$:
+    \[
+      \boxed{H_1(x)=2x}.
+    \]
+    \emph{Nota:} la serie par ($a_1=0$) da $a_2=-a_0$, $a_4=-a_0/6$, $\ldots$ — no termina para $n=1$ y corresponde a la solución no polinomial.
   \end{myproof}
 \end{prob}
 
