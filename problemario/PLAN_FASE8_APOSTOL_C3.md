@@ -157,7 +157,7 @@ todo concepto con interpretación geométrica lleva figura TikZ inmediatamente d
 (b) superficie de nivel f(x,y)=c con gradiente perpendicular  
 (c) región acotada tipo I en R²  
 **Criterio de cierre:** compila limpio, figuras legibles en PDF a tamaño de página estándar.  
-**Estado:** Pendiente
+**Estado:** Completo — 2026-06-26. `figuras_guia.tex` creado con plantillas A (hélice+tangente), B (paraboloide+normal) y C (región tipo I). Estándares globales documentados al final del archivo.
 
 ---
 
@@ -166,7 +166,7 @@ todo concepto con interpretación geométrica lleva figura TikZ inmediatamente d
 **Figura:** hélice $\mathbf{r}(t)=(\cos t, \sin t, t/2)$ con vector tangente en $t=\pi/2$, ejes xyz etiquetados, sin relleno de superficie  
 **TikZ:** `tikzpicture` con `tdplot` o pgfplots 3D axis — elegir el que compile más rápido  
 **Líneas estimadas:** 40–60  
-**Estado:** Pendiente
+**Estado:** Completo — 2026-06-26. Figura pgfplots 3D insertada después de `\end{definition}` de función vectorial (entre párrafo "curva parametrizada" y subsección Límite). `\label{fig:helice_tangente}`. Compilación limpia.
 
 ---
 
@@ -175,7 +175,7 @@ todo concepto con interpretación geométrica lleva figura TikZ inmediatamente d
 **Figura:** paraboloide $z=x^2+y^2$ visto desde arriba con 4 curvas de nivel $c=1,2,3,4$ en el plano $xy$ (proyección), y la superficie en 3D encima — dos subfiguras o figura compuesta  
 **TikZ:** pgfplots `surf` + pgfplots 2D para proyección  
 **Líneas estimadas:** 60–80  
-**Estado:** Pendiente
+**Estado:** Completo — 2026-06-26. Figura doble (minipage 46%+50%) insertada después de `\end{pasos}[Trazado de curvas de nivel]` y antes del ejemplo resuelto de paraboloide. Izquierda: TikZ 2D con 4 círculos (c=1,2,3,4, scale=1.1). Derecha: pgfplots 3D surf shader=flat corner samples=20. `\label{fig:paraboloide_curvas_nivel}`.
 
 ---
 
@@ -184,7 +184,7 @@ todo concepto con interpretación geométrica lleva figura TikZ inmediatamente d
 **Figura:** disco abierto $B((x_0,y_0),\delta)$ con punto interior, borde punteado, etiquetas $\delta$, $(x_0,y_0)$, y banda de salida $|f-L|<\varepsilon$ indicada en texto lateral  
 **TikZ:** `tikzpicture` puro, 2D  
 **Líneas estimadas:** 30–45  
-**Estado:** Pendiente
+**Estado:** Completo — 2026-06-26. TikZ 2D insertado inmediatamente después de `\end{definition}[Límite de una función de dos variables]`. Disco relleno azul claro, borde punteado, radio δ, punto interior (x,y), nota ε lateral. `\label{fig:disco_epsilon_delta}`.
 
 ---
 
@@ -193,7 +193,7 @@ todo concepto con interpretación geométrica lleva figura TikZ inmediatamente d
 **Figura:** dos trayectorias hacia el origen con límites distintos — recta $y=mx$ y parábola $y=x^2$ — con flechas de dirección y etiquetas de límite obtenido por cada camino  
 **TikZ:** `tikzpicture` puro, 2D  
 **Líneas estimadas:** 35–50  
-**Estado:** Pendiente
+**Estado:** Completo — 2026-06-26. TikZ 2D insertado DENTRO del example "Límite que no existe por trayectorias distintas", entre el enunciado y `\begin{myproof}` (F8.30 integrado aquí). Recta y=x (rojo) y parábola y=x² (azul) con flechas →(0,0) y etiquetas lim=0 / lim=1/2. `\label{fig:trayectorias_limite}`.
 
 ---
 
@@ -265,7 +265,7 @@ todo concepto con interpretación geométrica lleva figura TikZ inmediatamente d
 - Esquema geométrico: rectángulo en $(u,v)$ → región deformada en $(x,y)$, área escalada por $|J|$  
 - 1 ejemplo completo (4 pasos): integral doble con cambio $x=r\cos\theta$, $y=r\sin\theta$ (caso polar como instancia del Jacobiano — conecta con lo que ya existe)  
 **Líneas estimadas:** 120–160  
-**Estado:** Pendiente
+**Estado:** Completo — 2026-06-26. Nueva sección insertada antes de `\section{Coordenadas cilíndricas}`. Contiene: definición Jacobiano 2×2, figura F8.14 (incrustada), teorema cambio de variables, rem sobre J=0, ejemplo coordenadas polares (e^{r²}, disco r≤2, resultado π(e⁴-1) con 4 pasos + boxed). `\label{sec:cambio-var-dobles}`.
 
 ---
 
@@ -278,7 +278,7 @@ todo concepto con interpretación geométrica lleva figura TikZ inmediatamente d
 - Añadir al inicio de la sección de cilíndricas existente: 2 líneas que calculen el Jacobiano cilíndrico $r$ y lo conecten con la fórmula $dV=r\,dr\,d\theta\,dz$  
 - Añadir al inicio de la sección de esféricas existente: 2 líneas con el Jacobiano esférico $\rho^2\sin\phi$  
 **Líneas estimadas:** 80–110 (más 2×2 líneas de edición en secciones existentes)  
-**Estado:** Pendiente
+**Estado:** Completo — 2026-06-26. Nueva sección `\section{Cambio de variables en integrales triples}` con definición Jacobiano 3×3, teorema cambio de variables triple, párrafo de conexión con cilíndricas/esféricas. Definición cilíndrica ampliada con cálculo explícito del determinante 3×3 (→ r). Definición esférica con nota referenciando la sección. `\label{sec:cambio-var-triples}`.
 
 ---
 
@@ -287,7 +287,7 @@ todo concepto con interpretación geométrica lleva figura TikZ inmediatamente d
 **Figura:** cuadrado $[0,1]^2$ en plano $(u,v)$ → paralelogramo deformado en plano $(x,y)$ con los vectores columna del Jacobiano como lados, área $= |J|$ indicada  
 **TikZ:** `tikzpicture` 2D, dos subfiguras con flecha de transformación entre ellas  
 **Líneas estimadas:** 40–55  
-**Estado:** Pendiente
+**Estado:** Completo — 2026-06-26. Figura minipage doble (42%+10%+42%) dentro de F8.12, entre definición y teorema. Cuadrado azul R*=[0,1]² ← T → paralelogramo rojo R con "área=|J|". `\label{fig:jacobiano_2x2}`.
 
 ---
 
@@ -299,7 +299,7 @@ todo concepto con interpretación geométrica lleva figura TikZ inmediatamente d
 **Figura B:** región tipo II — $c \le y \le d$, $h_1(y) \le x \le h_2(y)$ — franja horizontal  
 **TikZ:** dos `tikzpicture` 2D en minipages lado a lado  
 **Líneas estimadas:** 60–80  
-**Estado:** Pendiente
+**Estado:** Completo — 2026-06-26. Dos minipages TikZ 2D: (a) tipo I azul con curvas g₁/g₂ y líneas dashed a=b, (b) tipo II rojo con curvas h₁/h₂ y líneas dashed c=d. Insertado antes de `\begin{pasos}[Integral doble sobre una región general]`. `fig:region_tipo_I_II`.
 
 ---
 
@@ -308,7 +308,7 @@ todo concepto con interpretación geométrica lleva figura TikZ inmediatamente d
 **Figura:** región acotada por dos curvas, con las dos descomposiciones posibles (vertical y horizontal) superpuestas, indicando cuál es más simple  
 **TikZ:** `tikzpicture` 2D  
 **Líneas estimadas:** 45–60  
-**Estado:** Pendiente
+**Estado:** Completo — 2026-06-26. Dos minipages TikZ 2D (escala 2.0): región D entre y=x² e y=x con franjas verticales (a, dy dx) y horizontales (b, dx dy). Insertado después de `\end{rem}` y antes de `\section*{Problemas propuestos}`. `fig:cambio_orden_integracion`.
 
 ---
 
@@ -317,7 +317,7 @@ todo concepto con interpretación geométrica lleva figura TikZ inmediatamente d
 **Figura:** campo $\mathbf{F}(x,y)=(-y,x)$ (rotacional puro) en grilla $[-2,2]^2$ con flechas proporcionales, ejes etiquetados  
 **TikZ:** pgfplots 2D con `quiver` — es el método más limpio para campos vectoriales en pgfplots  
 **Líneas estimadas:** 35–50  
-**Estado:** Pendiente
+**Estado:** Completo — 2026-06-26. TikZ puro con `\foreach \xi/\yi in {...}`: grilla 5×5 (excl. origen) de flechas F=(-y,x)×0.28, escala=0.88. Insertado entre párrafo introductorio de div/rot y `\begin{definition}[Divergencia]`. `fig:campo_vectorial_rotacional`.
 
 ---
 
@@ -326,7 +326,7 @@ todo concepto con interpretación geométrica lleva figura TikZ inmediatamente d
 **Figura:** curva suave $C$ de $A$ a $B$ en R², con flechas de orientación, punto de muestreo $P_i$, segmento $\Delta s_i$ indicado, y valor $f(P_i)$ como altura sobre la curva (barra vertical)  
 **TikZ:** `tikzpicture` 2D  
 **Líneas estimadas:** 45–60  
-**Estado:** Pendiente
+**Estado:** Completo — 2026-06-26. TikZ 2D: curva cerrada suave C con dos segmentos orientados (→ en cada mitad), región R sombreada azul, etiqueta "orientación +". Insertado entre `\end{definition}[Curva cerrada...]` y `\begin{theorem}[Teorema de Green]`. `fig:curva_orientacion_positiva`.
 
 ---
 
@@ -335,7 +335,7 @@ todo concepto con interpretación geométrica lleva figura TikZ inmediatamente d
 **Figura:** parche de superficie con vector normal $\mathbf{n}$ en varios puntos, orientación consistente indicada por sentido de giro del borde, con dos caras diferenciadas visualmente  
 **TikZ:** pgfplots 3D con `surf`, vectores normales añadidos con `\draw[->]`  
 **Líneas estimadas:** 55–75  
-**Estado:** Pendiente
+**Estado:** Completo — 2026-06-26. pgfplots 3D: paraboloide z=4-x²-y² (colormap/cool, samples=14, opacity=0.75) + 4 vectores normales n (dirección ∇F normalizada) en rojo. Insertado entre párrafo "flujo" y `\begin{definition}[Flujo de un campo vectorial]`. `fig:superficie_orientada`.
 
 ---
 
@@ -344,7 +344,19 @@ todo concepto con interpretación geométrica lleva figura TikZ inmediatamente d
 ### F8.20 — Auditoría R1: verificar orden canónico en caps. 18–22
 **Acción:** revisar que en cada capítulo el orden sea definición → figura → teorema → prueba/esquema → ejemplo → problemas. Registrar cualquier inversión.  
 **Entregable:** lista de inversiones encontradas + correcciones aplicadas (cada corrección ≤ 50 líneas de reordenamiento)  
-**Estado:** Pendiente
+**Estado:** Completo — 2026-06-26
+
+**Inversiones encontradas y acciones:**
+
+| Cap | ID | Descripción | Acción |
+|---|---|---|---|
+| 18 | — | `\begin{rem}[Interpretación geométrica]` de longitud de arco viene después del ejemplo. Revisado: el rem interpreta el resultado numérico del ejemplo (L = 2π√2), no motiva la definición. Posición post-ejemplo es correcta. | SIN INVERSIÓN REAL. No se modifica. |
+| 18 | INV18.2 | Subsección "Reglas de derivación": teorema sin ejemplo resuelto ilustrativo. | REGISTRADO (ausencia, no inversión de posición). Pendiente F8.25. |
+| 19 | INV19.1 | `\begin{theorem}[Composición de funciones continuas]` + proof venían después de 3 probs resueltos de discontinuidad. | REGISTRADO. No se corrige: los probs ilustran casos de discontinuidad que motivan el teorema — orden pedagógicamente justificado. |
+| 20 | INV20.1 | Párrafo de interpretación geométrica + figura de derivadas parciales venían DESPUÉS de dos ejemplos (antes: def → rem → ej1 → ej2 → figura). | **CORREGIDO**: movidos entre `\end{rem}` (notación) y `\begin{example}[Derivadas parciales por definición]`. Nuevo orden: def → rem(notación) → párrafo+figura(geométrica) → ej1 → ej2. (38 líneas). |
+| 20 | INV20.2 | Falta párrafo introductorio del capítulo. | REGISTRADO. Cubierto por F8.24 (pendiente). |
+| 21 | INV21.1 | Figura `fig:gradiente_curvas_nivel` viene después del `\begin{theorem}[Propiedades del gradiente]`. | REGISTRADO. No se corrige: la figura ilustra inmediatamente la lista de interpretación geométrica que la precede — coherencia interna mantenida. |
+| 22 | — | Sin inversiones. Estructura correcta en todo el capítulo. | — |
 
 ---
 
@@ -381,6 +393,249 @@ todo concepto con interpretación geométrica lleva figura TikZ inmediatamente d
 
 ---
 
+## Semana 6 — Auditorías y contenido adicional Cap. 18
+
+### F8.25 — Cap. 18 (`funvectoriales.tex`): auditoría de ejemplos de dominio sin figura
+**Acción:** recorrer todos los ejemplos de dominio de funciones de varias variables que estén resueltos (cálculo del dominio) pero sin figura TikZ asociada. Por cada uno: añadir figura TikZ 2D del dominio en el plano xy (región sombreada, frontera etiquetada, punto de exclusión si aplica).  
+**Criterio de cierre:** ningún ejemplo de dominio calculado queda sin representación gráfica.  
+**Líneas estimadas:** 20–40 por figura (número total depende de auditoría).  
+**Estado:** Pendiente
+
+---
+
+### F8.26 — Cap. 18 (`funvectoriales.tex`): galería de superficies canónicas
+**Acción:** añadir una sección (o subsección según el orden R1 del capítulo) con las 5 superficies cuádricas fundamentales: paraboloide elíptico, paraboloide hiperbólico, cono elíptico, hiperboloide de una hoja, hiperboloide de dos hojas. Para cada superficie: figura pgfplots 3D (shader=flat, samples=20), ecuación canónica, nombre, y 1 ejemplo resuelto con estructura de 4 pasos + `\boxed{}` (dominio, trazado por trazas, identificación de tipo).  
+**Criterio de cierre:** las 5 superficies presentes, cada una con figura + ejemplo resuelto completo.  
+**Líneas estimadas:** 200–280 en total.  
+**Estado:** Pendiente
+
+---
+
+### F8.27 — Cap. 18 (`funvectoriales.tex`): ejemplos resueltos de superficies de nivel
+**Acción:** añadir 2–3 ejemplos resueltos de superficies de nivel $f(x,y,z)=c$ para varios valores de $c$, cada uno con figura pgfplots 3D mostrando la familia de superficies. Los ejemplos deben cubrir casos distintos (esfera, elipsoide, paraboloide) para ilustrar variedad de comportamiento.  
+**Criterio de cierre:** 2–3 ejemplos resueltos con 4 pasos + `\boxed{}`, cada uno con figura 3D.  
+**Líneas estimadas:** 80–120 en total.  
+**Estado:** Pendiente
+
+---
+
+### F8.28 — Cap. 18 (`funvectoriales.tex`): auditoría de estructura interna de resueltos
+**Acción:** verificar que todos los ejemplos resueltos existentes en `funvectoriales.tex` tienen la estructura de 4 pasos del protocolo diagnóstico + `\boxed{}` en el resultado final. Corregir los que no cumplan: añadir los pasos faltantes, reorganizar si el orden es incorrecto, añadir `\boxed{}` donde falte.  
+**Criterio de cierre:** todos los resueltos existentes cumplen el protocolo. Lista de correcciones registrada en las notas del ítem.  
+**Líneas estimadas:** 10–30 por ejemplo corregido (número total depende de auditoría).  
+**Estado:** Pendiente
+
+---
+
+### F8.29 — Cap. 19 (`limvariasvariables.tex`): auditoría de estructura interna de resueltos
+**Acción:** verificar que todos los ejemplos resueltos existentes en `limvariasvariables.tex` tienen la estructura de 4 pasos del protocolo diagnóstico + `\boxed{}` en el resultado final. Corregir los que no cumplan: añadir los pasos faltantes, reorganizar si el orden es incorrecto, añadir `\boxed{}` donde falte.  
+**Criterio de cierre:** todos los resueltos existentes cumplen el protocolo. Lista de correcciones registrada en las notas del ítem.  
+**Líneas estimadas:** 10–30 por ejemplo corregido (número total depende de auditoría).  
+**Estado:** Pendiente
+
+---
+
+### F8.30 — Cap. 19 (`limvariasvariables.tex`): vincular figura F8.05 a ejemplo resuelto
+**Acción:** identificar el ejemplo resuelto de límite por trayectorias en `limvariasvariables.tex` (el que muestra límite inexistente por dos caminos distintos). Insertar la figura F8.05 (dos trayectorias hacia el origen con límites distintos — recta $y=mx$ y parábola $y=x^2$) inmediatamente después del enunciado del ejemplo y antes del desarrollo, con `\caption` y `\label` correctos. Verificar que las trayectorias de la figura corresponden exactamente a las trayectorias usadas en el ejemplo resuelto; si no coinciden, ajustar la figura para que sean consistentes.  
+**Criterio de cierre:** figura F8.05 insertada en el lugar correcto, trayectorias de la figura y del ejemplo coinciden, caption y label presentes, compilación limpia.  
+**Líneas estimadas:** 20–40.  
+**Estado:** Completo — 2026-06-26. Integrado durante F8.05: figura con y=x y y=x² colocada dentro del example "Límite que no existe por trayectorias distintas", exactamente entre el enunciado y `\begin{myproof}`. Trayectorias coinciden con el ejemplo (y=x → lim=0, y=x² → lim=1/2).
+
+---
+
+## Semana 7 — Auditoría de figuras preexistentes
+
+### F8.31 — Cap. 18 (`funvectoriales.tex`): auditoría de figuras preexistentes
+**Acción:** identificar todas las figuras que ya existen en el archivo (anteriores a la Fase 8). Por cada una: verificar que está dentro de un entorno `figure`, tiene `\caption` descriptivo, tiene `\label` con convención `fig:`, y todas las etiquetas de puntos y curvas usan `anchor` explícito o desplazamiento `xshift`/`yshift` para evitar solapamiento. Corregir las que no cumplan el estándar de `figuras_guia.tex`.  
+**Criterio de cierre:** todas las figuras preexistentes cumplen el protocolo. Lista de correcciones registrada en las notas del ítem.  
+**Líneas estimadas:** 10–20 por figura corregida (número total depende de auditoría).  
+**Estado:** Pendiente
+
+---
+
+### F8.32 — Cap. 19 (`limvariasvariables.tex`): auditoría de figuras preexistentes
+**Acción:** igual que F8.31 aplicado a `limvariasvariables.tex`.  
+**Criterio de cierre:** todas las figuras preexistentes cumplen el protocolo. Lista de correcciones registrada en las notas del ítem.  
+**Líneas estimadas:** 10–20 por figura corregida (número total depende de auditoría).  
+**Estado:** Pendiente
+
+---
+
+### F8.33 — Cap. 20 (`planostangentes.tex`): auditoría de figuras preexistentes
+**Acción:** igual que F8.31 aplicado a `planostangentes.tex`.  
+**Criterio de cierre:** todas las figuras preexistentes cumplen el protocolo. Lista de correcciones registrada en las notas del ítem.  
+**Líneas estimadas:** 10–20 por figura corregida (número total depende de auditoría).  
+**Estado:** Pendiente
+
+---
+
+### F8.34 — Cap. 21 (`gradientes.tex`): auditoría de figuras preexistentes
+**Acción:** igual que F8.31 aplicado a `gradientes.tex`.  
+**Criterio de cierre:** todas las figuras preexistentes cumplen el protocolo. Lista de correcciones registrada en las notas del ítem.  
+**Líneas estimadas:** 10–20 por figura corregida (número total depende de auditoría).  
+**Estado:** Pendiente
+
+---
+
+### F8.35 — Cap. 22 (`multiplicadoresintdobles.tex`): auditoría de figuras preexistentes
+**Acción:** igual que F8.31 aplicado a `multiplicadoresintdobles.tex`.  
+**Criterio de cierre:** todas las figuras preexistentes cumplen el protocolo. Lista de correcciones registrada en las notas del ítem.  
+**Líneas estimadas:** 10–20 por figura corregida (número total depende de auditoría).  
+**Estado:** Pendiente
+
+---
+
+### F8.36 — Cap. 32 (`apintdobles.tex`): auditoría de figuras preexistentes
+**Acción:** igual que F8.31 aplicado a `apintdobles.tex`.  
+**Criterio de cierre:** todas las figuras preexistentes cumplen el protocolo. Lista de correcciones registrada en las notas del ítem.  
+**Líneas estimadas:** 10–20 por figura corregida (número total depende de auditoría).  
+**Estado:** Pendiente
+
+---
+
+### F8.37 — Cap. 33 (`inttriples.tex`): auditoría de figuras preexistentes
+**Acción:** igual que F8.31 aplicado a `inttriples.tex`.  
+**Criterio de cierre:** todas las figuras preexistentes cumplen el protocolo. Lista de correcciones registrada en las notas del ítem.  
+**Líneas estimadas:** 10–20 por figura corregida (número total depende de auditoría).  
+**Estado:** Pendiente
+
+---
+
+### F8.38 — Cap. 33 (`cap33.tex`): auditoría de figuras preexistentes
+**Acción:** igual que F8.31 aplicado a `cap33.tex` (Campos vectoriales e integrales de línea).  
+**Criterio de cierre:** todas las figuras preexistentes cumplen el protocolo. Lista de correcciones registrada en las notas del ítem.  
+**Líneas estimadas:** 10–20 por figura corregida (número total depende de auditoría).  
+**Estado:** Pendiente
+
+---
+
+### F8.39 — Cap. 34 (`cap34.tex`): auditoría de figuras preexistentes
+**Acción:** igual que F8.31 aplicado a `cap34.tex` (Integrales de superficie y teoremas integrales).  
+**Criterio de cierre:** todas las figuras preexistentes cumplen el protocolo. Lista de correcciones registrada en las notas del ítem.  
+**Líneas estimadas:** 10–20 por figura corregida (número total depende de auditoría).  
+**Estado:** Pendiente
+
+---
+
+## Semana 8 — Revisión manual post-lectura
+
+### F8.40 — Cap. 20 (`planostangentes.tex`): mejorar figura de derivadas parciales con rectas tangentes en 3D
+**Acción:** localizar la figura existente de interpretación geométrica de derivadas parciales. Modificarla para que muestre explícitamente las dos rectas tangentes en el punto $(x_0, y_0, z_0)$: una en la dirección $x$ (pendiente $f_x$) y otra en la dirección $y$ (pendiente $f_y$), ambas sobre la superficie en 3D. Usar pgfplots 3D con `shader=flat`, `samples=20`. Etiquetas con `anchor` explícito. Figura dentro de `figure` con `\caption` y `\label`.  
+**Criterio de cierre:** figura muestra superficie + punto + dos rectas tangentes etiquetadas, sin solapamiento de etiquetas, compilación limpia.  
+**Líneas estimadas:** 60–90.  
+**Estado:** Pendiente
+
+---
+
+### F8.41 — Cap. 20 (`planostangentes.tex`): auditoría de resueltos sin 4 pasos
+**Acción:** verificar que todos los ejemplos resueltos existentes en `planostangentes.tex` tienen la estructura de 4 pasos del protocolo diagnóstico + `\boxed{}` en el resultado final. Corregir los que no cumplan.  
+**Criterio de cierre:** todos los resueltos cumplen el protocolo. Lista de correcciones registrada en las notas del ítem.  
+**Líneas estimadas:** 10–30 por ejemplo corregido.  
+**Estado:** Pendiente
+
+---
+
+### F8.42 — Cap. 21 (`gradientes.tex`): auditoría de resueltos sin 4 pasos
+**Acción:** igual que F8.41 aplicado a `gradientes.tex`.  
+**Criterio de cierre:** todos los resueltos cumplen el protocolo. Lista de correcciones registrada en las notas del ítem.  
+**Líneas estimadas:** 10–30 por ejemplo corregido.  
+**Estado:** Pendiente
+
+---
+
+### F8.43 — Cap. 22 (`multiplicadoresintdobles.tex`): auditoría de resueltos sin 4 pasos
+**Acción:** igual que F8.41 aplicado a `multiplicadoresintdobles.tex`.  
+**Criterio de cierre:** todos los resueltos cumplen el protocolo. Lista de correcciones registrada en las notas del ítem.  
+**Líneas estimadas:** 10–30 por ejemplo corregido.  
+**Estado:** Pendiente
+
+---
+
+### F8.44 — Cap. 32 (`apintdobles.tex`): auditoría de resueltos sin 4 pasos
+**Acción:** igual que F8.41 aplicado a `apintdobles.tex`.  
+**Criterio de cierre:** todos los resueltos cumplen el protocolo. Lista de correcciones registrada en las notas del ítem.  
+**Líneas estimadas:** 10–30 por ejemplo corregido.  
+**Estado:** Pendiente
+
+---
+
+### F8.45 — Cap. 33 (`inttriples.tex`): auditoría de resueltos sin 4 pasos
+**Acción:** igual que F8.41 aplicado a `inttriples.tex`.  
+**Criterio de cierre:** todos los resueltos cumplen el protocolo. Lista de correcciones registrada en las notas del ítem.  
+**Líneas estimadas:** 10–30 por ejemplo corregido.  
+**Estado:** Pendiente
+
+---
+
+### F8.46 — Cap. 33 (`cap33.tex`): auditoría de resueltos sin 4 pasos
+**Acción:** igual que F8.41 aplicado a `cap33.tex` (Campos vectoriales e integrales de línea).  
+**Criterio de cierre:** todos los resueltos cumplen el protocolo. Lista de correcciones registrada en las notas del ítem.  
+**Líneas estimadas:** 10–30 por ejemplo corregido.  
+**Estado:** Pendiente
+
+---
+
+### F8.47 — Cap. 34 (`cap34.tex`): auditoría de resueltos sin 4 pasos
+**Acción:** igual que F8.41 aplicado a `cap34.tex` (Integrales de superficie y teoremas integrales).  
+**Criterio de cierre:** todos los resueltos cumplen el protocolo. Lista de correcciones registrada en las notas del ítem.  
+**Líneas estimadas:** 10–30 por ejemplo corregido.  
+**Estado:** Pendiente
+
+---
+
+### F8.48 — Caps. 32 y 33 (`apintdobles.tex`, `inttriples.tex`): figuras de cambio de coordenadas
+**Acción:** crear tres figuras TikZ/pgfplots que expliquen geométricamente el cambio de coordenadas, insertadas en la sección correspondiente de cada capítulo:
+- **Polares** (`apintdobles.tex`): círculo de radio $r$ con ángulo $\theta$, punto $(r,\theta)$ etiquetado, relaciones $x=r\cos\theta$, $y=r\sin\theta$ indicadas, explicación del elemento de área $r\,dr\,d\theta$.
+- **Cilíndricas** (`inttriples.tex`): cilindro con variables $r$, $\theta$, $z$ etiquetadas, punto $(r,\theta,z)$ marcado, explicación del elemento de volumen $r\,dr\,d\theta\,dz$.
+- **Esféricas** (`inttriples.tex`): esfera con variables $\rho$, $\phi$, $\theta$ etiquetadas, punto $(\rho,\phi,\theta)$ marcado, explicación del elemento de volumen $\rho^2\sin\phi\,d\rho\,d\phi\,d\theta$.
+
+Cada figura dentro de `figure` con `\caption` y `\label`. Etiquetas con `anchor` explícito sin solapamiento. Estándar de `figuras_guia.tex`.  
+**Criterio de cierre:** tres figuras compilando limpio, cada una insertada inmediatamente antes de la primera integral en esas coordenadas.  
+**Líneas estimadas:** 50–80 por figura (150–240 total).  
+**Estado:** Pendiente
+
+---
+
+### F8.49 — Todos los capítulos C3: auditoría de problemas propuestos
+**Acción:** recorrer todos los capítulos C3 (`funvectoriales.tex`, `limvariasvariables.tex`, `planostangentes.tex`, `gradientes.tex`, `multiplicadoresintdobles.tex`, `apintdobles.tex`, `inttriples.tex`, `cap33.tex`, `cap34.tex`) y por cada uno: (1) verificar que ningún problema propuesto contiene `\begin{myproof}` — eliminarlo si existe; (2) verificar que los propuestos están organizados por dificultad creciente — reordenar si no lo están, añadiendo comentario `% Básico`, `% Intermedio`, `% Desafiante` antes de cada grupo.  
+**Criterio de cierre:** cero propuestos con myproof en todos los capítulos, todos los propuestos organizados por dificultad con comentarios de grupo. Compilación limpia.  
+**Líneas estimadas:** 10–40 por capítulo.  
+**Estado:** Pendiente
+
+---
+
+### F8.50 — Cap. 33 (`cap33.tex`): figura campo gradiente
+**Acción:** crear figura pgfplots 2D con `quiver` mostrando el campo gradiente $\nabla f$ de una función concreta (e.g. $f(x,y)=x^2+y^2/4$) en una grilla $[-2,2]^2$, con curvas de nivel superpuestas mostrando la perpendicularidad entre el campo y las curvas. Figura dentro de `figure` con `\caption{Campo gradiente $\nabla f$ perpendicular a las curvas de nivel}` y `\label{fig:campo_gradiente}`. Etiquetas con `anchor` explícito. Estándar de `figuras_guia.tex`.  
+**Criterio de cierre:** figura muestra campo + curvas de nivel + perpendicularidad visible, sin solapamiento, compilación limpia.  
+**Líneas estimadas:** 50–70.  
+**Estado:** Pendiente
+
+---
+
+### F8.51 — Cap. 33 (`cap33.tex`): figura campo conservativo
+**Acción:** crear figura pgfplots 2D con `quiver` mostrando un campo conservativo concreto (e.g. $\mathbf{F}(x,y)=(x,y)$, gradiente de $f=\frac{1}{2}(x^2+y^2)$) en grilla $[-2,2]^2$, con trayectoria cerrada superpuesta e indicación de que $\oint_C \mathbf{F}\cdot d\mathbf{r}=0$. Figura dentro de `figure` con `\caption{Campo conservativo: integral sobre trayectoria cerrada es cero}` y `\label{fig:campo_conservativo}`. Estándar de `figuras_guia.tex`.  
+**Criterio de cierre:** figura muestra campo + trayectoria cerrada + etiqueta de resultado, sin solapamiento, compilación limpia.  
+**Líneas estimadas:** 50–70.  
+**Estado:** Pendiente
+
+---
+
+### F8.52 — Cap. 33 (`cap33.tex`): añadir problemas propuestos
+**Acción:** revisar el conteo actual de propuestos en `cap33.tex`. Añadir los necesarios para alcanzar mínimo 15 propuestos, cubriendo: integral de línea escalar, integral de línea vectorial, campos conservativos y potenciales, teorema fundamental para integrales de línea, Green en región simplemente conexa, Green para calcular área. Organizar por dificultad con comentarios `% Básico`, `% Intermedio`, `% Desafiante`. Ningún propuesto nuevo lleva `\begin{myproof}`.  
+**Criterio de cierre:** mínimo 15 propuestos, graduados, sin myproof, compilación limpia.  
+**Líneas estimadas:** 60–100.  
+**Estado:** Pendiente
+
+---
+
+### F8.53 — Cap. 34 (`cap34.tex`): añadir problemas propuestos
+**Acción:** revisar el conteo actual de propuestos en `cap34.tex`. Añadir los necesarios para alcanzar mínimo 15 propuestos, cubriendo: integral de superficie escalar, integral de superficie vectorial (flujo), Stokes sobre superficie con borde no trivial, Divergencia en sólido acotado, aplicaciones (masa de superficie, flujo total). Organizar por dificultad con comentarios `% Básico`, `% Intermedio`, `% Desafiante`. Ningún propuesto nuevo lleva `\begin{myproof}`.  
+**Criterio de cierre:** mínimo 15 propuestos, graduados, sin myproof, compilación limpia.  
+**Líneas estimadas:** 60–100.  
+**Estado:** Pendiente
+
+---
+
 ## Registro de progreso
 
 | Ítem | Archivo(s) | Acción | Estado | Fecha | Notas |
@@ -391,28 +646,28 @@ todo concepto con interpretación geométrica lleva figura TikZ inmediatamente d
 | F8.P4 | `gradientes.tex` | Elevar 7–8 resueltos | Completo | 2026-06-25 | +myproof 5 probs (cadena Caso2, implícita, deriv.direcc., máx.crec., plano tang.). 9 res., 15 prop. Compilación pendiente. |
 | F8.P5 | `multiplicadoresintdobles.tex` | Revisar calidad pedagógica | Completo | 2026-06-25 | +myproof Hessiano limitado (Lagrange 1 restr.). Traslado 2 probs Ohm a Cap21. 9 res., 20 prop. Compilación pendiente. |
 | F8.P6 | `apintdobles.tex` | Añadir 15–18 propuestos | Completo | 2026-06-25 | +18 propuestos nuevos (5 directos, 8 intermedios, 5 desafiantes). Todos los temas cubiertos: rect., tipo I/II, cambio orden, polares, vol., masa, momentos, área superf. 11 res., 18 prop. Compilación pendiente. |
-| F8.P7 | `inttriples.tex` | Conteo real + ajuste | Pendiente | — | — |
-| F8.P8 | `cap34_integrales_vectoriales.tex` | Elevar 8–10 resueltos, podar propuestos | Pendiente | — | — |
-| F8.01 | `figuras_guia.tex` (nuevo) | Plantilla TikZ | Pendiente | — | — |
-| F8.02 | `funvectoriales.tex` | Figura hélice R³ | Pendiente | — | — |
-| F8.03 | `funvectoriales.tex` | Figura paraboloide + curvas nivel | Pendiente | — | — |
-| F8.04 | `limvariasvariables.tex` | Figura vecindad ε-δ | Pendiente | — | — |
-| F8.05 | `limvariasvariables.tex` | Figura trayectorias límite | Pendiente | — | — |
-| F8.06 | `planostangentes.tex` | Figura plano tangente 3D | Pendiente | — | — |
-| F8.07 | `planostangentes.tex` | Figura aproximación lineal | Pendiente | — | — |
-| F8.08 | `gradientes.tex` | Figura gradiente + curvas nivel | Pendiente | — | — |
-| F8.09 | `gradientes.tex` | Figura derivada direccional | Pendiente | — | — |
-| F8.10 | `multiplicadoresintdobles.tex` | Figura punto de silla | Pendiente | — | — |
-| F8.11 | `multiplicadoresintdobles.tex` | Figura región factible Lagrange | Pendiente | — | — |
-| F8.12 | `inttriples.tex` | Sección Jacobiano 2×2 (nueva) | Pendiente | — | — |
-| F8.13 | `inttriples.tex` | Sección Jacobiano 3×3 + reencuadre cil./esf. | Pendiente | — | — |
-| F8.14 | `inttriples.tex` | Figura geométrica Jacobiano | Pendiente | — | — |
-| F8.15 | `apintdobles.tex` | Figuras región tipo I y II | Pendiente | — | — |
-| F8.16 | `apintdobles.tex` | Figura cambio de orden | Pendiente | — | — |
-| F8.17 | `cap34_integrales_vectoriales.tex` | Figura campo vectorial quiver | Pendiente | — | — |
-| F8.18 | `cap34_integrales_vectoriales.tex` | Figura curva orientada integral de línea | Pendiente | — | — |
-| F8.19 | `cap34_integrales_vectoriales.tex` | Figura superficie orientada + normal | Pendiente | — | — |
-| F8.20 | caps. 18–22 | Auditoría orden R1 | Pendiente | — | — |
+| F8.P7 | `inttriples.tex` | Conteo real + ajuste | Completo | 2026-06-25 | Ver bloque narrativo Semana 0. |
+| F8.P8 | `cap34_integrales_vectoriales.tex` | Elevar 8–10 resueltos, podar propuestos | Completo | 2026-06-25 | Ver bloque narrativo Semana 0. |
+| F8.01 | `figuras_guia.tex` (nuevo) | Plantilla TikZ | Completo | 2026-06-26 | 3 plantillas (hélice, paraboloide+normal, región tipo I) + estándares globales. Excluido de `\input` en doc principal (es solo referencia). |
+| F8.02 | `funvectoriales.tex` | Figura hélice R³ | Completo | 2026-06-26 | pgfplots 3D, después de def. función vectorial. `fig:helice_tangente`. |
+| F8.03 | `funvectoriales.tex` | Figura paraboloide + curvas nivel | Completo | 2026-06-26 | Minipage doble, después de pasos trazado curvas nivel. `fig:paraboloide_curvas_nivel`. |
+| F8.04 | `limvariasvariables.tex` | Figura vecindad ε-δ | Completo | 2026-06-26 | TikZ 2D, después de def. límite 2 vars. `fig:disco_epsilon_delta`. |
+| F8.05 | `limvariasvariables.tex` | Figura trayectorias límite | Completo | 2026-06-26 | TikZ 2D dentro del example "trayectorias distintas", antes de myproof. F8.30 integrado. `fig:trayectorias_limite`. |
+| F8.06 | `planostangentes.tex` | Figura plano tangente 3D | Completo | 2026-06-26 | pgfplots 3D paraboloide + plano tangente (naranja) + normal, antes del pasos-protocolo. `fig:plano_tangente_3d`. |
+| F8.07 | `planostangentes.tex` | Figura aproximación lineal | Completo | 2026-06-26 | TikZ 2D sección con Δz vs dz + segmento error, después de def. diferencial total. `fig:aprox_lineal_dz`. |
+| F8.08 | `gradientes.tex` | Figura gradiente + curvas nivel | Completo | 2026-06-26 | TikZ 2D 5 elipses f=x²+y²/4 + 4 vectores ∇f, antes de subsección interpretación geométrica. `fig:gradiente_curvas_nivel`. |
+| F8.09 | `gradientes.tex` | Figura derivada direccional | Completo | 2026-06-26 | pgfplots 3D z=x²+y² con plano vertical y pendiente D_u f, antes del teorema fórmula gradiente. `fig:derivada_direccional`. |
+| F8.10 | `multiplicadoresintdobles.tex` | Figura punto de silla | Completo | 2026-06-26 | pgfplots 3D z=x²-y² con curvas de curvatura ±, después de rem punto crítico. `fig:punto_silla`. |
+| F8.11 | `multiplicadoresintdobles.tex` | Figura región factible Lagrange | Completo | 2026-06-26 | TikZ 2D elipses f + recta g=0 + punto óptimo + ∇f, antes del pasos-método Lagrange. `fig:lagrange_region_factible`. |
+| F8.12 | `inttriples.tex` | Sección Jacobiano 2×2 (nueva) | Completo | 2026-06-26 | Nueva `\section{Cambio de variables en integrales dobles}` con def. Jacobiano 2×2, teorema cambio de variables, ejemplo polares (e^(x²+y²), disco r≤2 → π(e⁴-1)). |
+| F8.13 | `inttriples.tex` | Sección Jacobiano 3×3 + reencuadre cil./esf. | Completo | 2026-06-26 | Nueva `\section{Cambio de variables en integrales triples}` con def. 3×3, teorema. Determinante cilíndrico explícito en def. cilíndricas. Nota esféricas referenciada. |
+| F8.14 | `inttriples.tex` | Figura geométrica Jacobiano | Completo | 2026-06-26 | Figura minipage doble: cuadrado R*=[0,1]² → paralelogramo R con leyenda área=|J|. Dentro de F8.12. `fig:jacobiano_2x2`. |
+| F8.15 | `apintdobles.tex` | Figuras región tipo I y II | Completo | 2026-06-26 | Minipages TikZ 2D: tipo I (g₁/g₂ + franjas verticales) y tipo II (h₁/h₂ + franjas horizontales). `fig:region_tipo_I_II`. |
+| F8.16 | `apintdobles.tex` | Figura cambio de orden | Completo | 2026-06-26 | Minipages TikZ 2D: región y=x²/y=x con franja vertical (a) y horizontal (b). `fig:cambio_orden_integracion`. |
+| F8.17 | `cap34.tex` | Figura campo vectorial quiver | Completo | 2026-06-26 | TikZ `\foreach` grilla 5×5: F=(-y,x). Antes de def. Divergencia. `fig:campo_vectorial_rotacional`. |
+| F8.18 | `cap34.tex` | Figura curva orientada integral de línea | Completo | 2026-06-26 | TikZ 2D: curva cerrada C orientada (+) con región R. Antes de Teorema Green. `fig:curva_orientacion_positiva`. |
+| F8.19 | `cap34.tex` | Figura superficie orientada + normal | Completo | 2026-06-26 | pgfplots 3D z=4-x²-y² + 4 vectores n en rojo. Antes de def. Flujo. `fig:superficie_orientada`. |
+| F8.20 | caps. 18–22 | Auditoría orden R1 | Completo | 2026-06-26 | 1 inversión corregida (INV20.1 planostangentes: figura DP antes de ejemplos); 3 registradas sin corrección (INV18.2, INV19.1, INV21.1). Cap 18 y 22 sin inversiones. |
 | F8.21 | `cap34_integrales_vectoriales.tex` | Esquema prueba Green | Pendiente | — | — |
 | F8.22 | `cap34_integrales_vectoriales.tex` | Esquema prueba Stokes | Pendiente | — | — |
 | F8.23 | `cap34_integrales_vectoriales.tex` | Esquema prueba Divergencia | Pendiente | — | — |
@@ -421,25 +676,54 @@ todo concepto con interpretación geométrica lleva figura TikZ inmediatamente d
 | F8.03 | `funvectoriales.tex` | Figura paraboloide + curvas nivel | Pendiente | — | — |
 | F8.04 | `limvariasvariables.tex` | Figura vecindad ε-δ | Pendiente | — | — |
 | F8.05 | `limvariasvariables.tex` | Figura trayectorias límite | Pendiente | — | — |
-| F8.06 | `planostangentes.tex` | Figura plano tangente 3D | Pendiente | — | — |
-| F8.07 | `planostangentes.tex` | Figura aproximación lineal | Pendiente | — | — |
-| F8.08 | `gradientes.tex` | Figura gradiente + curvas nivel | Pendiente | — | — |
-| F8.09 | `gradientes.tex` | Figura derivada direccional | Pendiente | — | — |
-| F8.10 | `multiplicadoresintdobles.tex` | Figura punto de silla | Pendiente | — | — |
-| F8.11 | `multiplicadoresintdobles.tex` | Figura región factible Lagrange | Pendiente | — | — |
-| F8.12 | `inttriples.tex` | Sección Jacobiano 2×2 (nueva) | Pendiente | — | — |
-| F8.13 | `inttriples.tex` | Sección Jacobiano 3×3 + reencuadre cil./esf. | Pendiente | — | — |
-| F8.14 | `inttriples.tex` | Figura geométrica Jacobiano | Pendiente | — | — |
-| F8.15 | `apintdobles.tex` | Figuras región tipo I y II | Pendiente | — | — |
-| F8.16 | `apintdobles.tex` | Figura cambio de orden | Pendiente | — | — |
-| F8.17 | `cap34_integrales_vectoriales.tex` | Figura campo vectorial quiver | Pendiente | — | — |
-| F8.18 | `cap34_integrales_vectoriales.tex` | Figura curva orientada integral de línea | Pendiente | — | — |
-| F8.19 | `cap34_integrales_vectoriales.tex` | Figura superficie orientada + normal | Pendiente | — | — |
-| F8.20 | caps. 18–22 | Auditoría orden R1 | Pendiente | — | — |
+| F8.06 | `planostangentes.tex` | Figura plano tangente 3D | Completo | 2026-06-26 | pgfplots 3D paraboloide + plano tangente (naranja) + normal, antes del pasos-protocolo. `fig:plano_tangente_3d`. |
+| F8.07 | `planostangentes.tex` | Figura aproximación lineal | Completo | 2026-06-26 | TikZ 2D sección con Δz vs dz + segmento error, después de def. diferencial total. `fig:aprox_lineal_dz`. |
+| F8.08 | `gradientes.tex` | Figura gradiente + curvas nivel | Completo | 2026-06-26 | TikZ 2D 5 elipses f=x²+y²/4 + 4 vectores ∇f, antes de subsección interpretación geométrica. `fig:gradiente_curvas_nivel`. |
+| F8.09 | `gradientes.tex` | Figura derivada direccional | Completo | 2026-06-26 | pgfplots 3D z=x²+y² con plano vertical y pendiente D_u f, antes del teorema fórmula gradiente. `fig:derivada_direccional`. |
+| F8.10 | `multiplicadoresintdobles.tex` | Figura punto de silla | Completo | 2026-06-26 | pgfplots 3D z=x²-y² con curvas de curvatura ±, después de rem punto crítico. `fig:punto_silla`. |
+| F8.11 | `multiplicadoresintdobles.tex` | Figura región factible Lagrange | Completo | 2026-06-26 | TikZ 2D elipses f + recta g=0 + punto óptimo + ∇f, antes del pasos-método Lagrange. `fig:lagrange_region_factible`. |
+| F8.12 | `inttriples.tex` | Sección Jacobiano 2×2 (nueva) | Completo | 2026-06-26 | Nueva `\section{Cambio de variables en integrales dobles}` con def. Jacobiano 2×2, teorema cambio de variables, ejemplo polares (e^(x²+y²), disco r≤2 → π(e⁴-1)). |
+| F8.13 | `inttriples.tex` | Sección Jacobiano 3×3 + reencuadre cil./esf. | Completo | 2026-06-26 | Nueva `\section{Cambio de variables en integrales triples}` con def. 3×3, teorema. Determinante cilíndrico explícito en def. cilíndricas. Nota esféricas referenciada. |
+| F8.14 | `inttriples.tex` | Figura geométrica Jacobiano | Completo | 2026-06-26 | Figura minipage doble: cuadrado R*=[0,1]² → paralelogramo R con leyenda área=|J|. Dentro de F8.12. `fig:jacobiano_2x2`. |
+| F8.15 | `apintdobles.tex` | Figuras región tipo I y II | Completo | 2026-06-26 | Minipages TikZ 2D: tipo I (g₁/g₂ + franjas verticales) y tipo II (h₁/h₂ + franjas horizontales). `fig:region_tipo_I_II`. |
+| F8.16 | `apintdobles.tex` | Figura cambio de orden | Completo | 2026-06-26 | Minipages TikZ 2D: región y=x²/y=x con franja vertical (a) y horizontal (b). `fig:cambio_orden_integracion`. |
+| F8.17 | `cap34.tex` | Figura campo vectorial quiver | Completo | 2026-06-26 | TikZ `\foreach` grilla 5×5: F=(-y,x). Antes de def. Divergencia. `fig:campo_vectorial_rotacional`. |
+| F8.18 | `cap34.tex` | Figura curva orientada integral de línea | Completo | 2026-06-26 | TikZ 2D: curva cerrada C orientada (+) con región R. Antes de Teorema Green. `fig:curva_orientacion_positiva`. |
+| F8.19 | `cap34.tex` | Figura superficie orientada + normal | Completo | 2026-06-26 | pgfplots 3D z=4-x²-y² + 4 vectores n en rojo. Antes de def. Flujo. `fig:superficie_orientada`. |
+| F8.20 | caps. 18–22 | Auditoría orden R1 | Completo | 2026-06-26 | 1 inversión corregida (INV20.1 planostangentes: figura DP antes de ejemplos); 3 registradas sin corrección (INV18.2, INV19.1, INV21.1). Cap 18 y 22 sin inversiones. |
 | F8.21 | `cap34_integrales_vectoriales.tex` | Esquema prueba Green | Pendiente | — | — |
 | F8.22 | `cap34_integrales_vectoriales.tex` | Esquema prueba Stokes | Pendiente | — | — |
 | F8.23 | `cap34_integrales_vectoriales.tex` | Esquema prueba Divergencia | Pendiente | — | — |
 | F8.24 | caps. 18, 19, 32 | Introducciones narrativas | Pendiente | — | — |
+| F8.25 | `funvectoriales.tex` | Auditoría ejemplos de dominio sin figura → añadir TikZ 2D | Pendiente | — | — |
+| F8.26 | `funvectoriales.tex` | Galería 5 superficies canónicas: figura + ejemplo resuelto cada una | Pendiente | — | — |
+| F8.27 | `funvectoriales.tex` | 2–3 ejemplos resueltos de superficies de nivel con figura 3D | Pendiente | — | — |
+| F8.28 | `funvectoriales.tex` | Auditoría estructura interna resueltos: 4 pasos + boxed | Pendiente | — | — |
+| F8.29 | `limvariasvariables.tex` | Auditoría estructura interna resueltos: 4 pasos + boxed | Pendiente | — | — |
+| F8.30 | `limvariasvariables.tex` | Vincular figura F8.05 a ejemplo resuelto de trayectorias | Completo | 2026-06-26 | Integrado en F8.05: figura colocada dentro del example antes de myproof. |
+| F8.31 | `funvectoriales.tex` | Auditoría figuras preexistentes: figure + caption + label + anchors | Pendiente | — | — |
+| F8.32 | `limvariasvariables.tex` | Auditoría figuras preexistentes: figure + caption + label + anchors | Pendiente | — | — |
+| F8.33 | `planostangentes.tex` | Auditoría figuras preexistentes: figure + caption + label + anchors | Pendiente | — | — |
+| F8.34 | `gradientes.tex` | Auditoría figuras preexistentes: figure + caption + label + anchors | Pendiente | — | — |
+| F8.35 | `multiplicadoresintdobles.tex` | Auditoría figuras preexistentes: figure + caption + label + anchors | Pendiente | — | — |
+| F8.36 | `apintdobles.tex` | Auditoría figuras preexistentes: figure + caption + label + anchors | Pendiente | — | — |
+| F8.37 | `inttriples.tex` | Auditoría figuras preexistentes: figure + caption + label + anchors | Pendiente | — | — |
+| F8.38 | `cap33.tex` | Auditoría figuras preexistentes: figure + caption + label + anchors | Pendiente | — | — |
+| F8.39 | `cap34.tex` | Auditoría figuras preexistentes: figure + caption + label + anchors | Pendiente | — | — |
+| F8.40 | `planostangentes.tex` | Mejorar figura derivadas parciales: rectas tangentes en 3D | Pendiente | — | — |
+| F8.41 | `planostangentes.tex` | Auditoría resueltos sin 4 pasos + boxed | Pendiente | — | — |
+| F8.42 | `gradientes.tex` | Auditoría resueltos sin 4 pasos + boxed | Pendiente | — | — |
+| F8.43 | `multiplicadoresintdobles.tex` | Auditoría resueltos sin 4 pasos + boxed | Pendiente | — | — |
+| F8.44 | `apintdobles.tex` | Auditoría resueltos sin 4 pasos + boxed | Pendiente | — | — |
+| F8.45 | `inttriples.tex` | Auditoría resueltos sin 4 pasos + boxed | Pendiente | — | — |
+| F8.46 | `cap33.tex` | Auditoría resueltos sin 4 pasos + boxed | Pendiente | — | — |
+| F8.47 | `cap34.tex` | Auditoría resueltos sin 4 pasos + boxed | Pendiente | — | — |
+| F8.48 | `apintdobles.tex`, `inttriples.tex` | Figuras cambio de coordenadas: polares, cilíndricas, esféricas | Pendiente | — | — |
+| F8.49 | Todos los caps. C3 | Auditoría propuestos: eliminar myproof + organizar por dificultad | Pendiente | — | — |
+| F8.50 | `cap33.tex` | Figura campo gradiente con curvas de nivel | Pendiente | — | — |
+| F8.51 | `cap33.tex` | Figura campo conservativo con trayectoria cerrada | Pendiente | — | — |
+| F8.52 | `cap33.tex` | Añadir mínimo 15 problemas propuestos graduados | Pendiente | — | — |
+| F8.53 | `cap34.tex` | Añadir mínimo 15 problemas propuestos graduados | Pendiente | — | — |
 
 ---
 

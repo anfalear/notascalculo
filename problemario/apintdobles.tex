@@ -1,10 +1,9 @@
-\chapter{Aplicaciones de la integral doble e integrales dobles en coordenadas polares}
+\chapter{Integrales dobles y sus aplicaciones}
 
-\section{Integrales dobles en coordenadas rectangulares}
 
 La integral definida de una variable permite calcular áreas bajo curvas y acumulaciones a lo largo de intervalos. La integral doble extiende esta idea a funciones de dos variables, permitiendo calcular volúmenes bajo superficies, áreas de regiones planas, masas, centros de masa y otras magnitudes sobre regiones del plano.
 
-\subsection{Integral doble sobre un rectángulo}
+\section{Integral doble sobre un rectángulo}
 
 Sea $R=[a,b]\times[c,d]$ un rectángulo en el plano. Una partición de $R$ consiste en dividir $[a,b]$ en $m$ subintervalos de longitudes $\Delta x_i$ y $[c,d]$ en $n$ subintervalos de longitudes $\Delta y_j$, formando $mn$ subrectángulos $R_{ij}$ de área $\Delta A_{ij}=\Delta x_i\Delta y_j$. Elegimos un punto muestra $(\bar{x}_{ij},\bar{y}_{ij})$ en cada subrectángulo y formamos la suma de Riemann
 \[
@@ -19,8 +18,6 @@ Si el límite de estas sumas existe cuando la norma de la partición tiende a ce
 Si $f$ es continua en $R$, entonces $f$ es integrable en $R$. Más generalmente, si $f$ es acotada y continua excepto posiblemente en un número finito de curvas suaves, también es integrable.
 \end{theorem}
 
-\subsection{Teorema de Fubini}
-
 El cálculo directo de la integral doble a partir de sumas de Riemann es engorroso. El teorema de Fubini la reduce a dos integrales simples sucesivas.
 
 \begin{theorem}[Fubini]
@@ -33,7 +30,7 @@ Si $f$ es continua en el rectángulo $R=[a,b]\times[c,d]$, entonces
 
 La primera integral iterada indica que primero se integra respecto a $y$ (manteniendo $x$ fija) y luego respecto a $x$; la segunda invierte el orden.
 
-\subsection{Propiedades de la integral doble}
+\section{Propiedades de la integral doble}
 
 \begin{itemize}
     \item \textbf{Linealidad:} $\iint_R [\alpha f+\beta g]\,dA = \alpha\iint_R f\,dA + \beta\iint_R g\,dA$.
@@ -74,7 +71,7 @@ $\displaystyle\boxed{\iint_R (x^2 y + y^2)\,dA = \tfrac{10}{3}}$.
 \end{myproof}
 \end{example}
 
-\subsection{Integrales dobles sobre regiones generales}
+\section{Integrales dobles sobre regiones generales}
 
 No toda región de integración es un rectángulo. Consideramos regiones acotadas con fronteras suaves. Dos tipos básicos son:
 
@@ -103,6 +100,56 @@ Para regiones tipo II, se tiene
 \iint_D f(x,y)\,dA = \int_c^d \int_{h_1(y)}^{h_2(y)} f(x,y)\,dx\,dy.
 \]
 
+\begin{figure}[H]
+\centering
+\begin{minipage}{0.46\textwidth}
+\centering
+\begin{tikzpicture}[scale=1.1]
+    \draw[thin,->] (-0.3,0)--(3.1,0) node[right]{$x$};
+    \draw[thin,->] (0,-0.3)--(0,3.0) node[above]{$y$};
+    \fill[blue!15]
+        (0.5,0.4) ..controls (1.2,0.15) and (1.8,0.15).. (2.5,0.4)
+        -- (2.5,2.2) ..controls (1.8,2.45) and (1.2,2.45).. (0.5,2.2)
+        -- cycle;
+    \draw[blue!70!black,thick]
+        (0.5,0.4) ..controls (1.2,0.15) and (1.8,0.15).. (2.5,0.4)
+        node[right,font=\small]{$y=g_1(x)$};
+    \draw[blue!70!black,thick]
+        (0.5,2.2) ..controls (1.2,2.45) and (1.8,2.45).. (2.5,2.2)
+        node[right,font=\small]{$y=g_2(x)$};
+    \draw[thin,dashed] (0.5,0) node[below,font=\small]{$a$} -- (0.5,2.2);
+    \draw[thin,dashed] (2.5,0) node[below,font=\small]{$b$} -- (2.5,2.2);
+    \node at (1.5,1.3){\small $D$};
+    \node[anchor=north west,font=\small] at (0.1,2.9){(a) Tipo I};
+\end{tikzpicture}
+\end{minipage}
+\hfill
+\begin{minipage}{0.46\textwidth}
+\centering
+\begin{tikzpicture}[scale=1.1]
+    \draw[thin,->] (-0.3,0)--(3.1,0) node[right]{$x$};
+    \draw[thin,->] (0,-0.3)--(0,3.0) node[above]{$y$};
+    \fill[red!15]
+        (0.35,0.5) ..controls (0.0,1.2) and (0.0,1.8).. (0.35,2.5)
+        -- (2.3,2.5) ..controls (2.65,1.8) and (2.65,1.2).. (2.3,0.5)
+        -- cycle;
+    \draw[red!70!black,thick]
+        (0.35,0.5) ..controls (0.0,1.2) and (0.0,1.8).. (0.35,2.5)
+        node[above,font=\small]{$x=h_1(y)$};
+    \draw[red!70!black,thick]
+        (2.3,0.5) ..controls (2.65,1.2) and (2.65,1.8).. (2.3,2.5)
+        node[above,font=\small]{$x=h_2(y)$};
+    \draw[thin,dashed] (0,0.5) node[left,font=\small]{$c$} -- (0.35,0.5);
+    \draw[thin,dashed] (0,2.5) node[left,font=\small]{$d$} -- (0.35,2.5);
+    \node at (1.3,1.5){\small $D$};
+    \node[anchor=north west,font=\small] at (0.1,2.9){(b) Tipo II};
+\end{tikzpicture}
+\end{minipage}
+\caption{(a) Región tipo I: $y\in[g_1(x),g_2(x)]$ para cada $x\in[a,b]$.
+         (b) Región tipo II: $x\in[h_1(y),h_2(y)]$ para cada $y\in[c,d]$}
+\label{fig:region_tipo_I_II}
+\end{figure}
+
 \begin{pasos}[Integral doble sobre una región general]
 \begin{enumerate}
     \item \textbf{Identificar el tipo de región.} Determinar si $D$ es tipo I (y entre dos curvas) o tipo II (x entre dos curvas). Si es posible, elegir el orden que simplifique los límites.
@@ -110,8 +157,6 @@ Para regiones tipo II, se tiene
     \item \textbf{Evaluar la integral iterada.} Integrar primero respecto a la variable interior y luego respecto a la exterior.
 \end{enumerate}
 \end{pasos}
-
-\subsection{Ejemplos de regiones generales}
 
 \begin{example}[Región tipo I]
 Evalúe $\displaystyle\iint_D xy\,dA$, donde $D$ es la región acotada por $y=x^2$ y $y=x$, con $0\le x\le 1$.
@@ -191,8 +236,54 @@ $\displaystyle\boxed{\iint_D (x+y)\,dA = \tfrac{189}{20}}$.
 En regiones generales, elegir el orden de integración adecuado puede simplificar drásticamente los límites. A menudo, una región que no es tipo I puede ser tipo II, y viceversa. Si la región no es de ninguno de estos tipos, se puede descomponer en varias subregiones.
 \end{rem}
 
-
-\section*{Problemas propuestos}
+\begin{figure}[H]
+\centering
+\begin{minipage}{0.46\textwidth}
+\centering
+\begin{tikzpicture}[scale=2.0]
+    \draw[thin,->] (-0.1,0)--(1.3,0) node[right]{$x$};
+    \draw[thin,->] (0,-0.1)--(0,1.25) node[above]{$y$};
+    \fill[blue!15]
+        plot[domain=0:1,samples=25](\x,{\x*\x})
+        -- plot[domain=1:0,samples=2](\x,\x) -- cycle;
+    \draw[blue!70!black,thick] (0,0)--(1.15,1.15)
+        node[right,font=\small]{$y=x$};
+    \draw[blue!70!black,thick]
+        plot[domain=0:1.1,samples=30](\x,{\x*\x})
+        node[right,font=\small]{$y=x^2$};
+    \draw[thin] (1,0.02)--(1,-0.02) node[below,font=\small]{$1$};
+    \draw[thin] (0.02,1)--(-0.02,1) node[left,font=\small]{$1$};
+    \draw[red!70!black,thick] (0.6,0.36)--(0.6,0.6);
+    \node[font=\small] at (0.38,0.5){$D$};
+    \node[font=\small] at (0.55,1.18){(a) $dy\,dx$};
+\end{tikzpicture}
+\end{minipage}
+\hfill
+\begin{minipage}{0.46\textwidth}
+\centering
+\begin{tikzpicture}[scale=2.0]
+    \draw[thin,->] (-0.1,0)--(1.3,0) node[right]{$x$};
+    \draw[thin,->] (0,-0.1)--(0,1.25) node[above]{$y$};
+    \fill[red!15]
+        plot[domain=0:1,samples=25](\x,{\x*\x})
+        -- plot[domain=1:0,samples=2](\x,\x) -- cycle;
+    \draw[red!70!black,thick] (0,0)--(1.15,1.15)
+        node[right,font=\small]{$x=y$};
+    \draw[red!70!black,thick]
+        plot[domain=0:1.1,samples=30](\x,{\x*\x})
+        node[right,font=\small]{$x=\!\sqrt{y}$};
+    \draw[thin] (1,0.02)--(1,-0.02) node[below,font=\small]{$1$};
+    \draw[thin] (0.02,1)--(-0.02,1) node[left,font=\small]{$1$};
+    \draw[blue!70!black,thick] (0.5,0.5)--(0.707,0.5);
+    \node[font=\small] at (0.38,0.5){$D$};
+    \node[font=\small] at (0.55,1.18){(b) $dx\,dy$};
+\end{tikzpicture}
+\end{minipage}
+\caption{La misma región $D$ (entre $y=x^2$ e $y=x$) descrita como tipo I
+         $\int_0^1\!\int_{x^2}^{x}dy\,dx$ (a) o tipo II
+         $\int_0^1\!\int_{y}^{\sqrt{y}}dx\,dy$ (b)}
+\label{fig:cambio_orden_integracion}
+\end{figure}
 
 \begin{prob}[Integrales dobles sobre rectángulos]
 Calcule las siguientes integrales dobles:
@@ -330,9 +421,8 @@ D = \{(x,y): 0\le y\le 1,\; y\le x\le \sqrt{y}\}.
 \end{myproof}
 \end{prob}
 
-\section{Área, volumen, centro de masa y momentos de inercia}
+\section{Volumen bajo una superficie y áreas de regiones planas}
 
-\subsection{Volumen bajo una superficie y área de una región plana}
 
 Recordemos que si \(f(x,y)\ge 0\) es continua sobre una región \(D\subset\mathbb R^2\), el volumen del sólido comprendido entre la superficie \(z=f(x,y)\) y el plano \(xy\) (sobre \(D\)) es
 \[
@@ -344,7 +434,7 @@ Si \(f(x,y)=1\) sobre \(D\), entonces el volumen es numéricamente igual al áre
 \]
 Esta observación permite calcular áreas de regiones planas mediante una integral doble, aunque en la práctica suele ser más eficiente usar integrales simples.
 
-\subsection{Masa y centro de masa de una lámina plana}
+\section{Masa y centro de masa de una lámina plana}
 
 Consideremos una lámina delgada que ocupa la región \(D\) del plano, con densidad superficial de masa \(\rho(x,y)\) (masa por unidad de área). Si la densidad es variable, la masa total se obtiene sumando (integrando) la masa de cada elemento infinitesimal de área \(dA\):
 \[
@@ -365,7 +455,25 @@ El centro de masa \((\bar{x},\bar{y})\) viene dado por
 El momento \(M_y\) mide la tendencia de la lámina a girar alrededor del eje \(y\); por eso multiplicamos la densidad por la distancia \(x\) al eje. Análogamente, \(M_x\) mide el giro alrededor del eje \(x\). El centro de masa es el punto donde se concentraría toda la masa para producir los mismos momentos.
 \end{rem}
 
-\subsection{Momentos de inercia}
+\begin{prob}
+Determine el centro de masa de la lámina de densidad $\delta(x,y)=y+1$ sobre el rectángulo $[0,4]\times[0,3]$.
+\begin{myproof} 
+Observe que 
+\begin{align*}
+M_{x}&=\int_{0}^{4}\int_{0}^{3}y\left(y+1\right)\ dydx,\\
+&=\int_{0}^{3}\left(y^2+y\right)\ dy  = \dfrac{y^3}{3}+\dfrac{y^2}{2}\Big|_{0}^{3}=\dfrac{27}{2}.\\
+&=\int_{0}^{3}\dfrac{27}{2}\ dx  = \dfrac{27x}{2}\Big|_{0}^{4}=54.
+\end{align*}
+\begin{align*}
+M_{y}&=\int_{0}^{3}\int_{0}^{4}x\left(y+1\right)\ dxdy,\\
+&=\int_{0}^{4}\left(xy+x\right)\ dx  = \dfrac{yx^2}{2}+\dfrac{x^2}{2}\Big|_{0}^{4}=8y+8.\\
+&=\int_{0}^{3}\left( 8y+8 \right)\ dy  = \dfrac{8y^2}{2}+8y\Big|_{0}^{3}=60.
+\end{align*}
+Lo cual implica que el centro de masa está en el punto $\left( \overline{x},\overline{y} \right)=\left(  \dfrac{M_y}{m},\dfrac{M_x}{m} \right)=\left(  \dfrac{60}{30},\dfrac{54}{30} \right)=\left(  2,\dfrac{9}{5} \right).$
+\end{myproof}
+\end{prob}
+
+\section{Momentos de inercia}
 
 El momento de inercia de una lámina respecto a un eje mide su resistencia a cambiar su velocidad angular alrededor de ese eje. Para una lámina con densidad \(\rho(x,y)\):
 \[
@@ -386,8 +494,6 @@ I_0 = \iint_D (x^2+y^2)\rho(x,y)\,dA = I_x + I_y.
     \item \textbf{Interpretar los resultados.} Calcular el centro de masa \((\bar{x},\bar{y})\) a partir de los momentos, y dar los momentos de inercia con sus unidades.
 \end{enumerate}
 \end{pasos}
-
-\subsection{Ejemplos}
 
 \begin{example}[Volumen bajo un paraboloide sobre un rectángulo]
 Calcule el volumen del sólido bajo el paraboloide \(z=4-x^2-y^2\) y sobre el rectángulo \(D=[0,1]\times[0,1]\).
@@ -529,6 +635,112 @@ Así,
 \end{myproof}
 \end{example}
 
+\begin{prob}
+Determine la masa de la lámina acotada por las curvas $x=0,\ x=4,\ y=0,\ y=3,$ cuya densidad está dada por la función $\rho(x,y)=y+1.$
+\begin{myproof} 
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=0.8]
+  \draw[->] (-1.9,0) -- (6,0) node[right] {$x$};
+  \draw[->] (0,-2.6) -- (0,4.4) node[above] {$y$};
+  \fill[gray!20] (0,0) rectangle (4,3);
+  \draw[thick, dashed] (0,0) rectangle (4,3);
+  \fill (4,0) circle (2.5pt); \fill (0,3) circle (2.5pt);
+  \fill (4,3) circle (2.5pt); \fill (0,0) circle (2.5pt);
+  \foreach \x in {1,2,3,4} \draw (\x,2pt) -- (\x,-2pt) node[below] {\small$\x$};
+  \foreach \y in {1,2,3} \draw (2pt,\y) -- (-2pt,\y) node[left] {\small$\y$};
+\end{tikzpicture}
+\end{figure}	 
+La placa está representada por la figura punteada. La integral de masa está definida por $$m=\int_{0}^{4}\int_{0}^{3}\left( y+1 \right)\ dydx.$$
+Resolviendo la integral:
+$\displaystyle\int_{0}^{3}y+1\ dy=\dfrac{y^2}{2}+y\Big|_{0}^{3}=\dfrac{3^2}{2}+3-0=\dfrac{15}{2}.$
+$\displaystyle\int_{0}^{4}\dfrac{15}{2}\ dx=\dfrac{15x}{2}+y\Big|_{0}^{4}=\dfrac{15(4)}{2}-0=30.$ Por lo cual la masa de la lámina es $m=30.$	
+\end{myproof}
+\end{prob}
+
+\begin{prob}
+Halle la masa $m$ y el centro de masa para la lámina acotada por $y=e^x,y=0,x=0,x=1$ cuya densidad está dada por la función $\rho (x,y)=2-x+y.$
+\begin{myproof}
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=0.9]
+  \fill[gray!20] (0,0) -- plot[domain=0:1, samples=50] (\x,{exp(\x)}) -- (1,0) -- cycle;
+  \draw[thick] plot[domain=-0.2:1.6, samples=60] (\x,{exp(\x)});
+  \draw[->] (-1.5,0) -- (4.5,0) node[right] {$x$};
+  \draw[->] (0,-1.7) -- (0,4.4) node[above] {$y$};
+  \fill[darkgray] (1,{exp(1)}) circle (2.5pt);
+  \node[right, font=\small] at (1.1,{exp(1)}) {$(1,e)$};
+  \draw (1,2pt) -- (1,-2pt) node[below] {\small$1$};
+  \foreach \y in {1,2,3} \draw (2pt,\y) -- (-2pt,\y) node[left] {\small$\y$};
+\end{tikzpicture}
+\end{figure}
+La placa está representada por la figura rayada.  La integral de masa está definida por $$m=\int_{0}^{1}\int_{0}^{e^x}\left( 2-x+y\right)\ dydx.$$
+Resolviendo la integral:
+$\displaystyle\int_{0}^{e^x}(2-x+y)\ dy=2y-xy+\dfrac{y^2}{2}\Big|_{0}^{e^x}=2e^x-xe^x+\dfrac{e^{2x}}{2}.$
+\begin{align*}
+&\displaystyle\int_{0}^{1}\left( 2e^x-xe^x+\dfrac{e^{2x}}{2} \right)\ dx\\
+=&\displaystyle\int_{0}^{1}2e^{x}\ dx  - \displaystyle\int_{0}^{1}xe^{x}\ dx+\displaystyle\int_{0}^{1} \dfrac{e^{2x}}{2}\ dx\\ &=\left[2e^x-(x-1)e^x+\dfrac{e^{2x}}{4}\right]\Big|_{0}^{1} \\ 
+& =\dfrac{e^2+8e-13}{4}.
+\end{align*}
+Por lo cual, $m=\dfrac{e^2+8e-13}{4}.$ 
+\textbf{Nota:} La integral $\displaystyle\int xe^{x}dx=(x-1)e^x+C$ se obtiene haciendo integración por partes.
+Ahora, observe que 
+\begin{align*}
+M_{x}&=\int_{0}^{1}\int_{0}^{e^x}y\left(2-x+y\right)\ dydx,\\
+&=\int_{0}^{e^x}\left(2y-xy+y^2\right)\ dy  \\ &=\dfrac{2y^2}{2}-\dfrac{xy^2}{2}+\dfrac{y^3}{3}\Big|_{0}^{e^x}\\&=e^{2x}-xe^{2x}+\dfrac{e^{3x}}{3}.\\
+&=\int_{0}^{1} \left( e^{2x}-xe^{2x}+\dfrac{e^{3x}}{3} \right) \ dx  \\
+&= \dfrac{e^{2x}}{2}-\dfrac{1}{4}e^{2x}\left( 2x-1 \right)+\dfrac{e^{3x}}{9}\Big|_{0}^{1}\\
+&=\dfrac{8e^3+27e^2-53}{72}.
+\end{align*}
+\textbf{Nota:} La integral $\displaystyle\int xe^{2x}dx=\dfrac{1}{4}e^{2x}(2x-1)+C$ se obtiene haciendo integración por partes.
+\begin{align*}
+M_{y}&=\int_{0}^{1}\int_{0}^{e^x}x\left(2-x+y\right)\ dydx,\\
+&=\int_{0}^{e^x}\left(2x-x^2+xy\right)\ dy  \\ &=2xy-x^2y+\dfrac{xy^2}{2}\Big|_{0}^{e^x}\\&=2xe^{x}-x^2e^{x}+\dfrac{xe^{2x}}{2}.\\
+&=\int_{0}^{1} \left( 2xe^{x}-x^2e^{x}+\dfrac{xe^{2x}}{2} \right) \ dx  \\
+&=2(x-1)e^{x}-(x^2-2x+2)e^x+ \dfrac{1}{8}\left( 2x-1 \right)e^{2x}\Big|_{0}^{1}\\
+&=\dfrac{e^2-8e+33}{8}.
+\end{align*}
+\textbf{Nota:} La integral $\displaystyle\int x^2e^{x}dx=(x^2-2x+2)e^x+C$ se obtiene haciendo integración por partes.
+Lo cual implica que el centro de masa está en el punto $$\left( \overline{x},\overline{y} \right)=\left(  \dfrac{M_y}{m},\dfrac{M_x}{m} \right)=\left(  \dfrac{ \dfrac{e^2-8e+33}{8}  }{ \dfrac{e^2+8e-13}{4} },\dfrac{  \dfrac{8e^3+27e^2-53}{72}}{\dfrac{e^2+8e-13}{4}} \right)\approx\left( 0.577  , 1.058 \right).$$
+\end{myproof}
+\end{prob}
+
+\begin{prob}
+Verifique que los momentos de inercia de una lámina rectangular, con ancho $b$, altura $h$ y densidad $\rho(x,y)=1$ están dados por $I_x=\dfrac{1}{3}bh^3$ e $I_y=\dfrac{1}{3}b^3h.$ Calcule $\overline{\overline{x}}$ e $\overline{\overline{y}}.$ Vea la figura.
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=0.8]
+  \draw[->] (-1.3,0) -- (6.3,0) node[right] {$x$};
+  \draw[->] (0,-1.7) -- (0,4.6) node[above] {$y$};
+  \fill[gray!20] (0,0) rectangle (4,3);
+  \draw[thick] (0,0) rectangle (4,3);
+  \node[below, font=\small] at (4,-0.5) {$b$};
+  \node[right, font=\small] at (4.3,3) {$h$};
+\end{tikzpicture}
+\end{figure}
+\begin{myproof}
+Observe que la masa de la lámina está dada por $$m=\int_{0}^{h}\int_{0}^{b}1\ dydx$$
+Calculando la integral,
+\begin{align*}
+\int_{0}^{b}dx&=x\Big|_{0}^{b}=b\\
+&=\int_{0}^{h}b\ dy=by\Big|_{0}^{h}=bh.
+\end{align*}
+Las integrales de los momentos de inercia resultan en $I_{x}=\displaystyle\int_{0}^{h}\int_{0}^{b} y^2\ dxdy$ y $I_{y}=\displaystyle\int_{0}^{h}\int_{0}^{b} x^2\ dxdy.$
+Calculando las integrales:
+ \begin{align*}
+ I_x&=\int_{0}^{b}y^2\ dx=y^2x\Big|_{0}^{b}=y^2b,\\
+ &=\int_{0}^{h}y^2b\ dy=b\dfrac{y^3}{3}\Big|_{0}^{h}=\dfrac{bh^3}{3}.
+ \end{align*}
+ \begin{align*}
+ I_y=&\int_{0}^{b}x^2\ dx=\dfrac{x^3}{3}\Big|_{0}^{b}=\dfrac{b^3}{3},\\
+ &=\int_{0}^{h}\dfrac{b^3}{3}\ dy=y\dfrac{b^3}{3}\Big|_{0}^{h}=\dfrac{hb^3}{3}.
+ \end{align*}
+Finalmente, el radio de giro en $X$ está dado por $\overline{\overline{x}}=\sqrt{\dfrac{\dfrac{b^3h}{3}}{bh}}=\sqrt{\dfrac{b^2}{3}}$
+  y el radio de giro en $Y,$ $\overline{\overline{y}}=\sqrt{\dfrac{\dfrac{h^3b}{3}}{bh}}=\sqrt{\dfrac{h^2}{3}}.$	
+\end{myproof}
+\end{prob}
+
+
 \section{Integrales dobles en coordenadas polares}
 
 Cuando la región de integración o la función presentan simetría circular, es conveniente usar coordenadas polares. Recordemos la relación:
@@ -561,8 +773,6 @@ Entonces la integral doble se convierte en
     \item \textbf{Integrar.} Primero en \(r\), luego en \(\theta\).
 \end{enumerate}
 \end{pasos}
-
-\subsection{Ejemplos}
 
 \begin{example}[Integral sobre un disco]
 Calcule \(\displaystyle \iint_D (x^2+y^2)\,dA\), donde \(D\) es el disco \(x^2+y^2\le 1\).
@@ -648,8 +858,6 @@ Por tanto, \(\boxed{A(S)=\frac{\pi}{6}(5\sqrt5-1)}\).
 \begin{rem}
 Observe que si \(f\) es constante, \(f_x=f_y=0\), la fórmula da \(\iint_D 1\,dA\), que es el área de \(D\). Esto coincide con el hecho de que la superficie es un plano horizontal y su área es la misma que la de su proyección.
 \end{rem}
-
-\section{Problemas propuestos}
 
 \begin{prob}[Volumen]
 Calcule el volumen del sólido limitado por el plano \(z=2x+3y+1\), el cilindro \(x^2+y^2=1\) y los planos \(x=0\), \(y=0\), \(z=0\) (en el primer octante). (Sugerencia: use coordenadas polares.)
@@ -900,7 +1108,255 @@ M_y=\frac{7\pi}{4}.
 \end{myproof}
 \end{prob}
 
-\section*{Problemas propuestos}
+\section{Cambio de variables en integrales dobles}
+\label{sec:cambio-var-dobles}
+% ============================================================
+
+En muchas integrales dobles la región o el integrando sugieren un cambio
+de variables que simplifica el cálculo. El instrumento que mide cómo se
+transforma el elemento de área es el \textbf{jacobiano}.
+
+\begin{definition}[Transformación y jacobiano en $\mathbb{R}^2$]
+Sea $T\colon R^*\subset\mathbb{R}^2\to\mathbb{R}^2$ la transformación
+$T(u,v)=(x(u,v),\,y(u,v))$ de clase $\mathcal{C}^1$. El
+\textbf{jacobiano} de $T$ en $(u,v)$ es el determinante
+\[
+\frac{\partial(x,y)}{\partial(u,v)}
+= \det\begin{pmatrix}
+    \dfrac{\partial x}{\partial u} & \dfrac{\partial x}{\partial v} \\[6pt]
+    \dfrac{\partial y}{\partial u} & \dfrac{\partial y}{\partial v}
+  \end{pmatrix}
+= \frac{\partial x}{\partial u}\,\frac{\partial y}{\partial v}
+  - \frac{\partial x}{\partial v}\,\frac{\partial y}{\partial u}.
+\]
+Geométricamente, $\left|\dfrac{\partial(x,y)}{\partial(u,v)}\right|$ es
+el factor de escala local de áreas bajo $T$.
+\end{definition}
+
+\begin{figure}[H]
+\centering
+\begin{minipage}{0.42\textwidth}
+\centering
+\begin{tikzpicture}[scale=1.5]
+    \draw[thin,->] (-0.2,0) -- (1.6,0) node[right] {$u$};
+    \draw[thin,->] (0,-0.2) -- (0,1.6) node[above] {$v$};
+    \fill[blue!15] (0,0) rectangle (1,1);
+    \draw[thick, blue!70!black] (0,0) rectangle (1,1);
+    \node[blue!70!black] at (0.5,0.5) {\small $R^*$};
+    \draw[thin] (1,0.05)--(1,-0.05) node[below] {\small $1$};
+    \draw[thin] (0.05,1)--(-0.05,1) node[left] {\small $1$};
+\end{tikzpicture}
+\end{minipage}
+\hfill
+\begin{minipage}{0.10\textwidth}
+\centering
+$\xrightarrow{\;T\;}$\\[4pt]
+{\small $|J|$}
+\end{minipage}
+\hfill
+\begin{minipage}{0.42\textwidth}
+\centering
+\begin{tikzpicture}[scale=1.5]
+    \draw[thin,->] (-0.2,0) -- (1.8,0) node[right] {$x$};
+    \draw[thin,->] (0,-0.2) -- (0,1.6) node[above] {$y$};
+    \fill[red!15]
+        (0,0)--(1.2,0.3)--(1.4,1.0)--(0.2,0.7)--cycle;
+    \draw[thick, red!70!black]
+        (0,0)--(1.2,0.3)--(1.4,1.0)--(0.2,0.7)--cycle;
+    \node[red!70!black] at (0.7,0.5) {\small $R$};
+    \node[anchor=south] at (0.7,1.1) {\small área $=|J|$};
+\end{tikzpicture}
+\end{minipage}
+\caption{El jacobiano $|J|$ es el factor de escala de área: el cuadrado
+         $R^*=[0,1]^2$ en $(u,v)$ se transforma en la región $R$
+         de área $|J|$ en $(x,y)$}
+\label{fig:jacobiano_2x2}
+\end{figure}
+
+\begin{theorem}[Cambio de variables en integrales dobles]
+Sea $T(u,v)=(x(u,v),y(u,v))$ una transformación $\mathcal{C}^1$
+inyectiva (excepto posiblemente en la frontera) que lleva $R^*$ en
+el plano $(u,v)$ a $R$ en el plano $(x,y)$. Si $f$ es continua en
+$R$, entonces
+\[
+\iint_R f(x,y)\,dA
+= \iint_{R^*} f\bigl(x(u,v),y(u,v)\bigr)
+  \left|\frac{\partial(x,y)}{\partial(u,v)}\right|\,du\,dv.
+\]
+\end{theorem}
+
+\begin{rem}
+El jacobiano puede anularse en un conjunto de área nula (p.ej., el
+origen en coordenadas polares) sin invalidar el teorema.
+\end{rem}
+
+\begin{example}[Coordenadas polares como caso del Jacobiano]
+Calcular $\displaystyle\iint_R e^{x^2+y^2}\,dA$ donde $R$ es el disco
+$x^2+y^2\le 4$.
+\begin{myproof}
+\textbf{Paso 1. Transformación.}
+$x=r\cos\theta$, $\;y=r\sen\theta$.
+
+\textbf{Paso 2. Jacobiano.}
+\[
+\frac{\partial(x,y)}{\partial(r,\theta)}
+= \det\begin{pmatrix}
+    \cos\theta & -r\sen\theta \\
+    \sen\theta &  r\cos\theta
+  \end{pmatrix}
+= r\cos^2\theta + r\sen^2\theta = r.
+\]
+
+\textbf{Paso 3. Nueva región.}
+$x^2+y^2\le4$ se convierte en $0\le r\le2$, $\;0\le\theta\le2\pi$.
+
+\textbf{Paso 4. Integral.}
+\[
+\iint_R e^{x^2+y^2}\,dA
+= \int_0^{2\pi}\!\int_0^2 e^{r^2}\,r\,dr\,d\theta
+= 2\pi\Bigl[\tfrac{1}{2}e^{r^2}\Bigr]_0^2
+= \pi(e^4-1).
+\]
+$\boxed{\displaystyle\iint_R e^{x^2+y^2}\,dA = \pi(e^4-1)}$
+\end{myproof}
+\end{example}
+
+
+\begin{prob}
+Determine la masa de la lámina acotada por la curva $r=2\sen \theta$ cuya densidad está dada por la función $\rho(r,\theta)=r.$
+\begin{myproof}
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=0.9]
+  \draw[->] (-2,0) -- (2.5,0) node[right] {$x$};
+  \draw[->] (0,-1.3) -- (0,3.1) node[above] {$y$};
+  \fill[gray!25] (0,1) circle (1);
+  \draw[thick] (0,1) circle (1);
+  \foreach \x in {-1,1} \draw (\x,2pt) -- (\x,-2pt) node[below] {\small$\x$};
+  \foreach \y in {1,2} \draw (2pt,\y) -- (-2pt,\y) node[left] {\small$\y$};
+\end{tikzpicture}
+\end{figure}	 
+La placa está representada por la figura punteada.  La integral de masa está definida por $$m=\int_{0}^{\pi}\int_{0}^{2\sen \theta}\left( r \right)\ rdrd\theta.$$
+Resolviendo la integral por medio de coordenadas polares:
+$\displaystyle\int_{0}^{2\sen \theta}r^2\ dr=\dfrac{r^3}{3}\Big|_{0}^{2\sen \theta}=\dfrac{\left(  2\sen\theta \right)^{3}}{3}-0=\dfrac{\left(  2\sen\theta \right)^{3}}{3}.$
+\begin{align*}
+\displaystyle\int_{0}^{\pi}\dfrac{8\sen^3 \theta}{3}\ d\theta&=\dfrac{8}{3}\displaystyle\int_{0}^{\pi}\sen^3 \theta\ d\theta=\dfrac{8}{3}\displaystyle\int_{0}^{\pi}\sen^2 \theta \sen \theta\ d\theta \\ 
+ & =\dfrac{8}{3}\displaystyle\int_{0}^{\pi}\left( 1-\cos^2\theta \right)  \sen \theta\ d\theta=\dfrac{8}{3}\displaystyle\int_{0}^{\pi}\sen \theta\ d\theta -\dfrac{8}{3}\displaystyle\int_{0}^{\pi}\cos^2\theta  \sen \theta\ d\theta  \\ 
+ &=\dfrac{-8}{3}\cos\theta \Big|_{0}^{\pi}-I.\\
+\end{align*}
+Resolviendo la integral $I,$ Tome $\omega=\cos \theta ,$ por lo cual $d\omega =\sen \theta\ d\theta.$ 
+Esto implica que, $I=\dfrac{8}{3}\displaystyle\int \cos^2\theta  \sen \theta\ d\theta=\dfrac{8}{3}\int \omega^{2}\ d\omega=\dfrac{8}{3}\dfrac{\omega^3}{3}+C.$
+Llevando este resultado a la solución del problema, $$m=\dfrac{-8}{3}\cos\theta \Big|_{0}^{\pi}-\dfrac{\cos ^3\theta}{9}\Big|_{0}^{\pi}=\dfrac{8}{3}\left[-\cos \pi +\cos 0\right]-\dfrac{8}{9}\left[\cos^3 \pi +\cos^3 0\right]=\dfrac{32}{9}. $$
+Por lo cual la masa de la lámina es $m=\dfrac{32}{9}.$ 
+\end{myproof}
+\end{prob}
+
+
+
+
+\section{Problemas propuestos}
+
+
+\begin{prob}
+Considere la región triangular $S$ con vértices $(0,0),$ $(3,0),$ y $(3,6).$ Haga una gráfica de la región descrita y calcule el valor de la integral $\displaystyle\iint_{S}8\ dA.$
+\end{prob}
+
+
+\begin{prob}
+Considere el sólido acotado por la superficie $z=16-x^2-y^2$ y los planos de coordenadas $x=0,$ $y=0$ y $z=0.$
+\begin{enumerate}[(a)]     
+    \item Plantee una integral doble que permita calcular el volumen del sólido propuesto.
+    \item Resuelva la integral que planteó en el ítem anterior. Si hace algún cambio de variable, exprese claramente la definición de los nuevos límites de integración. Muestre explícitamente cada uno de los cálculos realizados en la solución de la integral.
+\end{enumerate}    
+\end{prob}
+
+\begin{prob}
+Determine el volumen del tetraedro acotado por los planos de coordenadas y el plano $2x+y+z=2.$
+\end{prob}
+
+\begin{prob}
+Considere la región $R$ (ver figura \ref{fig1.1}), la cual está limitada por las curvas $y=x+5,$ $y=-x^2-4x-1,$ $y=x-1,$ $y=5x^2-10x+5.$ Plantee la integral doble que permite calcular el área encerrada por estas curvas y determine el valor de esta área.
+\begin{figure}[H]\centering
+\begin{tikzpicture}[scale=0.8]
+  \draw[->] (-5,0) -- (4.3,0) node[right] {$x$};
+  \draw[->] (0,-2) -- (0,5.9) node[above] {$y$};
+  \foreach \gx in {-4,-3,-2,-1,1,2,3,4} \draw[lightgray, dashed, thin] (\gx,-2) -- (\gx,5.9);
+  \foreach \gy in {-1,1,2,3,4,5} \draw[lightgray, dashed, thin] (-5,\gy) -- (4.3,\gy);
+  \fill[red!20]
+    plot[domain=-2:0, samples=30] (\x,{-\x*\x-4*\x-1})
+    -- (0,5)
+    -- plot[domain=0:-2, samples=30] (\x,{\x+5})
+    -- cycle;
+  \fill[red!20]
+    plot[domain=0:1, samples=20] (\x,{\x-1})
+    -- plot[domain=1:0, samples=20] (\x,{5*\x*\x-10*\x+5})
+    -- (0,-1)
+    -- cycle;
+  \draw[thick, red] plot[domain=-3.5:0.5, samples=80] (\x,{-\x*\x-4*\x-1});
+  \draw[thick, red] plot[domain=-3:1, samples=60] (\x,{\x+5});
+  \draw[thick, red] plot[domain=-0.1:1.5, samples=60] (\x,{5*\x*\x-10*\x+5});
+  \draw[thick, red] plot[domain=-0.5:1.5, samples=40] (\x,{\x-1});
+  \node[left, font=\tiny] at (-4.5,1.7) {$y{=}{-}x^2{-}4x{-}1$};
+  \node[right, font=\tiny] at (0.3,4.5) {$y{=}5x^2{-}10x{+}5$};
+  \node[above, font=\tiny] at (-2.5,3.8) {$y{=}x{+}5$};
+  \node[below, font=\tiny] at (0.8,-0.5) {$y{=}x{-}1$};
+  \foreach \x in {-4,-3,-2,-1,1,2,3} \draw (\x,2pt) -- (\x,-2pt) node[below, font=\tiny] {$\x$};
+  \foreach \y in {-1,1,2,3,4,5} \draw (2pt,\y) -- (-2pt,\y) node[left, font=\tiny] {$\y$};
+  \fill (0,5) circle (2.5pt); \fill (1,0) circle (2.5pt);
+  \fill (-2,3) circle (2.5pt); \fill (0,-1) circle (2.5pt);
+\end{tikzpicture}
+\caption{Región del primer ejercicio}\label{fig1.1}
+\end{figure}
+Respuesta: 41/6.
+\end{prob}
+
+
+
+% [Original: líneas 1925-1947 | sin verificar | PSTRICKS - pendiente convertir a tikz]
+\begin{prob}
+Considere la región $R$ (ver la figura), la cual está limitada por las curvas $y=2x+4,$ $y=-2x^2-4x,$ $y=3x,$ $y=-x^2+4.$ 
+\begin{enumerate}[(a)]
+\item Plantee la integral doble que permite calcular el área encerrada por estas curvas. Defina claramente los límites de integración.
+\item Evalúe la integral que obtuvo en el paso anterior. Muestre explícitamente todos los cálculos necesarios para obtener el área.
+\end{enumerate}
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=0.95]
+  \draw[->] (-2.7,0) -- (3.7,0) node[right] {$x$};
+  \draw[->] (0,-1) -- (0,5.1) node[above] {$y$};
+  \foreach \gx in {-2,-1,1,2,3} \draw[lightgray, dashed, thin] (\gx,-1) -- (\gx,5.1);
+  \foreach \gy in {1,2,3,4} \draw[lightgray, dashed, thin] (-2.7,\gy) -- (3.7,\gy);
+  \fill[gray!25]
+    plot[domain=-1:0, samples=20] (\x,{2*\x+4})
+    -- (0,0)
+    -- plot[domain=0:-1, samples=20] (\x,{-2*\x*\x-4*\x})
+    -- cycle;
+  \fill[gray!25]
+    plot[domain=0:1, samples=20] (\x,{3*\x})
+    -- plot[domain=1:0, samples=20] (\x,{-\x*\x+4})
+    -- (0,0)
+    -- cycle;
+  \draw[thick] plot[domain=-2:0.2, samples=60] (\x,{2*\x+4});
+  \draw[thick] plot[domain=-2.5:0.2, samples=60] (\x,{-2*\x*\x-4*\x});
+  \draw[thick] plot[domain=-0.5:2.5, samples=60] (\x,{-\x*\x+4});
+  \draw[thick] plot[domain=-0.5:1.5, samples=30] (\x,{3*\x});
+  \node[left, font=\small] at (-1.9,3.5) {$f{=}2x{+}4$};
+  \node[left, font=\small] at (-2.5,1.2) {$g{=}{-}2x^2{-}4x$};
+  \node[right, font=\small] at (0.6,4.5) {$h{=}{-}x^2{+}4$};
+  \node[right, font=\small] at (0.8,1.6) {$p{=}3x$};
+  \foreach \x in {-2,-1,1,2,3} \draw (\x,2pt) -- (\x,-2pt) node[below, font=\tiny] {$\x$};
+  \foreach \y in {1,2,3,4} \draw (2pt,\y) -- (-2pt,\y) node[left, font=\tiny] {$\y$};
+\end{tikzpicture}
+\caption{Figura para el problema 1.}
+\end{figure}
+\end{prob}
+
+\begin{prob}
+Determine si la siguiente afirmación es falsa o verdadera. Justifique su respuesta convenientemente, respuesta sin justificar no vale.
+\begin{center}     
+{\fboxrule=.3pt \fboxsep=3pt\fbox{ Si $R$ es la región del plano determinada por el círculo $x^2+y^2=9$, entonces $\displaystyle\int\int_{R}\ 5\ dA= 90\pi .$ }}        
+\end{center} 
+\end{prob}
 
 % ---- Directos (1–5) ----
 
@@ -986,3 +1442,121 @@ Una lámina ocupa el triángulo $D$: $x\geq 0$, $y\geq 0$, $x+y\leq 1$, con dens
 \begin{prob}
 Evalúe $\displaystyle\iint_D e^{x^2+y^2}\,dA$ donde $D$ es el anillo $1\leq x^2+y^2\leq 4$, usando coordenadas polares.
 \end{prob}
+
+\begin{prob}
+Considere la región $R$ limitada por las curvas $x^2+y^2=9$ y  $(x - 3)^{2} + y^{2} = 9.$ Use coordenadas polares para calcular la integral $\displaystyle\int\int_{R}  \left(x^2+y^2\right)\ dA$.
+\end{prob}
+
+% [Original: líneas 1522-1524 | sin verificar | sin figura]
+\begin{prob}
+Considere la región $R$ limitada por las curvas $x^2+y^2=4$ y  $(x - 4)^{2} + y^{2} = 16.$ Use coordenadas polares para calcular la integral $\displaystyle\int\int_{R}    \left(x^2+y^2\right)\ dA $.
+\end{prob}
+
+% [Original: líneas 1592-1594 | sin verificar | sin figura]
+\begin{prob}
+Considere la región $R$ limitada por las curvas $x^2+y^2=25$ y  $(x - 5)^{2} + y^{2} = 25.$ Use coordenadas polares para calcular la integral $\displaystyle\int\int_{R}   \left(x^2+y^2\right) \  dA$.
+\end{prob}
+
+% [Original: líneas 1894-1896 | sin verificar | sin figura]
+\begin{prob}
+Determine la masa y el centro de masa para la lámina acotada por las curvas $r=1,$ $r=2,$ $\theta=0,$ $\theta=\pi,$ $0\leq \theta \leq \pi$ cuya densidad es $\delta(r,\theta)=\dfrac{1}{r}$. Sugerencia: use integración en coordenadas polares.
+\end{prob}
+
+% [Original: líneas 2177-2179 | sin verificar | sin figura | 2 variante(s) de parámetro (se descartaron 1)]
+\begin{prob}
+Calcule el volumen del sólido $Q$ limitado por las superficies $z=\dfrac{y}{x^2+9},$ $x^2+y^2=9$ cuando $x\geq 0$ y $y\geq 0.$ Sugerencia: Use un CAS para observar el sólido y calcule la integral usando coordenadas polares.
+\end{prob}
+
+% [Original: líneas 2243-2245 | sin verificar | sin figura]
+\begin{prob}
+Calcule el volumen del sólido $Q$ limitado por las superficies $z=\dfrac{y}{x^2+16},$ $x^2+y^2=16$ cuando $x\geq 0$ y $y\geq 0.$ Sugerencia: Use un CAS para observar el sólido y calcule la integral usando coordenadas polares.
+\end{prob}
+
+\begin{prob}
+Considere la región $R$ (ver figura \ref{fig1.2}), la cual está limitada por las curvas $y=-x+6,$ $x^2+y^2=9$ y  $(x - 3)^{2} + y^{2} = 9.$ Use coordenadas polares para calcular la integral $\displaystyle\int\int_{R}  \dfrac{dA}{\sqrt{\left(x^2+y^2\right)^3}}$.
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=0.7]
+  \draw[->] (-2,0) -- (8,0) node[right] {$x$};
+  \draw[->] (0,-2.4) -- (0,5) node[above] {$y$};
+  \draw[thick, red] (3,0) arc[start angle=0, end angle=60, radius=3];
+  \draw[thick, blue] (3,3) arc[start angle=90, end angle=120, radius=3];
+  \draw[thick, red!40!black] (3,0) -- (6,0);
+  \draw[thick, green!60!black] (6,0) -- (3,3);
+  \node[red, right, font=\small] at (0.4,1.7) {$x^2{+}y^2{=}9$};
+  \node[blue, above, font=\small] at (0.3,4.2) {$(x{-}3)^2{+}y^2{=}9$};
+  \node[green!60!black, right, font=\small] at (4.2,2.6) {$y{=}{-}x{+}6$};
+  \node[below, font=\small] at (4.5,0) {$y{=}0$};
+  \fill[red] (3,0) circle (3pt);
+  \fill[red] (1.5,2.598) circle (3pt);
+  \fill[red] (3,3) circle (3pt);
+  \fill[red] (6,0) circle (3pt);
+  \foreach \x in {2,4,6} \draw (\x,2pt) -- (\x,-2pt) node[below] {\tiny$\x$};
+  \foreach \y in {2,4} \draw (2pt,\y) -- (-2pt,\y) node[left] {\tiny$\y$};
+\end{tikzpicture}
+\caption{Región del segundo ejercicio}\label{fig1.2}
+\end{figure}
+\end{prob}
+
+% [Original: líneas 2295-2321 | sin verificar | PSTRICKS - pendiente convertir a tikz]
+\begin{prob}
+Considere la región $R$ (ver figura \ref{fig3.2}), la cual está limitada por las curvas $y=-x+10,$ $x^2+y^2=25$ y  $(x - 5)^{2} + y^{2} = 25.$ Use coordenadas polares para calcular la integral $\displaystyle\int\int_{R}  \dfrac{dA}{\sqrt{\left(x^2+y^2\right)^3}}$.
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=0.42]
+  \draw[->] (-1,0) -- (12,0) node[right] {$x$};
+  \draw[->] (0,-1.8) -- (0,7) node[above] {$y$};
+  \draw[thick, red] (5,0) arc[start angle=0, end angle=60, radius=5];
+  \draw[thick, blue] (5,5) arc[start angle=90, end angle=120, radius=5];
+  \draw[thick, red!40!black] (5,0) -- (10,0);
+  \draw[thick, green!60!black] (10,0) -- (5,5);
+  \node[red, right, font=\small] at (0.5,3.2) {$x^2{+}y^2{=}25$};
+  \node[blue, above, font=\small] at (0.2,5.5) {$(x{-}5)^2{+}y^2{=}25$};
+  \node[green!60!black, right, font=\small] at (7.5,3.2) {$y{=}{-}x{+}10$};
+  \node[below, font=\small] at (7.5,0) {$y{=}0$};
+  \fill[red] (5,0) circle (4pt);
+  \fill[red] (2.5,4.33) circle (4pt);
+  \fill[red] (10,0) circle (4pt);
+  \fill[darkgray] (5,5) circle (4pt);
+  \foreach \x in {2,4,6,8,10} \draw (\x,2pt) -- (\x,-2pt) node[below] {\tiny$\x$};
+  \foreach \y in {2,4,6} \draw (2pt,\y) -- (-2pt,\y) node[left] {\tiny$\y$};
+\end{tikzpicture}
+\caption{Región del segundo ejercicio}\label{fig3.2}
+\end{figure}
+\end{prob}
+
+\begin{prob}
+Determine la masa de la lámina acotada por las curvas $y=0$ y $y=\sqrt{25-x^2}$ cuya densidad está dada por la función $\delta(x,y)=y.$ Haga un bosquejo de la lámina.
+\end{prob}
+
+\begin{prob}
+Una lámina cuya densidad está determinada por la función $\rho(x,y)=5x+2y+1$ tiene la forma de una región triangular cuyos vértices son los puntos $(0,0),$ $(3,3)$ y $(3,0).$ De acuerdo a la información dada:
+\begin{enumerate}[(a)] 
+\item Realice la gráfica de la lámina.
+\item Use integrales dobles para determinar la masa de la lámina. Exprese claramente los límites de integración correspondientes y la solución de la integral.
+\item Use integrales dobles para determinar el centro de masa de la lámina. Exprese claramente los límites de integración correspondientes y la solución de la integral.
+\end{enumerate}
+\end{prob}
+
+% [Original: líneas 1735-1742 | sin verificar | sin figura]
+\begin{prob}
+Una lámina cuya densidad está determinada por la función $\rho(x,y)=5x+1$ tiene la forma de una región triangular cuyos vértices son los puntos $(0,0),$ $(9,9)$ y $(9,0).$ De acuerdo a la información dada:
+\begin{enumerate}[(a)] 
+\item Realice la gráfica de la lámina.
+\item Use integrales dobles para determinar la masa de la lámina. Exprese claramente los límites de integración correspondientes y la solución de la integral.
+\item Use integrales dobles para determinar el centro de masa de la lámina. Exprese claramente los límites de integración correspondientes y la solución de la integral.
+\end{enumerate}
+\end{prob}
+
+
+% [Original: líneas 1779-1786 | sin verificar | sin figura]
+\begin{prob}
+Una lámina cuya densidad está determinada por la función $\rho(x,y)=5y+3$ tiene la forma de una región triangular cuyos vértices son los puntos $(0,0),$ $(8,8)$ y $(8,0).$ De acuerdo a la información dada:
+\begin{enumerate}[(a)] 
+\item Realice la gráfica de la lámina.
+\item Use integrales dobles para determinar la masa de la lámina. Exprese claramente los límites de integración correspondientes y la solución de la integral.
+\item Use integrales dobles para determinar el centro de masa de la lámina. Exprese claramente los límites de integración correspondientes y la solución de la integral.
+\end{enumerate}
+\end{prob}
+
+

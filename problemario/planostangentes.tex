@@ -8,7 +8,7 @@
 % SECCIÓN 1.4: DERIVADAS PARCIALES DE PRIMER ORDEN Y ORDEN SUPERIOR
 % ============================================================
 
-\section{Derivadas parciales de primer orden y orden superior}
+\section{Derivadas parciales}
 
 La derivada de una función de una variable mide la tasa de cambio
 instantánea cuando la variable independiente varía. Para una función
@@ -43,18 +43,63 @@ cociente, cadena, etc.) se aplican normalmente, tratando a la otra
 variable como constante.
 \end{rem}
 
+% ------------------------------------------------------------
+% INTERPRETACIÓN GEOMÉTRICA
+% ------------------------------------------------------------
+
+Las derivadas parciales tienen una interpretación geométrica clara.
+Dada la superficie $z=f(x,y)$, consideremos el plano $y=y_0$, que
+corta a la superficie en una curva $C$. La derivada parcial
+$f_x(x_0,y_0)$ es la pendiente de la recta tangente a esa curva en
+el punto $(x_0,y_0,f(x_0,y_0))$. Análogamente, $f_y(x_0,y_0)$ es la
+pendiente de la recta tangente a la curva obtenida al cortar con el
+plano $x=x_0$.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.2, x={(0.7cm,0.3cm)}, y={(-0.2cm,0.8cm)}, z={(0cm,0cm)}]
+    % Ejes
+    \draw[->] (0,0,0) -- (3.5,0,0) node[right] {$x$};
+    \draw[->] (0,0,0) -- (0,3.5,0) node[left] {$y$};
+    \draw[->] (0,0,0) -- (0,0,3.5) node[above] {$z$};
+    % Superficie aproximada z = 4 - x^2 - y^2
+    \draw[fill=blue!15, opacity=0.6] plot[domain=0:2.5] (\x,0,{4-\x*\x}) -- (2.5,2.5,{4-2.5*2.5-2.5*2.5}) -- (0,2.5,{4-2.5*2.5}) -- cycle;
+    \draw[fill=blue!15, opacity=0.6] plot[domain=0:2.5] (0,\x,{4-\x*\x}) -- (2.5,2.5,{4-2.5*2.5-2.5*2.5}) -- (2.5,0,{4-2.5*2.5}) -- cycle;
+    % Plano y = y0
+    \draw[red, dashed] (0,1.5,0) -- (3,1.5,0);
+    \draw[red, dashed] (0,1.5,0) -- (0,1.5,3);
+    % Curva en el plano y=y0
+    \draw[red, thick] plot[domain=0:2.2] (\x,1.5,{4-\x*\x-2.25});
+    % Plano x = x0
+    \draw[blue, dashed] (1.5,0,0) -- (1.5,3,0);
+    \draw[blue, dashed] (1.5,0,0) -- (1.5,0,3);
+    % Curva en el plano x=x0
+    \draw[blue, thick] plot[domain=0:2.2] (1.5,\x,{4-2.25-\x*\x});
+    % Punto
+    \filldraw[black] (1.5,1.5,{4-2.25-2.25}) circle (2pt);
+    % Etiquetas
+    \node at (2.5,1.5,{4-2.25-6.25}) {$y=y_0$};
+    \node at (1.5,2.5,{4-6.25-2.25}) {$x=x_0$};
+\end{tikzpicture}
+\caption{Interpretación geométrica de las derivadas parciales como
+pendientes de tangentes a curvas de intersección con planos
+coordenados.}
+\end{figure}
+
 \begin{example}[Derivadas parciales por definición]
 Calcular las primeras derivadas parciales de $f(x,y)=x^2 y^3$ usando
 la definición.
 \begin{myproof}
 \textbf{Paso 1. Derivada parcial con respecto a $x$.}
-\[
-f_x(x,y) = \lim_{h\to 0} \frac{(x+h)^2 y^3 - x^2 y^3}{h}
-= \lim_{h\to 0} \frac{(x^2+2xh+h^2)y^3 - x^2 y^3}{h}
-= \lim_{h\to 0} \frac{2xhy^3 + h^2 y^3}{h}
-= \lim_{h\to 0} (2xy^3 + h y^3)
+\begin{align*}
+f_x(x,y) = \lim_{h\to 0} \frac{(x+h)^2 y^3 - x^2 y^3}{h}\\
+&= \lim_{h\to 0} \frac{(x^2+2xh+h^2)y^3 - x^2 y^3}{h}
+= \lim_{h\to 0} \frac{2xhy^3 + h^2 y^3}{h}\\
+&= \lim_{h\to 0} (2xy^3 + h y^3)
 = 2xy^3.
-\]
+\end{align*}
+
+
 
 \textbf{Paso 2. Derivada parcial con respecto a $y$.}
 \[
@@ -130,49 +175,6 @@ f_y = \frac{2y}{x^2+y^2}}
 \]
 \end{myproof}
 \end{example}
-
-% ------------------------------------------------------------
-% INTERPRETACIÓN GEOMÉTRICA
-% ------------------------------------------------------------
-
-Las derivadas parciales tienen una interpretación geométrica clara.
-Dada la superficie $z=f(x,y)$, consideremos el plano $y=y_0$, que
-corta a la superficie en una curva $C$. La derivada parcial
-$f_x(x_0,y_0)$ es la pendiente de la recta tangente a esa curva en
-el punto $(x_0,y_0,f(x_0,y_0))$. Análogamente, $f_y(x_0,y_0)$ es la
-pendiente de la recta tangente a la curva obtenida al cortar con el
-plano $x=x_0$.
-
-\begin{figure}[H]
-\centering
-\begin{tikzpicture}[scale=1.2, x={(0.7cm,0.3cm)}, y={(-0.2cm,0.8cm)}, z={(0cm,0cm)}]
-    % Ejes
-    \draw[->] (0,0,0) -- (3.5,0,0) node[right] {$x$};
-    \draw[->] (0,0,0) -- (0,3.5,0) node[left] {$y$};
-    \draw[->] (0,0,0) -- (0,0,3.5) node[above] {$z$};
-    % Superficie aproximada z = 4 - x^2 - y^2
-    \draw[fill=blue!15, opacity=0.6] plot[domain=0:2.5] (\x,0,{4-\x*\x}) -- (2.5,2.5,{4-2.5*2.5-2.5*2.5}) -- (0,2.5,{4-2.5*2.5}) -- cycle;
-    \draw[fill=blue!15, opacity=0.6] plot[domain=0:2.5] (0,\x,{4-\x*\x}) -- (2.5,2.5,{4-2.5*2.5-2.5*2.5}) -- (2.5,0,{4-2.5*2.5}) -- cycle;
-    % Plano y = y0
-    \draw[red, dashed] (0,1.5,0) -- (3,1.5,0);
-    \draw[red, dashed] (0,1.5,0) -- (0,1.5,3);
-    % Curva en el plano y=y0
-    \draw[red, thick] plot[domain=0:2.2] (\x,1.5,{4-\x*\x-2.25});
-    % Plano x = x0
-    \draw[blue, dashed] (1.5,0,0) -- (1.5,3,0);
-    \draw[blue, dashed] (1.5,0,0) -- (1.5,0,3);
-    % Curva en el plano x=x0
-    \draw[blue, thick] plot[domain=0:2.2] (1.5,\x,{4-2.25-\x*\x});
-    % Punto
-    \filldraw[black] (1.5,1.5,{4-2.25-2.25}) circle (2pt);
-    % Etiquetas
-    \node at (2.5,1.5,{4-2.25-6.25}) {$y=y_0$};
-    \node at (1.5,2.5,{4-6.25-2.25}) {$x=x_0$};
-\end{tikzpicture}
-\caption{Interpretación geométrica de las derivadas parciales como
-pendientes de tangentes a curvas de intersección con planos
-coordenados.}
-\end{figure}
 
 % ------------------------------------------------------------
 % DERIVADAS PARCIALES DE ORDEN SUPERIOR
@@ -364,86 +366,6 @@ $\boxed{f_x=ye^{xy}\sin z,\; f_y=xe^{xy}\sin z,\; f_z=e^{xy}\cos z}$
 \end{myproof}
 \end{example}
 
-% ------------------------------------------------------------
-% IMPORTANCIA DE LAS DERIVADAS PARCIALES
-% ------------------------------------------------------------
-
-Las derivadas parciales son el primer paso para entender el
-comportamiento local de funciones de varias variables. Permiten:
-\begin{itemize}
-    \item Calcular planos tangentes y aproximaciones lineales.
-    \item Estudiar la variación de una función cuando todas las
-    variables cambian simultáneamente (a través del gradiente).
-    \item Formular ecuaciones diferenciales parciales, que modelan
-    fenómenos como la difusión del calor, el flujo de fluidos o la
-    propagación de ondas.
-\end{itemize}
-
-\begin{rem}
-El Teorema de Clairaut es una herramienta práctica que simplifica el
-cálculo: si las derivadas cruzadas son continuas, el orden de
-derivación no importa. Esto es especialmente útil cuando una de las
-derivadas es mucho más fácil de calcular que la otra.
-\end{rem}
-
-% ============================================================
-% CONCLUSIÓN
-% ============================================================
-
-En esta lección hemos extendido los conceptos fundamentales de
-límite, continuidad y derivada al contexto de funciones de varias
-variables. La noción de límite adquiere una complejidad nueva: la
-existencia del límite exige que el valor límite sea independiente de
-la trayectoria de aproximación. La continuidad preserva la idea de
-que la gráfica no presenta saltos, y las derivadas parciales permiten
-medir cómo cambia la función cuando se varía una variable a la vez.
-
-Estas herramientas son la base para los temas que siguen: el plano
-tangente y la aproximación lineal, la regla de la cadena, el
-gradiente y las derivadas direccionales, y finalmente la optimización
-de funciones de varias variables.
-
-% ============================================================
-% PROBLEMAS PROPUESTOS
-% ============================================================
-
-
-\section*{Problemas: derivadas parciales}
-
-
-\begin{prob}
-Calcule las primeras derivadas parciales de las siguientes funciones:
-\begin{multicols}{2}
-\begin{enumerate}
-    \item $f(x,y)=x^3-3x^2 y+2y^3$
-    \item $f(x,y)=e^{x^2+y^2}$
-    \item $f(x,y)=\ln(x^2+y^2+1)$
-    \item $f(x,y)=\arctan(y/x)$
-    \item $f(x,y)=\sin(x^2 y)$
-    \item $f(x,y)=x^y$ ($x>0$)
-    \item $f(x,y,z)=x^2 y z^3$
-    \item $f(x,y,z)=\ln(x^2+y^2+z^2)$
-\end{enumerate}
-\end{multicols}
-\end{prob}
-
-\begin{prob}
-Calcule todas las derivadas parciales de segundo orden de:
-\begin{multicols}{2}
-\begin{enumerate}
-    \item $f(x,y)=x^3 y^2$
-    \item $f(x,y)=e^x\cos y$
-    \item $f(x,y)=\ln(x^2+y^2)$
-    \item $f(x,y)=\sin(x+y)$
-\end{enumerate}
-\end{multicols}
-\end{prob}
-
-\begin{prob}
-Verifique el Teorema de Clairaut para $f(x,y)=x^2 e^{xy}$ calculando
-$f_{xy}$ y $f_{yx}$.
-\end{prob}
-
 \begin{prob}
 Calcule $f_{xy}$, $f_{yz}$ y $f_{zx}$ para $f(x,y,z)=x y^2 z^3$.
 \begin{myproof}
@@ -561,38 +483,40 @@ u_{xx}+u_{yy}
 \end{myproof}
 \end{prob}
 
-\begin{prob}
-Determine si cada afirmación es verdadera o falsa. Justifique.
-\begin{enumerate}
-    \item Si $\lim_{(x,y)\to(a,b)} f(x,y)$ existe, entonces existe un
-    disco abierto centrado en $(a,b)$ donde $f$ está definida.
-    \item Si $\lim_{(x,y)\to(a,b)} f(x,y)=L$, entonces
-    $\lim_{x\to a} f(x,b)=L$.
-    \item Si todos los límites a lo largo de rectas que pasan por
-    $(a,b)$ existen y son iguales, entonces el límite existe.
-    \item Si $f$ es continua en $(a,b)$, entonces $f_x$ y $f_y$ existen
-    en $(a,b)$.
-    \item Si $f_x$ y $f_y$ existen en $(a,b)$, entonces $f$ es continua
-    en $(a,b)$.
-    \item Si $f_{xy}=f_{yx}$ en todo punto, entonces $f$ es continua.
-\end{enumerate}
-\end{prob}
+% ------------------------------------------------------------
+% IMPORTANCIA DE LAS DERIVADAS PARCIALES
+% ------------------------------------------------------------
 
-\begin{prob}
-Encuentre los valores de $a$ y $b$ para que la función
-\[
-f(x,y)=
-\begin{cases}
-\dfrac{x^a y^b}{x^2+y^2}, & (x,y)\neq(0,0),\\
-0, & (x,y)=(0,0)
-\end{cases}
-\]
-sea continua en $(0,0)$.
-\end{prob}
+Las derivadas parciales son el primer paso para entender el
+comportamiento local de funciones de varias variables. Permiten:
+\begin{itemize}
+    \item Calcular planos tangentes y aproximaciones lineales.
+    \item Estudiar la variación de una función cuando todas las
+    variables cambian simultáneamente (a través del gradiente).
+    \item Formular ecuaciones diferenciales parciales, que modelan
+    fenómenos como la difusión del calor, el flujo de fluidos o la
+    propagación de ondas.
+\end{itemize}
 
-\section{Plano tangente, aproximación lineal y diferenciales}
+\begin{rem}
+El Teorema de Clairaut es una herramienta práctica que simplifica el
+cálculo: si las derivadas cruzadas son continuas, el orden de
+derivación no importa. Esto es especialmente útil cuando una de las
+derivadas es mucho más fácil de calcular que la otra.
+\end{rem}
 
-\subsection{Plano tangente}
+% ============================================================
+% CONCLUSIÓN
+% ============================================================
+
+En esta sección hemos extendido los conceptos fundamentales de límite, continuidad y derivada al contexto de funciones de varias variables. La noción de límite adquiere una complejidad nueva: la existencia del límite exige que el valor límite sea independiente de la trayectoria de aproximación. La continuidad preserva la idea de que la gráfica no presenta saltos, y las derivadas parciales permiten medir cómo cambia la función cuando se varía una variable a la vez.
+
+Estas herramientas son la base para los temas que siguen: el plano
+tangente y la aproximación lineal, la regla de la cadena, el
+gradiente y las derivadas direccionales, y finalmente la optimización
+de funciones de varias variables.
+
+\section{Plano tangente}
 
 Recordemos que, para una función de una variable $y=f(x)$, la recta tangente en $x_0$ es la mejor aproximación lineal a la curva cerca de ese punto. Su ecuación es
 \[
@@ -601,7 +525,47 @@ y = f(x_0) + f'(x_0)(x-x_0).
 
 Para una función de dos variables $z=f(x,y)$, cuya gráfica es una superficie en $\mathbb{R}^3$, el análogo a la recta tangente es el \textbf{plano tangente}. Este plano es la mejor aproximación lineal a la superficie en un punto $(x_0, y_0, z_0)$.
 
-\begin{pasos}[Protocolo para hallar el plano tangente a una superficie $z=f(x,y)$ en un punto $(x_0, y_0, f(x_0, y_0))$]
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    view={40}{25},
+    xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+    axis lines=center,
+    tick style={thin},
+    zmin=0, zmax=5,
+    xtick={-2,-1,1,2}, ytick={-2,-1,1,2}, ztick={1,2,3,4},
+    width=9cm, height=9cm,
+]
+    % Paraboloide z = x² + y²
+    \addplot3[
+        surf, shader=flat corner,
+        samples=20, domain=-1.8:1.8,
+        opacity=0.75, colormap/cool,
+    ] {x^2 + y^2};
+    % Punto de tangencia (1, 0, 1)
+    \addplot3[only marks, mark=*, mark size=2.5pt, red!70!black]
+        coordinates {(1,0,1)};
+    % Plano tangente z - 1 = 2(x-1) + 0*(y-0)  →  z = 2x - 1
+    % Sobre el dominio local [0.2,1.8]×[-0.9,0.9]
+    \addplot3[
+        surf, shader=flat,
+        samples=4, domain=0.2:1.8, y domain=-0.9:0.9,
+        opacity=0.55, colormap/hot,
+    ] {2*x - 1};
+    % Vector normal ∇F = (−2x,−2y,1) en (1,0,1) → (−2,0,1)/√5, ×0.7
+    \draw[->, thick, red!70!black]
+        (axis cs:1,0,1) -- (axis cs:0.374,0,1.313);
+    \node[above right] at (axis cs:0.374,0,1.313)
+        {\small $\mathbf{n}$};
+\end{axis}
+\end{tikzpicture}
+\caption{Plano tangente (naranja) a $z=x^2+y^2$ en $(1,0,1)$
+         con vector normal $\mathbf{n}$ perpendicular al plano}
+\label{fig:plano_tangente_3d}
+\end{figure}
+
+\begin{pasos}[Protocolo para hallar el plano tangente a una superficie] Sea $z=f(x,y)$ una superficie y $P=(x_0, y_0, f(x_0, y_0))$ un punto sobre ella, estos pasos permiten calcular el plano tangente a $z$ en $P.$
 \begin{enumerate}
     \item \textbf{Calcular las derivadas parciales}: Evaluar las derivadas parciales de primer orden en el punto $(x_0, y_0)$: $f_x(x_0, y_0)$ y $f_y(x_0, y_0)$.
     \item \textbf{Construir la ecuación}: Sustituir estos valores en la fórmula del plano tangente:
@@ -641,11 +605,78 @@ Por lo tanto, el plano tangente es $\boxed{z = 4x + 2y - 3}$.
 \end{myproof}
 \end{example}
 
+\begin{prob}
+Calcule el plano tangente a la superficie $z = x^2 y^3$ en el punto $(1, 2)$.
+\begin{myproof}
+Sea $f(x,y)=x^2y^3$.
+
+\textbf{Paso 1. Derivadas parciales.}
+\[
+f_x(x,y)=2xy^3,\qquad f_y(x,y)=3x^2y^2.
+\]
+Evaluando en $(1,2)$:
+\[
+f_x(1,2)=2(1)(8)=16,\quad f_y(1,2)=3(1)(4)=12,\quad f(1,2)=1\cdot 8=8.
+\]
+
+\textbf{Paso 2. Ecuación del plano tangente.}
+\[
+z-8=16(x-1)+12(y-2).
+\]
+
+\textbf{Paso 3. Simplificar.}
+\[
+\boxed{z=16x+12y-20}
+\]
+\end{myproof}
+\end{prob}
+
 \begin{rem}
 El plano tangente contiene las rectas tangentes a las curvas de intersección de la superficie con los planos verticales $x = x_0$ e $y = y_0$. Específicamente, $f_x(x_0, y_0)$ y $f_y(x_0, y_0)$ son las pendientes de estas rectas tangentes en las direcciones de los ejes $x$ e $y$, respectivamente.
 \end{rem}
 
-\subsection{Aproximación lineal y linealización}
+\begin{prob}
+Demuestre que el elipsoide $3x^2+2y^2+z^2=9$ y la esfera $x^2+y^2+z^2-8x-6y-8z+24=0$ son tangentes entre sí en el punto $(1,1,2)$. (Esto quiere decir que tienen un plano tangente común en ese punto.)
+\begin{myproof}
+Sea $F(x,y,z)=3x^2+2y^2+z^2-9,$ entonces $$\nabla F=6x{\bf i}+4y{\bf j}+2z{\bf k}$$ es su vector gradiente. Como el plano tangente es igual a $$\nabla F \cdot \left\langle x-x_0,y-y_0,z-z_0\right\rangle=0,$$ entonces el plano tangente tiene ecuación
+$$ 0=6x_0(x-x_0)+4y_0(y-y_0)+2z_0(z-z_0).$$  
+Si $(x_0,y_0,z_0)=(1,1,2)$ la ecuación del plano tangente al elipsoide en este punto es 
+\begin{align*}
+0&=6(1)(x-1)+4(y-1)+4(z-2)\\
+0&=6(x-1)+4(y-1)+4(z-2).
+\end{align*}
+Análogamente, sea $G(x,y,z)=x^2+y^2+z^2-8x-6y-8z+24,$ entonces $$\nabla G=(2x-8){\bf i}+(2y-6){\bf j}+(2z-8){\bf k}$$ es su vector gradiente. Como el plano tangente es igual a $$\nabla G \cdot \left\langle x-x_0,y-y_0,z-z_0\right\rangle=0,$$ entonces el plano tangente tiene ecuación
+$$ 0=(2x_0-8)(x-x_0)+(2y_0-6)(y-y_0)+(2z_0-8)(z-z_0).$$  
+Si $(x_0,y_0,z_0)=(1,1,2)$ la ecuación del plano tangente a la esfera en este punto es 
+\begin{align*}
+0&=(2(1)-8)(x-1)+(2(1)-6)(y-1)+(2(2)-8)(z-2)\\
+0&=-6(x-1)-4(y-1)-4(z-2).
+\end{align*}
+Finalmente observe que los vectores normales a cada plano tangente son paralelos, por lo tanto, son el mismo plano tangente y así se cumple que las superficies son tangentes entre sí en el punto $(1,1,2).$
+\end{myproof}
+\end{prob}
+
+% [Original: líneas 715-723 | solución completa | sin figura]
+\begin{prob}
+Determine el punto del paraboloide $y=x^2+z^2$ donde el plano tangente es paralelo al plano $x+2y+3z=1.$
+\begin{myproof}
+Sea $F(x,y,z)=x^2+z^2-y,$ entonces $y=x^2+z^2$ es una superficie de nivel de $F.$ Note que $\nabla F=\left\langle 2x,-1,2z \right\rangle$ es normal a la superficie, por lo tanto, es normal al plano tangente. Como el plano tangente es paralelo al plano $x+2y+3z=1$ entonces los vectores normales de cada plano deben ser paralelos. Así, $\left\langle 2x,-1,2z \right\rangle=k\left\langle 1,2,3 \right\rangle.$
+Despejando, $2x=k,$ $-1=2k$ y $2z=3k,$ lo cual implica que $k=\dfrac{-1}{2}.$ 
+Si $(x_0,y_0,z_0)$ es un punto en el paraboloide debe cumplir que $$\left\langle 2x_0,-1,2z_0 \right\rangle=\left\langle -1/2,-1,-3/2 \right\rangle.$$
+Finalmente, si $x_0=-1/4$ y $z_0=-3/4$ al despejar $y_0$ de la ecuación queda $$y_0=\left( \frac{-1}{4} \right)^2+\left( \frac{-3}{4} \right)^2=\frac{5}{8}.$$ El punto es $\left( \dfrac{-1}{4},\dfrac{5}{8},\dfrac{-3}{4} \right).$
+\end{myproof}
+\end{prob}
+
+% [Original: líneas 876-882 | solución completa | sin figura]
+\begin{prob}
+Halle los puntos del hiperboloide $x^2-y^2-z^2=1$ donde el plano tangente es paralelo al plano $z = x + y.$
+\begin{myproof}
+Sea $F(x,y,z)=x^2-y^2-z^2-1,$ entonces $$\nabla F=2x{\bf i}-2y{\bf j}-2z{\bf k}$$ es su vector gradiente. Como el plano tangente es paralelo al plano $x+y-z=0,$ sus vectores normales deben ser paralelos y así $ \left\langle 2x_0,-2y_0,-2z_0\right\rangle =k \left\langle 1,1,-1\right\rangle. $ Lo cual es equivalente a $$ \left\langle x_0,-y_0,-z_0\right\rangle =k \left\langle 1,1,-1\right\rangle. $$
+Esto implica que  $x_0=k$, $y_0=-k$ y $z_0=k.$ Reemplazando en la ecuación del hiperboloide $k^2-(-k)^2-k^2=1,$ lo cual implica que $k^2=-1$ lo cual es imposible. Así, no existe tal punto sobre el hiperboloide.
+\end{myproof}
+\end{prob}
+
+\section{Aproximación lineal y linealización}
 
 Así como la recta tangente se usa para aproximar la función de una variable cerca del punto de tangencia, el plano tangente se usa para aproximar la función de dos variables cerca del punto de tangencia.
 
@@ -693,7 +724,35 @@ El valor real es $\sqrt{3.1^2 + 3.9^2} \approx \sqrt{9.61 + 15.21} = \sqrt{24.82
 \end{myproof}
 \end{example}
 
-\subsection{Diferenciales}
+\begin{prob}
+Encuentre la linealización de la función $f(x, y) = \ln(1 + x + 2y)$ en el punto $(0, 0)$ y úsela para aproximar $f(0.1, -0.02)$.
+\begin{myproof}
+\textbf{Paso 1. Valor y derivadas en $(0,0)$.}
+\[
+f(0,0)=\ln 1=0.
+\]
+\[
+f_x(x,y)=\frac{1}{1+x+2y}\implies f_x(0,0)=1;\qquad
+f_y(x,y)=\frac{2}{1+x+2y}\implies f_y(0,0)=2.
+\]
+
+\textbf{Paso 2. Linealización.}
+\[
+L(x,y)=0+1\cdot x+2\cdot y=x+2y.
+\]
+
+\textbf{Paso 3. Aproximación.}
+\[
+f(0.1,-0.02)\approx L(0.1,-0.02)=0.1+2(-0.02)=0.06.
+\]
+Valor real: $\ln(1.06)\approx 0.0583$. La aproximación es muy precisa cerca del origen.
+\[
+\boxed{L(x,y)=x+2y,\quad f(0.1,-0.02)\approx 0.06}
+\]
+\end{myproof}
+\end{prob}
+
+\section{Diferenciales}
 
 \begin{definition}[Diferencial total]
 Para una función de dos variables $z = f(x, y)$, los diferenciales $dx$ y $dy$ son variables independientes. El \textbf{diferencial total} $dz$ (o $df$) se define como
@@ -702,6 +761,52 @@ dz = f_x(x, y)\,dx + f_y(x, y)\,dy = \frac{\partial z}{\partial x}\,dx + \frac{\
 \]
 Este diferencial representa el cambio en la \emph{linealización} $L(x,y)$ cuando las variables independientes cambian en $dx$ y $dy$. Si $dx = \Delta x$ y $dy = \Delta y$ son pequeños, entonces $\Delta z \approx dz$.
 \end{definition}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.2]
+    \draw[thin,->] (-0.3,0) -- (3.2,0) node[right] {$x$};
+    \draw[thin,->] (0,-0.3) -- (0,3.2) node[above] {$z$};
+    % Curva z = x² (sección de la superficie en y=y0)
+    \draw[thick, blue!70!black, domain=0.4:2.6, samples=50, smooth, variable=\t]
+        plot ({\t}, {\t*\t/2.2});
+    \node[anchor=west, blue!70!black] at (2.6,3.1) {\small $z=f(x,y_0)$};
+    % Punto (x0, z0)
+    \pgfmathsetmacro{\xo}{1.5}
+    \pgfmathsetmacro{\zo}{1.5*1.5/2.2}
+    \filldraw[red!70!black] (\xo,\zo) circle (1.5pt)
+        node[anchor=north east] {\small $(x_0,z_0)$};
+    % Plano tangente (recta tangente en 2D)
+    % Pendiente: (d/dx)(x²/2.2) = 2x/2.2 = x/1.1; en x=1.5: m=1.5/1.1≈1.364
+    \pgfmathsetmacro{\m}{1.5/1.1}
+    \draw[thick, red!70!black]
+        ({1.5-0.8},{\zo - \m*0.8}) -- ({1.5+0.8},{\zo + \m*0.8});
+    \node[anchor=south west, red!70!black] at ({1.5+0.5},{\zo+\m*0.5})
+        {\small plano tangente};
+    % Δx
+    \pgfmathsetmacro{\dx}{0.7}
+    \draw[thin, <->] (\xo, \zo-0.18) -- (\xo+\dx, \zo-0.18)
+        node[midway, below] {\small $\Delta x$};
+    % Δz (cambio real en la curva)
+    \pgfmathsetmacro{\znew}{(\xo+\dx)*(\xo+\dx)/2.2}
+    \draw[thin, blue!50!black]
+        (\xo+\dx, \zo) -- (\xo+\dx, \znew);
+    \node[anchor=west, blue!50!black] at (\xo+\dx+0.05, {(\zo+\znew)/2})
+        {\small $\Delta z$};
+    % dz (cambio en el plano tangente)
+    \pgfmathsetmacro{\dz}{\m*\dx}
+    \draw[thin, red!50!black]
+        (\xo+\dx, \zo) -- (\xo+\dx, \zo+\dz);
+    \node[anchor=east, red!50!black] at (\xo+\dx-0.05, {\zo+\dz/2})
+        {\small $dz$};
+    % Separación entre dz y Δz (error)
+    \draw[thin, gray, <->] (\xo+\dx+0.25, \zo+\dz) -- (\xo+\dx+0.25, \znew)
+        node[midway, right] {\small error};
+\end{tikzpicture}
+\caption{Aproximación lineal: $dz$ (plano tangente) aproxima $\Delta z$
+         (cambio real en la superficie) para incrementos pequeños $\Delta x$}
+\label{fig:aprox_lineal_dz}
+\end{figure}
 
 \begin{rem}
 La definición de diferencial se extiende de manera natural a funciones de más variables. Por ejemplo, para $w = f(x, y, z)$,
@@ -757,133 +862,70 @@ La linealización es $\boxed{L(x, y) = x + y}$ y la aproximación es $\boxed{f(1
 \section{Problemas propuestos}
 
 \begin{prob}
-Calcule el plano tangente a la superficie $z = x^2 y^3$ en el punto $(1, 2)$.
-\begin{myproof}
-Sea $f(x,y)=x^2y^3$.
-
-\textbf{Paso 1. Derivadas parciales.}
-\[
-f_x(x,y)=2xy^3,\qquad f_y(x,y)=3x^2y^2.
-\]
-Evaluando en $(1,2)$:
-\[
-f_x(1,2)=2(1)(8)=16,\quad f_y(1,2)=3(1)(4)=12,\quad f(1,2)=1\cdot 8=8.
-\]
-
-\textbf{Paso 2. Ecuación del plano tangente.}
-\[
-z-8=16(x-1)+12(y-2).
-\]
-
-\textbf{Paso 3. Simplificar.}
-\[
-\boxed{z=16x+12y-20}
-\]
-\end{myproof}
+Calcule las primeras derivadas parciales de las siguientes funciones:
+\begin{multicols}{2}
+\begin{enumerate}
+    \item $f(x,y)=x^3-3x^2 y+2y^3$
+    \item $f(x,y)=e^{x^2+y^2}$
+    \item $f(x,y)=\ln(x^2+y^2+1)$
+    \item $f(x,y)=\arctan(y/x)$
+    \item $f(x,y)=\sin(x^2 y)$
+    \item $f(x,y)=x^y$ ($x>0$)
+    \item $f(x,y,z)=x^2 y z^3$
+    \item $f(x,y,z)=\ln(x^2+y^2+z^2)$
+\end{enumerate}
+\end{multicols}
 \end{prob}
 
 \begin{prob}
-Encuentre la linealización de la función $f(x, y) = \ln(1 + x + 2y)$ en el punto $(0, 0)$ y úsela para aproximar $f(0.1, -0.02)$.
-\begin{myproof}
-\textbf{Paso 1. Valor y derivadas en $(0,0)$.}
-\[
-f(0,0)=\ln 1=0.
-\]
-\[
-f_x(x,y)=\frac{1}{1+x+2y}\implies f_x(0,0)=1;\qquad
-f_y(x,y)=\frac{2}{1+x+2y}\implies f_y(0,0)=2.
-\]
-
-\textbf{Paso 2. Linealización.}
-\[
-L(x,y)=0+1\cdot x+2\cdot y=x+2y.
-\]
-
-\textbf{Paso 3. Aproximación.}
-\[
-f(0.1,-0.02)\approx L(0.1,-0.02)=0.1+2(-0.02)=0.06.
-\]
-Valor real: $\ln(1.06)\approx 0.0583$. La aproximación es muy precisa cerca del origen.
-\[
-\boxed{L(x,y)=x+2y,\quad f(0.1,-0.02)\approx 0.06}
-\]
-\end{myproof}
+Calcule todas las derivadas parciales de segundo orden de:
+\begin{multicols}{2}
+\begin{enumerate}
+    \item $f(x,y)=x^3 y^2$
+    \item $f(x,y)=e^x\cos y$
+    \item $f(x,y)=\ln(x^2+y^2)$
+    \item $f(x,y)=\sin(x+y)$
+\end{enumerate}
+\end{multicols}
 \end{prob}
 
-% Cap. 20 — Diferenciación parcial, gradiente y diferenciabilidad
-% 9 problemas unicos: 9 listos para integrar ahora, 0 esperan pasada Claude Code (pstricks)
-% ============================================================
-
-% >>> LISTOS PARA INTEGRAR AHORA <<<
-
-% [Original: líneas 459-478 | solución completa | sin figura]
 \begin{prob}
-Demuestre que el elipsoide $3x^2+2y^2+z^2=9$ y la esfera $x^2+y^2+z^2-8x-6y-8z+24=0$ son tangentes entre sí en el punto $(1,1,2)$. (Esto quiere decir que tienen un plano tangente común en ese punto.)
-\begin{myproof}
-Sea $F(x,y,z)=3x^2+2y^2+z^2-9,$ entonces $$\nabla F=6x{\bf i}+4y{\bf j}+2z{\bf k}$$ es su vector gradiente. Como el plano tangente es igual a $$\nabla F \cdot \left\langle x-x_0,y-y_0,z-z_0\right\rangle=0,$$ entonces el plano tangente tiene ecuación
-$$ 0=6x_0(x-x_0)+4y_0(y-y_0)+2z_0(z-z_0).$$  
-Si $(x_0,y_0,z_0)=(1,1,2)$ la ecuación del plano tangente al elipsoide en este punto es 
-\begin{align*}
-0&=6(1)(x-1)+4(y-1)+4(z-2)\\
-0&=6(x-1)+4(y-1)+4(z-2).
-\end{align*}
-Análogamente, sea $G(x,y,z)=x^2+y^2+z^2-8x-6y-8z+24,$ entonces $$\nabla G=(2x-8){\bf i}+(2y-6){\bf j}+(2z-8){\bf k}$$ es su vector gradiente. Como el plano tangente es igual a $$\nabla G \cdot \left\langle x-x_0,y-y_0,z-z_0\right\rangle=0,$$ entonces el plano tangente tiene ecuación
-$$ 0=(2x_0-8)(x-x_0)+(2y_0-6)(y-y_0)+(2z_0-8)(z-z_0).$$  
-Si $(x_0,y_0,z_0)=(1,1,2)$ la ecuación del plano tangente a la esfera en este punto es 
-\begin{align*}
-0&=(2(1)-8)(x-1)+(2(1)-6)(y-1)+(2(2)-8)(z-2)\\
-0&=-6(x-1)-4(y-1)-4(z-2).
-\end{align*}
-Finalmente observe que los vectores normales a cada plano tangente son paralelos, por lo tanto, son el mismo plano tangente y así se cumple que las superficies son tangentes entre sí en el punto $(1,1,2).$
-\end{myproof}
+Verifique el Teorema de Clairaut para $f(x,y)=x^2 e^{xy}$ calculando
+$f_{xy}$ y $f_{yx}$.
 \end{prob}
 
-% [Original: líneas 715-723 | solución completa | sin figura]
 \begin{prob}
-Determine el punto del paraboloide $y=x^2+z^2$ donde el plano tangente es paralelo al plano $x+2y+3z=1.$
-\begin{myproof}
-Sea $F(x,y,z)=x^2+z^2-y,$ entonces $y=x^2+z^2$ es una superficie de nivel de $F.$ Note que $\nabla F=\left\langle 2x,-1,2z \right\rangle$ es normal a la superficie, por lo tanto, es normal al plano tangente. Como el plano tangente es paralelo al plano $x+2y+3z=1$ entonces los vectores normales de cada plano deben ser paralelos. Así, $\left\langle 2x,-1,2z \right\rangle=k\left\langle 1,2,3 \right\rangle.$
-Despejando, $2x=k,$ $-1=2k$ y $2z=3k,$ lo cual implica que $k=\dfrac{-1}{2}.$ 
-Si $(x_0,y_0,z_0)$ es un punto en el paraboloide debe cumplir que $$\left\langle 2x_0,-1,2z_0 \right\rangle=\left\langle -1/2,-1,-3/2 \right\rangle.$$
-Finalmente, si $x_0=-1/4$ y $z_0=-3/4$ al despejar $y_0$ de la ecuación queda $$y_0=\left( \frac{-1}{4} \right)^2+\left( \frac{-3}{4} \right)^2=\frac{5}{8}.$$ El punto es $\left( \dfrac{-1}{4},\dfrac{5}{8},\dfrac{-3}{4} \right).$
-\end{myproof}
+Determine si cada afirmación es verdadera o falsa. Justifique.
+\begin{enumerate}
+    \item Si $f$ es continua en $(a,b)$, entonces $f_x$ y $f_y$ existen
+    en $(a,b)$.
+    \item Si $f_x$ y $f_y$ existen en $(a,b)$, entonces $f$ es continua
+    en $(a,b)$.
+    \item Si $f_{xy}=f_{yx}$ en todo punto, entonces $f$ es continua.
+\end{enumerate}
 \end{prob}
 
-% [Original: líneas 876-882 | solución completa | sin figura]
-\begin{prob}
-Halle los puntos del hiperboloide $x^2-y^2-z^2=1$ donde el plano tangente es paralelo al plano $z = x + y.$
-\begin{myproof}
-Sea $F(x,y,z)=x^2-y^2-z^2-1,$ entonces $$\nabla F=2x{\bf i}-2y{\bf j}-2z{\bf k}$$ es su vector gradiente. Como el plano tangente es paralelo al plano $x+y-z=0,$ sus vectores normales deben ser paralelos y así $ \left\langle 2x_0,-2y_0,-2z_0\right\rangle =k \left\langle 1,1,-1\right\rangle. $ Lo cual es equivalente a $$ \left\langle x_0,-y_0,-z_0\right\rangle =k \left\langle 1,1,-1\right\rangle. $$
-Esto implica que  $x_0=k$, $y_0=-k$ y $z_0=k.$ Reemplazando en la ecuación del hiperboloide $k^2-(-k)^2-k^2=1,$ lo cual implica que $k^2=-1$ lo cual es imposible. Así, no existe tal punto sobre el hiperboloide.
-\end{myproof}
-\end{prob}
-
-% [Original: líneas 929-931 | sin verificar | sin figura | 2 variante(s) de parámetro (se descartaron 1)]
 \begin{prob}
 Encuentre la ecuación del plano tangente a la superficie $xy+yz+zx=7$ en el punto $(-1,3,5).$
 \end{prob}
 
-% [Original: líneas 949-951 | sin verificar | sin figura]
+
 \begin{prob}
 Encuentre la ecuación del plano tangente a la superficie $x^2+2y^2+4z^2=9$ en el punto $(2,1,\sqrt{3}/2).$
 \end{prob}
 
-% [Original: líneas 989-991 | sin verificar | sin figura | 2 variante(s) de parámetro (se descartaron 1)]
 \begin{prob}
 Encuentre la ecuación del plano tangente a la superficie $5x^2-y^2+4z^2=8$ en el punto $(-2,4,1).$
 \end{prob}
 
-% [Original: líneas 1224-1226 | sin verificar | sin figura | 3 variante(s) de parámetro (se descartaron 2)]
 \begin{prob}
 Considere la función $f(x,y)=3x^2y^4-12x^6+2xy^5.$ Calcule $\dfrac{\partial f}{\partial x}$ y $\dfrac{\partial f}{\partial y}$ para verificar que \[  x\left( \dfrac{\partial f}{\partial x} \right)+y\left( \dfrac{\partial f}{\partial y} \right)=6f(x,y).\] 
 \end{prob}
 
-% [Original: líneas 1252-1254 | sin verificar | sin figura]
 \begin{prob}
 Una función de dos variables $f(x,y)$ que satisface la ecuación de Laplace, \[\dfrac{\partial^2f}{\partial x^2}+\dfrac{\partial^2f}{\partial y^2}=0\] se dice que es armónica. Determine si la función $f(x,y)=Ay^3+5x$ es armónica.
 \end{prob}
 
-% [Original: líneas 1408-1410 | sin verificar | sin figura]
 \begin{prob}
 Encuentre la ecuación del plano tangente a la superficie $x^2+2y^2+z^2=4$ en el punto $(1,-1,1).$
 \end{prob}

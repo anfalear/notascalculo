@@ -1,4 +1,4 @@
-﻿% ============================================================
+% ============================================================
 % CAPÍTULO 33: CAMPOS VECTORIALES E INTEGRALES DE LÍNEA
 % ============================================================
 
@@ -24,10 +24,9 @@ entre ellos aparece cuando el campo escalar es una función potencial:
 entonces la integral de línea del campo vectorial gradiente se evalúa
 simplemente como la diferencia de potencial entre los extremos.
 
-\section{Campos Vectoriales: Gradiente y Conservativos}
+\section{Campos Vectoriales}
 
-\subsection*{Definición de Campo Vectorial}
-
+\begin{definition}[Campo vectorial]
 Un \textbf{campo vectorial} en \(\mathbb{R}^3\) es una función
 \(\mathbf{F}: D \subseteq \mathbb{R}^3 \to \mathbb{R}^3\) que asigna a
 cada punto \((x,y,z)\) de su dominio un vector tridimensional. Se
@@ -41,7 +40,7 @@ del campo. En \(\mathbb{R}^2\), un campo vectorial tiene la forma
 \[
 \mathbf{F}(x,y) = M(x,y)\,\mathbf{i} + N(x,y)\,\mathbf{j}.
 \]
-
+\end{definition}
 \begin{rem}
 Los campos vectoriales modelan magnitudes que tienen dirección y
 sentido en cada punto del espacio. Ejemplos físicos incluyen:
@@ -62,8 +61,7 @@ componentes \(M,N,P\) es continua en \(D\). Es \textbf{diferenciable}
 si cada componente tiene derivadas parciales continuas en \(D\).
 \end{definition}
 
-\subsection*{Campo Vectorial Gradiente}
-
+\begin{definition}[Campo vectorial gradiente]
 Dada una función escalar \(f: D \subseteq \mathbb{R}^n \to \mathbb{R}\)
 diferenciable, su \textbf{gradiente} es el campo vectorial definido por
 \[
@@ -77,7 +75,7 @@ y
 + f_z(x,y,z)\,\mathbf{k}
 \quad \text{en } \mathbb{R}^3.
 \]
-
+\end{definition}
 \begin{rem}[Interpretación geométrica del gradiente]
 El vector \(\nabla f(P)\) apunta en la dirección de \textbf{máximo
 crecimiento} de \(f\) en el punto \(P\), y su norma
@@ -86,8 +84,7 @@ Además, \(\nabla f(P)\) es perpendicular a las curvas (o superficies)
 de nivel de \(f\) que pasan por \(P\).
 \end{rem}
 
-\subsection*{Campos Vectoriales Conservativos}
-
+\begin{definition}[Campo vectorial conservativo]
 Un campo vectorial \(\mathbf{F}\) se dice \textbf{conservativo} si
 existe una función escalar \(\Phi\), llamada \textbf{función
 potencial}, tal que
@@ -96,7 +93,7 @@ potencial}, tal que
 \]
 Es decir, un campo conservativo es el gradiente de alguna función
 escalar. En este caso, el campo se denomina \textbf{campo gradiente}.
-
+\end{definition}
 \begin{theorem}[Caracterización de campos conservativos en el plano]
 Sean \(M(x,y)\) y \(N(x,y)\) funciones con derivadas parciales continuas
 en una región abierta \(R\). El campo vectorial
@@ -177,16 +174,12 @@ Verificamos: \(\nabla \Phi = (2xy)\,\mathbf{i} + (x^2+3y^2)\,\mathbf{j}
 \end{myproof}
 \end{example}
 
-\section{Integral de Línea de un Campo Escalar}
+\section{Integral de línea de un campo escalar}
 
-La integral de línea de un campo escalar generaliza la integral
-definida a curvas. En lugar de integrar sobre un intervalo en el eje
-\(x\), se integra sobre una curva \(C\) en el plano o en el espacio,
-acumulando los valores de una función escalar \(f\) a lo largo de la
+La integral de línea de un campo escalar generaliza la integral definida a curvas. En lugar de integrar sobre un intervalo en el eje \(x\), se integra sobre una curva \(C\) en el plano o en el espacio, acumulando los valores de una función escalar \(f\) a lo largo de la
 curva.
 
-\subsection*{Definición mediante suma de Riemann}
-
+\begin{definition}[Integral de línea sobre un campo escalar]
 Sea \(C\) una curva suave en \(\mathbb{R}^2\) parametrizada por
 \(\mathbf{r}(t) = (x(t), y(t))\), con \(a \le t \le b\). Dividimos
 el intervalo \([a,b]\) en \(n\) subintervalos, lo que induce una
@@ -207,7 +200,7 @@ En \(\mathbb{R}^3\), la definición es análoga:
 \int_C f(x,y,z)\,ds = \lim_{n\to\infty}
 \sum_{i=1}^n f(x_i^*, y_i^*, z_i^*) \,\Delta s_i.
 \]
-
+\end{definition}
 \begin{rem}
 La notación \(ds\) representa el \textbf{elemento de longitud de
 arco}. Para una curva parametrizada \(\mathbf{r}(t)\),
@@ -387,82 +380,12 @@ Sumando:
 \end{myproof}
 \end{example}
 
-\section{Problemas propuestos}
+%%==========================================================
+\section{Integral de línea de un campo vectorial}
+%%==========================================================
 
-\begin{prob}[Campos vectoriales conservativos]
-Determine si los siguientes campos son conservativos. En caso
-afirmativo, halle una función potencial.
-\begin{enumerate}[a)]
-  \item \(\mathbf{F}(x,y) = (e^x \cos y)\,\mathbf{i} - (e^x \sin y)\,\mathbf{j}\).
-  \item \(\mathbf{F}(x,y) = (y^2 + 2xy)\,\mathbf{i} + (x^2 + 2xy)\,\mathbf{j}\).
-  \item \(\mathbf{F}(x,y,z) = (yz, xz, xy)\).
-  \item \(\mathbf{F}(x,y) = \left(\dfrac{-y}{x^2+y^2},
-  \dfrac{x}{x^2+y^2}\right)\) en la región \(\mathbb{R}^2 \setminus \{(0,0)\}\).
-\end{enumerate}
-\end{prob}
 
-\begin{prob}[Cálculo de integrales de línea de campo escalar]
-Evalúe las siguientes integrales de línea:
-\begin{enumerate}[a)]
-  \item \(\displaystyle \int_C (2x + 3y)\,ds\), donde \(C\) es el
-  segmento de \((1,2)\) a \((4,6)\).
-  \item \(\displaystyle \int_C (x^2 + y^2 + z^2)\,ds\), donde \(C\) es
-  la curva \(\mathbf{r}(t) = (t, t^2, t^3)\), \(0\le t\le 1\).
-  \item \(\displaystyle \int_C x\,ds\), donde \(C\) es el arco de
-  la parábola \(y = x^2\) desde \((0,0)\) hasta \((2,4)\).
-  \item \(\displaystyle \int_C \sqrt{1 + 4x^2}\,ds\), donde \(C\) es
-  la curva \(y = x^2\), \(0\le x\le 1\). (Observe la relación con
-  la longitud de arco).
-\end{enumerate}
-\end{prob}
-
-\begin{prob}[Aplicación: masa de un alambre]
-Un alambre tiene la forma de la hélice \(\mathbf{r}(t) = (2\cos t,
-2\sin t, t)\), \(0 \le t \le 4\pi\). Su densidad lineal en cada punto
-es \(\rho(x,y,z) = x^2 + y^2 + z^2\). Calcule la masa total del alambre.
-\end{prob}
-
-\begin{prob}[Curvas suaves por partes]
-Calcule \(\displaystyle \int_C (xy)\,ds\), donde \(C\) es la frontera
-del triángulo con vértices \((0,0)\), \((2,0)\), \((0,1)\), recorrida
-en sentido antihorario.
-\end{prob}
-
-\begin{prob}[Análisis conceptual]
-Responda con verdadero o falso. Justifique.
-\begin{enumerate}[a)]
-  \item Si \(\mathbf{F}(x,y) = \nabla f(x,y)\), entonces
-  \(\mathbf{F}\) es conservativo.
-  \item Si \(\partial N/\partial x = \partial M/\partial y\) en
-  \(\mathbb{R}^2\), entonces \(\mathbf{F} = (M,N)\) es
-  automáticamente conservativo.
-  \item La integral de línea de un campo escalar cambia de signo
-  si se recorre la curva en sentido contrario.
-  \item Para una curva \(C\) suave por partes, la integral de línea
-  se calcula como la suma de las integrales en cada tramo suave.
-  \item El campo \(\mathbf{F}(x,y) = (y, -x)\) es conservativo en
-  \(\mathbb{R}^2\).
-\end{enumerate}
-\end{prob}
-
-\begin{prob}[Relación entre gradiente e integral de línea]
-Sea \(f(x,y) = x^2 y + e^x \cos y\). Calcule \(\nabla f\) y evalúe
-\(\displaystyle \int_C \nabla f \cdot d\mathbf{r}\) a lo largo de
-cualquier curva \(C\) que vaya de \((0,0)\) a \((1,\pi/2)\).
-¿Qué propiedad de los campos conservativos se está utilizando?
-\end{prob}
-
-\begin{prob}[Caso especial: integral de longitud de arco]
-Demuestre que si \(f(x,y,z) = 1\), entonces
-\[
-\int_C 1\,ds = \text{longitud de arco de } C.
-\]
-Utilice esta observación para calcular la longitud de la curva
-\(\mathbf{r}(t) = (t, t^2, t^3)\), \(0\le t\le 1\).
-\end{prob}
-
-La integral de línea de un campo escalar, estudiada en la lección anterior,
-permitía calcular la masa de un alambre o el área de una superficie curva,
+La integral de línea de un campo escalar, estudiada en la sección anterior, permitía calcular la masa de un alambre o el área de una superficie curva,
 acumulando una función a lo largo de una trayectoria. Ahora se aborda un
 problema más sutil: la integral de línea de un \emph{campo vectorial}, que
 mide la tendencia del campo a empujar o girar a lo largo de la curva. En
@@ -473,7 +396,7 @@ obstáculo. A diferencia del caso escalar, el resultado de esta integral
 depende críticamente de la orientación de la curva y, en general, del
 camino seguido.
 
-El objetivo de esta lección es doble. Por un lado, se estudian las
+El objetivo de esta sección es doble. Por un lado, se estudian las
 condiciones bajo las cuales la integral de línea de un campo vectorial
 \emph{no depende} del camino, sino únicamente de los puntos inicial y
 final, lo que conduce al \textbf{teorema fundamental de las integrales
@@ -487,9 +410,6 @@ más generales (Stokes, divergencia) que se estudiarán en la lección
 siguiente, y constituye una de las piedras angulares del cálculo
 vectorial.
 
-%%==========================================================
-\section{Integral de línea de un campo vectorial}
-%%==========================================================
 
 La definición de integral de línea de un campo vectorial se construye
 siguiendo el mismo principio de Riemann que ya se ha usado para
@@ -797,3 +717,77 @@ $C$, la diferencia $f(B)-f(A)$ no se altera. Por tanto, la constante
 de integración es irrelevante para el cálculo de la integral de línea.
 \end{rem}
 
+
+\section{Problemas propuestos}
+
+\begin{prob}[Campos vectoriales conservativos]
+Determine si los siguientes campos son conservativos. En caso
+afirmativo, halle una función potencial.
+\begin{enumerate}[a)]
+  \item \(\mathbf{F}(x,y) = (e^x \cos y)\,\mathbf{i} - (e^x \sin y)\,\mathbf{j}\).
+  \item \(\mathbf{F}(x,y) = (y^2 + 2xy)\,\mathbf{i} + (x^2 + 2xy)\,\mathbf{j}\).
+  \item \(\mathbf{F}(x,y,z) = (yz, xz, xy)\).
+  \item \(\mathbf{F}(x,y) = \left(\dfrac{-y}{x^2+y^2},
+  \dfrac{x}{x^2+y^2}\right)\) en la región \(\mathbb{R}^2 \setminus \{(0,0)\}\).
+\end{enumerate}
+\end{prob}
+
+\begin{prob}[Cálculo de integrales de línea de campo escalar]
+Evalúe las siguientes integrales de línea:
+\begin{enumerate}[a)]
+  \item \(\displaystyle \int_C (2x + 3y)\,ds\), donde \(C\) es el
+  segmento de \((1,2)\) a \((4,6)\).
+  \item \(\displaystyle \int_C (x^2 + y^2 + z^2)\,ds\), donde \(C\) es
+  la curva \(\mathbf{r}(t) = (t, t^2, t^3)\), \(0\le t\le 1\).
+  \item \(\displaystyle \int_C x\,ds\), donde \(C\) es el arco de
+  la parábola \(y = x^2\) desde \((0,0)\) hasta \((2,4)\).
+  \item \(\displaystyle \int_C \sqrt{1 + 4x^2}\,ds\), donde \(C\) es
+  la curva \(y = x^2\), \(0\le x\le 1\). (Observe la relación con
+  la longitud de arco).
+\end{enumerate}
+\end{prob}
+
+\begin{prob}[Aplicación: masa de un alambre]
+Un alambre tiene la forma de la hélice \(\mathbf{r}(t) = (2\cos t,
+2\sin t, t)\), \(0 \le t \le 4\pi\). Su densidad lineal en cada punto
+es \(\rho(x,y,z) = x^2 + y^2 + z^2\). Calcule la masa total del alambre.
+\end{prob}
+
+\begin{prob}[Curvas suaves por partes]
+Calcule \(\displaystyle \int_C (xy)\,ds\), donde \(C\) es la frontera
+del triángulo con vértices \((0,0)\), \((2,0)\), \((0,1)\), recorrida
+en sentido antihorario.
+\end{prob}
+
+\begin{prob}[Análisis conceptual]
+Responda con verdadero o falso. Justifique.
+\begin{enumerate}[a)]
+  \item Si \(\mathbf{F}(x,y) = \nabla f(x,y)\), entonces
+  \(\mathbf{F}\) es conservativo.
+  \item Si \(\partial N/\partial x = \partial M/\partial y\) en
+  \(\mathbb{R}^2\), entonces \(\mathbf{F} = (M,N)\) es
+  automáticamente conservativo.
+  \item La integral de línea de un campo escalar cambia de signo
+  si se recorre la curva en sentido contrario.
+  \item Para una curva \(C\) suave por partes, la integral de línea
+  se calcula como la suma de las integrales en cada tramo suave.
+  \item El campo \(\mathbf{F}(x,y) = (y, -x)\) es conservativo en
+  \(\mathbb{R}^2\).
+\end{enumerate}
+\end{prob}
+
+\begin{prob}[Relación entre gradiente e integral de línea]
+Sea \(f(x,y) = x^2 y + e^x \cos y\). Calcule \(\nabla f\) y evalúe
+\(\displaystyle \int_C \nabla f \cdot d\mathbf{r}\) a lo largo de
+cualquier curva \(C\) que vaya de \((0,0)\) a \((1,\pi/2)\).
+¿Qué propiedad de los campos conservativos se está utilizando?
+\end{prob}
+
+\begin{prob}[Caso especial: integral de longitud de arco]
+Demuestre que si \(f(x,y,z) = 1\), entonces
+\[
+\int_C 1\,ds = \text{longitud de arco de } C.
+\]
+Utilice esta observación para calcular la longitud de la curva
+\(\mathbf{r}(t) = (t, t^2, t^3)\), \(0\le t\le 1\).
+\end{prob}

@@ -4,7 +4,7 @@
 
 \chapter{Optimización: extremos libres y con restricciones}
 
-\section{Valores extremos de una función multivariable}
+
 %%==========================================================
 
 La teoría de máximos y mínimos de funciones de una variable se extiende
@@ -13,7 +13,7 @@ rica: los puntos críticos pueden ser máximos, mínimos o puntos de silla,
 una configuración sin análogo en una dimensión.
 
 %%----------------------------------------------------------
-\subsection{Definiciones básicas}
+\section{Definiciones básicas}
 %%----------------------------------------------------------
 
 \begin{definition}[Extremos absolutos y locales]
@@ -61,9 +61,41 @@ que es un punto donde la función crece en una dirección y decrece en
 otra.
 \end{rem}
 
-%%----------------------------------------------------------
-\subsection{Teorema del Valor Extremo}
-%%----------------------------------------------------------
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    view={40}{25},
+    xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+    axis lines=center,
+    tick style={thin},
+    zmin=-2.5, zmax=2.5,
+    xtick={-1,1}, ytick={-1,1}, ztick={-2,-1,1,2},
+    width=9cm, height=9cm,
+]
+    % Silla de montar: z = x² - y²
+    \addplot3[
+        surf, shader=flat corner,
+        samples=20, domain=-1.5:1.5,
+        opacity=0.80, colormap/cool,
+    ] {x^2 - y^2};
+    % Punto crítico en el origen
+    \addplot3[only marks, mark=*, mark size=3pt, red!70!black]
+        coordinates {(0,0,0)};
+    \node[above right] at (axis cs:0,0,0.1) {\small $(0,0,0)$};
+    % Curva de curvatura positiva: y=0, z=x²
+    \addplot3[thick, blue!70!black, domain=-1.3:1.3, samples=30, samples y=0]
+        ({x},{0},{x^2});
+    % Curva de curvatura negativa: x=0, z=-y²
+    \addplot3[thick, red!50!black, domain=-1.3:1.3, samples=30, samples y=0]
+        ({0},{x},{-x^2});
+\end{axis}
+\end{tikzpicture}
+\caption{Punto de silla en el origen de $z=x^2-y^2$: curvatura positiva
+         en dirección $x$ (azul) y negativa en dirección $y$ (rojo)}
+\label{fig:punto_silla}
+\end{figure}
+
 
 El siguiente resultado garantiza la existencia de extremos absolutos para
 funciones continuas sobre conjuntos cerrados y acotados.
@@ -111,7 +143,7 @@ variable.
 \end{rem}
 
 %%----------------------------------------------------------
-\subsection{Criterio de la segunda derivada}
+\section{Criterio de la segunda derivada}
 %%----------------------------------------------------------
 
 El criterio de la segunda derivada para funciones de dos variables
@@ -274,365 +306,6 @@ ni otro.
 \end{rem}
 
 %%==========================================================
-
-\section{Optimización restringida y multiplicadores de Lagrange}
-
-\subsection{Problema motivador: el rectángulo de área máxima}
-
-\begin{prob}[Rectángulo de diagonal fija]
-Determine el área máxima de un rectángulo cuya diagonal mide $d>0$.
-\end{prob}
-
-Colocamos un vértice en el origen y el opuesto en $(x,y)$ con $x,y>0$; la diagonal satisface $\sqrt{x^2+y^2}=d$. El problema es
-
-\[
-\text{Maximizar } f(x,y)=xy \quad \text{sujeta a } g(x,y)=x^2+y^2-d^2=0,\quad x,y>0.
-\]
-
-La pregunta que guía el desarrollo es: ¿cómo hallar el máximo \emph{sin} eliminar una variable? La respuesta la proporciona el método de Lagrange, que se apoya en la relación geométrica entre las curvas de nivel de $f$ y la restricción.
-
-\subsection{Definiciones básicas}
-
-\begin{definition}[Extremo local para funciones de varias variables]
-Sea $f\colon U\subseteq \mathbb{R}^n\to\mathbb{R}$ definida en un abierto $U$. Decimos que $f$ tiene un \textbf{máximo local} en $\mathbf{x}_0\in U$ si existe $\delta>0$ tal que $f(\mathbf{x}_0)\ge f(\mathbf{x})$ para todo $\mathbf{x}\in B(\mathbf{x}_0,\delta)$. Análogamente, $f$ tiene un \textbf{mínimo local} en $\mathbf{x}_0$ si $f(\mathbf{x}_0)\le f(\mathbf{x})$ para todo $\mathbf{x}$ en dicha bola.
-\end{definition}
-
-\begin{definition}[Punto crítico]
-Un punto $\mathbf{x}_0\in U$ se denomina \textbf{punto crítico} (o estacionario) de $f$ si todas sus derivadas parciales existen y se anulan en $\mathbf{x}_0$, esto es, $\nabla f(\mathbf{x}_0)=\mathbf{0}$.
-\end{definition}
-
-\begin{definition}[Punto de silla]
-Un punto crítico $\mathbf{x}_0$ es un \textbf{punto de silla} si no es ni máximo ni mínimo local: en toda bola $B(\mathbf{x}_0,\delta)$ existen puntos $\mathbf{x}$ con $f(\mathbf{x})>f(\mathbf{x}_0)$ y puntos $\mathbf{y}$ con $f(\mathbf{y})<f(\mathbf{x}_0)$.
-\end{definition}
-
-\subsection{Curvas de nivel, regularidad y ortogonalidad del gradiente}
-
-Volvamos al problema del rectángulo. Las curvas de nivel de $f(x,y)=xy$ son hipérbolas $xy=C$, y la restricción $g=0$ es una circunferencia. Si en un punto de la circunferencia se alcanza el máximo de $f$ restringido, la hipérbola que pasa por ese punto debe ser \textbf{tangente} a la circunferencia; de otro modo, moviéndonos ligeramente sobre la circunferencia podríamos aumentar el área. Para justificar esta tangencia necesitamos el concepto de curva regular y el teorema de la función implícita.
-
-\begin{definition}[Curva regular]
-Una \textbf{curva regular} en $\R^2$ es una función diferenciable $\mathbf{r}\colon I\subset\R\to\R^2$, $\mathbf{r}(t)=(x(t),y(t))$, tal que $\mathbf{r}'(t)\neq\mathbf{0}$ para todo $t\in I$.
-\end{definition}
-
-\begin{theorem}[Función implícita]
-Si $g\colon\R^2\to\R$ es de clase $\mathcal C^1$ y $\nabla g(x_0,y_0)\neq\mathbf{0}$ con $g(x_0,y_0)=0$, entonces en un abierto de $(x_0,y_0)$ la ecuación $g(x,y)=0$ define una curva regular (localmente expresable como $y=\varphi(x)$ o $x=\psi(y)$).
-\end{theorem}
-
-En el problema del rectángulo, $\nabla g=(2x,2y)$ se anula únicamente en el origen, que no pertenece a la restricción ($d>0$); por tanto, todos los puntos de la circunferencia son regulares y el teorema de la función implícita garantiza que la restricción es localmente una curva suave.
-
-\begin{prop}[Ortogonalidad del gradiente a las curvas de nivel]
-Sea $f$ diferenciable y sea $\mathbf{r}(t)$ una curva regular contenida en la curva de nivel $f(\mathbf{r}(t))=c$. Entonces $\nabla f(\mathbf{r}(t))$ es perpendicular a $\mathbf{r}'(t)$ para cada $t$.
-\end{prop}
-
-\begin{proof}
-Derivando $f(\mathbf{r}(t))=c$ respecto a $t$ mediante la regla de la cadena:
-\[
-\nabla f(\mathbf{r}(t))\cdot \mathbf{r}'(t)=0.
-\]
-El producto escalar nulo caracteriza la ortogonalidad.
-\end{proof}
-
-En particular, para la restricción $g=0$, el vector $\nabla g$ es perpendicular a la curva $\{g=0\}$ en cada punto regular.
-
-\subsection{Deducción de la condición de Lagrange}
-
-Parametricemos la restricción $g=0$ mediante una curva regular $\mathbf{r}(t)$ y definamos $h(t)=f(\mathbf{r}(t))$. Si en $t_0$ la función $h$ alcanza un extremo local (porque $\mathbf{r}(t_0)$ es extremo de $f$ sobre la restricción), entonces $h'(t_0)=0$, es decir,
-\[
-\nabla f(\mathbf{r}(t_0))\cdot \mathbf{r}'(t_0)=0.
-\]
-Así, $\nabla f$ es perpendicular al vector tangente $\mathbf{r}'(t_0)$. Por la proposición anterior, $\nabla g$ también es perpendicular a $\mathbf{r}'(t_0)$. En $\R^2$, dos vectores perpendiculares a una misma recta son paralelos; por tanto, existe $\lambda\in\R$ tal que
-\[
-\nabla f(\mathbf{r}(t_0)) = \lambda\,\nabla g(\mathbf{r}(t_0)).
-\]
-Este escalar $\lambda$ se denomina \textbf{multiplicador de Lagrange}. La igualdad vectorial equivale a un sistema de $n$ ecuaciones (más la restricción) en $n+1$ incógnitas.
-
-\subsection{Teorema de Lagrange y método}
-
-\begin{theorem}[Multiplicadores de Lagrange, condición necesaria]
-Sean $f$ y $g$ funciones de clase $\mathcal C^1$ en un abierto de $\R^n$. Si $\mathbf{x}_0$ es un extremo local de $f$ restringido a la superficie $g(\mathbf{x})=0$ y $\nabla g(\mathbf{x}_0)\neq \mathbf{0}$, entonces existe un escalar $\lambda$ tal que
-\[
-\nabla f(\mathbf{x}_0) = \lambda\,\nabla g(\mathbf{x}_0).
-\]
-Equivalentemente, definiendo la \textbf{función de Lagrange}
-\[
-F(\mathbf{x},\lambda)=f(\mathbf{x})+\lambda g(\mathbf{x}),
-\]
-la condición anterior junto con $g(\mathbf{x}_0)=0$ equivale a $\nabla F(\mathbf{x}_0,\lambda)=\mathbf{0}$.
-\end{theorem}
-
-\begin{rem}
-El teorema establece una condición \emph{necesaria, no suficiente}: los puntos que satisfacen $\nabla F=\mathbf{0}$ son solo candidatos a extremo. Se requiere un análisis adicional para determinar su naturaleza.
-\end{rem}
-
-El siguiente teorema garantiza la existencia de extremos cuando la restricción es compacta.
-
-\begin{theorem}[Weierstrass]
-Sea $K\subset\R^n$ compacto (cerrado y acotado) y $f\colon K\to\R$ continua. Entonces $f$ alcanza su máximo y su mínimo absolutos en $K$.
-\end{theorem}
-
-Si la restricción $S$ es compacta, el teorema de Weierstrass asegura la existencia de extremos absolutos; si además la regularidad se cumple en todos los puntos de $S$, todo extremo aparece como candidato de Lagrange, por lo que basta evaluar $f$ en todos los candidatos y comparar.
-
-\begin{pasos}[Método de los multiplicadores de Lagrange]
-\begin{enumerate}
-    \item \textbf{Función de Lagrange.} Definir $F(\mathbf{x},\lambda)=f(\mathbf{x})+\lambda g(\mathbf{x})$.
-    \item \textbf{Sistema.} Resolver el sistema $\nabla F=\mathbf{0}$, es decir,
-    \[
-    \nabla f(\mathbf{x})=\lambda\nabla g(\mathbf{x}),\qquad g(\mathbf{x})=0.
-    \]
-    \item \textbf{Candidatos.} Los puntos $\mathbf{x}$ que satisfacen el sistema son los candidatos a extremo.
-    \item \textbf{Clasificación.} Si $S$ es compacto, comparar los valores de $f$ en los candidatos; el mayor es el máximo absoluto y el menor el mínimo absoluto. Si $S$ no es compacto, usar el criterio de la segunda derivada restringida (hessiano limitado) o un análisis directo.
-\end{enumerate}
-\end{pasos}
-
-\subsection{Ejemplos}
-
-\begin{example}[Rectángulo de diagonal fija (continuación)]
-Para $f(x,y)=xy$ y $g(x,y)=x^2+y^2-d^2$, los gradientes son $\nabla f=(y,x)$, $\nabla g=(2x,2y)$.
-\begin{myproof}
-\textbf{Paso 1. Función de Lagrange.}
-\[
-F(x,y,\lambda)=xy+\lambda(x^2+y^2-d^2).
-\]
-
-\textbf{Paso 2. Sistema $\nabla F=\mathbf{0}$.}
-\[
-\begin{cases}
-y+2\lambda x=0,\\
-x+2\lambda y=0,\\
-x^2+y^2=d^2.
-\end{cases}
-\]
-
-\textbf{Paso 3. Resolución.}
-Multiplicando la primera ecuación por $x$ y la segunda por $y$: $xy=-2\lambda x^2$ e $xy=-2\lambda y^2$, de donde $x^2=y^2$. Sustituyendo en la restricción: $2x^2=d^2$, luego $x=\pm d/\sqrt{2}$. Los cuatro candidatos son
-\[
-\left(\frac{d}{\sqrt2},\frac{d}{\sqrt2}\right),\quad
-\left(-\frac{d}{\sqrt2},-\frac{d}{\sqrt2}\right),\quad
-\left(-\frac{d}{\sqrt2},\frac{d}{\sqrt2}\right),\quad
-\left(\frac{d}{\sqrt2},-\frac{d}{\sqrt2}\right).
-\]
-
-\textbf{Paso 4. Evaluación.}
-Los dos primeros dan $d^2/2$ y los dos últimos $-d^2/2$. Como la circunferencia es compacta, el máximo absoluto es $d^2/2$. Restringiendo a $x,y>0$:
-\[
-\boxed{\text{Punto óptimo: } \left(\frac{d}{\sqrt2},\frac{d}{\sqrt2}\right),\qquad A_{\max}=\frac{d^2}{2}}.
-\]
-\end{myproof}
-\end{example}
-
-A continuación mostramos dos situaciones críticas que ponen de manifiesto la importancia de las hipótesis del teorema de Lagrange.
-
-\subsubsection{Regularidad violada: el método no detecta el extremo}
-
-\begin{example}[Cúspide]
-Considere el problema de minimizar $f(x,y)=x^2+y^2$ sujeta a $g(x,y)=x^2-y^3=0$.
-\end{example}
-
-La restricción $y^3=x^2$ se puede escribir como $y=x^{2/3}$, que tiene una cúspide en $(0,0)$. El mínimo de $f$ (distancia al origen) se alcanza en $(0,0)$, ya que $f(0,0)=0$ y $f\ge0$. Sin embargo,
-\[
-\nabla g(x,y)=(2x,-3y^2),\quad \nabla g(0,0)=(0,0).
-\]
-La hipótesis de regularidad falla en el punto del extremo. El sistema de Lagrange no produce una solución significativa para ese punto: $\nabla f(0,0)=(0,0)$ y $\nabla g(0,0)=(0,0)$, por lo que la ecuación $\nabla f=\lambda\nabla g$ se reduce a $0=0$, y el método no puede localizar el extremo.
-
-\begin{figure}[H]
-\centering
-\begin{tikzpicture}[scale=1.2,>=stealth]
-  \draw[->] (-0.5,0) -- (2.5,0) node[right] {$x$};
-  \draw[->] (0,-0.5) -- (0,2.5) node[above] {$y$};
-  \draw[thick,blue,domain=0:2.2,samples=200] plot ({\x*\x},{\x*\x*\x});
-  \draw[thick,blue,domain=0:2.2,samples=200] plot ({\x*\x},{-\x*\x*\x});
-  \fill (0,0) circle (2pt) node[below left] {$(0,0)$};
-  \node[blue,right] at (1.5,2.2) {$y^3=x^2$};
-  \node at (1.8,0.5) {$\nabla g(0,0)=\mathbf{0}$};
-  \draw[dashed,red] (0,0) -- (2.5,0) node[midway,above] {$d_{\min}=0$};
-\end{tikzpicture}
-\caption{Curva $y^3=x^2$ con cúspide en $(0,0)$; el mínimo de la distancia al origen ocurre en ese punto, pero $\nabla g=\mathbf{0}$ y el método de Lagrange falla.}
-\end{figure}
-
-\subsubsection{Candidato que no es extremo}
-
-\begin{example}[Candidato falso]
-¿Tiene extremos condicionados $f(x,y)=y-x^5$ sujeta a $g(x,y)=y-x^3=0$?
-\end{example}
-
-La restricción es $y=x^3$; sobre ella, $h(x)=f(x,x^3)=x^3-x^5=x^3(1-x^2)$. El origen es un punto crítico de $h$ (pues $h'(0)=0$), pero no es extremo: para $x>0$ pequeño, $h(x)>0$, y para $x<0$ pequeño, $h(x)<0$ (ya que $x^3$ es negativo y $1-x^2>0$). Por tanto, $(0,0)$ no es extremo condicionado.
-
-Veamos qué ocurre con el método de Lagrange. $\nabla f=(-5x^4,1)$, $\nabla g=(-3x^2,1)$. La regularidad se cumple pues $\nabla g\neq\mathbf{0}$ para todo punto (la segunda componente es $1$). El sistema
-\[
-\begin{cases}
--5x^4 = -3\lambda x^2,\\
-1 = \lambda,\\
-y=x^3
-\end{cases}
-\]
-da $\lambda=1$ y $5x^4=3x^2$, es decir, $x=0$ o $x=\pm\sqrt{3/5}$. El punto $(0,0)$ es un candidato de Lagrange, pero no es extremo. Esto confirma que la condición $\nabla F=\mathbf{0}$ es necesaria pero no suficiente.
-
-\subsection{Criterio de la segunda derivada restringida (hessiano limitado)}
-
-Cuando la regularidad se cumple y se ha identificado un candidato $\mathbf{p}=(x_0,y_0)$, se puede determinar su naturaleza mediante un criterio de segundo orden. La idea es analizar la segunda derivada de $f$ a lo largo de la curva de restricción. Para el caso de una restricción $g(x,y)=0$, se define el \textbf{hessiano limitado} como el determinante de la matriz de orden $3$:
-\[
-\mathcal{H} =
-\det\begin{bmatrix}
-0 & -\dfrac{\partial g}{\partial x} & -\dfrac{\partial g}{\partial y} \\[8pt]
--\dfrac{\partial g}{\partial x} & \dfrac{\partial^2 F}{\partial x^2} & \dfrac{\partial^2 F}{\partial x\partial y} \\[8pt]
--\dfrac{\partial g}{\partial y} & \dfrac{\partial^2 F}{\partial x\partial y} & \dfrac{\partial^2 F}{\partial y^2}
-\end{bmatrix},
-\]
-donde $F=f+\lambda g$ y el determinante se evalúa en el candidato $(x_0,y_0)$.
-
-\begin{theorem}[Criterio del hessiano limitado]
-Suponga que $(x_0,y_0)$ es un candidato de Lagrange para optimizar $f$ sujeta a $g=0$, con $\partial g/\partial y(x_0,y_0)\neq0$. Entonces:
-\begin{itemize}
-    \item Si $\mathcal{H}(x_0,y_0)>0$, el punto es un \textbf{máximo condicionado}.
-    \item Si $\mathcal{H}(x_0,y_0)<0$, el punto es un \textbf{mínimo condicionado}.
-    \item Si $\mathcal{H}(x_0,y_0)=0$, el criterio es no concluyente.
-\end{itemize}
-\end{theorem}
-
-\begin{example}[Aplicación al rectángulo]
-Para el problema del rectángulo, verificamos que el candidato $A=(d/\sqrt2,d/\sqrt2)$ (con $\lambda=-1/2$) es un máximo condicionado usando el hessiano limitado.
-\begin{myproof}
-\textbf{Paso 1. Segundas derivadas de $F=f+\lambda g$.}
-\[
-\frac{\partial g}{\partial x}=2x,\quad \frac{\partial g}{\partial y}=2y,\quad
-\frac{\partial^2 F}{\partial x^2}=2\lambda=-1,\quad
-\frac{\partial^2 F}{\partial y^2}=2\lambda=-1,\quad
-\frac{\partial^2 F}{\partial x\partial y}=1.
-\]
-
-\textbf{Paso 2. Evaluación en $A=(d/\sqrt2,d/\sqrt2)$.}
-\[
-\frac{\partial g}{\partial x}\bigg|_A=d\sqrt{2},\qquad \frac{\partial g}{\partial y}\bigg|_A=d\sqrt{2}.
-\]
-
-\textbf{Paso 3. Hessiano limitado.}
-\[
-\mathcal{H}=\det\begin{bmatrix}
-0 & -d\sqrt2 & -d\sqrt2 \\
--d\sqrt2 & -1 & 1 \\
--d\sqrt2 & 1 & -1
-\end{bmatrix}
-= 8d^2 > 0.
-\]
-Como $\mathcal{H}>0$:
-\[
-\boxed{A=\left(\frac{d}{\sqrt2},\frac{d}{\sqrt2}\right) \text{ es un máximo condicionado};\quad A_{\max}=\frac{d^2}{2}}.
-\]
-\end{myproof}
-\end{example}
-
-
-\section{Problemas propuestos}
-
-\begin{prob}[Extremos absolutos]
-Encuentre los extremos absolutos de $f$ en el conjunto $S$ indicado:
-\begin{enumerate}[a)]
-    \item $f(x,y) = x^2 + y^2 - 2x - 4y$, $S$: el rectángulo
-    $0\leq x\leq 3$, $0\leq y\leq 2$
-    \item $f(x,y) = xy$, $S$: el círculo $x^2 + y^2 \leq 1$
-    \item $f(x,y) = x^2 + 2y^2$, $S$: el triángulo con vértices
-    $(0,0)$, $(1,0)$, $(0,1)$
-\end{enumerate}
-\end{prob}
-
-\begin{prob}[Clasificación de puntos críticos]
-Encuentre y clasifique todos los puntos críticos de las siguientes
-funciones:
-\begin{multicols}{2}
-\begin{enumerate}
-    \item $f(x,y) = x^2 + xy + y^2 - 3x$
-    \item $f(x,y) = 3x^2 y + y^3 - 3y$
-    \item $f(x,y) = x^3 + y^3 - 3xy$
-    \item $f(x,y) = x^2 y^2 - 8x^2 - 4y^2 + 24$
-    \item $f(x,y) = x^4 + y^4 - 4x^2 y^2$
-    \item $f(x,y) = x^3 + 3xy^2 - 15x - 12y$
-\end{enumerate}
-\end{multicols}
-\end{prob}
-
-\begin{prob}
-Para la función $f(x,y) = x^3 - 3xy^2$:
-\begin{enumerate}[a)]
-    \item Encuentre todos los puntos críticos.
-    \item Clasifique cada punto crítico usando el criterio de la segunda
-    derivada.
-    \item Verifique que el origen es un punto de silla mostrando que
-    $f$ crece en una dirección y decrece en otra.
-\end{enumerate}
-\end{prob}
-
-\begin{prob}
-Demuestre que la función $f(x,y) = x^2 y^2$ tiene un punto crítico en
-$(0,0)$ donde el criterio de la segunda derivada es inconcluso.
-Determine la naturaleza del punto mediante un análisis directo de los
-valores de $f$ en una vecindad del origen.
-\end{prob}
-
-\begin{prob}
-Una función $f$ tiene derivadas parciales continuas hasta segundo orden.
-En el punto crítico $(1,2)$ se sabe que $f_{xx}=4$, $f_{yy}=9$ y
-$f_{xy}=6$. ¿Qué puede concluirse sobre la naturaleza del punto
-crítico?
-\end{prob}
-
-\begin{prob}
-Encuentre los puntos de la superficie $z = x^2 + y^2$ donde el plano
-tangente es paralelo al plano $2x + 4y - z = 0$.
-\end{prob}
-
-\begin{prob}[Multiplicadores de Lagrange]
-\begin{enumerate}
-    \item Utilice multiplicadores de Lagrange para encontrar los extremos de $f(x,y)=x^2+y^2$ sujetos a $x^2+xy+y^2=1$.
-    \item Determine los valores máximo y mínimo de $f(x,y,z)=xyz$ sujetos a $x^2+y^2+z^2=1$.
-    \item (Regularidad violada) Considere $f(x,y)=x^2+y^2$ sujeta a $g(x,y)=x^3-y^2=0$. ¿Qué ocurre en el origen? ¿Por qué el método de Lagrange no lo detecta?
-    \item (Candidato falso) Para $f(x,y)=y-x^4$ y $g(x,y)=y-x^2=0$, muestre que el origen es un candidato de Lagrange pero no es extremo condicionado.
-\end{enumerate}
-\end{prob}
-
-\begin{prob}[Hessiano limitado]
-Para el problema de minimizar $f(x,y)=x^2+y^2$ sujeto a $g(x,y)=x+y-1=0$, encuentre el candidato y utilice el hessiano limitado para confirmar que es un mínimo.
-\begin{myproof}
-\textbf{Paso 1. Condiciones de Lagrange.} $\nabla f=\lambda\nabla g$:
-\[
-2x=\lambda,\qquad 2y=\lambda \quad\Rightarrow\quad x=y.
-\]
-
-\textbf{Paso 2. Candidato.} Con $x=y$ y $x+y=1$: $x=y=\frac{1}{2}$, $\lambda=1$.
-\[
-f\!\left(\tfrac{1}{2},\tfrac{1}{2}\right)=\tfrac{1}{4}+\tfrac{1}{4}=\tfrac{1}{2}.
-\]
-
-\textbf{Paso 3. Hessiano bordeado.} Sea $L=f-\lambda g$; entonces
-$L_{xx}=2$, $L_{yy}=2$, $L_{xy}=0$ y $g_x=g_y=1$:
-\[
-\bar{H}=
-\begin{vmatrix}
-0 & 1 & 1\\
-1 & 2 & 0\\
-1 & 0 & 2
-\end{vmatrix}
-=0(4-0)-1(2-0)+1(0-2)=-4.
-\]
-
-\textbf{Paso 4. Criterio.} Con $m=1$ restricción y $n=2$ variables,
-el candidato es mínimo si $(-1)^{m}\bar{H}>0$:
-\[
-(-1)^{1}(-4)=4>0.\quad\checkmark
-\]
-
-\textbf{Conclusión.}
-\[
-\boxed{f_{\min}=\tfrac{1}{2}\;\text{ en }\;\left(\tfrac{1}{2},\tfrac{1}{2}\right).}
-\]
-\end{myproof}
-\end{prob}
-
-% Cap. 22 — Optimización: extremos y multiplicadores de Lagrange
-% 22 problemas unicos: 22 listos para integrar ahora, 0 esperan pasada Claude Code (pstricks)
-% ============================================================
-
-% >>> LISTOS PARA INTEGRAR AHORA <<<
-
-% [Original: líneas 480-513 | solución completa | sin figura]
 \begin{prob}
 Determine el punto sobre el plano $x-y+z=9$ que está más cerca al punto $(1,2,5).$
 \begin{myproof}
@@ -668,12 +341,6 @@ La distancia mínima será $s=\sqrt{\left(\dfrac{8}{3}-1\right)^2+\left(\dfrac{1
 \end{myproof}
 \end{prob}
 
-% [Original: líneas 515-517 | sin verificar | sin figura]
-\begin{prob}
-Determine el punto sobre el plano $x-y+z=9$ que está más cerca al punto $(0,0,0)$.
-\end{prob}
-
-% [Original: líneas 519-582 | solución completa | tikz - listo]
 \begin{prob}
 Se construirá un canal abierto con sección transversal en la forma de un  trapecio con ángulos iguales en la base, doblando franjas iguales a ambos lados de una larga pieza de metal de 50 centímetros de ancho tal como se muestra en la figura. Determine los ángulos en la base y el ancho de los lados para obtener la mayor capacidad de carga.
 \begin{myproof}
@@ -739,7 +406,6 @@ Finalmente, el punto para el cual el volumen del canal es máximo son los puntos
 \end{myproof}
 \end{prob}
 
-% [Original: líneas 584-599 | solución completa | sin figura]
 \begin{prob}
 El material para construir la base de una caja cuya tapa es abierta cuesta $1.5$ veces más por unidad de área que el material para los lados. Si hay disponibles $\$ 1 000$, halle la caja de mayor volumen que puede ser fabricada.
 \begin{myproof}
@@ -757,7 +423,6 @@ Finalmente, el volumen es aproximadamente $V=\left( \dfrac{20\sqrt{5}}{3} \right
 \end{myproof}
 \end{prob}
 
-% [Original: líneas 725-761 | solución completa | sin figura]
 \begin{prob}
 Calcule el volumen de la caja rectangular más grande en el primer octante con tres caras en los planos coordenados y un vértice en el plano $x+5y+3z=6.$
 \begin{myproof}
@@ -796,7 +461,6 @@ El volumen de la caja será $V=\dfrac{xy}{3}\left( 6-x-5y \right)=\dfrac{8}{15}\
 \end{myproof}
 \end{prob}
 
-% [Original: líneas 884-915 | solución completa | sin figura]
 \begin{prob}
 La base de un acuario de volumen $V$ está hecho de cerámica y los lados son de vidrio. Si la cerámica cuesta tres veces más por unidad de área que el vidrio, determine las dimensiones del acuario que minimizan el costo de los materiales.
 \begin{myproof}
@@ -830,73 +494,6 @@ Lo cual implica que $\left( \sqrt[3]{\dfrac{2V}{3}},\sqrt[3]{\dfrac{2V}{3}} \rig
 \end{myproof}
 \end{prob}
 
-% [Original: líneas 933-935 | sin verificar | sin figura]
-\begin{prob}
-Encuentre las dimensiones de una caja rectangular cerrada (con tapa) con volumen máximo si su área superficial es igual a $75\ cm^2$ .
-\end{prob}
-
-% [Original: líneas 937-939 | sin verificar | sin figura | 2 variante(s) de parámetro (se descartaron 1)]
-\begin{prob}
-Encuentre el área máxima de un triángulo rectángulo cuyo perímetro es $16$.
-\end{prob}
-
-
-% [Original: líneas 993-995 | sin verificar | sin figura]
-\begin{prob}
-Determine el punto sobre el plano $x+y+z=9$ que está más cerca al punto $(0,0,0).$
-\end{prob}
-
-% [Original: líneas 1123-1125 | sin verificar | sin figura | 2 variante(s) de parámetro (se descartaron 1)]
-\begin{prob}
-Determine el punto sobre el plano $x+5y+4z=18$ que está más cerca al punto $(11A,7A,9A).$
-\end{prob}
-
-% [Original: líneas 1135-1137 | sin verificar | sin figura | 2 variante(s) de parámetro (se descartaron 1)]
-\begin{prob}
-Determine el punto sobre el plano $3x+8y+2z=-3$ que está más cerca al punto $(3A,2A,5A).$ Use multiplicadores de Lagrange o el método de máximos y mínimos para su solución.
-\end{prob}
-
-% [Original: líneas 1164-1166 | sin verificar | sin figura]
-\begin{prob}
-Determine las dimensiones de una lata cilíndrica con tapa que permita contener dos litros de agua usando la menor cantidad de metal.
-\end{prob}
-
-% [Original: líneas 1220-1222 | sin verificar | sin figura]
-\begin{prob}
-Use multiplicadores de Lagrange o el método de máximos y mínimos para determinar el punto sobre el plano $x-y+z=9$ que está más cerca al punto $(A,8A,9A).$
-\end{prob}
-
-% [Original: líneas 1232-1234 | sin verificar | sin figura | 3 variante(s) de parámetro (se descartaron 2)]
-\begin{prob}
-Determine la distancia mínima del punto $(6,4,10)$ al plano $3x+8y+z=5.$  Use multiplicadores de Lagrange o el método de máximos y mínimos para su solución.
-\end{prob}
-
-% [Original: líneas 1296-1298 | sin verificar | sin figura]
-\begin{prob}
-Determine el punto sobre el plano $x-y+z=9$ que está más cerca al punto $(A,8A,3A).$
-\end{prob}
-
-% [Original: líneas 1300-1317 | sin verificar | sin figura]
-\begin{prob}
-Defina tres números distintos $A$ $B$ y $C.$  
-\begin{enumerate}[(a)]
-\item Considere la función $f(x,y)=A\left(\dfrac{x^4-y^4}{x^2+y^2}\right).$
-\begin{enumerate}[(a)]
-    \item Calcule el dominio de $f(x,y).$ Grafique este dominio.
-    \item Evalúe detalladamente la continuidad de la función. Si existen puntos donde la función sea discontinua, redefina si es posible para construir una función que sea continua.
-\end{enumerate}
-\item Se deposita arena en una pila cónica, de modo que, en cierto instante la altura es de $B$ metros y crece a razón de $\dfrac{B}{3}$ metros/minuto, mientras que el radio es de $C$ metros y crece a razón de $\dfrac{C}{4}$ metros/minuto. ¿Qué tan rápido aumenta el volumen en tal instante?
-\item La temperatura en un punto $(x,y,z)$ está dada por $T(x,y,z)=200e^{-x^2-3y^2-9z^2}$ donde $T$ se mide en centímetros y $x, y,  z$ en metros.
-\begin{enumerate}[$a)$]
-    \item Determine la razón de cambio de la temperatura en el punto $P(2,-1,2)$ en dirección del punto $Q(A,-B,C).$ \textbf{Sugerencia:} Construya el vector cuyo punto inicial es $(2,-1,2)$ y el punto final es $Q(A,-B,C).$
-    \item Determine la dirección de máximo incremento de la temperatura en $P$. 
-    \item ¿Cuál es la razón máxima de incremento en $P.$?
-\end{enumerate}
-\item Determine el punto sobre el plano $x-y+z=4$ que está más cerca al punto $(A,B,C).$  			
-\end{enumerate}
-\end{prob}
-
-% [Original: líneas 1319-1334 | solución completa | sin figura]
 \begin{prob}
 \textbf{Ley de Hardy-Weinberg} Los tipos sanguíneos son genéticamente determinados por tres alelos A, B y O. (Alelo es cualquiera de las posibles formas de mutación de un gen.) Una persona cuyo tipo sanguíneo es AA, BB u OO es homocigótica. Una persona cuyo tipo sanguíneo es AB, AO o BO es heterocigótica. La ley Hardy-Weinberg establece que la proporción $P$ de individuos heterocigótica en cualquier población dada es $P(p,q,r)=2pq+2pr+2qr,$  donde $p$ representa el porcentaje de alelos A en la población, $q$ representa el porcentaje de alelos B en la población y $r$ representa el porcentaje de alelos O en la población. Utilizar el hecho que $p+q+r=1$ para mostrar que la proporción máxima de individuos heterocigóticos en cualquier población es $\dfrac{2}{3}.$
 \begin{myproof}
@@ -914,7 +511,6 @@ Finalmente, al despejar,  $p= \dfrac{1}{3}.$ Esto lleva a que la proporción  $P
 \end{myproof}
 \end{prob}
 
-% [Original: líneas 1336-1352 | solución completa | sin figura]
 \begin{prob}
 Determine el punto en el plano $2x+4y+3z=12$ que es más cercano al origen.
 \begin{myproof}
@@ -932,8 +528,6 @@ Al usar el criterio de las segundas derivadas parciales, como $f_{xx}=\dfrac{26}
 Finalmente, al despejar,  $z=\dfrac{12-2\left( \frac{24}{29} \right)-4\left( \frac{48}{29} \right)}{3}=\dfrac{36}{29}, $ por lo cual el punto  cuya distancia es mínima es $\left(\dfrac{24}{29},\dfrac{48}{29},\dfrac{36}{29}  \right).$ 
 \end{myproof}
 \end{prob}
-
-% [Original: líneas 1354-1374 | solución completa | sin figura]
 \begin{prob}
 Suponga que la temperatura $T$ en la placa circular $\{  (x,y): x^2+y^2\leq 1 \}$ está dada por la función $T(x,y)=2x^2+y^2-y.$ Determine cuáles son los puntos más calientes y más fríos de la placa.
 \begin{myproof} 
@@ -955,8 +549,425 @@ Observe que $T^{\prime}(y)=-2y-1,$ se obtienen sus puntos críticos haciendo  $T
 De donde se puede concluir que los puntos donde la temperatura es más alta son $\left( \dfrac{\sqrt{3}}{2}, \dfrac{-1}{2} \right)$ y $\left( \dfrac{-\sqrt{3}}{2}, \dfrac{1}{-2} \right).$ El punto donde la temperatura es más baja es  $\left(0,\dfrac{1}{2}\right).$
 \end{myproof}
 \end{prob}
+\section{Optimización restringida y multiplicadores de Lagrange}
 
-% [Original: líneas 1392-1394 | sin verificar | sin figura]
+Estudiaremos la optimización de funciones restringidas usando un ejemplo motivador
+
+\begin{prob}[Rectángulo de diagonal fija]
+Determine el área máxima de un rectángulo cuya diagonal mide $d>0$.
+\end{prob}
+
+Colocamos un vértice en el origen y el opuesto en $(x,y)$ con $x,y>0$; la diagonal satisface $\sqrt{x^2+y^2}=d$. El problema es
+
+\[
+\text{Maximizar } f(x,y)=xy \quad \text{sujeta a } g(x,y)=x^2+y^2-d^2=0,\quad x,y>0.
+\]
+
+La pregunta que guía el desarrollo es: ¿cómo hallar el máximo \emph{sin} eliminar una variable? La respuesta la proporciona el método de Lagrange, que se apoya en la relación geométrica entre las curvas de nivel de $f$ y la restricción.
+
+
+
+Note que, para la función objetivo a minimizar en el problema del rectángulo las curvas de nivel de $f(x,y)=xy$ son hipérbolas $xy=C$, y la restricción $g=0$ es una circunferencia. Si en un punto de la circunferencia se alcanza el máximo de $f$ restringido, la hipérbola que pasa por ese punto debe ser \textbf{tangente} a la circunferencia; de otro modo, moviéndonos ligeramente sobre la circunferencia podríamos aumentar el área. Para justificar esta tangencia necesitamos el concepto de curva regular y el teorema de la función implícita.
+
+\begin{definition}[Curva regular]
+Una \textbf{curva regular} en $\R^2$ es una función diferenciable $\mathbf{r}\colon I\subset\R\to\R^2$, $\mathbf{r}(t)=(x(t),y(t))$, tal que $\mathbf{r}'(t)\neq\mathbf{0}$ para todo $t\in I$.
+\end{definition}
+
+\begin{theorem}[Función implícita]
+Si $g\colon\R^2\to\R$ es de clase $\mathcal C^1$ y $\nabla g(x_0,y_0)\neq\mathbf{0}$ con $g(x_0,y_0)=0$, entonces en un abierto de $(x_0,y_0)$ la ecuación $g(x,y)=0$ define una curva regular (localmente expresable como $y=\varphi(x)$ o $x=\psi(y)$).
+\end{theorem}
+
+En el problema del rectángulo, $\nabla g=(2x,2y)$ se anula únicamente en el origen, que no pertenece a la restricción ($d>0$); por tanto, todos los puntos de la circunferencia son regulares y el teorema de la función implícita garantiza que la restricción es localmente una curva suave.
+
+\begin{prop}[Ortogonalidad del gradiente a las curvas de nivel]
+Sea $f$ diferenciable y sea $\mathbf{r}(t)$ una curva regular contenida en la curva de nivel $f(\mathbf{r}(t))=c$. Entonces $\nabla f(\mathbf{r}(t))$ es perpendicular a $\mathbf{r}'(t)$ para cada $t$.
+\end{prop}
+
+\begin{proof}
+Derivando $f(\mathbf{r}(t))=c$ respecto a $t$ mediante la regla de la cadena:
+\[
+\nabla f(\mathbf{r}(t))\cdot \mathbf{r}'(t)=0.
+\]
+El producto escalar nulo caracteriza la ortogonalidad.
+\end{proof}
+
+En particular, para la restricción $g=0$, el vector $\nabla g$ es perpendicular a la curva $\{g=0\}$ en cada punto regular.
+
+Si parametrizamos la restricción $g=0$ mediante una curva regular $\mathbf{r}(t)$ y definamos $h(t)=f(\mathbf{r}(t))$. Si en $t_0$ la función $h$ alcanza un extremo local (porque $\mathbf{r}(t_0)$ es extremo de $f$ sobre la restricción), entonces $h'(t_0)=0$, es decir,
+\[
+\nabla f(\mathbf{r}(t_0))\cdot \mathbf{r}'(t_0)=0.
+\]
+Así, $\nabla f$ es perpendicular al vector tangente $\mathbf{r}'(t_0)$. Por la proposición anterior, $\nabla g$ también es perpendicular a $\mathbf{r}'(t_0)$. En $\R^2$, dos vectores perpendiculares a una misma recta son paralelos; por tanto, existe $\lambda\in\R$ tal que
+\[
+\nabla f(\mathbf{r}(t_0)) = \lambda\,\nabla g(\mathbf{r}(t_0)).
+\]
+Este escalar $\lambda$ se denomina \textbf{multiplicador de Lagrange}. La igualdad vectorial equivale a un sistema de $n$ ecuaciones (más la restricción) en $n+1$ incógnitas.
+
+\section{Teorema de los Multiplicadores de Lagrange}
+
+\begin{theorem}[Multiplicadores de Lagrange, condición necesaria]
+Sean $f$ y $g$ funciones de clase $\mathcal C^1$ en un abierto de $\R^n$. Si $\mathbf{x}_0$ es un extremo local de $f$ restringido a la superficie $g(\mathbf{x})=0$ y $\nabla g(\mathbf{x}_0)\neq \mathbf{0}$, entonces existe un escalar $\lambda$ tal que
+\[
+\nabla f(\mathbf{x}_0) = \lambda\,\nabla g(\mathbf{x}_0).
+\]
+Equivalentemente, definiendo la \textbf{función de Lagrange}
+\[
+F(\mathbf{x},\lambda)=f(\mathbf{x})+\lambda g(\mathbf{x}),
+\]
+la condición anterior junto con $g(\mathbf{x}_0)=0$ equivale a $\nabla F(\mathbf{x}_0,\lambda)=\mathbf{0}$.
+\end{theorem}
+
+\begin{rem}
+El teorema establece una condición \emph{necesaria, no suficiente}: los puntos que satisfacen $\nabla F=\mathbf{0}$ son solo candidatos a extremo. Se requiere un análisis adicional para determinar su naturaleza.
+\end{rem}
+
+El siguiente teorema garantiza la existencia de extremos cuando la restricción es compacta.
+
+\begin{theorem}[Weierstrass]
+Sea $K\subset\R^n$ compacto (cerrado y acotado) y $f\colon K\to\R$ continua. Entonces $f$ alcanza su máximo y su mínimo absolutos en $K$.
+\end{theorem}
+
+Si la restricción $S$ es compacta, el teorema de Weierstrass asegura la existencia de extremos absolutos; si además la regularidad se cumple en todos los puntos de $S$, todo extremo aparece como candidato de Lagrange, por lo que basta evaluar $f$ en todos los candidatos y comparar.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.2]
+    \draw[thin,->] (-2.3,0) -- (2.5,0) node[right] {$x$};
+    \draw[thin,->] (0,-2.3) -- (0,2.5) node[above] {$y$};
+    % Curvas de nivel f(x,y)=x²+y²/2 para c=0.5,1,1.5,2 (elipses)
+    % Semiejes: a=√c, b=√(2c)
+    \foreach \c/\col in {0.5/blue!20!black, 1/blue!40!black, 1.5/blue!60!black, 2/blue!80!black}{
+        \pgfmathsetmacro{\a}{sqrt(\c)}
+        \pgfmathsetmacro{\b}{sqrt(2*\c)}
+        \draw[thick, \col] (0,0) ellipse ({\a} and {\b});
+    }
+    % Restricción g(x,y)=x+y-1=0 (recta x+y=1)
+    \draw[thick, red!70!black, domain=-1.4:2.4, variable=\t, samples=2]
+        plot ({\t},{1-\t});
+    \node[anchor=south west, red!70!black] at (1.8,-0.8)
+        {\small $g=x+y-1=0$};
+    % Punto de tangencia: mínimo de f sobre la recta
+    % f restringida: f(t,1-t)=t²+(1-t)²/2; f'=2t-(1-t)=3t-1=0 → t=1/3
+    % Punto: (1/3, 2/3)
+    \filldraw[red!70!black] ({1/3},{2/3}) circle (2pt)
+        node[anchor=south west] {\small $({\tfrac{1}{3}},{\tfrac{2}{3}})$};
+    % Gradiente de f en el punto: ∇f=(2/3, 2/3)·0.35 → (0.233, 0.233)
+    \draw[->, thick, green!50!black]
+        ({1/3},{2/3}) -- ({1/3+0.233},{2/3+0.233});
+    \node[anchor=west, green!50!black] at ({1/3+0.24},{2/3+0.24})
+        {\small $\nabla f$};
+    % Gradiente de g: ∇g=(1,1)/√2·0.35 → mismo (0.247, 0.247)
+    % Ambos paralelos — ya lo muestra el dibujo del ∇f
+    % Marcas de eje
+    \foreach \x in {-2,-1,1,2}
+        \draw[thin] (\x,0.07)--(\x,-0.07) node[below] {\small $\x$};
+    \foreach \y in {-2,-1,1,2}
+        \draw[thin] (0.07,\y)--(-0.07,\y) node[left] {\small $\y$};
+\end{tikzpicture}
+\caption{Método de Lagrange: el óptimo ocurre donde una curva de nivel
+         de $f$ (elipse azul) es tangente a la restricción $g=0$ (recta roja);
+         en ese punto $\nabla f \parallel \nabla g$}
+\label{fig:lagrange_region_factible}
+\end{figure}
+
+\begin{pasos}[Método de los multiplicadores de Lagrange] acontinuación se resume el método de los Multiplicadores de Lagrange:
+\begin{enumerate}
+    \item \textbf{Función de Lagrange.} Definir $F(\mathbf{x},\lambda)=f(\mathbf{x})+\lambda g(\mathbf{x})$.
+    \item \textbf{Sistema.} Resolver el sistema $\nabla F=\mathbf{0}$, es decir,
+    \[
+    \nabla f(\mathbf{x})=\lambda\nabla g(\mathbf{x}),\qquad g(\mathbf{x})=0.
+    \]
+    \item \textbf{Candidatos.} Los puntos $\mathbf{x}$ que satisfacen el sistema son los candidatos a extremo.
+    \item \textbf{Clasificación.} Si $S$ es compacto, comparar los valores de $f$ en los candidatos; el mayor es el máximo absoluto y el menor el mínimo absoluto. Si $S$ no es compacto, usar el criterio de la segunda derivada restringida (hessiano limitado) o un análisis directo.
+\end{enumerate}
+\end{pasos}
+
+\begin{example}[Rectángulo de diagonal fija ] 
+Determine el área máxima de un rectángulo cuya diagonal mide $d>0$.
+
+\begin{myproof}
+Para $f(x,y)=xy$ y $g(x,y)=x^2+y^2-d^2$, los gradientes son $\nabla f=(y,x)$, $\nabla g=(2x,2y)$.
+\textbf{Paso 1. Función de Lagrange.}
+\[
+F(x,y,\lambda)=xy+\lambda(x^2+y^2-d^2).
+\]
+
+\textbf{Paso 2. Sistema $\nabla F=\mathbf{0}$.}
+\[
+\begin{cases}
+y+2\lambda x=0,\\
+x+2\lambda y=0,\\
+x^2+y^2=d^2.
+\end{cases}
+\]
+
+\textbf{Paso 3. Resolución.}
+Multiplicando la primera ecuación por $x$ y la segunda por $y$: $xy=-2\lambda x^2$ e $xy=-2\lambda y^2$, de donde $x^2=y^2$. Sustituyendo en la restricción: $2x^2=d^2$, luego $x=\pm d/\sqrt{2}$. Los cuatro candidatos son
+\[
+\left(\frac{d}{\sqrt2},\frac{d}{\sqrt2}\right),\quad
+\left(-\frac{d}{\sqrt2},-\frac{d}{\sqrt2}\right),\quad
+\left(-\frac{d}{\sqrt2},\frac{d}{\sqrt2}\right),\quad
+\left(\frac{d}{\sqrt2},-\frac{d}{\sqrt2}\right).
+\]
+
+\textbf{Paso 4. Evaluación.}
+Los dos primeros dan $d^2/2$ y los dos últimos $-d^2/2$. Como la circunferencia es compacta, el máximo absoluto es $d^2/2$. Restringiendo a $x,y>0$:
+\[
+\boxed{\text{Punto óptimo: } \left(\frac{d}{\sqrt2},\frac{d}{\sqrt2}\right),\qquad A_{\max}=\frac{d^2}{2}}.
+\]
+\end{myproof}
+\end{example}
+
+A continuación mostramos dos situaciones críticas que ponen de manifiesto la importancia de las hipótesis del teorema de Lagrange.
+
+
+\begin{example}[Cúspide]
+Considere el problema de minimizar $f(x,y)=x^2+y^2$ sujeta a $g(x,y)=x^2-y^3=0$.
+\end{example}
+
+La restricción $y^3=x^2$ se puede escribir como $y=x^{2/3}$, que tiene una cúspide en $(0,0)$. El mínimo de $f$ (distancia al origen) se alcanza en $(0,0)$, ya que $f(0,0)=0$ y $f\ge0$. Sin embargo,
+\[
+\nabla g(x,y)=(2x,-3y^2),\quad \nabla g(0,0)=(0,0).
+\]
+La hipótesis de regularidad falla en el punto del extremo. El sistema de Lagrange no produce una solución significativa para ese punto: $\nabla f(0,0)=(0,0)$ y $\nabla g(0,0)=(0,0)$, por lo que la ecuación $\nabla f=\lambda\nabla g$ se reduce a $0=0$, y el método no puede localizar el extremo.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.2,>=stealth]
+  \draw[->] (-0.5,0) -- (2.5,0) node[right] {$x$};
+  \draw[->] (0,-0.5) -- (0,2.5) node[above] {$y$};
+  \draw[thick,blue,domain=0:2.2,samples=200] plot ({\x*\x},{\x*\x*\x});
+  \draw[thick,blue,domain=0:2.2,samples=200] plot ({\x*\x},{-\x*\x*\x});
+  \fill (0,0) circle (2pt) node[below left] {$(0,0)$};
+  \node[blue,right] at (1.5,2.2) {$y^3=x^2$};
+  \node at (1.8,0.5) {$\nabla g(0,0)=\mathbf{0}$};
+  \draw[dashed,red] (0,0) -- (2.5,0) node[midway,above] {$d_{\min}=0$};
+\end{tikzpicture}
+\caption{Curva $y^3=x^2$ con cúspide en $(0,0)$; el mínimo de la distancia al origen ocurre en ese punto, pero $\nabla g=\mathbf{0}$ y el método de Lagrange falla.}
+\end{figure}
+
+
+\begin{example}[Candidato falso]
+¿Tiene extremos condicionados $f(x,y)=y-x^5$ sujeta a $g(x,y)=y-x^3=0$?
+\end{example}
+
+La restricción es $y=x^3$; sobre ella, $h(x)=f(x,x^3)=x^3-x^5=x^3(1-x^2)$. El origen es un punto crítico de $h$ (pues $h'(0)=0$), pero no es extremo: para $x>0$ pequeño, $h(x)>0$, y para $x<0$ pequeño, $h(x)<0$ (ya que $x^3$ es negativo y $1-x^2>0$). Por tanto, $(0,0)$ no es extremo condicionado.
+
+Veamos qué ocurre con el método de Lagrange. $\nabla f=(-5x^4,1)$, $\nabla g=(-3x^2,1)$. La regularidad se cumple pues $\nabla g\neq\mathbf{0}$ para todo punto (la segunda componente es $1$). El sistema
+\[
+\begin{cases}
+-5x^4 = -3\lambda x^2,\\
+1 = \lambda,\\
+y=x^3
+\end{cases}
+\]
+da $\lambda=1$ y $5x^4=3x^2$, es decir, $x=0$ o $x=\pm\sqrt{3/5}$. El punto $(0,0)$ es un candidato de Lagrange, pero no es extremo. Esto confirma que la condición $\nabla F=\mathbf{0}$ es necesaria pero no suficiente.
+
+\section{Criterio de la segunda derivada restringida (hessiano limitado)}
+
+Cuando la regularidad se cumple y se ha identificado un candidato $\mathbf{p}=(x_0,y_0)$, se puede determinar su naturaleza mediante un criterio de segundo orden. La idea es analizar la segunda derivada de $f$ a lo largo de la curva de restricción. Para el caso de una restricción $g(x,y)=0$, se define el \textbf{hessiano limitado} como el determinante de la matriz de orden $3$:
+\[
+\mathcal{H} =
+\det\begin{bmatrix}
+0 & -\dfrac{\partial g}{\partial x} & -\dfrac{\partial g}{\partial y} \\[8pt]
+-\dfrac{\partial g}{\partial x} & \dfrac{\partial^2 F}{\partial x^2} & \dfrac{\partial^2 F}{\partial x\partial y} \\[8pt]
+-\dfrac{\partial g}{\partial y} & \dfrac{\partial^2 F}{\partial x\partial y} & \dfrac{\partial^2 F}{\partial y^2}
+\end{bmatrix},
+\]
+donde $F=f+\lambda g$ y el determinante se evalúa en el candidato $(x_0,y_0)$.
+
+\begin{theorem}[Criterio del hessiano limitado]
+Suponga que $(x_0,y_0)$ es un candidato de Lagrange para optimizar $f$ sujeta a $g=0$, con $\partial g/\partial y(x_0,y_0)\neq0$. Entonces:
+\begin{itemize}
+    \item Si $\mathcal{H}(x_0,y_0)>0$, el punto es un \textbf{máximo condicionado}.
+    \item Si $\mathcal{H}(x_0,y_0)<0$, el punto es un \textbf{mínimo condicionado}.
+    \item Si $\mathcal{H}(x_0,y_0)=0$, el criterio es no concluyente.
+\end{itemize}
+\end{theorem}
+
+\begin{example}[Aplicación al rectángulo]
+Para el problema del rectángulo, verificamos que el candidato $A=(d/\sqrt2,d/\sqrt2)$ (con $\lambda=-1/2$) es un máximo condicionado usando el hessiano limitado.
+\begin{myproof}
+\textbf{Paso 1. Segundas derivadas de $F=f+\lambda g$.}
+\[
+\frac{\partial g}{\partial x}=2x,\quad \frac{\partial g}{\partial y}=2y,\quad
+\frac{\partial^2 F}{\partial x^2}=2\lambda=-1,\quad
+\frac{\partial^2 F}{\partial y^2}=2\lambda=-1,\quad
+\frac{\partial^2 F}{\partial x\partial y}=1.
+\]
+
+\textbf{Paso 2. Evaluación en $A=(d/\sqrt2,d/\sqrt2)$.}
+\[
+\frac{\partial g}{\partial x}\bigg|_A=d\sqrt{2},\qquad \frac{\partial g}{\partial y}\bigg|_A=d\sqrt{2}.
+\]
+
+\textbf{Paso 3. Hessiano limitado.}
+\[
+\mathcal{H}=\det\begin{bmatrix}
+0 & -d\sqrt2 & -d\sqrt2 \\
+-d\sqrt2 & -1 & 1 \\
+-d\sqrt2 & 1 & -1
+\end{bmatrix}
+= 8d^2 > 0.
+\]
+Como $\mathcal{H}>0$:
+\[
+\boxed{A=\left(\frac{d}{\sqrt2},\frac{d}{\sqrt2}\right) \text{ es un máximo condicionado};\quad A_{\max}=\frac{d^2}{2}}.
+\]
+\end{myproof}
+\end{example}
+
+\begin{prob}[Hessiano limitado]
+Para el problema de minimizar $f(x,y)=x^2+y^2$ sujeto a $g(x,y)=x+y-1=0$, encuentre el candidato y utilice el hessiano limitado para confirmar que es un mínimo.
+\begin{myproof}
+\textbf{Paso 1. Condiciones de Lagrange.} $\nabla f=\lambda\nabla g$:
+\[
+2x=\lambda,\qquad 2y=\lambda \quad\Rightarrow\quad x=y.
+\]
+
+\textbf{Paso 2. Candidato.} Con $x=y$ y $x+y=1$: $x=y=\frac{1}{2}$, $\lambda=1$.
+\[
+f\!\left(\tfrac{1}{2},\tfrac{1}{2}\right)=\tfrac{1}{4}+\tfrac{1}{4}=\tfrac{1}{2}.
+\]
+
+\textbf{Paso 3. Hessiano bordeado.} Sea $L=f-\lambda g$; entonces
+$L_{xx}=2$, $L_{yy}=2$, $L_{xy}=0$ y $g_x=g_y=1$:
+\[
+\bar{H}=
+\begin{vmatrix}
+0 & 1 & 1\\
+1 & 2 & 0\\
+1 & 0 & 2
+\end{vmatrix}
+=0(4-0)-1(2-0)+1(0-2)=-4.
+\]
+
+\textbf{Paso 4. Criterio.} Con $m=1$ restricción y $n=2$ variables,
+el candidato es mínimo si $(-1)^{m}\bar{H}>0$:
+\[
+(-1)^{1}(-4)=4>0.\quad\checkmark
+\]
+
+\textbf{Conclusión.}
+\[
+\boxed{f_{\min}=\tfrac{1}{2}\;\text{ en }\;\left(\tfrac{1}{2},\tfrac{1}{2}\right).}
+\]
+\end{myproof}
+\end{prob}
+
+
+\section{Problemas propuestos}
+
+\begin{prob}[Extremos absolutos]
+Encuentre los extremos absolutos de $f$ en el conjunto $S$ indicado:
+\begin{enumerate}[a)]
+    \item $f(x,y) = x^2 + y^2 - 2x - 4y$, $S$: el rectángulo
+    $0\leq x\leq 3$, $0\leq y\leq 2$
+    \item $f(x,y) = xy$, $S$: el círculo $x^2 + y^2 \leq 1$
+    \item $f(x,y) = x^2 + 2y^2$, $S$: el triángulo con vértices
+    $(0,0)$, $(1,0)$, $(0,1)$
+\end{enumerate}
+\end{prob}
+
+\begin{prob}[Clasificación de puntos críticos]
+Encuentre y clasifique todos los puntos críticos de las siguientes
+funciones:
+\begin{multicols}{2}
+\begin{enumerate}
+    \item $f(x,y) = x^2 + xy + y^2 - 3x$
+    \item $f(x,y) = 3x^2 y + y^3 - 3y$
+    \item $f(x,y) = x^3 + y^3 - 3xy$
+    \item $f(x,y) = x^2 y^2 - 8x^2 - 4y^2 + 24$
+    \item $f(x,y) = x^4 + y^4 - 4x^2 y^2$
+    \item $f(x,y) = x^3 + 3xy^2 - 15x - 12y$
+\end{enumerate}
+\end{multicols}
+\end{prob}
+
+\begin{prob}
+Para la función $f(x,y) = x^3 - 3xy^2$:
+\begin{enumerate}[a)]
+    \item Encuentre todos los puntos críticos.
+    \item Clasifique cada punto crítico usando el criterio de la segunda
+    derivada.
+    \item Verifique que el origen es un punto de silla mostrando que
+    $f$ crece en una dirección y decrece en otra.
+\end{enumerate}
+\end{prob}
+
+\begin{prob}
+Demuestre que la función $f(x,y) = x^2 y^2$ tiene un punto crítico en
+$(0,0)$ donde el criterio de la segunda derivada es inconcluso.
+Determine la naturaleza del punto mediante un análisis directo de los
+valores de $f$ en una vecindad del origen.
+\end{prob}
+
+\begin{prob}
+Una función $f$ tiene derivadas parciales continuas hasta segundo orden.
+En el punto crítico $(1,2)$ se sabe que $f_{xx}=4$, $f_{yy}=9$ y
+$f_{xy}=6$. ¿Qué puede concluirse sobre la naturaleza del punto
+crítico?
+\end{prob}
+
+\begin{prob}
+Encuentre los puntos de la superficie $z = x^2 + y^2$ donde el plano
+tangente es paralelo al plano $2x + 4y - z = 0$.
+\end{prob}
+
+\begin{prob}[Multiplicadores de Lagrange]
+\begin{enumerate}
+    \item Utilice multiplicadores de Lagrange para encontrar los extremos de $f(x,y)=x^2+y^2$ sujetos a $x^2+xy+y^2=1$.
+    \item Determine los valores máximo y mínimo de $f(x,y,z)=xyz$ sujetos a $x^2+y^2+z^2=1$.
+    \item Considere $f(x,y)=x^2+y^2$ sujeta a $g(x,y)=x^3-y^2=0$. ¿Qué ocurre en el origen? ¿Por qué el método de Lagrange no lo detecta?
+    \item (Candidato falso) Para $f(x,y)=y-x^4$ y $g(x,y)=y-x^2=0$, muestre que el origen es un candidato de Lagrange pero no es extremo condicionado.
+\end{enumerate}
+\end{prob}
+
+\begin{prob}
+Determine el punto sobre el plano $x-y+z=9$ que está más cerca al punto $(0,0,0)$.
+\end{prob}
+
+\begin{prob}
+Encuentre las dimensiones de una caja rectangular cerrada (con tapa) con volumen máximo si su área superficial es igual a $75\ cm^2$ .
+\end{prob}
+
+
+\begin{prob}
+Encuentre el área máxima de un triángulo rectángulo cuyo perímetro es $16$.
+\end{prob}
+
+\begin{prob}
+Determine el punto sobre el plano $x+y+z=9$ que está más cerca al punto $(0,0,0).$
+\end{prob}
+
+
+\begin{prob}
+Determine el punto sobre el plano $x+5y+4z=18$ que está más cerca al punto $(11A,7A,9A).$
+\end{prob}
+
+
+\begin{prob}
+Determine el punto sobre el plano $3x+8y+2z=-3$ que está más cerca al punto $(3A,2A,5A).$ Use multiplicadores de Lagrange o el método de máximos y mínimos para su solución.
+\end{prob}
+
+\begin{prob}
+Determine las dimensiones de una lata cilíndrica con tapa que permita contener dos litros de agua usando la menor cantidad de metal.
+\end{prob}
+
+
+\begin{prob}
+Use multiplicadores de Lagrange o el método de máximos y mínimos para determinar el punto sobre el plano $x-y+z=9$ que está más cerca al punto $(A,8A,9A).$
+\end{prob}
+
+
+\begin{prob}
+Determine la distancia mínima del punto $(6,4,10)$ al plano $3x+8y+z=5.$  Use multiplicadores de Lagrange o el método de máximos y mínimos para su solución.
+\end{prob}
+
+\begin{prob}
+Determine el punto sobre el plano $x-y+z=9$ que está más cerca al punto $(A,8A,3A).$
+\end{prob}
+
 \begin{prob}
 Encuentre las dimensiones de una caja rectangular abierta (sin tapa) con volumen máximo si su área superficial es igual a $75\ cm^2$ .
 \end{prob}

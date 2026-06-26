@@ -1,4 +1,4 @@
-﻿% ============================================================
+% ============================================================
 % CAPÍTULO 34: INTEGRALES DE SUPERFICIE Y TEOREMAS INTEGRALES
 % ============================================================
 
@@ -23,6 +23,29 @@ aquella en la que la región encerrada queda siempre a la izquierda al
 recorrer la curva (sentido antihorario para una curva que encierra una
 región convexa).
 \end{definition}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.35]
+    \draw[thin,->] (-0.3,0)--(3.6,0) node[right]{$x$};
+    \draw[thin,->] (0,-0.3)--(0,2.9) node[above]{$y$};
+    \fill[blue!15]
+        (1.5,0.4) ..controls (2.8,0.2) and (3.2,1.0).. (2.8,1.8)
+                  ..controls (2.3,2.5) and (0.9,2.6).. (0.6,1.8)
+                  ..controls (0.2,1.1) and (0.7,0.3).. (1.5,0.4);
+    \draw[blue!70!black,thick,->]
+        (1.5,0.4) ..controls (2.8,0.2) and (3.2,1.0).. (2.8,1.8);
+    \draw[blue!70!black,thick,->]
+        (2.8,1.8) ..controls (2.3,2.5) and (0.9,2.6).. (0.6,1.8)
+                  ..controls (0.2,1.1) and (0.7,0.3).. (1.5,0.4);
+    \node[blue!70!black] at (2.9,0.7){\small $C$};
+    \node at (1.6,1.45){\small $R$};
+    \node[blue!70!black,font=\small] at (1.6,2.85){orientación $+$};
+\end{tikzpicture}
+\caption{Orientación positiva de $C$: la región $R$ queda siempre a la
+         izquierda; la curva se recorre en sentido antihorario}
+\label{fig:curva_orientacion_positiva}
+\end{figure}
 
 \begin{theorem}[Teorema de Green]
 Sea $C$ una curva suave por partes, cerrada simple, orientada
@@ -160,6 +183,32 @@ $\mathbb{R}^3$, el rotacional es un vector que mide la tendencia del
 campo a \emph{girar} alrededor de un punto, mientras que la divergencia
 mide la tendencia a \emph{fluir} hacia el exterior o el interior.
 
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=0.88]
+    \draw[thin,->] (-2.5,0)--(2.8,0) node[right]{$x$};
+    \draw[thin,->] (0,-2.5)--(0,2.8) node[above]{$y$};
+    \foreach \xi/\yi in {
+        -2/-2, -2/-1, -2/0, -2/1, -2/2,
+        -1/-2, -1/-1, -1/0, -1/1, -1/2,
+         0/-2,  0/-1,        0/1,  0/2,
+         1/-2,  1/-1,  1/0,  1/1,  1/2,
+         2/-2,  2/-1,  2/0,  2/1,  2/2}{
+        \draw[->,blue!70!black]
+            (\xi,\yi)--({(\xi)+(-\yi)*0.28},{(\yi)+(\xi)*0.28});
+    }
+    \filldraw (0,0) circle (1.5pt);
+    \foreach \n in {-2,-1,1,2}{
+        \draw[thin] (\n,0.06)--(\n,-0.06) node[below,font=\small]{$\n$};
+        \draw[thin] (0.06,\n)--(-0.06,\n) node[left,font=\small]{$\n$};
+    }
+\end{tikzpicture}
+\caption{Campo vectorial $\mathbf{F}(x,y)=(-y,\,x)$: vectores tangentes a
+         círculos concéntricos orientados en sentido antihorario
+         ($\nabla\cdot\mathbf{F}=0$;\; $\nabla\times\mathbf{F}=2\mathbf{k}$)}
+\label{fig:campo_vectorial_rotacional}
+\end{figure}
+
 \begin{definition}[Divergencia]
 La \textbf{divergencia} de un campo vectorial $\mathbf{F}(x,y,z) =
 \langle F_1, F_2, F_3 \rangle$ es el campo escalar
@@ -252,10 +301,6 @@ Este es el principio del planímetro, un instrumento mecánico para medir
 áreas de regiones irregulares.
 \end{rem}
 
-%%==========================================================
-\section{Problemas propuestos}
-%%==========================================================
-
 \begin{prob}
 Calcule la integral de línea $\int_C \mathbf{F}\cdot d\mathbf{r}$ para
 $\mathbf{F}(x,y)=\langle x^2, y^2 \rangle$ a lo largo de los siguientes
@@ -335,40 +380,7 @@ que une $(0,0)$ con $(1,2)$.
 \end{myproof}
 \end{prob}
 
-\begin{prob}
-Un campo de fuerzas $\mathbf{F}(x,y) = \langle e^x \cos y + y,
--e^x \sin y + x \rangle$ actúa sobre una partícula.
-\begin{enumerate}[(a)]
-    \item Demuestre que $\mathbf{F}$ es conservativo.
-    \item Encuentre la función potencial $f$.
-    \item Calcule el trabajo realizado por $\mathbf{F}$ al mover una
-    partícula desde $(0,0)$ hasta $(1,\pi/2)$.
-\end{enumerate}
-\end{prob}
 
-\begin{prob}
-Verifique el teorema de Green para el campo $\mathbf{F}(x,y) =
-\langle x^2 y, x y^2 \rangle$ y el rectángulo $0\le x\le 2$,
-$0\le y\le 1$.
-\end{prob}
-
-\begin{prob}
-Use el teorema de Green para calcular
-\[
-\oint_C (x^2 + y^2)\,dx + (2xy)\,dy,
-\]
-donde $C$ es el cuadrado con vértices $(0,0)$, $(2,0)$, $(2,2)$,
-$(0,2)$ orientado positivamente.
-\end{prob}
-
-\begin{prob}
-Calcule la integral de línea
-\[
-\oint_C -y^3\,dx + x^3\,dy
-\]
-donde $C$ es el círculo $x^2+y^2=4$ orientado positivamente, usando
-el teorema de Green. Compare con la evaluación directa.
-\end{prob}
 
 \begin{prob}
 Sea $R$ una región plana con frontera $C$. Demuestre que el área de $R$
@@ -393,31 +405,7 @@ A=\frac{1}{2}\int_0^{2\pi}ab\,dt=\frac{ab}{2}\cdot2\pi=\boxed{\pi ab}.
 \end{myproof}
 \end{prob}
 
-\begin{prob}
-Calcule la divergencia y el rotacional de los siguientes campos:
-\begin{multicols}{2}
-\begin{enumerate}[(a)]
-    \item $\mathbf{F}(x,y,z)=\langle x^2, y^2, z^2 \rangle$
-    \item $\mathbf{F}(x,y,z)=\langle yz, xz, xy \rangle$
-    \item $\mathbf{F}(x,y,z)=\langle e^x, \sin y, \cos z \rangle$
-    \item $\mathbf{F}(x,y,z)=\langle -y, x, 0 \rangle$
-\end{enumerate}
-\end{multicols}
-\end{prob}
 
-\begin{prob}
-Demuestre que para cualquier campo $\mathbf{F}$ con segundas derivadas
-parciales continuas, se cumple $\nabla \cdot (\nabla \times \mathbf{F})
-= 0$. Esto muestra que el rotacional de un campo siempre es
-\emph{solenoidal} (sin divergencia). Use un ejemplo concreto para
-verificar esta identidad.
-\end{prob}
-
-\begin{prob}
-Interprete físicamente el resultado del problema anterior:
-si $\mathbf{F}$ es el campo de velocidades de un fluido, ¿qué significa
-que $\nabla \cdot (\nabla \times \mathbf{F})=0$?
-\end{prob}
 
 \begin{prob}
 Determine si el campo $\mathbf{F}(x,y) = \langle -y/(x^2+y^2),
@@ -448,7 +436,7 @@ El hilo conductor sigue siendo \emph{rebanar, aproximar e integrar}, pero ahora 
 \end{rem}
 
 % ============================================================
-\section{Preliminares geométricos: superficies paramétricas y orientación}
+\section{Superficies paramétricas y orientación}
 % ============================================================
 
 Para integrar sobre una superficie curva necesitamos una forma sistemática de describirla y de medir sus áreas infinitesimales. La parametrización cumple ese rol: convierte un problema geométrico en el plano de los parámetros $(u,v)$ en un problema de integración doble.
@@ -713,11 +701,66 @@ M_{yz}
 \end{myproof}
 \end{example}
 
+\begin{prob}
+Encuentre el momento de inercia $I_z$ de una cáscara esférica homogénea de radio $R$ y masa $M$ (es decir, con densidad constante $\rho = M/(4\pi R^2)$) con respecto al eje $z$.
+\begin{myproof}
+\textbf{Paso 1. Plantear la integral.} Con $\rho_0=M/(4\pi R^2)$:
+\[
+I_z=\iint_S(x^2+y^2)\,\rho_0\,dS.
+\]
+\textbf{Paso 2. Parametrizar la esfera.} $\mathbf{r}(\varphi,\theta)=\langle R\sen\varphi\cos\theta,R\sen\varphi\sen\theta,R\cos\varphi\rangle$, $dS=R^2\sen\varphi\,d\varphi\,d\theta$. Sobre $S$: $x^2+y^2=R^2\sen^2\varphi$.
+
+\textbf{Paso 3. Evaluar.}
+\[
+I_z=\rho_0\int_0^{2\pi}\!\int_0^{\pi}R^2\sen^2\varphi\cdot R^2\sen\varphi\,d\varphi\,d\theta
+=\rho_0 R^4\cdot2\pi\int_0^{\pi}\sen^3\varphi\,d\varphi.
+\]
+Usando $\displaystyle\int_0^\pi\sen^3\varphi\,d\varphi=\frac{4}{3}$:
+\[
+I_z=\rho_0 R^4\cdot2\pi\cdot\frac{4}{3}=\frac{8\pi\rho_0 R^4}{3}.
+\]
+\textbf{Paso 4. Sustituir $\rho_0=M/(4\pi R^2)$.}
+\[
+I_z=\frac{8\pi}{3}\cdot\frac{M}{4\pi R^2}\cdot R^4=\boxed{\dfrac{2}{3}MR^2}.
+\]
+\end{myproof}
+\end{prob}
+
 % ============================================================
 \section{Integral de superficie de un campo vectorial (flujo)}
 % ============================================================
 
 Si un campo vectorial $\mathbf{F}$ representa la velocidad de un fluido, el volumen de fluido que atraviesa un elemento de superficie $dS$ por unidad de tiempo es la componente normal de $\mathbf{F}$ multiplicada por $dS$: $\mathbf{F}\cdot\mathbf{n}\,dS$. La integral de esta cantidad sobre toda la superficie es el \textbf{flujo}.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    view={40}{25},
+    xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+    axis lines=center,
+    tick style={thin},
+    zmin=0, zmax=5,
+    xtick={-1,1}, ytick={-1,1}, ztick={2,4},
+    width=8cm, height=8cm,
+]
+    \addplot3[surf,shader=flat corner,samples=14,domain=-1.4:1.4,
+              opacity=0.75,colormap/cool]{4-x^2-y^2};
+    \draw[->,thick,red!70!black]
+        (axis cs:1,0,3)--(axis cs:1.36,0,3.18);
+    \draw[->,thick,red!70!black]
+        (axis cs:0,1,3)--(axis cs:0,1.36,3.18);
+    \draw[->,thick,red!70!black]
+        (axis cs:-1,0,3)--(axis cs:-1.36,0,3.18);
+    \draw[->,thick,red!70!black]
+        (axis cs:0,0,4)--(axis cs:0,0,4.4)
+        node[above]{\small $\mathbf{n}$};
+\end{axis}
+\end{tikzpicture}
+\caption{Superficie orientada $z=4-x^2-y^2$ con vectores normales $\mathbf{n}$
+         consistentes; invertir la orientación cambia el signo del flujo}
+\label{fig:superficie_orientada}
+\end{figure}
 
 \begin{definition}[Flujo de un campo vectorial]
 Sea $\mathbf{F}$ un campo vectorial continuo sobre una superficie orientada $S$ con normal unitaria $\mathbf{n}$. La \textbf{integral de superficie de $\mathbf{F}$ sobre $S$}, o \textbf{flujo} de $\mathbf{F}$ a través de $S$, es
@@ -938,6 +981,57 @@ Sea $u=1-r^2$, $du=-2r\,dr$, $r\,dr=-du/2$. Cuando $r=0$, $u=1$; cuando $r=1$, $
 \end{myproof}
 \end{example}
 
+\begin{prob}
+Use el teorema de la divergencia para calcular el flujo de $\mathbf{F}(x,y,z)=\langle x^3, y^3, z^3\rangle$ a través del cubo $0\le x,y,z\le 1$.
+\end{prob}
+
+\begin{prob}
+Verifique el teorema de Stokes para $\mathbf{F}(x,y,z)=\langle y, z, x\rangle$ sobre la superficie del cono $z=\sqrt{x^2+y^2}$ con $0\le z\le 1$, orientado hacia arriba.
+\begin{myproof}
+\textbf{Paso 1. Calcular el rotacional.}
+\[
+\nabla\times\mathbf{F}
+=\left\langle\frac{\partial x}{\partial y}-\frac{\partial z}{\partial z},\;
+\frac{\partial y}{\partial z}-\frac{\partial x}{\partial x},\;
+\frac{\partial z}{\partial x}-\frac{\partial y}{\partial y}\right\rangle
+=\langle0-1,\;0-1,\;0-1\rangle=\langle-1,-1,-1\rangle.
+\]
+\textbf{Paso 2. Integral de superficie.} Parametrizamos: $\mathbf{r}(r,\theta)=\langle r\cos\theta,r\sen\theta,r\rangle$, $r\in[0,1]$, $\theta\in[0,2\pi]$:
+\[
+\mathbf{r}_r\times\mathbf{r}_\theta=\langle-r\cos\theta,-r\sen\theta,r\rangle\quad(z\text{-comp.}=r>0:\text{ apunta hacia arriba}).
+\]
+\[
+(\nabla\times\mathbf{F})\cdot(\mathbf{r}_r\times\mathbf{r}_\theta)
+=\langle-1,-1,-1\rangle\cdot\langle-r\cos\theta,-r\sen\theta,r\rangle=r\cos\theta+r\sen\theta-r.
+\]
+\[
+\iint_S(\nabla\times\mathbf{F})\cdot d\mathbf{S}
+=\int_0^{2\pi}\!\int_0^1(r\cos\theta+r\sen\theta-r)\,dr\,d\theta
+=\int_0^{2\pi}\frac{\cos\theta+\sen\theta-1}{2}\,d\theta
+=\frac{0+0-2\pi}{2}=-\pi.
+\]
+\textbf{Paso 3. Verificación por integral de línea.} $\partial S$: $\mathbf{r}(t)=\langle\cos t,\sen t,1\rangle$, $d\mathbf{r}=\langle-\sen t,\cos t,0\rangle dt$, $\mathbf{F}=\langle\sen t,1,\cos t\rangle$:
+\[
+\oint_{\partial S}\mathbf{F}\cdot d\mathbf{r}
+=\int_0^{2\pi}(-\sen^2 t+\cos t)\,dt=-\pi+0=\boxed{-\pi}.\;\checkmark
+\]
+\end{myproof}
+\end{prob}
+
+\begin{prob}
+Calcule el flujo de $\mathbf{F}(x,y,z)=\langle 2x, -y, 3z\rangle$ a través de la esfera $x^2+y^2+z^2=4$, orientada hacia afuera.
+\begin{myproof}
+\textbf{Paso 1. Calcular la divergencia.}
+\[
+\nabla\cdot\mathbf{F}=\frac{\partial(2x)}{\partial x}+\frac{\partial(-y)}{\partial y}+\frac{\partial(3z)}{\partial z}=2-1+3=4.
+\]
+\textbf{Paso 2. Aplicar el teorema de la divergencia.} El sólido $Q$ es la bola de radio 2; $V=\dfrac{4}{3}\pi(2)^3=\dfrac{32\pi}{3}$.
+\[
+\iint_{\partial Q}\mathbf{F}\cdot\mathbf{n}\,dS=\iiint_Q 4\,dV=4\cdot\frac{32\pi}{3}=\boxed{\frac{128\pi}{3}}.
+\]
+\end{myproof}
+\end{prob}
+
 % ============================================================
 \section{Teorema de Stokes}
 % ============================================================
@@ -1094,6 +1188,41 @@ Por tanto, el flujo del rotacional es $\pi$.
 % ============================================================
 \section{Problemas propuestos}
 % ============================================================
+\begin{prob}
+Un campo de fuerzas $\mathbf{F}(x,y) = \langle e^x \cos y + y,
+-e^x \sin y + x \rangle$ actúa sobre una partícula.
+\begin{enumerate}[(a)]
+    \item Demuestre que $\mathbf{F}$ es conservativo.
+    \item Encuentre la función potencial $f$.
+    \item Calcule el trabajo realizado por $\mathbf{F}$ al mover una
+    partícula desde $(0,0)$ hasta $(1,\pi/2)$.
+\end{enumerate}
+\end{prob}
+
+\begin{prob}
+Verifique el teorema de Green para el campo $\mathbf{F}(x,y) =
+\langle x^2 y, x y^2 \rangle$ y el rectángulo $0\le x\le 2$,
+$0\le y\le 1$.
+\end{prob}
+
+\begin{prob}
+Use el teorema de Green para calcular
+\[
+\oint_C (x^2 + y^2)\,dx + (2xy)\,dy,
+\]
+donde $C$ es el cuadrado con vértices $(0,0)$, $(2,0)$, $(2,2)$,
+$(0,2)$ orientado positivamente.
+\end{prob}
+
+\begin{prob}
+Calcule la integral de línea
+\[
+\oint_C -y^3\,dx + x^3\,dy
+\]
+donde $C$ es el círculo $x^2+y^2=4$ orientado positivamente, usando
+el teorema de Green. Compare con la evaluación directa.
+\end{prob}
+
 
 \begin{prob}
 Calcule $\displaystyle \iint_S xy\,dS$, donde $S$ es la porción del cilindro $x^2+z^2=1$ con $y\ge 0$, $z\ge 0$.
@@ -1104,88 +1233,44 @@ Halle el área de la superficie del toro generado al rotar la circunferencia $(x
 \end{prob}
 
 \begin{prob}
-Calcule el flujo de $\mathbf{F}(x,y,z)=\langle 2x, -y, 3z\rangle$ a través de la esfera $x^2+y^2+z^2=4$, orientada hacia afuera.
-\begin{myproof}
-\textbf{Paso 1. Calcular la divergencia.}
-\[
-\nabla\cdot\mathbf{F}=\frac{\partial(2x)}{\partial x}+\frac{\partial(-y)}{\partial y}+\frac{\partial(3z)}{\partial z}=2-1+3=4.
-\]
-\textbf{Paso 2. Aplicar el teorema de la divergencia.} El sólido $Q$ es la bola de radio 2; $V=\dfrac{4}{3}\pi(2)^3=\dfrac{32\pi}{3}$.
-\[
-\iint_{\partial Q}\mathbf{F}\cdot\mathbf{n}\,dS=\iiint_Q 4\,dV=4\cdot\frac{32\pi}{3}=\boxed{\frac{128\pi}{3}}.
-\]
-\end{myproof}
+Calcule la divergencia y el rotacional de los siguientes campos:
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+    \item $\mathbf{F}(x,y,z)=\langle x^2, y^2, z^2 \rangle$
+    \item $\mathbf{F}(x,y,z)=\langle yz, xz, xy \rangle$
+    \item $\mathbf{F}(x,y,z)=\langle e^x, \sin y, \cos z \rangle$
+    \item $\mathbf{F}(x,y,z)=\langle -y, x, 0 \rangle$
+\end{enumerate}
+\end{multicols}
 \end{prob}
+
+\begin{prob}
+Demuestre que para cualquier campo $\mathbf{F}$ con segundas derivadas
+parciales continuas, se cumple $\nabla \cdot (\nabla \times \mathbf{F})
+= 0$. Esto muestra que el rotacional de un campo siempre es
+\emph{solenoidal} (sin divergencia). Use un ejemplo concreto para
+verificar esta identidad.
+\end{prob}
+
+\begin{prob}
+Interprete físicamente el resultado del problema anterior:
+si $\mathbf{F}$ es el campo de velocidades de un fluido, ¿qué significa
+que $\nabla \cdot (\nabla \times \mathbf{F})=0$?
+\end{prob}
+
+
 
 \begin{prob}
 Una lámina tiene la forma de la superficie $z=xy$ sobre el cuadrado $0\le x\le 2$, $0\le y\le 2$. Su densidad superficial es $\rho=x^2+y^2$. Halle su masa y su centro de masa.
 \end{prob}
 
-\begin{prob}
-Use el teorema de la divergencia para calcular el flujo de $\mathbf{F}(x,y,z)=\langle x^3, y^3, z^3\rangle$ a través del cubo $0\le x,y,z\le 1$.
-\end{prob}
 
-\begin{prob}
-Verifique el teorema de Stokes para $\mathbf{F}(x,y,z)=\langle y, z, x\rangle$ sobre la superficie del cono $z=\sqrt{x^2+y^2}$ con $0\le z\le 1$, orientado hacia arriba.
-\begin{myproof}
-\textbf{Paso 1. Calcular el rotacional.}
-\[
-\nabla\times\mathbf{F}
-=\left\langle\frac{\partial x}{\partial y}-\frac{\partial z}{\partial z},\;
-\frac{\partial y}{\partial z}-\frac{\partial x}{\partial x},\;
-\frac{\partial z}{\partial x}-\frac{\partial y}{\partial y}\right\rangle
-=\langle0-1,\;0-1,\;0-1\rangle=\langle-1,-1,-1\rangle.
-\]
-\textbf{Paso 2. Integral de superficie.} Parametrizamos: $\mathbf{r}(r,\theta)=\langle r\cos\theta,r\sen\theta,r\rangle$, $r\in[0,1]$, $\theta\in[0,2\pi]$:
-\[
-\mathbf{r}_r\times\mathbf{r}_\theta=\langle-r\cos\theta,-r\sen\theta,r\rangle\quad(z\text{-comp.}=r>0:\text{ apunta hacia arriba}).
-\]
-\[
-(\nabla\times\mathbf{F})\cdot(\mathbf{r}_r\times\mathbf{r}_\theta)
-=\langle-1,-1,-1\rangle\cdot\langle-r\cos\theta,-r\sen\theta,r\rangle=r\cos\theta+r\sen\theta-r.
-\]
-\[
-\iint_S(\nabla\times\mathbf{F})\cdot d\mathbf{S}
-=\int_0^{2\pi}\!\int_0^1(r\cos\theta+r\sen\theta-r)\,dr\,d\theta
-=\int_0^{2\pi}\frac{\cos\theta+\sen\theta-1}{2}\,d\theta
-=\frac{0+0-2\pi}{2}=-\pi.
-\]
-\textbf{Paso 3. Verificación por integral de línea.} $\partial S$: $\mathbf{r}(t)=\langle\cos t,\sen t,1\rangle$, $d\mathbf{r}=\langle-\sen t,\cos t,0\rangle dt$, $\mathbf{F}=\langle\sen t,1,\cos t\rangle$:
-\[
-\oint_{\partial S}\mathbf{F}\cdot d\mathbf{r}
-=\int_0^{2\pi}(-\sen^2 t+\cos t)\,dt=-\pi+0=\boxed{-\pi}.\;\checkmark
-\]
-\end{myproof}
-\end{prob}
 
 \begin{prob}
 Sea $\mathbf{F}(x,y,z)=\langle -y, x, 2z\rangle$. Calcule la circulación de $\mathbf{F}$ alrededor del cuadrado en el plano $z=1$ con vértices $(1,1,1),(-1,1,1),(-1,-1,1),(1,-1,1)$.
 \end{prob}
 
-\begin{prob}
-Encuentre el momento de inercia $I_z$ de una cáscara esférica homogénea de radio $R$ y masa $M$ (es decir, con densidad constante $\rho = M/(4\pi R^2)$) con respecto al eje $z$.
-\begin{myproof}
-\textbf{Paso 1. Plantear la integral.} Con $\rho_0=M/(4\pi R^2)$:
-\[
-I_z=\iint_S(x^2+y^2)\,\rho_0\,dS.
-\]
-\textbf{Paso 2. Parametrizar la esfera.} $\mathbf{r}(\varphi,\theta)=\langle R\sen\varphi\cos\theta,R\sen\varphi\sen\theta,R\cos\varphi\rangle$, $dS=R^2\sen\varphi\,d\varphi\,d\theta$. Sobre $S$: $x^2+y^2=R^2\sen^2\varphi$.
 
-\textbf{Paso 3. Evaluar.}
-\[
-I_z=\rho_0\int_0^{2\pi}\!\int_0^{\pi}R^2\sen^2\varphi\cdot R^2\sen\varphi\,d\varphi\,d\theta
-=\rho_0 R^4\cdot2\pi\int_0^{\pi}\sen^3\varphi\,d\varphi.
-\]
-Usando $\displaystyle\int_0^\pi\sen^3\varphi\,d\varphi=\frac{4}{3}$:
-\[
-I_z=\rho_0 R^4\cdot2\pi\cdot\frac{4}{3}=\frac{8\pi\rho_0 R^4}{3}.
-\]
-\textbf{Paso 4. Sustituir $\rho_0=M/(4\pi R^2)$.}
-\[
-I_z=\frac{8\pi}{3}\cdot\frac{M}{4\pi R^2}\cdot R^4=\boxed{\dfrac{2}{3}MR^2}.
-\]
-\end{myproof}
-\end{prob}
 
 \begin{prob}
 Demuestre que si $\mathbf{F}$ es un campo conservativo (es decir, $\mathbf{F}=\nabla f$), entonces $\nabla\times\mathbf{F}=0$ y su flujo a través de cualquier superficie cerrada es cero (por el teorema de la divergencia) y su circulación a través de cualquier borde cerrado es cero (por Stokes).
