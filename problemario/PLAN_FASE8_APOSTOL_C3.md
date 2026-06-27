@@ -366,7 +366,7 @@ todo concepto con interpretación geométrica lleva figura TikZ inmediatamente d
 - Si es solo enunciado: añadir esquema con pasos clave (dividir región en tipo I + tipo II, aplicar TFC a cada integral itinerada, sumar)  
 - Si es completa: añadir figura geométrica del argumento (región con borde orientado, franjas verticales/horizontales)  
 **Líneas estimadas:** 40–80 según caso  
-**Estado:** Pendiente
+**Estado:** Completo — 2026-06-26. Prueba ya era completa (pedagógica, región tipo I+II). Figura TikZ 2D añadida después de `\end{proof}`: elipse como región R + franja vertical clipeada (azul oscuro) + orientación antihoraria de C (decorations.markings) + etiquetas g₁(x), g₂(x), C₁(→), C₂(←), a, b. `fig:green_region_tipo_I`. 764 págs, 0 errores.
 
 ---
 
@@ -374,7 +374,7 @@ todo concepto con interpretación geométrica lleva figura TikZ inmediatamente d
 **Verificar:** si la prueba de Green como caso particular de Stokes (que ya existe) es suficiente o si falta el esquema general  
 **Acción:** añadir figura con superficie $S$, borde $\partial S$ orientado por regla de la mano derecha, y micro-circulaciones del rotacional  
 **Líneas estimadas:** 35–55  
-**Estado:** Pendiente
+**Estado:** Completo — 2026-06-26. Figura TikZ 2D añadida entre `\end{rem}` y `\begin{proof}`: forma orgánica cerrada como superficie S + borde ∂S con 3 flechas stealth (regla de la mano derecha) + 3 vectores n (azul) + 3 micro-circulaciones arc CCW (gris). `fig:stokes_superficie`. 764 págs, 0 errores.
 
 ---
 
@@ -382,14 +382,14 @@ todo concepto con interpretación geométrica lleva figura TikZ inmediatamente d
 **Verificar:** estado de la demostración actual  
 **Acción:** añadir esquema con sólido $E$ dividido en rebanadas verticales, flujo neto por cara superior e inferior, cancelación de caras internas  
 **Líneas estimadas:** 40–60  
-**Estado:** Pendiente
+**Estado:** Completo — 2026-06-26. Figura TikZ 2D añadida después de `\end{proof}`: grilla 2×2 de celdas (sólido Q) + flechas de cancelación en cara interior vertical (rojas, opuestas) + flechas de flujo neto en ∂Q exterior (azules, hacia afuera) + etiquetas Q y ∂Q. `fig:divergencia_cancelacion`. 764 págs, 0 errores.
 
 ---
 
 ### F8.24 — Introducción narrativa: caps. 18, 19, 32 (los que no tienen párrafo introductorio)
 **Acción:** verificar cuáles capítulos C3 carecen de párrafo introductorio (motivación del capítulo antes de la primera sección). Añadir donde falte: 1 párrafo de 4–6 líneas con la pregunta central del capítulo y su conexión con lo anterior.  
 **Líneas estimadas:** 6–8 por capítulo afectado  
-**Estado:** Pendiente
+**Estado:** Completo — 2026-06-26. Auditoría real: caps 18, 19, 32, 33 ya tenían intro completa. Cap 20 (`planostangentes.tex`) carecía de párrafo a nivel `\chapter` (saltaba directo a `\section`). Añadido párrafo de 9 líneas entre `\chapter{...}` y los comentarios de sección: conecta con cap 19 (límites/continuidad), introduce derivada parcial, plano tangente y diferenciabilidad, y advierte que DP existentes ≠ diferenciable. 764 págs, 0 errores.
 
 ---
 
@@ -399,7 +399,7 @@ todo concepto con interpretación geométrica lleva figura TikZ inmediatamente d
 **Acción:** recorrer todos los ejemplos de dominio de funciones de varias variables que estén resueltos (cálculo del dominio) pero sin figura TikZ asociada. Por cada uno: añadir figura TikZ 2D del dominio en el plano xy (región sombreada, frontera etiquetada, punto de exclusión si aplica).  
 **Criterio de cierre:** ningún ejemplo de dominio calculado queda sin representación gráfica.  
 **Líneas estimadas:** 20–40 por figura (número total depende de auditoría).  
-**Estado:** Pendiente
+**Estado:** Completo — 2026-06-26. Auditoría: 1 `\begin{example}` de dominio sin figura (línea 794: $f=\sqrt{x+y}/\ln(x-y)$). Los 4 `\begin{prob}` de dominio que siguen ya tienen figuras. Figura añadida dentro de myproof, entre descripción verbal del Paso 4 y `\boxed{}`: triángulo azul D (x>0, -x≤y<x) + línea y=-x sólida (incluida) + y=x rayada (excluida) + y=x-1 punteada (excluida interior) + punto (1,0) + círculo vacío en origen. `fig:dominio_log_raiz`. 764 págs, 0 errores.
 
 ---
 
@@ -407,7 +407,7 @@ todo concepto con interpretación geométrica lleva figura TikZ inmediatamente d
 **Acción:** añadir una sección (o subsección según el orden R1 del capítulo) con las 5 superficies cuádricas fundamentales: paraboloide elíptico, paraboloide hiperbólico, cono elíptico, hiperboloide de una hoja, hiperboloide de dos hojas. Para cada superficie: figura pgfplots 3D (shader=flat, samples=20), ecuación canónica, nombre, y 1 ejemplo resuelto con estructura de 4 pasos + `\boxed{}` (dominio, trazado por trazas, identificación de tipo).  
 **Criterio de cierre:** las 5 superficies presentes, cada una con figura + ejemplo resuelto completo.  
 **Líneas estimadas:** 200–280 en total.  
-**Estado:** Pendiente
+**Estado:** Completo — 2026-06-26. Nueva `\subsection{Superficies cuádricas}` (`\label{sec:superficies-cuadricas}`) insertada entre `\subsection{Gráfica}` y `\subsection{Curvas y superficies de nivel}`. Rem anterior actualizado ("en secciones posteriores" → "en la subsección siguiente"). Las 5 superficies con figura pgfplots 3D + ejemplo 4 pasos + boxed: (1) paraboloide elíptico z=x²+4y²; (2) paraboloide hiperbólico z=x²-y²; (3) cono circular z²=x²+y² (2 napas); (4) hiperboloide 1 hoja x²+y²-z²=1 (paramétrico, samples=18); (5) hiperboloide 2 hojas z²-x²-y²=1 (2 casquetes). Todas las figuras con `[H]`. 766 págs, 0 errores.
 
 ---
 
@@ -415,7 +415,7 @@ todo concepto con interpretación geométrica lleva figura TikZ inmediatamente d
 **Acción:** añadir 2–3 ejemplos resueltos de superficies de nivel $f(x,y,z)=c$ para varios valores de $c$, cada uno con figura pgfplots 3D mostrando la familia de superficies. Los ejemplos deben cubrir casos distintos (esfera, elipsoide, paraboloide) para ilustrar variedad de comportamiento.  
 **Criterio de cierre:** 2–3 ejemplos resueltos con 4 pasos + `\boxed{}`, cada uno con figura 3D.  
 **Líneas estimadas:** 80–120 en total.  
-**Estado:** Pendiente
+**Estado:** Completo — 2026-06-26. 3 ejemplos añadidos después de `\end{rem}[Interpretación en topografía]` y antes del primer `\begin{prob}`: (1) esferas $f=x^2+y^2+z^2$ ($k=1,4,9$ → radios 1,2,3; figura esfera unitaria paramétrica); (2) elipsoide $f=x^2+y^2/4+z^2/9$ ($k=1$ → semiejes 1,2,3; figura elipsoide paramétrico); (3) paraboloides $f=x^2+y^2-z$ ($k=0,-1$ → vértices en $z=0,1$; figura 2 paraboloides superpuestos). Figuras `fig:nivel_esfera`, `fig:nivel_elipsoide`, `fig:nivel_paraboloides`. 768 págs, 0 errores.
 
 ---
 
@@ -423,7 +423,18 @@ todo concepto con interpretación geométrica lleva figura TikZ inmediatamente d
 **Acción:** verificar que todos los ejemplos resueltos existentes en `funvectoriales.tex` tienen la estructura de 4 pasos del protocolo diagnóstico + `\boxed{}` en el resultado final. Corregir los que no cumplan: añadir los pasos faltantes, reorganizar si el orden es incorrecto, añadir `\boxed{}` donde falte.  
 **Criterio de cierre:** todos los resueltos existentes cumplen el protocolo. Lista de correcciones registrada en las notas del ítem.  
 **Líneas estimadas:** 10–30 por ejemplo corregido (número total depende de auditoría).  
-**Estado:** Pendiente
+**Estado:** Completo — 2026-06-26
+
+**Correcciones aplicadas (4 de 7 ejemplos):**
+- L.129 (Límite vectorial): añadido `\textbf{Paso 4: Resultado vectorial.}` antes de `\boxed{}`. Tenía 3 pasos.
+- L.323 (Derivada hélice): reestructurado de 2 a 4 pasos: Paso 1 (componentes de r), Paso 2 (derivar), Paso 3 (función derivada), Paso 4 (evaluar en π/4).
+- L.465 (Integral vectorial): añadido `\textbf{Paso 4: Resultado vectorial.}` antes de `\boxed{}`. Tenía 3 pasos.
+- L.711 (Longitud arco circunferencia): separado verificación en Paso 4 independiente. Tenía 3 pasos.
+- L.550 (Longitud hélice): ya tenía 4 pasos + `\boxed{}`. Sin cambios.
+- L.794 (Dominio log+raíz): ya tenía 4 pasos + `\boxed{}` (verificado en F8.25). Sin cambios.
+- L.1328 (Curvas de nivel paraboloide): ya tenía 4 pasos + `\boxed{}`. Sin cambios.
+
+PDF final: 762 páginas. Compilación limpia.
 
 ---
 
@@ -668,10 +679,10 @@ Cada figura dentro de `figure` con `\caption` y `\label`. Etiquetas con `anchor`
 | F8.18 | `cap34.tex` | Figura curva orientada integral de línea | Completo | 2026-06-26 | TikZ 2D: curva cerrada C orientada (+) con región R. Antes de Teorema Green. `fig:curva_orientacion_positiva`. |
 | F8.19 | `cap34.tex` | Figura superficie orientada + normal | Completo | 2026-06-26 | pgfplots 3D z=4-x²-y² + 4 vectores n en rojo. Antes de def. Flujo. `fig:superficie_orientada`. |
 | F8.20 | caps. 18–22 | Auditoría orden R1 | Completo | 2026-06-26 | 1 inversión corregida (INV20.1 planostangentes: figura DP antes de ejemplos); 3 registradas sin corrección (INV18.2, INV19.1, INV21.1). Cap 18 y 22 sin inversiones. |
-| F8.21 | `cap34_integrales_vectoriales.tex` | Esquema prueba Green | Pendiente | — | — |
-| F8.22 | `cap34_integrales_vectoriales.tex` | Esquema prueba Stokes | Pendiente | — | — |
-| F8.23 | `cap34_integrales_vectoriales.tex` | Esquema prueba Divergencia | Pendiente | — | — |
-| F8.24 | caps. 18, 19, 32 | Introducciones narrativas | Pendiente | — | — |
+| F8.21 | `cap34.tex` | Figura geométrica prueba Green | Completo | 2026-06-26 | TikZ 2D: elipse R + franja vertical + orientación CCW + etiquetas C₁/C₂/g₁/g₂. `fig:green_region_tipo_I`. 764 págs. |
+| F8.22 | `cap34.tex` | Figura superficie Stokes | Completo | 2026-06-26 | TikZ 2D: superficie S + ∂S orientado + vectores n + micro-circulaciones. `fig:stokes_superficie`. 764 págs. |
+| F8.23 | `cap34.tex` | Figura cancelación Divergencia | Completo | 2026-06-26 | TikZ 2D: grilla 2×2 + flechas cancelación interna (rojo) + flujo ∂Q (azul). `fig:divergencia_cancelacion`. 764 págs. |
+| F8.24 | `planostangentes.tex` | Introducción narrativa cap 20 | Completo | 2026-06-26 | Caps 18/19/32/33 ya tenían intro. Párrafo añadido en cap 20 (entre \chapter y \section). 764 págs. |
 | F8.02 | `funvectoriales.tex` | Figura hélice R³ | Pendiente | — | — |
 | F8.03 | `funvectoriales.tex` | Figura paraboloide + curvas nivel | Pendiente | — | — |
 | F8.04 | `limvariasvariables.tex` | Figura vecindad ε-δ | Pendiente | — | — |
@@ -691,14 +702,14 @@ Cada figura dentro de `figure` con `\caption` y `\label`. Etiquetas con `anchor`
 | F8.18 | `cap34.tex` | Figura curva orientada integral de línea | Completo | 2026-06-26 | TikZ 2D: curva cerrada C orientada (+) con región R. Antes de Teorema Green. `fig:curva_orientacion_positiva`. |
 | F8.19 | `cap34.tex` | Figura superficie orientada + normal | Completo | 2026-06-26 | pgfplots 3D z=4-x²-y² + 4 vectores n en rojo. Antes de def. Flujo. `fig:superficie_orientada`. |
 | F8.20 | caps. 18–22 | Auditoría orden R1 | Completo | 2026-06-26 | 1 inversión corregida (INV20.1 planostangentes: figura DP antes de ejemplos); 3 registradas sin corrección (INV18.2, INV19.1, INV21.1). Cap 18 y 22 sin inversiones. |
-| F8.21 | `cap34_integrales_vectoriales.tex` | Esquema prueba Green | Pendiente | — | — |
-| F8.22 | `cap34_integrales_vectoriales.tex` | Esquema prueba Stokes | Pendiente | — | — |
-| F8.23 | `cap34_integrales_vectoriales.tex` | Esquema prueba Divergencia | Pendiente | — | — |
-| F8.24 | caps. 18, 19, 32 | Introducciones narrativas | Pendiente | — | — |
-| F8.25 | `funvectoriales.tex` | Auditoría ejemplos de dominio sin figura → añadir TikZ 2D | Pendiente | — | — |
-| F8.26 | `funvectoriales.tex` | Galería 5 superficies canónicas: figura + ejemplo resuelto cada una | Pendiente | — | — |
-| F8.27 | `funvectoriales.tex` | 2–3 ejemplos resueltos de superficies de nivel con figura 3D | Pendiente | — | — |
-| F8.28 | `funvectoriales.tex` | Auditoría estructura interna resueltos: 4 pasos + boxed | Pendiente | — | — |
+| F8.21 | `cap34.tex` | Figura geométrica prueba Green | Completo | 2026-06-26 | TikZ 2D: elipse R + franja vertical + orientación CCW + etiquetas C₁/C₂/g₁/g₂. `fig:green_region_tipo_I`. 764 págs. |
+| F8.22 | `cap34.tex` | Figura superficie Stokes | Completo | 2026-06-26 | TikZ 2D: superficie S + ∂S orientado + vectores n + micro-circulaciones. `fig:stokes_superficie`. 764 págs. |
+| F8.23 | `cap34.tex` | Figura cancelación Divergencia | Completo | 2026-06-26 | TikZ 2D: grilla 2×2 + flechas cancelación interna (rojo) + flujo ∂Q (azul). `fig:divergencia_cancelacion`. 764 págs. |
+| F8.24 | `planostangentes.tex` | Introducción narrativa cap 20 | Completo | 2026-06-26 | Caps 18/19/32/33 ya tenían intro. Párrafo añadido en cap 20 (entre \chapter y \section). 764 págs. |
+| F8.25 | `funvectoriales.tex` | Auditoría ejemplos dominio sin figura | Completo | 2026-06-26 | 1 example sin figura (f=√(x+y)/ln(x-y)); triángulo D + 3 rectas etiquetadas. `fig:dominio_log_raiz`. 764 págs. |
+| F8.26 | `funvectoriales.tex` | Galería 5 superficies cuádricas | Completo | 2026-06-26 | Nueva subsección con 5 superficies: paraboloide elíptico/hiperbólico, cono, hiperboloide 1/2 hojas. Figura pgfplots 3D + ejemplo 4 pasos + boxed cada una. 766 págs. |
+| F8.27 | `funvectoriales.tex` | 3 ejemplos superficies de nivel con figura 3D | Completo | 2026-06-26 | Esferas/elipsoide/paraboloides; figuras paramétricas pgfplots. `fig:nivel_esfera/elipsoide/paraboloides`. 768 págs. |
+| F8.28 | `funvectoriales.tex` | Auditoría estructura interna resueltos: 4 pasos + boxed | Completo | 2026-06-26 | 4/7 ejemplos corregidos (L.129, L.323, L.465, L.711). 3 ya OK (L.550, L.794, L.1328). 762 págs. |
 | F8.29 | `limvariasvariables.tex` | Auditoría estructura interna resueltos: 4 pasos + boxed | Pendiente | — | — |
 | F8.30 | `limvariasvariables.tex` | Vincular figura F8.05 a ejemplo resuelto de trayectorias | Completo | 2026-06-26 | Integrado en F8.05: figura colocada dentro del example antes de myproof. |
 | F8.31 | `funvectoriales.tex` | Auditoría figuras preexistentes: figure + caption + label + anchors | Pendiente | — | — |

@@ -147,6 +147,8 @@ Calcular
 \[
 \lim_{t \to 2} \cos(\pi t) = \cos(2\pi) = 1.
 \]
+
+\textbf{Paso 4: Resultado vectorial.}
 \[
 \boxed{\lim_{t \to 2} \left\langle t^2 - 1,\; \frac{t^2 - 4}{t - 2},\; \cos(\pi t) \right\rangle = \langle 3,\; 4,\; 1 \rangle}.
 \]
@@ -324,15 +326,23 @@ a la dinámica.
 Calcular la derivada de $\mathbf{r}(t) = \langle \cos t,\; \sen t,\; t \rangle$
 y determinar el vector velocidad en $t = \pi/4$.
 \begin{myproof}
-\textbf{Paso 1: Derivar componente a componente.}
-\[
-\frac{d}{dt}(\cos t) = -\sen t, \qquad
-\frac{d}{dt}(\sen t) = \cos t, \qquad
-\frac{d}{dt}(t) = 1,
-\]
-por tanto $\mathbf{r}'(t) = \langle -\sen t,\; \cos t,\; 1 \rangle$.
+\textbf{Paso 1: Componentes de $\mathbf{r}(t)$.}
+La función vectorial es $\mathbf{r}(t) = \langle \cos t,\; \sen t,\; t \rangle$,
+con tres componentes escalares: $r_1=\cos t$, $r_2=\sen t$, $r_3=t$.
 
-\textbf{Paso 2: Evaluar en $t = \pi/4$.}
+\textbf{Paso 2: Derivar componente a componente.}
+\[
+r_1'(t) = \frac{d}{dt}(\cos t) = -\sen t, \qquad
+r_2'(t) = \frac{d}{dt}(\sen t) = \cos t, \qquad
+r_3'(t) = \frac{d}{dt}(t) = 1.
+\]
+
+\textbf{Paso 3: Función derivada.}
+\[
+\mathbf{r}'(t) = \langle -\sen t,\; \cos t,\; 1 \rangle.
+\]
+
+\textbf{Paso 4: Evaluar en $t = \pi/4$.}
 \[
 \mathbf{r}'\!\left(\frac{\pi}{4}\right)
 = \left\langle -\sen\frac{\pi}{4},\; \cos\frac{\pi}{4},\; 1 \right\rangle
@@ -485,6 +495,8 @@ Calcular
 \int_0^{\pi/2} e^t\,dt = [e^t]_0^{\pi/2}
 = e^{\pi/2} - 1.
 \]
+
+\textbf{Paso 4: Resultado vectorial.}
 \[
 \boxed{\int_0^{\pi/2} \langle \sen t,\; \cos t,\; e^t \rangle\,dt
       = \left\langle 1,\; 1,\; e^{\pi/2} - 1 \right\rangle}.
@@ -732,11 +744,12 @@ Como $s = Rt$, se tiene $t = s/R$. Sustituyendo en $\mathbf{r}(t)$:
 \mathbf{r}(s) = \left\langle R\cos\frac{s}{R},\; R\sen\frac{s}{R} \right\rangle,
 \qquad 0 \leq s \leq 2\pi R.
 \]
-Verificamos que $\|\mathbf{r}'(s)\| = 1$:
+
+\textbf{Paso 4. Verificación: parametrización unitaria.}
 \[
 \mathbf{r}'(s) = \left\langle -\sen\frac{s}{R},\; \cos\frac{s}{R} \right\rangle,
 \qquad
-\|\mathbf{r}'(s)\| = \sqrt{\sen^2 + \cos^2} = 1.
+\|\mathbf{r}'(s)\| = \sqrt{\sen^2\frac{s}{R} + \cos^2\frac{s}{R}} = 1. \quad\checkmark
 \]
 \[
 \boxed{s(t) = Rt,\qquad \mathbf{r}(s) = \left\langle R\cos\frac{s}{R},\; R\sen\frac{s}{R} \right\rangle}.
@@ -829,6 +842,47 @@ En el plano $xy$:
   \item $x-y \neq 1$ excluye la recta $y = x-1$.
 \end{itemize}
 El dominio es la intersección de estas tres regiones.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=0.85]
+  % Shaded domain: triangle (0,0)-(3,-3)-(3,3)
+  \fill[blue!10] (0,0) -- (3,-3) -- (3,3) -- cycle;
+  % Light grid
+  \draw[gray!20, thin] (0,-3) grid[step=1] (3,3);
+  % Axes
+  \draw[->] (-0.4,0) -- (3.5,0) node[right] {$x$};
+  \draw[->] (0,-3.4) -- (0,3.4) node[above] {$y$};
+  % y = x (dashed red — EXCLUIDA: x-y=0)
+  \draw[thick, dashed, red!70!black] (-0.2,-0.2) -- (3.2,3.2);
+  \node[above left, red!70!black, scale=0.85] at (3.1,3.1) {$y=x$};
+  % y = -x (solid blue — INCLUIDA: x+y=0)
+  \draw[thick, blue!70!black] (-0.2,0.2) -- (3.2,-3.2);
+  \node[below right, blue!70!black, scale=0.85] at (3.1,-3.1) {$y=-x$};
+  % y = x-1 (dotted — EXCLUIDA dentro del dominio)
+  \draw[thick, dotted, red!50!black] (0,-1) -- (3.2,2.2);
+  \node[right, red!50!black, scale=0.85] at (3.2,2.1) {$y=x-1$};
+  % Open circle at origin (no pertenece al dominio)
+  \draw[red!70!black, thick] (0,0) circle (3pt);
+  % Point (1,0): y=x-1 intersects x-axis
+  \filldraw[black] (1,0) circle (1.5pt)
+    node[above right, scale=0.78] {$(1,0)$};
+  % Domain label
+  \node[blue!50!black, scale=1.1] at (2.0,-0.7) {$D$};
+  % Tick marks
+  \foreach \x in {1,2,3} {
+    \draw[gray!60] (\x,0.07) -- (\x,-0.07);
+    \node[below, scale=0.72] at (\x,-0.12) {$\x$};
+  }
+  \foreach \y in {-3,-2,-1,1,2,3} {
+    \draw[gray!60] (0.07,\y) -- (-0.07,\y);
+    \node[left, scale=0.72] at (-0.12,\y) {$\y$};
+  }
+\end{tikzpicture}
+\caption{Dominio de $f(x,y)=\frac{\sqrt{x+y}}{\ln(x-y)}$ (región azul): acotado por $y=-x$ (incluida, trazo sólido) y $y=x$ (excluida, rayado), con la recta $y=x-1$ excluida del interior (punteada). El origen no pertenece al dominio.}
+\label{fig:dominio_log_raiz}
+\end{figure}
+
 \[
 \boxed{D = \{(x,y) : x+y \geq 0,\; x-y > 0,\; x-y \neq 1\}}.
 \]
@@ -965,9 +1019,229 @@ $x$, $y$ y $z$:
 Ax^2 + By^2 + Cz^2 + Dxy + Exz + Fyz + Gx + Hy + Iz + J = 0.
 \]
 Entre ellas se incluyen el elipsoide, el paraboloide, el hiperboloide y
-el cono. La identificación y el trazado de estas superficies será
-objeto de estudio en secciones posteriores.
+el cono. La identificación y el trazado de estas superficies se
+presenta en la subsección siguiente.
 \end{rem}
+
+\subsection{Superficies cuádricas}
+\label{sec:superficies-cuadricas}
+
+Una \textbf{superficie cuádrica} es la gráfica en $\mathbb{R}^3$ de una
+ecuación polinómica de segundo grado en $x$, $y$, $z$. Toda superficie
+cuádrica no degenerada se reduce, mediante traslaciones y rotaciones, a
+una de las cinco formas canónicas siguientes. Para identificar una:
+(1)~determinar el dominio y rango de $z$; (2)~calcular las trazas con
+$z=k$, $y=0$ y $x=0$; (3)~comparar con las formas canónicas; (4)~esbozar.
+
+% ---------- 1. Paraboloide elíptico ----------
+\medskip
+\noindent\textbf{1.\ Paraboloide elíptico:}
+$\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=\dfrac{z}{c}$, $c>0$.
+Trazas $z=k>0$ son elipses; trazas en planos verticales son parábolas
+abriéndose en la dirección de $+z$; vértice en el origen.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[axis lines=center, xlabel=$x$, ylabel=$y$, zlabel=$z$,
+             xmin=-2.2,xmax=2.2,ymin=-2.2,ymax=2.2,zmin=0,zmax=4.5,
+             view={130}{25}, ticklabel style={font=\tiny},
+             width=6cm, height=5.5cm]
+  \addplot3[surf, shader=flat corner, samples=15, domain=-2:2,
+            colormap/cool, opacity=0.78] {x^2+y^2};
+\end{axis}
+\end{tikzpicture}
+\caption{Paraboloide elíptico $z=x^2+y^2$.}
+\label{fig:paraboloide_eliptico}
+\end{figure}
+
+\begin{example}[Paraboloide elíptico]
+Identificar y esbozar la superficie $z = x^2 + 4y^2$.
+\begin{myproof}
+\textbf{Paso 1.} $D=\mathbb{R}^2$, $z\ge 0$.
+
+\textbf{Paso 2. Trazas.}
+$z=k>0$: $x^2+4y^2=k$ (elipses);
+$y=0$: $z=x^2$ (parábola $\cup$);
+$x=0$: $z=4y^2$ (parábola $\cup$).
+
+\textbf{Paso 3.} Trazas horizontales elípticas y verticales parabólicas
+abriéndose hacia arriba: \emph{paraboloide elíptico} con vértice en el
+origen.
+
+\textbf{Paso 4.}
+\[\boxed{z=x^2+4y^2:\;\text{paraboloide elíptico, vértice }(0,0,0).}\]
+\end{myproof}
+\end{example}
+
+% ---------- 2. Paraboloide hiperbólico ----------
+\medskip
+\noindent\textbf{2.\ Paraboloide hiperbólico (silla de montar):}
+$z=\dfrac{x^2}{a^2}-\dfrac{y^2}{b^2}$.
+Trazas $z=k$ son hipérbolas; la traza $y=0$ es parábola $\cup$ y la
+traza $x=0$ es parábola $\cap$; punto de silla en el origen.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[axis lines=center, xlabel=$x$, ylabel=$y$, zlabel=$z$,
+             xmin=-2.2,xmax=2.2,ymin=-2.2,ymax=2.2,zmin=-4.5,zmax=4.5,
+             view={130}{25}, ticklabel style={font=\tiny},
+             width=6cm, height=5.5cm]
+  \addplot3[surf, shader=flat corner, samples=15, domain=-2:2,
+            colormap/cool, opacity=0.78] {x^2-y^2};
+\end{axis}
+\end{tikzpicture}
+\caption{Paraboloide hiperbólico $z=x^2-y^2$ (silla de montar).}
+\label{fig:paraboloide_hiperbolico}
+\end{figure}
+
+\begin{example}[Paraboloide hiperbólico]
+Identificar y esbozar la superficie $z = x^2 - y^2$.
+\begin{myproof}
+\textbf{Paso 1.} $D=\mathbb{R}^2$, $z\in\mathbb{R}$.
+
+\textbf{Paso 2. Trazas.}
+$z=k$: $x^2-y^2=k$ (hipérbolas);
+$y=0$: $z=x^2$ (parábola $\cup$);
+$x=0$: $z=-y^2$ (parábola $\cap$).
+
+\textbf{Paso 3.} Curvatura opuesta en las dos direcciones principales:
+\emph{paraboloide hiperbólico}. El origen es un punto de silla (mínimo
+en la dirección $x$, máximo en la dirección $y$).
+
+\textbf{Paso 4.}
+\[\boxed{z=x^2-y^2:\;\text{paraboloide hiperbólico, punto de silla }(0,0,0).}\]
+\end{myproof}
+\end{example}
+
+% ---------- 3. Cono elíptico ----------
+\medskip
+\noindent\textbf{3.\ Cono elíptico:}
+$\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=\dfrac{z^2}{c^2}$.
+Trazas $z=k\ne0$ son elipses; trazas en planos verticales son pares de
+rectas; vértice (punto de pinzamiento) en el origen.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[axis lines=center, xlabel=$x$, ylabel=$y$, zlabel=$z$,
+             xmin=-2.2,xmax=2.2,ymin=-2.2,ymax=2.2,zmin=-2.5,zmax=2.5,
+             view={130}{25}, ticklabel style={font=\tiny},
+             width=6cm, height=5.5cm]
+  \addplot3[surf, shader=flat corner, samples=15, domain=-2:2,
+            colormap/cool, opacity=0.78] {sqrt(x^2+y^2)};
+  \addplot3[surf, shader=flat corner, samples=15, domain=-2:2,
+            colormap/cool, opacity=0.78] {-sqrt(x^2+y^2)};
+\end{axis}
+\end{tikzpicture}
+\caption{Cono circular $z^2=x^2+y^2$, con ambas napas.}
+\label{fig:cono_circular}
+\end{figure}
+
+\begin{example}[Cono circular]
+Identificar y esbozar la superficie $z^2 = x^2 + y^2$.
+\begin{myproof}
+\textbf{Paso 1.} $z=\pm\sqrt{x^2+y^2}$; $D=\mathbb{R}^2$.
+
+\textbf{Paso 2. Trazas.}
+$z=k\ne0$: $x^2+y^2=k^2$ (circunferencia de radio $|k|$);
+$y=0$: $z=\pm x$ (dos rectas);
+$x=0$: $z=\pm y$ (dos rectas).
+
+\textbf{Paso 3.} Trazas horizontales circulares que se anulan en el
+vértice: \emph{cono circular} con dos napas simétricas respecto a $z=0$.
+
+\textbf{Paso 4.}
+\[\boxed{z^2=x^2+y^2:\;\text{cono circular, vértice }(0,0,0).}\]
+\end{myproof}
+\end{example}
+
+% ---------- 4. Hiperboloide de una hoja ----------
+\medskip
+\noindent\textbf{4.\ Hiperboloide de una hoja:}
+$\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}-\dfrac{z^2}{c^2}=1$.
+Trazas $z=k$ son elipses de radio creciente con $|k|$; trazas
+verticales son hipérbolas; cintura (radio mínimo) en $z=0$.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[axis lines=center, xlabel=$x$, ylabel=$y$, zlabel=$z$,
+             xmin=-3,xmax=3,ymin=-3,ymax=3,zmin=-3,zmax=3,
+             view={130}{25}, ticklabel style={font=\tiny},
+             width=6cm, height=5.5cm]
+  \addplot3[surf, shader=flat corner, samples=18,
+            colormap/cool, opacity=0.78,
+            variable=\u, variable y=\v,
+            domain=0:360, y domain=-2.5:2.5,
+            trig format plots=deg]
+           ({sqrt(1+\v*\v)*cos(\u)}, {sqrt(1+\v*\v)*sin(\u)}, {\v});
+\end{axis}
+\end{tikzpicture}
+\caption{Hiperboloide de una hoja $x^2+y^2-z^2=1$.}
+\label{fig:hiperboloide_una_hoja}
+\end{figure}
+
+\begin{example}[Hiperboloide de una hoja]
+Identificar y esbozar la superficie $x^2 + y^2 - z^2 = 1$.
+\begin{myproof}
+\textbf{Paso 1.} $x^2+y^2=1+z^2\ge 1$ para todo $z\in\mathbb{R}$.
+
+\textbf{Paso 2. Trazas.}
+$z=k$: $x^2+y^2=1+k^2$ (circunferencia de radio $\sqrt{1+k^2}$, mínimo $1$ en $k=0$);
+$y=0$: $x^2-z^2=1$ (hipérbola).
+
+\textbf{Paso 3.} Superficie conectada, secciones horizontales circulares
+con radio mínimo $1$ en $z=0$: \emph{hiperboloide de una hoja}.
+
+\textbf{Paso 4.}
+\[\boxed{x^2+y^2-z^2=1:\;\text{hiperboloide de una hoja, cintura de radio }1.}\]
+\end{myproof}
+\end{example}
+
+% ---------- 5. Hiperboloide de dos hojas ----------
+\medskip
+\noindent\textbf{5.\ Hiperboloide de dos hojas:}
+$-\dfrac{x^2}{a^2}-\dfrac{y^2}{b^2}+\dfrac{z^2}{c^2}=1$.
+Trazas $z=k$ ($|k|\ge c$) son elipses; la superficie tiene dos
+componentes separadas ($z\ge c$ y $z\le -c$).
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[axis lines=center, xlabel=$x$, ylabel=$y$, zlabel=$z$,
+             xmin=-2.2,xmax=2.2,ymin=-2.2,ymax=2.2,zmin=-3.5,zmax=3.5,
+             view={130}{25}, ticklabel style={font=\tiny},
+             width=6cm, height=5.5cm]
+  \addplot3[surf, shader=flat corner, samples=15, domain=-2:2,
+            colormap/cool, opacity=0.78] {sqrt(1+x^2+y^2)};
+  \addplot3[surf, shader=flat corner, samples=15, domain=-2:2,
+            colormap/cool, opacity=0.78] {-sqrt(1+x^2+y^2)};
+\end{axis}
+\end{tikzpicture}
+\caption{Hiperboloide de dos hojas $z^2-x^2-y^2=1$.}
+\label{fig:hiperboloide_dos_hojas}
+\end{figure}
+
+\begin{example}[Hiperboloide de dos hojas]
+Identificar y esbozar la superficie $z^2 - x^2 - y^2 = 1$.
+\begin{myproof}
+\textbf{Paso 1.} $z^2=1+x^2+y^2\ge 1$, luego $|z|\ge 1$: dos hojas
+disjuntas ($z\ge 1$ y $z\le -1$).
+
+\textbf{Paso 2. Trazas.}
+$z=k$ ($|k|\ge1$): $x^2+y^2=k^2-1$ (circunferencias vacías para $|k|<1$);
+$y=0$: $z^2-x^2=1$ (hipérbola).
+
+\textbf{Paso 3.} Dos casquetes separados por la condición $|z|\ge 1$:
+\emph{hiperboloide de dos hojas}, con puntos más cercanos al origen en
+$(0,0,\pm1)$.
+
+\textbf{Paso 4.}
+\[\boxed{z^2-x^2-y^2=1:\;\text{hiperboloide de dos hojas, puntos }(0,0,\pm1).}\]
+\end{myproof}
+\end{example}
 
 \subsection{Curvas y superficies de nivel}
 
@@ -1126,6 +1400,134 @@ En un mapa topográfico, las curvas de nivel unen puntos de igual
 altitud. Si $f(x,y)$ representa la altura del terreno en el punto
 $(x,y)$, las curvas de nivel son las líneas de contorno del mapa.
 \end{rem}
+
+% ---- Ejemplos de superficies de nivel f(x,y,z)=k (F8.27) ----
+
+\begin{example}[Superficies de nivel: familia de esferas]
+Describir las superficies de nivel de $f(x,y,z) = x^2+y^2+z^2$ para
+$k=1$, $k=4$ y $k=9$.
+\begin{myproof}
+\textbf{Paso 1. Dominio.} $D=\mathbb{R}^3$, $f\ge 0$. Solo $k\ge 0$
+produce superficies no vacías.
+
+\textbf{Paso 2. Ecuación de nivel.} Para cada $k>0$:
+\[
+x^2+y^2+z^2 = k
+\quad\Longrightarrow\quad
+\text{esfera centrada en el origen con radio }\sqrt{k}.
+\]
+Para $k=0$: solo el punto origen. Para $k<0$: conjunto vacío.
+
+\textbf{Paso 3. Familia.} Al aumentar $k$ las esferas se expanden
+concéntricamente. Los valores $k=1,4,9$ dan radios $1, 2, 3$.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[axis lines=center, xlabel=$x$, ylabel=$y$, zlabel=$z$,
+             xmin=-1.4,xmax=1.4,ymin=-1.4,ymax=1.4,zmin=-1.4,zmax=1.4,
+             view={130}{25}, ticklabel style={font=\tiny},
+             width=6cm, height=5.5cm]
+  \addplot3[surf, shader=flat corner, samples=15,
+            colormap/cool, opacity=0.78,
+            variable=\u, variable y=\v,
+            domain=0:360, y domain=0:180,
+            trig format plots=deg]
+           ({cos(\u)*sin(\v)}, {sin(\u)*sin(\v)}, {cos(\v)});
+\end{axis}
+\end{tikzpicture}
+\caption{Superficie de nivel $k=1$: esfera unitaria $x^2+y^2+z^2=1$.}
+\label{fig:nivel_esfera}
+\end{figure}
+
+\textbf{Paso 4.}
+\[\boxed{f(x,y,z)=x^2+y^2+z^2=k:\;
+\text{esferas de radio }\sqrt{k}\text{ centradas en el origen.}}\]
+\end{myproof}
+\end{example}
+
+\begin{example}[Superficie de nivel: elipsoide]
+Describir la superficie de nivel $k=1$ de
+$\displaystyle f(x,y,z)=x^2+\frac{y^2}{4}+\frac{z^2}{9}$.
+\begin{myproof}
+\textbf{Paso 1. Dominio.} $D=\mathbb{R}^3$, $f\ge 0$.
+
+\textbf{Paso 2. Ecuación de nivel $k=1$.}
+\[
+x^2+\frac{y^2}{4}+\frac{z^2}{9}=1:
+\quad\text{forma estándar de elipsoide con semiejes }a=1,\,b=2,\,c=3.
+\]
+
+\textbf{Paso 3. Identificación.} La superficie es compacta y convexa,
+contenida en el cubo $[-1,1]\times[-2,2]\times[-3,3]$. Al variar $k$
+se obtiene la familia $\tfrac{x^2}{k}+\tfrac{y^2}{4k}+\tfrac{z^2}{9k}=1$
+(elipsoides homoteticos).
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[axis lines=center, xlabel=$x$, ylabel=$y$, zlabel=$z$,
+             xmin=-1.4,xmax=1.4,ymin=-2.4,ymax=2.4,zmin=-3.4,zmax=3.4,
+             view={130}{25}, ticklabel style={font=\tiny},
+             width=6cm, height=5.5cm]
+  \addplot3[surf, shader=flat corner, samples=15,
+            colormap/cool, opacity=0.78,
+            variable=\u, variable y=\v,
+            domain=0:360, y domain=0:180,
+            trig format plots=deg]
+           ({cos(\u)*sin(\v)}, {2*sin(\u)*sin(\v)}, {3*cos(\v)});
+\end{axis}
+\end{tikzpicture}
+\caption{Superficie de nivel $k=1$: elipsoide con semiejes $a=1$, $b=2$, $c=3$.}
+\label{fig:nivel_elipsoide}
+\end{figure}
+
+\textbf{Paso 4.}
+\[\boxed{k=1:\;\text{elipsoide }x^2+\tfrac{y^2}{4}+\tfrac{z^2}{9}=1,
+\;\text{semiejes }1,\,2,\,3.}\]
+\end{myproof}
+\end{example}
+
+\begin{example}[Superficies de nivel: familia de paraboloides]
+Describir las superficies de nivel de $f(x,y,z) = x^2+y^2-z$ para
+$k=0$, $k=1$ y $k=-1$.
+\begin{myproof}
+\textbf{Paso 1. Dominio.} $D=\mathbb{R}^3$, $f\in\mathbb{R}$.
+
+\textbf{Paso 2. Ecuación de nivel.} $x^2+y^2-z=k$ equivale a
+\[
+z = x^2+y^2-k.
+\]
+Cada nivel $k$ es un \emph{paraboloide circular} abierto hacia arriba
+con vértice en $(0,0,-k)$.
+
+\textbf{Paso 3. Familia.} Al aumentar $k$ el vértice desciende (se
+aleja hacia $-z$); al disminuir $k$, asciende. Las superficies son
+paraboloides congruentes desplazados verticalmente.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[axis lines=center, xlabel=$x$, ylabel=$y$, zlabel=$z$,
+             xmin=-2.2,xmax=2.2,ymin=-2.2,ymax=2.2,zmin=-1.5,zmax=5,
+             view={130}{25}, ticklabel style={font=\tiny},
+             width=6cm, height=5.5cm]
+  \addplot3[surf, shader=flat corner, samples=15, domain=-2:2,
+            colormap/cool, opacity=0.78] {x^2+y^2};
+  \addplot3[surf, shader=flat corner, samples=15, domain=-2:2,
+            colormap/cool, opacity=0.65] {x^2+y^2+1};
+\end{axis}
+\end{tikzpicture}
+\caption{Familia de paraboloides $z=x^2+y^2-k$: $k=0$ vértice en $z=0$ (abajo) y
+         $k=-1$ vértice en $z=1$ (arriba).}
+\label{fig:nivel_paraboloides}
+\end{figure}
+
+\textbf{Paso 4.}
+\[\boxed{f(x,y,z)=x^2+y^2-z=k:\;\text{paraboloide }z=x^2+y^2-k,
+\;\text{vértice en }(0,0,-k).}\]
+\end{myproof}
+\end{example}
 
 \begin{prob}
 Tome la función $f(x,y)=\ln\left(1+8x^2+2y^2\right).$

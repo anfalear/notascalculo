@@ -97,6 +97,47 @@ De manera análoga, expresando $R$ como región de tipo II
 Sumando ambas igualdades se obtiene la fórmula de Green.
 \end{proof}
 
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.2]
+  % Region R (ellipse)
+  \fill[blue!10] (0,0) ellipse (2.2 and 1.5);
+  % Vertical strip clipped to ellipse
+  \begin{scope}
+    \clip (0,0) ellipse (2.2 and 1.5);
+    \fill[blue!25] (0.4,-2) rectangle (0.8,2);
+  \end{scope}
+  % Boundary C with counterclockwise arrows (positive orientation)
+  \draw[thick, blue!70!black,
+        postaction={decorate, decoration={markings,
+          mark=at position 0.10 with {\arrow[blue!70!black]{stealth}},
+          mark=at position 0.60 with {\arrow[blue!70!black]{stealth}}}}]
+        (0,0) ellipse (2.2 and 1.5);
+  % Reference x-axis
+  \draw[dashed, gray!60] (-2.5,0) -- (2.5,0);
+  % Strip vertical boundaries
+  \draw[dashed, gray!70] (0.4,-1.7) -- (0.4,1.7);
+  \draw[dashed, gray!70] (0.8,-1.7) -- (0.8,1.7);
+  % dx label above strip
+  \draw[stealth-stealth, gray!60] (0.4,1.68) -- (0.8,1.68) node[midway, above, black] {\small $dx$};
+  % Labels
+  \node at (-0.5,0.4) {$R$};
+  \node[blue!70!black] at (2.62,0.5) {$C$};
+  \node[below] at (-2.2,0) {\small $a$};
+  \node[below] at ( 2.2,0) {\small $b$};
+  % g1 and g2 at x=0.8
+  \node[right] at (0.83, 1.40) {\small $g_2(x)$};
+  \node[right] at (0.83,-1.40) {\small $g_1(x)$};
+  % C1 at bottom (goes right →) and C2 at top (goes left ←)
+  \draw[->, thick, red!70!black] (0.4,-1.48) -- (0.8,-1.40)
+        node[below right, scale=0.8] {$C_1$};
+  \draw[<-, thick, red!70!black] (0.4, 1.48) -- (0.8, 1.40)
+        node[above right, scale=0.8] {$C_2$};
+\end{tikzpicture}
+\caption{Región tipo\,I en la demostración del Teorema de Green: la franja vertical entre $g_1(x)$ y $g_2(x)$ muestra la aplicación del TFC en $y$. La orientación positiva (antihoraria) de $C$ implica que $C_1$ recorre el borde inferior $\to$ y $C_2$ el superior $\leftarrow$, originando el signo negativo en $-\iint_R \partial M/\partial y\,dA$.}
+\label{fig:green_region_tipo_I}
+\end{figure}
+
 \begin{rem}
 La demostración anterior supone que la región es simple (se puede
 describir como tipo I y tipo II). Para regiones más generales (con
@@ -899,6 +940,42 @@ La demostración rigurosa sigue la misma estrategia que el Teorema Fundamental d
 Para la componente $P$ del campo, se aplica el teorema de Fubini y el TFC en la dirección $x$; el resultado se suma con las otras dos componentes. La orientación exterior garantiza que los signos en la frontera coincidan con los de la integral de flujo.
 \end{proof}
 
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.0]
+  % 2x2 grid of cells representing solid Q
+  \foreach \i in {0,1} {
+    \foreach \j in {0,1} {
+      \fill[blue!6] (\i*2, \j*1.6) rectangle (\i*2+2, \j*1.6+1.6);
+      \draw[gray!55] (\i*2, \j*1.6) rectangle (\i*2+2, \j*1.6+1.6);
+    }
+  }
+  % Outer boundary (thick blue)
+  \draw[thick, blue!70!black] (0,0) rectangle (4,3.2);
+  % Interior shared faces (dashed)
+  \draw[dashed, gray!75] (2,0) -- (2,3.2);
+  \draw[dashed, gray!75] (0,1.6) -- (4,1.6);
+  % Cancellation at interior vertical face (x=2): opposite arrows
+  \draw[->, thick, red!60] (1.68, 0.80) -- (2.05, 0.80);
+  \draw[<-, thick, red!60] (1.95, 0.58) -- (2.32, 0.58);
+  \node[red!70!black, scale=0.78] at (2.0, 0.26) {\small se cancelan};
+  % Outer flux arrows (outward, blue)
+  \draw[->, thick, blue!70!black] (0, 0.80) -- (-0.50, 0.80);
+  \draw[->, thick, blue!70!black] (0, 2.40) -- (-0.50, 2.40);
+  \draw[->, thick, blue!70!black] (4, 0.80) -- ( 4.50, 0.80);
+  \draw[->, thick, blue!70!black] (4, 2.40) -- ( 4.50, 2.40);
+  \draw[->, thick, blue!70!black] (1, 3.2)  -- ( 1, 3.70);
+  \draw[->, thick, blue!70!black] (3, 3.2)  -- ( 3, 3.70);
+  \draw[->, thick, blue!70!black] (1, 0)    -- ( 1,-0.50);
+  \draw[->, thick, blue!70!black] (3, 0)    -- ( 3,-0.50);
+  % Labels
+  \node[blue!50!black] at (1.0, 2.35) {$Q$};
+  \node[blue!70!black, right] at (4.55, 1.6) {\small $\partial Q$};
+\end{tikzpicture}
+\caption{Cancelación de flujos en caras interiores (flechas rojas opuestas) en el Teorema de la Divergencia: cada cara interna tiene un flujo entrante de una celda y un flujo saliente de la celda vecina, que se anulan. Solo la frontera exterior $\partial Q$ contribuye al flujo neto (flechas azules).}
+\label{fig:divergencia_cancelacion}
+\end{figure}
+
 \begin{pasos}
 Para aplicar el teorema de la divergencia:
 \begin{enumerate}
@@ -1051,6 +1128,40 @@ donde $\displaystyle \nabla\times\mathbf{F} = \left( \frac{\partial R}{\partial 
 \begin{rem}
 La interpretación física es clara: la circulación total del campo alrededor del borde de una superficie es igual a la suma de las ``micro-circulaciones'' (el rotacional) a través de la superficie. Si $\nabla\times\mathbf{F}=\mathbf{0}$ en toda la superficie, el campo es irrotacional y la integral de línea sobre cualquier curva cerrada que limite una porción de $S$ es cero (independencia de la trayectoria local).
 \end{rem}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.1]
+  % Surface S (closed organic shape suggesting a curved surface)
+  \fill[green!8]
+    (-2,0) to[out=70,in=190] (0,1.8) to[out=10,in=100] (2.2,0.5)
+           to[out=280,in=0]  (0,-1.4) to[out=180,in=270] cycle;
+  % Boundary ∂S with right-hand rule orientation (arrows)
+  \draw[thick, red!70!black,
+        postaction={decorate, decoration={markings,
+          mark=at position 0.12 with {\arrow[red!70!black]{stealth}},
+          mark=at position 0.42 with {\arrow[red!70!black]{stealth}},
+          mark=at position 0.72 with {\arrow[red!70!black]{stealth}}}}]
+    (-2,0) to[out=70,in=190] (0,1.8) to[out=10,in=100] (2.2,0.5)
+           to[out=280,in=0]  (0,-1.4) to[out=180,in=270] cycle;
+  % Normal vectors n on surface
+  \draw[->, thick, blue!70!black] (-0.8,0.4) -- (-0.4,1.2)
+        node[left] {\small $\mathbf{n}$};
+  \draw[->, thick, blue!70!black] ( 0.6,0.2) -- ( 1.0,1.0);
+  \draw[->, thick, blue!70!black] ( 1.6,0.4) -- ( 2.0,1.2);
+  % Micro-circulations (small CCW arcs on surface patches)
+  \foreach \cx/\cy in {-0.8/-0.2, 0.3/0.7, 1.1/-0.3} {
+    \draw[->, gray!60, thin] (\cx,\cy) arc[start angle=0, end angle=300, radius=0.22];
+  }
+  % Labels
+  \node[green!40!black] at (0.3,-0.2) {$S$};
+  \node[red!70!black, below] at (0,-1.6) {\small $\partial S$};
+  \node[gray!55, scale=0.82] at (-1.6,-0.7) {\small micro-circulaciones};
+  \draw[->, gray!45, thin] (-1.0,-0.65) -- (-0.6,-0.2);
+\end{tikzpicture}
+\caption{Superficie orientada $S$ con borde $\partial S$ (rojo): la orientación de $\partial S$ sigue la regla de la mano derecha respecto de $\mathbf{n}$. Las micro-circulaciones del rotacional (arcos grises) se cancelan entre parches adyacentes; al sumar sobre toda $S$, solo queda la circulación total sobre $\partial S$.}
+\label{fig:stokes_superficie}
+\end{figure}
 
 \begin{proof}[El teorema de Green como caso particular de Stokes]
 Si la superficie $S$ es una región plana en el plano $xy$, podemos parametrizarla como $\mathbf{r}(x,y)=\langle x,y,0\rangle$ con $(x,y)\in R$. Su normal es $\mathbf{n}=\mathbf{k}$, y el borde $\partial S$ es la curva cerrada que limita a $R$ en el plano. 
