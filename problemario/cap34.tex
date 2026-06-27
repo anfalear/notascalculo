@@ -386,7 +386,9 @@ función potencial.
 \end{enumerate}
 \end{multicols}
 \begin{myproof}
-Para cada campo verificamos $\partial M/\partial y=\partial N/\partial x$ (en $\mathbb{R}^2$) o $\nabla\times\mathbf{F}=\mathbf{0}$ (en $\mathbb{R}^3$); si el dominio es simplemente conexo, el campo es conservativo. Hallamos $f$ tal que $\nabla f=\mathbf{F}$.
+\textbf{Paso 1. Estrategia.} Para cada campo verificamos $\partial M/\partial y=\partial N/\partial x$ (en $\mathbb{R}^2$) o $\nabla\times\mathbf{F}=\mathbf{0}$ (en $\mathbb{R}^3$); si el dominio es simplemente conexo, el campo es conservativo. Hallamos $f$ tal que $\nabla f=\mathbf{F}$.
+
+\textbf{Paso 2. Casos (a)--(d) en $\mathbb{R}^2$.}
 
 \textbf{(a)} $\tfrac{\partial(2y)}{\partial x}=0=\tfrac{\partial(2x)}{\partial y}$ ✓.\quad $f=x^2+y^2$.
 
@@ -396,9 +398,16 @@ Para cada campo verificamos $\partial M/\partial y=\partial N/\partial x$ (en $\
 
 \textbf{(d)} $\tfrac{\partial(e^x\cos y)}{\partial y}=-e^x\sen y=\tfrac{\partial(-e^x\sen y)}{\partial x}$ ✓.\quad $f=e^x\cos y$.
 
+\textbf{Paso 3. Casos (e)--(f) en $\mathbb{R}^3$.}
+
 \textbf{(e)} $\nabla\times\langle2x,2y,2z\rangle=\mathbf{0}$ ✓.\quad $f=x^2+y^2+z^2$.
 
-\textbf{(f)} $\mathbf{F}=\langle yz,xz,xy\rangle$: $\tfrac{\partial(xy)}{\partial y}-\tfrac{\partial(xz)}{\partial z}=x-x=0$;\; $\tfrac{\partial(yz)}{\partial z}-\tfrac{\partial(xy)}{\partial x}=y-y=0$;\; $\tfrac{\partial(xz)}{\partial x}-\tfrac{\partial(yz)}{\partial y}=z-z=0$ ✓. Integrando: $\partial f/\partial x=yz\Rightarrow f=xyz+g(y,z)$; $\partial f/\partial y=xz+\partial g/\partial y=xz\Rightarrow g=h(z)$; $\partial f/\partial z=xy+h'(z)=xy\Rightarrow h'=0$. $\boxed{f=xyz}$.
+\textbf{(f)} $\mathbf{F}=\langle yz,xz,xy\rangle$: $\tfrac{\partial(xy)}{\partial y}-\tfrac{\partial(xz)}{\partial z}=x-x=0$;\; $\tfrac{\partial(yz)}{\partial z}-\tfrac{\partial(xy)}{\partial x}=y-y=0$;\; $\tfrac{\partial(xz)}{\partial x}-\tfrac{\partial(yz)}{\partial y}=z-z=0$ ✓. Integrando: $\partial f/\partial x=yz\Rightarrow f=xyz+g(y,z)$; $\partial f/\partial y=xz+\partial g/\partial y=xz\Rightarrow g=h(z)$; $\partial f/\partial z=xy+h'(z)=xy\Rightarrow h'=0$.
+
+\textbf{Paso 4. Resultado.}
+\[
+\boxed{f_a=x^2+y^2,\quad f_b=xy^2,\quad f_c=x\cos y,\quad f_d=e^x\cos y,\quad f_e=x^2+y^2+z^2,\quad f_f=xyz.}
+\]
 \end{myproof}
 \end{prob}
 
@@ -416,7 +425,11 @@ que une $(0,0)$ con $(1,2)$.
 
 \textbf{Paso 3. Aplicar el TFC.}
 \[
-\int_C\mathbf{F}\cdot d\mathbf{r}=f(1,2)-f(0,0)=1^2\cdot2^2-0=\boxed{4}.
+\int_C\mathbf{F}\cdot d\mathbf{r}=f(1,2)-f(0,0)=1^2\cdot2^2-0=4.
+\]
+\textbf{Paso 4. Resultado.}
+\[
+\boxed{\int_C\mathbf{F}\cdot d\mathbf{r}=4.}
 \]
 \end{myproof}
 \end{prob}
@@ -436,12 +449,17 @@ Use esta fórmula para calcular el área de la elipse $\frac{x^2}{a^2}
 \[
 \frac{1}{2}\oint_C x\,dy-y\,dx=\iint_R 1\,dA=A(R).\quad\checkmark
 \]
-\textbf{Paso 2. Área de la elipse.} Parametrizamos $C$: $x=a\cos t$, $y=b\sen t$, $0\le t\le2\pi$:
+\textbf{Paso 2. Parametrizar la elipse.} $C$: $x=a\cos t$, $y=b\sen t$, $0\le t\le2\pi$:
 \[
 x\,dy-y\,dx=(a\cos t)(b\cos t\,dt)-(b\sen t)(-a\sen t\,dt)=ab(\cos^2t+\sen^2t)\,dt=ab\,dt.
 \]
+\textbf{Paso 3. Calcular la integral.}
 \[
-A=\frac{1}{2}\int_0^{2\pi}ab\,dt=\frac{ab}{2}\cdot2\pi=\boxed{\pi ab}.
+A=\frac{1}{2}\int_0^{2\pi}ab\,dt=\frac{ab}{2}\cdot2\pi=\pi ab.
+\]
+\textbf{Paso 4. Resultado.}
+\[
+\boxed{A(\text{elipse})=\pi ab.}
 \]
 \end{myproof}
 \end{prob}
@@ -461,12 +479,13 @@ línea.
 \]
 La condición se cumple en el dominio $D=\mathbb{R}^2\setminus\{(0,0)\}$.
 
-\textbf{Paso 2. Integral sobre la circunferencia unidad.} $\mathbf{r}(t)=\langle\cos t,\sen t\rangle$, $d\mathbf{r}=\langle-\sen t,\cos t\rangle dt$. Sobre $C$, $x^2+y^2=1$, luego $\mathbf{F}=\langle-\sen t,\cos t\rangle$:
-\[
-\oint_C\mathbf{F}\cdot d\mathbf{r}=\int_0^{2\pi}\bigl(\sen^2 t+\cos^2 t\bigr)dt=\int_0^{2\pi}dt=\boxed{2\pi}.
-\]
+\textbf{Paso 2. Parametrizar la circunferencia unidad.} $\mathbf{r}(t)=\langle\cos t,\sen t\rangle$, $d\mathbf{r}=\langle-\sen t,\cos t\rangle dt$. Sobre $C$, $x^2+y^2=1$, luego $\mathbf{F}=\langle-\sen t,\cos t\rangle$.
 
-\textbf{Paso 3. Explicación.} Aunque $\partial N/\partial x=\partial M/\partial y$, el dominio $D$ tiene un agujero en el origen: \emph{no es simplemente conexo}. El TFC exige que el campo sea conservativo en un dominio simplemente conexo, condición que no se cumple aquí. De hecho, $\mathbf{F}$ no tiene potencial global en $D$.
+\textbf{Paso 3. Calcular la integral.}
+\[
+\oint_C\mathbf{F}\cdot d\mathbf{r}=\int_0^{2\pi}\bigl(\sen^2 t+\cos^2 t\bigr)dt=\int_0^{2\pi}dt=2\pi.
+\]
+\textbf{Paso 4. Conclusión.} Aunque $\partial N/\partial x=\partial M/\partial y$, el dominio $D=\mathbb{R}^2\setminus\{(0,0)\}$ tiene un agujero en el origen: \emph{no es simplemente conexo}. El TFC exige dominio simplemente conexo, condición que no se cumple. $\mathbf{F}$ no tiene potencial global en $D$, por lo que $\oint_C\mathbf{F}\cdot d\mathbf{r}=2\pi\ne0$ no contradice el TFC.
 \end{myproof}
 \end{prob}
 
@@ -1090,7 +1109,11 @@ Verifique el teorema de Stokes para $\mathbf{F}(x,y,z)=\langle y, z, x\rangle$ s
 \textbf{Paso 3. Verificación por integral de línea.} $\partial S$: $\mathbf{r}(t)=\langle\cos t,\sen t,1\rangle$, $d\mathbf{r}=\langle-\sen t,\cos t,0\rangle dt$, $\mathbf{F}=\langle\sen t,1,\cos t\rangle$:
 \[
 \oint_{\partial S}\mathbf{F}\cdot d\mathbf{r}
-=\int_0^{2\pi}(-\sen^2 t+\cos t)\,dt=-\pi+0=\boxed{-\pi}.\;\checkmark
+=\int_0^{2\pi}(-\sen^2 t+\cos t)\,dt=-\pi+0=-\pi.
+\]
+\textbf{Paso 4. Conclusión.} Ambos cálculos coinciden, verificando el teorema de Stokes.
+\[
+\boxed{\iint_S(\nabla\times\mathbf{F})\cdot d\mathbf{S}=\oint_{\partial S}\mathbf{F}\cdot d\mathbf{r}=-\pi.}
 \]
 \end{myproof}
 \end{prob}
@@ -1102,9 +1125,17 @@ Calcule el flujo de $\mathbf{F}(x,y,z)=\langle 2x, -y, 3z\rangle$ a través de l
 \[
 \nabla\cdot\mathbf{F}=\frac{\partial(2x)}{\partial x}+\frac{\partial(-y)}{\partial y}+\frac{\partial(3z)}{\partial z}=2-1+3=4.
 \]
-\textbf{Paso 2. Aplicar el teorema de la divergencia.} El sólido $Q$ es la bola de radio 2; $V=\dfrac{4}{3}\pi(2)^3=\dfrac{32\pi}{3}$.
+\textbf{Paso 2. Identificar el sólido y su volumen.} El sólido $Q$ es la bola de radio 2:
 \[
-\iint_{\partial Q}\mathbf{F}\cdot\mathbf{n}\,dS=\iiint_Q 4\,dV=4\cdot\frac{32\pi}{3}=\boxed{\frac{128\pi}{3}}.
+V=\frac{4}{3}\pi(2)^3=\frac{32\pi}{3}.
+\]
+\textbf{Paso 3. Aplicar el teorema de la divergencia.}
+\[
+\iint_{\partial Q}\mathbf{F}\cdot\mathbf{n}\,dS=\iiint_Q 4\,dV=4\cdot\frac{32\pi}{3}=\frac{128\pi}{3}.
+\]
+\textbf{Paso 4. Resultado.}
+\[
+\boxed{\iint_{\partial Q}\mathbf{F}\cdot\mathbf{n}\,dS=\frac{128\pi}{3}.}
 \]
 \end{myproof}
 \end{prob}
