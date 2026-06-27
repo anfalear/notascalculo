@@ -727,7 +727,7 @@ Cada figura dentro de `figure` con `\caption` y `\label`. Etiquetas con `anchor`
 | F8.28 | `funvectoriales.tex` | Auditoría estructura interna resueltos: 4 pasos + boxed | Completo | 2026-06-26 | 4/7 ejemplos corregidos (L.129, L.323, L.465, L.711). 3 ya OK (L.550, L.794, L.1328). 762 págs. |
 | F8.29 | `limvariasvariables.tex` | Auditoría estructura interna resueltos: 4 pasos + boxed | Completo | 2026-06-27 | 11 correcciones: 8 examples + 3 probs. Ver bloque narrativo Semana 6. 768 págs. |
 | F8.30 | `limvariasvariables.tex` | Vincular figura F8.05 a ejemplo resuelto de trayectorias | Completo | 2026-06-26 | Integrado en F8.05: figura colocada dentro del example antes de myproof. |
-| F8.31 | `funvectoriales.tex` | Auditoría figuras preexistentes: figure + caption + label + anchors | Pendiente | — | — |
+| F8.31 | `funvectoriales.tex` | Auditoría figuras preexistentes: figure + caption + label + anchors | Completo | 2026-06-27 | 10 figuras Phase 8 ✓. 9 figuras preexistentes corregidas: +caption+label en 8 figure[H]; \begin{center}→figure[H] en 1 example. 768 págs. |
 | F8.32 | `limvariasvariables.tex` | Auditoría figuras preexistentes: figure + caption + label + anchors | Pendiente | — | — |
 | F8.33 | `planostangentes.tex` | Auditoría figuras preexistentes: figure + caption + label + anchors | Pendiente | — | — |
 | F8.34 | `gradientes.tex` | Auditoría figuras preexistentes: figure + caption + label + anchors | Pendiente | — | — |

@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (MiKTeX 25.4) (format=lualatex 2025.7.7)  27 JUN 2026 09:17
+This is LuaHBTeX, Version 1.22.0 (MiKTeX 25.4) (format=lualatex 2025.7.7)  27 JUN 2026 09:28
  restricted system commands enabled.
 **anfalearNotasCalculo.tex
 (./anfalearNotasCalculo.tex
@@ -1691,10 +1691,18 @@ Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
 luatex.def
 File: l3backend-luatex.def 2025-06-09 L3 backend support: PDF output (LuaTeX)
 \l__color_backend_stack_int=\count407
-Inserting `l3color' in `luaotfload.parse_color'.)
-No file anfalearNotasCalculo.aux.
+Inserting `l3color' in `luaotfload.parse_color'.) (./anfalearNotasCalculo.aux
+LaTeX Info: Redefining \. on input line 11.
+LaTeX Info: Redefining \% on input line 11.
+Package babel Info: 'spanish' activates 'spanish' shorthands.
+(babel)             Reported  on input line 11.
 
+
+LaTeX Warning: Label `figrayo' multiply defined.
+
+)
 \openout1 = anfalearNotasCalculo.aux
+
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 504.
 LaTeX Font Info:    ... okay on input line 504.
 LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 504.
@@ -1715,6 +1723,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 504.
 LaTeX Font Info:    ... okay on input line 504.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 504.
 LaTeX Font Info:    ... okay on input line 504.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: luatex
 *geometry* verbose mode - [ preamble ] result:
@@ -1751,8 +1760,6 @@ LaTeX Font Info:    ... okay on input line 504.
 
 LaTeX Info: Redefining \. on input line 504.
 LaTeX Info: Redefining \% on input line 504.
-Package babel Info: 'spanish' activates 'spanish' shorthands.
-(babel)             Reported  on input line 504.
 
 (C:/Users/anfalear/AppData/Local/Programs/MiKTeX/tex/context/base/mkii/supp-pdf
 .mkii
@@ -1901,10 +1908,6 @@ Package hyperref Info: bookmark level for unknown definition defaults to 0 on i
 nput line 7.
 Package hyperref Info: bookmark level for unknown rem defaults to 0 on input li
 ne 12.
-
-LaTeX Warning: Reference `defespvectorial' on page 19 undefined on input line 2
-6.
-
 Package hyperref Info: bookmark level for unknown theorem defaults to 0 on inpu
 t line 28.
 
@@ -1912,11 +1915,6 @@ t line 28.
 [19]
 Package hyperref Info: bookmark level for unknown prob defaults to 0 on input l
 ine 39.
-
-
-LaTeX Warning: Citation `andreescu2014complex' on page 20 undefined on input li
-ne 39.
-
 
 
 
@@ -1928,27 +1926,17 @@ ne 39.
 LaTeX Info: Redefining \. on input line 105.
 LaTeX Info: Redefining \% on input line 105.
 [20]
-
-LaTeX Warning: Citation `andreescu2014complex' on page 21 undefined on input li
-ne 109.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-LaTeX Info: Redefining \. on input line 173.
-LaTeX Info: Redefining \% on input line 173.
+LaTeX Info: Redefining \. on input line 168.
+LaTeX Info: Redefining \% on input line 168.
 [21]
 
-LaTeX Warning: Reference `demformeuler' on page 22 undefined on input line 177.
-
-
-
-LaTeX Warning: Reference `formageometrica54i' on page 22 undefined on input lin
-e 220.
-
-
-LaTeX Warning: Reference `formapolar54i' on page 22 undefined on input line 220
-.
-
+LaTeX Info: Redefining \. on input line 217.
+LaTeX Info: Redefining \% on input line 217.
+[22]
 Missing character: There is no π (U+03C0) in font [lmroman10-regular]:+tlig;!
 Missing character: There is no π (U+03C0) in font [lmroman10-regular]:+tlig;!
 Package epstopdf Info: Source file: <representacioncomplejo.eps>
@@ -1962,34 +1950,22 @@ f>
 jo-eps-converted-to.pdf representacioncomplejo.eps>
 (epstopdf)             \includegraphics on input line 275.
 Package epstopdf Info: Output file is already uptodate.
-<representacioncomplejo-eps-converted-to.pdf, id=1860, 662.475pt x 479.7925pt>
+<representacioncomplejo-eps-converted-to.pdf, id=1892, 662.475pt x 479.7925pt>
 File: representacioncomplejo-eps-converted-to.pdf Graphic file (type pdf)
 <use representacioncomplejo-eps-converted-to.pdf>
 Package luatex.def Info: representacioncomplejo-eps-converted-to.pdf  used on i
 nput line 275.
 (luatex.def)             Requested size: 231.86972pt x 167.92987pt.
 
-LaTeX Warning: Reference `formageometrica54i' on page 22 undefined on input lin
-e 279.
-
-
-LaTeX Warning: Reference `formapolar54i' on page 22 undefined on input line 279
-.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
 LaTeX Info: Redefining \. on input line 280.
 LaTeX Info: Redefining \% on input line 280.
-[22]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-LaTeX Info: Redefining \. on input line 285.
-LaTeX Info: Redefining \% on input line 285.
 [23
 Missing character: There is no π (U+03C0) in font [lmroman10-regular]:+tlig;!
-<./representacioncomplejo-eps-converted-to.pdf>]
+]
 
 
 
@@ -2000,30 +1976,21 @@ Missing character: There is no π (U+03C0) in font [lmroman10-regular]:+tlig;!
 
 
 
-LaTeX Warning: Citation `andreescu2014complex' on page 24 undefined on input li
-ne 308.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
 LaTeX Info: Redefining \. on input line 398.
 LaTeX Info: Redefining \% on input line 398.
-[24]
+[24<./representacioncomplejo-eps-converted-to.pdf>]
 
-
-
-
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-LaTeX Info: Redefining \. on input line 467.
-LaTeX Info: Redefining \% on input line 467.
+LaTeX Info: Redefining \. on input line 411.
+LaTeX Info: Redefining \% on input line 411.
 [25]
 
-LaTeX Warning: Citation `andreescu2014complex' on page 26 undefined on input li
-ne 470.
+
+
+
 
 
 
@@ -2037,47 +2004,27 @@ LaTeX Info: Redefining \. on input line 517.
 LaTeX Info: Redefining \% on input line 517.
 [26]
 
-LaTeX Warning: Reference `multiplicidadgeometrica' on page 27 undefined on inpu
-t line 533.
-
-
-LaTeX Warning: Citation `andreescu2014complex' on page 27 undefined on input li
-ne 536.
-
-
-
-
-
-
-
-
-
-LaTeX Info: Redefining \. on input line 597.
-LaTeX Info: Redefining \% on input line 597.
+LaTeX Info: Redefining \. on input line 534.
+LaTeX Info: Redefining \% on input line 534.
 [27]
 
-LaTeX Info: Redefining \. on input line 610.
-LaTeX Info: Redefining \% on input line 610.
+
+
+
+
+
+
+LaTeX Info: Redefining \. on input line 602.
+LaTeX Info: Redefining \% on input line 602.
 [28]
 
-LaTeX Warning: Reference `compsombreado' on page 29 undefined on input line 689
-.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-LaTeX Info: Redefining \. on input line 692.
-LaTeX Info: Redefining \% on input line 692.
+LaTeX Info: Redefining \. on input line 672.
+LaTeX Info: Redefining \% on input line 672.
 [29]
 
 
 
 
-
-
-LaTeX Warning: Reference `comprepex' on page 30 undefined on input line 765.
 
 
 
@@ -2096,15 +2043,6 @@ Missing character: There is no r (U+0072) in font nullfont!
 Missing character: There is no s (U+0073) in font nullfont!
 Missing character: There is no ] (U+005D) in font nullfont!
 ]
-
-LaTeX Warning: Reference `compubicacion' on page 31 undefined on input line 808
-.
-
-
-LaTeX Warning: Reference `compubicacion' on page 31 undefined on input line 872
-.
-
-
 
 LaTeX Info: Redefining \. on input line 876.
 LaTeX Info: Redefining \% on input line 876.
@@ -2125,14 +2063,6 @@ LaTeX Info: Redefining \. on input line 1087.
 LaTeX Info: Redefining \% on input line 1087.
 [34]
 
-LaTeX Warning: Citation `andreescu2014complex' on page 35 undefined on input li
-ne 1091.
-
-
-Underfull \vbox (badness 1308) has occurred while \output is active []
-
-
-
 LaTeX Info: Redefining \. on input line 1187.
 LaTeX Info: Redefining \% on input line 1187.
 [35]
@@ -2143,11 +2073,6 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 LaTeX Info: Redefining \. on input line 1187.
 LaTeX Info: Redefining \% on input line 1187.
 [36]
-
-LaTeX Warning: Citation `andreescu2014complex' on page 37 undefined on input li
-ne 1190.
-
-
 
 LaTeX Info: Redefining \. on input line 1249.
 LaTeX Info: Redefining \% on input line 1249.
@@ -2160,10 +2085,6 @@ LaTeX Info: Redefining \% on input line 1249.
 
 
 
-LaTeX Warning: Citation `andreescu2014complex' on page 38 undefined on input li
-ne 1269.
-
-
 
 
 
@@ -2174,11 +2095,6 @@ ne 1269.
 LaTeX Info: Redefining \. on input line 1308.
 LaTeX Info: Redefining \% on input line 1308.
 [38]
-
-LaTeX Warning: Citation `andreescu2014complex' on page 39 undefined on input li
-ne 1312.
-
-
 
 
 
@@ -2224,10 +2140,6 @@ Overfull \vbox (81.19304pt too high) has occurred while \output is active []
 
 
 
-
-LaTeX Warning: Reference `defespvectorial' on page 42 undefined on input line 1
-21.
-
 Package hyperref Info: bookmark level for unknown example defaults to 0 on inpu
 t line 124.
 Package pgfplots info on input line 151: Using 'lua backend=false' for plot 0 (
@@ -2265,10 +2177,6 @@ LaTeX Info: Redefining \% on input line 273.
 Missing character: There is no ° (U+00B0) in font cmr8!
 Missing character: There is no ° (U+00B0) in font cmr8!
 
-LaTeX Warning: Reference `probvectrigo' on page 43 undefined on input line 305.
-
-
-
 
 
 
@@ -2293,10 +2201,6 @@ Underfull \vbox (badness 2799) has occurred while \output is active []
 
 
 [43]
-
-LaTeX Warning: Reference `ejemplonorma' on page 44 undefined on input line 384.
-
-
 Package pgfplots info on input line 402: Using 'lua backend=false' for plot 0 (
 type 'quiver'): plot handler does not support LUA.
 Package pgfplots info on input line 408: Using 'lua backend=false' for plot 1 (
@@ -2319,11 +2223,6 @@ LaTeX Info: Redefining \% on input line 445.
 [44]
 
 [45]
-
-LaTeX Warning: Reference `probtrianguloperimetro' on page 46 undefined on input
- line 606.
-
-
 Overfull \hbox (1.30046pt too wide) detected at line 623
 []
  []
@@ -2393,11 +2292,6 @@ LaTeX Info: Redefining \. on input line 1193.
 LaTeX Info: Redefining \% on input line 1193.
 [52]
 
-LaTeX Warning: Citation `espinoza2006Algebralineal' on page 53 undefined on inp
-ut line 1217.
-
-
-
 [53]
 
 
@@ -2428,77 +2322,26 @@ LaTeX Info: Redefining \. on input line 1553.
 LaTeX Info: Redefining \% on input line 1553.
 [56]
 
-LaTeX Warning: Citation `espinoza2006Algebralineal' on page 57 undefined on inp
-ut line 1557.
-
-
-
 [57]
-
-LaTeX Warning: Citation `espinoza2006Algebralineal' on page 58 undefined on inp
-ut line 1605.
-
-
-LaTeX Warning: Citation `espinoza2006Algebralineal' on page 58 undefined on inp
-ut line 1675.
-
-
 
 LaTeX Info: Redefining \. on input line 1676.
 LaTeX Info: Redefining \% on input line 1676.
 [58]
-
-LaTeX Warning: Citation `espinoza2006Algebralineal' on page 59 undefined on inp
-ut line 1744.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 3168) has occurred while \output is active []
 
 
 
 [59]
 
-LaTeX Warning: Citation `espinoza2006Algebralineal' on page 60 undefined on inp
-ut line 1810.
-
-
-Overfull \hbox (0.12675pt too wide) in paragraph at lines 1810--1811
-[][]\TU/lmr/bx/n/12 Pro-ble-ma 3.39. []\TU/lmr/m/n/12 ([[]], p. 88, Pro-ble-ma 
-86) Ha-lle la ecua-ción del plano que pa-sa por los pun-tos $\OML/cmm/m/it/12 
-A\OT1/cmr/m/n/12 (1\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 2\OML/cmm/m/it/12 ; \OMS/
-cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 4)$\TU/lmr/m/n/12 ,
- []
-
-
-
 LaTeX Info: Redefining \. on input line 1811.
 LaTeX Info: Redefining \% on input line 1811.
 [60]
 
-LaTeX Warning: Citation `espinoza2006Algebralineal' on page 61 undefined on inp
-ut line 1880.
-
-
-
 [61]
-
-LaTeX Warning: Citation `espinoza2006Algebralineal' on page 62 undefined on inp
-ut line 1909.
-
-
 
 LaTeX Info: Redefining \. on input line 1991.
 LaTeX Info: Redefining \% on input line 1991.
 [62]
-
-LaTeX Warning: Citation `espinoza2006Algebralineal' on page 63 undefined on inp
-ut line 1995.
-
-
-LaTeX Warning: Citation `espinoza2006Algebralineal' on page 63 undefined on inp
-ut line 2046.
-
-
 
 [63]
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -2602,13 +2445,6 @@ LaTeX Info: Redefining \. on input line 117.
 LaTeX Info: Redefining \% on input line 117.
 [72]
 
-LaTeX Warning: Reference `ejgrafo01' on page 73 undefined on input line 149.
-
-
-LaTeX Warning: Reference `ejgrafo02' on page 73 undefined on input line 183.
-
-
-
 LaTeX Info: Redefining \. on input line 223.
 LaTeX Info: Redefining \% on input line 223.
 [73]
@@ -2657,18 +2493,6 @@ LaTeX Info: Redefining \. on input line 828.
 LaTeX Info: Redefining \% on input line 828.
 [79]
 
-LaTeX Warning: Reference `lem:gauss-jordan' on page 80 undefined on input line 
-845.
-
-
-LaTeX Warning: Reference `thm:adjunta' on page 80 undefined on input line 846.
-
-
-LaTeX Warning: Citation `araujo2014algebra' on page 80 undefined on input line 
-848.
-
-
-
 LaTeX Info: Redefining \. on input line 850.
 LaTeX Info: Redefining \% on input line 850.
 [80]
@@ -2685,28 +2509,9 @@ LaTeX Info: Redefining \. on input line 1066.
 LaTeX Info: Redefining \% on input line 1066.
 [83]
 
-LaTeX Warning: Reference `def:escalonada' on page 84 undefined on input line 11
-25.
-
-
-
 LaTeX Info: Redefining \. on input line 1126.
 LaTeX Info: Redefining \% on input line 1126.
 [84]
-
-LaTeX Warning: Reference `lem:gauss' on page 85 undefined on input line 1177.
-
-
-LaTeX Warning: Reference `lem:gauss-jordan' on page 85 undefined on input line 
-1178.
-
-
-LaTeX Warning: Reference `lem:gauss' on page 85 undefined on input line 1186.
-
-
-LaTeX Warning: Reference `lem:gauss-jordan' on page 85 undefined on input line 
-1186.
-
 Package hyperref Info: bookmark level for unknown lemma defaults to 0 on input 
 line 1189.
 
@@ -2715,22 +2520,9 @@ LaTeX Info: Redefining \. on input line 1205.
 LaTeX Info: Redefining \% on input line 1205.
 [85]
 
-LaTeX Warning: Reference `lem:gauss' on page 86 undefined on input line 1224.
-
-
-
 LaTeX Info: Redefining \. on input line 1258.
 LaTeX Info: Redefining \% on input line 1258.
 [86]
-
-LaTeX Warning: Reference `def:escalonada' on page 87 undefined on input line 12
-63.
-
-
-LaTeX Warning: Reference `def:escalonada-reducida' on page 87 undefined on inpu
-t line 1264.
-
-
 
 LaTeX Info: Redefining \. on input line 1326.
 LaTeX Info: Redefining \% on input line 1326.
@@ -2740,45 +2532,17 @@ LaTeX Info: Redefining \. on input line 1377.
 LaTeX Info: Redefining \% on input line 1377.
 [88]
 
-LaTeX Warning: Reference `lem:gauss-jordan' on page 89 undefined on input line 
-1394.
-
-
-
 LaTeX Info: Redefining \. on input line 1460.
 LaTeX Info: Redefining \% on input line 1460.
 [89]
-
-LaTeX Warning: Citation `araujo2014algebra' on page 90 undefined on input line 
-1463.
-
-
-LaTeX Warning: Citation `araujo2014algebra' on page 90 undefined on input line 
-1465.
-
-
-LaTeX Warning: Citation `araujo2014algebra' on page 90 undefined on input line 
-1510.
-
-
 
 LaTeX Info: Redefining \. on input line 1526.
 LaTeX Info: Redefining \% on input line 1526.
 [90]
 
-LaTeX Warning: Citation `araujo2014algebra' on page 91 undefined on input line 
-1579.
-
-
-
 LaTeX Info: Redefining \. on input line 1618.
 LaTeX Info: Redefining \% on input line 1618.
 [91]
-
-LaTeX Warning: Citation `araujo2014algebra' on page 92 undefined on input line 
-1675.
-
-
 
 LaTeX Info: Redefining \. on input line 1708.
 LaTeX Info: Redefining \% on input line 1708.
@@ -2806,11 +2570,6 @@ LaTeX Info: Redefining \% on input line 1921.
 LaTeX Info: Redefining \. on input line 1954.
 LaTeX Info: Redefining \% on input line 1954.
 [95]
-
-LaTeX Warning: Reference `thm:invertible-equiv-v2' on page 96 undefined on inpu
-t line 1997.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
@@ -2819,31 +2578,13 @@ LaTeX Info: Redefining \. on input line 2007.
 LaTeX Info: Redefining \% on input line 2007.
 [96]
 
-LaTeX Warning: Reference `thm:invertible-equiv' on page 97 undefined on input l
-ine 2069.
-
-
-
 LaTeX Info: Redefining \. on input line 2071.
 LaTeX Info: Redefining \% on input line 2071.
 [97]
 
-LaTeX Warning: Reference `thm:adjunta' on page 98 undefined on input line 2073.
-
-
-
-LaTeX Warning: Reference `thm:det-prop' on page 98 undefined on input line 2098
-.
-
-
-
 LaTeX Info: Redefining \. on input line 2128.
 LaTeX Info: Redefining \% on input line 2128.
 [98]
-
-LaTeX Warning: Reference `ej.inversa' on page 99 undefined on input line 2135.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
@@ -2880,11 +2621,6 @@ LaTeX Info: Redefining \. on input line 2547.
 LaTeX Info: Redefining \% on input line 2547.
 [103]
 
-LaTeX Warning: Citation `andreescu2014essential' on page 104 undefined on input
- line 2577.
-
-
-
 LaTeX Info: Redefining \. on input line 2611.
 LaTeX Info: Redefining \% on input line 2611.
 [104]
@@ -2915,14 +2651,6 @@ LaTeX Info: Redefining \. on input line 2832.
 LaTeX Info: Redefining \% on input line 2832.
 [107]
 
-LaTeX Warning: Citation `andreescu2014essential' on page 108 undefined on input
- line 2857.
-
-
-LaTeX Warning: Reference `def:traza' on page 108 undefined on input line 2858.
-
-
-
 LaTeX Info: Redefining \. on input line 2893.
 LaTeX Info: Redefining \% on input line 2893.
 [108]
@@ -2950,47 +2678,12 @@ LaTeX Info: Redefining \% on input line 1.
 ]
 Capítulo 5.
 
-LaTeX Warning: Reference `vegern' on page 113 undefined on input line 5.
-
-
-LaTeX Warning: Reference `def:vectorescoordenadas' on page 113 undefined on inp
-ut line 5.
-
-
-LaTeX Warning: Reference `def:comblineal' on page 113 undefined on input line 1
-2.
-
-
 
 [113]
-
-LaTeX Warning: Reference `def:rango' on page 114 undefined on input line 64.
-
-
-LaTeX Warning: Reference `thm:carsisthom' on page 114 undefined on input line 8
-4.
-
-
-LaTeX Warning: Reference `lem:gauss' on page 114 undefined on input line 86.
-
-
-LaTeX Warning: Reference `lem:gauss-jordan' on page 114 undefined on input line
- 86.
-
-
 
 LaTeX Info: Redefining \. on input line 87.
 LaTeX Info: Redefining \% on input line 87.
 [114]
-
-LaTeX Warning: Reference `lem:gauss-jordan' on page 115 undefined on input line
- 95.
-
-
-LaTeX Warning: Reference `lem:gauss-jordan' on page 115 undefined on input line
- 178.
-
-
 
 [115]
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -3021,17 +2714,7 @@ LaTeX Info: Redefining \. on input line 575.
 LaTeX Info: Redefining \% on input line 575.
 [120]
 
-LaTeX Warning: Reference `thm:invertible-equiv-v2' on page 121 undefined on inp
-ut line 581.
-
-
-
 [121]
-
-LaTeX Warning: Reference `thm:invertible-equiv-v3' on page 122 undefined on inp
-ut line 648.
-
-
 
 LaTeX Info: Redefining \. on input line 686.
 LaTeX Info: Redefining \% on input line 686.
@@ -3057,11 +2740,6 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 LaTeX Info: Redefining \. on input line 1058.
 LaTeX Info: Redefining \% on input line 1058.
 [126]
-
-LaTeX Warning: Reference `parabolainterpolacion' on page 127 undefined on input
- line 1061.
-
-
 Overfull \vbox (13.34036pt too high) has occurred while \output is active []
 
 
@@ -3077,11 +2755,6 @@ Overfull \vbox (13.34036pt too high) has occurred while \output is active []
 
 
 [127]
-
-LaTeX Warning: Reference `circunferenciainterpolacion' on page 128 undefined on
- input line 1184.
-
-
 
 
 
@@ -3151,29 +2824,14 @@ LaTeX Info: Redefining \% on input line 2058.
 
 [139]
 
-LaTeX Warning: Reference `trianguloreglacramer' on page 140 undefined on input 
-line 2147.
-
-
-
 LaTeX Info: Redefining \. on input line 2283.
 LaTeX Info: Redefining \% on input line 2283.
 [140]
-
-LaTeX Warning: Reference `Aladeaviontabla' on page 141 undefined on input line 
-2291.
-
-
 Underfull \vbox (badness 1584) has occurred while \output is active []
 
 
 
 [141]
-
-LaTeX Warning: Reference `problemapolinomios' on page 142 undefined on input li
-ne 2443.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
@@ -3183,11 +2841,6 @@ LaTeX Info: Redefining \% on input line 2445.
 [142]
 
 [143]
-
-LaTeX Warning: Reference `flujosrefineria' on page 144 undefined on input line 
-2545.
-
-
 
 
 
@@ -3223,10 +2876,6 @@ LaTeX Info: Redefining \% on input line 2769.
 
 
 
-LaTeX Warning: Reference `plantrafico' on page 147 undefined on input line 2865
-.
-
-
 
 LaTeX Info: Redefining \. on input line 2915.
 LaTeX Info: Redefining \% on input line 2915.
@@ -3242,23 +2891,6 @@ Capítulo 6.
 
 ]
 
-LaTeX Warning: Citation `anton2014elementary' on page 150 undefined on input li
-ne 76.
-
-
-LaTeX Warning: Citation `anton2014elementary' on page 150 undefined on input li
-ne 82.
-
-
-LaTeX Warning: Citation `anton2014elementary' on page 150 undefined on input li
-ne 88.
-
-
-LaTeX Warning: Reference `defespvectorial' on page 150 undefined on input line 
-96.
-
-
-
 LaTeX Info: Redefining \. on input line 164.
 LaTeX Info: Redefining \% on input line 164.
 [150]
@@ -3267,24 +2899,11 @@ LaTeX Info: Redefining \. on input line 164.
 LaTeX Info: Redefining \% on input line 164.
 [151]
 
-LaTeX Warning: Reference `defsubespacio' on page 152 undefined on input line 18
-9.
-
-
-
 LaTeX Info: Redefining \. on input line 192.
 LaTeX Info: Redefining \% on input line 192.
 [152]
-
-LaTeX Warning: Reference `testsubespacio' on page 153 undefined on input line 1
-98.
-
 Package hyperref Info: bookmark level for unknown coro defaults to 0 on input l
 ine 200.
-
-LaTeX Warning: Reference `testsubespacioversioncompacta' on page 153 undefined 
-on input line 229.
-
 
 
 LaTeX Info: Redefining \. on input line 242.
@@ -3300,26 +2919,10 @@ LaTeX Info: Redefining \% on input line 242.
 
 
 
-LaTeX Warning: Reference `testsubespacioversioncompacta' on page 155 undefined 
-on input line 256.
-
-
-LaTeX Warning: Reference `testsubespacioversioncompacta' on page 155 undefined 
-on input line 275.
-
-
 
 LaTeX Info: Redefining \. on input line 295.
 LaTeX Info: Redefining \% on input line 295.
 [155]
-
-LaTeX Warning: Reference `testsubespacio' on page 156 undefined on input line 2
-95.
-
-
-LaTeX Warning: Reference `testsubespacioversioncompacta' on page 156 undefined 
-on input line 308.
-
 
 LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 330.
 
@@ -3339,10 +2942,6 @@ Overfull \hbox (16.20161pt too wide) in paragraph at lines 364--367
 ; [] ; v[]$\TU/lmr/m/n/12 . En-ton-ces exis-ten es-ca-la-res $\OML/cmm/m/it/12 
 []; []; [] ; []$ \TU/lmr/m/n/12 y $\OML/cmm/m/it/12 []; []; [] ; []$
  []
-
-
-LaTeX Warning: Reference `testsubespacioversioncompacta' on page 157 undefined 
-on input line 373.
 
 
 
@@ -3412,11 +3011,6 @@ LaTeX Info: Redefining \. on input line 1038.
 LaTeX Info: Redefining \% on input line 1038.
 [170]
 
-LaTeX Warning: Reference `thm:invertible-equiv-v3' on page 171 undefined on inp
-ut line 1059.
-
-
-
 LaTeX Info: Redefining \. on input line 1085.
 LaTeX Info: Redefining \% on input line 1085.
 [171]
@@ -3443,10 +3037,6 @@ LaTeX Info: Redefining \% on input line 1.
 
 ]
 Capítulo 7.
-
-LaTeX Warning: Reference `defespvectorial' on page 177 undefined on input line 
-6.
-
 
 
 [177]
@@ -3556,10 +3146,6 @@ LaTeX Info: Redefining \% on input line 984.
 
 [193]
 
-LaTeX Warning: Reference `fig1' on page 194 undefined on input line 1104.
-
-
-
 LaTeX Info: Redefining \. on input line 1131.
 LaTeX Info: Redefining \% on input line 1131.
 [194]
@@ -3621,26 +3207,10 @@ LaTeX Info: Redefining \% on input line 1.
 [200]
 Capítulo 8.
 
-LaTeX Warning: Reference `tfam' on page 201 undefined on input line 35.
-
-
-LaTeX Warning: Reference `ex:ejemplovvp' on page 201 undefined on input line 46
-.
-
-
 
 [201
 
 ]
-
-LaTeX Warning: Reference `teo:caracterizacion' on page 202 undefined on input l
-ine 90.
-
-
-LaTeX Warning: Reference `teo:potencia' on page 202 undefined on input line 114
-.
-
-
 
 LaTeX Info: Redefining \. on input line 115.
 LaTeX Info: Redefining \% on input line 115.
@@ -3660,17 +3230,9 @@ LaTeX Info: Redefining \% on input line 293.
 
 [205]
 
-LaTeX Warning: Reference `prob:vvp' on page 206 undefined on input line 418.
-
-
-
 LaTeX Info: Redefining \. on input line 453.
 LaTeX Info: Redefining \% on input line 453.
 [206]
-
-LaTeX Warning: Reference `potdim' on page 207 undefined on input line 475.
-
-
 
 [207]
 
@@ -4039,44 +3601,17 @@ Capítulo 10.
 
 ]
 
-LaTeX Warning: Reference `subsec:supremo' on page 264 undefined on input line 1
-02.
-
-
-
 LaTeX Info: Redefining \. on input line 152.
 LaTeX Info: Redefining \% on input line 152.
 [264]
-
-LaTeX Warning: Reference `def:valorabsoluto' on page 265 undefined on input lin
-e 221.
-
-
 
 LaTeX Info: Redefining \. on input line 230.
 LaTeX Info: Redefining \% on input line 230.
 [265]
 
-LaTeX Warning: Reference `def:valorabsoluto' on page 266 undefined on input lin
-e 235.
-
-
-LaTeX Warning: Reference `def:valorabsoluto' on page 266 undefined on input lin
-e 263.
-
-
-LaTeX Warning: Reference `thm:orden' on page 266 undefined on input line 304.
-
-
-
 LaTeX Info: Redefining \. on input line 335.
 LaTeX Info: Redefining \% on input line 335.
 [266]
-
-LaTeX Warning: Reference `fig:circulo' on page 267 undefined on input line 356.
-
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
@@ -4089,24 +3624,9 @@ LaTeX Info: Redefining \. on input line 498.
 LaTeX Info: Redefining \% on input line 498.
 [268]
 
-LaTeX Warning: Reference `def:supremo' on page 269 undefined on input line 605.
-
-
-
-LaTeX Warning: Reference `thm:orden' on page 269 undefined on input line 606.
-
-
-
 LaTeX Info: Redefining \. on input line 624.
 LaTeX Info: Redefining \% on input line 624.
 [269]
-
-LaTeX Warning: Reference `thm:campo' on page 270 undefined on input line 652.
-
-
-LaTeX Warning: Reference `thm:orden' on page 270 undefined on input line 653.
-
-
 
 LaTeX Info: Redefining \. on input line 671.
 LaTeX Info: Redefining \% on input line 671.
@@ -4129,19 +3649,10 @@ LaTeX Info: Redefining \% on input line 671.
 
 
 
-LaTeX Warning: Reference `fig:supremo' on page 271 undefined on input line 750.
-
-
-
 
 LaTeX Info: Redefining \. on input line 758.
 LaTeX Info: Redefining \% on input line 758.
-[271]
-
-LaTeX Warning: Reference `thm:densidad' on page 272 undefined on input line 774
-.
-
-) (./funciones.tex
+[271]) (./funciones.tex
 
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
@@ -4153,19 +3664,9 @@ Capítulo 11.
 
 ]
 
-LaTeX Warning: Reference `prob:dominio-basico' on page 274 undefined on input l
-ine 79.
-
-
-
 LaTeX Info: Redefining \. on input line 117.
 LaTeX Info: Redefining \% on input line 117.
 [274]
-
-LaTeX Warning: Reference `ex:costo-contenedor' on page 275 undefined on input l
-ine 196.
-
-
 
 LaTeX Info: Redefining \. on input line 198.
 LaTeX Info: Redefining \% on input line 198.
@@ -4305,20 +3806,11 @@ LaTeX Info: Redefining \% on input line 3.
 ]
 Capítulo 12.
 
-LaTeX Warning: Reference `fig:limite_ejemplo' on page 293 undefined on input li
-ne 42.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
 [293]
-
-LaTeX Warning: Citation `spivak2012calculus' on page 294 undefined on input lin
-e 102.
-
-
 
 LaTeX Info: Redefining \. on input line 179.
 LaTeX Info: Redefining \% on input line 179.
@@ -4494,25 +3986,13 @@ LaTeX Info: Redefining \. on input line 1126.
 LaTeX Info: Redefining \% on input line 1126.
 [322]
 
-LaTeX Warning: Reference `circder' on page 323 undefined on input line 1133.
-
-
-
-LaTeX Info: Redefining \. on input line 1188.
-LaTeX Info: Redefining \% on input line 1188.
+LaTeX Info: Redefining \. on input line 1186.
+LaTeX Info: Redefining \% on input line 1186.
 [323]
 
-LaTeX Info: Redefining \. on input line 1264.
-LaTeX Info: Redefining \% on input line 1264.
+LaTeX Info: Redefining \. on input line 1259.
+LaTeX Info: Redefining \% on input line 1259.
 [324]
-
-LaTeX Warning: Reference `trider' on page 325 undefined on input line 1308.
-
-
-LaTeX Warning: Reference `lamparader' on page 325 undefined on input line 1347.
-
-
-
 
 LaTeX Info: Redefining \. on input line 1371.
 LaTeX Info: Redefining \% on input line 1371.
@@ -4560,10 +4040,6 @@ LaTeX Info: Redefining \% on input line 707.
 LaTeX Info: Redefining \. on input line 738.
 LaTeX Info: Redefining \% on input line 738.
 [334]
-
-LaTeX Warning: Reference `x4+3x3' on page 335 undefined on input line 850.
-
-
 
 LaTeX Info: Redefining \. on input line 851.
 LaTeX Info: Redefining \% on input line 851.
@@ -5154,11 +4630,6 @@ ics
 Package pgfplots info on input line 406: Setting layers 'axis background,axis g
 rid,axis ticks,axis lines,axis tick labels,pre main,main,axis descriptions,axis
  foreground'...
-
-
-LaTeX Warning: Reference `ex:parabola-recta' on page 393 undefined on input lin
-e 422.
-
 Package pgfplots info on input line 455: Deactivating LUA version of plot expre
 ssion for plot 0 (type 'pgfplothandlerlineto'): x expression '\y +2' contains a
  TeX macro.
@@ -5694,9 +5165,6 @@ rid,axis ticks,axis lines,axis tick labels,pre main,main,axis descriptions,axis
 LaTeX Info: Redefining \. on input line 844.
 LaTeX Info: Redefining \% on input line 844.
 [453]
-
-LaTeX Warning: Reference `thm:mono' on page 454 undefined on input line 852.
-
 Package pgfplots info on input line 896: fill between: activating layered graph
 ics
 Package pgfplots info on input line 896: Setting layers 'axis background,axis g
@@ -5751,15 +5219,6 @@ Capítulo 21.
 
 ]
 
-LaTeX Warning: Reference `thm:prop_uniforme' on page 462 undefined on input lin
-e 127.
-
-
-LaTeX Warning: Reference `thm:prop_uniforme' on page 462 undefined on input lin
-e 142.
-
-
-
 LaTeX Info: Redefining \. on input line 219.
 LaTeX Info: Redefining \% on input line 219.
 [462]
@@ -5770,15 +5229,6 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 LaTeX Info: Redefining \. on input line 297.
 LaTeX Info: Redefining \% on input line 297.
 [463]
-
-LaTeX Warning: Reference `thm:prop_uniforme' on page 464 undefined on input lin
-e 393.
-
-
-LaTeX Warning: Reference `thm:prop_uniforme' on page 464 undefined on input lin
-e 410.
-
-
 Underfull \vbox (badness 1783) has occurred while \output is active []
 
 
@@ -5790,15 +5240,6 @@ LaTeX Info: Redefining \% on input line 413.
 LaTeX Info: Redefining \. on input line 459.
 LaTeX Info: Redefining \% on input line 459.
 [465]
-
-LaTeX Warning: Reference `thm:prop_uniforme' on page 466 undefined on input lin
-e 509.
-
-
-LaTeX Warning: Reference `thm:weierstrass_aprox' on page 466 undefined on input
- line 540.
-
-
 
 LaTeX Info: Redefining \. on input line 542.
 LaTeX Info: Redefining \% on input line 542.
@@ -5812,23 +5253,9 @@ LaTeX Info: Redefining \. on input line 744.
 LaTeX Info: Redefining \% on input line 744.
 [468]
 
-LaTeX Warning: Reference `thm:series_uniforme' on page 469 undefined on input l
-ine 798.
-
-
-
 LaTeX Info: Redefining \. on input line 809.
 LaTeX Info: Redefining \% on input line 809.
 [469]
-
-LaTeX Warning: Reference `thm:weierstrass_M' on page 470 undefined on input lin
-e 885.
-
-
-LaTeX Warning: Reference `thm:series_uniforme' on page 470 undefined on input l
-ine 886.
-
-
 Underfull \vbox (badness 3579) has occurred while \output is active []
 
 
@@ -5836,15 +5263,6 @@ Underfull \vbox (badness 3579) has occurred while \output is active []
 LaTeX Info: Redefining \. on input line 909.
 LaTeX Info: Redefining \% on input line 909.
 [470]
-
-LaTeX Warning: Reference `thm:weierstrass_M' on page 471 undefined on input lin
-e 930.
-
-
-LaTeX Warning: Reference `thm:series_uniforme' on page 471 undefined on input l
-ine 931.
-
-
 Underfull \vbox (badness 3942) has occurred while \output is active []
 
 
@@ -5878,11 +5296,6 @@ LaTeX Info: Redefining \. on input line 1267.
 LaTeX Info: Redefining \% on input line 1267.
 [475]
 
-LaTeX Warning: Reference `thm:algebra_series' on page 476 undefined on input li
-ne 1316.
-
-
-
 LaTeX Info: Redefining \. on input line 1416.
 LaTeX Info: Redefining \% on input line 1416.
 [476]
@@ -5898,23 +5311,13 @@ LaTeX Info: Redefining \% on input line 1497.
 LaTeX Info: Redefining \. on input line 1626.
 LaTeX Info: Redefining \% on input line 1626.
 [479]
-
-LaTeX Warning: Reference `thm:taylor' on page 480 undefined on input line 1630.
-
-
-
 Underfull \vbox (badness 1648) has occurred while \output is active []
 
 
 
 LaTeX Info: Redefining \. on input line 1673.
 LaTeX Info: Redefining \% on input line 1673.
-[480]
-
-LaTeX Warning: Reference `thm:irrac_e' on page 481 undefined on input line 1685
-.
-
-) (./funvectoriales.tex
+[480]) (./funvectoriales.tex
 
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
@@ -6013,210 +5416,216 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-LaTeX Info: Redefining \. on input line 941.
-LaTeX Info: Redefining \% on input line 941.
+LaTeX Info: Redefining \. on input line 945.
+LaTeX Info: Redefining \% on input line 945.
 [495]
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-
-LaTeX Info: Redefining \. on input line 994.
-LaTeX Info: Redefining \% on input line 994.
+LaTeX Info: Redefining \. on input line 1002.
+LaTeX Info: Redefining \% on input line 1002.
 [496]
 
-LaTeX Info: Redefining \. on input line 1057.
-LaTeX Info: Redefining \% on input line 1057.
+LaTeX Info: Redefining \. on input line 1065.
+LaTeX Info: Redefining \% on input line 1065.
 [497]
 Underfull \vbox (badness 1337) has occurred while \output is active []
 
 
 
-LaTeX Info: Redefining \. on input line 1141.
-LaTeX Info: Redefining \% on input line 1141.
+LaTeX Info: Redefining \. on input line 1149.
+LaTeX Info: Redefining \% on input line 1149.
 [498]
-Package pgfplots info on input line 1179: Deactivating LUA version of plot expr
+Package pgfplots info on input line 1187: Deactivating LUA version of plot expr
 ession for plot 0 (type 'mesh'): x expression 'sqrt(1+\v *\v )*cos(\u )' contai
 ns a TeX macro.
-Package pgfplots info on input line 1179: Deactivating LUA version of plot expr
+Package pgfplots info on input line 1187: Deactivating LUA version of plot expr
 ession for plot 0 (type 'mesh'): y expression ' {sqrt(1+\v *\v )*sin(\u )}' con
 tains a TeX macro.
-Package pgfplots info on input line 1179: Deactivating LUA version of plot expr
+Package pgfplots info on input line 1187: Deactivating LUA version of plot expr
 ession for plot 0 (type 'mesh'): z expression ' {\v }' contains a TeX macro.
 
 Underfull \vbox (badness 1122) has occurred while \output is active []
 
 
 
-LaTeX Info: Redefining \. on input line 1226.
-LaTeX Info: Redefining \% on input line 1226.
+LaTeX Info: Redefining \. on input line 1234.
+LaTeX Info: Redefining \% on input line 1234.
 [499]
 
-LaTeX Info: Redefining \. on input line 1289.
-LaTeX Info: Redefining \% on input line 1289.
+LaTeX Info: Redefining \. on input line 1297.
+LaTeX Info: Redefining \% on input line 1297.
 [500]
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94894pt,-0.31569pt) ar
-e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1333.
+e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1341.
 
  [warning /pgfplots/warning/ticklabel anchor undetermined]
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94894pt,-0.31569pt) ar
-e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1333.
+e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1341.
 
  [warning /pgfplots/warning/ticklabel anchor undetermined]
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94894pt,-0.31569pt) ar
-e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1333.
+e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1341.
 
  [warning /pgfplots/warning/ticklabel anchor undetermined]
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94894pt,-0.31569pt) ar
-e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1333.
+e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1341.
 
  [warning /pgfplots/warning/ticklabel anchor undetermined]
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94894pt,-0.31569pt) ar
-e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1333.
+e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1341.
 
  [warning /pgfplots/warning/ticklabel anchor undetermined]
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94894pt,-0.31569pt) ar
-e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1333.
+e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1341.
 
  [warning /pgfplots/warning/ticklabel anchor undetermined]
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94894pt,-0.31569pt) ar
-e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1333.
+e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1341.
 
  [warning /pgfplots/warning/ticklabel anchor undetermined]
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94894pt,-0.31569pt) ar
-e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1333.
+e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1341.
 
  [warning /pgfplots/warning/ticklabel anchor undetermined]
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(0.48035pt,0.87703pt) and the unit y vector (0.90419pt,0.42722pt) are 
-almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1333.
+almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1341.
 
  [warning /pgfplots/warning/ticklabel anchor undetermined]
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(0.48035pt,0.87703pt) and the unit y vector (0.90419pt,0.42722pt) are 
-almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1333.
+almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1341.
 
  [warning /pgfplots/warning/ticklabel anchor undetermined]
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(0.48035pt,0.87703pt) and the unit y vector (0.90419pt,0.42722pt) are 
-almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1333.
+almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1341.
 
  [warning /pgfplots/warning/ticklabel anchor undetermined]
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(0.48035pt,0.87703pt) and the unit y vector (0.90419pt,0.42722pt) are 
-almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1333.
+almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1341.
 
  [warning /pgfplots/warning/ticklabel anchor undetermined]
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(0.48035pt,0.87703pt) and the unit y vector (0.90419pt,0.42722pt) are 
-almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1333.
+almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1341.
 
  [warning /pgfplots/warning/ticklabel anchor undetermined]
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(0.48035pt,0.87703pt) and the unit y vector (0.90419pt,0.42722pt) are 
-almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1333.
+almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1341.
 
  [warning /pgfplots/warning/ticklabel anchor undetermined]
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(0.48035pt,0.87703pt) and the unit y vector (0.90419pt,0.42722pt) are 
-almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1333.
+almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1341.
 
  [warning /pgfplots/warning/ticklabel anchor undetermined]
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(0.48035pt,0.87703pt) and the unit y vector (0.90419pt,0.42722pt) are 
-almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1333.
+almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1341.
 
  [warning /pgfplots/warning/ticklabel anchor undetermined]
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(0.62912pt,-0.77728pt) and the unit x vector (0.94894pt,-0.31569pt) ar
-e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1333.
+e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1341.
 
  [warning /pgfplots/warning/ticklabel anchor undetermined]
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(0.62912pt,-0.77728pt) and the unit x vector (0.94894pt,-0.31569pt) ar
-e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1333.
+e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1341.
 
  [warning /pgfplots/warning/ticklabel anchor undetermined]
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(-0.48035pt,-0.87703pt) and the unit y vector (0.90419pt,0.42722pt) ar
-e almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1333.
+e almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1341.
 
  [warning /pgfplots/warning/ticklabel anchor undetermined]
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(-0.48035pt,-0.87703pt) and the unit y vector (0.90419pt,0.42722pt) ar
-e almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1333.
+e almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1341.
 
  [warning /pgfplots/warning/ticklabel anchor undetermined]
 
 
-LaTeX Info: Redefining \. on input line 1402.
-LaTeX Info: Redefining \% on input line 1402.
+LaTeX Info: Redefining \. on input line 1396.
+LaTeX Info: Redefining \% on input line 1396.
 [501]
-Package pgfplots info on input line 1436: Deactivating LUA version of plot expr
+Package pgfplots info on input line 1437: Deactivating LUA version of plot expr
 ession for plot 0 (type 'mesh'): x expression 'cos(\u )*sin(\v )' contains a Te
 X macro.
-Package pgfplots info on input line 1436: Deactivating LUA version of plot expr
+Package pgfplots info on input line 1437: Deactivating LUA version of plot expr
 ession for plot 0 (type 'mesh'): y expression ' {sin(\u )*sin(\v )}' contains a
  TeX macro.
-Package pgfplots info on input line 1436: Deactivating LUA version of plot expr
+Package pgfplots info on input line 1437: Deactivating LUA version of plot expr
 ession for plot 0 (type 'mesh'): z expression ' {cos(\v )}' contains a TeX macr
 o.
-Package pgfplots info on input line 1478: Deactivating LUA version of plot expr
+Package pgfplots info on input line 1479: Deactivating LUA version of plot expr
 ession for plot 0 (type 'mesh'): x expression 'cos(\u )*sin(\v )' contains a Te
 X macro.
-Package pgfplots info on input line 1478: Deactivating LUA version of plot expr
+Package pgfplots info on input line 1479: Deactivating LUA version of plot expr
 ession for plot 0 (type 'mesh'): y expression ' {2*sin(\u )*sin(\v )}' contains
  a TeX macro.
-Package pgfplots info on input line 1478: Deactivating LUA version of plot expr
+Package pgfplots info on input line 1479: Deactivating LUA version of plot expr
 ession for plot 0 (type 'mesh'): z expression ' {3*cos(\v )}' contains a TeX ma
 cro.
 
 
-LaTeX Info: Redefining \. on input line 1529.
-LaTeX Info: Redefining \% on input line 1529.
+LaTeX Info: Redefining \. on input line 1530.
+LaTeX Info: Redefining \% on input line 1530.
 [502]
+Underfull \vbox (badness 6792) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 1580.
-LaTeX Info: Redefining \% on input line 1580.
+
+
+LaTeX Info: Redefining \. on input line 1585.
+LaTeX Info: Redefining \% on input line 1585.
 [503]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 1627.
-LaTeX Info: Redefining \% on input line 1627.
+
+
+LaTeX Info: Redefining \. on input line 1636.
+LaTeX Info: Redefining \% on input line 1636.
 [504]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 1651.
-LaTeX Info: Redefining \% on input line 1651.
+
+
+LaTeX Info: Redefining \. on input line 1639.
+LaTeX Info: Redefining \% on input line 1639.
 [505]
 
-LaTeX Info: Redefining \. on input line 1723.
-LaTeX Info: Redefining \% on input line 1723.
+LaTeX Info: Redefining \. on input line 1700.
+LaTeX Info: Redefining \% on input line 1700.
 [506]
 
 
@@ -6229,17 +5638,15 @@ LaTeX Info: Redefining \% on input line 1723.
 
 
 
-) (./limvariasvariables.tex
+
+
+LaTeX Info: Redefining \. on input line 1781.
+LaTeX Info: Redefining \% on input line 1781.
+[507]) (./limvariasvariables.tex
 
 LaTeX Info: Redefining \. on input line 8.
 LaTeX Info: Redefining \% on input line 8.
-[507]
-
-LaTeX Info: Redefining \. on input line 8.
-LaTeX Info: Redefining \% on input line 8.
-[508
-
-]
+[508]
 Capítulo 23.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -6258,7 +5665,9 @@ Underfull \vbox (badness 5771) has occurred while \output is active []
 
 
 
-[509]
+[509
+
+]
 
 LaTeX Info: Redefining \. on input line 152.
 LaTeX Info: Redefining \% on input line 152.
@@ -6287,15 +5696,6 @@ LaTeX Info: Redefining \% on input line 454.
 [514]
 Package hyperref Info: bookmark level for unknown prop defaults to 0 on input l
 ine 476.
-
-
-LaTeX Warning: Reference `prop:acot-polar' on page 515 undefined on input line 
-494.
-
-
-LaTeX Warning: Reference `prop:acot-polar' on page 515 undefined on input line 
-521.
-
 
 
 LaTeX Info: Redefining \. on input line 525.
@@ -6330,12 +5730,7 @@ LaTeX Info: Redefining \% on input line 863.
 
 LaTeX Info: Redefining \. on input line 910.
 LaTeX Info: Redefining \% on input line 910.
-[521]
-
-LaTeX Warning: Reference `prop:acot-polar' on page 522 undefined on input line 
-934.
-
-) (./planostangentes.tex
+[521]) (./planostangentes.tex
 
 LaTeX Info: Redefining \. on input line 5.
 LaTeX Info: Redefining \% on input line 5.
@@ -7047,10 +6442,6 @@ LaTeX Info: Redefining \% on input line 1175.
 LaTeX Info: Redefining \. on input line 1251.
 LaTeX Info: Redefining \% on input line 1251.
 [591]
-
-LaTeX Warning: Reference `fig1.1' on page 592 undefined on input line 1278.
-
-
 Underfull \vbox (badness 2165) has occurred while \output is active []
 
 
@@ -7066,13 +6457,6 @@ LaTeX Info: Redefining \% on input line 1368.
 LaTeX Info: Redefining \. on input line 1453.
 LaTeX Info: Redefining \% on input line 1453.
 [594]
-
-LaTeX Warning: Reference `fig1.2' on page 595 undefined on input line 1476.
-
-
-LaTeX Warning: Reference `fig3.2' on page 595 undefined on input line 1503.
-
-
 
 LaTeX Info: Redefining \. on input line 1530.
 LaTeX Info: Redefining \% on input line 1530.
@@ -7130,11 +6514,6 @@ LaTeX Info: Redefining \% on input line 316.
 LaTeX Info: Redefining \. on input line 368.
 LaTeX Info: Redefining \% on input line 368.
 [603]
-
-LaTeX Warning: Reference `sec:cambio-var-triples' on page 604 undefined on inpu
-t line 428.
-
-
 
 LaTeX Info: Redefining \. on input line 456.
 LaTeX Info: Redefining \% on input line 456.
@@ -7943,31 +7322,9 @@ LaTeX Info: Redefining \. on input line 104.
 LaTeX Info: Redefining \% on input line 104.
 [727]
 
-LaTeX Warning: Citation `araujo2014algebra' on page 728 undefined on input line
- 152.
-
-
-LaTeX Warning: Citation `araujo2014algebra' on page 728 undefined on input line
- 154.
-
-
-LaTeX Warning: Citation `araujo2014algebra' on page 728 undefined on input line
- 156.
-
-
-
 LaTeX Info: Redefining \. on input line 159.
 LaTeX Info: Redefining \% on input line 159.
 [728]
-
-LaTeX Warning: Citation `andreescu2014essential' on page 729 undefined on input
- line 177.
-
-
-LaTeX Warning: Citation `andreescu2014essential' on page 729 undefined on input
- line 183.
-
-
 
 LaTeX Info: Redefining \. on input line 214.
 LaTeX Info: Redefining \% on input line 214.
@@ -8107,55 +7464,16 @@ LaTeX Info: Redefining \% on input line 595.
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 
-
-LaTeX Warning: Reference `compsombreado' on page 763 undefined on input line 7.
-
-
-
-LaTeX Warning: Reference `comprepex' on page 763 undefined on input line 8.
-
-
-LaTeX Warning: Reference `compubicacion' on page 763 undefined on input line 9.
-
-
-
-LaTeX Warning: Reference `compubicacion' on page 763 undefined on input line 10
-.
-
-
-LaTeX Warning: Reference `probvectrigo' on page 763 undefined on input line 19.
-
-
-
-LaTeX Warning: Reference `probtrianguloperimetro' on page 763 undefined on inpu
-t line 25.
-
-
-LaTeX Warning: Reference `ejgrafo01' on page 763 undefined on input line 29.
-
-
-LaTeX Warning: Reference `ejgrafo02' on page 763 undefined on input line 30.
-
-
-Underfull \vbox (badness 1147) has occurred while \output is active []
+Underfull \vbox (badness 1168) has occurred while \output is active []
 
 
 
 [763]
-
-LaTeX Warning: Reference `problemapolinomios' on page 764 undefined on input li
-ne 44.
-
-
 Overfull \hbox (13.72708pt too wide) in paragraph at lines 67--67
  [][] [][]\TU/lmr/m/n/12 Fi-gu-ra ori-gi-nal (Su-do-ku 3D cu-be, []$\TU/lmtt/m/
 n/12 https://texample.net/tikz/examples/sudoku-[]3d-[]cube$[]\TU/lmr/m/n/12 )[]
  []  
  []
-
-
-LaTeX Warning: Reference `ex:costo-contenedor' on page 764 undefined on input l
-ine 78.
 
 
 
@@ -8198,25 +7516,22 @@ L3 programming layer <2025-06-09>
  ***********
 
 
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `anfalearNotasCalculo.out' has not changed.
 (rerunfilecheck)             Checksum: 94159F62D2DE587D8CEB1DFA9061BD1D;71425.
 )
 
 Here is how much of LuaTeX's memory you used:
- 92136 strings out of 470205
- 305226,3417909 words of node,token memory allocated
+ 92163 strings out of 470205
+ 305211,3417909 words of node,token memory allocated
  23041 words of node memory still in use:
    32 hlist, 2 vlist, 14 rule, 3 glue, 4 kern, 1 glyph, 7173 attribute, 101 glue
 _spec, 3624 attribute_list, 2 write, 24 pdf_literal, 37 pdf_action, 24 pdf_color
 stack nodes
-   avail lists: 1:21,2:33281,3:19197,4:338,5:1797,6:145,7:10720,8:150,9:4035,10:
+   avail lists: 1:19,2:33281,3:19197,4:338,5:1797,6:147,7:10734,8:150,9:4035,10:
 31,11:1139
- 111594 multiletter control sequences out of 65536+600000
+ 111607 multiletter control sequences out of 65536+600000
  144 fonts using 10968999 bytes
  76i,22n,95p,1148b,3556s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/users/anfalear/appdata/local/programs/miktex/fonts/opentype/public/lm/lmmono
@@ -8272,9 +7587,9 @@ ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/latxfont/line10.pfb><C:/Use
 rs/anfalear/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/ms
 am10.pfb><C:/Users/anfalear/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
 fonts/symbols/msbm10.pfb>
-Output written on anfalearNotasCalculo.pdf (768 pages, 6376211 bytes).
+Output written on anfalearNotasCalculo.pdf (768 pages, 6415263 bytes).
 
-PDF statistics: 13654 PDF objects out of 15390 (max. 8388607)
- 7234 named destinations out of 7423 (max. 131072)
+PDF statistics: 13924 PDF objects out of 15390 (max. 8388607)
+ 7243 named destinations out of 7423 (max. 131072)
  2824 words of extra memory for PDF output out of 10000 (max. 100000000)
 
