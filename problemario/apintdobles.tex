@@ -67,7 +67,10 @@ Calcular $\displaystyle\iint_R (x^2 y + y^2)\,dA$, donde $R=[0,1]\times[0,2]$.
 = \left[\frac{2x^3}{3}+\frac{8x}{3}\right]_0^1
 = \frac{2}{3}+\frac{8}{3}=\frac{10}{3}.
 \]
-$\displaystyle\boxed{\iint_R (x^2 y + y^2)\,dA = \tfrac{10}{3}}$.
+\textbf{Paso 4. Resultado.}
+\[
+\boxed{\iint_R (x^2 y + y^2)\,dA = \tfrac{10}{3}.}
+\]
 \end{myproof}
 \end{example}
 
@@ -177,7 +180,10 @@ Evalúe $\displaystyle\iint_D xy\,dA$, donde $D$ es la región acotada por $y=x^
 = \frac{1}{2}\left(\frac{1}{4}-\frac{1}{6}\right)
 = \frac{1}{2}\cdot\frac{1}{12}=\frac{1}{24}.
 \]
-$\displaystyle\boxed{\iint_D xy\,dA = \tfrac{1}{24}}$.
+\textbf{Paso 4. Resultado.}
+\[
+\boxed{\iint_D xy\,dA = \tfrac{1}{24}.}
+\]
 \end{myproof}
 \end{example}
 
@@ -303,6 +309,7 @@ Calcule las siguientes integrales dobles:
 \[
 \int_0^2 (3x^2+9)\,dx = \left[x^3+9x\right]_0^2 = 8+18 = 26.
 \]
+\textbf{Paso 3. Resultado.}
 \[
 \boxed{\iint_R (x^2+2y)\,dA = 26.}
 \]
@@ -319,6 +326,7 @@ Calcule las siguientes integrales dobles:
 \int_0^{\pi/2}(\cos x - \sin x)\,dx = \bigl[\sin x + \cos x\bigr]_0^{\pi/2}
 = (1+0)-(0+1) = 0.
 \]
+\textbf{Paso 3. Resultado.}
 \[
 \boxed{\iint_R \cos(x+y)\,dA = 0.}
 \]
@@ -349,6 +357,7 @@ Evalúe:
 = \frac{1}{2}-\frac{1}{4}-\frac{1}{10}
 = \frac{10-5-2}{20} = \frac{3}{20}.
 \]
+\textbf{Paso 3. Resultado.}
 \[
 \boxed{\iint_D (x+y)\,dA = \frac{3}{20}.}
 \]
@@ -366,6 +375,7 @@ Evalúe:
 = \left[\frac{2x^{5/2}}{5}-\frac{x^4}{4}\right]_0^1
 = \frac{2}{5}-\frac{1}{4} = \frac{8-5}{20} = \frac{3}{20}.
 \]
+\textbf{Paso 3. Resultado.}
 \[
 \boxed{\iint_D x\,dA = \frac{3}{20}.}
 \]
@@ -391,6 +401,7 @@ Usando la relación $y_i^2=4-y_i$ (de $y_i^2+y_i-4=0$) se obtiene que $F(y_i)=\d
 \[
 F(y_2)-F(y_1) = \frac{17(y_2-y_1)}{12} = \frac{17\sqrt{17}}{12}.
 \]
+\textbf{Paso 3. Resultado.}
 \[
 \boxed{\iint_D xy\,dA = \frac{17\sqrt{17}}{24}.}
 \]
@@ -414,7 +425,11 @@ Está acotada por la parábola $y=x^2$ (abajo) y la recta $y=x$ (arriba), con $x
 D = \{(x,y): 0\le y\le 1,\; y\le x\le \sqrt{y}\}.
 \]
 
-\textbf{Paso 3. Integral con orden invertido.}
+\textbf{Paso 3. Integral equivalente.}
+\[
+\int_0^1\int_{x^2}^{x} f(x,y)\,dy\,dx = \int_0^1\int_{y}^{\sqrt{y}} f(x,y)\,dx\,dy.
+\]
+\textbf{Paso 4. Resultado.}
 \[
 \boxed{\int_0^1\int_{x^2}^{x} f(x,y)\,dy\,dx = \int_0^1\int_{y}^{\sqrt{y}} f(x,y)\,dx\,dy.}
 \]
@@ -457,19 +472,27 @@ El momento \(M_y\) mide la tendencia de la lámina a girar alrededor del eje \(y
 
 \begin{prob}
 Determine el centro de masa de la lámina de densidad $\delta(x,y)=y+1$ sobre el rectángulo $[0,4]\times[0,3]$.
-\begin{myproof} 
-Observe que 
+\begin{myproof}
+\textbf{Paso 1. Masa.}
+\[
+m=\int_{0}^{4}\int_{0}^{3}(y+1)\,dy\,dx = \int_{0}^{4}\left[\frac{y^2}{2}+y\right]_0^3 dx = \int_{0}^{4}\frac{15}{2}\,dx = 30.
+\]
+\textbf{Paso 2. Momento $M_x$.}
 \begin{align*}
-M_{x}&=\int_{0}^{4}\int_{0}^{3}y\left(y+1\right)\ dydx,\\
-&=\int_{0}^{3}\left(y^2+y\right)\ dy  = \dfrac{y^3}{3}+\dfrac{y^2}{2}\Big|_{0}^{3}=\dfrac{27}{2}.\\
-&=\int_{0}^{3}\dfrac{27}{2}\ dx  = \dfrac{27x}{2}\Big|_{0}^{4}=54.
+M_{x}&=\int_{0}^{4}\int_{0}^{3}y(y+1)\,dy\,dx
+=\int_{0}^{4}\left[\frac{y^3}{3}+\frac{y^2}{2}\right]_0^3 dx
+=\int_{0}^{4}\frac{27}{2}\,dx = 54.
 \end{align*}
+\textbf{Paso 3. Momento $M_y$.}
 \begin{align*}
-M_{y}&=\int_{0}^{3}\int_{0}^{4}x\left(y+1\right)\ dxdy,\\
-&=\int_{0}^{4}\left(xy+x\right)\ dx  = \dfrac{yx^2}{2}+\dfrac{x^2}{2}\Big|_{0}^{4}=8y+8.\\
-&=\int_{0}^{3}\left( 8y+8 \right)\ dy  = \dfrac{8y^2}{2}+8y\Big|_{0}^{3}=60.
+M_{y}&=\int_{0}^{4}\int_{0}^{3}x(y+1)\,dy\,dx
+=\int_{0}^{4}x\cdot\frac{15}{2}\,dx
+=\frac{15}{2}\left[\frac{x^2}{2}\right]_0^4 = 60.
 \end{align*}
-Lo cual implica que el centro de masa está en el punto $\left( \overline{x},\overline{y} \right)=\left(  \dfrac{M_y}{m},\dfrac{M_x}{m} \right)=\left(  \dfrac{60}{30},\dfrac{54}{30} \right)=\left(  2,\dfrac{9}{5} \right).$
+\textbf{Paso 4. Centro de masa.}
+\[
+(\bar{x},\bar{y}) = \left(\frac{M_y}{m},\frac{M_x}{m}\right) = \left(\frac{60}{30},\frac{54}{30}\right) = \boxed{\left(2,\frac{9}{5}\right)}.
+\]
 \end{myproof}
 \end{prob}
 
@@ -519,21 +542,32 @@ V=\int_0^1 \left(4-\frac{1}{3}-x^2\right)dx
 = \left[\frac{11x}{3}-\frac{x^3}{3}\right]_0^1
 = \frac{11}{3}-\frac{1}{3}=\frac{10}{3}.
 \]
-Por tanto, \(\boxed{V=\frac{10}{3}}\) unidades cúbicas.
+\textbf{Paso 4. Resultado.}
+\[
+\boxed{V=\frac{10}{3}\text{ unidades cúbicas.}}
+\]
 \end{myproof}
 \end{example}
 
 \begin{example}[Área de una región plana]
 Calcule el área de la región \(D\) acotada por las curvas \(y=x^2\) y \(y=x\).
 \begin{myproof}
-\textbf{Paso 1. Plantear e integrar el área.} El área es \(A=\iint_D 1\,dA\). La región es tipo I: para \(x\in[0,1]\), \(x^2\le y\le x\). Entonces
+\textbf{Paso 1. Región e integral iterada.} El área es \(A=\iint_D 1\,dA\). La región es tipo I: para \(x\in[0,1]\), \(x^2\le y\le x\), luego
 \[
-A=\int_0^1\int_{x^2}^{x} 1\,dy\,dx
-= \int_0^1 (x-x^2)\,dx
-= \left[\frac{x^2}{2}-\frac{x^3}{3}\right]_0^1
-= \frac{1}{2}-\frac{1}{3}=\frac{1}{6}.
+A=\int_0^1\int_{x^2}^{x} 1\,dy\,dx.
 \]
-Así, \(\boxed{A=\frac{1}{6}}\).
+\textbf{Paso 2. Integral interior.}
+\[
+\int_{x^2}^{x} 1\,dy = x-x^2.
+\]
+\textbf{Paso 3. Integral exterior.}
+\[
+A=\int_0^1(x-x^2)\,dx = \left[\frac{x^2}{2}-\frac{x^3}{3}\right]_0^1 = \frac{1}{2}-\frac{1}{3}=\frac{1}{6}.
+\]
+\textbf{Paso 4. Resultado.}
+\[
+\boxed{A=\frac{1}{6}.}
+\]
 \end{myproof}
 \end{example}
 
@@ -591,6 +625,8 @@ M_x = \frac{1}{3}\int_0^1 (x-3x^2+3x^3-x^4)\,dx
 \bar{x}=\frac{M_y}{m}=\frac{1/60}{1/24}=\frac{24}{60}=\frac{2}{5},\qquad
 \bar{y}=\frac{M_x}{m}=\frac{2}{5}.
 \]
+\textbf{Paso 4. Resultado.}
+
 El centro de masa es \(\boxed{\left(\frac{2}{5},\frac{2}{5}\right)}\).
 \end{myproof}
 \end{example}
@@ -653,10 +689,22 @@ Determine la masa de la lámina acotada por las curvas $x=0,\ x=4,\ y=0,\ y=3,$ 
 \caption{Lámina rectangular $[0,4]\times[0,3]$ con densidad $\rho(x,y)=y+1$.}
 \label{fig:lamina_rect_masa}
 \end{figure}
-La placa está representada por la figura punteada. La integral de masa está definida por $$m=\int_{0}^{4}\int_{0}^{3}\left( y+1 \right)\ dydx.$$
-Resolviendo la integral:
-$\displaystyle\int_{0}^{3}y+1\ dy=\dfrac{y^2}{2}+y\Big|_{0}^{3}=\dfrac{3^2}{2}+3-0=\dfrac{15}{2}.$
-$\displaystyle\int_{0}^{4}\dfrac{15}{2}\ dx=\dfrac{15x}{2}+y\Big|_{0}^{4}=\dfrac{15(4)}{2}-0=30.$ Por lo cual la masa de la lámina es $m=30.$	
+\textbf{Paso 1. Plantear la integral.}
+\[
+m=\int_{0}^{4}\int_{0}^{3}(y+1)\,dy\,dx.
+\]
+\textbf{Paso 2. Integral interior en $y$.}
+\[
+\int_{0}^{3}(y+1)\,dy=\left[\frac{y^2}{2}+y\right]_{0}^{3}=\frac{9}{2}+3=\frac{15}{2}.
+\]
+\textbf{Paso 3. Integral exterior en $x$.}
+\[
+m=\int_{0}^{4}\frac{15}{2}\,dx=\frac{15x}{2}\Big|_{0}^{4}=30.
+\]
+\textbf{Paso 4. Resultado.}
+\[
+\boxed{m=30.}
+\]
 \end{myproof}
 \end{prob}
 
@@ -678,17 +726,18 @@ Halle la masa $m$ y el centro de masa para la lámina acotada por $y=e^x,y=0,x=0
 \caption{Lámina acotada por $y=e^x$, $y=0$, $x=0$, $x=1$ con densidad $\rho(x,y)=2-x+y$.}
 \label{fig:lamina_exp_masa}
 \end{figure}
-La placa está representada por la figura rayada.  La integral de masa está definida por $$m=\int_{0}^{1}\int_{0}^{e^x}\left( 2-x+y\right)\ dydx.$$
-Resolviendo la integral:
-$\displaystyle\int_{0}^{e^x}(2-x+y)\ dy=2y-xy+\dfrac{y^2}{2}\Big|_{0}^{e^x}=2e^x-xe^x+\dfrac{e^{2x}}{2}.$
+\textbf{Paso 1. Masa.} La integral de masa está definida por $m=\displaystyle\int_{0}^{1}\int_{0}^{e^x}(2-x+y)\,dy\,dx.$
+\[
+\int_{0}^{e^x}(2-x+y)\,dy=\left[2y-xy+\frac{y^2}{2}\right]_{0}^{e^x}=2e^x-xe^x+\frac{e^{2x}}{2}.
+\]
 \begin{align*}
-&\displaystyle\int_{0}^{1}\left( 2e^x-xe^x+\dfrac{e^{2x}}{2} \right)\ dx\\
-=&\displaystyle\int_{0}^{1}2e^{x}\ dx  - \displaystyle\int_{0}^{1}xe^{x}\ dx+\displaystyle\int_{0}^{1} \dfrac{e^{2x}}{2}\ dx\\ &=\left[2e^x-(x-1)e^x+\dfrac{e^{2x}}{4}\right]\Big|_{0}^{1} \\ 
-& =\dfrac{e^2+8e-13}{4}.
+m=\int_{0}^{1}\!\left( 2e^x-xe^x+\frac{e^{2x}}{2} \right)dx
+=\left[2e^x-(x-1)e^x+\frac{e^{2x}}{4}\right]_0^1
+=\frac{e^2+8e-13}{4}.
 \end{align*}
-Por lo cual, $m=\dfrac{e^2+8e-13}{4}.$ 
 \textbf{Nota:} La integral $\displaystyle\int xe^{x}dx=(x-1)e^x+C$ se obtiene haciendo integración por partes.
-Ahora, observe que 
+
+\textbf{Paso 2. Momento $M_x$.}
 \begin{align*}
 M_{x}&=\int_{0}^{1}\int_{0}^{e^x}y\left(2-x+y\right)\ dydx,\\
 &=\int_{0}^{e^x}\left(2y-xy+y^2\right)\ dy  \\ &=\dfrac{2y^2}{2}-\dfrac{xy^2}{2}+\dfrac{y^3}{3}\Big|_{0}^{e^x}\\&=e^{2x}-xe^{2x}+\dfrac{e^{3x}}{3}.\\
@@ -697,6 +746,8 @@ M_{x}&=\int_{0}^{1}\int_{0}^{e^x}y\left(2-x+y\right)\ dydx,\\
 &=\dfrac{8e^3+27e^2-53}{72}.
 \end{align*}
 \textbf{Nota:} La integral $\displaystyle\int xe^{2x}dx=\dfrac{1}{4}e^{2x}(2x-1)+C$ se obtiene haciendo integración por partes.
+
+\textbf{Paso 3. Momento $M_y$.}
 \begin{align*}
 M_{y}&=\int_{0}^{1}\int_{0}^{e^x}x\left(2-x+y\right)\ dydx,\\
 &=\int_{0}^{e^x}\left(2x-x^2+xy\right)\ dy  \\ &=2xy-x^2y+\dfrac{xy^2}{2}\Big|_{0}^{e^x}\\&=2xe^{x}-x^2e^{x}+\dfrac{xe^{2x}}{2}.\\
@@ -705,7 +756,11 @@ M_{y}&=\int_{0}^{1}\int_{0}^{e^x}x\left(2-x+y\right)\ dydx,\\
 &=\dfrac{e^2-8e+33}{8}.
 \end{align*}
 \textbf{Nota:} La integral $\displaystyle\int x^2e^{x}dx=(x^2-2x+2)e^x+C$ se obtiene haciendo integración por partes.
-Lo cual implica que el centro de masa está en el punto $$\left( \overline{x},\overline{y} \right)=\left(  \dfrac{M_y}{m},\dfrac{M_x}{m} \right)=\left(  \dfrac{ \dfrac{e^2-8e+33}{8}  }{ \dfrac{e^2+8e-13}{4} },\dfrac{  \dfrac{8e^3+27e^2-53}{72}}{\dfrac{e^2+8e-13}{4}} \right)\approx\left( 0.577  , 1.058 \right).$$
+
+\textbf{Paso 4. Centro de masa.}
+\[
+(\bar{x},\bar{y}) = \left(\frac{M_y}{m},\frac{M_x}{m}\right) = \left(\frac{\dfrac{e^2-8e+33}{8}}{\dfrac{e^2+8e-13}{4}},\frac{\dfrac{8e^3+27e^2-53}{72}}{\dfrac{e^2+8e-13}{4}}\right) \approx \boxed{(0.577,\;1.058)}.
+\]
 \end{myproof}
 \end{prob}
 
@@ -725,24 +780,23 @@ Verifique que los momentos de inercia de una lámina rectangular, con ancho $b$,
 \label{fig:lamina_rect_inercia}
 \end{figure}
 \begin{myproof}
-Observe que la masa de la lámina está dada por $$m=\int_{0}^{h}\int_{0}^{b}1\ dydx$$
-Calculando la integral,
+\textbf{Paso 1. Masa.}
+\[
+m=\int_{0}^{h}\int_{0}^{b}1\,dx\,dy = \int_{0}^{h}b\,dy = bh.
+\]
+\textbf{Paso 2. Momento $I_x$.}
 \begin{align*}
-\int_{0}^{b}dx&=x\Big|_{0}^{b}=b\\
-&=\int_{0}^{h}b\ dy=by\Big|_{0}^{h}=bh.
+I_x&=\int_{0}^{h}\int_{0}^{b} y^2\,dx\,dy = \int_{0}^{h}y^2 b\,dy = b\frac{y^3}{3}\Big|_{0}^{h}=\frac{bh^3}{3}.
 \end{align*}
-Las integrales de los momentos de inercia resultan en $I_{x}=\displaystyle\int_{0}^{h}\int_{0}^{b} y^2\ dxdy$ y $I_{y}=\displaystyle\int_{0}^{h}\int_{0}^{b} x^2\ dxdy.$
-Calculando las integrales:
- \begin{align*}
- I_x&=\int_{0}^{b}y^2\ dx=y^2x\Big|_{0}^{b}=y^2b,\\
- &=\int_{0}^{h}y^2b\ dy=b\dfrac{y^3}{3}\Big|_{0}^{h}=\dfrac{bh^3}{3}.
- \end{align*}
- \begin{align*}
- I_y=&\int_{0}^{b}x^2\ dx=\dfrac{x^3}{3}\Big|_{0}^{b}=\dfrac{b^3}{3},\\
- &=\int_{0}^{h}\dfrac{b^3}{3}\ dy=y\dfrac{b^3}{3}\Big|_{0}^{h}=\dfrac{hb^3}{3}.
- \end{align*}
-Finalmente, el radio de giro en $X$ está dado por $\overline{\overline{x}}=\sqrt{\dfrac{\dfrac{b^3h}{3}}{bh}}=\sqrt{\dfrac{b^2}{3}}$
-  y el radio de giro en $Y,$ $\overline{\overline{y}}=\sqrt{\dfrac{\dfrac{h^3b}{3}}{bh}}=\sqrt{\dfrac{h^2}{3}}.$	
+\textbf{Paso 3. Momento $I_y$.}
+\begin{align*}
+I_y&=\int_{0}^{h}\int_{0}^{b} x^2\,dx\,dy = \int_{0}^{h}\frac{b^3}{3}\,dy = \frac{hb^3}{3}.
+\end{align*}
+\textbf{Paso 4. Radios de giro.}
+\[
+\overline{\overline{x}}=\sqrt{\frac{I_y}{m}}=\sqrt{\frac{b^2}{3}},\qquad
+\overline{\overline{y}}=\sqrt{\frac{I_x}{m}}=\sqrt{\frac{h^2}{3}}.
+\]
 \end{myproof}
 \end{prob}
 
@@ -783,15 +837,24 @@ Entonces la integral doble se convierte en
 \begin{example}[Integral sobre un disco]
 Calcule \(\displaystyle \iint_D (x^2+y^2)\,dA\), donde \(D\) es el disco \(x^2+y^2\le 1\).
 \begin{myproof}
-\textbf{Paso 1. Conversión a polares y evaluación.} En polares, \(D: 0\le r\le 1,\; 0\le\theta\le2\pi\), y \(x^2+y^2=r^2\). Entonces
+\textbf{Paso 1. Identificar la región y convertir.} En polares, \(D: 0\le r\le 1,\; 0\le\theta\le 2\pi\), y \(x^2+y^2=r^2\).
+
+\textbf{Paso 2. Integral iterada.}
 \[
-\iint_D (x^2+y^2)\,dA
-= \int_0^{2\pi}\int_0^1 r^2\cdot r\,dr\,d\theta
+\iint_D (x^2+y^2)\,dA = \int_0^{2\pi}\int_0^1 r^2\cdot r\,dr\,d\theta.
+\]
+
+\textbf{Paso 3. Evaluar.}
+\[
 = \int_0^{2\pi}\left[\frac{r^4}{4}\right]_0^1 d\theta
 = \int_0^{2\pi}\frac{1}{4}\,d\theta
 = \frac{1}{4}\cdot 2\pi = \frac{\pi}{2}.
 \]
-Por tanto, \(\boxed{\displaystyle \iint_D (x^2+y^2)\,dA = \frac{\pi}{2}}\).
+
+\textbf{Paso 4. Resultado.}
+\[
+\boxed{\iint_D (x^2+y^2)\,dA = \frac{\pi}{2}.}
+\]
 \end{myproof}
 \end{example}
 
@@ -819,7 +882,10 @@ A = \frac{1}{2}\int_0^{2\pi}\left(\frac{3}{2}+2\cos\theta+\frac{1}{2}\cos2\theta
 = \frac{1}{2}\left(\frac{3}{2}\cdot 2\pi\right)
 = \frac{3\pi}{2}.
 \]
-Así, \(\boxed{A=\frac{3\pi}{2}}\).
+\textbf{Paso 4. Resultado.}
+\[
+\boxed{A=\frac{3\pi}{2}.}
+\]
 \end{myproof}
 \end{example}
 
@@ -857,7 +923,10 @@ Multiplicando por \(\int_0^{2\pi}d\theta=2\pi\):
 \[
 A(S)= \frac{2\pi}{12}(5\sqrt5-1) = \frac{\pi}{6}(5\sqrt5-1).
 \]
-Por tanto, \(\boxed{A(S)=\frac{\pi}{6}(5\sqrt5-1)}\).
+\textbf{Paso 4. Resultado.}
+\[
+\boxed{A(S)=\frac{\pi}{6}(5\sqrt5-1).}
+\]
 \end{myproof}
 \end{example}
 
@@ -893,6 +962,7 @@ V=\int_0^{\pi/2}\!\left(\frac{2\cos\theta}{3}+\sin\theta+\frac{1}{2}\right)d\the
 =\left(\frac{2}{3}-0+\frac{\pi}{4}\right)-(0-1+0)
 =\frac{2}{3}+1+\frac{\pi}{4}.
 \]
+\textbf{Paso 4. Resultado.}
 \[
 \boxed{V=\frac{5}{3}+\frac{\pi}{4}.}
 \]
@@ -967,6 +1037,7 @@ I_y=\int_0^2\!\left(4x^4-x^5-\frac{x^6}{2}\right)dx
 \[
 I_0=I_x+I_y=\frac{160}{9}+\frac{608}{105}=\frac{5600+1824}{315}=\frac{7424}{315}.
 \]
+\textbf{Paso 4. Resultado.}
 \[
 \boxed{I_x=\frac{160}{9},\qquad I_y=\frac{608}{105},\qquad I_0=\frac{7424}{315}.}
 \]
@@ -990,6 +1061,7 @@ Evalúe \(\displaystyle \iint_D e^{x^2+y^2}\,dA\), donde \(D\) es el anillo \(1\
 \[
 \int_0^{2\pi}\frac{e^4-e}{2}\,d\theta=\pi(e^4-e).
 \]
+\textbf{Paso 4. Resultado.}
 \[
 \boxed{\iint_D e^{x^2+y^2}\,dA=\pi(e^4-e).}
 \]
@@ -1016,6 +1088,7 @@ A=\frac{1}{2}\bigl[\theta+\sin2\theta\bigr]_{-\pi/3}^{\pi/3}
 =\frac{1}{2}\!\left(\frac{2\pi}{3}+2\sin\frac{2\pi}{3}\right)
 =\frac{1}{2}\!\left(\frac{2\pi}{3}+\sqrt{3}\right).
 \]
+\textbf{Paso 4. Resultado.}
 \[
 \boxed{A=\frac{\pi}{3}+\frac{\sqrt{3}}{2}.}
 \]
@@ -1062,6 +1135,7 @@ Reescriba la integral \(\displaystyle \int_0^1\int_0^{\sqrt{1-x^2}} \sqrt{x^2+y^
 \int_0^1 r^2\,dr=\frac{1}{3},\qquad
 \int_0^{\pi/2}\frac{1}{3}\,d\theta=\frac{\pi}{6}.
 \]
+\textbf{Paso 4. Resultado.}
 \[
 \boxed{\int_0^1\int_0^{\sqrt{1-x^2}}\sqrt{x^2+y^2}\,dy\,dx=\frac{\pi}{6}.}
 \]
@@ -1244,18 +1318,26 @@ Determine la masa de la lámina acotada por la curva $r=2\sen \theta$ cuya densi
 \caption{Lámina acotada por la curva polar $r=2\sen\theta$ con densidad $\rho(r,\theta)=r$.}
 \label{fig:lamina_polar_masa}
 \end{figure}
-La placa está representada por la figura punteada.  La integral de masa está definida por $$m=\int_{0}^{\pi}\int_{0}^{2\sen \theta}\left( r \right)\ rdrd\theta.$$
-Resolviendo la integral por medio de coordenadas polares:
-$\displaystyle\int_{0}^{2\sen \theta}r^2\ dr=\dfrac{r^3}{3}\Big|_{0}^{2\sen \theta}=\dfrac{\left(  2\sen\theta \right)^{3}}{3}-0=\dfrac{\left(  2\sen\theta \right)^{3}}{3}.$
+\textbf{Paso 1. Plantear la integral.}
+\[
+m=\int_{0}^{\pi}\int_{0}^{2\sen\theta} r\cdot r\,dr\,d\theta.
+\]
+\textbf{Paso 2. Integral interior en $r$.}
+\[
+\int_{0}^{2\sen\theta}r^2\,dr=\frac{r^3}{3}\Big|_{0}^{2\sen\theta}=\frac{(2\sen\theta)^3}{3}=\frac{8\sen^3\theta}{3}.
+\]
+\textbf{Paso 3. Integral exterior en $\theta$.} Con $\sen^3\theta=(1-\cos^2\theta)\sen\theta$ y la sustitución $\omega=\cos\theta$:
 \begin{align*}
-\displaystyle\int_{0}^{\pi}\dfrac{8\sen^3 \theta}{3}\ d\theta&=\dfrac{8}{3}\displaystyle\int_{0}^{\pi}\sen^3 \theta\ d\theta=\dfrac{8}{3}\displaystyle\int_{0}^{\pi}\sen^2 \theta \sen \theta\ d\theta \\ 
- & =\dfrac{8}{3}\displaystyle\int_{0}^{\pi}\left( 1-\cos^2\theta \right)  \sen \theta\ d\theta=\dfrac{8}{3}\displaystyle\int_{0}^{\pi}\sen \theta\ d\theta -\dfrac{8}{3}\displaystyle\int_{0}^{\pi}\cos^2\theta  \sen \theta\ d\theta  \\ 
- &=\dfrac{-8}{3}\cos\theta \Big|_{0}^{\pi}-I.\\
+m&=\int_{0}^{\pi}\frac{8\sen^3\theta}{3}\,d\theta
+=\frac{8}{3}\int_{0}^{\pi}(1-\cos^2\theta)\sen\theta\,d\theta\\
+&=\frac{8}{3}\left[-\cos\theta+\frac{\cos^3\theta}{3}\right]_0^{\pi}
+=\frac{8}{3}\left[(1-\tfrac{1}{3})-(-1+\tfrac{1}{3})\right]
+=\frac{8}{3}\cdot\frac{4}{3}=\frac{32}{9}.
 \end{align*}
-Resolviendo la integral $I,$ Tome $\omega=\cos \theta ,$ por lo cual $d\omega =\sen \theta\ d\theta.$ 
-Esto implica que, $I=\dfrac{8}{3}\displaystyle\int \cos^2\theta  \sen \theta\ d\theta=\dfrac{8}{3}\int \omega^{2}\ d\omega=\dfrac{8}{3}\dfrac{\omega^3}{3}+C.$
-Llevando este resultado a la solución del problema, $$m=\dfrac{-8}{3}\cos\theta \Big|_{0}^{\pi}-\dfrac{\cos ^3\theta}{9}\Big|_{0}^{\pi}=\dfrac{8}{3}\left[-\cos \pi +\cos 0\right]-\dfrac{8}{9}\left[\cos^3 \pi +\cos^3 0\right]=\dfrac{32}{9}. $$
-Por lo cual la masa de la lámina es $m=\dfrac{32}{9}.$ 
+\textbf{Paso 4. Resultado.}
+\[
+\boxed{m=\frac{32}{9}.}
+\]
 \end{myproof}
 \end{prob}
 
