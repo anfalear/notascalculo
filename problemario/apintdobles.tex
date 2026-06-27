@@ -650,7 +650,9 @@ Determine la masa de la lámina acotada por las curvas $x=0,\ x=4,\ y=0,\ y=3,$ 
   \foreach \x in {1,2,3,4} \draw (\x,2pt) -- (\x,-2pt) node[below] {\small$\x$};
   \foreach \y in {1,2,3} \draw (2pt,\y) -- (-2pt,\y) node[left] {\small$\y$};
 \end{tikzpicture}
-\end{figure}	 
+\caption{Lámina rectangular $[0,4]\times[0,3]$ con densidad $\rho(x,y)=y+1$.}
+\label{fig:lamina_rect_masa}
+\end{figure}
 La placa está representada por la figura punteada. La integral de masa está definida por $$m=\int_{0}^{4}\int_{0}^{3}\left( y+1 \right)\ dydx.$$
 Resolviendo la integral:
 $\displaystyle\int_{0}^{3}y+1\ dy=\dfrac{y^2}{2}+y\Big|_{0}^{3}=\dfrac{3^2}{2}+3-0=\dfrac{15}{2}.$
@@ -673,6 +675,8 @@ Halle la masa $m$ y el centro de masa para la lámina acotada por $y=e^x,y=0,x=0
   \draw (1,2pt) -- (1,-2pt) node[below] {\small$1$};
   \foreach \y in {1,2,3} \draw (2pt,\y) -- (-2pt,\y) node[left] {\small$\y$};
 \end{tikzpicture}
+\caption{Lámina acotada por $y=e^x$, $y=0$, $x=0$, $x=1$ con densidad $\rho(x,y)=2-x+y$.}
+\label{fig:lamina_exp_masa}
 \end{figure}
 La placa está representada por la figura rayada.  La integral de masa está definida por $$m=\int_{0}^{1}\int_{0}^{e^x}\left( 2-x+y\right)\ dydx.$$
 Resolviendo la integral:
@@ -717,6 +721,8 @@ Verifique que los momentos de inercia de una lámina rectangular, con ancho $b$,
   \node[below, font=\small] at (4,-0.5) {$b$};
   \node[right, font=\small] at (4.3,3) {$h$};
 \end{tikzpicture}
+\caption{Lámina rectangular de ancho $b$ y altura $h$ con densidad uniforme $\rho=1$.}
+\label{fig:lamina_rect_inercia}
 \end{figure}
 \begin{myproof}
 Observe que la masa de la lámina está dada por $$m=\int_{0}^{h}\int_{0}^{b}1\ dydx$$
@@ -1235,7 +1241,9 @@ Determine la masa de la lámina acotada por la curva $r=2\sen \theta$ cuya densi
   \foreach \x in {-1,1} \draw (\x,2pt) -- (\x,-2pt) node[below] {\small$\x$};
   \foreach \y in {1,2} \draw (2pt,\y) -- (-2pt,\y) node[left] {\small$\y$};
 \end{tikzpicture}
-\end{figure}	 
+\caption{Lámina acotada por la curva polar $r=2\sen\theta$ con densidad $\rho(r,\theta)=r$.}
+\label{fig:lamina_polar_masa}
+\end{figure}
 La placa está representada por la figura punteada.  La integral de masa está definida por $$m=\int_{0}^{\pi}\int_{0}^{2\sen \theta}\left( r \right)\ rdrd\theta.$$
 Resolviendo la integral por medio de coordenadas polares:
 $\displaystyle\int_{0}^{2\sen \theta}r^2\ dr=\dfrac{r^3}{3}\Big|_{0}^{2\sen \theta}=\dfrac{\left(  2\sen\theta \right)^{3}}{3}-0=\dfrac{\left(  2\sen\theta \right)^{3}}{3}.$
@@ -1275,7 +1283,7 @@ Determine el volumen del tetraedro acotado por los planos de coordenadas y el pl
 \end{prob}
 
 \begin{prob}
-Considere la región $R$ (ver figura \ref{fig1.1}), la cual está limitada por las curvas $y=x+5,$ $y=-x^2-4x-1,$ $y=x-1,$ $y=5x^2-10x+5.$ Plantee la integral doble que permite calcular el área encerrada por estas curvas y determine el valor de esta área.
+Considere la región $R$ (ver figura \ref{fig:region_cuadricas_1}), la cual está limitada por las curvas $y=x+5,$ $y=-x^2-4x-1,$ $y=x-1,$ $y=5x^2-10x+5.$ Plantee la integral doble que permite calcular el área encerrada por estas curvas y determine el valor de esta área.
 \begin{figure}[H]\centering
 \begin{tikzpicture}[scale=0.8]
   \draw[->] (-5,0) -- (4.3,0) node[right] {$x$};
@@ -1305,7 +1313,7 @@ Considere la región $R$ (ver figura \ref{fig1.1}), la cual está limitada por l
   \fill (0,5) circle (2.5pt); \fill (1,0) circle (2.5pt);
   \fill (-2,3) circle (2.5pt); \fill (0,-1) circle (2.5pt);
 \end{tikzpicture}
-\caption{Región del primer ejercicio}\label{fig1.1}
+\caption{Región del primer ejercicio}\label{fig:region_cuadricas_1}
 \end{figure}
 Respuesta: 41/6.
 \end{prob}
@@ -1348,6 +1356,7 @@ Considere la región $R$ (ver la figura), la cual está limitada por las curvas 
   \foreach \y in {1,2,3,4} \draw (2pt,\y) -- (-2pt,\y) node[left, font=\tiny] {$\y$};
 \end{tikzpicture}
 \caption{Figura para el problema 1.}
+\label{fig:region_cuadricas_2}
 \end{figure}
 \end{prob}
 
@@ -1473,7 +1482,7 @@ Calcule el volumen del sólido $Q$ limitado por las superficies $z=\dfrac{y}{x^2
 \end{prob}
 
 \begin{prob}
-Considere la región $R$ (ver figura \ref{fig1.2}), la cual está limitada por las curvas $y=-x+6,$ $x^2+y^2=9$ y  $(x - 3)^{2} + y^{2} = 9.$ Use coordenadas polares para calcular la integral $\displaystyle\int\int_{R}  \dfrac{dA}{\sqrt{\left(x^2+y^2\right)^3}}$.
+Considere la región $R$ (ver figura \ref{fig:region_polar_1}), la cual está limitada por las curvas $y=-x+6,$ $x^2+y^2=9$ y  $(x - 3)^{2} + y^{2} = 9.$ Use coordenadas polares para calcular la integral $\displaystyle\int\int_{R}  \dfrac{dA}{\sqrt{\left(x^2+y^2\right)^3}}$.
 \begin{figure}[H]
 \centering
 \begin{tikzpicture}[scale=0.7]
@@ -1494,13 +1503,13 @@ Considere la región $R$ (ver figura \ref{fig1.2}), la cual está limitada por l
   \foreach \x in {2,4,6} \draw (\x,2pt) -- (\x,-2pt) node[below] {\tiny$\x$};
   \foreach \y in {2,4} \draw (2pt,\y) -- (-2pt,\y) node[left] {\tiny$\y$};
 \end{tikzpicture}
-\caption{Región del segundo ejercicio}\label{fig1.2}
+\caption{Región del segundo ejercicio}\label{fig:region_polar_1}
 \end{figure}
 \end{prob}
 
 % [Original: líneas 2295-2321 | sin verificar | PSTRICKS - pendiente convertir a tikz]
 \begin{prob}
-Considere la región $R$ (ver figura \ref{fig3.2}), la cual está limitada por las curvas $y=-x+10,$ $x^2+y^2=25$ y  $(x - 5)^{2} + y^{2} = 25.$ Use coordenadas polares para calcular la integral $\displaystyle\int\int_{R}  \dfrac{dA}{\sqrt{\left(x^2+y^2\right)^3}}$.
+Considere la región $R$ (ver figura \ref{fig:region_polar_2}), la cual está limitada por las curvas $y=-x+10,$ $x^2+y^2=25$ y  $(x - 5)^{2} + y^{2} = 25.$ Use coordenadas polares para calcular la integral $\displaystyle\int\int_{R}  \dfrac{dA}{\sqrt{\left(x^2+y^2\right)^3}}$.
 \begin{figure}[H]
 \centering
 \begin{tikzpicture}[scale=0.42]
@@ -1521,7 +1530,7 @@ Considere la región $R$ (ver figura \ref{fig3.2}), la cual está limitada por l
   \foreach \x in {2,4,6,8,10} \draw (\x,2pt) -- (\x,-2pt) node[below] {\tiny$\x$};
   \foreach \y in {2,4,6} \draw (2pt,\y) -- (-2pt,\y) node[left] {\tiny$\y$};
 \end{tikzpicture}
-\caption{Región del segundo ejercicio}\label{fig3.2}
+\caption{Región del segundo ejercicio (segunda variante)}\label{fig:region_polar_2}
 \end{figure}
 \end{prob}
 

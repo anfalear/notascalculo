@@ -475,7 +475,16 @@ PDF final: 768 páginas. Compilación limpia.
 **Acción:** identificar todas las figuras que ya existen en el archivo (anteriores a la Fase 8). Por cada una: verificar que está dentro de un entorno `figure`, tiene `\caption` descriptivo, tiene `\label` con convención `fig:`, y todas las etiquetas de puntos y curvas usan `anchor` explícito o desplazamiento `xshift`/`yshift` para evitar solapamiento. Corregir las que no cumplan el estándar de `figuras_guia.tex`.  
 **Criterio de cierre:** todas las figuras preexistentes cumplen el protocolo. Lista de correcciones registrada en las notas del ítem.  
 **Líneas estimadas:** 10–20 por figura corregida (número total depende de auditoría).  
-**Estado:** Pendiente
+**Estado:** Completo — 2026-06-27
+
+**Correcciones aplicadas (9 figuras preexistentes):**
+- 4 figuras de dominio (círculos/elipses en probs): añadidos `\caption` y `\label` a cada `figure[H]`.
+- 1 figura curvas de nivel paraboloide (en example): `\begin{center}` → `\begin{figure}[H]`, `\caption`, `\label`; etiquetas `k=...` con `anchor` explícito (`south`, `above left`, etc.).
+- 2 figuras dominio R² (en probs de ln): `\caption`, `\label` + `anchor` explícito en `\node`.
+- 2 figuras curvas de nivel ln: `\caption`, `\label` + `anchor=west` en etiquetas `z=`.
+- 10 figuras de Fase 8 (F8.02–F8.27): todas ya compliant — sin cambios.
+
+PDF: 768 páginas, 0 errores.
 
 ---
 
@@ -483,7 +492,9 @@ PDF final: 768 páginas. Compilación limpia.
 **Acción:** igual que F8.31 aplicado a `limvariasvariables.tex`.  
 **Criterio de cierre:** todas las figuras preexistentes cumplen el protocolo. Lista de correcciones registrada en las notas del ítem.  
 **Líneas estimadas:** 10–20 por figura corregida (número total depende de auditoría).  
-**Estado:** Pendiente
+**Estado:** Completo — 2026-06-27
+
+**Correcciones aplicadas:** 0. El archivo contiene exactamente 2 figuras, ambas de Fase 8 (F8.04: `fig:disco_epsilon_delta` y F8.05: `fig:trayectorias_limite`). No existen figuras preexistentes. Ambas figuras de F8 ya cumplen el protocolo completo: `figure[H]`, `\caption`, `\label{fig:...}`, `anchor` explícito en todos los `\node`.
 
 ---
 
@@ -491,7 +502,11 @@ PDF final: 768 páginas. Compilación limpia.
 **Acción:** igual que F8.31 aplicado a `planostangentes.tex`.  
 **Criterio de cierre:** todas las figuras preexistentes cumplen el protocolo. Lista de correcciones registrada en las notas del ítem.  
 **Líneas estimadas:** 10–20 por figura corregida (número total depende de auditoría).  
-**Estado:** Pendiente
+**Estado:** Completo — 2026-06-27
+
+**Correcciones aplicadas (1 figura preexistente):**
+- L.68 (Interpretación geométrica DP): ya tenía `figure[H]` y `\caption`; añadido `\label{fig:dp_interpretacion_geometrica}` + `anchor=north` + color `red!70!black`/`blue!70!black` + `\small` a los dos `\node` que indicaban planos $y=y_0$ y $x=x_0$.
+- 2 figuras de Fase 8 (`fig:plano_tangente_3d`, `fig:aprox_lineal_dz`): ya compliant — sin cambios.
 
 ---
 
@@ -499,7 +514,11 @@ PDF final: 768 páginas. Compilación limpia.
 **Acción:** igual que F8.31 aplicado a `gradientes.tex`.  
 **Criterio de cierre:** todas las figuras preexistentes cumplen el protocolo. Lista de correcciones registrada en las notas del ítem.  
 **Líneas estimadas:** 10–20 por figura corregida (número total depende de auditoría).  
-**Estado:** Pendiente
+**Estado:** Completo — 2026-06-27
+
+**Correcciones aplicadas (1 figura preexistente):**
+- L.1035 (triángulo en prob de razón de cambio): tenía `figure[H]` pero sin `\caption` ni `\label`. Añadido `anchor=south west` al `\node{$\theta$}`, `\caption{Triángulo con lados $x$, $y$ y ángulo $\theta$...}`, `\label{fig:triangulo_cadena}`.
+- 2 figuras de Fase 8 (`fig:gradiente_curvas_nivel`, `fig:derivada_direccional`): ya compliant — sin cambios.
 
 ---
 
@@ -507,7 +526,12 @@ PDF final: 768 páginas. Compilación limpia.
 **Acción:** igual que F8.31 aplicado a `multiplicadoresintdobles.tex`.  
 **Criterio de cierre:** todas las figuras preexistentes cumplen el protocolo. Lista de correcciones registrada en las notas del ítem.  
 **Líneas estimadas:** 10–20 por figura corregida (número total depende de auditoría).  
-**Estado:** Pendiente
+**Estado:** Completo — 2026-06-27
+
+**Correcciones aplicadas (2 figuras preexistentes):**
+- L.347 (trapecio canal, dentro de myproof): tenía `figure[H]` pero sin `\caption` ni `\label`. 4 nodos `$\theta$` sin anchor. Añadidos `anchor=center` a los 4, `\caption{Sección transversal del canal...}`, `\label{fig:trapecio_canal}`.
+- L.734 (cúspide $y^3=x^2$): tenía `figure[H]` y `\caption` pero sin `\label`. 1 nodo sin anchor. Añadidos `anchor=south west` al nodo `$\nabla g(0,0)$` y `\label{fig:cuspide_lagrange_falla}`.
+- 2 figuras de Fase 8 (`fig:punto_silla`, `fig:lagrange_region_factible`): ya compliant — sin cambios.
 
 ---
 
@@ -515,7 +539,19 @@ PDF final: 768 páginas. Compilación limpia.
 **Acción:** igual que F8.31 aplicado a `apintdobles.tex`.  
 **Criterio de cierre:** todas las figuras preexistentes cumplen el protocolo. Lista de correcciones registrada en las notas del ítem.  
 **Líneas estimadas:** 10–20 por figura corregida (número total depende de auditoría).  
-**Estado:** Pendiente
+**Estado:** Completo — 2026-06-27
+
+**Correcciones aplicadas (8 figuras preexistentes):**
+- L.641 (lámina rect. x∈[0,4]): añadidos `\caption` + `\label{fig:lamina_rect_masa}`.
+- L.664 (lámina y=e^x): añadidos `\caption` + `\label{fig:lamina_exp_masa}`.
+- L.710 (lámina rect. b×h, inercia): añadidos `\caption` + `\label{fig:lamina_rect_inercia}`.
+- L.1228 (lámina polar r=2sinθ): añadidos `\caption` + `\label{fig:lamina_polar_masa}`.
+- L.1279 (`fig1.1`): label renombrado a `fig:region_cuadricas_1`; referencia en texto actualizada.
+- L.1322: tenía `\caption` pero sin `\label`; añadido `\label{fig:region_cuadricas_2}`.
+- L.1477 (`fig1.2`): label renombrado a `fig:region_polar_1`; referencia en texto actualizada.
+- L.1504 (`fig3.2`): label renombrado a `fig:region_polar_2`; referencia en texto actualizada; caption diferenciado ("segunda variante").
+- 3 figuras de Fase 8 (`fig:region_tipo_I_II`, `fig:cambio_orden_integracion`, `fig:jacobiano_2x2`): ya compliant — sin cambios.
+- Todos los nodos ya tenían posicionamiento explícito — sin correcciones de anchor.
 
 ---
 
@@ -523,7 +559,9 @@ PDF final: 768 páginas. Compilación limpia.
 **Acción:** igual que F8.31 aplicado a `inttriples.tex`.  
 **Criterio de cierre:** todas las figuras preexistentes cumplen el protocolo. Lista de correcciones registrada en las notas del ítem.  
 **Líneas estimadas:** 10–20 por figura corregida (número total depende de auditoría).  
-**Estado:** Pendiente
+**Estado:** Completo — 2026-06-27
+
+**Correcciones aplicadas:** 0. `inttriples.tex` no contiene ninguna figura (ni preexistentes ni de Fase 8 — la figura del Jacobiano `fig:jacobiano_2x2` fue insertada en `apintdobles.tex`).
 
 ---
 
@@ -531,7 +569,9 @@ PDF final: 768 páginas. Compilación limpia.
 **Acción:** igual que F8.31 aplicado a `cap33.tex` (Campos vectoriales e integrales de línea).  
 **Criterio de cierre:** todas las figuras preexistentes cumplen el protocolo. Lista de correcciones registrada en las notas del ítem.  
 **Líneas estimadas:** 10–20 por figura corregida (número total depende de auditoría).  
-**Estado:** Pendiente
+**Estado:** Completo — 2026-06-27
+
+**Correcciones aplicadas:** 0. `cap33.tex` no contiene ninguna figura.
 
 ---
 
@@ -539,7 +579,14 @@ PDF final: 768 páginas. Compilación limpia.
 **Acción:** igual que F8.31 aplicado a `cap34.tex` (Integrales de superficie y teoremas integrales).  
 **Criterio de cierre:** todas las figuras preexistentes cumplen el protocolo. Lista de correcciones registrada en las notas del ítem.  
 **Líneas estimadas:** 10–20 por figura corregida (número total depende de auditoría).  
-**Estado:** Pendiente
+**Estado:** Completo — 2026-06-27
+
+**Correcciones aplicadas (9 nodos sin anchor en 4 figuras de Fase 8):**
+No hay figuras preexistentes. Las 6 figuras son de Fase 8 y ya tenían `figure[H]`, `\caption`, `\label`. Los nodos sin `anchor` explícito fueron corregidos:
+- `fig:curva_orientacion_positiva`: `anchor=west` a $C$, `anchor=center` a $R$, `anchor=south` a "orientación +"
+- `fig:green_region_tipo_I`: `anchor=center` a $R$, `anchor=west` a $C$
+- `fig:divergencia_cancelacion`: `anchor=center` a "se cancelan" y a $Q$
+- `fig:stokes_superficie`: `anchor=center` a $S$, `anchor=east` a "micro-circulaciones"
 
 ---
 
@@ -728,14 +775,14 @@ Cada figura dentro de `figure` con `\caption` y `\label`. Etiquetas con `anchor`
 | F8.29 | `limvariasvariables.tex` | Auditoría estructura interna resueltos: 4 pasos + boxed | Completo | 2026-06-27 | 11 correcciones: 8 examples + 3 probs. Ver bloque narrativo Semana 6. 768 págs. |
 | F8.30 | `limvariasvariables.tex` | Vincular figura F8.05 a ejemplo resuelto de trayectorias | Completo | 2026-06-26 | Integrado en F8.05: figura colocada dentro del example antes de myproof. |
 | F8.31 | `funvectoriales.tex` | Auditoría figuras preexistentes: figure + caption + label + anchors | Completo | 2026-06-27 | 10 figuras Phase 8 ✓. 9 figuras preexistentes corregidas: +caption+label en 8 figure[H]; \begin{center}→figure[H] en 1 example. 768 págs. |
-| F8.32 | `limvariasvariables.tex` | Auditoría figuras preexistentes: figure + caption + label + anchors | Pendiente | — | — |
-| F8.33 | `planostangentes.tex` | Auditoría figuras preexistentes: figure + caption + label + anchors | Pendiente | — | — |
-| F8.34 | `gradientes.tex` | Auditoría figuras preexistentes: figure + caption + label + anchors | Pendiente | — | — |
-| F8.35 | `multiplicadoresintdobles.tex` | Auditoría figuras preexistentes: figure + caption + label + anchors | Pendiente | — | — |
-| F8.36 | `apintdobles.tex` | Auditoría figuras preexistentes: figure + caption + label + anchors | Pendiente | — | — |
-| F8.37 | `inttriples.tex` | Auditoría figuras preexistentes: figure + caption + label + anchors | Pendiente | — | — |
-| F8.38 | `cap33.tex` | Auditoría figuras preexistentes: figure + caption + label + anchors | Pendiente | — | — |
-| F8.39 | `cap34.tex` | Auditoría figuras preexistentes: figure + caption + label + anchors | Pendiente | — | — |
+| F8.32 | `limvariasvariables.tex` | Auditoría figuras preexistentes: figure + caption + label + anchors | Completo | 2026-06-27 | 0 correcciones. Solo 2 figuras de F8 (F8.04/F8.05), ya compliant. |
+| F8.33 | `planostangentes.tex` | Auditoría figuras preexistentes: figure + caption + label + anchors | Completo | 2026-06-27 | 1 fig. preexistente: añadido \label{fig:dp_interpretacion_geometrica} + anchor=north + \small a \node planos. |
+| F8.34 | `gradientes.tex` | Auditoría figuras preexistentes: figure + caption + label + anchors | Completo | 2026-06-27 | 1 fig. preexistente (triángulo prob): añadido anchor=south west al nodo θ + \caption + \label{fig:triangulo_cadena}. |
+| F8.35 | `multiplicadoresintdobles.tex` | Auditoría figuras preexistentes: figure + caption + label + anchors | Completo | 2026-06-27 | 2 figs. preexistentes: trapecio (anchor+caption+label) + cúspide (anchor+label). |
+| F8.36 | `apintdobles.tex` | Auditoría figuras preexistentes: figure + caption + label + anchors | Completo | 2026-06-27 | 8 figs. preexistentes: +caption+label en 4; renombrar fig1.1/fig1.2/fig3.2 → fig:...; +label en 1. |
+| F8.37 | `inttriples.tex` | Auditoría figuras preexistentes: figure + caption + label + anchors | Completo | 2026-06-27 | 0 correcciones. Archivo sin figuras. |
+| F8.38 | `cap33.tex` | Auditoría figuras preexistentes: figure + caption + label + anchors | Completo | 2026-06-27 | 0 correcciones. Archivo sin figuras. |
+| F8.39 | `cap34.tex` | Auditoría figuras preexistentes: figure + caption + label + anchors | Completo | 2026-06-27 | 9 nodos sin anchor en 4 figs. F8: anchor=west/center/south/east según posición. |
 | F8.40 | `planostangentes.tex` | Mejorar figura derivadas parciales: rectas tangentes en 3D | Pendiente | — | — |
 | F8.41 | `planostangentes.tex` | Auditoría resueltos sin 4 pasos + boxed | Pendiente | — | — |
 | F8.42 | `gradientes.tex` | Auditoría resueltos sin 4 pasos + boxed | Pendiente | — | — |

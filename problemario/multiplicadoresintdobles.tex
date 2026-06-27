@@ -366,12 +366,14 @@ Se construirá un canal abierto con sección transversal en la forma de un  trap
 \draw (4.5,1.9216248599541543) node[anchor=north west] {$x \sin \theta$};
 \draw (7.242228357936088,1.5766081482071794) node[anchor=north west] {$x$};
 \draw [line width=2.pt,domain=-0.9631690910028438:9.64234461356722] plot(\x,{(-0.-0.*\x)/6.});
-\draw[color=black] (6.8,0.38405038369046196) node {$\theta $};
-\draw[color=black] (1.3019406252490366,0.39905111028815654) node {$\theta $};
-\draw[color=black] (7.1,2.6) node {$\theta $};
-\draw[color=black] (0.7,2.6) node {$\theta$};
+\draw[color=black] (6.8,0.38405038369046196) node[anchor=center] {$\theta$};
+\draw[color=black] (1.3019406252490366,0.39905111028815654) node[anchor=center] {$\theta$};
+\draw[color=black] (7.1,2.6) node[anchor=center] {$\theta$};
+\draw[color=black] (0.7,2.6) node[anchor=center] {$\theta$};
 \end{tikzpicture}
- \end{figure}
+\caption{Sección transversal del canal abierto en forma de trapecio con ángulos iguales $\theta$ en la base; $x$ es la longitud del lado doblado.}
+\label{fig:trapecio_canal}
+\end{figure}
 Para hallar el canal con volumen máximo basta con maximizar el área de la sección transversal, formado por el trapecio de la figura. Como el área de un trapecio está dada por la fórmula $A=\dfrac{B+b}{2}h$ donde $B$ es la base mayor, $b$ la base menor y $h$ la altura, se debe maximizar la función $A(x,\theta)=\dfrac{B+b}{2}h,$ donde $x$ es la longitud del canal que se dobla y $\theta$ es el ángulo desde la base del canal.
 Por la figura puede observarse que:
 \begin{multicols}{3}
@@ -740,10 +742,11 @@ La hipótesis de regularidad falla en el punto del extremo. El sistema de Lagran
   \draw[thick,blue,domain=0:2.2,samples=200] plot ({\x*\x},{-\x*\x*\x});
   \fill (0,0) circle (2pt) node[below left] {$(0,0)$};
   \node[blue,right] at (1.5,2.2) {$y^3=x^2$};
-  \node at (1.8,0.5) {$\nabla g(0,0)=\mathbf{0}$};
+  \node[anchor=south west] at (1.8,0.5) {$\nabla g(0,0)=\mathbf{0}$};
   \draw[dashed,red] (0,0) -- (2.5,0) node[midway,above] {$d_{\min}=0$};
 \end{tikzpicture}
 \caption{Curva $y^3=x^2$ con cúspide en $(0,0)$; el mínimo de la distancia al origen ocurre en ese punto, pero $\nabla g=\mathbf{0}$ y el método de Lagrange falla.}
+\label{fig:cuspide_lagrange_falla}
 \end{figure}
 
 
