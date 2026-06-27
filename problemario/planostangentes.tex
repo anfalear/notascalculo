@@ -67,33 +67,49 @@ plano $x=x_0$.
 
 \begin{figure}[H]
 \centering
-\begin{tikzpicture}[scale=1.2, x={(0.7cm,0.3cm)}, y={(-0.2cm,0.8cm)}, z={(0cm,0cm)}]
-    % Ejes
-    \draw[->] (0,0,0) -- (3.5,0,0) node[right] {$x$};
-    \draw[->] (0,0,0) -- (0,3.5,0) node[left] {$y$};
-    \draw[->] (0,0,0) -- (0,0,3.5) node[above] {$z$};
-    % Superficie aproximada z = 4 - x^2 - y^2
-    \draw[fill=blue!15, opacity=0.6] plot[domain=0:2.5] (\x,0,{4-\x*\x}) -- (2.5,2.5,{4-2.5*2.5-2.5*2.5}) -- (0,2.5,{4-2.5*2.5}) -- cycle;
-    \draw[fill=blue!15, opacity=0.6] plot[domain=0:2.5] (0,\x,{4-\x*\x}) -- (2.5,2.5,{4-2.5*2.5-2.5*2.5}) -- (2.5,0,{4-2.5*2.5}) -- cycle;
-    % Plano y = y0
-    \draw[red, dashed] (0,1.5,0) -- (3,1.5,0);
-    \draw[red, dashed] (0,1.5,0) -- (0,1.5,3);
-    % Curva en el plano y=y0
-    \draw[red, thick] plot[domain=0:2.2] (\x,1.5,{4-\x*\x-2.25});
-    % Plano x = x0
-    \draw[blue, dashed] (1.5,0,0) -- (1.5,3,0);
-    \draw[blue, dashed] (1.5,0,0) -- (1.5,0,3);
-    % Curva en el plano x=x0
-    \draw[blue, thick] plot[domain=0:2.2] (1.5,\x,{4-2.25-\x*\x});
-    % Punto
-    \filldraw[black] (1.5,1.5,{4-2.25-2.25}) circle (2pt);
-    % Etiquetas
-    \node[anchor=north, red!70!black] at (2.5,1.5,{4-2.25-6.25}) {\small $y=y_0$};
-    \node[anchor=north, blue!70!black] at (1.5,2.5,{4-6.25-2.25}) {\small $x=x_0$};
+\begin{tikzpicture}
+\begin{axis}[
+    view={42}{22},
+    xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+    axis lines=center,
+    tick style={thin},
+    zmin=0, zmax=4.5,
+    xmin=0, xmax=2.2,
+    ymin=0, ymax=2.2,
+    xtick={1,2}, ytick={1,2}, ztick={1,2,3,4},
+    width=9cm, height=9cm,
+]
+    % Superficie z = x^2 + y^2
+    \addplot3[
+        surf, shader=flat corner,
+        samples=18, domain=0:2, y domain=0:2,
+        opacity=0.62, colormap/cool,
+    ] {x^2 + y^2};
+    % Curva de corte con y=y0=1 (roja, sobre la superficie)
+    \addplot3[thick, red!70!black, variable=t, domain=0:2, samples=30]
+        ({t}, {1}, {t*t + 1});
+    % Curva de corte con x=x0=1 (azul, sobre la superficie)
+    \addplot3[thick, blue!70!black, variable=t, domain=0:2, samples=30]
+        ({1}, {t}, {1 + t*t});
+    % Recta tangente en x (pendiente f_x=2): z = 2x, y=1 fijo
+    \addplot3[ultra thick, red!50!black, dashed, variable=t, domain=0.1:2.0, samples=2]
+        ({t}, {1}, {2*t});
+    % Recta tangente en y (pendiente f_y=2): z = 2y, x=1 fijo
+    \addplot3[ultra thick, blue!50!black, dashed, variable=t, domain=0.1:2.0, samples=2]
+        ({1}, {t}, {2*t});
+    % Punto de tangencia (1,1,2)
+    \addplot3[only marks, mark=*, mark size=3pt, black]
+        coordinates {(1,1,2)};
+    \node[anchor=south west, black] at (axis cs:1,1,2)
+        {\small $(x_0,y_0,z_0)$};
+    % Etiquetas rectas tangentes
+    \node[anchor=north, red!70!black] at (axis cs:1.85,1,3.7)
+        {\small $\text{pend.}=f_x$};
+    \node[anchor=west, blue!70!black] at (axis cs:1,1.85,3.7)
+        {\small $\text{pend.}=f_y$};
+\end{axis}
 \end{tikzpicture}
-\caption{Interpretación geométrica de las derivadas parciales como
-pendientes de tangentes a curvas de intersección con planos
-coordenados.}
+\caption{Interpretación geométrica de las derivadas parciales: la curva roja (corte $y=y_0$) tiene recta tangente (roja punteada) con pendiente $f_x(x_0,y_0)$; la curva azul (corte $x=x_0$) tiene recta tangente (azul punteada) con pendiente $f_y(x_0,y_0)$.}
 \label{fig:dp_interpretacion_geometrica}
 \end{figure}
 
@@ -123,7 +139,10 @@ f_y(x,y) = \lim_{h\to 0} \frac{x^2(y+h)^3 - x^2 y^3}{h}
 = 3x^2y^2.
 \]
 
-\textbf{Conclusión.}
+\textbf{Paso 3. Verificación con reglas directas.}
+Tratando $y$ como constante: $\partial_x(x^2y^3)=2xy^3$ ✓. Tratando $x$ como constante: $\partial_y(x^2y^3)=3x^2y^2$ ✓.
+
+\textbf{Paso 4. Resultado.}
 \[
 \boxed{f_x(x,y)=2xy^3,\qquad f_y(x,y)=3x^2y^2}
 \]
@@ -143,43 +162,35 @@ Calcular las primeras derivadas parciales de:
     \item $f(x,y)=\ln(x^2+y^2)$.
 \end{enumerate}
 \begin{myproof}
-\textbf{a)} $f(x,y)=x e^{x/y}$.
+\textbf{Paso 1. Función (a) $f(x,y)=x e^{x/y}$ — regla del producto y de la cadena.}
 
-Para $f_x$: se considera $y$ constante. Usamos la regla del producto:
+$f_x$ ($y$ constante, regla del producto):
 \[
 f_x = 1\cdot e^{x/y} + x\cdot e^{x/y}\cdot \frac{1}{y}
 = e^{x/y}\left(1+\frac{x}{y}\right).
 \]
 
-Para $f_y$: se considera $x$ constante. Derivando $e^{x/y}$ respecto a $y$:
+\textbf{Paso 2. Función (a): $f_y$ y resultado.}
+
+$f_y$ ($x$ constante, cadena sobre $e^{x/y}$):
 \[
-\frac{\partial}{\partial y} e^{x/y}
-= e^{x/y}\cdot \frac{\partial}{\partial y}\left(\frac{x}{y}\right)
-= e^{x/y}\cdot \left(-\frac{x}{y^2}\right).
-\]
-Luego
-\[
-f_y = x e^{x/y}\left(-\frac{x}{y^2}\right)
+f_y = x e^{x/y}\cdot \left(-\frac{x}{y^2}\right)
 = -\frac{x^2}{y^2} e^{x/y}.
 \]
-
 \[
-\boxed{f_x = e^{x/y}\left(1+\frac{x}{y}\right),\qquad
+\boxed{f_x = e^{x/y}\!\left(1+\frac{x}{y}\right),\qquad
 f_y = -\frac{x^2}{y^2}e^{x/y}}
 \]
 
-\textbf{b)} $f(x,y)=\ln(x^2+y^2)$.
+\textbf{Paso 3. Función (b) $f(x,y)=\ln(x^2+y^2)$ — logaritmo compuesto.}
 
-Para $f_x$: derivamos respecto a $x$ tratando $y$ como constante:
-\[
-f_x = \frac{1}{x^2+y^2}\cdot 2x = \frac{2x}{x^2+y^2}.
-\]
+$f_x$ ($y$ constante):
+$f_x = \dfrac{2x}{x^2+y^2}$.
+\quad
+$f_y$ ($x$ constante):
+$f_y = \dfrac{2y}{x^2+y^2}$.
 
-Para $f_y$: derivamos respecto a $y$ tratando $x$ como constante:
-\[
-f_y = \frac{1}{x^2+y^2}\cdot 2y = \frac{2y}{x^2+y^2}.
-\]
-
+\textbf{Paso 4. Resultado de (b).}
 \[
 \boxed{f_x = \frac{2x}{x^2+y^2},\qquad
 f_y = \frac{2y}{x^2+y^2}}
@@ -280,7 +291,10 @@ f_{yx} = \frac{\partial}{\partial x}(f_y)
 = (3x^2 + x^3 y)e^{xy}.
 \]
 
-\textbf{Conclusión.}
+\textbf{Paso 3. Verificación (Clairaut).}
+Se verifica $f_{xy}=f_{yx}=(3x^2+x^3y)e^{xy}$ — las derivadas cruzadas coinciden, como garantiza el Teorema de Clairaut.
+
+\textbf{Paso 4. Resultado.}
 \[
 \boxed{
 f_{xx}=(2+4xy+x^2y^2)e^{xy},\quad
@@ -288,7 +302,6 @@ f_{yy}=x^4 e^{xy},\quad
 f_{xy}=f_{yx}=(3x^2+x^3y)e^{xy}
 }
 \]
-Se verifica $f_{xy}=f_{yx}$.
 \end{myproof}
 \end{example}
 
@@ -364,16 +377,28 @@ derivadas cruzadas sean continuas.
 Calcular $\frac{\partial f}{\partial x}$, $\frac{\partial f}{\partial y}$
 y $\frac{\partial f}{\partial z}$ para $f(x,y,z)=e^{xy}\sin z$.
 \begin{myproof}
+\textbf{Paso 1. Derivada parcial $f_x$.}
+Se tratan $y, z$ como constantes; se aplica la regla de la cadena a $e^{xy}$:
 \[
-f_x = y e^{xy}\sin z,
+f_x = y e^{xy}\sin z.
 \]
+
+\textbf{Paso 2. Derivada parcial $f_y$.}
+Se tratan $x, z$ como constantes:
 \[
-f_y = x e^{xy}\sin z,
+f_y = x e^{xy}\sin z.
 \]
+
+\textbf{Paso 3. Derivada parcial $f_z$.}
+Se tratan $x, y$ como constantes; se deriva $\sin z$:
 \[
 f_z = e^{xy}\cos z.
 \]
-$\boxed{f_x=ye^{xy}\sin z,\; f_y=xe^{xy}\sin z,\; f_z=e^{xy}\cos z}$
+
+\textbf{Paso 4. Resultado.}
+\[
+\boxed{f_x=ye^{xy}\sin z,\quad f_y=xe^{xy}\sin z,\quad f_z=e^{xy}\cos z}
+\]
 \end{myproof}
 \end{example}
 
@@ -396,12 +421,13 @@ f_{yz} = \frac{\partial}{\partial z}(2xyz^3) = 6xyz^2.
 f_{zx} = \frac{\partial}{\partial x}(3xy^2 z^2) = 3y^2 z^2.
 \]
 
-\textbf{Conclusión.}
+\textbf{Paso 3. Verificación (Clairaut).}
+El Teorema de Clairaut garantiza $f_{xy}=f_{yx}$, $f_{yz}=f_{zy}$, $f_{zx}=f_{xz}$ (derivadas cruzadas continuas pues $f$ es polinomial).
+
+\textbf{Paso 4. Resultado.}
 \[
 \boxed{f_{xy}=2yz^3,\quad f_{yz}=6xyz^2,\quad f_{zx}=3y^2z^2}
 \]
-El Teorema de Clairaut garantiza $f_{xy}=f_{yx}$, $f_{yz}=f_{zy}$, $f_{zx}=f_{xz}$
-(las derivadas cruzadas son continuas pues $f$ es polinomial).
 \end{myproof}
 \end{prob}
 
@@ -430,12 +456,13 @@ f_y(0,0)=\lim_{h\to 0}\frac{f(0,h)-f(0,0)}{h}
 =\lim_{h\to 0}\frac{0}{h}=0.
 \]
 
-\textbf{Conclusión.}
+\textbf{Paso 3. Observación.}
+Aunque $f_x(0,0)$ y $f_y(0,0)$ existen, puede verificarse que $f$ \emph{no} es diferenciable en $(0,0)$: la existencia de derivadas parciales no implica diferenciabilidad.
+
+\textbf{Paso 4. Resultado.}
 \[
 \boxed{f_x(0,0)=0,\quad f_y(0,0)=0}
 \]
-Aunque $f_x$ y $f_y$ existen en $(0,0)$, puede verificarse que $f$ \emph{no} es diferenciable
-en ese punto: la existencia de derivadas parciales no implica diferenciabilidad.
 \end{myproof}
 \end{prob}
 
@@ -457,6 +484,8 @@ u_t = -a\cos(x-at),\qquad u_{tt} = -a^2\sin(x-at).
 \[
 a^2 u_{xx} = a^2\bigl(-\sin(x-at)\bigr) = -a^2\sin(x-at) = u_{tt}.\quad\checkmark
 \]
+
+\textbf{Paso 4. Resultado.}
 \[
 \boxed{u_{tt}=a^2 u_{xx}}
 \]
@@ -488,6 +517,8 @@ u_{xx}+u_{yy}
 =\frac{(2y^2-2x^2)+(2x^2-2y^2)}{(x^2+y^2)^2}
 =\frac{0}{(x^2+y^2)^2}=0.\quad\checkmark
 \]
+
+\textbf{Paso 4. Resultado.}
 \[
 \boxed{u_{xx}+u_{yy}=0}
 \]
@@ -611,8 +642,12 @@ Definimos $f(x, y) = 2x^2 + y^2$. Seguimos el protocolo para hallar el plano tan
     \[
     z = 4x + 2y - 3.
     \]
+
+    \item \textbf{Resultado}:
+    \[
+    \boxed{z = 4x + 2y - 3}
+    \]
 \end{enumerate}
-Por lo tanto, el plano tangente es $\boxed{z = 4x + 2y - 3}$.
 \end{myproof}
 \end{example}
 
@@ -637,6 +672,11 @@ z-8=16(x-1)+12(y-2).
 
 \textbf{Paso 3. Simplificar.}
 \[
+z = 16x + 12y - 20.
+\]
+
+\textbf{Paso 4. Resultado.}
+\[
 \boxed{z=16x+12y-20}
 \]
 \end{myproof}
@@ -649,21 +689,21 @@ El plano tangente contiene las rectas tangentes a las curvas de intersección de
 \begin{prob}
 Demuestre que el elipsoide $3x^2+2y^2+z^2=9$ y la esfera $x^2+y^2+z^2-8x-6y-8z+24=0$ son tangentes entre sí en el punto $(1,1,2)$. (Esto quiere decir que tienen un plano tangente común en ese punto.)
 \begin{myproof}
-Sea $F(x,y,z)=3x^2+2y^2+z^2-9,$ entonces $$\nabla F=6x{\bf i}+4y{\bf j}+2z{\bf k}$$ es su vector gradiente. Como el plano tangente es igual a $$\nabla F \cdot \left\langle x-x_0,y-y_0,z-z_0\right\rangle=0,$$ entonces el plano tangente tiene ecuación
-$$ 0=6x_0(x-x_0)+4y_0(y-y_0)+2z_0(z-z_0).$$  
-Si $(x_0,y_0,z_0)=(1,1,2)$ la ecuación del plano tangente al elipsoide en este punto es 
-\begin{align*}
-0&=6(1)(x-1)+4(y-1)+4(z-2)\\
-0&=6(x-1)+4(y-1)+4(z-2).
-\end{align*}
-Análogamente, sea $G(x,y,z)=x^2+y^2+z^2-8x-6y-8z+24,$ entonces $$\nabla G=(2x-8){\bf i}+(2y-6){\bf j}+(2z-8){\bf k}$$ es su vector gradiente. Como el plano tangente es igual a $$\nabla G \cdot \left\langle x-x_0,y-y_0,z-z_0\right\rangle=0,$$ entonces el plano tangente tiene ecuación
-$$ 0=(2x_0-8)(x-x_0)+(2y_0-6)(y-y_0)+(2z_0-8)(z-z_0).$$  
-Si $(x_0,y_0,z_0)=(1,1,2)$ la ecuación del plano tangente a la esfera en este punto es 
-\begin{align*}
-0&=(2(1)-8)(x-1)+(2(1)-6)(y-1)+(2(2)-8)(z-2)\\
-0&=-6(x-1)-4(y-1)-4(z-2).
-\end{align*}
-Finalmente observe que los vectores normales a cada plano tangente son paralelos, por lo tanto, son el mismo plano tangente y así se cumple que las superficies son tangentes entre sí en el punto $(1,1,2).$
+\textbf{Paso 1. Plano tangente al elipsoide en $(1,1,2)$.}
+Sea $F(x,y,z)=3x^2+2y^2+z^2-9$. El gradiente $\nabla F=6x\,\mathbf{i}+4y\,\mathbf{j}+2z\,\mathbf{k}$ es normal a la superficie, así que el plano tangente en $(1,1,2)$ es:
+$0=6(x-1)+4(y-1)+4(z-2).$
+
+\textbf{Paso 2. Plano tangente a la esfera en $(1,1,2)$.}
+Sea $G(x,y,z)=x^2+y^2+z^2-8x-6y-8z+24$. El gradiente $\nabla G=(2x-8)\,\mathbf{i}+(2y-6)\,\mathbf{j}+(2z-8)\,\mathbf{k}$ evaluado en $(1,1,2)$: $(-6,-4,-4)$. El plano tangente es:
+$0=-6(x-1)-4(y-1)-4(z-2).$
+
+\textbf{Paso 3. Comparación de vectores normales.}
+El normal al elipsoide es $\langle 6,4,4\rangle$ y el normal a la esfera es $\langle -6,-4,-4\rangle=-\langle 6,4,4\rangle$. Son paralelos (antiparalelos), luego los planos tangentes son iguales.
+
+\textbf{Paso 4. Resultado.}
+\[
+\boxed{\text{Las superficies son tangentes en }(1,1,2)\text{: comparten el mismo plano tangente.}}
+\]
 \end{myproof}
 \end{prob}
 
@@ -671,10 +711,24 @@ Finalmente observe que los vectores normales a cada plano tangente son paralelos
 \begin{prob}
 Determine el punto del paraboloide $y=x^2+z^2$ donde el plano tangente es paralelo al plano $x+2y+3z=1.$
 \begin{myproof}
-Sea $F(x,y,z)=x^2+z^2-y,$ entonces $y=x^2+z^2$ es una superficie de nivel de $F.$ Note que $\nabla F=\left\langle 2x,-1,2z \right\rangle$ es normal a la superficie, por lo tanto, es normal al plano tangente. Como el plano tangente es paralelo al plano $x+2y+3z=1$ entonces los vectores normales de cada plano deben ser paralelos. Así, $\left\langle 2x,-1,2z \right\rangle=k\left\langle 1,2,3 \right\rangle.$
-Despejando, $2x=k,$ $-1=2k$ y $2z=3k,$ lo cual implica que $k=\dfrac{-1}{2}.$ 
-Si $(x_0,y_0,z_0)$ es un punto en el paraboloide debe cumplir que $$\left\langle 2x_0,-1,2z_0 \right\rangle=\left\langle -1/2,-1,-3/2 \right\rangle.$$
-Finalmente, si $x_0=-1/4$ y $z_0=-3/4$ al despejar $y_0$ de la ecuación queda $$y_0=\left( \frac{-1}{4} \right)^2+\left( \frac{-3}{4} \right)^2=\frac{5}{8}.$$ El punto es $\left( \dfrac{-1}{4},\dfrac{5}{8},\dfrac{-3}{4} \right).$
+\textbf{Paso 1. Gradiente de la superficie.}
+Sea $F(x,y,z)=x^2+z^2-y$. Entonces $\nabla F=\langle 2x,-1,2z\rangle$ es normal al plano tangente.
+
+\textbf{Paso 2. Condición de paralelismo.}
+Para que el plano tangente sea paralelo a $x+2y+3z=1$, los normales deben ser paralelos:
+$\langle 2x,-1,2z\rangle=k\langle 1,2,3\rangle.$
+Despejando: $2x=k$, $-1=2k$ y $2z=3k$, luego $k=-\tfrac{1}{2}$.
+
+\textbf{Paso 3. Coordenadas del punto.}
+Con $k=-\tfrac{1}{2}$: $x_0=-\tfrac{1}{4}$, $z_0=-\tfrac{3}{4}$; sustituyendo en el paraboloide:
+\[
+y_0=\left(-\tfrac{1}{4}\right)^2+\left(-\tfrac{3}{4}\right)^2=\tfrac{1}{16}+\tfrac{9}{16}=\tfrac{5}{8}.
+\]
+
+\textbf{Paso 4. Resultado.}
+\[
+\boxed{\left(-\frac{1}{4},\,\frac{5}{8},\,-\frac{3}{4}\right)}
+\]
 \end{myproof}
 \end{prob}
 
@@ -682,8 +736,23 @@ Finalmente, si $x_0=-1/4$ y $z_0=-3/4$ al despejar $y_0$ de la ecuación queda $
 \begin{prob}
 Halle los puntos del hiperboloide $x^2-y^2-z^2=1$ donde el plano tangente es paralelo al plano $z = x + y.$
 \begin{myproof}
-Sea $F(x,y,z)=x^2-y^2-z^2-1,$ entonces $$\nabla F=2x{\bf i}-2y{\bf j}-2z{\bf k}$$ es su vector gradiente. Como el plano tangente es paralelo al plano $x+y-z=0,$ sus vectores normales deben ser paralelos y así $ \left\langle 2x_0,-2y_0,-2z_0\right\rangle =k \left\langle 1,1,-1\right\rangle. $ Lo cual es equivalente a $$ \left\langle x_0,-y_0,-z_0\right\rangle =k \left\langle 1,1,-1\right\rangle. $$
-Esto implica que  $x_0=k$, $y_0=-k$ y $z_0=k.$ Reemplazando en la ecuación del hiperboloide $k^2-(-k)^2-k^2=1,$ lo cual implica que $k^2=-1$ lo cual es imposible. Así, no existe tal punto sobre el hiperboloide.
+\textbf{Paso 1. Gradiente del hiperboloide.}
+Sea $F(x,y,z)=x^2-y^2-z^2-1$. El gradiente $\nabla F=\langle 2x,-2y,-2z\rangle$ es normal al plano tangente.
+
+\textbf{Paso 2. Condición de paralelismo.}
+El plano $z=x+y$ se escribe $x+y-z=0$, con normal $\langle 1,1,-1\rangle$. La condición es $\langle 2x_0,-2y_0,-2z_0\rangle=k\langle 1,1,-1\rangle$, equivalente a $\langle x_0,-y_0,-z_0\rangle=k\langle 1,1,-1\rangle$.
+Luego $x_0=k$, $y_0=-k$, $z_0=k$.
+
+\textbf{Paso 3. Sustitución en el hiperboloide.}
+\[
+k^2-(-k)^2-k^2=k^2-k^2-k^2=-k^2=1\implies k^2=-1.
+\]
+Esto es imposible en $\mathbb{R}$.
+
+\textbf{Paso 4. Resultado.}
+\[
+\boxed{\text{No existe ningún punto del hiperboloide con plano tangente paralelo a }z=x+y.}
+\]
 \end{myproof}
 \end{prob}
 
@@ -726,12 +795,12 @@ Seguimos el protocolo para hallar el plano tangente, que es equivalente a hallar
     \[
     L(x, y) = \frac{3x + 4y}{5}.
     \]
-    \item \textbf{Aproximar}:
+    \item \textbf{Aproximar y concluir}:
     \[
     f(3.1, 3.9) \approx L(3.1, 3.9) = \frac{3(3.1) + 4(3.9)}{5} = \frac{9.3 + 15.6}{5} = \frac{24.9}{5} = 4.98.
     \]
+    Valor real: $\sqrt{3.1^2 + 3.9^2} \approx \sqrt{24.82} \approx 4.98197$. La linealización da $\boxed{4.98}$.
 \end{enumerate}
-El valor real es $\sqrt{3.1^2 + 3.9^2} \approx \sqrt{9.61 + 15.21} = \sqrt{24.82} \approx 4.98197$. La aproximación $\boxed{4.98}$ es muy cercana.
 \end{myproof}
 \end{example}
 
@@ -756,7 +825,9 @@ L(x,y)=0+1\cdot x+2\cdot y=x+2y.
 \[
 f(0.1,-0.02)\approx L(0.1,-0.02)=0.1+2(-0.02)=0.06.
 \]
-Valor real: $\ln(1.06)\approx 0.0583$. La aproximación es muy precisa cerca del origen.
+Valor real: $\ln(1.06)\approx 0.0583$.
+
+\textbf{Paso 4. Resultado.}
 \[
 \boxed{L(x,y)=x+2y,\quad f(0.1,-0.02)\approx 0.06}
 \]
@@ -864,8 +935,12 @@ Demuestre que la función $f(x, y) = x e^{xy}$ es diferenciable en $(1, 0)$ y de
     \[
     f(1.1, -0.1) \approx L(1.1, -0.1) = 1.0.
     \]
+
+    \item \textbf{Resultado.}
+    \[
+    \boxed{L(x, y) = x + y,\quad f(1.1, -0.1) \approx 1.0}
+    \]
 \end{enumerate}
-La linealización es $\boxed{L(x, y) = x + y}$ y la aproximación es $\boxed{f(1.1, -0.1) \approx 1.0}$.
 \end{myproof}
 \end{example}
 

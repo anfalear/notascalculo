@@ -596,7 +596,7 @@ No hay figuras preexistentes. Las 6 figuras son de Fase 8 y ya tenían `figure[H
 **Acción:** localizar la figura existente de interpretación geométrica de derivadas parciales. Modificarla para que muestre explícitamente las dos rectas tangentes en el punto $(x_0, y_0, z_0)$: una en la dirección $x$ (pendiente $f_x$) y otra en la dirección $y$ (pendiente $f_y$), ambas sobre la superficie en 3D. Usar pgfplots 3D con `shader=flat`, `samples=20`. Etiquetas con `anchor` explícito. Figura dentro de `figure` con `\caption` y `\label`.  
 **Criterio de cierre:** figura muestra superficie + punto + dos rectas tangentes etiquetadas, sin solapamiento de etiquetas, compilación limpia.  
 **Líneas estimadas:** 60–90.  
-**Estado:** Pendiente
+**Estado:** Completo (2026-06-27). Figura TikZ 3D oblicua reemplazada por pgfplots 3D: paraboloide $z=x^2+y^2$ (shader=flat corner, samples=18, opacity=0.62, colormap/cool) + curva traza $y=1$ (rojo) + curva traza $x=1$ (azul) + recta tangente $f_x$ (rojo punteado) + recta tangente $f_y$ (azul punteado) + punto $(1,1,2)$ + etiquetas con anchor explícito. `fig:dp_interpretacion_geometrica`.
 
 ---
 
@@ -604,7 +604,23 @@ No hay figuras preexistentes. Las 6 figuras son de Fase 8 y ya tenían `figure[H
 **Acción:** verificar que todos los ejemplos resueltos existentes en `planostangentes.tex` tienen la estructura de 4 pasos del protocolo diagnóstico + `\boxed{}` en el resultado final. Corregir los que no cumplan.  
 **Criterio de cierre:** todos los resueltos cumplen el protocolo. Lista de correcciones registrada en las notas del ítem.  
 **Líneas estimadas:** 10–30 por ejemplo corregido.  
-**Estado:** Pendiente
+**Estado:** Completo (2026-06-27). 16 resueltos auditados, 16 corregidos:
+1. DP definición: "Conclusión" → "Paso 3. Verificación." + "Paso 4. Resultado." + `\boxed{}`
+2. DP reglas (a+b): reestructuración completa a 4 pasos
+3. DP 2° orden: "Conclusión" → "Paso 3. Verificación (Clairaut)." + "Paso 4. Resultado."
+4. 3 variables: estructura completa de 4 pasos añadida
+5. $f_{xy},f_{yz},f_{zx}$: "Conclusión" → "Paso 3. Verificación (Clairaut)." + "Paso 4. Resultado."
+6. $f_x(0,0)$: "Conclusión" → "Paso 3. Observación." + "Paso 4. Resultado."
+7. Ecuación de onda: añadido "Paso 4. Resultado." antes de `\boxed{}`
+8. Laplace: añadido "Paso 4. Resultado." antes de `\boxed{}`
+9. Plano tangente paraboloide (enumerate): 4° ítem con `\boxed{}` añadido; removido de fuera del `\end{enumerate}`
+10. $z=x^2y^3$ prob: añadido "Paso 4. Resultado." antes de `\boxed{z=16x+12y-20}`
+11. Elipsoide+esfera: prosa reestructurada a 4 pasos explícitos
+12. Paraboloide paralelo: prosa reestructurada a 4 pasos explícitos
+13. Hiperboloide paralelo: prosa reestructurada a 4 pasos explícitos
+14. Linealización $\sqrt{x^2+y^2}$ (enumerate 4 ítems): `\boxed{4.98}` movido dentro del ítem 4
+15. Linealización $\ln(1+x+2y)$: añadido "Paso 4. Resultado." antes de `\boxed{}`
+16. Diferenciabilidad $xe^{xy}$ (enumerate 3 ítems): añadido ítem 4 con `\boxed{}`; eliminada prosa con boxed fuera del enumerate
 
 ---
 
@@ -783,8 +799,8 @@ Cada figura dentro de `figure` con `\caption` y `\label`. Etiquetas con `anchor`
 | F8.37 | `inttriples.tex` | Auditoría figuras preexistentes: figure + caption + label + anchors | Completo | 2026-06-27 | 0 correcciones. Archivo sin figuras. |
 | F8.38 | `cap33.tex` | Auditoría figuras preexistentes: figure + caption + label + anchors | Completo | 2026-06-27 | 0 correcciones. Archivo sin figuras. |
 | F8.39 | `cap34.tex` | Auditoría figuras preexistentes: figure + caption + label + anchors | Completo | 2026-06-27 | 9 nodos sin anchor en 4 figs. F8: anchor=west/center/south/east según posición. |
-| F8.40 | `planostangentes.tex` | Mejorar figura derivadas parciales: rectas tangentes en 3D | Pendiente | — | — |
-| F8.41 | `planostangentes.tex` | Auditoría resueltos sin 4 pasos + boxed | Pendiente | — | — |
+| F8.40 | `planostangentes.tex` | Mejorar figura derivadas parciales: rectas tangentes en 3D | Completo | 2026-06-27 | pgfplots 3D: paraboloide + trazas + rectas tangentes $f_x$/$f_y$ + punto (1,1,2). |
+| F8.41 | `planostangentes.tex` | Auditoría resueltos sin 4 pasos + boxed | Completo | 2026-06-27 | 16 resueltos corregidos: prosa→4 pasos, enumerate→4 ítems, \boxed{} en Paso 4. |
 | F8.42 | `gradientes.tex` | Auditoría resueltos sin 4 pasos + boxed | Pendiente | — | — |
 | F8.43 | `multiplicadoresintdobles.tex` | Auditoría resueltos sin 4 pasos + boxed | Pendiente | — | — |
 | F8.44 | `apintdobles.tex` | Auditoría resueltos sin 4 pasos + boxed | Pendiente | — | — |
