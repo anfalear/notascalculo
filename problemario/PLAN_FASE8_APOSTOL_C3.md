@@ -628,7 +628,20 @@ No hay figuras preexistentes. Las 6 figuras son de Fase 8 y ya tenían `figure[H
 **Acción:** igual que F8.41 aplicado a `gradientes.tex`.  
 **Criterio de cierre:** todos los resueltos cumplen el protocolo. Lista de correcciones registrada en las notas del ítem.  
 **Líneas estimadas:** 10–30 por ejemplo corregido.  
-**Estado:** Pendiente
+**Estado:** Completo (2026-06-27). 16 resueltos auditados, 12 corregidos:
+1. Voltaje: prosa → 4 pasos
+2. Cono: prosa → 4 pasos
+3. Caja área: prosa → 4 pasos
+4. Triángulo: prosa → Paso 1-4 explícitos
+5. Deriv. implícita ejemplo (enumerate 3 ítems + boxed fuera): añadido ítem 4 con boxed
+6. $z=e^{xy}$: "Conclusión" → "Paso 4. Resultado."
+7. $x^2y-y^2z+z^3=1$: añadido Paso 3 verificación + "Paso 4. Resultado."
+8. Gradiente $x^2\sin y+e^{xy}$: 2 pasos → 4 pasos (split Paso 1-2 + Paso 3 ensamblaje + Paso 4)
+9. Deriv. dir. (3 sub-partes a/b/c): Paso 1 Estrategia + Paso 2/3/4 (a/b/c)
+10. Maximización (2 sub-partes): Paso 1 gradiente, Paso 2 normalizar, Paso 3 (a), Paso 4 (b)
+11. Max crecimiento (3 sub-partes): Paso 1 Estrategia + Paso 2/3/4 (a/b/c)
+12. Plano tang. + recta normal (3 sub-partes): Paso 1 Estrategia + Paso 2/3/4 (a/b/c)
+Los 4 restantes ya cumplían el protocolo.
 
 ---
 
@@ -801,7 +814,7 @@ Cada figura dentro de `figure` con `\caption` y `\label`. Etiquetas con `anchor`
 | F8.39 | `cap34.tex` | Auditoría figuras preexistentes: figure + caption + label + anchors | Completo | 2026-06-27 | 9 nodos sin anchor en 4 figs. F8: anchor=west/center/south/east según posición. |
 | F8.40 | `planostangentes.tex` | Mejorar figura derivadas parciales: rectas tangentes en 3D | Completo | 2026-06-27 | pgfplots 3D: paraboloide + trazas + rectas tangentes $f_x$/$f_y$ + punto (1,1,2). |
 | F8.41 | `planostangentes.tex` | Auditoría resueltos sin 4 pasos + boxed | Completo | 2026-06-27 | 16 resueltos corregidos: prosa→4 pasos, enumerate→4 ítems, \boxed{} en Paso 4. |
-| F8.42 | `gradientes.tex` | Auditoría resueltos sin 4 pasos + boxed | Pendiente | — | — |
+| F8.42 | `gradientes.tex` | Auditoría resueltos sin 4 pasos + boxed | Completo | 2026-06-27 | 12 correcciones: prosa→4 pasos, enumerate+item4, "Conclusión"→"Paso 4", multi-parte→Paso 1-4. |
 | F8.43 | `multiplicadoresintdobles.tex` | Auditoría resueltos sin 4 pasos + boxed | Pendiente | — | — |
 | F8.44 | `apintdobles.tex` | Auditoría resueltos sin 4 pasos + boxed | Pendiente | — | — |
 | F8.45 | `inttriples.tex` | Auditoría resueltos sin 4 pasos + boxed | Pendiente | — | — |
