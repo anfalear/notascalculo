@@ -309,7 +309,10 @@ ni otro.
 \begin{prob}
 Determine el punto sobre el plano $x-y+z=9$ que está más cerca al punto $(1,2,5).$
 \begin{myproof}
+\textbf{Paso 1. Función a minimizar.}
 La función de distancia es $s=(x-1)^2+(y-2)^2+(z-5)^2$ (recuerde que minimizar $s$ minimiza su cuadrado) pero se está calculando la distancia a un punto que pertenece al plano $x-y+z-9=0.$ Despejando a $z$ de la ecuación del plano se obtiene la función $s=(x-1)^2+(y-2)^2+(4-x+y)^2$ la cual se va a minimizar.
+
+\textbf{Paso 2. Puntos críticos.}
 Calculando las derivadas, $$\dfrac{\partial s}{\partial x}=2(x-1)-2(4-x+y)$$ y  $$\dfrac{\partial s}{\partial y}=2(y-2)+2(4-x+y).$$
 \begin{multicols}{2}
 Haciendo $\dfrac{\partial s}{\partial x}=0$ se obtiene:
@@ -329,15 +332,18 @@ Lo cual lleva a resolver el siguiente sistema de ecuaciones
 0&=4x-2y-10\\0&=4y-2x+4
 \end{align*}
 Cuya solución es $x=\dfrac{8}{3}$ y $y=\dfrac{1}{3}.$
-Por criterio de las segundas derivadas parciales, al calcular 
+
+\textbf{Paso 3. Verificación mínimo (criterio 2da derivada).}
 \begin{multicols}{3}
 $$\dfrac{\partial^2 s}{\partial x^2}=4,$$ $$\dfrac{\partial^2 s}{\partial y^2}=4,$$ $$\dfrac{\partial^2 s}{\partial x\partial y}=-2.$$
 \end{multicols}
-Evaluando el valor de $D$ en el punto $\left( \dfrac{8}{3},\dfrac{1}{3}  \right)$:
-$D=\left(\dfrac{\partial^2 s}{\partial x^2}\right)\left(\dfrac{\partial^2 s}{\partial y^2}\right)-\left(\dfrac{\partial^2 s}{\partial x\partial y}\right)^2=\left(  4  \right)\left( 4 \right)-\left(-2 \right)^2 = 12>0$
-Finalmente,  $$\dfrac{\partial^2 s}{\partial x^2}=4>0$$
-Lo cual implica que $\left( \dfrac{8}{3},\dfrac{1}{3}  \right)$ es un mínimo. Así el punto más cercano es $\left(\dfrac{8}{3},\dfrac{1}{3},\dfrac{20}{3}\right)$
-La distancia mínima será $s=\sqrt{\left(\dfrac{8}{3}-1\right)^2+\left(\dfrac{1}{3}-2\right)^2+\left(4-\dfrac{8}{3}+\dfrac{1}{3}\right)^2}=\dfrac{5\sqrt{3}}{3}.$
+$D=\left(4\right)\left(4\right)-\left(-2\right)^2=12>0$ y $\dfrac{\partial^2 s}{\partial x^2}=4>0$, luego es un mínimo.
+El punto más cercano es $\left(\dfrac{8}{3},\dfrac{1}{3},\dfrac{20}{3}\right)$.
+
+\textbf{Paso 4. Resultado.}
+\[
+\boxed{\text{Punto más cercano: }\left(\dfrac{8}{3},\,\dfrac{1}{3},\,\dfrac{20}{3}\right);\quad d_{\min}=\dfrac{5\sqrt{3}}{3}}
+\]
 \end{myproof}
 \end{prob}
 
@@ -374,6 +380,7 @@ Se construirá un canal abierto con sección transversal en la forma de un  trap
 \caption{Sección transversal del canal abierto en forma de trapecio con ángulos iguales $\theta$ en la base; $x$ es la longitud del lado doblado.}
 \label{fig:trapecio_canal}
 \end{figure}
+\textbf{Paso 1. Función de área.}
 Para hallar el canal con volumen máximo basta con maximizar el área de la sección transversal, formado por el trapecio de la figura. Como el área de un trapecio está dada por la fórmula $A=\dfrac{B+b}{2}h$ donde $B$ es la base mayor, $b$ la base menor y $h$ la altura, se debe maximizar la función $A(x,\theta)=\dfrac{B+b}{2}h,$ donde $x$ es la longitud del canal que se dobla y $\theta$ es el ángulo desde la base del canal.
 Por la figura puede observarse que:
 \begin{multicols}{3}
@@ -389,11 +396,13 @@ A(x,\theta)&=\dfrac{1}{2}\left[ 2x\cos \theta+(50-2x)+(50-2x) \right]x\sin \thet
 &=\left(x\cos \theta+(50-2x)\right)x\sin \theta,\\
 &=x^2\cos\theta \sin \theta+50x\sin \theta-2x^2\sin \theta.
 \end{align*}
-Como los puntos críticos de la función están donde las dos primeras derivadas parciales son cero, se hace el cálculo de estas derivadas y  después se encuentran los puntos donde son simultáneamente cero. Así,
+\textbf{Paso 2. Derivadas parciales.}
+Como los puntos críticos de la función están donde las dos primeras derivadas parciales son cero, se hace el cálculo de estas derivadas y después se encuentran los puntos donde son simultáneamente cero. Así,
 \begin{itemize}
 \item $\dfrac{\partial A}{\partial x}=2x\cos\theta\sin\theta +50\sin \theta -4x\sin \theta.$
 \item $\dfrac{\partial A}{\partial \theta}=50 x \cos \theta -2 x^2\cos \theta +x^2\left(cos^{2}\theta-\sin^{2}\theta\right)=50 x \cos \theta -2 x^2\cos \theta +x^2\left(2cos^{2}\theta-1\right).$  
 \end{itemize}
+\textbf{Paso 3. Puntos críticos.}
 Si $\dfrac{\partial A}{\partial x}=0$ entonces $\sin \theta \left( 2x\cos\theta +50-4x \right)=0.$ Como $\sin \theta=0$ si $\theta =0$ o $\theta =\pi$ se descartan esos puntos, por lo cual se tomará el caso cuando $2x\cos\theta +50-4x =0,$ lo cual implica que $\cos \theta=\dfrac{2x-25}{x}.$
 Como las primeras derivadas parciales deben ser cero simultáneamente, puede hacerse el reemplazo $\cos \theta=\dfrac{2x-25}{x}$ en la ecuación $\dfrac{\partial A}{\partial \theta}=0.$ 
 De esta manera, haciendo los cálculos correspondientes se obtiene que
@@ -403,32 +412,46 @@ De esta manera, haciendo los cálculos correspondientes se obtiene que
 0&=3x^2-50x,\\
 0&=x(3x-50).\\
 \end{align*}
-Así, $x=0$  o $x=\dfrac{50}{3},$ como $x>0$ se toma el punto $x=\dfrac{50}{3},$ y esto determina que $\cos \theta =\dfrac{-2+2\left( \frac{50}{3} \right)}{\frac{50}{3}}=\dfrac{1}{2}$  y así $\theta=\frac{\pi}{3}.$ 
-Finalmente, el punto para el cual el volumen del canal es máximo son los puntos $(x,\theta)=\left(\dfrac{50}{3},\dfrac{\pi}{3}\right).$ 
+Así, $x=0$  o $x=\dfrac{50}{3},$ como $x>0$ se toma el punto $x=\dfrac{50}{3},$ y esto determina que $\cos \theta =\dfrac{-2+2\left( \frac{50}{3} \right)}{\frac{50}{3}}=\dfrac{1}{2}$  y así $\theta=\frac{\pi}{3}$.
+
+\textbf{Paso 4. Resultado.}
+\[
+\boxed{(x,\theta)=\left(\dfrac{50}{3}\,\text{cm},\,\dfrac{\pi}{3}\right)\text{ maximiza el área del canal}.}
+\]
 \end{myproof}
 \end{prob}
 
 \begin{prob}
 El material para construir la base de una caja cuya tapa es abierta cuesta $1.5$ veces más por unidad de área que el material para los lados. Si hay disponibles $\$ 1 000$, halle la caja de mayor volumen que puede ser fabricada.
 \begin{myproof}
-Sea $x,\ y,\ z$ la longitud de costo del ancho, el largo y la altura de la caja respectivamente. Note que el área superficial de la caja es $A_{s}=2xz+2yz+xy$ y el costo de su producción está dado por la función $C(x,y)=2xz+2yz+1.5xy.$ Como el valor destinado para su producción es $\$ 1000$, se tiene que, $1000=C(x,y)=2xz+2yz+1.5xy,$ donde se puede despejar $z$ obteniendo $z=\dfrac{1000-1.5xy}{2x+2y}.$  
-Así, el volumen de la caja está dado por $$V= xy   \left(\dfrac{1000-1.5xy}{2x+2y}\right)=\dfrac{1000xy-1.5x^2y^2}{2x+2y}.$$
-Al calcular las primeras derivadas parciales se tiene que
+\textbf{Paso 1. Variables y restricción de costo.}
+Sea $x,\ y,\ z$ el ancho, largo y altura de la caja. El costo es $C=2xz+2yz+1.5xy=1000$, despejando $z=\dfrac{1000-1.5xy}{2x+2y}.$
+
+\textbf{Paso 2. Función de volumen.}
+$$V=xy\left(\dfrac{1000-1.5xy}{2x+2y}\right)=\dfrac{1000xy-1.5x^2y^2}{2x+2y}.$$
+Las derivadas parciales son:
 \begin{itemize}
-\item $\dfrac{\partial V}{\partial x}=\dfrac{\left( 1000y-3xy^2 \right)\left( 2x+2y \right)-2\left( 1000xy-1.5x^2y^2 \right)}{\left(2x+2y\right)^{2}}=\dfrac{y^{2}\left(2000-3x^2-6xy\right)}{4\left(x+y\right)^{2}}.$
-\item $\dfrac{\partial V}{\partial y}=\dfrac{\left( 1000x-3x^2y \right)\left( 2x+2y \right)-2\left( 1000xy-1.5x^2y^2 \right)}{\left(2x+2y\right)^{2}}=\dfrac{x^{2}\left(2000-3y^2-6xy\right)}{4\left(x+y\right)^{2}}.$
+\item $\dfrac{\partial V}{\partial x}=\dfrac{y^{2}\left(2000-3x^2-6xy\right)}{4\left(x+y\right)^{2}}.$
+\item $\dfrac{\partial V}{\partial y}=\dfrac{x^{2}\left(2000-3y^2-6xy\right)}{4\left(x+y\right)^{2}}.$
 \end{itemize}
-Observe que las dos primeras derivadas parciales son iguales si $y=x,$ por lo tanto basta hacer este cambio en una de ellas para obtener los puntos críticos. 
-En efecto, $0=\dfrac{x^2\left( 2000-3x^2-6x^2 \right)}{4\left( 2x \right)^2}=\dfrac{x^2\left( 2000-9x^2 \right)}{16x^2}.$ 
-Es decir, $0=x^2\left( 2000-9x^2 \right).$ De ahí, $x=0,$ $x=\pm \sqrt{\dfrac{2000}{9}}=\pm \dfrac{20\sqrt{5}}{3},$ que determina el único valor $x=\dfrac{20\sqrt{5}}{3},$ el cual es un máximo (puede comprobarlo con el criterio de la segunda derivada), que determina las dimensiones de la caja como $x=\dfrac{20\sqrt{5}}{3},$ $y=\dfrac{20\sqrt{5}}{3},$ $z=5\sqrt{5}.$ 
-Finalmente, el volumen es aproximadamente $V=\left( \dfrac{20\sqrt{5}}{3} \right)\left( \dfrac{20\sqrt{5}}{3} \right)\left( 5\sqrt{5} \right)\approx 2484.52$ unidades cúbicas.
+
+\textbf{Paso 3. Puntos críticos.}
+Las derivadas son iguales si $y=x$; sustituyendo: $0=\dfrac{x^2(2000-9x^2)}{16x^2}$, luego $x=\dfrac{20\sqrt{5}}{3}$ (el único positivo). Dimensiones: $x=y=\dfrac{20\sqrt{5}}{3}$, $z=5\sqrt{5}$.
+
+\textbf{Paso 4. Resultado.}
+\[
+\boxed{V_{\max}\approx 2484.52\ \text{u}^3\text{; dimensiones: }x=y=\dfrac{20\sqrt{5}}{3},\;z=5\sqrt{5}}
+\]
 \end{myproof}
 \end{prob}
 
 \begin{prob}
 Calcule el volumen de la caja rectangular más grande en el primer octante con tres caras en los planos coordenados y un vértice en el plano $x+5y+3z=6.$
 \begin{myproof}
-Como la caja está en el primer cuadrante, el volumen es $V=xyz,$ pero se conoce que un vértice de esta se encuentra sobre el plano $x+5y+3z=6.$ Despejando a $z$ de la ecuación del plano se obtiene la función $V=\dfrac{xy}{3}\left( 6-x-5y \right)$ la cual se va a maximizar.
+\textbf{Paso 1. Función a maximizar.}
+Como la caja está en el primer cuadrante, el volumen es $V=xyz,$ pero se conoce que un vértice de esta se encuentra sobre el plano $x+5y+3z=6.$ Despejando a $z$ se obtiene la función $V=\dfrac{xy}{3}\left( 6-x-5y \right)$ la cual se va a maximizar.
+
+\textbf{Paso 2. Derivadas parciales.}
 Calculando las derivadas, $$\dfrac{\partial V}{\partial x}=2y-\frac{2}{3}xy-\frac{5}{3}y^2$$ y  $$\dfrac{\partial V}{\partial y}=2x-\frac{10}{3}xy-\frac{1}{3}x^2.$$
 \begin{multicols}{2}
 Haciendo $\dfrac{\partial V}{\partial x}=0$ se obtiene:
@@ -445,6 +468,7 @@ Similarmente, si $\dfrac{\partial V}{\partial y}=0$ entonces:
 &\Rightarrow x=0 \text{ o } y=\dfrac{6-x}{10}.
 \end{align*}
 \end{multicols}
+\textbf{Paso 3. Puntos críticos y discriminante.}
 Lo cual da dos puntos críticos: $(0,0)$ y el que resulta de igualar los valores de $y.$
 Así, 
 \begin{align*}
@@ -459,15 +483,22 @@ Evaluando el valor de $D$ en el punto $\left( 2,\dfrac{2}{5}  \right)$:
 $D=\left(\dfrac{\partial^2 V}{\partial x^2}\right)\left(\dfrac{\partial^2 V}{\partial y^2}\right)-\left(\dfrac{\partial^2 V}{\partial x\partial y}\right)^2=\left(  \dfrac{-4}{15}  \right)\left(  \dfrac{-20}{3}  \right)-\left( -\dfrac{2}{3} \right)^2 = \dfrac{4}{3}>0$
 Finalmente,  $$\dfrac{\partial^2 V}{\partial x^2}=\dfrac{-2}{3}y=\dfrac{-4}{15}<0$$
 Lo cual implica que $\left( 2,\dfrac{2}{5}  \right)$ es un máximo.
-El volumen de la caja será $V=\dfrac{xy}{3}\left( 6-x-5y \right)=\dfrac{8}{15}\ u^3.$
+
+\textbf{Paso 4. Resultado.}
+\[
+\boxed{V_{\max}=\dfrac{8}{15}\ u^3\text{; punto óptimo: }\left(2,\,\tfrac{2}{5},\,\tfrac{4}{15}\right)}
+\]
 \end{myproof}
 \end{prob}
 
 \begin{prob}
 La base de un acuario de volumen $V$ está hecho de cerámica y los lados son de vidrio. Si la cerámica cuesta tres veces más por unidad de área que el vidrio, determine las dimensiones del acuario que minimizan el costo de los materiales.
 \begin{myproof}
-Sean $x,$ $y$ y $z$ las dimensiones del ancho, el largo y la altura del acuario. Por lo tanto, el área de la cerámica será $xy.$ Sea $V=xyz$ el volumen del acuario, entonces $z=\dfrac{V}{xy}$ y como el área superficial del acuario es $A=2(xz+yz)+xy$ la función de costo es $C=3xy+2xz+2yz$ la cual se convierte al reemplazar $z$ en $C=3xy+\dfrac{2V}{y}+\dfrac{2V}{x}.$ 
-Calculando las derivadas, $$\dfrac{\partial C}{\partial x}=3y-\dfrac{2V}{x^2}$$ y  $$\dfrac{\partial C}{\partial y}=3x-\dfrac{2V}{y^2}.$$
+\textbf{Paso 1. Variables y función de costo.}
+Sean $x,$ $y$ y $z$ las dimensiones del ancho, el largo y la altura del acuario. El costo es $C=3xy+2xz+2yz$; con $z=V/(xy)$ queda $C=3xy+\dfrac{2V}{y}+\dfrac{2V}{x}.$
+
+\textbf{Paso 2. Derivadas parciales.}
+$$\dfrac{\partial C}{\partial x}=3y-\dfrac{2V}{x^2},\qquad \dfrac{\partial C}{\partial y}=3x-\dfrac{2V}{y^2}.$$
 \begin{multicols}{2}
 Haciendo $\dfrac{\partial C}{\partial x}=0$ se obtiene:
 \begin{align*}
@@ -481,74 +512,87 @@ Similarmente, si $\dfrac{\partial C}{\partial y}=0$ entonces:
 x&=\dfrac{2V}{3y^2}.
 \end{align*}
 \end{multicols}
-Resolviendo,
-$$3x=\dfrac{2V}{y^2}\Leftrightarrow 3x=\dfrac{2V}{\left( \dfrac{2V}{3x^2} \right)^2} \Leftrightarrow 3x=\dfrac{2V(9x^4)}{4V^2}\Leftrightarrow x^3=\dfrac{2V}{3}\Leftrightarrow x=\sqrt[3]{\dfrac{2V}{3}}.$$
-Observando la otra ecuación, $y=\sqrt[3]{\dfrac{2V}{3}}.$
- 
-Por criterio de las segundas derivadas parciales, al calcular 
+\textbf{Paso 3. Punto crítico y verificación.}
+Resolviendo el sistema: $x=y=\sqrt[3]{\dfrac{2V}{3}}.$
+
+Por criterio de las segundas derivadas parciales, al calcular
 \begin{multicols}{3}
 $$\dfrac{\partial^2 C}{\partial x^2}=\dfrac{4V}{x^3},$$ $$\dfrac{\partial^2 C}{\partial y^2}=\dfrac{4V}{y^3},$$ $$\dfrac{\partial^2 C}{\partial x\partial y}=3.$$
 \end{multicols}
 Evaluando el valor de $D$ en el punto $\left( \sqrt[3]{\dfrac{2V}{3}},\sqrt[3]{\dfrac{2V}{3}} \right)$:
 $D=\left(\dfrac{\partial^2 s}{\partial x^2}\right)\left(\dfrac{\partial^2 s}{\partial y^2}\right)-\left(\dfrac{\partial^2 s}{\partial x\partial y}\right)^2=\left(  6  \right)\left( 6 \right)-\left(3 \right)^2 = 27>0$
 Finalmente,  $$\dfrac{\partial^2 s}{\partial x^2}=6>0$$
-Lo cual implica que $\left( \sqrt[3]{\dfrac{2V}{3}},\sqrt[3]{\dfrac{2V}{3}} \right)$ es un mínimo. Así las dimensiones son $\left( \sqrt[3]{\dfrac{2V}{3}},\sqrt[3]{\dfrac{2V}{3}},\left(\dfrac{3}{2}\right)^{2/3}\sqrt[3]{V} \right)=\left( \sqrt[3]{\dfrac{2V}{3}},\sqrt[3]{\dfrac{2V}{3}},\sqrt[3]{\left(\dfrac{9}{4}\right){V}} \right).$
+Lo cual implica que $\left( \sqrt[3]{\dfrac{2V}{3}},\sqrt[3]{\dfrac{2V}{3}} \right)$ es un mínimo.
+
+\textbf{Paso 4. Resultado.}
+\[
+\boxed{\text{Dimensiones óptimas: }x=y=\sqrt[3]{\dfrac{2V}{3}},\quad z=\sqrt[3]{\dfrac{9V}{4}}}
+\]
 \end{myproof}
 \end{prob}
 
 \begin{prob}
 \textbf{Ley de Hardy-Weinberg} Los tipos sanguíneos son genéticamente determinados por tres alelos A, B y O. (Alelo es cualquiera de las posibles formas de mutación de un gen.) Una persona cuyo tipo sanguíneo es AA, BB u OO es homocigótica. Una persona cuyo tipo sanguíneo es AB, AO o BO es heterocigótica. La ley Hardy-Weinberg establece que la proporción $P$ de individuos heterocigótica en cualquier población dada es $P(p,q,r)=2pq+2pr+2qr,$  donde $p$ representa el porcentaje de alelos A en la población, $q$ representa el porcentaje de alelos B en la población y $r$ representa el porcentaje de alelos O en la población. Utilizar el hecho que $p+q+r=1$ para mostrar que la proporción máxima de individuos heterocigóticos en cualquier población es $\dfrac{2}{3}.$
 \begin{myproof}
-Sea $P(p,q,r)=2pq+2pr+2qr$ la proporción de individuos heterocigóticos. Como $p=1-q-r$ la función de proporción se reduce a $P(q,r)=2(1-q-r)q+2(1-q-r)r+2qr=-2q^2-2r^2-2qr+2q+2r.$ 
-Al calcular las primeras derivadas parciales,
-\begin{itemize}
-\item $\dfrac{\partial P}{\partial r}=-4r-2q+2.$
-\item $\dfrac{\partial P}{\partial q}=-4q-2r+2.$
-\end{itemize}
-Note que $\dfrac{\partial P}{\partial r}=-4r-2q+2=0$ implica que $4r+2q=2$ y de manera análoga $\dfrac{\partial P}{\partial q}=-4q-2r+2=0$ implica que $2r+4q=2.$
-La solución del sistema de ecuaciones $\left\lbrace \begin{array}{ccc} 2&=&4r+2q\\
-2&=&2r+4q \end{array} \right.$ determina a $\left(\dfrac{1}{3},\dfrac{1}{3}\right)$ como punto crítico.
-Al usar el criterio de las segundas derivadas parciales, como $P_{rr}=-4,\ P_{qq}=-4$ y $P_{qr}=-2,$ $D=\left(-4\right)\left(-4\right)-\left( -2 \right)^{2}=12>0.$ Lo cual dice que $\left( \dfrac{1}{3},\dfrac{1}{3} \right)$ es un máximo.
-Finalmente, al despejar,  $p= \dfrac{1}{3}.$ Esto lleva a que la proporción  $P\left(\dfrac{1}{3},\dfrac{1}{3},\dfrac{1}{3}  \right)=\dfrac{2}{3}$ tal como se quería demostrar.
+\textbf{Paso 1. Reducción con $p+q+r=1$.}
+Como $p=1-q-r$, la proporción se reduce a $P(q,r)=-2q^2-2r^2-2qr+2q+2r.$
+
+\textbf{Paso 2. Puntos críticos.}
+$\dfrac{\partial P}{\partial q}=-4q-2r+2=0$ y $\dfrac{\partial P}{\partial r}=-4r-2q+2=0$. El sistema tiene solución única $q=r=\dfrac{1}{3}$, luego $p=\dfrac{1}{3}$.
+
+\textbf{Paso 3. Verificación máximo.}
+$P_{qq}=-4$, $P_{rr}=-4$, $P_{qr}=-2$; $D=(-4)(-4)-(-2)^2=12>0$ y $P_{qq}<0$: es un máximo.
+
+\textbf{Paso 4. Resultado.}
+\[
+\boxed{P\!\left(\dfrac{1}{3},\dfrac{1}{3},\dfrac{1}{3}\right)=\dfrac{2}{3}}
+\]
 \end{myproof}
 \end{prob}
 
 \begin{prob}
 Determine el punto en el plano $2x+4y+3z=12$ que es más cercano al origen.
 \begin{myproof}
-Sea $P(x,y,z)$ un punto en el plano. Entonces el cuadrado de la distancia entre el origen y $P$ es $d^2=x^2+y^2+z^2.$ Como $P$ está en el plano, $z=\dfrac{12-2x-4y}{3},$ por lo cual se quiere minimizar  $d^2=f(x,y)=x^2+y^2+\left( \dfrac{12-2x-4y}{3} \right)^{2}.$
-Al calcular las derivadas parciales se obtiene que 
-\begin{itemize}
-\item $\dfrac{\partial f}{\partial x}=2x+\dfrac{2}{9}\left( 12-2x-4y \right)(-2)=\dfrac{-48+26x+16y}{9}.$
-\item $\dfrac{\partial f}{\partial y}=2y+\dfrac{2}{9}\left( 12-2x-4y \right)(-4)=\dfrac{-96+16x+50y}{9}.$
-\end{itemize}
-Así, $\dfrac{\partial f}{\partial x}=0=\dfrac{-48+26x+16y}{9}$ implica que $24=13x+8y.$ 
-Análogamente, $\dfrac{\partial f}{\partial y}=0=\dfrac{-96+16x+50y}{9}$ implica que $48=8x+25y.$ 
-Al resolver el sistema de ecuaciones $\left\lbrace \begin{array}{ccc} 24&=&13x+8y\\
-48&=&8x+25y \end{array} \right.$ se obtiene el punto crítico $\left( \dfrac{24}{29},\dfrac{48}{29} \right).$ 
-Al usar el criterio de las segundas derivadas parciales, como $f_{xx}=\dfrac{26}{9},\ f_{yy}=\dfrac{50}{9}$ y $f_{xy}=\dfrac{16}{9},$ $D=\left(\dfrac{26}{9}\right)\left(\dfrac{50}{9}\right)-\left( \dfrac{16}{9} \right)^{2}=\dfrac{116}{9}>0.$ Lo cual dice que $\left( \dfrac{24}{29},\dfrac{48}{29} \right)$ es un mínimo.
-Finalmente, al despejar,  $z=\dfrac{12-2\left( \frac{24}{29} \right)-4\left( \frac{48}{29} \right)}{3}=\dfrac{36}{29}, $ por lo cual el punto  cuya distancia es mínima es $\left(\dfrac{24}{29},\dfrac{48}{29},\dfrac{36}{29}  \right).$ 
+\textbf{Paso 1. Función a minimizar.}
+Con $z=\dfrac{12-2x-4y}{3}$ (de la restricción): $d^2=f(x,y)=x^2+y^2+\left(\dfrac{12-2x-4y}{3}\right)^2$.
+
+\textbf{Paso 2. Puntos críticos.}
+$\dfrac{\partial f}{\partial x}=0\Rightarrow 13x+8y=24$; $\dfrac{\partial f}{\partial y}=0\Rightarrow 8x+25y=48$. Solución: $\left(\dfrac{24}{29},\dfrac{48}{29}\right)$.
+
+\textbf{Paso 3. Verificación mínimo.}
+$f_{xx}=\dfrac{26}{9}$, $f_{yy}=\dfrac{50}{9}$, $f_{xy}=\dfrac{16}{9}$; $D=\dfrac{116}{9}>0$ y $f_{xx}>0$: mínimo.
+$z=\dfrac{36}{29}$.
+
+\textbf{Paso 4. Resultado.}
+\[
+\boxed{\text{Punto más cercano: }\left(\dfrac{24}{29},\,\dfrac{48}{29},\,\dfrac{36}{29}\right)}
+\]
 \end{myproof}
 \end{prob}
 \begin{prob}
 Suponga que la temperatura $T$ en la placa circular $\{  (x,y): x^2+y^2\leq 1 \}$ está dada por la función $T(x,y)=2x^2+y^2-y.$ Determine cuáles son los puntos más calientes y más fríos de la placa.
-\begin{myproof} 
-Para observar donde ocurre este fenómeno se calculan inicialmente los puntos críticos  donde las primeras derivadas parciales son cero. 
-Así, $\dfrac{\partial T}{\partial x}=4x$ y $\dfrac{\partial T}{\partial y}=2y-1,$ las cuales se anulan en el punto $(0,\frac{1}{2}),$ y este es el primer punto crítico. 
-Como los puntos de frontera  de la placa también son críticos, hay que verificar si son máximos o mínimos. La frontera está determinada por la ecuación $x^2+y^2=1$ entonces $x^2=1-y^2,$ y así $T(y)=2(1-y^2)+y^2-y=-y^2-y+2.$ Esta función tiene dominio $\left[-1,1\right],$ por lo cual dos de los puntos a evaluar como máximo o mínimo son $(0,-1)$ y $(0,1).$
-Observe que $T^{\prime}(y)=-2y-1,$ se obtienen sus puntos críticos haciendo  $T^{\prime}(y)=0,$ obteniendo el punto $y=\dfrac{-1}{2},$ y así otros posibles candidatos son los puntos $\left( \dfrac{\sqrt{3}}{2}, \dfrac{-1}{2} \right)$ y $\left( \dfrac{-\sqrt{3}}{2}, \dfrac{1}{-2} \right).$ 
- 
- Finalmente se evalúan todos los puntos para verificar cuál es máximo o mínimo.
+\begin{myproof}
+\textbf{Paso 1. Puntos críticos interiores.}
+$\dfrac{\partial T}{\partial x}=4x=0$ y $\dfrac{\partial T}{\partial y}=2y-1=0$ dan el único punto crítico interior $\left(0,\dfrac{1}{2}\right)$.
+
+\textbf{Paso 2. Puntos críticos de frontera.}
+Sobre $x^2+y^2=1$: $T(y)=-y^2-y+2$, $T'(y)=-2y-1=0\Rightarrow y=-\dfrac{1}{2}$. Candidatos: $(0,-1)$, $(0,1)$, $\left(\pm\dfrac{\sqrt{3}}{2},-\dfrac{1}{2}\right)$.
+
+\textbf{Paso 3. Comparación de valores.}
  \begin{multicols}{3}
  \begin{itemize}
- \item $T\left(0,\dfrac{1}{2}\right)=\dfrac{-1}{4}.$
- \item $T\left(0,-1\right)=2.$
- \item $T\left(0,1\right)=0.$
- \item $T\left(\dfrac{\sqrt{3}}{2},-\dfrac{1}{2}\right)=\dfrac{9}{4}.$
-  \item $T\left(-\dfrac{\sqrt{3}}{2},-\dfrac{1}{2}\right)=\dfrac{9}{4}.$
+ \item $T\!\left(0,\tfrac{1}{2}\right)=-\tfrac{1}{4}.$
+ \item $T\!\left(0,-1\right)=2.$
+ \item $T\!\left(0,1\right)=0.$
+ \item $T\!\left(\tfrac{\sqrt{3}}{2},-\tfrac{1}{2}\right)=\tfrac{9}{4}.$
+ \item $T\!\left(-\tfrac{\sqrt{3}}{2},-\tfrac{1}{2}\right)=\tfrac{9}{4}.$
  \end{itemize}
 \end{multicols}
-De donde se puede concluir que los puntos donde la temperatura es más alta son $\left( \dfrac{\sqrt{3}}{2}, \dfrac{-1}{2} \right)$ y $\left( \dfrac{-\sqrt{3}}{2}, \dfrac{1}{-2} \right).$ El punto donde la temperatura es más baja es  $\left(0,\dfrac{1}{2}\right).$
+
+\textbf{Paso 4. Resultado.}
+\[
+\boxed{\text{Máx.: }\left(\pm\dfrac{\sqrt{3}}{2},-\dfrac{1}{2}\right)\text{ con }T=\dfrac{9}{4};\quad\text{Mín.: }\left(0,\dfrac{1}{2}\right)\text{ con }T=-\dfrac{1}{4}}
+\]
 \end{myproof}
 \end{prob}
 \section{Optimización restringida y multiplicadores de Lagrange}
@@ -813,7 +857,9 @@ Para el problema del rectángulo, verificamos que el candidato $A=(d/\sqrt2,d/\s
 \end{bmatrix}
 = 8d^2 > 0.
 \]
-Como $\mathcal{H}>0$:
+
+\textbf{Paso 4. Resultado.}
+Como $\mathcal{H}>0$, el candidato es un máximo condicionado:
 \[
 \boxed{A=\left(\frac{d}{\sqrt2},\frac{d}{\sqrt2}\right) \text{ es un máximo condicionado};\quad A_{\max}=\frac{d^2}{2}}.
 \]
@@ -845,13 +891,11 @@ $L_{xx}=2$, $L_{yy}=2$, $L_{xy}=0$ y $g_x=g_y=1$:
 =0(4-0)-1(2-0)+1(0-2)=-4.
 \]
 
-\textbf{Paso 4. Criterio.} Con $m=1$ restricción y $n=2$ variables,
+\textbf{Paso 4. Criterio y resultado.} Con $m=1$ restricción y $n=2$ variables,
 el candidato es mínimo si $(-1)^{m}\bar{H}>0$:
 \[
 (-1)^{1}(-4)=4>0.\quad\checkmark
 \]
-
-\textbf{Conclusión.}
 \[
 \boxed{f_{\min}=\tfrac{1}{2}\;\text{ en }\;\left(\tfrac{1}{2},\tfrac{1}{2}\right).}
 \]

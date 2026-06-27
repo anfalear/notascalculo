@@ -649,7 +649,18 @@ Los 4 restantes ya cumplían el protocolo.
 **Acción:** igual que F8.41 aplicado a `multiplicadoresintdobles.tex`.  
 **Criterio de cierre:** todos los resueltos cumplen el protocolo. Lista de correcciones registrada en las notas del ítem.  
 **Líneas estimadas:** 10–30 por ejemplo corregido.  
-**Estado:** Pendiente
+**Estado:** Completo (2026-06-27). 12 resueltos auditados, 10 corregidos:
+1. Punto más cercano plano $x-y+z=9$: prosa → Paso 1-4 + boxed
+2. Canal trapecio: añadidos Paso 1-4 (preservando figura preexistente) + boxed
+3. Caja tapa abierta: prosa → Paso 1-4 + boxed
+4. Caja en primer octante: añadidos Paso 1-4 + boxed
+5. Acuario mínimo costo: prosa → Paso 1-4 + boxed
+6. Hardy-Weinberg: prosa → Paso 1-4 + boxed
+7. Punto más cercano plano $2x+4y+3z=12$: prosa → Paso 1-4 + boxed
+8. Temperatura placa circular: prosa → Paso 1-4 + boxed
+9. Rectángulo hessiano (3 pasos): separado Paso 3→Paso 3+Paso 4 Resultado
+10. Hessiano limitado prob ("Conclusión"): fusionado con Paso 4
+Los 2 restantes ya cumplían el protocolo.
 
 ---
 
@@ -815,7 +826,7 @@ Cada figura dentro de `figure` con `\caption` y `\label`. Etiquetas con `anchor`
 | F8.40 | `planostangentes.tex` | Mejorar figura derivadas parciales: rectas tangentes en 3D | Completo | 2026-06-27 | pgfplots 3D: paraboloide + trazas + rectas tangentes $f_x$/$f_y$ + punto (1,1,2). |
 | F8.41 | `planostangentes.tex` | Auditoría resueltos sin 4 pasos + boxed | Completo | 2026-06-27 | 16 resueltos corregidos: prosa→4 pasos, enumerate→4 ítems, \boxed{} en Paso 4. |
 | F8.42 | `gradientes.tex` | Auditoría resueltos sin 4 pasos + boxed | Completo | 2026-06-27 | 12 correcciones: prosa→4 pasos, enumerate+item4, "Conclusión"→"Paso 4", multi-parte→Paso 1-4. |
-| F8.43 | `multiplicadoresintdobles.tex` | Auditoría resueltos sin 4 pasos + boxed | Pendiente | — | — |
+| F8.43 | `multiplicadoresintdobles.tex` | Auditoría resueltos sin 4 pasos + boxed | Completo | 2026-06-27 | 10 correcciones: 8 prosa→4 pasos, Paso3→Paso3+4, "Conclusión"→Paso4. |
 | F8.44 | `apintdobles.tex` | Auditoría resueltos sin 4 pasos + boxed | Pendiente | — | — |
 | F8.45 | `inttriples.tex` | Auditoría resueltos sin 4 pasos + boxed | Pendiente | — | — |
 | F8.46 | `cap33.tex` | Auditoría resueltos sin 4 pasos + boxed | Pendiente | — | — |
