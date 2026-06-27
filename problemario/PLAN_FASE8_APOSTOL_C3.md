@@ -442,7 +442,22 @@ PDF final: 762 páginas. Compilación limpia.
 **Acción:** verificar que todos los ejemplos resueltos existentes en `limvariasvariables.tex` tienen la estructura de 4 pasos del protocolo diagnóstico + `\boxed{}` en el resultado final. Corregir los que no cumplan: añadir los pasos faltantes, reorganizar si el orden es incorrecto, añadir `\boxed{}` donde falte.  
 **Criterio de cierre:** todos los resueltos existentes cumplen el protocolo. Lista de correcciones registrada en las notas del ítem.  
 **Líneas estimadas:** 10–30 por ejemplo corregido (número total depende de auditoría).  
-**Estado:** Pendiente
+**Estado:** Completo — 2026-06-27
+
+**Correcciones aplicadas (11 elementos en 8 examples + 3 probs):**
+- Example L.148 (tray. distintas): Paso 1+Conclusión → Pasos 1-4 (tray1/tray2/comparación/conclusión)
+- Example L.286 (tray. paramétricas): ídem restructuración 4 pasos
+- Example L.347 (rectas, sin pasos ni boxed): añadidos Pasos 1-4 + `\boxed{\text{No existe}}`
+- Example L.521 (polares, 3 pasos): Paso 3 dividido en Paso 3 (independencia θ) + Paso 4 (resultado)
+- Example L.579 (sustitución directa, 2 pasos): restructurado en 4 pasos (tipo/denominador/sustitución/resultado)
+- Example L.623 (emparedado, 2 pasos): restructurado en 4 pasos (cota inf./cota sup./sandwich/resultado)
+- Example L.776 (continuidad por partes, 3 pasos): Paso 3 dividido en unión + Paso 4 (resultado)
+- Example L.818 (3 variables, Paso 1+Conclusión): restructurado en 4 pasos
+- Prob L.261 (factorización, 3 pasos): añadido Paso 4 antes de `\boxed{}`
+- Prob L.319 (polares raíz, 3 pasos): añadido Paso 4 antes de `\boxed{}`
+- Prob L.489 (Prop. acotada, 3 pasos): añadido Paso 4 antes de `\boxed{}`
+
+PDF final: 768 páginas. Compilación limpia.
 
 ---
 
@@ -710,7 +725,7 @@ Cada figura dentro de `figure` con `\caption` y `\label`. Etiquetas con `anchor`
 | F8.26 | `funvectoriales.tex` | Galería 5 superficies cuádricas | Completo | 2026-06-26 | Nueva subsección con 5 superficies: paraboloide elíptico/hiperbólico, cono, hiperboloide 1/2 hojas. Figura pgfplots 3D + ejemplo 4 pasos + boxed cada una. 766 págs. |
 | F8.27 | `funvectoriales.tex` | 3 ejemplos superficies de nivel con figura 3D | Completo | 2026-06-26 | Esferas/elipsoide/paraboloides; figuras paramétricas pgfplots. `fig:nivel_esfera/elipsoide/paraboloides`. 768 págs. |
 | F8.28 | `funvectoriales.tex` | Auditoría estructura interna resueltos: 4 pasos + boxed | Completo | 2026-06-26 | 4/7 ejemplos corregidos (L.129, L.323, L.465, L.711). 3 ya OK (L.550, L.794, L.1328). 762 págs. |
-| F8.29 | `limvariasvariables.tex` | Auditoría estructura interna resueltos: 4 pasos + boxed | Pendiente | — | — |
+| F8.29 | `limvariasvariables.tex` | Auditoría estructura interna resueltos: 4 pasos + boxed | Completo | 2026-06-27 | 11 correcciones: 8 examples + 3 probs. Ver bloque narrativo Semana 6. 768 págs. |
 | F8.30 | `limvariasvariables.tex` | Vincular figura F8.05 a ejemplo resuelto de trayectorias | Completo | 2026-06-26 | Integrado en F8.05: figura colocada dentro del example antes de myproof. |
 | F8.31 | `funvectoriales.tex` | Auditoría figuras preexistentes: figure + caption + label + anchors | Pendiente | — | — |
 | F8.32 | `limvariasvariables.tex` | Auditoría figuras preexistentes: figure + caption + label + anchors | Pendiente | — | — |

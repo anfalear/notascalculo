@@ -183,31 +183,24 @@ Estudiar $\lim_{(x,y)\to(0,0)} f(x,y)$.
 \end{figure}
 
 \begin{myproof}
-\textbf{Paso 1. Prueba de trayectorias.} Evaluamos a lo largo de dos
-trayectorias distintas que pasan por el origen.
-
-\textit{Trayectoria 1:} $y=x$. Entonces
+\textbf{Paso 1. Trayectoria $y=x$.} Sustituimos $y=x$:
 \[
 f(x,x) = \frac{x^2\cdot x}{x^4+x^2} = \frac{x^3}{x^2(x^2+1)}
         = \frac{x}{x^2+1}.
 \]
-Cuando $x\to 0$,
-\[
-\lim_{x\to 0} \frac{x}{x^2+1} = 0.
-\]
+Cuando $x\to 0$: $\displaystyle\lim_{x\to 0}\frac{x}{x^2+1} = 0$.
 
-\textit{Trayectoria 2:} $y=x^2$. Entonces
+\textbf{Paso 2. Trayectoria $y=x^2$.} Sustituimos $y=x^2$:
 \[
 f(x,x^2) = \frac{x^2\cdot x^2}{x^4+(x^2)^2}
           = \frac{x^4}{x^4+x^4} = \frac{1}{2}.
 \]
-Cuando $x\to 0$,
-\[
-\lim_{x\to 0} \frac{1}{2} = \frac{1}{2}.
-\]
+Cuando $x\to 0$: $\displaystyle\lim_{x\to 0}\frac{1}{2} = \frac{1}{2}$.
 
-\textbf{Conclusión.} Como las dos trayectorias producen límites
-distintos ($0$ y $\frac12$), el límite no existe en $(0,0)$.
+\textbf{Paso 3. Comparación de límites.} Los valores obtenidos son
+$0\neq\tfrac{1}{2}$: las dos trayectorias producen límites distintos.
+
+\textbf{Paso 4. Conclusión.} El límite no existe en $(0,0)$.
 $\boxed{\text{No existe}}$
 \end{myproof}
 \end{example}
@@ -277,6 +270,8 @@ x^4y^2+x^2y^4-5x^2-5y^2
 \[
   \lim_{(x,y)\to(0,0)}\!\left(x^2y^2-5\right) = 0-5 = -5.
 \]
+
+\textbf{Paso 4. Resultado.}
 \[
   \boxed{\lim_{(x,y)\to (0,0)}\frac{x^4y^2+x^2y^4-5x^2-5y^2}{x^2+y^2} = -5.}
 \]
@@ -290,28 +285,24 @@ f(x,y) = \frac{x^3 y}{x^6 + y^2}.
 \]
 Estudiar $\lim_{(x,y)\to(0,0)} f(x,y)$.
 \begin{myproof}
-\textbf{Paso 1. Prueba de trayectorias.} Evaluamos a lo largo de dos
-trayectorias.
-
-\textit{Trayectoria 1:} $y=x^3$. Entonces
+\textbf{Paso 1. Trayectoria $y=x^3$.} Sustituimos $y=x^3$:
 \[
 f(x,x^3) = \frac{x^3\cdot x^3}{x^6+(x^3)^2}
           = \frac{x^6}{x^6+x^6} = \frac{1}{2}.
 \]
-Así, $\lim_{x\to 0} f(x,x^3)=\frac12$.
+Luego $\lim_{x\to 0}f(x,x^3)=\tfrac{1}{2}$.
 
-\textit{Trayectoria 2:} $y=x$. Entonces
+\textbf{Paso 2. Trayectoria $y=x$.} Sustituimos $y=x$:
 \[
 f(x,x) = \frac{x^3\cdot x}{x^6+x^2}
         = \frac{x^4}{x^2(x^4+1)} = \frac{x^2}{x^4+1}.
 \]
-Cuando $x\to 0$,
-\[
-\lim_{x\to 0} \frac{x^2}{x^4+1} = 0.
-\]
+Cuando $x\to 0$: $\displaystyle\lim_{x\to 0}\frac{x^2}{x^4+1} = 0$.
 
-\textbf{Conclusión.} Las trayectorias $y=x^3$ e $y=x$ dan límites
-distintos ($\frac12$ y $0$), por lo que el límite no existe.
+\textbf{Paso 3. Comparación de límites.} Los valores obtenidos son
+$\tfrac{1}{2}\neq 0$: las dos trayectorias producen límites distintos.
+
+\textbf{Paso 4. Conclusión.} El límite no existe.
 $\boxed{\text{No existe}}$
 \end{myproof}
 \end{example}
@@ -334,10 +325,12 @@ usando coordenadas polares.
   = \sqrt{r^2+1}+1.
 \]
 
-\textbf{Paso 3: Límite.}
+\textbf{Paso 3: Límite simplificado.}
 \[
   \lim_{r\to 0^+}\!\bigl(\sqrt{r^2+1}+1\bigr) = \sqrt{0+1}+1 = 2.
 \]
+
+\textbf{Paso 4. Resultado.}
 \[
   \boxed{\lim_{(x,y)\to(0,0)}\frac{x^2+y^2}{\sqrt{x^2+y^2+1}-1} = 2.}
 \]
@@ -351,12 +344,23 @@ f(x,y) = \frac{x^2 y^2}{x^4 + y^4}.
 \]
 Evalue el límite a lo largo de rectas $y=mx$:
 \begin{myproof}
+\textbf{Paso 1. Trayectorias $y=mx$.} Para $m\in\mathbb{R}$ arbitrario,
+sustituimos $y=mx$:
 \[
 f(x,mx) = \frac{x^2(mx)^2}{x^4+(mx)^4}
         = \frac{m^2 x^4}{x^4(1+m^4)}
-        = \frac{m^2}{1+m^4},
+        = \frac{m^2}{1+m^4}.
 \]
-que depende de $m$. Por tanto, el límite no existe.
+
+\textbf{Paso 2. Dependencia en $m$.} El valor $\dfrac{m^2}{1+m^4}$ depende
+de $m$: para $m=0$ es $0$; para $m=1$ es $\tfrac{1}{2}$.
+
+\textbf{Paso 3. Dos trayectorias distintas.} Las rectas $y=0$ y $y=x$
+producen límites $0$ y $\tfrac{1}{2}$, respectivamente.
+
+\textbf{Paso 4. Conclusión.} Como dos trayectorias producen límites distintos,
+el límite no existe.
+$\boxed{\text{No existe}}$
 \end{myproof}
 \end{example}
 
@@ -511,7 +515,10 @@ Como $|\cos^4\theta|\leq 1$ y $|\sen\theta|\leq 1$:
 \]
 $\phi(\theta)$ está acotada con constante $M=2$.
 
-\textbf{Paso 3: Aplicar la proposición.} Se tiene $g(r,\theta)=\phi(\theta)\cdot r$ con $|\phi(\theta)|\leq 2$ y $\psi(r)=r\to 0^+$. Por la Proposición~\ref{prop:acot-polar}:
+\textbf{Paso 3: Aplicar la proposición.} Se tiene $g(r,\theta)=\phi(\theta)\cdot r$
+con $|\phi(\theta)|\leq 2$ y $\psi(r)=r\to 0^+$.
+
+\textbf{Paso 4. Resultado.} Por la Proposición~\ref{prop:acot-polar}:
 \[
   \boxed{\lim_{(x,y)\to(0,0)}\frac{x^4y}{x^4+y^4}=0.}
 \]
@@ -542,9 +549,12 @@ Para cualquier $\theta$ fijo,
 \]
 pues $|\cos^2\theta\sin\theta| \leq 1$ y $r\to 0$.
 
-\textbf{Paso 3. Conclusión.}
-El límite es $0$, independiente de $\theta$. Por tanto,
-$\displaystyle \lim_{(x,y)\to(0,0)} f(x,y) = 0$.
+\textbf{Paso 3. Independencia de $\theta$.}
+El valor $r\cos^2\theta\sin\theta\to 0$ para cualquier $\theta$ fijo,
+pues $|\cos^2\theta\sin\theta|\leq 1$ y $r\to 0$.
+
+\textbf{Paso 4. Resultado.}
+$\displaystyle\lim_{(x,y)\to(0,0)} f(x,y) = 0$.
 $\boxed{0}$
 \end{myproof}
 \end{example}
@@ -582,18 +592,23 @@ Calcular
 \lim_{(x,y)\to(\pi,1)} \frac{\cos(xy)}{y^2+1}.
 \]
 \begin{myproof}
-\textbf{Paso 1:} La función $\dfrac{\cos(xy)}{y^2+1}$ es cociente de funciones
-continuas en $(\pi,1)$, y el denominador no se anula: $1^2+1=2\neq 0$.
-Por tanto, podemos evaluar por sustitución directa.
+\textbf{Paso 1: Tipo de función.} $\dfrac{\cos(xy)}{y^2+1}$ es cociente
+de funciones continuas en todo $\mathbb{R}^2$.
 
-\textbf{Paso 2:} Sustituimos $(x,y)=(\pi,1)$:
+\textbf{Paso 2: Condición del denominador.} En $(\pi,1)$: $1^2+1=2\neq 0$,
+luego $f$ está definida y es continua en ese punto.
+
+\textbf{Paso 3: Sustitución directa.}
 \[
-\lim_{(x,y)\to(\pi,1)} \frac{\cos(xy)}{y^2+1}
-= \frac{\cos(\pi\cdot 1)}{1^2+1}
+\frac{\cos(\pi\cdot 1)}{1^2+1}
+= \frac{\cos\pi}{2}
 = \frac{-1}{2}.
 \]
 
-El límite es $\displaystyle\boxed{-\frac{1}{2}}$.
+\textbf{Paso 4. Resultado.}
+\[
+\lim_{(x,y)\to(\pi,1)} \frac{\cos(xy)}{y^2+1} = \boxed{-\frac{1}{2}}.
+\]
 \end{myproof}
 \end{example}
 
@@ -626,14 +641,21 @@ Calcular
 \lim_{(x,y)\to(0,0)} \frac{x^2 y^2}{x^2+y^2}.
 \]
 \begin{myproof}
-\textbf{Paso 1:} Establecemos una cota superior. Dado que $x^2 y^2 \leq (x^2+y^2)^2$
-(pues $(x^2+y^2)^2 = x^4+2x^2y^2+y^4 \geq x^2y^2$ para $x^2,y^2\geq 0$), se tiene:
+\textbf{Paso 1: Cota inferior.} Como $x^2,y^2\geq 0$, se tiene
+$x^2y^2\geq 0$ y $x^2+y^2>0$ para $(x,y)\neq(0,0)$, luego
+$\dfrac{x^2y^2}{x^2+y^2}\geq 0$.
+
+\textbf{Paso 2: Cota superior.} Dado que $(x^2+y^2)^2 = x^4+2x^2y^2+y^4
+\geq x^2y^2$:
 \[
-0 \leq \frac{x^2 y^2}{x^2+y^2} \leq \frac{(x^2+y^2)^2}{x^2+y^2} = x^2+y^2.
+\frac{x^2 y^2}{x^2+y^2} \leq \frac{(x^2+y^2)^2}{x^2+y^2} = x^2+y^2.
 \]
 
-\textbf{Paso 2:} Aplicamos el teorema del emparedado. Como
-$\lim_{(x,y)\to(0,0)}(x^2+y^2)=0$, concluimos
+\textbf{Paso 3: Teorema del emparedado.} Se tiene
+$0\leq\dfrac{x^2y^2}{x^2+y^2}\leq x^2+y^2$
+y $\lim_{(x,y)\to(0,0)}(x^2+y^2)=0$.
+
+\textbf{Paso 4. Resultado.}
 \[
 \lim_{(x,y)\to(0,0)} \frac{x^2 y^2}{x^2+y^2} = \boxed{0}.
 \]
@@ -795,7 +817,10 @@ $\mathbb{R}^2\setminus\{(0,0)\}$.
 \]
 Luego $\lim_{(x,y)\to(0,0)} f(x,y)=0=f(0,0)$, así que $f$ es continua en $(0,0)$.
 
-\textbf{Paso 3:} $f$ es continua en todo punto de $\mathbb{R}^2$, por tanto
+\textbf{Paso 3:} Unión de resultados. $f$ es continua en
+$\mathbb{R}^2\setminus\{(0,0)\}$ (Paso~1) y también en $(0,0)$ (Paso~2).
+
+\textbf{Paso 4. Resultado.}
 $\boxed{f \text{ es continua en todo } \mathbb{R}^2}$.
 \end{myproof}
 \end{example}
@@ -818,20 +843,23 @@ La continuidad de las funciones elementales se conserva.
 \begin{example}[Límite en tres variables]
 Calcular $\displaystyle\lim_{(x,y,z)\to(0,0,0)} \frac{x^2 - y^2}{x^2+y^2+z^2}$.
 \begin{myproof}
-\textbf{Paso 1. Prueba de trayectorias.}
-
-\textit{Trayectoria 1:} $x=y$, $z=0$. Entonces
+\textbf{Paso 1. Trayectoria $x=y$, $z=0$.} Sustituimos:
 \[
 f(x,x,0) = \frac{x^2 - x^2}{x^2+x^2+0} = 0.
 \]
+Límite a lo largo de esta trayectoria: $0$.
 
-\textit{Trayectoria 2:} $x=0$, $z=0$. Entonces
+\textbf{Paso 2. Trayectoria $x=0$, $z=0$.} Sustituimos:
 \[
 f(0,y,0) = \frac{0 - y^2}{0+y^2+0} = -1.
 \]
+Límite a lo largo de esta trayectoria: $-1$.
 
-\textbf{Conclusión.} Como las trayectorias dan límites distintos,
-el límite no existe. $\boxed{\text{No existe}}$
+\textbf{Paso 3. Comparación de límites.} Los valores obtenidos son
+$0\neq -1$: las dos trayectorias producen límites distintos.
+
+\textbf{Paso 4. Conclusión.} El límite no existe.
+$\boxed{\text{No existe}}$
 \end{myproof}
 \end{example}
 
