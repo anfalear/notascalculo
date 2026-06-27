@@ -69,42 +69,28 @@ El paso 5 puede variar según el orden elegido. Si se integra primero \(z\), la 
 \begin{example}[Volumen de un tetraedro]
 Calcular el volumen del sólido \(D\) limitado por los planos coordenados \(x=0\), \(y=0\), \(z=0\) y el plano \(x+y+z=1\).
 \begin{myproof}
-Seguimos los pasos del protocolo.
+\textbf{Paso 1. Identificar el sólido y límites de integración.} $D$ es el tetraedro con vértices $(0,0,0)$, $(1,0,0)$, $(0,1,0)$ y $(0,0,1)$. Elegimos el orden $dz\,dy\,dx$. La proyección sobre el plano $xy$ es el triángulo $R:\; x\ge0,\; y\ge0,\; x+y\le1$. Los límites son: $z$ de $0$ a $1-x-y$; $y$ de $0$ a $1-x$; $x$ de $0$ a $1$.
 
-\begin{enumerate}
-    \item \textbf{Identificar el sólido:} \(D\) es el tetraedro con vértices \((0,0,0)\), \((1,0,0)\), \((0,1,0)\) y \((0,0,1)\).
-    \item \textbf{Elegir orden:} \(dz\,dy\,dx\).
-    \item \textbf{Proyectar sobre \(xy\):} la proyección \(R\) es el triángulo \(x\ge0\), \(y\ge0\), \(x+y\le1\).
-    \item \textbf{Límites de \(z\):} para \((x,y)\in R\), \(z\) varía desde \(z=0\) hasta \(z=1-x-y\).
-    \item \textbf{Límites de \(y\):} para \(x\) fijo, \(y\) varía desde \(0\) hasta \(1-x\).
-    \item \textbf{Límites de \(x\):} \(x\) varía desde \(0\) hasta \(1\).
-    \item \textbf{Integral iterada:}
-    \[
-    V = \int_{0}^{1}\int_{0}^{1-x}\int_{0}^{1-x-y} dz\,dy\,dx.
-    \]
-    \item \textbf{Evaluar:}
-    \[
-    \int_{0}^{1-x-y} dz = 1-x-y,
-    \]
-    luego
-    \[
-    V = \int_{0}^{1}\int_{0}^{1-x} (1-x-y)\,dy\,dx.
-    \]
-    La integral interior:
-    \[
-    \int_{0}^{1-x} (1-x-y)\,dy
-    = \left[(1-x)y - \frac{y^2}{2}\right]_{0}^{1-x}
-    = (1-x)^2 - \frac{(1-x)^2}{2}
-    = \frac{(1-x)^2}{2}.
-    \]
-    Finalmente,
-    \[
-    V = \int_{0}^{1} \frac{(1-x)^2}{2}\,dx
-    = \frac{1}{2}\left[-\frac{(1-x)^3}{3}\right]_{0}^{1}
-    = \frac{1}{2}\cdot\frac{1}{3} = \frac{1}{6}.
-    \]
-    Por tanto, \(\boxed{V = \frac{1}{6}}\).
-\end{enumerate}
+\textbf{Paso 2. Integral iterada.}
+\[
+V = \int_{0}^{1}\int_{0}^{1-x}\int_{0}^{1-x-y} dz\,dy\,dx.
+\]
+\textbf{Paso 3. Evaluar.}
+\[
+\int_{0}^{1-x-y} dz = 1-x-y,\qquad
+\int_{0}^{1-x}(1-x-y)\,dy
+= \left[(1-x)y - \frac{y^2}{2}\right]_{0}^{1-x}
+= \frac{(1-x)^2}{2}.
+\]
+\[
+V = \int_{0}^{1} \frac{(1-x)^2}{2}\,dx
+= \frac{1}{2}\left[-\frac{(1-x)^3}{3}\right]_{0}^{1}
+= \frac{1}{6}.
+\]
+\textbf{Paso 4. Resultado.}
+\[
+\boxed{V = \frac{1}{6}.}
+\]
 \end{myproof}
 \end{example}
 
@@ -159,7 +145,10 @@ V = \int_{0}^{1}\int_{0}^{1}\int_{0}^{x^2+y^2} dz\,dy\,dx
 V = \int_{0}^{1} \left(x^2 + \frac{1}{3}\right) dx
 = \frac{1}{3} + \frac{1}{3} = \frac{2}{3}.
 \]
-Por tanto, \(\boxed{V = \frac{2}{3}}\).
+\textbf{Paso 4. Resultado.}
+\[
+\boxed{V = \frac{2}{3}.}
+\]
 \end{myproof}
 \end{example}
 
@@ -170,13 +159,15 @@ I = \int_{0}^{1}\int_{0}^{x}\int_{0}^{x+y} f(x,y,z)\,dz\,dy\,dx,
 \]
 reescribirla en el orden \(dz\,dx\,dy\).
 \begin{myproof}
-\textbf{Paso 1. Identificar el sólido.} Observamos los límites del orden original: \(x\) entre \(0\) y \(1\), para cada \(x\), \(y\) entre \(0\) y \(x\), y para cada \((x,y)\), \(z\) entre \(0\) y \(x+y\). Esto describe el sólido
+\textbf{Paso 1. Identificar el sólido.} Los límites del orden original describen:
 \[
 D = \{ (x,y,z) : 0 \le x \le 1,\; 0 \le y \le x,\; 0 \le z \le x+y \}.
 \]
-\textbf{Paso 2. Nuevo orden $dz\,dx\,dy$.} Queremos integrar primero \(z\), luego \(x\), luego \(y\). Para ello, necesitamos describir \(D\) en el orden \(dz\,dx\,dy\): fijamos \(y\), luego \(x\) varía entre ciertos límites dependiendo de \(y\), y finalmente \(y\) varía entre valores constantes.
+\textbf{Paso 2. Variable exterior $y$.} De la condición $0\le y\le x\le 1$, la variable $y$ varía entre $0$ y $1$.
 
-De las condiciones originales, \(0 \le y \le x \le 1\), así que \(y\) varía entre \(0\) y \(1\). Para \(y\) fijo, \(x\) varía entre \(y\) y \(1\). Para cada \((x,y)\), \(z\) varía entre \(0\) y \(x+y\). Por tanto, la integral reescrita es
+\textbf{Paso 3. Variables intermedias $x$ y $z$.} Para $y$ fijo, de $y\le x\le 1$, $x$ varía entre $y$ y $1$. Para cada $(x,y)$, $z$ varía entre $0$ y $x+y$.
+
+\textbf{Paso 4. Resultado.}
 \[
 \boxed{I = \int_{y=0}^{1}\int_{x=y}^{1}\int_{z=0}^{x+y} f(x,y,z)\,dz\,dx\,dy.}
 \]
@@ -251,7 +242,12 @@ La integral \(\int_{0}^{1} x(1-x)^2 dx = \int_{0}^{1} (x - 2x^2 + x^3) dx = \fra
 \[
 \iiint_D x\,dV = \frac12\cdot\frac{1}{12} = \frac{1}{24}.
 \]
-Entonces \(\bar{x} = \frac{1/24}{1/6} = \frac14\). Análogamente \(\bar{y}=\bar{z}=1/4\). \(\boxed{M = k/6,\; (\bar{x},\bar{y},\bar{z}) = (1/4,1/4,1/4)}\).
+Entonces \(\bar{x} = \frac{1/24}{1/6} = \frac14\). Análogamente \(\bar{y}=\bar{z}=1/4\).
+
+\textbf{Paso 4. Resultado.}
+\[
+\boxed{M = \frac{k}{6},\qquad (\bar{x},\bar{y},\bar{z}) = \left(\frac{1}{4},\frac{1}{4},\frac{1}{4}\right).}
+\]
 \end{myproof}
 \end{example}
 
@@ -305,14 +301,18 @@ I_z = \iiint_D (x^2+y^2)\,dV
 \[
 \int_{0}^{1} (x^2+y^2)\,dz = x^2+y^2.
 \]
-\textbf{Paso 2. Integrar la doble integral.}
+\textbf{Paso 2. Integral interior en $y$.}
 \[
-I_z = \int_{0}^{1}\int_{0}^{1} (x^2+y^2)\,dy\,dx
-= \int_{0}^{1} \left[x^2 y + \frac{y^3}{3}\right]_{0}^{1} dx
-= \int_{0}^{1} \left(x^2 + \frac13\right) dx
-= \frac13 + \frac13 = \frac23.
+\int_{0}^{1} (x^2+y^2)\,dy = \left[x^2 y + \frac{y^3}{3}\right]_{0}^{1} = x^2 + \frac{1}{3}.
 \]
-\(\boxed{I_z = \frac{2}{3}}\).
+\textbf{Paso 3. Integral exterior en $x$.}
+\[
+I_z = \int_{0}^{1}\left(x^2 + \frac{1}{3}\right) dx = \frac{1}{3} + \frac{1}{3} = \frac{2}{3}.
+\]
+\textbf{Paso 4. Resultado.}
+\[
+\boxed{I_z = \frac{2}{3}.}
+\]
 \end{myproof}
 \end{example}
 
