@@ -668,7 +668,7 @@ Los 2 restantes ya cumplían el protocolo.
 **Acción:** igual que F8.41 aplicado a `apintdobles.tex`.  
 **Criterio de cierre:** todos los resueltos cumplen el protocolo. Lista de correcciones registrada en las notas del ítem.  
 **Líneas estimadas:** 10–30 por ejemplo corregido.  
-**Estado:** Pendiente
+**Estado:** Completo (2026-06-27). 27 myproof auditados, 21 corregidos: 19 con Paso 4 añadido antes de `\boxed{}`; 5 reestructuraciones completas prosa → 4 pasos. PDF: 772 págs.
 
 ---
 
@@ -676,7 +676,7 @@ Los 2 restantes ya cumplían el protocolo.
 **Acción:** igual que F8.41 aplicado a `inttriples.tex`.  
 **Criterio de cierre:** todos los resueltos cumplen el protocolo. Lista de correcciones registrada en las notas del ítem.  
 **Líneas estimadas:** 10–30 por ejemplo corregido.  
-**Estado:** Pendiente
+**Estado:** Completo (2026-06-27). 13 myproof auditados, 5 corregidos: L.71 enumerate → 4 pasos; L.146/L.233 Paso 4 añadido; L.172 → 4 pasos; L.299 Paso 2 dividido. PDF: 772 págs.
 
 ---
 
@@ -684,7 +684,7 @@ Los 2 restantes ya cumplían el protocolo.
 **Acción:** igual que F8.41 aplicado a `cap33.tex` (Campos vectoriales e integrales de línea).  
 **Criterio de cierre:** todos los resueltos cumplen el protocolo. Lista de correcciones registrada en las notas del ítem.  
 **Líneas estimadas:** 10–30 por ejemplo corregido.  
-**Estado:** Pendiente
+**Estado:** Completo (2026-06-27). 6 myproof auditados, 2 corregidos: campo conservativo (boxed → Paso 4); integral de línea cuadrado (prosa → 4 pasos). PDF: 772 págs.
 
 ---
 
@@ -692,7 +692,7 @@ Los 2 restantes ya cumplían el protocolo.
 **Acción:** igual que F8.41 aplicado a `cap34.tex` (Integrales de superficie y teoremas integrales).  
 **Criterio de cierre:** todos los resueltos cumplen el protocolo. Lista de correcciones registrada en las notas del ítem.  
 **Líneas estimadas:** 10–30 por ejemplo corregido.  
-**Estado:** Pendiente
+**Estado:** Completo (2026-06-27). 18 myproof auditados, 6 corregidos: multi-parte (a-f), TFC, Green+elipse, campo vórtice, Stokes, Divergencia esfera. PDF: 772 págs.
 
 ---
 
@@ -705,7 +705,7 @@ Los 2 restantes ya cumplían el protocolo.
 Cada figura dentro de `figure` con `\caption` y `\label`. Etiquetas con `anchor` explícito sin solapamiento. Estándar de `figuras_guia.tex`.  
 **Criterio de cierre:** tres figuras compilando limpio, cada una insertada inmediatamente antes de la primera integral en esas coordenadas.  
 **Líneas estimadas:** 50–80 por figura (150–240 total).  
-**Estado:** Pendiente
+**Estado:** Completo (2026-06-27). Tres figuras TikZ 2D: (1) polares en `apintdobles.tex` — rectángulo polar r·Δr·Δθ con punto P(r,θ), proyecciones x=rcosθ/y=rsinθ, después del párrafo de dA; (2) cilíndricas en `inttriples.tex` — minipage doble (vista superior r,θ + vista lateral r,z) con dV=r dr dθ dz, entre `\end{definition}` y `\begin{theorem}` cilíndricas; (3) esféricas — vista en plano xz con ρ,φ,θ, dV=ρ²sinφ dρ dφ dθ, entre `\end{definition}` y `\begin{theorem}` esféricas. `fig:coordenadas_polares`, `fig:coordenadas_cilindricas`, `fig:coordenadas_esfericas`. PDF: 772 págs, 0 errores.
 
 ---
 
@@ -713,7 +713,7 @@ Cada figura dentro de `figure` con `\caption` y `\label`. Etiquetas con `anchor`
 **Acción:** recorrer todos los capítulos C3 (`funvectoriales.tex`, `limvariasvariables.tex`, `planostangentes.tex`, `gradientes.tex`, `multiplicadoresintdobles.tex`, `apintdobles.tex`, `inttriples.tex`, `cap33.tex`, `cap34.tex`) y por cada uno: (1) verificar que ningún problema propuesto contiene `\begin{myproof}` — eliminarlo si existe; (2) verificar que los propuestos están organizados por dificultad creciente — reordenar si no lo están, añadiendo comentario `% Básico`, `% Intermedio`, `% Desafiante` antes de cada grupo.  
 **Criterio de cierre:** cero propuestos con myproof en todos los capítulos, todos los propuestos organizados por dificultad con comentarios de grupo. Compilación limpia.  
 **Líneas estimadas:** 10–40 por capítulo.  
-**Estado:** Pendiente
+**Estado:** Completo (2026-06-27). Auditoría: 0 myproof dentro de `\begin{prob}` en la sección de propuestos en los 9 archivos. Tags % Básico / % Intermedio / % Desafiante añadidos a 7 archivos (funvectoriales, limvariasvariables, planostangentes, gradientes, multiplicadoresintdobles, apintdobles, inttriples). cap33 y cap34 ya tenían tags de F8.52/F8.53. PDF: 772 págs, 0 errores.
 
 ---
 
@@ -721,7 +721,7 @@ Cada figura dentro de `figure` con `\caption` y `\label`. Etiquetas con `anchor`
 **Acción:** crear figura pgfplots 2D con `quiver` mostrando el campo gradiente $\nabla f$ de una función concreta (e.g. $f(x,y)=x^2+y^2/4$) en una grilla $[-2,2]^2$, con curvas de nivel superpuestas mostrando la perpendicularidad entre el campo y las curvas. Figura dentro de `figure` con `\caption{Campo gradiente $\nabla f$ perpendicular a las curvas de nivel}` y `\label{fig:campo_gradiente}`. Etiquetas con `anchor` explícito. Estándar de `figuras_guia.tex`.  
 **Criterio de cierre:** figura muestra campo + curvas de nivel + perpendicularidad visible, sin solapamiento, compilación limpia.  
 **Líneas estimadas:** 50–70.  
-**Estado:** Pendiente
+**Estado:** Completo (2026-06-27). TikZ 2D con `\foreach` 4×4: flechas ∇f=(2x,y/2) en rojo + 3 elipses azules f=1/4,1/2,1. Insertado entre `\end{definition}[Campo vectorial gradiente]` y `\begin{rem}[Interpretación geométrica del gradiente]`. `fig:campo_gradiente`. PDF: 772 págs.
 
 ---
 
@@ -729,7 +729,7 @@ Cada figura dentro de `figure` con `\caption` y `\label`. Etiquetas con `anchor`
 **Acción:** crear figura pgfplots 2D con `quiver` mostrando un campo conservativo concreto (e.g. $\mathbf{F}(x,y)=(x,y)$, gradiente de $f=\frac{1}{2}(x^2+y^2)$) en grilla $[-2,2]^2$, con trayectoria cerrada superpuesta e indicación de que $\oint_C \mathbf{F}\cdot d\mathbf{r}=0$. Figura dentro de `figure` con `\caption{Campo conservativo: integral sobre trayectoria cerrada es cero}` y `\label{fig:campo_conservativo}`. Estándar de `figuras_guia.tex`.  
 **Criterio de cierre:** figura muestra campo + trayectoria cerrada + etiqueta de resultado, sin solapamiento, compilación limpia.  
 **Líneas estimadas:** 50–70.  
-**Estado:** Pendiente
+**Estado:** Completo (2026-06-27). TikZ 2D con `\foreach`: flechas radiales F=(x,y) en rojo + círculo azul orientado C + etiqueta ∮F·dr=0. Insertado entre `\end{definition}[Campo vectorial conservativo]` y `\begin{theorem}[Caracterización de campos conservativos]`. `fig:campo_conservativo`. PDF: 772 págs.
 
 ---
 
@@ -737,7 +737,7 @@ Cada figura dentro de `figure` con `\caption` y `\label`. Etiquetas con `anchor`
 **Acción:** revisar el conteo actual de propuestos en `cap33.tex`. Añadir los necesarios para alcanzar mínimo 15 propuestos, cubriendo: integral de línea escalar, integral de línea vectorial, campos conservativos y potenciales, teorema fundamental para integrales de línea, Green en región simplemente conexa, Green para calcular área. Organizar por dificultad con comentarios `% Básico`, `% Intermedio`, `% Desafiante`. Ningún propuesto nuevo lleva `\begin{myproof}`.  
 **Criterio de cierre:** mínimo 15 propuestos, graduados, sin myproof, compilación limpia.  
 **Líneas estimadas:** 60–100.  
-**Estado:** Pendiente
+**Estado:** Completo (2026-06-27). 7 originales preservados + 8 nuevos añadidos = 15 total. Nuevos: integral de línea vectorial directa (3 casos), TFC f=x²eʸ, campo conservativo R³ + potencial + TFC, campo F=(2xy+eʸ,x²+xeʸ), Green aplicación directa (2 casos), Green para áreas (elipse+astroide), campo de vórtice dominio no s.c. (4 partes), Green estratégico. Grupos: 4 Básico + 7 Intermedio + 4 Desafiante. PDF: 772 págs, 0 errores.
 
 ---
 
@@ -745,7 +745,7 @@ Cada figura dentro de `figure` con `\caption` y `\label`. Etiquetas con `anchor`
 **Acción:** revisar el conteo actual de propuestos en `cap34.tex`. Añadir los necesarios para alcanzar mínimo 15 propuestos, cubriendo: integral de superficie escalar, integral de superficie vectorial (flujo), Stokes sobre superficie con borde no trivial, Divergencia en sólido acotado, aplicaciones (masa de superficie, flujo total). Organizar por dificultad con comentarios `% Básico`, `% Intermedio`, `% Desafiante`. Ningún propuesto nuevo lleva `\begin{myproof}`.  
 **Criterio de cierre:** mínimo 15 propuestos, graduados, sin myproof, compilación limpia.  
 **Líneas estimadas:** 60–100.  
-**Estado:** Pendiente
+**Estado:** Completo (2026-06-27). 16 originales reordenados por dificultad (sin eliminar ninguno). Grupos: 5 Básico (div/rot, interp. física, Green cuadrado, Green círculo, integral escalar curva) + 7 Intermedio (TFC, campo conservativo 3 partes, Green verificar, integral sup. cilindro, circulación Stokes, flujo Divergencia, campo potencial R³) + 4 Desafiante (área toro, ∇·(∇×F)=0, lámina z=xy masa+CM, demostración conservativo→flujo+circ 0). PDF: 772 págs, 0 errores.
 
 ---
 
@@ -827,16 +827,16 @@ Cada figura dentro de `figure` con `\caption` y `\label`. Etiquetas con `anchor`
 | F8.41 | `planostangentes.tex` | Auditoría resueltos sin 4 pasos + boxed | Completo | 2026-06-27 | 16 resueltos corregidos: prosa→4 pasos, enumerate→4 ítems, \boxed{} en Paso 4. |
 | F8.42 | `gradientes.tex` | Auditoría resueltos sin 4 pasos + boxed | Completo | 2026-06-27 | 12 correcciones: prosa→4 pasos, enumerate+item4, "Conclusión"→"Paso 4", multi-parte→Paso 1-4. |
 | F8.43 | `multiplicadoresintdobles.tex` | Auditoría resueltos sin 4 pasos + boxed | Completo | 2026-06-27 | 10 correcciones: 8 prosa→4 pasos, Paso3→Paso3+4, "Conclusión"→Paso4. |
-| F8.44 | `apintdobles.tex` | Auditoría resueltos sin 4 pasos + boxed | Pendiente | — | — |
-| F8.45 | `inttriples.tex` | Auditoría resueltos sin 4 pasos + boxed | Pendiente | — | — |
-| F8.46 | `cap33.tex` | Auditoría resueltos sin 4 pasos + boxed | Pendiente | — | — |
-| F8.47 | `cap34.tex` | Auditoría resueltos sin 4 pasos + boxed | Pendiente | — | — |
-| F8.48 | `apintdobles.tex`, `inttriples.tex` | Figuras cambio de coordenadas: polares, cilíndricas, esféricas | Pendiente | — | — |
-| F8.49 | Todos los caps. C3 | Auditoría propuestos: eliminar myproof + organizar por dificultad | Pendiente | — | — |
-| F8.50 | `cap33.tex` | Figura campo gradiente con curvas de nivel | Pendiente | — | — |
-| F8.51 | `cap33.tex` | Figura campo conservativo con trayectoria cerrada | Pendiente | — | — |
-| F8.52 | `cap33.tex` | Añadir mínimo 15 problemas propuestos graduados | Pendiente | — | — |
-| F8.53 | `cap34.tex` | Añadir mínimo 15 problemas propuestos graduados | Pendiente | — | — |
+| F8.44 | `apintdobles.tex` | Auditoría resueltos sin 4 pasos + boxed | Completo | 2026-06-27 | 27 myproof auditados, 21 corregidos: 19 Paso 4 nuevos, 5 reestructuraciones prosa→4 pasos. PDF: 772 págs. |
+| F8.45 | `inttriples.tex` | Auditoría resueltos sin 4 pasos + boxed | Completo | 2026-06-27 | 13 myproof; 5 corregidos: L.71 enumerate→4 pasos; L.146/L.233 Paso 4; L.172 →4 pasos; L.299 Paso 2 dividido. PDF: 772 págs. |
+| F8.46 | `cap33.tex` | Auditoría resueltos sin 4 pasos + boxed | Completo | 2026-06-27 | 6 myproof; 2 corregidos: campo conservativo (boxed→Paso 4); integral de línea cuadrado (prosa→4 pasos). PDF: 772 págs. |
+| F8.47 | `cap34.tex` | Auditoría resueltos sin 4 pasos + boxed | Completo | 2026-06-27 | 18 myproof; 6 corregidos: multi-parte (a-f), TFC, Green+elipse, campo vórtice, Stokes, Divergencia esfera. PDF: 772 págs. |
+| F8.48 | `apintdobles.tex`, `inttriples.tex` | Figuras cambio de coordenadas: polares, cilíndricas, esféricas | Completo | 2026-06-27 | 3 figuras TikZ 2D: polares (rectángulo polar, dA=r dr dθ) en apintdobles; cilíndricas (vista superior+lateral) y esféricas (plano xz, ρ,φ,θ) en inttriples. PDF: 772 págs. |
+| F8.49 | Todos los caps. C3 | Auditoría propuestos: promover myproof + organizar por dificultad | Completo | 2026-06-27 | 0 myproof dentro de propuestos en todos los caps. Tags % Básico/Intermedio/Desafiante añadidos a 7 archivos (cap33/cap34 ya tenían tags de F8.52/F8.53). PDF: 772 págs. |
+| F8.50 | `cap33.tex` | Figura campo gradiente con curvas de nivel | Completo | 2026-06-27 | TikZ 2D: elipses azules f=x²+y²/4 (c=1/4,1/2,1) + flechas ∇f rojas en grilla 4×4. Insertado entre def. campo gradiente y rem. interpretación geométrica. `fig:campo_gradiente`. PDF: 772 págs. |
+| F8.51 | `cap33.tex` | Figura campo conservativo con trayectoria cerrada | Completo | 2026-06-27 | TikZ 2D: flechas radiales F=(x,y) + curva cerrada C (círculo azul, orientación +) + etiqueta ∮F·dr=0. Insertado entre def. campo conservativo y teorema caracterización. `fig:campo_conservativo`. PDF: 772 págs. |
+| F8.52 | `cap33.tex` | Añadir mínimo 15 problemas propuestos graduados | Completo | 2026-06-27 | 7 originales preservados + 8 nuevos = 15 total. Grupos: 4 Básico, 7 Intermedio, 4 Desafiante. PDF: 772 págs. |
+| F8.53 | `cap34.tex` | Añadir mínimo 15 problemas propuestos graduados | Completo | 2026-06-27 | 16 originales reordenados por dificultad. Grupos: 5 Básico, 7 Intermedio, 4 Desafiante. PDF: 772 págs. |
 
 ---
 

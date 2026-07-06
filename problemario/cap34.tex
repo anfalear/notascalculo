@@ -1330,21 +1330,24 @@ Por tanto, el flujo del rotacional es $\pi$.
 % ============================================================
 \section{Problemas propuestos}
 % ============================================================
+
+% Básico
 \begin{prob}
-Un campo de fuerzas $\mathbf{F}(x,y) = \langle e^x \cos y + y,
--e^x \sin y + x \rangle$ actúa sobre una partícula.
+Calcule la divergencia y el rotacional de los siguientes campos:
+\begin{multicols}{2}
 \begin{enumerate}[(a)]
-    \item Demuestre que $\mathbf{F}$ es conservativo.
-    \item Encuentre la función potencial $f$.
-    \item Calcule el trabajo realizado por $\mathbf{F}$ al mover una
-    partícula desde $(0,0)$ hasta $(1,\pi/2)$.
+    \item $\mathbf{F}(x,y,z)=\langle x^2, y^2, z^2 \rangle$
+    \item $\mathbf{F}(x,y,z)=\langle yz, xz, xy \rangle$
+    \item $\mathbf{F}(x,y,z)=\langle e^x, \sin y, \cos z \rangle$
+    \item $\mathbf{F}(x,y,z)=\langle -y, x, 0 \rangle$
 \end{enumerate}
+\end{multicols}
 \end{prob}
 
 \begin{prob}
-Verifique el teorema de Green para el campo $\mathbf{F}(x,y) =
-\langle x^2 y, x y^2 \rangle$ y el rectángulo $0\le x\le 2$,
-$0\le y\le 1$.
+Interprete físicamente el siguiente hecho: si $\mathbf{F}$ es el campo
+de velocidades de un fluido, ¿qué significa que
+$\nabla \cdot (\nabla \times \mathbf{F})=0$?
 \end{prob}
 
 \begin{prob}
@@ -1365,25 +1368,51 @@ donde $C$ es el círculo $x^2+y^2=4$ orientado positivamente, usando
 el teorema de Green. Compare con la evaluación directa.
 \end{prob}
 
+\begin{prob}
+Calcule la integral $\displaystyle\int_{C}(8x+36z)\,ds$ donde $C$ es la curva $x=t$, $y=t^2$, $z=t^3$ con $0\leq t\leq 2$.
+\end{prob}
+
+% Intermedio
+\begin{prob}
+Calcule la integral $\displaystyle\int_{C}(\cos x+2yz)\,dx+(\sen y+2xz)\,dy+(z+2xy)\,dz$ en el segmento de recta del punto $(0,0,0)$ a $(\pi,\pi,0)$.
+\end{prob}
+
+\begin{prob}
+Un campo de fuerzas $\mathbf{F}(x,y) = \langle e^x \cos y + y,
+-e^x \sin y + x \rangle$ actúa sobre una partícula.
+\begin{enumerate}[(a)]
+    \item Demuestre que $\mathbf{F}$ es conservativo.
+    \item Encuentre la función potencial $f$.
+    \item Calcule el trabajo realizado por $\mathbf{F}$ al mover una
+    partícula desde $(0,0)$ hasta $(1,\pi/2)$.
+\end{enumerate}
+\end{prob}
+
+\begin{prob}
+Verifique el teorema de Green para el campo $\mathbf{F}(x,y) =
+\langle x^2 y, x y^2 \rangle$ y el rectángulo $0\le x\le 2$,
+$0\le y\le 1$.
+\end{prob}
 
 \begin{prob}
 Calcule $\displaystyle \iint_S xy\,dS$, donde $S$ es la porción del cilindro $x^2+z^2=1$ con $y\ge 0$, $z\ge 0$.
 \end{prob}
 
 \begin{prob}
-Halle el área de la superficie del toro generado al rotar la circunferencia $(x-2)^2+z^2=1$ alrededor del eje $z$.
+Sea $\mathbf{F}(x,y,z)=\langle -y, x, 2z\rangle$. Calcule la circulación de $\mathbf{F}$ alrededor del cuadrado en el plano $z=1$ con vértices $(1,1,1),(-1,1,1),(-1,-1,1),(1,-1,1)$.
 \end{prob}
 
 \begin{prob}
-Calcule la divergencia y el rotacional de los siguientes campos:
-\begin{multicols}{2}
-\begin{enumerate}[(a)]
-    \item $\mathbf{F}(x,y,z)=\langle x^2, y^2, z^2 \rangle$
-    \item $\mathbf{F}(x,y,z)=\langle yz, xz, xy \rangle$
-    \item $\mathbf{F}(x,y,z)=\langle e^x, \sin y, \cos z \rangle$
-    \item $\mathbf{F}(x,y,z)=\langle -y, x, 0 \rangle$
-\end{enumerate}
-\end{multicols}
+Calcule el flujo de $\mathbf{F}(x,y,z)=\langle x, y, z\rangle$ a través del sólido $Q$ limitado por el paraboloide $z=4-x^2-y^2$ y el plano $z=0$.
+\end{prob}
+
+\begin{prob}
+Considere el campo vectorial $\mathbf{F}=\left(6xy^3+2z^2\right)\mathbf{i}+\left(9x^2y^2\right)\mathbf{j}+\left(4xz+1\right)\mathbf{k}$. Determine si es un campo vectorial conservativo, y si lo es calcule su función potencial.
+\end{prob}
+
+% Desafiante
+\begin{prob}
+Halle el área de la superficie del toro generado al rotar la circunferencia $(x-2)^2+z^2=1$ alrededor del eje $z$.
 \end{prob}
 
 \begin{prob}
@@ -1395,41 +1424,9 @@ verificar esta identidad.
 \end{prob}
 
 \begin{prob}
-Interprete físicamente el resultado del problema anterior:
-si $\mathbf{F}$ es el campo de velocidades de un fluido, ¿qué significa
-que $\nabla \cdot (\nabla \times \mathbf{F})=0$?
-\end{prob}
-
-
-
-\begin{prob}
 Una lámina tiene la forma de la superficie $z=xy$ sobre el cuadrado $0\le x\le 2$, $0\le y\le 2$. Su densidad superficial es $\rho=x^2+y^2$. Halle su masa y su centro de masa.
 \end{prob}
 
-
-
-\begin{prob}
-Sea $\mathbf{F}(x,y,z)=\langle -y, x, 2z\rangle$. Calcule la circulación de $\mathbf{F}$ alrededor del cuadrado en el plano $z=1$ con vértices $(1,1,1),(-1,1,1),(-1,-1,1),(1,-1,1)$.
-\end{prob}
-
-
-
 \begin{prob}
 Demuestre que si $\mathbf{F}$ es un campo conservativo (es decir, $\mathbf{F}=\nabla f$), entonces $\nabla\times\mathbf{F}=0$ y su flujo a través de cualquier superficie cerrada es cero (por el teorema de la divergencia) y su circulación a través de cualquier borde cerrado es cero (por Stokes).
-\end{prob}
-
-\begin{prob}
-Calcule el flujo de $\mathbf{F}(x,y,z)=\langle x, y, z\rangle$ a través del sólido $Q$ limitado por el paraboloide $z=4-x^2-y^2$ y el plano $z=0$.
-\end{prob}
-
-\begin{prob}
-Considere el campo vectorial $\mathbf{F}=\left(6xy^3+2z^2\right)\mathbf{i}+\left(9x^2y^2\right)\mathbf{j}+\left(4xz+1\right)\mathbf{k}$. Determine si es un campo vectorial conservativo, y si lo es calcule su función potencial.
-\end{prob}
-
-\begin{prob}
-Calcule la integral $\displaystyle\int_{C}(8x+36z)\,ds$ donde $C$ es la curva $x=t$, $y=t^2$, $z=t^3$ con $0\leq t\leq 2$.
-\end{prob}
-
-\begin{prob}
-Calcule la integral $\displaystyle\int_{C}(\cos x+2yz)\,dx+(\sen y+2xz)\,dy+(z+2xy)\,dz$ en el segmento de recta del punto $(0,0,0)$ a $(\pi,\pi,0)$.
 \end{prob}

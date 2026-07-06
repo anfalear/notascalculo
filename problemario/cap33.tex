@@ -76,6 +76,43 @@ y
 \quad \text{en } \mathbb{R}^3.
 \]
 \end{definition}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.05]
+  % Ejes
+  \draw[->,thin] (-2.4,0)--(2.4,0) node[anchor=west] {$x$};
+  \draw[->,thin] (0,-2.3)--(0,2.4) node[anchor=south] {$y$};
+  % Curvas de nivel f(x,y)=x^2+y^2/4  (elipses: semi-eje x=sqrt(c), y=2*sqrt(c))
+  % c=0.25: a=0.50, b=1.00
+  \draw[blue!70,thick] (0,0) ellipse (0.50 and 1.00);
+  \node[blue,font=\scriptsize,anchor=north west] at (0.52,0.02) {$\tfrac{1}{4}$};
+  % c=0.50: a=0.707, b=1.414
+  \draw[blue!70,thick] (0,0) ellipse (0.71 and 1.41);
+  \node[blue,font=\scriptsize,anchor=north west] at (0.73,0.02) {$\tfrac{1}{2}$};
+  % c=1.00: a=1.00, b=2.00
+  \draw[blue!70,thick] (0,0) ellipse (1.00 and 2.00);
+  \node[blue,font=\scriptsize,anchor=north west] at (1.02,0.02) {$1$};
+  % Vectores gradiente nabla f = (2x, y/2); escala k=0.14
+  \foreach \xi/\yi in {
+      -1.6/-1.6, -1.6/-0.8, -1.6/0.8, -1.6/1.6,
+      -0.8/-1.6, -0.8/-0.8, -0.8/0.8, -0.8/1.6,
+       0.8/-1.6,  0.8/-0.8,  0.8/0.8,  0.8/1.6,
+       1.6/-1.6,  1.6/-0.8,  1.6/0.8,  1.6/1.6} {
+    \pgfmathsetmacro\dx{2*\xi*0.14}
+    \pgfmathsetmacro\dy{\yi/2*0.14}
+    \draw[->,red!70!black,thin] (\xi,\yi)--++(\dx,\dy);
+  }
+  % Leyendas
+  \node[red!70!black,anchor=north east,font=\small] at (2.3,-2.1)
+    {$\nabla f=(2x,\tfrac{y}{2})$};
+  \node[blue!80!black,anchor=south east,font=\small] at (2.3,0.1)
+    {$f(x,y)=x^2+\tfrac{y^2}{4}$};
+\end{tikzpicture}
+\caption{Campo gradiente $\nabla f=(2x,\,\tfrac{y}{2})$ (flechas rojas) perpendicular
+  a las curvas de nivel $f(x,y)=c$ (elipses azules) de $f(x,y)=x^2+\tfrac{y^2}{4}$}
+\label{fig:campo_gradiente}
+\end{figure}
 \begin{rem}[Interpretación geométrica del gradiente]
 El vector \(\nabla f(P)\) apunta en la dirección de \textbf{máximo
 crecimiento} de \(f\) en el punto \(P\), y su norma
@@ -94,6 +131,39 @@ potencial}, tal que
 Es decir, un campo conservativo es el gradiente de alguna función
 escalar. En este caso, el campo se denomina \textbf{campo gradiente}.
 \end{definition}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.0]
+  % Ejes
+  \draw[->,thin] (-2.2,0)--(2.2,0) node[anchor=west] {$x$};
+  \draw[->,thin] (0,-2.2)--(0,2.2) node[anchor=south] {$y$};
+  % Vectores del campo F=(x,y); escala k=0.20
+  \foreach \xi/\yi in {
+      -1.5/-1.5, -1.5/0, -1.5/1.5,
+      -0.9/-0.9, -0.9/0, -0.9/0.9,
+       0/-1.5, 0/1.5,
+       0.9/-0.9, 0.9/0, 0.9/0.9,
+       1.5/-1.5, 1.5/0, 1.5/1.5} {
+    \pgfmathsetmacro\dx{\xi*0.20}
+    \pgfmathsetmacro\dy{\yi*0.20}
+    \draw[->,red!60!black,thin] (\xi,\yi)--++(\dx,\dy);
+  }
+  % Curva cerrada (círculo de radio 1.3, con orientación)
+  \draw[blue!70!black,thick,->] (1.3,0) arc(0:200:1.3);
+  \draw[blue!70!black,thick]    (1.3,0) arc(0:-160:1.3);
+  \node[blue!70!black,anchor=south,font=\small] at (-0.2,1.45) {$C$};
+  % Anotación integral cero
+  \node[blue!70!black,anchor=north,font=\small] at (0,-1.95)
+    {$\displaystyle\oint_C \mathbf{F}\cdot d\mathbf{r}=0$};
+  % Leyenda campo
+  \node[red!60!black,anchor=south east,font=\small] at (2.1,1.8)
+    {$\mathbf{F}=(x,y)$};
+\end{tikzpicture}
+\caption{Campo conservativo $\mathbf{F}(x,y)=(x,y)=\nabla\!\left(\tfrac{x^2+y^2}{2}\right)$:
+  las flechas apuntan radialmente; la integral sobre cualquier curva cerrada $C$ es cero}
+\label{fig:campo_conservativo}
+\end{figure}
 \begin{theorem}[Caracterización de campos conservativos en el plano]
 Sean \(M(x,y)\) y \(N(x,y)\) funciones con derivadas parciales continuas
 en una región abierta \(R\). El campo vectorial
@@ -711,19 +781,8 @@ de integración es irrelevante para el cálculo de la integral de línea.
 
 \section{Problemas propuestos}
 
-\begin{prob}[Campos vectoriales conservativos]
-Determine si los siguientes campos son conservativos. En caso
-afirmativo, halle una función potencial.
-\begin{enumerate}[a)]
-  \item \(\mathbf{F}(x,y) = (e^x \cos y)\,\mathbf{i} - (e^x \sin y)\,\mathbf{j}\).
-  \item \(\mathbf{F}(x,y) = (y^2 + 2xy)\,\mathbf{i} + (x^2 + 2xy)\,\mathbf{j}\).
-  \item \(\mathbf{F}(x,y,z) = (yz, xz, xy)\).
-  \item \(\mathbf{F}(x,y) = \left(\dfrac{-y}{x^2+y^2},
-  \dfrac{x}{x^2+y^2}\right)\) en la región \(\mathbb{R}^2 \setminus \{(0,0)\}\).
-\end{enumerate}
-\end{prob}
-
-\begin{prob}[Cálculo de integrales de línea de campo escalar]
+% Básico
+\begin{prob}[Integrales de línea escalares]
 Evalúe las siguientes integrales de línea:
 \begin{enumerate}[a)]
   \item \(\displaystyle \int_C (2x + 3y)\,ds\), donde \(C\) es el
@@ -738,6 +797,67 @@ Evalúe las siguientes integrales de línea:
 \end{enumerate}
 \end{prob}
 
+\begin{prob}[Integral de línea vectorial directa]
+Calcule \(\displaystyle\int_C \mathbf{F}\cdot d\mathbf{r}\) para los
+siguientes campos y trayectorias:
+\begin{enumerate}[a)]
+  \item \(\mathbf{F}(x,y)=(y,x)\), \(C\): segmento de \((0,0)\) a \((2,3)\).
+  \item \(\mathbf{F}(x,y)=(x^2,y^2)\), \(C\): arco de \(y=x^2\) de
+  \((0,0)\) a \((1,1)\), con \(x=t\), \(y=t^2\), \(0\le t\le 1\).
+  \item \(\mathbf{F}(x,y,z)=(x,y,z)\), \(C\): hélice
+  \(\mathbf{r}(t)=(\cos t,\sin t,t)\), \(0\le t\le \pi\).
+\end{enumerate}
+\end{prob}
+
+\begin{prob}[Teorema fundamental para integrales de línea]
+Sea \(f(x,y)=x^2 e^y\). Calcule \(\displaystyle\int_C \nabla f\cdot d\mathbf{r}\)
+sobre cualquier curva suave \(C\) de \((0,0)\) a \((1,1)\). ¿Cuánto vale si
+\(C\) es el segmento de recta? ¿Y si \(C\) es la parábola \(y=x^2\)?
+Justifique por qué el resultado es el mismo en ambos casos.
+\end{prob}
+
+\begin{prob}[Caso especial: integral de longitud de arco]
+Demuestre que si \(f(x,y,z) = 1\), entonces
+\[
+\int_C 1\,ds = \text{longitud de arco de } C.
+\]
+Utilice esta observación para calcular la longitud de la curva
+\(\mathbf{r}(t) = (t, t^2, t^3)\), \(0\le t\le 1\).
+\end{prob}
+
+% Intermedio
+\begin{prob}[Campos vectoriales conservativos]
+Determine si los siguientes campos son conservativos. En caso
+afirmativo, halle una función potencial.
+\begin{enumerate}[a)]
+  \item \(\mathbf{F}(x,y) = (e^x \cos y)\,\mathbf{i} - (e^x \sin y)\,\mathbf{j}\).
+  \item \(\mathbf{F}(x,y) = (y^2 + 2xy)\,\mathbf{i} + (x^2 + 2xy)\,\mathbf{j}\).
+  \item \(\mathbf{F}(x,y,z) = (yz, xz, xy)\).
+  \item \(\mathbf{F}(x,y) = \left(\dfrac{-y}{x^2+y^2},
+  \dfrac{x}{x^2+y^2}\right)\) en la región \(\mathbb{R}^2 \setminus \{(0,0)\}\).
+\end{enumerate}
+\end{prob}
+
+\begin{prob}[Campo conservativo en \(\mathbb{R}^3\) y potencial]
+Sea \(\mathbf{F}(x,y,z) = (2xyz + z^2,\; x^2z,\; x^2y + 2xz)\).
+\begin{enumerate}[a)]
+  \item Verifique que \(\mathbf{F}\) es conservativo.
+  \item Halle una función potencial \(f\) tal que \(\nabla f = \mathbf{F}\).
+  \item Use el teorema fundamental para calcular
+  \(\displaystyle\int_C \mathbf{F}\cdot d\mathbf{r}\) desde
+  \((0,0,0)\) hasta \((1,2,1)\).
+\end{enumerate}
+\end{prob}
+
+\begin{prob}[Campo con forma especial]
+Sea \(\mathbf{F}(x,y) = (2xy + e^y,\; x^2 + xe^y)\).
+\begin{enumerate}[a)]
+  \item Determine si \(\mathbf{F}\) es conservativo.
+  \item Calcule \(\displaystyle\int_C \mathbf{F}\cdot d\mathbf{r}\) a lo largo de
+  la parábola \(y = x^2\) de \((0,0)\) a \((2,4)\).
+\end{enumerate}
+\end{prob}
+
 \begin{prob}[Aplicación: masa de un alambre]
 Un alambre tiene la forma de la hélice \(\mathbf{r}(t) = (2\cos t,
 2\sin t, t)\), \(0 \le t \le 4\pi\). Su densidad lineal en cada punto
@@ -748,6 +868,36 @@ es \(\rho(x,y,z) = x^2 + y^2 + z^2\). Calcule la masa total del alambre.
 Calcule \(\displaystyle \int_C (xy)\,ds\), donde \(C\) es la frontera
 del triángulo con vértices \((0,0)\), \((2,0)\), \((0,1)\), recorrida
 en sentido antihorario.
+\end{prob}
+
+\begin{prob}[Relación entre gradiente e integral de línea]
+Sea \(f(x,y) = x^2 y + e^x \cos y\). Calcule \(\nabla f\) y evalúe
+\(\displaystyle \int_C \nabla f \cdot d\mathbf{r}\) a lo largo de
+cualquier curva \(C\) que vaya de \((0,0)\) a \((1,\pi/2)\).
+¿Qué propiedad de los campos conservativos se está utilizando?
+\end{prob}
+
+\begin{prob}[Teorema de Green: aplicación directa]
+Use el teorema de Green para evaluar las siguientes integrales sobre curvas
+cerradas simples orientadas positivamente:
+\begin{enumerate}[a)]
+  \item \(\displaystyle\oint_C y^2\,dx + 3x^2y\,dy\), donde \(C\) es el
+  cuadrado \([0,1]\times[0,1]\).
+  \item \(\displaystyle\oint_C (x^2 - y^3)\,dx + (x^3 + y^2)\,dy\), donde
+  \(C\) es el círculo \(x^2 + y^2 = 4\), orientado positivamente.
+\end{enumerate}
+\end{prob}
+
+% Desafiante
+\begin{prob}[Green para calcular áreas]
+El teorema de Green implica que \(A = \tfrac{1}{2}\oint_C (-y\,dx + x\,dy)\).
+Use esta fórmula para calcular:
+\begin{enumerate}[a)]
+  \item El área encerrada por la elipse
+  \(\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1\).
+  \item El área encerrada por la astroide
+  \(x = \cos^3 t\), \(y = \sin^3 t\), \(t\in[0,2\pi]\).
+\end{enumerate}
 \end{prob}
 
 \begin{prob}[Análisis conceptual]
@@ -767,18 +917,23 @@ Responda con verdadero o falso. Justifique.
 \end{enumerate}
 \end{prob}
 
-\begin{prob}[Relación entre gradiente e integral de línea]
-Sea \(f(x,y) = x^2 y + e^x \cos y\). Calcule \(\nabla f\) y evalúe
-\(\displaystyle \int_C \nabla f \cdot d\mathbf{r}\) a lo largo de
-cualquier curva \(C\) que vaya de \((0,0)\) a \((1,\pi/2)\).
-¿Qué propiedad de los campos conservativos se está utilizando?
+\begin{prob}[Campo de vórtice y dominio no simplemente conexo]
+Sea \(\mathbf{F}(x,y) = \left(\dfrac{-y}{x^2+y^2},\,
+\dfrac{x}{x^2+y^2}\right)\) definido en \(\mathbb{R}^2 \setminus \{(0,0)\}\).
+\begin{enumerate}[a)]
+  \item Verifique que \(\partial N/\partial x = \partial M/\partial y\)
+  en su dominio.
+  \item Calcule \(\oint_C \mathbf{F}\cdot d\mathbf{r}\) donde \(C\) es
+  la circunferencia unitaria orientada positivamente.
+  \item ¿Contradice esto el criterio de campo conservativo? Explique.
+  \item Calcule \(\oint_D \mathbf{F}\cdot d\mathbf{r}\) donde \(D\) es
+  la curva \(x^2+y^2=4\), orientada positivamente.
+\end{enumerate}
 \end{prob}
 
-\begin{prob}[Caso especial: integral de longitud de arco]
-Demuestre que si \(f(x,y,z) = 1\), entonces
-\[
-\int_C 1\,ds = \text{longitud de arco de } C.
-\]
-Utilice esta observación para calcular la longitud de la curva
-\(\mathbf{r}(t) = (t, t^2, t^3)\), \(0\le t\le 1\).
+\begin{prob}[Green: cálculo estratégico]
+Evalúe \(\displaystyle\oint_C (x^2 + y^2)\,dx + 2xy\,dy\) donde \(C\)
+es la frontera de la región acotada por \(y = \sqrt{x}\) e \(y = x^2\),
+orientada positivamente. ¿Resulta más eficiente aplicar Green o
+evaluar directamente? Justifique.
 \end{prob}

@@ -153,14 +153,19 @@
 \contentsline {figure}{\numberline {27.3}{\ignorespaces Lámina rectangular $[0,4]\times [0,3]$ con densidad $\rho (x,y)=y+1$.}}{582}{figure.27.3}%
 \contentsline {figure}{\numberline {27.4}{\ignorespaces Lámina acotada por $y=e^x$, $y=0$, $x=0$, $x=1$ con densidad $\rho (x,y)=2-x+y$.}}{582}{figure.27.4}%
 \contentsline {figure}{\numberline {27.5}{\ignorespaces Lámina rectangular de ancho $b$ y altura $h$ con densidad uniforme $\rho =1$.}}{584}{figure.27.5}%
-\contentsline {figure}{\numberline {27.6}{\ignorespaces El jacobiano $|J|$ es el factor de escala de área: el cuadrado $R^*=[0,1]^2$ en $(u,v)$ se transforma en la región $R$ de área $|J|$ en $(x,y)$}}{591}{figure.27.6}%
-\contentsline {figure}{\numberline {27.7}{\ignorespaces Lámina acotada por la curva polar $r=2\mathop {\mathgroup \symoperators sen}\nolimits \theta $ con densidad $\rho (r,\theta )=r$.}}{592}{figure.27.7}%
-\contentsline {figure}{\numberline {27.8}{\ignorespaces Región del primer ejercicio}}{593}{figure.27.8}%
-\contentsline {figure}{\numberline {27.9}{\ignorespaces Figura para el problema 1.}}{594}{figure.27.9}%
-\contentsline {figure}{\numberline {27.10}{\ignorespaces Región del segundo ejercicio}}{596}{figure.27.10}%
-\contentsline {figure}{\numberline {27.11}{\ignorespaces Región del segundo ejercicio (segunda variante)}}{596}{figure.27.11}%
+\contentsline {figure}{\numberline {27.6}{\ignorespaces Coordenadas polares: el punto $P$ satisface $x=r\cos \theta $, $y=r\sin \theta $; el rectángulo polar (azul) tiene área $dA = r\,dr\,d\theta $}}{585}{figure.27.6}%
+\contentsline {figure}{\numberline {27.7}{\ignorespaces El jacobiano $|J|$ es el factor de escala de área: el cuadrado $R^*=[0,1]^2$ en $(u,v)$ se transforma en la región $R$ de área $|J|$ en $(x,y)$}}{591}{figure.27.7}%
+\contentsline {figure}{\numberline {27.8}{\ignorespaces Lámina acotada por la curva polar $r=2\mathop {\mathgroup \symoperators sen}\nolimits \theta $ con densidad $\rho (r,\theta )=r$.}}{592}{figure.27.8}%
+\contentsline {figure}{\numberline {27.9}{\ignorespaces Región del primer ejercicio}}{593}{figure.27.9}%
+\contentsline {figure}{\numberline {27.10}{\ignorespaces Figura para el problema 1.}}{594}{figure.27.10}%
+\contentsline {figure}{\numberline {27.11}{\ignorespaces Región del segundo ejercicio}}{596}{figure.27.11}%
+\contentsline {figure}{\numberline {27.12}{\ignorespaces Región del segundo ejercicio (segunda variante)}}{596}{figure.27.12}%
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {28.1}{\ignorespaces Coordenadas cilíndricas $(r,\theta ,z)$: $x=r\cos \theta $, $y=r\mathop {\mathgroup \symoperators sen}\nolimits \theta $, $z=z$; el elemento de volumen es $dV=r\,dr\,d\theta \,dz$}}{606}{figure.28.1}%
+\contentsline {figure}{\numberline {28.2}{\ignorespaces Coordenadas esféricas $(\rho ,\varphi ,\theta )$: $x=\rho \mathop {\mathgroup \symoperators sen}\nolimits \varphi \cos \theta $, $y=\rho \mathop {\mathgroup \symoperators sen}\nolimits \varphi \mathop {\mathgroup \symoperators sen}\nolimits \theta $, $z=\rho \cos \varphi $; el elemento de volumen es $dV=\rho ^2\mathop {\mathgroup \symoperators sen}\nolimits \varphi \,d\rho \,d\varphi \,d\theta $}}{608}{figure.28.2}%
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {29.1}{\ignorespaces Campo gradiente $\nabla f=(2x,\,\tfrac {y}{2})$ (flechas rojas) perpendicular a las curvas de nivel $f(x,y)=c$ (elipses azules) de $f(x,y)=x^2+\tfrac {y^2}{4}$}}{614}{figure.29.1}%
+\contentsline {figure}{\numberline {29.2}{\ignorespaces Campo conservativo $\mathbf {F}(x,y)=(x,y)=\nabla \!\left (\tfrac {x^2+y^2}{2}\right )$: las flechas apuntan radialmente; la integral sobre cualquier curva cerrada $C$ es cero}}{614}{figure.29.2}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {30.1}{\ignorespaces Orientación positiva de $C$: la región $R$ queda siempre a la izquierda; la curva se recorre en sentido antihorario}}{625}{figure.30.1}%
 \contentsline {figure}{\numberline {30.2}{\ignorespaces Región tipo\,I en la demostración del Teorema de Green: la franja vertical entre $g_1(x)$ y $g_2(x)$ muestra la aplicación del TFC en $y$. La orientación positiva (antihoraria) de $C$ implica que $C_1$ recorre el borde inferior $\to $ y $C_2$ el superior $\leftarrow $, originando el signo negativo en $-\DOTSI \MultiIntegral {2}_R \partial M/\partial y\,dA$.}}{626}{figure.30.2}%

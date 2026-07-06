@@ -441,6 +441,53 @@ dV = r\,dr\,d\theta\,dz.
 \]
 \end{definition}
 
+\begin{figure}[H]
+\centering
+\begin{minipage}{0.43\textwidth}
+\centering
+\begin{tikzpicture}[scale=1.5]
+  % Vista superior: plano xy con r y theta
+  \draw[->,thin] (-1.3,0)--(1.4,0) node[anchor=west,font=\small] {$x$};
+  \draw[->,thin] (0,-1.3)--(0,1.4) node[anchor=south,font=\small] {$y$};
+  \draw[gray!50] (0,0) circle(0.9);
+  \draw[->,thick,blue!70!black] (0,0)--(0.636,0.636)
+    node[midway,anchor=south east,font=\small] {$r$};
+  \draw[thin] (0.22,0) arc(0:45:0.22);
+  \node[font=\small] at (0.32,0.10) {$\theta$};
+  \filldraw[red] (0.636,0.636) circle(0.035)
+    node[anchor=south west,font=\small] {$(r,\theta)$};
+  \node[gray!70,font=\scriptsize] at (0,1.55) {vista superior};
+\end{tikzpicture}
+\end{minipage}
+\hfill
+\begin{minipage}{0.53\textwidth}
+\centering
+\begin{tikzpicture}[scale=1.3]
+  % Vista lateral: r horizontal, z vertical
+  \draw[->,thin] (-0.2,0)--(1.6,0) node[anchor=west,font=\small] {$r$};
+  \draw[->,thin] (0,-0.2)--(0,2.1) node[anchor=south,font=\small] {$z$};
+  \draw[gray!50,thin] (1.0,0)--(1.0,1.9);
+  % Punto P
+  \filldraw[red] (0.85,1.3) circle(0.045)
+    node[anchor=west,font=\small] {$P(r,\theta,z)$};
+  % Flechas de coordenadas
+  \draw[<->,blue!70!black,thick] (0.05,0)--(0.05,1.3)
+    node[midway,anchor=east,font=\small] {$z$};
+  \draw[<->,blue!70!black,thick] (0,1.45)--(0.85,1.45)
+    node[midway,anchor=south,font=\small] {$r$};
+  % Líneas de referencia
+  \draw[dashed,gray] (0.85,0)--(0.85,1.3);
+  \draw[dashed,gray] (0,1.3)--(0.85,1.3);
+  % Elemento de volumen
+  \node[red!70!black,font=\small] at (1.55,0.45) {$dV=$};
+  \node[red!70!black,font=\small] at (1.55,0.15) {$r\,dr\,d\theta\,dz$};
+\end{tikzpicture}
+\end{minipage}
+\caption{Coordenadas cilíndricas $(r,\theta,z)$: $x=r\cos\theta$, $y=r\sen\theta$, $z=z$;
+  el elemento de volumen es $dV=r\,dr\,d\theta\,dz$}
+\label{fig:coordenadas_cilindricas}
+\end{figure}
+
 \begin{theorem}[Integral triple en coordenadas cilíndricas]
 Si el sólido $D$ se describe como $\alpha\le\theta\le\beta$, $g_1(\theta)\le r\le g_2(\theta)$, $z_1(r,\theta)\le z\le z_2(r,\theta)$, entonces
 \[
@@ -532,6 +579,46 @@ dV = \rho^2\sen\varphi\,d\rho\,d\varphi\,d\theta.
 \]
 \end{definition}
 
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.7]
+  % Ejes (vista en el plano xz, theta indicado en base)
+  \draw[->,thin] (-0.15,0)--(1.55,0)
+    node[anchor=north west,font=\small] {$x$ (o $y$)};
+  \draw[->,thin] (0,-0.15)--(0,1.65)
+    node[anchor=south east,font=\small] {$z$};
+  % Semicírculo (esfera de radio 1, vista frontal)
+  \draw[gray!50] (1,0) arc(0:180:1);
+  \draw[gray!50,dashed] (1,0) arc(0:-180:1);
+  % Punto P: rho=1, phi=35° desde eje z
+  % P_x = sin(35)=0.574, P_z = cos(35)=0.819
+  \draw[->,thick,blue!70!black] (0,0)--(0.574,0.819)
+    node[midway,anchor=east,font=\small] {$\rho$};
+  % Ángulo phi (desde eje z)
+  \draw[thin] (0,0.28) arc(90:55:0.28);
+  \node[font=\small] at (0.10,0.35) {$\varphi$};
+  % Ángulo theta (en la base, indicado con arco en gris)
+  \draw[gray!70,thin] (0,0)--(0.574,0);
+  \draw[blue!40,thin] (0.18,0) arc(0:38:0.18);
+  \node[font=\scriptsize,blue!40] at (0.30,-0.10) {$\theta$};
+  % Punto P
+  \filldraw[red] (0.574,0.819) circle(0.025)
+    node[anchor=south west,font=\small] {$P(\rho,\varphi,\theta)$};
+  % Proyecciones
+  \draw[dashed,gray] (0.574,0.819)--(0.574,0)
+    node[anchor=north,font=\scriptsize] {$\rho\sin\varphi$};
+  \draw[dashed,gray] (0.574,0.819)--(0,0.819)
+    node[anchor=east,font=\scriptsize] {$\rho\cos\varphi$};
+  % Elemento de volumen
+  \node[red!70!black,font=\small,anchor=west] at (1.05,0.30)
+    {$dV=\rho^2\!\sen\varphi\,d\rho\,d\varphi\,d\theta$};
+\end{tikzpicture}
+\caption{Coordenadas esféricas $(\rho,\varphi,\theta)$: $x=\rho\sen\varphi\cos\theta$,
+  $y=\rho\sen\varphi\sen\theta$, $z=\rho\cos\varphi$; el elemento de volumen es
+  $dV=\rho^2\sen\varphi\,d\rho\,d\varphi\,d\theta$}
+\label{fig:coordenadas_esfericas}
+\end{figure}
+
 \begin{theorem}[Integral triple en coordenadas esféricas]
 Si $D$ se describe como $\alpha\le\theta\le\beta$, $\varphi_1\le\varphi\le\varphi_2$, $0\le\rho\le g(\varphi,\theta)$, entonces
 \[
@@ -619,6 +706,7 @@ I_\varphi = \frac12\!\int_0^{\pi/4}\!\sen2\varphi\,d\varphi
 
 \section{Problemas propuestos}
 
+% Básico
 \begin{prob}
 Evaluar \(\iiint_D (x^2 + y^2 + z^2)\,dV\), donde \(D\) es el cubo \([0,1]^3\).
 \end{prob}
@@ -631,6 +719,8 @@ Calcular el volumen del sólido encerrado entre el cilindro \(x^2+y^2=1\) y los 
 Sea \(D\) el sólido bajo el paraboloide \(z=x^2+y^2\) y sobre el cuadrado \([0,1]\times[0,1]\) (ejemplo 3). Calcular la masa si la densidad es \(\rho(x,y,z) = x\).
 \end{prob}
 
+
+% Intermedio
 \begin{prob}
 Encontrar el centro de masa del sólido \(D = \{ (x,y,z): 0\le x\le1,\;0\le y\le1,\;0\le z\le x+y \}\) con densidad constante \(\rho=1\).
 \end{prob}
@@ -692,6 +782,8 @@ Plantee las integrales que permiten calcular la masa y los momentos de masa resp
 \end{prob}
 
 
+
+% Desafiante
 \begin{prob}
 Calcule el volumen del sólido $Q$ limitado por las superficies $z=\dfrac{y}{x^2+9},$ $x^2+y^2=9$ cuando $x\geq 0$ y $y\geq 0.$ 
 \end{prob}
