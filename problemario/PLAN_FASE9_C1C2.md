@@ -75,13 +75,23 @@ Mínimo 15 propuestos por capítulo, máximo 40; graduación 25/50/25 con tags. 
 **Acción:** confirmar con el autor: sección única `\section{Problemas propuestos}` como estándar, con subsecciones temáticas permitidas en capítulos largos (apderivadas, sucesiones×2); tags de graduación dentro de cada subsección.
 **Criterio de cierre:** decisión registrada en ambos `.md`.
 **Líneas estimadas:** 5–15 (Markdown)
-**Estado:** Pendiente
+**Estado:** Completado — 2026-07-06
+
+**Decisión del autor (E4):**
+- Heading único: `\section{Problemas propuestos}` (minúscula en "propuestos"), siempre **última sección del capítulo** (precedida por `\section{Problemas resueltos adicionales}` cuando exista, según Decisión F).
+- En capítulos largos se permiten subsecciones temáticas internas (patrón apderivadas), con tags de graduación dentro de cada subsección.
+- Las 4 variantes actuales de heading se renombran cuando cada capítulo sea intervenido en su ítem correspondiente (no de forma masiva anticipada).
+- Nota de ejecución: la actualización de `GUIA_REESCRITURA_PROBLEMARIO.md` §2.4 con esta convención queda pendiente como parte del primer ítem de graduación que se ejecute (registrada aquí para no perderla).
 
 ### F9C1.02 — Decisión de exceso de propuestos (limites 50, sucesionesyseriesfunciones 48)
 **Acción:** presentar al autor las opciones por capítulo: (a) consolidar duplicados de técnica hasta ≤40, (b) marcar los excedentes como `\textbf{(*) Desafío}` sin eliminar, (c) mantener con justificación (banco de examen). **Nada se elimina sin autorización.**
 **Criterio de cierre:** decisión registrada por capítulo; aplicación queda en F9C1.10 y F9C1.37.
 **Líneas estimadas:** 5–15 (Markdown)
-**Estado:** Pendiente
+**Estado:** Completado — 2026-07-06
+
+**Decisión del autor:**
+- **No se elimina ningún problema.** Los bancos que excedan 40 se reorganizan por subsección temática (amparado en E4); los problemas que superen la cuota se marcan con el comentario `% Banco extendido` y cuentan fuera del mínimo/máximo.
+- La aplicación queda en F9C1.10 (limites, 50) y F9C1.37 (sucesionesyseriesfunciones, 48).
 
 ---
 
@@ -347,8 +357,8 @@ Mínimo 15 propuestos por capítulo, máximo 40; graduación 25/50/25 con tags. 
 
 | Ítem | Archivo(s) | Acción | Estado | Fecha | Notas |
 |---|---|---|---|---|---|
-| F9C1.01 | `.md` | Decisión E4 organización propuestos | Pendiente | — | — |
-| F9C1.02 | `.md` | Decisión exceso (limites 50 / sucfun 48) | Pendiente | — | — |
+| F9C1.01 | `.md` | Decisión E4 organización propuestos | Completado | 2026-07-06 | Heading único `Problemas propuestos`, última sección (tras `Problemas resueltos adicionales` si existe); subsecciones temáticas permitidas con tags internos; renombres al intervenir cada capítulo. |
+| F9C1.02 | `.md` | Decisión exceso (limites 50 / sucfun 48) | Completado | 2026-07-06 | Nada se elimina: reorganizar por subsección (E4) y marcar excedentes con `% Banco extendido` (fuera de la cuota). Aplicación en F9C1.10 y F9C1.37. |
 | F9C1.03 | `preliminares.tex` | 2 figuras R2 + 5 center | Pendiente | — | Auxiliar: decisión de alcance |
 | F9C1.04 | `preliminares.tex` | Elevar 2–3 resueltos + tags | Pendiente | — | Auxiliar: decisión de alcance |
 | F9C1.05 | `funciones.tex` | Auditoría 18 figuras | Pendiente | — | — |

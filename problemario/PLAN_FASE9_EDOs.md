@@ -6,6 +6,7 @@
 **Regla de tamaño:** cada ítem ≤ 300 líneas de código nuevo o modificado.
 **Regla de contenido:** nada se elimina sin decisión explícita del autor.
 **Prerequisito bloqueante:** Decisión G (formato de las soluciones de los propuestos EDO — subcaso de la Decisión F, ver `ARQUITECTURA_LIBRO.md` §3.1) — ítems marcados 🔒G.
+**✅ Decisión G resuelta el 2026-07-06 (misma convención F, sin subcaso especial — ver F9ED.01): todos los ítems 🔒G quedan desbloqueados.**
 
 ---
 
@@ -73,7 +74,14 @@ Mínimo 15 propuestos por capítulo (todos cumplen: 19/20/20/16/21), máximo 40;
 En todo escenario, los 59 myproof huérfanos de caps 27–29 se corrigen (anidar o retirar según la opción).
 **Criterio de cierre:** decisión escrita en ambos `.md`; ítems 🔒G desbloqueados.
 **Líneas estimadas:** 10–20 (Markdown)
-**Estado:** Pendiente
+**Estado:** Completado — 2026-07-06
+
+**Decisión del autor: misma convención F (F-i variante conservadora), sin subcaso especial para EDOs:**
+- Por capítulo (cap27–cap31), 4–6 propuestos representativos con solución se elevan a `example` con protocolo de 4 pasos + `\boxed{}`.
+- TODOS los demás conservan su desarrollo completo dentro del capítulo, agrupados en `\section{Problemas resueltos adicionales}` inmediatamente antes de `\section{Problemas propuestos}`, igual que en AL. Ninguna solución se borra, se abrevia ni se mueve a un archivo externo.
+- No se crea solucionario aparte en ninguna fase (queda descartada la variante de G-i que planteaba retirar soluciones a un solucionario futuro).
+- Los myproof huérfanos de cap27–cap29 (estilo B) se reencajan dentro de su prob antes de aplicar lo anterior, igual que en F.
+- Quedan desbloqueados todos los ítems 🔒G de este plan (F9ED.05, .10, .16, .19, .23).
 
 ---
 
@@ -257,7 +265,7 @@ En todo escenario, los 59 myproof huérfanos de caps 27–29 se corrigen (anidar
 
 | Ítem | Archivo(s) | Acción | Estado | Fecha | Notas |
 |---|---|---|---|---|---|
-| F9ED.01 | `.md` | Decisión G registrada | Pendiente | — | — |
+| F9ED.01 | `.md` | Decisión G registrada | Completado | 2026-07-06 | Misma convención F (F-i conservadora), sin subcaso EDO: elevar 4–6 por cap.; resto íntegro en `Problemas resueltos adicionales`; sin solucionario aparte; huérfanos 27–29 se reencajan. Ítems 🔒G desbloqueados. |
 | F9ED.02 | `cap27` | Teoremas existencia-unicidad + lineal (R3) | Pendiente | — | Cap. sin teoremas hoy |
 | F9ED.03 | `cap27` | Figura campo de pendientes + soluciones | Pendiente | — | — |
 | F9ED.04 | `cap27` | Figuras RL (circuitikz) + enfriamiento | Pendiente | — | — |

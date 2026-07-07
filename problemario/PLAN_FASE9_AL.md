@@ -6,6 +6,7 @@
 **Regla de tamaño:** cada ítem ≤ 300 líneas de código nuevo o modificado.
 **Regla de contenido:** nada se elimina sin decisión explícita del autor.
 **Prerequisito bloqueante:** Decisión F (convención de soluciones en `prob`, ver `ARQUITECTURA_LIBRO.md` §3.1) — los ítems marcados 🔒F no pueden ejecutarse antes.
+**✅ Decisión F resuelta el 2026-07-06 (F-i variante conservadora — ver F9AL.01): todos los ítems 🔒F quedan desbloqueados.**
 
 ---
 
@@ -65,7 +66,15 @@ Mínimo 8–10 resueltos (example con myproof) + 15–20 propuestos (sin myproof
 **Acción:** presentar al autor las opciones F-i / F-ii (ARQUITECTURA §3.1) con el conteo por capítulo; registrar la elegida aquí y actualizar la GUIA §2.1.
 **Criterio de cierre:** decisión escrita en ambos `.md`; ítems 🔒F desbloqueados.
 **Líneas estimadas:** 10–20 (solo Markdown)
-**Estado:** Pendiente
+**Estado:** Completado — 2026-07-06
+
+**Decisión del autor (F-i variante conservadora):**
+- Por capítulo, 3–5 probs representativos con solución se elevan a `example` con protocolo de 4 pasos + `\boxed{}`.
+- TODOS los demás probs con myproof interno se conservan íntegros, agrupados en `\section{Problemas resueltos adicionales}` inmediatamente antes de `\section{Problemas propuestos}`. Ninguna solución se borra.
+- La sección `Problemas propuestos` queda solo con probs sin solución (convención C3/GUIA).
+- El estilo B (myproof huérfano tras `\end{prob}`) es bug estructural: cada huérfano se reencaja dentro de su prob y el prob resultante se trata según las reglas anteriores.
+- Quedan desbloqueados todos los ítems 🔒F de este plan (F9AL.04, .10, .14, .18, .21, .26, .28, .37).
+- Nota de ejecución: la actualización de `GUIA_REESCRITURA_PROBLEMARIO.md` §2.1 con esta convención queda pendiente como parte del primer ítem 🔒F que se ejecute (registrada aquí para no perderla).
 
 ---
 
@@ -75,37 +84,77 @@ Mínimo 8–10 resueltos (example con myproof) + 15–20 propuestos (sin myproof
 **Acción:** insertar cabeceras para que el capítulo quede: `\section{Propiedades básicas}` (existente) → `\section{Determinantes}` (hoy subsumido en "Matrices invertibles: determinantes", l.1462) → `\section{Matrices invertibles}` (existente, l.829) → `\section{Problemas propuestos}` (nueva, ver F9AL.04). Mover el mínimo de contenido; solo re-encabezar y reordenar bloques completos si un tema quedó partido.
 **Criterio de cierre:** ≥4 secciones; determinantes con sección propia; orden def→teo→ej respetado dentro de cada una; compilación limpia.
 **Líneas estimadas:** 40–90
-**Estado:** Pendiente
+**Estado:** Completado — 2026-07-07
+
+**Notas de ejecución:**
+- Estructura final: `\section{Propiedades básicas}` → `\section{Matrices invertibles}` (con `\subsection{Método de eliminación gaussiana}`, renombrada desde «Matrices invertibles: Método de eliminación gaussiana») → `\section{Determinantes}` (promovida desde `\subsection{Matrices invertibles: determinantes}`) → `\section{Problemas propuestos}` (heading insertado antes del banco final, l.2397; su contenido se trata en F9AL.04).
+- **Desviación justificada del orden listado en el plan** (Determinantes antes de Matrices invertibles): el texto de Determinantes depende explícitamente del material previo («Hasta este momento hemos visto que una matriz cuadrada $A$ es invertible si su rango…», rem «De eliminación gaussiana a determinante», Caracterización v1 por rango). Reordenarla habría exigido reescribir la motivación — se mantiene el orden físico actual, que es el lógico del texto.
+- Bloque de matrices especiales (diagonal, triangular, simétrica, antisimétrica, traza + teorema + 6 ejemplos; 105 líneas) movido íntegro desde dentro de la subsección gaussiana (donde interrumpía el flujo) al final de `\section{Propiedades básicas}` — caso «tema partido» previsto en la acción.
+- Verificación: 139 entornos (32 example + 25 prob + 50 myproof + 21 definition + 11 theorem) idénticos antes y después; refs a `def:traza`/`def:escalonada` siguen válidas (todas posteriores a la nueva posición). Compilación limpia: 0 errores `!`, 772 pp.
 
 ### F9AL.03 — matrices: anidar 8 myproof huérfanos
 **Acción:** localizar los 8 `\begin{myproof}` fuera de example/prob (detección automatizada disponible); anidar cada uno dentro de su `prob`/`example` correspondiente.
 **Criterio de cierre:** `myproof_huerfanos = 0` en re-escaneo; compilación limpia.
 **Líneas estimadas:** 16–40 (solo movimiento de delimitadores)
-**Estado:** Pendiente
+**Estado:** Completado — 2026-07-07
+
+**Notas de ejecución:**
+- 8 huérfanos localizados con escaneo de anidamiento (tras F9AL.02): l.627, 690, 765, 1395, 2862, 2895, 2994, 3057. Patrón uniforme estilo B: `\end{prob}` → línea en blanco → `\begin{myproof}`. Corrección: el `\end{prob}` se movió tras el `\end{myproof}` correspondiente en los 8 casos.
+- Re-escaneo: 0 huérfanos; 25 `\begin{prob}` / 25 `\end{prob}` balanceados; 50 myproof intactos.
+- **Hallazgo relevante para F9AL.04:** con los 8 reencajados, los **25/25 probs del capítulo tienen solución interna** (el diagnóstico contaba 17 + 8 huérfanos). Aplicada la Decisión F tal cual, la sección `Problemas propuestos` quedaría vacía — requiere decisión del autor (ver F9AL.04).
+- Compilación limpia: 0 errores `!`, 772 pp.
 
 ### F9AL.04 — matrices: crear sección de propuestos + aplicar Decisión F 🔒F
 **Acción:** reunir los 25 probs bajo `\section{Problemas propuestos}`; según Decisión F, elevar 3–5 representativos con solución a `example` (4 pasos + boxed) y tratar el resto conforme a la convención elegida; tags de graduación.
 **Criterio de cierre:** sección única de propuestos, graduada con tags; convención F aplicada al 100 % del capítulo.
 **Líneas estimadas:** 80–150
-**Estado:** Pendiente
+**Estado:** Completado — 2026-07-07
+
+**Notas de ejecución:**
+- Tras F9AL.03 los 25/25 probs tenían solución interna → el autor decidió (2026-07-07): elevar 5 y **crear 18 propuestos nuevos sin solución** (lote redactado por el asistente y aprobado explícitamente por el autor antes de insertarse).
+- **5 elevaciones a `example`** (validadas por el autor), cada una en su sección temática: #1 Operaciones con matrices y compatibilidad de tamaños (4 pasos); #5 Ingresos mensuales mediante un producto matricial (4 pasos); #8 Inversa por el algoritmo de Gauss-Jordan (7 pasos, conserva `\label{ej.inversa}`); #9 Determinante $5\times 5$ por reducción a forma triangular (enunciado corregido: decía «forma diagonal» pero la reducción es triangular); #10 Inversa mediante la matriz adjunta (typo «Calcule de inversa» corregido; ref ajustada a «Ejemplo \ref{ej.inversa}»). Todas con `Paso N.` y `\boxed{}`.
+- **`\section{Problemas resueltos adicionales}`**: 20 probs íntegros con su myproof (6 movidos desde secciones temáticas — grafos ×2, aerolínea, restaurante, frutas, invertibles multiparte — + 14 del banco final), cada uno con tag individual (6 Básico / 8 Intermedio / 6 Desafiante; tag por prob y no por grupo porque el banco heredado no está ordenado por dificultad).
+- **`\section{Problemas propuestos}`**: 18 nuevos sin solución, agrupados §2.4 (5 Básico / 9 Intermedio / 4 Desafiante ≈ 28/50/22): operaciones y compatibilidad, especiales y traza, det 2×2, Gauss-Jordan, adjunta, rango, invertibilidad con parámetro, propiedades del det, descomposición S+K, grafos, aplicación panadería, ecuación matricial, nilpotente, AB−BA≠I (traza), suma de filas de A⁻¹, det(adj A).
+- `GUIA_REESCRITURA_PROBLEMARIO.md` §2.1 actualizada con la convención F completa (compromiso pendiente de F9AL.01).
+- Verificación: 38/38 prob, 37/37 example, 50/50 myproof, 0 huérfanos. Compilación limpia (ver registro).
 
 ### F9AL.05 — matrices: auditoría de figuras (protocolo F8.31)
 **Acción:** 8 entornos figure sin caption/label + 4 tikzpicture fuera de figure → todos a `figure[H]` + `\caption` + `\label{fig:...}` + anchors explícitos.
 **Criterio de cierre:** 12/12 figuras compliant; compilación limpia.
 **Líneas estimadas:** 60–120
-**Estado:** Pendiente
+**Estado:** Completado — 2026-07-07
+
+**Notas de ejecución:**
+- 8 `figure[H]` tenían caption pero **no label** → añadidos: `fig:grafo_ejemplo01`, `fig:grafo_ejemplo02`, `fig:sarrus_columnas`, `fig:sarrus_filas`, `fig:grafo_prob_dibujo_a/_b/_c`, `fig:red_vuelos`.
+- 4 tikzpicture sueltos convertidos a `figure[H]` + caption + label: el del ejemplo de Sarrus (estaba en `center` → `fig:sarrus_ejemplo`) y los 3 grafos-enunciado del prob de adyacencia (`fig:grafo_adyacencia_a/_b/_c`).
+- Fix adicional: en el grafo (c) del prob de adyacencia la arista 3→4 estaba dibujada dos veces (la línea duplicada llevaba el comentario «Corrección: solo una arista 3→4») → eliminada la duplicada; la matriz C ya era consistente con una sola arista.
+- Anchors: los nodos de texto flotante ya tenían anchor explícito (estilo `anchor=base` en las figuras de Sarrus); los nodos restantes son de forma cerrada (círculos de grafos) sin texto flotante.
+- Verificación: 12/12 `figure[H]` con caption+label, 0 tikz fuera de figure, 0 `center`, 0 labels duplicados. Compilación limpia: 0 errores `!`, 774 pp.
 
 ### F9AL.06 — matrices: figuras nuevas R2
 **Acción:** (a) esquema del producto matricial AB (fila i × columna j con flechas); (b) expansión por cofactores 3×3 con submatrices sombreadas; (c) interpretación geométrica del determinante 2×2 como área del paralelogramo.
 **Criterio de cierre:** 3 figuras insertadas inmediatamente después de la definición correspondiente (R2), estándar F8; compilación limpia.
 **Líneas estimadas:** 100–160
-**Estado:** Pendiente
+**Estado:** Completado — 2026-07-07
+
+**Notas de ejecución:**
+- `fig:producto_matricial`: esquema $AB$ con matrices genéricas $3{\times}2\cdot 2{\times}3$, fila 2 de $A$ (rojo) y columna 3 de $B$ (azul) enmarcadas, flechas grises hacia $c_{23}$ y fórmula $c_{23}=a_{21}b_{13}+a_{22}b_{23}$ — tras la def. de multiplicación de matrices.
+- `fig:det_area`: paralelogramo generado por $(a,b)$ y $(c,d)$ (dibujado con $(3,1)$ y $(1,2)$) sobre rejilla, área $|ad-bc|$ — tras la rem de fundamentación del det $2\times 2$.
+- `fig:cofactores_sombreados`: tres copias de la matriz $3\times 3$ con fila 1/columna $j$ en gris y submatriz $M_{1j}$ sombreada en azul, con signos $+/-/+$ — tras `def:menor`.
+- Estándar F8: `figure[H]` + caption + label, anchors explícitos, paleta `blue!70!black`/`red!70!black`/`gray!50`; librerías `matrix` y `calc` ya usadas por las figuras de Sarrus del capítulo. Compilación limpia: 0 errores `!`, 774 pp.
 
 ### F9AL.07 — matrices: verificación de protocolo en 32 examples
 **Acción:** confirmar que los 19 computacionales usan `\textbf{Paso N.}` (punto) + `\boxed{}`; que los 13 ilustrativos tienen título y se justifican como tales; corregir desviaciones.
 **Criterio de cierre:** 100 % de examples conformes o justificados; lista de correcciones en Notas.
 **Líneas estimadas:** 20–60
-**Estado:** Pendiente
+**Estado:** Completado — 2026-07-07
+
+**Notas de ejecución:**
+- El capítulo tiene ahora **37 examples** (32 originales + 5 elevaciones de F9AL.04).
+- **47 marcas `\textbf{Paso N:}` (dos puntos) normalizadas a `\textbf{Paso N.}`** en todo el archivo (formato GUIA §2.2) — cubría los ejemplos didácticos de grafos, operaciones elementales, formas escalonadas, rango, cofactores, Sarrus y adjunta.
+- 2 correcciones de `\boxed{}`: los ejemplos de grafos dirigidos (`ejgrafo01`, `ejgrafo02`) tenían Paso 1/2 sin caja → encajonada la matriz de adyacencia (resultado computable; la figura es la visualización).
+- Auditoría final automatizada: 24/24 examples con myproof conformes (Paso N. + boxed); 13 examples ilustrativos (identificación de entradas, suma, escalar, transpuesta, especiales, traza, verificación de inversa, matrices elementales, no-escalonadas, menores) justificados con título según criterio de Fase 4.
+- 0 `\textbf{Paso N:}` residuales en el archivo (incluye los myproof de «Problemas resueltos adicionales»).
 
 ---
 
@@ -319,13 +368,13 @@ Mínimo 8–10 resueltos (example con myproof) + 15–20 propuestos (sin myproof
 
 | Ítem | Archivo(s) | Acción | Estado | Fecha | Notas |
 |---|---|---|---|---|---|
-| F9AL.01 | `.md` | Decisión F registrada | Pendiente | — | — |
-| F9AL.02 | `matrices.tex` | Estructura de secciones | Pendiente | — | — |
-| F9AL.03 | `matrices.tex` | Anidar 8 myproof huérfanos | Pendiente | — | — |
-| F9AL.04 | `matrices.tex` | Sección propuestos + Decisión F + tags | Pendiente | — | — |
-| F9AL.05 | `matrices.tex` | Auditoría 12 figuras | Pendiente | — | — |
-| F9AL.06 | `matrices.tex` | 3 figuras nuevas R2 | Pendiente | — | — |
-| F9AL.07 | `matrices.tex` | Verificación protocolo 32 examples | Pendiente | — | — |
+| F9AL.01 | `.md` | Decisión F registrada | Completado | 2026-07-06 | F-i variante conservadora: elevar 3–5 por cap.; resto íntegro en `\section{Problemas resueltos adicionales}`; huérfanos se reencajan. Ítems 🔒F desbloqueados. |
+| F9AL.02 | `matrices.tex` | Estructura de secciones | Completado | 2026-07-07 | 4 secciones: Propiedades básicas → Matrices invertibles (subsec. gaussiana) → Determinantes (promovida) → Problemas propuestos. Bloque matrices especiales (105 l.) movido a Propiedades básicas. Orden físico Determinantes tras invertibles conservado (dependencia narrativa). 772 pp, 0 errores. |
+| F9AL.03 | `matrices.tex` | Anidar 8 myproof huérfanos | Completado | 2026-07-07 | 8/8 reencajados (l.627, 690, 765, 1395, 2862, 2895, 2994, 3057); re-escaneo 0 huérfanos; 25/25 probs quedan con solución interna → propuestos quedaría vacía (decisión en F9AL.04). 772 pp, 0 errores. |
+| F9AL.04 | `matrices.tex` | Sección propuestos + Decisión F + tags | Completado | 2026-07-07 | 5 elevaciones a example (validadas); 20 resueltos íntegros en `Problemas resueltos adicionales` con tags; 18 propuestos nuevos aprobados por el autor (5B/9I/4D); GUIA §2.1 actualizada. 38/38 prob, 0 huérfanos. |
+| F9AL.05 | `matrices.tex` | Auditoría 12 figuras | Completado | 2026-07-07 | 8 labels añadidos; 4 tikz sueltos → figure[H]+caption+label; arista 3→4 duplicada eliminada en grafo (c). 12/12 conformes. 774 pp, 0 errores. |
+| F9AL.06 | `matrices.tex` | 3 figuras nuevas R2 | Completado | 2026-07-07 | fig:producto_matricial, fig:det_area, fig:cofactores_sombreados — insertadas en posición R2, estándar F8. 774 pp, 0 errores. |
+| F9AL.07 | `matrices.tex` | Verificación protocolo 32 examples | Completado | 2026-07-07 | 37 examples (con 5 elevados): 47 `Paso N:` → `Paso N.`; 2 boxed añadidos (grafos); 24/24 con myproof conformes; 13 ilustrativos justificados. |
 | F9AL.08 | `sel.tex` | Estructura de secciones | Pendiente | — | — |
 | F9AL.09 | `sel.tex` | Anidar 8 myproof huérfanos | Pendiente | — | — |
 | F9AL.10 | `sel.tex` | Propuestos + Decisión F + heading | Pendiente | — | — |

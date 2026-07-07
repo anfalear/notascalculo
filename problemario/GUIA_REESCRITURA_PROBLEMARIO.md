@@ -46,9 +46,16 @@ Todo concepto con interpretación geométrica lleva figura TikZ inmediatamente d
 | `\begin{rem}[Nombre]` | Observación o interpretación |
 | `\begin{example}[Nombre]` | Problema resuelto — siempre con myproof |
 | `\begin{myproof}` | Solución con 4 pasos — SIEMPRE dentro de `example` o `prob`, nunca fuera |
-| `\begin{prob}` | Problema propuesto — nunca lleva `myproof` |
+| `\begin{prob}` | Problema. En `Problemas propuestos` nunca lleva `myproof`; en `Problemas resueltos adicionales` conserva su `myproof` interno (Decisión F) |
 | `\begin{pasos}[Nombre]` | Protocolo o algoritmo |
 | `\begin{figure}[H]` | Toda figura — siempre `[H]`, nunca `center` ni flotante libre |
+
+**Decisión F (2026-07-06, F-i variante conservadora) — bancos heredados con soluciones dentro de `prob`:**
+- Por capítulo, 3–5 probs representativos con solución se elevan a `example` (protocolo de 4 pasos + `\boxed{}`) en su sección temática.
+- Todos los demás probs con solución se conservan íntegros (con su `myproof` interno) agrupados en `\section{Problemas resueltos adicionales}`, colocada inmediatamente antes de `\section{Problemas propuestos}`. Ninguna solución se borra, abrevia ni externaliza.
+- `\section{Problemas propuestos}` queda solo con probs sin solución (organización §2.4). En `Problemas resueltos adicionales` el tag de graduación va sobre **cada** prob, porque el banco heredado no está ordenado por dificultad.
+- Todo `myproof` huérfano (tras `\end{prob}`, estilo B) es bug estructural: se reencaja dentro de su prob antes de aplicar lo anterior.
+- La Decisión G (EDOs, caps. 27–31) sigue esta misma convención sin subcaso especial, con 4–6 elevaciones por capítulo.
 
 ### 2.2 Protocolo de ejemplos resueltos
 

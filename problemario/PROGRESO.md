@@ -1,5 +1,7 @@
 # PROGRESO — Problemario unificado
 
+> **Nota de numeración (Decisión E5, 2026-07-06):** los números de capítulo usados en este documento y en todos los `.md` anteriores a esta fecha siguen el índice objetivo antiguo de 34 capítulos. El libro compilado tiene **35 capítulos reales** (el índice antiguo asignaba el nº 33 a dos archivos: `inttriples.tex` y `cap33.tex`). A partir del 2026-07-06 toda referencia nueva usa el "# real" de `ARQUITECTURA_LIBRO.md` §1.1.
+
 | # | Capítulo(s) | Intervención | Estado | Fecha | Notas |
 |---|---|---|---|---|---|
 | 1 | Cap. 5 (`limites.tex`) | Fix matemático L.921: `p(x)=x^{11}+x-x+2` → `p(x)=x^{11}+x-1` | completo | 2026-06-16 | Original simplificaba a `x^{11}+2` (siempre positivo, sin raíz en (0,1)). Corrección: p(0)=-1<0, p(1)=1>0, p continua → IVT garantiza existencia de al menos una raíz en (0,1). |

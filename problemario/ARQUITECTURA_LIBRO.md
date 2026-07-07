@@ -132,11 +132,17 @@ Hoy conviven **tres convenciones** incompatibles con la regla C3 ("prob nunca ll
 - **F-ii:** legalizar el estilo A como "banco con solución" y actualizar la GUIA (rompe la regla C3 ya aplicada).
 En cualquier caso, el estilo B (huérfanos) es un bug estructural en todos los escenarios y se corrige siempre.
 
+> **Resuelta 2026-07-06:** se adoptó **F-i en variante conservadora** (ninguna solución se borra; sección `Problemas resueltos adicionales` antes de `Problemas propuestos`). Texto completo de la resolución en §7.
+
 ### 3.2 Notación trigonométrica: `\sen` vs `\sin`
 Los 5 capítulos de EDOs usan `\sen` (macro de babel-spanish, conversión hecha en Fase 7); **todo el resto del libro usa `\sin`** (imprime "sin"). El PDF muestra ambas grafías. **Decisión E3:** unificar (recomendado: `\sen` en todo el libro por coherencia con el idioma, vía conversión masiva por bloque; o revertir EDOs a `\sin`). Debe resolverse antes de reescrituras para no propagar la mezcla.
 
+> **Resuelta 2026-07-06:** grafía única `\sen` en todo el libro, vía sustitución mecánica (C3 incluido, solo esta sustitución). Texto completo en §7.
+
 ### 3.3 Encabezado de la sección de propuestos — 4 variantes actuales
 `\section{Problemas propuestos}` (estándar C3) vs `\section{Problemas Propuestos}` (vectoresrn, limites, derivadas, apderivadas, intdefinida, impropias) vs `\section{Problemas propuestos para el capítulo}` (complejos, sel, espaciosvectoriales) vs `\section{Ejercicios propuestos}` (tecintegracion). Además: `matrices`, `vvpropios`, `translineales`, `prodinterno` **no tienen sección de propuestos** (los probs están dispersos en el cuerpo), y `apderivadas`/`sucesionesyseries`/`sucesionesyseriesfunciones` organizan propuestos **por subsección temática** (patrón distinto pero defendible). **Convención propuesta:** `\section{Problemas propuestos}` única al final; subsecciones temáticas internas permitidas en capítulos largos (se conserva el patrón de apderivadas). **Decisión E4** (los planes la asumen).
+
+> **Resuelta 2026-07-06:** convención propuesta adoptada; `Problemas propuestos` siempre última sección, precedida por `Problemas resueltos adicionales` cuando exista (Decisión F). Texto completo en §7.
 
 ### 3.4 Estándar de figuras — 3 regímenes conviviendo
 - **C3 (post-F8):** `figure[H]` + `\caption` + `\label{fig:kebab}` + `anchor` explícito. ✔ patrón objetivo.
@@ -224,16 +230,51 @@ R1 (orden canónico), R2 (figura obligatoria) y R3 (nivel de demostración) son 
 
 ---
 
-## 7. Decisiones editoriales abiertas (consolidado)
+## 7. Decisiones editoriales (consolidado)
 
-| ID | Decisión | Bloqueante para |
-|---|---|---|
-| E1 | Estructura de partes (5 partes vs mínimo `\part{ED}`) | Ninguno (independiente) |
-| E2 | Intercambio translineales ↔ vvpropios | F9AL semanas 4–5 (solo el orden de ejecución) |
-| E3 | `\sen` vs `\sin` global | Cualquier reescritura masiva |
-| E4 | Heading único de propuestos + patrón subsecciones | F9AL/F9C1/F9ED ítems de graduación |
-| F | Convención de soluciones en `prob` (§3.1) | **F9AL y F9ED casi completos** |
-| G | Formato de soluciones EDO (subcaso de F: breve vs 4 pasos al elevar) | F9ED |
-| — | `figrayo` duplicado en vectoresrn (cuál conserva el label) | F9AL.36 |
-| — | Exceso de propuestos: limites 50, sucesionesyseriesfunciones 48, inttriples ~53 | F9C1.02 (y pendiente C3 previo) |
-| — | Dependencia adelantada en tecintegracion §"Sustitución en integrales definidas" | F9C1 semana 4 (nota, no ejecución) |
+| ID | Decisión | Bloqueante para | Estado |
+|---|---|---|---|
+| E1 | Estructura de partes (5 partes vs mínimo `\part{ED}`) | Ninguno (independiente) | Abierta |
+| E2 | Intercambio translineales ↔ vvpropios | F9AL semanas 4–5 (solo el orden de ejecución) | Abierta |
+| E3 | `\sen` vs `\sin` global | Cualquier reescritura masiva | **Resuelta 2026-07-06** — grafía única `\sen` en todo el libro (ver resolución bajo la tabla) |
+| E4 | Heading único de propuestos + patrón subsecciones | F9AL/F9C1/F9ED ítems de graduación | **Resuelta 2026-07-06** — cierra F9C1.01 (ver resolución) |
+| E5 | Numeración 35 capítulos reales vs índice objetivo de 34 | Referencias en todos los `.md` | **Resuelta 2026-07-06** — el índice de 34 queda obsoleto; toda referencia nueva usa el "# real" de §1.1; nota añadida al inicio de `PROGRESO.md` |
+| F | Convención de soluciones en `prob` (§3.1) | F9AL y F9ED casi completos | **Resuelta 2026-07-06** — F-i variante conservadora; cierra F9AL.01 (ver resolución) |
+| G | Formato de soluciones EDO (subcaso de F) | F9ED | **Resuelta 2026-07-06** — misma convención F, sin subcaso; cierra F9ED.01 (ver resolución) |
+| F9C1.02 | Exceso de propuestos: limites 50, sucesionesyseriesfunciones 48 | F9C1.10 y F9C1.37 | **Resuelta 2026-07-06** — nada se elimina; `% Banco extendido` (ver resolución) |
+| — | `figrayo` duplicado en vectoresrn (cuál conserva el label) | F9AL.36 | Abierta |
+| — | Exceso de propuestos en inttriples ~53 (pendiente C3 previo) | Fuera de F9 | Abierta |
+| — | Dependencia adelantada en tecintegracion §"Sustitución en integrales definidas" | F9C1 semana 4 (nota, no ejecución) | Abierta |
+
+### Resoluciones registradas (2026-07-06, decisión del autor)
+
+**Decisión F — F-i variante conservadora (cierra F9AL.01):**
+- Por capítulo, 3–5 probs representativos con solución se elevan a `example` con protocolo de 4 pasos + `\boxed{}`.
+- **Todos los demás probs con myproof interno se conservan íntegros**, agrupados en `\section{Problemas resueltos adicionales}` inmediatamente antes de `\section{Problemas propuestos}`. Ninguna solución se borra.
+- La sección `Problemas propuestos` queda solo con probs sin solución (convención C3/GUIA).
+- El estilo B (myproof huérfano tras `\end{prob}`) es bug estructural: cada huérfano se reencaja dentro de su prob y el prob resultante se trata según las reglas anteriores.
+- Desbloquea todos los ítems 🔒F de `PLAN_FASE9_AL.md`.
+
+**Decisión G — misma convención F, sin subcaso especial para EDOs (cierra F9ED.01):**
+- Por capítulo (cap27–cap31), 4–6 propuestos representativos con solución se elevan a `example` con 4 pasos + `\boxed{}`.
+- **Todos los demás conservan su desarrollo completo dentro del capítulo**, agrupados en `\section{Problemas resueltos adicionales}` inmediatamente antes de `\section{Problemas propuestos}`, igual que en AL. Ninguna solución se borra, se abrevia ni se mueve a un archivo externo.
+- No se crea solucionario aparte en ninguna fase.
+- Los myproof huérfanos de cap27–cap29 (estilo B) se reencajan dentro de su prob antes de aplicar lo anterior, igual que en F.
+- Desbloquea todos los ítems 🔒G de `PLAN_FASE9_EDOs.md`.
+
+**Decisión E3 — grafía única `\sen`:**
+- Todo el libro usa `\sen` (y las variantes en español que el preámbulo/babel definan — verificar disponibilidad global antes de ejecutar).
+- La ejecución es una sustitución mecánica `\sin` → `\sen` (respetando `\sinh` y palabras que contengan "sin") en los ~30 archivos que usan `\sin`.
+- **El bloque C3, aunque cerrado desde F8, recibe únicamente esta sustitución mecánica y nada más.**
+
+**Decisión E4 — heading y organización de propuestos (cierra F9C1.01):**
+- Heading único: `\section{Problemas propuestos}` (minúscula en "propuestos"), siempre **última sección del capítulo** (precedida por `Problemas resueltos adicionales` cuando exista, según F).
+- En capítulos largos se permiten subsecciones temáticas internas (patrón apderivadas), con tags de graduación dentro de cada subsección.
+- Las 4 variantes actuales de heading se renombran cuando cada capítulo sea intervenido en su ítem correspondiente (no de forma masiva anticipada).
+
+**Decisión F9C1.02 — exceso de propuestos (limites 50, sucesionesyseriesfunciones 48):**
+- **No se elimina ningún problema.** Los bancos que excedan 40 se reorganizan por subsección temática (amparado en E4); los problemas que superen la cuota se marcan con el comentario `% Banco extendido` y cuentan fuera del mínimo/máximo.
+- La aplicación queda en F9C1.10 y F9C1.37.
+
+**Decisión E5 — numeración de capítulos:**
+- El libro tiene 35 capítulos reales; el índice objetivo de 34 queda obsoleto. Toda referencia nueva en los `.md` usa el "# real" de §1.1. Los números de capítulo en documentos anteriores al 2026-07-06 siguen el índice viejo (nota añadida al inicio de `PROGRESO.md`).
