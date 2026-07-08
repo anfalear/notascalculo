@@ -175,6 +175,27 @@ En $\mathbb{R}^3$, se puede demostrar que las rectas y planos que pasan por el o
 \begin{rem}A partir de ahora, cuando se hable de subespacio, se hará referencia a un subespacio vectorial.
 \end{rem}
 
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.2, >=stealth]
+% Espacio vectorial V
+\draw[blue!70!black, thick] (0,0) ellipse (3.2 and 2.1);
+\node[blue!70!black] at (-2.35,1.55) {$V$};
+% Subespacio W
+\draw[blue!70!black, thick, fill=blue!10] (0.3,-0.2) ellipse (1.8 and 1.05);
+\node[blue!70!black] at (1.55,0.75) {$W$};
+% Vector nulo
+\fill[black] (0,-0.35) circle (1.5pt);
+\node[below left] at (0,-0.35) {\small $\mathbf{0}$};
+% Vectores en W y cerradura
+\draw[->, red!70!black, thick] (0,-0.35) -- (1.1,0.1) node[above] {\small $u$};
+\draw[->, red!70!black, thick] (0,-0.35) -- (0.9,-0.75) node[below] {\small $v$};
+\draw[->, red!70!black, thick, dashed] (0,-0.35) -- (2.0,-0.3) node[above right] {\small $u+v$};
+\end{tikzpicture}
+\caption{Un subespacio $W$ de un espacio vectorial $V$: contiene al vector nulo $\mathbf{0}$ y es cerrado bajo las operaciones heredadas de $V$; si $u,v\in W$, entonces $u+v$ permanece en $W$.}
+\label{fig:subespacio_en_V}
+\end{figure}
+
 \begin{theorem}[Test del subespacio]\label{testsubespacio} Sea $V$ un espacio vectorial y $W$ un subconjunto de $V$. $W$ es subespacio vectorial de $V$ si y solo si se cumplen las siguientes condiciones:
 \begin{enumerate}[$a)$]
 \item El vector nulo de $V$ está en $W,$ i.e., ${\bf{0}}\in W.$
@@ -354,8 +375,32 @@ Sea $V$ un espacio vectorial sobre un cuerpo $\mathbb{F}$. Se dice que un vector
 Los escalares $\alpha_i$ se denominan \textbf{coeficientes de la combinación lineal}.
 \end{definition}
 
-\begin{theorem} 
-El conjunto de todas las combinaciones lineales de los vectores $v_1,v_2,\dots, v_n$ es un subespacio de $V$, y además es el subespacio más pequeño de $V$ que los contiene.
+\begin{definition}[Subespacio generado] \label{defgenerado}
+El conjunto de todas las combinaciones lineales de los vectores $v_1,v_2,\dots, v_n$ se denomina \textbf{subespacio generado} por estos vectores. Se denota $\operatorname{gen}\{v_1,v_2,\dots, v_n\}$ o $\operatorname{span}\{v_1,v_2,\dots, v_n\}$.
+\end{definition}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.1, >=stealth]
+\draw[gray!50, very thin] (-1.2,-1.2) grid (5.2,3.4);
+\draw[->, gray!50] (-1.2,0) -- (5.2,0) node[anchor=west] {$x$};
+\draw[->, gray!50] (0,-1.2) -- (0,3.4) node[anchor=south] {$y$};
+% Vectores generadores
+\draw[->, red!70!black, very thick] (0,0) -- (2,0.5) node[below right] {\small $v_1$};
+\draw[->, red!70!black, very thick] (0,0) -- (0.5,1.5) node[above left] {\small $v_2$};
+% Combinación lineal w = 2v_1 + v_2
+\draw[dashed, blue!70!black] (0,0) -- (4,1) node[pos=0.75, below] {\small $2v_1$};
+\draw[dashed, blue!70!black] (4,1) -- (4.5,2.5);
+\draw[->, blue!70!black, very thick] (0,0) -- (4.5,2.5) node[above] {\small $w=2v_1+v_2$};
+% Otra combinación con coeficiente negativo
+\draw[->, blue!70!black, thick] (0,0) -- (-1,2.5) node[above] {\small $-v_1+2v_2$};
+\end{tikzpicture}
+\caption{Dos vectores no colineales $v_1$ y $v_2$ generan $\mathbb{R}^2$: todo vector del plano, como $w=2v_1+v_2$, se obtiene como combinación lineal de ellos, es decir, $\operatorname{gen}\{v_1,v_2\}=\mathbb{R}^2$.}
+\label{fig:gen_dos_vectores}
+\end{figure}
+
+\begin{theorem}[El generado es el menor subespacio que contiene a los generadores]
+El conjunto $\operatorname{gen}\{v_1,v_2,\dots, v_n\}$ de todas las combinaciones lineales de los vectores $v_1,v_2,\dots, v_n$ es un subespacio de $V$, y además es el subespacio más pequeño de $V$ que los contiene.
 \end{theorem}
 
 \begin{proof}
@@ -378,10 +423,6 @@ Para demostrar que es el subespacio más pequeño que contiene a $\{v_1,\dots,v_
 \]
 Por lo tanto, $\operatorname{gen}\{v_1,\dots,v_n\} \subseteq W$. Además, $\operatorname{gen}\{v_1,\dots,v_n\}$ contiene a cada $v_i$ (tomando $\gamma_i=1$ y $\gamma_j=0$ para $j\neq i$). Así, es el subespacio más pequeño que contiene a $\{v_1,\dots,v_n\}$.
 \end{proof}
-
-\begin{definition}[Subespacio generado] \label{defgenerado} 
-El conjunto de todas las combinaciones lineales de los vectores $v_1,v_2,\dots, v_n$ se denomina \textbf{subespacio generado} por estos vectores. Se denota $\operatorname{gen}\{v_1,v_2,\dots, v_n\}$ o $\operatorname{span}\{v_1,v_2,\dots, v_n\}$.
-\end{definition}
 
 \begin{example}[Pertenencia a un subespacio generado]
 Determine si el polinomio $q(x) = -9 - 7x - 15x^2$ pertenece a $\operatorname{span}\{p_1, p_2, p_3\}$ donde $p_1(x) = 2 + x + 4x^2$, $p_2(x) = 1 - x + 3x^2$, y $p_3(x) = 3 + 2x + 5x^2$ en $\mathcal{P}_2(\mathbb{R})$.
@@ -490,7 +531,29 @@ es una combinación lineal no trivial igual a cero, contradiciendo la hipótesis
 \end{enumerate}
 \end{coro}
 
-\begin{definition}[Wronskiano] 
+\begin{example}[Independencia lineal según un parámetro]
+¿Para qué valores de $\lambda$ los vectores $v_1=(\lambda,-\frac{1}{2},-\frac{1}{2})$, $v_2=(-\frac{1}{2},\lambda,-\frac{1}{2})$, $v_3=(-\frac{1}{2},-\frac{1}{2},\lambda)$ son l.d.?
+
+\begin{myproof}
+\textbf{Paso 1. Estrategia.} Tres vectores en $\mathbb{R}^3$ son l.d. si y solo si el determinante de la matriz que los tiene por columnas es cero. Buscamos entonces las raíces de $\det(A)=0$ con
+$$A = \begin{pmatrix}
+\lambda & -1/2 & -1/2 \\
+-1/2 & \lambda & -1/2 \\
+-1/2 & -1/2 & \lambda
+\end{pmatrix}.$$
+
+\textbf{Paso 2. Cálculo del determinante.} Expandiendo por la primera fila:
+$$\det(A) = \lambda\left(\lambda^2-\tfrac{1}{4}\right) + \tfrac{1}{2}\left(-\tfrac{\lambda}{2}-\tfrac{1}{4}\right) - \tfrac{1}{2}\left(\tfrac{1}{4}+\tfrac{\lambda}{2}\right) = \lambda^3 - \tfrac{3}{4}\lambda - \tfrac{1}{4} = \tfrac{1}{4}(4\lambda^3 - 3\lambda - 1).$$
+
+\textbf{Paso 3. Factorización.} $\lambda=1$ es raíz de $4\lambda^3-3\lambda-1$; dividiendo se obtiene
+$$4\lambda^3 - 3\lambda - 1 = (\lambda-1)(4\lambda^2+4\lambda+1) = (\lambda-1)(2\lambda+1)^2.$$
+
+\textbf{Paso 4. Resultado.} El conjunto es l.d. exactamente cuando $\det(A)=0$:
+$$\boxed{\lambda = 1 \quad \text{o} \quad \lambda = -\tfrac{1}{2}.}$$
+\end{myproof}
+\end{example}
+
+\begin{definition}[Wronskiano]
 Para funciones $f_1,\dots,f_n$ $(n-1)$-veces diferenciables en $(-\infty, \infty)$, el \textbf{Wronskiano} es:
 $$W(x) = \begin{vmatrix} 
 f_1(x) & f_2(x) & \cdots & f_n(x) \\
@@ -502,71 +565,10 @@ f_1^{(n-1)}(x) & f_2^{(n-1)}(x) & \cdots & f_n^{(n-1)}(x)
 
 \begin{theorem}[Criterio del Wronskiano]
 Si $W(x) \not\equiv 0$ en $(-\infty, \infty)$, entonces $\{f_1,\dots,f_n\}$ es l.i. en $\mathcal{C}^{n-1}(-\infty, \infty)$.
+\begin{proof}
+Probamos el contrarrecíproco. Si $\{f_1,\dots,f_n\}$ es l.d., existen escalares $c_1,\dots,c_n$ no todos nulos tales que $c_1f_1(x)+\cdots+c_nf_n(x)=0$ para todo $x$. Derivando esta identidad $k$ veces se obtiene $c_1f_1^{(k)}(x)+\cdots+c_nf_n^{(k)}(x)=0$ para $k=0,1,\dots,n-1$. Es decir, para cada $x$ fijo las columnas de la matriz del Wronskiano satisfacen una relación lineal no trivial con los mismos coeficientes $c_i$, de modo que su determinante se anula: $W(x)=0$ para todo $x$, esto es, $W \equiv 0$.
+\end{proof}
 \end{theorem}
-
-\begin{prob} Determine cuáles conjuntos son l.i. en el espacio dado:
-\begin{enumerate}[(a)]
-\item $\{(3,-1), (4,5), (-4,7)\}$ en $\mathbb{R}^2$
-\item $\{3-2x+x^2, 6-4x+2x^2\}$ en $\mathcal{P}_2(\mathbb{R})$
-\item $\{2-x+4x^2, 3+6x+2x^2, 2+10x-4x^2\}$ en $\mathcal{P}_2(\mathbb{R})$
-\item $\left\{ \begin{pmatrix} 0 & 0 \\ 2 & 1 \end{pmatrix}, \begin{pmatrix} 3 & 0 \\ 0 & 4 \end{pmatrix}, \begin{pmatrix} 4 & 0 \\ 4 & 4 \end{pmatrix} \right\}$ en $\mathcal{M}_{2\times 2}(\mathbb{R})$
-\item $\{\cos x, \sin x\}$ en $\mathcal{C}[-\pi, \pi]$
-\item $\{\cos^2 x, \sin^2 x, 1\}$ en $\mathcal{C}[-1, 1]$
-\item $\{e^x, e^{2x}, e^{3x}\}$ en $\mathcal{C}[-1, 1]$ (use Wronskiano)
-\end{enumerate}
-
-\begin{myproof}
-\textbf{(a)} En $\mathbb{R}^2$, todo conjunto con más de dos vectores es l.d.
-
-\textbf{(b)} $6-4x+2x^2 = 2(3-2x+x^2)$ por lo cual es l.d. 
-
-\textbf{(c)} Resolvemos $a(2-x+4x^2) + b(3+6x+2x^2) + c(2+10x-4x^2) = 0$: $\begin{cases} 2a + 3b + 2c = 0 \\ -a + 6b + 10c = 0 \\ 4a + 2b - 4c = 0 \end{cases}$ Como el determinante de la matriz asociada es distinto de cero $(\det = -32 )$ el sistema tiene la solución trivial, por tanto, el conjunto es l.i.
-
-\textbf{(d)} Resolvemos $a\begin{pmatrix}0&0\\2&1\end{pmatrix} + b\begin{pmatrix}3&0\\0&4\end{pmatrix} + c\begin{pmatrix}4&0\\4&4\end{pmatrix} = \begin{pmatrix}0&0\\0&0\end{pmatrix}$:
-$$\begin{cases} 3b + 4c = 0 \\ 2a + 4c = 0 \\ a + 4b + 4c = 0 \end{cases} \Rightarrow a=b=c=0 \Rightarrow \text{l.i.}$$ \\
-\textbf{(e)} Si $a\cos x + b\sin x = 0$ $\forall x$, se tiene que evaluando en $x=0$: $a=0$; y en $x=\pi/2$: $b=0$ $\Rightarrow$ l.i. \\
-\textbf{(f)} $\cos^2x + \sin^2x - 1 = 0$ la cual es una combinación lineal no trivial, por tanto es un conjunto l.d. \\
-\textbf{(g)} Wronskiano:
-$$W(x) = \begin{vmatrix}
-e^x & e^{2x} & e^{3x} \\
-e^x & 2e^{2x} & 3e^{3x} \\
-e^x & 4e^{2x} & 9e^{3x}
-\end{vmatrix} = 2e^{6x} \neq 0 \Rightarrow \text{l.i.}$$
-\end{myproof}
-\end{prob}
-
-\begin{prob} ¿Para qué $\lambda$ los vectores $v_1=(\lambda,-\frac{1}{2},-\frac{1}{2})$, $v_2=(-\frac{1}{2},\lambda,-\frac{1}{2})$, $v_3=(-\frac{1}{2},-\frac{1}{2},\lambda)$ son l.d.?
-
-\begin{myproof}
-Son l.d. si $\det(A) = 0$ donde $A = \begin{pmatrix}
-\lambda & -1/2 & -1/2 \\
--1/2 & \lambda & -1/2 \\
--1/2 & -1/2 & \lambda
-\end{pmatrix}$. Calculamos:
-$$\det(A) = \lambda^3 - \tfrac{3}{4}\lambda - \tfrac{1}{4} = \tfrac{1}{4}(4\lambda^3 - 3\lambda - 1).$$
-Factorizando el polinomio $(4\lambda^3 - 3\lambda - 1) = (\lambda-1)(2\lambda+1)^2 = 0,$ por tanto el conjunto es l.d. para los valores $\lambda = 1 \text{ o } \lambda = -\frac{1}{2}.$
-\end{myproof}
-\end{prob}
-
-\begin{prob} Sean $v_1,v_2,v_3 \neq \mathbf{0}$ en $V$. Demuestre que si $\{v_1,v_2\}$ es l.i. y $v_3 \notin \operatorname{gen}\{v_1,v_2\}$, entonces $\{v_1,v_2,v_3\}$ es l.i.
-
-\begin{myproof}
-Supongamos $a v_1 + b v_2 + c v_3 = \mathbf{0}$. Si $c \neq 0$, entonces $v_3 = -\tfrac{a}{c}v_1 - \tfrac{b}{c}v_2 \in \operatorname{gen}\{v_1,v_2\}$, la cual es una contradicción. Luego $c=0$. Entonces $a v_1 + b v_2 = \mathbf{0}$. Como $\{v_1,v_2\}$ es l.i., $a=b=0$. Por tanto, el conjunto debe ser l.i.
-\end{myproof}
-\end{prob}
-
-\begin{prob} Demuestre que si $u,v,w$ son l.i., entonces $\{u+v+w, u+v, u\}$ es l.i.
-
-\begin{myproof}
-Supongamos $a(u+v+w) + b(u+v) + c u = \mathbf{0}$. Reordenando:
-$$(a + b + c)u + (a + b)v + a w = \mathbf{0}$$
-Como $\{u,v,w\}$ es l.i.:
-$$\begin{cases} a + b + c = 0 \\ a + b = 0 \\ a = 0 \end{cases} \Rightarrow a=0,\ b=0,\ c=0$$
-Por tanto, el conjunto es l.i.
-\end{myproof}
-\end{prob}
-
-
 
  \section{Bases y dimensión}
 
@@ -629,10 +631,17 @@ Como $S$ es linealmente independiente, necesariamente $k_i - c_i = 0$ para todo 
 Para una base \textit{ordenada} $S = \{v_1,\dots,v_n\}$ y $u = \sum_{i=1}^n k_i v_i$, el \textbf{vector de coordenadas} es $[u]_S = (k_1,\dots,k_n)^T$.
 \end{definition}
 
+\begin{theorem}[Lema de intercambio]\label{thm:cap06:lema-intercambio}
+Sea $V$ un espacio vectorial. Si $\{u_1, \ldots, u_m\}$ es linealmente independiente y $\{v_1, \ldots, v_n\}$ genera $V$, entonces $m \leq n$.
+\begin{proof}
+Esbozamos el argumento de intercambio (Steinitz). Como $\{v_1,\ldots,v_n\}$ genera $V$, $u_1$ es combinación lineal de los $v_i$ con algún coeficiente no nulo — digamos el de $v_1$, reordenando si es necesario. Despejando $v_1$ se ve que $\{u_1, v_2, \ldots, v_n\}$ también genera $V$: hemos intercambiado $v_1$ por $u_1$. Repetimos con $u_2$: al escribirlo en términos de $\{u_1, v_2,\ldots,v_n\}$, algún $v_j$ tiene coeficiente no nulo (si todos fueran cero, $u_2$ sería combinación de $u_1$, contra la independencia), y ese $v_j$ se intercambia por $u_2$. Si fuera $m > n$, tras $n$ pasos el conjunto generador sería $\{u_1,\ldots,u_n\}$ y entonces $u_{n+1}$ sería combinación lineal de $u_1,\ldots,u_n$, contradiciendo que $\{u_1,\ldots,u_m\}$ es linealmente independiente. Por tanto $m \leq n$.
+\end{proof}
+\end{theorem}
+
 \begin{theorem}[Invariancia del número de elementos en una base]
 Todas las bases de un espacio vectorial de dimensión finita tienen el mismo número de vectores.
 \begin{proof}
-Sean $B_1 = \{u_1, \ldots, u_m\}$ y $B_2 = \{v_1, \ldots, v_n\}$ dos bases de $V$. Como $B_1$ es linealmente independiente y $B_2$ genera $V$, por el lema de intercambio tenemos $m \leq n$. Análogamente, como $B_2$ es linealmente independiente y $B_1$ genera $V$, tenemos $n \leq m$. Por tanto, $m = n$.
+Sean $B_1 = \{u_1, \ldots, u_m\}$ y $B_2 = \{v_1, \ldots, v_n\}$ dos bases de $V$. Como $B_1$ es linealmente independiente y $B_2$ genera $V$, por el Lema de intercambio (Teorema \ref{thm:cap06:lema-intercambio}) tenemos $m \leq n$. Análogamente, como $B_2$ es linealmente independiente y $B_1$ genera $V$, tenemos $n \leq m$. Por tanto, $m = n$.
 \end{proof}
 \end{theorem}
 
@@ -687,140 +696,26 @@ Si $W \subseteq V$ es subespacio y $\dim V < \infty$, entonces:
 Dadas bases $B = \{v_1,\dots,v_n\}$ y $B' = \{w_1,\dots,w_n\}$ de $V$, la \textbf{matriz de cambio de base} de $B$ a $B'$ es $P_{B\to B'} = ([v_1]_{B'} \mid \cdots \mid [v_n]_{B'})$, donde $[v_i]_{B'}$ es el vector de coordenadas de $v_i$ respecto a $B'$. Esta matriz satisface $[u]_{B'} = P_{B\to B'}[u]_B$ para todo $u \in V$.
 \end{definition}
 
-% ============= PROBLEMAS RESUELTOS =============
-\begin{prob} Determine cuáles conjuntos son base del espacio dado:
-\begin{enumerate}[(a)]
-\item $S=\{(-1,3,2), (6,1,1)\}$ en $\mathbb{R}^3$
-\item $S=\{1, 1+x, 1+x^2, 1+x^3\}$ en $\mathcal{P}_4(\mathbb{R})$
-\item $\left\{\begin{pmatrix}3&6\\3&-6\end{pmatrix}, \begin{pmatrix}0&-1\\-1&0\end{pmatrix}, \begin{pmatrix}0&3\\-2&-4\end{pmatrix}, \begin{pmatrix}8&0\\-1&3\end{pmatrix}\right\}$ en $\mathcal{M}_{2\times2}(\mathbb{R})$
-\item $S=\{(0,0,2), (2,0,2), (4,4,4)\}$ en $\mathbb{R}^3$
-\item $S=\{(22,11), (-6,-4)\}$ en $\mathbb{R}^2$
-\end{enumerate}
+\begin{example}[Extensión de un conjunto l.i. a una base]
+Extienda $S=\{(1,-4,2,-3), (-3,8,-2,5)\}$ a una base de $\mathbb{R}^4$.
 
 \begin{myproof}
-\textbf{(a)} $\dim \mathbb{R}^3 = 3$ y $|S|=2 < 3$, por lo que $S$ no puede generar $\mathbb{R}^3$ y no es base.
+\textbf{Paso 1. Estrategia.} Los vectores de $S$ no son múltiplos escalares entre sí, por lo que $S$ es l.i. Como $\dim \mathbb{R}^4=4$, por el teorema de la base incompleta basta añadir dos vectores que preserven la independencia lineal; ensayamos con vectores canónicos.
 
-\textbf{(b)} $\dim \mathcal{P}_4(\mathbb{R}) = 5$ y $|S|=4 < 5$, por lo que $S$ no puede generar $\mathcal{P}_4(\mathbb{R})$ y no es base.
+\textbf{Paso 2. Candidatos y criterio.} Proponemos $e_1=(1,0,0,0)$ y $e_2=(0,1,0,0)$. El conjunto ampliado de 4 vectores es base si y solo si la matriz que los tiene por columnas es invertible.
 
-\textbf{(c)} $\dim \mathcal{M}_{2\times2}(\mathbb{R}) = 4$ y $|S|=4$. Verificamos independencia lineal resolviendo $\sum k_i A_i = \mathbf{0}$. El sistema homogéneo asociado tiene matriz de coeficientes con determinante $201 \neq 0$, por lo que solo tiene la solución trivial. Luego $S$ es linealmente independiente y sí es base.
-
-\textbf{(d)} $\dim \mathbb{R}^3 = 3$ y $|S|=3$. Calculamos: 
-$$\det \begin{pmatrix}0&2&4\\0&0&4\\2&2&4\end{pmatrix} = 0 \cdot \det\begin{pmatrix}0&4\\2&4\end{pmatrix} - 2 \cdot \det\begin{pmatrix}0&4\\2&4\end{pmatrix} + 4 \cdot \det\begin{pmatrix}0&0\\2&2\end{pmatrix} = -2(-8) = 16 \neq 0$$
-Por tanto, $S$ es linealmente independiente y es base.
-
-\textbf{(e)} $\dim \mathbb{R}^2 = 2$ y $|S|=2$. Calculamos: 
-$$\det \begin{pmatrix}22&-6\\11&-4\end{pmatrix} = 22(-4) - (-6)(11) = -88 + 66 = -22 \neq 0$$
-Por tanto, $S$ es linealmente independiente y es base.
-\end{myproof}
-\end{prob}
-
-\begin{prob} Determine bases para:
-\begin{enumerate}[(a)]
-\item Plano $3x+2y-5z=0$ en $\mathbb{R}^3$
-\item Recta $x=2t,\ y=-t,\ z=4t$ en $\mathbb{R}^3$
-\item Vectores $(a,b,c)$ con $a=b=c$ en $\mathbb{R}^3$
-\end{enumerate}
-
-\begin{myproof}
-\textbf{(a)} El plano $3x+2y-5z=0$ es el núcleo de la transformación lineal $(x,y,z) \mapsto 3x+2y-5z$. Para encontrar una base, resolvemos el sistema homogéneo. Tomando $y$ y $z$ como variables libres: $x = -\frac{2y+5z}{3}$. Los vectores del plano son de la forma $\left(-\frac{2s+5t}{3}, s, t\right) = s\left(-\frac{2}{3}, 1, 0\right) + t\left(-\frac{5}{3}, 0, 1\right)$. Una base es $\left\{\left(-2, 3, 0\right), \left(-5, 0, 3\right)\right\}$.
-
-\textbf{(b)} La recta está generada por el vector director $\begin{pmatrix}2\\-1\\4\end{pmatrix}$. Una base es $\left\{\begin{pmatrix}2\\-1\\4\end{pmatrix}\right\}$.
-
-\textbf{(c)} Los vectores con $a=b=c$ son de la forma $\begin{pmatrix}t\\t\\t\end{pmatrix} = t\begin{pmatrix}1\\1\\1\end{pmatrix}$. Una base es $\left\{\begin{pmatrix}1\\1\\1\end{pmatrix}\right\}$.
-\end{myproof}
-\end{prob}
-
-\begin{prob} Extienda $S=\{(1,-4,2,-3), (-3,8,-2,5)\}$ a una base de $\mathbb{R}^4$.
-
-\begin{myproof}
-Primero verificamos que $S$ es linealmente independiente. Los vectores no son múltiplos escalares entre sí, por lo que son linealmente independientes. Como $\dim \mathbb{R}^4=4$, necesitamos añadir dos vectores más. 
-
-Consideremos los vectores canónicos $e_1=(1,0,0,0)$ y $e_2=(0,1,0,0)$. Verificamos que $\{(1,-4,2,-3), (-3,8,-2,5), (1,0,0,0), (0,1,0,0)\}$ es linealmente independiente calculando: $\det \begin{pmatrix}
+\textbf{Paso 3. Verificación por determinante.} Expandiendo por la tercera y cuarta columnas:
+$$\det \begin{pmatrix}
 1 & -3 & 1 & 0 \\
 -4 & 8 & 0 & 1 \\
 2 & -2 & 0 & 0 \\
--3 & 5 & 0 & 0 
-\end{pmatrix}= 4 \neq 0$.
+-3 & 5 & 0 & 0
+\end{pmatrix}= \det\begin{pmatrix} 2 & -2 \\ -3 & 5 \end{pmatrix} = 10-6 = 4 \neq 0.$$
 
-Por tanto, una base extendida es $\{(1,-4,2,-3), (-3,8,-2,5), (1,0,0,0), (0,1,0,0)\}$.
+\textbf{Paso 4. Resultado.} Los cuatro vectores son l.i. y, por dimensión, forman base:
+$$\boxed{\{(1,-4,2,-3),\ (-3,8,-2,5),\ (1,0,0,0),\ (0,1,0,0)\} \text{ es base de } \mathbb{R}^4.}$$
 \end{myproof}
-\end{prob}
-
-\begin{prob} Para qué valores de $t\in\mathbb{R}$ el conjunto es base de $\mathcal{M}_{2\times2}(\mathbb{R})$:
-$$\left\{\begin{pmatrix}3&2\\2&1\end{pmatrix}, \begin{pmatrix}2&1\\1&0\end{pmatrix}, \begin{pmatrix}6&5\\4&2\end{pmatrix}, \begin{pmatrix}5&4\\4&t\end{pmatrix}\right\}$$
-
-\begin{myproof}
-Como $\dim \mathcal{M}_{2\times2}(\mathbb{R})=4$ y tenemos 4 matrices, el conjunto es base si y solo si es linealmente independiente. Esto ocurre cuando el sistema homogéneo $\sum k_i A_i = \mathbf{0}$ tiene únicamente la solución trivial.
-
-Planteando el sistema: $k_1\begin{pmatrix}3&2\\2&1\end{pmatrix} + k_2\begin{pmatrix}2&1\\1&0\end{pmatrix} + k_3\begin{pmatrix}6&5\\4&2\end{pmatrix} + k_4\begin{pmatrix}5&4\\4&t\end{pmatrix} = \begin{pmatrix}0&0\\0&0\end{pmatrix}$
-
-Obtenemos el sistema: $\begin{cases}
-3k_1 + 2k_2 + 6k_3 + 5k_4 = 0 \\
-2k_1 + k_2 + 5k_3 + 4k_4 = 0 \\
-2k_1 + k_2 + 4k_3 + 4k_4 = 0 \\
-k_1 + 0k_2 + 2k_3 + t k_4 = 0 
-\end{cases}$
-
-La matriz de coeficientes es: $A = \begin{pmatrix}
-3 & 2 & 6 & 5 \\
-2 & 1 & 5 & 4 \\
-2 & 1 & 4 & 4 \\
-1 & 0 & 2 & t 
-\end{pmatrix}$
-
-Calculando el determinante por cofactores de la segunda columna (entradas $2,1,1,0$):
-$$\det(A) = -2\det\begin{pmatrix}2&5&4\\2&4&4\\1&2&t\end{pmatrix} + 1\det\begin{pmatrix}3&6&5\\2&4&4\\1&2&t\end{pmatrix} - 1\det\begin{pmatrix}3&6&5\\2&5&4\\1&2&t\end{pmatrix}$$
-
-Calculando cada menor:
-\begin{align*}
-M_{12} &= 2(4t-8)-5(2t-4)+4(4-4) = -2t+4\\
-M_{22} &= 3(4t-8)-6(2t-4)+5(4-4) = 0\\
-M_{32} &= 3(5t-8)-6(2t-4)+5(4-5) = 3t-5
-\end{align*}
-Así: $\det(A) = -2(-2t+4) + 0 - (3t-5) = 4t-8-3t+5 = t-3$.
-
-El conjunto es base cuando $\det(A) \neq 0$, es decir, cuando $t \neq 3$.
-\end{myproof}
-\end{prob}
-
-\begin{prob} Encuentre la matriz de cambio de base de $B$ a $B'$ en $\mathbb{R}^3$: \\
-$B=\left\{\begin{pmatrix}2\\1\\1\end{pmatrix}, \begin{pmatrix}2\\-1\\1\end{pmatrix}, \begin{pmatrix}1\\2\\1\end{pmatrix}\right\}$, 
-$B'=\left\{\begin{pmatrix}3\\1\\-5\end{pmatrix}, \begin{pmatrix}1\\1\\-3\end{pmatrix}, \begin{pmatrix}-1\\0\\2\end{pmatrix}\right\}$
-
-\begin{myproof}
-La matriz de cambio de base es $P_{B\to B'} = [B']^{-1}[B]$, donde $[B]$ y $[B']$ son las matrices que tienen como columnas los vectores de las respectivas bases.
-
-$$[B] = \begin{pmatrix}2&2&1\\1&-1&2\\1&1&1\end{pmatrix}, \quad [B'] = \begin{pmatrix}3&1&-1\\1&1&0\\-5&-3&2\end{pmatrix}$$
-
-Calculamos $[B']^{-1}$ usando la fórmula $A^{-1} = \frac{1}{\det(A)}\text{adj}(A)$:
-
-$\det([B']) = 3(2-0) - 1(2-0) + (-1)(-3+5) = 6 - 2 - 2 = 2$
-
-La matriz adjunta es:
-$$\text{adj}([B']) = \begin{pmatrix}2&1&1\\-2&1&-1\\2&4&2\end{pmatrix}$$
-
-Por tanto: $[B']^{-1} = \frac{1}{2}\begin{pmatrix}2&1&1\\-2&1&-1\\2&4&2\end{pmatrix} = \begin{pmatrix}1&1/2&1/2\\-1&1/2&-1/2\\1&2&1\end{pmatrix}$
-
-Finalmente:
-$$P_{B\to B'} = \begin{pmatrix}1&1/2&1/2\\-1&1/2&-1/2\\1&2&1\end{pmatrix}\begin{pmatrix}2&2&1\\1&-1&2\\1&1&1\end{pmatrix} = \begin{pmatrix}3&2&5/2\\-2&-3&-1/2\\5&1&6\end{pmatrix}$$
-\end{myproof}
-\end{prob}
-
-\begin{prob} Encuentre la matriz de cambio de la base canónica $B$ a la base $B'$ que representa la reflexión sobre la recta $y=x$ en $\mathbb{R}^2$.
-
-\begin{myproof}
-La base canónica es $B = \left\{\begin{pmatrix}1\\0\end{pmatrix}, \begin{pmatrix}0\\1\end{pmatrix}\right\}$.
-
-La reflexión sobre la recta $y=x$ intercambia las coordenadas: $(x,y) \mapsto (y,x)$.
-
-Por tanto: $e_1 = \begin{pmatrix}1\\0\end{pmatrix} \mapsto \begin{pmatrix}0\\1\end{pmatrix}$ y $e_2 = \begin{pmatrix}0\\1\end{pmatrix} \mapsto \begin{pmatrix}1\\0\end{pmatrix}$.
-
-La matriz de la transformación (que es también la matriz de cambio de base) es:
-$$P = \begin{pmatrix}0&1\\1&0\end{pmatrix}$$
-
-Verificación: $P\begin{pmatrix}x\\y\end{pmatrix} = \begin{pmatrix}0&1\\1&0\end{pmatrix}\begin{pmatrix}x\\y\end{pmatrix} = \begin{pmatrix}y\\x\end{pmatrix}$, que es efectivamente la reflexión sobre $y=x$.
-\end{myproof}
-\end{prob}
+\end{example}
 
 \section{Espacios fundamentales de una matriz}
 
@@ -835,6 +730,30 @@ Para $A \in \mathcal{M}_{m \times n}(\mathbb{R})$:
     \item \textbf{Espacio nulo izquierdo:} $\mathcal{N}(A^T) = \{ \mathbf{y} \in \mathbb{R}^m \mid A^T\mathbf{y} = \mathbf{0} \}$
 \end{itemize}
 \end{definition}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.15, >=stealth]
+% Dominio R^n
+\draw[blue!70!black, thick] (0,0) rectangle (2.6,3);
+\node[blue!70!black, anchor=south] at (1.3,3.05) {$\mathbb{R}^n$};
+\draw[blue!70!black] (0,1.5) -- (2.6,1.5);
+\node[align=center] at (1.3,2.25) {\small $\mathcal{R}(A)$\\[-2pt]\small $\dim = r$};
+\node[align=center] at (1.3,0.75) {\small $\mathcal{N}(A)$\\[-2pt]\small $\dim = n-r$};
+% Codominio R^m
+\draw[blue!70!black, thick] (6,0) rectangle (8.6,3);
+\node[blue!70!black, anchor=south] at (7.3,3.05) {$\mathbb{R}^m$};
+\draw[blue!70!black] (6,1.5) -- (8.6,1.5);
+\node[align=center] at (7.3,2.25) {\small $\mathcal{C}(A)$\\[-2pt]\small $\dim = r$};
+\node[align=center] at (7.3,0.75) {\small $\mathcal{N}(A^T)$\\[-2pt]\small $\dim = m-r$};
+% Acción de A
+\draw[->, red!70!black, very thick] (2.75,2.25) -- (5.85,2.25) node[midway, above] {\small $\mathbf{x}\mapsto A\mathbf{x}$};
+\draw[->, red!70!black, thick, dashed] (2.75,0.75) -- (5.85,1.45) node[midway, below, sloped] {\small $\mathcal{N}(A)\mapsto\{\mathbf{0}\}$};
+\fill[red!70!black] (5.95,1.5) circle (1.2pt);
+\end{tikzpicture}
+\caption{Esquema de los espacios fundamentales de $A\in\mathcal{M}_{m\times n}(\mathbb{R})$ con $\operatorname{rango}(A)=r$. En el dominio $\mathbb{R}^n$ conviven el espacio fila ($\dim r$) y el espacio nulo ($\dim n-r$), que satisfacen el teorema del rango-nulidad $r+(n-r)=n$; la matriz envía el espacio fila sobre el espacio columna y aplasta el espacio nulo en $\mathbf{0}$.}
+\label{fig:cuatro_espacios}
+\end{figure}
 
 \begin{example}[Cálculo de los espacios fundamentales de una matriz]
 Para $A = \begin{pmatrix} 2 & 5 & 8 & 3 \\ 4 & 2 & 1 & 1 \\ 7 & 5 & 4 & 2 \end{pmatrix}$ encuentre $\mathcal{R}(A)$, $\mathcal{C}(A)$ y $\mathcal{N}(A)$.
@@ -910,127 +829,65 @@ $$\mathbf{x} \cdot \mathbf{y} = \mathbf{x} \cdot (A^T\mathbf{z}) = (A\mathbf{x})
 \end{proof}
 \end{theorem}
 
-% ============= PROBLEMAS RESUELTOS =============
-\begin{prob} Encuentre bases para $\mathcal{N}(A)$, $\mathcal{R}(A)$, $\mathcal{C}(A)$:
+\begin{example}[Bases de los espacios fila, columna y nulo]
+Encuentre bases para $\mathcal{N}(A)$, $\mathcal{R}(A)$, $\mathcal{C}(A)$:
 \begin{enumerate}[(a)]
 \item $A = \begin{pmatrix} 1 & 4 & 5 & 2 \\ 2 & 1 & 3 & 0 \\ -1 & 3 & 2 & 2 \end{pmatrix}$
 \item $A = \begin{pmatrix} -1 & 2 & 5 & 0 & 3 \\ 2 & -5 & 7 & 0 & -6 \\ -1 & 3 & 2 & 1 & -3 \\ 3 & -8 & 9 & -1 & 9 \end{pmatrix}$
 \end{enumerate}
 
 \begin{myproof}
-\textbf{(a)} Aplicando operaciones elementales de fila a $A$:
-$$F_2 - 2F_1 \to F_2: \begin{pmatrix} 1 & 4 & 5 & 2 \\ 0 & -7 & -7 & -4 \\ -1 & 3 & 2 & 2 \end{pmatrix}$$
-$$F_3 + F_1 \to F_3: \begin{pmatrix} 1 & 4 & 5 & 2 \\ 0 & -7 & -7 & -4 \\ 0 & 7 & 7 & 4 \end{pmatrix}$$
-$$F_3 + F_2 \to F_3: \begin{pmatrix} 1 & 4 & 5 & 2 \\ 0 & -7 & -7 & -4 \\ 0 & 0 & 0 & 0 \end{pmatrix}$$
+\textbf{Paso 1. Estrategia.} En ambos casos reducimos $A$ a su forma escalonada reducida: las filas no nulas dan una base de $\mathcal{R}(A)$, las columnas de $A$ en las posiciones pivote dan una base de $\mathcal{C}(A)$, y las soluciones del sistema homogéneo (una por variable libre) dan una base de $\mathcal{N}(A)$.
 
-Forma escalonada reducida: $A \sim \begin{pmatrix} 1 & 0 & 1 & 2/7 \\ 0 & 1 & 1 & 4/7 \\ 0 & 0 & 0 & 0 \end{pmatrix}.$
+\textbf{Paso 2. Parte (a).} Aplicando operaciones elementales de fila:
+$$F_2 - 2F_1 \to F_2: \begin{pmatrix} 1 & 4 & 5 & 2 \\ 0 & -7 & -7 & -4 \\ -1 & 3 & 2 & 2 \end{pmatrix}
+\quad
+F_3 + F_1 \to F_3: \begin{pmatrix} 1 & 4 & 5 & 2 \\ 0 & -7 & -7 & -4 \\ 0 & 7 & 7 & 4 \end{pmatrix}$$
+$$F_3 + F_2 \to F_3: \begin{pmatrix} 1 & 4 & 5 & 2 \\ 0 & -7 & -7 & -4 \\ 0 & 0 & 0 & 0 \end{pmatrix}
+\qquad\text{y así}\qquad
+A \sim \begin{pmatrix} 1 & 0 & 1 & -2/7 \\ 0 & 1 & 1 & 4/7 \\ 0 & 0 & 0 & 0 \end{pmatrix}.$$
 
 \begin{itemize}
-    \item $\mathcal{R}(A)$: Base $\left\{ (1, 0, 1, 2/7), (0, 1, 1, 4/7) \right\}$
+    \item $\mathcal{R}(A)$: Base $\left\{ (1, 0, 1, -2/7), (0, 1, 1, 4/7) \right\}$
     \item $\mathcal{C}(A)$: Columnas pivote 1 y 2: $\left\{ \begin{pmatrix}1\\2\\-1\end{pmatrix}, \begin{pmatrix}4\\1\\3\end{pmatrix} \right\}$
-    \item $\mathcal{N}(A)$: Del sistema homogéneo con variables libres $x_3$ y $x_4$:
-    $$\mathcal{N}(A) = \operatorname{span}\left\{ \begin{pmatrix}-1\\-1\\1\\0\end{pmatrix}, \begin{pmatrix}-2/7\\-4/7\\0\\1\end{pmatrix} \right\}$$
+    \item $\mathcal{N}(A)$: Del sistema homogéneo, $x_1 = -x_3 + \tfrac{2}{7}x_4$ y $x_2 = -x_3 - \tfrac{4}{7}x_4$ con variables libres $x_3$ y $x_4$:
+    $$\mathcal{N}(A) = \operatorname{span}\left\{ \begin{pmatrix}-1\\-1\\1\\0\end{pmatrix}, \begin{pmatrix}2/7\\-4/7\\0\\1\end{pmatrix} \right\}$$
 \end{itemize}
 
-\textbf{(b)} La forma escalonada reducida de $A$ es: $A \sim \begin{pmatrix} 1 & 0 & 0 & 0 & 114 \\ 0 & 1 & 0 & 0 & 51 \\ 0 & 0 & 1 & 0 & 3 \\ 0 & 0 & 0 & 1 & -48 \end{pmatrix}$
+\textbf{Paso 3. Parte (b).} La forma escalonada reducida de $A$ es: $A \sim \begin{pmatrix} 1 & 0 & 0 & 0 & 114 \\ 0 & 1 & 0 & 0 & 51 \\ 0 & 0 & 1 & 0 & 3 \\ 0 & 0 & 0 & 1 & -48 \end{pmatrix}$
 
 \begin{itemize}
     \item $\mathcal{R}(A)$: Base $\left\{ (1,0,0,0,114), (0,1,0,0,51), (0,0,1,0,3), (0,0,0,1,-48) \right\}$
     \item $\mathcal{C}(A)$: Columnas pivote 1,2,3,4: $\left\{ \begin{pmatrix}-1\\2\\-1\\3\end{pmatrix}, \begin{pmatrix}2\\-5\\3\\-8\end{pmatrix}, \begin{pmatrix}5\\7\\2\\9\end{pmatrix}, \begin{pmatrix}0\\0\\1\\-1\end{pmatrix} \right\}$
     \item $\mathcal{N}(A)$: Con $x_5$ como variable libre: $\mathcal{N}(A) = \operatorname{span}\left\{ \begin{pmatrix}-114\\-51\\-3\\48\\1\end{pmatrix} \right\}$
 \end{itemize}
+
+\textbf{Paso 4. Resultado.} En cada caso las dimensiones confirman el teorema del rango-nulidad:
+$$\boxed{\text{(a) } \operatorname{rango}(A)=2,\ \dim\mathcal{N}(A)=2,\ 2+2=4; \qquad \text{(b) } \operatorname{rango}(A)=4,\ \dim\mathcal{N}(A)=1,\ 4+1=5.}$$
 \end{myproof}
-\end{prob}
+\end{example}
 
 
-\begin{prob} Encuentre bases para los espacios generados por:
-\begin{enumerate}[(a)]
-\item $\{ (1,0,1,1), (-3,-3,7,1), (-1,-3,9,3), (-5,3,5,1) \}$
-\item $\{ (1,-1,5,2), (-2,3,1,0), (4,-5,9,4), (1,4,-2,3), (7,18,-2,8) \}$
-\end{enumerate}
+\begin{example}[Construcción de una matriz con espacio nulo prescrito]
+Construya una matriz $A$ tal que $\mathcal{N}(A) = \operatorname{span}\left\{ \begin{pmatrix}-1\\-1\\2\\3\end{pmatrix}, \begin{pmatrix}2\\1\\0\\2\end{pmatrix} \right\}$
 
 \begin{myproof}
-\textbf{(a)} Matriz con vectores como filas y reducción:
-$$\begin{pmatrix} 1 & 0 & 1 & 1 \\ -3 & -3 & 7 & 1 \\ -1 & -3 & 9 & 3 \\ -5 & 3 & 5 & 1 \end{pmatrix} \sim \begin{pmatrix} 1 & 0 & 0 & 1/2 \\ 0 & 1 & 0 & 1/3 \\ 0 & 0 & 1 & 1/2 \\ 0 & 0 & 0 & 0 \end{pmatrix}$$
-Base: $\left\{ \left(1,0,0,\tfrac{1}{2}\right),\ \left(0,1,0,\tfrac{1}{3}\right),\ \left(0,0,1,\tfrac{1}{2}\right) \right\}$
+\textbf{Paso 1. Análisis dimensional.} Como $\dim \mathcal{N}(A) = 2$ y $A$ debe ser $m \times 4$, por el teorema del rango-nulidad: $\operatorname{rango}(A) = 4 - 2 = 2$. Basta entonces una matriz $2\times 4$ con dos filas l.i. ortogonales al núcleo, pues cada fila $\mathbf{r}$ de $A$ satisface $\mathbf{r}\cdot\mathbf{x}=0$ para todo $\mathbf{x}\in\mathcal{N}(A)$.
 
-\textbf{(b)} Reducción de la matriz: $\begin{pmatrix} 1 & -1 & 5 & 2 \\ -2 & 3 & 1 & 0 \\ 4 & -5 & 9 & 4 \\ 1 & 4 & -2 & 3 \\ 7 & 18 & -2 & 8 \end{pmatrix} \sim \begin{pmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 0 & 0 \end{pmatrix}.$
-
-Base: $\left\{ (1,0,0,0),\ (0,1,0,0),\ (0,0,1,0),\ (0,0,0,1) \right\}$
-\end{myproof}
-\end{prob}
-
-\begin{prob} Para $A = \begin{pmatrix} -2 & -5 & 8 & 0 & 17 \\ 1 & 3 & -5 & 1 & 5 \\ 3 & 11 & -19 & 7 & 1 \\ 1 & 7 & -13 & 5 & -3 \end{pmatrix}$:
-\begin{enumerate}[(a)]
-\item Encuentre bases para $\mathcal{N}(A)$ y $\mathcal{N}(A^T)$
-\end{enumerate}
-
-\begin{myproof}
-\textbf{(a)} Reducción de $A$ a su forma escalonada reducida: $A \sim \begin{pmatrix} 1 & 0 & 1 & 0 & 0 & 0 \\
-0 & 1 & -2 & 0 & 0 & 0 \\
-0 & 0 & 0 & 1 & 0 & 0 \\
-0 & 0 & 0 & 0 & 1 & 0 \end{pmatrix}$
-
-Del sistema homogéneo $A\mathbf{x} = \mathbf{0}$ con variable libre $x_3=t:$ $\mathbf{x} = t\begin{pmatrix}-1\\2\\1\\0\\0\end{pmatrix}$
-
-Por tanto: $\mathcal{N}(A) = \operatorname{span}\left\{ \begin{pmatrix}-1\\2\\1\\0\\0\end{pmatrix}\right\}.$
-
-Para $A^T$, calculando su forma escalonada reducida: $A^T \sim \begin{pmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 0 & 0 \end{pmatrix}.$
-
-Como $A^T$ tiene rango 4 (matriz $5 \times 4$ con 4 columnas pivote): $\mathcal{N}(A^T) = \{\mathbf{0}\}.$
-\end{myproof}
-\end{prob}
-
-
-\begin{prob} Construya una matriz $A$ tal que $\mathcal{N}(A) = \operatorname{span}\left\{ \begin{pmatrix}-1\\-1\\2\\3\end{pmatrix}, \begin{pmatrix}2\\1\\0\\2\end{pmatrix} \right\}$
-
-\begin{myproof}
-Como $\dim \mathcal{N}(A) = 2$ y $A$ es $m \times 4$, por el teorema del rango-nulidad: $\operatorname{rango}(A) = 4 - 2 = 2$.
-
-Las filas de $A$ deben ser ortogonales a los vectores del núcleo. Si $\mathbf{r}$ es una fila de $A$, entonces:
+\textbf{Paso 2. Sistema de ortogonalidad.} Las condiciones
 $$\mathbf{r} \cdot \begin{pmatrix}-1\\-1\\2\\3\end{pmatrix} = 0 \quad \text{y} \quad \mathbf{r} \cdot \begin{pmatrix}2\\1\\0\\2\end{pmatrix} = 0$$
+equivalen al sistema homogéneo
+$$\begin{pmatrix}-1 & -1 & 2 & 3 \\ 2 & 1 & 0 & 2\end{pmatrix} \mathbf{r}^T = \mathbf{0}
+\qquad\text{con}\qquad
+\begin{pmatrix}-1 & -1 & 2 & 3 \\ 2 & 1 & 0 & 2\end{pmatrix} \sim \begin{pmatrix}1 & 0 & 2 & 5 \\ 0 & 1 & -4 & -8\end{pmatrix},$$
+cuyas soluciones son $\mathbf{r} = s(-2,4,1,0) + t(-5,8,0,1)$ para escalares $s,t$.
 
-Esto equivale a resolver el sistema:
-$$\begin{pmatrix}-1 & -1 & 2 & 3 \\ 2 & 1 & 0 & 2\end{pmatrix} \mathbf{r}^T = \mathbf{0}$$
+\textbf{Paso 3. Verificación.} Tomando como filas los dos generadores: $(-2,4,1,0)\cdot(-1,-1,2,3) = 2-4+2+0 = 0$, $(-2,4,1,0)\cdot(2,1,0,2) = -4+4 = 0$, $(-5,8,0,1)\cdot(-1,-1,2,3) = 5-8+3 = 0$ y $(-5,8,0,1)\cdot(2,1,0,2) = -10+8+2 = 0$; además las filas no son múltiplos entre sí, así que $\operatorname{rango}(A)=2$ y $\dim\mathcal{N}(A)=2$, exactamente el subespacio dado.
 
-Encontrando el espacio nulo de esta matriz:
-$$\begin{pmatrix}-1 & -1 & 2 & 3 \\ 2 & 1 & 0 & 2\end{pmatrix} \sim \begin{pmatrix}1 & 0 & 2 & 5 \\ 0 & 1 & -4 & -8\end{pmatrix}$$
-
-Las soluciones son: $\mathbf{r} = s(-2,4,1,0) + t(-5,8,0,1)$ para escalares $s,t$.
-
-Por tanto, una matriz posible es:
-$$A = \begin{pmatrix} -2 & 4 & 1 & 0 \\ -5 & 8 & 0 & 1 \end{pmatrix}$$
+\textbf{Paso 4. Resultado.}
+$$\boxed{A = \begin{pmatrix} -2 & 4 & 1 & 0 \\ -5 & 8 & 0 & 1 \end{pmatrix}}$$
 \end{myproof}
-\end{prob}
-
-\begin{prob} Determine el rango de $A$ en función del parámetro $t$:
-\begin{enumerate}[(a)]
-\item $A = \begin{pmatrix} 1 & 1 & t \\ 1 & t & 1 \\ t & 1 & 1 \end{pmatrix}$
-\item $A = \begin{pmatrix} t & 3 & -1 \\ 3 & 6 & -2 \\ -1 & -3 & t \end{pmatrix}$
-\end{enumerate}
-
-\begin{myproof}
-\textbf{(a)} Calculamos $\det(A) = 1(t-1) - 1(1-t) + t(1-t^2) = t-1-1+t+t-t^3 = 3t-2-t^3 = -t^3+3t-2$
-
-Factorizando: $\det(A) = -(t-1)^2(t+2)$
-
-\begin{itemize}
-    \item Si $t \neq 1$ y $t \neq -2$: $\det(A) \neq 0$, luego $\operatorname{rango}(A) = 3$
-    \item Si $t = 1$: $A = \begin{pmatrix} 1 & 1 & 1 \\ 1 & 1 & 1 \\ 1 & 1 & 1 \end{pmatrix}$, todas las filas son iguales, $\operatorname{rango}(A) = 1$
-    \item Si $t = -2$: $A = \begin{pmatrix} 1 & 1 & -2 \\ 1 & -2 & 1 \\ -2 & 1 & 1 \end{pmatrix}$, reduciendo se obtiene $\operatorname{rango}(A) = 2$
-\end{itemize}
-
-\textbf{(b)} $\det(A) = t(6t-6) - 3(3t-2) + (-1)(-9+6) = 6t^2-6t-9t+6+3 = 6t^2-15t+9$
-
-Factorizando: $\det(A) = 3(2t^2-5t+3) = 3(t-1)(2t-3)$
-
-\begin{itemize}
-    \item Si $t \neq 1$ y $t \neq \frac{3}{2}$: $\operatorname{rango}(A) = 3$
-    \item Si $t = 1$ o $t = \frac{3}{2}$: $\operatorname{rango}(A) < 3$, determinando por reducción se obtiene $\operatorname{rango}(A) = 2$
-\end{itemize}
-\end{myproof}
-\end{prob}
-
+\end{example}
 
 \begin{theorem}[Caracterización de matrices invertibles - Versión 4]\label{thm:invertible-equiv-v4}
 Sea $A$ una matriz cuadrada de orden $n \times n$. Las siguientes afirmaciones son equivalentes:
@@ -1082,50 +939,255 @@ Por tanto, todas las afirmaciones son equivalentes.
 \end{proof}
 
 
-\section{Problemas propuestos para el capítulo}
+\section{Problemas resueltos adicionales}
 
-\begin{prob} Determine el valor de verdad de las siguientes afirmaciones. Si la afirmación es verdadera, justifique adecuadamente; en caso contrario, muestre un contraejemplo.
-
-\begin{enumerate}[i.] 
-\item Un espacio vectorial siempre debe contener al menos dos vectores.
-\item Si $\mathbf{u}$ es un vector y $k$ un escalar, entonces $k\mathbf{u} = \mathbf{0}$ implica que $k = 0$.
-\item Todo subespacio de un espacio vectorial es un espacio vectorial.
-\item Todo subconjunto de un espacio vectorial que contenga a $\mathbf{0}$ es un espacio vectorial.
-\item El generado por cualquier conjunto finito de vectores en un espacio vectorial es cerrado bajo suma de vectores y multiplicación por escalar.
-\item La intersección y la unión de dos subespacios vectoriales es un subespacio vectorial.
-\item Los polinomios $(x-1)$, $(x-1)^2$ y $(x-1)^3$ generan $\mathcal{P}_3(\mathbb{R})$.
-\item Un conjunto con un único vector es linealmente independiente.
-\item El conjunto $\{\mathbf{v}, k\mathbf{v}\}$ es linealmente dependiente para cualquier $k \neq 0$.
-\item Si el conjunto $\{v_1, v_2, v_3\}$ es linealmente independiente, entonces el conjunto $\{kv_1, kv_2, kv_3\}$ es linealmente independiente para cualquier $k \neq 0$.
-\item Si $V = \operatorname{span}\{v_1, v_2, \ldots, v_n\}$, entonces $\{v_1, v_2, \ldots, v_n\}$ es base de $V$.
-\item Todo subconjunto linealmente independiente de $V$ es una base para $V$.
-\item Toda base de $\mathcal{P}_4(\mathbb{R})$ contiene al menos un polinomio de grado 3.
-\item Existe un conjunto de 17 vectores linealmente independientes en $\mathbb{R}^{17}$.
-\item Todo conjunto linealmente independiente de $\mathbb{R}^5$ con 5 vectores genera $\mathbb{R}^5$.
-\item Todo conjunto de 6 vectores linealmente independientes de $\mathbb{R}^6$ es base de $\mathbb{R}^6$.
-\end{enumerate}
-\end{prob}
-
-
-\begin{prob} Determine si los siguientes conjuntos junto con las operaciones dadas forman un espacio vectorial:
-
+% Intermedio
+\begin{prob} Determine cuáles conjuntos son l.i. en el espacio dado:
 \begin{enumerate}[(a)]
-\item Sea $V = \mathbb{R}^2$ con escalares en $\mathbb{R}$ y las operaciones:
-\begin{itemize}
-\item \textbf{Suma:} $(x_1,y_1) + (x_2,y_2) = (x_1+x_2, y_1+y_2)$
-\item \textbf{Multiplicación por escalar:} $k(x,y) = (2kx, 0)$
-\end{itemize}
-
-\item Sea $V = \mathbb{R}^+$ (números reales positivos) con las operaciones:
-\begin{itemize}
-\item \textbf{Suma:} $x \oplus y = xy$
-\item \textbf{Multiplicación por escalar:} $k \odot x = x^k$
-\end{itemize}
+\item $\{(3,-1), (4,5), (-4,7)\}$ en $\mathbb{R}^2$
+\item $\{3-2x+x^2, 6-4x+2x^2\}$ en $\mathcal{P}_2(\mathbb{R})$
+\item $\{2-x+4x^2, 3+6x+2x^2, 2+10x-4x^2\}$ en $\mathcal{P}_2(\mathbb{R})$
+\item $\left\{ \begin{pmatrix} 0 & 0 \\ 2 & 1 \end{pmatrix}, \begin{pmatrix} 3 & 0 \\ 0 & 4 \end{pmatrix}, \begin{pmatrix} 4 & 0 \\ 4 & 4 \end{pmatrix} \right\}$ en $\mathcal{M}_{2\times 2}(\mathbb{R})$
+\item $\{\cos x, \sin x\}$ en $\mathcal{C}[-\pi, \pi]$
+\item $\{\cos^2 x, \sin^2 x, 1\}$ en $\mathcal{C}[-1, 1]$
+\item $\{e^x, e^{2x}, e^{3x}\}$ en $\mathcal{C}[-1, 1]$ (use Wronskiano)
 \end{enumerate}
+
+\begin{myproof}
+\textbf{(a)} En $\mathbb{R}^2$, todo conjunto con más de dos vectores es l.d.
+
+\textbf{(b)} $6-4x+2x^2 = 2(3-2x+x^2)$ por lo cual es l.d. 
+
+\textbf{(c)} Resolvemos $a(2-x+4x^2) + b(3+6x+2x^2) + c(2+10x-4x^2) = 0$: $\begin{cases} 2a + 3b + 2c = 0 \\ -a + 6b + 10c = 0 \\ 4a + 2b - 4c = 0 \end{cases}$ Como el determinante de la matriz asociada es distinto de cero $(\det = -32 )$ el sistema tiene la solución trivial, por tanto, el conjunto es l.i.
+
+\textbf{(d)} Resolvemos $a\begin{pmatrix}0&0\\2&1\end{pmatrix} + b\begin{pmatrix}3&0\\0&4\end{pmatrix} + c\begin{pmatrix}4&0\\4&4\end{pmatrix} = \begin{pmatrix}0&0\\0&0\end{pmatrix}$:
+$$\begin{cases} 3b + 4c = 0 \\ 2a + 4c = 0 \\ a + 4b + 4c = 0 \end{cases} \Rightarrow a=b=c=0 \Rightarrow \text{l.i.}$$ \\
+\textbf{(e)} Si $a\cos x + b\sin x = 0$ $\forall x$, se tiene que evaluando en $x=0$: $a=0$; y en $x=\pi/2$: $b=0$ $\Rightarrow$ l.i. \\
+\textbf{(f)} $\cos^2x + \sin^2x - 1 = 0$ la cual es una combinación lineal no trivial, por tanto es un conjunto l.d. \\
+\textbf{(g)} Wronskiano:
+$$W(x) = \begin{vmatrix}
+e^x & e^{2x} & e^{3x} \\
+e^x & 2e^{2x} & 3e^{3x} \\
+e^x & 4e^{2x} & 9e^{3x}
+\end{vmatrix} = 2e^{6x} \neq 0 \Rightarrow \text{l.i.}$$
+\end{myproof}
 \end{prob}
 
+% Intermedio
+\begin{prob} Sean $v_1,v_2,v_3 \neq \mathbf{0}$ en $V$. Demuestre que si $\{v_1,v_2\}$ es l.i. y $v_3 \notin \operatorname{gen}\{v_1,v_2\}$, entonces $\{v_1,v_2,v_3\}$ es l.i.
 
+\begin{myproof}
+Supongamos $a v_1 + b v_2 + c v_3 = \mathbf{0}$. Si $c \neq 0$, entonces $v_3 = -\tfrac{a}{c}v_1 - \tfrac{b}{c}v_2 \in \operatorname{gen}\{v_1,v_2\}$, la cual es una contradicción. Luego $c=0$. Entonces $a v_1 + b v_2 = \mathbf{0}$. Como $\{v_1,v_2\}$ es l.i., $a=b=0$. Por tanto, el conjunto debe ser l.i.
+\end{myproof}
+\end{prob}
 
+% Intermedio
+\begin{prob} Demuestre que si $u,v,w$ son l.i., entonces $\{u+v+w, u+v, u\}$ es l.i.
+
+\begin{myproof}
+Supongamos $a(u+v+w) + b(u+v) + c u = \mathbf{0}$. Reordenando:
+$$(a + b + c)u + (a + b)v + a w = \mathbf{0}$$
+Como $\{u,v,w\}$ es l.i.:
+$$\begin{cases} a + b + c = 0 \\ a + b = 0 \\ a = 0 \end{cases} \Rightarrow a=0,\ b=0,\ c=0$$
+Por tanto, el conjunto es l.i.
+\end{myproof}
+\end{prob}
+
+% Básico
+\begin{prob} Determine cuáles conjuntos son base del espacio dado:
+\begin{enumerate}[(a)]
+\item $S=\{(-1,3,2), (6,1,1)\}$ en $\mathbb{R}^3$
+\item $S=\{1, 1+x, 1+x^2, 1+x^3\}$ en $\mathcal{P}_4(\mathbb{R})$
+\item $\left\{\begin{pmatrix}3&6\\3&-6\end{pmatrix}, \begin{pmatrix}0&-1\\-1&0\end{pmatrix}, \begin{pmatrix}0&3\\-2&-4\end{pmatrix}, \begin{pmatrix}8&0\\-1&3\end{pmatrix}\right\}$ en $\mathcal{M}_{2\times2}(\mathbb{R})$
+\item $S=\{(0,0,2), (2,0,2), (4,4,4)\}$ en $\mathbb{R}^3$
+\item $S=\{(22,11), (-6,-4)\}$ en $\mathbb{R}^2$
+\end{enumerate}
+
+\begin{myproof}
+\textbf{(a)} $\dim \mathbb{R}^3 = 3$ y $|S|=2 < 3$, por lo que $S$ no puede generar $\mathbb{R}^3$ y no es base.
+
+\textbf{(b)} $\dim \mathcal{P}_4(\mathbb{R}) = 5$ y $|S|=4 < 5$, por lo que $S$ no puede generar $\mathcal{P}_4(\mathbb{R})$ y no es base.
+
+\textbf{(c)} $\dim \mathcal{M}_{2\times2}(\mathbb{R}) = 4$ y $|S|=4$. Verificamos independencia lineal resolviendo $\sum k_i A_i = \mathbf{0}$. El sistema homogéneo asociado tiene matriz de coeficientes con determinante $201 \neq 0$, por lo que solo tiene la solución trivial. Luego $S$ es linealmente independiente y sí es base.
+
+\textbf{(d)} $\dim \mathbb{R}^3 = 3$ y $|S|=3$. Calculamos: 
+$$\det \begin{pmatrix}0&2&4\\0&0&4\\2&2&4\end{pmatrix} = 0 \cdot \det\begin{pmatrix}0&4\\2&4\end{pmatrix} - 2 \cdot \det\begin{pmatrix}0&4\\2&4\end{pmatrix} + 4 \cdot \det\begin{pmatrix}0&0\\2&2\end{pmatrix} = -2(-8) = 16 \neq 0$$
+Por tanto, $S$ es linealmente independiente y es base.
+
+\textbf{(e)} $\dim \mathbb{R}^2 = 2$ y $|S|=2$. Calculamos: 
+$$\det \begin{pmatrix}22&-6\\11&-4\end{pmatrix} = 22(-4) - (-6)(11) = -88 + 66 = -22 \neq 0$$
+Por tanto, $S$ es linealmente independiente y es base.
+\end{myproof}
+\end{prob}
+
+% Básico
+\begin{prob} Determine bases para:
+\begin{enumerate}[(a)]
+\item Plano $3x+2y-5z=0$ en $\mathbb{R}^3$
+\item Recta $x=2t,\ y=-t,\ z=4t$ en $\mathbb{R}^3$
+\item Vectores $(a,b,c)$ con $a=b=c$ en $\mathbb{R}^3$
+\end{enumerate}
+
+\begin{myproof}
+\textbf{(a)} El plano $3x+2y-5z=0$ es el núcleo de la transformación lineal $(x,y,z) \mapsto 3x+2y-5z$. Para encontrar una base, resolvemos el sistema homogéneo. Tomando $y$ y $z$ como variables libres: $x = -\frac{2y+5z}{3}$. Los vectores del plano son de la forma $\left(-\frac{2s+5t}{3}, s, t\right) = s\left(-\frac{2}{3}, 1, 0\right) + t\left(-\frac{5}{3}, 0, 1\right)$. Una base es $\left\{\left(-2, 3, 0\right), \left(-5, 0, 3\right)\right\}$.
+
+\textbf{(b)} La recta está generada por el vector director $\begin{pmatrix}2\\-1\\4\end{pmatrix}$. Una base es $\left\{\begin{pmatrix}2\\-1\\4\end{pmatrix}\right\}$.
+
+\textbf{(c)} Los vectores con $a=b=c$ son de la forma $\begin{pmatrix}t\\t\\t\end{pmatrix} = t\begin{pmatrix}1\\1\\1\end{pmatrix}$. Una base es $\left\{\begin{pmatrix}1\\1\\1\end{pmatrix}\right\}$.
+\end{myproof}
+\end{prob}
+
+% Desafiante
+\begin{prob} Para qué valores de $t\in\mathbb{R}$ el conjunto es base de $\mathcal{M}_{2\times2}(\mathbb{R})$:
+$$\left\{\begin{pmatrix}3&2\\2&1\end{pmatrix}, \begin{pmatrix}2&1\\1&0\end{pmatrix}, \begin{pmatrix}6&5\\4&2\end{pmatrix}, \begin{pmatrix}5&4\\4&t\end{pmatrix}\right\}$$
+
+\begin{myproof}
+Como $\dim \mathcal{M}_{2\times2}(\mathbb{R})=4$ y tenemos 4 matrices, el conjunto es base si y solo si es linealmente independiente. Esto ocurre cuando el sistema homogéneo $\sum k_i A_i = \mathbf{0}$ tiene únicamente la solución trivial.
+
+Planteando el sistema: $k_1\begin{pmatrix}3&2\\2&1\end{pmatrix} + k_2\begin{pmatrix}2&1\\1&0\end{pmatrix} + k_3\begin{pmatrix}6&5\\4&2\end{pmatrix} + k_4\begin{pmatrix}5&4\\4&t\end{pmatrix} = \begin{pmatrix}0&0\\0&0\end{pmatrix}$
+
+Obtenemos el sistema: $\begin{cases}
+3k_1 + 2k_2 + 6k_3 + 5k_4 = 0 \\
+2k_1 + k_2 + 5k_3 + 4k_4 = 0 \\
+2k_1 + k_2 + 4k_3 + 4k_4 = 0 \\
+k_1 + 0k_2 + 2k_3 + t k_4 = 0 
+\end{cases}$
+
+La matriz de coeficientes es: $A = \begin{pmatrix}
+3 & 2 & 6 & 5 \\
+2 & 1 & 5 & 4 \\
+2 & 1 & 4 & 4 \\
+1 & 0 & 2 & t 
+\end{pmatrix}$
+
+Calculando el determinante por cofactores de la segunda columna (entradas $2,1,1,0$):
+$$\det(A) = -2\det\begin{pmatrix}2&5&4\\2&4&4\\1&2&t\end{pmatrix} + 1\det\begin{pmatrix}3&6&5\\2&4&4\\1&2&t\end{pmatrix} - 1\det\begin{pmatrix}3&6&5\\2&5&4\\1&2&t\end{pmatrix}$$
+
+Calculando cada menor:
+\begin{align*}
+M_{12} &= 2(4t-8)-5(2t-4)+4(4-4) = -2t+4\\
+M_{22} &= 3(4t-8)-6(2t-4)+5(4-4) = 0\\
+M_{32} &= 3(5t-8)-6(2t-4)+5(4-5) = 3t-5
+\end{align*}
+Así: $\det(A) = -2(-2t+4) + 0 - (3t-5) = 4t-8-3t+5 = t-3$.
+
+El conjunto es base cuando $\det(A) \neq 0$, es decir, cuando $t \neq 3$.
+\end{myproof}
+\end{prob}
+
+% Intermedio
+\begin{prob} Encuentre la matriz de cambio de base de $B$ a $B'$ en $\mathbb{R}^3$: \\
+$B=\left\{\begin{pmatrix}2\\1\\1\end{pmatrix}, \begin{pmatrix}2\\-1\\1\end{pmatrix}, \begin{pmatrix}1\\2\\1\end{pmatrix}\right\}$, 
+$B'=\left\{\begin{pmatrix}3\\1\\-5\end{pmatrix}, \begin{pmatrix}1\\1\\-3\end{pmatrix}, \begin{pmatrix}-1\\0\\2\end{pmatrix}\right\}$
+
+\begin{myproof}
+La matriz de cambio de base es $P_{B\to B'} = [B']^{-1}[B]$, donde $[B]$ y $[B']$ son las matrices que tienen como columnas los vectores de las respectivas bases.
+
+$$[B] = \begin{pmatrix}2&2&1\\1&-1&2\\1&1&1\end{pmatrix}, \quad [B'] = \begin{pmatrix}3&1&-1\\1&1&0\\-5&-3&2\end{pmatrix}$$
+
+Calculamos $[B']^{-1}$ usando la fórmula $A^{-1} = \frac{1}{\det(A)}\text{adj}(A)$:
+
+$\det([B']) = 3(2-0) - 1(2-0) + (-1)(-3+5) = 6 - 2 - 2 = 2$
+
+La matriz adjunta es:
+$$\text{adj}([B']) = \begin{pmatrix}2&1&1\\-2&1&-1\\2&4&2\end{pmatrix}$$
+
+Por tanto: $[B']^{-1} = \frac{1}{2}\begin{pmatrix}2&1&1\\-2&1&-1\\2&4&2\end{pmatrix} = \begin{pmatrix}1&1/2&1/2\\-1&1/2&-1/2\\1&2&1\end{pmatrix}$
+
+Finalmente:
+$$P_{B\to B'} = \begin{pmatrix}1&1/2&1/2\\-1&1/2&-1/2\\1&2&1\end{pmatrix}\begin{pmatrix}2&2&1\\1&-1&2\\1&1&1\end{pmatrix} = \begin{pmatrix}3&2&5/2\\-2&-3&-1/2\\5&1&6\end{pmatrix}$$
+\end{myproof}
+\end{prob}
+
+% Básico
+\begin{prob} Encuentre la matriz de cambio de la base canónica $B$ a la base $B'$ que representa la reflexión sobre la recta $y=x$ en $\mathbb{R}^2$.
+
+\begin{myproof}
+La base canónica es $B = \left\{\begin{pmatrix}1\\0\end{pmatrix}, \begin{pmatrix}0\\1\end{pmatrix}\right\}$.
+
+La reflexión sobre la recta $y=x$ intercambia las coordenadas: $(x,y) \mapsto (y,x)$.
+
+Por tanto: $e_1 = \begin{pmatrix}1\\0\end{pmatrix} \mapsto \begin{pmatrix}0\\1\end{pmatrix}$ y $e_2 = \begin{pmatrix}0\\1\end{pmatrix} \mapsto \begin{pmatrix}1\\0\end{pmatrix}$.
+
+La matriz de la transformación (que es también la matriz de cambio de base) es:
+$$P = \begin{pmatrix}0&1\\1&0\end{pmatrix}$$
+
+Verificación: $P\begin{pmatrix}x\\y\end{pmatrix} = \begin{pmatrix}0&1\\1&0\end{pmatrix}\begin{pmatrix}x\\y\end{pmatrix} = \begin{pmatrix}y\\x\end{pmatrix}$, que es efectivamente la reflexión sobre $y=x$.
+\end{myproof}
+\end{prob}
+
+% Intermedio
+\begin{prob} Encuentre bases para los espacios generados por:
+\begin{enumerate}[(a)]
+\item $\{ (1,0,1,1), (-3,-3,7,1), (-1,-3,9,3), (-5,3,5,1) \}$
+\item $\{ (1,-1,5,2), (-2,3,1,0), (4,-5,9,4), (1,4,-2,3), (7,18,-2,8) \}$
+\end{enumerate}
+
+\begin{myproof}
+\textbf{(a)} Matriz con vectores como filas y reducción:
+$$\begin{pmatrix} 1 & 0 & 1 & 1 \\ -3 & -3 & 7 & 1 \\ -1 & -3 & 9 & 3 \\ -5 & 3 & 5 & 1 \end{pmatrix} \sim \begin{pmatrix} 1 & 0 & 0 & 1/2 \\ 0 & 1 & 0 & 1/3 \\ 0 & 0 & 1 & 1/2 \\ 0 & 0 & 0 & 0 \end{pmatrix}$$
+Base: $\left\{ \left(1,0,0,\tfrac{1}{2}\right),\ \left(0,1,0,\tfrac{1}{3}\right),\ \left(0,0,1,\tfrac{1}{2}\right) \right\}$
+
+\textbf{(b)} Reducción de la matriz: $\begin{pmatrix} 1 & -1 & 5 & 2 \\ -2 & 3 & 1 & 0 \\ 4 & -5 & 9 & 4 \\ 1 & 4 & -2 & 3 \\ 7 & 18 & -2 & 8 \end{pmatrix} \sim \begin{pmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 0 & 0 \end{pmatrix}.$
+
+Base: $\left\{ (1,0,0,0),\ (0,1,0,0),\ (0,0,1,0),\ (0,0,0,1) \right\}$
+\end{myproof}
+\end{prob}
+
+% Intermedio
+\begin{prob} Para $A = \begin{pmatrix} -2 & -5 & 8 & 0 & 17 \\ 1 & 3 & -5 & 1 & 5 \\ 3 & 11 & -19 & 7 & 1 \\ 1 & 7 & -13 & 5 & -3 \end{pmatrix}$:
+\begin{enumerate}[(a)]
+\item Encuentre bases para $\mathcal{N}(A)$ y $\mathcal{N}(A^T)$
+\end{enumerate}
+
+\begin{myproof}
+\textbf{(a)} Reducción de $A$ a su forma escalonada reducida: $A \sim \begin{pmatrix} 1 & 0 & 1 & 0 & 0 & 0 \\
+0 & 1 & -2 & 0 & 0 & 0 \\
+0 & 0 & 0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 0 & 1 & 0 \end{pmatrix}$
+
+Del sistema homogéneo $A\mathbf{x} = \mathbf{0}$ con variable libre $x_3=t:$ $\mathbf{x} = t\begin{pmatrix}-1\\2\\1\\0\\0\end{pmatrix}$
+
+Por tanto: $\mathcal{N}(A) = \operatorname{span}\left\{ \begin{pmatrix}-1\\2\\1\\0\\0\end{pmatrix}\right\}.$
+
+Para $A^T$, calculando su forma escalonada reducida: $A^T \sim \begin{pmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 0 & 0 \end{pmatrix}.$
+
+Como $A^T$ tiene rango 4 (matriz $5 \times 4$ con 4 columnas pivote): $\mathcal{N}(A^T) = \{\mathbf{0}\}.$
+\end{myproof}
+\end{prob}
+
+% Desafiante
+\begin{prob} Determine el rango de $A$ en función del parámetro $t$:
+\begin{enumerate}[(a)]
+\item $A = \begin{pmatrix} 1 & 1 & t \\ 1 & t & 1 \\ t & 1 & 1 \end{pmatrix}$
+\item $A = \begin{pmatrix} t & 3 & -1 \\ 3 & 6 & -2 \\ -1 & -3 & t \end{pmatrix}$
+\end{enumerate}
+
+\begin{myproof}
+\textbf{(a)} Calculamos $\det(A) = 1(t-1) - 1(1-t) + t(1-t^2) = t-1-1+t+t-t^3 = 3t-2-t^3 = -t^3+3t-2$
+
+Factorizando: $\det(A) = -(t-1)^2(t+2)$
+
+\begin{itemize}
+    \item Si $t \neq 1$ y $t \neq -2$: $\det(A) \neq 0$, luego $\operatorname{rango}(A) = 3$
+    \item Si $t = 1$: $A = \begin{pmatrix} 1 & 1 & 1 \\ 1 & 1 & 1 \\ 1 & 1 & 1 \end{pmatrix}$, todas las filas son iguales, $\operatorname{rango}(A) = 1$
+    \item Si $t = -2$: $A = \begin{pmatrix} 1 & 1 & -2 \\ 1 & -2 & 1 \\ -2 & 1 & 1 \end{pmatrix}$, reduciendo se obtiene $\operatorname{rango}(A) = 2$
+\end{itemize}
+
+\textbf{(b)} $\det(A) = t(6t-6) - 3(3t-2) + (-1)(-9+6) = 6t^2-6t-9t+6+3 = 6t^2-15t+9$
+
+Factorizando: $\det(A) = 3(2t^2-5t+3) = 3(t-1)(2t-3)$
+
+\begin{itemize}
+    \item Si $t \neq 1$ y $t \neq \frac{3}{2}$: $\operatorname{rango}(A) = 3$
+    \item Si $t = 1$ o $t = \frac{3}{2}$: $\operatorname{rango}(A) < 3$, determinando por reducción se obtiene $\operatorname{rango}(A) = 2$
+\end{itemize}
+\end{myproof}
+\end{prob}
+
+\section{Problemas propuestos}
+
+% Básico
 \begin{prob} Determine si $W$ es subespacio de $\mathbb{R}^3$:
 \begin{enumerate}[(a)]
 \item $W = \{(a,b,c) \in \mathbb{R}^3 \mid a + 7b + c = 0\}$
@@ -1152,37 +1214,6 @@ Por tanto, todas las afirmaciones son equivalentes.
 \end{enumerate}
 \end{prob}
 
-\begin{prob} Sea $\mathcal{C}[-2,2]$ el espacio de funciones continuas en $[-2,2]$. Determine si $W$ es subespacio:
-\begin{enumerate}[(a)]
-\item $W = \{f \in \mathcal{C}[-2,2] \mid f(-1) \cdot f(1) = 0\}$
-\item $W = \{f \in \mathcal{C}[-2,2] \mid f(x) \geq 0 \text{ para todo } x \in [-2,2]\}$
-\item $W = \{f \in \mathcal{C}[-2,2] \mid f(-x) = f(x) \text{ para todo } x \in [-2,2]\}$ (funciones pares)
-\end{enumerate}
-\end{prob}
-
-\begin{prob} Sea $\mathcal{F}[0,1]$ el espacio de todas las funciones de $[0,1]$ en $\mathbb{R}$. Determine si $W$ es subespacio:
-\begin{enumerate}[(a)]
-\item $W = \{f \in \mathcal{F}[0,1] \mid f(0) = f(1)\}$
-\item $W = \{f \in \mathcal{F}[0,1] \mid f(0) = f(1) + 3\}$
-\item $W = \{f \in \mathcal{F}[0,1] \mid f(x) = f(1-x) \text{ para todo } x \in [0,1]\}$
-\end{enumerate}
-\end{prob}
-
-\begin{prob} En el espacio $\mathcal{F}(\mathbb{R})$ de todas las funciones de $\mathbb{R}$ en $\mathbb{R}$, sea:
-$$W = \{f \in \mathcal{F}(\mathbb{R}) \mid \text{existe } k \in \mathbb{R} \text{ tal que } |f(x)| \leq k \text{ para todo } x \in \mathbb{R}\}$$
-Demuestre que $W$ es un subespacio vectorial de $\mathcal{F}(\mathbb{R})$.
-\end{prob}
-
-\begin{prob} Sea $V$ un espacio vectorial sobre $\mathbb{R}$. Si $W_1$ y $W_2$ son subespacios de $V$, demuestre que:
-\begin{enumerate}[(a)]
-\item $W_1 \cap W_2$ es subespacio de $V$
-\item $W_1 + W_2 := \{\mathbf{x} + \mathbf{y} \mid \mathbf{x} \in W_1, \mathbf{y} \in W_2\}$ es subespacio de $V$
-\item $W_1 \cup W_2$ es subespacio de $V$ si y solo si $W_1 \subseteq W_2$ o $W_2 \subseteq W_1$
-\end{enumerate}
-\end{prob}
-
-
-
 \begin{prob} Determine cuáles de los siguientes polinomios pertenecen al subespacio generado por $p_1 = 2 + x + 4x^2$, $p_2 = 1 - x + 3x^2$ y $p_3 = 3 + 2x + 5x^2$:
 \begin{enumerate}[(a)]
 \item $-9 - 7x - 15x^2$
@@ -1207,11 +1238,6 @@ Demuestre que $W$ es un subespacio vectorial de $\mathcal{F}(\mathbb{R})$.
 \end{enumerate}
 \end{prob}
 
-
-
-\begin{prob} Demuestre que si $\mathbf{u}$, $\mathbf{v}$ y $\mathbf{w}$ son vectores linealmente independientes, entonces el conjunto $\{\mathbf{w} - \mathbf{u} - \mathbf{v}, \mathbf{u} - \mathbf{v} - \mathbf{w}, \mathbf{v} - \mathbf{u} - \mathbf{w}\}$ es linealmente independiente.
-\end{prob}
-
 \begin{prob} Determine si los siguientes conjuntos de vectores son linealmente independientes:
 \begin{enumerate}[(a)]
 \item $\{(1,2,3), (2,1,0), (0,3,6)\}$ en $\mathbb{R}^3$
@@ -1220,7 +1246,103 @@ Demuestre que $W$ es un subespacio vectorial de $\mathcal{F}(\mathbb{R})$.
 \end{enumerate}
 \end{prob}
 
+% Intermedio
+\begin{prob} Determine el valor de verdad de las siguientes afirmaciones. Si la afirmación es verdadera, justifique adecuadamente; en caso contrario, muestre un contraejemplo.
 
+\begin{enumerate}[i.] 
+\item Un espacio vectorial siempre debe contener al menos dos vectores.
+\item Si $\mathbf{u}$ es un vector y $k$ un escalar, entonces $k\mathbf{u} = \mathbf{0}$ implica que $k = 0$.
+\item Todo subespacio de un espacio vectorial es un espacio vectorial.
+\item Todo subconjunto de un espacio vectorial que contenga a $\mathbf{0}$ es un espacio vectorial.
+\item El generado por cualquier conjunto finito de vectores en un espacio vectorial es cerrado bajo suma de vectores y multiplicación por escalar.
+\item La intersección y la unión de dos subespacios vectoriales es un subespacio vectorial.
+\item Los polinomios $(x-1)$, $(x-1)^2$ y $(x-1)^3$ generan $\mathcal{P}_3(\mathbb{R})$.
+\item Un conjunto con un único vector es linealmente independiente.
+\item El conjunto $\{\mathbf{v}, k\mathbf{v}\}$ es linealmente dependiente para cualquier $k \neq 0$.
+\item Si el conjunto $\{v_1, v_2, v_3\}$ es linealmente independiente, entonces el conjunto $\{kv_1, kv_2, kv_3\}$ es linealmente independiente para cualquier $k \neq 0$.
+\item Si $V = \operatorname{span}\{v_1, v_2, \ldots, v_n\}$, entonces $\{v_1, v_2, \ldots, v_n\}$ es base de $V$.
+\item Todo subconjunto linealmente independiente de $V$ es una base para $V$.
+\item Toda base de $\mathcal{P}_4(\mathbb{R})$ contiene al menos un polinomio de grado 3.
+\item Existe un conjunto de 17 vectores linealmente independientes en $\mathbb{R}^{17}$.
+\item Todo conjunto linealmente independiente de $\mathbb{R}^5$ con 5 vectores genera $\mathbb{R}^5$.
+\item Todo conjunto de 6 vectores linealmente independientes de $\mathbb{R}^6$ es base de $\mathbb{R}^6$.
+\end{enumerate}
+\end{prob}
+
+\begin{prob} Determine si los siguientes conjuntos junto con las operaciones dadas forman un espacio vectorial:
+
+\begin{enumerate}[(a)]
+\item Sea $V = \mathbb{R}^2$ con escalares en $\mathbb{R}$ y las operaciones:
+\begin{itemize}
+\item \textbf{Suma:} $(x_1,y_1) + (x_2,y_2) = (x_1+x_2, y_1+y_2)$
+\item \textbf{Multiplicación por escalar:} $k(x,y) = (2kx, 0)$
+\end{itemize}
+
+\item Sea $V = \mathbb{R}^+$ (números reales positivos) con las operaciones:
+\begin{itemize}
+\item \textbf{Suma:} $x \oplus y = xy$
+\item \textbf{Multiplicación por escalar:} $k \odot x = x^k$
+\end{itemize}
+\end{enumerate}
+\end{prob}
+
+\begin{prob} Sea $\mathcal{C}[-2,2]$ el espacio de funciones continuas en $[-2,2]$. Determine si $W$ es subespacio:
+\begin{enumerate}[(a)]
+\item $W = \{f \in \mathcal{C}[-2,2] \mid f(-1) \cdot f(1) = 0\}$
+\item $W = \{f \in \mathcal{C}[-2,2] \mid f(x) \geq 0 \text{ para todo } x \in [-2,2]\}$
+\item $W = \{f \in \mathcal{C}[-2,2] \mid f(-x) = f(x) \text{ para todo } x \in [-2,2]\}$ (funciones pares)
+\end{enumerate}
+\end{prob}
+
+\begin{prob} Sea $\mathcal{F}[0,1]$ el espacio de todas las funciones de $[0,1]$ en $\mathbb{R}$. Determine si $W$ es subespacio:
+\begin{enumerate}[(a)]
+\item $W = \{f \in \mathcal{F}[0,1] \mid f(0) = f(1)\}$
+\item $W = \{f \in \mathcal{F}[0,1] \mid f(0) = f(1) + 3\}$
+\item $W = \{f \in \mathcal{F}[0,1] \mid f(x) = f(1-x) \text{ para todo } x \in [0,1]\}$
+\end{enumerate}
+\end{prob}
+
+\begin{prob} En el espacio $\mathcal{F}(\mathbb{R})$ de todas las funciones de $\mathbb{R}$ en $\mathbb{R}$, sea:
+$$W = \{f \in \mathcal{F}(\mathbb{R}) \mid \text{existe } k \in \mathbb{R} \text{ tal que } |f(x)| \leq k \text{ para todo } x \in \mathbb{R}\}$$
+Demuestre que $W$ es un subespacio vectorial de $\mathcal{F}(\mathbb{R})$.
+\end{prob}
+
+\begin{prob} Demuestre que si $\mathbf{u}$, $\mathbf{v}$ y $\mathbf{w}$ son vectores linealmente independientes, entonces el conjunto $\{\mathbf{w} - \mathbf{u} - \mathbf{v}, \mathbf{u} - \mathbf{v} - \mathbf{w}, \mathbf{v} - \mathbf{u} - \mathbf{w}\}$ es linealmente independiente.
+\end{prob}
+
+\begin{prob} Encuentre una base y la dimensión de los siguientes subespacios:
+\begin{enumerate}[(a)]
+\item $W = \{(x, y, z, w) \in \mathbb{R}^4 \mid x + y = 0, z - w = 0\}$
+\item $W = \{A \in \mathcal{M}_{3 \times 3}(\mathbb{R}) \mid A^T = A\}$ (matrices simétricas)
+\item $W = \{p(x) \in \mathcal{P}_4(\mathbb{R}) \mid p(0) = p(1) = 0\}$
+\end{enumerate}
+\end{prob}
+
+\begin{prob} En $\mathbb{R}^3$, considere las bases: $B = \left\{\begin{pmatrix} 1 \\ 1 \\ 0 \end{pmatrix}, \begin{pmatrix} 1 \\ 0 \\ 1 \end{pmatrix}, \begin{pmatrix} 0 \\ 1 \\ 1 \end{pmatrix}\right\}$ y $B' = \left\{\begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix}, \begin{pmatrix} 1 \\ 1 \\ 0 \end{pmatrix}, \begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix}\right\}$
+
+\begin{enumerate}[(a)]
+\item Encuentre las coordenadas del vector $\mathbf{v} = \begin{pmatrix} 2 \\ 3 \\ 1 \end{pmatrix}$ respecto a la base $B$.
+\item Encuentre la matriz de cambio de base de $B$ a $B'$.
+\item Use la matriz de cambio de base para encontrar $[\mathbf{v}]_{B'}$ a partir de $[\mathbf{v}]_B$.
+\end{enumerate}
+\end{prob}
+
+\begin{prob} Para la matriz $A = \begin{pmatrix} 1 & 2 & 3 & 4 \\ 2 & 4 & 6 & 8 \\ 1 & 3 & 5 & 7 \end{pmatrix}$:
+\begin{enumerate}[(a)]
+\item Encuentre bases para $\mathcal{C}(A)$, $\mathcal{R}(A)$ y $\mathcal{N}(A)$.
+\item Verifique el teorema del rango-nulidad.
+\item Determine si el vector $\mathbf{b} = \begin{pmatrix} 1 \\ 2 \\ 0 \end{pmatrix}$ pertenece a $\mathcal{C}(A)$.
+\end{enumerate}
+\end{prob}
+
+% Desafiante
+\begin{prob} Sea $V$ un espacio vectorial sobre $\mathbb{R}$. Si $W_1$ y $W_2$ son subespacios de $V$, demuestre que:
+\begin{enumerate}[(a)]
+\item $W_1 \cap W_2$ es subespacio de $V$
+\item $W_1 + W_2 := \{\mathbf{x} + \mathbf{y} \mid \mathbf{x} \in W_1, \mathbf{y} \in W_2\}$ es subespacio de $V$
+\item $W_1 \cup W_2$ es subespacio de $V$ si y solo si $W_1 \subseteq W_2$ o $W_2 \subseteq W_1$
+\end{enumerate}
+\end{prob}
 
 \begin{prob} Sean $W_1$ y $W_2$ los siguientes subconjuntos de $\mathcal{M}_{2 \times 2}(\mathbb{R})$:
 $$W_1 = \left\{\begin{pmatrix} a & a+b \\ a+c & b+c \end{pmatrix} \mid a, b, c \in \mathbb{R}\right\}$$
@@ -1250,42 +1372,10 @@ $$W_2 = \{p(x) \in \mathcal{P}_3(\mathbb{R}) \mid p(-1) = 0\}$$
 \end{enumerate}
 \end{prob}
 
-\begin{prob} Encuentre una base y la dimensión de los siguientes subespacios:
-\begin{enumerate}[(a)]
-\item $W = \{(x, y, z, w) \in \mathbb{R}^4 \mid x + y = 0, z - w = 0\}$
-\item $W = \{A \in \mathcal{M}_{3 \times 3}(\mathbb{R}) \mid A^T = A\}$ (matrices simétricas)
-\item $W = \{p(x) \in \mathcal{P}_4(\mathbb{R}) \mid p(0) = p(1) = 0\}$
-\end{enumerate}
-\end{prob}
-
-
-
-\begin{prob} En $\mathbb{R}^3$, considere las bases: $B = \left\{\begin{pmatrix} 1 \\ 1 \\ 0 \end{pmatrix}, \begin{pmatrix} 1 \\ 0 \\ 1 \end{pmatrix}, \begin{pmatrix} 0 \\ 1 \\ 1 \end{pmatrix}\right\}$ y $B' = \left\{\begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix}, \begin{pmatrix} 1 \\ 1 \\ 0 \end{pmatrix}, \begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix}\right\}$
-
-\begin{enumerate}[(a)]
-\item Encuentre las coordenadas del vector $\mathbf{v} = \begin{pmatrix} 2 \\ 3 \\ 1 \end{pmatrix}$ respecto a la base $B$.
-\item Encuentre la matriz de cambio de base de $B$ a $B'$.
-\item Use la matriz de cambio de base para encontrar $[\mathbf{v}]_{B'}$ a partir de $[\mathbf{v}]_B$.
-\end{enumerate}
-\end{prob}
-
-
-\begin{prob} Para la matriz $A = \begin{pmatrix} 1 & 2 & 3 & 4 \\ 2 & 4 & 6 & 8 \\ 1 & 3 & 5 & 7 \end{pmatrix}$:
-\begin{enumerate}[(a)]
-\item Encuentre bases para $\mathcal{C}(A)$, $\mathcal{R}(A)$ y $\mathcal{N}(A)$.
-\item Verifique el teorema del rango-nulidad.
-\item Determine si el vector $\mathbf{b} = \begin{pmatrix} 1 \\ 2 \\ 0 \end{pmatrix}$ pertenece a $\mathcal{C}(A)$.
-\end{enumerate}
-\end{prob}
-
 \begin{prob} Construya una matriz $A$ de tamaño $3 \times 4$ tal que:
 $$\mathcal{N}(A) = \operatorname{span}\left\{\begin{pmatrix} 1 \\ -1 \\ 1 \\ 0 \end{pmatrix}, \begin{pmatrix} 2 \\ 0 \\ 1 \\ -1 \end{pmatrix}\right\}$$
 \end{prob}
 
-
-
 \begin{prob} Sea $V$ un espacio vectorial de dimensión finita y sean $W_1, W_2, W_3$ subespacios de $V$. Calcule y demuestre una fórmula para $\dim(W_1 + W_2 + W_3).$
 \end{prob}
 
-
- 

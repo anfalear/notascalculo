@@ -227,19 +227,36 @@ Mínimo 8–10 resueltos (example con myproof) + 15–20 propuestos (sin myproof
 **Acción:** (a) diagrama W ⊂ V con el vector 0 (subespacio); (b) dos vectores no colineales generando ℝ² (combinaciones lineales/generado); (c) esquema de los espacios fundamentales de A (fila/columna/nulo con dimensiones y rango-nulidad). Insertar cada una inmediatamente después de su definición (R2).
 **Criterio de cierre:** ≥3 figuras estándar F8; el capítulo deja de tener 0 figuras; compilación limpia.
 **Líneas estimadas:** 120–180
-**Estado:** Pendiente
+**Estado:** Completado (2026-07-08)
+**Notas de ejecución:**
+- `fig:subespacio_en_V` (tras la Obs. 6.10, def. de subespacio): elipse V ⊃ W con **0**, u, v y u+v (cerradura), estilo Venn 2D.
+- `fig:gen_dos_vectores` (tras def. de subespacio generado): v₁, v₂ no colineales; w=2v₁+v₂ construido por etapas (dashed 2v₁ → +v₂) y −v₁+2v₂ con coeficiente negativo. Aritmética verificada: 2(2,0.5)+(0.5,1.5)=(4.5,2.5); −(2,0.5)+2(0.5,1.5)=(−1,2.5).
+- `fig:cuatro_espacios` (tras def. de espacios fundamentales): esquema tipo Strang — ℝⁿ dividido en R(A) (dim r) y N(A) (dim n−r), ℝᵐ en C(A) y N(Aᵀ); flecha x↦Ax y N(A)↦{0}; caption menciona rango-nulidad.
+- Las 3 verificadas visualmente (pdftoppm pp. 158, 163, 172). Compilación limpia: 0 errores `!`, 778 pp.
 
 ### F9AL.14 — espaciosvectoriales: propuestos + Decisión F + heading 🔒F
 **Acción:** heading estándar; los probs 1–15 (con solución) y 16–36 (sin solución) se tratan según Decisión F (candidatos naturales a elevar: verificación de subespacio, independencia lineal por determinante, base del espacio nulo); tags de graduación en los restantes.
 **Criterio de cierre:** convención F aplicada; 15–25 propuestos graduados con tags.
 **Líneas estimadas:** 60–120
-**Estado:** Pendiente
+**Estado:** Completado (2026-07-08)
+**Notas de ejecución:**
+- **4 elevaciones a `example`** (protocolo 4 pasos + `\boxed{}`, en su sección temática): Independencia lineal según un parámetro (det con λ, factorización `(λ−1)(2λ+1)²`); Extensión de un conjunto l.i. a una base (base incompleta, det 4×4 = 4); Bases de los espacios fila, columna y nulo (multi-parte a/b); Construcción de una matriz con espacio nulo prescrito (rango-nulidad inverso). Verificadas con SymPy. ⚠️ Pendiente visto bueno del autor (elegidas según candidatos del plan; no había prob resuelto de "verificación de subespacio").
+- **Error heredado corregido** en el ejemplo de bases de espacios fundamentales (a): la RREF es `(1,0,1,−2/7)`, no `(1,0,1,2/7)` → base de R(A) y segundo generador de N(A) con signo corregido: `(2/7,−4/7,0,1)` (confirmado SymPy).
+- **11 probs resueltos** movidos íntegros (con su myproof) a `\section{Problemas resueltos adicionales}` (§6.7) con tag por prob: 3B/6I/2D.
+- **Propuestos:** heading renombrado a `\section{Problemas propuestos}` (E4); 21 propuestos heredados reordenados en grupos con comentarios: 7 Básico / 9 Intermedio / 5 Desafiante (33/43/24 %). No hizo falta redactar propuestos nuevos (el capítulo, a diferencia de matrices/sel, ya tenía 21 sin solución).
+- Balance verificado: 32/32 prob, 25/25 myproof, 19 examples. Compilación limpia 778 pp; §6.7 (p. 173) y §6.8 (p. 178) verificadas visualmente.
 
 ### F9AL.15 — espaciosvectoriales: auditoría R1 + R3 de teoremas centrales
 **Acción:** verificar orden def→motivación→teorema→ejemplo en las 7 secciones; el teorema de la base/dimensión (central) debe tener demostración o esquema — añadir esquema si solo hay enunciado; el criterio de subespacio (operacional) enunciado + referencia.
 **Criterio de cierre:** inversiones registradas/corregidas (≤50 líneas por corrección); teorema central con esquema.
 **Líneas estimadas:** 30–90
-**Estado:** Pendiente
+**Estado:** Completado (2026-07-08)
+**Notas de ejecución:**
+- **R3 teorema central:** la prueba de «Invariancia del número de elementos en una base» invocaba un «lema de intercambio» inexistente en el libro → añadido `\begin{theorem}[Lema de intercambio]` (`thm:cap06:lema-intercambio`) con esquema de prueba (argumento de Steinitz, 8 líneas) justo antes; la prueba de invariancia ahora lo referencia con `\ref`.
+- **R3 extra:** Criterio del Wronskiano no tenía prueba → añadida prueba por contrarrecíproco (5 líneas: derivar la relación de dependencia n−1 veces anula las columnas).
+- **Criterio de subespacio:** ya conforme (coro «versión compacta» enunciado con referencia explícita al Teorema del test — sin cambios).
+- **INV corregidas (2):** (i) §6.3: def «Subespacio generado» + fig:gen_dos_vectores estaban DESPUÉS del teorema cuya prueba usa `gen{...}` → movidas antes; teorema retitulado «El generado es el menor subespacio que contiene a los generadores». (ii) §6.4: example elevado «Independencia lineal según un parámetro» (test por determinante) quedaba tras el Wronskiano → movido tras el corolario de propiedades, antes de def Wronskiano.
+- Orden R1 verificado en las 7 secciones (mapa completo de entornos); §6.1 y §6.5 sin figura propia (no requerida). Intro de capítulo presente. 2 pasadas lualatex; solo warning preexistente `figrayo`. 778 pp, 0 errores; pp. 162/167 verificadas visualmente.
 
 ### F9AL.16 — prodinterno: estructura de secciones R1 (capítulo con CERO secciones)
 **Acción:** insertar: `\section{Producto interno}`, `\section{Norma, distancia y ángulo}` (incluye Cauchy-Schwarz), `\section{Ortogonalidad y complemento ortogonal}`, `\section{Proceso de Gram-Schmidt}`, `\section{Proyección ortogonal y mínimos cuadrados}`, `\section{Problemas propuestos}` (ajustar al contenido real).
@@ -409,9 +426,9 @@ Mínimo 8–10 resueltos (example con myproof) + 15–20 propuestos (sin myproof
 | F9AL.10 | `sel.tex` | Propuestos + Decisión F + heading | Completado | 2026-07-07 | 4 elevaciones a example; banco 19 probs con tags; propuestos 17 (7 heredados + 10 nuevos aprobados) 5B/8I/4D; fix `\,\%` babel-spanish. 778 pp, 0 errores. |
 | F9AL.11 | `sel.tex` | Figura 3 planos ℝ³ + auditoría | Completado | 2026-07-07 | fig:tresplanoscasos (3 minipages pgfplots 3D: punto/recta/sin intersección, verificada visualmente); 2 labels añadidos (fig:sistema2x2casos, fig:familiapolinomios); 10/10 conformes. 778 pp, 0 errores. |
 | F9AL.12 | `sel.tex` | Verificación protocolo 5 examples | Completado | 2026-07-07 | 9 examples (con 4 elevados): 37 `Paso N:` → `Paso N.`; Pasos 3–4 marcados en homogéneo 3×4; 8/8 computacionales conformes + 1 ilustrativo justificado. |
-| F9AL.13 | `espaciosvectoriales.tex` | 3 figuras nuevas R2 | Pendiente | — | — |
-| F9AL.14 | `espaciosvectoriales.tex` | Propuestos + Decisión F + tags | Pendiente | — | — |
-| F9AL.15 | `espaciosvectoriales.tex` | Auditoría R1 + R3 | Pendiente | — | — |
+| F9AL.13 | `espaciosvectoriales.tex` | 3 figuras nuevas R2 | Completado | 2026-07-08 | fig:subespacio_en_V, fig:gen_dos_vectores, fig:cuatro_espacios; verificadas visualmente pp. 158/163/172. 778 pp, 0 errores. |
+| F9AL.14 | `espaciosvectoriales.tex` | Propuestos + Decisión F + tags | Completado | 2026-07-08 | 4 elevaciones (SymPy-verificadas, 1 error de signo heredado corregido); banco §6.7 con 11 probs taggeados; 21 propuestos 7B/9I/5D; heading E4. 778 pp, 0 errores. |
+| F9AL.15 | `espaciosvectoriales.tex` | Auditoría R1 + R3 | Completado | 2026-07-08 | Lema de intercambio nuevo (esquema Steinitz); prueba Wronskiano añadida; 2 INV corregidas (def generado+figura antes del teorema; example det antes de Wronskiano). 778 pp, 0 errores. |
 | F9AL.16 | `prodinterno.tex` | Estructura de secciones (0 actuales) | Pendiente | — | — |
 | F9AL.17 | `prodinterno.tex` | 2 figuras nuevas + auditoría | Pendiente | — | — |
 | F9AL.18 | `prodinterno.tex` | Protocolo + residuales + propuestos | Pendiente | — | — |
