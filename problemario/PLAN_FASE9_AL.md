@@ -164,31 +164,60 @@ Mínimo 8–10 resueltos (example con myproof) + 15–20 propuestos (sin myproof
 **Acción:** el capítulo tiene 2 723 líneas sin secciones antes de los propuestos. Insertar: `\section{Sistemas lineales y forma matricial}`, `\section{Eliminación gaussiana y Gauss-Jordan}`, `\section{Consistencia y conjunto solución}`, `\section{Sistemas homogéneos}`, `\section{Regla de Cramer}` (ajustar títulos al contenido real al ejecutar).
 **Criterio de cierre:** ≥5 secciones temáticas; ningún contenido eliminado; compilación limpia.
 **Líneas estimadas:** 30–70
-**Estado:** Pendiente
+**Estado:** Completado — 2026-07-07
+
+**Notas de ejecución:**
+- 7 secciones insertadas (títulos ajustados al contenido real, como preveía el plan): `Sistemas lineales y forma matricial` (l.7, tras la intro del capítulo), `Tipos de solución e interpretación geométrica` (l.55: defs de tipos/homogéneo + ejemplos 2×2/3×3 con figuras), `Eliminación gaussiana y variables libres` (l.359: rem de análisis escalonado + def variables básicas/libres + ejemplo 3×4), `Consistencia: el teorema de Rouché-Frobenius` (l.444: teorema + demostración + caracterización invertibles v3), `Sistemas homogéneos` (l.592), `Regla de Cramer` (l.651), `Problemas resueltos adicionales` (l.698, delimita el banco de 23 probs — anticipa F9AL.10 con el heading de la convención F ya decidida).
+- Solo inserción de cabeceras: ningún contenido movido ni eliminado.
+- Inventario para ítems siguientes: 30 probs = 23 en banco (15 con myproof interno + 8 con myproof huérfano estilo B, l.1651–2116 pre-inserción — exactamente los 8 de F9AL.09) + 7 propuestos sin solución bajo el heading final. Tras F9AL.09 el banco completo quedará resuelto → en F9AL.10 no habrá que reclasificar probs entre secciones.
 
 ### F9AL.09 — sel: anidar 8 myproof huérfanos
 **Acción:** igual que F9AL.03 aplicado a `sel.tex`.
 **Criterio de cierre:** `myproof_huerfanos = 0`; compilación limpia.
 **Líneas estimadas:** 16–40
-**Estado:** Pendiente
+**Estado:** Completado — 2026-07-07
+
+**Notas de ejecución:**
+- 8 huérfanos (l.1665, 1794, 1862, 1930, 1976, 2035, 2086, 2130 tras F9AL.08) reencajados con el mismo procedimiento de F9AL.03: `\end{prob}` movido tras el `\end{myproof}` correspondiente. Eran las soluciones de los probs 11–18 del banco (matriz X, dieta, alcancía, número de dos dígitos, matriz simétrica con parámetros, coeficientes a/b/c, matriz de coeficientes, sistema con parámetro).
+- Re-escaneo: 0 huérfanos; 30/30 `\begin{prob}`/`\end{prob}`. El banco de `Problemas resueltos adicionales` queda 23/23 con solución interna; los 7 propuestos finales sin solución (sin reclasificaciones pendientes para F9AL.10).
 
 ### F9AL.10 — sel: propuestos + Decisión F + heading 🔒F
 **Acción:** renombrar `\section{Problemas propuestos para el capítulo}` → `\section{Problemas propuestos}`; aplicar Decisión F a los 30 probs (15 con solución dentro); tags de graduación.
 **Criterio de cierre:** heading estándar, convención F aplicada, tags presentes.
 **Líneas estimadas:** 60–120
-**Estado:** Pendiente
+**Estado:** Completado — 2026-07-07 (en dos sesiones)
+
+**Notas de ejecución:**
+- Heading renombrado a `\section{Problemas propuestos}`.
+- **4 elevaciones a `example`** desde el banco resuelto: Consistencia según un parámetro; Tres números (regla de Cramer); Interpolación de una parábola; Ley de cosenos vía regla de Cramer. Con ello el capítulo queda con 9 examples (F9AL.12 los verificará).
+- **Banco `Problemas resueltos adicionales`**: 19 probs con myproof interno, tag individual (4 Básico / 12 Intermedio / 3 Desafiante).
+- **`Problemas propuestos`**: 17 probs sin solución = 7 heredados + **10 nuevos** (lote redactado por el asistente y aprobado explícitamente por el autor el 2026-07-07 antes de insertarse; el primer borrador se perdió al cerrar la sesión anterior y se redactó de nuevo). Graduación 5 Básico / 8 Intermedio / 4 Desafiante ≈ 29/47/24. Agrupados con separadores de comentario en el orden de las secciones del capítulo: forma matricial y tipos de solución (2 nuevos), eliminación gaussiana/Gauss-Jordan (2 nuevos + drill heredado), consistencia y rango (1 nuevo Rouché-Frobenius directo + parámetro t heredado), homogéneos (1 nuevo), Cramer (1 nuevo con caso det = 0), teoría (1 nuevo «una o infinitas» + 2 heredados), aplicaciones (2 nuevos: balanceo de propano y fondos de inversión + 3 heredados, reubicados aquí interpolación cúbica y casas).
+- Incidencia de compilación: `\,\%` en modo matemático rompe con babel-spanish (`\es@sppercent`, «Incompatible glue units», 5 errores) — corregido a `\%` sin espacio fino. Nota para futuros lotes.
+- Verificación: 36/36 prob balanceados (19 banco + 17 propuestos); 0 huérfanos. Compilación limpia: 0 errores `!`, 778 pp.
 
 ### F9AL.11 — sel: figura 3 planos en ℝ³ + auditoría de las 9 existentes
 **Acción:** (a) figura nueva en minipages pgfplots 3D: tres configuraciones (punto único / recta / sin intersección) tras la discusión de tipos de solución; (b) completar caption/label en las 2 figuras no conformes.
 **Criterio de cierre:** figura nueva estándar F8 insertada según R2; 9/9 existentes conformes.
 **Líneas estimadas:** 90–140
-**Estado:** Pendiente
+**Estado:** Completado — 2026-07-07
+
+**Notas de ejecución:**
+- **Figura nueva `fig:tresplanoscasos`**: 3 minipages de 0.32\textwidth con pgfplots 3D (`surf, samples=2`, colormap constante por plano — sin librería `patchplots`, no cargada en el preámbulo), insertada dentro de la rem de interpretación geométrica, justo tras el itemize de casos $3\times 3$ (posición R2). Paneles: (a) solución única — planos $z=2-x$, $z=2-y$, $z=1$ con punto común $(1,1,1)$ marcado; (b) infinitas soluciones — $z=y$, $z=2-y$, $z=1$ con la recta común $\{(t,1,1)\}$ en trazo grueso; (c) sin solución — $z=0.4$ y $z=1.6$ paralelos + $z=y$ transversal (el ejemplo que menciona el propio texto). Paleta del capítulo (blue/red/green como `fig:sistema3x3`). Verificación visual en PDF: ejes extendidos (ymax=3.9) para que las etiquetas de eje no se solapen con los planos.
+- **Auditoría de las 9 existentes**: solo 2 no conformes (el diagnóstico acertó): «Interpretación geométrica de sistemas $2\times 2$» → `\label{fig:sistema2x2casos}`; «Curvas que cumplen la condición del problema» → `\label{fig:familiapolinomios}`. La figura del triángulo (ley de cosenos) sí tenía label (`trianguloreglacramer`, sin prefijo `fig:` — igual que otros 4 labels heredados del capítulo, que se conservan porque tienen refs en el texto). 10/10 figuras con caption+label.
+- Compilación limpia (2 pasadas): 0 errores `!`, 0 refs indefinidas, 778 pp.
 
 ### F9AL.12 — sel: verificación de protocolo en 5 examples
 **Acción:** igual que F9AL.07 (Ejs. con Paso N + boxed ya al 4/5; cerrar el restante o justificarlo como ilustrativo).
 **Criterio de cierre:** 5/5 conformes o justificados.
 **Líneas estimadas:** 10–30
-**Estado:** Pendiente
+**Estado:** Completado — 2026-07-07
+
+**Notas de ejecución:**
+- El capítulo tiene ahora **9 examples** (5 originales + 4 elevaciones de F9AL.10).
+- **37 marcas `Paso N:` (dos puntos) normalizadas a `Paso N.`** en todo el archivo: 34 simples + 3 con título (`Paso 1: Calcular el rango…` → `Paso 1. Calcular el rango…`, formato titulado idéntico al de matrices.tex). Cubre los examples 2×2, 3×3 y homogéneo 3×4, y los myproof del banco de resueltos.
+- Example «Sistema homogéneo $3\times 4$»: los pasos 3 (variables básicas/libres) y 4 (solución paramétrica) existían como texto sin marca → marcados `\textbf{Paso 3.}` / `\textbf{Paso 4.}`.
+- Resultado: 8/8 computacionales con `Paso N.` + `\boxed{}`; 1 ilustrativo justificado con título («Producto matriz-vector como combinación lineal de columnas», identidad mostrada sin cómputo, criterio Fase 4). Total 52 marcas `Paso N.` en el archivo, 0 residuales con dos puntos.
+- Compilación limpia: 0 errores `!`, 778 pp.
 
 ---
 
@@ -375,11 +404,11 @@ Mínimo 8–10 resueltos (example con myproof) + 15–20 propuestos (sin myproof
 | F9AL.05 | `matrices.tex` | Auditoría 12 figuras | Completado | 2026-07-07 | 8 labels añadidos; 4 tikz sueltos → figure[H]+caption+label; arista 3→4 duplicada eliminada en grafo (c). 12/12 conformes. 774 pp, 0 errores. |
 | F9AL.06 | `matrices.tex` | 3 figuras nuevas R2 | Completado | 2026-07-07 | fig:producto_matricial, fig:det_area, fig:cofactores_sombreados — insertadas en posición R2, estándar F8. 774 pp, 0 errores. |
 | F9AL.07 | `matrices.tex` | Verificación protocolo 32 examples | Completado | 2026-07-07 | 37 examples (con 5 elevados): 47 `Paso N:` → `Paso N.`; 2 boxed añadidos (grafos); 24/24 con myproof conformes; 13 ilustrativos justificados. |
-| F9AL.08 | `sel.tex` | Estructura de secciones | Pendiente | — | — |
-| F9AL.09 | `sel.tex` | Anidar 8 myproof huérfanos | Pendiente | — | — |
-| F9AL.10 | `sel.tex` | Propuestos + Decisión F + heading | Pendiente | — | — |
-| F9AL.11 | `sel.tex` | Figura 3 planos ℝ³ + auditoría | Pendiente | — | — |
-| F9AL.12 | `sel.tex` | Verificación protocolo 5 examples | Pendiente | — | — |
+| F9AL.08 | `sel.tex` | Estructura de secciones | Completado | 2026-07-07 | 7 secciones insertadas (6 temáticas + banco `Problemas resueltos adicionales`); solo cabeceras, nada movido. Los 8 huérfanos del cap. son las soluciones de los probs 11–18 del banco. |
+| F9AL.09 | `sel.tex` | Anidar 8 myproof huérfanos | Completado | 2026-07-07 | 8/8 reencajados (soluciones de probs 11–18 del banco); 0 huérfanos; 30/30 prob balanceados; banco 23/23 resuelto. |
+| F9AL.10 | `sel.tex` | Propuestos + Decisión F + heading | Completado | 2026-07-07 | 4 elevaciones a example; banco 19 probs con tags; propuestos 17 (7 heredados + 10 nuevos aprobados) 5B/8I/4D; fix `\,\%` babel-spanish. 778 pp, 0 errores. |
+| F9AL.11 | `sel.tex` | Figura 3 planos ℝ³ + auditoría | Completado | 2026-07-07 | fig:tresplanoscasos (3 minipages pgfplots 3D: punto/recta/sin intersección, verificada visualmente); 2 labels añadidos (fig:sistema2x2casos, fig:familiapolinomios); 10/10 conformes. 778 pp, 0 errores. |
+| F9AL.12 | `sel.tex` | Verificación protocolo 5 examples | Completado | 2026-07-07 | 9 examples (con 4 elevados): 37 `Paso N:` → `Paso N.`; Pasos 3–4 marcados en homogéneo 3×4; 8/8 computacionales conformes + 1 ilustrativo justificado. |
 | F9AL.13 | `espaciosvectoriales.tex` | 3 figuras nuevas R2 | Pendiente | — | — |
 | F9AL.14 | `espaciosvectoriales.tex` | Propuestos + Decisión F + tags | Pendiente | — | — |
 | F9AL.15 | `espaciosvectoriales.tex` | Auditoría R1 + R3 | Pendiente | — | — |

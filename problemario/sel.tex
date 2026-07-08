@@ -4,6 +4,8 @@ En el capítulo anterior se estudiaron las matrices como arreglos ordenados de n
 
 En el capítulo \ref{vegern} se estudiaron los vectores como unidades con magnitud, dirección y sentido que son usados en múltiples ramas de la ciencia como física e ingenierías. Allí también se les dio sentido como vectores en coordenadas (Definición \ref{def:vectorescoordenadas}), por lo que podríamos pensar en vectores como una matriz fila $\mathbf{u}=(4,2,3)$ o como una matriz columna $\mathbf{u}=\begin{pmatrix}4\\2\\3\end{pmatrix}$. 
 
+\section{Sistemas lineales y forma matricial}
+
 Piense ahora en el siguiente problema: dada una matriz $A=\begin{pmatrix}a_{11}&a_{12}&\cdots &a_{1n}\\a_{21}&a_{22}&\cdots &a_{2n}\\ \vdots&\vdots&\ddots &\vdots\\ a_{m1}&a_{m2}&\cdots &a_{mn}\end{pmatrix}$ de tamaño $m\times n$, si la multiplicamos por un vector $\mathbf{x}=\begin{pmatrix}x_1\\x_2\\\vdots\\ x_n \end{pmatrix} \in \mathbb{R}^n$, obtenemos el vector 
 \begin{equation*}
 A\mathbf{x} = \begin{pmatrix} a_{11}x_1+a_{12}x_2+\cdots + a_{1n}x_n\\a_{21}x_1+a_{22}x_2+\cdots + a_{2n}x_n\\\vdots \\ a_{m1}x_1+a_{m2}x_2+\cdots + a_{mn}x_n\end{pmatrix}.
@@ -49,6 +51,8 @@ b_1 \\ b_2 \\ \vdots \\ b_m
 \end{equation*}
 respectivamente, la matriz de coeficientes, el vector de incógnitas y el vector de términos independientes.
 \end{definition}
+
+\section{Tipos de solución e interpretación geométrica}
 
 \begin{definition}[Tipos de soluciones de un sistema lineal]
 Encontrar la \textbf{solución} o el conjunto-solución o, aún, la solución general de un sistema de ecuaciones significa hallar todos los valores de $\mathbf{x} \in \mathbb{R}^n$ que resuelven simultáneamente las ecuaciones.
@@ -98,22 +102,22 @@ $$\left[\begin{array}{cc|c}
 1 & -1 & 1
 \end{array}\right]$$
 
-\textbf{Paso 1:} $f_1\leftrightarrow f_2$ (pivote más conveniente) $\left(\begin{array}{cc|c}
+\textbf{Paso 1.} $f_1\leftrightarrow f_2$ (pivote más conveniente) $\left(\begin{array}{cc|c}
 1 & -1 & 1 \\
 2 & 3 & 7
 \end{array}\right),$
 
-\textbf{Paso 2:} $f_2 - 2f_1 \rightarrow f_2$ $\left(\begin{array}{cc|c}
+\textbf{Paso 2.} $f_2 - 2f_1 \rightarrow f_2$ $\left(\begin{array}{cc|c}
 1 & -1 & 1 \\
 0 & 5 & 5
 \end{array}\right),$
 
-\textbf{Paso 3:} $\frac{1}{5}f_2 \rightarrow f_2$: $\left(\begin{array}{cc|c}
+\textbf{Paso 3.} $\frac{1}{5}f_2 \rightarrow f_2$: $\left(\begin{array}{cc|c}
 1 & -1 & 1 \\
 0 & 1 & 1
 \end{array}\right),$
 
-\textbf{Paso 4:} $f_1 + f_2 \rightarrow f_1$: $\left(\begin{array}{cc|c}
+\textbf{Paso 4.} $f_1 + f_2 \rightarrow f_1$: $\left(\begin{array}{cc|c}
 1 & 0 & 2 \\
 0 & 1 & 1
 \end{array}\right)$
@@ -177,38 +181,38 @@ $\left(\begin{array}{ccc|c}
 1 & 1 & -1 & 1
 \end{array}\right).$ Usaremos el método de Gauss-Jordan (Lema \ref{lem:gauss-jordan}).
 
-\textbf{Paso 1:} $f_2 - 2f_1 \rightarrow f_2$ y $f_3 - f_1 \rightarrow f_3$:
+\textbf{Paso 1.} $f_2 - 2f_1 \rightarrow f_2$ y $f_3 - f_1 \rightarrow f_3$:
 $\left(\begin{array}{ccc|c}
 1 & 2 & 1 & 9 \\
 0 & -5 & 0 & -10 \\
 0 & -1 & -2 & -8
 \end{array}\right)$
 
-\textbf{Paso 2:} $-\frac{1}{5}f_2 \rightarrow f_2$: $\left(\begin{array}{ccc|c}
+\textbf{Paso 2.} $-\frac{1}{5}f_2 \rightarrow f_2$: $\left(\begin{array}{ccc|c}
 1 & 2 & 1 & 9 \\
 0 & 1 & 0 & 2 \\
 0 & -1 & -2 & -8
 \end{array}\right)$
 
-\textbf{Paso 3:} $f_3 + f_2 \rightarrow f_3$: $\left(\begin{array}{ccc|c}
+\textbf{Paso 3.} $f_3 + f_2 \rightarrow f_3$: $\left(\begin{array}{ccc|c}
 1 & 2 & 1 & 9 \\
 0 & 1 & 0 & 2 \\
 0 & 0 & -2 & -6
 \end{array}\right)$
 
-\textbf{Paso 4:} $-\frac{1}{2}f_3 \rightarrow f_3$: $\left(\begin{array}{ccc|c}
+\textbf{Paso 4.} $-\frac{1}{2}f_3 \rightarrow f_3$: $\left(\begin{array}{ccc|c}
 1 & 2 & 1 & 9 \\
 0 & 1 & 0 & 2 \\
 0 & 0 & 1 & 3
 \end{array}\right)$
 
-\textbf{Paso 5:}  $f_1 - f_3 \rightarrow f_1$: $\left(\begin{array}{ccc|c}
+\textbf{Paso 5.}  $f_1 - f_3 \rightarrow f_1$: $\left(\begin{array}{ccc|c}
 1 & 2 & 0 & 6 \\
 0 & 1 & 0 & 2 \\
 0 & 0 & 1 & 3
 \end{array}\right)$
 
-\textbf{Paso 6:} $f_1 - 2f_2 \rightarrow f_1$: $\left(\begin{array}{ccc|c}
+\textbf{Paso 6.} $f_1 - 2f_2 \rightarrow f_1$: $\left(\begin{array}{ccc|c}
 1 & 0 & 0 & 2 \\
 0 & 1 & 0 & 2 \\
 0 & 0 & 1 & 3
@@ -331,6 +335,7 @@ Cada ecuación lineal en tres variables representa un \textbf{plano} en el espac
     \end{scope}
 \end{tikzpicture}
 \caption{Interpretación geométrica de sistemas $2 \times 2$}
+\label{fig:sistema2x2casos}
 \end{figure}
 
 \vspace{0.5cm}
@@ -345,6 +350,105 @@ De manera análoga, para sistemas de $3$ ecuaciones con $3$ incógnitas, tenemos
     \item \textbf{Infinitas soluciones:} Los tres planos se intersectan en una recta (intersección común es una línea) o los tres planos son coincidentes (intersección común es todo el plano).
 \end{itemize}
 
+La Figura \ref{fig:tresplanoscasos} ilustra las tres configuraciones:
+
+\begin{figure}[H]
+\centering
+\begin{minipage}{0.32\textwidth}
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    view={42}{22},
+    axis lines=center,
+    xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+    xtick=\empty, ytick=\empty, ztick=\empty,
+    xmin=0, xmax=3.1, ymin=0, ymax=3.9, zmin=0, zmax=2.8,
+    width=5.9cm, height=5.9cm,
+]
+    % Plano z = 2 - x (azul)
+    \addplot3[surf, shader=faceted, samples=2, domain=0:2, y domain=0:2,
+        opacity=0.55, colormap={planoazul}{color=(blue!25) color=(blue!25)},
+        faceted color=blue!70!black] {2-x};
+    % Plano z = 2 - y (rojo)
+    \addplot3[surf, shader=faceted, samples=2, domain=0:2, y domain=0:2,
+        opacity=0.55, colormap={planorojo}{color=(red!25) color=(red!25)},
+        faceted color=red!70!black] {2-y};
+    % Plano z = 1 (verde)
+    \addplot3[surf, shader=faceted, samples=2, domain=0:2, y domain=0:2,
+        opacity=0.55, colormap={planoverde}{color=(green!25) color=(green!25)},
+        faceted color=green!60!black] {1};
+    % Punto común (1,1,1)
+    \addplot3[only marks, mark=*, mark size=2pt, black] coordinates {(1,1,1)};
+\end{axis}
+\end{tikzpicture}
+
+\small (a) Solución única
+\end{minipage}
+\hfill
+\begin{minipage}{0.32\textwidth}
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    view={42}{22},
+    axis lines=center,
+    xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+    xtick=\empty, ytick=\empty, ztick=\empty,
+    xmin=0, xmax=3.1, ymin=0, ymax=3.9, zmin=0, zmax=2.8,
+    width=5.9cm, height=5.9cm,
+]
+    % Plano z = y (azul)
+    \addplot3[surf, shader=faceted, samples=2, domain=0:2, y domain=0:2,
+        opacity=0.55, colormap={planoazul}{color=(blue!25) color=(blue!25)},
+        faceted color=blue!70!black] {y};
+    % Plano z = 2 - y (rojo)
+    \addplot3[surf, shader=faceted, samples=2, domain=0:2, y domain=0:2,
+        opacity=0.55, colormap={planorojo}{color=(red!25) color=(red!25)},
+        faceted color=red!70!black] {2-y};
+    % Plano z = 1 (verde)
+    \addplot3[surf, shader=faceted, samples=2, domain=0:2, y domain=0:2,
+        opacity=0.55, colormap={planoverde}{color=(green!25) color=(green!25)},
+        faceted color=green!60!black] {1};
+    % Recta común: y = 1, z = 1
+    \addplot3[very thick, black, variable=t, domain=0:2, samples=2]
+        ({t}, {1}, {1});
+\end{axis}
+\end{tikzpicture}
+
+\small (b) Infinitas soluciones
+\end{minipage}
+\hfill
+\begin{minipage}{0.32\textwidth}
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    view={42}{22},
+    axis lines=center,
+    xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+    xtick=\empty, ytick=\empty, ztick=\empty,
+    xmin=0, xmax=3.1, ymin=0, ymax=3.9, zmin=0, zmax=2.8,
+    width=5.9cm, height=5.9cm,
+]
+    % Plano z = 0.4 (azul, paralelo al rojo)
+    \addplot3[surf, shader=faceted, samples=2, domain=0:2, y domain=0:2,
+        opacity=0.55, colormap={planoazul}{color=(blue!25) color=(blue!25)},
+        faceted color=blue!70!black] {0.4};
+    % Plano z = 1.6 (rojo, paralelo al azul)
+    \addplot3[surf, shader=faceted, samples=2, domain=0:2, y domain=0:2,
+        opacity=0.55, colormap={planorojo}{color=(red!25) color=(red!25)},
+        faceted color=red!70!black] {1.6};
+    % Plano z = y (verde, corta a los dos anteriores)
+    \addplot3[surf, shader=faceted, samples=2, domain=0:2, y domain=0:2,
+        opacity=0.55, colormap={planoverde}{color=(green!25) color=(green!25)},
+        faceted color=green!60!black] {y};
+\end{axis}
+\end{tikzpicture}
+
+\small (c) Sin solución
+\end{minipage}
+\caption{Configuraciones de tres planos en $\mathbb{R}^3$ según el tipo de solución del sistema $3\times 3$: (a) los tres planos se cortan en un único punto (sistema con solución única); (b) los tres planos comparten una recta (infinitas soluciones); (c) dos planos paralelos y un tercero que los corta: no existe punto común a los tres (sistema inconsistente).}
+\label{fig:tresplanoscasos}
+\end{figure}
+
 En general, para un sistema $n \times n$:
 \begin{itemize}
     \item La \textbf{solución única} corresponde a que los $n$ hiperplanos se intersecten en exactamente un punto de $\mathbb{R}^n$.
@@ -352,6 +456,8 @@ En general, para un sistema $n \times n$:
     \item \textbf{Infinitas soluciones} se presenta cuando la intersección común tiene más de un punto (puede ser una línea, un plano, etc., dependiendo de la dimensión).
 \end{itemize}
 \end{rem}
+\section{Eliminación gaussiana y variables libres}
+
 \begin{rem}
 Al aplicar el método de eliminación gaussiana a un sistema de ecuaciones lineales $Ax = b$, el comportamiento del sistema puede determinarse mediante el análisis de la matriz aumentada $(A|b)$ en su forma escalonada:
 
@@ -392,22 +498,22 @@ $\left(\begin{array}{cccc|c}
 1 & 1 & -1 & 1 & 0
 \end{array}\right).$ Aplicando eliminación gaussiana:
 
-\textbf{Paso 1:} $f_2 - 2f_1\ \to f_2$ y $f_3 - f_1\to f_3$: $\left(\begin{array}{cccc|c}
+\textbf{Paso 1.} $f_2 - 2f_1\ \to f_2$ y $f_3 - f_1\to f_3$: $\left(\begin{array}{cccc|c}
 1 & 1 & 1 & 1 & 0 \\
 0 & 0 & -1 & -1 & 0 \\
 0 & 0 & -2 & 0 & 0
 \end{array}\right)$
 
-\textbf{Paso 2:} Como la segunda columna no tiene pivote, se busca pivote en la tercera columna. Se toma $-2$ como pivote en la fila 3. $f_3 - 2f_2\to f_3$
+\textbf{Paso 2.} Como la segunda columna no tiene pivote, se busca pivote en la tercera columna. Se toma $-2$ como pivote en la fila 3. $f_3 - 2f_2\to f_3$
 $\left(\begin{array}{cccc|c}
 \boxed{1} & 1 & 1 & 1 & 0 \\
 0 & 0 & \boxed{-1} & -1 & 0 \\
 0 & 0 & 0 & \boxed{2} & 0
 \end{array}\right)$
 
-De esta matriz se tiene que $x_1, x_3, x_4$ son columnas con pivotes  $1$, $-1$, $2$ (variables básicas) y $x_2$ es la variable libre (columna sin pivote).
+\textbf{Paso 3.} De esta matriz se tiene que $x_1, x_3, x_4$ son columnas con pivotes  $1$, $-1$, $2$ (variables básicas) y $x_2$ es la variable libre (columna sin pivote).
 
-La \textbf{Solución paramétrica} se toma a partir de la forma escalonada en el sistema equivalente:
+\textbf{Paso 4.} La \textbf{solución paramétrica} se toma a partir de la forma escalonada en el sistema equivalente:
 \begin{align*}
 x_1 + x_2 + x_3 + x_4 &= 0 \quad (1)\\
 -x_3 - x_4 &= 0 \quad (2)\\
@@ -434,6 +540,8 @@ x_1 \\ x_2 \\ x_3 \\ x_4
 El conjunto solución es una recta que pasa por el origen en la dirección del vector $(-1, 1, 0, 0)$.
 \end{myproof}
 \end{example}
+
+\section{Consistencia: el teorema de Rouché-Frobenius}
 
 \begin{theorem}[Teorema de Rouché-Frobenius]
 Sea $A$ una matriz de $m \times n$ y $b$ un vector de $\mathbb{R}^m$. Consideremos el sistema de ecuaciones lineales $Ax = b$. Sea $\tilde{A} = [A|b]$ la matriz ampliada del sistema. Entonces:
@@ -471,7 +579,7 @@ x_1 + 2x_2 + x_3 &= 4\\
 x_1 + 2x_2 + 2x_3 &= 6
 \end{cases}$
 \begin{myproof}
-\textbf{Paso 1: Calcular el rango de la matriz de coeficientes $A$}
+\textbf{Paso 1. Calcular el rango de la matriz de coeficientes $A$}
 
 $A = \begin{pmatrix}
 1 & 2 & 1\\
@@ -489,7 +597,7 @@ $A = \begin{pmatrix}
 
 $\operatorname{rango}(A) = 2$.
 
-\textbf{Paso 2: Calcular el rango de la matriz ampliada $\tilde{A}$}
+\textbf{Paso 2. Calcular el rango de la matriz ampliada $\tilde{A}$}
 
 $\tilde{A} = \begin{pmatrix}
 1 & 2 & 1 & 4\\
@@ -507,11 +615,70 @@ $\tilde{A} = \begin{pmatrix}
 
 $\operatorname{rango}(\tilde{A}) = 3$.
 
-\textbf{Paso 3: Conclusión por Rouché-Frobenius}
+\textbf{Paso 3. Conclusión por Rouché-Frobenius}
 
 Como $\operatorname{rango}(A) = 2 \neq 3 = \operatorname{rango}(\tilde{A})$, el sistema \textbf{no tiene solución}. La última fila equivale a la ecuación $0 = 1$, que es una contradicción.
 
 $\boxed{\text{El sistema es inconsistente (sin solución)}}$
+\end{myproof}
+\end{example}
+
+\begin{example}[Consistencia según un parámetro]
+Determine los valores del parámetro \( t \) para los cuales el siguiente sistema tiene solución única, infinitas soluciones o ninguna solución. Justifique mediante análisis de rango y consistencia.
+
+\[
+\left\lbrace  
+\begin{array}{rcl}
+x_1 + x_2 + x_3 &=& 4 \\
+x_3 &=& 2 \\
+\left(t^2 - 4\right)x_3 &=& t + 2 \\
+\end{array} 
+\right. 
+\]
+
+\begin{myproof}
+\textbf{Paso 1.} Reducir la matriz aumentada por eliminación gaussiana: \(
+\begin{pmatrix}
+1 & 1 & 1 & | & 4 \\
+0 & 0 & 1 & | & 2 \\
+0 & 0 & t^2-4 & | & t+2 \\
+\end{pmatrix}
+\)
+
+\( f_3 - (t^2-4) \cdot f_2 \to f_3 \): \(
+\begin{pmatrix}
+1 & 1 & 1 & | & 4 \\
+0 & 0 & 1 & | & 2 \\
+0 & 0 & 0 & | & -2t^2 + t + 10 \\
+\end{pmatrix}.
+\)
+
+\textbf{Paso 2.} Analizar rango y consistencia:
+\begin{itemize}
+\item \(\text{rango}(A) = 2\) (dos filas no nulas en forma escalonada)
+\item \(\text{rango}(\tilde{A}) = 2\) si \(-2t^2 + t + 10 = 0\), y \(3\) en otro caso.
+\end{itemize}
+
+\textbf{Paso 3.} Discutir los casos:
+\begin{itemize}
+\item \textbf{Solución única:} Imposible. La segunda columna no tiene pivote, lo que implica una variable libre (\(x_2\)) si el sistema es consistente.
+
+\item \textbf{Infinitas soluciones:} Ocurre cuando \(\text{rango}(A) = \text{rango}(\tilde{A}) = 2\). Esto requiere:
+  \[
+  -2t^2 + t + 10 = 0 \implies t = \frac{1 \pm \sqrt{1 + 80}}{4} = \frac{1 \pm 9}{4}
+  \]
+  Así, \( t = \dfrac{5}{2} \) o \( t = -2 \). En estos casos, \(x_2\) es variable libre y las soluciones son de la forma:
+  \[
+  \begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix} = \begin{pmatrix} 2 - x_2 \\ x_2 \\ 2 \end{pmatrix}, \quad x_2 \in \mathbb{R}.
+  \]
+
+\item \textbf{Ninguna solución:} Ocurre cuando \(\text{rango}(A) = 2 \neq 3 = \text{rango}(\tilde{A})\), es decir, para \(t \neq \dfrac{5}{2}\) y \(t \neq -2\). La última ecuación sería \(0 = -2t^2 + t + 10 \neq 0\), una inconsistencia.
+\end{itemize}
+
+\textbf{Paso 4.} Conclusión:
+\[
+\boxed{\text{infinitas soluciones si } t = \tfrac{5}{2} \text{ o } t = -2;\ \text{sin solución para todo otro } t;\ \text{solución única: imposible}}
+\]
 \end{myproof}
 \end{example}
 
@@ -581,6 +748,8 @@ $$(1) \Rightarrow (8) \Rightarrow (6) \Rightarrow (4) \Rightarrow (1)$$
 Como ya habíamos establecido que (1)-(5) son equivalentes (Teorema \ref{thm:invertible-equiv-v2}), concluimos que todas las afirmaciones (1)-(8) son equivalentes.
 \end{proof}
 
+\section{Sistemas homogéneos}
+
 \begin{theorem}[Propiedades de los sistemas homogéneos] 
 Dado un sistema de ecuaciones lineales homogéneo $A\mathbf{x}=\mathbf{0}$ se cumple:
 \begin{enumerate}
@@ -638,6 +807,8 @@ Podemos construir una solución no trivial asignando el valor 1 a una de las var
 Como al menos una variable (la variable libre elegida) tiene valor 1, la solución obtenida es no trivial.
 \end{proof}
 
+\section{Regla de Cramer}
+
 \begin{theorem}[Regla de Cramer]
 Sea $A$ una matriz cuadrada de orden $n \times n$ con $\det(A) \neq 0$, y sea $\mathbf{b}$ un vector en $\mathbb{R}^n$. Entonces el sistema de ecuaciones lineales $A\mathbf{x} = \mathbf{b}$ tiene una única solución dada por:
 $x_i = \frac{\det(A_i)}{\det(A)}, \quad i = 1, 2, \ldots, n$
@@ -683,6 +854,329 @@ $x_i = \frac{1}{\det(A)}\sum_{j=1}^{n} (-1)^{i+j}M_{ji}b_j = \frac{\det(A_i)}{\d
 Esto completa la demostración de la Regla de Cramer.
 \end{proof}
 
+\begin{example}[Tres números: aplicación de la regla de Cramer]
+Encuentre tres números reales tales que su suma sea 12, la suma de dos veces el primero más el segundo más el tercero sea 5 y que el tercer número es uno más que el primero.
+\begin{myproof}
+\textbf{Paso 1.} Plantear el sistema. Sean $x$, $y$, $z$ los tres números reales que buscamos. Según las condiciones del problema, podemos plantear el siguiente sistema de ecuaciones:
+
+De "su suma sea 12": $x + y + z = 12 \quad (1)$
+
+De "la suma de dos veces el primero más el segundo más el tercero sea 5": $2x + y + z = 5 \quad (2)$
+
+De "el tercer número es uno más que el primero": $z = x + 1 \quad \Rightarrow \quad x - z = -1 \quad (3)$
+
+Reescribimos el sistema en forma matricial:
+$\left\lbrace \begin{array}{ccccccc}
+x & + & y & + & z & = & 12 \\
+2x & + & y & + & z & = & 5 \\
+x & + & 0y & - & z & = & -1
+\end{array} \right.$
+
+La matriz de coeficientes es:
+$A = \begin{pmatrix}
+1 & 1 & 1 \\
+2 & 1 & 1 \\
+1 & 0 & -1
+\end{pmatrix}$
+
+\textbf{Paso 2.} Calcular el determinante de $A$:
+$\det(A) = \begin{vmatrix}
+1 & 1 & 1 \\
+2 & 1 & 1 \\
+1 & 0 & -1
+\end{vmatrix} = 1$
+
+Como $\det(A) = 1 \neq 0$, el sistema tiene solución única.
+
+\textbf{Paso 3.} Aplicar la regla de Cramer a cada incógnita. Para encontrar $x$, calculamos $\det(A_1)$ reemplazando la primera columna por el vector de términos independientes:
+$A_1 = \begin{pmatrix}
+12 & 1 & 1 \\
+5 & 1 & 1 \\
+-1 & 0 & -1
+\end{pmatrix}$ y $\det(A_1) = -7.$
+
+Por tanto: $x = \frac{\det(A_1)}{\det(A)} = \frac{-7}{1} = -7$
+
+Para encontrar $y$, calculamos $\det(A_2)$: $A_2 = \begin{pmatrix}
+1 & 12 & 1 \\
+2 & 5 & 1 \\
+1 & -1 & -1
+\end{pmatrix}$ y $\det(A_2) = 25.$
+
+Por tanto: $y = \frac{\det(A_2)}{\det(A)} = \frac{25}{1} = 25$
+
+Para encontrar $z$, calculamos $\det(A_3)$:
+$A_3 = \begin{pmatrix}
+1 & 1 & 12 \\
+2 & 1 & 5 \\
+1 & 0 & -1
+\end{pmatrix}$ y $\det(A_3) = -6.$
+
+Por tanto: $z = \frac{\det(A_3)}{\det(A)} = \frac{-6}{1} = -6$
+
+\textbf{Paso 4.} Los tres números reales son \( \boxed{x = -7, \quad y = 25, \quad z = -6} \).
+\end{myproof}
+\end{example}
+
+\begin{example}[Interpolación de una parábola]
+La curva $y=ax^2+bx+c$ que se observa en la figura \ref{parabolainterpolacion} pasa por los puntos $(x_1,y_1)$, $(x_2,y_2)$ y $(x_3,y_3)$.
+
+\begin{multicols}{2}
+
+
+\begin{enumerate}[a)]
+\item Demuestre que los coeficientes $a$, $b$ y $c$ son soluciones del sistema cuya matriz aumentada es 
+\[ \left( \begin{array}{ccc|c} 
+x_1^2 & x_1 & 1 & y_1\\
+x_2^2 & x_2 & 1 & y_2\\
+x_3^2 & x_3 & 1 & y_3
+\end{array} \right) \]
+
+\item Use lo anterior para calcular el polinomio que pasa por los puntos $(1,3)$, $(2,5)$ y $(-1,9)$.
+\end{enumerate}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=0.5]
+    % Ejes coordenados
+    \draw[-latex] (-2,0) -- (4,0) node[right] {$x$};
+    \draw[-latex] (0,-1) -- (0,10) node[above] {$y$};
+    
+    % Grilla opcional (comentar si no se desea)
+    \draw[help lines, opacity=0.3] (-2,-1) grid (4,10);
+    
+    % Parábola: y = (5/3)x² - 3x + 13/3
+    \draw[thick, blue, smooth, samples=100, domain=-1.1:3] 
+        plot (\x, {(5/3)*\x*\x - 3*\x + 13/3});
+    
+    % Puntos de interpolación
+    \fill[red] (1,3) circle (3pt);
+    \fill[red] (2,5) circle (3pt);
+    \fill[red] (-1,9) circle (3pt);
+    
+    % Etiquetas de los puntos
+    \node[above right] at (1,3) {$(x_1,y_1)$};
+    \node[above right] at (2,5) {$(x_2,y_2)$};
+    \node[above left] at (-1,9) {$(x_3,y_3)$};
+    
+    % Marcas en los ejes
+    \foreach \x in {-1,1,2,3}
+        \draw (\x,0.1) -- (\x,-0.1) node[below] {$\x$};
+    \foreach \y in {3,5,9}
+        \draw (0.1,\y) -- (-0.1,\y) node[left] {$\y$};
+\end{tikzpicture}
+\caption{Parábola de interpolación}\label{parabolainterpolacion}
+\end{figure}
+\end{multicols}
+\begin{myproof}
+\textbf{Paso 1.} $a)$ Si la curva $y=ax^2+bx+c$ pasa por los puntos dados, entonces al sustituir las coordenadas de cada punto en la ecuación de la parábola, obtenemos el siguiente sistema de ecuaciones lineales para $a$, $b$ y $c$: $
+\begin{cases}
+y_1 &= ax_1^2 + bx_1 + c\\
+y_2 &= ax_2^2 + bx_2 + c\\
+y_3 &= ax_3^2 + bx_3 + c
+\end{cases}$
+
+Reordenando en forma matricial, este sistema corresponde exactamente a la matriz aumentada del enunciado.
+
+\textbf{Paso 2.} $b)$ Para los puntos específicos $(1,3)$, $(2,5)$ y $(-1,9)$, construimos el sistema de ecuaciones: $\begin{cases}
+a(1)^2 + b(1) + c &= 3\\
+a(2)^2 + b(2) + c &= 5\\
+a(-1)^2 + b(-1) + c &= 9
+\end{cases}$ 
+el cual es equivalente a $\begin{cases}
+a + b + c &= 3\\
+4a + 2b + c &= 5\\
+a - b + c &= 9
+\end{cases}$
+
+La matriz aumentada correspondiente es:
+\[ \left( \begin{array}{ccc|c} 
+1 & 1 & 1 & 3\\
+4 & 2 & 1 & 5\\
+1 & -1 & 1 & 9
+\end{array} \right) \]
+
+\textbf{Paso 3.} Resolver por la regla de Cramer:
+
+La matriz de coeficientes es $A=\begin{pmatrix}
+1 & 1 & 1 \\
+4 & 2 & 1 \\
+1 & -1 & 1
+\end{pmatrix}$ y $\det A = -6$.
+
+Para encontrar $a$: $A_1=\begin{pmatrix}
+3 & 1 & 1 \\
+5 & 2 & 1 \\
+9 & -1 & 1
+\end{pmatrix}$ y $\det A_1 = -10$.
+
+Para encontrar $b$: $A_2=\begin{pmatrix}
+1 & 3 & 1 \\
+4 & 5 & 1 \\
+1 & 9 & 1
+\end{pmatrix}$ y $\det A_2 = 18$.
+
+Para encontrar $c$: $A_3=\begin{pmatrix}
+1 & 1 & 3 \\
+4 & 2 & 5 \\
+1 & -1 & 9
+\end{pmatrix}$ y $\det A_3 = -26$.
+
+Por tanto:
+\begin{align*}
+a &= \frac{\det A_1}{\det A} = \frac{-10}{-6} = \frac{5}{3}\\
+b &= \frac{\det A_2}{\det A} = \frac{18}{-6} = -3\\
+c &= \frac{\det A_3}{\det A} = \frac{-26}{-6} = \frac{13}{3}
+\end{align*}
+
+\textbf{Paso 4.} El polinomio que interpola los puntos dados es:
+\[ \boxed{p(x) = \frac{5}{3}x^2 - 3x + \frac{13}{3}} \]
+\end{myproof}
+\end{example}
+
+\begin{example}[La ley de cosenos vía la regla de Cramer]
+Considere el triángulo en la figura \ref{trianguloreglacramer}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.2]
+    % Definir coordenadas principales
+    \coordinate (A) at (-2,0);
+    \coordinate (B) at (5.16,0);
+    \coordinate (C) at (0,2.14);
+    \coordinate (D) at (0,0);
+    
+    % Triángulo principal
+    \draw[line width=2pt] (A) -- (C) -- (B) -- cycle;
+    
+    % Altura desde C
+    \draw[line width=2pt] (C) -- (D);
+    
+    % Líneas adicionales (proyecciones)
+    \draw[line width=2pt] (A) -- (D);
+    \draw[line width=2pt] (D) -- (B);
+    
+    % Cuadrado pequeño (ángulo recto)
+    \fill[black, opacity=0.2] (0,0) rectangle (0.42426,0.42426);
+    \draw[line width=2pt] (0,0) rectangle (0.42426,0.42426);
+    
+    % Arcos para los ángulos
+    \draw[line width=1.5pt] (A) ++(0.6,0) arc (0:46.57:0.6);
+    \draw[line width=1.5pt] (C) ++(-0.52,-0.36) arc (-135:-22.5:0.6);
+    \draw[line width=1.5pt] (B) ++(-0.6,0) arc (180:133.43:0.6);
+    
+    % Etiquetas de los lados
+    \node[above left] at (-1,1.07) {$b$};
+    \node[above right] at (2.58,1.07) {$a$};
+    \node[below] at (1.58,-0.3) {$c$};
+    
+    % Etiquetas de las proyecciones
+    \node[below] at (-1,-0.1) {$b\cos A$};
+    \node[below] at (2.58,-0.1) {$a\cos B$};
+    
+    % Línea de medida inferior
+    \draw[line width=2pt, |-|] ([yshift=-0.6cm]A) -- ([yshift=-0.6cm]B);
+    
+    % Etiquetas de los ángulos
+    \node[above right, font=\scriptsize] at (-1.28,0.32) {$A$};
+    \node[below, font=\scriptsize] at (0.3,1.34) {$C$};
+    \node[above left, font=\scriptsize] at (3.56,0.18) {$B$};
+    
+\end{tikzpicture}
+\caption{Triángulo del problema}
+\label{trianguloreglacramer}
+\end{figure}
+
+\begin{enumerate}[$(a)$]
+\item Demuestre usando trigonometría elemental que $\begin{cases}
+c\cos A + a\cos C =b\\
+b\cos A + a\cos B =c\\
+ c\cos B + b\cos C=a\\
+\end{cases}$
+\item Si se piensa que el sistema del inciso $(a)$ es un sistema de tres ecuaciones con tres incógnitas, $\cos A, \cos B$ y $\cos C,$ demuestre que el determinante del sistema es diferente de cero.
+\item Use la regla de Cramer para despejar $\cos C.$
+\item Utilice el inciso $(c)$ para probar la \textbf{ley de cosenos:} $c^2=a^2+b^2-2ab\cos C.$
+\end{enumerate}
+
+\begin{myproof}
+\textbf{Paso 1.} $(a)$ Para cada lado del triángulo, podemos expresarlo como la suma de las proyecciones de los otros dos lados sobre él.
+
+\textbf{Primera ecuación:} $c\cos A + a\cos C = b,$
+
+El lado $b$ (lado $AC$) puede descomponerse considerando las proyecciones del lado $c$ sobre $b$ la cual es $c\cos A$ y la proyección del lado $a$ sobre $b,$ que es $a\cos C.$ Por tanto: $b = c\cos A + a\cos C.$
+
+\textbf{Segunda ecuación:} $b\cos A + a\cos B = c.$
+
+El lado $c$ (lado $AB$) puede descomponerse considerando las proyecciones del lado $b$ sobre $c$ que es $b\cos A$ y la proyección del lado $a$ sobre $c$ que es $a\cos B.$ Por tanto: $c = b\cos A + a\cos B.$
+
+\textbf{Tercera ecuación:} $c\cos B + b\cos C = a.$
+
+El lado $a$ (lado $BC$) puede descomponerse considerando las proyecciones del lado $c$ sobre $a$ que es $c\cos B$ y la proyección del lado $b$ sobre $a$ que es $b\cos C.$ Por tanto: $a = c\cos B + b\cos C$
+
+\textbf{Paso 2.} $(b)$ El sistema se puede escribir en forma matricial como:
+\[\begin{pmatrix}
+c & 0 & a \\
+b & a & 0 \\
+0 & c & b
+\end{pmatrix}
+\begin{pmatrix}
+\cos A \\
+\cos B \\
+\cos C
+\end{pmatrix}
+=
+\begin{pmatrix}
+b \\
+c \\
+a
+\end{pmatrix}\]
+
+Calculamos el determinante de la matriz de coeficientes:
+\begin{align*}
+\det\begin{pmatrix}
+c & 0 & a \\
+b & a & 0 \\
+0 & c & b
+\end{pmatrix} &= c \det\begin{pmatrix} a & 0 \\ c & b \end{pmatrix} - 0 + a \det\begin{pmatrix} b & a \\ 0 & c \end{pmatrix}\\
+&= c(ab - 0) + a(bc - 0)\\
+&= abc + abc\\
+&= 2abc
+\end{align*}
+
+Como $a$, $b$, y $c$ son las longitudes de los lados de un triángulo, son todas positivas, por lo que $2abc > 0$. Por tanto, el determinante es diferente de cero.
+
+\textbf{Paso 3.} $(c)$ Aplicación de la regla de Cramer para despejar $\cos C$:
+
+Por la regla de Cramer: $\cos C = \frac{\det A_3}{\det A},$ donde $A_3$ es la matriz obtenida reemplazando la tercera columna por el vector de términos independientes: $A_3 = \begin{pmatrix}
+c & 0 & b \\
+b & a & c \\
+0 & c & a
+\end{pmatrix}$
+
+Calculamos $\det A_3$:
+\begin{align*}
+\det A_3 &= c \det\begin{pmatrix} a & c \\ c & a \end{pmatrix} - 0 + b \det\begin{pmatrix} b & a \\ 0 & c \end{pmatrix}\\
+&= c(a^2 - c^2) + b(bc - 0)\\
+&= c(a^2 - c^2) + b^2c\\
+&= ca^2 - c^3 + b^2c\\
+&= c(a^2 + b^2 - c^2)
+\end{align*}
+
+Por tanto: $\cos C = \frac{c(a^2 + b^2 - c^2)}{2abc} = \frac{a^2 + b^2 - c^2}{2ab}.$
+
+\textbf{Paso 4.} $(d)$ Demostración de la ley de cosenos:
+
+Del inciso $(c)$ tenemos: $\cos C = \frac{a^2 + b^2 - c^2}{2ab}.$
+
+Multiplicando ambos lados por $2ab$: $2ab\cos C = a^2 + b^2 - c^2.$
+
+Reordenando términos: $\boxed{c^2 = a^2 + b^2 - 2ab\cos C}.$ Esta es precisamente la \textbf{ley de cosenos}.
+\end{myproof}
+\end{example}
+
+\section{Problemas resueltos adicionales}
+
+% Intermedio
 \begin{prob} Tres especies de ardillas han sido llevadas a una isla con una población inicial total de 2.000. Después de 10 años, la especie I ha duplicado su población y la especie II ha incrementado su población en un 50\%, mientras que la especie III se ha extinguido. Si el incremento en la población de la especie I es igual que el de la especie II y si la población total se ha incrementado en 500, determine la población inicial de las tres especies.
 
 \begin{myproof}
@@ -750,6 +1244,7 @@ Por tanto, las poblaciones iniciales son: 500 ardillas de la especie I, 1000 ard
 \end{prob}
 
 
+% Básico
 \begin{prob} 
 Utilice eliminación gaussiana o de Gauss-Jordan para resolver los sistemas de ecuaciones lineales. Si existe solución única, indíquela; si hay infinitas soluciones, identifique las variables libres y exprese el conjunto solución en forma paramétrica; si no hay solución, explique claramente la razón mediante la forma escalonada o inconsistencia detectada.
 
@@ -926,59 +1421,7 @@ x+2y-2z&=&b_1\\
     \end{enumerate}
 \end{prob}
 
-\begin{prob} 
-Determine los valores del parámetro \( t \) para los cuales el siguiente sistema tiene solución única, infinitas soluciones o ninguna solución. Justifique mediante análisis de rango y consistencia.
-
-\[
-\left\lbrace  
-\begin{array}{rcl}
-x_1 + x_2 + x_3 &=& 4 \\
-x_3 &=& 2 \\
-\left(t^2 - 4\right)x_3 &=& t + 2 \\
-\end{array} 
-\right. 
-\]
-
-\begin{myproof}
-Aplicamos eliminación gaussiana a la matriz aumentada: \(
-\begin{pmatrix}
-1 & 1 & 1 & | & 4 \\
-0 & 0 & 1 & | & 2 \\
-0 & 0 & t^2-4 & | & t+2 \\
-\end{pmatrix}
-\)
-
-\( f_3 - (t^2-4) \cdot f_2 \to f_3 \): \(
-\begin{pmatrix}
-1 & 1 & 1 & | & 4 \\
-0 & 0 & 1 & | & 2 \\
-0 & 0 & 0 & | & -2t^2 + t + 10 \\
-\end{pmatrix}.
-\)
-
-\begin{itemize}
-\item \textbf{Rango y consistencia:} 
-  \begin{itemize}
-  \item \(\text{rango}(A) = 2\) (dos filas no nulas en forma escalonada)
-  \item \(\text{rango}(\tilde{A}) = 2\) si \(-2t^2 + t + 10 = 0\), y \(3\) en otro caso.
-  \end{itemize}
-
-\item \textbf{Solución única:} Imposible. La segunda columna no tiene pivote, lo que implica una variable libre (\(x_2\)) si el sistema es consistente.
-
-\item \textbf{Infinitas soluciones:} Ocurre cuando \(\text{rango}(A) = \text{rango}(\tilde{A}) = 2\). Esto requiere:
-  \[
-  -2t^2 + t + 10 = 0 \implies t = \frac{1 \pm \sqrt{1 + 80}}{4} = \frac{1 \pm 9}{4}
-  \]
-  Así, \( t = \dfrac{5}{2} \) o \( t = -2 \). En estos casos, \(x_2\) es variable libre y las soluciones son de la forma:
-  \[
-  \begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix} = \begin{pmatrix} 2 - x_2 \\ x_2 \\ 2 \end{pmatrix}, \quad x_2 \in \mathbb{R}.
-  \]
-
-\item \textbf{Ninguna solución:} Ocurre cuando \(\text{rango}(A) = 2 \neq 3 = \text{rango}(\tilde{A})\), es decir, para \(t \neq \dfrac{5}{2}\) y \(t \neq -2\). La última ecuación sería \(0 = -2t^2 + t + 10 \neq 0\), una inconsistencia.
-\end{itemize}
-\end{myproof}
-\end{prob}
-
+% Intermedio
 \begin{prob} 
 Dado el sistema de ecuaciones lineales
 
@@ -1058,125 +1501,7 @@ es inconsistente (la tercera ecuación fuerza $y=1$, pero las primeras implican 
 \end{myproof}
 \end{prob}
 
-\begin{prob} La curva $y=ax^2+bx+c$ que se observa en la figura \ref{parabolainterpolacion} pasa por los puntos $(x_1,y_1)$, $(x_2,y_2)$ y $(x_3,y_3)$.
-
-\begin{multicols}{2}
-
-
-\begin{enumerate}[a)]
-\item Demuestre que los coeficientes $a$, $b$ y $c$ son soluciones del sistema cuya matriz aumentada es 
-\[ \left( \begin{array}{ccc|c} 
-x_1^2 & x_1 & 1 & y_1\\
-x_2^2 & x_2 & 1 & y_2\\
-x_3^2 & x_3 & 1 & y_3
-\end{array} \right) \]
-
-\item Use lo anterior para calcular el polinomio que pasa por los puntos $(1,3)$, $(2,5)$ y $(-1,9)$.
-\end{enumerate}
-
-\begin{figure}[H]
-\centering
-\begin{tikzpicture}[scale=0.5]
-    % Ejes coordenados
-    \draw[-latex] (-2,0) -- (4,0) node[right] {$x$};
-    \draw[-latex] (0,-1) -- (0,10) node[above] {$y$};
-    
-    % Grilla opcional (comentar si no se desea)
-    \draw[help lines, opacity=0.3] (-2,-1) grid (4,10);
-    
-    % Parábola: y = (5/3)x² - 3x + 13/3
-    \draw[thick, blue, smooth, samples=100, domain=-1.1:3] 
-        plot (\x, {(5/3)*\x*\x - 3*\x + 13/3});
-    
-    % Puntos de interpolación
-    \fill[red] (1,3) circle (3pt);
-    \fill[red] (2,5) circle (3pt);
-    \fill[red] (-1,9) circle (3pt);
-    
-    % Etiquetas de los puntos
-    \node[above right] at (1,3) {$(x_1,y_1)$};
-    \node[above right] at (2,5) {$(x_2,y_2)$};
-    \node[above left] at (-1,9) {$(x_3,y_3)$};
-    
-    % Marcas en los ejes
-    \foreach \x in {-1,1,2,3}
-        \draw (\x,0.1) -- (\x,-0.1) node[below] {$\x$};
-    \foreach \y in {3,5,9}
-        \draw (0.1,\y) -- (-0.1,\y) node[left] {$\y$};
-\end{tikzpicture}
-\caption{Parábola de interpolación}\label{parabolainterpolacion}
-\end{figure}
-\end{multicols}
-\begin{myproof}
-\begin{enumerate}[a)]
-\item Si la curva $y=ax^2+bx+c$ pasa por los puntos dados, entonces al sustituir las coordenadas de cada punto en la ecuación de la parábola, obtenemos el siguiente sistema de ecuaciones lineales para $a$, $b$ y $c$: $
-\begin{cases}
-y_1 &= ax_1^2 + bx_1 + c\\
-y_2 &= ax_2^2 + bx_2 + c\\
-y_3 &= ax_3^2 + bx_3 + c
-\end{cases}$
-
-Reordenando en forma matricial, este sistema corresponde exactamente a la matriz aumentada del enunciado.
-
-\item Para los puntos específicos $(1,3)$, $(2,5)$ y $(-1,9)$, construimos el sistema de ecuaciones: $\begin{cases}
-a(1)^2 + b(1) + c &= 3\\
-a(2)^2 + b(2) + c &= 5\\
-a(-1)^2 + b(-1) + c &= 9
-\end{cases}$ 
-el cual es equivalente a $\begin{cases}
-a + b + c &= 3\\
-4a + 2b + c &= 5\\
-a - b + c &= 9
-\end{cases}$
-
-La matriz aumentada correspondiente es:
-\[ \left( \begin{array}{ccc|c} 
-1 & 1 & 1 & 3\\
-4 & 2 & 1 & 5\\
-1 & -1 & 1 & 9
-\end{array} \right) \]
-
-Resolviendo por la regla de Cramer:
-
-La matriz de coeficientes es $A=\begin{pmatrix}
-1 & 1 & 1 \\
-4 & 2 & 1 \\
-1 & -1 & 1
-\end{pmatrix}$ y $\det A = -6$.
-
-Para encontrar $a$: $A_1=\begin{pmatrix}
-3 & 1 & 1 \\
-5 & 2 & 1 \\
-9 & -1 & 1
-\end{pmatrix}$ y $\det A_1 = -10$.
-
-Para encontrar $b$: $A_2=\begin{pmatrix}
-1 & 3 & 1 \\
-4 & 5 & 1 \\
-1 & 9 & 1
-\end{pmatrix}$ y $\det A_2 = 18$.
-
-Para encontrar $c$: $A_3=\begin{pmatrix}
-1 & 1 & 3 \\
-4 & 2 & 5 \\
-1 & -1 & 9
-\end{pmatrix}$ y $\det A_3 = -26$.
-
-Por tanto:
-\begin{align*}
-a &= \frac{\det A_1}{\det A} = \frac{-10}{-6} = \frac{5}{3}\\
-b &= \frac{\det A_2}{\det A} = \frac{18}{-6} = -3\\
-c &= \frac{\det A_3}{\det A} = \frac{-26}{-6} = \frac{13}{3}
-\end{align*}
-
-El polinomio que interpola los puntos dados es:
-\[ p(x) = \frac{5}{3}x^2 - 3x + \frac{13}{3} \]
-\end{enumerate}
-\end{myproof}
-
-\end{prob}
-
-
+% Básico
 \begin{prob}
 
 \begin{multicols}{2}
@@ -1282,6 +1607,7 @@ Esta es una circunferencia con centro en $(1, 2)$ y radio $\sqrt{34}.$
 
 \end{prob}
 
+% Intermedio
 \begin{prob}  
 Considere el siguiente sistema de ecuaciones lineales
 
@@ -1381,73 +1707,7 @@ La solución general es: $x = 3 - 2t, y = t$ donde $t \in \mathbb{R}$.
 \end{enumerate}
 \end{prob}
 
-\begin{prob} 
-Encuentre tres números reales tales que su suma sea 12, la suma de dos veces el primero más el segundo más el tercero sea 5 y que el tercer número es uno más que el primero.  
-
-\begin{myproof} 
-Sean $x$, $y$, $z$ los tres números reales que buscamos. Según las condiciones del problema, podemos plantear el siguiente sistema de ecuaciones:
-
-De "su suma sea 12": $x + y + z = 12 \quad (1)$
-
-De "la suma de dos veces el primero más el segundo más el tercero sea 5": $2x + y + z = 5 \quad (2)$
-
-De "el tercer número es uno más que el primero": $z = x + 1 \quad \Rightarrow \quad x - z = -1 \quad (3)$
-
-Reescribimos el sistema en forma matricial:
-$\left\lbrace \begin{array}{ccccccc}
-x & + & y & + & z & = & 12 \\
-2x & + & y & + & z & = & 5 \\
-x & + & 0y & - & z & = & -1
-\end{array} \right.$
-
-La matriz de coeficientes es:
-$A = \begin{pmatrix}
-1 & 1 & 1 \\
-2 & 1 & 1 \\
-1 & 0 & -1
-\end{pmatrix}$
-
-\textbf{Aplicando la Regla de Cramer:}
-
-Primero calculamos el determinante de $A$:
-$\det(A) = \begin{vmatrix}
-1 & 1 & 1 \\
-2 & 1 & 1 \\
-1 & 0 & -1
-\end{vmatrix} = 1$
-
-Como $\det(A) = 1 \neq 0$, el sistema tiene solución única.
-
-Para encontrar $x$, calculamos $\det(A_1)$ reemplazando la primera columna por el vector de términos independientes:
-$A_1 = \begin{pmatrix}
-12 & 1 & 1 \\
-5 & 1 & 1 \\
--1 & 0 & -1
-\end{pmatrix}$ y $\det(A_1) = -7.$
-
-Por tanto: $x = \frac{\det(A_1)}{\det(A)} = \frac{-7}{1} = -7$
-
-Para encontrar $y$, calculamos $\det(A_2)$: $A_2 = \begin{pmatrix}
-1 & 12 & 1 \\
-2 & 5 & 1 \\
-1 & -1 & -1
-\end{pmatrix}$ y $\det(A_y) = 25.$
-
-Por tanto: $y = \frac{\det(A_y)}{\det(A)} = \frac{25}{1} = 25$
-
-Para encontrar $z$, calculamos $\det(A_3)$:
-$A_z = \begin{pmatrix}
-1 & 1 & 12 \\
-2 & 1 & 5 \\
-1 & 0 & -1
-\end{pmatrix}$ y $\det(A_z) = -6.$
-
-Por tanto: $z = \frac{\det(A_z)}{\det(A)} = \frac{-6}{1} = -6$
-
-Los tres números reales son: $x = -7, \quad y = 25, \quad z = -6.$
-\end{myproof}
-\end{prob}
-
+% Intermedio
 \begin{prob} 
 Una artesana teje tres tipos de abrigos. El primer tipo de abrigo requiere 6 metros de hilo rojo, 2 metros de hilo negro y 8 metros de hilo blanco. Los tipos segundo y tercero requieren 4, 3, 7 y 8, 2, 10 metros respectivamente. Si en cada pedido de materiales la artesana dispone de 400 metros de hilo rojo, 150 metros de hilo negro y 550 metros de hilo blanco: 
 
@@ -1542,6 +1802,7 @@ Si se prioriza el tercer tipo de abrigo, se debe maximizar $C$. El valor máximo
 \end{myproof}
 \end{prob}
 
+% Intermedio
 \begin{prob}
 Según mediciones meteorológicas realizadas en el Aeropuerto Internacional Palonegro en Bucaramanga, durante los días 1 de abril, 11 de abril y 21 de abril de 2023, el sol salió a las 5:50 a.m., 5:46 a.m. y 5:41 a.m., respectivamente. 
 
@@ -1592,21 +1853,21 @@ B = \begin{pmatrix}
 350 \\ 346 \\ 341
 \end{pmatrix}.\)
 
-\textbf{Paso 1:} Calcular $\det(A)= -2000.$
+\textbf{Paso 1.} Calcular $\det(A)= -2000.$
 
-\textbf{Paso 2:} $A_1 = \begin{pmatrix}
+\textbf{Paso 2.} $A_1 = \begin{pmatrix}
 350 & 91 & 1 \\
 346 & 101 & 1 \\
 341 & 111 & 1
 \end{pmatrix}$ y $\det(A_1) = 10.$
 
-\textbf{Paso 3:} $A_2 = \begin{pmatrix}
+\textbf{Paso 3.} $A_2 = \begin{pmatrix}
 8281 & 350 & 1 \\
 10201 & 346 & 1 \\
 12321 & 341 & 1
 \end{pmatrix}$ y $\det(A_2) = -1120.$
 
-\textbf{Paso 4:} $A_3 = \begin{pmatrix}
+\textbf{Paso 4.} $A_3 = \begin{pmatrix}
 8281 & 91 & 350 \\
 10201 & 101 & 346 \\
 12321 & 111 & 341
@@ -1638,6 +1899,7 @@ El polinomio interpolador es \( P(x) = -\dfrac{1}{200}x^2 + \dfrac{14}{25}x + \d
 
 
 
+% Básico
 \begin{prob}
 Encuentre la matriz $X$ tal que la igualdad se cumpla $\left( \begin{array}{cc}
 3&1\\
@@ -1646,7 +1908,6 @@ Encuentre la matriz $X$ tal que la igualdad se cumpla $\left( \begin{array}{cc}
 2&0\\ \end{array} \right)= \left( \begin{array}{cc}
 2&-2\\
 5&4\\ \end{array} \right).$
-\end{prob}
 
 \begin{myproof}
 Sea $X = \left( \begin{array}{cc} x_{11} & x_{12} \\ x_{21} & x_{22} \end{array} \right)$ la matriz incógnita.
@@ -1696,56 +1957,56 @@ Resolvemos usando eliminación gaussiana. La matriz aumentada es: $\left(\begin{
 0 & -1 & -4 & 2 & 4
 \end{array}\right).$
 
-\textbf{Paso 1:} $f_1 \leftrightarrow f_3$: $\left(\begin{array}{cccc|c}
+\textbf{Paso 1.} $f_1 \leftrightarrow f_3$: $\left(\begin{array}{cccc|c}
 -1 & 0 & 1 & -2 & 5 \\
 -4 & 3 & 0 & 1 & -2 \\
 2 & -2 & 1 & 0 & 2 \\
 0 & -1 & -4 & 2 & 4
 \end{array}\right)$
 
-\textbf{Paso 2:} $f_2 - 4f_1 \to f_2$: $\left(\begin{array}{cccc|c}
+\textbf{Paso 2.} $f_2 - 4f_1 \to f_2$: $\left(\begin{array}{cccc|c}
 -1 & 0 & 1 & -2 & 5 \\
 0 & 3 & -4 & 9 & -22 \\
 2 & -2 & 1 & 0 & 2 \\
 0 & -1 & -4 & 2 & 4
 \end{array}\right).$
 
-\textbf{Paso 3:} $f_3 + 2f_1 \to f_3$: $\left(\begin{array}{cccc|c}
+\textbf{Paso 3.} $f_3 + 2f_1 \to f_3$: $\left(\begin{array}{cccc|c}
 -1 & 0 & 1 & -2 & 5 \\
 0 & 3 & -4 & 9 & -22 \\
 0 & -2 & 3 & -4 & 12 \\
 0 & -1 & -4 & 2 & 4
 \end{array}\right).$
 
-\textbf{Paso 4:} $2f_2 + 3f_3 \to f_3$: $\left(\begin{array}{cccc|c}
+\textbf{Paso 4.} $2f_2 + 3f_3 \to f_3$: $\left(\begin{array}{cccc|c}
 -1 & 0 & 1 & -2 & 5 \\
 0 & 3 & -4 & 9 & -22 \\
 0 & 0 & 1 & 6 & -8 \\
 0 & -1 & -4 & 2 & 4
 \end{array}\right).$
 
-\textbf{Paso 5:} $3f_4 + f_2 \to f_4$: $\left(\begin{array}{cccc|c}
+\textbf{Paso 5.} $3f_4 + f_2 \to f_4$: $\left(\begin{array}{cccc|c}
 -1 & 0 & 1 & -2 & 5 \\
 0 & 3 & -4 & 9 & -22 \\
 0 & 0 & 1 & 6 & -8 \\
 0 & 0 & -16 & 15 & -10
 \end{array}\right).$
 
-\textbf{Paso 6:} $16f_3 + f_4 \to f_4$: $\left(\begin{array}{cccc|c}
+\textbf{Paso 6.} $16f_3 + f_4 \to f_4$: $\left(\begin{array}{cccc|c}
 -1 & 0 & 1 & -2 & 5 \\
 0 & 3 & -4 & 9 & -22 \\
 0 & 0 & 1 & 6 & -8 \\
 0 & 0 & 0 & 111 & -138
 \end{array}\right).$
 
-\textbf{Paso 7:} $\frac{1}{3}f_4 \to f_4$: $\left(\begin{array}{cccc|c}
+\textbf{Paso 7.} $\frac{1}{3}f_4 \to f_4$: $\left(\begin{array}{cccc|c}
 -1 & 0 & 1 & -2 & 5 \\
 0 & 3 & -4 & 9 & -22 \\
 0 & 0 & 1 & 6 & -8 \\
 0 & 0 & 0 & 37 & -46
 \end{array}\right).$
 
-\textbf{Paso 8:} Sustitución hacia atrás:
+\textbf{Paso 8.} Sustitución hacia atrás:
 
 De la cuarta fila: $37x_{22} = -46 \Rightarrow x_{22} = -\dfrac{46}{37}$
 
@@ -1764,7 +2025,9 @@ Por lo tanto: $X = \left( \begin{array}{cc}
 -\dfrac{20}{37} & -\dfrac{46}{37}
 \end{array} \right).$
 \end{myproof}
+\end{prob}
 
+% Básico
 \begin{prob}
 Suponga que una cierta dieta requiere 7 unidades de grasa, 9 unidades de proteína y 16 unidades de carbohidratos para la comida principal, y que una persona tiene tres alimentos posibles para elegir y cumplir con estos requisitos:
 
@@ -1775,7 +2038,6 @@ Suponga que una cierta dieta requiere 7 unidades de grasa, 9 unidades de proteí
 \textit{Alimento 3:} Cada onza contiene 1 unidad de grasa, 3 de proteína y 5 de carbohidratos.
 
 Sean $x,$ $y$ y $z$ las cantidades en onzas del primer, segundo y tercer alimento que la persona consumirá en la comida principal. Determine un sistema de ecuaciones lineales en términos de $x,$ $y$ y $z$ cuya solución indique cuántas onzas de cada alimento deben consumirse para cumplir con los requisitos de la dieta.
-\end{prob}
 
 \begin{myproof}
 Para establecer el sistema de ecuaciones, consideramos que:
@@ -1805,25 +2067,25 @@ Resolvemos usando eliminación gaussiana. La matriz aumentada es: $\left(\begin{
 4 & 2 & 5 & 16
 \end{array}\right)$
 
-\textbf{Paso 1:} $-f_1 + f_2 \to f_2:$ $\left(\begin{array}{ccc|c}
+\textbf{Paso 1.} $-f_1 + f_2 \to f_2:$ $\left(\begin{array}{ccc|c}
 2 & 3 & 1 & 7 \\
 0 & -2 & 2 & 2 \\
 4 & 2 & 5 & 16
 \end{array}\right)$
 
-\textbf{Paso 2:} $-2f_1 + f_3 \to f_3:$ $\left(\begin{array}{ccc|c}
+\textbf{Paso 2.} $-2f_1 + f_3 \to f_3:$ $\left(\begin{array}{ccc|c}
 2 & 3 & 1 & 7 \\
 0 & -2 & 2 & 2 \\
 0 & -4 & 3 & 2
 \end{array}\right)$
 
-\textbf{Paso 3:} $-2f_2 + f_3 \to f_3:$ $\left(\begin{array}{ccc|c}
+\textbf{Paso 3.} $-2f_2 + f_3 \to f_3:$ $\left(\begin{array}{ccc|c}
 2 & 3 & 1 & 7 \\
 0 & -2 & 2 & 2 \\
 0 & 0 & -1 & -2
 \end{array}\right)$
 
-\textbf{Paso 4:} Sustitución hacia atrás:
+\textbf{Paso 4.} Sustitución hacia atrás:
 
 De la tercera fila: $-z = -2\Rightarrow z = 2.$
 
@@ -1840,10 +2102,11 @@ z &= 2 \text{ onzas del alimento 3}
 
 La persona debe consumir 1 onza del alimento 1, 1 onza del alimento 2, y 2 onzas del alimento 3 para cumplir exactamente con los requisitos de la dieta.
 \end{myproof}
+\end{prob}
 
+% Básico
 \begin{prob}
 Una alcancía tiene monedas de tres denominaciones diferentes. Con 8 monedas de la primera denominación más 23 monedas de la segunda denominación, más 17 monedas de la tercera denominación se completarían \$23.300. Además, tener 10 monedas de la primera denominación, más 10 monedas de la segunda denominación sería lo mismo que tener 6 monedas de la tercera denominación, mientras que tener 10 monedas de la segunda denominación más 5 monedas de la tercera denominación sería lo mismo que tener 12 monedas de la primera denominación. ¿Cuáles son las denominaciones de las monedas que contiene la alcancía?
-\end{prob}
 
 \begin{myproof} Sean $x$, $y$, y $z$ las denominaciones de la primera, segunda y tercera moneda respectivamente, expresadas en pesos. Del enunciado del problema, podemos establecer el siguiente sistema de ecuaciones: $\begin{cases}
 8x + 23y + 17z &= 23300  \\
@@ -1883,7 +2146,7 @@ $22f_2 - 15f_3 \to f_3$: $\left(\begin{array}{ccc|c}
 0 & 0 & 2563 & 2563000
 \end{array}\right)$
 
-\textbf{Paso 5:} Sustitución hacia atrás:
+\textbf{Paso 5.} Sustitución hacia atrás:
 
 De la tercera fila: $2563z = 2563000$
 $z = \dfrac{2563000}{2563} = 1000$
@@ -1907,11 +2170,12 @@ z &= 1000 \text{ pesos}
 
 Por tanto, las denominaciones de las monedas son \$500, \$100 y \$1000.
 \end{myproof}
+\end{prob}
 
 
+% Básico
 \begin{prob}
 Un número de dos dígitos tiene dos propiedades: la suma de los dígitos es 11 y si el número se escribe con sus dígitos al revés y se restan del número original, el resultado es 45. Encuentre el número. \textit{Sugerencia:} Recuerde que si un número es de dos dígitos $AB$, puede escribirse como $10A+B$, por ejemplo, $53=5(10)+3.$
-\end{prob}
 
 \begin{myproof}
 Sea el número de dos dígitos $AB$, donde $A$ representa el dígito de las decenas y $B$ representa el dígito de las unidades.
@@ -1937,12 +2201,12 @@ Resolvemos usando eliminación gaussiana. La matriz aumentada es: $\left(\begin{
 \end{array}\right).$
 
 
-\textbf{Paso 1:} $-f_1 + f_2 \to f_2:$ $\left(\begin{array}{cc|c}
+\textbf{Paso 1.} $-f_1 + f_2 \to f_2:$ $\left(\begin{array}{cc|c}
 1 & 1 & 11 \\
 0 & -2 & -6
 \end{array}\right).$
 
-\textbf{Paso 2:} Sustitución hacia atrás: 
+\textbf{Paso 2.} Sustitución hacia atrás: 
 
 De la segunda fila: $-2B = -6\Rightarrow B = 3.$
 
@@ -1950,14 +2214,15 @@ De la primera fila: $A + B = 11\Rightarrow A = 8.$
 
 Por lo tanto el número de dos dígitos es $AB = 83$.
 \end{myproof}
+\end{prob}
 
 
+% Intermedio
 \begin{prob}
 Encuentre $a,b,c,d$ para que la matriz $\left( \begin{array}{ccc}
 0&2a-3b+c&3a-5b+5c\\
 -2&0&5a-8b+c\\
 -3&-5&d\\\end{array} \right)$ sea antisimétrica 
-\end{prob}
 
 \begin{myproof}
 Una matriz $M$ es antisimétrica si $M^T = -M$, es decir, $m_{ij} = -m_{ji}$ para todos los índices $i,j$.
@@ -2007,7 +2272,9 @@ $c = 0$, $b = 0$, $a = 1$
 
 Por tanto: $a = 1$, $b = 0$, $c = 0$, $d = 0$.
 \end{myproof}
+\end{prob}
 
+% Intermedio
 \begin{prob}
 ¿Cuáles deben ser los coeficientes $a,b,c$ para que el sistema  $\left\lbrace \begin{array}{ccc}
 ax+by-3z&=&-3\\
@@ -2016,7 +2283,6 @@ ax+3y-cz&=&-3\\
 \end{array} \right. $ tenga soluciones $x=1,$ $y=-1$ y $z=2$?
 
 
-\end{prob}
 
 \begin{myproof}
 Sustituimos $x=1$, $y=-1$, $z=2$ en cada ecuación:
@@ -2056,7 +2322,9 @@ $c = 1$, $b = -1$, $a = 2$
 
 Por tanto: $a = 2$, $b = -1$, $c = 1$.
 \end{myproof}
+\end{prob}
 
+% Intermedio
 \begin{prob}
 Sea $A$ la matriz de coeficientes del sistema de ecuaciones lineales $\left\lbrace \begin{array}{cc}
 -x_1-2x_2&=1\\ 
@@ -2067,7 +2335,6 @@ Sea $A$ la matriz de coeficientes del sistema de ecuaciones lineales $\left\lbra
 \item Resuelva el sistema calculando la matriz inversa $A^{-1}.$
 \item Si ${\bf x}=\left( \begin{array}{c} x_1 \\ x_2 \end{array} \right)$ es la solución del sistema obtenida en la parte $a)$ calcule y simplifique $A^{2017}{\bf x}.$
 \end{enumerate}
-\end{prob}
 
 \begin{myproof}
 $a)$ La matriz de coeficientes es: $A = \left( \begin{array}{cc} -1 & -2 \\ 2 & 3 \end{array} \right).$
@@ -2102,7 +2369,9 @@ Continuando este proceso: $A^{2017}{\bf x} = \left( \begin{array}{c} 1 \\ -1 \en
 
 Por tanto: $A^{2017}{\bf x} = \left( \begin{array}{c} 1 \\ -1 \end{array} \right)$.
 \end{myproof}
+\end{prob}
 
+% Intermedio
 \begin{prob}
 Dado el sistema de ecuaciones lineales $\left\lbrace \begin{array}{ccc }
 x + y + \alpha z&=&0\\
@@ -2111,7 +2380,6 @@ x + y + \beta z&=&0\\
 \end{array} \right.$ use la matriz de coeficientes del sistema para justificar por qué tiene soluciones infinitas si $\alpha=\beta.$
 
 
-\end{prob}
 
 \begin{myproof}
 La matriz de coeficientes es: $A = \left( \begin{array}{ccc}
@@ -2143,150 +2411,9 @@ Si $\alpha = \pm 1$, entonces el rango de $A$ es 1.
 
 En ambos casos, el rango de $A$ es menor que 3 (número de variables), por lo que el sistema homogéneo tiene soluciones no triviales infinitas cuando $\alpha = \beta$.
 \end{myproof}
-
-\begin{prob} Considere el triángulo en la figura \ref{trianguloreglacramer}
-
-\begin{figure}[H]
-\centering
-\begin{tikzpicture}[scale=1.2]
-    % Definir coordenadas principales
-    \coordinate (A) at (-2,0);
-    \coordinate (B) at (5.16,0);
-    \coordinate (C) at (0,2.14);
-    \coordinate (D) at (0,0);
-    
-    % Triángulo principal
-    \draw[line width=2pt] (A) -- (C) -- (B) -- cycle;
-    
-    % Altura desde C
-    \draw[line width=2pt] (C) -- (D);
-    
-    % Líneas adicionales (proyecciones)
-    \draw[line width=2pt] (A) -- (D);
-    \draw[line width=2pt] (D) -- (B);
-    
-    % Cuadrado pequeño (ángulo recto)
-    \fill[black, opacity=0.2] (0,0) rectangle (0.42426,0.42426);
-    \draw[line width=2pt] (0,0) rectangle (0.42426,0.42426);
-    
-    % Arcos para los ángulos
-    \draw[line width=1.5pt] (A) ++(0.6,0) arc (0:46.57:0.6);
-    \draw[line width=1.5pt] (C) ++(-0.52,-0.36) arc (-135:-22.5:0.6);
-    \draw[line width=1.5pt] (B) ++(-0.6,0) arc (180:133.43:0.6);
-    
-    % Etiquetas de los lados
-    \node[above left] at (-1,1.07) {$b$};
-    \node[above right] at (2.58,1.07) {$a$};
-    \node[below] at (1.58,-0.3) {$c$};
-    
-    % Etiquetas de las proyecciones
-    \node[below] at (-1,-0.1) {$b\cos A$};
-    \node[below] at (2.58,-0.1) {$a\cos B$};
-    
-    % Línea de medida inferior
-    \draw[line width=2pt, |-|] ([yshift=-0.6cm]A) -- ([yshift=-0.6cm]B);
-    
-    % Etiquetas de los ángulos
-    \node[above right, font=\scriptsize] at (-1.28,0.32) {$A$};
-    \node[below, font=\scriptsize] at (0.3,1.34) {$C$};
-    \node[above left, font=\scriptsize] at (3.56,0.18) {$B$};
-    
-\end{tikzpicture}
-\caption{Triángulo del problema}
-\label{trianguloreglacramer}
-\end{figure}
-
-\begin{enumerate}[$(a)$]
-\item Demuestre usando trigonometría elemental que $\begin{cases}
-c\cos A + a\cos C =b\\
-b\cos A + a\cos B =c\\
- c\cos B + b\cos C=a\\
-\end{cases}$
-\item Si se piensa que el sistema del inciso $(a)$ es un sistema de tres ecuaciones con tres incógnitas, $\cos A, \cos B$ y $\cos C,$ demuestre que el determinante del sistema es diferente de cero.
-\item Use la regla de Cramer para despejar $\cos C.$
-\item Utilice el inciso $(c)$ para probar la \textbf{ley de cosenos:} $c^2=a^2+b^2-2ab\cos C.$
-\end{enumerate}
-
-\begin{myproof}
-\textbf{(a)} Para cada lado del triángulo, podemos expresarlo como la suma de las proyecciones de los otros dos lados sobre él.
-
-\textbf{Primera ecuación:} $c\cos A + a\cos C = b,$
-
-El lado $b$ (lado $AC$) puede descomponerse considerando las proyecciones del lado $c$ sobre $b$ la cual es $c\cos A$ y la proyección del lado $a$ sobre $b,$ que es $a\cos C.$ Por tanto: $b = c\cos A + a\cos C.$
-
-\textbf{Segunda ecuación:} $b\cos A + a\cos B = c.$
-
-El lado $c$ (lado $AB$) puede descomponerse considerando las proyecciones del lado $b$ sobre $c$ que es $b\cos A$ y la proyección del lado $a$ sobre $c$ que es $a\cos B.$ Por tanto: $c = b\cos A + a\cos B.$
-
-\textbf{Tercera ecuación:} $c\cos B + b\cos C = a.$
-
-El lado $a$ (lado $BC$) puede descomponerse considerando las proyecciones del lado $c$ sobre $a$ que es $c\cos B$ y la proyección del lado $b$ sobre $a$ que es $b\cos C.$ Por tanto: $a = c\cos B + b\cos C$
-
-\textbf{(b)}  El sistema se puede escribir en forma matricial como:
-\[\begin{pmatrix}
-c & 0 & a \\
-b & a & 0 \\
-0 & c & b
-\end{pmatrix}
-\begin{pmatrix}
-\cos A \\
-\cos B \\
-\cos C
-\end{pmatrix}
-=
-\begin{pmatrix}
-b \\
-c \\
-a
-\end{pmatrix}\]
-
-Calculamos el determinante de la matriz de coeficientes:
-\begin{align*}
-\det\begin{pmatrix}
-c & 0 & a \\
-b & a & 0 \\
-0 & c & b
-\end{pmatrix} &= c \det\begin{pmatrix} a & 0 \\ c & b \end{pmatrix} - 0 + a \det\begin{pmatrix} b & a \\ 0 & c \end{pmatrix}\\
-&= c(ab - 0) + a(bc - 0)\\
-&= abc + abc\\
-&= 2abc
-\end{align*}
-
-Como $a$, $b$, y $c$ son las longitudes de los lados de un triángulo, son todas positivas, por lo que $2abc > 0$. Por tanto, el determinante es diferente de cero.
-
-\textbf{(c)} Aplicación de la regla de Cramer para despejar $\cos C$:
-
-Por la regla de Cramer: $\cos C = \frac{\det A_3}{\det A},$ donde $A_3$ es la matriz obtenida reemplazando la tercera columna por el vector de términos independientes: $A_3 = \begin{pmatrix}
-c & 0 & b \\
-b & a & c \\
-0 & c & a
-\end{pmatrix}$
-
-Calculamos $\det A_3$:
-\begin{align*}
-\det A_3 &= c \det\begin{pmatrix} a & c \\ c & a \end{pmatrix} - 0 + b \det\begin{pmatrix} b & a \\ 0 & c \end{pmatrix}\\
-&= c(a^2 - c^2) + b(bc - 0)\\
-&= c(a^2 - c^2) + b^2c\\
-&= ca^2 - c^3 + b^2c\\
-&= c(a^2 + b^2 - c^2)
-\end{align*}
-
-Por tanto: $\cos C = \frac{c(a^2 + b^2 - c^2)}{2abc} = \frac{a^2 + b^2 - c^2}{2ab}.$
-
-\textbf{(d)} Demostración de la ley de cosenos:
-
-Del inciso $(c)$ tenemos: $\cos C = \frac{a^2 + b^2 - c^2}{2ab}.$
-
-Multiplicando ambos lados por $2ab$: $2ab\cos C = a^2 + b^2 - c^2.$
-
-Reordenando términos: $c^2 = a^2 + b^2 - 2ab\cos C.$ Esta es precisamente la \textbf{ley de cosenos}.
-\end{myproof}
 \end{prob}
- 
 
-
-
-
+% Desafiante
 \begin{prob}
 La tabla \ref{Aladeaviontabla} muestra la fuerza necesaria para levantar el ala de un avión medida usando la velocidad de despegue en un túnel del viento. Construya un polinomio de grado cinco que interpole los datos y estime la fuerza a los $2000\ \text{ft}/\text{s}.$
 
@@ -2355,6 +2482,7 @@ Por tanto, la fuerza estimada a $2000\ \text{ft}/\text{s}$ es aproximadamente $2
 \end{myproof}
 \end{prob}
 
+% Desafiante
 \begin{prob}\label{problemapolinomios}
 Calcule una ecuación que represente la familia de todos los polinomios de grado 2 que pasen por los puntos $(0,1)$ y $(1,2).$ Esto generará un sistema de ecuaciones que tiene infinitas soluciones, determine una forma paramétrica de esta solución y grafique 4 curvas que cumplan esta condición.
 
@@ -2441,11 +2569,13 @@ Cuatro ejemplos específicos:
 \end{axis}
 \end{tikzpicture}
 \caption{Curvas que cumplen la condición del problema \ref{problemapolinomios}}
+\label{fig:familiapolinomios}
 \end{figure}
 \end{myproof}
 \end{prob}
 
 
+% Intermedio
 \begin{prob} Encuentre los valores de $A, B, C$ y $D$ para que se cumpla la siguiente igualdad:
 
 $$\dfrac{3x^3+4x^2-6x}{(x^2+2x+2)(x^2-1)}=\dfrac{Ax+B}{x^2+2x+2}+\dfrac{C}{x-1}+\dfrac{D}{x+1}$$
@@ -2502,21 +2632,21 @@ $\left(\begin{array}{cccc|c}
 0 & -1 & 2 & -2 & 0
 \end{array}\right)$
 
-\textbf{Paso 1:} $f_1 + f_3 \to f_3:$ $\left(\begin{array}{cccc|c}
+\textbf{Paso 1.} $f_1 + f_3 \to f_3:$ $\left(\begin{array}{cccc|c}
 1 & 0 & 1 & 1 & 3 \\
 0 & 1 & 3 & 1 & 4 \\
 0 & 0 & 5 & 1 & -3 \\
 0 & -1 & 2 & -2 & 0
 \end{array}\right)$
 
-\textbf{Paso 2:} $f_2 + f_4 \to f_4:$  $\left(\begin{array}{cccc|c}
+\textbf{Paso 2.} $f_2 + f_4 \to f_4:$  $\left(\begin{array}{cccc|c}
 1 & 0 & 1 & 1 & 3 \\
 0 & 1 & 3 & 1 & 4 \\
 0 & 0 & 5 & 1 & -3 \\
 0 & 0 & 5 & -1 & 4
 \end{array}\right)$
 
-\textbf{Paso 3:} $f_3 - f_4 \to f_4:$ $\left(\begin{array}{cccc|c}
+\textbf{Paso 3.} $f_3 - f_4 \to f_4:$ $\left(\begin{array}{cccc|c}
 1 & 0 & 1 & 1 & 3 \\
 0 & 1 & 3 & 1 & 4 \\
 0 & 0 & 5 & 1 & -3 \\
@@ -2541,6 +2671,7 @@ $$A = \frac{32}{5}, \quad B = \frac{36}{5}, \quad C = \frac{1}{10}, \quad D = -\
 
 
 
+% Desafiante
 \begin{prob}   
 La figura \ref{flujosrefineria} muestra algunos flujos (en litros por minuto) conocidos en una refinería de petróleo
  
@@ -2721,15 +2852,103 @@ Todos los flujos son positivos, por lo que conservan su dirección original most
 \end{myproof}
 \end{prob}
 
-\section{Problemas propuestos para el capítulo}
- 
-\begin{prob} Encuentre los coeficientes $a, b, c$ y $d$ para que la curva $y=ax^3+bx^2+cx+d$ pase por los puntos $(0,10),$ $(1,7),$ $(3,-11),$ $(4,-14)$.\end{prob}
+\section{Problemas propuestos}
 
-\begin{prob}Una compañía de construcción ofrece tres tipos de casa. El primer tipo de casa requiere 3 unidades de concreto, 2 unidades de madera para cancelería y 8 unidades de madera para estructuras. Los tipos segundo y tercero requieren 2, 3, 7 y 4, 2, 10 unidades respectivamente. Si cada mes la compañía dispone de 200 unidades de concreto, 150 de madera para cancelería y 550 unidades de madera para estructuras, calcule el número de diferentes tipos de casas que la compañía podrá construir al mes si usa todos los materiales de que dispone.
+% --- Forma matricial y tipos de solución ---
+
+% Básico
+\begin{prob}
+\begin{enumerate}[$a)$]
+\item Escriba cada uno de los siguientes sistemas en la forma matricial $A\mathbf{x}=\mathbf{b}$, identificando explícitamente la matriz de coeficientes $A$, el vector de incógnitas $\mathbf{x}$ y el vector de términos independientes $\mathbf{b}$:
+\[
+\left\lbrace \begin{array}{ccc}
+2x_1-3x_2+x_3&=&5\\
+x_1+4x_3&=&-2\\
+-x_1+x_2-x_3&=&0\\
+\end{array} \right. \qquad\qquad
+\left\lbrace \begin{array}{ccc}
+x-7y&=&1\\
+3x+2y&=&0\\
+\end{array} \right.
+\]
+\item Escriba el sistema de ecuaciones lineales que corresponde a la matriz aumentada
+\[
+\left( \begin{array}{ccccc}
+1&0&-2&|&4\\
+0&3&1&|&-1\\
+2&-1&0&|&7\\
+\end{array} \right)
+\]
+\end{enumerate}
 \end{prob}
 
+% Básico
+\begin{prob} Para cada uno de los siguientes sistemas, determine si las dos rectas se cortan en un punto único, son paralelas o son coincidentes. Clasifique cada sistema como consistente con solución única, consistente con infinitas soluciones o inconsistente, e interprete geométricamente cada caso.
+\begin{multicols}{3}
+\begin{enumerate}[$a)$]
+\item $\left\lbrace \begin{array}{ccc}
+x+y&=&3\\
+x-y&=&1\\
+\end{array} \right. $
 
+\item $\left\lbrace \begin{array}{ccc}
+2x-y&=&1\\
+4x-2y&=&2\\
+\end{array} \right. $
 
+\item $\left\lbrace \begin{array}{ccc}
+x+2y&=&1\\
+2x+4y&=&5\\
+\end{array} \right. $
+\end{enumerate}
+\end{multicols}
+\end{prob}
+
+% --- Eliminación gaussiana y Gauss-Jordan ---
+
+% Básico
+\begin{prob} Resuelva el siguiente sistema mediante el método de Gauss-Jordan y compruebe la solución obtenida sustituyéndola en cada una de las tres ecuaciones originales.
+\[
+\left\lbrace \begin{array}{ccc}
+x+y+z&=&6\\
+2x-y+z&=&3\\
+x+2y-z&=&2\\
+\end{array} \right.
+\]
+\end{prob}
+
+% Básico
+\begin{prob} Determine cuáles de las siguientes matrices están en forma escalonada, cuáles en forma escalonada reducida y cuáles en ninguna de las dos. En cada caso negativo, señale la condición de la definición que no se cumple.
+\begin{multicols}{2}
+\begin{enumerate}[$a)$]
+\item $\left( \begin{array}{ccc}
+1&2&0\\
+0&1&3\\
+0&0&1\\
+\end{array} \right)$
+
+\item $\left( \begin{array}{cccc}
+1&0&0&4\\
+0&1&0&-1\\
+0&0&1&2\\
+\end{array} \right)$
+
+\item $\left( \begin{array}{ccc}
+0&1&2\\
+1&0&3\\
+0&0&0\\
+\end{array} \right)$
+
+\item $\left( \begin{array}{ccc}
+1&0&2\\
+0&0&0\\
+0&1&-1\\
+\end{array} \right)$
+\end{enumerate}
+\end{multicols}
+\end{prob}
+
+% Básico
 \begin{prob} Utilice eliminación gaussiana o de Gauss-Jordan para resolver los sistemas de ecuaciones lineales. Si existe solución única, indíquela; si hay infinitas soluciones, identifique las variables libres y exprese el conjunto solución en forma paramétrica; si no hay solución, explique claramente la razón mediante la forma escalonada o inconsistencia detectada.
 \begin{multicols}{2}
 \begin{enumerate}[$a)$]
@@ -2788,6 +3007,34 @@ x_1 -x_3 -2x_5&=1 \\
 \end{multicols}
 \end{prob}
 
+% --- Consistencia y rango: teorema de Rouché-Frobenius ---
+
+% Intermedio
+\begin{prob} Sin resolver los sistemas, calcule el rango de la matriz de coeficientes y el rango de la matriz aumentada de cada uno, y clasifíquelo mediante el teorema de Rouché-Frobenius como: solución única, infinitas soluciones (indicando el número de variables libres) o inconsistente.
+\begin{multicols}{3}
+\begin{enumerate}[$a)$]
+\item $\left\lbrace \begin{array}{ccc}
+x+y-z&=&1\\
+2x-y+z&=&0\\
+x+4y+z&=&5\\
+\end{array} \right. $
+
+\item $\left\lbrace \begin{array}{ccc}
+x+y+z&=&2\\
+2x+2y+2z&=&4\\
+x-y+z&=&0\\
+\end{array} \right. $
+
+\item $\left\lbrace \begin{array}{ccc}
+x+2y-z&=&3\\
+2x+4y-2z&=&1\\
+x-y&=&0\\
+\end{array} \right. $
+\end{enumerate}
+\end{multicols}
+\end{prob}
+
+% Desafiante
 \begin{prob} Determine los valores del parámetro $t$ para los cuales los siguientes sistemas de ecuaciones tienen solución única, infinitas soluciones, o ninguna solución, justificando cada caso mediante análisis de consistencia y rango.
 \begin{multicols}{2}
 \begin{enumerate}[$a)$]
@@ -2831,6 +3078,50 @@ x_1+2x_2-\left(t^2-3\right)x_3&=&t\\
 \end{multicols}
 \end{prob}
 
+% --- Sistemas homogéneos ---
+
+% Intermedio
+\begin{prob} Considere el sistema homogéneo
+\[
+\left\lbrace \begin{array}{ccc}
+x_1+2x_2-x_3+x_4&=&0\\
+2x_1+4x_2+x_3-x_4&=&0\\
+\end{array} \right.
+\]
+\begin{enumerate}[$a)$]
+\item Encuentre la solución general, identifique las variables libres y exprese el conjunto solución en forma vectorial paramétrica.
+\item Verifique que si $\mathbf{u}$ y $\mathbf{v}$ son dos soluciones del sistema, entonces $\mathbf{u}+\mathbf{v}$ también es solución.
+\end{enumerate}
+\end{prob}
+
+% --- Regla de Cramer ---
+
+% Intermedio
+\begin{prob}
+\begin{enumerate}[$a)$]
+\item Resuelva el siguiente sistema mediante la regla de Cramer:
+\[
+\left\lbrace \begin{array}{ccc}
+2x+y-z&=&3\\
+x-y+2z&=&1\\
+3x+2y+z&=&8\\
+\end{array} \right.
+\]
+\item Explique por qué la regla de Cramer no puede aplicarse al sistema
+\[
+\left\lbrace \begin{array}{ccc}
+x+y+z&=&1\\
+2x+2y+2z&=&2\\
+x-y+z&=&0\\
+\end{array} \right.
+\]
+y determine, mediante eliminación gaussiana, si el sistema tiene infinitas soluciones o ninguna.
+\end{enumerate}
+\end{prob}
+
+% --- Teoría y demostraciones ---
+
+% Desafiante
 \begin{prob} Determine el valor de verdad de las siguientes afirmaciones, si la afirmación es verdadera, proporcione una demostración, en caso contrario, proporcione un contraejemplo.
 
 \begin{enumerate}[$a)$]
@@ -2853,6 +3144,7 @@ es consistente
 
 \end{prob}
 
+% Desafiante
 \begin{prob} Demuestre que si $ad-bc\neq 0,$ entonces la forma reducida escalonada de $\left( \begin{array}{cc} a& b\\
 c&d\\ \end{array}  \right)$ es $\left( \begin{array}{cc} 1& 0\\
 0&1\\ \end{array}  \right)$. Use este resultado para demostrar que si $ad-bc\neq 0$
@@ -2862,6 +3154,32 @@ cx&+&dy&=&l\\
 \end{array} \right.  $ tiene solución única.
 \end{prob}
 
+% Desafiante
+\begin{prob} Sean $\mathbf{x}_1$ y $\mathbf{x}_2$ dos soluciones distintas del sistema $A\mathbf{x}=\mathbf{b}$. Demuestre que, para todo $t\in\mathbb{R}$, el vector $\mathbf{x}_1+t\left(\mathbf{x}_2-\mathbf{x}_1\right)$ también es solución del sistema, y concluya que todo sistema de ecuaciones lineales consistente tiene exactamente una solución o infinitas soluciones.
+\end{prob}
+
+% --- Aplicaciones ---
+
+% Intermedio
+\begin{prob} Encuentre los coeficientes $a, b, c$ y $d$ para que la curva $y=ax^3+bx^2+cx+d$ pase por los puntos $(0,10),$ $(1,7),$ $(3,-11),$ $(4,-14)$.\end{prob}
+
+% Intermedio
+\begin{prob}Una compañía de construcción ofrece tres tipos de casa. El primer tipo de casa requiere 3 unidades de concreto, 2 unidades de madera para cancelería y 8 unidades de madera para estructuras. Los tipos segundo y tercero requieren 2, 3, 7 y 4, 2, 10 unidades respectivamente. Si cada mes la compañía dispone de 200 unidades de concreto, 150 de madera para cancelería y 550 unidades de madera para estructuras, calcule el número de diferentes tipos de casas que la compañía podrá construir al mes si usa todos los materiales de que dispone.
+\end{prob}
+
+% Intermedio
+\begin{prob} La combustión del gas propano en presencia de oxígeno produce dióxido de carbono y agua:
+\[
+x_1\,\text{C}_3\text{H}_8 + x_2\,\text{O}_2 \longrightarrow x_3\,\text{CO}_2 + x_4\,\text{H}_2\text{O}
+\]
+Plantee un sistema de ecuaciones lineales homogéneo igualando el número de átomos de carbono, hidrógeno y oxígeno en ambos lados de la reacción, resuélvalo y determine los menores valores enteros positivos de $x_1, x_2, x_3$ y $x_4$ que balancean la ecuación química.
+\end{prob}
+
+% Intermedio
+\begin{prob} Una persona invierte $\$50\,000$ repartidos en tres fondos cuyos rendimientos anuales son del $4\%$, $6\%$ y $8\%$ respectivamente. Al final del año el interés total recibido es de $\$3\,200$, y la cantidad invertida en el fondo del $8\%$ es el doble de la invertida en el fondo del $4\%$. Plantee un sistema de ecuaciones lineales y determine cuánto se invirtió en cada fondo.
+\end{prob}
+
+% Intermedio
 \begin{prob} La figura \ref{plantrafico} muestra el plan de tráfico proyectado alrededor del parque principal de un pueblo turístico en las direcciones indicadas. Los flujos se proyectan de acuerdo a los valores promedio de vehículos por hora.
 
 \begin{enumerate}[$(a)$]
