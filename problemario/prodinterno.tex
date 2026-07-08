@@ -2,6 +2,8 @@
 
 Algunos espacios vectoriales poseen una propiedad particular llamada producto interno. La ventaja de esta propiedad es que nos permite medir longitudes y ángulos. Cuando un espacio vectorial posee producto interno, se facilitan considerablemente estas operaciones geométricas. En este capítulo definiremos el concepto de producto interno y estableceremos propiedades interesantes respecto a estos espacios vectoriales especiales.
 
+\section{Producto interno}
+
 \begin{definition}[Espacio vectorial con producto interno]
 Sea $V$ un espacio vectorial real (Definición \ref{defespvectorial}). Un \textbf{producto interno} es una función $\langle \cdot, \cdot \rangle: V \times V \to \mathbb{R}$ que satisface:
 \begin{enumerate}[$1.$]
@@ -99,6 +101,8 @@ $$\boxed{\langle \mathbf{u}, \mathbf{v} \rangle = \sum_{k=1}^n u_k \overline{v_k
 \end{myproof}
 \end{example}
 
+
+\section{Norma, ángulo y desigualdad de Cauchy-Schwarz}
 
 \begin{definition}[Ortogonalidad y ángulo]
 Sea $V$ un espacio vectorial con producto interno real, entonces 
@@ -281,6 +285,8 @@ Desarrollamos:
 \end{prob}
 
 
+\section{Ortogonalidad y complemento ortogonal}
+
 \begin{definition}[Complemento ortogonal]
 Sea $W$ un subespacio de un espacio vectorial $V$ con producto interno. El \textbf{complemento ortogonal} de $W$, denotado $W^\perp$, es el conjunto:
 \[
@@ -390,6 +396,8 @@ $$\boxed{W^\perp = \operatorname{span}\!\left\{ \begin{pmatrix} -2 \\ 7/2 \\ 1 \
 \end{myproof}
 \end{example}
 
+\section{Bases ortogonales y proceso de Gram-Schmidt}
+
 \begin{definition}[Conjunto ortogonal y ortonormal]
 Un conjunto $S = \{ \mathbf{v}_1, \dots, \mathbf{v}_k \}$ en $V$ (con producto interno) es \textbf{ortogonal} si $\langle \mathbf{v}_i, \mathbf{v}_j \rangle = 0$ para $i \neq j$ y es \textbf{ortonormal} si es ortogonal y $\|\mathbf{v}_i\| = 1$ para todo $i.$
 \end{definition}
@@ -416,6 +424,26 @@ Sea $V$ espacio vectorial con producto interno real y $\mathbf{u}, \mathbf{v} \i
 \operatorname{proy}_{\mathbf{v}} \mathbf{u} = \frac{\langle \mathbf{u}, \mathbf{v} \rangle}{\|\mathbf{v}\|^2} \mathbf{v}
 \)
 \end{definition}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.2, >=stealth]
+% Recta generada por v
+\draw[gray!50, dashed] (-0.5,-0.25) -- (4.6,2.3);
+% Vectores
+\draw[->, blue!70!black, very thick] (0,0) -- (4,2) node[anchor=north west] {\small $\mathbf{v}$};
+\draw[->, red!70!black, very thick] (0,0) -- (1,3) node[anchor=south] {\small $\mathbf{u}$};
+\draw[->, blue!70!black, thick] (0,0) -- (2,1);
+\node[blue!70!black, anchor=north] at (2.15,0.85) {\small $\operatorname{proy}_{\mathbf{v}}\mathbf{u}$};
+% Componente ortogonal
+\draw[->, red!70!black, thick, dashed] (2,1) -- (1,3);
+\node[red!70!black, anchor=west] at (1.75,2.25) {\small $\mathbf{u}-\operatorname{proy}_{\mathbf{v}}\mathbf{u}$};
+% Marca de ángulo recto en (2,1)
+\draw[gray!70] (1.776,0.888) -- (1.664,1.112) -- (1.888,1.224);
+\end{tikzpicture}
+\caption{Proyección ortogonal de $\mathbf{u}$ sobre $\mathbf{v}$: el vector $\operatorname{proy}_{\mathbf{v}}\mathbf{u}$ vive en la recta generada por $\mathbf{v}$ y la diferencia $\mathbf{u}-\operatorname{proy}_{\mathbf{v}}\mathbf{u}$ es ortogonal a $\mathbf{v}$.}
+\label{fig:proyeccion_ortogonal}
+\end{figure}
 
 \begin{theorem}[Expansión en base ortogonal]
 Sea $S = \{ \mathbf{v}_1, \dots, \mathbf{v}_n \}$ una base ortogonal de $V$ (espacio vectorial con producto interno real). Para todo $\mathbf{u} \in V$ \(
@@ -495,6 +523,28 @@ Sea $\{ \mathbf{u}_1, \dots, \mathbf{u}_n \}$ base cualquiera de $V$. Construimo
 Cada $\mathbf{v}_k$ es ortogonal a $\mathbf{v}_1, \dots, \mathbf{v}_{k-1}$ por construcción, y el conjunto resultante es base ortogonal. Para obtener una base ortonormal se normaliza cada vector \(\mathbf{q}_i = \frac{\mathbf{v}_i}{\|\mathbf{v}_i\|}.\)
 \end{proof}
 \end{theorem}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.3, >=stealth]
+\draw[gray!50, very thin] (-1.4,-0.4) grid (2.4,2.4);
+\draw[->, gray!50] (-1.4,0) -- (2.4,0) node[anchor=west] {$x$};
+\draw[->, gray!50] (0,-0.4) -- (0,2.4) node[anchor=south] {$y$};
+% Base original
+\draw[->, red!70!black, very thick] (0,0) -- (2,1) node[anchor=west] {\small $\mathbf{v}_1=\mathbf{u}_1$};
+\draw[->, red!70!black, very thick] (0,0) -- (0,2) node[anchor=south west] {\small $\mathbf{u}_2$};
+% Proyección de u2 sobre v1
+\draw[->, gray!70, thick, dashed] (0,0) -- (0.8,0.4);
+\node[gray!70, anchor=north west] at (0.55,0.38) {\small $\operatorname{proy}_{\mathbf{v}_1}\mathbf{u}_2$};
+\draw[dashed, gray!70] (0,2) -- (0.8,0.4);
+% Vector ortogonalizado
+\draw[->, blue!70!black, very thick] (0,0) -- (-0.8,1.6) node[anchor=south east] {\small $\mathbf{v}_2$};
+% Marca de ángulo recto en el origen
+\draw[gray!70] (0.268,0.134) -- (0.134,0.402) -- (-0.134,0.268);
+\end{tikzpicture}
+\caption{Proceso de Gram-Schmidt en $\mathbb{R}^2$: de la base $\{\mathbf{u}_1,\mathbf{u}_2\}$ se obtiene la base ortogonal $\{\mathbf{v}_1,\mathbf{v}_2\}$ tomando $\mathbf{v}_1=\mathbf{u}_1$ y restando de $\mathbf{u}_2$ su proyección sobre $\mathbf{v}_1$: $\mathbf{v}_2=\mathbf{u}_2-\operatorname{proy}_{\mathbf{v}_1}\mathbf{u}_2$.}
+\label{fig:gram_schmidt_r2}
+\end{figure}
 
 
 \begin{prob} 
@@ -655,6 +705,8 @@ Sea $B= \{1+x, x^2, x-x^2\}$, halle una base ortogonal para $B$ usando el produc
 $$\boxed{B_\perp = \left\{1+x,\; x^2 - \tfrac{1}{4}x - \tfrac{1}{4},\; -\tfrac{10}{13}x^2 + \tfrac{76}{91}x - \tfrac{15}{91}\right\}}$$
 \end{myproof}
 \end{example}
+
+\section{Proyección ortogonal y mínimos cuadrados}
 
 \begin{definition}[Aproximación por mínimos cuadrados]
 Sea $A \in \mathcal{M}_{m \times n}(\mathbb{R})$ y $b \in \mathbb{R}^m$. Si el sistema $Ax = b$ no tiene solución exacta (es decir, $b \notin \mathcal{C}(A)$), se busca $x$ tal que $Ax$ sea el vector más cercano posible a $b$, minimizando el error cuadrático: \(
@@ -942,6 +994,7 @@ La constante del resorte es \(m \approx 1.2597\ \text{kg/m}\).
 \end{axis}
 \end{tikzpicture}
 \caption{Recta de mínimos cuadrados para los datos del resorte}
+\label{fig:recta_minimos_cuadrados}
 \end{figure}
 \end{myproof}
 \end{prob}
@@ -963,6 +1016,8 @@ Solución por mínimos cuadrados:
 V = (M^T M)^{-1} M^T Y
 \]
 \end{prob}
+
+\section{Series de Fourier}
 
 \begin{definition}[Serie de Fourier]
 Para $f$ periódica en $[0, 2\pi]$, con producto interno $\langle f, g \rangle = \int_0^{2\pi} f(x) g(x)  dx$:
@@ -1006,6 +1061,8 @@ Se verifica $e^{ix} = \cos x + i \sin x$.
 
 
  
+
+\section{Problemas resueltos adicionales}
 
 % ------------------ PROBLEMA 1 ------------------
 \begin{prob}
@@ -1098,10 +1155,10 @@ Una altura de un triángulo es cada uno de los segmentos que une un vértice con
 \node[above left] at (C) {$C$};
 \node[below right] at (D) {$D$};
 \end{tikzpicture}
-\caption{Altura de un triángulo}\label{fig1}
+\caption{Altura de un triángulo}\label{fig:altura_triangulo}
 \end{figure}
 \begin{enumerate}
-\item Sea $V$ un espacio vectorial con producto interno. Suponga que $\mathbf{u},$ $\mathbf{v},$ y $\mathbf{w}$ son vectores en $V$ que forman un triángulo como se muestra en la figura \ref{fig1}. Calcule en términos de $\mathbf{u},$ $\mathbf{v}$ y $\mathbf{w}$ la altura $\mathbf{h}$ bajada desde $B$ al lado opuesto.
+\item Sea $V$ un espacio vectorial con producto interno. Suponga que $\mathbf{u},$ $\mathbf{v},$ y $\mathbf{w}$ son vectores en $V$ que forman un triángulo como se muestra en la figura \ref{fig:altura_triangulo}. Calcule en términos de $\mathbf{u},$ $\mathbf{v}$ y $\mathbf{w}$ la altura $\mathbf{h}$ bajada desde $B$ al lado opuesto.
 \item Dado el triángulo con vértices $A=(8,7,11),$ $B=(11,17,22)$ y $C=(5,3,11)$ use el producto interno usual de $\mathbb{R}^3$ para calcular las ecuaciones simétricas de la altura bajada desde el vértice $B$ al lado opuesto.
 \end{enumerate}
 \begin{myproof}

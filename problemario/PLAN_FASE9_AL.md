@@ -262,13 +262,22 @@ Mínimo 8–10 resueltos (example con myproof) + 15–20 propuestos (sin myproof
 **Acción:** insertar: `\section{Producto interno}`, `\section{Norma, distancia y ángulo}` (incluye Cauchy-Schwarz), `\section{Ortogonalidad y complemento ortogonal}`, `\section{Proceso de Gram-Schmidt}`, `\section{Proyección ortogonal y mínimos cuadrados}`, `\section{Problemas propuestos}` (ajustar al contenido real).
 **Criterio de cierre:** ≥5 secciones + sección de propuestos; compilación limpia.
 **Líneas estimadas:** 30–70
-**Estado:** Pendiente
+**Estado:** Completado (2026-07-08)
+**Notas de ejecución:**
+- 7 secciones insertadas (solo cabeceras, nada movido — mismo procedimiento que F9AL.08): §7.1 Producto interno (incluye norma inducida y caso complejo, orden físico conservado); §7.2 Norma, ángulo y desigualdad de Cauchy-Schwarz; §7.3 Ortogonalidad y complemento ortogonal; §7.4 Bases ortogonales y proceso de Gram-Schmidt; §7.5 Proyección ortogonal y mínimos cuadrados; §7.6 Series de Fourier (contenido real no previsto en el plan); §7.7 Problemas resueltos adicionales (ante el banco final de 14 probs, marcado `% PROBLEMA 1`).
+- **Desviación documentada:** `\section{Problemas propuestos}` NO se insertó aún — el capítulo no tiene ningún prob sin solución al final (el único sin myproof es la nota-fórmula «Regresión polinómica» en §7.5), y una sección vacía rompería el PDF. Se creará en F9AL.18 al aplicar Decisión F (que además requerirá redactar propuestos nuevos con validación del autor, como en matrices).
+- Inventario para F9AL.18: 23 probs (9 dentro de secciones temáticas + 14 en el banco §7.7); 22 con myproof; el de regresión polinómica sin él.
 
 ### F9AL.17 — prodinterno: figuras R2 + auditoría
 **Acción:** (a) proyección ortogonal de u sobre v con ángulo recto marcado (tras def. de proyección); (b) Gram-Schmidt en ℝ²: v₁, v₂ originales → u₁, u₂ ortogonales (tras el teorema); (c) completar label de la figura existente sin él y verificar la otra.
 **Criterio de cierre:** 2 figuras nuevas estándar F8; 2/2 existentes conformes.
 **Líneas estimadas:** 90–140
-**Estado:** Pendiente
+**Estado:** Completado (2026-07-08)
+**Notas de ejecución:**
+- `fig:proyeccion_ortogonal` (tras def. de proyección, §7.4): u=(1,3), v=(4,2), proy=(2,1) — aritmética exacta, (u−proy)·v=0; marca de ángulo recto en el pie de la proyección.
+- `fig:gram_schmidt_r2` (tras el teorema de Gram-Schmidt): u₁=(2,1), u₂=(0,2) → v₂=u₂−proy=(−0.8,1.6), v₁·v₂=0 exacto; proyección punteada gris y ángulo recto en el origen.
+- Auditoría existentes: figura de la recta de mínimos cuadrados tenía caption sin label → añadido `fig:recta_minimos_cuadrados`; `fig1` («Altura de un triángulo») renombrado a `fig:altura_triangulo` (label + su único `\ref`, mismo archivo). 2/2 conformes.
+- Verificadas visualmente (pdftoppm pp. 190–191). 2 pasadas lualatex; solo warning preexistente `figrayo`. PDF: 780 pp, 0 errores.
 
 ### F9AL.18 — prodinterno: protocolo + residuales + propuestos 🔒F
 **Acción:** eliminar/auditar las 2 marcas `\square` residuales; verificar 4 pasos en los 9 examples (8 ya conformes); aplicar Decisión F a los 23 probs (22 con solución); tags.
@@ -429,8 +438,8 @@ Mínimo 8–10 resueltos (example con myproof) + 15–20 propuestos (sin myproof
 | F9AL.13 | `espaciosvectoriales.tex` | 3 figuras nuevas R2 | Completado | 2026-07-08 | fig:subespacio_en_V, fig:gen_dos_vectores, fig:cuatro_espacios; verificadas visualmente pp. 158/163/172. 778 pp, 0 errores. |
 | F9AL.14 | `espaciosvectoriales.tex` | Propuestos + Decisión F + tags | Completado | 2026-07-08 | 4 elevaciones (SymPy-verificadas, 1 error de signo heredado corregido); banco §6.7 con 11 probs taggeados; 21 propuestos 7B/9I/5D; heading E4. 778 pp, 0 errores. |
 | F9AL.15 | `espaciosvectoriales.tex` | Auditoría R1 + R3 | Completado | 2026-07-08 | Lema de intercambio nuevo (esquema Steinitz); prueba Wronskiano añadida; 2 INV corregidas (def generado+figura antes del teorema; example det antes de Wronskiano). 778 pp, 0 errores. |
-| F9AL.16 | `prodinterno.tex` | Estructura de secciones (0 actuales) | Pendiente | — | — |
-| F9AL.17 | `prodinterno.tex` | 2 figuras nuevas + auditoría | Pendiente | — | — |
+| F9AL.16 | `prodinterno.tex` | Estructura de secciones (0 actuales) | Completado | 2026-07-08 | 7 secciones (6 temáticas + banco §7.7, incluye §7.6 Series de Fourier); heading de propuestos diferido a F9AL.18 (0 probs sin solución al final). 780 pp, 0 errores. |
+| F9AL.17 | `prodinterno.tex` | 2 figuras nuevas + auditoría | Completado | 2026-07-08 | fig:proyeccion_ortogonal, fig:gram_schmidt_r2 (aritmética exacta, verificadas pp. 190–191); label añadido a recta mín. cuadrados; fig1→fig:altura_triangulo. |
 | F9AL.18 | `prodinterno.tex` | Protocolo + residuales + propuestos | Pendiente | — | — |
 | F9AL.19 | `vvpropios.tex` | Intro + estructura de secciones | Pendiente | — | — |
 | F9AL.20 | `vvpropios.tex` | 2 figuras nuevas R2 | Pendiente | — | — |
