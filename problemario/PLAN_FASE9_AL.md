@@ -357,7 +357,13 @@ Mínimo 8–10 resueltos (example con myproof) + 15–20 propuestos (sin myproof
 **Acción:** la sección de aplicaciones EDO se conserva (decisión de Fase 4). Ahora que existe `cap29`, añadir remisiones cruzadas (`\ref`) en ambos sentidos y una `rem` que delimite: aquí se ve el mecanismo eigen, el tratamiento sistemático está en cap29. **No recortar contenido sin autorización del autor** — registrar en Notas cualquier solapamiento detectado.
 **Criterio de cierre:** referencias cruzadas insertadas; solapamientos documentados en Notas para decisión del autor.
 **Líneas estimadas:** 10–30
-**Estado:** Pendiente
+**Estado:** Completado — 2026-07-10
+
+**Notas de ejecución:**
+- **cap29 → vvpropios:** en §29.3 (derivación de $(A-\lambda I)\mathbf{v}=0$) se añadió «Los métodos para calcular valores y vectores propios, junto con una primera aplicación de la diagonalización a estos sistemas, se desarrollaron en el Capítulo~\ref{vvpropios}».
+- **vvpropios → cap29:** `rem[Alcance de esta sección]` al inicio de §8.3: aquí el mecanismo (diagonalizar desacopla); el tratamiento sistemático (λ complejos/repetidos, no homogéneos, aplicaciones) en el Capítulo~\ref{sistemasedos}. (La intro del capítulo, F9AL.19, ya remite también.)
+- **Solapamientos documentados (sin recortar, para eventual decisión del autor):** (i) el teorema de solución general $\mathbf{y}=\sum c_i e^{\lambda_i x}\mathbf{v}_i$ aparece en ambos capítulos — en vvpropios probado vía desacople con $P$, en cap29 §29.3 enunciado por superposición de soluciones eigen: son complementarios; (ii) el prob del banco «EDO de orden superior → sistema» solapa §29.1.2 (allí es material central); (iii) el prob LRC solapa temáticamente §29.5.2 (circuitos de dos mallas; circuito distinto); (iv) la matriz $\left(\begin{smallmatrix}1&2\\3&2\end{smallmatrix}\right)$ del primer example de vvpropios reaparece en el example de §29.3.1 (contextos distintos: allí se resuelve el sistema completo).
+- Compilación limpia (2 pasadas): 0 errores `!`, 0 refs indefinidas, 788 pp.
 
 ---
 
@@ -559,7 +565,7 @@ Mínimo 8–10 resueltos (example con myproof) + 15–20 propuestos (sin myproof
 | F9AL.19 | `vvpropios.tex` | Intro + estructura de secciones | Completado | 2026-07-10 | Intro 5 frases (refs a matrdet/sel/sistemasedos); 7 secciones sin mover contenido; labels `vvpropios` + `sistemasedos` (cap29); heading banco anticipado; `proof` huérfano l.92 registrado para F9AL.21. 782 pp, 0 errores. |
 | F9AL.20 | `vvpropios.tex` | 2 figuras nuevas R2 | Completado | 2026-07-10 | fig:accion_vector_propio (v se estira, w gira; A=(2 1;1 2)) + fig:diagonalizacion_cajas (cuadrado conmutativo PDP⁻¹); verificadas pp. 212/217. 782 pp, 0 errores. |
 | F9AL.21 | `vvpropios.tex` | Sección propuestos + Decisión F | Completado | 2026-07-10 | 1 elevación (ex:vvp_multiplicidades); cor:cerovp para proof huérfano; error LRC corregido (λ=−1±i); duplicados EDO sustituidos; banco 12 probs 3B/6I/3D; §8.8 con 16 propuestos 5B/8I/3D SymPy-OK. 788 pp, 0 errores. |
-| F9AL.22 | `vvpropios.tex` | Remisiones cruzadas EDO (cap29) | Pendiente | — | — |
+| F9AL.22 | `vvpropios.tex` | Remisiones cruzadas EDO (cap29) | Completado | 2026-07-10 | Ref cap29§3→vvpropios + rem de alcance §8.3→cap29; 4 solapamientos documentados sin recorte. 788 pp, 0 errores. Semana 4 completa. |
 | F9AL.23 | `translineales.tex` | Estructura de secciones | Pendiente | — | — |
 | F9AL.24 | `translineales.tex` | Auditoría 20 figuras | Pendiente | — | — |
 | F9AL.25 | `translineales.tex` | 2 figuras nuevas R2 | Pendiente | — | — |
