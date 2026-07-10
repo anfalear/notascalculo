@@ -536,7 +536,14 @@ Mínimo 8–10 resueltos (example con myproof) + 15–20 propuestos (sin myproof
 **Criterio de cierre:** subsección ≤120 líneas con def + teorema enunciado + 1 ejemplo 4 pasos + rem de alcance; compilación limpia.
 **Líneas estimadas:** 80–120
 **Nota de orden:** ejecutar tras F9AL.22, en cualquier punto antes del cierre de bloque F9AL.34.
-**Estado:** Pendiente
+**Estado:** Completado — 2026-07-10
+
+**Notas de ejecución:**
+- **§8.2.1 «La forma canónica de Jordan»** (67 líneas, al final de §8.2): párrafo motivador (m.g. < m.a. ⇒ no hay base de vectores propios) → `definition[Bloque de Jordan]` con $J_1, J_2, J_3$ explícitos → `theorem[Forma canónica de Jordan]` (`thm:cap08:jordan`, enunciado sin prueba: semejanza, unicidad salvo orden, diagonalizable ⟺ bloques de tamaño 1) → `example` 4 pasos (`ex:jordan_2x2`) → `rem[Alcance y potencias]`.
+- **Ejemplo con matriz fresca** $A=\left(\begin{smallmatrix}1&1\\-1&3\end{smallmatrix}\right)$ (no la del banco, para no duplicar): $(\lambda-2)^2$, m.g. $=1$, vector propio generalizado $(A-2I)\mathbf{v}_2=\mathbf{v}_1$ → $\mathbf{v}_2=(0,1)$, $P=\left(\begin{smallmatrix}1&0\\1&1\end{smallmatrix}\right)$, $J=J_2(2)$, verificación $AP=PJ$. Confirmado con SymPy (incl. `jordan_form()` y $J^5$ contra la fórmula $J_2(\lambda)^k$).
+- **rem de alcance:** remisión a `\cite{hoffman1973algebra}` (cita nueva → corrido `bibtex` + 2 lualatex) + fórmula cerrada $J_2(\lambda)^k$ conectando con el tema de potencias de la sección.
+- **2 conexiones `\ref{subsec:jordan}`** desde las menciones existentes: Paso 4 del literal (a) de `ex:vvp_multiplicidades` y el prob del banco con $\left(\begin{smallmatrix}-3&2\\0&-3\end{smallmatrix}\right)$ (a la que además se le explicitó $J_2(-3)$).
+- Verificación visual pp. 221–222 (cita resuelta «Hoffman and Kunze, 1973»). Compilación limpia: 0 errores `!`, 0 refs/citas indefinidas, 790 pp.
 
 ---
 
@@ -589,7 +596,7 @@ Mínimo 8–10 resueltos (example con myproof) + 15–20 propuestos (sin myproof
 | F9AL.43 | `translineales.tex` | 47 myproof → 4 pasos (2 lotes) | Pendiente | — | Tras F9AL.26/.27 |
 | F9AL.44 | `complejos.tex` | 24 myproof → 4 pasos | Pendiente | — | Tras F9AL.28 |
 | F9AL.45 | `vectoresrn.tex` | 27 myproof → 4 pasos (bloque V) | Pendiente | — | Tras F9AL.37; opcional |
-| F9AL.46 | `vvpropios.tex` | Subsección breve forma de Jordan | Pendiente | — | Solicitud del autor 2026-07-10; tras F9AL.22 |
+| F9AL.46 | `vvpropios.tex` | Subsección breve forma de Jordan | Completado | 2026-07-10 | §8.2.1: def J_k + teorema enunciado + ejemplo A=(1 1;−1 3)→J_2(2) SymPy-OK + rem con cite Hoffman-Kunze (bibtex corrido) + 2 refs conectadas. 790 pp, 0 errores. |
 
 **Total: 46 ítems** (42 núcleo + 4 bloque V opcional). F9AL.34 (cierre de bloque) se ejecuta después de F9AL.44 y F9AL.46.
 

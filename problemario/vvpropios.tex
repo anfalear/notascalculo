@@ -216,7 +216,7 @@ Solución: $v_2 = \begin{pmatrix} 2 \\ 1 \\ 0 \end{pmatrix}$ (multiplicidad geom
 \[
 \boxed{\lambda=1\ (\text{m.a.}=\text{m.g.}=1), \qquad \lambda=2\ (\text{m.a.}=2,\ \text{m.g.}=1).}
 \]
-Como la multiplicidad algebraica de $\lambda=2$ es $2$ pero la geométrica es $1$, la matriz $A$ \textbf{no es diagonalizable} (se requiere la forma de Jordan para su representación canónica).
+Como la multiplicidad algebraica de $\lambda=2$ es $2$ pero la geométrica es $1$, la matriz $A$ \textbf{no es diagonalizable} (se requiere la forma canónica de Jordan para su representación canónica; véase la Subsección \ref{subsec:jordan}).
 \end{myproof}
 	
 	\item $A=\left( \begin{array}{ccc} 
@@ -565,6 +565,54 @@ A^6 \begin{pmatrix} 4 \\ 3 \end{pmatrix}
 \end{example}
 
 
+\subsection{La forma canónica de Jordan}\label{subsec:jordan}
+
+Cuando alguna multiplicidad geométrica es menor que la algebraica, la matriz no es diagonalizable: no hay suficientes vectores propios linealmente independientes para formar la matriz $P$. Aun así, toda matriz puede llevarse a una forma «casi diagonal», que es su representación canónica en el caso general.
+
+\begin{definition}[Bloque de Jordan]
+Un \textbf{bloque de Jordan} de tamaño $k$ asociado al valor propio $\lambda$ es la matriz $J_k(\lambda)\in M_k(\mathbb{C})$ que tiene $\lambda$ en toda la diagonal, $1$ en la superdiagonal y $0$ en las demás entradas:
+\[
+J_1(\lambda)=\begin{pmatrix}\lambda\end{pmatrix}, \qquad
+J_2(\lambda)=\begin{pmatrix}\lambda & 1\\ 0 & \lambda\end{pmatrix}, \qquad
+J_3(\lambda)=\begin{pmatrix}\lambda & 1 & 0\\ 0 & \lambda & 1\\ 0 & 0 & \lambda\end{pmatrix}, \qquad \dots
+\]
+\end{definition}
+
+\begin{theorem}[Forma canónica de Jordan]\label{thm:cap08:jordan}
+Toda matriz $A\in M_n(\mathbb{C})$ es semejante a una matriz formada por bloques de Jordan: existe una matriz invertible $P$ tal que
+\[
+A = P\, J\, P^{-1}, \qquad
+J=\begin{pmatrix} J_{k_1}(\lambda_1) & & \\ & \ddots & \\ & & J_{k_m}(\lambda_m) \end{pmatrix},
+\]
+donde $\lambda_1,\dots,\lambda_m$ son valores propios de $A$ (posiblemente repetidos entre bloques) y $k_1+\cdots+k_m=n$. La matriz $J$ es única salvo el orden de los bloques, y $A$ es diagonalizable si y solo si todos los bloques son de tamaño $1$.
+\end{theorem}
+
+\begin{example}[Forma de Jordan de una matriz no diagonalizable]\label{ex:jordan_2x2}
+Encuentre la forma canónica de Jordan de $A=\begin{pmatrix} 1 & 1 \\ -1 & 3 \end{pmatrix}$ y una matriz invertible $P$ tal que $A=PJP^{-1}$.
+\begin{myproof}
+\textbf{Paso 1.} Calculamos los valores propios: $\det(\lambda I - A) = (\lambda-1)(\lambda-3)+1 = \lambda^2-4\lambda+4 = (\lambda-2)^2$, así que $\lambda=2$ con multiplicidad algebraica $2$.
+
+\textbf{Paso 2.} Calculamos el espacio propio: $A-2I=\begin{pmatrix} -1 & 1 \\ -1 & 1 \end{pmatrix}$, de donde $E_2=\operatorname{gen}\left\{\begin{pmatrix}1\\1\end{pmatrix}\right\}$ y la multiplicidad geométrica es $1<2$: la matriz no es diagonalizable y, por el Teorema \ref{thm:cap08:jordan}, su forma de Jordan es un único bloque $J=J_2(2)=\begin{pmatrix}2&1\\0&2\end{pmatrix}$.
+
+\textbf{Paso 3.} Para construir $P$ tomamos el vector propio $\mathbf{v}_1=\begin{pmatrix}1\\1\end{pmatrix}$ y un \textbf{vector propio generalizado} $\mathbf{v}_2$, solución de $(A-2I)\mathbf{v}_2=\mathbf{v}_1$: el sistema se reduce a $-x+y=1$ y, tomando $x=0$, queda $\mathbf{v}_2=\begin{pmatrix}0\\1\end{pmatrix}$. Con $P=\begin{pmatrix}1&0\\1&1\end{pmatrix}$ (columnas $\mathbf{v}_1$, $\mathbf{v}_2$) se verifica
+\[
+AP=\begin{pmatrix}2&1\\2&3\end{pmatrix}=PJ.
+\]
+
+\textbf{Paso 4.} Como $P$ es invertible, concluimos:
+\[
+\boxed{A=PJP^{-1} \quad\text{con}\quad J=\begin{pmatrix}2&1\\0&2\end{pmatrix},\quad P=\begin{pmatrix}1&0\\1&1\end{pmatrix}.}
+\]
+\end{myproof}
+\end{example}
+
+\begin{rem}[Alcance y potencias]
+La construcción general de la forma de Jordan —cadenas de vectores propios generalizados que determinan el número y el tamaño de los bloques— excede el alcance de este curso; puede consultarse en \cite{hoffman1973algebra}. Para nuestros propósitos basta reconocer la estructura y una consecuencia práctica: igual que con la diagonalización, $A^k=PJ^kP^{-1}$, y las potencias de un bloque de tamaño $2$ tienen forma cerrada:
+\[
+J_2(\lambda)^k=\begin{pmatrix}\lambda^k & k\,\lambda^{k-1}\\ 0 & \lambda^k\end{pmatrix}.
+\]
+\end{rem}
+
 \section{Aplicación: sistemas de ecuaciones diferenciales lineales}
 
 \begin{rem}[Alcance de esta sección]
@@ -832,7 +880,7 @@ Así, cualquier vector de la forma $\begin{pmatrix} x \\ 0 \end{pmatrix}$ es pro
 
 Multiplicidad geométrica: 1 (solo un vector propio linealmente independiente).
 
-No es diagonalizable porque la multiplicidad geométrica es menor que la algebraica.
+No es diagonalizable porque la multiplicidad geométrica es menor que la algebraica; su forma canónica de Jordan es $J_2(-3)$ (véase la Subsección \ref{subsec:jordan}).
 \end{myproof}
 
 \item $A=\left(\begin{matrix}
