@@ -17,6 +17,27 @@ En este capítulo se estudian los valores y vectores propios de una matriz cuadr
 	Para cada valor propio $\lambda_i$, los vectores propios correspondientes forman el espacio nulo de la matriz $(A - \lambda_i I_n)$, es decir: $E_{\lambda_i} = \ker(A - \lambda_i I_n) = \{\mathbf{v} \in \mathbb{R}^n : (A - \lambda_i I_n)\mathbf{v} = \mathbf{0}\}.$
 \end{definition}
 
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.1, >=stealth]
+\draw[gray!50, very thin] (-0.6,-0.6) grid (3.4,3.4);
+\draw[->, gray!50] (-0.6,0) -- (3.4,0) node[anchor=west] {$x$};
+\draw[->, gray!50] (0,-0.6) -- (0,3.4) node[anchor=south] {$y$};
+% Dirección propia (recta y = x)
+\draw[dashed, gray!60] (-0.5,-0.5) -- (3.3,3.3) node[anchor=south west] {\small $E_{3}$};
+% Vector propio v y su imagen Av = 3v (misma dirección)
+\draw[->, red!70!black, very thick] (0,0) -- (3,3) node[pos=0.85, above left] {\small $A\mathbf{v}=3\mathbf{v}$};
+\draw[->, red!70!black, very thick] (0,0) -- (1,1) node[pos=0.7, above left] {\small $\mathbf{v}$};
+% Vector genérico w y su imagen Aw (cambia de dirección)
+\draw[->, blue!70!black, very thick] (0,0) -- (1,0) node[below] {\small $\mathbf{w}$};
+\draw[->, blue!70!black, very thick] (0,0) -- (2,1) node[anchor=west] {\small $A\mathbf{w}$};
+% Arco que indica el giro de w hacia Aw
+\draw[->, blue!70!black] (1.3,0) arc[start angle=0, end angle=26.6, radius=1.3];
+\end{tikzpicture}
+\caption{Acción de la matriz $A=\left(\begin{smallmatrix}2&1\\1&2\end{smallmatrix}\right)$ sobre dos vectores. El vector propio $\mathbf{v}=(1,1)$ no cambia de dirección: solo se estira, $A\mathbf{v}=3\mathbf{v}$, y su recta $E_{3}$ queda invariante. En cambio, el vector genérico $\mathbf{w}=(1,0)$ sí gira: $A\mathbf{w}=(2,1)$ no es múltiplo de $\mathbf{w}$.}
+\label{fig:accion_vector_propio}
+\end{figure}
+
 \begin{example}[Valores propios de una matriz $2\times2$]\label{ex:ejemplovvp}
 	Sea $A = \begin{pmatrix} 1 & 2 \\ 3 & 2 \end{pmatrix}$. Calcule sus valores propios.
 	\begin{myproof}
@@ -406,6 +427,23 @@ Sea $A \in M_n(\mathbb{R})$. Las siguientes afirmaciones son equivalentes:
 \textbf{(2) $\Leftrightarrow$ (4):} Como $\sum m_i = n$ siempre, entonces $\sum d_i = n$ si y solo si $d_i = m_i$ para todo $i$.
 \end{proof}
 \end{theorem}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.0, >=stealth,
+  caja/.style={draw=blue!70!black, fill=blue!5, rounded corners, minimum width=3.2cm, minimum height=1cm, align=center}]
+\node[caja] (x)  at (0,2.6)   {\small $\mathbf{x}$\\[-1pt] {\scriptsize coordenadas canónicas}};
+\node[caja] (Ax) at (6.4,2.6) {\small $A\mathbf{x}$\\[-1pt] {\scriptsize coordenadas canónicas}};
+\node[caja] (u)  at (0,0)     {\small $\mathbf{u}=P^{-1}\mathbf{x}$\\[-1pt] {\scriptsize coordenadas propias}};
+\node[caja] (Du) at (6.4,0)   {\small $D\mathbf{u}$\\[-1pt] {\scriptsize coordenadas propias}};
+\draw[->, red!70!black, very thick] (x) -- node[above] {\small $A$} (Ax);
+\draw[->, thick] (x) -- node[left] {\small $P^{-1}$} (u);
+\draw[->, thick] (u) -- node[below] {\small $D$} (Du);
+\draw[->, thick] (Du) -- node[right] {\small $P$} (Ax);
+\end{tikzpicture}
+\caption{La diagonalización $A=PDP^{-1}$ como cambio de base. Para aplicar $A$ se puede pasar a coordenadas de vectores propios con $P^{-1}$, escalar cada componente con la matriz diagonal $D$ y volver a coordenadas canónicas con $P$: ambos caminos del diagrama producen el mismo resultado, $A\mathbf{x}=PDP^{-1}\mathbf{x}$.}
+\label{fig:diagonalizacion_cajas}
+\end{figure}
 \begin{theorem} Si $A$ tiene $n$ valores propios distintos, entonces $A$ es diagonalizable.
 \begin{proof}
 Si $A$ tiene $n$ valores propios distintos, cada multiplicidad algebraica es 1. Como $1 \leq d_i \leq m_i = 1$, entonces $d_i = 1$ para todo $i$, luego $A$ es diagonalizable. Los vectores propios asociados a valores propios distintos son linealmente independientes.

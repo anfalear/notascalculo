@@ -327,7 +327,13 @@ Mínimo 8–10 resueltos (example con myproof) + 15–20 propuestos (sin myproof
 **Acción:** (a) acción de A sobre vector propio (v escala λv, w genérico rota) — TikZ 2D con flechas rojas/azules; (b) diagrama de cajas de diagonalización A = PDP⁻¹ (cambio de base). Insertar tras la definición y tras el teorema de diagonalización respectivamente.
 **Criterio de cierre:** 2 figuras estándar F8; compilación limpia.
 **Líneas estimadas:** 80–130
-**Estado:** Pendiente
+**Estado:** Completado — 2026-07-10
+
+**Notas de ejecución:**
+- `fig:accion_vector_propio` (tras la def. de valores/vectores propios, posición R2): $A=\left(\begin{smallmatrix}2&1\\1&2\end{smallmatrix}\right)$; $\mathbf{v}=(1,1)$ rojo se estira a $A\mathbf{v}=3\mathbf{v}$ sobre la recta invariante $E_3$ (dashed); $\mathbf{w}=(1,0)$ azul gira a $A\mathbf{w}=(2,1)$ con arco indicador. Aritmética exacta.
+- `fig:diagonalizacion_cajas` (tras el teorema de condición de diagonalización): cuadrado conmutativo $\mathbf{x}\to A\mathbf{x}$ (arriba, flecha roja) vs. $P^{-1}\to D\to P$ (camino inferior), cajas con coordenadas canónicas/propias.
+- Estándar F8: `figure[H]` + caption + label tras caption; paleta `blue!70!black`/`red!70!black`; `>=stealth`; `\small`.
+- Verificadas visualmente (pdftoppm pp. 212 y 217). Compilación limpia (2 pasadas): 0 errores `!`, 782 pp.
 
 ### F9AL.21 — vvpropios: sección de propuestos + Decisión F + protocolo 🔒F
 **Acción:** crear `\section{Problemas propuestos}` (hoy no existe; los 14 probs, 13 con solución, están dispersos); aplicar Decisión F; tags; verificar 4 pasos en los 10 examples (5 computacionales conformes, 5 por revisar/justificar).
@@ -531,7 +537,7 @@ Mínimo 8–10 resueltos (example con myproof) + 15–20 propuestos (sin myproof
 | F9AL.17 | `prodinterno.tex` | 2 figuras nuevas + auditoría | Completado | 2026-07-08 | fig:proyeccion_ortogonal, fig:gram_schmidt_r2 (aritmética exacta, verificadas pp. 190–191); label añadido a recta mín. cuadrados; fig1→fig:altura_triangulo. |
 | F9AL.18 | `prodinterno.tex` | Protocolo + residuales + propuestos | Completado | 2026-07-09 | **2 errores de Fourier corregidos** (factores `(-1)^k` de `[-π,π]` en problemas sobre `[0,2π]`, verificado SymPy). 5 elevaciones (incl. 1er ejemplo de §7.6). Banco 17 probs 6B/7I/4D. §7.8 propuestos creada: 18 probs 5B/9I/4D. `prob[Regresión polinómica]`→`rem`. Respuesta evasiva corregida con contraejemplo. 782 pp, 0 errores. |
 | F9AL.19 | `vvpropios.tex` | Intro + estructura de secciones | Completado | 2026-07-10 | Intro 5 frases (refs a matrdet/sel/sistemasedos); 7 secciones sin mover contenido; labels `vvpropios` + `sistemasedos` (cap29); heading banco anticipado; `proof` huérfano l.92 registrado para F9AL.21. 782 pp, 0 errores. |
-| F9AL.20 | `vvpropios.tex` | 2 figuras nuevas R2 | Pendiente | — | — |
+| F9AL.20 | `vvpropios.tex` | 2 figuras nuevas R2 | Completado | 2026-07-10 | fig:accion_vector_propio (v se estira, w gira; A=(2 1;1 2)) + fig:diagonalizacion_cajas (cuadrado conmutativo PDP⁻¹); verificadas pp. 212/217. 782 pp, 0 errores. |
 | F9AL.21 | `vvpropios.tex` | Sección propuestos + Decisión F | Pendiente | — | — |
 | F9AL.22 | `vvpropios.tex` | Remisiones cruzadas EDO (cap29) | Pendiente | — | — |
 | F9AL.23 | `translineales.tex` | Estructura de secciones | Pendiente | — | — |
