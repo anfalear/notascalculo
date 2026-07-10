@@ -339,7 +339,19 @@ Mínimo 8–10 resueltos (example con myproof) + 15–20 propuestos (sin myproof
 **Acción:** crear `\section{Problemas propuestos}` (hoy no existe; los 14 probs, 13 con solución, están dispersos); aplicar Decisión F; tags; verificar 4 pasos en los 10 examples (5 computacionales conformes, 5 por revisar/justificar).
 **Criterio de cierre:** sección única graduada; convención F aplicada; examples conformes o justificados.
 **Líneas estimadas:** 60–120
-**Estado:** Pendiente
+**Estado:** Completado — 2026-07-10 (2 lotes)
+
+**Notas de ejecución:**
+- **Decisiones del autor (2026-07-10, 4 preguntas):** elevar solo `prob:vvp`; añadir el corolario perdido del `proof` huérfano; sustituir los literales EDO duplicados por sistemas nuevos; completar la solución evasiva del LRC.
+- **1 elevación a `example`** (el autor eligió 1 de 4 candidatas): «Valores y vectores propios y sus multiplicidades» (`ex:vvp_multiplicidades`, ex `prob:vvp`) — 4 literales con protocolo por literal (Paso 1 polinomio, Paso 2 raíces/m.a., Paso 3 espacios propios, Paso 4 resumen con `\boxed{}`); ref del example de diagonalización actualizada («en el Ejemplo \ref{ex:vvp_multiplicidades}»). Typo «redución» corregido.
+- **`proof` huérfano resuelto:** nuevo `\begin{coro}[Invertibilidad y el valor propio cero]` (`cor:cerovp`) antes de su prueba; la Caracterización v5 ahora cita el corolario en vez de duplicar la prueba.
+- **⚠️ Error matemático heredado corregido (verificado SymPy):** prob del circuito LRC — con $R=1$, $L=1$, $C=0.5$ es $1/(RC)=2$, no $1$: matriz correcta $\left(\begin{smallmatrix}0&1\\-2&-2\end{smallmatrix}\right)$, $\lambda=-1\pm i$ (el libro traía $\lambda=\frac{-1\pm i\sqrt7}{2}$). (a) reescrito con solución general real; (b) resuelto el PVI ($i_L=e^{-t}(2\cos t+3\sen t)$, $v_C=e^{-t}(\cos t-5\sen t)$); (c) corregido $e^{-t/2}\to e^{-t}$.
+- **Duplicación eliminada:** los literales (a)/(b) del prob de sistemas EDO del banco repetían íntegros los 2 examples de §8.3 → sustituidos por sistemas nuevos verificados SymPy ($A=\left(\begin{smallmatrix}1&2\\2&1\end{smallmatrix}\right)$ con CI $(3,1)$; $A=\left(\begin{smallmatrix}4&1\\3&2\end{smallmatrix}\right)$ con CI $(1,5)$); el (c) $3\times3$ se conservó.
+- Prob expositivo «Solución de EDOs de primer orden…» (sin pregunta ni solución) → `rem` con `\label{rem:edo_primer_orden}` (precedente: regresión polinómica en prodinterno).
+- **Banco §8.6:** los 12 probs del capítulo quedaron todos en el banco (movidos: C-H desde §8.4, los 2 de $A^{-1}$ desde §8.5), en 5 grupos temáticos con separadores; tag individual 3B/6I/3D.
+- **Protocolo:** 15 marcas `Paso N:` → `Paso N.`; 11 examples (10+1 elevado): 6 computacionales conformes (Paso N. + boxed), 5 ilustrativos justificados con título (aplicación potencias, Markov, forma cuadrática, 2 sistemas dinámicos).
+- **§8.8 «Problemas propuestos» creada** (última sección, E4): 16 probs nuevos 5B/8I/3D en 4 grupos temáticos, lote aprobado por el autor y 16/16 verificados con SymPy (P9/P10 en forma simbólica general).
+- Compilación limpia (2 pasadas): 0 errores `!`, 0 refs indefinidas, 788 pp.
 
 ### F9AL.22 — vvpropios: nota editorial sobre aplicaciones a EDOs
 **Acción:** la sección de aplicaciones EDO se conserva (decisión de Fase 4). Ahora que existe `cap29`, añadir remisiones cruzadas (`\ref`) en ambos sentidos y una `rem` que delimite: aquí se ve el mecanismo eigen, el tratamiento sistemático está en cap29. **No recortar contenido sin autorización del autor** — registrar en Notas cualquier solapamiento detectado.
@@ -512,6 +524,14 @@ Mínimo 8–10 resueltos (example con myproof) + 15–20 propuestos (sin myproof
 **Nota:** ejecutar tras F9AL.37; hereda la condición de alcance del bloque V.
 **Estado:** Pendiente
 
+### F9AL.46 — vvpropios: subsección breve sobre la forma canónica de Jordan
+**Solicitud del autor (2026-07-10):** incluir una parte sobre formas canónicas de Jordan, «no muy extensa porque el curso no nos da», como ítem para más adelante.
+**Acción:** añadir al final de §Diagonalización y potencias de matrices una subsección mínima: (a) def. de bloque de Jordan $J_k(\lambda)$; (b) enunciado sin prueba del teorema de la forma canónica de Jordan (toda matriz compleja es semejante a una matriz de bloques de Jordan, única salvo orden); (c) 1 ejemplo $2\times 2$ completo con la matriz no diagonalizable del capítulo (p. ej. la del literal (a) del Ejemplo de multiplicidades o $\left(\begin{smallmatrix}-3&2\\0&-3\end{smallmatrix}\right)$ del banco, que ya remiten a Jordan); (d) `rem` de alcance con remisión bibliográfica. Conectar con las 2 menciones existentes de «forma de Jordan» en el capítulo (convertirlas en `\ref`).
+**Criterio de cierre:** subsección ≤120 líneas con def + teorema enunciado + 1 ejemplo 4 pasos + rem de alcance; compilación limpia.
+**Líneas estimadas:** 80–120
+**Nota de orden:** ejecutar tras F9AL.22, en cualquier punto antes del cierre de bloque F9AL.34.
+**Estado:** Pendiente
+
 ---
 
 ## Registro de progreso
@@ -538,7 +558,7 @@ Mínimo 8–10 resueltos (example con myproof) + 15–20 propuestos (sin myproof
 | F9AL.18 | `prodinterno.tex` | Protocolo + residuales + propuestos | Completado | 2026-07-09 | **2 errores de Fourier corregidos** (factores `(-1)^k` de `[-π,π]` en problemas sobre `[0,2π]`, verificado SymPy). 5 elevaciones (incl. 1er ejemplo de §7.6). Banco 17 probs 6B/7I/4D. §7.8 propuestos creada: 18 probs 5B/9I/4D. `prob[Regresión polinómica]`→`rem`. Respuesta evasiva corregida con contraejemplo. 782 pp, 0 errores. |
 | F9AL.19 | `vvpropios.tex` | Intro + estructura de secciones | Completado | 2026-07-10 | Intro 5 frases (refs a matrdet/sel/sistemasedos); 7 secciones sin mover contenido; labels `vvpropios` + `sistemasedos` (cap29); heading banco anticipado; `proof` huérfano l.92 registrado para F9AL.21. 782 pp, 0 errores. |
 | F9AL.20 | `vvpropios.tex` | 2 figuras nuevas R2 | Completado | 2026-07-10 | fig:accion_vector_propio (v se estira, w gira; A=(2 1;1 2)) + fig:diagonalizacion_cajas (cuadrado conmutativo PDP⁻¹); verificadas pp. 212/217. 782 pp, 0 errores. |
-| F9AL.21 | `vvpropios.tex` | Sección propuestos + Decisión F | Pendiente | — | — |
+| F9AL.21 | `vvpropios.tex` | Sección propuestos + Decisión F | Completado | 2026-07-10 | 1 elevación (ex:vvp_multiplicidades); cor:cerovp para proof huérfano; error LRC corregido (λ=−1±i); duplicados EDO sustituidos; banco 12 probs 3B/6I/3D; §8.8 con 16 propuestos 5B/8I/3D SymPy-OK. 788 pp, 0 errores. |
 | F9AL.22 | `vvpropios.tex` | Remisiones cruzadas EDO (cap29) | Pendiente | — | — |
 | F9AL.23 | `translineales.tex` | Estructura de secciones | Pendiente | — | — |
 | F9AL.24 | `translineales.tex` | Auditoría 20 figuras | Pendiente | — | — |
@@ -563,8 +583,9 @@ Mínimo 8–10 resueltos (example con myproof) + 15–20 propuestos (sin myproof
 | F9AL.43 | `translineales.tex` | 47 myproof → 4 pasos (2 lotes) | Pendiente | — | Tras F9AL.26/.27 |
 | F9AL.44 | `complejos.tex` | 24 myproof → 4 pasos | Pendiente | — | Tras F9AL.28 |
 | F9AL.45 | `vectoresrn.tex` | 27 myproof → 4 pasos (bloque V) | Pendiente | — | Tras F9AL.37; opcional |
+| F9AL.46 | `vvpropios.tex` | Subsección breve forma de Jordan | Pendiente | — | Solicitud del autor 2026-07-10; tras F9AL.22 |
 
-**Total: 45 ítems** (41 núcleo + 4 bloque V opcional). F9AL.34 (cierre de bloque) se ejecuta después de F9AL.44.
+**Total: 46 ítems** (42 núcleo + 4 bloque V opcional). F9AL.34 (cierre de bloque) se ejecuta después de F9AL.44 y F9AL.46.
 
 ---
 
