@@ -373,19 +373,19 @@ Mínimo 8–10 resueltos (example con myproof) + 15–20 propuestos (sin myproof
 **Acción:** el capítulo (2 566 líneas) tiene una sola `\section` en la línea 10. Insertar: `\section{Transformaciones lineales}` (existente), `\section{Núcleo, imagen y el teorema rango-nulidad}`, `\section{Matriz de una transformación}`, `\section{Cambio de base}`, `\section{Composición e invertibilidad}`, `\section{Transformaciones geométricas en el plano y el espacio}` (ajustar al contenido real).
 **Criterio de cierre:** ≥5 secciones; teorema rango-nulidad (central R3) con demostración o esquema verificado; compilación limpia.
 **Líneas estimadas:** 40–90
-**Estado:** Pendiente
+**Estado:** Completado (2026-07-10). 6 secciones: Transformaciones lineales / Núcleo, imagen y el teorema de la dimensión / Composición, invertibilidad e isomorfismos / Matriz asociada a una transformación lineal / Transformaciones geométricas en el plano / Problemas resueltos adicionales. `\label{translineales}` añadido al capítulo. El teorema de la dimensión (`teodim`) ya tenía demostración completa (verificada). 792 pp, 0 errores.
 
 ### F9AL.24 — translineales: auditoría de 19 figuras + 1 tikz suelto
 **Acción:** las 19 figuras en `figure` carecen todas de caption y label; 1 tikzpicture está fuera de entorno figure. Protocolo F8.31 completo (caption + `\label{fig:...}` + anchors).
 **Criterio de cierre:** 20/20 conformes; compilación limpia.
 **Líneas estimadas:** 100–200 (2 lotes internos si excede 300)
-**Estado:** Pendiente
+**Estado:** Completado (2026-07-10). Corrección al diagnóstico: las 19 figuras SÍ tenían caption; lo que faltaba eran los 19 labels. 19 `\label{fig:...}` insertados tras caption + 17 anchors (11 `\textbf{Gráfica} (Figura~\ref{...})` en banco, 6 en teoría) + 2 refs en enunciados de probs gráficos. El tikz suelto (diagrama conmutativo matriz asociada, L457) envuelto en `figure[H]` → `fig:diagrama_matriz_asociada` con anchor. 20/20 conformes.
 
 ### F9AL.25 — translineales: figuras nuevas R2
 **Acción:** (a) cuadrado unitario → paralelogramo bajo rotación θ y bajo cizalla (minipage doble); (b) diagrama conmutativo de composición T∘S entre V, W, Z con nodos y flechas. Insertar según R2 tras las definiciones correspondientes.
 **Criterio de cierre:** 2 figuras estándar F8; compilación limpia.
 **Líneas estimadas:** 80–130
-**Estado:** Pendiente
+**Estado:** Completado (2026-07-10). (a) `fig:cuadrado_rotacion_cizalla` — minipage doble: cuadrado unitario (azul punteado) → rotación π/6 y cizalla horizontal (rojo), con T(e₁)/T(e₂) y matrices; intro nueva de la sección geométrica la ancla. (b) `fig:composicion_diagrama` — diagrama U→V→W con flecha diagonal T₂∘T₁ punteada, tras la prueba de linealidad de la composición (notación del capítulo: T₁, T₂, U, V, W en lugar de T∘S, V, W, Z del plan).
 
 ### F9AL.26 — translineales: sección de propuestos + Decisión F 🔒F
 **Acción:** crear `\section{Problemas propuestos}`; aplicar Decisión F a los 22 probs (22 con solución dentro); tags de graduación.
@@ -579,9 +579,9 @@ Mínimo 8–10 resueltos (example con myproof) + 15–20 propuestos (sin myproof
 | F9AL.20 | `vvpropios.tex` | 2 figuras nuevas R2 | Completado | 2026-07-10 | fig:accion_vector_propio (v se estira, w gira; A=(2 1;1 2)) + fig:diagonalizacion_cajas (cuadrado conmutativo PDP⁻¹); verificadas pp. 212/217. 782 pp, 0 errores. |
 | F9AL.21 | `vvpropios.tex` | Sección propuestos + Decisión F | Completado | 2026-07-10 | 1 elevación (ex:vvp_multiplicidades); cor:cerovp para proof huérfano; error LRC corregido (λ=−1±i); duplicados EDO sustituidos; banco 12 probs 3B/6I/3D; §8.8 con 16 propuestos 5B/8I/3D SymPy-OK. 788 pp, 0 errores. |
 | F9AL.22 | `vvpropios.tex` | Remisiones cruzadas EDO (cap29) | Completado | 2026-07-10 | Ref cap29§3→vvpropios + rem de alcance §8.3→cap29; 4 solapamientos documentados sin recorte. 788 pp, 0 errores. Semana 4 completa. |
-| F9AL.23 | `translineales.tex` | Estructura de secciones | Pendiente | — | — |
-| F9AL.24 | `translineales.tex` | Auditoría 20 figuras | Pendiente | — | — |
-| F9AL.25 | `translineales.tex` | 2 figuras nuevas R2 | Pendiente | — | — |
+| F9AL.23 | `translineales.tex` | Estructura de secciones | Completado | 2026-07-10 | 6 secciones + label capítulo; teodim ya tenía prueba. 792 pp |
+| F9AL.24 | `translineales.tex` | Auditoría 20 figuras | Completado | 2026-07-10 | 19 labels + 19 anchors + tikz suelto → fig:diagrama_matriz_asociada. 20/20 |
+| F9AL.25 | `translineales.tex` | 2 figuras nuevas R2 | Completado | 2026-07-10 | fig:cuadrado_rotacion_cizalla (minipage doble) + fig:composicion_diagrama |
 | F9AL.26 | `translineales.tex` | Sección propuestos + Decisión F | Pendiente | — | — |
 | F9AL.27 | `translineales.tex` | Completar 4 pasos | Pendiente | — | — |
 | F9AL.28 | `complejos.tex` | Elevar 8–10 resueltos del banco | Pendiente | — | — |

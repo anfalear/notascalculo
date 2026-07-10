@@ -1,4 +1,4 @@
-\chapter{Transformaciones lineales}
+\chapter{Transformaciones lineales}\label{translineales}
 
 Las transformaciones lineales constituyen una herramienta esencial en numerosos campos, como la generación de efectos visuales realistas, el procesamiento de imágenes digitales, el cifrado de información, la compresión eficiente de datos, el análisis de patrones y estructuras en conjuntos de datos, así como en el modelado y la predicción de fenómenos complejos. Particularmente en el plano y en el espacio, las transformaciones lineales permiten realizar operaciones fundamentales como rotaciones, escalados y traslaciones de objetos.
 
@@ -133,6 +133,8 @@ T(u) = T\left(\sum_{i=1}^{n} k_i v_i\right) = \sum_{i=1}^{n} k_i T(v_i).
     \]
 \end{enumerate}
 \end{example}
+
+\section{Núcleo, imagen y el teorema de la dimensión}
 
 \begin{definition}[Kernel e imagen de una transformación lineal]
 Sea $T: V \to W$ una transformación lineal entre espacios vectoriales sobre un campo $\mathbb{F}$. Se definen:
@@ -308,6 +310,8 @@ Ya se demostró que $i. \iff ii.$ en el teorema anterior. Probemos las demás im
 \end{theorem}
 
 
+\section{Composición, invertibilidad e isomorfismos}
+
 \begin{definition}[Composición de transformaciones lineales]
 Sean $U$, $V$ y $W$ espacios vectoriales sobre el mismo campo $\mathbb{F}$, y sean $T_1: U \to V$ y $T_2: V \to W$ transformaciones lineales. Se define la composición $T_2 \circ T_1: U \to W$ por
 \[
@@ -338,6 +342,20 @@ Por lo tanto,
 \]
 Esto prueba que $T_2 \circ T_1$ es una transformación lineal.
 \end{proof}
+
+La Figura~\ref{fig:composicion_diagrama} representa la composición como un diagrama: aplicar primero $T_1$ y después $T_2$ equivale a recorrer la flecha diagonal $T_2 \circ T_1$.
+
+\begin{figure}[H]\centering
+\begin{tikzpicture}[>=stealth, node distance=3cm, scale=1.2]
+    \node (U) at (0,0) {$U$};
+    \node (V) [right=of U] {$V$};
+    \node (W) [below=2.2cm of V] {$W$};
+    \draw[->, thick, blue!70!black] (U) -- node[above] {\small $T_1$} (V);
+    \draw[->, thick, blue!70!black] (V) -- node[right] {\small $T_2$} (W);
+    \draw[->, thick, dashed, red!70!black] (U) -- node[below left] {\small $T_2 \circ T_1$} (W);
+\end{tikzpicture}
+\caption{Diagrama conmutativo de la composición $T_2 \circ T_1: U \to W$.}\label{fig:composicion_diagrama}
+\end{figure}
 
 
 \begin{definition}[Inversa de una transformación lineal]
@@ -437,6 +455,8 @@ Algunos ejemplos de funciones que \textbf{son} y \textbf{no son} isomorfismos:
 \end{itemize}
 \end{example}
 
+\section{Matriz asociada a una transformación lineal}
+
 \begin{definition}[Matriz asociada a una transformación lineal]
 Sean $V$ y $W$ espacios vectoriales sobre un campo $\mathbb{F}$, con $\dim(V) = n$ y $\dim(W) = m$. Sea $T: V \to W$ una transformación lineal. Sean $B = \{v_1, \ldots, v_n\}$ una base de $V$ y $B' = \{w_1, \ldots, w_m\}$ una base de $W$.
 
@@ -447,7 +467,9 @@ La \textbf{matriz asociada a $T$ respecto de las bases $B$ y $B'$}, denotada por
 donde $[x]_B$ es el vector de coordenadas de $x$ en la base $B$, y $[T(x)]_{B'}$ es el vector de coordenadas de $T(x)$ en la base $B'$.
 \end{definition}
 
-\begin{center}
+La Figura~\ref{fig:diagrama_matriz_asociada} resume esta relación: aplicar $T$ a un vector equivale a multiplicar su vector de coordenadas por la matriz $[T]_{B',B}$.
+
+\begin{figure}[H]\centering
 \begin{tikzpicture}[>=stealth, node distance=3.5cm, scale=1]
     \node (v) at (0,0) {$x \in V$};
     \node (vb) [below=of v] {$[x]_B$};
@@ -459,7 +481,8 @@ donde $[x]_B$ es el vector de coordenadas de $x$ en la base $B$, y $[T(x)]_{B'}$
     \draw[->] (w) -- node[right] {\footnotesize coordenadas en $B'$} (wb);
     \draw[->, dashed] (vb) -- node[below] {\footnotesize $[T]_{B',B}$} (wb);
 \end{tikzpicture}
-\end{center}
+\caption{Diagrama conmutativo de la matriz asociada a una transformación lineal.}\label{fig:diagrama_matriz_asociada}
+\end{figure}
 \begin{example}[Matriz de representación de $T:\mathbb{R}^5\to\mathbb{R}^3$]\label{ejmntl}
 Sea $T: \mathbb{R}^5 \to \mathbb{R}^3$ definida por
 \[
@@ -663,6 +686,38 @@ T(p(x)) = \begin{pmatrix} p(-1) \\ p(0) \\ p(1) \end{pmatrix}
 
 
 
+\section{Transformaciones geométricas en el plano}
+
+Toda matriz $A \in \mathbb{M}_2(\mathbb{R})$ define una transformación lineal $T(x) = Ax$ en el plano, y sus columnas son precisamente las imágenes de los vectores canónicos $e_1$ y $e_2$. Por eso, para visualizar el efecto geométrico de $T$ basta observar qué le hace al cuadrado unitario de lados $e_1$ y $e_2$: su imagen es el paralelogramo de lados $T(e_1)$ y $T(e_2)$. La Figura~\ref{fig:cuadrado_rotacion_cizalla} muestra dos casos representativos: una rotación, que gira el cuadrado sin deformarlo, y una cizalla, que lo inclina en un paralelogramo de la misma área.
+
+\begin{figure}[H]\centering
+\begin{minipage}{0.48\textwidth}\centering
+\begin{tikzpicture}[scale=1.3]
+    \draw[->] (-0.7,0) -- (1.6,0) node[below] {\small $x$};
+    \draw[->] (0,-0.3) -- (0,1.6) node[left] {\small $y$};
+    \draw[blue!70!black, thick, dashed] (0,0) rectangle (1,1);
+    \draw[red!70!black, thick, rotate=30] (0,0) rectangle (1,1);
+    \draw[->, thick, red!70!black] (0,0) -- ({cos(30)},{sin(30)}) node[right] {\small $T(e_1)$};
+    \draw[->, thick, red!70!black] (0,0) -- ({-sin(30)},{cos(30)}) node[above left] {\small $T(e_2)$};
+    \draw[->] (0.55,0) arc [start angle=0, end angle=30, radius=0.55];
+    \node at (0.75,0.16) {\small $\theta$};
+\end{tikzpicture}\\[4pt]
+{\small $A = \begin{pmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{pmatrix}$, $\theta = \dfrac{\pi}{6}$}
+\end{minipage}\hfill
+\begin{minipage}{0.48\textwidth}\centering
+\begin{tikzpicture}[scale=1.3]
+    \draw[->] (-0.3,0) -- (2.3,0) node[below] {\small $x$};
+    \draw[->] (0,-0.3) -- (0,1.6) node[left] {\small $y$};
+    \draw[blue!70!black, thick, dashed] (0,0) rectangle (1,1);
+    \draw[red!70!black, thick] (0,0) -- (1,0) -- (2,1) -- (1,1) -- cycle;
+    \draw[->, thick, red!70!black] (0,0) -- (1,0) node[below right] {\small $T(e_1)$};
+    \draw[->, thick, red!70!black] (0,0) -- (1,1) node[above right] {\small $T(e_2)$};
+\end{tikzpicture}\\[4pt]
+{\small $A = \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix}$}
+\end{minipage}
+\caption{El cuadrado unitario (azul punteado) y su imagen (rojo) bajo una rotación de $\pi/6$ (izquierda) y una cizalla horizontal (derecha).}\label{fig:cuadrado_rotacion_cizalla}
+\end{figure}
+
 \begin{example}[Transformaciones lineales clásicas en $\mathbb{R}^2$]
 A continuación se presentan algunos ejemplos clásicos de transformaciones lineales en el plano $\mathbb{R}^2$, con sus matrices de representación respecto a la base canónica y las gráficas correspondientes.
 
@@ -681,6 +736,7 @@ A continuación se presentan algunos ejemplos clásicos de transformaciones line
     \[
     T\begin{pmatrix}a\\b\end{pmatrix} = \begin{pmatrix}b\\a\end{pmatrix}.
     \]
+    La Figura~\ref{fig:reflexion_recta_yx} muestra el efecto sobre el punto $(1,4)$, que se transforma en $(4,1)$.
     \begin{figure}[H]\centering
         \begin{tikzpicture}[scale=0.5]
             \draw[step=1cm,help lines] (-1.5,-1.5) grid (4.7,4.7);
@@ -692,7 +748,7 @@ A continuación se presentan algunos ejemplos clásicos de transformaciones line
                 \filldraw [black] (\j,\l) circle [radius=6pt];
                 \draw (\j+0.5,\l+0.5) node{(\j,\l)};}
         \end{tikzpicture}
-        \caption{Reflexión respecto a la recta $y = x$.}
+        \caption{Reflexión respecto a la recta $y = x$.}\label{fig:reflexion_recta_yx}
     \end{figure}
 
     \item \textbf{Rotación de un ángulo $\theta$ respecto al origen:} \\
@@ -712,6 +768,7 @@ A continuación se presentan algunos ejemplos clásicos de transformaciones line
     \begin{pmatrix}1\\4\end{pmatrix}
     = \frac{\sqrt{2}}{2} \begin{pmatrix} -3 \\ 5 \end{pmatrix}
     \]
+    La Figura~\ref{fig:rotacion_origen} ilustra la rotación de un ángulo $\theta$ sobre la circunferencia unitaria.
     \begin{figure}[H]\centering
         \begin{tikzpicture}[scale=1.5]
             \draw[step=0.2cm,help lines] (-1.5,-1.5) grid (1.5,1.5);
@@ -724,7 +781,7 @@ A continuación se presentan algunos ejemplos clásicos de transformaciones line
             \draw (0,0)-- (0.707106, 0.707106);
             \draw (0,0)-- (-0.707106, 0.707106);
         \end{tikzpicture}
-        \caption{Rotación de un punto respecto al origen.}
+        \caption{Rotación de un punto respecto al origen.}\label{fig:rotacion_origen}
     \end{figure}
 
     \item \textbf{Amplificación (escalado) de regiones:} \\
@@ -735,6 +792,7 @@ A continuación se presentan algunos ejemplos clásicos de transformaciones line
         0 & 2
     \end{pmatrix}
     \]
+    La Figura~\ref{fig:escalado_region} muestra la región original y su imagen ampliada.
     \begin{figure}[H]\centering
         \begin{tikzpicture}[scale=0.3]
             \draw[step=1cm,help lines, line width=0.01cm] (-1,-1) grid (8,7);
@@ -747,7 +805,7 @@ A continuación se presentan algunos ejemplos clásicos de transformaciones line
             \draw[latex-latex, line width=0.05cm] (13,-1.5) -- (13,8);
             \filldraw[fill=red!70, draw=black] (13,0) rectangle ++(6,6);
         \end{tikzpicture}
-        \caption{Escalado de una región en el plano.}
+        \caption{Escalado de una región en el plano.}\label{fig:escalado_region}
     \end{figure}
 \end{enumerate}
 
@@ -764,7 +822,7 @@ Consideremos una figura en el plano (la "casita") representada por los vértices
     \[
     A = \begin{pmatrix} -1 & 0 \\ 0 & 1 \end{pmatrix}
     \]
-    Esta transformación invierte la coordenada $x$ y deja inalterada la coordenada $y$.
+    Esta transformación invierte la coordenada $x$ y deja inalterada la coordenada $y$ (Figura~\ref{fig:casita_reflexion_y}).
 
     \begin{figure}[H]\centering
     \begin{tikzpicture}[scale=0.35]
@@ -778,7 +836,7 @@ Consideremos una figura en el plano (la "casita") representada por los vértices
         \filldraw[line width=0.1cm, fill=red!70, draw=black] (-2.5,1.5) rectangle ++(-1,1);
         \filldraw[line width=0.1cm, fill=red!70, draw=black] (-1.5,0) rectangle ++(-1,1.25);
     \end{tikzpicture}
-    \caption{Reflexión de la casita respecto al eje $y$.}
+    \caption{Reflexión de la casita respecto al eje $y$.}\label{fig:casita_reflexion_y}
     \end{figure}
 
     \item \textbf{Dilatación (ampliación) al doble:}
@@ -787,7 +845,7 @@ Consideremos una figura en el plano (la "casita") representada por los vértices
     \[
     A = \begin{pmatrix} 2 & 0 \\ 0 & 2 \end{pmatrix}
     \]
-    Esta transformación multiplica por $2$ cada coordenada, ampliando la figura al doble de su tamaño.
+    Esta transformación multiplica por $2$ cada coordenada, ampliando la figura al doble de su tamaño (Figura~\ref{fig:casita_dilatacion}).
 
     \begin{figure}[H]\centering
     \begin{tikzpicture}[scale=0.35]
@@ -801,7 +859,7 @@ Consideremos una figura en el plano (la "casita") representada por los vértices
         \filldraw[line width=0.1cm, fill=red!70, draw=black] (5,3) rectangle ++(2,2);
         \filldraw[line width=0.1cm, fill=red!70, draw=black] (3,0) rectangle ++(2,2.5);
     \end{tikzpicture}
-    \caption{La casita ampliada al doble.}
+    \caption{La casita ampliada al doble.}\label{fig:casita_dilatacion}
     \end{figure}
 
     \item \textbf{Reflexión respecto al eje $x$:}
@@ -810,7 +868,7 @@ Consideremos una figura en el plano (la "casita") representada por los vértices
     \[
     A = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}
     \]
-    Esta transformación invierte la coordenada $y$ y deja inalterada la coordenada $x$.
+    Esta transformación invierte la coordenada $y$ y deja inalterada la coordenada $x$ (Figura~\ref{fig:casita_reflexion_x}).
 
     \begin{figure}[H]\centering
     \begin{tikzpicture}[scale=0.35]
@@ -824,7 +882,7 @@ Consideremos una figura en el plano (la "casita") representada por los vértices
         \filldraw[line width=0.1cm, fill=red!70, draw=black] (2.5,-1.5) rectangle ++(1,-1);
         \filldraw[line width=0.1cm, fill=red!70, draw=black] (1.5,0) rectangle ++(1,-1.25);
     \end{tikzpicture}
-    \caption{Reflexión de la casita respecto al eje $x$.}
+    \caption{Reflexión de la casita respecto al eje $x$.}\label{fig:casita_reflexion_x}
     \end{figure}
 
 \end{enumerate}
@@ -834,6 +892,8 @@ Consideremos una figura en el plano (la "casita") representada por los vértices
 
 
 
+
+\section{Problemas resueltos adicionales}
 
 \begin{prob}
 Sea $S = \{e_1, e_2, e_3\}$ la base canónica de $\mathbb{R}^3$ y sea $B = \{v_1, v_2, v_3\}$ la base que resulta al evaluar los vectores de $S$ en la transformación lineal
@@ -1997,7 +2057,7 @@ $T$ no es un isomorfismo porque no es inyectiva (ni sobreyectiva).
 \end{prob}
 
 \begin{prob}
-Dada la siguiente figura, determine el efecto geométrico que efectúan sobre ella las transformaciones lineales representadas por las siguientes matrices. Para cada caso, calcule el kernel, la imagen, el rango y la nulidad.
+Dada la figura plana de la Figura~\ref{fig:figura_original_plano}, determine el efecto geométrico que efectúan sobre ella las transformaciones lineales representadas por las siguientes matrices. Para cada caso, calcule el kernel, la imagen, el rango y la nulidad.
 
 \begin{figure}[H]
 \centering
@@ -2029,7 +2089,7 @@ ytick={-1.0,0.0,...,4.0},]
 \draw [line width=2.pt] (2.,0.)-- (3.,0.);
 \end{axis}
 \end{tikzpicture}
-\caption{Figura original en el plano}
+\caption{Figura original en el plano}\label{fig:figura_original_plano}
 \end{figure}
 
 \begin{enumerate}[$a)$]
@@ -2045,7 +2105,7 @@ ytick={-1.0,0.0,...,4.0},]
 
     \textbf{Nulidad:} $0$.
 
-    \textbf{Gráfica:}
+    \textbf{Gráfica} (Figura~\ref{fig:trans_reflexion_yx})\textbf{:}
     \begin{figure}[H]\centering
     \begin{tikzpicture}[scale=0.5]
         \draw[step=1cm,help lines] (-1.5,-1.5) grid (4.7,4.7);
@@ -2057,7 +2117,7 @@ ytick={-1.0,0.0,...,4.0},]
             \filldraw [black] (\j,\l) circle [radius=6pt];
             \draw (\j+0.5,\l+0.5) node{(\j,\l)};}
     \end{tikzpicture}
-    \caption{Reflexión respecto a la recta $y = x$.}
+    \caption{Reflexión respecto a la recta $y = x$.}\label{fig:trans_reflexion_yx}
     \end{figure}
     \end{myproof}
     
@@ -2073,7 +2133,7 @@ ytick={-1.0,0.0,...,4.0},]
 
     \textbf{Nulidad:} $0$.
 
-    \textbf{Gráfica:}
+    \textbf{Gráfica} (Figura~\ref{fig:trans_estiramiento_reflexion_y})\textbf{:}
     \begin{figure}[H]\centering
     \begin{tikzpicture}[xscale=-0.5,yscale=0.5]
         \draw[step=1cm,help lines] (-4,-1.5) grid (2.7,4.7);
@@ -2094,7 +2154,7 @@ ytick={-1.0,0.0,...,4.0},]
         \draw [line width=2.pt] (-4.,3.)-- (-4.,2.);
         \draw [line width=2.pt] (-4.,0.)-- (-6.,0.);
     \end{tikzpicture}
-    \caption{Estiramiento y reflexión respecto al eje $y$.}
+    \caption{Estiramiento y reflexión respecto al eje $y$.}\label{fig:trans_estiramiento_reflexion_y}
     \end{figure}
     \end{myproof}
     
@@ -2110,7 +2170,7 @@ ytick={-1.0,0.0,...,4.0},]
 
     \textbf{Nulidad:} $1$.
 
-    \textbf{Gráfica:}
+    \textbf{Gráfica} (Figura~\ref{fig:trans_proyeccion_x})\textbf{:}
     \begin{figure}[H]\centering
     \begin{tikzpicture}[xscale=1,yscale=0.2]
         \draw[step=1cm,help lines] (-1.5,-1.5) grid (4.7,1.7);
@@ -2119,7 +2179,7 @@ ytick={-1.0,0.0,...,4.0},]
         % Dibuja la figura proyectada sobre el eje x
         \draw [line width=2.pt] (0.,0.)-- (3.,0.);
     \end{tikzpicture}
-    \caption{Proyección sobre el eje $x$.}
+    \caption{Proyección sobre el eje $x$.}\label{fig:trans_proyeccion_x}
     \end{figure}
     \end{myproof}
     
@@ -2135,7 +2195,7 @@ ytick={-1.0,0.0,...,4.0},]
 
     \textbf{Nulidad:} $1$.
 
-    \textbf{Gráfica:}
+    \textbf{Gráfica} (Figura~\ref{fig:trans_proyeccion_y})\textbf{:}
     \begin{figure}[H]\centering
     \begin{tikzpicture}[xscale=0.2,yscale=1]
         \draw[step=1cm,help lines] (-1.5,-1.5) grid (1.7,4.7);
@@ -2144,7 +2204,7 @@ ytick={-1.0,0.0,...,4.0},]
         % Dibuja la figura proyectada sobre el eje y
         \draw [line width=2.pt] (0.,4.)-- (0.,0.);
     \end{tikzpicture}
-    \caption{Proyección sobre el eje $y$.}
+    \caption{Proyección sobre el eje $y$.}\label{fig:trans_proyeccion_y}
     \end{figure}
     \end{myproof}
     
@@ -2160,7 +2220,7 @@ ytick={-1.0,0.0,...,4.0},]
 
     \textbf{Nulidad:} $0$.
 
-    \textbf{Gráfica:}
+    \textbf{Gráfica} (Figura~\ref{fig:trans_general_invertible})\textbf{:}
     \begin{figure}[H]\centering
     \begin{tikzpicture}[xscale=0.7,yscale=0.7]
         \draw[step=1cm,help lines] (-1.5,-1.5) grid (6,8);
@@ -2181,7 +2241,7 @@ ytick={-1.0,0.0,...,4.0},]
         \draw [line width=2.pt] (5,6)-- (5,4);
         \draw [line width=2.pt] (5,2)-- (7,2);
     \end{tikzpicture}
-    \caption{Transformación general invertible.}
+    \caption{Transformación general invertible.}\label{fig:trans_general_invertible}
     \end{figure}
     \end{myproof}
     
@@ -2197,7 +2257,7 @@ ytick={-1.0,0.0,...,4.0},]
 
     \textbf{Nulidad:} $0$.
 
-    \textbf{Gráfica:}
+    \textbf{Gráfica} (Figura~\ref{fig:trans_escalado_anisotropico})\textbf{:}
     \begin{figure}[H]\centering
     \begin{tikzpicture}[xscale=0.5,yscale=0.75]
         \draw[step=1cm,help lines] (-1.5,-1.5) grid (7,13);
@@ -2218,7 +2278,7 @@ ytick={-1.0,0.0,...,4.0},]
         \draw [line width=2.pt] (4,9)-- (4,6);
         \draw [line width=2.pt] (4,0)-- (6,0);
     \end{tikzpicture}
-    \caption{Escalado anisotrópico.}
+    \caption{Escalado anisotrópico.}\label{fig:trans_escalado_anisotropico}
     \end{figure}
     \end{myproof}
 
@@ -2234,7 +2294,7 @@ ytick={-1.0,0.0,...,4.0},]
 
     \textbf{Nulidad:} $0$.
 
-    \textbf{Gráfica:}
+    \textbf{Gráfica} (Figura~\ref{fig:trans_rotacion_30})\textbf{:}
     \begin{figure}[H]\centering
     \begin{tikzpicture}[scale=0.7]
         \draw[step=1cm,help lines] (-1.5,-1.5) grid (4.7,4.7);
@@ -2255,7 +2315,7 @@ ytick={-1.0,0.0,...,4.0},]
         \draw [rotate around={30:(1.5,2)},line width=2.pt] (2.,3.)-- (2.,2.);
         \draw [rotate around={30:(1.5,2)},line width=2.pt] (2.,0.)-- (3.,0.);
     \end{tikzpicture}
-    \caption{Rotación de $30^\circ$ respecto al origen.}
+    \caption{Rotación de $30^\circ$ respecto al origen.}\label{fig:trans_rotacion_30}
     \end{figure}
     \end{myproof}
 \end{enumerate}
@@ -2264,7 +2324,7 @@ ytick={-1.0,0.0,...,4.0},]
 
 
 \begin{prob}
-Dada la siguiente figura tridimensional, determine el efecto geométrico que efectúan sobre ella las transformaciones lineales representadas por las siguientes matrices. Calcule el kernel, la imagen, la nulidad y el rango. Represente gráficamente las transformaciones.
+Dada la figura tridimensional de la Figura~\ref{fig:sudoku_original}, determine el efecto geométrico que efectúan sobre ella las transformaciones lineales representadas por las siguientes matrices. Calcule el kernel, la imagen, la nulidad y el rango. Represente gráficamente las transformaciones.
 
 \begin{figure}[H]
 \centering 
@@ -2311,7 +2371,7 @@ Dada la siguiente figura tridimensional, determine el efecto geométrico que efe
   \draw (3,0) grid (6,3);
 \end{scope}
 \end{tikzpicture}
-\caption{Figura original (Sudoku 3D cube, \protect\url{https://texample.net/tikz/examples/sudoku-3d-cube})}
+\caption{Figura original (Sudoku 3D cube, \protect\url{https://texample.net/tikz/examples/sudoku-3d-cube})}\label{fig:sudoku_original}
 \end{figure}
 
 \begin{enumerate}[$a)$]
@@ -2327,7 +2387,7 @@ Dada la siguiente figura tridimensional, determine el efecto geométrico que efe
 
     \textbf{Nulidad:} $0$.
 
-    \textbf{Gráfica:}
+    \textbf{Gráfica} (Figura~\ref{fig:sudoku_reflexion_xy})\textbf{:}
     \begin{figure}[H]
     \centering
     \begin{tikzpicture}[every node/.style={minimum size=1cm},on grid]
@@ -2374,7 +2434,7 @@ Dada la siguiente figura tridimensional, determine el efecto geométrico que efe
       \draw (3,0) grid (6,3);
     \end{scope}
     \end{tikzpicture}
-    \caption{Reflexión respecto al plano $XY$ (inversión de $z$).}
+    \caption{Reflexión respecto al plano $XY$ (inversión de $z$).}\label{fig:sudoku_reflexion_xy}
     \end{figure}
     \end{myproof}
     
@@ -2390,7 +2450,7 @@ Dada la siguiente figura tridimensional, determine el efecto geométrico que efe
 
     \textbf{Nulidad:} $0$.
 
-    \textbf{Gráfica:}
+    \textbf{Gráfica} (Figura~\ref{fig:sudoku_escalado})\textbf{:}
     \begin{figure}[H]
     \centering
     \begin{tikzpicture}[every node/.style={minimum size=1cm},on grid, xscale=-1.2, yscale=1, yslant=-0.5]
@@ -2406,7 +2466,7 @@ Dada la siguiente figura tridimensional, determine el efecto geométrico que efe
     \node at (2.5,0.5) {6};
     \draw (0,0) grid (3,3);
     \end{tikzpicture}
-    \caption{Reflejo y estiramiento en $x$, estiramiento en $z$.}
+    \caption{Reflejo y estiramiento en $x$, estiramiento en $z$.}\label{fig:sudoku_escalado}
     \end{figure}
     \end{myproof}
     
@@ -2422,7 +2482,7 @@ Dada la siguiente figura tridimensional, determine el efecto geométrico que efe
 
     \textbf{Nulidad:} $1$.
 
-    \textbf{Gráfica:}
+    \textbf{Gráfica} (Figura~\ref{fig:sudoku_proyeccion_yz})\textbf{:}
     \begin{figure}[H]
     \centering
     \begin{tikzpicture}[every node/.style={minimum size=1cm},on grid, xscale=0.01, yscale=1]
@@ -2439,7 +2499,7 @@ Dada la siguiente figura tridimensional, determine el efecto geométrico que efe
     \node at (5.5,-2.5) {4};
     \draw (3,-3) grid (6,0);
     \end{tikzpicture}
-    \caption{Proyección sobre el plano $YZ$.}
+    \caption{Proyección sobre el plano $YZ$.}\label{fig:sudoku_proyeccion_yz}
     \end{figure}
     \end{myproof}
     
@@ -2455,7 +2515,7 @@ Dada la siguiente figura tridimensional, determine el efecto geométrico que efe
 
     \textbf{Nulidad:} $0$.
 
-    \textbf{Gráfica:}
+    \textbf{Gráfica} (Figura~\ref{fig:sudoku_rotacion_x})\textbf{:}
     \begin{figure}[H]
     \centering
     \begin{tikzpicture}[every node/.style={minimum size=1cm},on grid]
@@ -2501,7 +2561,7 @@ Dada la siguiente figura tridimensional, determine el efecto geométrico que efe
       \draw (3,0) grid (6,3);
     \end{scope}
     \end{tikzpicture}
-    \caption{Rotación de $30^\circ$ en el plano $YZ$ alrededor del eje $x$.}
+    \caption{Rotación de $30^\circ$ en el plano $YZ$ alrededor del eje $x$.}\label{fig:sudoku_rotacion_x}
     \end{figure}
     \end{myproof}
 \end{enumerate}
