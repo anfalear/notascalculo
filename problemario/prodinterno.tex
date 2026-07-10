@@ -19,14 +19,14 @@ Sean $\mathbf{u} = (u_1, u_2)$ y $\mathbf{v} = (v_1, v_2)$, el producto $$\langl
 \begin{myproof}
 Se verifican los cuatro axiomas:
 
-\textbf{Paso 1: Simetría.} $\langle \mathbf{u}, \mathbf{v} \rangle = u_1v_1 + u_2v_2 = v_1u_1 + v_2u_2 = \langle \mathbf{v}, \mathbf{u} \rangle$.
+\textbf{Paso 1. Simetría.} $\langle \mathbf{u}, \mathbf{v} \rangle = u_1v_1 + u_2v_2 = v_1u_1 + v_2u_2 = \langle \mathbf{v}, \mathbf{u} \rangle$.
 
-\textbf{Paso 2: Linealidad en la primera variable.} Para $\mathbf{w} = (w_1, w_2)$:
+\textbf{Paso 2. Linealidad en la primera variable.} Para $\mathbf{w} = (w_1, w_2)$:
 $\langle \mathbf{u} + \mathbf{v}, \mathbf{w} \rangle = (u_1 + v_1)w_1 + (u_2 + v_2)w_2 = u_1w_1 + u_2w_2 + v_1w_1 + v_2w_2 = \langle \mathbf{u}, \mathbf{w} \rangle + \langle \mathbf{v}, \mathbf{w} \rangle$.
 
-\textbf{Paso 3: Homogeneidad.} $\langle k\mathbf{u}, \mathbf{v} \rangle = (ku_1)v_1 + (ku_2)v_2 = k(u_1v_1 + u_2v_2) = k\langle \mathbf{u}, \mathbf{v} \rangle$.
+\textbf{Paso 3. Homogeneidad.} $\langle k\mathbf{u}, \mathbf{v} \rangle = (ku_1)v_1 + (ku_2)v_2 = k(u_1v_1 + u_2v_2) = k\langle \mathbf{u}, \mathbf{v} \rangle$.
 
-\textbf{Paso 4: Positividad definida.} $\langle \mathbf{u}, \mathbf{u} \rangle = u_1^2 + u_2^2 \geq 0$ y $u_1^2 + u_2^2 = 0$ si y solo si $u_1 = u_2 = 0$.
+\textbf{Paso 4. Positividad definida.} $\langle \mathbf{u}, \mathbf{u} \rangle = u_1^2 + u_2^2 \geq 0$ y $u_1^2 + u_2^2 = 0$ si y solo si $u_1 = u_2 = 0$.
 
 La generalización para $\mathbb{R}^n$ es $\langle \mathbf{u}, \mathbf{v} \rangle = \sum_{i=1}^n u_i v_i$.
 $$\boxed{\langle \mathbf{u}, \mathbf{v} \rangle = u_1v_1 + u_2v_2 \text{ define un producto interno en } \mathbb{R}^2.}$$
@@ -86,16 +86,16 @@ Sea $V$ un espacio vectorial complejo con producto interno. Para todo $\mathbf{u
 \begin{example}[Producto interno canónico en $\mathbb{C}^n$]
 Para $\mathbf{u} = (u_1,\dots,u_n)$ y $\mathbf{v} = (v_1,\dots,v_n)$ en $\mathbb{C}^n$, la función $\langle \mathbf{u}, \mathbf{v} \rangle = \sum_{k=1}^n u_k \overline{v_k}$ es un producto interno válido.
 \begin{myproof}
-\textbf{Paso 1: Simetría conjugada.}
+\textbf{Paso 1. Simetría conjugada.}
 $\langle \mathbf{v}, \mathbf{u} \rangle = \sum v_k \overline{u_k} = \overline{\sum \overline{v_k} u_k} = \overline{\sum u_k \overline{v_k}} = \overline{\langle \mathbf{u}, \mathbf{v} \rangle}$.
 
-\textbf{Paso 2: Aditividad.}
+\textbf{Paso 2. Aditividad.}
 $\langle \mathbf{u} + \mathbf{v}, \mathbf{w} \rangle = \sum (u_k + v_k)\overline{w_k} = \sum u_k\overline{w_k} + \sum v_k\overline{w_k} = \langle \mathbf{u}, \mathbf{w} \rangle + \langle \mathbf{v}, \mathbf{w} \rangle$.
 
-\textbf{Paso 3: Homogeneidad en la primera variable.}
+\textbf{Paso 3. Homogeneidad en la primera variable.}
 $\langle k\mathbf{u}, \mathbf{v} \rangle = \sum (ku_k)\overline{v_k} = k \sum u_k \overline{v_k} = k\langle \mathbf{u}, \mathbf{v} \rangle$.
 
-\textbf{Paso 4: Positividad definida.}
+\textbf{Paso 4. Positividad definida.}
 $\langle \mathbf{u}, \mathbf{u} \rangle = \sum_{k=1}^n |u_k|^2 \geq 0$ y $\langle \mathbf{u}, \mathbf{u} \rangle = 0 \iff u_k=0\ \forall k \iff \mathbf{u}=\mathbf{0}$.
 $$\boxed{\langle \mathbf{u}, \mathbf{v} \rangle = \sum_{k=1}^n u_k \overline{v_k}\ \text{define un producto interno en}\ \mathbb{C}^n.}$$
 \end{myproof}
@@ -116,56 +116,15 @@ Sea $V$ un espacio vectorial con producto interno real, entonces
 \begin{example}[Ortogonalidad de $\cos x$ y $\sin x$ en ${\mathcal{C}[0,\pi]}$]
 Calcule $\langle \cos x, \sin x \rangle$ en $\mathcal{C}[0, \pi]$ con $\langle f, g \rangle = \int_0^\pi f(x)g(x)\,dx$ y determine si $f \perp g$.
 \begin{myproof}
-\textbf{Paso 1: Evaluar el producto interno.}
+\textbf{Paso 1. Evaluar el producto interno.}
 \[
 \langle \cos x, \sin x \rangle = \int_0^\pi \sin x \cos x\,dx = \left[ \frac{\sin^2 x}{2} \right]_0^\pi = \frac{\sin^2 \pi}{2} - \frac{\sin^2 0}{2} = 0.
 \]
 
-\textbf{Paso 2: Concluir ortogonalidad.} Como $\langle \cos x, \sin x \rangle = 0$, los vectores son ortogonales.
+\textbf{Paso 2. Concluir ortogonalidad.} Como $\langle \cos x, \sin x \rangle = 0$, los vectores son ortogonales.
 $$\boxed{\langle \cos x,\, \sin x \rangle = 0,\quad \cos x \perp \sin x \text{ en } \mathcal{C}[0,\pi].}$$
 \end{myproof}
 \end{example}
-
-\begin{prob}
-Un rombo es un paralelogramo cuyos lados son de igual longitud. Demuestre que si se construye un rombo en un espacio vectorial con producto interno real sus diagonales son ortogonales.
-\begin{myproof}
-Sea $V$ un espacio vectorial real con producto interno $\langle \cdot, \cdot \rangle$. Sea $\mathbf{a}, \mathbf{b} \in V$ dos vectores no nulos y linealmente independientes que forman dos lados adyacentes de un rombo, es decir, $\|\mathbf{a}\| = \|\mathbf{b}\|$. Las diagonales del rombo son: \(
-\mathbf{d}_1 = \mathbf{a} + \mathbf{b}, \qquad \mathbf{d}_2 = \mathbf{a} - \mathbf{b}.
-\)
-
-Calculamos el producto interno de las diagonales: 
-
-\(
-\langle \mathbf{d}_1, \mathbf{d}_2 \rangle = \langle \mathbf{a} + \mathbf{b}, \mathbf{a} - \mathbf{b} \rangle = \langle \mathbf{a}, \mathbf{a} \rangle - \langle \mathbf{a}, \mathbf{b} \rangle + \langle \mathbf{b}, \mathbf{a} \rangle - \langle \mathbf{b}, \mathbf{b} \rangle
-\)
-
-Como el producto interno es simétrico ($\langle \mathbf{a}, \mathbf{b} \rangle = \langle \mathbf{b}, \mathbf{a} \rangle$):
-\[
-= \|\mathbf{a}\|^2 - \langle \mathbf{a}, \mathbf{b} \rangle + \langle \mathbf{a}, \mathbf{b} \rangle - \|\mathbf{b}\|^2
-= \|\mathbf{a}\|^2 - \|\mathbf{b}\|^2
-\]
-
-Como $\|\mathbf{a}\| = \|\mathbf{b}\|$, entonces $\|\mathbf{a}\|^2 - \|\mathbf{b}\|^2 = 0$. Por lo tanto, \(\langle \mathbf{d}_1, \mathbf{d}_2 \rangle = 0 \) lo que prueba que las diagonales del rombo son ortogonales.
-\end{myproof}
-\end{prob}
-
-% ------------------ PROBLEMA 12 ------------------
-\begin{prob}
-Demuestre que si las diagonales de un paralelogramo tienen igual norma, entonces los vectores \( \mathbf{u}, \mathbf{v} \) son ortogonales.
-\begin{myproof}
-Las diagonales son \( \mathbf{u} + \mathbf{v} \) y \( \mathbf{u} - \mathbf{v} \). Si tienen igual norma:
-\[
-\|\mathbf{u} + \mathbf{v}\|^2 = \|\mathbf{u} - \mathbf{v}\|^2
-\]
-Desarrollando:
-\[
-\|\mathbf{u}\|^2 + 2\langle \mathbf{u}, \mathbf{v} \rangle + \|\mathbf{v}\|^2 = \|\mathbf{u}\|^2 - 2\langle \mathbf{u}, \mathbf{v} \rangle + \|\mathbf{v}\|^2
-\]
-\[
-4\langle \mathbf{u}, \mathbf{v} \rangle = 0 \implies \langle \mathbf{u}, \mathbf{v} \rangle = 0
-\]
-\end{myproof}
-\end{prob}
 
 
 \begin{theorem}[Desigualdad de Cauchy-Schwarz]
@@ -241,48 +200,57 @@ Desarrollamos la norma al cuadrado:
 \end{proof}
 \end{theorem}
 
-% ------------------ PROBLEMA 6 ------------------
-\begin{prob}
-Sea $V$ un espacio vectorial real con producto interno. Demuestre la \textbf{identidad del paralelogramo}, es decir, si $\mathbf{x}$ y $\mathbf{y}$ son dos vectores en $V$  entonces
+\begin{example}[Identidad del paralelogramo]
+Sea $V$ un espacio vectorial real con producto interno. Demuestre que para todo par de vectores $\mathbf{x}, \mathbf{y} \in V$
 \[
 2\lVert \mathbf{x} \rVert^2+2\lVert \mathbf{y} \rVert^2=\lVert \mathbf{x+y} \rVert^2+\lVert \mathbf{x-y} \rVert^2
 \]
 \begin{myproof}
-Desarrollamos los términos:
+\textbf{Paso 1. Estrategia.} Ambos miembros involucran normas al cuadrado, de modo que escribimos cada una como producto interno mediante $\|\mathbf{z}\|^2 = \langle \mathbf{z}, \mathbf{z} \rangle$ y expandimos por bilinealidad. Los términos cruzados $\langle \mathbf{x}, \mathbf{y} \rangle$ aparecerán con signos opuestos y se cancelarán al sumar.
+
+\textbf{Paso 2. Expandir la norma de la suma.}
 \[
-\|\mathbf{x} + \mathbf{y}\|^2 = \|\mathbf{x}\|^2 + 2\langle \mathbf{x}, \mathbf{y} \rangle + \|\mathbf{y}\|^2
+\|\mathbf{x} + \mathbf{y}\|^2 = \langle \mathbf{x}+\mathbf{y},\, \mathbf{x}+\mathbf{y} \rangle = \|\mathbf{x}\|^2 + 2\langle \mathbf{x}, \mathbf{y} \rangle + \|\mathbf{y}\|^2
 \]
+
+\textbf{Paso 3. Expandir la norma de la diferencia.}
 \[
-\|\mathbf{x} - \mathbf{y}\|^2 = \|\mathbf{x}\|^2 - 2\langle \mathbf{x}, \mathbf{y} \rangle + \|\mathbf{y}\|^2
+\|\mathbf{x} - \mathbf{y}\|^2 = \langle \mathbf{x}-\mathbf{y},\, \mathbf{x}-\mathbf{y} \rangle = \|\mathbf{x}\|^2 - 2\langle \mathbf{x}, \mathbf{y} \rangle + \|\mathbf{y}\|^2
 \]
-Sumando:
+En ambos pasos se usó la simetría $\langle \mathbf{x}, \mathbf{y} \rangle = \langle \mathbf{y}, \mathbf{x} \rangle$ para agrupar los dos términos cruzados.
+
+\textbf{Paso 4. Resultado.} Al sumar los Pasos 2 y 3, los términos $\pm 2\langle \mathbf{x}, \mathbf{y} \rangle$ se cancelan:
 \[
-\|\mathbf{x} + \mathbf{y}\|^2 + \|\mathbf{x} - \mathbf{y}\|^2 = 2\|\mathbf{x}\|^2 + 2\|\mathbf{y}\|^2
+\boxed{\|\mathbf{x} + \mathbf{y}\|^2 + \|\mathbf{x} - \mathbf{y}\|^2 = 2\|\mathbf{x}\|^2 + 2\|\mathbf{y}\|^2}
 \]
 \end{myproof}
-\end{prob}
+\end{example}
 
-% ------------------ PROBLEMA 14 ------------------
-\begin{prob}
-Sean $\mathbf{u}$ y $\mathbf{v}$ vectores en un espacio vectorial real con producto interno $V$. Demuestre que se cumple la ley del coseno:
+\begin{example}[Ley del coseno]
+Sean $\mathbf{u}$ y $\mathbf{v}$ vectores no nulos en un espacio vectorial real con producto interno $V$. Demuestre que se cumple la ley del coseno:
 \[
 \|\mathbf{u}-\mathbf{v}\|^2 = \|\mathbf{u}\|^2 + \|\mathbf{v}\|^2 - 2\|\mathbf{u}\|\|\mathbf{v}\|\cos\theta
 \]
 donde $\theta$ es el ángulo entre $\mathbf{u}$ y $\mathbf{v}$.
 \begin{myproof}
-Por definición de ángulo:
+\textbf{Paso 1. Estrategia.} El miembro izquierdo se expande por bilinealidad y produce un término cruzado $\langle \mathbf{u}, \mathbf{v} \rangle$. La definición de ángulo permite reescribir ese término en función de $\cos\theta$.
+
+\textbf{Paso 2. Expandir la norma.}
 \[
-\cos \theta = \frac{\langle \mathbf{u}, \mathbf{v} \rangle}{\|\mathbf{u}\|\|\mathbf{v}\|}
+\|\mathbf{u} - \mathbf{v}\|^2 = \langle \mathbf{u}-\mathbf{v},\, \mathbf{u}-\mathbf{v} \rangle = \|\mathbf{u}\|^2 - 2\langle \mathbf{u}, \mathbf{v} \rangle + \|\mathbf{v}\|^2
 \]
-Desarrollamos:
+
+\textbf{Paso 3. Sustituir el término cruzado.} Como $\mathbf{u}, \mathbf{v} \neq \mathbf{0}$, la definición de ángulo da
 \[
-\|\mathbf{u} - \mathbf{v}\|^2 = \|\mathbf{u}\|^2 - 2\langle \mathbf{u}, \mathbf{v} \rangle + \|\mathbf{v}\|^2
+\cos \theta = \frac{\langle \mathbf{u}, \mathbf{v} \rangle}{\|\mathbf{u}\|\|\mathbf{v}\|} \qquad\Longrightarrow\qquad \langle \mathbf{u}, \mathbf{v} \rangle = \|\mathbf{u}\|\|\mathbf{v}\|\cos\theta.
 \]
+
+\textbf{Paso 4. Resultado.} Reemplazando la expresión del Paso 3 en el Paso 2:
 \[
-= \|\mathbf{u}\|^2 + \|\mathbf{v}\|^2 - 2\|\mathbf{u}\|\|\mathbf{v}\|\cos\theta
+\boxed{\|\mathbf{u} - \mathbf{v}\|^2 = \|\mathbf{u}\|^2 + \|\mathbf{v}\|^2 - 2\|\mathbf{u}\|\|\mathbf{v}\|\cos\theta}
 \]
 \end{myproof}
-\end{prob}
+\end{example}
 
 
 \section{Ortogonalidad y complemento ortogonal}
@@ -367,7 +335,7 @@ Demostramos cada parte:
 \begin{example}[Cálculo del complemento ortogonal $W^\perp$]
 Sea $W = \operatorname{gen} \left\{ \begin{pmatrix} 1 \\ 0 \\ 2 \\ 1 \end{pmatrix}, \begin{pmatrix} 4 \\ 2 \\ 1 \\ 1 \end{pmatrix} \right\}$. Hallar $W^\perp$ en $\mathbb{R}^4$ con producto punto usual.
 \begin{myproof}
-\textbf{Paso 1: Plantear las condiciones de ortogonalidad.} Un vector $\mathbf{x} = (x_1, x_2, x_3, x_4)^T \in W^\perp$ debe satisfacer $\langle \mathbf{x}, \mathbf{v}_i \rangle = 0$ para cada generador:
+\textbf{Paso 1. Plantear las condiciones de ortogonalidad.} Un vector $\mathbf{x} = (x_1, x_2, x_3, x_4)^T \in W^\perp$ debe satisfacer $\langle \mathbf{x}, \mathbf{v}_i \rangle = 0$ para cada generador:
 \[
 \begin{cases}
 \langle \mathbf{x}, \mathbf{v}_1 \rangle = x_1 + 2x_3 + x_4 = 0 \\
@@ -375,7 +343,7 @@ Sea $W = \operatorname{gen} \left\{ \begin{pmatrix} 1 \\ 0 \\ 2 \\ 1 \end{pmatri
 \end{cases}
 \]
 
-\textbf{Paso 2: Resolver el sistema por reducción de filas.}
+\textbf{Paso 2. Resolver el sistema por reducción de filas.}
 \[
 \begin{pmatrix}
 1 & 0 & 2 & 1 \\
@@ -388,7 +356,7 @@ Sea $W = \operatorname{gen} \left\{ \begin{pmatrix} 1 \\ 0 \\ 2 \\ 1 \end{pmatri
 \end{pmatrix}
 \]
 
-\textbf{Paso 3: Escribir la solución general.} Con $x_3 = s$ y $x_4 = t$ variables libres:
+\textbf{Paso 3. Escribir la solución general.} Con $x_3 = s$ y $x_4 = t$ variables libres:
 \[
 \mathbf{x} = s \begin{pmatrix} -2 \\ \frac{7}{2} \\ 1 \\ 0 \end{pmatrix} + t \begin{pmatrix} -1 \\ \frac{3}{2} \\ 0 \\ 1 \end{pmatrix}, \quad s,t \in \mathbb{R}.
 \]
@@ -469,7 +437,7 @@ k_i = \frac{\langle \mathbf{u}, \mathbf{v}_i \rangle}{\|\mathbf{v}_i\|^2}
 
 
 Sustituyendo en la combinación lineal:\(
-\mathbf{u} = \sum_{i=1}^n \frac{\langle \mathbf{u}, \mathbf{v}_i \rangle}{\|\mathbf{v}_i\|^2} \mathbf{v}_i = \sum_{i=1}^n \operatorname{proy}_{\mathbf{v}_i} \mathbf{u} \qedhere
+\mathbf{u} = \sum_{i=1}^n \frac{\langle \mathbf{u}, \mathbf{v}_i \rangle}{\|\mathbf{v}_i\|^2} \mathbf{v}_i = \sum_{i=1}^n \operatorname{proy}_{\mathbf{v}_i} \mathbf{u}
 \)
 \end{proof}
 \end{theorem}
@@ -505,7 +473,7 @@ Por el teorema de descomposición ortogonal, $\mathbf{u} = \mathbf{w} + \mathbf{
 \operatorname{proy}_W \mathbf{u} = \mathbf{w} = \sum_{i=1}^r \frac{\langle \mathbf{w}, \mathbf{v}_i \rangle}{\|\mathbf{v}_i\|^2} \mathbf{v}_i
 \]
 Pero $\langle \mathbf{w}, \mathbf{v}_i \rangle = \langle \mathbf{u} - \mathbf{w}^\perp, \mathbf{v}_i \rangle = \langle \mathbf{u}, \mathbf{v}_i \rangle$ pues $\mathbf{w}^\perp \perp \mathbf{v}_i$. Así: \(
-\operatorname{proy}_W \mathbf{u} = \sum_{i=1}^r \frac{\langle \mathbf{u}, \mathbf{v}_i \rangle}{\|\mathbf{v}_i\|^2} \mathbf{v}_i = \sum_{i=1}^r \operatorname{proy}_{\mathbf{v}_i} \mathbf{u}. \qedhere \)
+\operatorname{proy}_W \mathbf{u} = \sum_{i=1}^r \frac{\langle \mathbf{u}, \mathbf{v}_i \rangle}{\|\mathbf{v}_i\|^2} \mathbf{v}_i = \sum_{i=1}^r \operatorname{proy}_{\mathbf{v}_i} \mathbf{u}. \)
 \end{proof}
 \end{theorem}
 
@@ -547,41 +515,14 @@ Cada $\mathbf{v}_k$ es ortogonal a $\mathbf{v}_1, \dots, \mathbf{v}_{k-1}$ por c
 \end{figure}
 
 
-\begin{prob} 
-Use el proceso de Gram-Schmidt para calcular una base ortogonal para el subespacio $W$ de $\mathbb{R}^3$ generado por ${\bf{w_1}}=(1,0,3)$ y ${\bf{w_2}}=(2,-1,0).$
-\begin{myproof}
-\textbf{Dados:} $\mathbf{w_1} = (1, 0, 3)$, $\mathbf{w_2} = (2, -1, 0)$
-
-\textbf{Paso 1:}  
-$\mathbf{v_1} = \mathbf{w_1} = \begin{pmatrix} 1 \\ 0 \\ 3 \end{pmatrix}$
-
-\textbf{Paso 2:}  
-Proyección de $\mathbf{w_2}$ sobre $\mathbf{v_1}$:
-\[
-\operatorname{proy}_{\mathbf{v_1}} \mathbf{w_2} = \frac{\mathbf{w_2} \cdot \mathbf{v_1}}{\mathbf{v_1} \cdot \mathbf{v_1}} \mathbf{v_1} = \frac{2}{10} \begin{pmatrix} 1 \\ 0 \\ 3 \end{pmatrix} = \begin{pmatrix} \frac{1}{5} \\ 0 \\ \frac{3}{5} \end{pmatrix}
-\]
-\[
-\mathbf{v_2} = \mathbf{w_2} - \operatorname{proy}_{\mathbf{v_1}} \mathbf{w_2} = \begin{pmatrix} 2 \\ -1 \\ 0 \end{pmatrix} - \begin{pmatrix} \frac{1}{5} \\ 0 \\ \frac{3}{5} \end{pmatrix} = \begin{pmatrix} \frac{9}{5} \\ -1 \\ -\frac{3}{5} \end{pmatrix}
-\]
-
-\textbf{Base ortogonal:}
-\[
-\boxed{\mathbf{v_1} = \begin{pmatrix} 1 \\ 0 \\ 3 \end{pmatrix}, \quad \mathbf{v_2} = \begin{pmatrix} \frac{9}{5} \\ -1 \\ -\frac{3}{5} \end{pmatrix}}
-\]
-\end{myproof}
-\end{prob}
-
-\begin{prob} 
+\begin{example}[Extensión de un vector a una base ortogonal de $\mathbb{R}^3$]
 Calcule una base ortogonal para $\mathbb{R}^3$ que contenga al vector ${\bf{v_1}}=(2,2,1).$
 \begin{myproof}
-\textbf{Dado:} $\mathbf{v_1} = (2, 2, 1)$
+\textbf{Paso 1. Estrategia.} Gram-Schmidt no construye bases de la nada: ortogonaliza una base dada respetando el orden. Por eso completamos $\mathbf{v_1}$ hasta una base cualquiera de $\mathbb{R}^3$ colocándolo \emph{primero}, y aplicamos el proceso; al no modificarse nunca el primer vector, $\mathbf{v_1}$ sobrevive en la base ortogonal final.
 
-\textbf{Base inicial:} $\{\mathbf{v_1}, \mathbf{e_1}, \mathbf{e_2}\}$ con $\mathbf{e_1} = (1,0,0)$, $\mathbf{e_2} = (0,1,0)$
+Tomamos la base inicial $\{\mathbf{v_1}, \mathbf{e_1}, \mathbf{e_2}\}$ con $\mathbf{e_1} = (1,0,0)$, $\mathbf{e_2} = (0,1,0)$, que es linealmente independiente porque $\det[\mathbf{v_1}\ \mathbf{e_1}\ \mathbf{e_2}] = 1 \neq 0$. Así $\mathbf{u_1} = \mathbf{v_1} = \begin{pmatrix} 2 \\ 2 \\ 1 \end{pmatrix}$, con $\|\mathbf{u_1}\|^2 = 9$.
 
-\textbf{Paso 1:}  
-$\mathbf{u_1} = \mathbf{v_1} = \begin{pmatrix} 2 \\ 2 \\ 1 \end{pmatrix}$
-
-\textbf{Paso 2:}  
+\textbf{Paso 2. Ortogonalizar $\mathbf{e_1}$ contra $\mathbf{u_1}$.}
 Proyección de $\mathbf{e_1}$ sobre $\mathbf{u_1}$:
 \[
 \operatorname{proy}_{\mathbf{u_1}} \mathbf{e_1} = \frac{2}{9} \begin{pmatrix} 2 \\ 2 \\ 1 \end{pmatrix} = \begin{pmatrix} \frac{4}{9} \\ \frac{4}{9} \\ \frac{2}{9} \end{pmatrix}
@@ -590,12 +531,12 @@ Proyección de $\mathbf{e_1}$ sobre $\mathbf{u_1}$:
 \mathbf{u_2} = \mathbf{e_1} - \operatorname{proy}_{\mathbf{u_1}} \mathbf{e_1} = \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} - \begin{pmatrix} \frac{4}{9} \\ \frac{4}{9} \\ \frac{2}{9} \end{pmatrix} = \begin{pmatrix} \frac{5}{9} \\ -\frac{4}{9} \\ -\frac{2}{9} \end{pmatrix}
 \]
 
-\textbf{Paso 3:}  
+\textbf{Paso 3. Ortogonalizar $\mathbf{e_2}$ contra $\mathbf{u_1}$ y $\mathbf{u_2}$.}
 Proyección de $\mathbf{e_2}$ sobre $\mathbf{u_1}$:
 \[
 \operatorname{proy}_{\mathbf{u_1}} \mathbf{e_2} = \frac{2}{9} \begin{pmatrix} 2 \\ 2 \\ 1 \end{pmatrix} = \begin{pmatrix} \frac{4}{9} \\ \frac{4}{9} \\ \frac{2}{9} \end{pmatrix}
 \]
-Proyección de $\mathbf{e_2}$ sobre $\mathbf{u_2}$:
+Proyección de $\mathbf{e_2}$ sobre $\mathbf{u_2}$, con $\|\mathbf{u_2}\|^2 = \frac{5}{9}$ y $\mathbf{e_2} \cdot \mathbf{u_2} = -\frac{4}{9}$:
 \[
 \operatorname{proy}_{\mathbf{u_2}} \mathbf{e_2} = \frac{\mathbf{e_2} \cdot \mathbf{u_2}}{\mathbf{u_2} \cdot \mathbf{u_2}} \mathbf{u_2} = -\frac{4}{5} \begin{pmatrix} \frac{5}{9} \\ -\frac{4}{9} \\ -\frac{2}{9} \end{pmatrix} = \begin{pmatrix} -\frac{4}{9} \\ \frac{16}{45} \\ \frac{8}{45} \end{pmatrix}
 \]
@@ -603,66 +544,22 @@ Proyección de $\mathbf{e_2}$ sobre $\mathbf{u_2}$:
 \mathbf{u_3} = \mathbf{e_2} - \operatorname{proy}_{\mathbf{u_1}} \mathbf{e_2} - \operatorname{proy}_{\mathbf{u_2}} \mathbf{e_2} = \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} - \begin{pmatrix} \frac{4}{9} \\ \frac{4}{9} \\ \frac{2}{9} \end{pmatrix} - \begin{pmatrix} -\frac{4}{9} \\ \frac{16}{45} \\ \frac{8}{45} \end{pmatrix} = \begin{pmatrix} 0 \\ \frac{1}{5} \\ -\frac{2}{5} \end{pmatrix}
 \]
 
-\textbf{Base ortogonal:}
+\textbf{Paso 4. Resultado.} Se verifica que los tres productos internos cruzados se anulan:
+\[
+\mathbf{u_1}\cdot\mathbf{u_2} = 0, \qquad \mathbf{u_1}\cdot\mathbf{u_3} = \tfrac{2}{5} - \tfrac{2}{5} = 0, \qquad \mathbf{u_2}\cdot\mathbf{u_3} = -\tfrac{4}{45} + \tfrac{4}{45} = 0,
+\]
+y como son tres vectores ortogonales no nulos en $\mathbb{R}^3$, forman una base que contiene a $\mathbf{v_1} = \mathbf{u_1}$:
 \[
 \boxed{\mathbf{u_1} = \begin{pmatrix} 2 \\ 2 \\ 1 \end{pmatrix}, \quad \mathbf{u_2} = \begin{pmatrix} \frac{5}{9} \\ -\frac{4}{9} \\ -\frac{2}{9} \end{pmatrix}, \quad \mathbf{u_3} = \begin{pmatrix} 0 \\ \frac{1}{5} \\ -\frac{2}{5} \end{pmatrix}}
 \]
 \end{myproof}
-\end{prob}
-
-\begin{prob} 
-Calcule una base ortogonal para $\mathcal{P}_{2}(\mathbb{R})$ que contenga al vector $p(x)=x^2+2x+1$ usando el producto interno de las funciones continuas en el intervalo $[0,1].$
-\begin{myproof}
-\textbf{Dado:} $p_1(x) = x^2 + 2x + 1$
-
-\textbf{Base inicial:} $\{p_1, p_2, p_3\}$ con $p_2(x) = 1$, $p_3(x) = x$
-
-\textbf{Producto interno:} $\langle f, g \rangle = \int_0^1 f(x)g(x)  dx$
-
-\textbf{Paso 1:}  
-$u_1(x) = p_1(x) = x^2 + 2x + 1$
-
-\textbf{Paso 2:}  
-$\langle p_2, u_1 \rangle = \int_0^1 (1)(x^2 + 2x + 1)  dx = \frac{7}{3}$ \\
-$\langle u_1, u_1 \rangle = \int_0^1 (x^2 + 2x + 1)^2  dx = \frac{31}{5}$ \\
-\[
-\operatorname{proy}_{u_1} p_2 = \frac{7/3}{31/5} (x^2 + 2x + 1) = \frac{35}{93} (x^2 + 2x + 1)
-\]
-\[
-u_2(x) = p_2(x) - \operatorname{proy}_{u_1} p_2 = 1 - \frac{35}{93}(x^2 + 2x + 1) = -\frac{35}{93}x^2 - \frac{70}{93}x + \frac{58}{93}
-\]
-
-\textbf{Paso 3:}  
-$\langle p_3, u_1 \rangle = \int_0^1 x(x^2 + 2x + 1)  dx = \frac{17}{12}$ \\
-$\langle p_3, u_2 \rangle = \int_0^1 x \left( -\frac{35}{93}x^2 - \frac{70}{93}x + \frac{58}{93} \right)  dx = -\frac{425}{1116}$ \\
-$\langle u_2, u_2 \rangle = \int_0^1 \left( -\frac{35}{93}x^2 - \frac{70}{93}x + \frac{58}{93} \right)^2  dx = \frac{1385}{25947}$ \\
-\[
-\operatorname{proy}_{u_1} p_3 = \frac{17/12}{31/5} u_1(x) = \frac{85}{372} (x^2 + 2x + 1)
-\]
-\[
-\operatorname{proy}_{u_2} p_3 = \frac{-425/1116}{1385/25947} u_2(x) = -\frac{45}{136} u_2(x)
-\]
-\[
-u_3(x) = p_3(x) - \operatorname{proy}_{u_1} p_3 - \operatorname{proy}_{u_2} p_3 = x - \frac{85}{372}(x^2 + 2x + 1) + \frac{45}{136} \left( \frac{35}{93}x^2 + \frac{70}{93}x - \frac{58}{93} \right)
-\]
-\[
-u_3(x) = -\frac{45}{136}x^2 + \frac{23}{68}x - \frac{1}{17}
-\]
-
-\textbf{Base ortogonal:}
-\[
-\boxed{u_1(x) = x^2 + 2x + 1, \quad u_2(x) = -\frac{35}{93}x^2 - \frac{70}{93}x + \frac{58}{93}, \quad u_3(x) = -\frac{45}{136}x^2 + \frac{23}{68}x - \frac{1}{17}}
-\]
-\end{myproof}
-\end{prob}
-
-
+\end{example}
 
 
 \begin{example}[Base ortonormal para $W \subseteq \mathbb{R}^3$ por Gram-Schmidt]
 Sea $W = \operatorname{gen} \left\{ \begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix}, \begin{pmatrix} 1 \\ 0 \\ -1 \end{pmatrix}, \begin{pmatrix} 2 \\ 0 \\ 3 \end{pmatrix} \right\}$. Hallar base ortonormal para $W$.
 \begin{myproof}
-\textbf{Paso 1: Aplicar Gram-Schmidt para obtener base ortogonal.} Con $\mathbf{u}_1 = (1,1,1)^T$, $\mathbf{u}_2 = (1,0,-1)^T$, $\mathbf{u}_3 = (2,0,3)^T$:
+\textbf{Paso 1. Aplicar Gram-Schmidt para obtener base ortogonal.} Con $\mathbf{u}_1 = (1,1,1)^T$, $\mathbf{u}_2 = (1,0,-1)^T$, $\mathbf{u}_3 = (2,0,3)^T$:
 \begin{align*}
 \mathbf{v}_1 &= \mathbf{u}_1 = \begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix} \\
 \mathbf{v}_2 &= \mathbf{u}_2 - \frac{\langle \mathbf{u}_2, \mathbf{v}_1 \rangle}{\|\mathbf{v}_1\|^2} \mathbf{v}_1 = \begin{pmatrix} 1 \\ 0 \\ -1 \end{pmatrix} - \frac{0}{3} \begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix} = \begin{pmatrix} 1 \\ 0 \\ -1 \end{pmatrix} \\
@@ -670,7 +567,7 @@ Sea $W = \operatorname{gen} \left\{ \begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix}, \
 &= \begin{pmatrix} 2 \\ 0 \\ 3 \end{pmatrix} - \frac{5}{3} \begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix} + \frac{1}{2} \begin{pmatrix} 1 \\ 0 \\ -1 \end{pmatrix} = \begin{pmatrix} \frac{5}{6} \\ -\frac{5}{3} \\ \frac{11}{6} \end{pmatrix}
 \end{align*}
 
-\textbf{Paso 2: Normalizar cada vector.}
+\textbf{Paso 2. Normalizar cada vector.}
 \begin{align*}
 \|\mathbf{v}_1\| &= \sqrt{3} \Rightarrow \mathbf{q}_1 = \tfrac{1}{\sqrt{3}} (1,1,1)^T \\
 \|\mathbf{v}_2\| &= \sqrt{2} \Rightarrow \mathbf{q}_2 = \tfrac{1}{\sqrt{2}} (1,0,-1)^T \\
@@ -684,25 +581,36 @@ $$\boxed{\left\{ \frac{1}{\sqrt{3}}\begin{pmatrix}1\\1\\1\end{pmatrix},\ \frac{1
 \begin{example}[Base ortogonal en $\mathcal{P}_2(\mathbb{R})$ por Gram-Schmidt]
 Sea $B= \{1+x, x^2, x-x^2\}$, halle una base ortogonal para $B$ usando el producto interno $\langle p,q\rangle = \int_0^1 p(x)q(x)\,dx$.
 \begin{myproof}
-\textbf{Paso 1: Gram-Schmidt.} Aplicamos el proceso de Gram-Schmidt:
+\textbf{Paso 1. Estrategia.} Aplicamos Gram-Schmidt a $B$ en el orden dado. El primer vector no se modifica, y cada uno de los siguientes se obtiene restándole sus proyecciones sobre los anteriores. Todos los productos internos son integrales sobre $[0,1]$, así que fijamos $\mathbf{v}_1 = 1+x$ y calculamos de una vez
+\[
+\langle \mathbf{v}_1, \mathbf{v}_1 \rangle = \int_0^1 (1+x)^2\,dx = \left[ x + x^2 + \frac{x^3}{3} \right]_0^1 = \frac{7}{3}.
+\]
+
+\textbf{Paso 2. Segundo vector.} Con $\langle x^2, \mathbf{v}_1\rangle = \int_0^1 x^2(1+x)\,dx = \frac{1}{3}+\frac{1}{4} = \frac{7}{12}$:
 \begin{align*}
-\mathbf{v}_1 &= 1+x \\
-\mathbf{v}_2 &= x^2 - \frac{\langle x^2, \mathbf{v}_1\rangle}{\langle \mathbf{v}_1, \mathbf{v}_1\rangle} \mathbf{v}_1 \\
-    &= x^2 - \frac{\int_0^1 x^2(1+x)  dx}{\int_0^1 (1+x)^2  dx} (1+x) \\
-    &= x^2 - \frac{\left[ \frac{x^3}{3} + \frac{x^4}{4} \right]_0^1}{\left[ x + x^2 + \frac{x^3}{3} \right]_0^1} (1+x) \\
-    &= x^2 - \frac{\frac{1}{3} + \frac{1}{4}}{1 + 1 + \frac{1}{3}} (1+x) \\
-    &= x^2 - \frac{7/12}{7/3} (1+x) \\
-    &= x^2 - \frac{1}{4}(1+x) \\
-    &= \boxed{x^2 - \frac{1}{4}x - \frac{1}{4}} \\
-\mathbf{v}_3 &= (x - x^2) - \frac{\langle x - x^2, \mathbf{v}_1\rangle}{\langle \mathbf{v}_1, \mathbf{v}_1\rangle} \mathbf{v}_1 - \frac{\langle x - x^2, v_2\rangle}{\langle \mathbf{v}_2, \mathbf{v}_2\rangle} \mathbf{v}_2 \\
-    &= (x - x^2) - \frac{\int_0^1 (x - x^2)(1+x)  dx}{7/3} (1+x) - \frac{\int_0^1 (x - x^2)(x^2 - \frac{1}{4}x - \frac{1}{4})  dx}{\int_0^1 (x^2 - \frac{1}{4}x - \frac{1}{4})^2  dx} \left(x^2 - \frac{1}{4}x - \frac{1}{4}\right) \\
-    &= (x - x^2) - \frac{1/4}{7/3} (1+x) - \frac{-1/80}{13/240} \left(x^2 - \frac{1}{4}x - \frac{1}{4}\right) \\
+\mathbf{v}_2 &= x^2 - \frac{\langle x^2, \mathbf{v}_1\rangle}{\langle \mathbf{v}_1, \mathbf{v}_1\rangle} \mathbf{v}_1
+    = x^2 - \frac{7/12}{7/3} (1+x) \\
+    &= x^2 - \frac{1}{4}(1+x)
+    = x^2 - \frac{1}{4}x - \frac{1}{4}
+\end{align*}
+
+\textbf{Paso 3. Tercer vector.} Necesitamos tres integrales más:
+\[
+\langle x-x^2, \mathbf{v}_1 \rangle = \frac{1}{4}, \qquad
+\langle x-x^2, \mathbf{v}_2 \rangle = -\frac{1}{80}, \qquad
+\langle \mathbf{v}_2, \mathbf{v}_2 \rangle = \frac{13}{240},
+\]
+de donde los coeficientes son $\frac{1/4}{7/3} = \frac{3}{28}$ y $\frac{-1/80}{13/240} = -\frac{3}{13}$. Entonces:
+\begin{align*}
+\mathbf{v}_3 &= (x - x^2) - \frac{\langle x - x^2, \mathbf{v}_1\rangle}{\langle \mathbf{v}_1, \mathbf{v}_1\rangle} \mathbf{v}_1 - \frac{\langle x - x^2, \mathbf{v}_2\rangle}{\langle \mathbf{v}_2, \mathbf{v}_2\rangle} \mathbf{v}_2 \\
     &= (x - x^2) - \frac{3}{28} (1+x) + \frac{3}{13} \left(x^2 - \frac{1}{4}x - \frac{1}{4}\right) \\
-    &= x - x^2 - \frac{3}{28} - \frac{3}{28}x + \frac{3}{13}x^2 - \frac{3}{52}x - \frac{3}{52} \\
     &= \left(-x^2 + \frac{3}{13}x^2\right) + \left(x - \frac{3}{28}x - \frac{3}{52}x\right) + \left(-\frac{3}{28} - \frac{3}{52}\right) \\
     &= -\frac{10}{13}x^2 + \frac{76}{91}x - \frac{15}{91}
 \end{align*}
+
+\textbf{Paso 4. Resultado.} Se comprueba que $\langle \mathbf{v}_1, \mathbf{v}_2 \rangle = \langle \mathbf{v}_1, \mathbf{v}_3 \rangle = \langle \mathbf{v}_2, \mathbf{v}_3 \rangle = 0$, luego
 $$\boxed{B_\perp = \left\{1+x,\; x^2 - \tfrac{1}{4}x - \tfrac{1}{4},\; -\tfrac{10}{13}x^2 + \tfrac{76}{91}x - \tfrac{15}{91}\right\}}$$
+es una base ortogonal de $\mathcal{P}_2(\mathbb{R})$ para este producto interno.
 \end{myproof}
 \end{example}
 
@@ -765,7 +673,7 @@ A = \begin{pmatrix}
 b = \begin{pmatrix} 1 \\ 1 \\ 4 \end{pmatrix}
 \]
 
-\textbf{Paso 1: Cálculo de $A^T A$}
+\textbf{Paso 1. Cálculo de $A^T A$}
 \[
 A^T A = \begin{pmatrix}
 3 & 7 & 1 \\
@@ -784,7 +692,7 @@ A^T A = \begin{pmatrix}
 \end{pmatrix}
 \]
 
-\textbf{Paso 2: Cálculo de $A^T b$}
+\textbf{Paso 2. Cálculo de $A^T b$}
 \[
 A^T b = \begin{pmatrix}
 3 & 7 & 1 \\
@@ -795,7 +703,7 @@ A^T b = \begin{pmatrix}
 = \begin{pmatrix} 14 \\ 13 \\ 17 \end{pmatrix}
 \]
 
-\textbf{Paso 3: Resolución del sistema}
+\textbf{Paso 3. Resolución del sistema}
 \[
 \begin{pmatrix}
 59 & 71 & 56 \\
@@ -834,7 +742,7 @@ X =
 \begin{pmatrix} -1 \\ 0 \\ 1 \\ 2 \end{pmatrix}
 \]
 \begin{myproof}
-\textbf{Paso 1: Cálculo de $A^T A$ y $A^T b$.}
+\textbf{Paso 1. Cálculo de $A^T A$ y $A^T b$.}
 \[
 A^T A = \begin{pmatrix}
 15 & -1 & 5 \\
@@ -844,12 +752,12 @@ A^T A = \begin{pmatrix}
 A^T b = \begin{pmatrix} -1 \\ 9 \\ 13 \end{pmatrix}
 \]
 
-\textbf{Paso 2: Solución del sistema normal.}
+\textbf{Paso 2. Solución del sistema normal.}
 \[
 X = \left( -\dfrac{31}{91},\ -\dfrac{4}{7},\ \dfrac{46}{65} \right)
 \]
 
-\textbf{Paso 3: Error residual.}
+\textbf{Paso 3. Error residual.}
 \[
 \|b - AX\| = \sqrt{\frac{7969}{5915}} \approx 1.162
 \]
@@ -866,8 +774,8 @@ Si las columnas de $A$ son linealmente independientes, entonces:
 \end{enumerate}
 \end{theorem}
 
-\begin{prob}
-La ley de Hooke en física determina que la longitud $x$ en un resorte uniforme es una función lineal de la fuerza $y$ aplicada. Si se expresa esta relación como $y=mx+b,$ entonces el coeficiente $m$ es llamado la constante del resorte. 
+\begin{example}[Ley de Hooke: estimación de la constante de un resorte]
+La ley de Hooke en física determina que la longitud $x$ en un resorte uniforme es una función lineal de la fuerza $y$ aplicada. Si se expresa esta relación como $y=mx+b,$ entonces el coeficiente $m$ es llamado la constante del resorte.
 
 \begin{table}[H]
 \centering
@@ -885,14 +793,16 @@ Longitud (x) m & 6.1 & 7.6 & 8.7 & 10.4 \\ \hline
 \end{enumerate}
 
 \begin{myproof}
-\textbf{(a) Recta de ajuste por mínimos cuadrados usando método matricial:}
+\textbf{Paso 1. Estrategia.} Los cuatro datos exigen que la recta $y = mx + b$ pase por cuatro puntos, lo que da un sistema de cuatro ecuaciones con dos incógnitas: sobredeterminado y, salvo coincidencia, inconsistente. En lugar de una solución exacta buscamos la que minimiza $\|\mathbf{b} - A\mathbf{x}\|$, es decir, la solución de las ecuaciones normales $A^TA\mathbf{x} = A^T\mathbf{b}$. La pendiente $m$ de esa recta es la constante del resorte.
 
-Definimos:
-- Vector de observaciones: \(\mathbf{b} = \begin{pmatrix} 1.5 \\ 2.7 \\ 4.9 \\ 6.7 \end{pmatrix}\)
-- Matriz de diseño: \(A = \begin{pmatrix} 1 & 6.1 \\ 1 & 7.6 \\ 1 & 8.7 \\ 1 & 10.4 \end{pmatrix}\)
-- Vector de parámetros: \(\mathbf{x} = \begin{pmatrix} b \\ m \end{pmatrix}\)
+\textbf{Paso 2. Plantear las ecuaciones normales (parte $a$).} Definimos
+\begin{itemize}
+\item vector de observaciones: \(\mathbf{b} = \begin{pmatrix} 1.5 \\ 2.7 \\ 4.9 \\ 6.7 \end{pmatrix}\)
+\item matriz de diseño: \(A = \begin{pmatrix} 1 & 6.1 \\ 1 & 7.6 \\ 1 & 8.7 \\ 1 & 10.4 \end{pmatrix}\)
+\item vector de parámetros: \(\mathbf{x} = \begin{pmatrix} b \\ m \end{pmatrix}\)
+\end{itemize}
 
-Resolvemos \(A^TA\mathbf{x} = A^T\mathbf{b}\):
+Entonces:
 
 \[
 A^TA = \begin{pmatrix}
@@ -922,7 +832,7 @@ A^T\mathbf{b} = \begin{pmatrix}
 \end{pmatrix}
 \]
 
-Sistema a resolver:
+\textbf{Paso 3. Resolver el sistema normal (parte $a$).} El sistema es
 \[
 \begin{pmatrix}
 4 & 32.8 \\
@@ -930,7 +840,7 @@ Sistema a resolver:
 \end{pmatrix}
 \begin{pmatrix}
 b \\ m
-\end{pmatrix} = 
+\end{pmatrix} =
 \begin{pmatrix}
 15.8 \\ 141.98
 \end{pmatrix}
@@ -941,7 +851,7 @@ Calculamos el determinante:
 \det(A^TA) = (4)(278.82) - (32.8)(32.8) = 1115.28 - 1075.84 = 39.44
 \]
 
-Solución:
+Como $\det(A^TA) \neq 0$, el sistema normal tiene solución única y la obtenemos por la regla de Cramer:
 \[
 b = \frac{
 \begin{vmatrix}
@@ -960,14 +870,12 @@ m = \frac{
 }{\det(A^TA)} = \frac{(4)(141.98) - (32.8)(15.8)}{39.44} = \frac{567.92 - 518.24}{39.44} = \frac{49.68}{39.44} \approx 1.2597
 \]
 
-Ecuación de la recta:
+\textbf{Paso 4. Resultado y gráfica (parte $b$).} La recta de mínimos cuadrados y la constante del resorte son
 \[
-\boxed{y = 1.2597x - 6.389}
+\boxed{y = 1.2597x - 6.389, \qquad m \approx 1.2597\ \text{kg/m}}
 \]
+La figura confirma el ajuste: los cuatro puntos experimentales quedan repartidos a ambos lados de la recta, como corresponde a un residuo de norma mínima.
 
-La constante del resorte es \(m \approx 1.2597\ \text{kg/m}\).
-
-\textbf{(b) Gráfico de la recta y puntos:}
 \begin{figure}[H]
 \centering
 \begin{tikzpicture}
@@ -997,11 +905,11 @@ La constante del resorte es \(m \approx 1.2597\ \text{kg/m}\).
 \label{fig:recta_minimos_cuadrados}
 \end{figure}
 \end{myproof}
-\end{prob}
+\end{example}
 
 
-\begin{prob}[Regresión polinómica]
-Para ajustar puntos $\{(x_i,y_i)\}_{i=1}^n$ al polinomio $y = \sum_{k=0}^m a_k x^k$, construimos:
+\begin{rem}[Regresión polinómica]\label{rem:regresion_polinomica}
+El método de mínimos cuadrados no se limita a rectas. Para ajustar puntos $\{(x_i,y_i)\}_{i=1}^n$ al polinomio $y = \sum_{k=0}^m a_k x^k$, construimos:
 \[
 M = \begin{pmatrix}
 1 & x_1 & \cdots & x_1^m \\
@@ -1015,7 +923,8 @@ Solución por mínimos cuadrados:
 \[
 V = (M^T M)^{-1} M^T Y
 \]
-\end{prob}
+La matriz $M$ es la matriz de Vandermonde de los nodos $x_i$; cuando los $x_i$ son distintos y $n > m$, $M^T M$ es invertible y el ajuste es único.
+\end{rem}
 
 \section{Series de Fourier}
 
@@ -1031,6 +940,60 @@ a_k &= \frac{1}{\pi} \int_0^{2\pi} f(x) \cos kx  dx \\
 b_k &= \frac{1}{\pi} \int_0^{2\pi} f(x) \sin kx  dx
 \end{align*}
 \end{definition}
+
+\begin{example}[{Series de Fourier en $[0,2\pi]$}]
+Calcule la serie de Fourier correspondiente para las siguientes funciones en el intervalo $\left[ 0,2\pi \right]$:
+\begin{enumerate}[$a)$]
+\item $f(x)=x.$
+\item $f(x)=8.$
+\item $f(x)=x^2+2x+1.$
+\end{enumerate}
+\begin{myproof}
+\textbf{Paso 1. Estrategia.} Las tres funciones son polinomios, así que basta aplicar las fórmulas de la definición. Como todos los integrandos se reducen a combinaciones de $x^j\cos kx$ y $x^j\sin kx$ con $j \leq 2$, calculamos una vez por partes las integrales auxiliares sobre $[0,2\pi]$, válidas para todo entero $k \geq 1$:
+\[
+\int_0^{2\pi}\! \cos kx\,dx = \int_0^{2\pi}\! \sin kx\,dx = 0, \qquad
+\int_0^{2\pi}\! x\cos kx\,dx = 0, \qquad
+\int_0^{2\pi}\! x\sin kx\,dx = -\frac{2\pi}{k},
+\]
+\[
+\int_0^{2\pi}\! x^2\cos kx\,dx = \frac{4\pi}{k^2}, \qquad
+\int_0^{2\pi}\! x^2\sin kx\,dx = -\frac{4\pi^2}{k}.
+\]
+Conviene subrayar que el intervalo es $[0,2\pi]$ y no $[-\pi,\pi]$: aquí no hay simetría par ni impar que anule coeficientes, y en particular no aparecen factores $(-1)^k$.
+
+\textbf{Paso 2. Parte $a)$: $f(x)=x$.}
+\[
+a_0 = \frac{1}{2\pi}\int_0^{2\pi}\! x\,dx = \frac{1}{2\pi}\cdot 2\pi^2 = \pi, \qquad
+a_k = \frac{1}{\pi}\cdot 0 = 0, \qquad
+b_k = \frac{1}{\pi}\left(-\frac{2\pi}{k}\right) = -\frac{2}{k}.
+\]
+\[
+f(x) \sim \pi - 2 \sum_{k=1}^{\infty} \frac{\sin(kx)}{k}
+\]
+
+\textbf{Paso 3. Parte $b)$: $f(x)=8$.} Al ser constante, $a_0 = \frac{1}{2\pi}\cdot 8 \cdot 2\pi = 8$, mientras que $a_k$ y $b_k$ son múltiplos de $\int_0^{2\pi}\cos kx\,dx$ y $\int_0^{2\pi}\sin kx\,dx$, ambas nulas. Luego $a_k = b_k = 0$ y la serie se reduce a su término constante:
+\[
+f(x) \sim 8
+\]
+
+\textbf{Paso 4. Parte $c)$ y resultado.} Para $f(x)=x^2+2x+1$ usamos linealidad de la integral y las fórmulas del Paso 1:
+\begin{align*}
+a_0 &= \frac{1}{2\pi}\left( \frac{8\pi^3}{3} + 4\pi^2 + 2\pi \right) = \frac{4\pi^2}{3} + 2\pi + 1, \\
+a_k &= \frac{1}{\pi}\left( \frac{4\pi}{k^2} + 2\cdot 0 + 0 \right) = \frac{4}{k^2}, \\
+b_k &= \frac{1}{\pi}\left( -\frac{4\pi^2}{k} + 2\left(-\frac{2\pi}{k}\right) + 0 \right) = -\frac{4(\pi+1)}{k}.
+\end{align*}
+Reuniendo las tres series:
+\[
+\boxed{
+\begin{aligned}
+a)\ & f(x) \sim \pi - 2 \sum_{k=1}^{\infty} \frac{\sin(kx)}{k} \\
+b)\ & f(x) \sim 8 \\
+c)\ & f(x) \sim \left( \frac{4\pi^2}{3} + 2\pi + 1 \right) + \sum_{k=1}^{\infty} \left[ \frac{4}{k^2} \cos(kx) - \frac{4(\pi+1)}{k} \sin(kx) \right]
+\end{aligned}
+}
+\]
+\end{myproof}
+\end{example}
 
 \begin{lemma}[Polinomio de Taylor]
 Si $f$ es analítica en $x=a$:
@@ -1059,12 +1022,9 @@ Se verifica $e^{ix} = \cos x + i \sin x$.
 \end{theorem}
 
 
-
- 
-
 \section{Problemas resueltos adicionales}
 
-% ------------------ PROBLEMA 1 ------------------
+% Intermedio
 \begin{prob}
 Sea $A=\left( \begin{array}{ccc} 
 	1&0&1\\
@@ -1101,43 +1061,7 @@ Base: \( \boxed{\left\{ \begin{pmatrix} -1 \\ 0 \\ 1 \end{pmatrix} \right\}} \).
 \end{prob}
 
 % ------------------ PROBLEMA 2 ------------------
-\begin{prob}
-Calcule la serie de Fourier correspondiente para las siguientes funciones en el intervalo $\left[  0,2\pi \right]:$
-\begin{enumerate} 
-\item $f(x)=x.$
-\item $f(x)=8.$
-\item $f(x)=x^2+2x+1.$
-\end{enumerate}	
-\begin{myproof}
-\textbf{a)} Coeficientes para \( f(x) = x \):  
-- \( a_0 = \pi \).  
-- \( a_k = 0 \).  
-- \( b_k = -\frac{2}{k} \).  
-Serie:  
-\[
-\boxed{f(x) \sim \pi - 2 \sum_{k=1}^{\infty} \frac{\sin(kx)}{k}}
-\]
-
-\textbf{b)} Coeficientes para \( f(x) = 8 \):  
-- \( a_0 = 8 \).  
-- \( a_k = b_k = 0 \).  
-Serie:  
-\[
-\boxed{f(x) \sim 8}
-\]
-
-\textbf{c)} Coeficientes para \( f(x) = x^2 + 2x + 1 \):  
-- \( a_0 = \frac{4\pi^2}{3} + 2\pi + 1 \).  
-- \( a_k = \frac{4(-1)^k}{k^2} \).  
-- \( b_k = -\frac{4(-1)^k}{k} - \frac{4\pi}{k} \).  
-Serie:  
-\[
-\boxed{f(x) \sim \left( \frac{4\pi^2}{3} + 2\pi + 1 \right) + \sum_{k=1}^{\infty} \left[ \frac{4(-1)^k}{k^2} \cos(kx) + \left( -\frac{4(-1)^k}{k} - \frac{4\pi}{k} \right) \sin(kx) \right]}
-\]
-\end{myproof}
-\end{prob}
-
-% ------------------ PROBLEMA 3 ------------------
+% Intermedio
 \begin{prob}
 Una altura de un triángulo es cada uno de los segmentos que une un vértice con un punto de su lado opuesto o de su prolongación y es perpendicular a dicho lado.
 \begin{figure}[H]
@@ -1188,22 +1112,22 @@ Ecuaciones simétricas de la recta que pasa por \(B=(11,17,22)\) con dirección 
 \end{myproof}
 \end{prob}
 
-% ------------------ PROBLEMA 4 ------------------
+% Intermedio
 \begin{prob}
 Calcule la serie de Fourier para la función $f(x)=9x^2+4x$ en el intervalo $\left[0,2\pi\right].$
 \begin{myproof}
-Coeficientes:  
-- \( a_0 = 12\pi^2 + 4\pi \).  
-- \( a_k = \frac{36(-1)^k}{k^2} \).  
-- \( b_k = -\frac{72(-1)^k}{k^3} - \frac{8(-1)^k}{k} \).  
-Serie:  
+Coeficientes:
+- \( a_0 = 12\pi^2 + 4\pi \).
+- \( a_k = \frac{36}{k^2} \).
+- \( b_k = -\frac{36\pi + 8}{k} \).
+Serie:
 \[
-\boxed{f(x) \sim (12\pi^2 + 4\pi) + \sum_{k=1}^{\infty} \left[ \frac{36(-1)^k}{k^2} \cos(kx) + \left( -\frac{72(-1)^k}{k^3} - \frac{8(-1)^k}{k} \right) \sin(kx) \right]}
+\boxed{f(x) \sim (12\pi^2 + 4\pi) + \sum_{k=1}^{\infty} \left[ \frac{36}{k^2} \cos(kx) - \frac{36\pi + 8}{k} \sin(kx) \right]}
 \]
 \end{myproof}
 \end{prob}
 
-% ------------------ PROBLEMA 5 ------------------
+% Intermedio
 \begin{prob}
 Sea $A=\left( \begin{array}{cccc} 
 	1&0&1&1\\
@@ -1260,7 +1184,7 @@ Por tanto, \( \mathbf{x} = t(-2,-1,1,1) \). Base:
 \end{prob}
 
 
-% ------------------ PROBLEMA 7 ------------------
+% Difícil
 \begin{prob}
 Sea $V=\mathcal{P}_{2}(\mathbb{R})$. Dados dos vectores $\mathbf{p}=a_0+a_1x+a_2x^2$ y  $\mathbf{q}=b_0+b_1x+b_2x^2$  defina el producto interno en $V$ como $\left\langle \mathbf{p},\mathbf{q} \right\rangle=a_0b_0+a_1b_1+a_2b_2$. 
 
@@ -1334,7 +1258,7 @@ q - \operatorname{proy}_H q = \left(2 - \frac{34}{7}\right) + \left(5 - \frac{5}
 \end{myproof}
 \end{prob}
 
-% ------------------ PROBLEMA 8 ------------------
+% Básico
 \begin{prob}
 Calcule la serie de Fourier para la función $f(x)=9x+7$ en el intervalo $[0,2\pi]$.
 \begin{myproof}
@@ -1349,7 +1273,7 @@ Serie:
 \end{myproof}
 \end{prob}
 
-% ------------------ PROBLEMA 9 ------------------
+% Difícil
 \begin{prob}
 Defina $W$ como el subespacio de $\mathbb{R}^4$ definido por el espacio solución del sistema de ecuaciones lineales
 \[
@@ -1415,7 +1339,7 @@ Base ortogonal:
 \end{myproof}
 \end{prob}
 
-% ------------------ PROBLEMA 10 ------------------
+% Intermedio
 \begin{prob}
 Sea $\{\mathbf{v}_1, \mathbf{v}_2, \dots, \mathbf{v}_m\}$ un subconjunto ortonormal en un espacio vectorial con producto interno de dimensión $n$ y suponga que $m\leq n$. Calcule el valor de $\lVert  \mathbf{v}_1+ \mathbf{v}_2+\dots +  \mathbf{v}_m \rVert$.
 \begin{myproof}
@@ -1428,7 +1352,7 @@ Sea $\{\mathbf{v}_1, \mathbf{v}_2, \dots, \mathbf{v}_m\}$ un subconjunto ortonor
 \end{myproof}
 \end{prob}
 
-% ------------------ PROBLEMA 11 ------------------
+% Básico
 \begin{prob}
 Sea $f(x)=5x+7$. Calcule la serie de Fourier en el intervalo $[0,2\pi]$.
 \begin{myproof}
@@ -1444,8 +1368,7 @@ Serie:
 \end{prob}
 
 
-
-% ------------------ PROBLEMA 13 ------------------
+% Difícil
 \begin{prob}
 En $\mathbb{R}^4$ defina $W$ el espacio solución del sistema de ecuaciones lineales
 \[
@@ -1528,8 +1451,7 @@ Su norma es:
 \end{prob}
 
 
-
-% ------------------ PROBLEMA 15 ------------------
+% Intermedio
 \begin{prob}
 Determine el valor de verdad de las siguientes afirmaciones. Si la afirmación es falsa, dé un contraejemplo; en caso contrario, proporcione una demostración. Suponga que $V$ es un espacio vectorial con producto interno:
 \begin{enumerate}
@@ -1540,13 +1462,15 @@ Determine el valor de verdad de las siguientes afirmaciones. Si la afirmación e
 \end{enumerate}
 \begin{myproof}
 \textbf{a)} Falso. Si \( \mathbf{u} \perp \mathbf{v} \), entonces \( \langle \mathbf{u}, \mathbf{v} \rangle = 0 \), pero \( \|\mathbf{u}\|\|\mathbf{v}\| \) puede ser no cero.  
-\textbf{b)} Verdadero si ambos están en $W^{\perp}$; de lo contrario, falso.  
-\textbf{c)} Falso. $\operatorname{proy}_W \mathbf{u}$ está en $W$, pero no necesariamente ortogonal a $W$.  
+\textbf{b)} Falso. La ortogonalidad entre $\mathbf{u}$ y $\mathbf{v}$ nada dice sobre la relación de ambos con $W$. Contraejemplo: en $V=\mathbb{R}^2$ con $W=\operatorname{gen}\{(1,0)\}$ se tiene $W^{\perp}=\operatorname{gen}\{(0,1)\}$. Los vectores $\mathbf{u}=(1,0)$ y $\mathbf{v}=(0,1)$ son no nulos y ortogonales, pero $\mathbf{u}+\mathbf{v}=(1,1) \notin W^{\perp}$, pues $\langle (1,1),(1,0) \rangle = 1 \neq 0$.
+
+\textbf{c)} Falso. $\operatorname{proy}_W \mathbf{u}$ pertenece a $W$, y el único vector de $W$ ortogonal a todo $W$ es $\mathbf{0}$. Luego la afirmación solo se cumple en el caso trivial $\operatorname{proy}_W \mathbf{u} = \mathbf{0}$, es decir, cuando $\mathbf{u} \in W^{\perp}$.
+
 \textbf{d)} Falso. Contraejemplo: $\{(1,0), (1,1)\}$ en $\mathbb{R}^2$ es linealmente independiente pero no ortogonal.
 \end{myproof}
 \end{prob}
 
-% ------------------ PROBLEMA 16 ------------------
+% Básico
 \begin{prob}
 Calcule la serie de Fourier de la función $f(x)=7x+2$ en el intervalo $[0,2\pi]$.
 \begin{myproof}
@@ -1561,7 +1485,7 @@ Serie:
 \end{myproof}
 \end{prob}
 
-% ------------------ PROBLEMA 17 ------------------
+% Intermedio
 \begin{prob}
 Defina el subespacio $H=\left\lbrace (x,y,z) : \frac{x}{2}=\frac{y}{-3}=\frac{z}{4} \right\rbrace$.
 \begin{enumerate}
@@ -1588,5 +1512,258 @@ Entonces:
 \end{myproof}
 \end{prob}
 
+% --- Reubicados desde las secciones temáticas (Decisión F, F9AL.18) ---
+
+% Básico
+\begin{prob}
+Un rombo es un paralelogramo cuyos lados son de igual longitud. Demuestre que si se construye un rombo en un espacio vectorial con producto interno real sus diagonales son ortogonales.
+\begin{myproof}
+Sea $V$ un espacio vectorial real con producto interno $\langle \cdot, \cdot \rangle$. Sea $\mathbf{a}, \mathbf{b} \in V$ dos vectores no nulos y linealmente independientes que forman dos lados adyacentes de un rombo, es decir, $\|\mathbf{a}\| = \|\mathbf{b}\|$. Las diagonales del rombo son: \(
+\mathbf{d}_1 = \mathbf{a} + \mathbf{b}, \qquad \mathbf{d}_2 = \mathbf{a} - \mathbf{b}.
+\)
+
+Calculamos el producto interno de las diagonales: 
+
+\(
+\langle \mathbf{d}_1, \mathbf{d}_2 \rangle = \langle \mathbf{a} + \mathbf{b}, \mathbf{a} - \mathbf{b} \rangle = \langle \mathbf{a}, \mathbf{a} \rangle - \langle \mathbf{a}, \mathbf{b} \rangle + \langle \mathbf{b}, \mathbf{a} \rangle - \langle \mathbf{b}, \mathbf{b} \rangle
+\)
+
+Como el producto interno es simétrico ($\langle \mathbf{a}, \mathbf{b} \rangle = \langle \mathbf{b}, \mathbf{a} \rangle$):
+\[
+= \|\mathbf{a}\|^2 - \langle \mathbf{a}, \mathbf{b} \rangle + \langle \mathbf{a}, \mathbf{b} \rangle - \|\mathbf{b}\|^2
+= \|\mathbf{a}\|^2 - \|\mathbf{b}\|^2
+\]
+
+Como $\|\mathbf{a}\| = \|\mathbf{b}\|$, entonces $\|\mathbf{a}\|^2 - \|\mathbf{b}\|^2 = 0$. Por lo tanto, \(\langle \mathbf{d}_1, \mathbf{d}_2 \rangle = 0 \) lo que prueba que las diagonales del rombo son ortogonales.
+\end{myproof}
+\end{prob}
+
+% Básico
+\begin{prob}
+Demuestre que si las diagonales de un paralelogramo tienen igual norma, entonces los vectores \( \mathbf{u}, \mathbf{v} \) son ortogonales.
+\begin{myproof}
+Las diagonales son \( \mathbf{u} + \mathbf{v} \) y \( \mathbf{u} - \mathbf{v} \). Si tienen igual norma:
+\[
+\|\mathbf{u} + \mathbf{v}\|^2 = \|\mathbf{u} - \mathbf{v}\|^2
+\]
+Desarrollando:
+\[
+\|\mathbf{u}\|^2 + 2\langle \mathbf{u}, \mathbf{v} \rangle + \|\mathbf{v}\|^2 = \|\mathbf{u}\|^2 - 2\langle \mathbf{u}, \mathbf{v} \rangle + \|\mathbf{v}\|^2
+\]
+\[
+4\langle \mathbf{u}, \mathbf{v} \rangle = 0 \implies \langle \mathbf{u}, \mathbf{v} \rangle = 0
+\]
+\end{myproof}
+\end{prob}
+
+% Básico
+\begin{prob} 
+Use el proceso de Gram-Schmidt para calcular una base ortogonal para el subespacio $W$ de $\mathbb{R}^3$ generado por ${\bf{w_1}}=(1,0,3)$ y ${\bf{w_2}}=(2,-1,0).$
+\begin{myproof}
+\textbf{Dados:} $\mathbf{w_1} = (1, 0, 3)$, $\mathbf{w_2} = (2, -1, 0)$
+
+\textbf{Paso 1.}  
+$\mathbf{v_1} = \mathbf{w_1} = \begin{pmatrix} 1 \\ 0 \\ 3 \end{pmatrix}$
+
+\textbf{Paso 2.}  
+Proyección de $\mathbf{w_2}$ sobre $\mathbf{v_1}$:
+\[
+\operatorname{proy}_{\mathbf{v_1}} \mathbf{w_2} = \frac{\mathbf{w_2} \cdot \mathbf{v_1}}{\mathbf{v_1} \cdot \mathbf{v_1}} \mathbf{v_1} = \frac{2}{10} \begin{pmatrix} 1 \\ 0 \\ 3 \end{pmatrix} = \begin{pmatrix} \frac{1}{5} \\ 0 \\ \frac{3}{5} \end{pmatrix}
+\]
+\[
+\mathbf{v_2} = \mathbf{w_2} - \operatorname{proy}_{\mathbf{v_1}} \mathbf{w_2} = \begin{pmatrix} 2 \\ -1 \\ 0 \end{pmatrix} - \begin{pmatrix} \frac{1}{5} \\ 0 \\ \frac{3}{5} \end{pmatrix} = \begin{pmatrix} \frac{9}{5} \\ -1 \\ -\frac{3}{5} \end{pmatrix}
+\]
+
+\textbf{Base ortogonal:}
+\[
+\boxed{\mathbf{v_1} = \begin{pmatrix} 1 \\ 0 \\ 3 \end{pmatrix}, \quad \mathbf{v_2} = \begin{pmatrix} \frac{9}{5} \\ -1 \\ -\frac{3}{5} \end{pmatrix}}
+\]
+\end{myproof}
+\end{prob}
+
+% Difícil
+\begin{prob} 
+Calcule una base ortogonal para $\mathcal{P}_{2}(\mathbb{R})$ que contenga al vector $p(x)=x^2+2x+1$ usando el producto interno de las funciones continuas en el intervalo $[0,1].$
+\begin{myproof}
+\textbf{Dado:} $p_1(x) = x^2 + 2x + 1$
+
+\textbf{Base inicial:} $\{p_1, p_2, p_3\}$ con $p_2(x) = 1$, $p_3(x) = x$
+
+\textbf{Producto interno:} $\langle f, g \rangle = \int_0^1 f(x)g(x)  dx$
+
+\textbf{Paso 1.}  
+$u_1(x) = p_1(x) = x^2 + 2x + 1$
+
+\textbf{Paso 2.}  
+$\langle p_2, u_1 \rangle = \int_0^1 (1)(x^2 + 2x + 1)  dx = \frac{7}{3}$ \\
+$\langle u_1, u_1 \rangle = \int_0^1 (x^2 + 2x + 1)^2  dx = \frac{31}{5}$ \\
+\[
+\operatorname{proy}_{u_1} p_2 = \frac{7/3}{31/5} (x^2 + 2x + 1) = \frac{35}{93} (x^2 + 2x + 1)
+\]
+\[
+u_2(x) = p_2(x) - \operatorname{proy}_{u_1} p_2 = 1 - \frac{35}{93}(x^2 + 2x + 1) = -\frac{35}{93}x^2 - \frac{70}{93}x + \frac{58}{93}
+\]
+
+\textbf{Paso 3.}  
+$\langle p_3, u_1 \rangle = \int_0^1 x(x^2 + 2x + 1)  dx = \frac{17}{12}$ \\
+$\langle p_3, u_2 \rangle = \int_0^1 x \left( -\frac{35}{93}x^2 - \frac{70}{93}x + \frac{58}{93} \right)  dx = -\frac{425}{1116}$ \\
+$\langle u_2, u_2 \rangle = \int_0^1 \left( -\frac{35}{93}x^2 - \frac{70}{93}x + \frac{58}{93} \right)^2  dx = \frac{1385}{25947}$ \\
+\[
+\operatorname{proy}_{u_1} p_3 = \frac{17/12}{31/5} u_1(x) = \frac{85}{372} (x^2 + 2x + 1)
+\]
+\[
+\operatorname{proy}_{u_2} p_3 = \frac{-425/1116}{1385/25947} u_2(x) = -\frac{45}{136} u_2(x)
+\]
+\[
+u_3(x) = p_3(x) - \operatorname{proy}_{u_1} p_3 - \operatorname{proy}_{u_2} p_3 = x - \frac{85}{372}(x^2 + 2x + 1) + \frac{45}{136} \left( \frac{35}{93}x^2 + \frac{70}{93}x - \frac{58}{93} \right)
+\]
+\[
+u_3(x) = -\frac{45}{136}x^2 + \frac{23}{68}x - \frac{1}{17}
+\]
+
+\textbf{Base ortogonal:}
+\[
+\boxed{u_1(x) = x^2 + 2x + 1, \quad u_2(x) = -\frac{35}{93}x^2 - \frac{70}{93}x + \frac{58}{93}, \quad u_3(x) = -\frac{45}{136}x^2 + \frac{23}{68}x - \frac{1}{17}}
+\]
+\end{myproof}
+\end{prob}
 
 
+\section{Problemas propuestos}
+
+% --- Producto interno ---
+
+% Básico
+\begin{prob}
+Determine si la función $\langle \mathbf{u}, \mathbf{v} \rangle = u_1v_1 - u_2v_2$, con $\mathbf{u}=(u_1,u_2)$ y $\mathbf{v}=(v_1,v_2)$, define un producto interno en $\mathbb{R}^2$. Justifique su respuesta indicando cuáles axiomas se cumplen y cuáles no.
+\end{prob}
+
+% Intermedio
+\begin{prob}
+Sea $V=\mathcal{M}_{2\times 2}(\mathbb{R})$ el espacio de las matrices reales $2\times 2$.
+\begin{enumerate}[$a)$]
+\item Demuestre que $\langle A, B \rangle = \operatorname{tr}(A^TB)$ define un producto interno en $V$.
+\item Calcule $\langle A, B \rangle$ y $\|A\|$ para $A=\begin{pmatrix} 1 & 2 \\ 0 & -1 \end{pmatrix}$ y $B=\begin{pmatrix} 0 & 1 \\ 3 & 2 \end{pmatrix}$. ¿Son $A$ y $B$ ortogonales?
+\end{enumerate}
+\end{prob}
+
+% --- Norma, ángulo y desigualdad de Cauchy-Schwarz ---
+
+% Básico
+\begin{prob}
+En $\mathbb{R}^3$ con el producto punto usual, sean $\mathbf{u}=(1,2,2)$ y $\mathbf{v}=(2,-1,2)$. Calcule $\|\mathbf{u}\|$, $\|\mathbf{v}\|$ y el ángulo $\theta$ entre $\mathbf{u}$ y $\mathbf{v}$.
+\end{prob}
+
+% Intermedio
+\begin{prob}
+Sea $V$ un espacio vectorial real con producto interno. Usando la desigualdad de Cauchy-Schwarz, demuestre la \textbf{desigualdad triangular}:
+\[
+\|\mathbf{u}+\mathbf{v}\| \leq \|\mathbf{u}\| + \|\mathbf{v}\| \qquad \text{para todo } \mathbf{u},\mathbf{v} \in V.
+\]
+Determine además bajo qué condición se alcanza la igualdad.
+\end{prob}
+
+% Intermedio
+\begin{prob}
+En $\mathcal{C}[0,1]$ con el producto interno $\langle f, g \rangle = \int_0^1 f(x)g(x)\,dx$, sean $f(x)=1$ y $g(x)=x$. Calcule $\|f\|$, $\|g\|$ y el ángulo entre $f$ y $g$.
+\end{prob}
+
+% Difícil
+\begin{prob}
+Sea $V$ un espacio vectorial real con producto interno y sean $\mathbf{u},\mathbf{v} \in V$. Demuestre que la desigualdad de Cauchy-Schwarz se convierte en igualdad,
+\[
+|\langle \mathbf{u}, \mathbf{v} \rangle| = \|\mathbf{u}\|\,\|\mathbf{v}\|,
+\]
+si y solo si $\mathbf{u}$ y $\mathbf{v}$ son linealmente dependientes.
+\end{prob}
+
+% --- Ortogonalidad y complemento ortogonal ---
+
+% Básico
+\begin{prob}
+Determine todos los valores de $k \in \mathbb{R}$ para los cuales los vectores $\mathbf{u}=(1,k,3)$ y $\mathbf{v}=(2,-1,k)$ son ortogonales en $\mathbb{R}^3$ con el producto punto usual.
+\end{prob}
+
+% Intermedio
+\begin{prob}
+Sea $W = \operatorname{gen}\{(1,1,0,0),\, (0,1,1,0)\}$ un subespacio de $\mathbb{R}^4$.
+\begin{enumerate}[$a)$]
+\item Encuentre una base para $W^{\perp}$.
+\item Verifique que $\dim W + \dim W^{\perp} = 4$.
+\end{enumerate}
+\end{prob}
+
+% Intermedio
+\begin{prob}
+Sea $W$ un subespacio de un espacio vectorial $V$ con producto interno. Demuestre que:
+\begin{enumerate}[$a)$]
+\item $W \cap W^{\perp} = \{\mathbf{0}\}$.
+\item $W \subseteq (W^{\perp})^{\perp}$.
+\end{enumerate}
+\end{prob}
+
+% Difícil
+\begin{prob}
+Sea $A$ una matriz real de tamaño $m \times n$ y considere $\mathbb{R}^n$ con el producto punto usual.
+\begin{enumerate}[$a)$]
+\item Demuestre que el espacio nulo de $A$ es el complemento ortogonal del espacio fila de $A$, es decir, $N(A) = \left(\operatorname{fil}(A)\right)^{\perp}$.
+\item Use el literal anterior para deducir que $\operatorname{rango}(A) + \operatorname{nulidad}(A) = n$.
+\end{enumerate}
+\end{prob}
+
+% --- Bases ortogonales y proceso de Gram-Schmidt ---
+
+% Básico
+\begin{prob}
+Verifique que $B=\{(1,1,1),\, (1,-1,0),\, (1,1,-2)\}$ es una base ortogonal de $\mathbb{R}^3$ con el producto punto usual y normalícela para obtener una base ortonormal.
+\end{prob}
+
+% Intermedio
+\begin{prob}
+Aplique el proceso de Gram-Schmidt al conjunto $\{(1,1,1),\, (1,2,0),\, (0,1,1)\}$ de $\mathbb{R}^3$ con el producto punto usual para obtener una base ortogonal de $\mathbb{R}^3$.
+\end{prob}
+
+% Intermedio
+\begin{prob}
+En $\mathcal{P}_2(\mathbb{R})$ con el producto interno $\langle p, q \rangle = \int_{-1}^{1} p(x)q(x)\,dx$, aplique el proceso de Gram-Schmidt a la base $\{1,\, x,\, x^2\}$. Los polinomios obtenidos son, salvo constantes multiplicativas, los tres primeros \textbf{polinomios de Legendre}.
+\end{prob}
+
+% Difícil
+\begin{prob}
+Sea $\{\mathbf{v}_1, \dots, \mathbf{v}_n\}$ una base ortonormal de un espacio vectorial $V$ con producto interno. Demuestre la \textbf{identidad de Parseval}:
+\[
+\|\mathbf{u}\|^2 = \sum_{i=1}^{n} |\langle \mathbf{u}, \mathbf{v}_i \rangle|^2 \qquad \text{para todo } \mathbf{u} \in V.
+\]
+\end{prob}
+
+% --- Proyección ortogonal y mínimos cuadrados ---
+
+% Básico
+\begin{prob}
+En $\mathbb{R}^2$ con el producto punto usual, sean $\mathbf{u}=(3,4)$ y $\mathbf{v}=(1,0)$. Calcule $\operatorname{proy}_{\mathbf{v}}\mathbf{u}$ y verifique que $\mathbf{u} - \operatorname{proy}_{\mathbf{v}}\mathbf{u}$ es ortogonal a $\mathbf{v}$.
+\end{prob}
+
+% Intermedio
+\begin{prob}
+Encuentre la recta de mínimos cuadrados $y = mx + b$ que mejor ajusta los puntos
+\[
+(1,1), \quad (2,3), \quad (3,4), \quad (4,6),
+\]
+planteando y resolviendo el sistema de ecuaciones normales $A^TA\mathbf{x} = A^T\mathbf{b}$. Calcule además la norma del residuo $\|\mathbf{b} - A\mathbf{x}\|$.
+\end{prob}
+
+% Difícil
+\begin{prob}
+Sea $W$ un subespacio de dimensión finita de un espacio vectorial $V$ con producto interno y sea $\mathbf{u} \in V$. Demuestre el \textbf{teorema de la mejor aproximación}: para todo $\mathbf{w} \in W$ con $\mathbf{w} \neq \operatorname{proy}_W \mathbf{u}$ se cumple
+\[
+\|\mathbf{u} - \operatorname{proy}_W \mathbf{u}\| < \|\mathbf{u} - \mathbf{w}\|.
+\]
+Es decir, $\operatorname{proy}_W \mathbf{u}$ es el único vector de $W$ más cercano a $\mathbf{u}$.
+\end{prob}
+
+% --- Series de Fourier ---
+
+% Intermedio
+\begin{prob}
+Calcule la serie de Fourier de la función $f(x)=x^2$ en el intervalo $[0,2\pi]$, determinando explícitamente $a_0$, $a_k$ y $b_k$.
+\end{prob}

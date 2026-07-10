@@ -283,7 +283,27 @@ Mínimo 8–10 resueltos (example con myproof) + 15–20 propuestos (sin myproof
 **Acción:** eliminar/auditar las 2 marcas `\square` residuales; verificar 4 pasos en los 9 examples (8 ya conformes); aplicar Decisión F a los 23 probs (22 con solución); tags.
 **Criterio de cierre:** 0 marcas residuales fuera de `proof`; examples conformes; convención F aplicada con tags.
 **Líneas estimadas:** 50–110
-**Estado:** Pendiente
+**Estado:** Completado (2026-07-09)
+**Notas de ejecución:**
+- **⚠️ 2 errores matemáticos corregidos (verificados con SymPy)** en las series de Fourier del banco. Los coeficientes traían factores `(-1)^k` que corresponden al intervalo `[-π,π]`, no al `[0,2π]` que usan los enunciados:
+  - `f(x)=x²+2x+1`: `a_k = 4(-1)^k/k²` → `4/k²`; `b_k = -4(-1)^k/k - 4π/k` → `-4(π+1)/k`.
+  - `f(x)=9x²+4x`: `a_k = 36(-1)^k/k²` → `36/k²`; `b_k = -72(-1)^k/k³ - 8(-1)^k/k` → `-(36π+8)/k` (el término en `k³` era espurio).
+  - Los 3 problemas lineales del banco (`9x+7`, `5x+7`, `7x+2`) y `a_0` en todos los casos estaban correctos.
+- **Residuales:** las «2 marcas `\square`» eran 2 `\qedhere` dentro de `proof` (conformes al criterio), pero embebidos en math inline `\(...\)`. Eliminados; `proof` emite el □ automáticamente. Auditoría final: 0 `\qedhere`/`\square`/`\blacksquare`/`\qed` en todo el archivo.
+- **Decisión F — 5 elevaciones a `example`** (lote validado por el autor), todas con protocolo 4 pasos + `\boxed{}` y aritmética verificada:
+  - §7.2 `Identidad del paralelogramo` y `Ley del coseno` (la sección no tenía ejemplos de demostración).
+  - §7.4 `Extensión de un vector a una base ortogonal de ℝ³` (Gram-Schmidt sobre `{v₁,e₁,e₂}`; verificado con `fractions.Fraction`, ortogonalidad exacta).
+  - §7.5 `Ley de Hooke` (mínimos cuadrados con datos reales; `Σx=32.8`, `Σx²=278.82`, `Σxy=141.98`, `det=39.44` verificados).
+  - §7.6 `Series de Fourier en [0,2π]` — **primer y único ejemplo de la sección**, que antes tenía cero. Movido desde el banco y expandido con la derivación completa: 6 integrales auxiliares verificadas con SymPy + nota explícita de por qué no aparecen factores `(-1)^k`.
+  - Nota LaTeX: el título `[Series de Fourier en $[0,2\pi]$]` necesita llaves (`[{...}]`) porque el `]` cierra el argumento opcional.
+- **Banco §7.7:** 17 probs (13 heredados + 4 reubicados desde secciones temáticas). Los 4 movidos: rombo, diagonales de igual norma, Gram-Schmidt en ℝ³, base ortogonal de `P₂(ℝ)`. Tags de graduación sobre **cada** prob: 6B/7I/4D.
+- **`\section{Problemas propuestos}` (§7.8) creada desde cero** con 18 probs nuevos 5B/9I/4D (lote validado por el autor), en 6 subsecciones temáticas por comentario. El capítulo no tenía ningún prob sin solución, tal como anticipaba F9AL.16.
+- **Otras correcciones de auditoría:**
+  - `prob[Regresión polinómica]` no era un problema sino una fórmula sin pregunta → convertido a `rem` con `\label{rem:regresion_polinomica}` y una frase sobre la matriz de Vandermonde.
+  - Prob «valor de verdad», literal (b): la respuesta era evasiva («Verdadero si ambos están en `W⊥`; de lo contrario, falso»), lo cual no responde el enunciado. La afirmación es **falsa**; se redactó contraejemplo explícito (`V=ℝ²`, `W=gen{(1,0)}`, `u=(1,0)`, `v=(0,1)`). El literal (c) se afinó (el único vector de `W` ortogonal a todo `W` es `0`).
+  - 30 `Paso N:` → `Paso N.`; `\boxed{}` intermedio eliminado del example de `P₂(ℝ)` (la convención lo reserva para el Paso 4).
+- **Examples:** 14 en total (9 previos + 5 elevados). 13 con `\boxed{}`; el restante (`Producto interno no usual`) es ilustrativo sin `myproof` — aceptable por la guía. El único no conforme (`Base ortogonal en P₂(ℝ)`, 1 solo paso) se reestructuró a 4 pasos; su cadena aritmética se verificó íntegra con SymPy (`⟨v₂,v₂⟩=13/240`, `⟨x−x²,v₂⟩=−1/80`, ortogonalidad final exacta).
+- 0 `myproof` huérfanos. 8 secciones. 35 probs (17 banco + 18 propuestos). 2 pasadas lualatex; único warning `figrayo` (preexistente, `vectoresrn.tex`). PDF: **782 pp, 0 errores**.
 
 ---
 
@@ -440,7 +460,7 @@ Mínimo 8–10 resueltos (example con myproof) + 15–20 propuestos (sin myproof
 | F9AL.15 | `espaciosvectoriales.tex` | Auditoría R1 + R3 | Completado | 2026-07-08 | Lema de intercambio nuevo (esquema Steinitz); prueba Wronskiano añadida; 2 INV corregidas (def generado+figura antes del teorema; example det antes de Wronskiano). 778 pp, 0 errores. |
 | F9AL.16 | `prodinterno.tex` | Estructura de secciones (0 actuales) | Completado | 2026-07-08 | 7 secciones (6 temáticas + banco §7.7, incluye §7.6 Series de Fourier); heading de propuestos diferido a F9AL.18 (0 probs sin solución al final). 780 pp, 0 errores. |
 | F9AL.17 | `prodinterno.tex` | 2 figuras nuevas + auditoría | Completado | 2026-07-08 | fig:proyeccion_ortogonal, fig:gram_schmidt_r2 (aritmética exacta, verificadas pp. 190–191); label añadido a recta mín. cuadrados; fig1→fig:altura_triangulo. |
-| F9AL.18 | `prodinterno.tex` | Protocolo + residuales + propuestos | Pendiente | — | — |
+| F9AL.18 | `prodinterno.tex` | Protocolo + residuales + propuestos | Completado | 2026-07-09 | **2 errores de Fourier corregidos** (factores `(-1)^k` de `[-π,π]` en problemas sobre `[0,2π]`, verificado SymPy). 5 elevaciones (incl. 1er ejemplo de §7.6). Banco 17 probs 6B/7I/4D. §7.8 propuestos creada: 18 probs 5B/9I/4D. `prob[Regresión polinómica]`→`rem`. Respuesta evasiva corregida con contraejemplo. 782 pp, 0 errores. |
 | F9AL.19 | `vvpropios.tex` | Intro + estructura de secciones | Pendiente | — | — |
 | F9AL.20 | `vvpropios.tex` | 2 figuras nuevas R2 | Pendiente | — | — |
 | F9AL.21 | `vvpropios.tex` | Sección propuestos + Decisión F | Pendiente | — | — |
