@@ -866,21 +866,24 @@ Dadas las siguientes matrices calcule sus valores y vectores propios, determine 
 \end{matrix}\right)$
 
 \begin{myproof}
-Polinomio característico:
+\textbf{Paso 1.} Polinomio característico:
 \[
 \det(\lambda I - A) = \begin{vmatrix} \lambda+3 & -2 \\ 0 & \lambda+3 \end{vmatrix} = (\lambda+3)^2
 \]
-Valor propio: $\lambda = -3$ (multiplicidad algebraica 2).
 
-Vectores propios:
+\textbf{Paso 2.} Valor propio: $\lambda = -3$ (multiplicidad algebraica 2).
+
+\textbf{Paso 3.} Vectores propios:
 \[
 (A + 3I)\mathbf{v} = 0 \implies \begin{pmatrix} 0 & 2 \\ 0 & 0 \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix} \implies 2y=0 \implies y=0
 \]
-Así, cualquier vector de la forma $\begin{pmatrix} x \\ 0 \end{pmatrix}$ es propio, con $x\neq 0$.
+Así, cualquier vector de la forma $\begin{pmatrix} x \\ 0 \end{pmatrix}$ es propio, con $x\neq 0$; la multiplicidad geométrica es 1 (solo un vector propio linealmente independiente).
 
-Multiplicidad geométrica: 1 (solo un vector propio linealmente independiente).
-
-No es diagonalizable porque la multiplicidad geométrica es menor que la algebraica; su forma canónica de Jordan es $J_2(-3)$ (véase la Subsección \ref{subsec:jordan}).
+\textbf{Paso 4.} Como la multiplicidad geométrica es menor que la algebraica,
+\[
+\boxed{\lambda=-3\ (\text{m.a.}=2,\ \text{m.g.}=1):\ A\ \text{no es diagonalizable}.}
+\]
+Su forma canónica de Jordan es $J_2(-3)$ (véase la Subsección \ref{subsec:jordan}).
 \end{myproof}
 
 \item $A=\left(\begin{matrix}
@@ -888,25 +891,27 @@ a & -b \\ b & a
 \end{matrix}\right)$
 
 \begin{myproof}
-Polinomio característico:
+\textbf{Paso 1.} Polinomio característico:
 \[
 \det(\lambda I - A) = \begin{vmatrix} \lambda-a & b \\ -b & \lambda-a \end{vmatrix} = (\lambda-a)^2 + b^2
 \]
-Raíces:
+
+\textbf{Paso 2.} Raíces:
 \[
 \lambda = a \pm ib
 \]
 Ambos valores propios son complejos conjugados (si $b\neq 0$), de multiplicidad algebraica 1 cada uno.
 
-Para $\lambda_1 = a + ib$:
+\textbf{Paso 3.} Para $\lambda_1 = a + ib$:
 \[
 (A - \lambda_1 I)\mathbf{v} = 0 \implies \begin{pmatrix} a-(a+ib) & -b \\ b & a-(a+ib) \end{pmatrix} = \begin{pmatrix} -ib & -b \\ b & -ib \end{pmatrix}
 \]
-El vector propio asociado es $\begin{pmatrix} 1 \\ -i \end{pmatrix}$ (o cualquier múltiplo).
+El vector propio asociado es $\begin{pmatrix} 1 \\ -i \end{pmatrix}$ (o cualquier múltiplo). La multiplicidad geométrica es 1 para cada valor propio.
 
-Multiplicidad geométrica: 1 para cada valor propio.
-
-La matriz es diagonalizable sobre $\mathbb{C}$, y la matriz diagonal asociada es $D = \begin{pmatrix} a+ib & 0 \\ 0 & a-ib \end{pmatrix}$.
+\textbf{Paso 4.} La matriz es diagonalizable sobre $\mathbb{C}$:
+\[
+\boxed{D = \begin{pmatrix} a+ib & 0 \\ 0 & a-ib \end{pmatrix}.}
+\]
 \end{myproof}
 
 \item $A=\left(\begin{matrix}
@@ -914,21 +919,23 @@ La matriz es diagonalizable sobre $\mathbb{C}$, y la matriz diagonal asociada es
 \end{matrix}\right),\ 0\leq \theta \leq 2\pi.$
 
 \begin{myproof}
-Polinomio característico:
+\textbf{Paso 1.} Polinomio característico:
 \[
 \det(\lambda I - A) = \begin{vmatrix} \lambda-\cos\theta & \sen\theta \\ -\sen\theta & \lambda-\cos\theta \end{vmatrix} = (\lambda-\cos\theta)^2 + \sen^2\theta = \lambda^2 - 2\lambda\cos\theta + 1
 \]
-Raíces:
+
+\textbf{Paso 2.} Raíces:
 \[
 \lambda = \cos\theta \pm i\sen\theta = e^{\pm i\theta}
 \]
 Ambos valores propios son complejos conjugados (salvo $\theta=0,\pi$).
 
-Vectores propios: para $\lambda_1 = e^{i\theta}$, vector propio $\begin{pmatrix} 1 \\ -i \end{pmatrix}$.
+\textbf{Paso 3.} Vectores propios: para $\lambda_1 = e^{i\theta}$, vector propio $\begin{pmatrix} 1 \\ -i \end{pmatrix}$. Multiplicidad algebraica y geométrica: 1 cada una.
 
-Multiplicidad algebraica y geométrica: 1 cada una.
-
-La matriz es diagonalizable sobre $\mathbb{C}$, y la matriz diagonal asociada es $D = \begin{pmatrix} e^{i\theta} & 0 \\ 0 & e^{-i\theta} \end{pmatrix}$.
+\textbf{Paso 4.} La matriz es diagonalizable sobre $\mathbb{C}$:
+\[
+\boxed{D = \begin{pmatrix} e^{i\theta} & 0 \\ 0 & e^{-i\theta} \end{pmatrix}.}
+\]
 \end{myproof}
 
 \end{enumerate}
@@ -940,23 +947,25 @@ Sea $A=\left( \begin{array}{cc} a&-1 \\ 1&4 \end{array} \right)$ donde $a\in \ma
 \begin{enumerate}[$a)$]
 \item Calcule el valor de $a.$
 \begin{myproof}
-El polinomio característico es:
+\textbf{Paso 1.} El polinomio característico es:
 \[
 \det(\lambda I - A) = (\lambda-a)(\lambda-4) + 1 = \lambda^2 - (a+4)\lambda + (4a+1)
 \]
-Sustituyendo $\lambda=3$:
+
+\textbf{Paso 2.} Como $\lambda=3$ es valor propio, debe anular el polinomio. Sustituyendo:
 \[
-3^2 - (a+4)3 + (4a+1) = 0 \implies 9 - 3a - 12 + 4a + 1 = 0 \implies (4a-3a) + (9-12+1) = 0 \implies a - 2 = 0 \implies a=2
+3^2 - (a+4)3 + (4a+1) = 0 \implies 9 - 3a - 12 + 4a + 1 = 0 \implies (4a-3a) + (9-12+1) = 0 \implies \boxed{a=2}
 \]
 \end{myproof}
 
 \item ¿La matriz $A$ tiene valores propios distintos a $3$?
 \begin{myproof}
-Sustituyendo $a=2$ en el polinomio característico:
+\textbf{Paso 1.} Sustituyendo $a=2$ en el polinomio característico:
 \[
 \lambda^2 - 6\lambda + (8+1) = \lambda^2 - 6\lambda + 9 = (\lambda-3)^2
 \]
-Por lo tanto, $3$ es un valor propio de multiplicidad 2 y no hay otros valores propios.
+
+\textbf{Paso 2.} Por lo tanto, $\boxed{3\ \text{es el único valor propio (multiplicidad algebraica 2)}}$ y no hay otros valores propios.
 \end{myproof}
 \end{enumerate}
 \end{prob}
@@ -965,16 +974,17 @@ Por lo tanto, $3$ es un valor propio de multiplicidad 2 y no hay otros valores p
 \begin{prob}
 Suponga que $A=\left( \begin{array}{ccc} -2&0&1 \\ -5&3&a\\ 4&-2&-1 \end{array} \right)$ donde $a\in \mathbb{R}.$ Encuentre los valores de $a$ de manera que $0, 3, -3$ sean valores propios de $A.$ Calcule los vectores propios asociados a cada valor propio.
 \begin{myproof}
-El polinomio característico de $A$ es:
+\textbf{Paso 1.} El polinomio característico de $A$ es:
 \[
 p(\lambda) = \det(\lambda I - A) = \lambda^3 + (2a-11)\lambda + (4a-4).
 \]
-Si los valores propios son $0,3,-3$, entonces $p(\lambda) = \lambda(\lambda-3)(\lambda+3) = \lambda^3 - 9\lambda$. Comparando coeficientes:
+
+\textbf{Paso 2.} Si los valores propios son $0,3,-3$, entonces $p(\lambda) = \lambda(\lambda-3)(\lambda+3) = \lambda^3 - 9\lambda$. Comparando coeficientes:
 \[
-4a - 4 = 0 \implies a = 1, \qquad 2(1)-11 = -9\ \checkmark.
+4a - 4 = 0 \implies \boxed{a = 1}, \qquad 2(1)-11 = -9\ \checkmark.
 \]
 
-Con $a=1$, $A = \begin{pmatrix}-2&0&1\\-5&3&1\\4&-2&-1\end{pmatrix}$.
+\textbf{Paso 3.} Con $a=1$, $A = \begin{pmatrix}-2&0&1\\-5&3&1\\4&-2&-1\end{pmatrix}$. Calculamos los espacios propios.
 
 \textbf{$\lambda=0$:} $(A-0I)\mathbf{v}=0$. Reducción por filas:
 \[
@@ -993,6 +1003,11 @@ $x_3$ libre, $x_1=\tfrac{x_3}{5}$, $x_2=-\tfrac{8x_3}{5}$. Vector propio: $\math
 \sim \begin{pmatrix}1&0&1\\0&1&1\\0&0&0\end{pmatrix}
 \]
 $x_3$ libre, $x_1=-x_3$, $x_2=-x_3$. Vector propio: $\mathbf{v}_{-3}=\begin{pmatrix}1\\1\\-1\end{pmatrix}$.
+
+\textbf{Paso 4.} En resumen, con $a=1$:
+\[
+\boxed{\mathbf{v}_0=\begin{pmatrix}1\\1\\2\end{pmatrix},\qquad \mathbf{v}_3=\begin{pmatrix}1\\-8\\5\end{pmatrix},\qquad \mathbf{v}_{-3}=\begin{pmatrix}1\\1\\-1\end{pmatrix}.}
+\]
 \end{myproof}
 \end{prob}
 
@@ -1000,12 +1015,13 @@ $x_3$ libre, $x_1=-x_3$, $x_2=-x_3$. Vector propio: $\mathbf{v}_{-3}=\begin{pmat
 \begin{prob}
 Sea $A=\left(\begin{matrix} a&b \\ c&d \end{matrix}\right)$ una matriz de $2\times 2$ y suponga que $b\neq 0.$ Sea $m$ una raíz (real o compleja) de la ecuación $bm^2+(a-d)m-c=0.$  Demuestre que $a+bm$ es un valor propio de $A$ cuyo vector propio asociado es $\begin{pmatrix} 1\\m \end{pmatrix}.$
 \begin{myproof}
-Sea $\mathbf{v} = \begin{pmatrix} 1 \\ m \end{pmatrix}$. Calculamos:
+\textbf{Paso 1.} Sea $\mathbf{v} = \begin{pmatrix} 1 \\ m \end{pmatrix}$. Calculamos:
 \[
 A\mathbf{v} = \begin{pmatrix} a & b \\ c & d \end{pmatrix} \begin{pmatrix} 1 \\ m \end{pmatrix}
 = \begin{pmatrix} a + b m \\ c + d m \end{pmatrix}
 \]
-Queremos que $A\mathbf{v} = \lambda \mathbf{v}$, es decir,
+
+\textbf{Paso 2.} Queremos que $A\mathbf{v} = \lambda \mathbf{v}$, es decir,
 \[
 \begin{cases}
 a + b m = \lambda \\
@@ -1016,7 +1032,8 @@ De la primera ecuación, $\lambda = a + b m$. Sustituyendo en la segunda:
 \[
 c + d m = (a + b m)m \implies c + d m = a m + b m^2 \implies b m^2 + (a - d)m - c = 0
 \]
-Por hipótesis, $m$ es raíz de esta ecuación, por lo tanto, existe un valor propio $\lambda = a + b m$ con vector propio $\begin{pmatrix} 1 \\ m \end{pmatrix}$.
+
+\textbf{Paso 3.} Por hipótesis, $m$ es raíz de esta ecuación, así que ambas condiciones se cumplen: $\lambda = a + b m$ es un valor propio de $A$ con vector propio $\begin{pmatrix} 1 \\ m \end{pmatrix}$, como se quería demostrar.
 \end{myproof}
 \end{prob}
 
@@ -1026,9 +1043,9 @@ Por hipótesis, $m$ es raíz de esta ecuación, por lo tanto, existe un valor pr
 \begin{prob}
 Suponga que $\begin{pmatrix} 1 \\ 1 \end{pmatrix}$ es un vector propio de la matriz $A$ correspondiente al valor propio $3$ y que $\begin{pmatrix} 2 \\ 1 \end{pmatrix}$ es un vector propio correspondiente al valor propio $-2$. Calcule $A^{2}\begin{pmatrix} 4 \\ 3 \end{pmatrix}$.
 \begin{myproof}
-Los vectores propios forman la base de diagonalización. Sea $P = \begin{pmatrix} 1 & 2 \\ 1 & 1 \end{pmatrix}$, $D = \begin{pmatrix} 3 & 0 \\ 0 & -2 \end{pmatrix}$.
+\textbf{Paso 1.} Los vectores propios forman la base de diagonalización. Sea $P = \begin{pmatrix} 1 & 2 \\ 1 & 1 \end{pmatrix}$, $D = \begin{pmatrix} 3 & 0 \\ 0 & -2 \end{pmatrix}$.
 
-Descomponemos $\begin{pmatrix} 4 \\ 3 \end{pmatrix}$ en la base de vectores propios:
+\textbf{Paso 2.} Descomponemos $\begin{pmatrix} 4 \\ 3 \end{pmatrix}$ en la base de vectores propios:
 \[
 P \begin{pmatrix} \alpha \\ \beta \end{pmatrix} = \begin{pmatrix} 4 \\ 3 \end{pmatrix}
 \implies
@@ -1038,14 +1055,16 @@ P \begin{pmatrix} \alpha \\ \beta \end{pmatrix} = \begin{pmatrix} 4 \\ 3 \end{pm
 \end{cases}
 \implies \beta = 1, \ \alpha = 2
 \]
-Por lo tanto,
+
+\textbf{Paso 3.} Aplicamos $A^2 = PD^2P^{-1}$ sobre las coordenadas halladas:
 \[
 A^2\begin{pmatrix} 4 \\ 3 \end{pmatrix} = P D^2 P^{-1} \begin{pmatrix} 4 \\ 3 \end{pmatrix} = P D^2 \begin{pmatrix} 2 \\ 1 \end{pmatrix} = P \begin{pmatrix} 2\cdot 9 \\ 1\cdot 4 \end{pmatrix} = P \begin{pmatrix} 18 \\ 4 \end{pmatrix}
 \]
+
+\textbf{Paso 4.} Calculamos el producto final:
 \[
-P \begin{pmatrix} 18 \\ 4 \end{pmatrix} = \begin{pmatrix} 1 & 2 \\ 1 & 1 \end{pmatrix} \begin{pmatrix} 18 \\ 4 \end{pmatrix} = \begin{pmatrix} 18 + 8 \\ 18 + 4 \end{pmatrix} = \begin{pmatrix} 26 \\ 22 \end{pmatrix}
+P \begin{pmatrix} 18 \\ 4 \end{pmatrix} = \begin{pmatrix} 1 & 2 \\ 1 & 1 \end{pmatrix} \begin{pmatrix} 18 \\ 4 \end{pmatrix} = \begin{pmatrix} 18 + 8 \\ 18 + 4 \end{pmatrix} \implies \boxed{A^2\begin{pmatrix} 4 \\ 3 \end{pmatrix} = \begin{pmatrix} 26 \\ 22 \end{pmatrix}.}
 \]
-Por lo tanto, $A^2\begin{pmatrix} 4 \\ 3 \end{pmatrix} = \begin{pmatrix} 26 \\ 22 \end{pmatrix}$.
 \end{myproof}
 \end{prob}
 
@@ -1056,13 +1075,14 @@ Sea $A$ una matriz $n\times n$, ya se demostró por inducción sobre $n$ que si 
 \item Suponga que $A=\begin{pmatrix} 1&-14&4 \\ -1&6&-2\\ -2&24&-7
 \end{pmatrix}.$ Calcule los valores y vectores propios de $A.$
 \begin{myproof}
-Calculamos el polinomio característico. Se tiene $\operatorname{tr}(A)=0$, $\det(A)=0$, y la suma de menores principales de orden 2 es $-1$; por tanto:
+\textbf{Paso 1.} Calculamos el polinomio característico. Se tiene $\operatorname{tr}(A)=0$, $\det(A)=0$, y la suma de menores principales de orden 2 es $-1$; por tanto:
 \[
 \det(\lambda I - A) = \lambda^3 - \lambda = \lambda(\lambda-1)(\lambda+1).
 \]
-Raíces: $\lambda_1=0$, $\lambda_2=1$, $\lambda_3=-1$ (multiplicidad algebraica 1 cada una).
 
-Vectores propios (eliminación gaussiana en $(A-\lambda I)\mathbf{v}=0$):
+\textbf{Paso 2.} Raíces: $\lambda_1=0$, $\lambda_2=1$, $\lambda_3=-1$ (multiplicidad algebraica 1 cada una).
+
+\textbf{Paso 3.} Vectores propios (eliminación gaussiana en $(A-\lambda I)\mathbf{v}=0$):
 \begin{itemize}
   \item Para $\lambda=0$: $x_1=-\tfrac{1}{2}x_3$, $x_2=\tfrac{1}{4}x_3$ $\Rightarrow$ $\mathbf{v}_0 = \begin{pmatrix}-2\\1\\4\end{pmatrix}$.
   \item Para $\lambda=1$: $x_1=-\tfrac{4}{7}x_3$, $x_2=\tfrac{2}{7}x_3$ $\Rightarrow$ $\mathbf{v}_1 = \begin{pmatrix}-4\\2\\7\end{pmatrix}$.
@@ -1072,12 +1092,13 @@ Vectores propios (eliminación gaussiana en $(A-\lambda I)\mathbf{v}=0$):
 
 \item Sea ${\bf{u}}=\vector(4,-1,7).$ Use el ítem anterior para calcular $A^{20}{\bf{u}}.$
 \begin{myproof}
-Expresamos $\mathbf{u}=(4,-1,7)^T$ en la base de vectores propios del ítem anterior:
+\textbf{Paso 1.} Expresamos $\mathbf{u}=(4,-1,7)^T$ en la base de vectores propios del ítem anterior:
 \[
 \alpha_0\,\mathbf{v}_0 + \alpha_1\,\mathbf{v}_1 + \alpha_{-1}\,\mathbf{v}_{-1} = \mathbf{u}
 \implies \alpha_0=27,\quad \alpha_1=-13,\quad \alpha_{-1}=-2.
 \]
-Usando $A^n\mathbf{v}=\lambda^n\mathbf{v}$ y que $0^{20}=0$, $1^{20}=1$, $(-1)^{20}=1$:
+
+\textbf{Paso 2.} Usando $A^n\mathbf{v}=\lambda^n\mathbf{v}$ y que $0^{20}=0$, $1^{20}=1$, $(-1)^{20}=1$:
 \[
 A^{20}\mathbf{u} = 27\cdot 0^{20}\,\mathbf{v}_0 + (-13)\cdot 1^{20}\,\mathbf{v}_1 + (-2)\cdot(-1)^{20}\,\mathbf{v}_{-1}
 = (-13)\begin{pmatrix}-4\\2\\7\end{pmatrix} + (-2)\begin{pmatrix}-3\\1\\5\end{pmatrix}
@@ -1105,9 +1126,9 @@ El teorema de Cayley-Hamilton afirma que toda matriz cuadrada $n \times n$ satis
 \begin{enumerate}[$a)$]
 \item \textbf{Verifique el teorema de Cayley-Hamilton para la matriz $A = \begin{pmatrix} 3 & 6 \\ 1 & 2 \end{pmatrix}$.}
 \begin{myproof}
-Calculamos el polinomio característico:
+\textbf{Paso 1.} Calculamos el polinomio característico:
 \[
-p(\lambda) = \det(\lambda I - A) = 
+p(\lambda) = \det(\lambda I - A) =
 \begin{vmatrix}
 \lambda - 3 & -6 \\
 -1 & \lambda - 2
@@ -1116,11 +1137,12 @@ p(\lambda) = \det(\lambda I - A) =
 \]
 Por lo tanto, $c_1 = -5$ y $c_0 = 0$.
 
-El teorema de Cayley-Hamilton afirma que:
+\textbf{Paso 2.} El teorema de Cayley-Hamilton afirma que:
 \[
 A^2 - 5A = 0 \implies A^2 = 5A
 \]
-Verificamos:
+
+\textbf{Paso 3.} Verificamos calculando ambos lados:
 \[
 A^2 = \begin{pmatrix} 3 & 6 \\ 1 & 2 \end{pmatrix}^2 = \begin{pmatrix} 3\cdot3 + 6\cdot1 & 3\cdot6 + 6\cdot2 \\ 1\cdot3 + 2\cdot1 & 1\cdot6 + 2\cdot2 \end{pmatrix}
 = \begin{pmatrix} 9 + 6 & 18 + 12 \\ 3 + 2 & 6 + 4 \end{pmatrix}
@@ -1129,13 +1151,18 @@ A^2 = \begin{pmatrix} 3 & 6 \\ 1 & 2 \end{pmatrix}^2 = \begin{pmatrix} 3\cdot3 +
 \[
 5A = 5\begin{pmatrix} 3 & 6 \\ 1 & 2 \end{pmatrix} = \begin{pmatrix} 15 & 30 \\ 5 & 10 \end{pmatrix}
 \]
-Por lo tanto, $A^2 = 5A$, lo que verifica el teorema de Cayley-Hamilton para esta matriz.
+
+\textbf{Paso 4.} Ambos productos coinciden:
+\[
+\boxed{A^2 = 5A,}
+\]
+lo que verifica el teorema de Cayley-Hamilton para esta matriz.
 \end{myproof}
 \item \textbf{Use diagonalización para calcular $A^3$.}
 \begin{myproof}
-Los valores propios de $A$ son las raíces de $p(\lambda) = \lambda^2 - 5\lambda = \lambda(\lambda - 5)$, es decir, $\lambda_1 = 5$, $\lambda_2 = 0$.
+\textbf{Paso 1.} Los valores propios de $A$ son las raíces de $p(\lambda) = \lambda^2 - 5\lambda = \lambda(\lambda - 5)$, es decir, $\lambda_1 = 5$, $\lambda_2 = 0$.
 
-Los vectores propios asociados (normalizados) son:
+\textbf{Paso 2.} Los vectores propios asociados son:
 \[
 \text{Para }\lambda=5: \quad (A - 5I)x = 0 \implies \begin{pmatrix} -2 & 6 \\ 1 & -3 \end{pmatrix} \implies x_1 = 3x_2, \text{ elijo } x_2 = 1 \implies v_1 = \begin{pmatrix} 3 \\ 1 \end{pmatrix}
 \]
@@ -1144,43 +1171,39 @@ Los vectores propios asociados (normalizados) son:
 \]
 Formamos $P = \begin{pmatrix} 3 & -2 \\ 1 & 1 \end{pmatrix}$ y $D = \begin{pmatrix} 5 & 0 \\ 0 & 0 \end{pmatrix}$.
 
-Entonces,
+\textbf{Paso 3.} Calculamos $A^3 = P D^3 P^{-1}$:
 \[
-A^3 = P D^3 P^{-1}
-\]
-\[
-D^3 = \begin{pmatrix} 125 & 0 \\ 0 & 0 \end{pmatrix}
-\]
-\[
+D^3 = \begin{pmatrix} 125 & 0 \\ 0 & 0 \end{pmatrix}, \qquad
 P^{-1} = \frac{1}{5} \begin{pmatrix} 1 & 2 \\ -1 & 3 \end{pmatrix}
 \]
 \[
 A^3 = \begin{pmatrix} 3 & -2 \\ 1 & 1 \end{pmatrix} \begin{pmatrix} 125 & 0 \\ 0 & 0 \end{pmatrix} \frac{1}{5} \begin{pmatrix} 1 & 2 \\ -1 & 3 \end{pmatrix}
-= \begin{pmatrix} 75 & 150 \\ 25 & 50 \end{pmatrix}
+\implies \boxed{A^3 = \begin{pmatrix} 75 & 150 \\ 25 & 50 \end{pmatrix}.}
 \]
-Esto coincide con el resultado obtenido por diagonalización en los cálculos numéricos[2].
+El literal $d)$ obtiene este mismo resultado mediante el teorema de Cayley-Hamilton.
 \end{myproof}
 \item \textbf{El teorema de Cayley-Hamilton provee una forma de calcular potencias de una matriz. Demuestre que $A^3 = -c_1A^2 - c_0A$.}
 \begin{myproof}
-Por el teorema de Cayley-Hamilton, $A^2 + c_1A + c_0I = 0$, así que $A^2 = -c_1A - c_0I$.
+\textbf{Paso 1.} Por el teorema de Cayley-Hamilton, $A^2 + c_1A + c_0I = 0$, así que $A^2 = -c_1A - c_0I$.
 
-Multiplicando ambos lados por $A$:
+\textbf{Paso 2.} Multiplicando ambos lados por $A$:
 \[
-A^3 = A \cdot A^2 = A(-c_1A - c_0I) = -c_1A^2 - c_0A
+A^3 = A \cdot A^2 = A(-c_1A - c_0I) = -c_1A^2 - c_0A,
 \]
-Esto demuestra la relación.
+que es la relación pedida.
 \end{myproof}
 \item \textbf{Use el ítem anterior para calcular $A^3$ con la matriz $A = \begin{pmatrix} 3 & 6 \\ 1 & 2 \end{pmatrix}$. Compare con el resultado obtenido por diagonalización.}
 \begin{myproof}
-Para esta matriz, $c_1 = -5$, $c_0 = 0$, así que:
+\textbf{Paso 1.} Para esta matriz, $c_1 = -5$, $c_0 = 0$, así que:
 \[
 A^3 = -(-5)A^2 - 0 \cdot A = 5A^2
 \]
-Ya calculamos $A^2 = \begin{pmatrix} 15 & 30 \\ 5 & 10 \end{pmatrix}$, así que:
+
+\textbf{Paso 2.} Ya calculamos $A^2 = \begin{pmatrix} 15 & 30 \\ 5 & 10 \end{pmatrix}$ en el literal $a)$, así que:
 \[
-A^3 = 5 \begin{pmatrix} 15 & 30 \\ 5 & 10 \end{pmatrix} = \begin{pmatrix} 75 & 150 \\ 25 & 50 \end{pmatrix}
+A^3 = 5 \begin{pmatrix} 15 & 30 \\ 5 & 10 \end{pmatrix} \implies \boxed{A^3 = \begin{pmatrix} 75 & 150 \\ 25 & 50 \end{pmatrix},}
 \]
-Esto coincide exactamente con el resultado obtenido por diagonalización.
+que coincide exactamente con el resultado obtenido por diagonalización en el literal $b)$.
 \end{myproof}
 \end{enumerate}
 \end{prob}
@@ -1190,11 +1213,13 @@ Esto coincide exactamente con el resultado obtenido por diagonalización.
 % Básico
 \begin{prob} Suponga que $A$ es una matriz invertible con valor propio $\lambda$ y su vector propio correspondiente ${\bf{v}}.$ ¿Es  ${\bf{v}}$ un vector propio de $A^{-1}$? Haga una demostración o muestre un contraejemplo.
 \begin{myproof}
-Si $A\mathbf{v} = \lambda \mathbf{v}$ y $A$ es invertible, entonces:
+\textbf{Paso 1.} Como $A$ es invertible, $\lambda \neq 0$ (Corolario \ref{cor:cerovp}), así que $\lambda^{-1}$ existe.
+
+\textbf{Paso 2.} Aplicando $A^{-1}$ a ambos lados de $A\mathbf{v} = \lambda \mathbf{v}$:
 \[
-A\mathbf{v} = \lambda \mathbf{v} \implies \mathbf{v} = \lambda^{-1} A \mathbf{v} \implies A^{-1} \mathbf{v} = \lambda^{-1} \mathbf{v}
+A\mathbf{v} = \lambda \mathbf{v} \implies \mathbf{v} = \lambda\, A^{-1} \mathbf{v} \implies A^{-1} \mathbf{v} = \lambda^{-1} \mathbf{v}
 \]
-Por lo tanto, $\mathbf{v}$ es vector propio de $A^{-1}$ con valor propio $\lambda^{-1}$ (si $\lambda \neq 0$).
+Por lo tanto, $\mathbf{v}$ sí es vector propio de $A^{-1}$, con valor propio $\lambda^{-1}$.
 \end{myproof}
 \end{prob}
 
@@ -1217,21 +1242,18 @@ y_{2}^{\prime}&=&2y_1+y_2\\
 \end{matrix} \right. $ con las condiciones iniciales $y_{1}(0)=3,$ $y_{2}(0)=1.$
 
 \begin{myproof}
-La matriz de coeficientes es $A = \begin{pmatrix} 1 & 2 \\ 2 & 1 \end{pmatrix}$.
+\textbf{Paso 1.} La matriz de coeficientes es $A = \begin{pmatrix} 1 & 2 \\ 2 & 1 \end{pmatrix}$, con polinomio característico $\lambda^2 - 2\lambda - 3 = 0 \implies \lambda_1=3, \lambda_2=-1$.
 
-Polinomio característico: $\lambda^2 - 2\lambda - 3 = 0 \implies \lambda_1=3, \lambda_2=-1$
+\textbf{Paso 2.} Vectores propios: para $\lambda=3$, $\mathbf{v}_1 = \begin{pmatrix} 1 \\ 1 \end{pmatrix}$; para $\lambda=-1$, $\mathbf{v}_2 = \begin{pmatrix} 1 \\ -1 \end{pmatrix}$.
 
-Vectores propios: para $\lambda=3$, $\mathbf{v}_1 = \begin{pmatrix} 1 \\ 1 \end{pmatrix}$; para $\lambda=-1$, $\mathbf{v}_2 = \begin{pmatrix} 1 \\ -1 \end{pmatrix}$.
-
-Solución general:
+\textbf{Paso 3.} Solución general:
 \[
 \mathbf{y}(x) = c_1 e^{3x} \begin{pmatrix} 1 \\ 1 \end{pmatrix} + c_2 e^{-x} \begin{pmatrix} 1 \\ -1 \end{pmatrix}
 \]
-Condiciones iniciales: $y_1(0)=3$, $y_2(0)=1$ $\implies$ $c_1 + c_2 = 3$, $c_1 - c_2 = 1$ $\implies$ $c_1 = 2$, $c_2 = 1$.
 
-Solución particular:
+\textbf{Paso 4.} Condiciones iniciales: $y_1(0)=3$, $y_2(0)=1$ $\implies$ $c_1 + c_2 = 3$, $c_1 - c_2 = 1$ $\implies$ $c_1 = 2$, $c_2 = 1$. Solución particular:
 \[
-y_1(x) = 2e^{3x} + e^{-x},\quad y_2(x) = 2e^{3x} - e^{-x}
+\boxed{y_1(x) = 2e^{3x} + e^{-x},\quad y_2(x) = 2e^{3x} - e^{-x}.}
 \]
 \end{myproof}
 
@@ -1241,19 +1263,16 @@ y_{2}^{\prime}&=&3y_1+2y_2\\
 \end{matrix} \right. $ con las condiciones iniciales $y_{1}(0)=1,$ $y_{2}(0)=5.$
 
 \begin{myproof}
-$A = \begin{pmatrix} 4 & 1 \\ 3 & 2 \end{pmatrix}$.
+\textbf{Paso 1.} $A = \begin{pmatrix} 4 & 1 \\ 3 & 2 \end{pmatrix}$, con polinomio característico $\lambda^2 - 6\lambda + 5 = 0 \implies \lambda_1=5, \lambda_2=1$.
 
-Polinomio característico: $\lambda^2 - 6\lambda + 5 = 0 \implies \lambda_1=5, \lambda_2=1$
+\textbf{Paso 2.} Vectores propios: para $\lambda=5$, $\mathbf{v}_1 = \begin{pmatrix} 1 \\ 1 \end{pmatrix}$; para $\lambda=1$, $\mathbf{v}_2 = \begin{pmatrix} 1 \\ -3 \end{pmatrix}$.
 
-Vectores propios: para $\lambda=5$, $\mathbf{v}_1 = \begin{pmatrix} 1 \\ 1 \end{pmatrix}$; para $\lambda=1$, $\mathbf{v}_2 = \begin{pmatrix} 1 \\ -3 \end{pmatrix}$.
-
-Solución general:
+\textbf{Paso 3.} Solución general:
 \[
 \mathbf{y}(x) = c_1 e^{5x} \begin{pmatrix} 1 \\ 1 \end{pmatrix} + c_2 e^{x} \begin{pmatrix} 1 \\ -3 \end{pmatrix}
 \]
-Condiciones iniciales: $y_1(0)=1$, $y_2(0)=5$
 
-Sistema para $c_1, c_2$:
+\textbf{Paso 4.} Con las condiciones iniciales $y_1(0)=1$, $y_2(0)=5$:
 \[
 \begin{cases}
 c_1 + c_2 = 1 \\
@@ -1263,7 +1282,7 @@ c_1 - 3c_2 = 5
 \]
 Solución particular:
 \[
-y_1(x) = 2e^{5x} - e^{x},\quad y_2(x) = 2e^{5x} + 3e^{x}
+\boxed{y_1(x) = 2e^{5x} - e^{x},\quad y_2(x) = 2e^{5x} + 3e^{x}.}
 \]
 \end{myproof}
 
@@ -1274,22 +1293,19 @@ y_{3}^{\prime}&=&-2y_1+y_3\\
 \end{matrix} \right. $ con las condiciones iniciales $y_{1}(0)=-1,$ $y_{2}(0)=1,$ $y_3(0)=0.$
 
 \begin{myproof}
-La matriz es $A = \begin{pmatrix} 4 & 0 & 1 \\ -2 & 1 & 0 \\ -2 & 0 & 1 \end{pmatrix}$.
+\textbf{Paso 1.} La matriz es $A = \begin{pmatrix} 4 & 0 & 1 \\ -2 & 1 & 0 \\ -2 & 0 & 1 \end{pmatrix}$, con polinomio característico $\det(\lambda I - A) = (\lambda-1)(\lambda-2)(\lambda-3) = 0$: valores propios $\lambda_1=1$, $\lambda_2=2$, $\lambda_3=3$ (multiplicidad algebraica 1 cada uno).
 
-Polinomio característico: $\det(\lambda I - A) = (\lambda-1)(\lambda-2)(\lambda-3) = 0$.
-
-Valores propios: $\lambda_1=1$, $\lambda_2=2$, $\lambda_3=3$ (multiplicidad algebraica 1 cada uno).
-
-Vectores propios:
+\textbf{Paso 2.} Vectores propios:
 \begin{itemize}
   \item $\lambda=1$: $\mathbf{v}_1 = \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix}$; \quad $\lambda=2$: $\mathbf{v}_2 = \begin{pmatrix} -1 \\ 2 \\ 2 \end{pmatrix}$; \quad $\lambda=3$: $\mathbf{v}_3 = \begin{pmatrix} 1 \\ -1 \\ -1 \end{pmatrix}$.
 \end{itemize}
 
-Solución general:
+\textbf{Paso 3.} Solución general:
 \[
 \mathbf{y}(x) = c_1 e^{x} \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} + c_2 e^{2x} \begin{pmatrix} -1 \\ 2 \\ 2 \end{pmatrix} + c_3 e^{3x} \begin{pmatrix} 1 \\ -1 \\ -1 \end{pmatrix}
 \]
-Condiciones iniciales $y_1(0)=-1$, $y_2(0)=1$, $y_3(0)=0$:
+
+\textbf{Paso 4.} Condiciones iniciales $y_1(0)=-1$, $y_2(0)=1$, $y_3(0)=0$:
 \[
 \begin{cases}
 -c_2 + c_3 = -1 \\
@@ -1324,22 +1340,23 @@ y_{2}^{\prime}&=&6y_1+y_2\\
 \]
 Resuelva este sistema y use sus resultados para resolver la ecuación diferencial original. Realice un procedimiento similar para las ecuaciones $y^{\prime \prime}+y^{\prime}-12y=0$ y $y^{\prime \prime \prime}-6y^{\prime\prime}+11y^{\prime}-6y=0.$
 \begin{myproof}
-Para $y''-y'-6y=0$, definimos $y_1=y$, $y_2=y'$. Entonces $y_1'=y_2$, $y_2'=y''=y'+6y=y_2+6y_1$.
-
-El sistema es:
+\textbf{Paso 1.} Para $y''-y'-6y=0$, definimos $y_1=y$, $y_2=y'$. Entonces $y_1'=y_2$, $y_2'=y''=y'+6y=y_2+6y_1$, y el sistema es:
 \[
 \begin{pmatrix} y_1' \\ y_2' \end{pmatrix} = \begin{pmatrix} 0 & 1 \\ 6 & 1 \end{pmatrix} \begin{pmatrix} y_1 \\ y_2 \end{pmatrix}
 \]
 
-El polinomio característico es $\lambda^2 - \lambda - 6 = 0 \implies \lambda=3,-2$.
+\textbf{Paso 2.} El polinomio característico es $\lambda^2 - \lambda - 6 = 0 \implies \lambda=3,-2$.
 
-Solución general: $y(x) = c_1 e^{3x} + c_2 e^{-2x}$.
+\textbf{Paso 3.} Como $y=y_1$, la solución de la ecuación original es:
+\[
+\boxed{y(x) = c_1 e^{3x} + c_2 e^{-2x}.}
+\]
 
-Repetir el procedimiento para las otras ecuaciones:
-- $y'' + y' - 12y = 0$: sistema $\begin{pmatrix} 0 & 1 \\ 12 & -1 \end{pmatrix}$, raíces $\lambda=3,-4$.
-- $y''' - 6y'' + 11y' - 6y = 0$: sistema de $3\times 3$, polinomio característico $\lambda^3 - 6\lambda^2 + 11\lambda - 6 = 0$ (raíces $\lambda=1,2,3$).
-
-Solución general: combinación lineal de exponentes con las raíces encontradas.
+\textbf{Paso 4.} Repitiendo el procedimiento para las otras ecuaciones:
+\begin{itemize}
+  \item $y'' + y' - 12y = 0$: sistema $\begin{pmatrix} 0 & 1 \\ 12 & -1 \end{pmatrix}$, raíces $\lambda=3,-4$ $\implies$ $y(x)=c_1e^{3x}+c_2e^{-4x}$.
+  \item $y''' - 6y'' + 11y' - 6y = 0$: sistema de $3\times 3$, polinomio característico $\lambda^3 - 6\lambda^2 + 11\lambda - 6 = 0$ (raíces $\lambda=1,2,3$) $\implies$ $y(x)=c_1e^{x}+c_2e^{2x}+c_3e^{3x}$.
+\end{itemize}
 \end{myproof}
 \end{prob}
 
@@ -1354,11 +1371,11 @@ i_{L}^{\prime}(t)\\v_{C}^{\prime}(t)\\
 \begin{enumerate}[$(a)$]
 \item Calcule la solución general del sistema cuando $R=1\ \Omega,$ $L=1\ H,$ y $C=0.5\ F.$
 \begin{myproof}
-Con $R=1$, $L=1$ y $C=0.5$ se tiene $\tfrac{1}{L}=1$, $\tfrac{1}{C}=2$ y $\tfrac{1}{RC}=2$, así que la matriz del sistema es $A = \begin{pmatrix} 0 & 1 \\ -2 & -2 \end{pmatrix}$.
+\textbf{Paso 1.} Con $R=1$, $L=1$ y $C=0.5$ se tiene $\tfrac{1}{L}=1$, $\tfrac{1}{C}=2$ y $\tfrac{1}{RC}=2$, así que la matriz del sistema es $A = \begin{pmatrix} 0 & 1 \\ -2 & -2 \end{pmatrix}$.
 
-Polinomio característico: $\lambda^2 + 2\lambda + 2 = 0 \implies \lambda = -1 \pm i$.
+\textbf{Paso 2.} Polinomio característico: $\lambda^2 + 2\lambda + 2 = 0 \implies \lambda = -1 \pm i$.
 
-Para $\lambda = -1+i$ un vector propio es $\mathbf{v} = \begin{pmatrix} 1 \\ -1+i \end{pmatrix} = \begin{pmatrix} 1 \\ -1 \end{pmatrix} + i\begin{pmatrix} 0 \\ 1 \end{pmatrix}$. Separando las partes real e imaginaria de $e^{\lambda t}\,\mathbf{v}$ se obtiene la solución general real:
+\textbf{Paso 3.} Para $\lambda = -1+i$ un vector propio es $\mathbf{v} = \begin{pmatrix} 1 \\ -1+i \end{pmatrix} = \begin{pmatrix} 1 \\ -1 \end{pmatrix} + i\begin{pmatrix} 0 \\ 1 \end{pmatrix}$. Separando las partes real e imaginaria de $e^{\lambda t}\,\mathbf{v}$ se obtiene la solución general real:
 \[
 \begin{pmatrix} i_L(t) \\ v_C(t) \end{pmatrix}
 = c_1\, e^{-t}\begin{pmatrix} \cos t \\ -\cos t - \sen t \end{pmatrix}
@@ -1369,10 +1386,12 @@ donde $c_1$ y $c_2$ se determinan por condiciones iniciales.
 
 \item Calcule $i_{L}$ y $v_{C}$ cuando $i_{L}(0)=2$ amperios y $v_{C}(0)=1$ voltio.
 \begin{myproof}
-Evaluando la solución general del literal anterior en $t=0$: $i_L(0) = c_1 = 2$ y $v_C(0) = -c_1 + c_2 = 1$, de donde $c_2 = 3$. Sustituyendo:
+\textbf{Paso 1.} Evaluando la solución general del literal anterior en $t=0$: $i_L(0) = c_1 = 2$ y $v_C(0) = -c_1 + c_2 = 1$, de donde $c_2 = 3$.
+
+\textbf{Paso 2.} Sustituyendo:
 \[
-i_L(t) = e^{-t}\left(2\cos t + 3\,\sen t\right), \qquad
-v_C(t) = e^{-t}\left(\cos t - 5\,\sen t\right).
+\boxed{i_L(t) = e^{-t}\left(2\cos t + 3\,\sen t\right), \qquad
+v_C(t) = e^{-t}\left(\cos t - 5\,\sen t\right).}
 \]
 \end{myproof}
 

@@ -516,7 +516,13 @@ Mínimo 8–10 resueltos (example con myproof) + 15–20 propuestos (sin myproof
 
 ### F9AL.42 — vvpropios: 27 myproof → protocolo 4 pasos
 **Nota:** ejecutar tras F9AL.21 (las elevaciones de ese ítem reducen el conteo del banco).
-**Estado:** Pendiente
+**Estado:** Completado — 2026-07-10
+
+**Notas de ejecución:**
+- Tras F9AL.21/.46 el archivo tenía 33 myproof, 23 sin marca `Paso N` (todos en el banco §8.6). **21 reestructurados** a protocolo con `\boxed{}` en los resultados computacionales: 3 literales de matrices con $D$ (Jordan $J_2(-3)$, complejos $a\pm ib$, rotación $e^{\pm i\theta}$), 2 del parámetro $a$, el de vp $0,3,-3$ (Paso 4 resumen nuevo), demostración de la raíz $m$ (3 pasos, sin boxed por ser demostración), $A^2(4,3)$, 2 de $A^{20}$, 4 de Cayley-Hamilton, $A^{-1}$, 3 sistemas EDO, EDO de orden superior, LRC (a)/(b).
+- **2 excepciones de prosa registradas** (criterio ampliación: ≤4 líneas, una sola cadena): prob «$3\mathbf{v}$ vector propio de $A^{-1}$» (2 líneas) y literal (c) del LRC ($t\to\infty$, 2 líneas).
+- **Mejoras de auditoría:** prob de $A^{-1}$ justifica $\lambda\neq0$ con `\ref{cor:cerovp}`; artefacto de cita `[2]` eliminado en C-H (b) (frase circular → remisión al literal d); «(normalizados)» corregido (no lo estaban); EDO de orden superior con soluciones generales explícitas de las otras 2 ecuaciones e `itemize` en vez de guiones.
+- Balance: 33/33 myproof, 28/28 prob, 12/12 example, 0 huérfanos. Compilación limpia (2 pasadas): 0 errores `!`, 0 refs indefinidas, 790 pp.
 
 ### F9AL.43 — translineales: 47 myproof → protocolo 4 pasos (2 lotes)
 **Nota:** ejecutar tras F9AL.26/.27.
@@ -592,7 +598,7 @@ Mínimo 8–10 resueltos (example con myproof) + 15–20 propuestos (sin myproof
 | F9AL.39 | `sel.tex` | 18 myproof → 4 pasos | Pendiente | — | Ampliación 2026-07-10 |
 | F9AL.40 | `espaciosvectoriales.tex` | 11 myproof → 4 pasos | Pendiente | — | Ampliación 2026-07-10 |
 | F9AL.41 | `prodinterno.tex` | 15 myproof → 4 pasos | Pendiente | — | Ampliación 2026-07-10 |
-| F9AL.42 | `vvpropios.tex` | 27 myproof → 4 pasos | Pendiente | — | Tras F9AL.21 |
+| F9AL.42 | `vvpropios.tex` | 27 myproof → 4 pasos | Completado | 2026-07-10 | 21/23 reestructurados con boxed; 2 excepciones prosa (≤4 líneas) registradas; artefacto [2] y «normalizados» corregidos; ref a cor:cerovp. 790 pp, 0 errores. |
 | F9AL.43 | `translineales.tex` | 47 myproof → 4 pasos (2 lotes) | Pendiente | — | Tras F9AL.26/.27 |
 | F9AL.44 | `complejos.tex` | 24 myproof → 4 pasos | Pendiente | — | Tras F9AL.28 |
 | F9AL.45 | `vectoresrn.tex` | 27 myproof → 4 pasos (bloque V) | Pendiente | — | Tras F9AL.37; opcional |
