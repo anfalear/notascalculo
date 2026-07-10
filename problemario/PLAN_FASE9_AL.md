@@ -313,7 +313,15 @@ Mínimo 8–10 resueltos (example con myproof) + 15–20 propuestos (sin myproof
 **Acción:** (a) escribir el párrafo introductorio del capítulo (único del libro sin él): motivar Av=λv como "direcciones que A no tuerce", conexión hacia atrás (matrices/determinantes vía ecuación característica) y hacia adelante (diagonalización, sistemas de EDOs — `\ref` a cap29). Si se aprueba la Decisión E2 (intercambio con translineales), motivar además desde la matriz de una transformación. (b) Insertar secciones: `\section{Valores y vectores propios}`, `\section{Diagonalización}`, `\section{Teorema de Cayley-Hamilton y potencias de matrices}`, manteniendo `\section{Algunas aplicaciones adicionales}` al final.
 **Criterio de cierre:** intro de 5–9 líneas presente; ≥4 secciones; compilación limpia.
 **Líneas estimadas:** 40–80
-**Estado:** Pendiente
+**Estado:** Completado — 2026-07-10
+
+**Notas de ejecución:**
+- **Intro** (5 frases tras `\chapter`): motiva $A\mathbf{v}=\lambda\mathbf{v}$ como «direcciones que la matriz no tuerce»; conexión hacia atrás con determinantes (`\ref{matrdet}`) y espacios nulos (`\ref{sel}`); hacia adelante con diagonalización, potencias y sistemas de EDOs (`\ref{sistemasedos}`). La parte condicional de la acción (Decisión E2) no aplica: E2 no está aprobada.
+- **Labels nuevos:** `\label{vvpropios}` en el chapter; `\label{sistemasedos}` añadido a `cap29_Sistemas de EDOs.tex` (no tenía y la intro lo referencia; servirá también para F9AL.22).
+- **7 secciones** insertadas sin mover contenido (títulos ajustados al contenido real): §8.1 Valores y vectores propios; §8.2 Diagonalización y potencias de matrices (la rem de potencias `potdim` y el example $A^6$ están físicamente aquí y dependen de $A=PDP^{-1}$, no de Cayley-Hamilton — por eso «potencias» va en este título y no en el de C-H como esbozaba el plan); §8.3 Aplicación: sistemas de ecuaciones diferenciales lineales; §8.4 El teorema de Cayley-Hamilton; §8.5 Valores propios e invertibilidad (Caracterización v5 + 2 probs sobre vectores propios de $A^{-1}$); §8.6 Problemas resueltos adicionales (heading anticipado para F9AL.21, precedente F9AL.08); §8.7 Algunas aplicaciones adicionales (existente).
+- Única micro-reubicación: la frase puente «Algunas aplicaciones adicionales…» estaba **antes** del heading de su sección → movida después.
+- **Hallazgo registrado para F9AL.21:** en l.92–98 hay un `\begin{proof}` huérfano (sin enunciado) que demuestra «$A$ invertible $\iff$ $\lambda=0$ no es valor propio» — aparentemente se perdió el enunciado del corolario. Duplica el ítem 18 de la Caracterización v5 (§8.5) y su prueba. No se tocó (regla: nada se corrige sin decisión del autor). Opciones para el autor en F9AL.21: (a) añadir el enunciado de corolario perdido tras el coro de triangulares; (b) fusionarlo con la v5.
+- Compilación limpia (2 pasadas): 0 errores `!`, 0 refs indefinidas, 782 pp.
 
 ### F9AL.20 — vvpropios: figuras nuevas R2 (capítulo con CERO figuras)
 **Acción:** (a) acción de A sobre vector propio (v escala λv, w genérico rota) — TikZ 2D con flechas rojas/azules; (b) diagrama de cajas de diagonalización A = PDP⁻¹ (cambio de base). Insertar tras la definición y tras el teorema de diagonalización respectivamente.
@@ -445,6 +453,61 @@ Mínimo 8–10 resueltos (example con myproof) + 15–20 propuestos (sin myproof
 
 ---
 
+## Ampliación 2026-07-10 — Protocolo de 4 pasos en los bancos de resueltos (F9AL.38–.45)
+
+**Decisión del autor (2026-07-10):** el autor detectó que muchos `myproof` del bloque AL carecen del protocolo de 4 pasos. El plan original solo cubría los `example` (incluidas elevaciones); la Decisión F conservaba los myproof de los bancos «íntegros» pero nunca decidió sobre su formato interno. Se aprueba extender a AL el mismo criterio aplicado en C3 (F8.40–F8.47): **todo myproof computacional → protocolo `\textbf{Paso N.}` + `\boxed{}` final**.
+
+**Inventario del escaneo (2026-07-10) — myproof sin marca `Paso N`:**
+
+| Archivo | myproof | sin protocolo |
+|---|---|---|
+| matrices.tex | 50 | 26 |
+| sel.tex | 32 | 18 |
+| espaciosvectoriales.tex | 25 | 11 |
+| prodinterno.tex | 30 | 15 |
+| vvpropios.tex | 32 | 27 |
+| translineales.tex | 56 | 47 |
+| complejos.tex | 24 | 24 |
+| vectoresrn.tex | 32 | 27 |
+| **Total** | **281** | **195** |
+
+**Criterio común a los 8 ítems (heredado de F8.44–F8.47 + GUIA §2.2):**
+- Computacionales → 4 pasos (`Paso 1.` planteamiento/estrategia … `Paso 4.` conclusión con `\boxed{}`); el número de pasos puede exceder 4 si el cómputo lo exige.
+- Multi-parte → `Paso 1.` Estrategia común + pasos por sub-parte (patrón F8.44), o protocolo completo dentro de cada literal si las partes son independientes.
+- Demostraciones teóricas breves (una sola cadena de implicaciones, ≤4 líneas) pueden conservarse en prosa — se registra cada excepción en Notas (análogo al criterio «ilustrativo» de los examples).
+- La aritmética NO se re-deriva (ya verificada en V3.x/V4.x): solo se reestructura. Si la reestructuración revela una inconsistencia, se registra sin corregir y se escala al autor.
+- Compilación limpia tras cada ítem; si un capítulo excede 300 líneas modificadas, se parte en lotes internos con compilación entre lotes.
+
+### F9AL.38 — matrices: 26 myproof → protocolo 4 pasos
+**Estado:** Pendiente
+
+### F9AL.39 — sel: 18 myproof → protocolo 4 pasos
+**Estado:** Pendiente
+
+### F9AL.40 — espaciosvectoriales: 11 myproof → protocolo 4 pasos
+**Estado:** Pendiente
+
+### F9AL.41 — prodinterno: 15 myproof → protocolo 4 pasos
+**Estado:** Pendiente
+
+### F9AL.42 — vvpropios: 27 myproof → protocolo 4 pasos
+**Nota:** ejecutar tras F9AL.21 (las elevaciones de ese ítem reducen el conteo del banco).
+**Estado:** Pendiente
+
+### F9AL.43 — translineales: 47 myproof → protocolo 4 pasos (2 lotes)
+**Nota:** ejecutar tras F9AL.26/.27.
+**Estado:** Pendiente
+
+### F9AL.44 — complejos: 24 myproof → protocolo 4 pasos
+**Nota:** ejecutar tras F9AL.28 (las 8–10 elevaciones de ese ítem ya salen con 4 pasos; este ítem cubre el resto del banco).
+**Estado:** Pendiente
+
+### F9AL.45 — vectoresrn: 27 myproof → protocolo 4 pasos (bloque V, opcional)
+**Nota:** ejecutar tras F9AL.37; hereda la condición de alcance del bloque V.
+**Estado:** Pendiente
+
+---
+
 ## Registro de progreso
 
 | Ítem | Archivo(s) | Acción | Estado | Fecha | Notas |
@@ -467,7 +530,7 @@ Mínimo 8–10 resueltos (example con myproof) + 15–20 propuestos (sin myproof
 | F9AL.16 | `prodinterno.tex` | Estructura de secciones (0 actuales) | Completado | 2026-07-08 | 7 secciones (6 temáticas + banco §7.7, incluye §7.6 Series de Fourier); heading de propuestos diferido a F9AL.18 (0 probs sin solución al final). 780 pp, 0 errores. |
 | F9AL.17 | `prodinterno.tex` | 2 figuras nuevas + auditoría | Completado | 2026-07-08 | fig:proyeccion_ortogonal, fig:gram_schmidt_r2 (aritmética exacta, verificadas pp. 190–191); label añadido a recta mín. cuadrados; fig1→fig:altura_triangulo. |
 | F9AL.18 | `prodinterno.tex` | Protocolo + residuales + propuestos | Completado | 2026-07-09 | **2 errores de Fourier corregidos** (factores `(-1)^k` de `[-π,π]` en problemas sobre `[0,2π]`, verificado SymPy). 5 elevaciones (incl. 1er ejemplo de §7.6). Banco 17 probs 6B/7I/4D. §7.8 propuestos creada: 18 probs 5B/9I/4D. `prob[Regresión polinómica]`→`rem`. Respuesta evasiva corregida con contraejemplo. 782 pp, 0 errores. |
-| F9AL.19 | `vvpropios.tex` | Intro + estructura de secciones | Pendiente | — | — |
+| F9AL.19 | `vvpropios.tex` | Intro + estructura de secciones | Completado | 2026-07-10 | Intro 5 frases (refs a matrdet/sel/sistemasedos); 7 secciones sin mover contenido; labels `vvpropios` + `sistemasedos` (cap29); heading banco anticipado; `proof` huérfano l.92 registrado para F9AL.21. 782 pp, 0 errores. |
 | F9AL.20 | `vvpropios.tex` | 2 figuras nuevas R2 | Pendiente | — | — |
 | F9AL.21 | `vvpropios.tex` | Sección propuestos + Decisión F | Pendiente | — | — |
 | F9AL.22 | `vvpropios.tex` | Remisiones cruzadas EDO (cap29) | Pendiente | — | — |
@@ -486,8 +549,16 @@ Mínimo 8–10 resueltos (example con myproof) + 15–20 propuestos (sin myproof
 | F9AL.35 | `vectoresrn.tex` | Estructura de secciones (bloque V, opcional) | Pendiente | — | Requiere decisión de alcance |
 | F9AL.36 | `vectoresrn.tex` | Auditoría 26 figuras + figrayo (bloque V) | Parcial | 2026-07-09 | `figrayo` resuelto: eran 2 figuras distintas sin caption y sin referencias → `fig:rayo_reflejado` + `fig:rayo_construccion_vector`, con captions y 2 `\ref` nuevas. 0 warnings de labels. Faltan las otras 24 figuras y `axis equal image`. |
 | F9AL.37 | `vectoresrn.tex` | Protocolo + propuestos (bloque V) | Pendiente | — | — |
+| F9AL.38 | `matrices.tex` | 26 myproof → 4 pasos | Pendiente | — | Ampliación 2026-07-10 |
+| F9AL.39 | `sel.tex` | 18 myproof → 4 pasos | Pendiente | — | Ampliación 2026-07-10 |
+| F9AL.40 | `espaciosvectoriales.tex` | 11 myproof → 4 pasos | Pendiente | — | Ampliación 2026-07-10 |
+| F9AL.41 | `prodinterno.tex` | 15 myproof → 4 pasos | Pendiente | — | Ampliación 2026-07-10 |
+| F9AL.42 | `vvpropios.tex` | 27 myproof → 4 pasos | Pendiente | — | Tras F9AL.21 |
+| F9AL.43 | `translineales.tex` | 47 myproof → 4 pasos (2 lotes) | Pendiente | — | Tras F9AL.26/.27 |
+| F9AL.44 | `complejos.tex` | 24 myproof → 4 pasos | Pendiente | — | Tras F9AL.28 |
+| F9AL.45 | `vectoresrn.tex` | 27 myproof → 4 pasos (bloque V) | Pendiente | — | Tras F9AL.37; opcional |
 
-**Total: 37 ítems** (34 núcleo + 3 bloque V opcional).
+**Total: 45 ítems** (41 núcleo + 4 bloque V opcional). F9AL.34 (cierre de bloque) se ejecuta después de F9AL.44.
 
 ---
 

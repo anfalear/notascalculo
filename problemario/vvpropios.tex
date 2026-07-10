@@ -1,4 +1,7 @@
-\chapter{Valores y vectores propios}
+\chapter{Valores y vectores propios}\label{vvpropios}
+En este capítulo se estudian los valores y vectores propios de una matriz cuadrada $A$: los vectores no nulos que la matriz no ``tuerce'', sino que únicamente estira, contrae o invierte, de modo que $A\mathbf{v}=\lambda\mathbf{v}$ para algún escalar $\lambda$. Hallarlos se reduce a resolver la ecuación característica $\det(\lambda I-A)=0$, un polinomio en $\lambda$ que conecta este capítulo con las técnicas de determinantes del Capítulo~\ref{matrdet}, mientras que el espacio propio asociado a cada $\lambda$ se calcula como el espacio nulo de la matriz $\lambda I-A$ con los métodos del Capítulo~\ref{sel}. Sobre estos conceptos se construye la diagonalización $A=PDP^{-1}$, que permite calcular potencias $A^{k}$ de manera eficiente y resolver sistemas de ecuaciones diferenciales lineales; este último tema se retoma de forma sistemática en el Capítulo~\ref{sistemasedos}. El capítulo cierra con el teorema de Cayley-Hamilton y una muestra de aplicaciones adicionales: cadenas de Markov, formas cuadráticas y sistemas dinámicos.
+
+\section{Valores y vectores propios}
 
 \begin{definition}[Valores y vectores propios]
 	Sea $A$ una matriz cuadrada $n\times n$. Un vector no nulo $\mathbf{v}\in \mathbb{R}^n$ es llamado \textbf{vector propio} (también conocido como \textbf{autovector} o \textbf{eigenvector}) de la matriz $A$ asociado al \textbf{valor propio} $\lambda \in \mathbb{R}$ (también llamado \textbf{autovalor} o \textbf{eigenvalor}) si satisface la ecuación:
@@ -376,6 +379,8 @@ Estos valores propios complejos permiten interpretar la acción de la matriz com
 
 
 
+\section{Diagonalización y potencias de matrices}
+
 \begin{definition}[Matriz diagonalizable]
 Una matriz $A \in M_n(\mathbb{R})$ es \textbf{diagonalizable} si existe una matriz invertible $P$ y una matriz diagonal $D$ tales que: \(A = PDP^{-1}.\)
 \end{definition}
@@ -498,6 +503,8 @@ A^6 \begin{pmatrix} 4 \\ 3 \end{pmatrix}
 \end{myproof}
 \end{example}
 
+
+\section{Aplicación: sistemas de ecuaciones diferenciales lineales}
 
 \begin{prob}[Solución de ecuaciones diferenciales de primer orden con coeficientes constantes]
 Una ecuación diferencial (E.D.) es una igualdad que involucra derivadas y cuya solución consiste en encontrar una función que satisfaga dicha relación. Por ejemplo, para la ecuación $y' = 5y$, la solución se obtiene así:
@@ -665,6 +672,8 @@ y_2(x) = \dfrac{7}{4} e^{7x} - \dfrac{3}{4} e^{-x}
 \end{myproof}
 \end{example}
 
+\section{El teorema de Cayley-Hamilton}
+
 \begin{theorem}[Cayley-Hamilton]
 Sea $A \in M_n(F)$ una matriz cuadrada de orden $n$ sobre un cuerpo $F$. Sea $p_A(\lambda) = \det(\lambda I - A)$ el polinomio característico de $A$. Entonces,
 \[
@@ -788,6 +797,8 @@ Esto coincide exactamente con el resultado obtenido por diagonalización.
 \end{prob}
 
 
+\section{Valores propios e invertibilidad}
+
 \begin{theorem}[Caracterización de matrices invertibles - Versión 5]
 Sea $A$ una matriz $n\times n$, las siguientes afirmaciones son equivalentes: \begin{enumerate}
     \item $A$ es invertible.
@@ -830,6 +841,8 @@ Sí, porque si $A\mathbf{v} = \lambda \mathbf{v}$, entonces $A^{-1}(3\mathbf{v})
 
 
 
+
+\section{Problemas resueltos adicionales}
 
 \begin{prob}
 Dadas las siguientes matrices calcule sus valores y vectores propios, determine las multiplicidades algebraicas y geométricas correspondientes a cada valor propio. Si la matriz es diagonalizable, calcule su matriz diagonal $D$ asociada.
@@ -1222,10 +1235,10 @@ Como la parte exponencial es $e^{-t/2}$, ambos tienden a cero cuando $t\to\infty
 \end{enumerate}
 \end{prob}
 
-Algunas aplicaciones adicionales de los valores y vectores propios se enuncian a continuación:
-
 % --- Cadenas de Markov ---
 \section{Algunas aplicaciones adicionales}
+
+Algunas aplicaciones adicionales de los valores y vectores propios se enuncian a continuación:
 
 \begin{definition}
 Una \textbf{cadena de Markov} es un proceso estocástico con un número finito de estados, en el cual la probabilidad de transición al siguiente estado depende únicamente del estado actual, y no de los anteriores. Las probabilidades de transición permanecen constantes en el tiempo.
