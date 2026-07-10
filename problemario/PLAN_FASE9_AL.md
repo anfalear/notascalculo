@@ -429,7 +429,13 @@ Mínimo 8–10 resueltos (example con myproof) + 15–20 propuestos (sin myproof
 **Acción:** 24/26 figuras sin caption+label → protocolo F8.31 (2 lotes si excede 300 líneas); resolver el label duplicado `figrayo` (L.1221/L.1264) — **requiere decisión del autor sobre cuál conserva el nombre original**; verificar `axis equal image` en cónicas 2D (pendiente desde DIAGNÓSTICO Paso 4).
 **Criterio de cierre:** 26/26 conformes; 0 labels duplicados; cónicas sin distorsión.
 **Líneas estimadas:** 150–280
-**Estado:** Pendiente
+**Estado:** Parcial — `figrayo` resuelto (2026-07-09); resto pendiente.
+**Notas de ejecución (adelanto de `figrayo`):**
+- El duplicado **no requería decisión del autor**: no eran dos labels de la misma figura, sino dos figuras distintas del mismo problema (rayo reflejado, `\cite{espinoza2006Algebralineal}` p. 87) que compartían nombre por copia-pega. Además **ninguna tenía `\caption`** y **nadie las referenciaba** (`\ref{figrayo}`: 0 usos en todo el libro).
+- Defecto de fondo: un `\label` colocado sin `\caption` (y antes de él) no captura el contador de figura, sino el contador vigente. Aunque no hubieran estado duplicados, ambos labels habrían resuelto a un número equivocado.
+- Corrección: `fig:rayo_reflejado` (montaje físico: rayo incidente, normal, rayo reflejado) y `fig:rayo_construccion_vector` (construcción de $\mathbf{v}$ a partir de $\operatorname{proy}_{\mathbf{n}}\mathbf{u}$), cada una con `\caption` + `\label` después del caption. Añadidas 2 remisiones `\ref` en la prueba, que antes no existían.
+- Verificado: resuelven a `figure.3.17` y `figure.3.18`, aparecen en el `.lof` y se imprimen como «Figura 3.17/3.18» en pp. 53–54. Matemática del problema revisada de paso y correcta ($t=7$, punto $(-5,-7,1)$, $\|\mathbf{v}\|=\|\mathbf{u}\|=\sqrt{2}$).
+- **Warning `figrayo' multiply defined` eliminado: el libro compila ahora sin ningún warning de labels/referencias.** 782 pp, 0 errores.
 
 ### F9AL.37 — vectoresrn: protocolo + propuestos 🔒F
 **Acción:** normalizar `Paso N:` → `Paso N.` en soluciones; verificar 4 pasos en los 8 examples; aplicar Decisión F a los 28 probs (26 con solución); heading `Problemas Propuestos` → `Problemas propuestos`; tags.
@@ -478,7 +484,7 @@ Mínimo 8–10 resueltos (example con myproof) + 15–20 propuestos (sin myproof
 | F9AL.33 | 7 caps AL | Labels resultados centrales | Pendiente | — | — |
 | F9AL.34 | maestro | Compilación + re-inventario | Pendiente | — | — |
 | F9AL.35 | `vectoresrn.tex` | Estructura de secciones (bloque V, opcional) | Pendiente | — | Requiere decisión de alcance |
-| F9AL.36 | `vectoresrn.tex` | Auditoría 26 figuras + figrayo (bloque V) | Pendiente | — | Requiere decisión autor (figrayo) |
+| F9AL.36 | `vectoresrn.tex` | Auditoría 26 figuras + figrayo (bloque V) | Parcial | 2026-07-09 | `figrayo` resuelto: eran 2 figuras distintas sin caption y sin referencias → `fig:rayo_reflejado` + `fig:rayo_construccion_vector`, con captions y 2 `\ref` nuevas. 0 warnings de labels. Faltan las otras 24 figuras y `axis equal image`. |
 | F9AL.37 | `vectoresrn.tex` | Protocolo + propuestos (bloque V) | Pendiente | — | — |
 
 **Total: 37 ítems** (34 núcleo + 3 bloque V opcional).

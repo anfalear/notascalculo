@@ -1218,7 +1218,6 @@ Como la última fila es combinación lineal de las dos primeras, el determinante
 Un rayo de luz viaja por la recta $l=\{(2,0,1)+t(-1,-1,0)\}$. Al chocar con el plano $2x-y+z+2=0$ se refleja. Hallar la recta $l_1$ que contiene el rayo reflejado.
 
 \begin{figure}[H]
-\label{figrayo}
 \centering
 \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
 \clip(-3,0.6898444376684937) rectangle (5.704830109449234,5.826700269504003);
@@ -1238,10 +1237,12 @@ Un rayo de luz viaja por la recta $l=\{(2,0,1)+t(-1,-1,0)\}$. Al chocar con el p
 \draw[color=black] (-0.5,3.700316327245684) node {normal};
 \end{scriptsize}
 \end{tikzpicture}
+\caption{Rayo incidente, normal a la superficie reflectante y rayo reflejado en el punto de incidencia.}
+\label{fig:rayo_reflejado}
 \end{figure}
 
 \begin{myproof}
-Para hallar la ecuación de la recta reflejada necesitamos un punto y un vector director.
+Para hallar la ecuación de la recta reflejada necesitamos un punto y un vector director. La Figura \ref{fig:rayo_reflejado} muestra la situación: el punto es el de incidencia sobre el plano, y el vector director se obtiene reflejando la dirección del rayo respecto de la normal.
 
 \textbf{Paso 1:} Encontrar el punto de intersección.
 La recta tiene ecuaciones paramétricas: $\left\{\begin{matrix}
@@ -1255,13 +1256,12 @@ $$2(2-t)-(-t)+1+2=0 \Rightarrow 4-2t+t+3=0 \Rightarrow t=7$$
 
 El punto de intersección es $(-5,-7,1)$.
 
-\textbf{Paso 2:} Sea $\mathbf{u}$ el vector director de la recta en sentido contrario, $\mathbf{n}$ el vector normal al plano y $\mathbf{v}$ el vector director del rayo reflejado. Entonces 
+\textbf{Paso 2:} Sea $\mathbf{u}$ el vector director de la recta en sentido contrario, $\mathbf{n}$ el vector normal al plano y $\mathbf{v}$ el vector director del rayo reflejado. Como se aprecia en la Figura \ref{fig:rayo_construccion_vector}, al descomponer $\mathbf{u}$ en su proyección sobre $\mathbf{n}$ y su componente ortogonal, el reflejado conserva la primera e invierte la segunda:
 \begin{equation}
 \mathbf{v}=\text{proy}_{\mathbf{n}}\mathbf{u}-\left(\mathbf{u}-\text{proy}_{\mathbf{n}}\mathbf{u}\right).
 \end{equation}
 
 \begin{figure}[H]
-\label{figrayo}
 \centering
 \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.8cm,y=0.8cm]
 \clip(-1.78,-0.58) rectangle (6.74,5.08);
@@ -1289,6 +1289,8 @@ El punto de intersección es $(-5,-7,1)$.
 \draw[color=green] (3.12,4.2) node {$-\left(\mathbf{u}-\text{proy}_{\mathbf{n}}\mathbf{u}\right)$};
 
 \end{tikzpicture}
+\caption{Construcción del vector director $\mathbf{v}$ del rayo reflejado a partir de $\operatorname{proy}_{\mathbf{n}}\mathbf{u}$ y de la componente de $\mathbf{u}$ ortogonal a $\mathbf{n}$.}
+\label{fig:rayo_construccion_vector}
 \end{figure}
 
 Haciendo los cálculos: 
