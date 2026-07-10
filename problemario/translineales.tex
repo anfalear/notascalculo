@@ -90,15 +90,21 @@ Por lo tanto, ambas condiciones se cumplen para toda $z \in \mathbb{C}$.
 \begin{example}[Operador integral]
 Considere $T: \mathcal{C}[a,b] \to \mathcal{C}[a,b]$ definido por
 \[
-T(f)(x) = \int f(x)\,dx.
+T(f)(x) = \int_a^x f(t)\,dt.
 \]
-Este operador es lineal, ya que para cualesquiera $p(x), q(x) \in \mathcal{C}[a,b]$ y $k, m \in \mathbb{R}$,
+Verifique que $T$ es una transformación lineal.
+\begin{myproof}
+\textbf{Paso 1.} Sean $p, q \in \mathcal{C}[a,b]$ y $k, m \in \mathbb{R}$ arbitrarios.
+
+\textbf{Paso 2.} Por la linealidad de la integral:
 \begin{align*}
-    T(kp(x) + m q(x)) &= \int (k p(x) + m q(x))\,dx \\
-    &= k \int p(x)\,dx + m \int q(x)\,dx \\
-    &= k T(p(x)) + m T(q(x)),
+    T(kp + m q)(x) &= \int_a^x (k p(t) + m q(t))\,dt \\
+    &= k \int_a^x p(t)\,dt + m \int_a^x q(t)\,dt \\
+    &= k\, T(p)(x) + m\, T(q)(x).
 \end{align*}
-lo que demuestra la linealidad del operador integral.
+
+\textbf{Paso 3.} Como $T(kp+mq) = kT(p) + mT(q)$, concluimos que $\boxed{T \text{ es transformación lineal}}$.
+\end{myproof}
 \end{example}
 
 
@@ -309,6 +315,65 @@ Ya se demostró que $i. \iff ii.$ en el teorema anterior. Probemos las demás im
 \end{proof}
 \end{theorem}
 
+\begin{example}[Núcleo, imagen y teorema de la dimensión]\label{ex:tl_nucleo_imagen}
+Sea $T: \mathbb{R}^4 \to \mathbb{R}^3$ una transformación lineal definida por $T(\mathbf{x}) = A\mathbf{x}$, donde
+\[
+A = \begin{pmatrix} 1 & 2 & 1 & 0 \\ 0 & 1 & 1 & 1 \\ 1 & 3 & 2 & 1 \end{pmatrix}.
+\]
+
+\begin{enumerate}[(a)]
+\item Encuentre una base para $\ker(T)$ y $\operatorname{Im}(T)$.
+\begin{myproof}
+\textbf{Paso 1.} Reducimos $A$ por filas:
+\[
+\begin{pmatrix} 1 & 2 & 1 & 0 \\ 0 & 1 & 1 & 1 \\ 1 & 3 & 2 & 1 \end{pmatrix}
+\xrightarrow{F_3 \to F_3 - F_1 - F_2}
+\begin{pmatrix} 1 & 2 & 1 & 0 \\ 0 & 1 & 1 & 1 \\ 0 & 0 & 0 & 0 \end{pmatrix}
+\xrightarrow{F_1 \to F_1 - 2F_2}
+\begin{pmatrix} 1 & 0 & -1 & -2 \\ 0 & 1 & 1 & 1 \\ 0 & 0 & 0 & 0 \end{pmatrix}.
+\]
+
+\textbf{Paso 2.} Para el núcleo resolvemos $A\mathbf{x} = 0$: los pivotes están en las columnas $1$ y $2$, así que $x_3$ y $x_4$ son variables libres y
+\[
+x_1 = x_3 + 2x_4, \qquad x_2 = -x_3 - x_4.
+\]
+Tomando $(x_3, x_4) = (1,0)$ y $(0,1)$ obtenemos una base de $\ker(T)$:
+\[
+\left\{
+\begin{pmatrix} 1 \\ -1 \\ 1 \\ 0 \end{pmatrix},
+\begin{pmatrix} 2 \\ -1 \\ 0 \\ 1 \end{pmatrix}
+\right\}.
+\]
+
+\textbf{Paso 3.} Como los pivotes están en las columnas $1$ y $2$, las dos primeras columnas de $A$ (de la matriz \emph{original}) forman una base de $\operatorname{Im}(T)$:
+\[
+\left\{
+\begin{pmatrix} 1 \\ 0 \\ 1 \end{pmatrix},
+\begin{pmatrix} 2 \\ 1 \\ 3 \end{pmatrix}
+\right\}.
+\]
+
+\textbf{Paso 4.} $\boxed{\operatorname{nul}(T) = 2 \text{ y } \operatorname{rang}(T) = 2}$, con las bases anteriores.
+\end{myproof}
+
+\item Verifique el teorema de la dimensión para $T$.
+\begin{myproof}
+\textbf{Paso 1.} Del inciso anterior, $\operatorname{nul}(T) = 2$ y $\operatorname{rang}(T) = 2$.
+
+\textbf{Paso 2.} Según el Teorema~\ref{teodim}, debe cumplirse $\operatorname{rang}(T) + \operatorname{nul}(T) = \dim(\mathbb{R}^4)$. En efecto: $\boxed{2 + 2 = 4 = \dim(\mathbb{R}^4)}$.
+\end{myproof}
+
+\item Determine si $T$ es inyectiva, sobreyectiva o biyectiva.
+\begin{myproof}
+\textbf{Paso 1.} Como $\operatorname{nul}(T) = 2 \neq 0$, el núcleo no es trivial y $T$ no es inyectiva.
+
+\textbf{Paso 2.} Como $\operatorname{rang}(T) = 2 < 3 = \dim(\mathbb{R}^3)$, la imagen no es todo el codominio y $T$ no es sobreyectiva.
+
+\textbf{Paso 3.} $\boxed{T \text{ no es inyectiva, ni sobreyectiva, ni biyectiva}}$.
+\end{myproof}
+\end{enumerate}
+\end{example}
+
 
 \section{Composición, invertibilidad e isomorfismos}
 
@@ -455,6 +520,47 @@ Algunos ejemplos de funciones que \textbf{son} y \textbf{no son} isomorfismos:
 \end{itemize}
 \end{example}
 
+\begin{example}[Un isomorfismo entre $\mathcal{M}_2(\mathbb{R})$ y $\mathbb{R}^4$]\label{ex:tl_isomorfismo_m2}
+Demuestre que la transformación lineal $T:\mathcal{M}_{2}(\mathbb{R}) \rightarrow \mathbb{R}^{4}$ definida como
+\[
+T\left(
+\begin{pmatrix}
+a & b \\
+c & d
+\end{pmatrix}
+\right) =
+\begin{pmatrix}
+a \\
+a+b \\
+a+b+c \\
+a+b+c+d
+\end{pmatrix}
+\]
+es un isomorfismo.
+\begin{myproof}
+\textbf{Paso 1.} $T$ es lineal porque cada componente de la imagen es una combinación lineal de las entradas $a, b, c, d$ de la matriz. Identificando $\mathcal{M}_2(\mathbb{R})$ con $\mathbb{R}^4$ en el orden $(a, b, c, d)$, la matriz de $T$ en las bases canónicas es
+\[
+A_T =
+\begin{pmatrix}
+1 & 0 & 0 & 0 \\
+1 & 1 & 0 & 0 \\
+1 & 1 & 1 & 0 \\
+1 & 1 & 1 & 1
+\end{pmatrix}.
+\]
+
+\textbf{Paso 2.} \emph{Inyectividad.} Si $T\begin{pmatrix} a & b \\ c & d \end{pmatrix} = 0$, el sistema
+\[
+a = 0, \quad a + b = 0, \quad a + b + c = 0, \quad a + b + c + d = 0
+\]
+se resuelve en cadena: $a = 0 \implies b = 0 \implies c = 0 \implies d = 0$. Por lo tanto $\ker(T) = \{0\}$ y $T$ es inyectiva.
+
+\textbf{Paso 3.} \emph{Sobreyectividad.} Como $\dim(\mathcal{M}_2(\mathbb{R})) = \dim(\mathbb{R}^4) = 4$ y $T$ es inyectiva, la versión finita del teorema de equivalencias garantiza que $T$ es sobreyectiva. Alternativamente, $A_T$ es triangular inferior con $\det(A_T) = 1 \neq 0$.
+
+\textbf{Paso 4.} $T$ es lineal, inyectiva y sobreyectiva: $\boxed{T \text{ es un isomorfismo y } \mathcal{M}_2(\mathbb{R}) \cong \mathbb{R}^4}$.
+\end{myproof}
+\end{example}
+
 \section{Matriz asociada a una transformación lineal}
 
 \begin{definition}[Matriz asociada a una transformación lineal]
@@ -524,22 +630,128 @@ Esto permite calcular la imagen de cualquier vector de $V$ bajo $T$ a través de
 \begin{example}[Matriz de $T:\mathbb{P}_2(\mathbb{R})\to\mathbb{P}_2(\mathbb{R})$ por traslación]
 Sea $T: \mathbb{P}_2(\mathbb{R}) \to \mathbb{P}_2(\mathbb{R})$ definida por
 \[
-T\left(a_0 + a_1 x + a_2 x^2\right) = a_0 + a_1(x+1) + a_2(x+1)^2
+T\left(a_0 + a_1 x + a_2 x^2\right) = a_0 + a_1(x+1) + a_2(x+1)^2.
 \]
-con la base estándar $B = \{1, x, x^2\}$. Calculamos las imágenes de los vectores base:
+Calcule la matriz asociada a $T$ en la base estándar $B = \{1, x, x^2\}$.
+\begin{myproof}
+\textbf{Paso 1.} Calculamos las imágenes de los vectores base y sus coordenadas en $B$:
 \begin{align*}
 T(1) &= 1 \mapsto (1, 0, 0) \\
 T(x) &= x+1 \mapsto (1, 1, 0) \\
 T(x^2) &= (x+1)^2 = x^2 + 2x + 1 \mapsto (1, 2, 1)
 \end{align*}
-Por lo tanto, la matriz asociada a $T$ en la base $B$ es:
+
+\textbf{Paso 2.} Colocando los vectores de coordenadas como columnas, la matriz asociada a $T$ en la base $B$ es:
 \[
-A_T = \begin{pmatrix}
+\boxed{A_T = \begin{pmatrix}
 1 & 1 & 1 \\
 0 & 1 & 2 \\
 0 & 0 & 1
-\end{pmatrix}
+\end{pmatrix}}
 \]
+\end{myproof}
+\end{example}
+
+\begin{example}[Matriz del operador derivada en $\mathbb{P}_2(\mathbb{R})$]\label{ex:tl_matriz_derivada}
+Sea $D:\mathbb{P}_{2}(\mathbb{R}) \rightarrow \mathbb{P}_{2}(\mathbb{R})$ el operador derivada $D(p(x)) = p^{\prime}(x)$. Encuentre la matriz de $D$ relativa a la base $B = \left\lbrace 1, x, x^2 \right\rbrace$. Use esta matriz para calcular $D(6 - 6x + 24x^2)$.
+\begin{myproof}
+\textbf{Paso 1.} Derivamos cada elemento de la base y expresamos el resultado en términos de $B$:
+\[
+\begin{aligned}
+D(1) &= 0 = 0\cdot 1 + 0\cdot x + 0\cdot x^2 \\
+D(x) &= 1 = 1\cdot 1 + 0\cdot x + 0\cdot x^2 \\
+D(x^2) &= 2x = 0\cdot 1 + 2\cdot x + 0\cdot x^2
+\end{aligned}
+\]
+
+\textbf{Paso 2.} Colocando los vectores de coordenadas como columnas, la matriz asociada es
+\[
+[D]_B = \begin{pmatrix}
+0 & 1 & 0 \\
+0 & 0 & 2 \\
+0 & 0 & 0
+\end{pmatrix}.
+\]
+
+\textbf{Paso 3.} El vector de coordenadas de $p(x) = 6 - 6x + 24x^2$ respecto de $B$ es $(6, -6, 24)^T$. Multiplicamos:
+\[
+[D]_B \begin{pmatrix} 6 \\ -6 \\ 24 \end{pmatrix} =
+\begin{pmatrix}
+0 & 1 & 0 \\
+0 & 0 & 2 \\
+0 & 0 & 0
+\end{pmatrix}
+\begin{pmatrix} 6 \\ -6 \\ 24 \end{pmatrix}
+=
+\begin{pmatrix} -6 \\ 48 \\ 0 \end{pmatrix}.
+\]
+
+\textbf{Paso 4.} Traduciendo las coordenadas de vuelta a $\mathbb{P}_2(\mathbb{R})$: $\boxed{D(6 - 6x + 24x^2) = -6 + 48x}$.
+\end{myproof}
+\end{example}
+
+\begin{example}[Matriz de $T:\mathbb{R}^2\to\mathbb{R}^3$ respecto de bases no canónicas]\label{ex:tl_bases_no_canonicas}
+Defina $T: \mathbb{R}^2 \rightarrow \mathbb{R}^3$ como
+\[
+T\begin{pmatrix}
+ x_1\\x_2
+\end{pmatrix}=\begin{pmatrix}
+x_1+2x_2 \\
+	-x_1 \\
+	0\\
+\end{pmatrix}.
+\]
+Calcule la matriz de representación de $T$ donde $B=\left\lbrace \begin{pmatrix} 1 \\ 3 \end{pmatrix}, \begin{pmatrix} -2 \\ 4 \end{pmatrix} \right\rbrace$ es la base del espacio de salida y $B'=\left\lbrace \begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix}, \begin{pmatrix} 2 \\ 2 \\ 0 \end{pmatrix}, \begin{pmatrix} 3 \\ 0 \\ 0 \end{pmatrix} \right\rbrace$ es base del espacio de llegada. Calcule una base para el kernel y la imagen de $T$.
+\begin{myproof}
+\textbf{Paso 1.} Calculamos las imágenes de los vectores de la base $B$ del dominio:
+\[
+T(v_1) = T\begin{pmatrix} 1 \\ 3 \end{pmatrix} = \begin{pmatrix} 1 + 2 \cdot 3 \\ -1 \\ 0 \end{pmatrix} = \begin{pmatrix} 7 \\ -1 \\ 0 \end{pmatrix},
+\qquad
+T(v_2) = T\begin{pmatrix} -2 \\ 4 \end{pmatrix} = \begin{pmatrix} -2 + 2 \cdot 4 \\ 2 \\ 0 \end{pmatrix} = \begin{pmatrix} 6 \\ 2 \\ 0 \end{pmatrix}.
+\]
+
+\textbf{Paso 2.} Expresamos cada imagen en la base $B'$ del codominio. Para $T(v_1)$ buscamos $a_1, a_2, a_3$ tales que
+\[
+\begin{pmatrix} 7 \\ -1 \\ 0 \end{pmatrix} = a_1 \begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix} + a_2 \begin{pmatrix} 2 \\ 2 \\ 0 \end{pmatrix} + a_3 \begin{pmatrix} 3 \\ 0 \\ 0 \end{pmatrix}
+\implies
+\begin{cases}
+7 = a_1 + 2a_2 + 3a_3 \\
+-1 = a_1 + 2a_2 \\
+0 = a_1
+\end{cases}
+\]
+La tercera ecuación da $a_1 = 0$; sustituyendo en la segunda, $a_2 = -\frac{1}{2}$; y en la primera, $7 = -1 + 3a_3 \implies a_3 = \frac{8}{3}$. De igual modo, para $T(v_2)$:
+\[
+\begin{cases}
+6 = b_1 + 2b_2 + 3b_3 \\
+2 = b_1 + 2b_2 \\
+0 = b_1
+\end{cases}
+\implies b_1 = 0,\quad b_2 = 1,\quad b_3 = \tfrac{4}{3}.
+\]
+
+\textbf{Paso 3.} Colocando los vectores de coordenadas como columnas:
+\[
+\boxed{[T]_{B',B} = \begin{pmatrix}
+0 & 0 \\
+-\frac{1}{2} & 1 \\
+\frac{8}{3} & \frac{4}{3}
+\end{pmatrix}}
+\]
+
+\textbf{Paso 4.} Para el kernel y la imagen usamos la matriz de $T$ en las bases canónicas,
+\[
+A = \begin{pmatrix}
+1 & 2 \\
+-1 & 0 \\
+0 & 0
+\end{pmatrix}.
+\]
+El sistema $A\mathbf{x} = 0$ da $-x_1 = 0$ y $x_1 + 2x_2 = 0$, de donde $x_1 = x_2 = 0$: el núcleo es trivial, $\boxed{\ker(T) = \{0\}}$. Las dos columnas de $A$ son linealmente independientes, así que forman una base de la imagen:
+\[
+\boxed{\operatorname{Im}(T) = \operatorname{span}\left\{ \begin{pmatrix}1\\-1\\0\end{pmatrix}, \begin{pmatrix}2\\0\\0\end{pmatrix} \right\}}
+\]
+\end{myproof}
 \end{example}
 
 
@@ -559,15 +771,18 @@ Por otro lado, el \textbf{espacio columna} de $A$ (o \textbf{imagen} de $A$), de
 \begin{example}[Matriz, kernel e imagen de $T:\mathbb{R}^3\to\mathbb{R}^3$]
 Sea $T: \mathbb{R}^3 \to \mathbb{R}^3$ definida por
 \[
-T\begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix} = \begin{pmatrix} x_1 + x_2 \\ 2x_1 - x_2 + x_3 \\ x_2 + 3x_3 \end{pmatrix}
+T\begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix} = \begin{pmatrix} x_1 + x_2 \\ 2x_1 - x_2 + x_3 \\ x_2 + 3x_3 \end{pmatrix}.
 \]
-Respecto de la base canónica de $\mathbb{R}^3$, calculamos:
+Calcule la matriz de $T$ respecto de la base canónica, el kernel y la imagen de $T$.
+\begin{myproof}
+\textbf{Paso 1.} Calculamos las imágenes de los vectores de la base canónica:
 \begin{align*}
 T\begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} &= \begin{pmatrix} 1 \\ 2 \\ 0 \end{pmatrix} \\
 T\begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} &= \begin{pmatrix} 1 \\ -1 \\ 1 \end{pmatrix} \\
 T\begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix} &= \begin{pmatrix} 0 \\ 1 \\ 3 \end{pmatrix}
 \end{align*}
-Por lo tanto, la matriz asociada es:
+
+\textbf{Paso 2.} La matriz asociada (columnas = imágenes de la base) es:
 \[
 A = \begin{pmatrix}
 1 & 1 & 0 \\
@@ -575,7 +790,12 @@ A = \begin{pmatrix}
 0 & 1 & 3
 \end{pmatrix}
 \]
-Como $\det(A) = -10 \neq 0$, la matriz es invertible, lo que implica que $\ker(A) = \{0\}$ y $\operatorname{Im}(A) = \mathbb{R}^3$ (es decir, el núcleo es trivial y la imagen es todo el codominio).
+
+\textbf{Paso 3.} Como $\det(A) = -10 \neq 0$, la matriz es invertible, así que el núcleo es trivial y la imagen es todo el codominio:
+\[
+\boxed{\ker(T) = \{0\}, \qquad \operatorname{Im}(T) = \mathbb{R}^3}
+\]
+\end{myproof}
 \end{example}
 
 \begin{theorem}
@@ -895,36 +1115,9 @@ Consideremos una figura en el plano (la "casita") representada por los vértices
 
 \section{Problemas resueltos adicionales}
 
-\begin{prob}
-Sea $S = \{e_1, e_2, e_3\}$ la base canónica de $\mathbb{R}^3$ y sea $B = \{v_1, v_2, v_3\}$ la base que resulta al evaluar los vectores de $S$ en la transformación lineal
-\[
-T\begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix} = \begin{pmatrix} x_1 + x_2 \\ 2x_1 - x_2 + x_3 \\ x_2 + 3x_3 \end{pmatrix}.
-\]
-Calcule la matriz de cambio de base de la base canónica a la base $B$.
-\begin{myproof}
-Para obtener la base $B$, aplicamos la transformación $T$ a cada vector de la base canónica $S$:
-\[
-v_1 = T(e_1) = T\begin{pmatrix}1 \\ 0 \\ 0\end{pmatrix} = \begin{pmatrix}1 + 0 \\ 2 \cdot 1 - 0 + 0 \\ 0 + 3 \cdot 0 \end{pmatrix} = \begin{pmatrix}1 \\ 2 \\ 0 \end{pmatrix},
-\]
-\[
-v_2 = T(e_2) = T\begin{pmatrix}0 \\ 1 \\ 0\end{pmatrix} = \begin{pmatrix}0 + 1 \\ 2 \cdot 0 - 1 + 0 \\ 1 + 3 \cdot 0 \end{pmatrix} = \begin{pmatrix}1 \\ -1 \\ 1 \end{pmatrix},
-\]
-\[
-v_3 = T(e_3) = T\begin{pmatrix}0 \\ 0 \\ 1\end{pmatrix} = \begin{pmatrix}0 + 0 \\ 2 \cdot 0 - 0 + 1 \\ 0 + 3 \cdot 1 \end{pmatrix} = \begin{pmatrix}0 \\ 1 \\ 3 \end{pmatrix}.
-\]
+% --- Núcleo, imagen y espacios fundamentales ---
 
-La matriz de cambio de base de la base canónica $S$ a la base $B$ está formada por las columnas que son los vectores $v_1, v_2, v_3$ expresados en la base canónica:
-\[
-P_{S \to B} = \begin{pmatrix}
-1 & 1 & 0 \\
-2 & -1 & 1 \\
-0 & 1 & 3
-\end{pmatrix}.
-\]
-\end{myproof}
-\end{prob}
-
-
+% Intermedio
 \begin{prob}
 Determine si las siguientes funciones son una transformación lineal. Si lo son, use la matriz de representación en las bases canónicas para calcular una base para el kernel y la imagen. Determine el rango y la nulidad de la transformación.
 
@@ -1194,166 +1387,150 @@ El rango es $3$, nulidad $=0$. El kernel es $\{0\}$.
 \end{enumerate}
 \end{prob}
 
-
+% Básico
 \begin{prob}
-Sea $D:\mathcal{P}_{2}(\mathbb{R}) \rightarrow \mathcal{P}_{2}(\mathbb{R})$ el operador derivada $D(p(x))=p^{\prime}(x).$ Encuentre la matriz $D$ relativa a la base $B=\left\lbrace 1,x,x^2  \right\rbrace.$ Use $D$ para calcular $D(6-6x+24x^2).$
+Sea $A = \begin{pmatrix}
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+0 & 0 & 0
+\end{pmatrix}$. Demuestre que, en relación al espacio con coordenadas $XYZ$, el espacio nulo de $A$ consiste en todos los puntos del plano $Z$ y que el espacio columna consiste en todos los puntos del plano $XY$.
 \begin{myproof}
-Para encontrar la matriz de $D$ relativa a la base $B = \{1, x, x^2\}$, derivamos cada elemento de la base y expresamos el resultado en términos de $B$:
+El \textbf{espacio nulo} (o kernel) de $A$ es el conjunto de vectores $v = (x, y, z)^T$ tales que $A v = 0$:
 \[
-\begin{aligned}
-D(1) &= 0 = 0\cdot 1 + 0\cdot x + 0\cdot x^2 \\
-D(x) &= 1 = 1\cdot 1 + 0\cdot x + 0\cdot x^2 \\
-D(x^2) &= 2x = 0\cdot 1 + 2\cdot x + 0\cdot x^2
-\end{aligned}
+A \begin{pmatrix} x \\ y \\ z \end{pmatrix} = \begin{pmatrix} y \\ x \\ 0 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}
 \]
-Por lo tanto, la matriz asociada es:
+Esto implica $x = 0$ y $y = 0$, pero $z$ es libre. Por lo tanto,
 \[
-[D]_B = \begin{pmatrix}
-0 & 1 & 0 \\
-0 & 0 & 2 \\
-0 & 0 & 0
-\end{pmatrix}
+\ker(A) = \left\{ \begin{pmatrix} 0 \\ 0 \\ z \end{pmatrix} : z \in \mathbb{R} \right\}
 \]
+Esto corresponde exactamente al eje $Z$, es decir, a todos los puntos del plano $Z$ (el subespacio generado por el vector $(0,0,1)$).
 
-Para calcular $D(6 - 6x + 24x^2)$, primero escribimos el vector de coordenadas respecto a $B$:
+El \textbf{espacio columna} de $A$ es el subespacio generado por sus columnas:
 \[
-\vec{p} = \begin{pmatrix} 6 \\ -6 \\ 24 \end{pmatrix}
+\text{Col}(A) = \text{span}\left\{ \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix}, \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix}, \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix} \right\}
 \]
-Multiplicamos por la matriz $[D]_B$:
+Las dos primeras columnas son linealmente independientes y generan el plano $XY$, es decir,
 \[
-[D]_B \cdot \vec{p} = 
-\begin{pmatrix}
-0 & 1 & 0 \\
-0 & 0 & 2 \\
-0 & 0 & 0
-\end{pmatrix}
-\begin{pmatrix} 6 \\ -6 \\ 24 \end{pmatrix}
-=
-\begin{pmatrix}
-0 \cdot 6 + 1 \cdot (-6) + 0 \cdot 24 \\
-0 \cdot 6 + 0 \cdot (-6) + 2 \cdot 24 \\
-0
-\end{pmatrix}
-=
-\begin{pmatrix}
--6 \\ 48 \\ 0
-\end{pmatrix}
+\text{Col}(A) = \left\{ \begin{pmatrix} a \\ b \\ 0 \end{pmatrix} : a, b \in \mathbb{R} \right\}
 \]
-Por lo tanto,
-\[
-D(6 - 6x + 24x^2) = -6 + 48x
-\]
+Por lo tanto, el espacio columna de $A$ consiste en todos los puntos del plano $XY$.
+
+Esto coincide con los resultados computacionales: el núcleo es generado por $(0,0,1)$ y el espacio columna por $(1,0,0)$ y $(0,1,0)$.
 \end{myproof}
 \end{prob}
 
+% Intermedio
 \begin{prob}
-Defina $T: \mathbb{R}^2 \rightarrow \mathbb{R}^3$ como
-\[
-T\begin{pmatrix}
- x_1\\x_2
-\end{pmatrix}=\begin{pmatrix}
-x_1+2x_2 \\
-	-x_1 \\
-	0\\
-\end{pmatrix}.
-\]
-Calcule la matriz de representación de la transformación lineal donde $B=\left\lbrace \begin{pmatrix} 1 \\ 3 \end{pmatrix}, \begin{pmatrix} -2 \\ 4 \end{pmatrix} \right\rbrace$ es la base del espacio de salida y $B'=\left\lbrace \begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix}, \begin{pmatrix} 2 \\ 2 \\ 0 \end{pmatrix}, \begin{pmatrix} 3 \\ 0 \\ 0 \end{pmatrix} \right\rbrace$ es base del espacio de llegada. Calcule una base para el kernel y la imagen de $T$.
+Encuentre una matriz $3\times 3$ cuyo espacio nulo sea el eje $X$ y cuyo espacio columna sea el plano $YZ$.
 \begin{myproof}
-\textbf{Matriz de representación en las bases dadas:}
+Queremos que el espacio nulo (kernel) sea el eje $X$, es decir, todos los vectores de la forma $(x,0,0)^T$. Esto implica que la matriz $A$ debe anular cualquier vector cuya única componente no nula sea la primera.
 
-Primero, escribimos los vectores de la base $B$ del dominio:
-\[
-v_1 = \begin{pmatrix} 1 \\ 3 \end{pmatrix}, \quad v_2 = \begin{pmatrix} -2 \\ 4 \end{pmatrix}
-\]
+Además, queremos que el espacio columna (imagen) de $A$ sea el plano $YZ$, es decir, todos los vectores de la forma $(0, y, z)^T$. Esto significa que las columnas de $A$ deben generar el subespacio $YZ$ y, por lo tanto, su primera fila debe ser toda cero.
 
-Calculamos sus imágenes por $T$:
-\[
-T(v_1) = T\begin{pmatrix} 1 \\ 3 \end{pmatrix} = \begin{pmatrix} 1 + 2 \cdot 3 \\ -1 \\ 0 \end{pmatrix} = \begin{pmatrix} 7 \\ -1 \\ 0 \end{pmatrix}
-\]
-\[
-T(v_2) = T\begin{pmatrix} -2 \\ 4 \end{pmatrix} = \begin{pmatrix} -2 + 2 \cdot 4 \\ 2 \\ 0 \end{pmatrix} = \begin{pmatrix} 6 \\ 2 \\ 0 \end{pmatrix}
-\]
-
-Ahora, expresamos $T(v_1)$ y $T(v_2)$ en la base $B'$ del codominio. Buscamos escalares $a_1, a_2, a_3$ tales que:
-\[
-T(v_1) = a_1 \begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix} + a_2 \begin{pmatrix} 2 \\ 2 \\ 0 \end{pmatrix} + a_3 \begin{pmatrix} 3 \\ 0 \\ 0 \end{pmatrix}
-\]
-\[
-\begin{pmatrix} 7 \\ -1 \\ 0 \end{pmatrix} = a_1 \begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix} + a_2 \begin{pmatrix} 2 \\ 2 \\ 0 \end{pmatrix} + a_3 \begin{pmatrix} 3 \\ 0 \\ 0 \end{pmatrix}
-\]
-Esto da el sistema:
-\[
-\begin{cases}
-7 = a_1 + 2a_2 + 3a_3 \\
--1 = a_1 + 2a_2 \\
-0 = a_1
-\end{cases}
-\implies a_1 = 0,\ -1 = 2a_2 \implies a_2 = -\frac{1}{2},\ 7 = 2(-\frac{1}{2}) + 3a_3 \implies 7 = -1 + 3a_3 \implies a_3 = \frac{8}{3}
-\]
-Por lo tanto,
-\[
-[T(v_1)]_{B'} = \begin{pmatrix} 0 \\ -\frac{1}{2} \\ \frac{8}{3} \end{pmatrix}
-\]
-
-De igual modo, para $T(v_2)$:
-\[
-\begin{pmatrix} 6 \\ 2 \\ 0 \end{pmatrix} = b_1 \begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix} + b_2 \begin{pmatrix} 2 \\ 2 \\ 0 \end{pmatrix} + b_3 \begin{pmatrix} 3 \\ 0 \\ 0 \end{pmatrix}
-\]
-\[
-\begin{cases}
-6 = b_1 + 2b_2 + 3b_3 \\
-2 = b_1 + 2b_2 \\
-0 = b_1
-\end{cases}
-\implies b_1 = 0,\ 2 = 2b_2 \implies b_2 = 1,\ 6 = 2(1) + 3b_3 \implies 6 = 2 + 3b_3 \implies b_3 = \frac{4}{3}
-\]
-Por lo tanto,
-\[
-[T(v_2)]_{B'} = \begin{pmatrix} 0 \\ 1 \\ \frac{4}{3} \end{pmatrix}
-\]
-
-La matriz de representación de $T$ en las bases $B$ y $B'$ es:
-\[
-[T]_{B',B} = \begin{pmatrix}
-0 & 0 \\
--\frac{1}{2} & 1 \\
-\frac{8}{3} & \frac{4}{3}
-\end{pmatrix}
-\]
-
-\textbf{Base para el kernel y la imagen de $T$:}
-
-La matriz de $T$ en las bases canónicas es:
+Una matriz que cumple estas condiciones es:
 \[
 A = \begin{pmatrix}
-1 & 2 \\
--1 & 0 \\
-0 & 0
+0 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
 \end{pmatrix}
 \]
-Resolvemos $A\begin{pmatrix}x_1\\x_2\end{pmatrix} = 0$:
-\[
-\begin{cases}
-x_1 + 2x_2 = 0 \\
--x_1 = 0 \\
-0 = 0
-\end{cases}
-\implies x_1 = 0,\ 2x_2 = 0 \implies x_2 = 0
-\]
-Por lo tanto, $\ker(T) = \{0\}$.
 
-La imagen de $T$ es el subespacio generado por las columnas de $A$:
+Verificación:
+\begin{itemize}
+    \item \textbf{Espacio nulo:} $A\begin{pmatrix} x \\ 0 \\ 0 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}$ para cualquier $x$. Si $A\begin{pmatrix} x \\ y \\ z \end{pmatrix} = 0$, entonces $y = 0$ y $z = 0$, así que el núcleo es exactamente el eje $X$.
+    \item \textbf{Espacio columna:} Las columnas de $A$ son $\begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}$, $\begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix}$ y $\begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix}$, que generan el plano $YZ$.
+\end{itemize}
+\end{myproof}
+\end{prob}
+
+% Intermedio
+\begin{prob}
+Defina $W := \left\lbrace f \in \mathcal{C}\left[ -1,1 \right] \mid f(0) = 0 \right\rbrace$ y $T: \mathcal{C}\left[ -1,1 \right] \rightarrow W$ como $T(f(x)) = f(x) - f(0)$. Determine si $T$ es una transformación lineal y, si lo es, calcule una base para el kernel y la imagen de $T$.
+\begin{myproof}
+\textbf{Linealidad:}  
+Sea $f, g \in \mathcal{C}[-1,1]$ y $k \in \mathbb{R}$.  
 \[
-\text{Im}(T) = \text{span}\left\{ \begin{pmatrix}1\\-1\\0\end{pmatrix}, \begin{pmatrix}2\\0\\0\end{pmatrix} \right\}
+T(f+g)(x) = (f+g)(x) - (f+g)(0) = f(x) + g(x) - f(0) - g(0) = (f(x) - f(0)) + (g(x) - g(0)) = T(f)(x) + T(g)(x)
 \]
-Estas dos columnas son linealmente independientes, así que una base para la imagen de $T$ es:
 \[
-\left\{ \begin{pmatrix}1\\-1\\0\end{pmatrix},\ \begin{pmatrix}2\\0\\0\end{pmatrix} \right\}
+T(kf)(x) = (kf)(x) - (kf)(0) = kf(x) - kf(0) = k(f(x) - f(0)) = kT(f)(x)
+\]
+Por lo tanto, $T$ es una transformación lineal.
+
+\textbf{Kernel de $T$:}  
+Buscamos todas las $f$ tales que $T(f) = 0$, es decir,
+\[
+f(x) - f(0) = 0 \implies f(x) = f(0)\ \forall x
+\]
+Por lo tanto, el kernel está formado por todas las funciones constantes. Una base para el kernel es la función constante $1$.
+
+\textbf{Imagen de $T$:}  
+Para cualquier $f \in \mathcal{C}[-1,1]$, $T(f)(0) = f(0) - f(0) = 0$. Por lo tanto, la imagen de $T$ es el subespacio $W = \{g \in \mathcal{C}[-1,1] \mid g(0) = 0\}$, es decir, el conjunto de funciones continuas que se anulan en $0$. Este subespacio es de dimensión infinita y no admite una base finita, pero puede describirse simplemente como $W$.
+\end{myproof}
+\end{prob}
+
+% Intermedio
+\begin{prob}
+Defina $T:\mathcal{C}\left[ 0,3 \right] \rightarrow \mathcal{P}_{3}(\mathbb{R}) $ como $T(f(x))= f(0)+f(1)x+f(2)x^2+f(3)x^3.$ Determine si $T$ es una transformación lineal. Si lo es, calcule el kernel y la imagen de $T.$
+\begin{myproof}
+\textbf{Linealidad:}  
+Sea $f,g \in \mathcal{C}[0,3]$ y $k \in \mathbb{R}$:
+\[
+T(f+g) = (f+g)(0) + (f+g)(1)x + (f+g)(2)x^2 + (f+g)(3)x^3 = [f(0) + g(0)] + [f(1) + g(1)]x + [f(2) + g(2)]x^2 + [f(3) + g(3)]x^3
+\]
+\[
+= T(f) + T(g)
+\]
+\[
+T(kf) = kf(0) + kf(1)x + kf(2)x^2 + kf(3)x^3 = kT(f)
+\]
+Por lo tanto, $T$ es una transformación lineal[4][5].
+
+\textbf{Kernel:}  
+$T(f) = 0$ si y sólo si $f(0) = f(1) = f(2) = f(3) = 0$.  
+Por lo tanto, el kernel es el conjunto de funciones continuas en $[0,3]$ que se anulan en $0,1,2,3$.  
+Una base del núcleo (en el sentido de subespacio infinito dimensional) es $\{(x-0)(x-1)(x-2)(x-3)\}$ y todos sus múltiplos y sumas con funciones que sean cero en esos puntos.
+
+\textbf{Imagen:}  
+Para cualquier $a_0,a_1,a_2,a_3\in\mathbb{R}$, la función $f$ definida por $f(0)=a_0$, $f(1)=a_1$, $f(2)=a_2$, $f(3)=a_3$ y arbitraria en el resto, cumple $T(f)=a_0+a_1x+a_2x^2+a_3x^3$.  
+Por lo tanto, la imagen de $T$ es todo $\mathcal{P}_3(\mathbb{R})$.
+\end{myproof}
+\end{prob}
+
+% --- Matriz de representación y cambio de base ---
+
+% Intermedio
+\begin{prob}
+Sea $S = \{e_1, e_2, e_3\}$ la base canónica de $\mathbb{R}^3$ y sea $B = \{v_1, v_2, v_3\}$ la base que resulta al evaluar los vectores de $S$ en la transformación lineal
+\[
+T\begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix} = \begin{pmatrix} x_1 + x_2 \\ 2x_1 - x_2 + x_3 \\ x_2 + 3x_3 \end{pmatrix}.
+\]
+Calcule la matriz de cambio de base de la base canónica a la base $B$.
+\begin{myproof}
+Para obtener la base $B$, aplicamos la transformación $T$ a cada vector de la base canónica $S$:
+\[
+v_1 = T(e_1) = T\begin{pmatrix}1 \\ 0 \\ 0\end{pmatrix} = \begin{pmatrix}1 + 0 \\ 2 \cdot 1 - 0 + 0 \\ 0 + 3 \cdot 0 \end{pmatrix} = \begin{pmatrix}1 \\ 2 \\ 0 \end{pmatrix},
+\]
+\[
+v_2 = T(e_2) = T\begin{pmatrix}0 \\ 1 \\ 0\end{pmatrix} = \begin{pmatrix}0 + 1 \\ 2 \cdot 0 - 1 + 0 \\ 1 + 3 \cdot 0 \end{pmatrix} = \begin{pmatrix}1 \\ -1 \\ 1 \end{pmatrix},
+\]
+\[
+v_3 = T(e_3) = T\begin{pmatrix}0 \\ 0 \\ 1\end{pmatrix} = \begin{pmatrix}0 + 0 \\ 2 \cdot 0 - 0 + 1 \\ 0 + 3 \cdot 1 \end{pmatrix} = \begin{pmatrix}0 \\ 1 \\ 3 \end{pmatrix}.
+\]
+
+La matriz de cambio de base de la base canónica $S$ a la base $B$ está formada por las columnas que son los vectores $v_1, v_2, v_3$ expresados en la base canónica:
+\[
+P_{S \to B} = \begin{pmatrix}
+1 & 1 & 0 \\
+2 & -1 & 1 \\
+0 & 1 & 3
+\end{pmatrix}.
 \]
 \end{myproof}
 \end{prob}
 
-
+% Intermedio
 \begin{prob}
 Sea $A = \begin{pmatrix}
 3 & -2 & 1 & 0 \\
@@ -1426,197 +1603,7 @@ T\left(\begin{pmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{pmatrix}\right)_{B'} =
 \end{myproof}
 \end{prob}
 
- 
-\begin{prob}
-Sea $A = \begin{pmatrix}
-0 & 1 & 0 \\
-1 & 0 & 0 \\
-0 & 0 & 0
-\end{pmatrix}$. Demuestre que, en relación al espacio con coordenadas $XYZ$, el espacio nulo de $A$ consiste en todos los puntos del plano $Z$ y que el espacio columna consiste en todos los puntos del plano $XY$.
-\begin{myproof}
-El \textbf{espacio nulo} (o kernel) de $A$ es el conjunto de vectores $v = (x, y, z)^T$ tales que $A v = 0$:
-\[
-A \begin{pmatrix} x \\ y \\ z \end{pmatrix} = \begin{pmatrix} y \\ x \\ 0 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}
-\]
-Esto implica $x = 0$ y $y = 0$, pero $z$ es libre. Por lo tanto,
-\[
-\ker(A) = \left\{ \begin{pmatrix} 0 \\ 0 \\ z \end{pmatrix} : z \in \mathbb{R} \right\}
-\]
-Esto corresponde exactamente al eje $Z$, es decir, a todos los puntos del plano $Z$ (el subespacio generado por el vector $(0,0,1)$).
-
-El \textbf{espacio columna} de $A$ es el subespacio generado por sus columnas:
-\[
-\text{Col}(A) = \text{span}\left\{ \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix}, \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix}, \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix} \right\}
-\]
-Las dos primeras columnas son linealmente independientes y generan el plano $XY$, es decir,
-\[
-\text{Col}(A) = \left\{ \begin{pmatrix} a \\ b \\ 0 \end{pmatrix} : a, b \in \mathbb{R} \right\}
-\]
-Por lo tanto, el espacio columna de $A$ consiste en todos los puntos del plano $XY$.
-
-Esto coincide con los resultados computacionales: el núcleo es generado por $(0,0,1)$ y el espacio columna por $(1,0,0)$ y $(0,1,0)$.
-\end{myproof}
-\end{prob}
-
-
-\begin{prob}
-Encuentre una matriz $3\times 3$ cuyo espacio nulo sea el eje $X$ y cuyo espacio columna sea el plano $YZ$.
-\begin{myproof}
-Queremos que el espacio nulo (kernel) sea el eje $X$, es decir, todos los vectores de la forma $(x,0,0)^T$. Esto implica que la matriz $A$ debe anular cualquier vector cuya única componente no nula sea la primera.
-
-Además, queremos que el espacio columna (imagen) de $A$ sea el plano $YZ$, es decir, todos los vectores de la forma $(0, y, z)^T$. Esto significa que las columnas de $A$ deben generar el subespacio $YZ$ y, por lo tanto, su primera fila debe ser toda cero.
-
-Una matriz que cumple estas condiciones es:
-\[
-A = \begin{pmatrix}
-0 & 0 & 0 \\
-0 & 1 & 0 \\
-0 & 0 & 1
-\end{pmatrix}
-\]
-
-Verificación:
-\begin{itemize}
-    \item \textbf{Espacio nulo:} $A\begin{pmatrix} x \\ 0 \\ 0 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}$ para cualquier $x$. Si $A\begin{pmatrix} x \\ y \\ z \end{pmatrix} = 0$, entonces $y = 0$ y $z = 0$, así que el núcleo es exactamente el eje $X$.
-    \item \textbf{Espacio columna:} Las columnas de $A$ son $\begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}$, $\begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix}$ y $\begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix}$, que generan el plano $YZ$.
-\end{itemize}
-\end{myproof}
-\end{prob}
-
-
-
-
-\begin{prob}
-Sea $V$ un espacio vectorial de dimensión $m$. Demuestre que si $T:V\rightarrow \mathbb{R}^n$ es una transformación lineal inyectiva y $\left\lbrace v_1,v_2,\dots , v_k \right\rbrace$ con $k\leq m$ es un conjunto linealmente independiente en $V$, entonces $\left\lbrace T(v_1), T(v_2), \dots , T(v_k)  \right\rbrace$ es un conjunto linealmente independiente en $\mathbb{R}^n$.
-\begin{myproof}
-Sea $T: V \to \mathbb{R}^n$ una transformación lineal inyectiva y sea $\{v_1, v_2, \dots, v_k\}$ un conjunto linealmente independiente en $V$ con $k \leq m = \dim(V)$.
-
-Supongamos que existen escalares $a_1, a_2, \dots, a_k$ tales que
-\[
-    a_1 T(v_1) + a_2 T(v_2) + \cdots + a_k T(v_k) = 0.
-\]
-Por la linealidad de $T$, esto implica
-\[
-    T(a_1 v_1 + a_2 v_2 + \cdots + a_k v_k) = 0.
-\]
-Como $T$ es inyectiva, su núcleo es trivial, es decir,
-\[
-    a_1 v_1 + a_2 v_2 + \cdots + a_k v_k = 0.
-\]
-Dado que $\{v_1, v_2, \dots, v_k\}$ es linealmente independiente, se concluye que
-\[
-    a_1 = a_2 = \cdots = a_k = 0.
-\]
-Por lo tanto, $\{T(v_1), T(v_2), \dots, T(v_k)\}$ es un conjunto linealmente independiente en $\mathbb{R}^n$.
-\end{myproof}
-\end{prob}
-
-\begin{prob}
-Sea $V$ un espacio vectorial de dimensión $m$. Demuestre que si $T:V\rightarrow \mathbb{R}^n$ es una transformación lineal y $\left\lbrace v_1,v_2,\dots , v_k \right\rbrace$ con $k\leq m$ es un conjunto linealmente dependiente en $V$, entonces $\left\lbrace T(v_1), T(v_2), \dots , T(v_k)  \right\rbrace$ es un conjunto linealmente dependiente en $\mathbb{R}^n$.
-\begin{myproof}
-Sea $T: V \to \mathbb{R}^n$ una transformación lineal y sea $\{v_1, v_2, \dots, v_k\}$ un conjunto linealmente dependiente en $V$ con $k \leq m = \dim(V)$.
-
-Por definición de dependencia lineal, existen escalares no todos cero $a_1, a_2, \dots, a_k$ tales que
-\[
-    a_1 v_1 + a_2 v_2 + \cdots + a_k v_k = 0.
-\]
-Aplicando la transformación lineal $T$ y usando su linealidad, se tiene
-\[
-    a_1 T(v_1) + a_2 T(v_2) + \cdots + a_k T(v_k) = T(0) = 0.
-\]
-Por lo tanto, $\{T(v_1), T(v_2), \dots, T(v_k)\}$ es un conjunto linealmente dependiente en $\mathbb{R}^n$.
-\end{myproof}
-\end{prob}
-
-
-
-
-\begin{prob}
-Sea $T: V \rightarrow W$ una transformación lineal. Demuestre que si $\{v_1, v_2, \dots, v_n\}$ es una base de $V$ y $\{v_1, v_2, \dots, v_k\}$ es una base de $\ker(T)$, entonces 
-\[
-\{T(v_{k+1}), T(v_{k+2}), \dots, T(v_n)\}
-\]
-es una base de $\operatorname{Im}(T)$.
-\begin{myproof}
-Como $\{v_1, \dots, v_n\}$ es base de $V$, todo vector $v \in V$ se puede escribir de forma única como
-\[
-v = \sum_{i=1}^n a_i v_i.
-\]
-Aplicando $T$, obtenemos
-\[
-T(v) = \sum_{i=1}^n a_i T(v_i) = \sum_{i=k+1}^n a_i T(v_i),
-\]
-ya que para $1 \leq i \leq k$, $v_i \in \ker(T)$ implica que $T(v_i) = 0$.
-
-Por lo tanto, $\operatorname{Im}(T)$ está generado por $\{T(v_{k+1}), \dots, T(v_n)\}$.
-
-Para demostrar que este conjunto es linealmente independiente, supongamos que existen escalares $c_{k+1}, \dots, c_n$ tales que
-\[
-\sum_{i=k+1}^n c_i T(v_i) = 0.
-\]
-Esto implica que
-\[
-T\left(\sum_{i=k+1}^n c_i v_i\right) = 0,
-\]
-es decir, $\sum_{i=k+1}^n c_i v_i \in \ker(T)$.
-
-Pero como $\{v_1, \dots, v_k\}$ es base de $\ker(T)$ y $\{v_1, \dots, v_n\}$ es base de $V$, la expresión
-\[
-\sum_{i=k+1}^n c_i v_i = \sum_{j=1}^k d_j v_j
-\]
-para algunos escalares $d_j$.
-
-Reordenando,
-\[
-\sum_{j=1}^k (-d_j) v_j + \sum_{i=k+1}^n c_i v_i = 0.
-\]
-Dado que $\{v_1, \dots, v_n\}$ es base, todos los coeficientes deben ser cero, por lo que
-\[
-c_i = 0 \quad \text{para } i = k+1, \dots, n.
-\]
-
-Por lo tanto, $\{T(v_{k+1}), \dots, T(v_n)\}$ es linealmente independiente y, junto con la generación demostrada, es base de $\operatorname{Im}(T)$.
-\end{myproof}
-\end{prob}
-
-
-\begin{prob}
-Sea $A$ una matriz $m\times n$. Demuestre el teorema de la dimensión para matrices, es decir, demuestre que $\mathrm{nulidad}(A) + \mathrm{rango}(A) = n$.
-\begin{myproof}
-El teorema de la dimensión para matrices, también conocido como teorema rango-nulidad, afirma que para cualquier matriz $A$ de tamaño $m \times n$:
-\[
-\mathrm{nulidad}(A) + \mathrm{rango}(A) = n,
-\]
-donde $\mathrm{rango}(A)$ es la dimensión del espacio columna de $A$ (el número de columnas linealmente independientes) y $\mathrm{nulidad}(A)$ es la dimensión del espacio nulo de $A$ (el conjunto de soluciones de $A\vec{x} = 0$).
-
-\textbf{Demostración:}
-
-Al reducir $A$ a su forma escalonada por filas, el número de columnas con pivote (unos principales) es igual al rango $r$ de $A$. Las variables asociadas a columnas sin pivote son variables libres, y su número es $n - r$.
-
-Cada variable libre corresponde a un vector linealmente independiente en el espacio nulo, por lo que la nulidad de $A$ es precisamente el número de variables libres:
-\[
-\mathrm{nulidad}(A) = n - \mathrm{rango}(A).
-\]
-Reordenando,
-\[
-\mathrm{nulidad}(A) + \mathrm{rango}(A) = n.
-\]
-
-De manera formal, si $A$ define una transformación lineal $T: \mathbb{R}^n \to \mathbb{R}^m$, entonces el teorema rango-nulidad se deduce del hecho de que la dimensión del dominio es igual a la suma de la dimensión del núcleo y la dimensión de la imagen:
-\[
-\dim(\ker T) + \dim(\operatorname{Im} T) = \dim(\mathbb{R}^n) = n.
-\]
-
-Por lo tanto, para cualquier matriz $A$ de tamaño $m \times n$,
-\[
-\mathrm{nulidad}(A) + \mathrm{rango}(A) = n.
-\]
-\end{myproof}
-\end{prob}
-
-
-
-
+% Intermedio
 \begin{prob}
 Defina $W = \operatorname{span}\{1, \sin x, \cos x\}$ como subespacio de $\mathcal{C}[0,2\pi]$ y sea $T: W \rightarrow \mathbb{R}^3$ la transformación lineal definida por evaluación en $0$, $\pi$ y $2\pi$:
 \[
@@ -1693,33 +1680,7 @@ $\left\{\begin{pmatrix}1\\1\\1\end{pmatrix},\,\begin{pmatrix}1\\-1\\1\end{pmatri
 \end{enumerate}
 \end{prob}
 
-
-\begin{prob}
-Defina $W := \left\lbrace f \in \mathcal{C}\left[ -1,1 \right] \mid f(0) = 0 \right\rbrace$ y $T: \mathcal{C}\left[ -1,1 \right] \rightarrow W$ como $T(f(x)) = f(x) - f(0)$. Determine si $T$ es una transformación lineal y, si lo es, calcule una base para el kernel y la imagen de $T$.
-\begin{myproof}
-\textbf{Linealidad:}  
-Sea $f, g \in \mathcal{C}[-1,1]$ y $k \in \mathbb{R}$.  
-\[
-T(f+g)(x) = (f+g)(x) - (f+g)(0) = f(x) + g(x) - f(0) - g(0) = (f(x) - f(0)) + (g(x) - g(0)) = T(f)(x) + T(g)(x)
-\]
-\[
-T(kf)(x) = (kf)(x) - (kf)(0) = kf(x) - kf(0) = k(f(x) - f(0)) = kT(f)(x)
-\]
-Por lo tanto, $T$ es una transformación lineal.
-
-\textbf{Kernel de $T$:}  
-Buscamos todas las $f$ tales que $T(f) = 0$, es decir,
-\[
-f(x) - f(0) = 0 \implies f(x) = f(0)\ \forall x
-\]
-Por lo tanto, el kernel está formado por todas las funciones constantes. Una base para el kernel es la función constante $1$.
-
-\textbf{Imagen de $T$:}  
-Para cualquier $f \in \mathcal{C}[-1,1]$, $T(f)(0) = f(0) - f(0) = 0$. Por lo tanto, la imagen de $T$ es el subespacio $W = \{g \in \mathcal{C}[-1,1] \mid g(0) = 0\}$, es decir, el conjunto de funciones continuas que se anulan en $0$. Este subespacio es de dimensión infinita y no admite una base finita, pero puede describirse simplemente como $W$.
-\end{myproof}
-\end{prob}
-
-
+% Básico
 \begin{prob}
 Defina $T: \mathbb{R}^2 \rightarrow \mathbb{R}^3$ la transformación lineal tal que
 \[
@@ -1829,34 +1790,7 @@ Las dos columnas de $A$ son linealmente independientes (no son múltiplos una de
 \end{myproof}
 \end{prob}
 
-
-\begin{prob}
-Defina $T:\mathcal{C}\left[ 0,3 \right] \rightarrow \mathcal{P}_{3}(\mathbb{R}) $ como $T(f(x))= f(0)+f(1)x+f(2)x^2+f(3)x^3.$ Determine si $T$ es una transformación lineal. Si lo es, calcule el kernel y la imagen de $T.$
-\begin{myproof}
-\textbf{Linealidad:}  
-Sea $f,g \in \mathcal{C}[0,3]$ y $k \in \mathbb{R}$:
-\[
-T(f+g) = (f+g)(0) + (f+g)(1)x + (f+g)(2)x^2 + (f+g)(3)x^3 = [f(0) + g(0)] + [f(1) + g(1)]x + [f(2) + g(2)]x^2 + [f(3) + g(3)]x^3
-\]
-\[
-= T(f) + T(g)
-\]
-\[
-T(kf) = kf(0) + kf(1)x + kf(2)x^2 + kf(3)x^3 = kT(f)
-\]
-Por lo tanto, $T$ es una transformación lineal[4][5].
-
-\textbf{Kernel:}  
-$T(f) = 0$ si y sólo si $f(0) = f(1) = f(2) = f(3) = 0$.  
-Por lo tanto, el kernel es el conjunto de funciones continuas en $[0,3]$ que se anulan en $0,1,2,3$.  
-Una base del núcleo (en el sentido de subespacio infinito dimensional) es $\{(x-0)(x-1)(x-2)(x-3)\}$ y todos sus múltiplos y sumas con funciones que sean cero en esos puntos.
-
-\textbf{Imagen:}  
-Para cualquier $a_0,a_1,a_2,a_3\in\mathbb{R}$, la función $f$ definida por $f(0)=a_0$, $f(1)=a_1$, $f(2)=a_2$, $f(3)=a_3$ y arbitraria en el resto, cumple $T(f)=a_0+a_1x+a_2x^2+a_3x^3$.  
-Por lo tanto, la imagen de $T$ es todo $\mathcal{P}_3(\mathbb{R})$.
-\end{myproof}
-\end{prob}
-
+% Intermedio
 \begin{prob}
 Considere $B=\left\lbrace \begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix}, \begin{pmatrix} 1 \\ 1 \\ 0 \end{pmatrix}, \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} \right\rbrace$, y defina
 \[
@@ -1936,7 +1870,139 @@ T\begin{pmatrix} 2 \\ 4 \\ -1 \end{pmatrix} = \begin{pmatrix}
 \end{myproof}
 \end{prob}
 
+% --- Demostraciones sobre transformaciones lineales ---
 
+% Intermedio
+\begin{prob}
+Sea $V$ un espacio vectorial de dimensión $m$. Demuestre que si $T:V\rightarrow \mathbb{R}^n$ es una transformación lineal inyectiva y $\left\lbrace v_1,v_2,\dots , v_k \right\rbrace$ con $k\leq m$ es un conjunto linealmente independiente en $V$, entonces $\left\lbrace T(v_1), T(v_2), \dots , T(v_k)  \right\rbrace$ es un conjunto linealmente independiente en $\mathbb{R}^n$.
+\begin{myproof}
+Sea $T: V \to \mathbb{R}^n$ una transformación lineal inyectiva y sea $\{v_1, v_2, \dots, v_k\}$ un conjunto linealmente independiente en $V$ con $k \leq m = \dim(V)$.
+
+Supongamos que existen escalares $a_1, a_2, \dots, a_k$ tales que
+\[
+    a_1 T(v_1) + a_2 T(v_2) + \cdots + a_k T(v_k) = 0.
+\]
+Por la linealidad de $T$, esto implica
+\[
+    T(a_1 v_1 + a_2 v_2 + \cdots + a_k v_k) = 0.
+\]
+Como $T$ es inyectiva, su núcleo es trivial, es decir,
+\[
+    a_1 v_1 + a_2 v_2 + \cdots + a_k v_k = 0.
+\]
+Dado que $\{v_1, v_2, \dots, v_k\}$ es linealmente independiente, se concluye que
+\[
+    a_1 = a_2 = \cdots = a_k = 0.
+\]
+Por lo tanto, $\{T(v_1), T(v_2), \dots, T(v_k)\}$ es un conjunto linealmente independiente en $\mathbb{R}^n$.
+\end{myproof}
+\end{prob}
+
+% Básico
+\begin{prob}
+Sea $V$ un espacio vectorial de dimensión $m$. Demuestre que si $T:V\rightarrow \mathbb{R}^n$ es una transformación lineal y $\left\lbrace v_1,v_2,\dots , v_k \right\rbrace$ con $k\leq m$ es un conjunto linealmente dependiente en $V$, entonces $\left\lbrace T(v_1), T(v_2), \dots , T(v_k)  \right\rbrace$ es un conjunto linealmente dependiente en $\mathbb{R}^n$.
+\begin{myproof}
+Sea $T: V \to \mathbb{R}^n$ una transformación lineal y sea $\{v_1, v_2, \dots, v_k\}$ un conjunto linealmente dependiente en $V$ con $k \leq m = \dim(V)$.
+
+Por definición de dependencia lineal, existen escalares no todos cero $a_1, a_2, \dots, a_k$ tales que
+\[
+    a_1 v_1 + a_2 v_2 + \cdots + a_k v_k = 0.
+\]
+Aplicando la transformación lineal $T$ y usando su linealidad, se tiene
+\[
+    a_1 T(v_1) + a_2 T(v_2) + \cdots + a_k T(v_k) = T(0) = 0.
+\]
+Por lo tanto, $\{T(v_1), T(v_2), \dots, T(v_k)\}$ es un conjunto linealmente dependiente en $\mathbb{R}^n$.
+\end{myproof}
+\end{prob}
+
+% Difícil
+\begin{prob}
+Sea $T: V \rightarrow W$ una transformación lineal. Demuestre que si $\{v_1, v_2, \dots, v_n\}$ es una base de $V$ y $\{v_1, v_2, \dots, v_k\}$ es una base de $\ker(T)$, entonces 
+\[
+\{T(v_{k+1}), T(v_{k+2}), \dots, T(v_n)\}
+\]
+es una base de $\operatorname{Im}(T)$.
+\begin{myproof}
+Como $\{v_1, \dots, v_n\}$ es base de $V$, todo vector $v \in V$ se puede escribir de forma única como
+\[
+v = \sum_{i=1}^n a_i v_i.
+\]
+Aplicando $T$, obtenemos
+\[
+T(v) = \sum_{i=1}^n a_i T(v_i) = \sum_{i=k+1}^n a_i T(v_i),
+\]
+ya que para $1 \leq i \leq k$, $v_i \in \ker(T)$ implica que $T(v_i) = 0$.
+
+Por lo tanto, $\operatorname{Im}(T)$ está generado por $\{T(v_{k+1}), \dots, T(v_n)\}$.
+
+Para demostrar que este conjunto es linealmente independiente, supongamos que existen escalares $c_{k+1}, \dots, c_n$ tales que
+\[
+\sum_{i=k+1}^n c_i T(v_i) = 0.
+\]
+Esto implica que
+\[
+T\left(\sum_{i=k+1}^n c_i v_i\right) = 0,
+\]
+es decir, $\sum_{i=k+1}^n c_i v_i \in \ker(T)$.
+
+Pero como $\{v_1, \dots, v_k\}$ es base de $\ker(T)$ y $\{v_1, \dots, v_n\}$ es base de $V$, la expresión
+\[
+\sum_{i=k+1}^n c_i v_i = \sum_{j=1}^k d_j v_j
+\]
+para algunos escalares $d_j$.
+
+Reordenando,
+\[
+\sum_{j=1}^k (-d_j) v_j + \sum_{i=k+1}^n c_i v_i = 0.
+\]
+Dado que $\{v_1, \dots, v_n\}$ es base, todos los coeficientes deben ser cero, por lo que
+\[
+c_i = 0 \quad \text{para } i = k+1, \dots, n.
+\]
+
+Por lo tanto, $\{T(v_{k+1}), \dots, T(v_n)\}$ es linealmente independiente y, junto con la generación demostrada, es base de $\operatorname{Im}(T)$.
+\end{myproof}
+\end{prob}
+
+% Intermedio
+\begin{prob}
+Sea $A$ una matriz $m\times n$. Demuestre el teorema de la dimensión para matrices, es decir, demuestre que $\mathrm{nulidad}(A) + \mathrm{rango}(A) = n$.
+\begin{myproof}
+El teorema de la dimensión para matrices, también conocido como teorema rango-nulidad, afirma que para cualquier matriz $A$ de tamaño $m \times n$:
+\[
+\mathrm{nulidad}(A) + \mathrm{rango}(A) = n,
+\]
+donde $\mathrm{rango}(A)$ es la dimensión del espacio columna de $A$ (el número de columnas linealmente independientes) y $\mathrm{nulidad}(A)$ es la dimensión del espacio nulo de $A$ (el conjunto de soluciones de $A\vec{x} = 0$).
+
+\textbf{Demostración:}
+
+Al reducir $A$ a su forma escalonada por filas, el número de columnas con pivote (unos principales) es igual al rango $r$ de $A$. Las variables asociadas a columnas sin pivote son variables libres, y su número es $n - r$.
+
+Cada variable libre corresponde a un vector linealmente independiente en el espacio nulo, por lo que la nulidad de $A$ es precisamente el número de variables libres:
+\[
+\mathrm{nulidad}(A) = n - \mathrm{rango}(A).
+\]
+Reordenando,
+\[
+\mathrm{nulidad}(A) + \mathrm{rango}(A) = n.
+\]
+
+De manera formal, si $A$ define una transformación lineal $T: \mathbb{R}^n \to \mathbb{R}^m$, entonces el teorema rango-nulidad se deduce del hecho de que la dimensión del dominio es igual a la suma de la dimensión del núcleo y la dimensión de la imagen:
+\[
+\dim(\ker T) + \dim(\operatorname{Im} T) = \dim(\mathbb{R}^n) = n.
+\]
+
+Por lo tanto, para cualquier matriz $A$ de tamaño $m \times n$,
+\[
+\mathrm{nulidad}(A) + \mathrm{rango}(A) = n.
+\]
+\end{myproof}
+\end{prob}
+
+% --- Isomorfismos ---
+
+% Básico
 \begin{prob}
 De condiciones para cuando una matriz cuadrada sea un isomorfismo entre espacios vectoriales. Use esto para verificar si las siguientes matrices representan un isomorfismo:
 \begin{enumerate}[$a)$]
@@ -1971,64 +2037,7 @@ Calculamos el determinante de cada matriz:
 \end{myproof}
 \end{prob}
 
-
-\begin{prob}
-Demuestre que la transformación lineal $T:\mathcal{M}_{2}\left(\mathbb{R}\right) \rightarrow \mathbb{R}^{4}$
-definida como
-\[
-T\left(
-\begin{pmatrix}
-a & b \\
-c & d
-\end{pmatrix}
-\right) = 
-\begin{pmatrix}
-a \\
-a+b \\
-a+b+c \\
-a+b+c+d
-\end{pmatrix}
-\]
-es un isomorfismo.
-\begin{myproof}
-\textbf{Linealidad:}  
-La transformación $T$ es lineal porque cada componente de la imagen es una combinación lineal de las entradas $a, b, c, d$ de la matriz.
-
-\textbf{Matriz asociada:}  
-Si identificamos $\mathcal{M}_2(\mathbb{R})$ con $\mathbb{R}^4$ en el orden $(a, b, c, d)$, la matriz de $T$ en las bases canónicas es:
-\[
-A_T = 
-\begin{pmatrix}
-1 & 0 & 0 & 0 \\
-1 & 1 & 0 & 0 \\
-1 & 1 & 1 & 0 \\
-1 & 1 & 1 & 1
-\end{pmatrix}
-\]
-
-\textbf{Inyectividad:}  
-$T$ es inyectiva si y sólo si $\ker(T) = \{0\}$. Si $T(a, b, c, d) = (0, 0, 0, 0)$, entonces:
-\[
-\begin{cases}
-a = 0 \\
-a + b = 0 \\
-a + b + c = 0 \\
-a + b + c + d = 0
-\end{cases}
-\implies
-a = 0,\ b = 0,\ c = 0,\ d = 0
-\]
-Por lo tanto, el núcleo es trivial.
-
-\textbf{Sobreyectividad:}  
-Como la matriz asociada $A_T$ es cuadrada ($4 \times 4$) y su determinante es $1 \neq 0$ (es invertible), $T$ es sobreyectiva: para cualquier vector en $\mathbb{R}^4$ existe una preimagen.
-
-\textbf{Conclusión:}  
-$T$ es lineal, inyectiva y sobreyectiva, por lo tanto es un isomorfismo entre $\mathcal{M}_2(\mathbb{R})$ y $\mathbb{R}^4$.
-\end{myproof}
-\end{prob}
-
-
+% Difícil
 \begin{prob}
 Sea $A$ una matriz $2\times 2.$ ¿Es la transformación lineal $T(A)=\begin{pmatrix} 
 2 & 3\\ 
@@ -2056,6 +2065,9 @@ $T$ no es un isomorfismo porque no es inyectiva (ni sobreyectiva).
 \end{myproof}
 \end{prob}
 
+% --- Transformaciones geométricas ---
+
+% Básico
 \begin{prob}
 Dada la figura plana de la Figura~\ref{fig:figura_original_plano}, determine el efecto geométrico que efectúan sobre ella las transformaciones lineales representadas por las siguientes matrices. Para cada caso, calcule el kernel, la imagen, el rango y la nulidad.
 
@@ -2322,7 +2334,7 @@ ytick={-1.0,0.0,...,4.0},]
 
 \end{prob}
 
-
+% Intermedio
 \begin{prob}
 Dada la figura tridimensional de la Figura~\ref{fig:sudoku_original}, determine el efecto geométrico que efectúan sobre ella las transformaciones lineales representadas por las siguientes matrices. Calcule el kernel, la imagen, la nulidad y el rango. Represente gráficamente las transformaciones.
 
@@ -2567,59 +2579,115 @@ Dada la figura tridimensional de la Figura~\ref{fig:sudoku_original}, determine 
 \end{enumerate}
 \end{prob}
 
+\section{Problemas propuestos}
 
+% --- Linealidad ---
+
+% Básico
 \begin{prob}
-Sea $T: \mathbb{R}^4 \to \mathbb{R}^3$ una transformación lineal definida por $T(\mathbf{x}) = A\mathbf{x}$, donde:
-\[
-A = \begin{pmatrix} 1 & 2 & 1 & 0 \\ 0 & 1 & 1 & 1 \\ 1 & 3 & 2 & 1 \end{pmatrix}
-\]
+Determine si la función $T:\mathbb{R}^2 \to \mathbb{R}^2$ definida por $T\begin{pmatrix} x \ y \end{pmatrix} = \begin{pmatrix} x+1 \ y \end{pmatrix}$ es una transformación lineal. Justifique su respuesta.
+\end{prob}
 
-\begin{enumerate}[(a)]
-\item Encuentre una base para $\ker(T)$ y $\operatorname{Im}(T)$.
-\begin{myproof}
-Para encontrar una base del núcleo (kernel), resolvemos $A\mathbf{x} = 0$:
-\[
-\ker(T) = \left\{ \begin{pmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{pmatrix} \in \mathbb{R}^4 : 
-\begin{pmatrix} 1 & 2 & 1 & 0 \\ 0 & 1 & 1 & 1 \\ 1 & 3 & 2 & 1 \end{pmatrix} 
-\begin{pmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{pmatrix} = 0 \right\}
-\]
-El cálculo computacional muestra que una base de $\ker(T)$ es:
-\[
-\left\{
-\begin{pmatrix} 1 \\ -1 \\ 1 \\ 0 \end{pmatrix},
-\begin{pmatrix} 2 \\ -1 \\ 0 \\ 1 \end{pmatrix}
-\right\}
-\]
+% Básico
+\begin{prob}
+Considere la función de evaluación $T:\mathbb{P}_2(\mathbb{R}) \to \mathbb{R}$ definida por $T(p(x)) = p(2)$. Demuestre que $T$ es una transformación lineal y calcule una base para $\ker(T)$. ¿Cuáles son el rango y la nulidad de $T$?
+\end{prob}
 
-Para la imagen (columna espacio), una base está dada por las columnas linealmente independientes de $A$. El cálculo computacional muestra que una base de $\operatorname{Im}(T)$ es:
+% --- Núcleo, imagen y teorema de la dimensión ---
+
+% Básico
+\begin{prob}
+Sea $T:\mathbb{R}^3 \to \mathbb{R}^2$ definida por $T\begin{pmatrix} x \ y \ z \end{pmatrix} = \begin{pmatrix} x - y \ 2z \end{pmatrix}$. Calcule la matriz de $T$ en las bases canónicas, una base para el kernel y una base para la imagen. Determine el rango y la nulidad.
+\end{prob}
+
+% Básico
+\begin{prob}
+Sea $T:\mathbb{R}^3 \to \mathbb{R}^3$ la proyección sobre el plano $XY$, es decir, $T\begin{pmatrix} x \ y \ z \end{pmatrix} = \begin{pmatrix} x \ y \ 0 \end{pmatrix}$. Calcule el rango y la nulidad de $T$ y verifique el teorema de la dimensión.
+\end{prob}
+
+% Intermedio
+\begin{prob}
+Sea $T:\mathbb{R}^3 \to \mathbb{R}^3$ la transformación lineal cuya matriz en las bases canónicas es
 \[
-\left\{
-\begin{pmatrix} 1 \\ 0 \\ 1 \end{pmatrix},
-\begin{pmatrix} 2 \\ 1 \\ 3 \end{pmatrix}
-\right\}
+A = \begin{pmatrix} 1 & 2 & 0 \ 0 & 1 & 1 \ 1 & 3 & 1 \end{pmatrix}.
 \]
-\end{myproof}
+Calcule una base para $\ker(T)$ y una base para $\operatorname{Im}(T)$. Determine si $T$ es inyectiva, sobreyectiva o biyectiva.
+\end{prob}
 
-\item Verifique el teorema del rango-nulidad para $T$.
-\begin{myproof}
-El teorema del rango-nulidad establece que:
+% Intermedio
+\begin{prob}
+Sea $T: \mathbb{R}^4 \to \mathbb{R}^3$ definida por $T(\mathbf{x}) = A\mathbf{x}$, donde
 \[
-\operatorname{nulidad}(T) + \operatorname{rango}(T) = \dim(\mathbb{R}^4) = 4
+A = \begin{pmatrix} 1 & 0 & 2 & 1 \ 0 & 1 & 1 & -1 \ 2 & 1 & 5 & 1 \end{pmatrix}.
 \]
-Del inciso anterior, la nulidad es $2$ (dos vectores en la base del núcleo) y el rango es $2$ (dos vectores en la base de la imagen). Por lo tanto:
+Encuentre una base para $\ker(T)$ y para $\operatorname{Im}(T)$, y verifique el teorema de la dimensión.
+\end{prob}
+
+% Difícil
+\begin{prob}
+¿Existe una transformación lineal $T:\mathbb{R}^3 \to \mathbb{R}^3$ tal que $\operatorname{Im}(T) = \ker(T)$? ¿Y una transformación lineal $T:\mathbb{R}^4 \to \mathbb{R}^4$ con esa propiedad? En cada caso, dé un ejemplo o demuestre que no puede existir.
+\end{prob}
+
+% --- Matriz de representación ---
+
+% Básico
+\begin{prob}
+Escriba la matriz, respecto a la base canónica, de la reflexión $T:\mathbb{R}^2 \to \mathbb{R}^2$ respecto al eje $y$, y úsela para calcular la imagen del punto $(3, -2)$.
+\end{prob}
+
+% Intermedio
+\begin{prob}
+Encuentre la transformación lineal $T:\mathbb{R}^2 \to \mathbb{R}^2$ tal que
 \[
-2 + 2 = 4
+T\begin{pmatrix} 1 \ 1 \end{pmatrix} = \begin{pmatrix} 2 \ 3 \end{pmatrix}, \qquad T\begin{pmatrix} 1 \ -1 \end{pmatrix} = \begin{pmatrix} 0 \ 1 \end{pmatrix},
 \]
-El teorema se cumple.
-\end{myproof}
+y calcule su matriz respecto a la base canónica.
+\end{prob}
 
-\item Determine si $T$ es inyectiva, sobreyectiva o biyectiva.
-\begin{myproof}
-$T$ es \textbf{inyectiva} si y sólo si el núcleo es trivial, es decir, sólo contiene el vector cero. Como la nulidad es $2$, $T$ \textbf{no es inyectiva}.
+% Intermedio
+\begin{prob}
+Encuentre la matriz del operador derivada $D:\mathbb{P}_3(\mathbb{R}) \to \mathbb{P}_3(\mathbb{R})$ relativa a la base $B = \{1, x, x^2, x^3\}$ y úsela para calcular $D(2 - x + 5x^3)$.
+\end{prob}
 
-$T$ es \textbf{sobreyectiva} si su imagen es todo $\mathbb{R}^3$, es decir, si el rango es $3$. Como el rango es $2$, $T$ \textbf{no es sobreyectiva}.
+% Intermedio
+\begin{prob}
+Sea $T:\mathbb{P}_2(\mathbb{R}) \to \mathbb{P}_2(\mathbb{R})$ definida por $T(p(x)) = p(2x-1)$. Calcule la matriz de $T$ respecto a la base $B = \{1, x, x^2\}$ y determine si $T$ es un isomorfismo.
+\end{prob}
 
-$T$ es \textbf{biyectiva} si es inyectiva y sobreyectiva. Por lo anterior, $T$ \textbf{no es biyectiva}.
-\end{myproof}
-\end{enumerate}
+% Intermedio
+\begin{prob}
+Sea $T:\mathcal{M}_2(\mathbb{R}) \to \mathcal{M}_2(\mathbb{R})$ definida por $T(A) = A^{T}$ (la transpuesta). Demuestre que $T$ es lineal, encuentre su matriz respecto a la base canónica $\{E_{11}, E_{12}, E_{21}, E_{22}\}$ y determine si $T$ es un isomorfismo.
+\end{prob}
+
+% --- Composición e isomorfismos ---
+
+% Intermedio
+\begin{prob}
+Sean $S:\mathbb{R}^2 \to \mathbb{R}^3$ y $T:\mathbb{R}^3 \to \mathbb{R}^2$ definidas por
+\[
+S\begin{pmatrix} x \ y \end{pmatrix} = \begin{pmatrix} x \ y \ x+y \end{pmatrix}, \qquad
+T\begin{pmatrix} x \ y \ z \end{pmatrix} = \begin{pmatrix} x - z \ y + z \end{pmatrix}.
+\]
+Calcule una fórmula para $T \circ S$, su matriz respecto a las bases canónicas y su núcleo. ¿Es $T \circ S$ invertible?
+\end{prob}
+
+% Difícil
+\begin{prob}
+Sea $T:\mathbb{P}_2(\mathbb{R}) \to \mathbb{P}_2(\mathbb{R})$ definida por $T(p(x)) = p(x) + p'(x)$. Demuestre que $T$ es un isomorfismo y calcule $T^{-1}(x^2)$.
+\end{prob}
+
+% --- Demostraciones ---
+
+% Intermedio
+\begin{prob}
+Sea $T:V \to W$ una transformación lineal. Demuestre que si $\{T(v_1), T(v_2), \dots, T(v_k)\}$ es un conjunto linealmente independiente en $W$, entonces $\{v_1, v_2, \dots, v_k\}$ es linealmente independiente en $V$. Compare con los problemas de la sección anterior: ¿es cierto el recíproco sin hipótesis adicionales sobre $T$?
+\end{prob}
+
+% Difícil
+\begin{prob}
+Sea $T:V \to V$ un operador lineal sobre un espacio de dimensión finita tal que $T \circ T = T$. Demuestre que
+\[
+V = \ker(T) \oplus \operatorname{Im}(T),
+\]
+es decir, todo $v \in V$ se escribe de manera única como suma de un vector del núcleo y uno de la imagen.
 \end{prob}

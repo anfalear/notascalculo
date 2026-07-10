@@ -391,13 +391,13 @@ Mínimo 8–10 resueltos (example con myproof) + 15–20 propuestos (sin myproof
 **Acción:** crear `\section{Problemas propuestos}`; aplicar Decisión F a los 22 probs (22 con solución dentro); tags de graduación.
 **Criterio de cierre:** sección única graduada; convención F aplicada al 100 %.
 **Líneas estimadas:** 60–120
-**Estado:** Pendiente
+**Estado:** Completado (2026-07-10). 4 elevaciones aprobadas por el autor: #3→`ex:tl_matriz_derivada` (§matriz asociada), #4→`ex:tl_bases_no_canonicas` (§matriz asociada), #18→`ex:tl_isomorfismo_m2` (§isomorfismos), #22→`ex:tl_nucleo_imagen` (§núcleo/imagen; el «cálculo computacional muestra» sustituido por reducción de filas explícita, RREF verificado a mano). Banco reorganizado: 18 probs en 5 grupos temáticos con tags 5B/11I/2D. §Problemas propuestos creada con 16 probs nuevos 5B/8I/3D aprobados por el autor y verificados con SymPy.
 
 ### F9AL.27 — translineales: completar protocolo de 4 pasos
 **Acción:** de los 10 examples solo 3 tienen marcas de Paso; revisar los 7 restantes: los ilustrativos se justifican con título, los computacionales se reforman a 4 pasos + boxed.
 **Criterio de cierre:** 10/10 conformes o justificados; lista en Notas.
 **Líneas estimadas:** 40–100
-**Estado:** Pendiente
+**Estado:** Completado (2026-07-10). 14 examples tras las elevaciones: 3 ya tenían pasos (Verificación TL, ejmntl, P₂→R³ multi), 4 elevados llegan con protocolo, 3 reformados a pasos+boxed (Operador integral — además precisado a $\int_a^x f(t)\,dt$ de Volterra, la indefinida no era una función bien definida —, Matriz P₂ traslación, Matriz/kernel R³ con det=−10 verificado), 4 ilustrativos justificados por título (Propiedades básicas, Ejemplos de isomorfismos, Clásicas R², Casita). 14/14 conformes o justificados.
 
 ---
 
@@ -582,8 +582,8 @@ Mínimo 8–10 resueltos (example con myproof) + 15–20 propuestos (sin myproof
 | F9AL.23 | `translineales.tex` | Estructura de secciones | Completado | 2026-07-10 | 6 secciones + label capítulo; teodim ya tenía prueba. 792 pp |
 | F9AL.24 | `translineales.tex` | Auditoría 20 figuras | Completado | 2026-07-10 | 19 labels + 19 anchors + tikz suelto → fig:diagrama_matriz_asociada. 20/20 |
 | F9AL.25 | `translineales.tex` | 2 figuras nuevas R2 | Completado | 2026-07-10 | fig:cuadrado_rotacion_cizalla (minipage doble) + fig:composicion_diagrama |
-| F9AL.26 | `translineales.tex` | Sección propuestos + Decisión F | Pendiente | — | — |
-| F9AL.27 | `translineales.tex` | Completar 4 pasos | Pendiente | — | — |
+| F9AL.26 | `translineales.tex` | Sección propuestos + Decisión F | Completado | 2026-07-10 | 4 elevaciones aprobadas; banco 18 probs/5 grupos 5B/11I/2D; 16 propuestos nuevos 5B/8I/3D SymPy-OK |
+| F9AL.27 | `translineales.tex` | Completar 4 pasos | Completado | 2026-07-10 | 3 reformas (integral→Volterra, P₂ traslación, R³); 4 ilustrativos justificados; 14/14 |
 | F9AL.28 | `complejos.tex` | Elevar 8–10 resueltos del banco | Pendiente | — | — |
 | F9AL.29 | `complejos.tex` | Auditoría 7 figuras | Pendiente | — | — |
 | F9AL.30 | `complejos.tex` | 2 figuras nuevas R2 | Pendiente | — | — |
