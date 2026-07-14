@@ -526,7 +526,7 @@ Mínimo 8–10 resueltos (example con myproof) + 15–20 propuestos (sin myproof
 
 ### F9AL.43 — translineales: 47 myproof → protocolo 4 pasos (2 lotes)
 **Nota:** ejecutar tras F9AL.26/.27.
-**Estado:** Pendiente
+**Estado:** Completado (2026-07-10). Alcance real tras las 4 elevaciones de F9AL.26: 41 myproof en 18 probs. **Lote 1** (commit 1af9caa): 12 myproof del mega-prob de 12 literales; **error matemático corregido en el literal f)** ($T:\mathcal{M}_2\to\mathcal{P}_3$: el banco afirmaba rango 4/invertible, SymPy da det=0, rango 3, ker=span{(0,1,0,1)}); literal g) duplicaba el example de traslación en P₂ → sustituido por $T(p)=p(2x)$ (SymPy-OK, precedente F9AL.21); artefacto de matriz simbólica en l) eliminado. **Lote 2**: 18 myproof de los probs 2–16 a protocolo con boxed; correcciones extra: «plano Z»→«eje Z» (enunciado y solución del prob 2), artefacto `[4][5]` eliminado (prob 5), sobreyectividad de Im(T)=W completada (prob 4), «base» de núcleo infinito-dimensional reformulada (prob 5), det(C)=1 calculado (prob 15c), prob 7 verificado con SymPy ((B')⁻¹A coincide). **Excepciones registradas:** los 11 myproof de los probs geométricos 17–18 conservan la plantilla estructurada de campos (Efecto geométrico/Kernel/Imagen/Rango/Nulidad/Gráfica), equivalente al protocolo. Balance: 30/41 con `Paso N.`, 11/41 excepción de plantilla.
 
 ### F9AL.44 — complejos: 24 myproof → protocolo 4 pasos
 **Nota:** ejecutar tras F9AL.28 (las 8–10 elevaciones de ese ítem ya salen con 4 pasos; este ítem cubre el resto del banco).
@@ -599,7 +599,7 @@ Mínimo 8–10 resueltos (example con myproof) + 15–20 propuestos (sin myproof
 | F9AL.40 | `espaciosvectoriales.tex` | 11 myproof → 4 pasos | Pendiente | — | Ampliación 2026-07-10 |
 | F9AL.41 | `prodinterno.tex` | 15 myproof → 4 pasos | Pendiente | — | Ampliación 2026-07-10 |
 | F9AL.42 | `vvpropios.tex` | 27 myproof → 4 pasos | Completado | 2026-07-10 | 21/23 reestructurados con boxed; 2 excepciones prosa (≤4 líneas) registradas; artefacto [2] y «normalizados» corregidos; ref a cor:cerovp. 790 pp, 0 errores. |
-| F9AL.43 | `translineales.tex` | 47 myproof → 4 pasos (2 lotes) | Pendiente | — | Tras F9AL.26/.27 |
+| F9AL.43 | `translineales.tex` | 47 myproof → 4 pasos (2 lotes) | Completado | 2026-07-10 | 41 reales tras elevaciones: 30 con Paso+boxed, 11 excepción plantilla geométrica; fix literal f (rango 3), g duplicado sustituido, plano Z→eje Z, [4][5], det(C)=1 |
 | F9AL.44 | `complejos.tex` | 24 myproof → 4 pasos | Pendiente | — | Tras F9AL.28 |
 | F9AL.45 | `vectoresrn.tex` | 27 myproof → 4 pasos (bloque V) | Pendiente | — | Tras F9AL.37; opcional |
 | F9AL.46 | `vvpropios.tex` | Subsección breve forma de Jordan | Completado | 2026-07-10 | §8.2.1: def J_k + teorema enunciado + ejemplo A=(1 1;−1 3)→J_2(2) SymPy-OK + rem con cite Hoffman-Kunze (bibtex corrido) + 2 refs conectadas. 790 pp, 0 errores. |
