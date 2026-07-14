@@ -36,7 +36,7 @@ Sean $z_1,z_2$ y $z_3 \in \mathbb{C}$, entonces:
 \end{enumerate}
 \end{theorem}
 
-\begin{prob}  (\cite{andreescu2014complex}, p. 19, Problema 1) Considere los complejos $z_1=1+2i$, $z_2=-2+3i$ y $z_3=1-i$. Calcule:
+\begin{example}[Operaciones básicas con números complejos] (\cite{andreescu2014complex}, p. 19, Problema 1) Considere los complejos $z_1=1+2i$, $z_2=-2+3i$ y $z_3=1-i$. Calcule:
 \begin{multicols}{2}
 \begin{enumerate}[$(a)$]
 \item $z_1+z_2+z_3$.
@@ -45,7 +45,11 @@ Sean $z_1,z_2$ y $z_3 \in \mathbb{C}$, entonces:
 \item $z_1^2 + z_2^2 +z_3^2$.
 \end{enumerate}
 \end{multicols}
-\begin{myproof}	
+\begin{myproof}
+\textbf{Paso 1.} Estrategia: operamos en forma binomial agrupando partes reales e imaginarias y usando $i^2=-1$; para el cociente del literal $(c)$ multiplicaremos numerador y denominador por el conjugado del denominador.
+
+\textbf{Paso 2.} Literales $(a)$ y $(b)$.
+
 $(a)$ Sumando las partes reales e imaginarias:
 \begin{equation}
 z_1+z_2+z_3 = (1+2i)+(-2+3i)+(1-i)=(1-2+1)+(2+3-1)i= \boxed{0+4i}.
@@ -62,7 +66,7 @@ z_1z_2z_3 &= (1+2i)(-2+3i)(1-i)\\
 &= \boxed{-9+7i}
 \end{align*}
 
-$(c)$ Calculando cada término:
+\textbf{Paso 3.} Literal $(c)$. Calculando cada término:
 \begin{align*}
 z_1^2 &= (1+2i)^2 = 1+4i+4i^2 = 1+4i-4 = -3+4i\\
 z_2^2 &= (-2+3i)^2 = 4-12i+9i^2 = 4-12i-9 = -5-12i\\
@@ -84,31 +88,31 @@ Multiplicando numerador y denominador por el conjugado del denominador:
 &= \boxed{\frac{152}{221}-\frac{72}{221}i}
 \end{align*}
 
-$(d)$ Utilizando los cálculos previos:
+\textbf{Paso 4.} Literal $(d)$. Utilizando los cálculos previos:
 \begin{align*}
 z_1^2 + z_2^2 +z_3^2 &= (-3+4i) + (-5-12i) + (-2i)\\
-&= -8-10i
+&= \boxed{-8-10i}
 \end{align*}
 \end{myproof}
-\end{prob}
+\end{example}
 
-\begin{prob} Demuestre que $z$ es real si y solo si es igual a su conjugado.
+\begin{example}[Caracterización de los reales por conjugación] Demuestre que $z$ es real si y solo si es igual a su conjugado.
 
-\begin{myproof}	
-Sea $z=a+bi$ un número complejo, donde $a$ y $b$ son números reales. El conjugado de $z$ es $\overline{z}=a-bi$. 
+\begin{myproof}
+\textbf{Paso 1.} Planteamiento. Sea $z=a+bi$ un número complejo, donde $a$ y $b$ son números reales. El conjugado de $z$ es $\overline{z}=a-bi$. Debemos probar las dos implicaciones del «si y solo si».
 
-$(\Rightarrow)$ Si $z$ es real, entonces $z=a$ con $b=0$. Por tanto, $\overline{z}=a-0i=a=z$.
+\textbf{Paso 2.} $(\Rightarrow)$ Si $z$ es real, entonces $z=a$ con $b=0$. Por tanto, $\overline{z}=a-0i=a=z$.
 
-$(\Leftarrow)$ Si $z=\overline{z}$, entonces $a+bi=a-bi$. Esto implica que $2bi=0$, lo que solo es posible si $b=0$. Por lo tanto, $z=a$ es un número real.
+\textbf{Paso 3.} $(\Leftarrow)$ Si $z=\overline{z}$, entonces $a+bi=a-bi$. Esto implica que $2bi=0$, lo que solo es posible si $b=0$. Por lo tanto, $z=a$ es un número real.
 
-En conclusión, $z$ es real si y solo si $z=\overline{z}$.
+\textbf{Paso 4.} En conclusión, $z$ es real si y solo si $z=\overline{z}$.
 \end{myproof}
-\end{prob}
+\end{example}
 
 
-\begin{prob} (\cite{andreescu2014complex}, p. 19, Problema 9) Encuentre los números reales $x,$ $y$ tales que $\dfrac{x-3}{3+i}+\dfrac{y-3}{3-i}=i.$
-\begin{myproof}	
-Multiplicando ambos lados por el denominador común $(3+i)(3-i)=9+1=10$:
+\begin{example}[Ecuación con incógnitas reales] (\cite{andreescu2014complex}, p. 19, Problema 9) Encuentre los números reales $x,$ $y$ tales que $\dfrac{x-3}{3+i}+\dfrac{y-3}{3-i}=i.$
+\begin{myproof}
+\textbf{Paso 1.} Multiplicamos ambos lados por el denominador común $(3+i)(3-i)=9+1=10$:
 \begin{align*}
 \dfrac{x-3}{3+i}+\dfrac{y-3}{3-i}&=i\\
 (x-3)(3-i)+(y-3)(3+i)&=10i\\
@@ -116,13 +120,13 @@ Multiplicando ambos lados por el denominador común $(3+i)(3-i)=9+1=10$:
 (3x+3y-18)+i(-x+y)&=10i
 \end{align*}
 
-Igualando partes reales e imaginarias:
+\textbf{Paso 2.} Igualando partes reales e imaginarias obtenemos un sistema lineal:
 \begin{align*}
 3x+3y-18&=0\\
 -x+y&=10
 \end{align*}
 
-De la segunda ecuación: $y=10+x$. Sustituyendo en la primera:
+\textbf{Paso 3.} De la segunda ecuación: $y=10+x$. Sustituyendo en la primera:
 \begin{align*}
 3x+3(10+x)-18&=0\\
 3x+30+3x-18&=0\\
@@ -131,15 +135,19 @@ De la segunda ecuación: $y=10+x$. Sustituyendo en la primera:
 x&=-2
 \end{align*}
 
-Por lo tanto, $\boxed{x=-2}$ y $\boxed{y=10+(-2)=8}$.
+\textbf{Paso 4.} Por lo tanto, $\boxed{x=-2}$ y $\boxed{y=10+(-2)=8}$.
 \end{myproof}
-\end{prob}
+\end{example}
 
 La forma presentada anteriormente se denomina \textbf{forma binomial} o \textbf{cartesiana} de un número complejo. También es posible representar un número complejo como una pareja ordenada $(x,y)$ de números reales, donde la parte real se grafica en el eje $X$ y la parte imaginaria en el eje $Y$. Esta es conocida como la \textbf{representación geométrica} del complejo $z$.
 
-\begin{prob} Calcule la representación geométrica del complejo $z=-5-4i.$ \label{formageometrica54i}
-\begin{myproof} 
-La parte real del complejo $z$ es $-5$ y la parte imaginaria es $-4$. Por tanto, $z$ corresponde al punto $(-5,-4)$ en el plano complejo. Su representación geométrica es:
+\begin{example}[Representación geométrica de un número complejo] Calcule la representación geométrica del complejo $z=-5-4i.$ \label{formageometrica54i}
+\begin{myproof}
+\textbf{Paso 1.} Identificamos las componentes: la parte real del complejo $z$ es $-5$ y la parte imaginaria es $-4$.
+
+\textbf{Paso 2.} Por tanto, $z$ corresponde al punto $\boxed{(-5,-4)}$ en el plano complejo.
+
+\textbf{Paso 3.} Su representación geométrica es:
 
 \begin{figure}[H]
 \centering
@@ -166,7 +174,7 @@ ytick={-4.0,-3.0,...,1.0},]
 \caption{Representación geométrica del complejo $-5-4i.$}
 \end{figure}
 \end{myproof}
-\end{prob} 
+\end{example}
 
 Haciendo uso de las coordenadas polares, podemos obtener otra representación del número complejo $z$:
 
@@ -199,113 +207,29 @@ Sean $z_1=\abs{z_1}\mathrm{e}^{i\theta_1}$ y $z_2=\abs{z_2}\mathrm{e}^{i\theta_2
 De este teorema se deduce que multiplicar complejos en forma polar equivale a multiplicar sus módulos y sumar sus argumentos, mientras que dividir complejos equivale a dividir sus módulos y restar sus argumentos. Para estas operaciones es importante considerar el cuadrante y posiblemente ajustar para obtener el argumento principal.
 \end{rem}
 
-\begin{prob} Encuentre la forma polar del número complejo $z=-5-4i.$ ¿Cuál es el efecto geométrico en el plano complejo de multiplicar y dividir por este número? Justifique su respuesta. \label{formapolar54i}
+\begin{example}[Forma polar y efecto geométrico de la multiplicación] Encuentre la forma polar del número complejo $z=-5-4i.$ ¿Cuál es el efecto geométrico en el plano complejo de multiplicar y dividir por este número? Justifique su respuesta. \label{formapolar54i}
 
 \begin{myproof}
-Para encontrar la forma polar de $z=-5-4i$, calculamos:
+\textbf{Paso 1.} El módulo: $|z|=\sqrt{(-5)^2+(-4)^2}=\sqrt{25+16}=\sqrt{41}$.
 
-El módulo: $|z|=\sqrt{(-5)^2+(-4)^2}=\sqrt{25+16}=\sqrt{41}$.
-
-Para el argumento, calculamos $\tan\theta = \frac{-4}{-5}=\frac{4}{5}$, lo que da $\theta = \arctan\left(\frac{4}{5}\right) \approx 0.6747$ radianes. Como $z$ se encuentra en el tercer cuadrante (tanto $x$ como $y$ son negativos), debemos sumar $\pi$ al valor obtenido:
+\textbf{Paso 2.} Para el argumento, calculamos $\tan\theta = \frac{-4}{-5}=\frac{4}{5}$, lo que da $\theta = \arctan\left(\frac{4}{5}\right) \approx 0.6747$ radianes. Como $z$ se encuentra en el tercer cuadrante (tanto $x$ como $y$ son negativos), debemos sumar $\pi$ al valor obtenido:
 $$\text{arg}(z) = \pi+\arctan\left(\frac{4}{5}\right) \approx 3.8163 \text{ radianes}.$$
 
-Por tanto, la forma polar de $z$ es $\boxed{z=\sqrt{41}\,\mathrm{e}^{i\cdot 3.8163}}$.
+\textbf{Paso 3.} Por tanto, la forma polar de $z$ es $\boxed{z=\sqrt{41}\,\mathrm{e}^{i\cdot 3.8163}}$.
 
-Respecto al efecto geométrico:
-- Multiplicar un número complejo por $z$ tiene dos efectos: (1) una dilatación por un factor de $\sqrt{41} \approx 6.40$ y (2) una rotación en sentido antihorario de aproximadamente $3.8163$ radianes (218.8°).
-- Dividir por $z$ produce: (1) una contracción por un factor de $\frac{1}{\sqrt{41}} \approx 0.156$ y (2) una rotación en sentido horario de $3.8163$ radianes.
+\textbf{Paso 4.} Respecto al efecto geométrico:
+\begin{itemize}
+\item Multiplicar un número complejo por $z$ tiene dos efectos: (1) una dilatación por un factor de $\sqrt{41} \approx 6.40$ y (2) una rotación en sentido antihorario de aproximadamente $3.8163$ radianes (218.8°).
+\item Dividir por $z$ produce: (1) una contracción por un factor de $\frac{1}{\sqrt{41}} \approx 0.156$ y (2) una rotación en sentido horario de $3.8163$ radianes.
+\end{itemize}
 \end{myproof}
-\end{prob}
+\end{example}
 
-Es posible verificar los resultados de los problemas \ref{formageometrica54i} y \ref{formapolar54i} mediante el siguiente programa en \texttt{Python 3.x}:
 
-\begin{prob} Use el lenguaje de programación \texttt{Python 3.x} para calcular la forma geométrica y polar del número complejo $-5-4i$.
-\begin{myproof}
-\begin{lstlisting}[label={lst:complejo},basicstyle=\footnotesize]
-import cmath
-import matplotlib.pyplot as plt
 
-def calcular_modulo_argumento(numero_complejo):
-    modulo = abs(numero_complejo)
-    argumento = cmath.phase(numero_complejo)
-    
-    # Normalizar el argumento al intervalo [0, 2π)
-    if argumento < 0:
-        argumento += 2 * cmath.pi
-    elif argumento > 2 * cmath.pi:
-        argumento %= 2 * cmath.pi
-    
-    return modulo, argumento
 
-# Entrada de valores
-real_part = float(input("Parte real: "))
-imag_part = float(input("Parte imaginaria, sin la i: "))
-numero_complejo = complex(real_part, imag_part)
 
-# Cálculo de módulo y argumento
-modulo, argumento = calcular_modulo_argumento(numero_complejo)
-print(f'Módulo: {modulo}')
-print(f'Argumento: {argumento} radianes')
-
-# Visualización gráfica
-plt.figure(figsize=(8, 8))
-plt.scatter(real_part, imag_part, color='red', marker='x', label='Número complejo')
-plt.xlabel('Parte Real')
-plt.ylabel('Parte Imaginaria')
-plt.title('Representación en el Plano Complejo')
-plt.axhline(0, color='black', linewidth=0.5)
-plt.axvline(0, color='black', linewidth=0.5)
-plt.grid(color='gray', linestyle='--', linewidth=0.5)
-plt.legend()
-plt.show()
-\end{lstlisting}
-
-Este programa genera la siguiente salida:
-
-Parte real: -5
-
-Parte imaginaria, sin la i: -4
-
-Módulo: $6.4031242374328485$
-
-Argumento: $3.8163335958133455$ radianes.
-
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.35]{representacioncomplejo.eps}
-\caption{Representación gráfica en \texttt{matplotlib} del complejo $-5-4i.$}
-\end{figure}
-
-Estos resultados confirman los cálculos realizados en los problemas \ref{formageometrica54i} y \ref{formapolar54i}.
-\end{myproof}
-\end{prob}
-
-\begin{prob} Sea $z$ un número complejo. Es posible probarse que si $\abs{z}=1,$ con $z\neq 1$ entonces $z=\dfrac{1+it}{1-it},$ con $t\in \mathbb{R}.$  Para el complejo $z=\dfrac{1}{2}+\dfrac{\sqrt{3}}{2}i$ se tiene que  $it$ es igual a %real
-				\begin{multicols}{4}
-					\begin{enumerate}[$(a)$]
-						\item $ \dfrac{ 1-\sqrt{3}}{-3-\sqrt{3}}.$  
-						\item $ \dfrac{-1+\sqrt{3}i}{1-\sqrt{3}i}.$  
-						\item $ \dfrac{-1+\sqrt{3}}{3+\sqrt{3}}.$  %ok
-						\item Ninguna.
-					\end{enumerate}
-				\end{multicols}							
-\begin{myproof}
-Observe que si $z=\dfrac{1+it}{1-it},$ entonces 
-\begin{align*}
-z\left( 1-it \right)&=1+it\\
-z-zit&=1+it\\
-z-1&=zit+it\\
-\dfrac{z-1}{z+1}&=it.
-\end{align*}
-
-De esta manera, \begin{align*} it&=\dfrac{\dfrac{1}{2}+\dfrac{\sqrt{3}}{2}i-1}{\dfrac{1}{2}+\dfrac{\sqrt{3}}{2}i+1}=\dfrac{\dfrac{1}{2}+\dfrac{\sqrt{3}}{2}i-1}{\dfrac{1}{2}+\dfrac{\sqrt{3}}{2}i+1}\\
-&=\dfrac{1+\sqrt{3}i-2}{1+\sqrt{3}i+2}=\boxed{\dfrac{-1+\sqrt{3}i}{3+\sqrt{3}i}}.
-\end{align*}
-Por lo cual, la opción correcta es \textbf{Ninguna.}
-\end{myproof}
-\end{prob}
-
-\begin{prob}  (\cite{andreescu2014complex}, p. 30, Problema 5)
+\begin{example}[Vértice que completa un triángulo equilátero] (\cite{andreescu2014complex}, p. 30, Problema 5)
 Sean $z_1 = 1+i$ y $z_2 = -1-i$. Encuentre el número complejo $z_3$ tal que el triángulo $z_1$, $z_2$ y $z_3$ sea equilátero.
 
 \begin{myproof}
@@ -365,15 +289,11 @@ El problema tiene dos soluciones, dependiendo del argumento a tomar. Se muestran
 
 
 
-Observe que si $z_1 = 1+i$ y $z_2 = -1-i$ son vértices, entonces el segmento $\overline{z_1z_2}$ es un lado del triángulo. Como este es equilátero, su altura pasa por el punto medio del segmento, que es precisamente $0+0i$. 
+\textbf{Paso 1.} Observe que si $z_1 = 1+i$ y $z_2 = -1-i$ son vértices, entonces el segmento $\overline{z_1z_2}$ es un lado del triángulo. Como este es equilátero, su altura pasa por el punto medio del segmento, que es precisamente $0+0i$. La estrategia es calcular el módulo y argumento del complejo $z_3$ usando propiedades geométricas del triángulo equilátero.
 
-La estrategia es calcular el módulo y argumento del complejo $z_3$ usando propiedades geométricas del triángulo equilátero.
+\textbf{Paso 2.} \textbf{Cálculo del argumento:}
 
-
-
-\textbf{Cálculo del argumento:}
-
-El argumento de $z_1$ es $\arg(z_1) = \arctan(1) = \frac{\pi}{4}$. 
+El argumento de $z_1$ es $\arg(z_1) = \arctan(1) = \frac{\pi}{4}$.
 
 Como la altura del triángulo equilátero es perpendicular al lado $\overline{z_1z_2}$, los posibles argumentos de $z_3$ son:
 \begin{align}
@@ -381,7 +301,7 @@ Como la altura del triángulo equilátero es perpendicular al lado $\overline{z_
 \arg(z_3') &= \frac{\pi}{4} - \frac{\pi}{2} = -\frac{\pi}{4} = \frac{7\pi}{4}
 \end{align}
 
-\textbf{Cálculo del módulo:}
+\textbf{Paso 3.} \textbf{Cálculo del módulo:}
 
 La longitud del lado del triángulo es:
 $$|z_1 - z_2| = |2 + 2i| = 2\sqrt{2}$$
@@ -389,14 +309,62 @@ $$|z_1 - z_2| = |2 + 2i| = 2\sqrt{2}$$
 En un triángulo equilátero, si el lado mide $a$, entonces la altura mide $\frac{\sqrt{3}}{2}a$. Por tanto:
 $$|z_3| = \frac{\sqrt{3}}{2} \cdot 2\sqrt{2} = \sqrt{6}$$
 
-\textbf{Soluciones finales:}
+\textbf{Paso 4.} \textbf{Soluciones finales:}
 
 $$\boxed{z_3 = \sqrt{6} \cdot e^{i\frac{3\pi}{4}} = -\sqrt{3} + i\sqrt{3}}$$
 
 $$\boxed{z_3' = \sqrt{6} \cdot e^{i\frac{7\pi}{4}} = \sqrt{3} - i\sqrt{3}}$$
 
 \end{myproof}
-\end{prob}
+\end{example}
+
+El módulo y el argumento también permiten describir regiones del plano complejo, como muestra el siguiente ejemplo.
+
+\begin{example}[Región del plano definida por módulo y argumento]\label{comprepex} En el plano complejo, represente el conjunto de números complejos $z$ tales que:
+$$\dfrac{4\pi}{6}\leq\text{arg}(z)\leq\dfrac{5\pi}{6} \text{ y } |z|<3$$
+\begin{myproof}
+\textbf{Paso 1.} Queremos representar el conjunto de números complejos $z$ tales que
+\[
+\dfrac{4\pi}{6}\leq\text{arg}(z)\leq\dfrac{5\pi}{6} \quad \text{y} \quad |z|<3.
+\]
+Esto corresponde a todos los puntos del plano complejo cuya distancia al origen es menor que $3$ (es decir, están dentro del círculo de radio $3$ centrado en el origen), y cuyo argumento (ángulo respecto al eje real positivo) está entre $\frac{4\pi}{6} = \frac{2\pi}{3}$ y $\frac{5\pi}{6}$.
+
+\textbf{Paso 2.} Geométricamente, esto es un sector circular de radio $3$, centrado en el origen, que abarca los ángulos desde $\frac{2\pi}{3}$ hasta $\frac{5\pi}{6}$.
+
+\textbf{Paso 3.} A continuación se muestra la gráfica de la región:
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.1]
+    % Ejes
+    \draw[->] (-3.5,0) -- (3.5,0) node[right] {Re$\{z\}$};
+    \draw[->] (0,-0.5) -- (0,3.5) node[above] {Im$\{z\}$};
+
+    % Límites del sector
+    \filldraw[fill=gray!30, draw=black, thick, domain=120:150, variable=\t]
+        (0,0) -- ({3*cos(120)},{3*sin(120)})
+        arc (120:150:3) -- (0,0);
+
+    % Círculo de radio 3 (guía)
+    \draw[dashed] (0,0) circle (3);
+
+    % Radios
+    \draw[thick] (0,0) -- ({3*cos(120)},{3*sin(120)});
+    \draw[thick] (0,0) -- ({3*cos(150)},{3*sin(150)});
+
+    % Etiquetas de ángulos
+    \draw (1.1,0.2) node[right] {$0$};
+    \draw (-3.2,0) node[left] {$-3$};
+    \draw (0,3.2) node[above] {$3i$};
+    \draw (0,1.5) arc (90:120:1.5) node[left] {$\frac{2\pi}{3}$};
+    \draw (0,1.5) arc (90:150:1.5) node[above left] {$\frac{5\pi}{6}$};
+\end{tikzpicture}
+\caption{Representación de la región del Ejemplo \ref{comprepex}}
+\end{figure}
+
+\textbf{Paso 4.} Por lo tanto, el conjunto pedido es el sector sombreado en la figura, correspondiente a los números complejos con argumento entre $\frac{2\pi}{3}$ y $\frac{5\pi}{6}$ y módulo menor que $3$.
+\end{myproof}
+\end{example}
 
 De la multiplicación de números complejos en forma polar se derivan las siguientes propiedades importantes:
 
@@ -406,6 +374,264 @@ De la multiplicación de números complejos en forma polar se derivan las siguie
 \item \textbf{Fórmula de De Moivre:} $\sqrt[n]{z}=\sqrt[n]{\abs{z}}\cdot \mathrm{e}^{i\frac{\theta+2k\pi}{n}}$ donde $k=0,1,\dots , n-1$.
 \end{enumerate}
 \end{theorem}
+
+
+
+\begin{example}[Raíces cuartas mediante la fórmula de De Moivre] (\cite{andreescu2014complex}, p. 55, Problemas 1 y 3) Use la fórmula de De Moivre para encontrar las raíces cuartas de los siguientes complejos:
+\begin{multicols}{2}
+\begin{enumerate}[$a)$]
+\item $z=-27$.
+\item $z=-7+24i$.
+\end{enumerate}
+\end{multicols}
+\begin{myproof}
+\textbf{Paso 1.} Estrategia: para calcular las raíces cuartas de los números complejos dados, primero los expresaremos en forma polar y luego aplicaremos la fórmula de De Moivre.
+
+\begin{enumerate}[$a)$]
+\item \textbf{Paso 2.} Para $z=-27$:
+
+   El módulo es $|-27| = 27$ y su argumento es $\text{arg}(-27) = \pi$, por lo cual, $z = 27\cdot e^{i\pi}$.
+
+   Las raíces cuartas están dadas por:
+   $$\boxed{\sqrt[4]{z} = \sqrt[4]{27}\cdot \mathrm{e}^{i\frac{\pi+2k\pi}{4}}}$$
+   donde $k=0,1,2,3$.
+
+   Dado que $\sqrt[4]{27} \approx 2.28$, tenemos:
+   $$\begin{matrix}
+   k=0: & \sqrt[4]{27}\cdot\mathrm{e}^{i\frac{\pi}{4}} &\approx& 2.28\cdot\mathrm{e}^{i\frac{\pi}{4}} &\approx& 1.61+1.61i \\
+   k=1: & \sqrt[4]{27}\cdot\mathrm{e}^{i\frac{3\pi}{4}} &\approx& 2.28\cdot\mathrm{e}^{i\frac{3\pi}{4}} &\approx& -1.61+1.61i \\
+   k=2: & \sqrt[4]{27}\cdot\mathrm{e}^{i\frac{5\pi}{4}} &\approx& 2.28\cdot\mathrm{e}^{i\frac{5\pi}{4}} &\approx& -1.61-1.61i \\
+   k=3: & \sqrt[4]{27}\cdot\mathrm{e}^{i\frac{7\pi}{4}} &\approx& 2.28\cdot\mathrm{e}^{i\frac{7\pi}{4}} &\approx& 1.61-1.61i
+   \end{matrix}$$
+
+\item \textbf{Paso 3.} Para $z=-7+24i$:
+
+   El módulo es $|z| = \sqrt{(-7)^2+(24)^2} = \sqrt{49+576} = \sqrt{625} = 25$.
+
+   Para el argumento, como $z$ está en el segundo cuadrante (parte real negativa, parte imaginaria positiva):
+   $$\text{arg}(z) = \arctan\left(\frac{24}{-7}\right) + \pi = \arctan(-\frac{24}{7}) + \pi \approx -1.2863 + \pi \approx 1.8553 \text{ radianes}$$
+
+   Por lo tanto, $z = 25\cdot e^{i\cdot 1.8553}$.
+
+   Las raíces cuartas están dadas por:
+   $$\boxed{\sqrt[4]{z} = \sqrt[4]{25}\cdot \mathrm{e}^{i\frac{1.8553+2k\pi}{4}}}$$
+   donde $k=0,1,2,3$ y $\sqrt[4]{25} = 2.24$
+
+   $$\begin{matrix}
+   k=0: & 2.24\cdot\mathrm{e}^{i\frac{1.8553}{4}} &\approx& 2.24\cdot\mathrm{e}^{i\cdot 0.4638} &\approx& 2.02+0.94i \\
+   k=1: & 2.24\cdot\mathrm{e}^{i\frac{1.8553+2\pi}{4}} &\approx& 2.24\cdot\mathrm{e}^{i\cdot 2.0344} &\approx& -0.68+2.14i \\
+   k=2: & 2.24\cdot\mathrm{e}^{i\frac{1.8553+4\pi}{4}} &\approx& 2.24\cdot\mathrm{e}^{i\cdot 3.6050} &\approx& -2.02-0.94i \\
+   k=3: & 2.24\cdot\mathrm{e}^{i\frac{1.8553+6\pi}{4}} &\approx& 2.24\cdot\mathrm{e}^{i\cdot 5.1756} &\approx& 0.68-2.14i
+   \end{matrix}$$
+\end{enumerate}
+
+\textbf{Paso 4.} En cada caso, las cuatro raíces cuartas comparten el mismo módulo y sus argumentos difieren en $\frac{\pi}{2}$: quedan distribuidas uniformemente sobre una circunferencia centrada en el origen, como predice la fórmula de De Moivre.
+\end{myproof}
+\end{example}
+
+\section{Teorema Fundamental del Álgebra}
+
+\begin{definition}[Raíz de un polinomio] 
+Sea $p(z)$ un polinomio con coeficientes complejos. Diremos que $\alpha \in \mathbb{C}$ es una raíz de $p(z)$ si $p(\alpha)=0$. Es decir, $\alpha$ es una solución de la ecuación polinómica $p(z)=0$.
+\end{definition}
+
+El cálculo de las raíces de un polinomio puede ser un problema muy difícil y se estudia ampliamente en matemáticas, en una rama llamada análisis numérico. Debido a los alcances de este curso, se tratarán polinomios especiales con coeficientes complejos (que incluyen los de coeficientes reales como caso particular) para los cuales sea fácil calcular su factorización. Sin embargo, el siguiente teorema no distingue el tipo de polinomio a estudiar. Este teorema es un resultado muy importante demostrado, entre otros, por \textbf{Carl Friedrich Gauss} (1777--1855), un célebre matemático alemán que nombraremos bastante en este curso.
+
+\begin{theorem}[Teorema Fundamental del Álgebra]\label{tfam}
+Todo polinomio no constante $p(z)$ de grado $n \geq 1$ con coeficientes complejos tiene exactamente $n$ raíces en $\mathbb{C}$, contando sus multiplicidades algebraicas.
+\end{theorem}
+
+\begin{rem}
+La multiplicidad algebraica de una raíz $\alpha$ de un polinomio $p(z)$ es el mayor entero positivo $m$ tal que $(z-\alpha)^m$ divide a $p(z)$. En otras palabras, es el exponente más alto de $(z-\alpha)$ en la factorización completa de $p(z)$. Por ejemplo, si $p(z) = (z-1)^2(z-2)$, entonces $z=1$ es una raíz con multiplicidad algebraica $2$, mientras que $z=2$ es una raíz con multiplicidad algebraica $1$ (o raíz simple). En adelante, cuando se haga referencia a la multiplicidad de una raíz, se entenderá la multiplicidad algebraica ya que luego en la Definición \ref{multiplicidadgeometrica} exténderemos este concepto.
+\end{rem}
+
+\begin{example}[Raíces de polinomios vía factorización y De Moivre] (\cite{andreescu2014complex}, p. 55, Problema 7) Use la fórmula de De Moivre para encontrar todas las raíces complejas de los siguientes polinomios:
+
+\begin{multicols}{2}
+\begin{enumerate}[$a)$]
+\item $z^4-z^2+1=0$
+\item $z^7-2iz^4-iz^3-2=0$
+\end{enumerate}
+\end{multicols}
+
+\begin{myproof}
+\begin{enumerate}[$a)$]
+\item \textbf{Paso 1.} Tome $w=z^2$ entonces la ecuación se reduce a $w^2-w+1=0$. Usando la fórmula cuadrática las soluciones son  $$w = \frac{-(-1)\pm\sqrt{(-1)^2-4(1)(1)}}{2(1)} = \frac{1\pm\sqrt{-3}}{2} = \frac{1\pm i\sqrt{3}}{2}$$
+
+\textbf{Paso 2.} Note que las soluciones son números complejos, además que $w$ es raíz cuadrada de $z$, por lo cual se calcula la forma polar de cada complejo y sus raíces cuadradas:
+
+\begin{itemize}
+\item Para $w=\frac{1+\sqrt{3}i}{2}$:  
+
+$|w| = \sqrt{\left( \frac{1}{2} \right)^2 + \left( \frac{\sqrt{3}}{2} \right)^2} = \sqrt{\frac{1}{4}+\frac{3}{4}} = 1,$ y $\arg(w) = \arctan\left( \frac{\sqrt{3}/2}{1/2} \right) = \arctan(\sqrt{3}) = \frac{\pi}{3}.$
+
+
+Las raíces cuadradas son $\sqrt{1} e^{i\frac{\frac{\pi}{3}+2k\pi}{2}}$ donde $k=0,1$.
+
+$k=0:   e^{i\frac{\pi/3}{2}} = \boxed{e^{i\frac{\pi}{6}}}$ y $k=1: e^{i\frac{\pi/3+2\pi}{2}} = \boxed{e^{i\frac{7\pi}{6}}}$
+
+\item Para $w=\frac{1-i\sqrt{3}}{2}$:
+
+$|w| = \sqrt{\left( \frac{1}{2} \right)^2 + \left( \frac{\sqrt{3}}{2} \right)^2} = 1$ y $\arg(w) = \arctan\left( \frac{-\sqrt{3}/2}{1/2} \right) = \arctan(-\sqrt{3}) = -\frac{\pi}{3}$
+
+
+Tomando el argumento principal: $\arg(w) = 2\pi - \frac{\pi}{3} = \frac{5\pi}{3}$.
+
+Las raíces cuadradas son $\sqrt{1} e^{i\frac{\frac{5\pi}{3}+2k\pi}{2}}$ donde $k=0,1$.
+
+$k=0:  e^{i\frac{5\pi/3}{2}} = \boxed{e^{i\frac{5\pi}{6}}}$ y  $k=1: e^{i\frac{5\pi/3+2\pi}{2}} = \boxed{e^{i\frac{11\pi}{6}}}$
+\end{itemize}
+
+\textbf{Paso 3.} Finalmente las soluciones de la ecuación son:
+$$z_1 = e^{i\frac{\pi}{6}}, \quad z_2 = e^{i\frac{5\pi}{6}}, \quad z_3 = e^{i\frac{7\pi}{6}}, \quad z_4 = e^{i\frac{11\pi}{6}}$$
+
+\item \textbf{Paso 1.} Factorizando la ecuación: $z^7-2iz^4-iz^3-2=z^4(z^3-2i)-i(z^3-2i)=(z^4-i)(z^3-2i)= 0.$
+
+Como los complejos forman un dominio entero, la ecuación se puede resolver calculando los valores de $z$ tales que $z^4=i$ y $z^3=2i$.
+
+\textbf{Paso 2.} Se resuelven ambas ecuaciones con la fórmula de De Moivre:
+
+\begin{itemize}
+\item Para $z^4=i$: $|i|=1$ y $\arg(i)=\frac{\pi}{2}$.
+
+Las raíces cuartas son $e^{i\frac{\frac{\pi}{2}+2k\pi}{4}}$ donde $k=0,1,2,3$.
+
+$k=0:\boxed{e^{i\frac{\pi}{8}}},$ $k=1: \boxed{e^{i\frac{5\pi}{8}}},$ $k=2: \boxed{e^{i\frac{9\pi}{8}}},$ $k=3: \boxed{e^{i\frac{13\pi}{8}}}.$
+
+\item Para $z^3=2i$: $|2i|=2$ y $\arg(2i)=\frac{\pi}{2}$.
+
+Las raíces cúbicas son $\sqrt[3]{2} e^{i\frac{\frac{\pi}{2}+2k\pi}{3}}$ donde $k=0,1,2$.
+
+$k=0: \boxed{\sqrt[3]{2}e^{i\frac{\pi}{6}}},$ $k=1: \boxed{\sqrt[3]{2}e^{i\frac{5\pi}{6}}},$ $k=2: \boxed{\sqrt[3]{2}e^{i\frac{3\pi}{2}}}.$
+\end{itemize}
+
+\textbf{Paso 3.} Finalmente las soluciones de la ecuación son:
+$z_1 = e^{i\frac{\pi}{8}},$ $z_2 = e^{i\frac{5\pi}{8}},$ $z_3 = e^{i\frac{9\pi}{8}},$ $z_4 = e^{i\frac{13\pi}{8}},$ $z_5 = \sqrt[3]{2}e^{i\frac{\pi}{6}},$ $z_6 = \sqrt[3]{2}e^{i\frac{5\pi}{6}},$ $z_7 = \sqrt[3]{2}e^{i\frac{3\pi}{2}}.$
+\end{enumerate}
+
+\textbf{Paso 4.} En ambos literales el número de raíces encontradas coincide con el grado del polinomio ($4$ y $7$ respectivamente), tal como garantiza el Teorema \ref{tfam}.
+\end{myproof}
+\end{example}
+
+Cuando el polinomio tiene coeficientes reales, sus raíces complejas no aparecen de cualquier manera: lo hacen en parejas conjugadas.
+
+\begin{theorem}[Raíces conjugadas de un polinomio real]\label{thm:cap02:raicesconjugadas}
+Sea $p(x)=a_nx^n+\cdots+a_1x+a_0$ un polinomio con coeficientes reales. Si $\alpha \in \mathbb{C}$ es una raíz de $p(x)$, entonces su conjugado $\overline{\alpha}$ también es una raíz de $p(x)$.
+\end{theorem}
+
+\begin{proof}
+La conjugación respeta sumas y productos ($\overline{z+w}=\overline{z}+\overline{w}$ y $\overline{zw}=\overline{z}\,\overline{w}$) y fija los números reales ($\overline{a_k}=a_k$). Por lo tanto,
+$$p\left(\overline{\alpha}\right)=\sum_{k=0}^{n} a_k\,\overline{\alpha}^{\,k}=\overline{\sum_{k=0}^{n} a_k\alpha^{k}}=\overline{p(\alpha)}=\overline{0}=0.$$
+\end{proof}
+
+\begin{example}[Raíces conjugadas y factorización de un polinomio real]\label{ex:raicesconjugadas}
+Dado que $2+i$ es una raíz del polinomio $p(x)=x^4-6x^3+15x^2-18x+10$, ¿otra raíz de $p(x)$ es?
+\begin{myproof}
+\textbf{Paso 1.} Los coeficientes de $p(x)$ son reales, de modo que, por el Teorema \ref{thm:cap02:raicesconjugadas}, el conjugado $\overline{2+i}=2-i$ también es raíz de $p(x)$.
+
+\textbf{Paso 2.} Podemos, además, hallar las raíces restantes. La pareja conjugada aporta el factor cuadrático con coeficientes reales
+$$(x-(2+i))(x-(2-i))=x^2-4x+5.$$
+
+\textbf{Paso 3.} Dividiendo $p(x)$ entre este factor se obtiene cociente $x^2-2x+2$ y residuo $0$, es decir,
+$$p(x)=(x^2-4x+5)(x^2-2x+2).$$
+Las raíces del cociente son, por la fórmula cuadrática,
+$$x=\frac{2\pm\sqrt{4-8}}{2}=1\pm i.$$
+
+\textbf{Paso 4.} Por lo tanto, otra raíz de $p(x)$ es $\boxed{2-i}$. Las cuatro raíces de $p(x)$ son $2\pm i$ y $1\pm i$: dos parejas conjugadas, en concordancia con el Teorema \ref{thm:cap02:raicesconjugadas}, y tantas raíces como indica el grado, en concordancia con el Teorema \ref{tfam}.
+\end{myproof}
+\end{example}
+
+
+
+\section{Problemas resueltos adicionales}
+
+% --- Movidos desde las secciones temáticas (Decisión F) ---
+
+\begin{prob} Sea $z$ un número complejo. Es posible probarse que si $\abs{z}=1,$ con $z\neq 1$ entonces $z=\dfrac{1+it}{1-it},$ con $t\in \mathbb{R}.$  Para el complejo $z=\dfrac{1}{2}+\dfrac{\sqrt{3}}{2}i$ se tiene que  $it$ es igual a %real
+				\begin{multicols}{4}
+					\begin{enumerate}[$(a)$]
+						\item $ \dfrac{ 1-\sqrt{3}}{-3-\sqrt{3}}.$  
+						\item $ \dfrac{-1+\sqrt{3}i}{1-\sqrt{3}i}.$  
+						\item $ \dfrac{-1+\sqrt{3}}{3+\sqrt{3}}.$  %ok
+						\item Ninguna.
+					\end{enumerate}
+				\end{multicols}							
+\begin{myproof}
+Observe que si $z=\dfrac{1+it}{1-it},$ entonces 
+\begin{align*}
+z\left( 1-it \right)&=1+it\\
+z-zit&=1+it\\
+z-1&=zit+it\\
+\dfrac{z-1}{z+1}&=it.
+\end{align*}
+
+De esta manera, \begin{align*} it&=\dfrac{\dfrac{1}{2}+\dfrac{\sqrt{3}}{2}i-1}{\dfrac{1}{2}+\dfrac{\sqrt{3}}{2}i+1}=\dfrac{\dfrac{1}{2}+\dfrac{\sqrt{3}}{2}i-1}{\dfrac{1}{2}+\dfrac{\sqrt{3}}{2}i+1}\\
+&=\dfrac{1+\sqrt{3}i-2}{1+\sqrt{3}i+2}=\boxed{\dfrac{-1+\sqrt{3}i}{3+\sqrt{3}i}}.
+\end{align*}
+Por lo cual, la opción correcta es \textbf{Ninguna.}
+\end{myproof}
+\end{prob}
+
+\begin{prob} Use el lenguaje de programación \texttt{Python 3.x} para calcular la forma geométrica y polar del número complejo $-5-4i$, verificando así los resultados de los Ejemplos \ref{formageometrica54i} y \ref{formapolar54i}.
+\begin{myproof}
+\begin{lstlisting}[label={lst:complejo},basicstyle=\footnotesize]
+import cmath
+import matplotlib.pyplot as plt
+
+def calcular_modulo_argumento(numero_complejo):
+    modulo = abs(numero_complejo)
+    argumento = cmath.phase(numero_complejo)
+    
+    # Normalizar el argumento al intervalo [0, 2π)
+    if argumento < 0:
+        argumento += 2 * cmath.pi
+    elif argumento > 2 * cmath.pi:
+        argumento %= 2 * cmath.pi
+    
+    return modulo, argumento
+
+# Entrada de valores
+real_part = float(input("Parte real: "))
+imag_part = float(input("Parte imaginaria, sin la i: "))
+numero_complejo = complex(real_part, imag_part)
+
+# Cálculo de módulo y argumento
+modulo, argumento = calcular_modulo_argumento(numero_complejo)
+print(f'Módulo: {modulo}')
+print(f'Argumento: {argumento} radianes')
+
+# Visualización gráfica
+plt.figure(figsize=(8, 8))
+plt.scatter(real_part, imag_part, color='red', marker='x', label='Número complejo')
+plt.xlabel('Parte Real')
+plt.ylabel('Parte Imaginaria')
+plt.title('Representación en el Plano Complejo')
+plt.axhline(0, color='black', linewidth=0.5)
+plt.axvline(0, color='black', linewidth=0.5)
+plt.grid(color='gray', linestyle='--', linewidth=0.5)
+plt.legend()
+plt.show()
+\end{lstlisting}
+
+Este programa genera la siguiente salida:
+
+Parte real: -5
+
+Parte imaginaria, sin la i: -4
+
+Módulo: $6.4031242374328485$
+
+Argumento: $3.8163335958133455$ radianes.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.35]{representacioncomplejo.eps}
+\caption{Representación gráfica en \texttt{matplotlib} del complejo $-5-4i.$}
+\end{figure}
+
+Estos resultados confirman los cálculos realizados en los Ejemplos \ref{formageometrica54i} y \ref{formapolar54i}.
+\end{myproof}
+\end{prob}
 
 \begin{prob} Determine el valor de verdad de las siguientes afirmaciones donde $z$ y $w\ \in \mathbb{C}$. Si son verdaderas, demuéstrelas; de lo contrario, presente un contraejemplo.
 
@@ -467,139 +693,7 @@ En realidad, para cualquier número real positivo $z > 0$, tenemos $\text{arg}(z
 \end{myproof}
 \end{prob}
 
-\begin{prob}  (\cite{andreescu2014complex}, p. 55, Problemas 1 y 3) Use la fórmula de De Moivre para encontrar las raíces cuartas de los siguientes complejos:
-\begin{multicols}{2}
-\begin{enumerate}[$a)$]
-\item $z=-27$.
-\item $z=-7+24i$.
-\end{enumerate}
-\end{multicols}
-\begin{myproof}
-Para calcular las raíces cuartas de los números complejos dados, primero los expresaremos en forma polar y luego aplicaremos la fórmula de De Moivre.
-
-\begin{enumerate}[$a)$]
-\item Para $z=-27$:
-   
-   El módulo es $|-27| = 27$ y su argumento es $\text{arg}(-27) = \pi$, por lo cual, $z = 27\cdot e^{i\pi}$.
-   
-   Las raíces cuartas están dadas por:
-   $$\sqrt[4]{z} = \sqrt[4]{27}\cdot \mathrm{e}^{i\frac{\pi+2k\pi}{4}}$$
-   donde $k=0,1,2,3$.
-   
-   Dado que $\sqrt[4]{27} \approx 2.28$, tenemos:
-   $$\begin{matrix}
-   k=0: & \sqrt[4]{27}\cdot\mathrm{e}^{i\frac{\pi}{4}} &\approx& 2.28\cdot\mathrm{e}^{i\frac{\pi}{4}} &\approx& 1.61+1.61i \\
-   k=1: & \sqrt[4]{27}\cdot\mathrm{e}^{i\frac{3\pi}{4}} &\approx& 2.28\cdot\mathrm{e}^{i\frac{3\pi}{4}} &\approx& -1.61+1.61i \\
-   k=2: & \sqrt[4]{27}\cdot\mathrm{e}^{i\frac{5\pi}{4}} &\approx& 2.28\cdot\mathrm{e}^{i\frac{5\pi}{4}} &\approx& -1.61-1.61i \\
-   k=3: & \sqrt[4]{27}\cdot\mathrm{e}^{i\frac{7\pi}{4}} &\approx& 2.28\cdot\mathrm{e}^{i\frac{7\pi}{4}} &\approx& 1.61-1.61i
-   \end{matrix}$$
-
-\item Para $z=-7+24i$:
-   
-   El módulo es $|z| = \sqrt{(-7)^2+(24)^2} = \sqrt{49+576} = \sqrt{625} = 25$.
-   
-   Para el argumento, como $z$ está en el segundo cuadrante (parte real negativa, parte imaginaria positiva):
-   $$\text{arg}(z) = \arctan\left(\frac{24}{-7}\right) + \pi = \arctan(-\frac{24}{7}) + \pi \approx -1.2863 + \pi \approx 1.8553 \text{ radianes}$$
-   
-   Por lo tanto, $z = 25\cdot e^{i\cdot 1.8553}$.
-   
-   Las raíces cuartas están dadas por:
-   $$\sqrt[4]{z} = \sqrt[4]{25}\cdot \mathrm{e}^{i\frac{1.8553+2k\pi}{4}}$$
-   donde $k=0,1,2,3$ y $\sqrt[4]{25} = 2.24$
-   
-   $$\begin{matrix}
-   k=0: & 2.24\cdot\mathrm{e}^{i\frac{1.8553}{4}} &\approx& 2.24\cdot\mathrm{e}^{i\cdot 0.4638} &\approx& 2.02+0.94i \\
-   k=1: & 2.24\cdot\mathrm{e}^{i\frac{1.8553+2\pi}{4}} &\approx& 2.24\cdot\mathrm{e}^{i\cdot 2.0344} &\approx& -0.68+2.14i \\
-   k=2: & 2.24\cdot\mathrm{e}^{i\frac{1.8553+4\pi}{4}} &\approx& 2.24\cdot\mathrm{e}^{i\cdot 3.6050} &\approx& -2.02-0.94i \\
-   k=3: & 2.24\cdot\mathrm{e}^{i\frac{1.8553+6\pi}{4}} &\approx& 2.24\cdot\mathrm{e}^{i\cdot 5.1756} &\approx& 0.68-2.14i
-   \end{matrix}$$
-\end{enumerate}
-\end{myproof}
-\end{prob}
-
-\section{Teorema Fundamental del Álgebra}
-
-\begin{definition}[Raíz de un polinomio] 
-Sea $p(z)$ un polinomio con coeficientes complejos. Diremos que $\alpha \in \mathbb{C}$ es una raíz de $p(z)$ si $p(\alpha)=0$. Es decir, $\alpha$ es una solución de la ecuación polinómica $p(z)=0$.
-\end{definition}
-
-El cálculo de las raíces de un polinomio puede ser un problema muy difícil y se estudia ampliamente en matemáticas, en una rama llamada análisis numérico. Debido a los alcances de este curso, se tratarán polinomios especiales con coeficientes complejos (que incluyen los de coeficientes reales como caso particular) para los cuales sea fácil calcular su factorización. Sin embargo, el siguiente teorema no distingue el tipo de polinomio a estudiar. Este teorema es un resultado muy importante demostrado, entre otros, por \textbf{Carl Friedrich Gauss} (1777--1855), un célebre matemático alemán que nombraremos bastante en este curso.
-
-\begin{theorem}[Teorema Fundamental del Álgebra]\label{tfam}
-Todo polinomio no constante $p(z)$ de grado $n \geq 1$ con coeficientes complejos tiene exactamente $n$ raíces en $\mathbb{C}$, contando sus multiplicidades algebraicas.
-\end{theorem}
-
-\begin{rem}
-La multiplicidad algebraica de una raíz $\alpha$ de un polinomio $p(z)$ es el mayor entero positivo $m$ tal que $(z-\alpha)^m$ divide a $p(z)$. En otras palabras, es el exponente más alto de $(z-\alpha)$ en la factorización completa de $p(z)$. Por ejemplo, si $p(z) = (z-1)^2(z-2)$, entonces $z=1$ es una raíz con multiplicidad algebraica $2$, mientras que $z=2$ es una raíz con multiplicidad algebraica $1$ (o raíz simple). En adelante, cuando se haga referencia a la multiplicidad de una raíz, se entenderá la multiplicidad algebraica ya que luego en la Definición \ref{multiplicidadgeometrica} exténderemos este concepto.
-\end{rem}
-
-\begin{prob}(\cite{andreescu2014complex}, p. 55, Problema 7) Use la fórmula de De Moivre para encontrar todas las raíces complejas de los siguientes polinomios:
-
-\begin{multicols}{2}
-\begin{enumerate}[$a)$]
-\item $z^4-z^2+1=0$
-\item $z^7-2iz^4-iz^3-2=0$
-\end{enumerate}
-\end{multicols}
-
-\begin{myproof}
-\begin{enumerate}[$a)$]
-\item Tome $w=z^2$ entonces la ecuación se reduce a $w^2-w+1=0$. Usando la fórmula cuadrática las soluciones son  $$w = \frac{-(-1)\pm\sqrt{(-1)^2-4(1)(1)}}{2(1)} = \frac{1\pm\sqrt{-3}}{2} = \frac{1\pm i\sqrt{3}}{2}$$
-
-Note que las soluciones son números complejos, además que $w$ es raíz cuadrada de $z$, por lo cual se calcula la forma polar de cada complejo y sus raíces cuadradas:
-
-\begin{itemize}
-\item Para $w=\frac{1+\sqrt{3}i}{2}$:  
-
-$|w| = \sqrt{\left( \frac{1}{2} \right)^2 + \left( \frac{\sqrt{3}}{2} \right)^2} = \sqrt{\frac{1}{4}+\frac{3}{4}} = 1,$ y $\arg(w) = \arctan\left( \frac{\sqrt{3}/2}{1/2} \right) = \arctan(\sqrt{3}) = \frac{\pi}{3}.$
-
-
-Las raíces cuadradas son $\sqrt{1} e^{i\frac{\frac{\pi}{3}+2k\pi}{2}}$ donde $k=0,1$.
-
-$k=0:   e^{i\frac{\pi/3}{2}} = \boxed{e^{i\frac{\pi}{6}}}$ y $k=1: e^{i\frac{\pi/3+2\pi}{2}} = \boxed{e^{i\frac{7\pi}{6}}}$
-
-\item Para $w=\frac{1-i\sqrt{3}}{2}$:
-
-$|w| = \sqrt{\left( \frac{1}{2} \right)^2 + \left( \frac{\sqrt{3}}{2} \right)^2} = 1$ y $\arg(w) = \arctan\left( \frac{-\sqrt{3}/2}{1/2} \right) = \arctan(-\sqrt{3}) = -\frac{\pi}{3}$
-
-
-Tomando el argumento principal: $\arg(w) = 2\pi - \frac{\pi}{3} = \frac{5\pi}{3}$.
-
-Las raíces cuadradas son $\sqrt{1} e^{i\frac{\frac{5\pi}{3}+2k\pi}{2}}$ donde $k=0,1$.
-
-$k=0:  e^{i\frac{5\pi/3}{2}} = \boxed{e^{i\frac{5\pi}{6}}}$ y  $k=1: e^{i\frac{5\pi/3+2\pi}{2}} = \boxed{e^{i\frac{11\pi}{6}}}$
-\end{itemize}
-
-Finalmente las soluciones de la ecuación son:
-$$z_1 = e^{i\frac{\pi}{6}}, \quad z_2 = e^{i\frac{5\pi}{6}}, \quad z_3 = e^{i\frac{7\pi}{6}}, \quad z_4 = e^{i\frac{11\pi}{6}}$$
-
-\item Factorizando la ecuación: $z^7-2iz^4-iz^3-2=z^4(z^3-2i)-i(z^3-2i)=(z^4-i)(z^3-2i)= 0.$
-
-Como los complejos forman un dominio entero, la ecuación se puede resolver calculando los valores de $z$ tales que $z^4=i$ y $z^3=2i$.
-
-\begin{itemize}
-\item Para $z^4=i$: $|i|=1$ y $\arg(i)=\frac{\pi}{2}$.
-
-Las raíces cuartas son $e^{i\frac{\frac{\pi}{2}+2k\pi}{4}}$ donde $k=0,1,2,3$.
-
-$k=0:\boxed{e^{i\frac{\pi}{8}}},$ $k=1: \boxed{e^{i\frac{5\pi}{8}}},$ $k=2: \boxed{e^{i\frac{9\pi}{8}}},$ $k=3: \boxed{e^{i\frac{13\pi}{8}}}.$
-
-\item Para $z^3=2i$: $|2i|=2$ y $\arg(2i)=\frac{\pi}{2}$.
-
-Las raíces cúbicas son $\sqrt[3]{2} e^{i\frac{\frac{\pi}{2}+2k\pi}{3}}$ donde $k=0,1,2$.
-
-$k=0: \boxed{\sqrt[3]{2}e^{i\frac{\pi}{6}}},$ $k=1: \boxed{\sqrt[3]{2}e^{i\frac{5\pi}{6}}},$ $k=2: \boxed{\sqrt[3]{2}e^{i\frac{3\pi}{2}}}.$
-\end{itemize}
-
-Finalmente las soluciones de la ecuación son:
-$z_1 = e^{i\frac{\pi}{8}},$ $z_2 = e^{i\frac{5\pi}{8}},$ $z_3 = e^{i\frac{9\pi}{8}},$ $z_4 = e^{i\frac{13\pi}{8}},$ $z_5 = \sqrt[3]{2}e^{i\frac{\pi}{6}},$ $z_6 = \sqrt[3]{2}e^{i\frac{5\pi}{6}},$ $z_7 = \sqrt[3]{2}e^{i\frac{3\pi}{2}}.$
-\end{enumerate}
-\end{myproof}
-\end{prob}
-
-
-
-\section{Problemas propuestos para el capítulo}
+% --- Banco original del capítulo ---
 
 \begin{prob} Determine cuál opción es correcta y justifique por qué las demás son incorrectas:
 
@@ -719,53 +813,6 @@ Incorrecta. Es el disco de radio $2$ centrado en $i$.
 \end{enumerate}
 
 Por lo tanto, la opción correcta es la \textbf{(c)}.
-\end{myproof}
-
-\end{prob}
-
-\begin{prob}\label{comprepex} En el plano complejo, represente el conjunto de números complejos $z$ tales que:
-$$\dfrac{4\pi}{6}\leq\text{arg}(z)\leq\dfrac{5\pi}{6} \text{ y } |z|<3$$
-\begin{myproof}
-Queremos representar el conjunto de números complejos $z$ tales que
-\[
-\dfrac{4\pi}{6}\leq\text{arg}(z)\leq\dfrac{5\pi}{6} \quad \text{y} \quad |z|<3.
-\]
-Esto corresponde a todos los puntos del plano complejo cuya distancia al origen es menor que $3$ (es decir, están dentro del círculo de radio $3$ centrado en el origen), y cuyo argumento (ángulo respecto al eje real positivo) está entre $\frac{4\pi}{6} = \frac{2\pi}{3}$ y $\frac{5\pi}{6}$.
-
-Geométricamente, esto es un sector circular de radio $3$, centrado en el origen, que abarca los ángulos desde $\frac{2\pi}{3}$ hasta $\frac{5\pi}{6}$.
-
-A continuación se muestra la gráfica de la región:
-
-\begin{figure}[H]
-\centering
-\begin{tikzpicture}[scale=1.1]
-    % Ejes
-    \draw[->] (-3.5,0) -- (3.5,0) node[right] {Re$\{z\}$};
-    \draw[->] (0,-0.5) -- (0,3.5) node[above] {Im$\{z\}$};
-
-    % Límites del sector
-    \filldraw[fill=gray!30, draw=black, thick, domain=120:150, variable=\t]
-        (0,0) -- ({3*cos(120)},{3*sin(120)})
-        arc (120:150:3) -- (0,0);
-
-    % Círculo de radio 3 (guía)
-    \draw[dashed] (0,0) circle (3);
-
-    % Radios
-    \draw[thick] (0,0) -- ({3*cos(120)},{3*sin(120)});
-    \draw[thick] (0,0) -- ({3*cos(150)},{3*sin(150)});
-
-    % Etiquetas de ángulos
-    \draw (1.1,0.2) node[right] {$0$};
-    \draw (-3.2,0) node[left] {$-3$};
-    \draw (0,3.2) node[above] {$3i$};
-    \draw (0,1.5) arc (90:120:1.5) node[left] {$\frac{2\pi}{3}$};
-    \draw (0,1.5) arc (90:150:1.5) node[above left] {$\frac{5\pi}{6}$};
-\end{tikzpicture}
-\caption{Representación de la región del problema \ref{comprepex}}
-\end{figure}
-
-Por lo tanto, el conjunto pedido es el sector sombreado en la figura, correspondiente a los números complejos con argumento entre $\frac{2\pi}{3}$ y $\frac{5\pi}{6}$ y módulo menor que $3$.
 \end{myproof}
 
 \end{prob}
@@ -1421,4 +1468,11 @@ Por lo tanto, $z = 0 + bi = bi$, es decir, $z$ es imaginario puro.
 $z$ es imaginario puro si y solo si $z = -\overline{z}$.
 \end{myproof}
 
+\end{prob}
+
+\section{Problemas propuestos}
+
+% Intermedio
+\begin{prob}
+Dado que $1-2i$ es una raíz del polinomio $q(x)=x^4-2x^3+6x^2-2x+5$, encuentre las tres raíces restantes de $q(x)$.
 \end{prob}

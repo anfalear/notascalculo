@@ -407,7 +407,13 @@ Mínimo 8–10 resueltos (example con myproof) + 15–20 propuestos (sin myproof
 **Acción:** el capítulo no tiene ningún `example` — todo el material resuelto son 24 probs con myproof dentro. Elevar 8–10 representativos a `example` con 4 pasos + boxed (candidatos: operaciones básicas, forma polar, De Moivre, raíces n-ésimas, ecuación con TFA, triángulo equilátero); el resto según Decisión F.
 **Criterio de cierre:** 8–10 examples con 4 pasos; convención F aplicada al resto.
 **Líneas estimadas:** 120–200
-**Estado:** Pendiente
+**Estado:** Completado — 2026-07-14 (2 lotes)
+
+**Notas de ejecución:**
+- **9 elevaciones a `example`** (lote aprobado por el autor; cubre los 6 candidatos del plan + 3 complementos), todas con protocolo de pasos: Operaciones básicas con números complejos (multi-parte, patrón F8.44, `\boxed{-8-10i}` añadido en (d) que no lo tenía); Caracterización de los reales por conjugación (demostración, 4 pasos sin boxed — excepción registrada); Ecuación con incógnitas reales; Representación geométrica de un número complejo (3 pasos, computación breve + figura — excepción registrada; conserva `formageometrica54i`); Forma polar y efecto geométrico (conserva `formapolar54i`; guiones → `itemize`); Vértice que completa un triángulo equilátero; Raíces cuartas mediante De Moivre (boxed en la fórmula general de cada literal + Paso 4 de interpretación); Raíces de polinomios vía factorización y De Moivre (§TFA recibe su primer example; protocolo por literal + Paso 4 conectando con `\ref{tfam}`); Región del plano definida por módulo y argumento (`comprepex`, movida del banco a §2.1, caption «problema»→«Ejemplo»).
+- **Lote 2 (Decisión F):** heading del banco renombrado a `\section{Problemas resueltos adicionales}`; 3 probs resueltos movidos desde §2.1 al inicio del banco con separador de comentario: opción múltiple de $|z|=1$ y $t$, programa Python (la frase-conector externa se integró al enunciado: «…verificando así los resultados de los Ejemplos \ref{...}»), valor de verdad 4 literales. Banco resultante: 15 probs resueltos. Refs «los problemas» → «los Ejemplos» (2 sitios).
+- **Adición del autor (2026-07-14, misma sesión):** problema «Dado que $2+i$ es raíz de $p(x)=x^4-6x^3+15x^2-18x+10$, ¿otra raíz es?» → nuevo `theorem[Raíces conjugadas de un polinomio real]` (`thm:cap02:raicesconjugadas`, prueba de 3 líneas vía conjugación) + `example` 4 pasos (`ex:raicesconjugadas`: respuesta $\boxed{2-i}$; factorización completa $(x^2-4x+5)(x^2-2x+2)$, raíces $2\pm i$, $1\pm i$ SymPy-OK) al final de §2.2; **§2.4 «Problemas propuestos» creada** con 1 propuesto similar tag Intermedio ($1-2i$ raíz de $q(x)=x^4-2x^3+6x^2-2x+5$; raíces restantes $1+2i$, $\pm i$ verificadas SymPy). F9AL.31 completará esta sección.
+- Balance: 16/16 prob (15 banco + 1 propuesto), 10/10 example, 25/25 myproof, 0 huérfanos. Estructura: §2.1 Propiedades básicas / §2.2 TFA / §2.3 Problemas resueltos adicionales / §2.4 Problemas propuestos. Compilación limpia (2 pasadas): 0 errores `!`, 0 refs indefinidas, **794 pp**. Verificación visual pp. 29–30 y 43.
 
 ### F9AL.29 — complejos: auditoría de 7 figuras
 **Acción:** 7 entornos figure, 0 con caption+label. Protocolo F8.31; verificar proporción 1:1 (círculos sin distorsión — ya revisado en 2026-06-16, solo confirmar).
@@ -422,7 +428,7 @@ Mínimo 8–10 resueltos (example con myproof) + 15–20 propuestos (sin myproof
 **Estado:** Pendiente
 
 ### F9AL.31 — complejos: graduación + heading
-**Acción:** renombrar `\section{Problemas propuestos para el capítulo}` → `\section{Problemas propuestos}`; tags de graduación sobre el banco resultante de F9AL.28.
+**Acción:** ~~renombrar heading~~ (hecho en F9AL.28: el banco quedó como `Problemas resueltos adicionales` y ya existe `\section{Problemas propuestos}` con 1 prob tag Intermedio); tags de graduación sobre los 15 probs del banco; poblar propuestos con nuevos sin solución (validar lote con el autor — el capítulo no tenía ninguno).
 **Criterio de cierre:** heading estándar; tags presentes; 15–20 propuestos si el banco lo permite (si queda corto tras elevaciones, añadir 3–5 nuevos sin solución cubriendo: forma polar, potencias, raíces, lugares geométricos).
 **Líneas estimadas:** 20–80
 **Estado:** Pendiente
@@ -529,7 +535,7 @@ Mínimo 8–10 resueltos (example con myproof) + 15–20 propuestos (sin myproof
 **Estado:** Completado (2026-07-10). Alcance real tras las 4 elevaciones de F9AL.26: 41 myproof en 18 probs. **Lote 1** (commit 1af9caa): 12 myproof del mega-prob de 12 literales; **error matemático corregido en el literal f)** ($T:\mathcal{M}_2\to\mathcal{P}_3$: el banco afirmaba rango 4/invertible, SymPy da det=0, rango 3, ker=span{(0,1,0,1)}); literal g) duplicaba el example de traslación en P₂ → sustituido por $T(p)=p(2x)$ (SymPy-OK, precedente F9AL.21); artefacto de matriz simbólica en l) eliminado. **Lote 2**: 18 myproof de los probs 2–16 a protocolo con boxed; correcciones extra: «plano Z»→«eje Z» (enunciado y solución del prob 2), artefacto `[4][5]` eliminado (prob 5), sobreyectividad de Im(T)=W completada (prob 4), «base» de núcleo infinito-dimensional reformulada (prob 5), det(C)=1 calculado (prob 15c), prob 7 verificado con SymPy ((B')⁻¹A coincide). **Excepciones registradas:** los 11 myproof de los probs geométricos 17–18 conservan la plantilla estructurada de campos (Efecto geométrico/Kernel/Imagen/Rango/Nulidad/Gráfica), equivalente al protocolo. Balance: 30/41 con `Paso N.`, 11/41 excepción de plantilla.
 
 ### F9AL.44 — complejos: 24 myproof → protocolo 4 pasos
-**Nota:** ejecutar tras F9AL.28 (las 8–10 elevaciones de ese ítem ya salen con 4 pasos; este ítem cubre el resto del banco).
+**Nota:** ejecutar tras F9AL.28 (las 8–10 elevaciones de ese ítem ya salen con 4 pasos; este ítem cubre el resto del banco). Alcance real tras F9AL.28: 15 myproof del banco §2.3 sin protocolo.
 **Estado:** Pendiente
 
 ### F9AL.45 — vectoresrn: 27 myproof → protocolo 4 pasos (bloque V, opcional)
@@ -584,7 +590,7 @@ Mínimo 8–10 resueltos (example con myproof) + 15–20 propuestos (sin myproof
 | F9AL.25 | `translineales.tex` | 2 figuras nuevas R2 | Completado | 2026-07-10 | fig:cuadrado_rotacion_cizalla (minipage doble) + fig:composicion_diagrama |
 | F9AL.26 | `translineales.tex` | Sección propuestos + Decisión F | Completado | 2026-07-10 | 4 elevaciones aprobadas; banco 18 probs/5 grupos 5B/11I/2D; 16 propuestos nuevos 5B/8I/3D SymPy-OK |
 | F9AL.27 | `translineales.tex` | Completar 4 pasos | Completado | 2026-07-10 | 3 reformas (integral→Volterra, P₂ traslación, R³); 4 ilustrativos justificados; 14/14 |
-| F9AL.28 | `complejos.tex` | Elevar 8–10 resueltos del banco | Pendiente | — | — |
+| F9AL.28 | `complejos.tex` | Elevar 8–10 resueltos del banco | Completado | 2026-07-14 | 9 elevaciones aprobadas (incl. 1er example de §TFA); banco renombrado con 15 probs (3 movidos); + adición del autor: teorema raíces conjugadas + example SymPy-OK + §2.4 propuestos con 1 prob. 794 pp, 0 errores. |
 | F9AL.29 | `complejos.tex` | Auditoría 7 figuras | Pendiente | — | — |
 | F9AL.30 | `complejos.tex` | 2 figuras nuevas R2 | Pendiente | — | — |
 | F9AL.31 | `complejos.tex` | Graduación + heading | Pendiente | — | — |
