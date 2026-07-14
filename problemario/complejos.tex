@@ -147,7 +147,7 @@ La forma presentada anteriormente se denomina \textbf{forma binomial} o \textbf{
 
 \textbf{Paso 2.} Por tanto, $z$ corresponde al punto $\boxed{(-5,-4)}$ en el plano complejo.
 
-\textbf{Paso 3.} Su representación geométrica es:
+\textbf{Paso 3.} Su representación geométrica se muestra en la Figura~\ref{fig:complejo_54i}:
 
 \begin{figure}[H]
 \centering
@@ -172,6 +172,7 @@ ytick={-4.0,-3.0,...,1.0},]
 \end{axis}
 \end{tikzpicture}
 \caption{Representación geométrica del complejo $-5-4i.$}
+\label{fig:complejo_54i}
 \end{figure}
 \end{myproof}
 \end{example}
@@ -181,6 +182,33 @@ Haciendo uso de las coordenadas polares, podemos obtener otra representación de
 \begin{definition}[Módulo y argumento]\label{modnumcom}
 Sea $z=x+iy$ un número complejo, y $P$ el punto en el plano cartesiano que lo representa. El \textbf{módulo} de $z$, denotado por $\abs{z}$, es la distancia desde el origen $O$ hasta el punto $P$, dado por $\abs{z}=\sqrt{x^2+y^2}$. El \textbf{argumento} de $z$, denotado por $\text{arg}(z)$, es el ángulo medido desde la parte positiva del eje real hasta el segmento $\overline{OP}$. Aunque el argumento puede tomar cualquier valor que difiera en múltiplos de $2\pi$, se suele considerar el \textbf{argumento principal} en el intervalo $[0,2\pi)$.
 \end{definition}
+
+La Figura~\ref{fig:modulo_argumento} ilustra ambas cantidades: el módulo mide la distancia del punto al origen y el argumento, el ángulo que el segmento $\overline{OP}$ forma con el eje real positivo.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.2,>=stealth]
+    % Ejes
+    \draw[->] (-0.8,0) -- (4.2,0) node[right] {Re$\{z\}$};
+    \draw[->] (0,-0.8) -- (0,3.0) node[above] {Im$\{z\}$};
+    % Proyecciones a los ejes
+    \draw[dashed, gray] (3,0) -- (3,2);
+    \draw[dashed, gray] (0,2) -- (3,2);
+    \node[below] at (3,0) {$a$};
+    \node[left] at (0,2) {$b$};
+    % Vector z con módulo
+    \draw[->, very thick, blue!70!black] (0,0) -- node[midway, above left] {$\abs{z}$} (3,2);
+    \fill[blue!70!black] (3,2) circle (1.6pt);
+    \node[blue!70!black, above right] at (3,2) {$z=a+bi$};
+    % Argumento
+    \draw[red!70!black, thick] (0.9,0) arc (0:33.69:0.9);
+    \node[red!70!black] at (17:1.25) {$\theta$};
+    % Origen
+    \node[below left] at (0,0) {$O$};
+\end{tikzpicture}
+\caption{Módulo y argumento de $z=a+bi$: el módulo $\abs{z}=\sqrt{a^2+b^2}$ es la distancia del origen al punto $(a,b)$ y el argumento $\theta$ es el ángulo medido desde el eje real positivo.}
+\label{fig:modulo_argumento}
+\end{figure}
 
 Antes de presentar la forma polar, introducimos una de las fórmulas más importantes en matemáticas, cuya demostración se hará en el Teorema \ref{demformeuler}.
 
@@ -233,7 +261,7 @@ $$\text{arg}(z) = \pi+\arctan\left(\frac{4}{5}\right) \approx 3.8163 \text{ radi
 Sean $z_1 = 1+i$ y $z_2 = -1-i$. Encuentre el número complejo $z_3$ tal que el triángulo $z_1$, $z_2$ y $z_3$ sea equilátero.
 
 \begin{myproof}
-El problema tiene dos soluciones, dependiendo del argumento a tomar. Se muestran ambas.
+El problema tiene dos soluciones, dependiendo del argumento a tomar. Se muestran ambas en la Figura~\ref{fig:triangulo_equilatero_complejo}.
 
 \begin{figure}[H]
 \centering
@@ -285,6 +313,7 @@ El problema tiene dos soluciones, dependiendo del argumento a tomar. Se muestran
     \draw (0.05,\y) -- (-0.05,\y) node[left] {$\y$};
 \end{tikzpicture}
 \caption{Representación gráfica de la solución}
+\label{fig:triangulo_equilatero_complejo}
 \end{figure}
 
 
@@ -331,7 +360,7 @@ Esto corresponde a todos los puntos del plano complejo cuya distancia al origen 
 
 \textbf{Paso 2.} Geométricamente, esto es un sector circular de radio $3$, centrado en el origen, que abarca los ángulos desde $\frac{2\pi}{3}$ hasta $\frac{5\pi}{6}$.
 
-\textbf{Paso 3.} A continuación se muestra la gráfica de la región:
+\textbf{Paso 3.} A continuación se muestra la gráfica de la región (Figura~\ref{fig:region_sector_complejo}):
 
 \begin{figure}[H]
 \centering
@@ -360,6 +389,7 @@ Esto corresponde a todos los puntos del plano complejo cuya distancia al origen 
     \draw (0,1.5) arc (90:150:1.5) node[above left] {$\frac{5\pi}{6}$};
 \end{tikzpicture}
 \caption{Representación de la región del Ejemplo \ref{comprepex}}
+\label{fig:region_sector_complejo}
 \end{figure}
 
 \textbf{Paso 4.} Por lo tanto, el conjunto pedido es el sector sombreado en la figura, correspondiente a los números complejos con argumento entre $\frac{2\pi}{3}$ y $\frac{5\pi}{6}$ y módulo menor que $3$.
@@ -374,6 +404,36 @@ De la multiplicación de números complejos en forma polar se derivan las siguie
 \item \textbf{Fórmula de De Moivre:} $\sqrt[n]{z}=\sqrt[n]{\abs{z}}\cdot \mathrm{e}^{i\frac{\theta+2k\pi}{n}}$ donde $k=0,1,\dots , n-1$.
 \end{enumerate}
 \end{theorem}
+
+La fórmula de De Moivre revela la geometría de las raíces: las $n$ raíces $n$-ésimas de un complejo comparten el módulo $\sqrt[n]{\abs{z}}$ y sus argumentos consecutivos difieren en $\frac{2\pi}{n}$, de modo que quedan distribuidas uniformemente sobre una circunferencia centrada en el origen. La Figura~\ref{fig:raices_unidad} lo ilustra con las raíces sextas de la unidad.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.6,>=stealth]
+    % Ejes
+    \draw[->] (-1.5,0) -- (1.8,0) node[right] {Re$\{z\}$};
+    \draw[->] (0,-1.4) -- (0,1.5) node[above] {Im$\{z\}$};
+    % Circunferencia unitaria
+    \draw[blue!70!black, thick] (0,0) circle (1);
+    % Hexágono de raíces
+    \draw[gray, dashed] (0:1) -- (60:1) -- (120:1) -- (180:1) -- (240:1) -- (300:1) -- cycle;
+    % Ángulo entre raíces consecutivas
+    \draw[red!70!black, thick] (0.35,0) arc (0:60:0.35);
+    \node[red!70!black] at (30:0.62) {$\frac{2\pi}{6}$};
+    % Raíces
+    \foreach \k in {0,...,5} {
+        \fill[red!70!black] (60*\k:1) circle (1.6pt);
+    }
+    \node[below right] at (0:1) {$z_0=1$};
+    \node[above right] at (60:1) {$z_1$};
+    \node[above left] at (120:1) {$z_2$};
+    \node[below left] at (180:1) {$z_3$};
+    \node[below left] at (240:1) {$z_4$};
+    \node[below right] at (300:1) {$z_5$};
+\end{tikzpicture}
+\caption{Las seis raíces sextas de la unidad ($z^6=1$): todas tienen módulo $1$ y sus argumentos $\frac{2k\pi}{6}$, con $k=0,\dots,5$, difieren consecutivamente en $\frac{2\pi}{6}$, por lo que forman un hexágono regular inscrito en la circunferencia unitaria.}
+\label{fig:raices_unidad}
+\end{figure}
 
 
 
@@ -425,7 +485,7 @@ De la multiplicación de números complejos en forma polar se derivan las siguie
    \end{matrix}$$
 \end{enumerate}
 
-\textbf{Paso 4.} En cada caso, las cuatro raíces cuartas comparten el mismo módulo y sus argumentos difieren en $\frac{\pi}{2}$: quedan distribuidas uniformemente sobre una circunferencia centrada en el origen, como predice la fórmula de De Moivre.
+\textbf{Paso 4.} En cada caso, las cuatro raíces cuartas comparten el mismo módulo y sus argumentos difieren en $\frac{\pi}{2}$: quedan distribuidas uniformemente sobre una circunferencia centrada en el origen, como predice la fórmula de De Moivre (compare con la Figura~\ref{fig:raices_unidad}).
 \end{myproof}
 \end{example}
 
@@ -627,9 +687,10 @@ Argumento: $3.8163335958133455$ radianes.
 \centering
 \includegraphics[scale=0.35]{representacioncomplejo.eps}
 \caption{Representación gráfica en \texttt{matplotlib} del complejo $-5-4i.$}
+\label{fig:complejo_54i_matplotlib}
 \end{figure}
 
-Estos resultados confirman los cálculos realizados en los Ejemplos \ref{formageometrica54i} y \ref{formapolar54i}.
+Estos resultados, graficados en la Figura~\ref{fig:complejo_54i_matplotlib}, confirman los cálculos realizados en los Ejemplos \ref{formageometrica54i} y \ref{formapolar54i}.
 \end{myproof}
 \end{prob}
 
@@ -762,7 +823,7 @@ Por lo tanto, la opción correcta es la \textbf{(e) Ninguna}.
 
 
 \begin{prob}\label{compsombreado}
-Determine cuál de las siguientes opciones representa el subconjunto de los números complejos sombreado en la gráfica:
+Determine cuál de las siguientes opciones representa el subconjunto de los números complejos sombreado en la gráfica (Figura~\ref{fig:anillo_sombreado}):
 
 
 \begin{figure}[H]
@@ -781,6 +842,7 @@ Determine cuál de las siguientes opciones representa el subconjunto de los núm
     \path [draw=none, fill=gray, even odd rule, fill opacity = 0.2] (0,-1) circle (2) (0,-1) circle (1);
 \end{tikzpicture}
 \caption{Figura del problema \ref{compsombreado}}
+\label{fig:anillo_sombreado}
 \end{figure} 
 \begin{multicols}{2}
 \begin{enumerate}[$(a)$]
@@ -818,7 +880,7 @@ Por lo tanto, la opción correcta es la \textbf{(c)}.
 \end{prob}
 
 \begin{prob}\label{compubicacion}
-En el plano complejo se han dibujado los números complejos $z$ y $w$ como se muestra en la figura. Indique en la misma figura dónde quedarían aproximadamente los números: 
+En el plano complejo se han dibujado los números complejos $z$ y $w$ como se muestra en la Figura~\ref{fig:compubicacion_datos}. Indique en la misma figura dónde quedarían aproximadamente los números:
 
 
 \begin{enumerate}[$a)$]
@@ -853,6 +915,7 @@ En el plano complejo se han dibujado los números complejos $z$ y $w$ como se mu
     
 \end{tikzpicture}
 \caption{Figura del problema \ref{compubicacion}}
+\label{fig:compubicacion_datos}
 \end{figure}
 \begin{myproof}
 Analicemos la ubicación aproximada de cada número pedido, usando la información de la figura: $z$ está en el primer cuadrante, sobre la circunferencia unitaria, formando $45^\circ$ con el eje real, es decir, $z = \frac{\sqrt{2}}{2} + i\frac{\sqrt{2}}{2}$ mientras que $w$ está en el segundo cuadrante, también sobre la circunferencia unitaria, aproximadamente a $135^\circ$, es decir, $w \approx -\frac{\sqrt{2}}{2} + i\frac{\sqrt{2}}{2}$.
@@ -871,7 +934,7 @@ Ahora ubicamos cada número:
 \item Como $w$ tiene módulo $1$ y argumento $135^\circ$ ($\frac{3\pi}{4}$), al elevar al cuadrado, el módulo sigue siendo $1$ y el argumento se duplica: $2 \cdot 135^\circ = 270^\circ$ ($\frac{3\pi}{2}$), que corresponde al eje imaginario negativo, es decir, en $-i$.
 \end{enumerate}
 
-A continuación se muestra la figura con las ubicaciones aproximadas:
+A continuación se muestra la Figura~\ref{fig:compubicacion_solucion} con las ubicaciones aproximadas:
 
 \begin{figure}[H]
 \centering
@@ -917,6 +980,7 @@ A continuación se muestra la figura con las ubicaciones aproximadas:
     \node[purple] at (0.2,-1.1) {$w^2$};
 \end{tikzpicture}
 \caption{Solución del problema \ref{compubicacion}}
+\label{fig:compubicacion_solucion}
 \end{figure}
 
 Así, cada número queda representado en la figura en su ubicación aproximada.

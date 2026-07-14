@@ -419,13 +419,24 @@ Mínimo 8–10 resueltos (example con myproof) + 15–20 propuestos (sin myproof
 **Acción:** 7 entornos figure, 0 con caption+label. Protocolo F8.31; verificar proporción 1:1 (círculos sin distorsión — ya revisado en 2026-06-16, solo confirmar).
 **Criterio de cierre:** 7/7 conformes.
 **Líneas estimadas:** 40–80
-**Estado:** Pendiente
+**Estado:** Completado — 2026-07-14
+
+**Notas de ejecución:**
+- Corrección al diagnóstico (mismo matiz que F9AL.24): las 7 figuras SÍ tenían caption; lo que faltaba eran los 7 labels. Añadidos tras el caption: `fig:complejo_54i`, `fig:complejo_54i_matplotlib`, `fig:triangulo_equilatero_complejo`, `fig:region_sector_complejo`, `fig:anillo_sombreado`, `fig:compubicacion_datos`, `fig:compubicacion_solucion`.
+- 7 anclas explícitas insertadas (`Figura~\ref{...}` en Paso 3 de los examples elevados, enunciados de compsombreado/compubicacion, solución de compubicacion, y «graficados en la Figura…» en el prob de Python).
+- Proporción 1:1 confirmada: las 8 tikzpicture usan escala uniforme (o ejes pgfplots con `x=y=0.5cm`); círculos sin distorsión. Las 7 ya eran `figure[H]`.
 
 ### F9AL.30 — complejos: figuras nuevas R2
 **Acción:** (a) plano complejo con z = a+bi, módulo |z| y argumento θ (tras la def. de módulo/argumento); (b) raíces n-ésimas de la unidad distribuidas sobre la circunferencia unitaria (tras De Moivre/raíces).
 **Criterio de cierre:** 2 figuras estándar F8 en posición R2.
 **Líneas estimadas:** 70–110
-**Estado:** Pendiente
+**Estado:** Completado — 2026-07-14
+
+**Notas de ejecución:**
+- `fig:modulo_argumento` (inmediatamente tras `def modnumcom`, posición R2): punto $z=a+bi$ genérico dibujado en $(3,2)$, vector azul con $\abs{z}$ al medio, proyecciones punteadas grises a los ejes con etiquetas $a$/$b$, arco rojo del argumento $\theta$ (33.69°, exacto para (3,2)); párrafo ancla antes de la figura.
+- `fig:raices_unidad` (tras el teorema de potencias y raíces enésimas): las 6 raíces sextas de la unidad (puntos rojos) sobre la circunferencia unitaria azul, hexágono regular punteado gris, ángulo $\frac{2\pi}{6}$ marcado entre $z_0=1$ y $z_1$; párrafo ancla nuevo sobre la geometría de De Moivre + remisión desde el Paso 4 del example de raíces cuartas («compare con la Figura~\ref{fig:raices_unidad}»).
+- Estándar F8: `figure[H]`, caption + label tras caption, paleta `blue!70!black`/`red!70!black`, `>=stealth`, anchors explícitos en todos los nodos de texto.
+- Verificación visual pp. 24 y 27 (figuras 2.2 y 2.5 del PDF). Compilación limpia (2 pasadas): 0 errores `!`, 0 refs indefinidas, 794 pp. El capítulo queda con 9/9 figuras conformes.
 
 ### F9AL.31 — complejos: graduación + heading
 **Acción:** ~~renombrar heading~~ (hecho en F9AL.28: el banco quedó como `Problemas resueltos adicionales` y ya existe `\section{Problemas propuestos}` con 1 prob tag Intermedio); tags de graduación sobre los 15 probs del banco; poblar propuestos con nuevos sin solución (validar lote con el autor — el capítulo no tenía ninguno).
@@ -591,8 +602,8 @@ Mínimo 8–10 resueltos (example con myproof) + 15–20 propuestos (sin myproof
 | F9AL.26 | `translineales.tex` | Sección propuestos + Decisión F | Completado | 2026-07-10 | 4 elevaciones aprobadas; banco 18 probs/5 grupos 5B/11I/2D; 16 propuestos nuevos 5B/8I/3D SymPy-OK |
 | F9AL.27 | `translineales.tex` | Completar 4 pasos | Completado | 2026-07-10 | 3 reformas (integral→Volterra, P₂ traslación, R³); 4 ilustrativos justificados; 14/14 |
 | F9AL.28 | `complejos.tex` | Elevar 8–10 resueltos del banco | Completado | 2026-07-14 | 9 elevaciones aprobadas (incl. 1er example de §TFA); banco renombrado con 15 probs (3 movidos); + adición del autor: teorema raíces conjugadas + example SymPy-OK + §2.4 propuestos con 1 prob. 794 pp, 0 errores. |
-| F9AL.29 | `complejos.tex` | Auditoría 7 figuras | Pendiente | — | — |
-| F9AL.30 | `complejos.tex` | 2 figuras nuevas R2 | Pendiente | — | — |
+| F9AL.29 | `complejos.tex` | Auditoría 7 figuras | Completado | 2026-07-14 | 7 labels añadidos (tenían caption, no label) + 7 anclas; proporción 1:1 confirmada. 7/7 conformes. |
+| F9AL.30 | `complejos.tex` | 2 figuras nuevas R2 | Completado | 2026-07-14 | fig:modulo_argumento (tras def modnumcom) + fig:raices_unidad (raíces sextas de la unidad, tras De Moivre) con anclas; verificadas pp. 24/27. 794 pp, 0 errores. |
 | F9AL.31 | `complejos.tex` | Graduación + heading | Pendiente | — | — |
 | F9AL.32 | 7 caps AL | Headings normalizados | Pendiente | — | — |
 | F9AL.33 | 7 caps AL | Labels resultados centrales | Pendiente | — | — |
