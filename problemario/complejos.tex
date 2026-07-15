@@ -618,7 +618,7 @@ $$x=\frac{2\pm\sqrt{4-8}}{2}=1\pm i.$$
 					\end{enumerate}
 				\end{multicols}							
 \begin{myproof}
-Observe que si $z=\dfrac{1+it}{1-it},$ entonces 
+\textbf{Paso 1. Despeje de $it$.} Si $z=\dfrac{1+it}{1-it},$ entonces
 \begin{align*}
 z\left( 1-it \right)&=1+it\\
 z-zit&=1+it\\
@@ -626,16 +626,24 @@ z-1&=zit+it\\
 \dfrac{z-1}{z+1}&=it.
 \end{align*}
 
-De esta manera, \begin{align*} it&=\dfrac{\dfrac{1}{2}+\dfrac{\sqrt{3}}{2}i-1}{\dfrac{1}{2}+\dfrac{\sqrt{3}}{2}i+1}=\dfrac{\dfrac{1}{2}+\dfrac{\sqrt{3}}{2}i-1}{\dfrac{1}{2}+\dfrac{\sqrt{3}}{2}i+1}\\
-&=\dfrac{1+\sqrt{3}i-2}{1+\sqrt{3}i+2}=\boxed{\dfrac{-1+\sqrt{3}i}{3+\sqrt{3}i}}.
+\textbf{Paso 2. Sustitución.} Para $z=\dfrac{1}{2}+\dfrac{\sqrt{3}}{2}i$:
+\begin{align*} it&=\dfrac{\dfrac{1}{2}+\dfrac{\sqrt{3}}{2}i-1}{\dfrac{1}{2}+\dfrac{\sqrt{3}}{2}i+1}=\dfrac{1+\sqrt{3}i-2}{1+\sqrt{3}i+2}=\dfrac{-1+\sqrt{3}i}{3+\sqrt{3}i}.
 \end{align*}
-Por lo cual, la opción correcta es \textbf{Ninguna.}
+
+\textbf{Paso 3. Simplificación.} Multiplicando por el conjugado del denominador:
+\[
+it=\dfrac{(-1+\sqrt{3}i)(3-\sqrt{3}i)}{(3+\sqrt{3}i)(3-\sqrt{3}i)}=\dfrac{-3+\sqrt{3}i+3\sqrt{3}i+3}{9+3}=\dfrac{4\sqrt{3}i}{12}=\dfrac{\sqrt{3}}{3}i,
+\]
+que en efecto es imaginario puro, con $t=\dfrac{\sqrt{3}}{3}$.
+
+\textbf{Paso 4. Resultado.} El valor $\dfrac{\sqrt{3}}{3}i$ no coincide con $(a)$ ni $(c)$ (que son números reales), ni con $(b)$, que simplificada vale $-1$. Por lo cual, la opción correcta es $\boxed{\text{Ninguna}}$.
 \end{myproof}
 \end{prob}
 
 % Básico
 \begin{prob} Use el lenguaje de programación \texttt{Python 3.x} para calcular la forma geométrica y polar del número complejo $-5-4i$, verificando así los resultados de los Ejemplos \ref{formageometrica54i} y \ref{formapolar54i}.
 \begin{myproof}
+\textbf{Paso 1. Programa.} El siguiente código calcula el módulo y el argumento del complejo y lo grafica:
 \begin{lstlisting}[label={lst:complejo},basicstyle=\footnotesize]
 import cmath
 import matplotlib.pyplot as plt
@@ -675,7 +683,7 @@ plt.legend()
 plt.show()
 \end{lstlisting}
 
-Este programa genera la siguiente salida:
+\textbf{Paso 2. Ejecución.} Con los datos del problema, el programa genera la siguiente salida:
 
 Parte real: -5
 
@@ -685,6 +693,8 @@ Módulo: $6.4031242374328485$
 
 Argumento: $3.8163335958133455$ radianes.
 
+\textbf{Paso 3. Representación gráfica.} La salida gráfica es la Figura~\ref{fig:complejo_54i_matplotlib}:
+
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.35]{representacioncomplejo.eps}
@@ -692,7 +702,10 @@ Argumento: $3.8163335958133455$ radianes.
 \label{fig:complejo_54i_matplotlib}
 \end{figure}
 
-Estos resultados, graficados en la Figura~\ref{fig:complejo_54i_matplotlib}, confirman los cálculos realizados en los Ejemplos \ref{formageometrica54i} y \ref{formapolar54i}.
+\textbf{Paso 4. Conclusión.} Estos resultados confirman los cálculos realizados en los Ejemplos \ref{formageometrica54i} y \ref{formapolar54i}:
+\[
+\boxed{\abs{z}=\sqrt{41}\approx 6.4031,\qquad \theta=\pi+\arctan\left(\tfrac{4}{5}\right)\approx 3.8163.}
+\]
 \end{myproof}
 \end{prob}
 
@@ -708,7 +721,10 @@ Estos resultados, graficados en la Figura~\ref{fig:complejo_54i_matplotlib}, con
 \end{enumerate}
 \end{multicols}
 
-\begin{myproof}	
+\begin{myproof}
+\textbf{Paso 1. Estrategia.} Usamos la forma binomial $z=a+bi$ cuando la afirmación involucra conjugados o módulos, y la forma polar cuando involucra argumentos; para refutar una afirmación basta exhibir un contraejemplo.
+
+\textbf{Paso 2. Análisis de cada afirmación.}
 \begin{enumerate}[$a)$]
 \item Verdadero. \textbf{Demostración:}
 Sea $z=a+bi$, entonces $\overline{z}=a-bi$. Por lo tanto:
@@ -754,6 +770,11 @@ Sea $z=1 \in \mathbb{R}$. Entonces $\text{arg}(z) = 0 \neq \pi$.
 
 En realidad, para cualquier número real positivo $z > 0$, tenemos $\text{arg}(z) = 0$, y para cualquier número real negativo $z < 0$, tenemos $\text{arg}(z) = \pi$. La afirmación solo es cierta para números reales negativos.
 \end{enumerate}
+
+\textbf{Paso 3. Resumen.}
+\[
+\boxed{a)\ \text{V},\qquad b)\ \text{V},\qquad c)\ \text{F},\qquad d)\ \text{F}.}
+\]
 \end{myproof}
 \end{prob}
 
@@ -774,7 +795,7 @@ El efecto geométrico de multiplicar por el complejo $w=6\left(\dfrac{3+3i}{3-3i
 
 
 \begin{myproof}
-Primero, simplificamos el número complejo dado:
+\textbf{Paso 1. Simplificación.} Simplificamos el número complejo dado:
 $$
 w = 6\left(\frac{3+3i}{3-3i}\right)
 $$
@@ -798,9 +819,9 @@ $$
 w = 6i
 $$
 
-El efecto geométrico de multiplicar por $w=6i$ en el plano complejo es:  multiplicar el módulo por $6$ y girar el ángulo por el argumento de $i$, que es $\frac{\pi}{2}$ en sentido antihorario (positivo).
+\textbf{Paso 2. Efecto geométrico.} El efecto de multiplicar por $w=6i$ en el plano complejo es: multiplicar el módulo por $6$ y girar el ángulo por el argumento de $i$, que es $\frac{\pi}{2}$ en sentido antihorario (positivo).
 
-Ahora analizamos las opciones:
+\textbf{Paso 3. Análisis de las opciones.}
 
 \begin{enumerate}[(a)]
 \item \textbf{Sextuplicar el módulo y girar $\frac{\pi}{2}$ en sentido horario.}  
@@ -819,7 +840,7 @@ Incorrecta. El giro es de $\frac{\pi}{2}$, no de $\pi$.
 Correcta. Ninguna de las opciones anteriores describe correctamente el efecto de multiplicar por $w=6i$.
 \end{enumerate}
 
-Por lo tanto, la opción correcta es la \textbf{(e) Ninguna}.
+\textbf{Paso 4. Resultado.} Por lo tanto, la opción correcta es la $\boxed{\text{(e) Ninguna}}$.
 \end{myproof}
 
 \end{prob}
@@ -859,11 +880,11 @@ Determine cuál de las siguientes opciones representa el subconjunto de los núm
 \end{multicols}
 
 \begin{myproof}
-Observemos la figura: el área sombreada es un anillo centrado en el punto $(0,-1)$ del plano complejo, con radio interior $1$ y radio exterior $2$. En términos de números complejos, el centro de los círculos es $z_0 = -i$.
+\textbf{Paso 1. Lectura de la figura.} El área sombreada es un anillo centrado en el punto $(0,-1)$ del plano complejo, con radio interior $1$ y radio exterior $2$. En términos de números complejos, el centro de los círculos es $z_0 = -i$.
 
-El conjunto de puntos $z$ que cumplen $1 \leq |z-(-i)| \leq 2$ corresponde exactamente al anillo mostrado, es decir, todos los números complejos cuya distancia al punto $-i$ es al menos $1$ y como máximo $2$.
+\textbf{Paso 2. Traducción a módulos.} El conjunto de puntos $z$ que cumplen $1 \leq |z-(-i)| \leq 2$ corresponde exactamente al anillo mostrado, es decir, todos los números complejos cuya distancia al punto $-i$ es al menos $1$ y como máximo $2$.
 
-Analicemos las opciones:
+\textbf{Paso 3. Análisis de las opciones.}
 
 \begin{enumerate}[(a)]
 \item $\left\lbrace z\in \mathbb{C}: 1\leq\abs{z-i}\leq 2 \right\rbrace$\\
@@ -879,7 +900,7 @@ Correcta. Esta opción describe exactamente el anillo centrado en $-i$ con radio
 Incorrecta. Es el disco de radio $2$ centrado en $i$.
 \end{enumerate}
 
-Por lo tanto, la opción correcta es la \textbf{(c)}.
+\textbf{Paso 4. Resultado.} Por lo tanto, la opción correcta es la $\boxed{\text{(c)}}$.
 \end{myproof}
 
 \end{prob}
@@ -924,9 +945,9 @@ En el plano complejo se han dibujado los números complejos $z$ y $w$ como se mu
 \label{fig:compubicacion_datos}
 \end{figure}
 \begin{myproof}
-Analicemos la ubicación aproximada de cada número pedido, usando la información de la figura: $z$ está en el primer cuadrante, sobre la circunferencia unitaria, formando $45^\circ$ con el eje real, es decir, $z = \frac{\sqrt{2}}{2} + i\frac{\sqrt{2}}{2}$ mientras que $w$ está en el segundo cuadrante, también sobre la circunferencia unitaria, aproximadamente a $135^\circ$, es decir, $w \approx -\frac{\sqrt{2}}{2} + i\frac{\sqrt{2}}{2}$.
+\textbf{Paso 1. Datos de la figura.} Según la Figura~\ref{fig:compubicacion_datos}: $z$ está en el primer cuadrante, sobre la circunferencia unitaria, formando $45^\circ$ con el eje real, es decir, $z = \frac{\sqrt{2}}{2} + i\frac{\sqrt{2}}{2}$ mientras que $w$ está en el segundo cuadrante, también sobre la circunferencia unitaria, aproximadamente a $135^\circ$, es decir, $w \approx -\frac{\sqrt{2}}{2} + i\frac{\sqrt{2}}{2}$.
 
-Ahora ubicamos cada número:
+\textbf{Paso 2. Ubicación de cada número.}
 
 \begin{enumerate}[a)]
 \item $\dfrac{1}{z}:$ Como $|z|=1$, $\frac{1}{z} = \overline{z}$, es decir, el conjugado de $z$. Así, $\frac{1}{z}$ estará en el primer cuadrante, sobre el círculo unitario, pero reflejado respecto al eje real aproximadamente en $(\frac{\sqrt{2}}{2}, -\frac{\sqrt{2}}{2})$.
@@ -940,7 +961,7 @@ Ahora ubicamos cada número:
 \item Como $w$ tiene módulo $1$ y argumento $135^\circ$ ($\frac{3\pi}{4}$), al elevar al cuadrado, el módulo sigue siendo $1$ y el argumento se duplica: $2 \cdot 135^\circ = 270^\circ$ ($\frac{3\pi}{2}$), que corresponde al eje imaginario negativo, es decir, en $-i$.
 \end{enumerate}
 
-A continuación se muestra la Figura~\ref{fig:compubicacion_solucion} con las ubicaciones aproximadas:
+\textbf{Paso 3. Representación gráfica.} A continuación se muestra la Figura~\ref{fig:compubicacion_solucion} con las ubicaciones aproximadas:
 
 \begin{figure}[H]
 \centering
@@ -989,7 +1010,7 @@ A continuación se muestra la Figura~\ref{fig:compubicacion_solucion} con las ub
 \label{fig:compubicacion_solucion}
 \end{figure}
 
-Así, cada número queda representado en la figura en su ubicación aproximada.
+\textbf{Paso 4. Conclusión.} Cada número queda representado en la Figura~\ref{fig:compubicacion_solucion} en su ubicación aproximada.
 \end{myproof}
 
 \end{prob}
@@ -997,7 +1018,7 @@ Así, cada número queda representado en la figura en su ubicación aproximada.
 % Difícil
 \begin{prob} La ecuación $2z^4+2z^2+1=0$ tiene una raíz compleja $z$ con argumento entre $\pi$ y $\dfrac{3\pi}{2}$. Determine el argumento de $z$.
 \begin{myproof}
-Primero, reescribimos la ecuación \(2z^4 + 2z^2 + 1 = 0,\) dividiendo entre $2,$ \(
+\textbf{Paso 1. Reducción y cambio de variable.} Reescribimos la ecuación \(2z^4 + 2z^2 + 1 = 0,\) dividiendo entre $2,$ \(
 z^4 + z^2 + \frac{1}{2} = 0.\)
 
 
@@ -1008,7 +1029,7 @@ w^2 + w + \frac{1}{2} = 0
 w = \frac{-1 \pm \sqrt{1 - 2}}{2} = \frac{-1 \pm i}{2}
 \]
 
-Ahora, buscamos $z$ tal que $z^2 = w$ y su argumento esté entre $\pi$ y $\frac{3\pi}{2}$.
+\textbf{Paso 2. Forma polar de $w_1$.} Buscamos $z$ tal que $z^2 = w$ y su argumento esté entre $\pi$ y $\frac{3\pi}{2}$.
 
 Tomamos $w_1 = \frac{-1 + i}{2}$ y $w_2 = \frac{-1 - i}{2}$.
 
@@ -1018,7 +1039,7 @@ Calculamos el argumento de $w_1$: \(
 
 Como $w_1$ está en el segundo cuadrante, su argumento es: \(\pi - \frac{\pi}{4} = \frac{3\pi}{4} \) y su módulo es: \[|w_1| = \sqrt{\left(\frac{-1}{2}\right)^2 + \left(\frac{1}{2}\right)^2} = \frac{1}{\sqrt{2}}.\]
 
-Las raíces cuadradas de $w_1$ son: \(
+\textbf{Paso 3. Raíces cuadradas de $w_1$.} Las raíces cuadradas de $w_1$ son: \(
 z = \left(\frac{1}{\sqrt{2}}\right)^{1/2} e^{\left(i \dfrac{\frac{3\pi}{4} + 2k\pi}{2}\right)}, \quad k=0,1
 \)
 
@@ -1026,7 +1047,7 @@ Los argumentos posibles son: \(
 \theta_1 = \frac{3\pi}{8}, \quad \theta_2 = \frac{3\pi}{8} + \pi = \frac{11\pi}{8}
 \)
 
-Ahora, como $\frac{11\pi}{8}$ está entre $\pi$ y $\frac{3\pi}{2},$  el argumento de la raíz $z$ pedida es: \(
+\textbf{Paso 4. Selección del argumento.} Como $\frac{11\pi}{8}$ está entre $\pi$ y $\frac{3\pi}{2},$ el argumento de la raíz $z$ pedida es: \(
 \boxed{\frac{11\pi}{8}}
 \)
 \end{myproof}
@@ -1036,13 +1057,13 @@ Ahora, como $\frac{11\pi}{8}$ está entre $\pi$ y $\frac{3\pi}{2},$  el argument
 % Difícil
 \begin{prob}Use la fórmula de De Moivre para encontrar todas las raíces complejas del polinomio $z^6-11(i+1)z^3+121i=0$.
 \begin{myproof}
-Dada la ecuación \(
+\textbf{Paso 1. Cambio de variable.} Dada la ecuación \(
 z^6 - 11(1+i)z^3 + 121i = 0
 \) hacemos el cambio $w = z^3$, así que la ecuación se convierte en:
 \[
 w^2 - 11(1+i)w + 121i = 0
 \]
-Usando factor común por agrupación: \begin{align*}
+\textbf{Paso 2. Factorización.} Usando factor común por agrupación: \begin{align*}
 w^2 - 11(1+i)w + 121i &= 0 \\
 w^2 - 11w - 11iw + 121i &= 0 \\
 (w^2 - 11w) - (11iw - 121i) &= 0 \\
@@ -1051,7 +1072,9 @@ w(w - 11) -11i(w - 11) &= 0 \\
 \end{align*}
 
 Por lo tanto, las raíces para $w$ son: \(
-w_1 = 11 \) y \(w_2 = 11i.\) Ahora resolvemos $z^3 = w$ para cada $w$:
+w_1 = 11 \) y \(w_2 = 11i.\)
+
+\textbf{Paso 3. Raíces cúbicas.} Resolvemos $z^3 = w$ para cada $w$:
 
 \textbf{Para $w_1 = 11$:}
 \[
@@ -1087,7 +1110,7 @@ z_5 = 11^{1/3} e^{i\dfrac{5\pi}{6}} = 11^{1/3} \left(-\frac{\sqrt{3}}{2} + i\fra
 z_6 = 11^{1/3} e^{i\frac{3\pi}{2}} = 11^{1/3} (-i)
 \]
 
-\textbf{En resumen, las seis raíces complejas son:}
+\textbf{Paso 4. Resultado.} En resumen, las seis raíces complejas son:
 \[
 \boxed{
 \begin{aligned}
@@ -1124,7 +1147,9 @@ Determine el valor de verdad de las siguientes afirmaciones donde $z, w \in \mat
 \item  Si $z=bi$ con $b\neq 0$, entonces $iz$ es real
 \end{enumerate}
 \begin{myproof}
-Analizamos cada afirmación:
+\textbf{Paso 1. Estrategia.} Usamos la forma binomial o la forma polar según convenga a cada afirmación; para refutar una afirmación basta exhibir un contraejemplo.
+
+\textbf{Paso 2. Análisis de cada afirmación.}
 
 \begin{enumerate}[a)]
 \item \textbf{$|z|=|iz|$}
@@ -1163,8 +1188,8 @@ Demostración: Si $z = re^{i\theta}$, entonces $\overline{z} = re^{-i\theta}$, a
 
 \item \textbf{Si $z$ y $\overline{z}$ son raíces de $ax^2+bx+c=0$, entonces $b^2-4ac<0$}
 
-Verdadera.  
-Demostración: Si las raíces son conjugadas, el discriminante es negativo, pues sólo ocurre si no hay raíces reales.
+Verdadera si $z$ no es real; falsa si $z\in\mathbb{R}$.
+Demostración: si $z$ no es real, las raíces $z\neq\overline{z}$ son complejas conjugadas no reales, lo que ocurre exactamente cuando $b^2-4ac<0$. En cambio, si $z\in\mathbb{R}$ entonces $z=\overline{z}$ y la afirmación falla: por ejemplo, $z=\overline{z}=1$ es raíz de $x^2-2x+1=0$, cuyo discriminante es $b^2-4ac=0$.
 
 \item \textbf{Sean $z, w\in \mathbb{C}$. Si $|w|<1$ y $|z|\leq 1$, entonces $\left|\dfrac{z+w}{1+\overline{w}z}\right|=1$}
 
@@ -1204,6 +1229,14 @@ Demostración: $|z| = \sqrt{a^2 + a^2} = |a|\sqrt{2}$.
 Verdadera.  
 Demostración: $iz = i(bi) = b(i^2) = b(-1) = -b \in \mathbb{R}$.
 \end{enumerate}
+
+\textbf{Paso 3. Resumen.}
+\[
+\boxed{\begin{array}{c}
+a)\ \text{V},\quad b)\ \text{F},\quad c)\ \text{V},\quad d)\ \text{V},\quad e)\ \text{V},\quad f)\ \text{V si } z\notin\mathbb{R},\quad g)\ \text{F},\\[2pt]
+h)\ \text{V},\quad i)\ \text{V},\quad j)\ \text{F},\quad k)\ \text{V},\quad l)\ \text{V},\quad m)\ \text{V}.
+\end{array}}
+\]
 \end{myproof}
 
 \end{prob}
@@ -1215,9 +1248,9 @@ Demostración: $iz = i(bi) = b(i^2) = b(-1) = -b \in \mathbb{R}$.
 \item $(4-3i)x^2+(3+2i)xy=4y^2-\dfrac{1}{2}x^2+(3xy-2y^2)i$
 \end{enumerate}
 \begin{myproof}
-Resolvamos cada inciso por separado.
+\textbf{Paso 1. Estrategia.} En ambos incisos agrupamos partes reales e imaginarias e igualamos coeficientes para obtener un sistema de ecuaciones reales.
 
-\textbf{a)} \quad $(1-2i)x + (1+2i)y = 1 + i$
+\textbf{Paso 2. Parte (a).} \quad $(1-2i)x + (1+2i)y = 1 + i$
 
 Expresamos la ecuación en términos de partes reales e imaginarias:
 \[
@@ -1248,7 +1281,7 @@ x = 1 - \frac{3}{4} = \frac{1}{4}
 
 \vspace{1em}
 
-\textbf{b)} \quad $(4-3i)x^2 + (3+2i)xy = 4y^2 - \dfrac{1}{2}x^2 + (3xy - 2y^2)i$
+\textbf{Paso 3. Parte (b).} \quad $(4-3i)x^2 + (3+2i)xy = 4y^2 - \dfrac{1}{2}x^2 + (3xy - 2y^2)i$
 
 Llevamos todos los términos al mismo lado e igualamos partes reales e imaginarias:
 \[
@@ -1311,57 +1344,28 @@ Por lo tanto, $x = \frac{2y}{3}$, $y$ arbitrario.
 % Difícil
 \begin{prob} (\cite{andreescu2014complex}, p. 21, Problema 31) Sean $z_1, z_2, z_3$ números complejos tales que $z_1+z_2+z_3=0$ y $|z_1|=|z_2|=|z_3|=1$. Demuestre que $z_1^2+z_2^2+z_3^2=0$.
 \begin{myproof}
-Sean $z_1, z_2, z_3 \in \mathbb{C}$ tales que $z_1 + z_2 + z_3 = 0$ y $|z_1| = |z_2| = |z_3| = 1$.
+\textbf{Paso 1. Identidad del cuadrado de la suma.} Elevando al cuadrado la hipótesis $z_1 + z_2 + z_3 = 0$:
+\[
+0=(z_1+z_2+z_3)^2=z_1^2+z_2^2+z_3^2+2(z_1z_2+z_1z_3+z_2z_3),
+\]
+de modo que basta demostrar que $z_1z_2+z_1z_3+z_2z_3=0$.
 
-Queremos demostrar que $z_1^2 + z_2^2 + z_3^2 = 0$.
-
-Como $z_1 + z_2 + z_3 = 0$, tenemos $z_3 = -z_1 - z_2$. Sustituimos en la suma de los cuadrados:
+\textbf{Paso 2. Los módulos unitarios convierten inversos en conjugados.} Como $|z_k|=1$, se tiene $z_k\overline{z_k}=|z_k|^2=1$, es decir,
 \[
-z_1^2 + z_2^2 + z_3^2 = z_1^2 + z_2^2 + (-z_1 - z_2)^2
-\]
-\[
-= z_1^2 + z_2^2 + (z_1^2 + 2z_1z_2 + z_2^2)
-\]
-\[
-= z_1^2 + z_2^2 + z_1^2 + 2z_1z_2 + z_2^2
-\]
-\[
-= 2z_1^2 + 2z_2^2 + 2z_1z_2
-\]
-\[
-= 2(z_1^2 + z_2^2 + z_1z_2)
+\dfrac{1}{z_k}=\overline{z_k},\qquad k=1,2,3.
 \]
 
-Por otro lado, usando la condición de los módulos, notamos que $z_1, z_2, z_3$ son puntos en la circunferencia unitaria y suman cero; es decir, forman un triángulo equilátero centrado en el origen. Así, existen $\theta \in \mathbb{R}$ tal que:
+\textbf{Paso 3. La suma de productos es cero.} Factorizando $z_1z_2z_3$ y usando el Paso 2:
 \[
-z_1 = e^{i\theta},\quad z_2 = e^{i(\theta + 2\pi/3)},\quad z_3 = e^{i(\theta + 4\pi/3)}
+z_1z_2+z_1z_3+z_2z_3=z_1z_2z_3\left(\frac{1}{z_3}+\frac{1}{z_2}+\frac{1}{z_1}\right)=z_1z_2z_3\left(\overline{z_1}+\overline{z_2}+\overline{z_3}\right)=z_1z_2z_3\,\overline{z_1+z_2+z_3}=0,
 \]
-Calculamos la suma de los cuadrados:
-\[
-z_1^2 + z_2^2 + z_3^2 = e^{i2\theta} + e^{i[2(\theta + 2\pi/3)]} + e^{i[2(\theta + 4\pi/3)]}
-\]
-\[
-= e^{i2\theta} + e^{i(2\theta + 4\pi/3)} + e^{i(2\theta + 8\pi/3)}
-\]
-Pero $8\pi/3 = 2\pi + 2\pi/3$, así que $e^{i(2\theta + 8\pi/3)} = e^{i(2\theta + 2\pi/3)}$.
+pues $z_1+z_2+z_3=0$.
 
-Entonces,
+\textbf{Paso 4. Conclusión.} Sustituyendo en la identidad del Paso 1:
 \[
-z_1^2 + z_2^2 + z_3^2 = e^{i2\theta} + e^{i(2\theta + 4\pi/3)} + e^{i(2\theta + 2\pi/3)}
+\boxed{z_1^2+z_2^2+z_3^2=-2(z_1z_2+z_1z_3+z_2z_3)=0.}
 \]
-\[
-= e^{i2\theta} + e^{i(2\theta + 2\pi/3)} + e^{i(2\theta + 4\pi/3)}
-\]
-Esta suma es la suma de las raíces cúbicas de la unidad multiplicadas por $e^{i2\theta}$:
-\[
-e^{i2\theta} \left[1 + e^{i2\pi/3} + e^{i4\pi/3}\right]
-\]
-Pero $1 + e^{i2\pi/3} + e^{i4\pi/3} = 0$.
-
-Por lo tanto,
-\[
-z_1^2 + z_2^2 + z_3^2 = 0
-\]
+Geométricamente, tres puntos de la circunferencia unitaria que suman cero son los vértices de un triángulo equilátero inscrito en ella, como las raíces cúbicas de la unidad (compare con la Figura~\ref{fig:raices_unidad}, que muestra el caso análogo de las raíces sextas).
 \end{myproof}
 \end{prob}
 
@@ -1375,15 +1379,16 @@ Encuentre la forma polar de los siguientes números complejos. ¿Cuál es el efe
 \item $z=8$
 \end{enumerate}
 \end{multicols}
-\begin{myproof} Multiplicar por un número complejo $re^{i\theta}$ equivale a: Multiplicar el módulo por $r$ (dilatar o contraer la distancia al origen) y sumar $\theta$ al argumento (girar en sentido antihorario). Por otro lado, dividir equivale a dividir el módulo entre $r$ y restar $\theta$ al argumento (girar en sentido horario). Analicemos cada número complejo:
+\begin{myproof}
+\textbf{Paso 1. Estrategia.} Multiplicar por un número complejo $re^{i\theta}$ equivale a: multiplicar el módulo por $r$ (dilatar o contraer la distancia al origen) y sumar $\theta$ al argumento (girar en sentido antihorario). Por otro lado, dividir equivale a dividir el módulo entre $r$ y restar $\theta$ al argumento (girar en sentido horario). Analicemos cada número complejo.
 
-\textbf{a) $z = 3 + i:$} El módulo es $r = \sqrt{3^2 + 1^2} = \sqrt{10}$ y su argumento es $\theta = \arctan\left(\frac{1}{3}\right)$.  Así, la forma polar es \(
-  z = \sqrt{10} \, e^{i\arctan(1/3)}. \) El efecto geométrico de multiplicar por $z$ será multiplicar el módulo por $\sqrt{10}$ y girar el ángulo $\arctan(1/3)$ en sentido antihorario, mientras que dividir por $z$ implica dividir el módulo entre $\sqrt{10}$ y gira el ángulo $-\arctan(1/3)$ en sentido horario.
+\textbf{Paso 2. Parte (a): $z = 3 + i$.} El módulo es $r = \sqrt{3^2 + 1^2} = \sqrt{10}$ y su argumento es $\theta = \arctan\left(\frac{1}{3}\right)$.  Así, la forma polar es \(
+  \boxed{z = \sqrt{10} \, e^{i\arctan(1/3)}}. \) El efecto geométrico de multiplicar por $z$ será multiplicar el módulo por $\sqrt{10}$ y girar el ángulo $\arctan(1/3)$ en sentido antihorario, mientras que dividir por $z$ implica dividir el módulo entre $\sqrt{10}$ y gira el ángulo $-\arctan(1/3)$ en sentido horario.
 
-\textbf{b) $z = 5 - i:$} El módulo es $r = \sqrt{5^2 + (-1)^2} = \sqrt{26}$ y su  argumento es $\theta = \arctan\left(\frac{-1}{5}\right)$. Así, la forma polar es \(
-  z = \sqrt{26} \, e^{i\arctan(-1/5)}.\) El efecto geométrico de multiplicar por $z$ será multiplicar el módulo por $\sqrt{26}$ y girar el ángulo $\arctan(-1/5)$ en sentido antihorario mientras que dividir por $z$ divide el módulo entre $\sqrt{26}$ y gira el ángulo $-\arctan(-1/5)$ en sentido horario.
+\textbf{Paso 3. Parte (b): $z = 5 - i$.} El módulo es $r = \sqrt{5^2 + (-1)^2} = \sqrt{26}$ y su  argumento es $\theta = \arctan\left(\frac{-1}{5}\right)$. Así, la forma polar es \(
+  \boxed{z = \sqrt{26} \, e^{i\arctan(-1/5)}}.\) El efecto geométrico de multiplicar por $z$ será multiplicar el módulo por $\sqrt{26}$ y girar el ángulo $\arctan(-1/5)$ en sentido antihorario mientras que dividir por $z$ divide el módulo entre $\sqrt{26}$ y gira el ángulo $-\arctan(-1/5)$ en sentido horario.
 
-\textbf{c) $z = 8:$} El módulo es $r = 8$ y el argumento es $\theta = 0$. Así, la forma polar es \(z = 8\, e^{i\cdot 0} = 8.\) El efecto geométrico de multiplicar por $z$ será multiplicar el módulo por $8$ y no gira el ángulo (no hay rotación) mientras que para dividir por $z$ se divide el módulo entre $8$ y no hay rotación.
+\textbf{Paso 4. Parte (c): $z = 8$.} El módulo es $r = 8$ y el argumento es $\theta = 0$. Así, la forma polar es \(\boxed{z = 8\, e^{i\cdot 0} = 8}.\) El efecto geométrico de multiplicar por $z$ será multiplicar el módulo por $8$ y no gira el ángulo (no hay rotación) mientras que para dividir por $z$ se divide el módulo entre $8$ y no hay rotación.
 
 \end{myproof}
 
@@ -1398,9 +1403,9 @@ Encuentre la forma polar de los siguientes números complejos. ¿Cuál es el efe
 \end{enumerate}
 \end{multicols}
 \begin{myproof}
-Vamos a encontrar las raíces cuartas de cada número complejo usando la fórmula de De Moivre.
+\textbf{Paso 1. Estrategia.} Si $z=re^{i\theta}$, sus raíces cuartas son $w_k=r^{1/4}\,e^{i\frac{\theta+2\pi k}{4}}$ con $k=0,1,2,3$; basta entonces hallar el módulo y el argumento de cada número.
 
-\textbf{a) $z = -27:$} El módulo es $r = 27$ y el argumento es $\theta = \pi$ (pues $-27$ está sobre el eje real negativo). Las raíces cuartas de $z$ son:
+\textbf{Paso 2. Parte (a): $z = -27$.} El módulo es $r = 27$ y el argumento es $\theta = \pi$ (pues $-27$ está sobre el eje real negativo). Las raíces cuartas de $z$ son:
 \[
 w_k = 27^{1/4} \cdot e^{i\dfrac{\pi + 2\pi k}{4}}, \quad k = 0,1,2,3
 \]
@@ -1417,7 +1422,7 @@ w_3 &= 27^{1/4} \, e^{i\frac{7\pi}{4}} = 27^{1/4} \left(\frac{\sqrt{2}}{2} - i\f
 }
 \]
 
-\textbf{b) $z = -7 + 24i:$} El módulo: $r = \sqrt{(-7)^2 + 24^2} = \sqrt{49 + 576} = \sqrt{625} = 25.$  Como $-7 < 0$ y $24 > 0$, el número está en el segundo cuadrante. El argumento es \(
+\textbf{Paso 3. Parte (b): $z = -7 + 24i$.} El módulo: $r = \sqrt{(-7)^2 + 24^2} = \sqrt{49 + 576} = \sqrt{625} = 25.$  Como $-7 < 0$ y $24 > 0$, el número está en el segundo cuadrante. El argumento es \(
 \theta = \pi - \arctan\left(\frac{24}{7}\right)
 \)
 
@@ -1427,7 +1432,6 @@ Las raíces cuartas de $z$ son:
 w_k = \sqrt{5} \cdot e^{i\left(\frac{\pi - \arctan\left(\frac{24}{7}\right)}{4} + \frac{\pi k}{2}\right)}, \quad k = 0,1,2,3
 }
 \]
-para $k = 0,1,2,3$.
 
 \end{myproof}
 
@@ -1444,9 +1448,9 @@ para $k = 0,1,2,3$.
 \end{enumerate}
 \end{multicols}
 \begin{myproof}
-Resolvamos cada inciso usando la fórmula de De Moivre.
+\textbf{Paso 1. Estrategia.} En cada inciso despejamos $z^n=w$, escribimos $w$ en forma polar y aplicamos la fórmula de De Moivre para las raíces $n$-ésimas.
 
-\textbf{a)} $z^4 + 16 = 0\Rightarrow z^4 = -16 = 16 e^{i\pi}$
+\textbf{Paso 2. Parte (a).} $z^4 + 16 = 0\Rightarrow z^4 = -16 = 16 e^{i\pi}$
 
 Las raíces cuartas son: \(
 z_k = 16^{1/4} e^{i \dfrac{\pi + 2\pi k}{4}}, \quad k = 0,1,2,3
@@ -1466,7 +1470,7 @@ z_3 &= 2 e^{i\frac{7\pi}{4}} = \sqrt{2} - i\sqrt{2}
 
 \vspace{1em}
 
-\textbf{b)} $z^3 - 27i = 0 \Rightarrow z^3 = 27i = 27 e^{i\frac{\pi}{2}}.$
+\textbf{Paso 3. Parte (b).} $z^3 - 27i = 0 \Rightarrow z^3 = 27i = 27 e^{i\frac{\pi}{2}}.$
 Las raíces cúbicas son \( z_k = 27^{1/3} e^{i \dfrac{\frac{\pi}{2} + 2\pi k}{3}}, \quad k=0,1,2.
 \)
 Explícitamente: 
@@ -1481,7 +1485,7 @@ z_2 &= 3 e^{i\frac{3\pi}{2}} = -3i
 \]
 
 
-\textbf{c)} $z^5 - 1 - i = 0\Rightarrow z^5 = 1 + i = \sqrt{2} e^{i\frac{\pi}{4}}.$ Las raíces quintas son 
+\textbf{Paso 4. Parte (c).} $z^5 - 1 - i = 0\Rightarrow z^5 = 1 + i = \sqrt{2} e^{i\frac{\pi}{4}}.$ Las raíces quintas son 
 \[
 \boxed{
 z_k = 2^{1/10} \, e^{i\left( \dfrac{\pi}{20} + \dfrac{2\pi k}{5} \right ) }, \quad k=0,1,2,3,4
@@ -1489,7 +1493,7 @@ z_k = 2^{1/10} \, e^{i\left( \dfrac{\pi}{20} + \dfrac{2\pi k}{5} \right ) }, \qu
 \]
 
 
-\textbf{d)} $(2-3i)z^6 + 1 + 5i = 0\Rightarrow (2-3i)z^6 = -1 - 5i\Rightarrow z^6 = \frac{-1 - 5i}{2 - 3i}.$
+\textbf{Paso 5. Parte (d).} $(2-3i)z^6 + 1 + 5i = 0\Rightarrow (2-3i)z^6 = -1 - 5i\Rightarrow z^6 = \frac{-1 - 5i}{2 - 3i}.$
 
 
 Multiplicamos numerador y denominador por el conjugado del denominador:
@@ -1520,9 +1524,9 @@ z_k = 2^{1/12} \, e^{i\left( -\frac{\pi}{24} + \frac{\pi k}{3} \right ) }, \quad
 \begin{prob}
 Demuestre que $z$ es imaginario puro si y solo si $z=-\overline{z}$.
 \begin{myproof}
-Sea $z \in \mathbb{C}$. Recordemos que $z$ es imaginario puro si y solo si su parte real es cero, es decir, $z = bi$ con $b \in \mathbb{R}$.
+\textbf{Paso 1. Planteamiento.} Sea $z \in \mathbb{C}$. Recordemos que $z$ es imaginario puro si y solo si su parte real es cero, es decir, $z = bi$ con $b \in \mathbb{R}$.
 
-\textbf{($\Rightarrow$)} Supongamos que $z$ es imaginario puro.  
+\textbf{Paso 2. ($\Rightarrow$).} Supongamos que $z$ es imaginario puro.  
 Entonces $z = bi$ con $b \in \mathbb{R}$.  
 El conjugado es $\overline{z} = \overline{bi} = -bi$.  
 Por lo tanto,
@@ -1531,7 +1535,7 @@ Por lo tanto,
 \]
 Así, $z = -\overline{z}$.
 
-\textbf{($\Leftarrow$)} Supongamos que $z = -\overline{z}$.  
+\textbf{Paso 3. ($\Leftarrow$).} Supongamos que $z = -\overline{z}$.  
 Sea $z = a + bi$ con $a, b \in \mathbb{R}$.  
 Entonces $\overline{z} = a - bi$ y la igualdad se convierte en:
 \[
@@ -1543,8 +1547,10 @@ a = -a \implies a = 0
 \]
 Por lo tanto, $z = 0 + bi = bi$, es decir, $z$ es imaginario puro.
 
-\textbf{Conclusión:}  
-$z$ es imaginario puro si y solo si $z = -\overline{z}$.
+\textbf{Paso 4. Conclusión.}
+\[
+\boxed{z \text{ es imaginario puro} \iff z = -\overline{z}.}
+\]
 \end{myproof}
 
 \end{prob}
@@ -1574,6 +1580,32 @@ Describa y dibuje en el plano complejo los siguientes conjuntos:
 \end{multicols}
 \end{prob}
 
+% Básico
+\begin{prob}
+Sean $z_1=2-3i$ y $z_2=-1+4i$. Calcule:
+\begin{multicols}{4}
+\begin{enumerate}[$a)$]
+\item $z_1 z_2$
+\item $\dfrac{z_1}{z_2}$
+\item $\overline{z_1}+z_2^2$
+\item $\abs{z_1-z_2}$
+\end{enumerate}
+\end{multicols}
+\end{prob}
+
+% Básico
+\begin{prob}
+Encuentre los números reales $x,$ $y$ tales que
+\[
+(1+i)x+(2-i)y=4+i.
+\]
+\end{prob}
+
+% Básico
+\begin{prob}
+¿Cuál es el efecto geométrico de multiplicar un número complejo por $w=\dfrac{1+i}{\sqrt{2}}$? ¿Y de multiplicar por $w^8$? Justifique su respuesta.
+\end{prob}
+
 % Intermedio
 \begin{prob}
 Use la fórmula de De Moivre para calcular las siguientes potencias. Exprese el resultado en forma geométrica.
@@ -1595,6 +1627,38 @@ Encuentre las tres raíces cúbicas de $z=-8i$, represéntelas en el plano compl
 Dado que $1-2i$ es una raíz del polinomio $q(x)=x^4-2x^3+6x^2-2x+5$, encuentre las tres raíces restantes de $q(x)$.
 \end{prob}
 
+% Intermedio
+\begin{prob}
+Determine el valor de verdad de las siguientes afirmaciones donde $z, w\in\mathbb{C}$ y $n$ es un entero positivo. Si son verdaderas, demuéstrelas; de lo contrario, presente un contraejemplo.
+\begin{multicols}{2}
+\begin{enumerate}[$a)$]
+\item $\abs{z+w}=\abs{z}+\abs{w}$.
+\item $\operatorname{Re}(iz)=-\operatorname{Im}(z)$.
+\item Si $\abs{z}=\abs{w}$, entonces $z=\pm w$.
+\item $\overline{z^{\,n}}=\left(\overline{z}\right)^n$.
+\end{enumerate}
+\end{multicols}
+\end{prob}
+
+% Intermedio
+\begin{prob}
+Encuentre las seis raíces sextas de $z=-64$ y represéntelas en el plano complejo. ¿Qué polígono forman?
+\end{prob}
+
+% Intermedio
+\begin{prob}
+Encuentre todas las raíces complejas de la ecuación
+\[
+z^4-2z^2+4=0.
+\]
+Exprese cada raíz en forma polar y en forma binomial.
+\end{prob}
+
+% Intermedio
+\begin{prob}
+Construya el polinomio mónico de grado mínimo con coeficientes reales que tenga entre sus raíces a $3i$ y a $2-i$.
+\end{prob}
+
 % Difícil
 \begin{prob}
 Demuestre que el conjunto de números complejos $z$ que satisfacen
@@ -1602,4 +1666,18 @@ Demuestre que el conjunto de números complejos $z$ que satisfacen
 \abs{z-1}=2\abs{z+1}
 \]
 es una circunferencia (un \emph{círculo de Apolonio}). Encuentre su centro y su radio.
+\end{prob}
+
+% Difícil
+\begin{prob}
+Sea $z$ un número complejo con $\abs{z}=1$ y $z\neq 1$. Demuestre que
+\[
+\dfrac{1+z}{1-z}
+\]
+es imaginario puro.
+\end{prob}
+
+% Difícil
+\begin{prob}
+Encuentre todos los números complejos $z$ que satisfacen $z^4=\overline{z}$.
 \end{prob}

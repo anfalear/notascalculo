@@ -553,7 +553,14 @@ Mínimo 8–10 resueltos (example con myproof) + 15–20 propuestos (sin myproof
 
 ### F9AL.44 — complejos: 24 myproof → protocolo 4 pasos
 **Nota:** ejecutar tras F9AL.28 (las 8–10 elevaciones de ese ítem ya salen con 4 pasos; este ítem cubre el resto del banco). Alcance real tras F9AL.28: 15 myproof del banco §2.3 sin protocolo.
-**Estado:** Pendiente
+**Estado:** Completado — 2026-07-15
+
+**Notas de ejecución:**
+- 15/15 myproof del banco §2.3 reestructurados con `\textbf{Paso N.}` + `\boxed{}` final.
+- Variantes de plantilla: los 2 «valor de verdad» multi-literal (4 y 13 literales) usan esquema de 3 pasos (Estrategia / Análisis de cada afirmación / Resumen con boxed de veredictos); los multi-parte usan Paso 1 Estrategia + Paso k por parte (x-y reales, forma polar, raíces cuartas, De Moivre 4 ecuaciones — este último con 5 pasos); `compubicacion` sin boxed (plantilla geométrica: la respuesta es la figura solución).
+- **Correcciones matemáticas de paso:** (1) prob opción múltiple $it$: fracción duplicada en el `align` eliminada y simplificación completada a $it=\frac{\sqrt3}{3}i$ (SymPy-OK; la respuesta «Ninguna» se mantiene, ahora con justificación de por qué (a)-(c) fallan). (2) Literal f del «valor de verdad» de 13 literales: la respuesta «Verdadera» era incorrecta si $z\in\mathbb{R}$ (contraejemplo $x^2-2x+1$, discriminante 0); cualificada como «V si $z\notin\mathbb{R}$» con demostración y contraejemplo. (3) Prob Andreescu p. 21 ($z_1^2+z_2^2+z_3^2=0$): demostración reescrita por completo — la anterior tenía un cálculo abandonado y asumía sin prueba que los puntos forman triángulo equilátero; nueva prueba rigurosa vía $1/z_k=\overline{z_k}$ y $\sigma_2=z_1z_2z_3\overline{(z_1+z_2+z_3)}=0$ (SymPy-OK), con remisión a `fig:raices_unidad`. (4) Redundancia «para $k=0,1,2,3$» tras el boxed de raíces cuartas eliminada.
+- **Ampliación de §2.4 solicitada por el autor:** +9 propuestos nuevos SymPy-OK (28/28 comprobaciones) → §2.4 queda con 15 propuestos 5B/7I/3D (Problemas 2.40–2.54): operaciones básicas, $x,y$ reales, rotación por $(1+i)/\sqrt2$, valor de verdad 4 literales, raíces sextas de $-64$, $z^4-2z^2+4=0$, polinomio mónico real mínimo con raíces $3i$ y $2-i$, $(1+z)/(1-z)$ imaginario puro si $|z|=1$, y $z^4=\overline{z}$ (0 y las raíces quintas de la unidad).
+- Balance: 30/30 prob, 25/25 myproof, 10/10 example, 0 huérfanos. Compilación limpia (2 pasadas): 0 errores `!`, 0 refs indefinidas, **796 pp**. Verificación visual pp. 44–46. **complejos.tex 100 % cerrado** (F9AL.28–.31, .44).
 
 ### F9AL.45 — vectoresrn: 27 myproof → protocolo 4 pasos (bloque V, opcional)
 **Nota:** ejecutar tras F9AL.37; hereda la condición de alcance del bloque V.
@@ -623,7 +630,7 @@ Mínimo 8–10 resueltos (example con myproof) + 15–20 propuestos (sin myproof
 | F9AL.41 | `prodinterno.tex` | 15 myproof → 4 pasos | Pendiente | — | Ampliación 2026-07-10 |
 | F9AL.42 | `vvpropios.tex` | 27 myproof → 4 pasos | Completado | 2026-07-10 | 21/23 reestructurados con boxed; 2 excepciones prosa (≤4 líneas) registradas; artefacto [2] y «normalizados» corregidos; ref a cor:cerovp. 790 pp, 0 errores. |
 | F9AL.43 | `translineales.tex` | 47 myproof → 4 pasos (2 lotes) | Completado | 2026-07-10 | 41 reales tras elevaciones: 30 con Paso+boxed, 11 excepción plantilla geométrica; fix literal f (rango 3), g duplicado sustituido, plano Z→eje Z, [4][5], det(C)=1 |
-| F9AL.44 | `complejos.tex` | 24 myproof → 4 pasos | Pendiente | — | Tras F9AL.28 |
+| F9AL.44 | `complejos.tex` | 24 myproof → 4 pasos | Completado | 2026-07-15 | 15/15 reales tras elevaciones: todos con Paso N. + boxed (2 T/F con Resumen; 1 plantilla geométrica sin boxed); 3 correcciones matemáticas (fracción duplicada+simplificación, literal f cualificado, prueba Andreescu p.21 reescrita); +9 propuestos (§2.4: 15 probs 5B/7I/3D). 796 pp. |
 | F9AL.45 | `vectoresrn.tex` | 27 myproof → 4 pasos (bloque V) | Pendiente | — | Tras F9AL.37; opcional |
 | F9AL.46 | `vvpropios.tex` | Subsección breve forma de Jordan | Completado | 2026-07-10 | §8.2.1: def J_k + teorema enunciado + ejemplo A=(1 1;−1 3)→J_2(2) SymPy-OK + rem con cite Hoffman-Kunze (bibtex corrido) + 2 refs conectadas. 790 pp, 0 errores. |
 
