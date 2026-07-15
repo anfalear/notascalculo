@@ -442,7 +442,13 @@ Mínimo 8–10 resueltos (example con myproof) + 15–20 propuestos (sin myproof
 **Acción:** ~~renombrar heading~~ (hecho en F9AL.28: el banco quedó como `Problemas resueltos adicionales` y ya existe `\section{Problemas propuestos}` con 1 prob tag Intermedio); tags de graduación sobre los 15 probs del banco; poblar propuestos con nuevos sin solución (validar lote con el autor — el capítulo no tenía ninguno).
 **Criterio de cierre:** heading estándar; tags presentes; 15–20 propuestos si el banco lo permite (si queda corto tras elevaciones, añadir 3–5 nuevos sin solución cubriendo: forma polar, potencias, raíces, lugares geométricos).
 **Líneas estimadas:** 20–80
-**Estado:** Pendiente
+**Estado:** Completado — 2026-07-15
+
+**Notas de ejecución:**
+- Tags de graduación aplicados a los 15 probs del banco §2.3: 5B/7I/3D (Difíciles: argumento de raíz de $2z^4+2z^2+1=0$, raíces de $z^6-11(i+1)z^3+121i=0$, y $z_1^2+z_2^2+z_3^2=0$ de Andreescu p. 21).
+- 5 propuestos nuevos sin solución aprobados por el autor (lote validado antes de insertar), todos SymPy-OK (14/14 comprobaciones): forma polar de $-2+2i$/$-3i$/$1-\sqrt{3}i$ (B); lugares geométricos $|z-2i|=3$ y $|z-1|\le|z+1|$ (B); potencias $(1+i)^{16}=256$ y $(\sqrt3-i)^6=-64$ (I); raíces cúbicas de $-8i$ + triángulo equilátero (I); círculo de Apolonio $|z-1|=2|z+1|$ (centro $-5/3$, radio $4/3$) (D).
+- §2.4 quedó con 6 propuestos 2B/3I/1D ordenados B→I→D (el heredado de raíces conjugadas quedó entre los Intermedios). Problemas 2.40–2.45 verificados visualmente en p. 44.
+- Compilación limpia (2 pasadas): 0 errores `!`, 0 refs indefinidas, 794 pp.
 
 ### F9AL.32 — Transversal AL: normalizar headings de propuestos
 **Acción:** verificar que los 7 capítulos usan exactamente `\section{Problemas propuestos}` (tras F9AL.04/.10/.14/.16/.21/.26/.31).
@@ -604,7 +610,7 @@ Mínimo 8–10 resueltos (example con myproof) + 15–20 propuestos (sin myproof
 | F9AL.28 | `complejos.tex` | Elevar 8–10 resueltos del banco | Completado | 2026-07-14 | 9 elevaciones aprobadas (incl. 1er example de §TFA); banco renombrado con 15 probs (3 movidos); + adición del autor: teorema raíces conjugadas + example SymPy-OK + §2.4 propuestos con 1 prob. 794 pp, 0 errores. |
 | F9AL.29 | `complejos.tex` | Auditoría 7 figuras | Completado | 2026-07-14 | 7 labels añadidos (tenían caption, no label) + 7 anclas; proporción 1:1 confirmada. 7/7 conformes. |
 | F9AL.30 | `complejos.tex` | 2 figuras nuevas R2 | Completado | 2026-07-14 | fig:modulo_argumento (tras def modnumcom) + fig:raices_unidad (raíces sextas de la unidad, tras De Moivre) con anclas; verificadas pp. 24/27. 794 pp, 0 errores. |
-| F9AL.31 | `complejos.tex` | Graduación + heading | Pendiente | — | — |
+| F9AL.31 | `complejos.tex` | Graduación + heading | Completado | 2026-07-15 | Banco §2.3 tagueado 5B/7I/3D; 5 propuestos nuevos aprobados SymPy-OK (§2.4: 6 probs 2B/3I/1D, incl. círculo de Apolonio). 794 pp, 0 errores. |
 | F9AL.32 | 7 caps AL | Headings normalizados | Pendiente | — | — |
 | F9AL.33 | 7 caps AL | Labels resultados centrales | Pendiente | — | — |
 | F9AL.34 | maestro | Compilación + re-inventario | Pendiente | — | — |
