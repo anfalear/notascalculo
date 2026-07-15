@@ -127,7 +127,7 @@ $$\boxed{\langle \cos x,\, \sin x \rangle = 0,\quad \cos x \perp \sin x \text{ e
 \end{example}
 
 
-\begin{theorem}[Desigualdad de Cauchy-Schwarz]
+\begin{theorem}[Desigualdad de Cauchy-Schwarz]\label{thm:cap07:cauchy-schwarz}
 Sea $V$ un espacio vectorial con producto interno real y sean $\mathbf{u}, \mathbf{v} \in V$. Entonces:
 \[
 |\langle \mathbf{u}, \mathbf{v} \rangle| \leq \|\mathbf{u}\| \cdot \|\mathbf{v}\|
@@ -477,7 +477,7 @@ Pero $\langle \mathbf{w}, \mathbf{v}_i \rangle = \langle \mathbf{u} - \mathbf{w}
 \end{proof}
 \end{theorem}
 
-\begin{theorem}[Proceso de Gram-Schmidt]
+\begin{theorem}[Proceso de Gram-Schmidt]\label{thm:cap07:gram-schmidt}
 Todo espacio vectorial de dimensión finita con producto interno posee una base ortogonal.
 \begin{proof}
 Sea $\{ \mathbf{u}_1, \dots, \mathbf{u}_n \}$ base cualquiera de $V$. Construimos una base ortogonal $\{ \mathbf{v}_1, \dots, \mathbf{v}_n \}$ recursivamente:
@@ -1184,7 +1184,7 @@ Por tanto, \( \mathbf{x} = t(-2,-1,1,1) \). Base:
 \end{prob}
 
 
-% Difícil
+% Desafiante
 \begin{prob}
 Sea $V=\mathcal{P}_{2}(\mathbb{R})$. Dados dos vectores $\mathbf{p}=a_0+a_1x+a_2x^2$ y  $\mathbf{q}=b_0+b_1x+b_2x^2$  defina el producto interno en $V$ como $\left\langle \mathbf{p},\mathbf{q} \right\rangle=a_0b_0+a_1b_1+a_2b_2$. 
 
@@ -1273,7 +1273,7 @@ Serie:
 \end{myproof}
 \end{prob}
 
-% Difícil
+% Desafiante
 \begin{prob}
 Defina $W$ como el subespacio de $\mathbb{R}^4$ definido por el espacio solución del sistema de ecuaciones lineales
 \[
@@ -1368,7 +1368,7 @@ Serie:
 \end{prob}
 
 
-% Difícil
+% Desafiante
 \begin{prob}
 En $\mathbb{R}^4$ defina $W$ el espacio solución del sistema de ecuaciones lineales
 \[
@@ -1581,7 +1581,7 @@ Proyección de $\mathbf{w_2}$ sobre $\mathbf{v_1}$:
 \end{myproof}
 \end{prob}
 
-% Difícil
+% Desafiante
 \begin{prob} 
 Calcule una base ortogonal para $\mathcal{P}_{2}(\mathbb{R})$ que contenga al vector $p(x)=x^2+2x+1$ usando el producto interno de las funciones continuas en el intervalo $[0,1].$
 \begin{myproof}
@@ -1668,7 +1668,7 @@ Determine además bajo qué condición se alcanza la igualdad.
 En $\mathcal{C}[0,1]$ con el producto interno $\langle f, g \rangle = \int_0^1 f(x)g(x)\,dx$, sean $f(x)=1$ y $g(x)=x$. Calcule $\|f\|$, $\|g\|$ y el ángulo entre $f$ y $g$.
 \end{prob}
 
-% Difícil
+% Desafiante
 \begin{prob}
 Sea $V$ un espacio vectorial real con producto interno y sean $\mathbf{u},\mathbf{v} \in V$. Demuestre que la desigualdad de Cauchy-Schwarz se convierte en igualdad,
 \[
@@ -1702,7 +1702,7 @@ Sea $W$ un subespacio de un espacio vectorial $V$ con producto interno. Demuestr
 \end{enumerate}
 \end{prob}
 
-% Difícil
+% Desafiante
 \begin{prob}
 Sea $A$ una matriz real de tamaño $m \times n$ y considere $\mathbb{R}^n$ con el producto punto usual.
 \begin{enumerate}[$a)$]
@@ -1728,7 +1728,7 @@ Aplique el proceso de Gram-Schmidt al conjunto $\{(1,1,1),\, (1,2,0),\, (0,1,1)\
 En $\mathcal{P}_2(\mathbb{R})$ con el producto interno $\langle p, q \rangle = \int_{-1}^{1} p(x)q(x)\,dx$, aplique el proceso de Gram-Schmidt a la base $\{1,\, x,\, x^2\}$. Los polinomios obtenidos son, salvo constantes multiplicativas, los tres primeros \textbf{polinomios de Legendre}.
 \end{prob}
 
-% Difícil
+% Desafiante
 \begin{prob}
 Sea $\{\mathbf{v}_1, \dots, \mathbf{v}_n\}$ una base ortonormal de un espacio vectorial $V$ con producto interno. Demuestre la \textbf{identidad de Parseval}:
 \[
@@ -1752,7 +1752,7 @@ Encuentre la recta de mínimos cuadrados $y = mx + b$ que mejor ajusta los punto
 planteando y resolviendo el sistema de ecuaciones normales $A^TA\mathbf{x} = A^T\mathbf{b}$. Calcule además la norma del residuo $\|\mathbf{b} - A\mathbf{x}\|$.
 \end{prob}
 
-% Difícil
+% Desafiante
 \begin{prob}
 Sea $W$ un subespacio de dimensión finita de un espacio vectorial $V$ con producto interno y sea $\mathbf{u} \in V$. Demuestre el \textbf{teorema de la mejor aproximación}: para todo $\mathbf{w} \in W$ con $\mathbf{w} \neq \operatorname{proy}_W \mathbf{u}$ se cumple
 \[

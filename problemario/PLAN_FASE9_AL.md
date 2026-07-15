@@ -454,19 +454,46 @@ Mínimo 8–10 resueltos (example con myproof) + 15–20 propuestos (sin myproof
 **Acción:** verificar que los 7 capítulos usan exactamente `\section{Problemas propuestos}` (tras F9AL.04/.10/.14/.16/.21/.26/.31).
 **Criterio de cierre:** grep de variantes = 0 en el bloque.
 **Líneas estimadas:** 5–15
-**Estado:** Pendiente
+**Estado:** Completado — 2026-07-15
+
+**Notas de ejecución:**
+- 7/7 capítulos con `\section{Problemas resueltos adicionales}` + `\section{Problemas propuestos}` exactos, y propuestos como **última** sección del archivo (E4). 0 variantes, 0 correcciones necesarias.
+- Normalización adicional detectada y aplicada: 3 capítulos usaban `% Difícil` en vez del estándar de la GUIA `% Desafiante` → 19 tags renombrados (complejos 6, prodinterno 8, translineales 5). Vocabulario 100 % unificado.
+- Deviación documentada sin corregir: la GUIA pide comentario de grupo (uno por bloque de dificultad); 5 de 7 capítulos quedaron con tag por-problema (superset informativo, validado en los ítems respectivos) y 2 con marcador de grupo (propuestos de matrices y espaciosvectoriales). Se deja mixto salvo indicación del autor.
 
 ### F9AL.33 — Transversal AL: labels formales en resultados centrales
 **Acción:** aplicar `thm:capNN:slug` / `def:capNN:slug` solo a los resultados centrales tocados en F9 (rango-nulidad, Gram-Schmidt, diagonalización, Cauchy-Schwarz, base/dimensión, De Moivre) — no es la fase Labeling global.
 **Criterio de cierre:** ≥6 labels centrales; referencias cruzadas de F9AL.19/.22 funcionando.
 **Líneas estimadas:** 15–30
-**Estado:** Pendiente
+**Estado:** Completado — 2026-07-15
+
+**Notas de ejecución:**
+- 6 labels aplicados: `thm:cap02:demoivre` (Potencias y raíces enésimas), `thm:cap06:invariancia-base`, `thm:cap06:rango-nulidad`, `thm:cap07:cauchy-schwarz`, `thm:cap07:gram-schmidt`, `thm:cap08:diagonalizacion` (renombrado desde `teo:diagonalizacion`, que tenía 0 referencias — renombre seguro).
+- 6/6 confirmados en el `.aux`; ya existían con la convención `thm:cap02:raicesconjugadas` y `thm:cap06:lema-intercambio` (total 8 labels de convención F9 en el bloque). Referencias cruzadas de F9AL.19/.22 funcionando (0 refs indefinidas).
 
 ### F9AL.34 — Cierre de bloque: compilación y re-inventario
 **Acción:** compilar el maestro (2 pasadas LuaLaTeX); re-ejecutar el inventario automatizado sobre los 7+1 archivos; confirmar: 0 myproof huérfanos, 0 figuras sin caption/label, tags presentes, secciones de propuestos presentes.
 **Criterio de cierre:** 0 errores `!`; tabla de re-inventario pegada en Notas; nº de páginas registrado.
 **Líneas estimadas:** 0 (verificación)
-**Estado:** Pendiente
+**Estado:** Completado — 2026-07-15
+
+**Notas de ejecución — tabla de re-inventario (2026-07-15):**
+
+| archivo | prob | example | myproof | huérfanos | figs OK | banco B/I/D | propuestos B/I/D | headings |
+|---------|------|---------|---------|-----------|---------|-------------|------------------|----------|
+| complejos | 30 | 10 | 25 | 0 | 9/9 | 5/7/3 | 5/7/3 | ✓✓ |
+| matrices | 38 | 37 | 50 | 0 | 15/15 | 7/8/5 | 18 probs, 3 grupos | ✓✓ |
+| sel | 36 | 9 | 32 | 0 | 10/10 | 6/10/3 | 5/8/4 | ✓✓ |
+| espaciosvectoriales | 32 | 19 | 25 | 0 | 3/3 | 3/6/2 | 21 probs, 3 grupos | ✓✓ |
+| prodinterno | 35 | 14 | 30 | 0 | 4/4 | 6/7/4 | 5/9/4 | ✓✓ |
+| vvpropios | 28 | 12 | 33 | 0 | 2/2 | 3/6/3 | 5/8/3 | ✓✓ |
+| translineales | 34 | 14 | 59 | 0 | 22/22 | 5/11/2 | 5/8/3 | ✓✓ |
+| vectoresrn (bloque V) | 28 | 8 | 32 | 0 | 4/26 | — | — | pendiente F9AL.35–.37 |
+
+- Todos los entornos balanceados (begin=end) en los 8 archivos; 0 myproof huérfanos en los 8.
+- Los 7 caps núcleo: figuras 100 % con caption+label (label tras caption), tags de graduación presentes en banco y propuestos, ambos headings estándar.
+- `vectoresrn` queda como está: es el bloque V opcional (estructura, figuras y tags corresponden a F9AL.35–.37/.45, pendientes de decisión de alcance).
+- Compilación limpia (2 pasadas): 0 errores `!`, 0 refs indefinidas, 0 citas indefinidas. **796 páginas.** **Bloque núcleo AL (F9AL.01–.34 + .38–.44 parciales según tabla) cerrado en sus 7 capítulos.**
 
 ---
 
@@ -618,9 +645,9 @@ Mínimo 8–10 resueltos (example con myproof) + 15–20 propuestos (sin myproof
 | F9AL.29 | `complejos.tex` | Auditoría 7 figuras | Completado | 2026-07-14 | 7 labels añadidos (tenían caption, no label) + 7 anclas; proporción 1:1 confirmada. 7/7 conformes. |
 | F9AL.30 | `complejos.tex` | 2 figuras nuevas R2 | Completado | 2026-07-14 | fig:modulo_argumento (tras def modnumcom) + fig:raices_unidad (raíces sextas de la unidad, tras De Moivre) con anclas; verificadas pp. 24/27. 794 pp, 0 errores. |
 | F9AL.31 | `complejos.tex` | Graduación + heading | Completado | 2026-07-15 | Banco §2.3 tagueado 5B/7I/3D; 5 propuestos nuevos aprobados SymPy-OK (§2.4: 6 probs 2B/3I/1D, incl. círculo de Apolonio). 794 pp, 0 errores. |
-| F9AL.32 | 7 caps AL | Headings normalizados | Pendiente | — | — |
-| F9AL.33 | 7 caps AL | Labels resultados centrales | Pendiente | — | — |
-| F9AL.34 | maestro | Compilación + re-inventario | Pendiente | — | — |
+| F9AL.32 | 7 caps AL | Headings normalizados | Completado | 2026-07-15 | 7/7 headings exactos y en última posición; 0 variantes. Extra: 19 tags `% Difícil`→`% Desafiante` (vocabulario GUIA unificado). |
+| F9AL.33 | 7 caps AL | Labels resultados centrales | Completado | 2026-07-15 | 6 labels: demoivre, invariancia-base, rango-nulidad, cauchy-schwarz, gram-schmidt, diagonalizacion (renombrado de teo:, 0 refs). 6/6 en .aux. |
+| F9AL.34 | maestro | Compilación + re-inventario | Completado | 2026-07-15 | Tabla en Notas: 0 huérfanos, figs/tags/headings OK en los 7 caps núcleo. 796 pp, 0 errores. Bloque núcleo AL cerrado. |
 | F9AL.35 | `vectoresrn.tex` | Estructura de secciones (bloque V, opcional) | Pendiente | — | Requiere decisión de alcance |
 | F9AL.36 | `vectoresrn.tex` | Auditoría 26 figuras + figrayo (bloque V) | Parcial | 2026-07-09 | `figrayo` resuelto: eran 2 figuras distintas sin caption y sin referencias → `fig:rayo_reflejado` + `fig:rayo_construccion_vector`, con captions y 2 `\ref` nuevas. 0 warnings de labels. Faltan las otras 24 figuras y `axis equal image`. |
 | F9AL.37 | `vectoresrn.tex` | Protocolo + propuestos (bloque V) | Pendiente | — | — |

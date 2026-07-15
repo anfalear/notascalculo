@@ -638,7 +638,7 @@ Esbozamos el argumento de intercambio (Steinitz). Como $\{v_1,\ldots,v_n\}$ gene
 \end{proof}
 \end{theorem}
 
-\begin{theorem}[Invariancia del número de elementos en una base]
+\begin{theorem}[Invariancia del número de elementos en una base]\label{thm:cap06:invariancia-base}
 Todas las bases de un espacio vectorial de dimensión finita tienen el mismo número de vectores.
 \begin{proof}
 Sean $B_1 = \{u_1, \ldots, u_m\}$ y $B_2 = \{v_1, \ldots, v_n\}$ dos bases de $V$. Como $B_1$ es linealmente independiente y $B_2$ genera $V$, por el Lema de intercambio (Teorema \ref{thm:cap06:lema-intercambio}) tenemos $m \leq n$. Análogamente, como $B_2$ es linealmente independiente y $B_1$ genera $V$, tenemos $n \leq m$. Por tanto, $m = n$.
@@ -805,7 +805,7 @@ Sea $R$ la forma escalonada reducida de $A$, y sean $j_1, \ldots, j_r$ las posic
 \end{proof}
 \end{theorem}
 
-\begin{theorem}[Teorema del rango-nulidad] 
+\begin{theorem}[Teorema del rango-nulidad]\label{thm:cap06:rango-nulidad}
 Para $A \in \mathcal{M}_{m \times n}(\mathbb{R})$: $\dim \mathcal{N}(A) + \dim \mathcal{R}(A) = n.$
 \begin{proof}
 Sea $r = \operatorname{rango}(A) = \dim \mathcal{R}(A)$. En la forma escalonada reducida de $A$, hay $r$ columnas pivote y $n-r$ columnas no pivote. El sistema homogéneo $A\mathbf{x} = \mathbf{0}$ tiene $n-r$ variables libres, cada una correspondiente a una columna no pivote. Por tanto, $\dim \mathcal{N}(A) = n-r$, y se cumple $\dim \mathcal{N}(A) + \dim \mathcal{R}(A) = (n-r) + r = n$.

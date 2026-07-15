@@ -398,7 +398,7 @@ Esto corresponde a todos los puntos del plano complejo cuya distancia al origen 
 
 De la multiplicación de números complejos en forma polar se derivan las siguientes propiedades importantes:
 
-\begin{theorem}[Potencias y raíces enésimas de un número complejo] Sea $z=\abs{z}\mathrm{e}^{i\theta}$ un número complejo y $n$ un entero positivo, entonces:
+\begin{theorem}[Potencias y raíces enésimas de un número complejo]\label{thm:cap02:demoivre} Sea $z=\abs{z}\mathrm{e}^{i\theta}$ un número complejo y $n$ un entero positivo, entonces:
 \begin{enumerate}[$1.$]
 \item $z^{n}=\abs{z}^n\mathrm{e}^{in\theta}$.
 \item \textbf{Fórmula de De Moivre:} $\sqrt[n]{z}=\sqrt[n]{\abs{z}}\cdot \mathrm{e}^{i\frac{\theta+2k\pi}{n}}$ donde $k=0,1,\dots , n-1$.
@@ -1015,7 +1015,7 @@ En el plano complejo se han dibujado los números complejos $z$ y $w$ como se mu
 
 \end{prob}
 	
-% Difícil
+% Desafiante
 \begin{prob} La ecuación $2z^4+2z^2+1=0$ tiene una raíz compleja $z$ con argumento entre $\pi$ y $\dfrac{3\pi}{2}$. Determine el argumento de $z$.
 \begin{myproof}
 \textbf{Paso 1. Reducción y cambio de variable.} Reescribimos la ecuación \(2z^4 + 2z^2 + 1 = 0,\) dividiendo entre $2,$ \(
@@ -1054,7 +1054,7 @@ Los argumentos posibles son: \(
 
 \end{prob}		
 
-% Difícil
+% Desafiante
 \begin{prob}Use la fórmula de De Moivre para encontrar todas las raíces complejas del polinomio $z^6-11(i+1)z^3+121i=0$.
 \begin{myproof}
 \textbf{Paso 1. Cambio de variable.} Dada la ecuación \(
@@ -1137,7 +1137,7 @@ Determine el valor de verdad de las siguientes afirmaciones donde $z, w \in \mat
 \item  Si $z\neq \mathbf{0}$, entonces $\left|\dfrac{z}{|z|}\right|=1$
 \item  Si $re^{i\theta}$ es la forma polar de $z$, entonces $\text{Im}(z)=r\sin \theta$
 \item $\arg(z)=-\arg(\overline{z})$
-\item  Si $z$ y $\overline{z}$ son raíces de $ax^2+bx+c=0$, entonces $b^2-4ac<0$
+\item  Si $z$ no es real y $z,$ $\overline{z}$ son raíces de $ax^2+bx+c=0$, entonces $b^2-4ac<0$
 \item  Sean $z, w\in \mathbb{C}$. Si $|w|<1$ y $|z|\leq 1$, entonces $\left|\dfrac{z+w}{1+\overline{w}z}\right|=1$
 \item  Si $z$ y $w$ son imaginarios puros, entonces $zw\in \mathbb{R}$
 \item  $z=\overline{z}$ si y solo si $z$ es real
@@ -1186,10 +1186,10 @@ z = re^{i\theta} = r(\cos\theta + i\sin\theta) \implies \text{Im}(z) = r\sin\the
 Verdadera.  
 Demostración: Si $z = re^{i\theta}$, entonces $\overline{z} = re^{-i\theta}$, así que $\arg(\overline{z}) = -\theta$, por lo tanto $\arg(z) = -\arg(\overline{z})$.
 
-\item \textbf{Si $z$ y $\overline{z}$ son raíces de $ax^2+bx+c=0$, entonces $b^2-4ac<0$}
+\item \textbf{Si $z$ no es real y $z,$ $\overline{z}$ son raíces de $ax^2+bx+c=0$, entonces $b^2-4ac<0$}
 
-Verdadera si $z$ no es real; falsa si $z\in\mathbb{R}$.
-Demostración: si $z$ no es real, las raíces $z\neq\overline{z}$ son complejas conjugadas no reales, lo que ocurre exactamente cuando $b^2-4ac<0$. En cambio, si $z\in\mathbb{R}$ entonces $z=\overline{z}$ y la afirmación falla: por ejemplo, $z=\overline{z}=1$ es raíz de $x^2-2x+1=0$, cuyo discriminante es $b^2-4ac=0$.
+Verdadera.
+Demostración: como $z$ no es real, las raíces $z\neq\overline{z}$ son complejas conjugadas no reales, lo que ocurre exactamente cuando $b^2-4ac<0$. La hipótesis de que $z$ no sea real es esencial: si $z\in\mathbb{R}$ entonces $z=\overline{z}$ y la conclusión puede fallar; por ejemplo, $z=\overline{z}=1$ es raíz de $x^2-2x+1=0$, cuyo discriminante es $b^2-4ac=0$.
 
 \item \textbf{Sean $z, w\in \mathbb{C}$. Si $|w|<1$ y $|z|\leq 1$, entonces $\left|\dfrac{z+w}{1+\overline{w}z}\right|=1$}
 
@@ -1233,7 +1233,7 @@ Demostración: $iz = i(bi) = b(i^2) = b(-1) = -b \in \mathbb{R}$.
 \textbf{Paso 3. Resumen.}
 \[
 \boxed{\begin{array}{c}
-a)\ \text{V},\quad b)\ \text{F},\quad c)\ \text{V},\quad d)\ \text{V},\quad e)\ \text{V},\quad f)\ \text{V si } z\notin\mathbb{R},\quad g)\ \text{F},\\[2pt]
+a)\ \text{V},\quad b)\ \text{F},\quad c)\ \text{V},\quad d)\ \text{V},\quad e)\ \text{V},\quad f)\ \text{V},\quad g)\ \text{F},\\[2pt]
 h)\ \text{V},\quad i)\ \text{V},\quad j)\ \text{F},\quad k)\ \text{V},\quad l)\ \text{V},\quad m)\ \text{V}.
 \end{array}}
 \]
@@ -1341,7 +1341,7 @@ Por lo tanto, $x = \frac{2y}{3}$, $y$ arbitrario.
 \end{myproof}
 \end{prob}
 
-% Difícil
+% Desafiante
 \begin{prob} (\cite{andreescu2014complex}, p. 21, Problema 31) Sean $z_1, z_2, z_3$ números complejos tales que $z_1+z_2+z_3=0$ y $|z_1|=|z_2|=|z_3|=1$. Demuestre que $z_1^2+z_2^2+z_3^2=0$.
 \begin{myproof}
 \textbf{Paso 1. Identidad del cuadrado de la suma.} Elevando al cuadrado la hipótesis $z_1 + z_2 + z_3 = 0$:
@@ -1659,7 +1659,7 @@ Exprese cada raíz en forma polar y en forma binomial.
 Construya el polinomio mónico de grado mínimo con coeficientes reales que tenga entre sus raíces a $3i$ y a $2-i$.
 \end{prob}
 
-% Difícil
+% Desafiante
 \begin{prob}
 Demuestre que el conjunto de números complejos $z$ que satisfacen
 \[
@@ -1668,7 +1668,7 @@ Demuestre que el conjunto de números complejos $z$ que satisfacen
 es una circunferencia (un \emph{círculo de Apolonio}). Encuentre su centro y su radio.
 \end{prob}
 
-% Difícil
+% Desafiante
 \begin{prob}
 Sea $z$ un número complejo con $\abs{z}=1$ y $z\neq 1$. Demuestre que
 \[
@@ -1677,7 +1677,7 @@ Sea $z$ un número complejo con $\abs{z}=1$ y $z\neq 1$. Demuestre que
 es imaginario puro.
 \end{prob}
 
-% Difícil
+% Desafiante
 \begin{prob}
 Encuentre todos los números complejos $z$ que satisfacen $z^4=\overline{z}$.
 \end{prob}
