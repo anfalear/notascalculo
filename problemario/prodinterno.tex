@@ -1631,11 +1631,25 @@ u_3(x) = -\frac{45}{136}x^2 + \frac{23}{68}x - \frac{1}{17}
 
 \section{Problemas propuestos}
 
-% --- Producto interno ---
-
 % Básico
 \begin{prob}
 Determine si la función $\langle \mathbf{u}, \mathbf{v} \rangle = u_1v_1 - u_2v_2$, con $\mathbf{u}=(u_1,u_2)$ y $\mathbf{v}=(v_1,v_2)$, define un producto interno en $\mathbb{R}^2$. Justifique su respuesta indicando cuáles axiomas se cumplen y cuáles no.
+\end{prob}
+
+\begin{prob}
+En $\mathbb{R}^3$ con el producto punto usual, sean $\mathbf{u}=(1,2,2)$ y $\mathbf{v}=(2,-1,2)$. Calcule $\|\mathbf{u}\|$, $\|\mathbf{v}\|$ y el ángulo $\theta$ entre $\mathbf{u}$ y $\mathbf{v}$.
+\end{prob}
+
+\begin{prob}
+Determine todos los valores de $k \in \mathbb{R}$ para los cuales los vectores $\mathbf{u}=(1,k,3)$ y $\mathbf{v}=(2,-1,k)$ son ortogonales en $\mathbb{R}^3$ con el producto punto usual.
+\end{prob}
+
+\begin{prob}
+Verifique que $B=\{(1,1,1),\, (1,-1,0),\, (1,1,-2)\}$ es una base ortogonal de $\mathbb{R}^3$ con el producto punto usual y normalícela para obtener una base ortonormal.
+\end{prob}
+
+\begin{prob}
+En $\mathbb{R}^2$ con el producto punto usual, sean $\mathbf{u}=(3,4)$ y $\mathbf{v}=(1,0)$. Calcule $\operatorname{proy}_{\mathbf{v}}\mathbf{u}$ y verifique que $\mathbf{u} - \operatorname{proy}_{\mathbf{v}}\mathbf{u}$ es ortogonal a $\mathbf{v}$.
 \end{prob}
 
 % Intermedio
@@ -1647,14 +1661,6 @@ Sea $V=\mathcal{M}_{2\times 2}(\mathbb{R})$ el espacio de las matrices reales $2
 \end{enumerate}
 \end{prob}
 
-% --- Norma, ángulo y desigualdad de Cauchy-Schwarz ---
-
-% Básico
-\begin{prob}
-En $\mathbb{R}^3$ con el producto punto usual, sean $\mathbf{u}=(1,2,2)$ y $\mathbf{v}=(2,-1,2)$. Calcule $\|\mathbf{u}\|$, $\|\mathbf{v}\|$ y el ángulo $\theta$ entre $\mathbf{u}$ y $\mathbf{v}$.
-\end{prob}
-
-% Intermedio
 \begin{prob}
 Sea $V$ un espacio vectorial real con producto interno. Usando la desigualdad de Cauchy-Schwarz, demuestre la \textbf{desigualdad triangular}:
 \[
@@ -1663,9 +1669,44 @@ Sea $V$ un espacio vectorial real con producto interno. Usando la desigualdad de
 Determine además bajo qué condición se alcanza la igualdad.
 \end{prob}
 
-% Intermedio
 \begin{prob}
 En $\mathcal{C}[0,1]$ con el producto interno $\langle f, g \rangle = \int_0^1 f(x)g(x)\,dx$, sean $f(x)=1$ y $g(x)=x$. Calcule $\|f\|$, $\|g\|$ y el ángulo entre $f$ y $g$.
+\end{prob}
+
+\begin{prob}
+Sea $W = \operatorname{gen}\{(1,1,0,0),\, (0,1,1,0)\}$ un subespacio de $\mathbb{R}^4$.
+\begin{enumerate}[$a)$]
+\item Encuentre una base para $W^{\perp}$.
+\item Verifique que $\dim W + \dim W^{\perp} = 4$.
+\end{enumerate}
+\end{prob}
+
+\begin{prob}
+Sea $W$ un subespacio de un espacio vectorial $V$ con producto interno. Demuestre que:
+\begin{enumerate}[$a)$]
+\item $W \cap W^{\perp} = \{\mathbf{0}\}$.
+\item $W \subseteq (W^{\perp})^{\perp}$.
+\end{enumerate}
+\end{prob}
+
+\begin{prob}
+Aplique el proceso de Gram-Schmidt al conjunto $\{(1,1,1),\, (1,2,0),\, (0,1,1)\}$ de $\mathbb{R}^3$ con el producto punto usual para obtener una base ortogonal de $\mathbb{R}^3$.
+\end{prob}
+
+\begin{prob}
+En $\mathcal{P}_2(\mathbb{R})$ con el producto interno $\langle p, q \rangle = \int_{-1}^{1} p(x)q(x)\,dx$, aplique el proceso de Gram-Schmidt a la base $\{1,\, x,\, x^2\}$. Los polinomios obtenidos son, salvo constantes multiplicativas, los tres primeros \textbf{polinomios de Legendre}.
+\end{prob}
+
+\begin{prob}
+Encuentre la recta de mínimos cuadrados $y = mx + b$ que mejor ajusta los puntos
+\[
+(1,1), \quad (2,3), \quad (3,4), \quad (4,6),
+\]
+planteando y resolviendo el sistema de ecuaciones normales $A^TA\mathbf{x} = A^T\mathbf{b}$. Calcule además la norma del residuo $\|\mathbf{b} - A\mathbf{x}\|$.
+\end{prob}
+
+\begin{prob}
+Calcule la serie de Fourier de la función $f(x)=x^2$ en el intervalo $[0,2\pi]$, determinando explícitamente $a_0$, $a_k$ y $b_k$.
 \end{prob}
 
 % Desafiante
@@ -1677,32 +1718,6 @@ Sea $V$ un espacio vectorial real con producto interno y sean $\mathbf{u},\mathb
 si y solo si $\mathbf{u}$ y $\mathbf{v}$ son linealmente dependientes.
 \end{prob}
 
-% --- Ortogonalidad y complemento ortogonal ---
-
-% Básico
-\begin{prob}
-Determine todos los valores de $k \in \mathbb{R}$ para los cuales los vectores $\mathbf{u}=(1,k,3)$ y $\mathbf{v}=(2,-1,k)$ son ortogonales en $\mathbb{R}^3$ con el producto punto usual.
-\end{prob}
-
-% Intermedio
-\begin{prob}
-Sea $W = \operatorname{gen}\{(1,1,0,0),\, (0,1,1,0)\}$ un subespacio de $\mathbb{R}^4$.
-\begin{enumerate}[$a)$]
-\item Encuentre una base para $W^{\perp}$.
-\item Verifique que $\dim W + \dim W^{\perp} = 4$.
-\end{enumerate}
-\end{prob}
-
-% Intermedio
-\begin{prob}
-Sea $W$ un subespacio de un espacio vectorial $V$ con producto interno. Demuestre que:
-\begin{enumerate}[$a)$]
-\item $W \cap W^{\perp} = \{\mathbf{0}\}$.
-\item $W \subseteq (W^{\perp})^{\perp}$.
-\end{enumerate}
-\end{prob}
-
-% Desafiante
 \begin{prob}
 Sea $A$ una matriz real de tamaño $m \times n$ y considere $\mathbb{R}^n$ con el producto punto usual.
 \begin{enumerate}[$a)$]
@@ -1711,24 +1726,6 @@ Sea $A$ una matriz real de tamaño $m \times n$ y considere $\mathbb{R}^n$ con e
 \end{enumerate}
 \end{prob}
 
-% --- Bases ortogonales y proceso de Gram-Schmidt ---
-
-% Básico
-\begin{prob}
-Verifique que $B=\{(1,1,1),\, (1,-1,0),\, (1,1,-2)\}$ es una base ortogonal de $\mathbb{R}^3$ con el producto punto usual y normalícela para obtener una base ortonormal.
-\end{prob}
-
-% Intermedio
-\begin{prob}
-Aplique el proceso de Gram-Schmidt al conjunto $\{(1,1,1),\, (1,2,0),\, (0,1,1)\}$ de $\mathbb{R}^3$ con el producto punto usual para obtener una base ortogonal de $\mathbb{R}^3$.
-\end{prob}
-
-% Intermedio
-\begin{prob}
-En $\mathcal{P}_2(\mathbb{R})$ con el producto interno $\langle p, q \rangle = \int_{-1}^{1} p(x)q(x)\,dx$, aplique el proceso de Gram-Schmidt a la base $\{1,\, x,\, x^2\}$. Los polinomios obtenidos son, salvo constantes multiplicativas, los tres primeros \textbf{polinomios de Legendre}.
-\end{prob}
-
-% Desafiante
 \begin{prob}
 Sea $\{\mathbf{v}_1, \dots, \mathbf{v}_n\}$ una base ortonormal de un espacio vectorial $V$ con producto interno. Demuestre la \textbf{identidad de Parseval}:
 \[
@@ -1736,34 +1733,10 @@ Sea $\{\mathbf{v}_1, \dots, \mathbf{v}_n\}$ una base ortonormal de un espacio ve
 \]
 \end{prob}
 
-% --- Proyección ortogonal y mínimos cuadrados ---
-
-% Básico
-\begin{prob}
-En $\mathbb{R}^2$ con el producto punto usual, sean $\mathbf{u}=(3,4)$ y $\mathbf{v}=(1,0)$. Calcule $\operatorname{proy}_{\mathbf{v}}\mathbf{u}$ y verifique que $\mathbf{u} - \operatorname{proy}_{\mathbf{v}}\mathbf{u}$ es ortogonal a $\mathbf{v}$.
-\end{prob}
-
-% Intermedio
-\begin{prob}
-Encuentre la recta de mínimos cuadrados $y = mx + b$ que mejor ajusta los puntos
-\[
-(1,1), \quad (2,3), \quad (3,4), \quad (4,6),
-\]
-planteando y resolviendo el sistema de ecuaciones normales $A^TA\mathbf{x} = A^T\mathbf{b}$. Calcule además la norma del residuo $\|\mathbf{b} - A\mathbf{x}\|$.
-\end{prob}
-
-% Desafiante
 \begin{prob}
 Sea $W$ un subespacio de dimensión finita de un espacio vectorial $V$ con producto interno y sea $\mathbf{u} \in V$. Demuestre el \textbf{teorema de la mejor aproximación}: para todo $\mathbf{w} \in W$ con $\mathbf{w} \neq \operatorname{proy}_W \mathbf{u}$ se cumple
 \[
 \|\mathbf{u} - \operatorname{proy}_W \mathbf{u}\| < \|\mathbf{u} - \mathbf{w}\|.
 \]
 Es decir, $\operatorname{proy}_W \mathbf{u}$ es el único vector de $W$ más cercano a $\mathbf{u}$.
-\end{prob}
-
-% --- Series de Fourier ---
-
-% Intermedio
-\begin{prob}
-Calcule la serie de Fourier de la función $f(x)=x^2$ en el intervalo $[0,2\pi]$, determinando explícitamente $a_0$, $a_k$ y $b_k$.
 \end{prob}

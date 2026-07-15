@@ -2537,28 +2537,25 @@ Dada la figura tridimensional de la Figura~\ref{fig:sudoku_original}, determine 
 
 \section{Problemas propuestos}
 
-% --- Linealidad ---
-
 % Básico
 \begin{prob}
 Determine si la función $T:\mathbb{R}^2 \to \mathbb{R}^2$ definida por $T\begin{pmatrix} x \ y \end{pmatrix} = \begin{pmatrix} x+1 \ y \end{pmatrix}$ es una transformación lineal. Justifique su respuesta.
 \end{prob}
 
-% Básico
 \begin{prob}
 Considere la función de evaluación $T:\mathbb{P}_2(\mathbb{R}) \to \mathbb{R}$ definida por $T(p(x)) = p(2)$. Demuestre que $T$ es una transformación lineal y calcule una base para $\ker(T)$. ¿Cuáles son el rango y la nulidad de $T$?
 \end{prob}
 
-% --- Núcleo, imagen y teorema de la dimensión ---
-
-% Básico
 \begin{prob}
 Sea $T:\mathbb{R}^3 \to \mathbb{R}^2$ definida por $T\begin{pmatrix} x \ y \ z \end{pmatrix} = \begin{pmatrix} x - y \ 2z \end{pmatrix}$. Calcule la matriz de $T$ en las bases canónicas, una base para el kernel y una base para la imagen. Determine el rango y la nulidad.
 \end{prob}
 
-% Básico
 \begin{prob}
 Sea $T:\mathbb{R}^3 \to \mathbb{R}^3$ la proyección sobre el plano $XY$, es decir, $T\begin{pmatrix} x \ y \ z \end{pmatrix} = \begin{pmatrix} x \ y \ 0 \end{pmatrix}$. Calcule el rango y la nulidad de $T$ y verifique el teorema de la dimensión.
+\end{prob}
+
+\begin{prob}
+Escriba la matriz, respecto a la base canónica, de la reflexión $T:\mathbb{R}^2 \to \mathbb{R}^2$ respecto al eje $y$, y úsela para calcular la imagen del punto $(3, -2)$.
 \end{prob}
 
 % Intermedio
@@ -2570,7 +2567,6 @@ A = \begin{pmatrix} 1 & 2 & 0 \ 0 & 1 & 1 \ 1 & 3 & 1 \end{pmatrix}.
 Calcule una base para $\ker(T)$ y una base para $\operatorname{Im}(T)$. Determine si $T$ es inyectiva, sobreyectiva o biyectiva.
 \end{prob}
 
-% Intermedio
 \begin{prob}
 Sea $T: \mathbb{R}^4 \to \mathbb{R}^3$ definida por $T(\mathbf{x}) = A\mathbf{x}$, donde
 \[
@@ -2579,19 +2575,6 @@ A = \begin{pmatrix} 1 & 0 & 2 & 1 \ 0 & 1 & 1 & -1 \ 2 & 1 & 5 & 1 \end{pmatrix}
 Encuentre una base para $\ker(T)$ y para $\operatorname{Im}(T)$, y verifique el teorema de la dimensión.
 \end{prob}
 
-% Desafiante
-\begin{prob}
-¿Existe una transformación lineal $T:\mathbb{R}^3 \to \mathbb{R}^3$ tal que $\operatorname{Im}(T) = \ker(T)$? ¿Y una transformación lineal $T:\mathbb{R}^4 \to \mathbb{R}^4$ con esa propiedad? En cada caso, dé un ejemplo o demuestre que no puede existir.
-\end{prob}
-
-% --- Matriz de representación ---
-
-% Básico
-\begin{prob}
-Escriba la matriz, respecto a la base canónica, de la reflexión $T:\mathbb{R}^2 \to \mathbb{R}^2$ respecto al eje $y$, y úsela para calcular la imagen del punto $(3, -2)$.
-\end{prob}
-
-% Intermedio
 \begin{prob}
 Encuentre la transformación lineal $T:\mathbb{R}^2 \to \mathbb{R}^2$ tal que
 \[
@@ -2600,24 +2583,18 @@ T\begin{pmatrix} 1 \ 1 \end{pmatrix} = \begin{pmatrix} 2 \ 3 \end{pmatrix}, \qqu
 y calcule su matriz respecto a la base canónica.
 \end{prob}
 
-% Intermedio
 \begin{prob}
 Encuentre la matriz del operador derivada $D:\mathbb{P}_3(\mathbb{R}) \to \mathbb{P}_3(\mathbb{R})$ relativa a la base $B = \{1, x, x^2, x^3\}$ y úsela para calcular $D(2 - x + 5x^3)$.
 \end{prob}
 
-% Intermedio
 \begin{prob}
 Sea $T:\mathbb{P}_2(\mathbb{R}) \to \mathbb{P}_2(\mathbb{R})$ definida por $T(p(x)) = p(2x-1)$. Calcule la matriz de $T$ respecto a la base $B = \{1, x, x^2\}$ y determine si $T$ es un isomorfismo.
 \end{prob}
 
-% Intermedio
 \begin{prob}
 Sea $T:\mathcal{M}_2(\mathbb{R}) \to \mathcal{M}_2(\mathbb{R})$ definida por $T(A) = A^{T}$ (la transpuesta). Demuestre que $T$ es lineal, encuentre su matriz respecto a la base canónica $\{E_{11}, E_{12}, E_{21}, E_{22}\}$ y determine si $T$ es un isomorfismo.
 \end{prob}
 
-% --- Composición e isomorfismos ---
-
-% Intermedio
 \begin{prob}
 Sean $S:\mathbb{R}^2 \to \mathbb{R}^3$ y $T:\mathbb{R}^3 \to \mathbb{R}^2$ definidas por
 \[
@@ -2627,19 +2604,19 @@ T\begin{pmatrix} x \ y \ z \end{pmatrix} = \begin{pmatrix} x - z \ y + z \end{pm
 Calcule una fórmula para $T \circ S$, su matriz respecto a las bases canónicas y su núcleo. ¿Es $T \circ S$ invertible?
 \end{prob}
 
-% Desafiante
-\begin{prob}
-Sea $T:\mathbb{P}_2(\mathbb{R}) \to \mathbb{P}_2(\mathbb{R})$ definida por $T(p(x)) = p(x) + p'(x)$. Demuestre que $T$ es un isomorfismo y calcule $T^{-1}(x^2)$.
-\end{prob}
-
-% --- Demostraciones ---
-
-% Intermedio
 \begin{prob}
 Sea $T:V \to W$ una transformación lineal. Demuestre que si $\{T(v_1), T(v_2), \dots, T(v_k)\}$ es un conjunto linealmente independiente en $W$, entonces $\{v_1, v_2, \dots, v_k\}$ es linealmente independiente en $V$. Compare con los problemas de la sección anterior: ¿es cierto el recíproco sin hipótesis adicionales sobre $T$?
 \end{prob}
 
 % Desafiante
+\begin{prob}
+¿Existe una transformación lineal $T:\mathbb{R}^3 \to \mathbb{R}^3$ tal que $\operatorname{Im}(T) = \ker(T)$? ¿Y una transformación lineal $T:\mathbb{R}^4 \to \mathbb{R}^4$ con esa propiedad? En cada caso, dé un ejemplo o demuestre que no puede existir.
+\end{prob}
+
+\begin{prob}
+Sea $T:\mathbb{P}_2(\mathbb{R}) \to \mathbb{P}_2(\mathbb{R})$ definida por $T(p(x)) = p(x) + p'(x)$. Demuestre que $T$ es un isomorfismo y calcule $T^{-1}(x^2)$.
+\end{prob}
+
 \begin{prob}
 Sea $T:V \to V$ un operador lineal sobre un espacio de dimensión finita tal que $T \circ T = T$. Demuestre que
 \[

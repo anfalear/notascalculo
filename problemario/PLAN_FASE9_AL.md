@@ -459,7 +459,7 @@ Mínimo 8–10 resueltos (example con myproof) + 15–20 propuestos (sin myproof
 **Notas de ejecución:**
 - 7/7 capítulos con `\section{Problemas resueltos adicionales}` + `\section{Problemas propuestos}` exactos, y propuestos como **última** sección del archivo (E4). 0 variantes, 0 correcciones necesarias.
 - Normalización adicional detectada y aplicada: 3 capítulos usaban `% Difícil` en vez del estándar de la GUIA `% Desafiante` → 19 tags renombrados (complejos 6, prodinterno 8, translineales 5). Vocabulario 100 % unificado.
-- Deviación documentada sin corregir: la GUIA pide comentario de grupo (uno por bloque de dificultad); 5 de 7 capítulos quedaron con tag por-problema (superset informativo, validado en los ítems respectivos) y 2 con marcador de grupo (propuestos de matrices y espaciosvectoriales). Se deja mixto salvo indicación del autor.
+- ~~Deviación documentada sin corregir~~ **Resuelta el 2026-07-15 por indicación del autor:** los propuestos de los 7 capítulos quedaron con marcador de grupo (`% Básico`/`% Intermedio`/`% Desafiante`, uno por bloque). Los 4 caps con orden temático intercalado (sel, prodinterno, vvpropios, translineales) se reordenaron B→I→D con sort estable (dentro de cada grupo se conserva el orden temático relativo; separadores temáticos retirados); complejos solo colapsó tags redundantes. Los bancos («Problemas resueltos adicionales») conservan tag por-problema en los 7+1 caps, pues su orden temático intercala dificultades. Convención final uniforme: banco = por-problema; propuestos = por-grupo.
 
 ### F9AL.33 — Transversal AL: labels formales en resultados centrales
 **Acción:** aplicar `thm:capNN:slug` / `def:capNN:slug` solo a los resultados centrales tocados en F9 (rango-nulidad, Gram-Schmidt, diagonalización, Cauchy-Schwarz, base/dimensión, De Moivre) — no es la fase Labeling global.
@@ -505,13 +505,24 @@ Mínimo 8–10 resueltos (example con myproof) + 15–20 propuestos (sin myproof
 **Acción:** 2 255 líneas sin secciones antes de los propuestos. Insertar: vectores y operaciones; producto punto (con Cauchy-Schwarz — único theorem actual, verificar R3); producto cruz y mixto; rectas en ℝ³; planos en ℝ³; cónicas y cuádricas.
 **Criterio de cierre:** ≥5 secciones; compilación limpia.
 **Líneas estimadas:** 30–70
-**Estado:** Pendiente
+**Estado:** Completado — 2026-07-15
+
+**Notas de ejecución:**
+- 9 secciones (7 de teoría + 2 de problemas en F9AL.37): §3.1 Vectores y operaciones básicas, §3.2 Norma y vectores unitarios, §3.3 Producto punto y ángulo entre vectores, §3.4 Producto cruz, §3.5 Planos en el espacio, §3.6 Proyección ortogonal, §3.7 Rectas en el espacio (+ §3.8/§3.9 de F9AL.37). Orden físico conservado (planos antes de rectas, como está el contenido).
+- Discrepancias con el diagnóstico original del plan: el archivo NO contiene cónicas ni cuádricas, y el único theorem es «Propiedades de la proyección ortogonal» (no Cauchy-Schwarz, que vive en el cap. 7 con `thm:cap07:cauchy-schwarz`). Secciones ajustadas al contenido real.
 
 ### F9AL.36 — vectoresrn: auditoría de 26 figuras + `figrayo` duplicado
 **Acción:** 24/26 figuras sin caption+label → protocolo F8.31 (2 lotes si excede 300 líneas); resolver el label duplicado `figrayo` (L.1221/L.1264) — **requiere decisión del autor sobre cuál conserva el nombre original**; verificar `axis equal image` en cónicas 2D (pendiente desde DIAGNÓSTICO Paso 4).
 **Criterio de cierre:** 26/26 conformes; 0 labels duplicados; cónicas sin distorsión.
 **Líneas estimadas:** 150–280
-**Estado:** Parcial — `figrayo` resuelto (2026-07-09); resto pendiente.
+**Estado:** Completado — 2026-07-15 (`figrayo` resuelto el 2026-07-09).
+
+**Notas de ejecución (cierre 2026-07-15):**
+- 14 figuras tenían caption sin label → label añadido tras el caption (fig:vector_geometrico, fig:regla_paralelogramo, fig:vector_r2, fig:vector_r3, fig:suma_vectores_r3, fig:resta_vectores_r3, fig:escalar_vector_r3, fig:probvectrigo_datos, fig:norma_vector, fig:vector_unitario, fig:angulo_vectores, fig:plano_normal, fig:probtriangulo_datos, fig:proyeccion_vectores).
+- 6 figuras de solución sin caption ni label → caption + label (fig:proyrn_construccion, fig:mediatriz_simetrico, fig:bisectriz_direccion, fig:triangulo_euler_datos, fig:mediana_desde_A, fig:mediana_desde_B).
+- Las 2 restantes eran copias idénticas dentro de los probs duplicados de la vieja sección de propuestos, eliminados en F9AL.37 → el capítulo queda con **24/24 figuras conformes** (Figuras 3.1–3.24 numeradas en el PDF).
+- `axis equal image` en cónicas: **no aplica** — el capítulo no contiene cónicas ni entornos axis 2D con circunferencias que exijan proporción (el pendiente venía de un diagnóstico desactualizado).
+- Corrección TikZ de paso: `\draw[->, thick] -- (C);` sin coordenada inicial en la figura del paralelepípedo → `(O) -- (C)`.
 **Notas de ejecución (adelanto de `figrayo`):**
 - El duplicado **no requería decisión del autor**: no eran dos labels de la misma figura, sino dos figuras distintas del mismo problema (rayo reflejado, `\cite{espinoza2006Algebralineal}` p. 87) que compartían nombre por copia-pega. Además **ninguna tenía `\caption`** y **nadie las referenciaba** (`\ref{figrayo}`: 0 usos en todo el libro).
 - Defecto de fondo: un `\label` colocado sin `\caption` (y antes de él) no captura el contador de figura, sino el contador vigente. Aunque no hubieran estado duplicados, ambos labels habrían resuelto a un número equivocado.
@@ -523,7 +534,17 @@ Mínimo 8–10 resueltos (example con myproof) + 15–20 propuestos (sin myproof
 **Acción:** normalizar `Paso N:` → `Paso N.` en soluciones; verificar 4 pasos en los 8 examples; aplicar Decisión F a los 28 probs (26 con solución); heading `Problemas Propuestos` → `Problemas propuestos`; tags.
 **Criterio de cierre:** formato de pasos uniforme; convención F aplicada; tags presentes.
 **Líneas estimadas:** 60–140
-**Estado:** Pendiente
+**Estado:** Completado — 2026-07-15
+
+**Notas de ejecución:**
+- 18/18 `Paso N:` → `Paso N.`.
+- Examples: E6 (plano), E7 (proyección — no tenía `myproof`; enunciado y solución estaban fusionados, se separaron) y E8 (recta) reestructurados con `Paso N.` + boxed; E1–E5 registrados como ilustrativos (fórmula única + figura, criterio F9AL.27).
+- **Hallazgo clave:** los 5 «propuestos» heredados eran duplicados con solución de problemas del cuerpo (comentarios `% [Original: líneas...]` delataban importación de una hoja resuelta): prob u,v,w ≡ íd., triángulo A(3,0,2)... ⊂ `probtrianguloperimetro`, recta⊥l₁ ≡ `proyrn`, recta⊥segmento ≡ Espinoza p. 81, mediana ≡ Espinoza p. 76 (con respuesta impresa). Los 5 se eliminaron (su contenido íntegro vive en el cuerpo/banco) — análogo al «literal g duplicado» de F9AL.43.
+- **Decisión F — 5 elevaciones a example** (⚠️ pendiente visto bueno del autor): «Componentes de un vector mediante trigonometría» (`probvectrigo`), «Geometría de un triángulo en el espacio» (`probtrianguloperimetro`, 7 ítems síntesis), «Volumen de un paralelepípedo mediante el producto mixto» (fix: `V=|−80|=80` boxed; antes decía `V=−80`), «Recta perpendicular a otra mediante proyección ortogonal» (`proyrn`, boxed añadido), «Reflexión de un rayo de luz» (Espinoza p. 87, ya tenía Paso 1./Paso 2. y 2 figuras conformes).
+- §3.8 «Problemas resueltos adicionales»: los 18 probs resueltos restantes movidos íntegros desde el cuerpo, orden conservado, tags por-problema 4B/11I/3D, 2 separadores temáticos (vectores | rectas-planos-triángulos).
+- §3.9 «Problemas propuestos» (heading corregido de «Problemas Propuestos»): **15 propuestos nuevos** 5B/7I/3D con marcadores de grupo, todos SymPy-OK (19/19 comprobaciones): operaciones/norma/unitario, ángulo π/3, cruz + área, plano por 3 puntos (6x+3y+2z=6), formas de la recta, ortogonalidad a=1±√5, volumen 13, coplanaridad λ=−1, proyección + componente ortogonal, distancia punto-plano 2/3, distancia punto-recta √42/3, intersección de planos, identidad de Lagrange, diagonales del rombo, punto simétrico respecto a un plano (−1/3,−7/3,−4/3).
+- Balance final: 33/33 prob (18 banco + 15 propuestos), 13/13 example, 30/30 myproof, 24/24 figuras, 0 huérfanos. Compilación limpia (2 pasadas): 0 errores `!`, 0 refs indefinidas, **796 pp**. Problemas 3.27–3.59 y §§3.1–3.9 verificados en PDF (pp. 47–77).
+- **Pendiente heredado:** F9AL.45 (protocolo `Paso N.` en los myproof del banco §3.8 y en las 4 elevaciones que aún van en prosa) sigue como ítem aparte.
 
 ---
 
@@ -648,9 +669,9 @@ Mínimo 8–10 resueltos (example con myproof) + 15–20 propuestos (sin myproof
 | F9AL.32 | 7 caps AL | Headings normalizados | Completado | 2026-07-15 | 7/7 headings exactos y en última posición; 0 variantes. Extra: 19 tags `% Difícil`→`% Desafiante` (vocabulario GUIA unificado). |
 | F9AL.33 | 7 caps AL | Labels resultados centrales | Completado | 2026-07-15 | 6 labels: demoivre, invariancia-base, rango-nulidad, cauchy-schwarz, gram-schmidt, diagonalizacion (renombrado de teo:, 0 refs). 6/6 en .aux. |
 | F9AL.34 | maestro | Compilación + re-inventario | Completado | 2026-07-15 | Tabla en Notas: 0 huérfanos, figs/tags/headings OK en los 7 caps núcleo. 796 pp, 0 errores. Bloque núcleo AL cerrado. |
-| F9AL.35 | `vectoresrn.tex` | Estructura de secciones (bloque V, opcional) | Pendiente | — | Requiere decisión de alcance |
-| F9AL.36 | `vectoresrn.tex` | Auditoría 26 figuras + figrayo (bloque V) | Parcial | 2026-07-09 | `figrayo` resuelto: eran 2 figuras distintas sin caption y sin referencias → `fig:rayo_reflejado` + `fig:rayo_construccion_vector`, con captions y 2 `\ref` nuevas. 0 warnings de labels. Faltan las otras 24 figuras y `axis equal image`. |
-| F9AL.37 | `vectoresrn.tex` | Protocolo + propuestos (bloque V) | Pendiente | — | — |
+| F9AL.35 | `vectoresrn.tex` | Estructura de secciones (bloque V, opcional) | Completado | 2026-07-15 | 9 secciones §3.1–§3.9 (orden físico conservado); sin cónicas/cuádricas en el archivo (diagnóstico desactualizado). |
+| F9AL.36 | `vectoresrn.tex` | Auditoría 26 figuras + figrayo (bloque V) | Completado | 2026-07-15 | 14 labels + 6 captions+labels nuevos; 2 figuras eran copias en probs duplicados (eliminadas con ellos en .37) → 24/24 conformes. `axis equal` no aplica (sin cónicas). Fix TikZ `-- (C)` sin origen. |
+| F9AL.37 | `vectoresrn.tex` | Protocolo + propuestos (bloque V) | Completado | 2026-07-15 | 18 Paso N:→N.; E6/E7/E8 con protocolo (E7 sin myproof, reestructurado); 5 elevaciones (⚠️ visto bueno del autor); 5 propuestos viejos eran duplicados resueltos → eliminados; banco §3.8 con 18 probs 4B/11I/3D; §3.9 con 15 propuestos nuevos 5B/7I/3D SymPy-OK. 796 pp. |
 | F9AL.38 | `matrices.tex` | 26 myproof → 4 pasos | Pendiente | — | Ampliación 2026-07-10 |
 | F9AL.39 | `sel.tex` | 18 myproof → 4 pasos | Pendiente | — | Ampliación 2026-07-10 |
 | F9AL.40 | `espaciosvectoriales.tex` | 11 myproof → 4 pasos | Pendiente | — | Ampliación 2026-07-10 |

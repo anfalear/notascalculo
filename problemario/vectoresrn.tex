@@ -4,6 +4,8 @@ Los vectores son objetos matemáticos fundamentales que representan magnitudes c
 
 Los vectores tienen dos representaciones equivalentes: como flechas en el espacio y como listas ordenadas de números ($n$-tuplas). La perspectiva geométrica revela propiedades importantes que pueden observarse en el video \textit{Vectores, ¿qué son? | Esencia del álgebra lineal, capítulo 1} del canal 3Blue1Brown en YouTube (\url{https://youtu.be/wiuEEkP_XuM?feature=shared}).
 
+\section{Vectores y operaciones básicas}
+
 \begin{definition}[Suma y producto por escalar de vectores de manera geométrica]\label{defvectoresgeometrica}
  
 Geométricamente, un vector $\mathbf{v}$ es una flecha en el espacio caracterizada por tres propiedades: \textbf{magnitud} (longitud, tamaño o norma), \textbf{dirección} y \textbf{sentido}.
@@ -17,6 +19,7 @@ Geométricamente, un vector $\mathbf{v}$ es una flecha en el espacio caracteriza
     \draw[->, thick] (5,0) -- node[above] {$\mathbf{2v}$} (9,2);
 \end{tikzpicture}
 \caption{Representación de un vector geométrico}
+\label{fig:vector_geometrico}
 \end{figure}
 
 Para sumar dos vectores $\mathbf{v}$ y $\mathbf{w}$, se utiliza la regla del paralelogramo:
@@ -34,6 +37,7 @@ Para sumar dos vectores $\mathbf{v}$ y $\mathbf{w}$, se utiliza la regla del par
     \draw[->, thick, blue] (2,1) -- node[above] {$\mathbf{v} - \mathbf{w}$} (1,-1);
 \end{tikzpicture}
 \caption{La regla del paralelogramo}
+\label{fig:regla_paralelogramo}
 \end{figure}
 
 Para calcular $\mathbf{u}+\mathbf{v}$, se coloca el punto inicial de $\mathbf{v}$ en el punto final de $\mathbf{u}$. El vector suma (en rojo) va desde el origen hasta el punto final resultante. La resta $\mathbf{v}-\mathbf{w}$ (en azul) equivale a la suma $\mathbf{v}+(-\mathbf{w})$.
@@ -63,6 +67,7 @@ Un vector se representa en un sistema de coordenadas con su punto inicial en el 
     \node at (-0.2,1) {1};
 \end{tikzpicture}
 \caption{Vector $\begin{pmatrix} 2\\1 \end{pmatrix}$ en el plano}
+\label{fig:vector_r2}
 \end{figure}
 
 \begin{figure}[H]
@@ -101,6 +106,7 @@ Un vector se representa en un sistema de coordenadas con su punto inicial en el 
 \end{axis}
 \end{tikzpicture}
 \caption{Vector $\begin{pmatrix} 2\\4\\5 \end{pmatrix}$ en el espacio}
+\label{fig:vector_r3}
 \end{figure}
 \end{multicols}
 
@@ -176,6 +182,7 @@ $$\mathbf{u} + \mathbf{v} = (1+2, 2-1, 1+3) = (3, 1, 4)$$
     \end{axis}
 \end{tikzpicture}
 \caption{Suma de vectores $\begin{pmatrix} 1\\2\\1 \end{pmatrix}$ y $\begin{pmatrix} 2\\-1\\3 \end{pmatrix}$}
+\label{fig:suma_vectores_r3}
 \end{figure}
 \columnbreak
 
@@ -228,6 +235,7 @@ $$\mathbf{u} - \mathbf{v} = (3-1, 2-1, 1-1) = (2, 1, 0)$$
     \end{axis}
 \end{tikzpicture}
 \caption{Resta de vectores $\begin{pmatrix} 3\\2\\1 \end{pmatrix}$ y $\begin{pmatrix} 1\\1\\1 \end{pmatrix}$}
+\label{fig:resta_vectores_r3}
 \end{figure}
 \end{multicols}
 
@@ -268,12 +276,13 @@ $$c \mathbf{u} = 2 \cdot (2, 1, 3) = (4, 2, 6)$$
     \end{axis}
 \end{tikzpicture}
 \caption{Multiplicación por escalar: $2\begin{pmatrix} 2\\1\\3 \end{pmatrix}$}
+\label{fig:escalar_vector_r3}
 \end{figure}
 \end{enumerate}
 \end{myproof}
 \end{example}
 
-\begin{prob}\label{probvectrigo}  
+\begin{example}[Componentes de un vector mediante trigonometría]\label{probvectrigo}
 La figura muestra los vectores $\mathbf{u}$ y $\mathbf{v}$. Calcule las coordenadas de $\mathbf{u}$, $\mathbf{v}$, $\mathbf{u}+\mathbf{v}$ y $\mathbf{u}-\mathbf{v}$.
 
 \begin{multicols}{2}
@@ -303,6 +312,7 @@ La figura muestra los vectores $\mathbf{u}$ y $\mathbf{v}$. Calcule las coordena
     \node at (0.85,-0.2) {\scriptsize $1$};
 \end{tikzpicture}
 \caption{Vectores del problema \ref{probvectrigo}}
+\label{fig:probvectrigo_datos}
 \end{figure}
 
 \columnbreak			
@@ -318,12 +328,14 @@ $\mathbf{u}+\mathbf{v} = \frac{\sqrt{3}-1}{2}\mathbf{i} + \frac{1-\sqrt{3}}{2}\m
 
 $\mathbf{u}-\mathbf{v} = \frac{\sqrt{3}+1}{2}\mathbf{i} + \frac{1+\sqrt{3}}{2}\mathbf{j}$
 \end{myproof}
-\end{multicols}	
-\end{prob}
+\end{multicols}
+\end{example}
 
 Los problemas de geometría analítica clásica se resuelven eficientemente usando vectores. El principio fundamental es que el vector que une el punto $A$ con el punto $B$ se calcula como $\overrightarrow{AB} = B - A$.
 
 \textbf{Ejemplo:} El vector que une $A(5,7,2)$ y $B(9,2,1)$ es:$\overrightarrow{AB} = \begin{pmatrix} 9-5 \\ 2-7 \\ 1-2 \end{pmatrix} = \begin{pmatrix} 4 \\ -5 \\ -1 \end{pmatrix}.$
+
+\section{Norma y vectores unitarios}
 
 \begin{definition}[Norma de un vector]
 La \textbf{norma} de un vector $\mathbf{u} = (u_1, u_2, \ldots, u_n)$ en $\mathbb{R}^n$ es: $\|\mathbf{u}\| = \sqrt{u_1^2 + u_2^2 + \cdots + u_n^2}.$
@@ -366,6 +378,7 @@ $$\|\mathbf{u}\| = \sqrt{2^2 + 3^2 + 6^2} = \sqrt{4 + 9 + 36} = \sqrt{49} = 7$$
     \end{axis}
 \end{tikzpicture}
 \caption{Norma del vector $\mathbf{u} = \begin{pmatrix} 2 \\ 3 \\ 6 \end{pmatrix}$}
+\label{fig:norma_vector}
 \end{figure}
 \end{multicols}
 \end{myproof}
@@ -410,10 +423,13 @@ $$\mathbf{v} = \frac{\mathbf{u}}{\|\mathbf{u}\|} = \left(\frac{2}{7}, \frac{3}{7
     \end{axis}
 \end{tikzpicture}
 \caption{Vector unitario con dirección de $\mathbf{u}$}
+\label{fig:vector_unitario}
 \end{figure}
 \end{multicols}
 \end{myproof}
 \end{example}
+
+\section{Producto punto y ángulo entre vectores}
 
 \begin{definition}[Producto punto]
 El \textbf{producto punto} de vectores $\mathbf{u} = (u_1, u_2, \ldots, u_n)$ y $\mathbf{v} = (v_1, v_2, \ldots, v_n)$ es:
@@ -441,6 +457,7 @@ El ángulo entre vectores $\mathbf{u}$ y $\mathbf{v}$ es siempre menor que $\pi$
     \node at (0.7,0.5) {$\theta$};
 \end{tikzpicture}
 \caption{Ángulo entre vectores}
+\label{fig:angulo_vectores}
 \end{figure}
 \end{rem}
 
@@ -452,6 +469,8 @@ $$\theta = \arccos\left(\frac{\mathbf{u} \cdot \mathbf{v}}{\|\mathbf{u}\| \|\mat
 \end{definition}
 
 El \textbf{sentido} del vector está determinado por la dirección de su flecha.
+
+\section{Producto cruz}
 
 \begin{definition}[Producto cruz] \label{defprodcruz}
 El \textbf{producto cruz} (o \textit{producto vectorial}) es una operación \textbf{exclusiva de $\mathbb{R}^3$} que toma dos vectores $\vec{a} = (a_1, a_2, a_3)$ y $\vec{b} = (b_1, b_2, b_3)$ y devuelve un nuevo vector $\vec{a} \times \vec{b}$ perpendicular al plano que forman $\vec{a}$ y $\vec{b}$. Su magnitud es igual al área del paralelogramo generado por ambos vectores. Se calcula de la siguiente manera: 
@@ -506,6 +525,8 @@ Sean los vectores $\vec{a} = (1, 2, 0)$ y $\vec{b} = (3, 4, 0).$ Entonces: $\vec
 \end{figure}
 \end{example}
 
+\section{Planos en el espacio}
+
 \begin{definition}[Plano en el espacio]
 Un \textbf{plano} en el espacio tridimensional es el conjunto de todos los puntos \((x, y, z)\) que satisfacen la ecuación \(\vec{n} \cdot (\vec{r} - \vec{r_0}) = 0
 \) donde \(\vec{r_0} = (x_0, y_0, z_0)\) es un punto conocido del plano, \(\vec{n} = (a, b, c)\) es el vector normal (perpendicular) al plano y \(\vec{r} = (x, y, z)\) es cualquier punto del plano.
@@ -550,32 +571,33 @@ Desarrollando el producto punto, obtenemos la \textbf{ecuación general del plan
     \node[blue!60!black] at (1.5,1) {Plano $\pi$};
 \end{tikzpicture}
 \caption{Representación geométrica de un plano: El vector normal $\vec{n}$ es perpendicular a cualquier vector contenido en el plano.}
+\label{fig:plano_normal}
 \end{figure}
 \end{definition}
 
 \begin{example}
 Determine la ecuación del plano que contiene al punto \(P_0(2, -1, 3)\) y tiene vector normal \(\vec{n} = (4, -2, 5)\).
 \begin{myproof}
- Usando la forma vectorial:
+\textbf{Paso 1. Forma vectorial.} Con $\vec{r_0}=(2,-1,3)$ y $\vec{n}=(4,-2,5)$:
 \[
 \vec{n} \cdot (\vec{r} - \vec{r_0}) = 0 \implies (4, -2, 5) \cdot (x-2, y+1, z-3) = 0
 \]
-Desarrollando el producto punto:
+\textbf{Paso 2. Desarrollo del producto punto.}
 \[
 4(x-2) - 2(y+1) + 5(z-3) = 0
 \]
 \[
 4x - 8 - 2y - 2 + 5z - 15 = 0
 \]
+\textbf{Paso 3. Resultado.}
 \[
-4x - 2y + 5z - 25 = 0
+\boxed{4x - 2y + 5z - 25 = 0}
 \]
 \end{myproof}
 \end{example}
 
 
-
-\begin{prob} \label{probtrianguloperimetro}
+\begin{example}[Geometría de un triángulo en el espacio]\label{probtrianguloperimetro}
 Dados los puntos $A=(3,0,2)$, $B=(4,3,0)$ y $C=(8,1,-1)$, calcular:
 \begin{enumerate}[$(a)$]
     \item El perímetro del triángulo $ABC$
@@ -604,6 +626,7 @@ Dados los puntos $A=(3,0,2)$, $B=(4,3,0)$ y $C=(8,1,-1)$, calcular:
 \draw[->, black, ultra thick] (A) -- (C) node[midway, below left] {$\overrightarrow{AC}$};
 \end{tikzpicture}
 \caption{Triángulo del problema \ref{probtrianguloperimetro}}
+\label{fig:probtriangulo_datos}
 \end{figure}
 
 Calculamos los vectores:
@@ -671,67 +694,11 @@ $d = \frac{|-7(3) - 7(1) - 14(-2) + 49|}{\sqrt{49 + 49 + 196}} = \frac{49}{7\sqr
 \end{enumerate}
 \end{multicols}
 \end{myproof}
-\end{prob}
+\end{example}
 
 
-\begin{prob}
-Dados los vectores $\mathbf{u} = 3\mathbf{i} - 3\mathbf{j} + \mathbf{k}$, $\mathbf{v} = -2\mathbf{i} + \mathbf{j} - 6\mathbf{k}$ y $\mathbf{w} = -\mathbf{i} + 5\mathbf{k}$, calcular:
-
-\begin{multicols}{2}
-\begin{enumerate}[$(a)$]
-    \item $\mathbf{u} + 5\mathbf{v} - \mathbf{w}$
-    \item $\|\mathbf{u} + \mathbf{w}\|$
-    \item $\|\mathbf{u}\| + \|\mathbf{w}\|$
-    \item Vector unitario con dirección de $\mathbf{u}$
-    \item Vector $\mathbf{x}$ que satisface $2\mathbf{u} - \mathbf{v} + \mathbf{x} = 4\mathbf{x} + \mathbf{w}$
-    \item $\mathbf{u} \cdot \mathbf{v}$ y $\mathbf{u} \times \mathbf{v}$
-    \item $\cos(\theta)$ donde $\theta$ es el ángulo entre $\mathbf{u}$ y $\mathbf{v}$
-    \item Vector ortogonal a $\mathbf{u}$ y $\mathbf{w}$
-    \item Proyección de $\mathbf{u}$ sobre $\mathbf{v}$
-    \item Valor de $\alpha$ tal que $\mathbf{s} = \mathbf{i} - \alpha\mathbf{j} + 3\mathbf{k}$ sea ortogonal a $\mathbf{v}$
-    \item Valor de $\alpha$ tal que $\mathbf{s} = \mathbf{i} - \alpha\mathbf{j} + 3\mathbf{k}$ sea paralelo a $\mathbf{v}$
-\end{enumerate}
-\end{multicols}
-
-\begin{myproof}
-Reescribiendo en coordenadas: $\mathbf{u} = (3,-3,1)$, $\mathbf{v} = (-2,1,-6)$, $\mathbf{w} = (-1,0,5)$
-
-\begin{enumerate}[$(a)$]
-\item $\mathbf{u} + 5\mathbf{v} - \mathbf{w} = (3,-3,1) + 5(-2,1,-6) - (-1,0,5) = (-6,2,-34)$
-
-\item $\|\mathbf{u} + \mathbf{w}\| = \|(2,-3,6)\| = \sqrt{4 + 9 + 36} = 7$
-
-\item $\|\mathbf{u}\| + \|\mathbf{w}\| = \sqrt{19} + \sqrt{26}$
-
-\item $\frac{\mathbf{u}}{\|\mathbf{u}\|} = \frac{(3,-3,1)}{\sqrt{19}} = \left(\frac{3}{\sqrt{19}}, -\frac{3}{\sqrt{19}}, \frac{1}{\sqrt{19}}\right)$
-
-\item De $2\mathbf{u} - \mathbf{v} + \mathbf{x} = 4\mathbf{x} + \mathbf{w}$:
-$$3\mathbf{x} = 2\mathbf{u} - \mathbf{v} - \mathbf{w}$$
-$$\mathbf{x} = \frac{1}{3}(9,-7,3) = \left(3, -\frac{7}{3}, 1\right)$$
-
-\item $\mathbf{u} \cdot \mathbf{v} = 3(-2) + (-3)(1) + 1(-6) = -15$
-$$\mathbf{u} \times \mathbf{v} = \begin{vmatrix}
-\mathbf{i} & \mathbf{j} & \mathbf{k} \\
-3 & -3 & 1 \\
--2 & 1 & -6
-\end{vmatrix} = (17,16,-3)$$
-
-\item $\cos(\theta) = \frac{-15}{\sqrt{19}\sqrt{41}}$, $\theta = \arccos\left(\frac{-15}{\sqrt{19}\sqrt{41}}\right) \approx 2.138$ rad
-
-\item $\mathbf{u} \times \mathbf{w} = (-15,-16,-3)$
-
-\item $\text{proy}_{\mathbf{v}}\mathbf{u} = \frac{\mathbf{u} \cdot \mathbf{v}}{\|\mathbf{v}\|^2}\mathbf{v} = \frac{-15}{41}(-2,1,-6) = \left(\frac{30}{41}, -\frac{15}{41}, \frac{90}{41}\right)$
-
-\item $\mathbf{s} \cdot \mathbf{v} = 0 \Rightarrow -2 - \alpha - 18 = 0 \Rightarrow \alpha = -20$
-
-\item Para paralelismo: $\mathbf{s} = k\mathbf{v}$. Comparando componentes: $\alpha = \frac{1}{2}$
-\end{enumerate}
-\end{myproof}
-\end{prob}
-
-
-
-\begin{prob} Calcule el volumen del paralelepípedo de la figura
+\begin{example}[Volumen de un paralelepípedo mediante el producto mixto]
+Calcule el volumen del paralelepípedo de la figura.
 	
 \begin{myproof}
 
@@ -752,7 +719,7 @@ $$\mathbf{u} \times \mathbf{v} = \begin{vmatrix}
 % Vectores principales (flechas)
 \draw[->, thick] (O) -- (A);
 \draw[->, thick] (O) -- (B);
-\draw[->, thick] -- (C);
+\draw[->, thick] (O) -- (C);
 
 % Líneas punteadas del paralelepípedo
 \draw[dashed, thick] (B) -- (D);
@@ -789,40 +756,18 @@ Calculamos $\abs{({\bf u} \times {\bf v}) \cdot {\bf w}}$:
 -5 & 1 & 0 \\
 \end{vmatrix} \\
 &= \begin{pmatrix} -4 \\ -20 \\ 9 \end{pmatrix}\\
-V &= {\bf p} \cdot {\bf w} = -80
+{\bf p} \cdot {\bf w} &= -80
 \end{align*}
 
-Por tanto, el volumen del paralelepípedo es $80$ unidades cúbicas.
+Por tanto, el volumen del paralelepípedo es $V=\abs{-80}=\boxed{80}$ unidades cúbicas.
 
 \end{multicols}
-\end{myproof}	
-\end{prob}
-
-\begin{prob}
-Determinar la veracidad de las siguientes afirmaciones:
-
-\begin{enumerate}[$(a)$]
-\item Si $k$ es escalar, entonces $\mathbf{u}$ y $k\mathbf{u}$ son paralelos si y solo si $k \geq 0$
-\item Si $\|\mathbf{u}\| = 2$, $\|\mathbf{v}\| = 1$ y $\mathbf{u} \cdot \mathbf{v} = 1$, entonces el ángulo entre $\mathbf{u}$ y $\mathbf{v}$ es $\pi/3$ radianes
-\item Para todo vector en $\mathbb{R}^n$: $\|\mathbf{u} + \mathbf{v} + \mathbf{w}\| = \|\mathbf{u}\| + \|\mathbf{v}\| + \|\mathbf{w}\|$
-\item Las expresiones $(\mathbf{u} \cdot \mathbf{v}) + \mathbf{w}$ y $\mathbf{u} \cdot (\mathbf{v} + \mathbf{w})$ tienen sentido y dan el mismo resultado
-\end{enumerate}
-
-\begin{myproof}
-\begin{enumerate}[$(a)$]
-\item \textbf{Falso}. Contraejemplo: $\mathbf{u} = (1,0)$ y $k = -1$. Entonces $k\mathbf{u} = (-1,0)$ es paralelo a $\mathbf{u}$ pero $k < 0$.
-
-\item \textbf{Verdadero}. $\cos(\theta) = \frac{\mathbf{u} \cdot \mathbf{v}}{\|\mathbf{u}\|\|\mathbf{v}\|} = \frac{1}{2 \cdot 1} = \frac{1}{2}$
-Por tanto, $\theta = \arccos(1/2) = \pi/3$.
-
-\item \textbf{Falso}. Contraejemplo: $\mathbf{u} = (1,0)$, $\mathbf{v} = (-1,0)$, $\mathbf{w} = (0,0)$.
-$\|\mathbf{u} + \mathbf{v} + \mathbf{w}\| = \|(0,0)\| = 0$
-$\|\mathbf{u}\| + \|\mathbf{v}\| + \|\mathbf{w}\| = 1 + 1 + 0 = 2$
-
-\item \textbf{Falso}. $(\mathbf{u} \cdot \mathbf{v})$ es un escalar, no puede sumarse con el vector $\mathbf{w}$. En cambio, $\mathbf{u} \cdot (\mathbf{v} + \mathbf{w})$ es válido.
-\end{enumerate}
 \end{myproof}
-\end{prob}
+\end{example}
+
+
+\section{Proyección ortogonal}
+
 \begin{definition}[Proyección ortogonal]
 La \textbf{proyección ortogonal} del vector $\mathbf{u}$ sobre el vector $\mathbf{v}$ (denotada como $\text{proy}_{\mathbf{v}}\mathbf{u}$) es el vector que resulta de proyectar $\mathbf{u}$ perpendicularmente sobre la recta que contiene a $\mathbf{v}$. Matemáticamente, la proyección ortogonal se define como: $\text{proy}_{\mathbf{v}}\mathbf{u} = \frac{\mathbf{u} \cdot \mathbf{v}}{\mathbf{v} \cdot \mathbf{v}} \mathbf{v} = \frac{\mathbf{u} \cdot \mathbf{v}}{\|\mathbf{v}\|^2} \mathbf{v}$
 donde $\mathbf{u} \cdot \mathbf{v}$ es el producto punto entre $\mathbf{u}$ y $\mathbf{v}$ mientras que $\|\mathbf{v}\|^2 = \mathbf{v} \cdot \mathbf{v}$ es el cuadrado de la norma de $\mathbf{v}.$ Su representación geométrica se da por: 
@@ -870,11 +815,19 @@ donde $\mathbf{u} \cdot \mathbf{v}$ es el producto punto entre $\mathbf{u}$ y $\
     
 \end{tikzpicture}
     \caption{Proyección ortogonal del vector $\mathbf{u}$ sobre el vector $\mathbf{v}.$}
+    \label{fig:proyeccion_vectores}
 \end{figure}
 \end{definition}
 \begin{example}
-   Consideremos los vectores $\mathbf{u} = (3, 4)$ y $\mathbf{v} = (5, 1)$. Calculando $\text{proy}_{\mathbf{v}}\mathbf{u}$ se tiene que: $\mathbf{u} \cdot \mathbf{v}= (3)(5) + (4)(1) = 15 + 4 = 19,$ $\mathbf{v} \cdot \mathbf{v} = (5)^2 + (1)^2 = 25 + 1 = 26.$ Así, $\text{proy}_{\mathbf{v}}\mathbf{u} = \frac{19}{26} \mathbf{v} = \frac{19}{26}(5, 1) = \left(\frac{95}{26}, \frac{19}{26}\right).$
+Calcule $\text{proy}_{\mathbf{v}}\mathbf{u}$ para $\mathbf{u} = (3, 4)$ y $\mathbf{v} = (5, 1)$.
+\begin{myproof}
+\textbf{Paso 1. Productos punto.} $\mathbf{u} \cdot \mathbf{v}= (3)(5) + (4)(1) = 15 + 4 = 19$ y $\mathbf{v} \cdot \mathbf{v} = (5)^2 + (1)^2 = 25 + 1 = 26.$
 
+\textbf{Paso 2. Proyección.}
+\[
+\text{proy}_{\mathbf{v}}\mathbf{u} = \frac{\mathbf{u} \cdot \mathbf{v}}{\mathbf{v} \cdot \mathbf{v}}\,\mathbf{v} = \frac{19}{26}(5, 1) = \boxed{\left(\frac{95}{26}, \frac{19}{26}\right)}.
+\]
+\end{myproof}
 \end{example}
 
 \begin{theorem}[Propiedades de la proyección ortogonal] Dados dos vectores $\mathbf{u}$ y $\mathbf{v}$ se cumple que:
@@ -884,6 +837,8 @@ donde $\mathbf{u} \cdot \mathbf{v}$ es el producto punto entre $\mathbf{u}$ y $\
 \item $\|\text{proy}_{\mathbf{v}}\mathbf{u}\| = \frac{|\mathbf{u} \cdot \mathbf{v}|}{\|\mathbf{v}\|}$
 \end{enumerate}
 \end{theorem}
+
+\section{Rectas en el espacio}
 
 \begin{definition}[Recta en el espacio]
 Una \textbf{recta en el espacio tridimensional} es el conjunto de puntos que siguen una dirección constante (vector director) desde un punto dado (punto de apoyo). Se define vectorialmente como $\vec{r} = \vec{r_0} + t\vec{d}$ con $t \in \mathbb{R}$, donde $\vec{r_0} = (x_0, y_0, z_0)$ es el vector posición de un punto conocido y $\vec{d} = (a, b, c)$ es el vector director. 
@@ -962,9 +917,9 @@ z = z_0 + t \cdot c
 \begin{example}
 Considere la recta que pasa por $P(1, -2, 3)$ con vector director $\vec{d} = (2, -1, 4).$ Calcule las ecuaciones vectoriales, paramétricas y simétricas. 
 \begin{myproof}
-\textbf{Ecuación vectorial:} \(\vec{r} = (1, -2, 3) + t(2, -1, 4)\).
+\textbf{Paso 1. Ecuación vectorial.} \(\vec{r} = (1, -2, 3) + t(2, -1, 4)\).
 
-\textbf{Ecuaciones paramétricas:} \(
+\textbf{Paso 2. Ecuaciones paramétricas.} \(
 \begin{cases}
 x = 1 + 2t \\
 y = -2 - t \\
@@ -972,16 +927,16 @@ z = 3 + 4t
 \end{cases}
 \)
 
-\textbf{Ecuaciones simétricas:} \( \frac{x - 1}{2} = \frac{y + 2}{-1} = \frac{z - 3}{4}
-\).  
+\textbf{Paso 3. Ecuaciones simétricas.} \( \boxed{\frac{x - 1}{2} = \frac{y + 2}{-1} = \frac{z - 3}{4}}
+\).
 \end{myproof}
 
 
 \end{example}
 
 
-
-\begin{prob}\label{proyrn} Halle las ecuaciones simétricas de la recta que pasa por el punto $(-2,1,-3)$ y es perpendicular a la recta $l_1=\{(7,4,1)+t(2,0,-4)\}$.
+\begin{example}[Recta perpendicular a otra mediante proyección ortogonal]\label{proyrn}
+Halle las ecuaciones simétricas de la recta que pasa por el punto $(-2,1,-3)$ y es perpendicular a la recta $l_1=\{(7,4,1)+t(2,0,-4)\}$.
 \begin{myproof}
 
 \begin{multicols}{2}
@@ -1006,9 +961,11 @@ z = 3 + 4t
 \draw[color=red] (3.52,1.05) node {$\text{proy}_{\mathbf{v}}\mathbf{u}$};
 \draw[color=orange] (-0.5,1.65) node {$\mathbf{u}-\text{proy}_{\mathbf{v}}\mathbf{u}$};
 \end{tikzpicture}
+\caption{Construcción del vector director de la recta perpendicular pedida en el problema \ref{proyrn}: $\mathbf{u}-\text{proy}_{\mathbf{v}}\mathbf{u}$.}
+\label{fig:proyrn_construccion}
 \end{figure}
 
-\columnbreak  
+\columnbreak
 
 Para construir la recta necesitamos un vector director y un punto. El punto dado es $A=(-2,1,-3)$.
 
@@ -1024,197 +981,13 @@ $\text{proy}_{\mathbf{v}} \mathbf{u}=\frac{\mathbf{u} \cdot \mathbf{v}}{||\mathb
 
 $\mathbf{u} - \text{proy}_{\mathbf{v}} \mathbf{u} = (-9,-3,-4) - \frac{-1}{10} (2,0,-4) = \left(-\frac{44}{5}, -3, -\frac{22}{5}\right)$
 
-Multiplicando por $5$, las ecuaciones simétricas son $\frac{x+2}{-44}=\frac{y-1}{-15}=\frac{z+3}{-22}.$
+Multiplicando por $5$, las ecuaciones simétricas son $\boxed{\frac{x+2}{-44}=\frac{y-1}{-15}=\frac{z+3}{-22}}.$
 \end{myproof}
-\end{prob}
-
-\begin{prob} El plano mediatriz del segmento $\overline{AB}$ es el plano que pasa por el punto medio de $\overline{AB}$ y es perpendicular a $\overline{AB}$. Considere los puntos $A(2,3,0)$ y $B(-2,1,-4)$.
-
- \begin{enumerate}[$a)$]
- \item Determine los valores de $a,$ $b$ y $c$ tal que $ax+by+cz=-2$ sea la ecuación del plano mediatriz $\Pi$ del segmento $\overline{AB}$.
-
-\item Calcule la ecuación de la recta $L$ perpendicular al plano $\Pi$ que pasa por el origen.
- 
-\item Si el punto $S=(s_1,s_2,s_3)$ es el simétrico de $P(0,1,4)$ respecto a la recta $L$, calcule los valores de $s_1,$ $s_2$ y $s_3$.
-  
-\item Calcule la distancia del punto $(4,2,0)$ al plano $\Pi$.
- \end{enumerate}
- 
-\begin{myproof}
-
-\textbf{a)} El vector $\overrightarrow{AB}=(-4,-2,-4)$ es normal al plano mediatriz. El punto medio del segmento es $(0,2,-2)$.
-
-La ecuación del plano es:
-$$-4(x-0)-2(y-2)-4(z+2)=0 \Rightarrow -4x-2y-4z=4$$
-
-Dividiendo entre $-2$: $2x+y+2z=-2$
-
-Por tanto, $a=2$, $b=1$ y $c=2$.
-
-\textbf{b)} El vector $\overrightarrow{AB}=(-4,-2,-4)$ es perpendicular al plano, así que las ecuaciones simétricas de la recta que pasa por el origen son:
-\begin{equation}
-\frac{x}{-4}=\frac{y}{-2}=\frac{z}{-4}
-\end{equation}
-
-\textbf{c)} 
-
-\begin{figure}[H]
-\centering
-\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=2cm,y=1cm]
-\clip(0.24,-0.9) rectangle (3.9,4.78);
-\draw [->,color=orange,line width=2.pt] (2.,0.) -- (2.,4.);
-\draw [->,line width=2.pt] (2.,0.) -- (1.,3.);
-\draw [->,color=blue,line width=2.pt] (2.,0.) -- (2.,3.);
-\draw [->,color=green,line width=2.pt] (2.,3.) -- (1.,3.);
-\draw [->,color=red,line width=2.pt] (2.,3.) -- (3.,3.);
-
-\draw [fill=black] (2.,0.) circle (2.5pt);
-\draw[color=black] (2.14,-0.17) node {$(0,0,0)$};
-\draw[color=orange] (1.7,3.41) node {$\overrightarrow{AB}$};
-\draw [fill=black] (1.,3.) circle (2.5pt);
-\draw[color=black] (1.14,3.27) node {$(0,1,4)$};
-\draw [fill=black] (2.,3.) circle (2.5pt);
-\draw [fill=black] (3.,3.) circle (2.0pt);
-\draw[color=black] (3.14,3.33) node {$S$};
-\draw[color=black] (1.2,1.57) node {$\mathbf{v}$};
-\draw[color=black] (2.48,1.63) node {$w$};
-\draw[color=black] (1.56,2.83) node {$a$};
-\draw[color=black] (2.56,2.85) node {$b$};
-\end{tikzpicture}
-\end{figure}
+\end{example}
 
 
-Sea $\mathbf{v}=(0,1,4)$ el vector del origen a $P$.
-
-La proyección de $\mathbf{v}$ sobre $\overrightarrow{AB}$ es:
-$$\text{proy}_{\overrightarrow{AB}} \mathbf{v}=\frac{\overrightarrow{AB} \cdot \mathbf{v}}{||\overrightarrow{AB}||^2} \overrightarrow{AB}=\frac{-18}{36} (-4,-2,-4) = (2,1,2)$$
-
-El vector perpendicular es:
-$$\mathbf{v}-\text{proy}_{\overrightarrow{AB}} \mathbf{v}=(-2,0,2)$$
-
-
-
-El punto simétrico es:
-$$S=\text{proy}_{\overrightarrow{AB}} \mathbf{v}-(\mathbf{v}-\text{proy}_{\overrightarrow{AB}} \mathbf{v})=(2,1,2)-(-2,0,2)=(4,1,0)$$
-
-\textbf{d)} Usando la fórmula de distancia punto-plano con $-4x-2y-4z=4$ y el punto $(4,2,0)$:
-$$d=\frac{|-4(4)-2(2)-4(0)-4|}{\sqrt{(-4)^2+(-2)^2+(-4)^2}}=\frac{|-24|}{\sqrt{36}}=4$$
-\end{myproof} 
-\end{prob}
-
-\begin{prob} Dados los vértices de un triángulo $A(3,-1,-1),$ $B(1,2,-7),$ $C(-5,14,-3),$ halle las ecuaciones simétricas de la recta bisectriz del ángulo interno del vértice $B$.
-
-\begin{myproof} 
-
-La bisectriz del ángulo en $B$ tiene vector director $\mathbf{w}=\frac{\overrightarrow{BA}}{||\overrightarrow{BA}||}+\frac{\overrightarrow{BC}}{||\overrightarrow{BC}||}$.
-
-\begin{multicols}{2}
-
-Calculamos:
-$\overrightarrow{BA}=(2,-3,6)$ con $||\overrightarrow{BA}||=7$
-$\overrightarrow{BC}=(-6,12,4)$ con $||\overrightarrow{BC}||=14$
-
-Por tanto:
-$$\mathbf{w}=\frac{(2,-3,6)}{7}+\frac{(-6,12,4)}{14}=\left(\frac{-1}{7},\frac{3}{7},\frac{8}{7}\right)$$
-
-Multiplicando por $7$, la ecuación de la recta es:
-\begin{equation}
-\frac{x-1}{-1}=\frac{y-2}{3}=\frac{z+7}{8}
-\end{equation}
-
-\columnbreak
-\begin{figure}[H]
-\centering
-\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.4cm,y=1.4cm]
-\clip(-1.5,-1) rectangle (4.431085145776089,2.9175798714133534);
-\draw [line width=2.pt] (1.,2.5)-- (0.,0.);
-\draw [line width=2.pt] (0.,0.)-- (4.089266532333138,0.8897442087910414);
-\draw [line width=2.pt] (4.089266532333138,0.8897442087910414)-- (1.,2.5);
-\draw [line width=2.pt,color=gray,domain=-0.4922607657391646:4.736944310619722] plot(\x,{(-0.--1.1410827572857927*\x)/1.3485286709739486});
-\draw [->,line width=2.pt] (0.,0.) -- (1.,2.5);
-\draw [->,line width=2.pt] (0.,0.) -- (4.089266532333138,0.8897442087910414);
-\draw [->,color=blue,line width=2.pt] (0.,0.) -- (0.37139067635410367,0.9284766908852592);
-\draw [->,color=red,line width=2.pt] (0.,0.) -- (0.9771379946198449,0.21260606640053356);
-\draw [->,color=magenta,line width=2.pt] (0.,0.) -- (1.3485286709739486,1.1410827572857927);
-
-\draw [fill=black] (1.,2.5) circle (2.5pt);
-\draw[color=black] (1.0666343324961263,2.6857188916125354) node {$A$};
-\draw [fill=black] (0.,0.) circle (2.5pt);
-\draw[color=black] (-0.8,-0.1) node {$B$};
-\draw [fill=black] (4.089266532333138,0.8897442087910414) circle (2.5pt);
-\draw[color=black] (3.5,0.4) node {$C$};
-\draw[color=blue] (-0.35,0.5841704363966089) node {$\frac{\overrightarrow{BA}}{||\overrightarrow{BA}||}$};
-\draw[color=red] (0.6226452222392396,-0.5) node {$\frac{\overrightarrow{BC}}{||\overrightarrow{BC}||}$};
-\end{tikzpicture}
-\end{figure}
-\end{multicols}
-
-\end{myproof}
-\end{prob}
-
-\begin{prob} Halle la ecuación de la recta que intercepta perpendicularmente a las rectas $l_1=\{(7,2,4)+t(2,5,1)\}$ y $l_2=\{(4,4,2)+s(-1,3,0)\}$.
-
-\begin{myproof}	
-
-Sean $\mathbf{u}=(2,5,1)$ y $\mathbf{v}=(-1,3,0)$ los vectores directores de $l_1$ y $l_2$ respectivamente.
-
-El vector director de la recta perpendicular es:
-$$\mathbf{p} = \mathbf{u} \times \mathbf{v} =
-\begin{vmatrix}
-\mathbf{i} & \mathbf{j} & \mathbf{k} \\
-2 & 5 & 1 \\
--1 & 3 & 0 \\
-\end{vmatrix} =
-(-3, -1, 11)$$
-
-Para encontrar un punto, construimos un plano que contenga $l_1$ y sea paralelo a $\mathbf{p}$. El vector normal del plano es:
-$$\mathbf{u} \times \mathbf{p} =
-\begin{vmatrix}
-\mathbf{i} & \mathbf{j} & \mathbf{k} \\
-2 & 5 & 1 \\
--3 & -1 & 11 \\
-\end{vmatrix} =
-(56, -25, 13)$$
-
-El plano que pasa por $(7,2,4)$ con normal $(56,-25,13)$ tiene ecuación:
-$$56(x-7)-25(y-2)+13(z-4)=0 \Rightarrow 56x-25y+13z=394$$
-
-Para encontrar la intersección con $l_2$, sustituimos las ecuaciones paramétricas de $l_2$:
-$$56(4-s)-25(4+3s)+13(2)=394$$
-$$224-56s-100-75s+26=394$$
-$$150 - 131s = 394 \Rightarrow s=-\frac{244}{131}$$
-
-El punto de intersección es:
-$$\left(4+\frac{244}{131},\; 4-\frac{3\cdot244}{131},\; 2\right) = \left(\frac{768}{131},\; -\frac{208}{131},\; 2\right)$$
-
-Por tanto, la recta tiene ecuación:
-$$\left(\frac{768}{131},\; -\frac{208}{131},\; 2\right) + t(-3,-1,11)$$
-
-\end{myproof}
-\end{prob}
-
-\begin{prob} Tres vectores son coplanares si están sobre el mismo plano. Demuestre que si $\mathbf{u}, \mathbf{v}$ y $\mathbf{w}$ pasan por el origen, entonces son coplanares si y solo si $\mathbf{u} \cdot (\mathbf{v} \times \mathbf{w}) = 0$.
-
-\begin{myproof}
-
-Si $\mathbf{u}=\begin{pmatrix} u_1\\u_2\\u_3\end{pmatrix}$, $\mathbf{v}=\begin{pmatrix} v_1\\v_2\\v_3\end{pmatrix}$ y $\mathbf{w}=\begin{pmatrix} w_1\\w_2\\w_3\end{pmatrix}$, entonces: $\mathbf{u} \cdot (\mathbf{v} \times \mathbf{w})=\begin{vmatrix} u_1&u_2&u_3\\v_1&v_2&v_3\\w_1&w_2&w_3 \end{vmatrix}$
-
-\textbf{($\Rightarrow$)} Si $\mathbf{u}, \mathbf{v}$ y $\mathbf{w}$ son coplanares, entonces uno puede escribirse como combinación lineal de los otros dos. Sin pérdida de generalidad, sea $\mathbf{w}=k_1\mathbf{u}+k_2\mathbf{v}$ para algunos escalares $k_1, k_2$.
-
-Entonces: $\mathbf{u} \cdot (\mathbf{v} \times \mathbf{w})=\begin{vmatrix}
-u_1 & u_2 & u_3 \\
-v_1 & v_2 & v_3 \\
-k_1u_1+k_2v_1 & k_1u_2+k_2v_2 & k_1u_3+k_2v_3
-\end{vmatrix}$
-
-Como la última fila es combinación lineal de las dos primeras, el determinante es cero.
-
-\textbf{($\Leftarrow$)} Si $\mathbf{u} \cdot (\mathbf{v} \times \mathbf{w}) = 0$, entonces el determinante es cero, lo que implica que las filas son linealmente dependientes. Por tanto, uno de los vectores puede escribirse como combinación lineal de los otros dos, es decir, son coplanares.
-
-\end{myproof}	
-\end{prob}
-
-\begin{prob}(\cite{espinoza2006Algebralineal}, p. 87, Problema 78)  
+\begin{example}[Reflexión de un rayo de luz]
+(\cite{espinoza2006Algebralineal}, p. 87, Problema 78)
 Un rayo de luz viaja por la recta $l=\{(2,0,1)+t(-1,-1,0)\}$. Al chocar con el plano $2x-y+z+2=0$ se refleja. Hallar la recta $l_1$ que contiene el rayo reflejado.
 
 \begin{figure}[H]
@@ -1244,7 +1017,7 @@ Un rayo de luz viaja por la recta $l=\{(2,0,1)+t(-1,-1,0)\}$. Al chocar con el p
 \begin{myproof}
 Para hallar la ecuación de la recta reflejada necesitamos un punto y un vector director. La Figura \ref{fig:rayo_reflejado} muestra la situación: el punto es el de incidencia sobre el plano, y el vector director se obtiene reflejando la dirección del rayo respecto de la normal.
 
-\textbf{Paso 1:} Encontrar el punto de intersección.
+\textbf{Paso 1.} Encontrar el punto de intersección.
 La recta tiene ecuaciones paramétricas: $\left\{\begin{matrix}
 x=2-t\\
 y=-t\\
@@ -1256,7 +1029,7 @@ $$2(2-t)-(-t)+1+2=0 \Rightarrow 4-2t+t+3=0 \Rightarrow t=7$$
 
 El punto de intersección es $(-5,-7,1)$.
 
-\textbf{Paso 2:} Sea $\mathbf{u}$ el vector director de la recta en sentido contrario, $\mathbf{n}$ el vector normal al plano y $\mathbf{v}$ el vector director del rayo reflejado. Como se aprecia en la Figura \ref{fig:rayo_construccion_vector}, al descomponer $\mathbf{u}$ en su proyección sobre $\mathbf{n}$ y su componente ortogonal, el reflejado conserva la primera e invierte la segunda:
+\textbf{Paso 2.} Sea $\mathbf{u}$ el vector director de la recta en sentido contrario, $\mathbf{n}$ el vector normal al plano y $\mathbf{v}$ el vector director del rayo reflejado. Como se aprecia en la Figura \ref{fig:rayo_construccion_vector}, al descomponer $\mathbf{u}$ en su proyección sobre $\mathbf{n}$ y su componente ortogonal, el reflejado conserva la primera e invierte la segunda:
 \begin{equation}
 \mathbf{v}=\text{proy}_{\mathbf{n}}\mathbf{u}-\left(\mathbf{u}-\text{proy}_{\mathbf{n}}\mathbf{u}\right).
 \end{equation}
@@ -1317,8 +1090,292 @@ Así, $\mathbf{v}=\begin{pmatrix} 1/3\\-1/6\\1/6 \end{pmatrix} + \begin{pmatrix}
 \end{pmatrix}=\begin{pmatrix} -1/3\\-4/3\\1/3 \end{pmatrix}.$
 Por lo cual, la recta por la cual está reflejado el rayo es $\boxed{(-5,-7,1)+t(-1/3,-4/3,1/3).}$
 \end{myproof}
+\end{example}
+
+\section{Problemas resueltos adicionales}
+
+% --- Vectores: operaciones, proyecciones y valor de verdad ---
+
+% Intermedio
+\begin{prob}
+Dados los vectores $\mathbf{u} = 3\mathbf{i} - 3\mathbf{j} + \mathbf{k}$, $\mathbf{v} = -2\mathbf{i} + \mathbf{j} - 6\mathbf{k}$ y $\mathbf{w} = -\mathbf{i} + 5\mathbf{k}$, calcular:
+
+\begin{multicols}{2}
+\begin{enumerate}[$(a)$]
+    \item $\mathbf{u} + 5\mathbf{v} - \mathbf{w}$
+    \item $\|\mathbf{u} + \mathbf{w}\|$
+    \item $\|\mathbf{u}\| + \|\mathbf{w}\|$
+    \item Vector unitario con dirección de $\mathbf{u}$
+    \item Vector $\mathbf{x}$ que satisface $2\mathbf{u} - \mathbf{v} + \mathbf{x} = 4\mathbf{x} + \mathbf{w}$
+    \item $\mathbf{u} \cdot \mathbf{v}$ y $\mathbf{u} \times \mathbf{v}$
+    \item $\cos(\theta)$ donde $\theta$ es el ángulo entre $\mathbf{u}$ y $\mathbf{v}$
+    \item Vector ortogonal a $\mathbf{u}$ y $\mathbf{w}$
+    \item Proyección de $\mathbf{u}$ sobre $\mathbf{v}$
+    \item Valor de $\alpha$ tal que $\mathbf{s} = \mathbf{i} - \alpha\mathbf{j} + 3\mathbf{k}$ sea ortogonal a $\mathbf{v}$
+    \item Valor de $\alpha$ tal que $\mathbf{s} = \mathbf{i} - \alpha\mathbf{j} + 3\mathbf{k}$ sea paralelo a $\mathbf{v}$
+\end{enumerate}
+\end{multicols}
+
+\begin{myproof}
+Reescribiendo en coordenadas: $\mathbf{u} = (3,-3,1)$, $\mathbf{v} = (-2,1,-6)$, $\mathbf{w} = (-1,0,5)$
+
+\begin{enumerate}[$(a)$]
+\item $\mathbf{u} + 5\mathbf{v} - \mathbf{w} = (3,-3,1) + 5(-2,1,-6) - (-1,0,5) = (-6,2,-34)$
+
+\item $\|\mathbf{u} + \mathbf{w}\| = \|(2,-3,6)\| = \sqrt{4 + 9 + 36} = 7$
+
+\item $\|\mathbf{u}\| + \|\mathbf{w}\| = \sqrt{19} + \sqrt{26}$
+
+\item $\frac{\mathbf{u}}{\|\mathbf{u}\|} = \frac{(3,-3,1)}{\sqrt{19}} = \left(\frac{3}{\sqrt{19}}, -\frac{3}{\sqrt{19}}, \frac{1}{\sqrt{19}}\right)$
+
+\item De $2\mathbf{u} - \mathbf{v} + \mathbf{x} = 4\mathbf{x} + \mathbf{w}$:
+$$3\mathbf{x} = 2\mathbf{u} - \mathbf{v} - \mathbf{w}$$
+$$\mathbf{x} = \frac{1}{3}(9,-7,3) = \left(3, -\frac{7}{3}, 1\right)$$
+
+\item $\mathbf{u} \cdot \mathbf{v} = 3(-2) + (-3)(1) + 1(-6) = -15$
+$$\mathbf{u} \times \mathbf{v} = \begin{vmatrix}
+\mathbf{i} & \mathbf{j} & \mathbf{k} \\
+3 & -3 & 1 \\
+-2 & 1 & -6
+\end{vmatrix} = (17,16,-3)$$
+
+\item $\cos(\theta) = \frac{-15}{\sqrt{19}\sqrt{41}}$, $\theta = \arccos\left(\frac{-15}{\sqrt{19}\sqrt{41}}\right) \approx 2.138$ rad
+
+\item $\mathbf{u} \times \mathbf{w} = (-15,-16,-3)$
+
+\item $\text{proy}_{\mathbf{v}}\mathbf{u} = \frac{\mathbf{u} \cdot \mathbf{v}}{\|\mathbf{v}\|^2}\mathbf{v} = \frac{-15}{41}(-2,1,-6) = \left(\frac{30}{41}, -\frac{15}{41}, \frac{90}{41}\right)$
+
+\item $\mathbf{s} \cdot \mathbf{v} = 0 \Rightarrow -2 - \alpha - 18 = 0 \Rightarrow \alpha = -20$
+
+\item Para paralelismo: $\mathbf{s} = k\mathbf{v}$. Comparando componentes: $\alpha = \frac{1}{2}$
+\end{enumerate}
+\end{myproof}
 \end{prob}
 
+% Intermedio
+\begin{prob}
+Determinar la veracidad de las siguientes afirmaciones:
+
+\begin{enumerate}[$(a)$]
+\item Si $k$ es escalar, entonces $\mathbf{u}$ y $k\mathbf{u}$ son paralelos si y solo si $k \geq 0$
+\item Si $\|\mathbf{u}\| = 2$, $\|\mathbf{v}\| = 1$ y $\mathbf{u} \cdot \mathbf{v} = 1$, entonces el ángulo entre $\mathbf{u}$ y $\mathbf{v}$ es $\pi/3$ radianes
+\item Para todo vector en $\mathbb{R}^n$: $\|\mathbf{u} + \mathbf{v} + \mathbf{w}\| = \|\mathbf{u}\| + \|\mathbf{v}\| + \|\mathbf{w}\|$
+\item Las expresiones $(\mathbf{u} \cdot \mathbf{v}) + \mathbf{w}$ y $\mathbf{u} \cdot (\mathbf{v} + \mathbf{w})$ tienen sentido y dan el mismo resultado
+\end{enumerate}
+
+\begin{myproof}
+\begin{enumerate}[$(a)$]
+\item \textbf{Falso}. Contraejemplo: $\mathbf{u} = (1,0)$ y $k = -1$. Entonces $k\mathbf{u} = (-1,0)$ es paralelo a $\mathbf{u}$ pero $k < 0$.
+
+\item \textbf{Verdadero}. $\cos(\theta) = \frac{\mathbf{u} \cdot \mathbf{v}}{\|\mathbf{u}\|\|\mathbf{v}\|} = \frac{1}{2 \cdot 1} = \frac{1}{2}$
+Por tanto, $\theta = \arccos(1/2) = \pi/3$.
+
+\item \textbf{Falso}. Contraejemplo: $\mathbf{u} = (1,0)$, $\mathbf{v} = (-1,0)$, $\mathbf{w} = (0,0)$.
+$\|\mathbf{u} + \mathbf{v} + \mathbf{w}\| = \|(0,0)\| = 0$
+$\|\mathbf{u}\| + \|\mathbf{v}\| + \|\mathbf{w}\| = 1 + 1 + 0 = 2$
+
+\item \textbf{Falso}. $(\mathbf{u} \cdot \mathbf{v})$ es un escalar, no puede sumarse con el vector $\mathbf{w}$. En cambio, $\mathbf{u} \cdot (\mathbf{v} + \mathbf{w})$ es válido.
+\end{enumerate}
+\end{myproof}
+\end{prob}
+
+% --- Rectas, planos y geometría del triángulo ---
+
+% Intermedio
+\begin{prob} El plano mediatriz del segmento $\overline{AB}$ es el plano que pasa por el punto medio de $\overline{AB}$ y es perpendicular a $\overline{AB}$. Considere los puntos $A(2,3,0)$ y $B(-2,1,-4)$.
+
+ \begin{enumerate}[$a)$]
+ \item Determine los valores de $a,$ $b$ y $c$ tal que $ax+by+cz=-2$ sea la ecuación del plano mediatriz $\Pi$ del segmento $\overline{AB}$.
+
+\item Calcule la ecuación de la recta $L$ perpendicular al plano $\Pi$ que pasa por el origen.
+ 
+\item Si el punto $S=(s_1,s_2,s_3)$ es el simétrico de $P(0,1,4)$ respecto a la recta $L$, calcule los valores de $s_1,$ $s_2$ y $s_3$.
+  
+\item Calcule la distancia del punto $(4,2,0)$ al plano $\Pi$.
+ \end{enumerate}
+ 
+\begin{myproof}
+
+\textbf{a)} El vector $\overrightarrow{AB}=(-4,-2,-4)$ es normal al plano mediatriz. El punto medio del segmento es $(0,2,-2)$.
+
+La ecuación del plano es:
+$$-4(x-0)-2(y-2)-4(z+2)=0 \Rightarrow -4x-2y-4z=4$$
+
+Dividiendo entre $-2$: $2x+y+2z=-2$
+
+Por tanto, $a=2$, $b=1$ y $c=2$.
+
+\textbf{b)} El vector $\overrightarrow{AB}=(-4,-2,-4)$ es perpendicular al plano, así que las ecuaciones simétricas de la recta que pasa por el origen son:
+\begin{equation}
+\frac{x}{-4}=\frac{y}{-2}=\frac{z}{-4}
+\end{equation}
+
+\textbf{c)} 
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=2cm,y=1cm]
+\clip(0.24,-0.9) rectangle (3.9,4.78);
+\draw [->,color=orange,line width=2.pt] (2.,0.) -- (2.,4.);
+\draw [->,line width=2.pt] (2.,0.) -- (1.,3.);
+\draw [->,color=blue,line width=2.pt] (2.,0.) -- (2.,3.);
+\draw [->,color=green,line width=2.pt] (2.,3.) -- (1.,3.);
+\draw [->,color=red,line width=2.pt] (2.,3.) -- (3.,3.);
+
+\draw [fill=black] (2.,0.) circle (2.5pt);
+\draw[color=black] (2.14,-0.17) node {$(0,0,0)$};
+\draw[color=orange] (1.7,3.41) node {$\overrightarrow{AB}$};
+\draw [fill=black] (1.,3.) circle (2.5pt);
+\draw[color=black] (1.14,3.27) node {$(0,1,4)$};
+\draw [fill=black] (2.,3.) circle (2.5pt);
+\draw [fill=black] (3.,3.) circle (2.0pt);
+\draw[color=black] (3.14,3.33) node {$S$};
+\draw[color=black] (1.2,1.57) node {$\mathbf{v}$};
+\draw[color=black] (2.48,1.63) node {$w$};
+\draw[color=black] (1.56,2.83) node {$a$};
+\draw[color=black] (2.56,2.85) node {$b$};
+\end{tikzpicture}
+\caption{Construcción del punto simétrico $S$ del punto $P(0,1,4)$ respecto a la recta $L$.}
+\label{fig:mediatriz_simetrico}
+\end{figure}
+
+
+Sea $\mathbf{v}=(0,1,4)$ el vector del origen a $P$.
+
+La proyección de $\mathbf{v}$ sobre $\overrightarrow{AB}$ es:
+$$\text{proy}_{\overrightarrow{AB}} \mathbf{v}=\frac{\overrightarrow{AB} \cdot \mathbf{v}}{||\overrightarrow{AB}||^2} \overrightarrow{AB}=\frac{-18}{36} (-4,-2,-4) = (2,1,2)$$
+
+El vector perpendicular es:
+$$\mathbf{v}-\text{proy}_{\overrightarrow{AB}} \mathbf{v}=(-2,0,2)$$
+
+
+
+El punto simétrico es:
+$$S=\text{proy}_{\overrightarrow{AB}} \mathbf{v}-(\mathbf{v}-\text{proy}_{\overrightarrow{AB}} \mathbf{v})=(2,1,2)-(-2,0,2)=(4,1,0)$$
+
+\textbf{d)} Usando la fórmula de distancia punto-plano con $-4x-2y-4z=4$ y el punto $(4,2,0)$:
+$$d=\frac{|-4(4)-2(2)-4(0)-4|}{\sqrt{(-4)^2+(-2)^2+(-4)^2}}=\frac{|-24|}{\sqrt{36}}=4$$
+\end{myproof} 
+\end{prob}
+
+% Desafiante
+\begin{prob} Dados los vértices de un triángulo $A(3,-1,-1),$ $B(1,2,-7),$ $C(-5,14,-3),$ halle las ecuaciones simétricas de la recta bisectriz del ángulo interno del vértice $B$.
+
+\begin{myproof} 
+
+La bisectriz del ángulo en $B$ tiene vector director $\mathbf{w}=\frac{\overrightarrow{BA}}{||\overrightarrow{BA}||}+\frac{\overrightarrow{BC}}{||\overrightarrow{BC}||}$.
+
+\begin{multicols}{2}
+
+Calculamos:
+$\overrightarrow{BA}=(2,-3,6)$ con $||\overrightarrow{BA}||=7$
+$\overrightarrow{BC}=(-6,12,4)$ con $||\overrightarrow{BC}||=14$
+
+Por tanto:
+$$\mathbf{w}=\frac{(2,-3,6)}{7}+\frac{(-6,12,4)}{14}=\left(\frac{-1}{7},\frac{3}{7},\frac{8}{7}\right)$$
+
+Multiplicando por $7$, la ecuación de la recta es:
+\begin{equation}
+\frac{x-1}{-1}=\frac{y-2}{3}=\frac{z+7}{8}
+\end{equation}
+
+\columnbreak
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.4cm,y=1.4cm]
+\clip(-1.5,-1) rectangle (4.431085145776089,2.9175798714133534);
+\draw [line width=2.pt] (1.,2.5)-- (0.,0.);
+\draw [line width=2.pt] (0.,0.)-- (4.089266532333138,0.8897442087910414);
+\draw [line width=2.pt] (4.089266532333138,0.8897442087910414)-- (1.,2.5);
+\draw [line width=2.pt,color=gray,domain=-0.4922607657391646:4.736944310619722] plot(\x,{(-0.--1.1410827572857927*\x)/1.3485286709739486});
+\draw [->,line width=2.pt] (0.,0.) -- (1.,2.5);
+\draw [->,line width=2.pt] (0.,0.) -- (4.089266532333138,0.8897442087910414);
+\draw [->,color=blue,line width=2.pt] (0.,0.) -- (0.37139067635410367,0.9284766908852592);
+\draw [->,color=red,line width=2.pt] (0.,0.) -- (0.9771379946198449,0.21260606640053356);
+\draw [->,color=magenta,line width=2.pt] (0.,0.) -- (1.3485286709739486,1.1410827572857927);
+
+\draw [fill=black] (1.,2.5) circle (2.5pt);
+\draw[color=black] (1.0666343324961263,2.6857188916125354) node {$A$};
+\draw [fill=black] (0.,0.) circle (2.5pt);
+\draw[color=black] (-0.8,-0.1) node {$B$};
+\draw [fill=black] (4.089266532333138,0.8897442087910414) circle (2.5pt);
+\draw[color=black] (3.5,0.4) node {$C$};
+\draw[color=blue] (-0.35,0.5841704363966089) node {$\frac{\overrightarrow{BA}}{||\overrightarrow{BA}||}$};
+\draw[color=red] (0.6226452222392396,-0.5) node {$\frac{\overrightarrow{BC}}{||\overrightarrow{BC}||}$};
+\end{tikzpicture}
+\caption{La dirección de la bisectriz en el vértice $B$ es la suma de los vectores unitarios $\frac{\overrightarrow{BA}}{\|\overrightarrow{BA}\|}$ y $\frac{\overrightarrow{BC}}{\|\overrightarrow{BC}\|}$.}
+\label{fig:bisectriz_direccion}
+\end{figure}
+\end{multicols}
+
+\end{myproof}
+\end{prob}
+
+% Desafiante
+\begin{prob} Halle la ecuación de la recta que intercepta perpendicularmente a las rectas $l_1=\{(7,2,4)+t(2,5,1)\}$ y $l_2=\{(4,4,2)+s(-1,3,0)\}$.
+
+\begin{myproof}	
+
+Sean $\mathbf{u}=(2,5,1)$ y $\mathbf{v}=(-1,3,0)$ los vectores directores de $l_1$ y $l_2$ respectivamente.
+
+El vector director de la recta perpendicular es:
+$$\mathbf{p} = \mathbf{u} \times \mathbf{v} =
+\begin{vmatrix}
+\mathbf{i} & \mathbf{j} & \mathbf{k} \\
+2 & 5 & 1 \\
+-1 & 3 & 0 \\
+\end{vmatrix} =
+(-3, -1, 11)$$
+
+Para encontrar un punto, construimos un plano que contenga $l_1$ y sea paralelo a $\mathbf{p}$. El vector normal del plano es:
+$$\mathbf{u} \times \mathbf{p} =
+\begin{vmatrix}
+\mathbf{i} & \mathbf{j} & \mathbf{k} \\
+2 & 5 & 1 \\
+-3 & -1 & 11 \\
+\end{vmatrix} =
+(56, -25, 13)$$
+
+El plano que pasa por $(7,2,4)$ con normal $(56,-25,13)$ tiene ecuación:
+$$56(x-7)-25(y-2)+13(z-4)=0 \Rightarrow 56x-25y+13z=394$$
+
+Para encontrar la intersección con $l_2$, sustituimos las ecuaciones paramétricas de $l_2$:
+$$56(4-s)-25(4+3s)+13(2)=394$$
+$$224-56s-100-75s+26=394$$
+$$150 - 131s = 394 \Rightarrow s=-\frac{244}{131}$$
+
+El punto de intersección es:
+$$\left(4+\frac{244}{131},\; 4-\frac{3\cdot244}{131},\; 2\right) = \left(\frac{768}{131},\; -\frac{208}{131},\; 2\right)$$
+
+Por tanto, la recta tiene ecuación:
+$$\left(\frac{768}{131},\; -\frac{208}{131},\; 2\right) + t(-3,-1,11)$$
+
+\end{myproof}
+\end{prob}
+
+% Intermedio
+\begin{prob} Tres vectores son coplanares si están sobre el mismo plano. Demuestre que si $\mathbf{u}, \mathbf{v}$ y $\mathbf{w}$ pasan por el origen, entonces son coplanares si y solo si $\mathbf{u} \cdot (\mathbf{v} \times \mathbf{w}) = 0$.
+
+\begin{myproof}
+
+Si $\mathbf{u}=\begin{pmatrix} u_1\\u_2\\u_3\end{pmatrix}$, $\mathbf{v}=\begin{pmatrix} v_1\\v_2\\v_3\end{pmatrix}$ y $\mathbf{w}=\begin{pmatrix} w_1\\w_2\\w_3\end{pmatrix}$, entonces: $\mathbf{u} \cdot (\mathbf{v} \times \mathbf{w})=\begin{vmatrix} u_1&u_2&u_3\\v_1&v_2&v_3\\w_1&w_2&w_3 \end{vmatrix}$
+
+\textbf{($\Rightarrow$)} Si $\mathbf{u}, \mathbf{v}$ y $\mathbf{w}$ son coplanares, entonces uno puede escribirse como combinación lineal de los otros dos. Sin pérdida de generalidad, sea $\mathbf{w}=k_1\mathbf{u}+k_2\mathbf{v}$ para algunos escalares $k_1, k_2$.
+
+Entonces: $\mathbf{u} \cdot (\mathbf{v} \times \mathbf{w})=\begin{vmatrix}
+u_1 & u_2 & u_3 \\
+v_1 & v_2 & v_3 \\
+k_1u_1+k_2v_1 & k_1u_2+k_2v_2 & k_1u_3+k_2v_3
+\end{vmatrix}$
+
+Como la última fila es combinación lineal de las dos primeras, el determinante es cero.
+
+\textbf{($\Leftarrow$)} Si $\mathbf{u} \cdot (\mathbf{v} \times \mathbf{w}) = 0$, entonces el determinante es cero, lo que implica que las filas son linealmente dependientes. Por tanto, uno de los vectores puede escribirse como combinación lineal de los otros dos, es decir, son coplanares.
+
+\end{myproof}	
+\end{prob}
+
+% Desafiante
 \begin{prob} Sean $A=(5,1,2)$, $B=(2,8,4)$ y $C=(1,-3,7)$ los vértices de un triángulo.
 
 \begin{enumerate}[a)]
@@ -1348,6 +1405,8 @@ Por lo cual, la recta por la cual está reflejado el rayo es $\boxed{(-5,-7,1)+t
 \draw[->, black, ultra thick] (A) -- (B) node[midway, above left] {$\overrightarrow{AB}$};
 \draw[->, black, ultra thick] (A) -- (C) node[midway, below left] {$\overrightarrow{AC}$};
 \end{tikzpicture}
+\caption{Triángulo con vértices $A(5,1,2)$, $B(2,8,4)$ y $C(1,-3,7)$ y los vectores $\overrightarrow{AB}$ y $\overrightarrow{AC}$.}
+\label{fig:triangulo_euler_datos}
 \end{figure}
 
 Los vectores son:
@@ -1397,6 +1456,8 @@ z = 2 + \frac{7}{2}t
 \draw [fill=black] (2.17,3.11) circle (2.0pt);
 \draw[color=black] (2.32,3.45) node {$D$};
 \end{tikzpicture}
+\caption{Mediana trazada desde $A$ hasta el punto medio $D$ del lado $\overline{BC}$.}
+\label{fig:mediana_desde_A}
 \end{figure}
 \end{multicols}
 
@@ -1428,6 +1489,8 @@ z = 4 + \frac{1}{2}t
 \draw [fill=black] (2.51,2.34) circle (2.0pt);
 \draw[color=black] (2.66,2.67) node {$E$};
 \end{tikzpicture}
+\caption{Mediana trazada desde $B$ hasta el punto medio $E$ del lado $\overline{AC}$.}
+\label{fig:mediana_desde_B}
 \end{figure}
 \end{multicols}
 
@@ -1490,6 +1553,7 @@ $$\boxed{\frac{x-\frac{8}{3}}{\frac{5464}{1749}} = \frac{y-2}{-\frac{752}{583}} 
 \end{myproof}
 \end{prob}
 
+% Intermedio
 \begin{prob} Determine si las siguientes afirmaciones son verdaderas o falsas. Recuerde que debe proporcionar una demostración si es verdadera o un contraejemplo si es falsa. Aquí $\mathbf{u}$, $\mathbf{v}$, $\mathbf{w}$ son vectores, $\mathbf{0}$ es el vector cero del espacio correspondiente y los símbolos $\|\mathbf{u}\|$ y $\mathbf{u} \cdot \mathbf{v}$ representan la norma de $\mathbf{u}$ y el producto punto entre $\mathbf{u}$ y $\mathbf{v}$, respectivamente.
 \begin{enumerate}[$a)$]
  \item En $\mathbb{R}^2$, si $\mathbf{u}$ está en el primer cuadrante y $\mathbf{v}$ está en el tercer cuadrante, entonces $\mathbf{u} \cdot \mathbf{v}$ no puede ser positivo.
@@ -1556,6 +1620,7 @@ Restando $\mathbf{x}$ en ambos lados: $\mathbf{a} = \mathbf{0}$.
 
 \end{prob}
 
+% Intermedio
 \begin{prob} (\cite{espinoza2006Algebralineal}, p. 85, Problema 64) Determine la ecuación de un plano que cumple las siguientes condiciones: pasa por el punto $(3,1,-1)$, es perpendicular al plano $2x-2y+z+4=0$ y su intersección con el eje $z$ es el punto $(0,0,-3)$. 
 
 \begin{myproof}
@@ -1604,6 +1669,7 @@ Tomando $b = 1$ (cualquier múltiplo sirve), obtenemos \(a = 5,\quad b = 1,\quad
 
 \end{prob}
 
+% Intermedio
 \begin{prob} (\cite{espinoza2006Algebralineal}, p. 86, Problema 76) Halle la ecuación del plano que contiene al punto $(5,0,-4)$ y a la recta $\frac{x-3}{-1}=\frac{y+5}{1}=\frac{z+2}{1}$. 
 \begin{myproof}
 Queremos hallar la ecuación del plano que contiene al punto $P = (5,0,-4)$ y a la recta \(\frac{x-3}{-1} = \frac{y+5}{1} = \frac{z+2}{1}.\)
@@ -1674,6 +1740,7 @@ Por lo tanto, la ecuación del plano es \(\boxed{x + z = 1}.\)
 
 \end{prob}
 
+% Básico
 \begin{prob} (\cite{espinoza2006Algebralineal}, p. 76, Problema 2) Una recta pasa por los puntos $A(-6,6,5)$ y $B(15,-6,1)$. Determine los puntos de intersección de esta recta con los planos coordenados $x=0$, $y=0$ y $z=0$. 
 
 \begin{myproof}
@@ -1743,6 +1810,7 @@ Los puntos de intersección de la recta con los planos coordenados son:
 
 \end{prob}
 
+% Intermedio
 \begin{prob} (\cite{espinoza2006Algebralineal}, p. 78, Problema 20) Un escalador observa que existe una rama recta de un árbol que pasa por los puntos $A(3,5,3)$ y $B(8,3,1)$. Si lanza una cuerda desde el punto $P(8,6,5)$ hasta la rama, ¿cuál es la longitud mínima que debe tener la cuerda? 
 
 \textbf{Solución:} $\sqrt{\frac{629}{33}}$.
@@ -1750,7 +1818,7 @@ Los puntos de intersección de la recta con los planos coordenados son:
 \begin{myproof}
 Queremos encontrar la distancia mínima desde el punto $P(8,6,5)$ a la recta que pasa por los puntos $A(3,5,3)$ y $B(8,3,1)$. Esta distancia será la longitud mínima de la cuerda.
 
-\textbf{Paso 1: Ecuación vectorial de la recta.}
+\textbf{Paso 1. Ecuación vectorial de la recta.}
 
 La recta que pasa por $A$ y $B$ tiene dirección
 \[
@@ -1761,12 +1829,12 @@ La ecuación de la recta es:
 \overrightarrow{r}(t) = (3,5,3) + t(5,-2,-2), \quad t \in \mathbb{R}
 \]
 
-\textbf{Paso 2: Vector desde un punto de la recta hasta $P$.}
+\textbf{Paso 2. Vector desde un punto de la recta hasta $P$.}
 
 Sea $Q$ un punto cualquiera de la recta, $Q = (3+5t,\, 5-2t,\, 3-2t)$.  
 El vector $\overrightarrow{PQ} = Q - P = (3+5t-8,\, 5-2t-6,\, 3-2t-5) = (5t-5,\, -2t-1,\, -2t-2)$.
 
-\textbf{Paso 3: Distancia mínima (proyección ortogonal).}
+\textbf{Paso 3. Distancia mínima (proyección ortogonal).}
 
 La distancia mínima se logra cuando $\overrightarrow{PQ}$ es ortogonal a la dirección de la recta, es decir,
 
@@ -1781,7 +1849,7 @@ La distancia mínima se logra cuando $\overrightarrow{PQ}$ es ortogonal a la dir
 
 
 
-\textbf{Paso 4: Coordenadas del punto más cercano $Q^*=(3 + 5t,\, 5 - 2t,\, 3 - 2t)$}
+\textbf{Paso 4. Coordenadas del punto más cercano $Q^*=(3 + 5t,\, 5 - 2t,\, 3 - 2t)$}
 
 Sustituyendo $t = \frac{19}{33}$:
 \[
@@ -1794,7 +1862,7 @@ y = 5 - 2 \cdot \frac{19}{33} = 5 - \frac{38}{33} = \frac{165 - 38}{33} = \frac{
 z = 3 - 2 \cdot \frac{19}{33} = 3 - \frac{38}{33} = \frac{99 - 38}{33} = \frac{61}{33}
 \]
 
-\textbf{Paso 5: Distancia mínima $d = |PQ^*|$.}
+\textbf{Paso 5. Distancia mínima $d = |PQ^*|$.}
 
 \begin{align*}
 d &= \sqrt{\left(8 - \frac{194}{33}\right)^2 + \left(6 - \frac{127}{33}\right)^2 + \left(5 - \frac{61}{33}\right)^2}\\
@@ -1809,12 +1877,13 @@ La longitud mínima que debe tener la cuerda es \(\boxed{\sqrt{\dfrac{629}{33}}}
 
 \end{prob}
 
+% Básico
 \begin{prob} (\cite{espinoza2006Algebralineal}, p. 88, Problema 86) Halle la ecuación del plano que pasa por los puntos $A(1,2,-4)$, $B(4,-3,2)$ y $C(-4,5,10)$. 
 
 \begin{myproof}
 Queremos hallar la ecuación del plano que pasa por los puntos $A(1,2,-4)$, $B(4,-3,2)$ y $C(-4,5,10)$.
 
-\textbf{Paso 1: Vectores directores del plano.}
+\textbf{Paso 1. Vectores directores del plano.}
 
 Calculamos los vectores $\vec{AB}$ y $\vec{AC}$:
 \[
@@ -1824,7 +1893,7 @@ Calculamos los vectores $\vec{AB}$ y $\vec{AC}$:
 \vec{AC} = C - A = (-4-1,\ 5-2,\ 10-(-4)) = (-5,\ 3,\ 14)
 \]
 
-\textbf{Paso 2: Vector normal al plano.}
+\textbf{Paso 2. Vector normal al plano.}
 
 El vector normal $\vec{n}$ se obtiene con el producto cruz:
 \[
@@ -1858,7 +1927,7 @@ Dividimos entre $8$ para simplificar:
 \vec{n} = (11,\ 9,\ 2)
 \]
 
-\textbf{Paso 3: Ecuación general del plano.}
+\textbf{Paso 3. Ecuación general del plano.}
 
 La ecuación es:
 \[
@@ -1879,19 +1948,20 @@ La ecuación es:
 
 \end{prob}
 
+% Básico
 \begin{prob} (\cite{espinoza2006Algebralineal}, p. 80, Problema 31) Los puntos $A$, $B$, $C$ y $D$ forman un paralelogramo en ese orden. Si las coordenadas de los tres primeros puntos son $A(1,2,3)$, $B(0,-1,4)$ y $C(-1,2,6)$, determine la ecuación de la recta que pasa por los puntos $C$ y $D$. 
 
 \begin{myproof}
 Sean $A(1,2,3)$, $B(0,-1,4)$ y $C(-1,2,6)$ los tres primeros vértices de un paralelogramo $ABCD$ en ese orden. Queremos encontrar la ecuación de la recta que pasa por $C$ y $D$.
 
-\textbf{Paso 1: Encontrar las coordenadas de $D$}
+\textbf{Paso 1. Encontrar las coordenadas de $D$}
 
 En un paralelogramo $ABCD$ (en orden), las diagonales $AC$ y $BD$ se bisecan mutuamente, por lo que sus puntos medios coinciden:
 \[
 \frac{A+C}{2} = \frac{B+D}{2} \implies D = A + C - B = (1,2,3)+(-1,2,6)-(0,-1,4) = (0,\ 5,\ 5).
 \]
 
-\textbf{Paso 2: Ecuación de la recta que pasa por $C$ y $D$}
+\textbf{Paso 2. Ecuación de la recta que pasa por $C$ y $D$}
 
 La recta que pasa por $C(-1,2,6)$ y $D(0,5,5)$ tiene vector director:
 \[
@@ -1908,24 +1978,25 @@ La ecuación simétrica de la recta es:
 
 \end{prob}
 
+% Intermedio
 \begin{prob} (\cite{espinoza2006Algebralineal}, p. 81, Problema 41) Determine la ecuación de la recta que pasa por el punto $(1,2,3)$ y que es perpendicular al segmento que une los puntos $(2,3,4)$ y $(-3,2,5)$, intersecándolo en algún punto.
 \begin{myproof}
 Sea $A = (2,3,4)$ y $B = (-3,2,5)$ los extremos del segmento dado, y $P = (1,2,3)$ el punto por el que debe pasar la recta buscada. Queremos hallar la ecuación de la recta que pasa por $P$ y es perpendicular al segmento $AB$, intersecándolo en algún punto $Q$.
 
-\textbf{Paso 1: Vector director del segmento $AB$}
+\textbf{Paso 1. Vector director del segmento $AB$}
 
 \[
 \vec{AB} = B - A = (-3 - 2,\ 2 - 3,\ 5 - 4) = (-5,\ -1,\ 1)
 \]
 
-\textbf{Paso 2: Ecuación paramétrica del segmento $AB$}
+\textbf{Paso 2. Ecuación paramétrica del segmento $AB$}
 
 Un punto general del segmento es
 \[
 Q = A + t\,\vec{AB} = (2,3,4) + t\,(-5,-1,1) = (2-5t,\ 3-t,\ 4+t), \quad t \in \mathbb{R}
 \]
 
-\textbf{Paso 3: Recta buscada}
+\textbf{Paso 3. Recta buscada}
 
 Sea $\mathcal{R}$ la recta que pasa por $P$ y por $Q$, con vector director $\vec{PQ} = Q - P = (2-5t-1,\ 3-t-2,\ 4+t-3) = (1-5t,\ 1-t,\ 1+t)$.
 
@@ -1946,7 +2017,7 @@ Queremos que la recta $\mathcal{R}$ sea perpendicular al segmento $AB$, es decir
 27t - 5 = 0 \implies t = \frac{5}{27}
 \]
 
-\textbf{Paso 4: Coordenadas del punto de intersección $Q$}
+\textbf{Paso 4. Coordenadas del punto de intersección $Q$}
 
 \[
 Q = (2 - 5t,\ 3 - t,\ 4 + t) = \left(2 - 5 \cdot \frac{5}{27},\ 3 - \frac{5}{27},\ 4 + \frac{5}{27}\right)
@@ -1965,14 +2036,14 @@ Por lo tanto,
 Q = \left(\frac{29}{27},\ \frac{76}{27},\ \frac{113}{27}\right)
 \]
 
-\textbf{Paso 5: Vector director de la recta buscada}
+\textbf{Paso 5. Vector director de la recta buscada}
 
 \[
 \vec{PQ} = Q - P = \left(\frac{29}{27} - 1,\ \frac{76}{27} - 2,\ \frac{113}{27} - 3\right) = \left(\frac{2}{27},\ \frac{22}{27},\ \frac{32}{27}\right)
 \]
 O, simplificando, el vector director es proporcional a $(2,22,32)$ o $(1,11,16)$.
 
-\textbf{Paso 6: Ecuación de la recta buscada}
+\textbf{Paso 6. Ecuación de la recta buscada}
 
 La ecuación paramétrica de la recta es:
 \[
@@ -1994,6 +2065,7 @@ o, en forma simétrica:
 
 \end{prob}
 
+% Básico
 \begin{prob} (\cite{espinoza2006Algebralineal}, p. 76, Problema 3) La mediana de un triángulo es el segmento que une un vértice con el punto medio del lado opuesto. Dado el triángulo con vértices $A(3,6,-7)$, $B(-5,2,7)$ y $C(4,-7,-2)$, determine las ecuaciones simétricas de la mediana trazada desde el vértice $C$. 
 
 \begin{myproof}
@@ -2045,6 +2117,7 @@ La ecuación simétrica de la mediana trazada desde $C$ es:
 
 \end{prob}
 
+% Intermedio
 \begin{prob} (\cite{espinoza2006Algebralineal}, p. 77, Problema 15) La altura de un triángulo es el segmento que une un vértice con un punto del lado opuesto (o su prolongación) de manera perpendicular a dicho lado. Dado el triángulo con vértices $A(1,-2,-4)$, $B(3,1,-3)$ y $C(5,1,-7)$, determine las ecuaciones simétricas de la altura trazada desde el vértice $B$ hacia el lado $\overline{AC}$. 
 \begin{myproof}
 Sea el triángulo con vértices $A(1,-2,-4)$, $B(3,1,-3)$ y $C(5,1,-7)$. Queremos hallar las ecuaciones simétricas de la altura trazada desde el vértice $B$ hacia el lado $\overline{AC}$.
@@ -2161,6 +2234,7 @@ Dividiendo entre $2$:
 
 \end{prob}
 
+% Intermedio
 \begin{prob}
 La mediatriz de un segmento es la recta que pasa por el punto medio del 
 segmento y es perpendicular a él. Dado el triángulo con vértices 
@@ -2255,169 +2329,79 @@ vector director $\vec{d}=(-1,\,-108,\,-806)$:
 \end{myproof}
 \end{prob}
 
-\section{Problemas Propuestos}
+\section{Problemas propuestos}
 
-% >>> LISTOS PARA INTEGRAR AHORA <<<
-
-% [Original: líneas 7-55 | solución completa | sin figura]
+% Básico
 \begin{prob}
-Dados los vectores ${\bf u}=3{\bf i}-3{\bf j}+{\bf k},$ ${\bf v}=-2{\bf i}+{\bf j}-6{\bf k}$ y ${\bf w}=-{\bf i}+5{\bf k}$ calcule los siguientes ítems. Si no es posible, indique la razón correspondiente:
-\begin{multicols}{2}
-\begin{enumerate}[(a)]
-    \item ${\bf u}+ 5{\bf v }-{\bf w}$ 
-    \item $\lVert {\bf u} +  {\bf w}\rVert $
-    \item $\lVert {\bf u} \rVert+ \lVert  {\bf w}\rVert$
-    \item Un vector unitario que tiene la misma dirección de $\bf u.$				
-    \item El vector $\bf x$ que satisface la ecuación $2 \mathbf{u}-\mathbf{v}+\mathbf{x}=4\mathbf{x}+\mathbf{w}.$				
-    \item El valor de ${\bf u}\cdot {\bf v}$ y el vector ${\bf u}\times {\bf v}.$				
-    \item El valor de $\cos(\theta)$ con $\theta$ el ángulo  entre los vectores ${\bf u}$ y $\bf v.$ Determine el valor de $\theta.$
-    \item Un vector ortogonal tanto a $\bf u$ como a $\bf w$
-    \item La proyección del vector $\bf u$ sobre el vector $\bf v$ 
-    \item Si el vector ${\bf s}={\bf i}-\alpha\ {\bf j}+3\ {\bf k}$ es ortogonal al vector ${\bf v},$ determine el valor de $\alpha.$ 
-    \item Si ${\bf s}={\bf i}-\alpha\ {\bf j}+3\ {\bf k}$ es paralelo a ${\bf v}$ entonces determine el valor de $\alpha.$ 
-\end{enumerate}	
-\end{multicols}
-\begin{myproof}
-Para facilitar los cálculos, los vectores ${\bf u}$, ${\bf v}$ y ${\bf w}$ se reescriben en coordenadas como ${\bf u}=3{\bf i}-3{\bf j}+{\bf k} = (3,-3,1),$ ${\bf v}=-2{\bf i}+{\bf j}-6{\bf k} = (-2,1,-6)$ y ${\bf w}=-{\bf i}+5{\bf k} = (-1,0,5).$
-
-Así, cada uno de los ítem se calculan así:
-\begin{enumerate}[(a)]
-\item ${\bf u}+ 5{\bf v }-{\bf w} = (3,-3,1) + 5(-2,1,-6) - (-1,0,5) = (-6,2,-34).$
-\item $\lVert {\bf u} + {\bf w}\rVert = \sqrt{(3 + (-1))^2 + (-3 + 0)^2 + (1 + 5)^2} = \sqrt{49}.$ 
-\item $\lVert {\bf u} \rVert + \lVert {\bf w}\rVert = \sqrt{3^2 + (-3)^2 + 1^2} + \sqrt{(-1)^2 + 0^2 + 5^2} = \sqrt{19} + \sqrt{26}.$
-\item Un vector unitario que tiene la misma dirección de $\bf u$ es $$\dfrac{{\bf u}}{\lVert {\bf u} \rVert} = \dfrac{(3,-3,1)}{\sqrt{19}} = \left(\dfrac{3}{\sqrt{19}}, -\dfrac{3}{\sqrt{19}}, \dfrac{1}{\sqrt{19}}\right).$$
-\item Resolviendo la ecuación $2 \mathbf{u}-\mathbf{v}+\mathbf{x}=4\mathbf{x}+\mathbf{w},$ encontramos que 
-\begin{align*}
-2 \mathbf{u}-\mathbf{v}+\mathbf{x}&=4\mathbf{x}+\mathbf{w}\\
-2 \mathbf{u}-\mathbf{v}-\mathbf{w}&=3\mathbf{x}\\
-\mathbf{x}&=\dfrac{1}{3}\left( 2 \mathbf{u}-\mathbf{v}-\mathbf{w}\right)\\&= \dfrac{1}{3} \left( 2(3,-3,1) - (-2,1,-6) - (-1,0,5)\right)\\&= \dfrac{1}{3} (9, -7, 3)=(3,\dfrac{-7}{3},1).
-\end{align*}
-\item ${\bf u}\cdot {\bf v} = (3,-3,1) \cdot (-2,1,-6) = 3(-2) + -3(1) + 1(-6) = -15.$
-\begin{align*}
-{\bf u}\times {\bf v} = \begin{vmatrix} {\bf i} & {\bf j} & {\bf k} \\ 3 & -3 & 1 \\ -2 & 1 & -6 \end{vmatrix} = {\bf i} \begin{vmatrix} -3 & 1\\ 1 & -6 \end{vmatrix} - {\bf j} \begin{vmatrix} 3 & 1\\ -2 & -6 \end{vmatrix} + {\bf k} \begin{vmatrix} 3 & -3\\ -2 & 1 \end{vmatrix}= (17,16,-3).
-\end{align*}
-\item $\cos(\theta) = \dfrac{{\bf u}\cdot {\bf v}}{\lVert {\bf u} \rVert \lVert {\bf v} \rVert} = \dfrac{-15}{\sqrt{19} \sqrt{41}}.$ $\theta=\arccos\left( \dfrac{-15}{\sqrt{19} \sqrt{41}} \right)\approx 2.13818.$
-\item Un vector que es ortogonal tanto a $\mathbf{u}$ y  $\mathbf{w}$ es el producto cruz, entonces
-\begin{align}
-{\bf u}\times {\bf w} = \begin{vmatrix} {\bf i} & {\bf j} & {\bf k} \\ 3 & -3 & 1 \\ -1 & 0 & 5 \end{vmatrix} = {\bf i} \begin{vmatrix} -3 & 1\\ 0 & 5 \end{vmatrix} - {\bf j} \begin{vmatrix} 3 & 1\\ -1 & 5 \end{vmatrix} + {\bf k} \begin{vmatrix} 3 & -3\\ -1 & 0 \end{vmatrix}= (-15,-16,-3).
-\end{align}
-\item $\text{proy}_{\mathbf{v}}\mathbf{u} = \dfrac{\mathbf{u}\cdot\mathbf{v}}{\left\lVert\mathbf{v}\right\rVert^2} \mathbf{v}=\left( \dfrac{-15}{41} \right)\begin{pmatrix}
--2\\1\\-6 \end{pmatrix}=\begin{pmatrix}
-30/41\\-15/41\\90/41 \end{pmatrix}.$
-\item Debemos encontrar el valor de $\alpha$ para el cual el producto punto $\mathbf{s}\cdot\mathbf{v}=0$. Note que $\mathbf{s}\cdot\mathbf{v} = (\mathbf{i}-\alpha\mathbf{j}+3\mathbf{k})\cdot(-2\mathbf{i}+\mathbf{j}-6\mathbf{k}) = -2 - \alpha - 18 = 0.$ Lo que nos da $\alpha = - 20$.
-\item El vector $\mathbf{s} = \mathbf{i} - \alpha \mathbf{j} + 3\mathbf{k}$ es paralelo a $\mathbf{v} = -2\mathbf{i} + \mathbf{j} - 6\mathbf{k}$ si y solo si son múltiplos escalares, i.e, existe $k$ tal que $\mathbf{v}=k\mathbf{s}.$ Note que si $k=-2,$ $-2\mathbf{i} + \mathbf{j} -6\mathbf{k}=-2\mathbf{i} +2 \alpha \mathbf{j} -6\mathbf{k}.$ Así, el valor de $\alpha=\dfrac{1}{2}.$
+Dados los vectores $\mathbf{u}=(1,2,-2)$ y $\mathbf{v}=(3,0,4)$, calcule:
+\begin{multicols}{4}
+\begin{enumerate}[$a)$]
+\item $\mathbf{u}+2\mathbf{v}$
+\item $\|\mathbf{u}\|$ y $\|\mathbf{v}\|$
+\item Un vector unitario con la dirección de $\mathbf{v}$
+\item $\mathbf{u}\cdot\mathbf{v}$
 \end{enumerate}
-\end{myproof}
-\end{prob}
-
-% [Original: líneas 57-116 | solución completa | tikz - listo]
-\begin{prob}
-Dados los puntos $A=(3,0,2),$ $B=(4,3,0)$ y $C=(8,1,-1).$ Calcule los siguientes ítems, si no es posible, indique la razón correspondiente
-\begin{enumerate}[(a)]
-    \item El perímetro del triángulo con vértices $A$, $B$ y $C.$
-    \item El área del triángulo con vértices $A$, $B$ y $C.$  
-    \item Un vector perpendicular al plano que contiene los puntos $A$, $B$ y $C.$  
-    \item Una ecuación general del plano $\Pi$ que contiene los puntos $A$, $B$ y $C.$ 
-    \item Las ecuaciones simétricas de la recta que es perpendicular al plano $\Pi$ y pasa por el origen.  
-    \item La menor distancia entre el punto $(3,1,-2)$ y el plano $\Pi.$  
-\end{enumerate}
-\begin{myproof}
-\begin{multicols}{2}
-\begin{figure}[H]
-\centering
-\begin{tikzpicture}
-\coordinate (A) at (0,0);
-\coordinate (B) at (2,3);
-\coordinate (C) at (4,1);
-\draw (A) -- (B) -- (C) -- cycle;
-\filldraw[black] (A) circle (2pt) node[below left] {$A(3,0,2)$};
-\filldraw[black] (B) circle (2pt) node[above right] {$B(4,3,0)$};
-\filldraw[black] (C) circle (2pt) node[below right] {$C(8,1,-1)$};
-\draw[->, black, ultra thick] (A) -- (B) node[midway, above left] {$\overrightarrow{AB}$};
-\draw[->, black, ultra thick] (B) -- (C) node[midway, above right] {$\overrightarrow{BC}$};
-\draw[->, black, ultra thick] (A) -- (C) node[midway, below left] {$\overrightarrow{AC}$};
-\end{tikzpicture}
-\end{figure}
-Note que 
-\begin{align*}
-\overrightarrow{AB}&= (4 - 3, 3 - 0, 0 - 2) = (1, 3, -2) \\
-\overrightarrow{AC}&= (8 - 3, 1 - 0, -1 - 2) = (5, 1, -3) \\
-\overrightarrow{BC}&= (8 - 4, 1 - 3, -1 - 0) = (4, -2, -1) 
-\end{align*}
 \end{multicols}
-\begin{enumerate}[(a)]
-\item Calculando las normas de los vectores que definen cada lado:
-\begin{align*}
-\lVert AB \rVert &= \sqrt{(1)^2 + (3)^2 + (-2)^2} = \sqrt{14}\\
-\lVert AC \rVert &= \sqrt{(5)^2 + (1)^2 + (-3)^2} = \sqrt{35}\\
-\lVert BC \rVert &= \sqrt{(4)^2 + (-2)^2 + (-1)^2} = \sqrt{21}
-\end{align*}
-El perímetro sería $\lVert AB \rVert+ \lVert AC \rVert+ \lVert BC \rVert =\sqrt{14} + \sqrt{35} + \sqrt{21}\approx 14.240.$
-\item Para calcular el área del triángulo, es necesario calcular $\overrightarrow{AB}\times \overrightarrow{AC}:$
-\begin{equation}
-\overrightarrow{AB} \times \overrightarrow{AC} = \begin{vmatrix}
-\mathbf{i} & \mathbf{j} & \mathbf{k} \\
-1 & 3 & -2 \\
-5 & 1 & -3
-\end{vmatrix} = (-7, -7, -14).
-\end{equation} 
-El área sería $\left(\dfrac{1}{2}\right) \lVert \vec{AB} \times \vec{AC}\rVert = \left(\dfrac{1}{2}\right) \sqrt{(-7)^2 + (-7)^2 + (-14)^2} = \dfrac{7\sqrt{6}}{2}\approx 8.573.$
-\item  El vector normal al plano que contiene los tres puntos es el mismo $\overrightarrow{AB}\times \overrightarrow{AC}=(-7, -7, -14)$ calculado anteriormente.
-\item La ecuación general del plano se puede calcular con el punto $(3,0,2)$ y el vector normal $(-7, -7, -14).$ 
-La ecuación es $-7(x - 3) - 7(y - 0) -14(z - 2) = 0 \implies -7 x - 7 y - 14 z = -49.$
-\item  Como la recta es perpendicular al plano, su vector director es $(-7, -7, -14)$ que es el normal del plano. Como pasa por $(0,0,0)$ sus ecuaciones simétricas son $$\dfrac{x}{-7}=\dfrac{y}{-7}=\dfrac{z}{-14}.$$
-\item Dado el punto $(3,1,-2)$ y el plano $-7 x - 7 y - 14 z = -49,$ calculando por la fórmula de la distancia:
-$$d=\dfrac{\left| -7(3)-7(1)-14(-2)+49 \right|}{\sqrt{(-7)^2 + (-7)^2 + (-14)^2}} = \dfrac{49}{7\sqrt{6}} = \dfrac{7}{\sqrt{6}} \approx 2.8577.$$
-\end{enumerate}
-\end{myproof}
 \end{prob}
 
-% [Original: líneas 118-120 | sin verificar | sin figura]
 \begin{prob}
-Hallar la ecuación de la recta que pasa por el punto $(1,2,3)$ y que intercepta perpendicularmente al segmento de extremos $(2,3,4)$ y $(-3,2,5)$.
+Calcule el ángulo entre los vectores $\mathbf{u}=(1,1,0)$ y $\mathbf{v}=(0,1,1)$.
 \end{prob}
 
-% [Original: líneas 122-124 | sin verificar | sin figura]
 \begin{prob}
-La mediana de un triángulo es la recta que une un vértice con el punto medio del lado opuesto. Dado el triángulo con vértices $A=(3,6,-7),$ $B=(-5,2,7)$ y $C=(4,-7,-2)$ halle las ecuaciones simétricas de la mediana del triángulo trazada desde el vértice $C.$ \textbf{Solución:} $\dfrac{x-4}{-5}=\dfrac{y+7}{11}=\dfrac{z+2}{2}.$
+Calcule $\mathbf{u}\times\mathbf{v}$ para $\mathbf{u}=(2,1,0)$ y $\mathbf{v}=(1,3,0)$. Verifique que el vector obtenido es perpendicular a $\mathbf{u}$ y a $\mathbf{v}$, y calcule el área del paralelogramo generado por ambos vectores.
 \end{prob}
 
-% [Original: líneas 126-163 | solución completa | tikz - listo]
 \begin{prob}
-Halle las ecuaciones simétricas de la recta que pasa por el punto $(-2,1,-3)$ es perpendicular a la recta $l_1=\left\lbrace (7,4,1)+t(2,0,-4)  \right\rbrace.$ 
-\begin{myproof}
-\begin{multicols}{2}
-\begin{figure}[H]
-\centering
-\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
-\clip(-1.8,-0.5) rectangle (6,4.24);
-\draw [line width=2.pt,domain=-1.32:6.16] plot(\x,{(-0.--2.*\x)/4.});
-\draw [->,line width=2.pt,ultra thick,color=blue] (4.,2.) -- (0.,3.);
-\draw [->,line width=2.pt,color=gray] (4.,2.) -- (0,0);
-\draw [->,line width=2.pt,color=red] (4.,2.) -- (1.2,0.6);
-\draw [->,line width=2.pt,color=orange] (1.2,0.6) -- (0.,3.);
-\draw [fill=black] (0.,0.) circle (2.0pt);
-\draw [fill=black] (4.,2.) circle (2.5pt);
-\draw[color=black] (4.8,1.5) node {$B=(7,4,1)$};
-\draw [fill=black] (0.,3.) circle (2.5pt);
-\draw[color=black] (0.14,3.37) node {$A=(-2,1,-3)$};
-\draw[color=black] (5,3) node {$l_1$};
-\draw[color=blue] (2.18,2.83) node {$\mathbf{u}$};
-\draw [fill=black] (1.2,0.6) circle (2.0pt);
-\draw[color=red] (3.52,1.05) node {$\text{proy}_{\mathbf{v}}\mathbf{u}$};
-\draw[color=orange] (-0.5,1.65) node {$\mathbf{u}-\text{proy}_{\mathbf{v}}\mathbf{u}$};
-\end{tikzpicture}
-\end{figure}
-\columnbreak  Para construir una recta necesitamos un vector director y un punto. Ya se conoce que la recta pasa por $A=(-2,1,-3),$ por lo cual falta calcular el vector director. La idea es calcular el vector \textcolor{blue}{$\mathbf{u}$} que inicia en $B$ y termina en $A$ y calcular la proyección del vector \textcolor{blue}{$\mathbf{u}$} sobre \textcolor{gray}{$\mathbf{v}$} director de la recta $l_1.$ El vector director de la recta perpendicular será \textcolor{orange}{$\mathbf{u} - \text{proy}_{\mathbf{v}} \mathbf{u}$}.
-\end{multicols}
-Haciendo los cálculos:
-\textcolor{blue}{$\mathbf{u}=(-2,1,-3)-(7,4,1)=(-9,-3,-4).$ }
-\textcolor{red}{$
-\text{proy}_{\mathbf{v}} \mathbf{u}=\dfrac{\mathbf{u} \cdot \mathbf{v}}{||\mathbf{v}||^2} \mathbf{v}=\dfrac{-2}{20} (2,0,-4)= \dfrac{-1}{10} (2,0,-4)
-$}
-\textcolor{orange}{$\mathbf{u} - \text{proy}_{\mathbf{v}} \mathbf{u} = (-9,-3,-4) - \dfrac{-1}{10} (2,0,-4) = \left(-\dfrac{44}{5}, -3, -\dfrac{22}{5}\right).$}
-Las ecuaciones simétricas de la recta son, multiplicando el vector por $5$ \begin{equation}
-\dfrac{x+2}{-44}=\dfrac{y-1}{-15}=\dfrac{z+3}{-22}.
-\end{equation}
-\end{myproof}
+Halle la ecuación general del plano que pasa por los puntos $A(1,0,0)$, $B(0,2,0)$ y $C(0,0,3)$.
+\end{prob}
+
+\begin{prob}
+Escriba las ecuaciones vectorial, paramétricas y simétricas de la recta que pasa por el punto $P(2,-1,3)$ y tiene vector director $\vec{d}=(4,1,-2)$.
+\end{prob}
+
+% Intermedio
+\begin{prob}
+Determine todos los valores de $a$ para los cuales los vectores $\mathbf{u}=(a,2,-1)$ y $\mathbf{v}=(a,-a,4)$ son ortogonales.
+\end{prob}
+
+\begin{prob}
+Calcule el volumen del paralelepípedo cuyas aristas concurrentes están dadas por los vectores $\mathbf{u}=(1,2,0)$, $\mathbf{v}=(0,1,3)$ y $\mathbf{w}=(2,0,1)$.
+\end{prob}
+
+\begin{prob}
+Determine el valor de $\lambda$ para el cual los vectores $(1,1,0)$, $(0,1,1)$ y $(1,0,\lambda)$ son coplanares.
+\end{prob}
+
+\begin{prob}
+Calcule $\text{proy}_{\mathbf{v}}\mathbf{u}$ para $\mathbf{u}=(3,4,0)$ y $\mathbf{v}=(1,0,1)$, y verifique que $\mathbf{u}-\text{proy}_{\mathbf{v}}\mathbf{u}$ es perpendicular a $\mathbf{v}$.
+\end{prob}
+
+\begin{prob}
+Calcule la distancia del punto $(1,2,3)$ al plano $2x-y+2z=4$.
+\end{prob}
+
+\begin{prob}
+Calcule la distancia del punto $P(1,0,2)$ a la recta $l=\left\lbrace (0,1,0)+t(1,1,1) \right\rbrace$.
+\end{prob}
+
+\begin{prob}
+Halle las ecuaciones paramétricas de la recta de intersección de los planos $x+y+z=1$ y $x-y+2z=0$.
+\end{prob}
+
+% Desafiante
+\begin{prob}
+Demuestre la identidad de Lagrange:
+\[
+\|\mathbf{u}\times\mathbf{v}\|^2=\|\mathbf{u}\|^2\|\mathbf{v}\|^2-(\mathbf{u}\cdot\mathbf{v})^2,
+\]
+y dedúzcase de ella que $\|\mathbf{u}\times\mathbf{v}\|=\|\mathbf{u}\|\|\mathbf{v}\|\sin\theta$, donde $\theta$ es el ángulo entre $\mathbf{u}$ y $\mathbf{v}$.
+\end{prob}
+
+\begin{prob}
+Un rombo es un paralelogramo cuyos cuatro lados tienen la misma longitud. Use el producto punto para demostrar que las diagonales de un rombo son perpendiculares.
+\end{prob}
+
+\begin{prob}
+Halle el punto simétrico del punto $P(3,1,2)$ respecto al plano $x+y+z=1$.
 \end{prob}

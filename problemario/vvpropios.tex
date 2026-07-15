@@ -1495,23 +1495,27 @@ Si $x_1(t)$ y $x_2(t)$ son soluciones de un sistema dinámico lineal homogéneo,
 
 \section{Problemas propuestos}
 
-% --- Valores y vectores propios y multiplicidades ---
-
 % Básico
 \begin{prob}
 Calcule los valores y vectores propios de $A=\begin{pmatrix} 5 & 4 \\ 1 & 2 \end{pmatrix}$.
 \end{prob}
 
-% Básico
 \begin{prob}
 Sin calcular el polinomio característico, dé los valores propios de la matriz triangular
 $A=\begin{pmatrix} 3 & 1 & -2 \\ 0 & -1 & 4 \\ 0 & 0 & 3 \end{pmatrix}$
 y determine sus multiplicidades algebraicas.
 \end{prob}
 
-% Básico
 \begin{prob}
 Verifique que $\mathbf{v}=\begin{pmatrix} 1 \\ 2 \end{pmatrix}$ es un vector propio de $A=\begin{pmatrix} 4 & 1 \\ 2 & 5 \end{pmatrix}$ y encuentre su valor propio asociado.
+\end{prob}
+
+\begin{prob}
+Sea $D=\begin{pmatrix} 2 & 0 \\ 0 & -3 \end{pmatrix}$. Calcule $D^{5}$ y explique por qué los valores propios de $D^{5}$ son los de $D$ elevados a la quinta potencia.
+\end{prob}
+
+\begin{prob}
+Para la matriz de transición $P=\begin{pmatrix} 0.8 & 0.3 \\ 0.2 & 0.7 \end{pmatrix}$ de una cadena de Markov, encuentre el vector estacionario, es decir, el vector propio asociado a $\lambda=1$ cuyas entradas son no negativas y suman $1$.
 \end{prob}
 
 % Intermedio
@@ -1521,63 +1525,26 @@ $A=\begin{pmatrix} 2 & 1 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 3 \end{pmatrix}$.
 ¿Es $A$ diagonalizable?
 \end{prob}
 
-% Intermedio
 \begin{prob}
 Encuentre el valor de $a$ para que $\lambda=2$ sea un valor propio de $A=\begin{pmatrix} 1 & a \\ 2 & 1 \end{pmatrix}$. Con ese valor de $a$, calcule el otro valor propio de $A$.
 \end{prob}
 
-% --- Diagonalización y potencias ---
-
-% Básico
-\begin{prob}
-Sea $D=\begin{pmatrix} 2 & 0 \\ 0 & -3 \end{pmatrix}$. Calcule $D^{5}$ y explique por qué los valores propios de $D^{5}$ son los de $D$ elevados a la quinta potencia.
-\end{prob}
-
-% Intermedio
 \begin{prob}
 Diagonalice la matriz $A=\begin{pmatrix} 1 & 3 \\ 2 & 2 \end{pmatrix}$: encuentre una matriz invertible $P$ y una matriz diagonal $D$ tales que $A=PDP^{-1}$, y verifique que $AP=PD$.
 \end{prob}
 
-% Intermedio
 \begin{prob}
 Sabiendo que $\begin{pmatrix} 1 \\ 1 \end{pmatrix}$ y $\begin{pmatrix} 1 \\ -1 \end{pmatrix}$ son vectores propios de $A=\begin{pmatrix} 3 & 2 \\ 2 & 3 \end{pmatrix}$, calcule $A^{4}\begin{pmatrix} 3 \\ 1 \end{pmatrix}$ sin calcular la matriz $A^{4}$.
 \end{prob}
 
-% Desafiante
-\begin{prob}
-Sea $A$ una matriz de $2\times 2$ con valores propios $\lambda_1$ y $\lambda_2$. Demuestre que $\operatorname{tr}(A)=\lambda_1+\lambda_2$ y que $\det(A)=\lambda_1\lambda_2$.
-\end{prob}
-
-% Desafiante
-\begin{prob}
-Sea $A=\begin{pmatrix} a & b \\ b & c \end{pmatrix}$ una matriz simétrica con entradas reales. Demuestre que sus valores propios son reales y que, si $\lambda_1\neq\lambda_2$, los vectores propios asociados son ortogonales.
-\end{prob}
-
-% --- Teorema de Cayley-Hamilton e invertibilidad ---
-
-% Intermedio
 \begin{prob}
 Verifique el teorema de Cayley-Hamilton para $A=\begin{pmatrix} 2 & 1 \\ 1 & 3 \end{pmatrix}$ y úselo para expresar $A^{-1}$ como un polinomio en $A$.
 \end{prob}
 
-% Intermedio
 \begin{prob}
 Demuestre que si $\lambda$ es un valor propio de $A$ con vector propio $\mathbf{v}$, entonces $\lambda+c$ es un valor propio de $A+cI$ con el mismo vector propio. Use este resultado para hallar los valores propios de $A+3I$ sabiendo que los de $A$ son $1$ y $-2$.
 \end{prob}
 
-% Desafiante
-\begin{prob}
-Demuestre que si $A^{2}=A$ (matriz idempotente), entonces sus valores propios solo pueden ser $0$ o $1$; y que si $A^{k}=0$ para algún entero positivo $k$ (matriz nilpotente), entonces su único valor propio es $0$.
-\end{prob}
-
-% --- Aplicaciones ---
-
-% Básico
-\begin{prob}
-Para la matriz de transición $P=\begin{pmatrix} 0.8 & 0.3 \\ 0.2 & 0.7 \end{pmatrix}$ de una cadena de Markov, encuentre el vector estacionario, es decir, el vector propio asociado a $\lambda=1$ cuyas entradas son no negativas y suman $1$.
-\end{prob}
-
-% Intermedio
 \begin{prob}
 Resuelva el sistema de ecuaciones diferenciales
 \[
@@ -1589,7 +1556,19 @@ y_{2}^{\prime}&=&y_1+2y_2\\
 con las condiciones iniciales $y_{1}(0)=1,$ $y_{2}(0)=3,$ usando diagonalización.
 \end{prob}
 
-% Intermedio
 \begin{prob}
 Clasifique la forma cuadrática $Q(x,y)=3x^{2}+2xy+3y^{2}$ (definida positiva, definida negativa o indefinida) calculando los valores propios de su matriz simétrica asociada.
+\end{prob}
+
+% Desafiante
+\begin{prob}
+Sea $A$ una matriz de $2\times 2$ con valores propios $\lambda_1$ y $\lambda_2$. Demuestre que $\operatorname{tr}(A)=\lambda_1+\lambda_2$ y que $\det(A)=\lambda_1\lambda_2$.
+\end{prob}
+
+\begin{prob}
+Sea $A=\begin{pmatrix} a & b \\ b & c \end{pmatrix}$ una matriz simétrica con entradas reales. Demuestre que sus valores propios son reales y que, si $\lambda_1\neq\lambda_2$, los vectores propios asociados son ortogonales.
+\end{prob}
+
+\begin{prob}
+Demuestre que si $A^{2}=A$ (matriz idempotente), entonces sus valores propios solo pueden ser $0$ o $1$; y que si $A^{k}=0$ para algún entero positivo $k$ (matriz nilpotente), entonces su único valor propio es $0$.
 \end{prob}

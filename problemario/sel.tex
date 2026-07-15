@@ -2854,8 +2854,6 @@ Todos los flujos son positivos, por lo que conservan su dirección original most
 
 \section{Problemas propuestos}
 
-% --- Forma matricial y tipos de solución ---
-
 % Básico
 \begin{prob}
 \begin{enumerate}[$a)$]
@@ -2882,7 +2880,6 @@ x-7y&=&1\\
 \end{enumerate}
 \end{prob}
 
-% Básico
 \begin{prob} Para cada uno de los siguientes sistemas, determine si las dos rectas se cortan en un punto único, son paralelas o son coincidentes. Clasifique cada sistema como consistente con solución única, consistente con infinitas soluciones o inconsistente, e interprete geométricamente cada caso.
 \begin{multicols}{3}
 \begin{enumerate}[$a)$]
@@ -2904,9 +2901,6 @@ x+2y&=&1\\
 \end{multicols}
 \end{prob}
 
-% --- Eliminación gaussiana y Gauss-Jordan ---
-
-% Básico
 \begin{prob} Resuelva el siguiente sistema mediante el método de Gauss-Jordan y compruebe la solución obtenida sustituyéndola en cada una de las tres ecuaciones originales.
 \[
 \left\lbrace \begin{array}{ccc}
@@ -2917,7 +2911,6 @@ x+2y-z&=&2\\
 \]
 \end{prob}
 
-% Básico
 \begin{prob} Determine cuáles de las siguientes matrices están en forma escalonada, cuáles en forma escalonada reducida y cuáles en ninguna de las dos. En cada caso negativo, señale la condición de la definición que no se cumple.
 \begin{multicols}{2}
 \begin{enumerate}[$a)$]
@@ -2948,7 +2941,6 @@ x+2y-z&=&2\\
 \end{multicols}
 \end{prob}
 
-% Básico
 \begin{prob} Utilice eliminación gaussiana o de Gauss-Jordan para resolver los sistemas de ecuaciones lineales. Si existe solución única, indíquela; si hay infinitas soluciones, identifique las variables libres y exprese el conjunto solución en forma paramétrica; si no hay solución, explique claramente la razón mediante la forma escalonada o inconsistencia detectada.
 \begin{multicols}{2}
 \begin{enumerate}[$a)$]
@@ -3007,8 +2999,6 @@ x_1 -x_3 -2x_5&=1 \\
 \end{multicols}
 \end{prob}
 
-% --- Consistencia y rango: teorema de Rouché-Frobenius ---
-
 % Intermedio
 \begin{prob} Sin resolver los sistemas, calcule el rango de la matriz de coeficientes y el rango de la matriz aumentada de cada uno, y clasifíquelo mediante el teorema de Rouché-Frobenius como: solución única, infinitas soluciones (indicando el número de variables libres) o inconsistente.
 \begin{multicols}{3}
@@ -3034,53 +3024,6 @@ x-y&=&0\\
 \end{multicols}
 \end{prob}
 
-% Desafiante
-\begin{prob} Determine los valores del parámetro $t$ para los cuales los siguientes sistemas de ecuaciones tienen solución única, infinitas soluciones, o ninguna solución, justificando cada caso mediante análisis de consistencia y rango.
-\begin{multicols}{2}
-\begin{enumerate}[$a)$]
-\item $\left\lbrace \begin{array}{ccc}
-x_1+x_2-x_3+x_4&=&12\\
-3x_2-2x_3+x_4&=&14\\
-2x_1+x_3+x_4&=&10\\
-tx_1+4x_2-2x_3+x_4&=&16\\
-\end{array} \right. $
-
-\item $\left\lbrace  \begin{array}{ccc}
-x_1+2x_2-3x_3&=&4\\
-3x_1-x_2+5x_3&=&2\\
-4x_1+x_2+\left(t^2-14\right)x_3&=&t+2\\
-\end{array} \right. $
-
-\item $\left\lbrace \begin{array}{ccc}
-x_1+2x_2+x_3&=&2\\
-2x_1-2x_2+3x_3&=&1\\
-x_1+2x_2-\left(t^2-3\right)x_3&=&t\\
-\end{array} \right.  $
-
-
-	\item $\left( \begin{array}{ccccc} 
-	1&1 &1&|&1 \\
-	-2&7 &4&|&t\\
-	0&3 &2&|&2\\
-	\end{array} \right)$
-	\item $\left( \begin{array}{ccccc} 
-	2&0 &t&|&2 \\
-	1&1 &1&|&1\\
-	4&-2 &7&|&4\\
-	\end{array} \right)$
-	
-	\item $\left( \begin{array}{ccccc} 
-	2&1 &2&|&1 \\
-	2&2 &t&|&1\\
-	4&2 &4&|&1\\
-	\end{array} \right)$
-\end{enumerate}
-\end{multicols}
-\end{prob}
-
-% --- Sistemas homogéneos ---
-
-% Intermedio
 \begin{prob} Considere el sistema homogéneo
 \[
 \left\lbrace \begin{array}{ccc}
@@ -3094,9 +3037,6 @@ x_1+2x_2-x_3+x_4&=&0\\
 \end{enumerate}
 \end{prob}
 
-% --- Regla de Cramer ---
-
-% Intermedio
 \begin{prob}
 \begin{enumerate}[$a)$]
 \item Resuelva el siguiente sistema mediante la regla de Cramer:
@@ -3119,55 +3059,11 @@ y determine, mediante eliminación gaussiana, si el sistema tiene infinitas solu
 \end{enumerate}
 \end{prob}
 
-% --- Teoría y demostraciones ---
-
-% Desafiante
-\begin{prob} Determine el valor de verdad de las siguientes afirmaciones, si la afirmación es verdadera, proporcione una demostración, en caso contrario, proporcione un contraejemplo.
-
-\begin{enumerate}[$a)$]
-\item Un sistema de ecuaciones lineales homogéneo es consistente.
-\item Sin importar el valor de $k,$ el siguiente sistema de ecuaciones $ \left\lbrace \begin{array}{ccccc}
-5x-5y=&3\\
-7x-7y=&k\\
-\end{array} \right.  $ no puede tener solución única.
-
-
-\item Si cada ecuación de un sistema de ecuaciones lineales consistente se multiplica por una constante $C$ no nula, entonces todas las soluciones del nuevo sistema pueden obtenerse multiplicando las soluciones originales por $C.$
-
-\item Si un sistema de ecuaciones lineales tiene matriz aumentada $\left( \begin{array}{cc|c} 3&5 &1\\0&0 &-1\\ \end{array} \right)$
-es consistente
-
-\item Si un sistema de ecuaciones lineales tiene más ecuaciones que incógnitas, tiene infinitas soluciones.
-
-
-\end{enumerate}
-
-\end{prob}
-
-% Desafiante
-\begin{prob} Demuestre que si $ad-bc\neq 0,$ entonces la forma reducida escalonada de $\left( \begin{array}{cc} a& b\\
-c&d\\ \end{array}  \right)$ es $\left( \begin{array}{cc} 1& 0\\
-0&1\\ \end{array}  \right)$. Use este resultado para demostrar que si $ad-bc\neq 0$
- entonces $ \left\lbrace \begin{array}{ccccc}
-ax&+&by&=&k\\
-cx&+&dy&=&l\\
-\end{array} \right.  $ tiene solución única.
-\end{prob}
-
-% Desafiante
-\begin{prob} Sean $\mathbf{x}_1$ y $\mathbf{x}_2$ dos soluciones distintas del sistema $A\mathbf{x}=\mathbf{b}$. Demuestre que, para todo $t\in\mathbb{R}$, el vector $\mathbf{x}_1+t\left(\mathbf{x}_2-\mathbf{x}_1\right)$ también es solución del sistema, y concluya que todo sistema de ecuaciones lineales consistente tiene exactamente una solución o infinitas soluciones.
-\end{prob}
-
-% --- Aplicaciones ---
-
-% Intermedio
 \begin{prob} Encuentre los coeficientes $a, b, c$ y $d$ para que la curva $y=ax^3+bx^2+cx+d$ pase por los puntos $(0,10),$ $(1,7),$ $(3,-11),$ $(4,-14)$.\end{prob}
 
-% Intermedio
 \begin{prob}Una compañía de construcción ofrece tres tipos de casa. El primer tipo de casa requiere 3 unidades de concreto, 2 unidades de madera para cancelería y 8 unidades de madera para estructuras. Los tipos segundo y tercero requieren 2, 3, 7 y 4, 2, 10 unidades respectivamente. Si cada mes la compañía dispone de 200 unidades de concreto, 150 de madera para cancelería y 550 unidades de madera para estructuras, calcule el número de diferentes tipos de casas que la compañía podrá construir al mes si usa todos los materiales de que dispone.
 \end{prob}
 
-% Intermedio
 \begin{prob} La combustión del gas propano en presencia de oxígeno produce dióxido de carbono y agua:
 \[
 x_1\,\text{C}_3\text{H}_8 + x_2\,\text{O}_2 \longrightarrow x_3\,\text{CO}_2 + x_4\,\text{H}_2\text{O}
@@ -3175,11 +3071,9 @@ x_1\,\text{C}_3\text{H}_8 + x_2\,\text{O}_2 \longrightarrow x_3\,\text{CO}_2 + x
 Plantee un sistema de ecuaciones lineales homogéneo igualando el número de átomos de carbono, hidrógeno y oxígeno en ambos lados de la reacción, resuélvalo y determine los menores valores enteros positivos de $x_1, x_2, x_3$ y $x_4$ que balancean la ecuación química.
 \end{prob}
 
-% Intermedio
 \begin{prob} Una persona invierte $\$50\,000$ repartidos en tres fondos cuyos rendimientos anuales son del $4\%$, $6\%$ y $8\%$ respectivamente. Al final del año el interés total recibido es de $\$3\,200$, y la cantidad invertida en el fondo del $8\%$ es el doble de la invertida en el fondo del $4\%$. Plantee un sistema de ecuaciones lineales y determine cuánto se invirtió en cada fondo.
 \end{prob}
 
-% Intermedio
 \begin{prob} La figura \ref{plantrafico} muestra el plan de tráfico proyectado alrededor del parque principal de un pueblo turístico en las direcciones indicadas. Los flujos se proyectan de acuerdo a los valores promedio de vehículos por hora.
 
 \begin{enumerate}[$(a)$]
@@ -3233,4 +3127,82 @@ Plantee un sistema de ecuaciones lineales homogéneo igualando el número de át
 
 
 
+\end{prob}
+
+% Desafiante
+\begin{prob} Determine los valores del parámetro $t$ para los cuales los siguientes sistemas de ecuaciones tienen solución única, infinitas soluciones, o ninguna solución, justificando cada caso mediante análisis de consistencia y rango.
+\begin{multicols}{2}
+\begin{enumerate}[$a)$]
+\item $\left\lbrace \begin{array}{ccc}
+x_1+x_2-x_3+x_4&=&12\\
+3x_2-2x_3+x_4&=&14\\
+2x_1+x_3+x_4&=&10\\
+tx_1+4x_2-2x_3+x_4&=&16\\
+\end{array} \right. $
+
+\item $\left\lbrace  \begin{array}{ccc}
+x_1+2x_2-3x_3&=&4\\
+3x_1-x_2+5x_3&=&2\\
+4x_1+x_2+\left(t^2-14\right)x_3&=&t+2\\
+\end{array} \right. $
+
+\item $\left\lbrace \begin{array}{ccc}
+x_1+2x_2+x_3&=&2\\
+2x_1-2x_2+3x_3&=&1\\
+x_1+2x_2-\left(t^2-3\right)x_3&=&t\\
+\end{array} \right.  $
+
+
+	\item $\left( \begin{array}{ccccc} 
+	1&1 &1&|&1 \\
+	-2&7 &4&|&t\\
+	0&3 &2&|&2\\
+	\end{array} \right)$
+	\item $\left( \begin{array}{ccccc} 
+	2&0 &t&|&2 \\
+	1&1 &1&|&1\\
+	4&-2 &7&|&4\\
+	\end{array} \right)$
+	
+	\item $\left( \begin{array}{ccccc} 
+	2&1 &2&|&1 \\
+	2&2 &t&|&1\\
+	4&2 &4&|&1\\
+	\end{array} \right)$
+\end{enumerate}
+\end{multicols}
+\end{prob}
+
+\begin{prob} Determine el valor de verdad de las siguientes afirmaciones, si la afirmación es verdadera, proporcione una demostración, en caso contrario, proporcione un contraejemplo.
+
+\begin{enumerate}[$a)$]
+\item Un sistema de ecuaciones lineales homogéneo es consistente.
+\item Sin importar el valor de $k,$ el siguiente sistema de ecuaciones $ \left\lbrace \begin{array}{ccccc}
+5x-5y=&3\\
+7x-7y=&k\\
+\end{array} \right.  $ no puede tener solución única.
+
+
+\item Si cada ecuación de un sistema de ecuaciones lineales consistente se multiplica por una constante $C$ no nula, entonces todas las soluciones del nuevo sistema pueden obtenerse multiplicando las soluciones originales por $C.$
+
+\item Si un sistema de ecuaciones lineales tiene matriz aumentada $\left( \begin{array}{cc|c} 3&5 &1\\0&0 &-1\\ \end{array} \right)$
+es consistente
+
+\item Si un sistema de ecuaciones lineales tiene más ecuaciones que incógnitas, tiene infinitas soluciones.
+
+
+\end{enumerate}
+
+\end{prob}
+
+\begin{prob} Demuestre que si $ad-bc\neq 0,$ entonces la forma reducida escalonada de $\left( \begin{array}{cc} a& b\\
+c&d\\ \end{array}  \right)$ es $\left( \begin{array}{cc} 1& 0\\
+0&1\\ \end{array}  \right)$. Use este resultado para demostrar que si $ad-bc\neq 0$
+ entonces $ \left\lbrace \begin{array}{ccccc}
+ax&+&by&=&k\\
+cx&+&dy&=&l\\
+\end{array} \right.  $ tiene solución única.
+\end{prob}
+
+\begin{prob} Sean $\mathbf{x}_1$ y $\mathbf{x}_2$ dos soluciones distintas del sistema $A\mathbf{x}=\mathbf{b}$. Demuestre que, para todo $t\in\mathbb{R}$, el vector $\mathbf{x}_1+t\left(\mathbf{x}_2-\mathbf{x}_1\right)$ también es solución del sistema, y concluya que todo sistema de ecuaciones lineales consistente tiene exactamente una solución o infinitas soluciones.
 \end{prob}
