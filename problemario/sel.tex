@@ -1180,7 +1180,7 @@ Reordenando términos: $\boxed{c^2 = a^2 + b^2 - 2ab\cos C}.$ Esta es precisamen
 \begin{prob} Tres especies de ardillas han sido llevadas a una isla con una población inicial total de 2.000. Después de 10 años, la especie I ha duplicado su población y la especie II ha incrementado su población en un 50\%, mientras que la especie III se ha extinguido. Si el incremento en la población de la especie I es igual que el de la especie II y si la población total se ha incrementado en 500, determine la población inicial de las tres especies.
 
 \begin{myproof}
-Definamos $x_1$, $x_2$ y $x_3$ como las poblaciones iniciales de las tres especies de ardillas. De las condiciones del problema:
+\textbf{Paso 1. Planteamiento.} Definamos $x_1$, $x_2$ y $x_3$ como las poblaciones iniciales de las tres especies de ardillas. De las condiciones del problema:
 \begin{itemize}
     \item Población inicial total: $x_1 + x_2 + x_3 = 2000$
     \item Población final total: $2x_1 + \frac{3}{2}x_2 + 0 = 2500$ (ya que la especie III se extinguió)
@@ -1197,7 +1197,7 @@ x_1 - \frac{1}{2}x_2 &=& 0
 \right.
 \)
 
-Usando la regla de Cramer. La matriz de coeficientes del sistema es:
+\textbf{Paso 2. Regla de Cramer.} La matriz de coeficientes del sistema es:
 
 
 \(
@@ -1233,13 +1233,13 @@ A_3 = \begin{pmatrix}
 \) y \(
 \det A_3 = -1250 \)
 
-De esta manera: $\begin{cases}
+\textbf{Paso 3. Cocientes de Cramer.} De esta manera: $\begin{cases}
 x_1 &= \frac{\det A_1}{\det A} = \frac{-1250}{-\frac{5}{2}} = \frac{1250 \cdot 2}{5} = 500\\
 x_2 &= \frac{\det A_2}{\det A} = \frac{-2500}{-\frac{5}{2}} = \frac{2500 \cdot 2}{5} = 1000\\
 x_3 &= \frac{\det A_3}{\det A} = \frac{-1250}{-\frac{5}{2}} = \frac{1250 \cdot 2}{5} = 500
 \end{cases}$
 
-Por tanto, las poblaciones iniciales son: 500 ardillas de la especie I, 1000 ardillas de la especie II y 500 ardillas de la especie III.
+\textbf{Paso 4. Conclusión.} Por tanto, las poblaciones iniciales son: $\boxed{500}$ ardillas de la especie I, $\boxed{1000}$ ardillas de la especie II y $\boxed{500}$ ardillas de la especie III.
 \end{myproof}
 \end{prob}
 
@@ -1256,7 +1256,7 @@ Utilice eliminación gaussiana o de Gauss-Jordan para resolver los sistemas de e
 \end{array} \right. $ 
     
     \begin{myproof}
-    Matriz aumentada y operaciones:
+    \textbf{Paso 1. Matriz aumentada y reducción.}
     \[
     \begin{pmatrix}
     2 & -1 & 2 & | & -4 \\
@@ -1280,19 +1280,19 @@ Utilice eliminación gaussiana o de Gauss-Jordan para resolver los sistemas de e
     \end{pmatrix}
     \end{align*}
     
-    \textbf{Análisis:} 
+    \textbf{Paso 2. Análisis.}
     \begin{itemize}
     \item Sistema equivalente: $2x - y + 2z = -4$.
     \item Variables libres: $y$ y $z$.
     \end{itemize}
-    
-    \textbf{Solución paramétrica:}
+
+    \textbf{Paso 3. Solución paramétrica.}
     \[
-    \begin{pmatrix} x \\ y \\ z \end{pmatrix} = 
-    \begin{pmatrix} \frac{y}{2} - z - 2 \\ y \\ z \end{pmatrix} = 
-    y \begin{pmatrix} \frac{1}{2} \\ 1 \\ 0 \end{pmatrix} + 
-    z \begin{pmatrix} -1 \\ 0 \\ 1 \end{pmatrix} + 
-    \begin{pmatrix} -2 \\ 0 \\ 0 \end{pmatrix}, \quad y,z \in \mathbb{R}.
+    \boxed{\begin{pmatrix} x \\ y \\ z \end{pmatrix} =
+    \begin{pmatrix} \frac{y}{2} - z - 2 \\ y \\ z \end{pmatrix} =
+    y \begin{pmatrix} \frac{1}{2} \\ 1 \\ 0 \end{pmatrix} +
+    z \begin{pmatrix} -1 \\ 0 \\ 1 \end{pmatrix} +
+    \begin{pmatrix} -2 \\ 0 \\ 0 \end{pmatrix}}, \quad y,z \in \mathbb{R}.
     \]
     \end{myproof}
 
@@ -1302,7 +1302,7 @@ x_1+2x_2-x_3&=&4\\
 \end{array} \right. $ 
     
     \begin{myproof}
-    Matriz aumentada y operaciones:
+    \textbf{Paso 1. Matriz aumentada y reducción.}
     \[
     \begin{pmatrix}
     1 & 2 & -1 & | & 4 \\
@@ -1328,11 +1328,11 @@ x_1+2x_2-x_3&=&4\\
     \end{pmatrix}
     \end{align*}
     
-    \textbf{Solución paramétrica:}
+    \textbf{Paso 2. Solución paramétrica.} La variable libre es $x_3$:
     \[
-    \begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix} = 
-    \begin{pmatrix} -1 \\ \frac{5}{2} \\ 0 \end{pmatrix} + 
-    x_3 \begin{pmatrix} 0 \\ \frac{1}{2} \\ 1 \end{pmatrix}, \quad x_3 \in \mathbb{R}.
+    \boxed{\begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix} =
+    \begin{pmatrix} -1 \\ \frac{5}{2} \\ 0 \end{pmatrix} +
+    x_3 \begin{pmatrix} 0 \\ \frac{1}{2} \\ 1 \end{pmatrix}}, \quad x_3 \in \mathbb{R}.
     \]
     \end{myproof}
 
@@ -1343,7 +1343,7 @@ x+2y-2z&=&b_1\\
 \end{array} \right.  $ 
     
     \begin{myproof}
-    Matriz aumentada:
+    \textbf{Paso 1. Matriz aumentada.}
     \[
     \begin{pmatrix}
     1 & 2 & -2 & | & b_1 \\
@@ -1351,8 +1351,8 @@ x+2y-2z&=&b_1\\
     4 & 9 & -8 & | & b_3 \\
     \end{pmatrix}
     \]
-    
-    \textbf{Forma escalonada:}
+
+    \textbf{Paso 2. Forma escalonada.}
     \[
     \begin{pmatrix}
     1 & 2 & -2 & | & b_1 \\
@@ -1361,17 +1361,17 @@ x+2y-2z&=&b_1\\
     \end{pmatrix}
     \]
     
-    \textbf{Análisis:} 
+    \textbf{Paso 3. Análisis.}
     \begin{itemize}
     \item Si $b_3 - b_2 - 2b_1 \neq 0$: sistema inconsistente.
     \item Si $b_3 - b_2 - 2b_1 = 0$: infinitas soluciones con variable libre $z$.
     \end{itemize}
-    
-    \textbf{Solución paramétrica (cuando existe):}
+
+    \textbf{Paso 4. Solución paramétrica (cuando existe).}
     \[
-    \begin{pmatrix} x \\ y \\ z \end{pmatrix} = 
-    \begin{pmatrix} 5b_1 - 2b_2 \\ b_2 - 2b_1 \\ 0 \end{pmatrix} + 
-    z \begin{pmatrix} 2 \\ 0 \\ 1 \end{pmatrix}, \quad z \in \mathbb{R}.
+    \boxed{\begin{pmatrix} x \\ y \\ z \end{pmatrix} =
+    \begin{pmatrix} 5b_1 - 2b_2 \\ b_2 - 2b_1 \\ 0 \end{pmatrix} +
+    z \begin{pmatrix} 2 \\ 0 \\ 1 \end{pmatrix}}, \quad z \in \mathbb{R}.
     \]
     \end{myproof}
 	
@@ -1383,7 +1383,7 @@ x+2y-2z&=&b_1\\
 	\end{array} \right. $ 
 	
 	\begin{myproof}
-    Matriz aumentada (reordenada):
+    \textbf{Paso 1. Matriz aumentada (reordenada).}
     \[
     \begin{pmatrix}
     2 & 4 & 4 & 2 & 2 & | & 1 \\
@@ -1393,7 +1393,7 @@ x+2y-2z&=&b_1\\
     \end{pmatrix}
     \]
     
-    \textbf{Forma escalonada reducida:}
+    \textbf{Paso 2. Forma escalonada.}
     \[
     \begin{pmatrix}
     1 & 2 & 2 & 1 & 1 & | & \frac{1}{2} \\
@@ -1402,8 +1402,8 @@ x+2y-2z&=&b_1\\
     0 & 0 & 0 & 0 & 9 & | & -\frac{7}{2} \\
     \end{pmatrix}
     \]
-    
-    \textbf{Solución:}
+
+    \textbf{Paso 3. Sustitución hacia atrás.}
     \begin{align*}
     &x_5 = -\frac{7}{18} \\
     &x_4 = -1 - 4\left(-\frac{7}{18}\right) = \frac{5}{9} \\
@@ -1411,11 +1411,11 @@ x+2y-2z&=&b_1\\
     &x_1 = \frac{1}{2} - 2x_2 - 2x_3 - x_4 - x_5 = -\frac{1}{9} - x_3
     \end{align*}
     
-    \textbf{Solución paramétrica:}
+    \textbf{Paso 4. Solución paramétrica.}
     \[
-    \begin{pmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5 \end{pmatrix} = 
-    \begin{pmatrix} -\frac{1}{9} \\ \frac{2}{9} \\ 0 \\ \frac{5}{9} \\ -\frac{7}{18} \end{pmatrix} + 
-    x_3 \begin{pmatrix} -1 \\ -\frac{1}{2} \\ 1 \\ 0 \\ 0 \end{pmatrix}, \quad x_3 \in \mathbb{R}.
+    \boxed{\begin{pmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5 \end{pmatrix} =
+    \begin{pmatrix} -\frac{1}{9} \\ \frac{2}{9} \\ 0 \\ \frac{5}{9} \\ -\frac{7}{18} \end{pmatrix} +
+    x_3 \begin{pmatrix} -1 \\ -\frac{1}{2} \\ 1 \\ 0 \\ 0 \end{pmatrix}}, \quad x_3 \in \mathbb{R}.
     \]
     \end{myproof}
     \end{enumerate}
@@ -1438,7 +1438,7 @@ $\left\lbrace \begin{array}{ccccccc}
 
 \begin{myproof} \textbf{En general este problema puede tener múltiples soluciones, se muestran algunas posibilidades.}
 
-\textbf{Solución del sistema original:} Aplicamos eliminación gaussiana:
+\textbf{Paso 1. Solución del sistema original.} Aplicamos eliminación gaussiana:
 \[
 \begin{pmatrix}
 2 & -1 & 2 & | & -4 \\
@@ -1464,8 +1464,9 @@ La solución general es:
 (x, y, z) = (-2 - z,  0,  z) \quad \text{con} \quad z \in \mathbb{R}.
 \]
 
+\textbf{Paso 2. Resolución de cada literal.}
 \begin{enumerate}[$a)$]
-\item \textbf{Solución única:} Añadir $z = 0$.\\
+\item \textbf{Solución única:} Añadir $\boxed{z = 0}$.\\
 Justificación: Fija el valor de la variable libre ($z$). El sistema ampliado:
 \[
 \left\lbrace \begin{array}{rcrcrcl}
@@ -1476,7 +1477,7 @@ Justificación: Fija el valor de la variable libre ($z$). El sistema ampliado:
 \]
 tiene solución única $(x, y, z) = (-2, 0, 0)$.
 
-\item \textbf{Infinitas soluciones:} Añadir $x + z = -2$.\\
+\item \textbf{Infinitas soluciones:} Añadir $\boxed{x + z = -2}$.\\
 Justificación: Es consistente con la solución general (es combinación lineal de las ecuaciones originales). El sistema ampliado:
 \[
 \left\lbrace \begin{array}{rcrcrcl}
@@ -1487,7 +1488,7 @@ x & & & + & z & = & -2 \\
 \]
 mantiene la solución general con $z$ libre.
 
-\item \textbf{Ninguna solución:} Añadir $y = 1$.\\
+\item \textbf{Ninguna solución:} Añadir $\boxed{y = 1}$.\\
 Justificación: Contradice $y = 0$ de la solución general. El sistema ampliado:
 \[
 \left\lbrace \begin{array}{rcrcrcl}
@@ -1541,9 +1542,9 @@ ytick={-4.0,-2.0,...,6.0},]
 \end{multicols}
 
 \begin{myproof}
-La circunferencia debe cumplir la ecuación $ax^2+ay^2+bx+cy+d=0.$ Dividiendo por $a$ toda la ecuación, esta se convierte en $x^2+y^2+\frac{b}{a}x+\frac{c}{a}y+\frac{d}{a}=0.$
+\textbf{Paso 1. Normalización de la ecuación.} La circunferencia debe cumplir la ecuación $ax^2+ay^2+bx+cy+d=0.$ Dividiendo por $a$ toda la ecuación, esta se convierte en $x^2+y^2+\frac{b}{a}x+\frac{c}{a}y+\frac{d}{a}=0.$
 
-Como los puntos $A,$ $B$ y $C$ están sobre la circunferencia, cada uno debe satisfacer la ecuación. Sustituyendo las coordenadas de cada punto:
+\textbf{Paso 2. Sistema de ecuaciones.} Como los puntos $A,$ $B$ y $C$ están sobre la circunferencia, cada uno debe satisfacer la ecuación. Sustituyendo las coordenadas de cada punto:
 
 \textbf{Para el punto $A = (-4, 5)$:}
 $$(-4)^2 + (5)^2 + \frac{b}{a}(-4) + \frac{c}{a}(5) + \frac{d}{a} = 0$$
@@ -1568,7 +1569,7 @@ $$\left\lbrace \begin{array}{rcl}
 4x_1 - 3x_2 + x_3 &=& -25
 \end{array} \right.$$
 
-Aplicando eliminación gaussiana:
+\textbf{Paso 3. Eliminación gaussiana.}
 
 $$\left( \begin{array}{ccc|c}
 -4&5&1&-41\\
@@ -1595,9 +1596,9 @@ $\begin{cases}
 -4x_1 + 5(-4) + (-29) = -41 \Rightarrow x_1 = -2
 \end{cases}$
 
-Por lo tanto: $\frac{b}{a} = -2,$ $\frac{c}{a} = -4,$ $\frac{d}{a} = -29.$
+\textbf{Paso 4. Conclusión.} Por lo tanto: $\frac{b}{a} = -2,$ $\frac{c}{a} = -4,$ $\frac{d}{a} = -29.$
 
-Si tomamos $a = 1,$ entonces $b = -2,$ $c = -4,$ $d = -29.$
+Si tomamos $a = 1,$ entonces $\boxed{a=1,\ b = -2,\ c = -4,\ d = -29}.$
 
 La ecuación de la circunferencia es $x^2+y^2-2x-4y-29=0,$ la cual puede reescribirse completando cuadrados como $(x - 1)^2 + (y - 2)^2 = 34.$
 
@@ -1621,10 +1622,10 @@ Determine los valores para $a, b, c, d, e, f, k, l, m$ tal que el sistema tenga
 
 \begin{enumerate}[$a)$]
 \item Ninguna solución 
-\begin{myproof} 
-Para que el sistema tenga ninguna solución, debe ser inconsistente. Esto ocurre cuando el rango de la matriz de coeficientes es menor que el rango de la matriz aumentada.
+\begin{myproof}
+\textbf{Paso 1. Criterio.} Para que el sistema tenga ninguna solución, debe ser inconsistente. Esto ocurre cuando el rango de la matriz de coeficientes es menor que el rango de la matriz aumentada.
 
-Consideremos un ejemplo específico: $a = 1, b = 2, c = 2, d = 4, e = 3, f = 6, k = 1, l = 3, m = 4.$
+\textbf{Paso 2. Ejemplo.} Consideremos un ejemplo específico: $\boxed{a = 1, b = 2, c = 2, d = 4, e = 3, f = 6, k = 1, l = 3, m = 4}.$
 
 La matriz de coeficientes es: $A = \begin{pmatrix}
 1 & 2 \\
@@ -1634,7 +1635,7 @@ La matriz de coeficientes es: $A = \begin{pmatrix}
 
 Observamos que la segunda fila es el doble de la primera, y la tercera fila es el triple de la primera. Por tanto, $\text{rango}(A) = 1$.
 
-La matriz aumentada es: $[A|b] = \begin{pmatrix}
+\textbf{Paso 3. Verificación.} La matriz aumentada es: $[A|b] = \begin{pmatrix}
 1 & 2 & 1 \\
 2 & 4 & 3 \\
 3 & 6 & 4
@@ -1647,12 +1648,12 @@ Por tanto, $\text{rango}([A|b]) = 2 > \text{rango}(A) = 1$.
 \end{myproof}
 
 \item Única solución 
-\begin{myproof} 
-Para que el sistema tenga única solución, necesitamos que el rango de la matriz de coeficientes sea igual al número de incógnitas y que el sistema sea consistente.
+\begin{myproof}
+\textbf{Paso 1. Criterio.} Para que el sistema tenga única solución, necesitamos que el rango de la matriz de coeficientes sea igual al número de incógnitas y que el sistema sea consistente.
 
 Como tenemos 2 incógnitas $(x, y)$, necesitamos $\text{rango}(A) = 2$.
 
-Consideremos el ejemplo: $a = 1, b = 0, c = 0, d = 1, e = 1, f = 1, k = 2, l = 3, m = 5.$
+\textbf{Paso 2. Ejemplo.} Consideremos el ejemplo: $\boxed{a = 1, b = 0, c = 0, d = 1, e = 1, f = 1, k = 2, l = 3, m = 5}.$
 
 El sistema queda: $\left\lbrace \begin{array}{c}
 x = 2\\
@@ -1666,14 +1667,14 @@ La matriz de coeficientes es: $A = \begin{pmatrix}
 1 & 1
 \end{pmatrix}.$
 
-Claramente $\text{rango}(A) = 2$ (las dos primeras filas son linealmente independientes). Por tanto, $\text{rango}(A) = \text{rango}([A|b]) = 2 = $ número de incógnitas, lo que garantiza una única solución.
+\textbf{Paso 3. Verificación.} Claramente $\text{rango}(A) = 2$ (las dos primeras filas son linealmente independientes). Por tanto, $\text{rango}(A) = \text{rango}([A|b]) = 2 = $ número de incógnitas, lo que garantiza una única solución.
 \end{myproof}
 
 \item Infinitas soluciones 
-\begin{myproof} 
-Para que el sistema tenga infinitas soluciones, debe ser consistente y el rango de la matriz de coeficientes debe ser menor que el número de incógnitas. Como tenemos 2 incógnitas, necesitamos $\text{rango}(A) < 2$, es decir, $\text{rango}(A) = 1$.
+\begin{myproof}
+\textbf{Paso 1. Criterio.} Para que el sistema tenga infinitas soluciones, debe ser consistente y el rango de la matriz de coeficientes debe ser menor que el número de incógnitas. Como tenemos 2 incógnitas, necesitamos $\text{rango}(A) < 2$, es decir, $\text{rango}(A) = 1$.
 
-Consideremos el ejemplo: $a = 1, b = 2, c = 2, d = 4, e = -1, f = -2, k = 3, l = 6, m = -3.$
+\textbf{Paso 2. Ejemplo.} Consideremos el ejemplo: $\boxed{a = 1, b = 2, c = 2, d = 4, e = -1, f = -2, k = 3, l = 6, m = -3}.$
 
 El sistema queda: $\left\lbrace \begin{array}{c}
 x + 2y = 3\\
@@ -1689,7 +1690,7 @@ La matriz de coeficientes es: $A = \begin{pmatrix}
 
 Observamos que: La segunda fila es el doble de la primera y la tercera fila es el negativo de la primera, por tanto, $\text{rango}(A) = 1$.
 
-La matriz aumentada es: $[A|b] = \begin{pmatrix}
+\textbf{Paso 3. Verificación.} La matriz aumentada es: $[A|b] = \begin{pmatrix}
 1 & 2 & 3 \\
 2 & 4 & 6 \\
 -1 & -2 & -3
@@ -1716,8 +1717,8 @@ Una artesana teje tres tipos de abrigos. El primer tipo de abrigo requiere 6 met
  \item La artesana observó que el tercer tipo de abrigo se vende mejor, si prioriza la producción de este tipo de abrigo, ¿cuántos abrigos de cada tipo podrá tejer usando todo el material?
  \end{enumerate} 
 
-\begin{myproof} 
-Note que la información disponible es posible organizarla en la siguiente tabla: 
+\begin{myproof}
+\textbf{Paso 1. Planteamiento.} Note que la información disponible es posible organizarla en la siguiente tabla:
 
 \begin{table}[H]
 \centering
@@ -1736,7 +1737,7 @@ $$\left\lbrace \begin{array}{ccc}
 8A+7B+10C&=&550\\
 \end{array} \right.$$
 
-Se usará el método de eliminación gaussiana para resolverlo:
+\textbf{Paso 2. Eliminación gaussiana.}
 
 \begin{align*}
 \begin{pmatrix}
@@ -1757,7 +1758,7 @@ Se usará el método de eliminación gaussiana para resolverlo:
 \end{pmatrix}
 \end{align*}
 
-\textbf{Parte (a): Solución general del sistema}
+\textbf{Paso 3. Literal (a): solución general del sistema.}
 
 Del sistema escalonado obtenemos:
 \begin{itemize}
@@ -1771,7 +1772,7 @@ Del sistema escalonado obtenemos:
 \end{itemize}
 
 
-Las soluciones paramétricas del sistema son: $\begin{pmatrix} A \\ B \\ C \end{pmatrix} = \begin{pmatrix} 60-\frac{8}{5}C\\ 10+\frac{2}{5}C\\C \end{pmatrix}$ donde $C$ es el parámetro libre.
+Las soluciones paramétricas del sistema son: $\boxed{\begin{pmatrix} A \\ B \\ C \end{pmatrix} = \begin{pmatrix} 60-\frac{8}{5}C\\ 10+\frac{2}{5}C\\C \end{pmatrix}}$ donde $C$ es el parámetro libre.
 
 \textbf{Restricciones del contexto:}
 
@@ -1796,9 +1797,9 @@ Las posibles combinaciones son:
 \item $C = 35$: $(A, B, C) = (4, 24, 35)$
 \end{itemize}
 
-\textbf{Parte (b): Maximizando la producción del tipo C}
+\textbf{Paso 4. Literal (b): maximizando la producción del tipo C.}
 
-Si se prioriza el tercer tipo de abrigo, se debe maximizar $C$. El valor máximo posible es $C = 35$. Para $C = 35$: se tiene que $A = 60 - \frac{8}{5}(35) = 60 - 56 = 4,$ $B = 10 + \frac{2}{5}(35) = 10 + 14 = 24$ y $C = 35.$ Por tanto, si la artesana prioriza el tercer tipo de abrigo, podrá tejer: 4 abrigos del tipo A, 24 abrigos del tipo B  y 35 abrigos del tipo C.
+Si se prioriza el tercer tipo de abrigo, se debe maximizar $C$. El valor máximo posible es $C = 35$. Para $C = 35$: se tiene que $A = 60 - \frac{8}{5}(35) = 60 - 56 = 4,$ $B = 10 + \frac{2}{5}(35) = 10 + 14 = 24$ y $C = 35.$ Por tanto, si la artesana prioriza el tercer tipo de abrigo, podrá tejer: $\boxed{4}$ abrigos del tipo A, $\boxed{24}$ abrigos del tipo B y $\boxed{35}$ abrigos del tipo C.
 \end{myproof}
 \end{prob}
 
@@ -2225,7 +2226,7 @@ Encuentre $a,b,c,d$ para que la matriz $\left( \begin{array}{ccc}
 -3&-5&d\\\end{array} \right)$ sea antisimétrica 
 
 \begin{myproof}
-Una matriz $M$ es antisimétrica si $M^T = -M$, es decir, $m_{ij} = -m_{ji}$ para todos los índices $i,j$.
+\textbf{Paso 1. Condición de antisimetría.} Una matriz $M$ es antisimétrica si $M^T = -M$, es decir, $m_{ij} = -m_{ji}$ para todos los índices $i,j$.
 
 Para la matriz dada aplicando la condición de antisimetría:
 
@@ -2237,10 +2238,10 @@ $m_{23} = -m_{32}$: $5a-8b+c = -(-5) = 5,$
 
 $m_{33} = -m_{33}$: $d = -d$, por lo tanto $d = 0$.
 
-Resolvemos el sistema usando eliminación gaussiana: $\begin{cases}
+\textbf{Paso 2. Eliminación gaussiana.} Resolvemos el sistema: $\begin{cases}
 2a-3b+c &= 2 \\
 3a-5b+5c &= 3 \\
-5a-8b+c &= 5 
+5a-8b+c &= 5
 \end{cases}$
 
 Matriz aumentada: $\left(\begin{array}{ccc|c}
@@ -2267,10 +2268,8 @@ $-f_2 + f_3 \to f_3$: $\left(\begin{array}{ccc|c}
 0 & 0 & -5 & 0
 \end{array}\right).$
 
-Sustitución hacia atrás:
-$c = 0$, $b = 0$, $a = 1$
-
-Por tanto: $a = 1$, $b = 0$, $c = 0$, $d = 0$.
+\textbf{Paso 3. Conclusión.} Por sustitución hacia atrás:
+$c = 0$, $b = 0$, $a = 1$. Por tanto: $\boxed{a = 1,\ b = 0,\ c = 0,\ d = 0}.$
 \end{myproof}
 \end{prob}
 
@@ -2285,7 +2284,7 @@ ax+3y-cz&=&-3\\
 
 
 \begin{myproof}
-Sustituimos $x=1$, $y=-1$, $z=2$ en cada ecuación:
+\textbf{Paso 1. Sustitución de la solución.} Sustituimos $x=1$, $y=-1$, $z=2$ en cada ecuación:
 
 Ecuación 1: $a(1) + b(-1) - 3(2) = -3\Rightarrow a - b = 3.$
 
@@ -2293,10 +2292,10 @@ Ecuación 2: $-2(1) - b(-1) + c(2) = -1\Rightarrow b + 2c = 1.$
 
 Ecuación 3: $a(1) + 3(-1) - c(2) = -3 \Rightarrow a - 2c = 0.$
 
-Sistema de ecuaciones: $\begin{cases}
+\textbf{Paso 2. Eliminación gaussiana.} Sistema de ecuaciones: $\begin{cases}
 a - b &= 3 \\
 b + 2c &= 1 \\
-a - 2c &= 0 
+a - 2c &= 0
 \end{cases}$
 
 Matriz aumentada: $\left(\begin{array}{ccc|c}
@@ -2317,10 +2316,8 @@ $-f_2 + f_3 \to f_3$: $\left(\begin{array}{ccc|c}
 0 & 0 & -4 & -4
 \end{array}\right)$
 
-Sustitución hacia atrás:
-$c = 1$, $b = -1$, $a = 2$
-
-Por tanto: $a = 2$, $b = -1$, $c = 1$.
+\textbf{Paso 3. Conclusión.} Por sustitución hacia atrás:
+$c = 1$, $b = -1$, $a = 2$. Por tanto: $\boxed{a = 2,\ b = -1,\ c = 1}.$
 \end{myproof}
 \end{prob}
 
@@ -2337,7 +2334,7 @@ Sea $A$ la matriz de coeficientes del sistema de ecuaciones lineales $\left\lbra
 \end{enumerate}
 
 \begin{myproof}
-$a)$ La matriz de coeficientes es: $A = \left( \begin{array}{cc} -1 & -2 \\ 2 & 3 \end{array} \right).$
+\textbf{Paso 1. Literal a): cálculo de $A^{-1}$.} La matriz de coeficientes es: $A = \left( \begin{array}{cc} -1 & -2 \\ 2 & 3 \end{array} \right).$
 
 Para encontrar $A^{-1}$, usamos la matriz aumentada $(A|I)$: $\left(\begin{array}{cc|cc}
 -1 & -2 & 1 & 0 \\
@@ -2361,13 +2358,11 @@ $-f_1 \to f_1$ y $-f_2 \to f_2$: $\left(\begin{array}{cc|cc}
 
 Por tanto: $A^{-1} = \left( \begin{array}{cc} 3 & 2 \\ -2 & -1 \end{array} \right)$
 
-La solución del sistema es: ${\bf x} = A^{-1} \left( \begin{array}{c} 1 \\ -1 \end{array} \right) = \left( \begin{array}{cc} 3 & 2 \\ -2 & -1 \end{array} \right) \left( \begin{array}{c} 1 \\ -1 \end{array} \right) = \left( \begin{array}{c} 1 \\ -1 \end{array} \right)$
+La solución del sistema es: ${\bf x} = A^{-1} \left( \begin{array}{c} 1 \\ -1 \end{array} \right) = \left( \begin{array}{cc} 3 & 2 \\ -2 & -1 \end{array} \right) \left( \begin{array}{c} 1 \\ -1 \end{array} \right) = \boxed{\left( \begin{array}{c} 1 \\ -1 \end{array} \right)}$
 
-$b)$ Como $A{\bf x} = \left( \begin{array}{c} 1 \\ -1 \end{array} \right)$, tenemos: $A^{2017}{\bf x} = A^{2016}(A{\bf x}) = A^{2016} \left( \begin{array}{c} 1 \\ -1 \end{array} \right).$
+\textbf{Paso 2. Literal b): cálculo de $A^{2017}{\bf x}$.} Como $A{\bf x} = \left( \begin{array}{c} 1 \\ -1 \end{array} \right) = {\bf x}$, tenemos: $A^{2017}{\bf x} = A^{2016}(A{\bf x}) = A^{2016} \left( \begin{array}{c} 1 \\ -1 \end{array} \right).$
 
-Continuando este proceso: $A^{2017}{\bf x} = \left( \begin{array}{c} 1 \\ -1 \end{array} \right).$
-
-Por tanto: $A^{2017}{\bf x} = \left( \begin{array}{c} 1 \\ -1 \end{array} \right)$.
+Continuando este proceso: $\boxed{A^{2017}{\bf x} = \left( \begin{array}{c} 1 \\ -1 \end{array} \right)}.$
 \end{myproof}
 \end{prob}
 
@@ -2382,7 +2377,7 @@ x + y + \beta z&=&0\\
 
 
 \begin{myproof}
-La matriz de coeficientes es: $A = \left( \begin{array}{ccc}
+\textbf{Paso 1. Matriz de coeficientes con $\alpha=\beta$.} La matriz de coeficientes es: $A = \left( \begin{array}{ccc}
 1 & 1 & \alpha \\
 1 & 1 & \beta \\
 \alpha & \beta & 1
@@ -2394,7 +2389,7 @@ Cuando $\alpha = \beta$, la matriz se convierte en: $A = \left( \begin{array}{cc
 \alpha & \alpha & 1
 \end{array} \right).$
 
-Aplicando eliminación gaussiana, $-f_1 + f_2 \to f_2$: $\left( \begin{array}{ccc}
+\textbf{Paso 2. Rango de la matriz.} Aplicando eliminación gaussiana, $-f_1 + f_2 \to f_2$: $\left( \begin{array}{ccc}
 1 & 1 & \alpha \\
 0 & 0 & 0 \\
 \alpha & \alpha & 1
@@ -2409,7 +2404,7 @@ $-\alpha f_1 + f_3 \to f_3$: $\left( \begin{array}{ccc}
 Si $\alpha \neq \pm 1$, entonces $1-\alpha^2 \neq 0$ y el rango de $A$ es 2.
 Si $\alpha = \pm 1$, entonces el rango de $A$ es 1.
 
-En ambos casos, el rango de $A$ es menor que 3 (número de variables), por lo que el sistema homogéneo tiene soluciones no triviales infinitas cuando $\alpha = \beta$.
+\textbf{Paso 3. Conclusión.} En ambos casos, el rango de $A$ es menor que 3 (número de variables), por lo que el sistema homogéneo tiene soluciones no triviales infinitas cuando $\alpha = \beta$.
 \end{myproof}
 \end{prob}
 
@@ -2427,7 +2422,7 @@ Fuerza de despegue $(100\ \text{lb})$&0&$3.12$&$15.86$&$33.7$&$81.5$&$123.0$\\\h
 \end{table}
 
 \begin{myproof}
-Sea $P(x) = a_5x^5 + a_4x^4 + a_3x^3 + a_2x^2 + a_1x + a_0$ el polinomio interpolador.
+\textbf{Paso 1. Planteamiento.} Sea $P(x) = a_5x^5 + a_4x^4 + a_3x^3 + a_2x^2 + a_1x + a_0$ el polinomio interpolador.
 
 Los puntos de interpolación son: $(1,0)$, $(2,3.12)$, $(4,15.86)$, $(8,33.7)$, $(16,81.5)$, $(32,123.0)$.
 
@@ -2447,7 +2442,7 @@ a_5 \\ a_4 \\ a_3 \\ a_2 \\ a_1 \\ a_0
 0 \\ 3.12 \\ 15.86 \\ 33.7 \\ 81.5 \\ 123.0
 \end{pmatrix}$
 
-\textbf{Matriz aumentada inicial:}
+\textbf{Paso 2. Eliminación gaussiana.} Matriz aumentada inicial:
 $\left(\begin{array}{cccccc|c}
 1 & 1 & 1 & 1 & 1 & 1 & 0 \\
 32 & 16 & 8 & 4 & 2 & 1 & 3.12 \\
@@ -2467,18 +2462,18 @@ $\left(\begin{array}{cccccc|c}
 0 & 0 & 0 & 0 & 0 & 1 & 2.195
 \end{array}\right)$
 
-De esta matriz final obtenemos:
+\textbf{Paso 3. Polinomio interpolador.} De esta matriz final obtenemos:
 
 $$P(x) = -0.0005433x^5 + 0.03231x^4 - 0.6007x^3 + 4.241x^2 - 5.867x + 2.195$$
 
-Para estimar la fuerza a $2000\ \text{ft}/\text{s} = 20 \times 100\ \text{ft}/\text{s}$:
+\textbf{Paso 4. Estimación.} Para estimar la fuerza a $2000\ \text{ft}/\text{s} = 20 \times 100\ \text{ft}/\text{s}$:
 
 \begin{align*}
 P(20) &= -0.0005433(20)^5 + 0.03231(20)^4 - 0.6007(20)^3 + 4.241(20)^2 - 5.867(20) + 2.195\\
 &= -1738.6 + 5169.6 - 4805.6 + 1696.4 - 117.3 + 2.2 \approx 206.9
 \end{align*}
 
-Por tanto, la fuerza estimada a $2000\ \text{ft}/\text{s}$ es aproximadamente $206.9 \times 100\ \text{lb} \approx 20{,}700\ \text{lb}$.
+Por tanto, la fuerza estimada a $2000\ \text{ft}/\text{s}$ es aproximadamente $\boxed{206.9 \times 100\ \text{lb} \approx 20{,}700\ \text{lb}}$.
 \end{myproof}
 \end{prob}
 
@@ -2487,7 +2482,7 @@ Por tanto, la fuerza estimada a $2000\ \text{ft}/\text{s}$ es aproximadamente $2
 Calcule una ecuación que represente la familia de todos los polinomios de grado 2 que pasen por los puntos $(0,1)$ y $(1,2).$ Esto generará un sistema de ecuaciones que tiene infinitas soluciones, determine una forma paramétrica de esta solución y grafique 4 curvas que cumplan esta condición.
 
 \begin{myproof}
-Sea $P(x) = ax^2 + bx + c$ un polinomio de grado 2. Las condiciones son: $P(0) = 1 \Rightarrow c = 1$ y $P(1) = 2 \Rightarrow a + b + c = 2.$
+\textbf{Paso 1. Condiciones de interpolación.} Sea $P(x) = ax^2 + bx + c$ un polinomio de grado 2. Las condiciones son: $P(0) = 1 \Rightarrow c = 1$ y $P(1) = 2 \Rightarrow a + b + c = 2.$
 
 Sustituyendo $c = 1$ en la segunda ecuación: $a + b + 1 = 2 \Rightarrow a + b = 1.$
 
@@ -2502,7 +2497,7 @@ a \\ b \\ c
 1 \\ 2
 \end{pmatrix}.$
 
-Aplicando eliminación gaussiana a la matriz aumentada: $\left(\begin{array}{ccc|c}
+\textbf{Paso 2. Eliminación gaussiana.} Aplicando eliminación gaussiana a la matriz aumentada: $\left(\begin{array}{ccc|c}
 0 & 0 & 1 & 1 \\
 1 & 1 & 1 & 2
 \end{array}\right).$
@@ -2517,7 +2512,7 @@ $f_1 - f_2 \rightarrow f_1$: $\left(\begin{array}{ccc|c}
 0 & 0 & 1 & 1
 \end{array}\right).$
 
-De la forma escalonada reducida obtenemos: $a + b = 1$ y $c = 1.$
+\textbf{Paso 3. Solución paramétrica.} De la forma escalonada reducida obtenemos: $a + b = 1$ y $c = 1.$
 
 Tomando $b = t$ como parámetro libre, la solución paramétrica es: $\begin{cases}
 a = 1 - t \\
@@ -2525,9 +2520,9 @@ b = t \\
 c = 1
 \end{cases}$
 
-Por tanto, la familia de polinomios es: $P(x) = (1-t)x^2 + tx + 1, \quad t \in \mathbb{R}.$
+Por tanto, la familia de polinomios es: $\boxed{P(x) = (1-t)x^2 + tx + 1}, \quad t \in \mathbb{R}.$
 
-Cuatro ejemplos específicos:
+\textbf{Paso 4. Gráfica de cuatro ejemplos.}
 \begin{itemize}
 \item $t = 0$: $P_1(x) = x^2 + 1$
 \item $t = 1$: $P_2(x) = x + 1$
@@ -2723,7 +2718,7 @@ La figura \ref{flujosrefineria} muestra algunos flujos (en litros por minuto) co
 \end{figure}
 
 \begin{myproof}
-\textbf{(a)} Se plantea el siguiente sistema de ecuaciones lineales para hallar los flujos desconocidos. En cada nodo, todo lo que entra debe salir.
+\textbf{Paso 1. Literal (a): planteamiento del sistema.} Se plantea el siguiente sistema de ecuaciones lineales para hallar los flujos desconocidos. En cada nodo, todo lo que entra debe salir.
 
 \begin{multicols}{2}
 \begin{table}[H]
@@ -2751,7 +2746,7 @@ x_5+x_6&=&200
 \end{matrix}\right.$
 \end{multicols}
 
-\textbf{(b)} Reescribiendo el sistema en forma estándar:
+\textbf{Paso 2. Literal (b): resolución del sistema.} Reescribiendo el sistema en forma estándar:
 $$\left\lbrace\begin{matrix}
 x_1 + 0x_2 + x_3 + 0x_4 + 0x_5 + 0x_6 &=& 200\\
 x_1 - x_2 + 0x_3 + 0x_4 + 0x_5 + 0x_6 &=& -25\\
@@ -2828,7 +2823,7 @@ De la ecuación 2: $x_2 = 225 - x_3 = 225 - (x_4 - x_6 + 50) = 175 - x_4 + x_6$
 
 De la ecuación 1: $x_1 = 200 - x_3 = 200 - (x_4 - x_6 + 50) = 150 - x_4 + x_6$
 
-La solución paramétrica es: $\begin{pmatrix}
+La solución paramétrica es: $\boxed{\begin{pmatrix}
 x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5 \\ x_6
 \end{pmatrix} = \begin{pmatrix}
 150 - x_4 + x_6 \\
@@ -2837,9 +2832,9 @@ x_4 - x_6 + 50 \\
 x_4 \\
 200 - x_6 \\
 x_6
-\end{pmatrix}$
+\end{pmatrix}}$
 
-\textbf{(c)} Si $x_4 = 50$ l/min y $x_6 = 0$ l/min, entonces: $\begin{cases}
+\textbf{Paso 3. Literal (c): caso $x_4=50$, $x_6=0$.} Entonces: $\begin{cases}
 x_1 &= 150 - 50 + 0 = 100 \text{ l/min}\\
 x_2 &= 175 - 50 + 0 = 125 \text{ l/min}\\
 x_3 &= 50 - 0 + 50 = 100 \text{ l/min}\\

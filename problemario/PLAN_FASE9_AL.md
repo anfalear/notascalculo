@@ -586,7 +586,13 @@ Mínimo 8–10 resueltos (example con myproof) + 15–20 propuestos (sin myproof
 - Aritmética no re-derivada (criterio de la ampliación); sin inconsistencias detectadas al reestructurar.
 
 ### F9AL.39 — sel: 18 myproof → protocolo 4 pasos
-**Estado:** Pendiente
+**Estado:** Completado — 2026-07-16
+
+**Notas de ejecución:**
+- 18/18 myproof del banco reestructurados con `Paso N.`; **0 excepciones de prosa** (ninguno era demostración breve).
+- **Computacionales con boxed (14):** ardillas por Cramer (4 pasos, boxed 500/1000/500); los 4 literales de Gauss-Jordan (los bold heredados `Análisis:`/`Solución paramétrica:` renombrados a `Paso N.`, boxed la solución paramétrica de cada uno); «añada una 3ª ecuación» (Paso 1 solución original + Paso 2 por literal, boxed las 3 ecuaciones añadidas); circunferencia por 3 puntos (4 pasos, boxed $a{=}1,b{=}-2,c{=}-4,d{=}-29$); antisimétrica (boxed $a,b,c,d$); coeficientes con solución dada (boxed $a{=}2,b{=}-1,c{=}1$); $A^{-1}$/$A^{2017}$ (Paso por literal, boxed ambos resultados; se explicitó $A\mathbf{x}=\mathbf{x}$ que justifica la iteración); ala de avión (4 pasos, boxed estimación 20 700 lb); familia de polinomios (4 pasos, boxed familia); artesana (Paso 1–2 + Paso 3/4 por literal, boxed paramétrica y 4/24/35); refinería (Paso 1–3 por literal, boxed solución paramétrica).
+- **Con pasos sin boxed final (4):** los 3 literales de rango (esquema Criterio/Ejemplo/Verificación, boxed los valores elegidos — son la respuesta pedida); justificación $\alpha=\beta$ (3 pasos, demostración).
+- **Limpieza:** en $A^{2017}$, frase final que repetía el resultado ya enunciado eliminada (quedaba dos veces «Por tanto: $A^{2017}\mathbf{x}=...$»).
 
 ### F9AL.40 — espaciosvectoriales: 11 myproof → protocolo 4 pasos
 **Estado:** Pendiente
@@ -689,7 +695,7 @@ Mínimo 8–10 resueltos (example con myproof) + 15–20 propuestos (sin myproof
 | F9AL.36 | `vectoresrn.tex` | Auditoría 26 figuras + figrayo (bloque V) | Completado | 2026-07-15 | 14 labels + 6 captions+labels nuevos; 2 figuras eran copias en probs duplicados (eliminadas con ellos en .37) → 24/24 conformes. `axis equal` no aplica (sin cónicas). Fix TikZ `-- (C)` sin origen. |
 | F9AL.37 | `vectoresrn.tex` | Protocolo + propuestos (bloque V) | Completado | 2026-07-15 | 18 Paso N:→N.; E6/E7/E8 con protocolo (E7 sin myproof, reestructurado); 5 elevaciones (⚠️ visto bueno del autor); 5 propuestos viejos eran duplicados resueltos → eliminados; banco §3.8 con 18 probs 4B/11I/3D; §3.9 con 15 propuestos nuevos 5B/7I/3D SymPy-OK. 796 pp. |
 | F9AL.38 | `matrices.tex` | 26 myproof → 4 pasos | Completado | 2026-07-16 | Alcance real 25: 24 reestructurados (17 computacionales con boxed, 4 demostraciones con pasos, 3 plantilla geométrica «dibuje el grafo»), 1 excepción prosa (det 2×2 nulo, 2 líneas); itemize duplicado de aerolínea eliminado. 798 pp. |
-| F9AL.39 | `sel.tex` | 18 myproof → 4 pasos | Pendiente | — | Ampliación 2026-07-10 |
+| F9AL.39 | `sel.tex` | 18 myproof → 4 pasos | Completado | 2026-07-16 | 18/18 reestructurados, 0 excepciones: 14 computacionales con boxed (Cramer, 4 Gauss, 3ª ecuación, circunferencia, antisimétrica, coeficientes, A^2017, ala de avión, polinomios, artesana, refinería) + 3 rango (Criterio/Ejemplo/Verificación) + α=β (demostración); frase duplicada de A^2017 eliminada. |
 | F9AL.40 | `espaciosvectoriales.tex` | 11 myproof → 4 pasos | Pendiente | — | Ampliación 2026-07-10 |
 | F9AL.41 | `prodinterno.tex` | 15 myproof → 4 pasos | Pendiente | — | Ampliación 2026-07-10 |
 | F9AL.42 | `vvpropios.tex` | 27 myproof → 4 pasos | Completado | 2026-07-10 | 21/23 reestructurados con boxed; 2 excepciones prosa (≤4 líneas) registradas; artefacto [2] y «normalizados» corregidos; ref a cor:cerovp. 790 pp, 0 errores. |
