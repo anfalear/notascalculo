@@ -8,8 +8,8 @@
             top=2.5cm,bottom=2.5cm]{geometry}
 \usepackage[utf8]{inputenc}
 \usepackage[spanish]{babel}
-%\usepackage{fontspec}          % fuentes OpenType/TrueType nativas
-%\setmainfont{Times New Roman}  % APA: Times New Roman 12 pt
+\usepackage{fontspec}          % fuentes OpenType/TrueType nativas
+\setmainfont{Times New Roman}  % APA: Times New Roman 12 pt
 
 % ==========================================
 % PAQUETES MATEMÁTICOS
@@ -187,89 +187,24 @@
   }
 \titlespacing*{\chapter}{0pt}{0pt}{1pt}
 
-\titleformat{\section}[display]
-  {\normalfont\bfseries}
-  {}
-  {1pt}
-  {%
-    \begin{tcolorbox}[
-      enhanced,
-      colback=uiscolor!5!white,
-      boxrule=0.1cm,
-      colframe=uiscolor!75!black,
-      arc=0pt,
-      outer arc=0pt,
-      leftrule=0.0cm,
-      rightrule=0.0cm,
-      fontupper=\color{red!85!black}\centering\sffamily\bfseries\Large,
-      enlarge left by=-1in-\hoffset-\oddsidemargin, 
-      enlarge right by=-\paperwidth+1in+\hoffset+\oddsidemargin+\textwidth,
-      width=\paperwidth, 
-      left=1in+\hoffset+\oddsidemargin, 
-      right=\paperwidth-1in-\hoffset-\oddsidemargin-\textwidth,
-      top=0.7cm, 
-      bottom=0.3cm,
-      overlay={
-        \node[fill=uiscolor!5!white,
-          draw=uiscolor!75!black,
-          line width=0.1cm,
-          inner sep=0pt,
-          text width=2cm,
-          minimum height=1.4cm,
-          align=center,
-          font=\color{red!85!black}\sffamily\bfseries\fontsize{20}{20}\selectfont
-        ] 
-        (chapname)
-        at ([xshift=-0.5\paperwidth]frame.north east)
-        {\thesection};
-      }
-    ]
-    #1
-    \end{tcolorbox}%
-  }
-\titlespacing*{\section}{0pt}{0pt}{1pt}
+% Colores del nuevo estilo de secciones (2026-07-16)
+\definecolor{sectitlecolor}{HTML}{C0392B}
+\definecolor{secrulecolor}{HTML}{1A6B3C}
 
-\titleformat{\subsection}[display]
-  {\normalfont\bfseries}
-  {}
-  {1pt}
-  {%
-    \begin{tcolorbox}[
-      enhanced,
-      colback=uiscolor!5!white,
-      boxrule=0.1cm,
-      colframe=uiscolor!75!black,
-      arc=0pt,
-      outer arc=0pt,
-      leftrule=0.0cm,
-      rightrule=0.0cm,
-      fontupper=\color{red!85!black}\centering\sffamily\bfseries\large,
-      enlarge left by=-1in-\hoffset-\oddsidemargin, 
-      enlarge right by=-\paperwidth+1in+\hoffset+\oddsidemargin+\textwidth,
-      width=\paperwidth, 
-      left=1in+\hoffset+\oddsidemargin, 
-      right=\paperwidth-1in-\hoffset-\oddsidemargin-\textwidth,
-      top=0.7cm, 
-      bottom=0.1cm,
-      overlay={
-        \node[fill=uiscolor!5!white,
-          draw=uiscolor!75!black,
-          line width=0.1cm,
-          inner sep=0pt,
-          text width=2cm,
-          minimum height=1.5cm,
-          align=center,
-          font=\color{red!85!black}\sffamily\bfseries\fontsize{15}{15}\selectfont
-        ] 
-        (chapname)
-        at ([xshift=-0.5\paperwidth]frame.north east)
-        {\thesubsection};
-      }
-    ]
-    #1
-    \end{tcolorbox}%
-  }
-\titlespacing*{\subsection}{0pt}{0pt}{1pt}
+\titleformat{\section}
+  {\normalfont\sffamily\bfseries\Large\color{sectitlecolor}}
+  {\thesection}
+  {0.6em}
+  {#1}
+  [{\color{secrulecolor}\titlerule[2pt]}]
+\titlespacing*{\section}{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+
+\titleformat{\subsection}
+  {\normalfont\sffamily\bfseries\large\color{sectitlecolor}}
+  {\thesubsection}
+  {0.6em}
+  {#1}
+\titlespacing*{\subsection}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
 
 \titleformat{\part}[display]
   {\normalfont\Huge\bfseries}
@@ -312,50 +247,19 @@
     #1
     \end{tcolorbox}%
   }
+% \part como clase "top" (2026-07-16): el contenido (prosa introductoria)
+% comparte página con el título de la parte en vez de expulsarse a página propia
+\titleclass{\part}{top}
+\titlespacing*{\part}{0pt}{0pt}{25pt}
   
   
   
-\titleformat{\subsubsection}[display]
-  {\normalfont\bfseries}
-  {}
-  {1pt}
-  {%
-    \begin{tcolorbox}[
-      enhanced,
-      colback=uiscolor!5!white,
-      boxrule=0.1cm,
-      colframe=uiscolor!75!black,
-      arc=0pt,
-      outer arc=0pt,
-      leftrule=0.0cm,
-      rightrule=0.0cm,
-      fontupper=\color{red!85!black}\centering\sffamily\bfseries\normalsize,
-      enlarge left by=-1in-\hoffset-\oddsidemargin, 
-      enlarge right by=-\paperwidth+1in+\hoffset+\oddsidemargin+\textwidth,
-      width=\paperwidth, 
-      left=1in+\hoffset+\oddsidemargin, 
-      right=\paperwidth-1in-\hoffset-\oddsidemargin-\textwidth,
-      top=0.5cm, 
-      bottom=0.1cm,
-      overlay={
-        \node[fill=uiscolor!5!white,
-          draw=uiscolor!75!black,
-          line width=0.1cm,
-          inner sep=0pt,
-          text width=2.5cm,
-          minimum height=1.2cm,
-          align=center,
-          font=\color{red!85!black}\sffamily\bfseries\fontsize{11}{13}\selectfont
-        ] 
-        (chapname)
-        at ([xshift=-0.5\paperwidth]frame.north east)
-        {\thesubsubsection};
-      }
-    ]
-    #1
-    \end{tcolorbox}%
-  }
-\titlespacing*{\subsubsection}{0pt}{0pt}{1pt}
+\titleformat{\subsubsection}
+  {\normalfont\sffamily\bfseries\normalsize\color{sectitlecolor}}
+  {\thesubsubsection}
+  {0.6em}
+  {#1}
+\titlespacing*{\subsubsection}{0pt}{3ex plus 1ex minus .2ex}{1.2ex plus .2ex}
 
 % ==========================================
 % CONFIGURACIÓN DE REGLAS COLOREADAS
@@ -528,7 +432,7 @@
 
 Este documento proporciona preparación para exámenes, talleres y quices de Cálculo I, II y III, presentando problemas prácticos y sus soluciones extraídas de diversas fuentes bibliográficas.
 
-El documento inicia con las políticas del curso, contenidos, evaluación y contacto. Cada capítulo incluye secciones con resumen teórico, problemas resueltos y ejercicios de práctica. Al final se proponen rutinas de programación en Python 3.x, Wolfram Alpha, \url{www.matrixcalc.org/es} y GeoGebra.
+El documento se organiza en nueve partes temáticas, desde los números reales hasta las ecuaciones diferenciales y el cálculo integral en varias variables. Cada capítulo incluye secciones con resumen teórico, problemas resueltos y ejercicios de práctica. Al final se proponen rutinas de programación en Python 3.x, Wolfram Alpha, \url{www.matrixcalc.org/es} y GeoGebra.
 
 Este material está en construcción continua, por lo que algunos ejercicios pueden carecer de solución o presentar errores que se corregirán progresivamente.
 
@@ -548,46 +452,84 @@ Correo: \url{anfalear@correo.uis.edu.co}\\
 
 \tableofcontents
 
-\part{Álgebra Lineal}
+\part{Fundamentos y Cálculo diferencial de una variable}
 
-\input{politicas}
-\input{complejos}
-\input{vectoresrn}
-\input{matrices}
-\input{sel}
-\input{espaciosvectoriales}
-\input{prodinterno}
-\input{vvpropios}
-\input{translineales}
-
-\part{Cálculo}
+\noindent{\itshape Todo el edificio del cálculo descansa sobre una pregunta engañosamente simple: ¿cómo describir con precisión el cambio? Esta parte construye el terreno donde esa pregunta puede plantearse: los números reales y sus axiomas, los números complejos que completan el álgebra, y las funciones como lenguaje de la dependencia entre cantidades. Sobre ese lenguaje se levanta el límite, la herramienta que vuelve riguroso lo infinitamente pequeño, y de él nace la derivada como medida exacta de la razón de cambio instantánea. Las aplicaciones que cierran la parte muestran que optimizar, aproximar y modelar son la misma idea contemplada desde tres ángulos distintos.}\bigskip
 
 \input{preliminares}
+\input{complejos}
 \input{funciones}
 \input{limites}
 \input{derivadas}
 \input{apderivadas}
+
+\part{Vectores y geometría analítica}
+
+\noindent{\itshape El cálculo de la Parte I vive sobre una recta; el mundo que queremos describir tiene profundidad. Esta parte introduce los vectores de $\mathbb{R}^n$ como el puente entre el álgebra y la geometría: el producto punto mide ángulos y distancias, el producto cruz genera áreas y volúmenes, y con ambos las rectas y los planos del espacio se reducen a ecuaciones. Las herramientas construidas aquí son doblemente fecundas: hacia el álgebra lineal, donde los vectores se volverán objetos abstractos, y hacia el cálculo en varias variables, cuya geometría es exactamente la de este capítulo.}\bigskip
+
+\input{vectoresrn}
+
+\part{Cálculo integral de una variable}
+
+\noindent{\itshape Conocida la derivada, se impone la pregunta inversa: si sabemos cómo cambia una cantidad, ¿podemos recuperar la cantidad misma? La antiderivada responde en lo algebraico y la integral definida en lo geométrico, y el Teorema Fundamental del Cálculo revela que ambas respuestas son una sola: derivar e integrar son operaciones recíprocas. Esta parte desarrolla las técnicas de integración, las aplicaciones geométricas y físicas de la integral, su extensión a dominios infinitos y el estudio de curvas paramétricas y polares. Las integrales impropias, además, preparan el criterio integral de las series, y las coordenadas polares reaparecerán en las integrales múltiples.}\bigskip
+
 \input{tecintegracion}
 \input{intdefinida}
 \input{apintegral}
 \input{impropias}
 \input{polares}
-\input{sucesionesyseries}
-\input{sucesionesyseriesfunciones}
+
+\part{Álgebra Lineal matricial}
+
+\noindent{\itshape Los vectores de la Parte II describían puntos y direcciones; ahora se organizan en arreglos que operan entre sí. Las matrices y sus determinantes, junto con los sistemas de ecuaciones lineales, constituyen la maquinaria operativa del álgebra lineal, y su estudio conduce a una abstracción poderosa: el espacio vectorial, donde polinomios, matrices y funciones obedecen las mismas leyes que las flechas de $\mathbb{R}^n$. El producto interno devuelve a esos espacios abstractos las nociones geométricas de ángulo, distancia y proyección. Todo lo construido aquí sostiene la teoría espectral de la Parte VI y la resolución de sistemas de ecuaciones diferenciales de la Parte VIII.}\bigskip
+
+\input{matrices}
+\input{sel}
+\input{espaciosvectoriales}
+\input{prodinterno}
+
+\part{Cálculo diferencial en varias variables}
+
+\noindent{\itshape ¿Qué significa derivar cuando la función depende de varias variables a la vez? Esta parte funde el cálculo diferencial de la Parte I con la geometría vectorial de la Parte II: las funciones vectoriales describen curvas en el espacio, los límites exigen ahora acercarse por infinitas trayectorias, y la derivada se desdobla en derivadas parciales, gradiente y derivadas direccionales. El plano tangente hereda el papel de la recta tangente, y la optimización culmina con el método de los multiplicadores de Lagrange. La contraparte integral de esta historia se desarrollará en la Parte IX.}\bigskip
+
 \input{funvectoriales}
 \input{limvariasvariables}
 \input{planostangentes}
 \input{gradientes}
 \input{multiplicadoresintdobles}
-\input{apintdobles}
-\input{inttriples}
-\input{cap33}
-\input{cap34}
+
+\part{Álgebra Lineal avanzada}
+
+\noindent{\itshape Cuando una matriz actúa sobre el espacio, casi todos los vectores giran; unos pocos, sin embargo, solo se estiran o encogen. Esos vectores propios y sus valores asociados revelan la estructura íntima de la matriz y permiten diagonalizarla, es decir, verla en su forma más simple. Las transformaciones lineales enmarcan luego este fenómeno en su contexto natural: toda matriz es la sombra numérica de una transformación, y cambiar de base es elegir el punto de vista donde esa sombra es más nítida. La teoría espectral desarrollada aquí será la llave que abra los sistemas de ecuaciones diferenciales de la Parte VIII.}\bigskip
+
+\input{vvpropios}
+\input{translineales}
+
+\part{Sucesiones y Series}
+
+\noindent{\itshape ¿Puede una suma de infinitos términos producir un resultado finito? La pregunta, que inquietó a los griegos, encuentra respuesta rigurosa en el concepto de límite de la Parte I, ahora aplicado a sucesiones y series numéricas mediante una batería de criterios de convergencia. El paso siguiente es dejar que los términos sean funciones: las series de potencias y las series de Taylor convierten a las funciones trascendentes en polinomios infinitos manipulables término a término. Esta representación será precisamente el método que resuelva, en la Parte VIII, las ecuaciones diferenciales que no admiten solución elemental.}\bigskip
+
+\input{sucesionesyseries}
+\input{sucesionesyseriesfunciones}
+
+\part{Ecuaciones Diferenciales Ordinarias}
+
+\noindent{\itshape Las leyes de la naturaleza rara vez dictan cuánto vale una cantidad; dictan cómo cambia. Una ecuación diferencial es exactamente eso ---una ley de cambio--- y resolverla es predecir el futuro de un sistema a partir de su presente. Esta parte reúne casi todas las herramientas del libro: las técnicas de integración de la Parte III resuelven las ecuaciones de primer orden, los números complejos de la Parte I gobiernan las ecuaciones lineales de orden superior, los vectores propios de la Parte VI desacoplan los sistemas, y las series de la Parte VII alcanzan las ecuaciones sin solución cerrada. La transformada de Laplace corona el estudio convirtiendo problemas de cálculo en problemas de álgebra.}\bigskip
+
 \input{cap27_EDOs primer orden}
 \input{cap28_EDOs orden n}
 \input{cap29_Sistemas de EDOs}
 \input{cap30_Sol EDOs Series Potencias}
 \input{cap31_Transformada de Laplace}
+
+\part{Cálculo integral en varias variables}
+
+\noindent{\itshape Falta la última pieza: integrar en dimensiones superiores. Las integrales dobles y triples extienden a regiones planas y sólidos el proceso de particionar, aproximar y tomar el límite, con los cambios de variable ---polares, cilíndricas, esféricas--- como aliados geométricos. Las integrales de línea y de superficie llevan luego la integración a curvas y superficies inmersas en el espacio, donde actúan los campos vectoriales. El desenlace son los teoremas de Green, de Stokes y de la divergencia: tres generalizaciones del Teorema Fundamental del Cálculo que unifican derivada e integral en cualquier dimensión y cierran el arco iniciado en la primera página del libro.}\bigskip
+
+\input{apintdobles}
+\input{inttriples}
+\input{cap33}
+\input{cap34}
 
 
 \newpage

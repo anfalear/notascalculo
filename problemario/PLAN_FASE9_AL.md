@@ -595,10 +595,21 @@ Mínimo 8–10 resueltos (example con myproof) + 15–20 propuestos (sin myproof
 - **Limpieza:** en $A^{2017}$, frase final que repetía el resultado ya enunciado eliminada (quedaba dos veces «Por tanto: $A^{2017}\mathbf{x}=...$»).
 
 ### F9AL.40 — espaciosvectoriales: 11 myproof → protocolo 4 pasos
-**Estado:** Pendiente
+**Estado:** Completado — 2026-07-16
+- 11/11 myproof del banco reestructurados; 0 excepciones de prosa.
+- **9 computacionales con boxed:** l.i. 7 literales (Paso 1 Estrategia + Paso 2 por literal, 7 boxed de veredicto), bases 5 literales (5 boxed), bases de plano/recta/diagonal (3 boxed), t para base de M2×2 (4 pasos, boxed t≠3), cambio de base B→B′ (3 pasos, boxed P), reflexión y=x (3 pasos, boxed + verificación), espacios generados (2 boxed), N(A)/N(Aᵀ) (3 pasos, 2 boxed), rango con parámetro (Criterio + boxed resumen por literal).
+- **2 demostraciones con pasos sin boxed:** v₃∉gen{v₁,v₂} (3 pasos) y {u+v+w,u+v,u} (2 pasos).
+- **1 corrección:** la RREF del problema N(A) estaba impresa con 6 columnas siendo A de 4×5 → corregida a 4×5 (SymPy-OK; el núcleo (−1,2,1,0,0) del texto era correcto).
+- Verificación SymPy previa: los 9 cálculos heredados no triviales coinciden (dets −32/201/16/t−3, [B′]⁻¹[B], 2 RREF, núcleos, factorizaciones de rango y rangos por caso).
 
 ### F9AL.41 — prodinterno: 15 myproof → protocolo 4 pasos
-**Estado:** Pendiente
+**Estado:** Completado — 2026-07-16
+- Alcance real 15 (los 2 últimos GS del banco ya tenían Paso desde F9AL.18). 15/15 reestructurados; 0 excepciones de prosa.
+- **9 computacionales** (6 multi-literal con Paso N. (letra) por literal): matriz 2×3 (base ortonormal/rango/complemento, +2 boxed nuevos), altura de triángulo (3 pasos), matriz 3×4 Gram-Schmidt (4 pasos, +1 boxed rango/nulidad), P₂ con producto de coeficientes (4 pasos), W de 2 ecuaciones (5 pasos), W de 3 ecuaciones (4 pasos; redundancia r₃=2r₁+r₂ explicitada en vez de «las filas son dependientes»).
+- **4 Fourier en [0,2π]** (9x²+4x, 9x+7, 5x+7, 7x+2): viñetas markdown «- » reemplazadas por Paso 1–4 con las integrales auxiliares explícitas; coeficientes SymPy-verificados (sin el vicio (−1)^k).
+- **1 T/F** (4 literales): esquema Estrategia/Análisis/Resumen; contraejemplo añadido en (a) (u=(1,0), v=(0,1)) que el enunciado exigía y faltaba.
+- **2 demostraciones con pasos:** rombo (3 pasos) y paralelogramo de diagonales iguales (2 pasos; lados u,v explicitados).
+- **1 error matemático corregido** (prob H={x/2=y/−3=z/4}): la «base ortogonal» de H⊥ {(3,2,0),(0,4,3)} no era ortogonal (⟨b₁,b₂⟩=8) → Gram-Schmidt: **{(3,2,0),(−8,12,13)}** (verificada ⊥ a d y entre sí, SymPy-OK). Además literal c) completado (p=(227/29,254/29,77/29), antes sin simplificar) y d) completado (‖p‖=√(4206/29)=√121974/29≈12.04, antes respondía solo «=√⟨p,p⟩»).
 
 ### F9AL.42 — vvpropios: 27 myproof → protocolo 4 pasos
 **Nota:** ejecutar tras F9AL.21 (las elevaciones de ese ítem reducen el conteo del banco).
@@ -696,8 +707,8 @@ Mínimo 8–10 resueltos (example con myproof) + 15–20 propuestos (sin myproof
 | F9AL.37 | `vectoresrn.tex` | Protocolo + propuestos (bloque V) | Completado | 2026-07-15 | 18 Paso N:→N.; E6/E7/E8 con protocolo (E7 sin myproof, reestructurado); 5 elevaciones (⚠️ visto bueno del autor); 5 propuestos viejos eran duplicados resueltos → eliminados; banco §3.8 con 18 probs 4B/11I/3D; §3.9 con 15 propuestos nuevos 5B/7I/3D SymPy-OK. 796 pp. |
 | F9AL.38 | `matrices.tex` | 26 myproof → 4 pasos | Completado | 2026-07-16 | Alcance real 25: 24 reestructurados (17 computacionales con boxed, 4 demostraciones con pasos, 3 plantilla geométrica «dibuje el grafo»), 1 excepción prosa (det 2×2 nulo, 2 líneas); itemize duplicado de aerolínea eliminado. 798 pp. |
 | F9AL.39 | `sel.tex` | 18 myproof → 4 pasos | Completado | 2026-07-16 | 18/18 reestructurados, 0 excepciones: 14 computacionales con boxed (Cramer, 4 Gauss, 3ª ecuación, circunferencia, antisimétrica, coeficientes, A^2017, ala de avión, polinomios, artesana, refinería) + 3 rango (Criterio/Ejemplo/Verificación) + α=β (demostración); frase duplicada de A^2017 eliminada. |
-| F9AL.40 | `espaciosvectoriales.tex` | 11 myproof → 4 pasos | Pendiente | — | Ampliación 2026-07-10 |
-| F9AL.41 | `prodinterno.tex` | 15 myproof → 4 pasos | Pendiente | — | Ampliación 2026-07-10 |
+| F9AL.40 | `espaciosvectoriales.tex` | 11 myproof → 4 pasos | Completado | 2026-07-16 | 11\11 con Paso N. (9 con boxed, 2 demostraciones con pasos), 0 excepciones; RREF de N(A) corregida (6 col→5 col); 9 cálculos heredados SymPy-OK. |
+| F9AL.41 | `prodinterno.tex` | 15 myproof → 4 pasos | Completado | 2026-07-16 | 15\15 con Paso N., 0 excepciones; **base ortogonal de H⊥ corregida** {(3,2,0),(−8,12,13)} + literales c)/d) completados (‖p‖=√(4206/29)≈12.04); 4 Fourier con integrales explícitas SymPy-OK; contraejemplo añadido al T/F (a); viñetas «- » eliminadas. **F9-AL 100 % cerrado (46/46 ítems).** |
 | F9AL.42 | `vvpropios.tex` | 27 myproof → 4 pasos | Completado | 2026-07-10 | 21/23 reestructurados con boxed; 2 excepciones prosa (≤4 líneas) registradas; artefacto [2] y «normalizados» corregidos; ref a cor:cerovp. 790 pp, 0 errores. |
 | F9AL.43 | `translineales.tex` | 47 myproof → 4 pasos (2 lotes) | Completado | 2026-07-10 | 41 reales tras elevaciones: 30 con Paso+boxed, 11 excepción plantilla geométrica; fix literal f (rango 3), g duplicado sustituido, plano Z→eje Z, [4][5], det(C)=1 |
 | F9AL.44 | `complejos.tex` | 24 myproof → 4 pasos | Completado | 2026-07-15 | 15/15 reales tras elevaciones: todos con Paso N. + boxed (2 T/F con Resumen; 1 plantilla geométrica sin boxed); 3 correcciones matemáticas (fracción duplicada+simplificación, literal f cualificado, prueba Andreescu p.21 reescrita); +9 propuestos (§2.4: 15 probs 5B/7I/3D). 796 pp. |

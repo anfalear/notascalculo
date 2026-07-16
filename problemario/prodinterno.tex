@@ -1037,19 +1037,17 @@ Sea $A=\left( \begin{array}{ccc}
     \item Encuentre una base para el complemento ortogonal del espacio fila de $A.$
 	\end{enumerate}	
 \begin{myproof}
-\textbf{a)} Las filas de \( A \) son \( \mathbf{r}_1 = (1,0,1) \) y \( \mathbf{r}_2 = (0,1,0) \).  
-Son ortogonales: \( \langle \mathbf{r}_1, \mathbf{r}_2 \rangle = 0 \).  
-Normas: \( \|\mathbf{r}_1\| = \sqrt{2} \), \( \|\mathbf{r}_2\| = 1 \).  
-Base ortonormal:  
+\textbf{Paso 1. (a)} Las filas de \( A \) son \( \mathbf{r}_1 = (1,0,1) \) y \( \mathbf{r}_2 = (0,1,0) \). Son ortogonales: \( \langle \mathbf{r}_1, \mathbf{r}_2 \rangle = 0 \), así que basta normalizar. Normas: \( \|\mathbf{r}_1\| = \sqrt{2} \), \( \|\mathbf{r}_2\| = 1 \). Base ortonormal:
 \[
-\mathbf{q}_1 = \frac{1}{\sqrt{2}} (1, 0, 1), \quad \mathbf{q}_2 = (0, 1, 0).
+\boxed{\mathbf{q}_1 = \frac{1}{\sqrt{2}} (1, 0, 1), \quad \mathbf{q}_2 = (0, 1, 0)}
 \]
 
-\textbf{b)}  
-Rango: Las filas son linealmente independientes, así que \( \text{rango}(A) = 2 \).  
-Nulidad: Por teorema de rango-nulidad, \( \text{nulidad}(A) = 3 - 2 = 1 \).
+\textbf{Paso 2. (b)} Las filas son linealmente independientes, así que \( \text{rango}(A) = 2 \); por el teorema de rango-nulidad, \( \text{nulidad}(A) = 3 - 2 = 1 \).
+\[
+\boxed{\text{rango}(A) = 2, \quad \text{nulidad}(A) = 1}
+\]
 
-\textbf{c)} El complemento ortogonal del espacio fila es el espacio nulo de \( A \). Resolviendo \( A\mathbf{x} = \mathbf{0} \):  
+\textbf{Paso 3. (c)} El complemento ortogonal del espacio fila es el espacio nulo de \( A \). Resolviendo \( A\mathbf{x} = \mathbf{0} \):
 \[
 \begin{cases}
 x_1 + x_3 = 0 \\
@@ -1086,26 +1084,25 @@ Una altura de un triángulo es cada uno de los segmentos que une un vértice con
 \item Dado el triángulo con vértices $A=(8,7,11),$ $B=(11,17,22)$ y $C=(5,3,11)$ use el producto interno usual de $\mathbb{R}^3$ para calcular las ecuaciones simétricas de la altura bajada desde el vértice $B$ al lado opuesto.
 \end{enumerate}
 \begin{myproof}
-\textbf{a)} Sean \( \overrightarrow{AB} = \mathbf{u} \), \( \overrightarrow{AC} = \mathbf{v} \), \( \overrightarrow{BC} = \mathbf{w} \). La proyección ortogonal de \( \overrightarrow{AB} \) sobre \( \overrightarrow{AC} \) es:
+\textbf{Paso 1. (a)} Sean \( \overrightarrow{AB} = \mathbf{u} \), \( \overrightarrow{AC} = \mathbf{v} \), \( \overrightarrow{BC} = \mathbf{w} \). La proyección ortogonal de \( \overrightarrow{AB} \) sobre \( \overrightarrow{AC} \) es:
 \[
 \operatorname{proy}_{\mathbf{v}} \mathbf{u} = \frac{\langle \mathbf{u}, \mathbf{v} \rangle}{\|\mathbf{v}\|^2} \mathbf{v}.
 \]
-La altura es:
+La altura es la componente de $\mathbf{u}$ perpendicular a $\mathbf{v}$:
 \[
 \boxed{\mathbf{h} = \mathbf{u} - \operatorname{proy}_{\mathbf{v}} \mathbf{u}}
 \]
 
-\textbf{b)} Vectores:
-- \( \overrightarrow{BA} = (-3, -10, -11) \), \( \overrightarrow{AC} = (-3, -4, 0) \).
-- Proyección de \( \overrightarrow{BA} \) sobre \( \overrightarrow{AC} \):
+\textbf{Paso 2. (b)} Calculamos los vectores \( \overrightarrow{BA} = (-3, -10, -11) \) y \( \overrightarrow{AC} = (-3, -4, 0) \), y la proyección de \( \overrightarrow{BA} \) sobre \( \overrightarrow{AC} \):
 \[
 \operatorname{proy}_{\overrightarrow{AC}}(\overrightarrow{BA}) = \frac{\langle (-3,-10,-11), (-3,-4,0) \rangle}{\|(-3,-4,0)\|^2} (-3,-4,0) = \frac{9+40}{25}(-3,-4,0) = \frac{49}{25}(-3,-4,0).
 \]
-Vector altura:
+
+\textbf{Paso 3.} Vector altura:
 \[
 \mathbf{h} = \overrightarrow{BA} - \operatorname{proy} = \left(\frac{72}{25}, -\frac{54}{25}, -11\right).
 \]
-Ecuaciones simétricas de la recta que pasa por \(B=(11,17,22)\) con dirección \(\mathbf{h}\):
+Escalando por 25, la dirección es $(72,-54,-275)$. Ecuaciones simétricas de la recta que pasa por \(B=(11,17,22)\) con dirección \(\mathbf{h}\):
 \[
 \boxed{\frac{x-11}{72} = \frac{y-17}{-54} = \frac{z-22}{-275}}.
 \]
@@ -1116,11 +1113,22 @@ Ecuaciones simétricas de la recta que pasa por \(B=(11,17,22)\) con dirección 
 \begin{prob}
 Calcule la serie de Fourier para la función $f(x)=9x^2+4x$ en el intervalo $\left[0,2\pi\right].$
 \begin{myproof}
-Coeficientes:
-- \( a_0 = 12\pi^2 + 4\pi \).
-- \( a_k = \frac{36}{k^2} \).
-- \( b_k = -\frac{36\pi + 8}{k} \).
-Serie:
+\textbf{Paso 1. Coeficiente $a_0$.} Con $\int_0^{2\pi} x\,dx = 2\pi^2$ y $\int_0^{2\pi} x^2\,dx = \frac{8\pi^3}{3}$:
+\[
+a_0 = \frac{1}{2\pi}\int_0^{2\pi} (9x^2+4x)\,dx = \frac{1}{2\pi}\left(9\cdot\frac{8\pi^3}{3} + 4\cdot 2\pi^2\right) = 12\pi^2 + 4\pi.
+\]
+
+\textbf{Paso 2. Coeficientes $a_k$.} Con $\int_0^{2\pi} x\cos kx\,dx = 0$ y $\int_0^{2\pi} x^2\cos kx\,dx = \frac{4\pi}{k^2}$:
+\[
+a_k = \frac{1}{\pi}\left(9\cdot\frac{4\pi}{k^2} + 4\cdot 0\right) = \frac{36}{k^2}.
+\]
+
+\textbf{Paso 3. Coeficientes $b_k$.} Con $\int_0^{2\pi} x\sin kx\,dx = -\frac{2\pi}{k}$ y $\int_0^{2\pi} x^2\sin kx\,dx = -\frac{4\pi^2}{k}$:
+\[
+b_k = \frac{1}{\pi}\left(9\left(-\frac{4\pi^2}{k}\right) + 4\left(-\frac{2\pi}{k}\right)\right) = -\frac{36\pi + 8}{k}.
+\]
+
+\textbf{Paso 4. Serie.}
 \[
 \boxed{f(x) \sim (12\pi^2 + 4\pi) + \sum_{k=1}^{\infty} \left[ \frac{36}{k^2} \cos(kx) - \frac{36\pi + 8}{k} \sin(kx) \right]}
 \]
@@ -1139,7 +1147,7 @@ Sea $A=\left( \begin{array}{cccc}
 	\item Encuentre una base para el complemento ortogonal del espacio fila de $A.$
 	\end{enumerate}
 \begin{myproof}
-\textbf{a)} Filas de \( A \): \( \mathbf{r}_1 = (1,0,1,1) \), \( \mathbf{r}_2 = (0,1,1,0) \), \( \mathbf{r}_3 = (0,1,0,1) \).  
+\textbf{Paso 1. (a)} Filas de \( A \): \( \mathbf{r}_1 = (1,0,1,1) \), \( \mathbf{r}_2 = (0,1,1,0) \), \( \mathbf{r}_3 = (0,1,0,1) \).
 Aplicamos Gram-Schmidt para obtener una base ortogonal:
 \begin{align*}
 \mathbf{v}_1 &= \mathbf{r}_1 = (1,0,1,1), \\
@@ -1153,7 +1161,7 @@ Aplicamos Gram-Schmidt para obtener una base ortogonal:
 &= \left(-\frac{1}{3}+\frac{2}{15}, 1-\frac{2}{5}, -\frac{1}{3}-\frac{4}{15}, \frac{2}{3}+\frac{2}{15}\right) \\
 &= \left(-\frac{1}{5}, \frac{3}{5}, -\frac{3}{5}, \frac{4}{5}\right).
 \end{align*}
-Normalizando:
+\textbf{Paso 2.} Normalizando:
 \[
 \|\mathbf{v}_1\| = \sqrt{3},\quad \|\mathbf{v}_2\| = \sqrt{\frac{5}{3}},\quad \|\mathbf{v}_3\| = \sqrt{\frac{35}{25}} = \frac{\sqrt{35}}{5}.
 \]
@@ -1165,9 +1173,12 @@ Base ortonormal:
 \mathbf{q}_3 = \frac{5}{\sqrt{35}}\left(-\frac{1}{5},\frac{3}{5},-\frac{3}{5},\frac{4}{5}\right)
 }
 \]
-Las filas son linealmente independientes, así que rango \( = 3 \). Por el teorema de rango-nulidad, nulidad \( = 4-3 = 1 \).
+\textbf{Paso 3.} Las filas son linealmente independientes, así que rango \( = 3 \). Por el teorema de rango-nulidad, nulidad \( = 4-3 = 1 \).
+\[
+\boxed{\text{rango}(A) = 3, \quad \text{nulidad}(A) = 1}
+\]
 
-\textbf{b)} Complemento ortogonal del espacio fila es el espacio nulo de \( A \). Resolviendo \( A\mathbf{x} = 0 \):
+\textbf{Paso 4. (b)} El complemento ortogonal del espacio fila es el espacio nulo de \( A \). Resolviendo \( A\mathbf{x} = 0 \):
 \[
 \begin{cases}
 x_1 + x_3 + x_4 = 0 \\
@@ -1196,7 +1207,7 @@ Si $H=\text{gen}\lbrace \mathbf{p_1}=1+2x^2,\mathbf{p_2}=2+x+x^2\rbrace$
 \item Calcule la distancia mínima de $\mathbf{q}$ al subespacio $H$.
 \end{enumerate}
 \begin{myproof}
-\textbf{a)} \( H^\perp = \{ p \in V : \langle p, h \rangle = 0 \ \forall h \in H \} \).  
+\textbf{Paso 1. (a)} \( H^\perp = \{ p \in V : \langle p, h \rangle = 0 \ \forall h \in H \} \).
 Resolviendo:
 \[
 \langle a_0 + a_1x + a_2x^2, 1 + 2x^2 \rangle = a_0 + 2a_2 = 0,
@@ -1210,7 +1221,7 @@ Por tanto, \( p = a_2(-2 + 3x + x^2) \). Base:
 \boxed{\{-2 + 3x + x^2\}}.
 \]
 
-\textbf{b)} Aplicamos Gram-Schmidt a \( h_1 = 1+2x^2 \), \( h_2 = 2+x+x^2 \):
+\textbf{Paso 2. (b)} Aplicamos Gram-Schmidt a \( h_1 = 1+2x^2 \), \( h_2 = 2+x+x^2 \):
 \[
 v_1 = h_1 = 1+2x^2.
 \]
@@ -1225,7 +1236,7 @@ Base ortogonal:
 \boxed{1+2x^2,\quad \frac{6}{5} + x - \frac{3}{5}x^2}.
 \]
 
-\textbf{c)} Proyección de \( \mathbf{q} = 2+5x+9x^2 \) sobre \( H \):
+\textbf{Paso 3. (c)} Proyección de \( \mathbf{q} = 2+5x+9x^2 \) sobre \( H \):
 Usando la base ortogonal \( v_1 = 1+2x^2 \), \( v_2 = \frac{6}{5} + x - \frac{3}{5}x^2 \) (podemos multiplicar por 5 para simplificar: \( v_2' = 6+5x-3x^2 \)). Usaremos \( v_2' \).
 \[
 \langle q, v_1 \rangle = 2\cdot 1 + 5\cdot 0 + 9\cdot 2 = 20,\quad \|v_1\|^2 = 1^2+0^2+2^2=5.
@@ -1243,7 +1254,7 @@ Entonces
 \boxed{\operatorname{proy}_H \mathbf{q} = \frac{34}{7} + \frac{5}{7}x + \frac{53}{7}x^2}.
 \]
 
-\textbf{d)} Distancia mínima:
+\textbf{Paso 4. (d)} Distancia mínima:
 \[
 q - \operatorname{proy}_H q = \left(2 - \frac{34}{7}\right) + \left(5 - \frac{5}{7}\right)x + \left(9 - \frac{53}{7}\right)x^2
 = -\frac{20}{7} + \frac{30}{7}x + \frac{10}{7}x^2.
@@ -1262,11 +1273,19 @@ q - \operatorname{proy}_H q = \left(2 - \frac{34}{7}\right) + \left(5 - \frac{5}
 \begin{prob}
 Calcule la serie de Fourier para la función $f(x)=9x+7$ en el intervalo $[0,2\pi]$.
 \begin{myproof}
-Coeficientes:
-- \( a_0 = 9\pi + 7 \)
-- \( a_k = 0 \)
-- \( b_k = -\frac{18}{k} \)
-Serie:
+\textbf{Paso 1. Coeficiente $a_0$.}
+\[
+a_0 = \frac{1}{2\pi}\int_0^{2\pi} (9x+7)\,dx = \frac{1}{2\pi}\left(9\cdot 2\pi^2 + 7\cdot 2\pi\right) = 9\pi + 7.
+\]
+
+\textbf{Paso 2. Coeficientes $a_k$.} Como $\int_0^{2\pi} \cos kx\,dx = 0$ y $\int_0^{2\pi} x\cos kx\,dx = 0$, se tiene $a_k = 0$.
+
+\textbf{Paso 3. Coeficientes $b_k$.} Con $\int_0^{2\pi} \sin kx\,dx = 0$ y $\int_0^{2\pi} x\sin kx\,dx = -\frac{2\pi}{k}$:
+\[
+b_k = \frac{1}{\pi}\cdot 9\left(-\frac{2\pi}{k}\right) = -\frac{18}{k}.
+\]
+
+\textbf{Paso 4. Serie.}
 \[
 \boxed{f(x) \sim (9\pi + 7) - 18 \sum_{k=1}^{\infty} \frac{\sin(kx)}{k}}
 \]
@@ -1292,7 +1311,7 @@ x_1+x_2+x_3&=&0\\
 \item Calcule $\lVert \mathbf{u}-\text{proy}_{W}\mathbf{u}\rVert$.
 \end{enumerate}
 \begin{myproof}
-\textbf{a)} Resolviendo el sistema:
+\textbf{Paso 1. (a)} Resolviendo el sistema:
 \( x_3 = -x_1 - x_2,\; x_4 = -2x_2 - x_3 = -2x_2 + x_1 + x_2 = x_1 - x_2 \).
 Por tanto, \( \mathbf{x} = (x_1, x_2, -x_1 - x_2, x_1 - x_2) = x_1(1,0,-1,1) + x_2(0,1,-1,-1) \).
 Base de \( W \): \( \mathbf{w}_1 = (1,0,-1,1),\; \mathbf{w}_2 = (0,1,-1,-1) \).
@@ -1302,7 +1321,7 @@ Por tanto, base ortogonal:
 \boxed{\{(1,0,-1,1),\ (0,1,-1,-1)\}}.
 \]
 
-\textbf{b)} \( W^\perp \) es el espacio fila de la matriz del sistema:
+\textbf{Paso 2. (b)} \( W^\perp \) es el espacio fila de la matriz del sistema:
 \( \operatorname{gen}\{(1,1,1,0),\ (0,2,1,1)\} \).
 Aplicamos Gram-Schmidt a estos dos vectores:
 \( \mathbf{v}_1 = (1,1,1,0) \).
@@ -1313,7 +1332,7 @@ Base ortogonal:
 \boxed{\{(1,1,1,0),\ (-1,1,0,1)\}}.
 \]
 
-\textbf{c)} Proyección de \( \mathbf{u}=(5,6,7,2) \) sobre \( W \):
+\textbf{Paso 3. (c)} Proyección de \( \mathbf{u}=(5,6,7,2) \) sobre \( W \):
 \[
 \langle \mathbf{u}, \mathbf{w}_1 \rangle = 5 + 0 -7 + 2 = 0,\quad \|\mathbf{w}_1\|^2 = 1+0+1+1 = 3.
 \]
@@ -1327,12 +1346,12 @@ Base ortogonal:
 \boxed{\operatorname{proy}_W \mathbf{u} = (0,-1,1,1)}.
 \]
 
-\textbf{d)} \( \mathbf{u} - \operatorname{proy}_W \mathbf{u} = (5,6,7,2) - (0,-1,1,1) = (5,7,6,1) \).
+\textbf{Paso 4. (d)} \( \mathbf{u} - \operatorname{proy}_W \mathbf{u} = (5,6,7,2) - (0,-1,1,1) = (5,7,6,1) \).
 \[
 \boxed{(5,7,6,1)}.
 \]
 
-\textbf{e)} \( \|(5,7,6,1)\| = \sqrt{25+49+36+1} = \sqrt{111} \).
+\textbf{Paso 5. (e)} \( \|(5,7,6,1)\| = \sqrt{25+49+36+1} = \sqrt{111} \).
 \[
 \boxed{\sqrt{111}}.
 \]
@@ -1343,9 +1362,12 @@ Base ortogonal:
 \begin{prob}
 Sea $\{\mathbf{v}_1, \mathbf{v}_2, \dots, \mathbf{v}_m\}$ un subconjunto ortonormal en un espacio vectorial con producto interno de dimensión $n$ y suponga que $m\leq n$. Calcule el valor de $\lVert  \mathbf{v}_1+ \mathbf{v}_2+\dots +  \mathbf{v}_m \rVert$.
 \begin{myproof}
+\textbf{Paso 1.} Expandimos la norma al cuadrado por bilinealidad; por ortonormalidad, $\langle \mathbf{v}_i, \mathbf{v}_j \rangle = 0$ si $i \neq j$ y $\langle \mathbf{v}_i, \mathbf{v}_i \rangle = 1$, de modo que solo sobreviven los $m$ términos diagonales:
 \[
 \left\| \sum_{i=1}^m \mathbf{v}_i \right\|^2 = \sum_{i=1}^m \sum_{j=1}^m \langle \mathbf{v}_i, \mathbf{v}_j \rangle = m
 \]
+
+\textbf{Paso 2.} Tomando raíz cuadrada:
 \[
 \boxed{\left\| \sum_{i=1}^m \mathbf{v}_i \right\| = \sqrt{m}}
 \]
@@ -1356,11 +1378,19 @@ Sea $\{\mathbf{v}_1, \mathbf{v}_2, \dots, \mathbf{v}_m\}$ un subconjunto ortonor
 \begin{prob}
 Sea $f(x)=5x+7$. Calcule la serie de Fourier en el intervalo $[0,2\pi]$.
 \begin{myproof}
-Coeficientes:
-- \( a_0 = 5\pi + 7 \)
-- \( a_k = 0 \)
-- \( b_k = -\frac{10}{k} \)
-Serie:
+\textbf{Paso 1. Coeficiente $a_0$.}
+\[
+a_0 = \frac{1}{2\pi}\int_0^{2\pi} (5x+7)\,dx = \frac{1}{2\pi}\left(5\cdot 2\pi^2 + 7\cdot 2\pi\right) = 5\pi + 7.
+\]
+
+\textbf{Paso 2. Coeficientes $a_k$.} Como $\int_0^{2\pi} \cos kx\,dx = 0$ y $\int_0^{2\pi} x\cos kx\,dx = 0$, se tiene $a_k = 0$.
+
+\textbf{Paso 3. Coeficientes $b_k$.} Con $\int_0^{2\pi} x\sin kx\,dx = -\frac{2\pi}{k}$:
+\[
+b_k = \frac{1}{\pi}\cdot 5\left(-\frac{2\pi}{k}\right) = -\frac{10}{k}.
+\]
+
+\textbf{Paso 4. Serie.}
 \[
 \boxed{f(x) \sim (5\pi + 7) - 10 \sum_{k=1}^{\infty} \frac{\sin(kx)}{k}}
 \]
@@ -1387,7 +1417,7 @@ x_1-x_2+x_3+x_4&=&0\\
 \item Calcule $\lVert \mathbf{u}-\text{proy}_{W^{\perp}}\mathbf{u}\rVert$.
 \end{enumerate}
 \begin{myproof}
-\textbf{a)} Resolvemos el sistema. De las dos primeras: restamos la primera de la segunda: \( (2x_1+x_2-x_3+x_4) - (x_1-x_2+x_3+x_4) = x_1+2x_2-2x_3 = 0 \Rightarrow x_1 = -2x_2+2x_3 \).  
+\textbf{Paso 1. (a)} Resolvemos el sistema. La tercera ecuación es redundante ($r_3 = 2r_1 + r_2$), así que trabajamos con las dos primeras. Restamos la primera de la segunda: \( (2x_1+x_2-x_3+x_4) - (x_1-x_2+x_3+x_4) = x_1+2x_2-2x_3 = 0 \Rightarrow x_1 = -2x_2+2x_3 \).
 Sustituyendo en la primera: \( (-2x_2+2x_3) - x_2 + x_3 + x_4 = 0 \Rightarrow -3x_2+3x_3+x_4=0 \Rightarrow x_4 = 3x_2-3x_3 \).  
 Por tanto, \( \mathbf{x} = (-2x_2+2x_3,\; x_2,\; x_3,\; 3x_2-3x_3) = x_2(-2,1,0,3) + x_3(2,0,1,-3) \).  
 Base: \( \mathbf{w}_1 = (-2,1,0,3),\; \mathbf{w}_2 = (2,0,1,-3) \).  
@@ -1406,7 +1436,7 @@ Base ortogonal:
 \boxed{\{(-2,1,0,3),\ (2,13,14,-3)\}}.
 \]
 
-\textbf{b)} \( W^\perp \) es el espacio fila de la matriz de coeficientes. Para obtener base ortogonal, aplicamos Gram-Schmidt a las filas \( r_1=(1,-1,1,1), r_2=(2,1,-1,1), r_3=(4,-1,1,3) \). Pero como el espacio fila tiene dimensión 2 (el sistema tiene rango 2, pues las filas son dependientes), podemos tomar dos filas independientes y luego ortogonalizar. Tomamos \( r_1 \) y \( r_2 \):
+\textbf{Paso 2. (b)} \( W^\perp \) es el espacio fila de la matriz de coeficientes. Como el espacio fila tiene dimensión 2 (rango 2, pues $r_3 = 2r_1 + r_2$), basta tomar dos filas independientes y ortogonalizar. Tomamos \( r_1=(1,-1,1,1) \) y \( r_2=(2,1,-1,1) \):
 \( \mathbf{u}_1 = r_1 = (1,-1,1,1) \).
 \[
 \mathbf{u}_2 = r_2 - \frac{\langle r_2, \mathbf{u}_1 \rangle}{\|\mathbf{u}_1\|^2}\mathbf{u}_1
@@ -1420,7 +1450,7 @@ Base ortogonal de \( W^\perp \):
 \boxed{\{(1,-1,1,1),\ (7,5,-5,3)\}}.
 \]
 
-\textbf{c)} Proyección de \( \mathbf{u}=(9,4,5,2) \) sobre \( W^\perp \):
+\textbf{Paso 3. (c)} Proyección de \( \mathbf{u}=(9,4,5,2) \) sobre \( W^\perp \):
 Usando la base ortogonal \( \mathbf{a}_1 = (1,-1,1,1) \), \( \mathbf{a}_2 = (7,5,-5,3) \):
 \[
 \langle \mathbf{u}, \mathbf{a}_1 \rangle = 9-4+5+2=12,\quad \|\mathbf{a}_1\|^2 = 1+1+1+1=4.
@@ -1439,7 +1469,7 @@ Usando la base ortogonal \( \mathbf{a}_1 = (1,-1,1,1) \), \( \mathbf{a}_2 = (7,5
 \boxed{\operatorname{proy}_{W^\perp} \mathbf{u} = \frac{1}{27}(193,-1,1,129)}.
 \]
 
-\textbf{d)} \( \mathbf{u} - \operatorname{proy}_{W^\perp}\mathbf{u} = \mathbf{u} - \frac{1}{27}(193,-1,1,129) = \frac{1}{27}(243-193, 108+1, 135-1, 54-129) = \frac{1}{27}(50,109,134,-75) \).
+\textbf{Paso 4. (d)} \( \mathbf{u} - \operatorname{proy}_{W^\perp}\mathbf{u} = \mathbf{u} - \frac{1}{27}(193,-1,1,129) = \frac{1}{27}(243-193, 108+1, 135-1, 54-129) = \frac{1}{27}(50,109,134,-75) \).
 Su norma es:
 \[
 \frac{1}{27}\sqrt{50^2+109^2+134^2+(-75)^2} = \frac{1}{27}\sqrt{2500+11881+17956+5625} = \frac{1}{27}\sqrt{37962}.
@@ -1461,12 +1491,19 @@ Determine el valor de verdad de las siguientes afirmaciones. Si la afirmación e
 \item Dado un espacio vectorial con producto interno de dimensión $n$. Si $n\geq k$ entonces todo conjunto $\{\mathbf{u_1},\dots, \mathbf{u}_k\}$ linealmente independiente es un conjunto ortogonal.
 \end{enumerate}
 \begin{myproof}
-\textbf{a)} Falso. Si \( \mathbf{u} \perp \mathbf{v} \), entonces \( \langle \mathbf{u}, \mathbf{v} \rangle = 0 \), pero \( \|\mathbf{u}\|\|\mathbf{v}\| \) puede ser no cero.  
+\textbf{Paso 1. Estrategia.} Para cada afirmación buscamos o bien una demostración general o bien un contraejemplo concreto; los contraejemplos más económicos viven en $\mathbb{R}^2$ con el producto punto usual.
+
+\textbf{Paso 2. Análisis por literal.}
+
+\textbf{a)} Falso. Si \( \mathbf{u} \perp \mathbf{v} \), entonces \( \langle \mathbf{u}, \mathbf{v} \rangle = 0 \), pero \( \|\mathbf{u}\|\|\mathbf{v}\| \) puede ser no cero. Contraejemplo: $\mathbf{u}=(1,0)$ y $\mathbf{v}=(0,1)$ en $\mathbb{R}^2$: $|\langle \mathbf{u},\mathbf{v} \rangle| = 0$ pero $\|\mathbf{u}\|\|\mathbf{v}\| = 1$.
+
 \textbf{b)} Falso. La ortogonalidad entre $\mathbf{u}$ y $\mathbf{v}$ nada dice sobre la relación de ambos con $W$. Contraejemplo: en $V=\mathbb{R}^2$ con $W=\operatorname{gen}\{(1,0)\}$ se tiene $W^{\perp}=\operatorname{gen}\{(0,1)\}$. Los vectores $\mathbf{u}=(1,0)$ y $\mathbf{v}=(0,1)$ son no nulos y ortogonales, pero $\mathbf{u}+\mathbf{v}=(1,1) \notin W^{\perp}$, pues $\langle (1,1),(1,0) \rangle = 1 \neq 0$.
 
 \textbf{c)} Falso. $\operatorname{proy}_W \mathbf{u}$ pertenece a $W$, y el único vector de $W$ ortogonal a todo $W$ es $\mathbf{0}$. Luego la afirmación solo se cumple en el caso trivial $\operatorname{proy}_W \mathbf{u} = \mathbf{0}$, es decir, cuando $\mathbf{u} \in W^{\perp}$.
 
 \textbf{d)} Falso. Contraejemplo: $\{(1,0), (1,1)\}$ en $\mathbb{R}^2$ es linealmente independiente pero no ortogonal.
+
+\textbf{Paso 3. Resumen.} Las cuatro afirmaciones son falsas.
 \end{myproof}
 \end{prob}
 
@@ -1474,11 +1511,19 @@ Determine el valor de verdad de las siguientes afirmaciones. Si la afirmación e
 \begin{prob}
 Calcule la serie de Fourier de la función $f(x)=7x+2$ en el intervalo $[0,2\pi]$.
 \begin{myproof}
-Coeficientes:
-- \( a_0 = 7\pi + 2 \)
-- \( a_k = 0 \)
-- \( b_k = -\frac{14}{k} \)
-Serie:
+\textbf{Paso 1. Coeficiente $a_0$.}
+\[
+a_0 = \frac{1}{2\pi}\int_0^{2\pi} (7x+2)\,dx = \frac{1}{2\pi}\left(7\cdot 2\pi^2 + 2\cdot 2\pi\right) = 7\pi + 2.
+\]
+
+\textbf{Paso 2. Coeficientes $a_k$.} Como $\int_0^{2\pi} \cos kx\,dx = 0$ y $\int_0^{2\pi} x\cos kx\,dx = 0$, se tiene $a_k = 0$.
+
+\textbf{Paso 3. Coeficientes $b_k$.} Con $\int_0^{2\pi} x\sin kx\,dx = -\frac{2\pi}{k}$:
+\[
+b_k = \frac{1}{\pi}\cdot 7\left(-\frac{2\pi}{k}\right) = -\frac{14}{k}.
+\]
+
+\textbf{Paso 4. Serie.}
 \[
 \boxed{f(x) \sim (7\pi + 2) - 14 \sum_{k=1}^{\infty} \frac{\sin(kx)}{k}}
 \]
@@ -1495,20 +1540,36 @@ Defina el subespacio $H=\left\lbrace (x,y,z) : \frac{x}{2}=\frac{y}{-3}=\frac{z}
 \item Calcule $\lVert \mathbf{u}-\operatorname{proy}_{H}\mathbf{u} \rVert$.
 \end{enumerate}
 \begin{myproof}
-\textbf{a)} $H$ es generado por $(2,-3,4)$. $H^{\perp}$ es el plano $2x-3y+4z=0$. Una base: $(3,2,0)$ y $(0,4,3)$.
-
-\textbf{b)} Proyección de $\mathbf{u}$ sobre $H$:
+\textbf{Paso 1. (a)} $H$ es la recta generada por $\mathbf{d}=(2,-3,4)$, así que $H^{\perp}$ es el plano $2x-3y+4z=0$. Dos vectores del plano son $\mathbf{b}_1=(3,2,0)$ y $\mathbf{b}_2=(0,4,3)$, pero no son ortogonales entre sí ($\langle \mathbf{b}_1,\mathbf{b}_2 \rangle = 8$), de modo que aplicamos Gram-Schmidt:
 \[
-\operatorname{proy}_H \mathbf{u} = \frac{17}{29}(2,-3,4)
+\mathbf{v}_1 = (3,2,0), \qquad
+\mathbf{v}_2 = \mathbf{b}_2 - \frac{\langle \mathbf{b}_2, \mathbf{v}_1 \rangle}{\|\mathbf{v}_1\|^2}\mathbf{v}_1
+= (0,4,3) - \frac{8}{13}(3,2,0) = \left(-\frac{24}{13}, \frac{36}{13}, 3\right).
 \]
-Entonces:
+Escalando $\mathbf{v}_2$ por $\tfrac{13}{3}$:
 \[
-\mathbf{h} = \operatorname{proy}_H \mathbf{u},\quad \mathbf{p} = \mathbf{u} - \mathbf{h}
+\boxed{\{(3,2,0),\ (-8,12,13)\}}
+\]
+(Verificación: $(-8,12,13)\cdot(2,-3,4) = -16-36+52 = 0$ y $(-8,12,13)\cdot(3,2,0) = -24+24 = 0$.)
+
+\textbf{Paso 2. (b)} Proyección de $\mathbf{u}$ sobre $H$: con $\langle \mathbf{u},\mathbf{d} \rangle = 18-21+20 = 17$ y $\|\mathbf{d}\|^2 = 29$:
+\[
+\mathbf{h} = \operatorname{proy}_H \mathbf{u} = \frac{17}{29}(2,-3,4) = \left(\frac{34}{29}, -\frac{51}{29}, \frac{68}{29}\right), \qquad
+\mathbf{p} = \mathbf{u} - \mathbf{h} = \left(\frac{227}{29}, \frac{254}{29}, \frac{77}{29}\right).
+\]
+\[
+\boxed{\mathbf{u} = \underbrace{\left(\tfrac{34}{29}, -\tfrac{51}{29}, \tfrac{68}{29}\right)}_{\mathbf{h}\, \in\, H} + \underbrace{\left(\tfrac{227}{29}, \tfrac{254}{29}, \tfrac{77}{29}\right)}_{\mathbf{p}\, \in\, H^{\perp}}}
 \]
 
-\textbf{c)} $\mathbf{u} - \operatorname{proy}_H \mathbf{u} = \left(9 - \frac{34}{29}, 7 + \frac{51}{29}, 5 - \frac{68}{29}\right)$
+\textbf{Paso 3. (c)} Por el paso anterior:
+\[
+\boxed{\mathbf{u} - \operatorname{proy}_H \mathbf{u} = \mathbf{p} = \left(\frac{227}{29}, \frac{254}{29}, \frac{77}{29}\right)}
+\]
 
-\textbf{d)} Distancia mínima: $\|\mathbf{u} - \operatorname{proy}_H \mathbf{u}\| = \sqrt{\langle \mathbf{p}, \mathbf{p} \rangle}$
+\textbf{Paso 4. (d)} Usando $\|\mathbf{p}\|^2 = \|\mathbf{u}\|^2 - \|\mathbf{h}\|^2 = 155 - \frac{17^2}{29} = \frac{4495-289}{29} = \frac{4206}{29}$:
+\[
+\boxed{\lVert \mathbf{u} - \operatorname{proy}_H \mathbf{u} \rVert = \sqrt{\frac{4206}{29}} = \frac{\sqrt{121974}}{29} \approx 12.04}
+\]
 \end{myproof}
 \end{prob}
 
@@ -1518,11 +1579,11 @@ Entonces:
 \begin{prob}
 Un rombo es un paralelogramo cuyos lados son de igual longitud. Demuestre que si se construye un rombo en un espacio vectorial con producto interno real sus diagonales son ortogonales.
 \begin{myproof}
-Sea $V$ un espacio vectorial real con producto interno $\langle \cdot, \cdot \rangle$. Sea $\mathbf{a}, \mathbf{b} \in V$ dos vectores no nulos y linealmente independientes que forman dos lados adyacentes de un rombo, es decir, $\|\mathbf{a}\| = \|\mathbf{b}\|$. Las diagonales del rombo son: \(
+\textbf{Paso 1. Planteamiento.} Sea $V$ un espacio vectorial real con producto interno $\langle \cdot, \cdot \rangle$. Sean $\mathbf{a}, \mathbf{b} \in V$ dos vectores no nulos y linealmente independientes que forman dos lados adyacentes de un rombo, es decir, $\|\mathbf{a}\| = \|\mathbf{b}\|$. Las diagonales del rombo son: \(
 \mathbf{d}_1 = \mathbf{a} + \mathbf{b}, \qquad \mathbf{d}_2 = \mathbf{a} - \mathbf{b}.
 \)
 
-Calculamos el producto interno de las diagonales: 
+\textbf{Paso 2. Producto interno de las diagonales.}
 
 \(
 \langle \mathbf{d}_1, \mathbf{d}_2 \rangle = \langle \mathbf{a} + \mathbf{b}, \mathbf{a} - \mathbf{b} \rangle = \langle \mathbf{a}, \mathbf{a} \rangle - \langle \mathbf{a}, \mathbf{b} \rangle + \langle \mathbf{b}, \mathbf{a} \rangle - \langle \mathbf{b}, \mathbf{b} \rangle
@@ -1534,7 +1595,7 @@ Como el producto interno es simétrico ($\langle \mathbf{a}, \mathbf{b} \rangle 
 = \|\mathbf{a}\|^2 - \|\mathbf{b}\|^2
 \]
 
-Como $\|\mathbf{a}\| = \|\mathbf{b}\|$, entonces $\|\mathbf{a}\|^2 - \|\mathbf{b}\|^2 = 0$. Por lo tanto, \(\langle \mathbf{d}_1, \mathbf{d}_2 \rangle = 0 \) lo que prueba que las diagonales del rombo son ortogonales.
+\textbf{Paso 3. Conclusión.} Como $\|\mathbf{a}\| = \|\mathbf{b}\|$, entonces $\|\mathbf{a}\|^2 - \|\mathbf{b}\|^2 = 0$. Por lo tanto, \(\langle \mathbf{d}_1, \mathbf{d}_2 \rangle = 0 \), lo que prueba que las diagonales del rombo son ortogonales.
 \end{myproof}
 \end{prob}
 
@@ -1542,17 +1603,19 @@ Como $\|\mathbf{a}\| = \|\mathbf{b}\|$, entonces $\|\mathbf{a}\|^2 - \|\mathbf{b
 \begin{prob}
 Demuestre que si las diagonales de un paralelogramo tienen igual norma, entonces los vectores \( \mathbf{u}, \mathbf{v} \) son ortogonales.
 \begin{myproof}
-Las diagonales son \( \mathbf{u} + \mathbf{v} \) y \( \mathbf{u} - \mathbf{v} \). Si tienen igual norma:
+\textbf{Paso 1.} Si $\mathbf{u}$ y $\mathbf{v}$ son los lados adyacentes del paralelogramo, las diagonales son \( \mathbf{u} + \mathbf{v} \) y \( \mathbf{u} - \mathbf{v} \). Si tienen igual norma:
 \[
 \|\mathbf{u} + \mathbf{v}\|^2 = \|\mathbf{u} - \mathbf{v}\|^2
 \]
-Desarrollando:
+
+\textbf{Paso 2.} Desarrollando ambos lados y cancelando:
 \[
 \|\mathbf{u}\|^2 + 2\langle \mathbf{u}, \mathbf{v} \rangle + \|\mathbf{v}\|^2 = \|\mathbf{u}\|^2 - 2\langle \mathbf{u}, \mathbf{v} \rangle + \|\mathbf{v}\|^2
 \]
 \[
 4\langle \mathbf{u}, \mathbf{v} \rangle = 0 \implies \langle \mathbf{u}, \mathbf{v} \rangle = 0
 \]
+Por tanto, $\mathbf{u}$ y $\mathbf{v}$ son ortogonales.
 \end{myproof}
 \end{prob}
 

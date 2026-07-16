@@ -234,7 +234,7 @@ R1 (orden canónico), R2 (figura obligatoria) y R3 (nivel de demostración) son 
 
 | ID | Decisión | Bloqueante para | Estado |
 |---|---|---|---|
-| E1 | Estructura de partes (5 partes vs mínimo `\part{ED}`) | Ninguno (independiente) | Abierta |
+| E1 | Estructura de partes (5 partes vs mínimo `\part{ED}`) | Ninguno (independiente) | **Resuelta 2026-07-16** — estructura de 9 partes del autor, supersede a P1 (ver resolución) |
 | E2 | Intercambio translineales ↔ vvpropios | F9AL semanas 4–5 (solo el orden de ejecución) | Abierta |
 | E3 | `\sen` vs `\sin` global | Cualquier reescritura masiva | **Resuelta 2026-07-06** — grafía única `\sen` en todo el libro (ver resolución bajo la tabla) |
 | E4 | Heading único de propuestos + patrón subsecciones | F9AL/F9C1/F9ED ítems de graduación | **Resuelta 2026-07-06** — cierra F9C1.01 (ver resolución) |
@@ -278,3 +278,20 @@ R1 (orden canónico), R2 (figura obligatoria) y R3 (nivel de demostración) son 
 
 **Decisión E5 — numeración de capítulos:**
 - El libro tiene 35 capítulos reales; el índice objetivo de 34 queda obsoleto. Toda referencia nueva en los `.md` usa el "# real" de §1.1. Los números de capítulo en documentos anteriores al 2026-07-06 siguen el índice viejo (nota añadida al inicio de `PROGRESO.md`).
+- **Actualización 2026-07-16 (tras E1):** el «# real» de §1.1 también queda obsoleto — la numeración vigente es la del orden de 9 partes (ver resolución E1).
+
+**Decisión E1 — estructura de 9 partes (2026-07-16, decisión del autor):**
+- Sustituye a la Propuesta P1 (5 partes) de §2.3. El maestro pasa de 2 a **9 `\part`**, con reordenamiento de ~20 de los 35 `\input`:
+  - **I — Fundamentos y Cálculo diferencial de una variable:** politicas, preliminares, complejos, funciones, limites, derivadas, apderivadas (caps. 1–7)
+  - **II — Vectores y geometría analítica:** vectoresrn (cap. 8)
+  - **III — Cálculo integral de una variable:** tecintegracion, intdefinida, apintegral, impropias, polares (caps. 9–13)
+  - **IV — Álgebra Lineal matricial:** matrices, sel, espaciosvectoriales, prodinterno (caps. 14–17)
+  - **V — Cálculo diferencial en varias variables:** funvectoriales, limvariasvariables, planostangentes, gradientes, multiplicadoresintdobles (caps. 18–22)
+  - **VI — Álgebra Lineal avanzada:** vvpropios, translineales (caps. 23–24)
+  - **VII — Sucesiones y Series:** sucesionesyseries, sucesionesyseriesfunciones (caps. 25–26)
+  - **VIII — Ecuaciones Diferenciales Ordinarias:** cap27–cap31 (caps. 27–31)
+  - **IX — Cálculo integral en varias variables:** apintdobles, inttriples, cap33, cap34 (caps. 32–35)
+- La numeración resultante **restaura el índice objetivo original** del programa de curso, resolviendo el #33 duplicado señalado en E5: inttriples→33, cap33→34, cap34→35.
+- Dependencias verificadas antes de ejecutar: las 2 únicas referencias en prosa a «capítulo anterior» (sel→matrices, planostangentes→limvariasvariables) conservan su adyacencia; el resto de remisiones son vía `\ref` y se renumeran automáticamente. Cadenas de §1.2 respetadas (cap29 tras vvpropios, cap30 tras series, Parte IX tras polares y Parte V).
+- Las prosas de apertura de parte (Propuesta P3) tienen plan propio: `PLAN_E1_PARTES.md` (prerequisito: cierre de F9-AL, ítems F9AL.40–.41).
+- **Actualización 2026-07-16 (retiro de politicas.tex):** por decisión del autor, `politicas.tex` salió del maestro (movido a `_auxiliar/`, no se borra) y su `\input` fue eliminado. **El libro tiene ahora 34 capítulos reales.** `preliminares.tex` se renombró `\chapter{Números reales}` (antes «Preliminares»; su §1 pasó a «De los números naturales a los reales» para no duplicar el título) y abre la Parte I. Numeración vigente: **I** preliminares…apderivadas (caps. 1–6); **II** vectoresrn (7); **III** tecintegracion…polares (8–12); **IV** matrices…prodinterno (13–16); **V** funvectoriales…multiplicadoresintdobles (17–21); **VI** vvpropios, translineales (22–23); **VII** sucesiones ×2 (24–25); **VIII** cap27–cap31 (26–30); **IX** apintdobles…cap34 (31–34). El prefacio del maestro dejó de mencionar las políticas como inicio del documento.
