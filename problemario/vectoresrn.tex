@@ -317,16 +317,18 @@ La figura muestra los vectores $\mathbf{u}$ y $\mathbf{v}$. Calcule las coordena
 
 \columnbreak			
 
-\begin{myproof}	
-Usando trigonometría:		
+\begin{myproof}
+\textbf{Paso 1. Componentes por trigonometría.} Ambos vectores tienen norma $1$; sus ángulos con el eje $x$ positivo son $30°$ y $240°$:
 
-$\mathbf{u} = \frac{\sqrt{3}}{2}\mathbf{i} + \frac{1}{2}\mathbf{j}$
+$\mathbf{u} = \cos 30°\,\mathbf{i} + \sen 30°\,\mathbf{j} = \frac{\sqrt{3}}{2}\mathbf{i} + \frac{1}{2}\mathbf{j}$
 
-$\mathbf{v} = -\frac{1}{2}\mathbf{i} - \frac{\sqrt{3}}{2}\mathbf{j}$
+$\mathbf{v} = \cos 240°\,\mathbf{i} + \sen 240°\,\mathbf{j} = -\frac{1}{2}\mathbf{i} - \frac{\sqrt{3}}{2}\mathbf{j}$
 
-$\mathbf{u}+\mathbf{v} = \frac{\sqrt{3}-1}{2}\mathbf{i} + \frac{1-\sqrt{3}}{2}\mathbf{j}$
+\textbf{Paso 2. Suma y diferencia.} Operando componente a componente:
 
-$\mathbf{u}-\mathbf{v} = \frac{\sqrt{3}+1}{2}\mathbf{i} + \frac{1+\sqrt{3}}{2}\mathbf{j}$
+$\boxed{\mathbf{u}+\mathbf{v} = \frac{\sqrt{3}-1}{2}\mathbf{i} + \frac{1-\sqrt{3}}{2}\mathbf{j}}$
+
+$\boxed{\mathbf{u}-\mathbf{v} = \frac{\sqrt{3}+1}{2}\mathbf{i} + \frac{1+\sqrt{3}}{2}\mathbf{j}}$
 \end{myproof}
 \end{multicols}
 \end{example}
@@ -629,14 +631,14 @@ Dados los puntos $A=(3,0,2)$, $B=(4,3,0)$ y $C=(8,1,-1)$, calcular:
 \label{fig:probtriangulo_datos}
 \end{figure}
 
-Calculamos los vectores:
+\textbf{Paso 1. Estrategia y vectores base.} Todos los literales se resuelven a partir de los vectores que unen los vértices:
 \begin{align*}
 \overrightarrow{AB} &= (1, 3, -2) \\
 \overrightarrow{AC} &= (5, 1, -3) \\
 \overrightarrow{BC} &= (4, -2, -1)
 \end{align*}
 
-
+\textbf{Paso 2. Resolución de cada literal.}
 \begin{enumerate}[$(a)$]
 \item Normas de los vectores:
 \begin{align*}
@@ -645,7 +647,7 @@ Calculamos los vectores:
 \|\overrightarrow{BC}\| &= \sqrt{4^2 + (-2)^2 + (-1)^2} = \sqrt{21}
 \end{align*}
 
-Perímetro: $\sqrt{14} + \sqrt{35} + \sqrt{21} \approx 14.240$
+Perímetro: $\boxed{\sqrt{14} + \sqrt{35} + \sqrt{21}} \approx 14.240$
 
 \item Ángulos internos:
 
@@ -653,20 +655,20 @@ Para el ángulo en $A$ (entre $\overrightarrow{AB}$ y $\overrightarrow{AC}$):
 \begin{align*}
 \overrightarrow{AB} \cdot \overrightarrow{AC} &=  14 \\
 \cos(\theta_A) &= \frac{14}{\sqrt{14} \cdot \sqrt{35}} = \frac{\sqrt{10}}{5} \\
-\theta_A &= \arccos\left(\frac{\sqrt{10}}{5}\right)
+\theta_A &= \boxed{\arccos\left(\frac{\sqrt{10}}{5}\right)}
 \end{align*}
 
 Para el ángulo en $B$ (entre $\overrightarrow{BA}$ y $\overrightarrow{BC}$):
 \begin{align*}
 \overrightarrow{BA} \cdot \overrightarrow{BC} &= 0 \\
-\theta_B &= \frac{\pi}{2}
+\theta_B &= \boxed{\frac{\pi}{2}}
 \end{align*}
 
 Para el ángulo en $C$ (entre $\overrightarrow{CA}$ y $\overrightarrow{CB}$):
 \begin{align*}
 \overrightarrow{CA} \cdot \overrightarrow{CB} &=  21 \\
 \cos(\theta_C) &= \frac{21}{\sqrt{35} \cdot \sqrt{21}} = \frac{21}{\sqrt{735}} \\
-\theta_C &= \arccos\left(\frac{21}{\sqrt{735}}\right)
+\theta_C &= \boxed{\arccos\left(\frac{21}{\sqrt{735}}\right)}
 \end{align*}
 
 \item Área usando el producto cruz:
@@ -676,21 +678,21 @@ $$\overrightarrow{AB} \times \overrightarrow{AC} = \begin{vmatrix}
 5 & 1 & -3
 \end{vmatrix} = (-7, -7, -14)$$
 
-Área = $\frac{1}{2}\|\overrightarrow{AB} \times \overrightarrow{AC}\| = \frac{1}{2}\sqrt{49 + 49 + 196} = \frac{7\sqrt{6}}{2} \approx 8.573$
+Área = $\frac{1}{2}\|\overrightarrow{AB} \times \overrightarrow{AC}\| = \frac{1}{2}\sqrt{49 + 49 + 196} = \boxed{\frac{7\sqrt{6}}{2}} \approx 8.573$
 
-\item Vector normal al plano: $\mathbf{n} = (-7, -7, -14)$
+\item Vector normal al plano: $\boxed{\mathbf{n} = (-7, -7, -14)}$
 
 \item Ecuación del plano usando el punto $A(3,0,2)$ y vector normal:
 $$-7(x - 3) - 7(y - 0) - 14(z - 2) = 0$$
-$$-7x - 7y - 14z = -49$$
+$$\boxed{-7x - 7y - 14z = -49}$$
 
 \item Ecuaciones simétricas de la recta perpendicular a $\Pi$ por el origen:
-$$\frac{x}{-7} = \frac{y}{-7} = \frac{z}{-14}$$
+$$\boxed{\frac{x}{-7} = \frac{y}{-7} = \frac{z}{-14}}$$
 
 \item Distancia del punto $(3,1,-2)$ al plano:
 
 
-$d = \frac{|-7(3) - 7(1) - 14(-2) + 49|}{\sqrt{49 + 49 + 196}} = \frac{49}{7\sqrt{6}} = \frac{7\sqrt{6}}{6} \approx 2.858.$
+$d = \frac{|-7(3) - 7(1) - 14(-2) + 49|}{\sqrt{49 + 49 + 196}} = \frac{49}{7\sqrt{6}} = \boxed{\frac{7\sqrt{6}}{6}} \approx 2.858.$
 \end{enumerate}
 \end{multicols}
 \end{myproof}
@@ -742,12 +744,12 @@ Calcule el volumen del paralelepípedo de la figura.
 
 \columnbreak
 
-El volumen del paralelepípedo es el valor absoluto del producto mixto de los tres vectores que lo definen. 
+\textbf{Paso 1. Estrategia.} El volumen del paralelepípedo es el valor absoluto del producto mixto de los tres vectores que lo definen.
 
 Sean ${\bf u} = \begin{pmatrix} -1 \\ 2 \\ 4 \end{pmatrix},$  ${\bf v} = \begin{pmatrix} -5 \\ 1 \\ 0 \end{pmatrix}$ y ${\bf w} = \begin{pmatrix} 0 \\ 4 \\ 0 \end{pmatrix}$.
 
-Calculamos $\abs{({\bf u} \times {\bf v}) \cdot {\bf w}}$:
-	
+\textbf{Paso 2. Producto mixto.} Calculamos $\abs{({\bf u} \times {\bf v}) \cdot {\bf w}}$:
+
 \begin{align*}
 {\bf p} = {\bf u} \times {\bf v} &=
 \begin{vmatrix}
@@ -759,7 +761,7 @@ Calculamos $\abs{({\bf u} \times {\bf v}) \cdot {\bf w}}$:
 {\bf p} \cdot {\bf w} &= -80
 \end{align*}
 
-Por tanto, el volumen del paralelepípedo es $V=\abs{-80}=\boxed{80}$ unidades cúbicas.
+\textbf{Paso 3. Volumen.} Por tanto, el volumen del paralelepípedo es $V=\abs{-80}=\boxed{80}$ unidades cúbicas.
 
 \end{multicols}
 \end{myproof}
@@ -967,13 +969,13 @@ Halle las ecuaciones simétricas de la recta que pasa por el punto $(-2,1,-3)$ y
 
 \columnbreak
 
-Para construir la recta necesitamos un vector director y un punto. El punto dado es $A=(-2,1,-3)$.
+\textbf{Paso 1. Estrategia.} Para construir la recta necesitamos un vector director y un punto. El punto dado es $A=(-2,1,-3)$.
 
 Sea $B=(7,4,1)$ un punto en $l_1$ y $\mathbf{v}=(2,0,-4)$ su vector director. El vector director de la recta perpendicular será $\mathbf{u} - \text{proy}_{\mathbf{v}} \mathbf{u}$, donde $\mathbf{u}$ es el vector de $B$ a $A$.
 
 \end{multicols}
 
-Calculamos:
+\textbf{Paso 2. Cálculo del vector director.}
 
 $\mathbf{u}=(-2,1,-3)-(7,4,1)=(-9,-3,-4)$
 
@@ -981,7 +983,7 @@ $\text{proy}_{\mathbf{v}} \mathbf{u}=\frac{\mathbf{u} \cdot \mathbf{v}}{||\mathb
 
 $\mathbf{u} - \text{proy}_{\mathbf{v}} \mathbf{u} = (-9,-3,-4) - \frac{-1}{10} (2,0,-4) = \left(-\frac{44}{5}, -3, -\frac{22}{5}\right)$
 
-Multiplicando por $5$, las ecuaciones simétricas son $\boxed{\frac{x+2}{-44}=\frac{y-1}{-15}=\frac{z+3}{-22}}.$
+\textbf{Paso 3. Ecuaciones simétricas.} Multiplicando por $5$, las ecuaciones simétricas son $\boxed{\frac{x+2}{-44}=\frac{y-1}{-15}=\frac{z+3}{-22}}.$
 \end{myproof}
 \end{example}
 
@@ -1121,34 +1123,34 @@ Dados los vectores $\mathbf{u} = 3\mathbf{i} - 3\mathbf{j} + \mathbf{k}$, $\math
 
 \textbf{Paso 2. Cálculo por literal.}
 \begin{enumerate}[$(a)$]
-\item $\mathbf{u} + 5\mathbf{v} - \mathbf{w} = (3,-3,1) + 5(-2,1,-6) - (-1,0,5) = (-6,2,-34)$
+\item $\mathbf{u} + 5\mathbf{v} - \mathbf{w} = (3,-3,1) + 5(-2,1,-6) - (-1,0,5) = \boxed{(-6,2,-34)}$
 
-\item $\|\mathbf{u} + \mathbf{w}\| = \|(2,-3,6)\| = \sqrt{4 + 9 + 36} = 7$
+\item $\|\mathbf{u} + \mathbf{w}\| = \|(2,-3,6)\| = \sqrt{4 + 9 + 36} = \boxed{7}$
 
-\item $\|\mathbf{u}\| + \|\mathbf{w}\| = \sqrt{19} + \sqrt{26}$
+\item $\|\mathbf{u}\| + \|\mathbf{w}\| = \boxed{\sqrt{19} + \sqrt{26}}$
 
-\item $\frac{\mathbf{u}}{\|\mathbf{u}\|} = \frac{(3,-3,1)}{\sqrt{19}} = \left(\frac{3}{\sqrt{19}}, -\frac{3}{\sqrt{19}}, \frac{1}{\sqrt{19}}\right)$
+\item $\frac{\mathbf{u}}{\|\mathbf{u}\|} = \frac{(3,-3,1)}{\sqrt{19}} = \boxed{\left(\frac{3}{\sqrt{19}}, -\frac{3}{\sqrt{19}}, \frac{1}{\sqrt{19}}\right)}$
 
 \item De $2\mathbf{u} - \mathbf{v} + \mathbf{x} = 4\mathbf{x} + \mathbf{w}$:
 $$3\mathbf{x} = 2\mathbf{u} - \mathbf{v} - \mathbf{w}$$
-$$\mathbf{x} = \frac{1}{3}(9,-7,3) = \left(3, -\frac{7}{3}, 1\right)$$
+$$\mathbf{x} = \frac{1}{3}(9,-7,3) = \boxed{\left(3, -\frac{7}{3}, 1\right)}$$
 
-\item $\mathbf{u} \cdot \mathbf{v} = 3(-2) + (-3)(1) + 1(-6) = -15$
+\item $\mathbf{u} \cdot \mathbf{v} = 3(-2) + (-3)(1) + 1(-6) = \boxed{-15}$
 $$\mathbf{u} \times \mathbf{v} = \begin{vmatrix}
 \mathbf{i} & \mathbf{j} & \mathbf{k} \\
 3 & -3 & 1 \\
 -2 & 1 & -6
-\end{vmatrix} = (17,16,-3)$$
+\end{vmatrix} = \boxed{(17,16,-3)}$$
 
-\item $\cos(\theta) = \frac{-15}{\sqrt{19}\sqrt{41}}$, $\theta = \arccos\left(\frac{-15}{\sqrt{19}\sqrt{41}}\right) \approx 2.138$ rad
+\item $\cos(\theta) = \frac{-15}{\sqrt{19}\sqrt{41}}$, $\theta = \boxed{\arccos\left(\frac{-15}{\sqrt{19}\sqrt{41}}\right) \approx 2.138}$ rad
 
-\item $\mathbf{u} \times \mathbf{w} = (-15,-16,-3)$
+\item $\mathbf{u} \times \mathbf{w} = \boxed{(-15,-16,-3)}$
 
-\item $\text{proy}_{\mathbf{v}}\mathbf{u} = \frac{\mathbf{u} \cdot \mathbf{v}}{\|\mathbf{v}\|^2}\mathbf{v} = \frac{-15}{41}(-2,1,-6) = \left(\frac{30}{41}, -\frac{15}{41}, \frac{90}{41}\right)$
+\item $\text{proy}_{\mathbf{v}}\mathbf{u} = \frac{\mathbf{u} \cdot \mathbf{v}}{\|\mathbf{v}\|^2}\mathbf{v} = \frac{-15}{41}(-2,1,-6) = \boxed{\left(\frac{30}{41}, -\frac{15}{41}, \frac{90}{41}\right)}$
 
-\item $\mathbf{s} \cdot \mathbf{v} = 0 \Rightarrow -2 - \alpha - 18 = 0 \Rightarrow \alpha = -20$
+\item $\mathbf{s} \cdot \mathbf{v} = 0 \Rightarrow -2 - \alpha - 18 = 0 \Rightarrow \boxed{\alpha = -20}$
 
-\item Para paralelismo: $\mathbf{s} = k\mathbf{v}$. Comparando componentes: $\alpha = \frac{1}{2}$
+\item Para paralelismo: $\mathbf{s} = k\mathbf{v}$. Comparando componentes: $\boxed{\alpha = \frac{1}{2}}$
 \end{enumerate}
 \end{myproof}
 \end{prob}
@@ -1824,9 +1826,7 @@ Por lo tanto,
 \end{prob}
 
 % Intermedio
-\begin{prob} (\cite{espinoza2006Algebralineal}, p. 78, Problema 20) Un escalador observa que existe una rama recta de un árbol que pasa por los puntos $A(3,5,3)$ y $B(8,3,1)$. Si lanza una cuerda desde el punto $P(8,6,5)$ hasta la rama, ¿cuál es la longitud mínima que debe tener la cuerda? 
-
-\textbf{Solución:} $\sqrt{\frac{629}{33}}$.
+\begin{prob} (\cite{espinoza2006Algebralineal}, p. 78, Problema 20) Un escalador observa que existe una rama recta de un árbol que pasa por los puntos $A(3,5,3)$ y $B(8,3,1)$. Si lanza una cuerda desde el punto $P(8,6,5)$ hasta la rama, ¿cuál es la longitud mínima que debe tener la cuerda?
 
 \begin{myproof}
 Queremos encontrar la distancia mínima desde el punto $P(8,6,5)$ a la recta que pasa por los puntos $A(3,5,3)$ y $B(8,3,1)$. Esta distancia será la longitud mínima de la cuerda.
@@ -2223,20 +2223,18 @@ segmento y es perpendicular a él. Dado el triángulo con vértices
 $A(3,-1,-1)$, $B(1,2,-7)$ y $C(-5,14,-3)$, determine las ecuaciones 
 simétricas de la mediatriz del segmento $\overline{CA}$.
 
-\textbf{Solución:}
-
 \begin{myproof}
 Sea el triángulo con vértices $A(3,-1,-1)$, $B(1,2,-7)$ y $C(-5,14,-3)$.
 Queremos hallar las ecuaciones simétricas de la mediatriz del segmento 
 $\overline{CA}$ en el plano del triángulo.
 
-\textbf{1. Punto medio $M$ de $\overline{CA}$:}
+\textbf{Paso 1. Punto medio $M$ de $\overline{CA}$.}
 \[
   M = \left(\frac{3+(-5)}{2},\; \frac{-1+14}{2},\; \frac{-1+(-3)}{2}\right)
     = \left(-1,\; \frac{13}{2},\; -2\right).
 \]
 
-\textbf{2. Vectores relevantes:}
+\textbf{Paso 2. Vectores relevantes.}
 
 Vector a lo largo de $\overline{CA}$:
 \[
@@ -2247,7 +2245,7 @@ Vector desde $C$ hasta $B$:
   \vec{w} = \overrightarrow{CB} = B - C = (6,\,-12,\,-4).
 \]
 
-\textbf{3. Proyección ortogonal de $\vec{w}$ sobre $\vec{u}$:}
+\textbf{Paso 3. Proyección ortogonal de $\vec{w}$ sobre $\vec{u}$.}
 
 Usamos la fórmula de proyección ortogonal:
 \[
@@ -2269,7 +2267,7 @@ Luego:
   = \left(\frac{1760}{293},\,-\frac{3300}{293},\,\frac{440}{293}\right).
 \]
 
-\textbf{4. Componente de $\vec{w}$ perpendicular a $\vec{u}$:}
+\textbf{Paso 4. Componente de $\vec{w}$ perpendicular a $\vec{u}$.}
 
 La componente de $\overrightarrow{CB}$ ortogonal a $\overrightarrow{CA}$ es:
 \[
@@ -2299,7 +2297,7 @@ positivo $\tfrac{2}{293}$):
   \vec{d} = (-1,\;-108,\;-806).
 \]
 
-\textbf{5. Ecuaciones simétricas de la mediatriz:}
+\textbf{Paso 5. Ecuaciones simétricas de la mediatriz.}
 
 La mediatriz pasa por $M=\bigl(-1,\,\tfrac{13}{2},\,-2\bigr)$ con 
 vector director $\vec{d}=(-1,\,-108,\,-806)$:

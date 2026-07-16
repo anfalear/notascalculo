@@ -612,7 +612,14 @@ Mínimo 8–10 resueltos (example con myproof) + 15–20 propuestos (sin myproof
 
 ### F9AL.45 — vectoresrn: 27 myproof → protocolo 4 pasos (bloque V, opcional)
 **Nota:** ejecutar tras F9AL.37; hereda la condición de alcance del bloque V.
-**Estado:** Pendiente
+**Estado:** Completado — 2026-07-16
+
+**Notas de ejecución:**
+- Alcance real tras F9AL.35–.37: de los 30 myproof del capítulo, 9 carecían de marca `Paso N`. De ellos, 4 son los examples ilustrativos E1–E5 del cuerpo (excepción ya registrada en F9AL.37: fórmula + figura, criterio F9AL.27) — se conservan en prosa.
+- **4 elevaciones reestructuradas a protocolo:** `probvectrigo` (2 pasos: componentes por trigonometría con ángulos 30°/240° explicitados + suma/diferencia, 2 boxed); «Geometría de un triángulo» (`probtrianguloperimetro`: Paso 1 Estrategia y vectores base + Paso 2 Resolución de cada literal, patrón F8.44, boxed en los 7 literales — 9 boxed pues (b) encierra los 3 ángulos); «Volumen de un paralelepípedo» (3 pasos: Estrategia / Producto mixto / Volumen, boxed 80 ya existente); `proyrn` (3 pasos: Estrategia / Cálculo del vector director / Ecuaciones simétricas, boxed ya existente).
+- **Banco §3.8:** el prob de la mediatriz (único sin marca) ya venía estructurado con `\textbf{1.}`–`\textbf{5.}` → renombrados a `Paso 1.`–`Paso 5.`. El prob multi-literal a–k recibió `\boxed{}` en los 11 resultados (tenía Paso 1/2 sin boxed). **Excepción registrada:** la demostración de coplanaridad (⇔ producto mixto nulo) conserva sus 3 pasos sin boxed (es demostración, criterio F9AL.42).
+- **Limpieza:** 2 `\textbf{Solución:}` sueltos antes de `\begin{myproof}` eliminados (mediatriz, y escalador de Espinoza p. 78 que además imprimía la respuesta $\sqrt{629/33}$ duplicando el boxed final — herencia de hoja resuelta).
+- Balance final: banco 18/18 con `Paso N.`, 17/18 con boxed (1 excepción demostración); cuerpo con E1–E5 ilustrativos registrados. Aritmética verificada al reestructurar (triángulo: ángulos suman π; paralelepípedo p·w=−80; proyrn u·v=−2; mediatriz 33·629=20757): sin inconsistencias.
 
 ### F9AL.46 — vvpropios: subsección breve sobre la forma canónica de Jordan
 **Solicitud del autor (2026-07-10):** incluir una parte sobre formas canónicas de Jordan, «no muy extensa porque el curso no nos da», como ítem para más adelante.
@@ -679,7 +686,7 @@ Mínimo 8–10 resueltos (example con myproof) + 15–20 propuestos (sin myproof
 | F9AL.42 | `vvpropios.tex` | 27 myproof → 4 pasos | Completado | 2026-07-10 | 21/23 reestructurados con boxed; 2 excepciones prosa (≤4 líneas) registradas; artefacto [2] y «normalizados» corregidos; ref a cor:cerovp. 790 pp, 0 errores. |
 | F9AL.43 | `translineales.tex` | 47 myproof → 4 pasos (2 lotes) | Completado | 2026-07-10 | 41 reales tras elevaciones: 30 con Paso+boxed, 11 excepción plantilla geométrica; fix literal f (rango 3), g duplicado sustituido, plano Z→eje Z, [4][5], det(C)=1 |
 | F9AL.44 | `complejos.tex` | 24 myproof → 4 pasos | Completado | 2026-07-15 | 15/15 reales tras elevaciones: todos con Paso N. + boxed (2 T/F con Resumen; 1 plantilla geométrica sin boxed); 3 correcciones matemáticas (fracción duplicada+simplificación, literal f cualificado, prueba Andreescu p.21 reescrita); +9 propuestos (§2.4: 15 probs 5B/7I/3D). 796 pp. |
-| F9AL.45 | `vectoresrn.tex` | 27 myproof → 4 pasos (bloque V) | Pendiente | — | Tras F9AL.37; opcional |
+| F9AL.45 | `vectoresrn.tex` | 27 myproof → 4 pasos (bloque V) | Completado | 2026-07-16 | Alcance real 9: 4 elevaciones a protocolo (2–3 pasos + boxed; triángulo con Paso 1 Estrategia + Paso 2 por literal, 9 boxed); mediatriz 1.–5.→Paso N.; 11 boxed en prob a–k; 2 excepciones (coplanaridad demostración; E1–E5 ilustrativos); 2 «Solución:» sueltos eliminados. 796 pp. |
 | F9AL.46 | `vvpropios.tex` | Subsección breve forma de Jordan | Completado | 2026-07-10 | §8.2.1: def J_k + teorema enunciado + ejemplo A=(1 1;−1 3)→J_2(2) SymPy-OK + rem con cite Hoffman-Kunze (bibtex corrido) + 2 refs conectadas. 790 pp, 0 errores. |
 
 **Total: 46 ítems** (42 núcleo + 4 bloque V opcional). F9AL.34 (cierre de bloque) se ejecuta después de F9AL.44 y F9AL.46.

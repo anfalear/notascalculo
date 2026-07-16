@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (MiKTeX 25.4) (format=lualatex 2025.7.7)  15 JUL 2026 15:12
+This is LuaHBTeX, Version 1.22.0 (MiKTeX 25.4) (format=lualatex 2025.7.7)  16 JUL 2026 08:19
  restricted system commands enabled.
 **anfalearNotasCalculo.tex
 (./anfalearNotasCalculo.tex
@@ -2239,6 +2239,12 @@ LaTeX Info: Redefining \% on input line 282.
 [48]
 Missing character: There is no ° (U+00B0) in font cmr8!
 Missing character: There is no ° (U+00B0) in font cmr8!
+Missing character: There is no ° (U+00B0) in font cmr12!
+Missing character: There is no ° (U+00B0) in font cmr12!
+Missing character: There is no ° (U+00B0) in font cmr12!
+Missing character: There is no ° (U+00B0) in font cmr12!
+Missing character: There is no ° (U+00B0) in font cmr12!
+Missing character: There is no ° (U+00B0) in font cmr12!
 
 Overfull \vbox (53.00781pt too high) has occurred while \output is active []
 
@@ -2251,18 +2257,18 @@ Overfull \vbox (53.00781pt too high) has occurred while \output is active []
 
 
 
-LaTeX Info: Redefining \. on input line 330.
-LaTeX Info: Redefining \% on input line 330.
+LaTeX Info: Redefining \. on input line 332.
+LaTeX Info: Redefining \% on input line 332.
 [49]
 
 
 
 
 
-Package pgfplots info on input line 366: Using 'lua backend=false' for plot 0 (
+Package pgfplots info on input line 368: Using 'lua backend=false' for plot 0 (
 type 'quiver'): plot handler does not support LUA.
 
-Overfull \hbox (4.6794pt too wide) in paragraph at lines 379--380
+Overfull \hbox (4.6794pt too wide) in paragraph at lines 381--382
  [][] 
  []
 
@@ -2272,12 +2278,12 @@ Overfull \hbox (4.6794pt too wide) in paragraph at lines 379--380
 
 
 
-Package pgfplots info on input line 415: Using 'lua backend=false' for plot 0 (
+Package pgfplots info on input line 417: Using 'lua backend=false' for plot 0 (
 type 'quiver'): plot handler does not support LUA.
-Package pgfplots info on input line 421: Using 'lua backend=false' for plot 1 (
+Package pgfplots info on input line 423: Using 'lua backend=false' for plot 1 (
 type 'quiver'): plot handler does not support LUA.
 
-Overfull \hbox (4.6794pt too wide) in paragraph at lines 424--425
+Overfull \hbox (4.6794pt too wide) in paragraph at lines 426--427
  [][] 
  []
 
@@ -2289,23 +2295,23 @@ Overfull \hbox (4.6794pt too wide) in paragraph at lines 424--425
 
 
 
-LaTeX Info: Redefining \. on input line 429.
-LaTeX Info: Redefining \% on input line 429.
+LaTeX Info: Redefining \. on input line 431.
+LaTeX Info: Redefining \% on input line 431.
 [50]
 
-LaTeX Info: Redefining \. on input line 473.
-LaTeX Info: Redefining \% on input line 473.
+LaTeX Info: Redefining \. on input line 470.
+LaTeX Info: Redefining \% on input line 470.
 [51]
 
-LaTeX Info: Redefining \. on input line 576.
-LaTeX Info: Redefining \% on input line 576.
+LaTeX Info: Redefining \. on input line 578.
+LaTeX Info: Redefining \% on input line 578.
 [52]
-Overfull \hbox (1.30046pt too wide) detected at line 646
+Overfull \hbox (1.30046pt too wide) detected at line 648
 []
  []
 
 
-Underfull \hbox (badness 6477) in paragraph at lines 683--684
+Underfull \hbox (badness 6477) in paragraph at lines 685--686
 []\TU/lmr/m/n/12 Ecua-ción del plano usan-do el pun-to
  []
 
@@ -2320,9 +2326,14 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-LaTeX Info: Redefining \. on input line 696.
-LaTeX Info: Redefining \% on input line 696.
+LaTeX Info: Redefining \. on input line 698.
+LaTeX Info: Redefining \% on input line 698.
 [53]
+Underfull \hbox (badness 7451) in paragraph at lines 751--752
+[]\TU/lmr/bx/n/12 Pa-so 2. Pro-duc-to mix-to. \TU/lmr/m/n/12 Cal-cu-la-mos
+ []
+
+
 
 
 
@@ -2333,16 +2344,16 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-LaTeX Info: Redefining \. on input line 765.
-LaTeX Info: Redefining \% on input line 765.
+LaTeX Info: Redefining \. on input line 767.
+LaTeX Info: Redefining \% on input line 767.
 [54]
 
-LaTeX Info: Redefining \. on input line 830.
-LaTeX Info: Redefining \% on input line 830.
+LaTeX Info: Redefining \. on input line 832.
+LaTeX Info: Redefining \% on input line 832.
 [55]
 
-LaTeX Info: Redefining \. on input line 932.
-LaTeX Info: Redefining \% on input line 932.
+LaTeX Info: Redefining \. on input line 934.
+LaTeX Info: Redefining \% on input line 934.
 [56]
 
 
@@ -2350,16 +2361,23 @@ LaTeX Info: Redefining \% on input line 932.
 
 
 
+Underfull \hbox (badness 2302) in paragraph at lines 986--987
+[]\TU/lmr/bx/n/12 Pa-so 3. Ecua-cio-nes si-mé-tri-cas. \TU/lmr/m/n/12 Mul-ti-pl
+i-can-do por $\OT1/cmr/m/n/12 5$\TU/lmr/m/n/12 , las ecua-cio-nes si-mé-tri-cas
+ son
+ []
 
-LaTeX Info: Redefining \. on input line 1092.
-LaTeX Info: Redefining \% on input line 1092.
+
+
+LaTeX Info: Redefining \. on input line 1094.
+LaTeX Info: Redefining \% on input line 1094.
 [57]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-LaTeX Info: Redefining \. on input line 1104.
-LaTeX Info: Redefining \% on input line 1104.
+LaTeX Info: Redefining \. on input line 1106.
+LaTeX Info: Redefining \% on input line 1106.
 [58]
 
 
@@ -2368,12 +2386,12 @@ LaTeX Info: Redefining \% on input line 1104.
 
 
 
-LaTeX Info: Redefining \. on input line 1179.
-LaTeX Info: Redefining \% on input line 1179.
+LaTeX Info: Redefining \. on input line 1190.
+LaTeX Info: Redefining \% on input line 1190.
 [59]
 
-LaTeX Info: Redefining \. on input line 1258.
-LaTeX Info: Redefining \% on input line 1258.
+LaTeX Info: Redefining \. on input line 1270.
+LaTeX Info: Redefining \% on input line 1270.
 [60]
 
 
@@ -2382,95 +2400,94 @@ LaTeX Info: Redefining \% on input line 1258.
 
 
 
-LaTeX Info: Redefining \. on input line 1353.
-LaTeX Info: Redefining \% on input line 1353.
+LaTeX Info: Redefining \. on input line 1363.
+LaTeX Info: Redefining \% on input line 1363.
 [61]
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-LaTeX Info: Redefining \. on input line 1553.
-LaTeX Info: Redefining \% on input line 1553.
+LaTeX Info: Redefining \. on input line 1397.
+LaTeX Info: Redefining \% on input line 1397.
 [62]
 
-LaTeX Info: Redefining \. on input line 1553.
-LaTeX Info: Redefining \% on input line 1553.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+LaTeX Info: Redefining \. on input line 1565.
+LaTeX Info: Redefining \% on input line 1565.
 [63]
 
-LaTeX Info: Redefining \. on input line 1553.
-LaTeX Info: Redefining \% on input line 1553.
+LaTeX Info: Redefining \. on input line 1565.
+LaTeX Info: Redefining \% on input line 1565.
 [64]
-Underfull \vbox (badness 2744) has occurred while \output is active []
 
+LaTeX Info: Redefining \. on input line 1637.
+LaTeX Info: Redefining \% on input line 1637.
+[65]
 
-
-LaTeX Info: Redefining \. on input line 1668.
-LaTeX Info: Redefining \% on input line 1668.
-[65
-
-]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-LaTeX Info: Redefining \. on input line 1739.
-LaTeX Info: Redefining \% on input line 1739.
+LaTeX Info: Redefining \. on input line 1756.
+LaTeX Info: Redefining \% on input line 1756.
 [66]
-
-LaTeX Info: Redefining \. on input line 1809.
-LaTeX Info: Redefining \% on input line 1809.
-[67]
-
-LaTeX Info: Redefining \. on input line 1876.
-LaTeX Info: Redefining \% on input line 1876.
-[68]
-
-LaTeX Info: Redefining \. on input line 1947.
-LaTeX Info: Redefining \% on input line 1947.
-[69]
-
-LaTeX Info: Redefining \. on input line 2064.
-LaTeX Info: Redefining \% on input line 2064.
-[70]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-LaTeX Info: Redefining \. on input line 2116.
-LaTeX Info: Redefining \% on input line 2116.
+LaTeX Info: Redefining \. on input line 1824.
+LaTeX Info: Redefining \% on input line 1824.
+[67]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+LaTeX Info: Redefining \. on input line 1889.
+LaTeX Info: Redefining \% on input line 1889.
+[68]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+LaTeX Info: Redefining \. on input line 1960.
+LaTeX Info: Redefining \% on input line 1960.
+[69]
+Underfull \vbox (badness 4316) has occurred while \output is active []
+
+
+
+LaTeX Info: Redefining \. on input line 1990.
+LaTeX Info: Redefining \% on input line 1990.
+[70]
+
+LaTeX Info: Redefining \. on input line 2077.
+LaTeX Info: Redefining \% on input line 2077.
 [71]
 
-LaTeX Info: Redefining \. on input line 2233.
-LaTeX Info: Redefining \% on input line 2233.
+LaTeX Info: Redefining \. on input line 2215.
+LaTeX Info: Redefining \% on input line 2215.
 [72]
 
-LaTeX Info: Redefining \. on input line 2233.
-LaTeX Info: Redefining \% on input line 2233.
+LaTeX Info: Redefining \. on input line 2225.
+LaTeX Info: Redefining \% on input line 2225.
 [73]
 
-LaTeX Info: Redefining \. on input line 2332.
-LaTeX Info: Redefining \% on input line 2332.
-[74
-
-]
+LaTeX Info: Redefining \. on input line 2312.
+LaTeX Info: Redefining \% on input line 2312.
+[74]
 
 
 
@@ -7809,15 +7826,15 @@ Package rerunfilecheck Info: File `anfalearNotasCalculo.out' has not changed.
 )
 
 Here is how much of LuaTeX's memory you used:
- 93253 strings out of 470205
- 305221,3417909 words of node,token memory allocated
- 23629 words of node memory still in use:
-   32 hlist, 2 vlist, 14 rule, 3 glue, 4 kern, 1 glyph, 7323 attribute, 101 glue
-_spec, 3699 attribute_list, 2 write, 24 pdf_literal, 60 pdf_action, 24 pdf_color
+ 93252 strings out of 470205
+ 305220,3417909 words of node,token memory allocated
+ 23611 words of node memory still in use:
+   32 hlist, 2 vlist, 14 rule, 3 glue, 4 kern, 1 glyph, 7317 attribute, 101 glue
+_spec, 3696 attribute_list, 2 write, 24 pdf_literal, 60 pdf_action, 24 pdf_color
 stack nodes
-   avail lists: 1:17,2:33185,3:19197,4:408,5:1830,6:126,7:11235,8:150,9:4058,10:
+   avail lists: 1:17,2:33185,3:19197,4:408,5:2298,6:126,7:11235,8:150,9:4578,10:
 30,11:1139
- 112348 multiletter control sequences out of 65536+600000
+ 112347 multiletter control sequences out of 65536+600000
  144 fonts using 10968999 bytes
  76i,22n,95p,1148b,3556s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/users/anfalear/appdata/local/programs/miktex/fonts/opentype/public/lm/lmmono
@@ -7873,9 +7890,9 @@ ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/latxfont/line10.pfb><C:/Use
 rs/anfalear/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/ms
 am10.pfb><C:/Users/anfalear/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
 fonts/symbols/msbm10.pfb>
-Output written on anfalearNotasCalculo.pdf (796 pages, 6710990 bytes).
+Output written on anfalearNotasCalculo.pdf (796 pages, 6714557 bytes).
 
-PDF statistics: 14830 PDF objects out of 15390 (max. 8388607)
+PDF statistics: 14832 PDF objects out of 15390 (max. 8388607)
  7592 named destinations out of 8907 (max. 131072)
  3152 words of extra memory for PDF output out of 10000 (max. 100000000)
 
