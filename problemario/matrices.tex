@@ -1749,7 +1749,8 @@ Determine la matriz de adyacencia asociada a los siguientes grafos. Use $A^3$ pa
 \label{fig:grafo_adyacencia_a}
 \end{figure}
 
-\begin{myproof} La matriz de adyacencia es \(
+\begin{myproof}
+\textbf{Paso 1. Matriz de adyacencia.} \(
 A = \begin{pmatrix}
 0 & 1 & 0 & 1 & 0 \\
 1 & 0 & 1 & 0 & 0 \\
@@ -1757,7 +1758,9 @@ A = \begin{pmatrix}
 1 & 0 & 0 & 0 & 0 \\
 0 & 0 & 0 & 0 & 0 \\
 \end{pmatrix}
-\), calculando $A^{3}$ se tiene que \(
+\)
+
+\textbf{Paso 2. Potencia $A^3$.} Calculando, \(
 A^3 = \begin{pmatrix}
 0 & 2 & 0 & 3 & 1 \\
 3 & 0 & 1 & 0 & 0 \\
@@ -1765,7 +1768,9 @@ A^3 = \begin{pmatrix}
 2 & 0 & 1 & 0 & 0 \\
 0 & 0 & 0 & 0 & 0 \\
 \end{pmatrix}
-\). El elemento (3,2) de $A^3 = 1,$ por lo cual existe 1 camino de longitud 3 de 3 a 2: $3 \to 4 \to 1 \to 2$.
+\)
+
+\textbf{Paso 3. Conclusión.} El elemento $(3,2)$ de $A^3$ es $1$, por lo cual existe $\boxed{1}$ camino de longitud 3 de 3 a 2: $3 \to 4 \to 1 \to 2$.
 \end{myproof}
 
 \item
@@ -1787,19 +1792,24 @@ A^3 = \begin{pmatrix}
 \label{fig:grafo_adyacencia_b}
 \end{figure}
 
-\begin{myproof} La matriz de adyacencia es \(
+\begin{myproof}
+\textbf{Paso 1. Matriz de adyacencia.} \(
 B = \begin{pmatrix}
 0 & 1 & 0 & 0 \\
 0 & 0 & 1 & 1 \\
 0 & 0 & 0 & 1 \\
 1 & 1 & 0 & 0 \\
 \end{pmatrix}
-\), donde \(B^3 = \begin{pmatrix}
+\)
+
+\textbf{Paso 2. Potencia $B^3$.} Calculando, \(B^3 = \begin{pmatrix}
 1 & 1 & 0 & 1 \\
 1 & 2 & 1 & 1 \\
 0 & 1 & 1 & 1 \\
 1 & 1 & 1 & 2 \\
-\end{pmatrix}\). Así la posición $(3,2)$ de $B^3$ es $1$ y el camino de longitud 3 de 3 a 2 es \( 3 \to 4 \to 1 \to 2 .\)
+\end{pmatrix}\)
+
+\textbf{Paso 3. Conclusión.} La posición $(3,2)$ de $B^3$ es $1$, así existe $\boxed{1}$ camino de longitud 3 de 3 a 2: \( 3 \to 4 \to 1 \to 2 .\)
 \end{myproof}
 
 \item
@@ -1826,19 +1836,24 @@ B = \begin{pmatrix}
 \label{fig:grafo_adyacencia_c}
 \end{figure}
 
-\begin{myproof} La matriz de adyacencia es \(
+\begin{myproof}
+\textbf{Paso 1. Matriz de adyacencia.} \(
 C = \begin{pmatrix}
 0 & 1 & 0 & 0 \\
 1 & 0 & 1 & 1 \\
 1 & 1 & 0 & 1 \\
 1 & 1 & 1 & 0 \\
 \end{pmatrix}
-,\) donde \(C^3 = \begin{pmatrix}
+\)
+
+\textbf{Paso 2. Potencia $C^3$.} Calculando, \(C^3 = \begin{pmatrix}
 2 & 3 & 1 & 1 \\
 5 & 4 & 4 & 4 \\
 5 & 5 & 3 & 4 \\
 5 & 5 & 4 & 3 \\
-\end{pmatrix}\) por lo cual $C^3_{3,2} = 5.$ Así, existen $5$ caminos de longitud 3 de 3 a 2:
+\end{pmatrix}\) por lo cual $C^3_{3,2} = 5.$
+
+\textbf{Paso 3. Conclusión.} Existen $\boxed{5}$ caminos de longitud 3 de 3 a 2:
 \begin{enumerate}[1.]
 \item $3 \to 2 \to 1 \to 2$
 \item $3 \to 2 \to 3 \to 2$
@@ -1862,7 +1877,7 @@ Dibuje el grafo para cada matriz de adyacencia:
 \end{pmatrix}$
 
 \begin{myproof}
-Grafo con 4 vértices $\{1,2,3,4\}$:
+\textbf{Paso 1. Lectura de la matriz.} Grafo con 4 vértices $\{1,2,3,4\}$; la entrada $a_{ij}$ indica el número de aristas de $i$ a $j$:
 \begin{itemize}
 \item Bucles: $1\to1$ (2 veces), $2\to2$ (4 veces), $3\to3$ (3 veces), $4\to4$ (3 veces)
 \item Aristas múltiples: 
@@ -1878,6 +1893,7 @@ Grafo con 4 vértices $\{1,2,3,4\}$:
   \end{itemize}
 \end{itemize}
 
+\textbf{Paso 2. Grafo.}
 \begin{figure}[H]
 \centering
 \begin{tikzpicture}[->, >=Stealth, shorten >=1pt, node distance=3cm, 
@@ -1945,7 +1961,7 @@ Grafo con 4 vértices $\{1,2,3,4\}$:
 \end{pmatrix}$
 
 \begin{myproof}
-Grafo con 4 vértices $\{1,2,3,4\}$:
+\textbf{Paso 1. Lectura de la matriz.} Grafo con 4 vértices $\{1,2,3,4\}$:
 \begin{itemize}
 \item Bucles: $3\to3$ (3 veces), $4\to4$ (3 veces)
 \item Aristas múltiples: 
@@ -1960,6 +1976,7 @@ Grafo con 4 vértices $\{1,2,3,4\}$:
   \end{itemize}
 \end{itemize}
 
+\textbf{Paso 2. Grafo.}
 \begin{figure}[H]
 \centering
 \begin{tikzpicture}[->, >=Stealth, shorten >=1pt, node distance=3cm, 
@@ -2016,7 +2033,7 @@ Grafo con 4 vértices $\{1,2,3,4\}$:
 \end{pmatrix}$
 
 \begin{myproof}
-Grafo con 4 vértices $\{1,2,3,4\}$:
+\textbf{Paso 1. Lectura de la matriz.} Grafo con 4 vértices $\{1,2,3,4\}$:
 \begin{itemize}
 \item Bucles: $1\to1$ (1 vez), $3\to3$ (3 veces), $4\to4$ (2 veces)
 \item Aristas múltiples: 
@@ -2032,6 +2049,7 @@ Grafo con 4 vértices $\{1,2,3,4\}$:
   \end{itemize}
 \end{itemize}
 
+\textbf{Paso 2. Grafo.}
 \begin{figure}[H]
 \centering
 \begin{tikzpicture}[->, >=Stealth, shorten >=1pt, node distance=3cm, 
@@ -2108,7 +2126,7 @@ Si se representa cada ciudad como un nodo en un grafo y cada vuelo directo como 
 \end{enumerate}
 
 \begin{myproof}
-Grafo no dirigido (todas las rutas son bidireccionales):
+\textbf{Paso 1. Grafo.} Grafo no dirigido (todas las rutas son bidireccionales):
 
 \begin{figure}[H]
 \centering
@@ -2133,26 +2151,22 @@ Grafo no dirigido (todas las rutas son bidireccionales):
 \label{fig:red_vuelos}
 \end{figure}
 
+\textbf{Paso 2. Resolución de cada literal.}
 \begin{enumerate}[i.]
-\item \textbf{Distancia máxima (diámetro):} 
+\item \textbf{Distancia máxima (diámetro):}
 La ruta más larga es BA $\to$ Stgo $\to$ Lima $\to$ Bog $\to$ Carc $\to$ CDMX (5 conexiones).
-El diámetro del grafo es 5.
+El diámetro del grafo es $\boxed{5}$.
 
-\item \textbf{BA a CDMX:} 
+\item \textbf{BA a CDMX:}
 Camino mínimo: BA $\to$ SP $\to$ Lima $\to$ Bog $\to$ Carc $\to$ CDMX (5 conexiones) \\
 Otra ruta: BA $\to$ Stgo $\to$ Lima $\to$ Bog $\to$ Carc $\to$ CDMX (5 conexiones) \\
-Mínimo: 5 conexiones
+Mínimo: $\boxed{5}$ conexiones
 
-\item \textbf{Bogotá a Sao Paulo:} 
-Camino mínimo: Bog $\to$ Lima $\to$ SP (2 conexiones)
+\item \textbf{Bogotá a Sao Paulo:}
+Camino mínimo: Bog $\to$ Lima $\to$ SP, es decir, $\boxed{2}$ conexiones
 \end{enumerate}
 
-\begin{itemize}
-\item \textbf{Distancia máxima (diámetro):} 5 conexiones (ej: BA a CDMX)
-\item \textbf{BA a CDMX:} Mínimo \fbox{5} conexiones: BA $\to$ SP $\to$ Lima $\to$ Bog $\to$ Carc $\to$ CDMX
-\item \textbf{Bogotá a SP:} Mínimo \fbox{2} conexiones: Bog $\to$ Lima $\to$ SP
-\end{itemize}
-
+\textbf{Paso 3. Resumen de rutas mínimas.}
 \begin{table}[H]
 \centering
 \begin{tabular}{c|c|c}
@@ -2191,14 +2205,17 @@ Si los costos de producción por plato son: Vegetariano \$3000, Carne \$9000 y M
 \end{enumerate}
 
 \begin{myproof}
+\textbf{Paso 1. Estrategia.} Organizamos costos, precios y cantidades como vectores columna y operamos con ellos literal por literal.
+
+\textbf{Paso 2. Resolución de cada literal.}
 \begin{enumerate}[$(a)$]
 \item Matriz de costo unitario (vector columna):
 \[
-C_{\text{unit}} = \begin{pmatrix}
+C_{\text{unit}} = \boxed{\begin{pmatrix}
 3000 \\
 9000 \\
 15000
-\end{pmatrix}
+\end{pmatrix}}
 \]
 
 \item Matriz de ingresos por tipo (precio unitario $\times$ cantidad):
@@ -2207,11 +2224,11 @@ I_{\text{tipo}} = \begin{pmatrix}
 5000 \times 200 \\
 13000 \times 150 \\
 20000 \times 100
-\end{pmatrix} = \begin{pmatrix}
+\end{pmatrix} = \boxed{\begin{pmatrix}
 1\,000\,000 \\
 1\,950\,000 \\
 2\,000\,000
-\end{pmatrix}
+\end{pmatrix}}
 \]
 
 \item Costo total de producción (suma de costos unitarios $\times$ cantidad):
@@ -2267,7 +2284,7 @@ Calcule:
 \end{enumerate}
 
 \begin{myproof}
-Defina las matrices de ventas \(
+\textbf{Paso 1. Datos como matrices.} Defina las matrices de ventas \(
 V_1 = \begin{pmatrix}
 40 & 25 & 30 \\
 15 & 50 & 20 \\
@@ -2278,12 +2295,14 @@ V_2 = \begin{pmatrix}
 35 & 15 & 30 \\
 45 & 20 & 25
 \end{pmatrix}
-,\) donde las filas representan los puestos (Satélite, Central, San Francisco) y las columnas la cantidad de frutas (manzanas, naranjas, plátanos). Haciendo los cálculos:
+,\) donde las filas representan los puestos (Satélite, Central, San Francisco) y las columnas la cantidad de frutas (manzanas, naranjas, plátanos).
+
+\textbf{Paso 2. Resolución de cada literal.}
 
 \begin{enumerate}[$(a)$]
 \item Las ventas en la Plaza Central están en la fila 2
 \[
-\text{Total} = \begin{pmatrix} 15 \\ 50 \\ 20 \end{pmatrix} + \begin{pmatrix} 35 \\ 15 \\ 30 \end{pmatrix} = \begin{pmatrix} 50 \\ 65 \\ 50 \end{pmatrix}
+\text{Total} = \begin{pmatrix} 15 \\ 50 \\ 20 \end{pmatrix} + \begin{pmatrix} 35 \\ 15 \\ 30 \end{pmatrix} = \boxed{\begin{pmatrix} 50 \\ 65 \\ 50 \end{pmatrix}}
 \]
 Se vendieron 50 manzanas, 65 naranjas, 50 plátanos.
 
@@ -2300,11 +2319,11 @@ Se vendieron 50 manzanas, 65 naranjas, 50 plátanos.
 
 \item La matriz de venta total es:
 \[
-V_{\text{total}} = V_1 + V_2 = \begin{pmatrix}
+V_{\text{total}} = V_1 + V_2 = \boxed{\begin{pmatrix}
 65 & 55 & 50 \\
 50 & 65 & 50 \\
 65 & 50 & 50
-\end{pmatrix}
+\end{pmatrix}}
 \]
 
 \item La matriz de ingresos por puesto se calcula según el vector de precios: $P = \begin{pmatrix} 2000 \\ 300 \\ 400 \end{pmatrix}$
@@ -2317,11 +2336,11 @@ V_{\text{total}} = V_1 + V_2 = \begin{pmatrix}
 65\cdot2000 + 55\cdot300 + 50\cdot400 \\
 50\cdot2000 + 65\cdot300 + 50\cdot400 \\
 65\cdot2000 + 50\cdot300 + 50\cdot400
-\end{pmatrix} = \begin{pmatrix}
+\end{pmatrix} = \boxed{\begin{pmatrix}
 166\,500 \\
 139\,500 \\
 165\,000
-\end{pmatrix}
+\end{pmatrix}}
 \]
 
 \item \textbf{Ingreso total semanal:}
@@ -2445,10 +2464,10 @@ $A^{-1} = \left( \begin{array}{cccc}
 k&3&2\\\end{array} \right)$ 
 
 \begin{myproof}
+\textbf{Paso 1. Determinante e invertibilidad.}
+$\det(A) = 1 \cdot \begin{vmatrix} 1&6\\3&2 \end{vmatrix} - 2 \cdot \begin{vmatrix} 3&6\\k&2 \end{vmatrix} + 4 \cdot \begin{vmatrix} 3&1\\k&3 \end{vmatrix}= 1(2-18) - 2(6-6k) + 4(9-k)= -16 - 12 + 12k + 36 - 4k= 8 + 8k = 8(1+k).$ La matriz es invertible si y solo si $\boxed{k \neq -1}$.
 
-$\det(A) = 1 \cdot \begin{vmatrix} 1&6\\3&2 \end{vmatrix} - 2 \cdot \begin{vmatrix} 3&6\\k&2 \end{vmatrix} + 4 \cdot \begin{vmatrix} 3&1\\k&3 \end{vmatrix}= 1(2-18) - 2(6-6k) + 4(9-k)= -16 - 12 + 12k + 36 - 4k= 8 + 8k = 8(1+k).$ La matriz es invertible si y solo si $k \neq -1$.
-
-Para $k \neq -1$, calculando la inversa usando matriz adjunta:
+\textbf{Paso 2. Cofactores.} Para $k \neq -1$, calculando la inversa usando matriz adjunta:
 \begin{multicols}{2}
 % Primera tabla - Primera fila de cofactores
 \begin{table}[H]
@@ -2510,17 +2529,19 @@ $C_{33}$ & $+$ & $\begin{vmatrix} 1&2\\3&1 \end{vmatrix}$ & $-5$ \\
 \label{tab:cofactores_fila3}
 \end{table}
 
+\textbf{Paso 3. Adjunta e inversa.}
+
 $\text{adj}(A) = \left( \begin{array}{ccc}
 -16&8&8\\
 6k-6&2-4k&6\\
 9-k&2k-3&-5\\
 \end{array} \right)$
 
-$A^{-1} = \frac{1}{8(1+k)} \left( \begin{array}{ccc}
+$\boxed{A^{-1} = \frac{1}{8(1+k)} \left( \begin{array}{ccc}
 -16&8&8\\
 6k-6&2-4k&6\\
 9-k&2k-3&-5\\
-\end{array} \right).$
+\end{array} \right)}$
 \end{multicols}
 \end{myproof}
 \end{enumerate}
@@ -2534,7 +2555,10 @@ $A^{-1} = \frac{1}{8(1+k)} \left( \begin{array}{ccc}
 \item Si $A$ es idempotente, ¿cuáles son los posibles valores para $\det A$?
 \end{enumerate}
 
-\begin{myproof} 
+\begin{myproof}
+\textbf{Paso 1. Estrategia.} Los tres literales se deducen algebraicamente de la identidad $A^2=A$.
+
+\textbf{Paso 2. Resolución de cada literal.}
 \begin{enumerate}[$(a)$]
 \item Calculamos $(I_n-A)^2$:
 \begin{align*}
@@ -2564,7 +2588,7 @@ $$\det(A) \cdot \det(A) = \det(A)$$
 $$(\det A)^2 = \det A$$
 $$(\det A)^2 - \det A = 0$$
 $$\det A(\det A - 1) = 0$$
-Por lo tanto, $\det A = 0$ o $\det A = 1$.
+Por lo tanto, $\boxed{\det A = 0 \text{ o } \det A = 1}$.
 \end{enumerate}
 \end{myproof}
 \end{prob}
@@ -2596,8 +2620,9 @@ En cada ítem encuentre la matriz $X$ para que se cumpla la igualdad
 \end{enumerate}
 
 \begin{myproof}
-Despejando la matriz $X$ de la ecuación $AX=B,$ se tiene que $X=A^{-1}B.$ Así, para cada ecuación:
+\textbf{Paso 1. Despeje.} Despejando la matriz $X$ de la ecuación $AX=B,$ se tiene que $X=A^{-1}B.$
 
+\textbf{Paso 2. Resolución de cada literal.}
 \begin{enumerate}[$(a)$]
 \item Si $A=\left( \begin{array}{ccc}
 1&-1&1\\
@@ -2616,11 +2641,11 @@ $$X=\begin{pmatrix}
 2 & -1 & 5 & 7 & 8 \\
 4 & 0 & -3 & 0 & 1 \\
 3 & 5 & -7 & 2 & 1
-\end{pmatrix}=\begin{pmatrix}
+\end{pmatrix}=\boxed{\begin{pmatrix}
 11 & 12 & -3 & 27 & 26 \\
 -6 & -8 & 1 & -18 & -17 \\
 -15 & -21 & 9 & -38 & -35
-\end{pmatrix}.$$
+\end{pmatrix}}.$$
 
 \item Si $A=\left( \begin{array}{ccc}
 -2&0&1\\
@@ -2639,11 +2664,11 @@ $$X=\begin{pmatrix}
 4&3&2&1\\
 6&7&8&9\\
 1&3&7&9\\
-\end{array} \right)=\begin{pmatrix}
+\end{array} \right)=\boxed{\begin{pmatrix}
 -3 & \frac{-25}{9} & \frac{-25}{9} & \frac{-23}{9} \\
 -4 & \frac{-40}{9} & \frac{-40}{9} & \frac{-44}{9} \\
 -2 & \frac{-23}{9} & \frac{-32}{9} & \frac{-37}{9}
-\end{pmatrix}.$$
+\end{pmatrix}}.$$
 \end{enumerate}
 \end{myproof}
 \end{prob}
@@ -2664,18 +2689,18 @@ $$X=\begin{pmatrix}
 \item Halle los valores propios de $A,$ es decir, los valores de $\lambda$ tales que $\det(\lambda I_{3}-A)=0.$  
 \end{enumerate}
 
-\begin{myproof} 
-Note que la matriz $\lambda I_{3}=\begin{pmatrix} \lambda &0&0\\0&\lambda &0\\ 0&0&\lambda \end{pmatrix},$ por lo cual, 
-$$\lambda I_{3}-A=\begin{pmatrix} \lambda-3&0&0\\4&\lambda -7&0\\-2&7&\lambda-5 \end{pmatrix}.$$ 
+\begin{myproof}
+\textbf{Paso 1. Construcción de $\lambda I_3 - A$.} Note que la matriz $\lambda I_{3}=\begin{pmatrix} \lambda &0&0\\0&\lambda &0\\ 0&0&\lambda \end{pmatrix},$ por lo cual,
+$$\lambda I_{3}-A=\begin{pmatrix} \lambda-3&0&0\\4&\lambda -7&0\\-2&7&\lambda-5 \end{pmatrix}.$$
 
-Calculando el determinante se tiene que 
+\textbf{Paso 2. Determinante.} Calculando el determinante se tiene que
 \[ \begin{vmatrix}
 \lambda-3 & 0 & 0 \\
 4 & \lambda-7 & 0 \\
 -2 & 7 & \lambda-5
 \end{vmatrix}=\lambda^3-15\lambda^2+71\lambda-105. \]
 
-Factorizando, $\lambda^3-15\lambda^2+71\lambda-105=\left(\lambda -3\right)\left( \lambda -7 \right)\left( \lambda -5 \right),$ por lo que los valores tales que $\det(\lambda I_{3}-A)=0$ son $\lambda=5,$ $\lambda=7,$ y $\lambda=3.$
+\textbf{Paso 3. Valores propios.} Factorizando, $\lambda^3-15\lambda^2+71\lambda-105=\left(\lambda -3\right)\left( \lambda -7 \right)\left( \lambda -5 \right),$ por lo que los valores tales que $\det(\lambda I_{3}-A)=0$ son $\boxed{\lambda=5,\ \lambda=7\ \text{y}\ \lambda=3}.$
 
 \end{myproof}
 \end{prob}
@@ -2686,7 +2711,7 @@ Factorizando, $\lambda^3-15\lambda^2+71\lambda-105=\left(\lambda -3\right)\left(
 Demuestre que si $A$ es una matriz antisimétrica de tamaño $3\times 3$ se tiene que $\det A=0.$ ¿Se puede generalizar este hecho para toda matriz $n \times n,$ con $n\in \mathbb{N}$?
 
 \begin{myproof}
-Sea $A$ una matriz antisimétrica de tamaño $n \times n$. Por definición, $A^{T} = -A$.
+\textbf{Paso 1. Planteamiento.} Sea $A$ una matriz antisimétrica de tamaño $n \times n$. Por definición, $A^{T} = -A$.
 
 Por propiedades del determinante, sabemos que $\det A = \det A^{T}$. Como $A$ es antisimétrica, entonces $A^{T} = -A$, lo cual nos permite plantear la siguiente ecuación $$\det A = \det A^{T}= \det (-A)= (-1)^{n}\det A.$$
 
@@ -2697,13 +2722,13 @@ Esto nos lleva a:
 $$\det A - (-1)^{n}\det A = 0$$
 $$\det A(1 - (-1)^{n}) = 0$$
 
-Ahora analizamos dos casos:
+\textbf{Paso 2. Análisis de casos.}
 
 \textbf{Caso 1:} Si $n$ es par, entonces $(-1)^{n} = 1$, por lo que $1 - (-1)^{n} = 1 - 1 = 0$. En este caso, la ecuación $\det A \cdot 0 = 0$ se satisface para cualquier valor de $\det A$, por lo que el determinante puede ser no nulo.
 
 \textbf{Caso 2:} Si $n$ es impar, entonces $(-1)^{n} = -1$, por lo que $1 - (-1)^{n} = 1 - (-1) = 2 \neq 0$. En este caso, para que se cumpla $\det A \cdot 2 = 0$, necesariamente debe ser $\det A = 0$.
 
-\textbf{Conclusión:} Para el caso particular $n = 3$ (que es impar), se tiene que $\det A = 0$. En general, toda matriz antisimétrica de orden impar tiene determinante nulo, mientras que las matrices antisimétricas de orden par pueden tener determinante no nulo.
+\textbf{Paso 3. Conclusión.} Para el caso particular $n = 3$ (que es impar), se tiene que $\det A = 0$. En general, toda matriz antisimétrica de orden impar tiene determinante nulo, mientras que las matrices antisimétricas de orden par pueden tener determinante no nulo.
 
 \end{myproof}
 \end{prob}
@@ -2713,10 +2738,10 @@ Ahora analizamos dos casos:
 Sea $A$ una matriz cuadrada tal que $A^{2}=\mu A,$ donde $\mu$ es un número real con $\mu \neq -1.$ Demuestre que 
 $$\left( I_{n}+A \right)^{-1}=I_{n}-\dfrac{1}{\mu +1}A.$$
 
-\begin{myproof} 
-Para demostrar que $\left( I_{n}+A \right)^{-1}=I_{n}-\dfrac{1}{\mu +1}A$, debemos verificar que estas matrices son inversas una de la otra. Por definición, esto significa que su producto debe ser la matriz identidad $I_{n}$.
+\begin{myproof}
+\textbf{Paso 1. Estrategia.} Para demostrar que $\left( I_{n}+A \right)^{-1}=I_{n}-\dfrac{1}{\mu +1}A$, debemos verificar que estas matrices son inversas una de la otra. Por definición, esto significa que su producto debe ser la matriz identidad $I_{n}$.
 
-Calculemos el producto $\left( I_{n}+A \right)\left( I_{n}-\dfrac{1}{\mu +1}A\right)$:
+\textbf{Paso 2. Cálculo del producto.} Calculemos el producto $\left( I_{n}+A \right)\left( I_{n}-\dfrac{1}{\mu +1}A\right)$:
 
 \begin{align*}
 \left( I_{n}+A \right)\left( I_{n}-\dfrac{1}{\mu +1}A\right) &= I_{n}^{2} - \dfrac{1}{\mu +1}I_{n}A + AI_{n} - \dfrac{1}{\mu +1}A^2\\
@@ -2735,7 +2760,7 @@ Ahora utilizamos la condición dada $A^{2} = \mu A$ para sustituir $A^2$:
 &= I_{n}
 \end{align*}
 
-Por lo tanto, $\left( I_{n}+A \right)\left( I_{n}-\dfrac{1}{\mu +1}A\right) = I_{n}$.
+\textbf{Paso 3. Conclusión.} Por lo tanto, $\left( I_{n}+A \right)\left( I_{n}-\dfrac{1}{\mu +1}A\right) = I_{n}$.
 
 De manera similar, se puede verificar que $\left( I_{n}-\dfrac{1}{\mu +1}A\right)\left( I_{n}+A \right) = I_{n}$.
 
@@ -2770,9 +2795,9 @@ Rellene los valores $\times$ para que la matriz $A$ sea simétrica
 \end{multicols}
 
 \begin{myproof}
-Una matriz $A$ es simétrica si y solo si $A = A^T$, es decir, si $a_{ij} = a_{ji}$ para todos los índices $i, j$.
+\textbf{Paso 1. Criterio de simetría.} Una matriz $A$ es simétrica si y solo si $A = A^T$, es decir, si $a_{ij} = a_{ji}$ para todos los índices $i, j$.
 
-\textbf{a)} Para la matriz $\left( \begin{array}{cccc}
+\textbf{Paso 2. Literal a).} Para la matriz $\left( \begin{array}{cccc}
 1&\times &\times &\times \\
 3&1&\times &\times \\
 7&-8&0&\times \\
@@ -2790,14 +2815,14 @@ Aplicando la condición de simetría $a_{ij} = a_{ji}$:
 \end{itemize}
 
 Por lo tanto, la matriz simétrica es:
-$$\left( \begin{array}{cccc}
+$$\boxed{\left( \begin{array}{cccc}
 1&3 &7 &2 \\
 3&1&-8 &3 \\
 7&-8&0&9 \\
 2&3&9&4 \\
-\end{array} \right)$$
+\end{array} \right)}$$
 
-\textbf{b)} Para la matriz $\left( \begin{array}{cccc}
+\textbf{Paso 3. Literal b).} Para la matriz $\left( \begin{array}{cccc}
 1&7 &-3 &2 \\
 \times &4& 6 & 5 \\
 \times &\times &2& 1 \\
@@ -2815,12 +2840,12 @@ Aplicando la condición de simetría $a_{ij} = a_{ji}$:
 \end{itemize}
 
 Por lo tanto, la matriz simétrica es:
-$$\left( \begin{array}{cccc}
+$$\boxed{\left( \begin{array}{cccc}
 1&7 &-3 &2 \\
 7 &4& 6 & 5 \\
 -3 &6 &2& 1 \\
 2 &5 &1 &-5 \\
-\end{array} \right)$$
+\end{array} \right)}$$
 
 \end{myproof}
 \end{prob}
@@ -2837,7 +2862,7 @@ d+2c&-2\\
 \end{array} \right)$$
 
 \begin{myproof}
-Para que dos matrices sean iguales, sus elementos correspondientes deben ser iguales. Comparando posición por posición:
+\textbf{Paso 1. Igualdad elemento a elemento.} Para que dos matrices sean iguales, sus elementos correspondientes deben ser iguales. Comparando posición por posición:
 
 \textbf{Elemento (1,1):} $a = 4$
 
@@ -2847,11 +2872,11 @@ Para que dos matrices sean iguales, sus elementos correspondientes deben ser igu
 
 \textbf{Elemento (2,2):} $a + b = -2.$
 
-Resolviendo las ecuaciones, de la primera comparación: $a = 4,$ sustituyendo en la ecuación $a + b = -2,$ se cumple que:
+\textbf{Paso 2. Cálculo de $a$ y $b$.} De la primera comparación: $a = 4,$ sustituyendo en la ecuación $a + b = -2,$ se cumple que:
 $$4 + b = -2$$
 $$b = -2 - 4 = -6.$$
 
-Para encontrar $c$ y $d$, se resuelve el sistema formado por las ecuaciones $3 = d - 2c$ y $-1 = d + 2c.$ Sumando las dos ecuaciones
+\textbf{Paso 3. Cálculo de $c$ y $d$.} Se resuelve el sistema formado por las ecuaciones $3 = d - 2c$ y $-1 = d + 2c.$ Sumando las dos ecuaciones
 $$3 + (-1) = (d - 2c) + (d + 2c)$$
 $$2 = 2d$$
 $$d = 1$$
@@ -2861,7 +2886,7 @@ $$3 = 1 - 2c$$
 $$2 = -2c$$
 $$c = -1$$
 
-Por lo cual los valores son $a=4,$ $b=-6,$ $c=-1$ y $d=1.$
+\textbf{Paso 4. Conclusión.} Por lo cual los valores son $\boxed{a=4,\ b=-6,\ c=-1\ \text{y}\ d=1}.$
 \end{myproof}
 \end{prob}
 
@@ -2890,7 +2915,9 @@ a+2d&b+2e&c+2f\\d+3g&e+3h&f+3i\\g+4a&h+4b&i+4c\\
 \end{multicols}
 
 \begin{myproof}
-\textbf{(a)} Primero, factorizamos $-5$ de la primera fila:
+\textbf{Paso 1. Estrategia.} Aplicamos las propiedades del determinante ante operaciones de fila: factor común de una fila, suma de un múltiplo de otra fila e intercambio de filas.
+
+\textbf{Paso 2. Literal (a).} Primero, factorizamos $-5$ de la primera fila:
 $$\begin{vmatrix}
 -5a&-5b&-5c\\d&e&f\\g-7d&h-7e&i-7f
 \end{vmatrix} = -5\begin{vmatrix}
@@ -2906,9 +2933,9 @@ a&b&c\\d&e&f\\g&h&i
 
 Por lo tanto: $\begin{vmatrix}
 -5a&-5b&-5c\\d&e&f\\g-7d&h-7e&i-7f
-\end{vmatrix} = -5 \cdot (-8) = 40$
+\end{vmatrix} = -5 \cdot (-8) = \boxed{40}$
 
-\textbf{(b)} Consideremos la matriz original con filas:$f_1 = (a, b, c),$ $f_2 = (d, e, f),$ $f_3 = (g, h, i).$ Así, la nueva matriz tiene las filas:
+\textbf{Paso 3. Literal (b).} Consideremos la matriz original con filas:$f_1 = (a, b, c),$ $f_2 = (d, e, f),$ $f_3 = (g, h, i).$ Así, la nueva matriz tiene las filas:
 \begin{align*}
 \text{Fila 1: } & (a+2d, b+2e, c+2f) = f_1 + 2f_2 \\
 \text{Fila 2: } & (d+3g, e+3h, f+3i) = f_2 + 3f_3 \\
@@ -2919,9 +2946,9 @@ C = \begin{pmatrix}
 1 & 2 & 0 \\
 0 & 1 & 3 \\
 4 & 0 & 1 \\
-\end{pmatrix}$ donde la nueva matriz es $C \cdot M$ y su determinante es $\det(C) \cdot \det(M)$. Calculamos $\det(C)= 25$ por lo que $ \det(C) \cdot \det(M) = 25 \cdot (-8) = -200.$
+\end{pmatrix}$ donde la nueva matriz es $C \cdot M$ y su determinante es $\det(C) \cdot \det(M)$. Calculamos $\det(C)= 25$ por lo que $ \det(C) \cdot \det(M) = 25 \cdot (-8) = \boxed{-200}.$
 
-\textbf{(c)} Factorizando los escalares de cada fila:
+\textbf{Paso 4. Literal (c).} Factorizando los escalares de cada fila:
 $$\begin{vmatrix}
 -2a&-2b&-2c\\-4g&-4h&-4i\\-3d&-3e&-3f\\
 \end{vmatrix} = (-2)(-4)(-3)\begin{vmatrix}
@@ -2939,7 +2966,7 @@ a&b&c\\d&e&f\\g&h&i\\
 
 Por lo tanto: $\begin{vmatrix}
 -2a&-2b&-2c\\-4g&-4h&-4i\\-3d&-3e&-3f\\
-\end{vmatrix} = -24 \cdot 8 = -192$
+\end{vmatrix} = -24 \cdot 8 = \boxed{-192}$
 \end{myproof}
 \end{prob}
 
@@ -2953,11 +2980,12 @@ Con el fin de calcular el determinante de una matriz $A,$ se aplicaron las sigui
 \item multiplicar la fila 3 por $\dfrac{-1}{4}.$
 \end{itemize}
 hasta obtener la matriz $\begin{pmatrix} -1&5&8\\0&-8&6\\0&0&-8 \end{pmatrix}.$ ¿Cuál es el determinante de la matriz $A$?
-\begin{myproof} Como la matriz resultante después de las operaciones $
+\begin{myproof}
+\textbf{Paso 1. Determinante de $B$.} Como la matriz resultante después de las operaciones $
 B = \begin{pmatrix} -1 & 5 & 8 \\ 0 & -8 & 6 \\ 0 & 0 & -8 \end{pmatrix}$ es triangular superior, su determinante es el producto de los elementos de la diagonal principal, así $
 \det(B) = (-1) \times (-8) \times (-8) = -64.$
 
-Las operaciones elementales afectan el determinante de la siguiente manera:
+\textbf{Paso 2. Efecto de las operaciones.} Las operaciones elementales afectan el determinante de la siguiente manera:
 \begin{itemize}
 \item Multiplicar la fila 1 por $-4$: multiplica el determinante por $-4$.
 \item Restar dos veces la fila 3 a la fila 2 (sumar $-2$ veces la fila 3 a la fila 2): no cambia el determinante (factor $1$).
@@ -2965,9 +2993,9 @@ Las operaciones elementales afectan el determinante de la siguiente manera:
 \item Multiplicar la fila 3 por $-\dfrac{1}{4}$: multiplica el determinante por $-\dfrac{1}{4}$.
 \end{itemize}
 
-El factor total por el que se multiplica el determinante es: $
-(-4) \times 1 \times (-1) \times \left(-\dfrac{1}{4}\right) = -1.$ Por lo tanto, la relación entre $\det(A)$ y $\det(B)$ es: $ 
-\det(B) = -1 \times \det(A).$ Así $ \det(A) = 64.$
+\textbf{Paso 3. Conclusión.} El factor total por el que se multiplica el determinante es: $
+(-4) \times 1 \times (-1) \times \left(-\dfrac{1}{4}\right) = -1.$ Por lo tanto, la relación entre $\det(A)$ y $\det(B)$ es: $
+\det(B) = -1 \times \det(A).$ Así $\boxed{\det(A) = 64}.$
 \end{myproof}
 \end{prob}
 
@@ -2983,14 +3011,15 @@ x & -1 \\
 \end{array} \right) \).
 
 \begin{myproof}
-El determinante de la matriz $2 \times 2$ es $
-\det \left( \begin{array}{cc} x & -1 \\ 3 & 1-x \end{array} \right) = x(1-x) - (-1)(3) = x - x^2 + 3 = -x^2 + x + 3,$ mientras que el determinante de la matriz $3 \times 3$ es $ x^2 - 2x. $ 
+\textbf{Paso 1. Determinantes.} El determinante de la matriz $2 \times 2$ es $
+\det \left( \begin{array}{cc} x & -1 \\ 3 & 1-x \end{array} \right) = x(1-x) - (-1)(3) = x - x^2 + 3 = -x^2 + x + 3,$ mientras que el determinante de la matriz $3 \times 3$ es $ x^2 - 2x. $
 
-Igualando los determinantes $-x^2 + x + 3 = x^2 - 2x$ y reorganizando $2x^2 - 3x - 3 = 0.$ Usando fórmula cuadrática: \[
+\textbf{Paso 2. Ecuación cuadrática.} Igualando los determinantes $-x^2 + x + 3 = x^2 - 2x$ y reorganizando $2x^2 - 3x - 3 = 0.$ Usando fórmula cuadrática: \[
 x = \frac{3 \pm \sqrt{(-3)^2 - 4(2)(-3)}}{4} = \frac{3 \pm \sqrt{33}}{4}.
 \]
-Por lo tanto, los valores son $
-x = \frac{3 + \sqrt{33}}{4} \quad \text{y} \quad x = \frac{3 - \sqrt{33}}{4}.$
+
+\textbf{Paso 3. Conclusión.} Por lo tanto, los valores son $
+\boxed{x = \frac{3 + \sqrt{33}}{4} \quad \text{y} \quad x = \frac{3 - \sqrt{33}}{4}}.$
 \end{myproof}
 \end{prob}
 
@@ -3000,10 +3029,12 @@ Sea $A$ una matriz cuadrada, se define la traza de $A$ como la suma de los eleme
 $$\det(A)=\dfrac{\left( \operatorname{tr}(A) \right)^{2}-\operatorname{tr}\left( A^{2} \right)}{2}.$$ 
 
 \begin{myproof}
-Sea \(A = \begin{pmatrix} a & b \\ c & d \end{pmatrix}\) una matriz \(2 \times 2\) arbitraria. Note que la traza de $A,$ \(
+\textbf{Paso 1. Notación.} Sea \(A = \begin{pmatrix} a & b \\ c & d \end{pmatrix}\) una matriz \(2 \times 2\) arbitraria. Note que la traza de $A,$ \(
 \operatorname{tr}(A) = a + d.
 \) y el determinante de $A$ es \(
-\det(A) = ad - bc.\) Calculando $A^2$
+\det(A) = ad - bc.\)
+
+\textbf{Paso 2. Cálculo de $A^2$ y su traza.} Calculando $A^2$
 \[
 A^2 = A \cdot A = \begin{pmatrix} a & b \\ c & d \end{pmatrix} \begin{pmatrix} a & b \\ c & d \end{pmatrix} = \begin{pmatrix} a^2 + bc & ab + bd \\ ac + cd & bc + d^2 \end{pmatrix}.
 \]
@@ -3012,7 +3043,7 @@ A^2 = A \cdot A = \begin{pmatrix} a & b \\ c & d \end{pmatrix} \begin{pmatrix} a
 \operatorname{tr}(A^2) = (a^2 + bc) + (bc + d^2) = a^2 + 2bc + d^2.
 .\)
 
-Evaluando la expresión del lado derecho de la igualdad:
+\textbf{Paso 3. Verificación de la identidad.} Evaluando la expresión del lado derecho de la igualdad:
 \[
 [\operatorname{tr}(A)]^2 = (a + d)^2 = a^2 + 2ad + d^2,
 \]
@@ -3033,7 +3064,8 @@ Dividiendo por 2 \(
 \begin{prob}
 Sea $A=\begin{pmatrix} 0&1&1&1\\1&0&1&1\\1&1&0&1\\1&1&1&0 \end{pmatrix}.$ Demuestre que $A^2=3I_{4}+2A.$ Úselo para calcular $A^{-1}.$
 
-\begin{myproof} Se demostrará inicialmente que $A^2 = 3I_4 + 2A.$ 
+\begin{myproof}
+\textbf{Paso 1. Verificación de la identidad.} Se demostrará inicialmente que $A^2 = 3I_4 + 2A.$
 
 Calculando \(
 A^2 = \begin{pmatrix}
@@ -3077,7 +3109,7 @@ De la misma manera $3I_4 + 2A=$
 \end{pmatrix}
 \) y se verifica que $A^2 = 3I_4 + 2A$.
 
-Ahora, reorganizando la ecuación $A^2 = 3I_4 + 2A$, se cumple que
+\textbf{Paso 2. Despeje de la inversa.} Ahora, reorganizando la ecuación $A^2 = 3I_4 + 2A$, se cumple que
 \[
 A^2 - 2A = 3I_4
 \]
@@ -3092,7 +3124,7 @@ Por lo tanto \(
 A^{-1} = \frac{1}{3} (A - 2I_4).
 \)
 
-Calculamos $A - 2I_4$:
+\textbf{Paso 3. Cálculo de $A^{-1}$.} Calculamos $A - 2I_4$:
 \[
 A - 2I_4 = \begin{pmatrix}
 0 & 1 & 1 & 1 \\
@@ -3134,7 +3166,7 @@ Sea  \(A= \left(
 \right) \) y suponga que $a, b, c$ son constantes con $a\neq 0.$ Encuentre los valores de $x$ para los cuales $A$ es invertible.
 
 \begin{myproof}
-Para que $A$ sea invertible, su determinante debe ser distinto de cero. Calculamos $\det(A)$ expandiendo por la primera fila:
+\textbf{Paso 1. Determinante.} Para que $A$ sea invertible, su determinante debe ser distinto de cero. Calculamos $\det(A)$ expandiendo por la primera fila:
 
 \[
 \det(A) = 1 \cdot \det \begin{pmatrix} a & -b \\ x & x^2 \end{pmatrix} 
@@ -3155,7 +3187,7 @@ Sustituyendo (notando que el segundo término es cero):
 \det(A) = 1 \cdot (a x^2 + b x) + c \cdot (-1) = a x^2 + b x - c
 \]
 
-La matriz $A$ es invertible si y solo si $\det(A) \neq 0$, es decir:
+\textbf{Paso 2. Condición de invertibilidad.} La matriz $A$ es invertible si y solo si $\det(A) \neq 0$, es decir:
 \[
 a x^2 + b x - c \neq 0
 \]
@@ -3197,22 +3229,26 @@ a-b & b+a
 \item Demuestre que si $A$ es una matriz ortogonal, entonces $\det A=1$ o $\det A=-1.$
 \end{enumerate}
 
-\begin{myproof} \textbf{(a)} Para verificar que $A$ es ortogonal, debemos comprobar que $AA^T = I_2$. Calculando $A^T$:
+\begin{myproof}
+\textbf{Paso 1. Estrategia.} En todos los literales usamos la caracterización $AA^{T}=I_n$.
+
+\textbf{Paso 2. Literal (a).} Para verificar que $A$ es ortogonal, debemos comprobar que $AA^T = I_2$. Calculando $A^T$:
 $$A^T = \begin{pmatrix} \dfrac{1}{\sqrt{2}}&\dfrac{-1}{\sqrt{2}}\\\dfrac{1}{\sqrt{2}}&\dfrac{1}{\sqrt{2}}\end{pmatrix}$$
 Ahora calculamos $AA^T$:
 $$AA^T = \begin{pmatrix} \dfrac{1}{\sqrt{2}}&\dfrac{1}{\sqrt{2}}\\\dfrac{-1}{\sqrt{2}}&\dfrac{1}{\sqrt{2}}\end{pmatrix} \begin{pmatrix} \dfrac{1}{\sqrt{2}}&\dfrac{-1}{\sqrt{2}}\\\dfrac{1}{\sqrt{2}}&\dfrac{1}{\sqrt{2}}\end{pmatrix}= \begin{pmatrix} \dfrac{1}{2}+\dfrac{1}{2} & \dfrac{-1}{2}+\dfrac{1}{2}\\\dfrac{-1}{2}+\dfrac{1}{2} & \dfrac{1}{2}+\dfrac{1}{2}\end{pmatrix} = \begin{pmatrix} 1 & 0\\0 & 1\end{pmatrix} = I_2$$
 
 Por lo tanto, $A$ es ortogonal.
 
-\textbf{(b)} Calculamos $A^T$:
+\textbf{Paso 3. Literal (b).} Calculamos $A^T$:
 $$A^T = \begin{pmatrix} \cos\theta & \sin\theta\\-\sin\theta&\cos\theta \end{pmatrix}$$
 
 Calculamos $AA^T$:
 \begin{align*}
 AA^T &= \begin{pmatrix} \cos\theta & -\sin\theta\\\sin\theta&\cos\theta \end{pmatrix} \begin{pmatrix} \cos\theta & \sin\theta\\-\sin\theta&\cos\theta \end{pmatrix}\\&= \begin{pmatrix} \cos^2\theta + \sin^2\theta & \cos\theta\sin\theta - \sin\theta\cos\theta\\\sin\theta\cos\theta - \cos\theta\sin\theta & \sin^2\theta + \cos^2\theta \end{pmatrix}\\&= \begin{pmatrix} 1 & 0\\0 & 1 \end{pmatrix} = I_2
 \end{align*}
-Por lo tanto, $A$ es ortogonal y $A^{-1} = A^T = \begin{pmatrix} \cos\theta & \sin\theta\\-\sin\theta&\cos\theta \end{pmatrix}$.
-\textbf{(c)} Calculamos $A^T$:
+Por lo tanto, $A$ es ortogonal y $\boxed{A^{-1} = A^T = \begin{pmatrix} \cos\theta & \sin\theta\\-\sin\theta&\cos\theta \end{pmatrix}}$.
+
+\textbf{Paso 4. Literal (c).} Calculamos $A^T$:
 $$A^T = \left(\begin{array}{ccc}\cos x & -\sin x & 0 \\\sin x & \cos x & 0 \\0 & 0 & 1\end{array}\right)$$
 
 Calculamos $AA^T$:
@@ -3236,9 +3272,9 @@ Para el elemento $(3,2)$: $0 + 0 + 0 = 0$
 
 Para el elemento $(3,3)$: $0 + 0 + 1 = 1$
 
-Por lo tanto, $AA^T = I_3$, así que $A$ es ortogonal y $A^{-1} = A^T = \left(\begin{array}{ccc}\cos x & -\sin x & 0 \\\sin x & \cos x & 0 \\0 & 0 & 1\end{array}\right)$.
+Por lo tanto, $AA^T = I_3$, así que $A$ es ortogonal y $\boxed{A^{-1} = A^T = \left(\begin{array}{ccc}\cos x & -\sin x & 0 \\\sin x & \cos x & 0 \\0 & 0 & 1\end{array}\right)}$.
 
-\textbf{(d)} Para que $B$ sea ortogonal, debe cumplirse $BB^T = I_2$.
+\textbf{Paso 5. Literal (d).} Para que $B$ sea ortogonal, debe cumplirse $BB^T = I_2$.
 
 Calculamos $B^T$:
 $$B^T = \begin{pmatrix}a+b & a-b \\b-a & b+a\end{pmatrix}$$
@@ -3257,11 +3293,11 @@ Para el elemento $(2,2)$: $(a-b)^2 + (b+a)^2 = a^2 - 2ab + b^2 + b^2 + 2ab + a^2
 Para que $BB^T = I_2$, necesitamos:
 $$2a^2 + 2b^2 = 1$$
 
-Por lo tanto, la condición es: $a^2 + b^2 = \dfrac{1}{2}$.
+Por lo tanto, la condición es: $\boxed{a^2 + b^2 = \dfrac{1}{2}}$.
 
-\textbf{(e)} Sea $A$ una matriz ortogonal, entonces $AA^T = I_n$. Aplicando el determinante a ambos lados $\det(AA^T) = \det(I_n).$  Usando la propiedad $\det(XY) = \det(X)\det(Y)$ y $\det(A^T) = \det(A)$:
+\textbf{Paso 6. Literal (e).} Sea $A$ una matriz ortogonal, entonces $AA^T = I_n$. Aplicando el determinante a ambos lados $\det(AA^T) = \det(I_n).$  Usando la propiedad $\det(XY) = \det(X)\det(Y)$ y $\det(A^T) = \det(A)$:
 $$\det(A)\det(A^T) = \det(A)\det(A) = (\det A)^2 = 1$$
-Por lo tanto, $\det A = \pm 1$.
+Por lo tanto, $\boxed{\det A = \pm 1}$.
 \end{myproof}
 \end{prob}
 

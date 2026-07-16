@@ -574,7 +574,16 @@ Mínimo 8–10 resueltos (example con myproof) + 15–20 propuestos (sin myproof
 - Compilación limpia tras cada ítem; si un capítulo excede 300 líneas modificadas, se parte en lotes internos con compilación entre lotes.
 
 ### F9AL.38 — matrices: 26 myproof → protocolo 4 pasos
-**Estado:** Pendiente
+**Estado:** Completado — 2026-07-16
+
+**Notas de ejecución:**
+- Alcance real al ejecutar: 25 myproof sin marca `Paso N` (todos en el banco «Problemas resueltos adicionales»). **24 reestructurados**, 1 excepción de prosa.
+- **Computacionales con boxed:** 3 grafos con $A^3$ (Paso 1 matriz / Paso 2 potencia / Paso 3 conclusión, boxed nº de caminos); aerolínea (Paso 1 grafo, Paso 2 por literal con boxed 5/5/2, Paso 3 resumen-tabla); restaurante y frutas (Paso 1 estrategia/datos + Paso 2 por literal, boxed en vectores y matrices resultado); invertible con $k$ (boxed $k\neq-1$ y $A^{-1}$); matriz $X$ (boxed las 2 $X$); $\lambda I_3-A$ (boxed $\lambda=5,7,3$); simétricas (boxed las 2 matrices); $a,b,c,d$ (4 pasos, boxed conjunto); determinantes desde $-8$ (Paso 1 estrategia + Paso k por literal, boxed 40/−200/−192); operaciones elementales (boxed $\det A=64$); $x$ con $\det=\det$ (boxed $x=(3\pm\sqrt{33})/4$); $A^2=3I_4+2A$ (boxed ya existente); $ax^2+bx-c$ (boxed ya existente); ortogonales (Paso 1 estrategia + Paso 2–6 por literal, boxed $A^{-1}$×2, $a^2+b^2=1/2$, $\det A=\pm1$).
+- **Demostraciones con pasos sin boxed:** idempotente (Paso 1 estrategia + Paso 2 por literal; boxed solo en (c) $\det A\in\{0,1\}$); antisimétrica (Planteamiento/Análisis de casos/Conclusión); Andreescu $(I+A)^{-1}$ (Estrategia/Producto/Conclusión); traza 2×2 (Notación/$A^2$/Verificación).
+- **Plantilla geométrica (sin boxed):** los 3 «dibuje el grafo» (Paso 1 lectura de la matriz + Paso 2 grafo; la respuesta es la figura).
+- **Excepción de prosa registrada:** det 2×2 nulo → no invertible (2 líneas, cadena única).
+- **Limpieza:** en aerolínea, `itemize` que duplicaba literalmente las respuestas del `enumerate` (con `\fbox`) eliminado — artefacto de fusión de hoja resuelta; la tabla de rutas se conservó como Paso 3 (resumen).
+- Aritmética no re-derivada (criterio de la ampliación); sin inconsistencias detectadas al reestructurar.
 
 ### F9AL.39 — sel: 18 myproof → protocolo 4 pasos
 **Estado:** Pendiente
@@ -679,7 +688,7 @@ Mínimo 8–10 resueltos (example con myproof) + 15–20 propuestos (sin myproof
 | F9AL.35 | `vectoresrn.tex` | Estructura de secciones (bloque V, opcional) | Completado | 2026-07-15 | 9 secciones §3.1–§3.9 (orden físico conservado); sin cónicas/cuádricas en el archivo (diagnóstico desactualizado). |
 | F9AL.36 | `vectoresrn.tex` | Auditoría 26 figuras + figrayo (bloque V) | Completado | 2026-07-15 | 14 labels + 6 captions+labels nuevos; 2 figuras eran copias en probs duplicados (eliminadas con ellos en .37) → 24/24 conformes. `axis equal` no aplica (sin cónicas). Fix TikZ `-- (C)` sin origen. |
 | F9AL.37 | `vectoresrn.tex` | Protocolo + propuestos (bloque V) | Completado | 2026-07-15 | 18 Paso N:→N.; E6/E7/E8 con protocolo (E7 sin myproof, reestructurado); 5 elevaciones (⚠️ visto bueno del autor); 5 propuestos viejos eran duplicados resueltos → eliminados; banco §3.8 con 18 probs 4B/11I/3D; §3.9 con 15 propuestos nuevos 5B/7I/3D SymPy-OK. 796 pp. |
-| F9AL.38 | `matrices.tex` | 26 myproof → 4 pasos | Pendiente | — | Ampliación 2026-07-10 |
+| F9AL.38 | `matrices.tex` | 26 myproof → 4 pasos | Completado | 2026-07-16 | Alcance real 25: 24 reestructurados (17 computacionales con boxed, 4 demostraciones con pasos, 3 plantilla geométrica «dibuje el grafo»), 1 excepción prosa (det 2×2 nulo, 2 líneas); itemize duplicado de aerolínea eliminado. 798 pp. |
 | F9AL.39 | `sel.tex` | 18 myproof → 4 pasos | Pendiente | — | Ampliación 2026-07-10 |
 | F9AL.40 | `espaciosvectoriales.tex` | 11 myproof → 4 pasos | Pendiente | — | Ampliación 2026-07-10 |
 | F9AL.41 | `prodinterno.tex` | 15 myproof → 4 pasos | Pendiente | — | Ampliación 2026-07-10 |
