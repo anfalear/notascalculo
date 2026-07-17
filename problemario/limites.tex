@@ -93,6 +93,43 @@ cuantitativa. El valor $\epsilon$ fija una tolerancia vertical en la imagen,
 mientras que $\delta$ determina la proximidad horizontal requerida en el dominio
 para cumplirla. La condición $0<|x-c|$ recalca que el comportamiento de $f$
 \emph{exactamente} en $c$ es irrelevante; solo importa su entorno perforado.
+La figura~\ref{fig:limite_epsilon_delta} representa la condición en general.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[>=latex, scale=1.0]
+  % Ejes
+  \draw[->] (-0.4,0) -- (6,0) node[right] {$x$};
+  \draw[->] (0,-0.4) -- (0,4.6) node[above] {$y$};
+  % Banda epsilon (horizontal)
+  \fill[blue!10] (0,2.4) rectangle (5.8,3.6);
+  \draw[blue!60, dashed] (0,2.4) -- (5.8,2.4);
+  \draw[blue!60, dashed] (0,3.6) -- (5.8,3.6);
+  \node[left, font=\small] at (0,3.6) {$L+\epsilon$};
+  \node[left, font=\small] at (0,3.0) {$L$};
+  \node[left, font=\small] at (0,2.4) {$L-\epsilon$};
+  \draw[gray, dashed] (0,3.0) -- (3,3.0);
+  % Entorno delta (vertical)
+  \draw[red!60, dashed] (2.4,0) -- (2.4,4.2);
+  \draw[red!60, dashed] (3.6,0) -- (3.6,4.2);
+  \node[below, font=\small] at (2.35,0) {$c-\delta$};
+  \node[below, font=\small] at (3,0) {$c$};
+  \node[below, font=\small] at (3.7,0) {$c+\delta$};
+  \draw[gray, dashed] (3,0) -- (3,3.0);
+  % Curva
+  \draw[blue!70!black, very thick, domain=0.6:5.6, smooth, samples=60]
+      plot (\x, {3 + 0.9*sin(deg(1.15*(\x-3)))});
+  \node[blue!70!black, font=\small] at (5.0,4.15) {$y=f(x)$};
+  % Punto excluido en (c, L)
+  \fill[white] (3,3) circle (2.2pt);
+  \draw[blue!70!black, thick] (3,3) circle (2.2pt);
+\end{tikzpicture}
+\caption{Definición $\epsilon$-$\delta$: fijada la tolerancia $\epsilon$
+alrededor de $L$ (banda horizontal), existe $\delta$ tal que todo $x$ del
+entorno perforado $(c-\delta,\,c+\delta)$ tiene imagen dentro de la banda.
+El valor $f(c)$, si existe, es irrelevante (punto excluido).}
+\label{fig:limite_epsilon_delta}
+\end{figure}
 
 \begin{rem}
 Puede interpretarse como un \textbf{juego adversarial}: un ``retador'' elige
@@ -115,7 +152,8 @@ $\epsilon$-$\delta$.
 Observamos que $|(2x-1)-5| = |2x-6| = 2|x-3|$. Para garantizar
 $2|x-3| < \epsilon$, basta exigir $|x-3| < \epsilon/2$.
 
-\textbf{Paso 2: Demostración formal.} Elegimos $\delta = \epsilon/2$. Entonces, si $0 < |x-3| < \delta$:
+\textbf{Paso 2: Demostración formal.} Elegimos $\delta = \epsilon/2$
+(figura~\ref{fig:epsilon_delta_demo}). Entonces, si $0 < |x-3| < \delta$:
 \[
   |(2x-1)-5| = 2|x-3| < 2\cdot\frac{\epsilon}{2} = \epsilon.
 \]
@@ -173,7 +211,8 @@ $2|x-3| < \epsilon$, basta exigir $|x-3| < \epsilon/2$.
       [below right] {$(3+\delta,\, 5-\epsilon)$};
   \end{axis}
 \end{tikzpicture}
-\caption{Interpretación geométrica del límite}
+\caption{Interpretación geométrica de la demostración: la banda
+$5\pm\epsilon$ y el entorno $3\pm\delta$ con $\delta=\epsilon/2$.}
 \label{fig:epsilon_delta_demo}
 \end{figure}
 \end{myproof}
@@ -183,7 +222,7 @@ $2|x-3| < \epsilon$, basta exigir $|x-3| < \epsilon/2$.
 Si $\lim_{x\to c}f(x)$ existe, entonces es único.
 \end{theorem}
 
-\begin{myproof}
+\begin{proof}
 Supongamos, por contradicción, que existen dos límites distintos $L_1 \neq L_2$.
 Sea $\epsilon = \dfrac{|L_1-L_2|}{2} > 0$. Por la definición, existen
 $\delta_1, \delta_2 > 0$ tales que:
@@ -199,7 +238,7 @@ triangular:
              = 2\epsilon = |L_1-L_2|,
 \]
 lo cual es absurdo. Por tanto, $L_1 = L_2$.
-\end{myproof}
+\end{proof}
 
 %%==========================================================
 \section{Propiedades Algebraicas de los Límites}
@@ -299,6 +338,30 @@ Determinar si $\lim_{x\to 2}f(x)$ existe.
 \end{myproof}
 \end{example}
 
+\begin{example}[Límite por racionalización]
+Calcular $\displaystyle\lim_{x\to 1}\frac{\sqrt{x}-1}{x-1}$.
+
+\begin{myproof}
+\textbf{Paso 1: Reconocer la indeterminación.} Numerador y denominador se
+anulan en $x=1$: es una forma $0/0$ con radical, que se trata multiplicando
+por el conjugado del numerador.
+
+\textbf{Paso 2: Racionalizar.} Para $x\neq 1$:
+\[
+  \frac{\sqrt{x}-1}{x-1}
+  = \frac{(\sqrt{x}-1)(\sqrt{x}+1)}{(x-1)(\sqrt{x}+1)}
+  = \frac{x-1}{(x-1)(\sqrt{x}+1)}
+  = \frac{1}{\sqrt{x}+1}.
+\]
+
+\textbf{Paso 3: Evaluar.} La última expresión es continua en $x=1$:
+\[
+  \boxed{\lim_{x\to 1}\frac{\sqrt{x}-1}{x-1}
+  = \frac{1}{\sqrt{1}+1} = \frac{1}{2}.}
+\]
+\end{myproof}
+\end{example}
+
 %%==========================================================
 \section{El Teorema del Encaje}
 %%==========================================================
@@ -324,10 +387,11 @@ Su aplicación más célebre es el límite trigonométrico fundamental.
 \)
 \end{theorem}
 
-\begin{myproof}
+\begin{proof}
 Sea $0<x<\dfrac{\pi}{2}$. Considérese el círculo unitario centrado en el
 origen y los puntos $O=(0,0)$, $A=(1,0)$, $B=(\cos x,\sin x)$ sobre dicho
-círculo, y $T=(1,\tan x)$ sobre la recta $x=1$ (véase la figura).
+círculo, y $T=(1,\tan x)$ sobre la recta $x=1$ (véase la
+figura~\ref{fig:encaje_areas}).
 
 \begin{figure}[H]
 \centering
@@ -403,6 +467,7 @@ círculo, y $T=(1,\tan x)$ sobre la recta $x=1$ (véase la figura).
 \end{tikzpicture}
 \caption{Comparación de áreas: triángulo inscrito $\subset$ sector $\subset$
 triángulo circunscrito.}
+\label{fig:encaje_areas}
 \end{figure}
 
 \noindent Comparando las tres áreas coloreadas se obtiene la cadena
@@ -437,7 +502,7 @@ Al coincidir ambos límites laterales se concluye
 \(
   \lim_{x \to 0} \frac{\sin x}{x} = 1.
 \)
-\end{myproof}
+\end{proof}
 
 \begin{rem}
 Como corolario inmediato, usando la identidad $1-\cos x = 2\sin^2\!\frac{x}{2}$,
@@ -464,7 +529,8 @@ $y=L$ es una \textbf{asíntota horizontal}.
 El comportamiento de funciones racionales proporciona los ejemplos más
 instructivos. En $f(x)=\dfrac{1}{x-2}$, los valores crecen sin cota cuando
 $x\to 2$, generando una asíntota vertical en $x=2$. En cambio,
-$\lim_{x\to\infty}\dfrac{1}{x-2}=0$ da la asíntota horizontal $y=0$.
+$\lim_{x\to\infty}\dfrac{1}{x-2}=0$ da la asíntota horizontal $y=0$
+(figura~\ref{fig:asintotas}).
 
 Para funciones racionales $\dfrac{P(x)}{Q(x)}$, el comportamiento en el
 infinito está completamente determinado por la relación entre los grados de
@@ -476,6 +542,106 @@ $P$ y $Q$:
   \item Si $\deg P > \deg Q$: no hay asíntota horizontal.
 \end{itemize}
 \end{rem}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines=middle, xlabel={$x$}, ylabel={$y$},
+    xmin=-2.5, xmax=6.5, ymin=-4, ymax=4,
+    width=11cm, height=6.5cm, samples=150,
+    restrict y to domain=-4:4,
+]
+\addplot[blue, ultra thick, domain=-2.5:1.72] {1/(x-2)};
+\addplot[blue, ultra thick, domain=2.28:6.4] {1/(x-2)};
+\draw[red, dashed, thick] (axis cs:2,-4) -- (axis cs:2,4);
+\node[red, font=\small, anchor=west] at (axis cs:2.15,3.4) {$x=2$};
+\node[gray, font=\small, anchor=south] at (axis cs:5.3,0.1) {$y=0$};
+\node[blue, font=\small, anchor=west] at (axis cs:4.2,1.3)
+  {$f(x)=\dfrac{1}{x-2}$};
+\end{axis}
+\end{tikzpicture}
+\caption{$f(x)=1/(x-2)$: asíntota vertical $x=2$ (los valores crecen sin
+cota al acercarse a $2$) y asíntota horizontal $y=0$ (la función se aplana
+hacia el eje $x$ cuando $x\to\pm\infty$).}
+\label{fig:asintotas}
+\end{figure}
+
+\begin{example}[Límite en el infinito de una función racional]
+Calcular $\displaystyle\lim_{x\to\infty}\frac{5x^2}{3x^2-5}$.
+
+\begin{myproof}
+\textbf{Paso 1: Identificar la estrategia.} Numerador y denominador tienen
+el mismo grado: se divide entre la potencia dominante $x^2$.
+
+\textbf{Paso 2: Dividir entre $x^2$.}
+\[
+  \frac{5x^2}{3x^2-5} = \frac{5}{3-\dfrac{5}{x^2}}.
+\]
+
+\textbf{Paso 3: Evaluar.} Como $5/x^2\to 0$ cuando $x\to\infty$:
+\[
+  \boxed{\lim_{x\to\infty}\frac{5x^2}{3x^2-5} = \frac{5}{3},}
+\]
+en acuerdo con la regla de los grados (cociente de coeficientes líderes).
+La recta $y=5/3$ es asíntota horizontal de la gráfica.
+\end{myproof}
+\end{example}
+
+\begin{example}[Asíntotas de una función racional]
+Encuentre todas las asíntotas verticales y horizontales de
+$f(x)=\dfrac{x^2}{16-x^2}$, verificando el tipo de infinito en cada una.
+
+\begin{myproof}
+\textbf{Paso 1: Asíntotas verticales.} El denominador $16-x^2=(4-x)(4+x)$
+se anula en $x=\pm 4$, donde el numerador vale $16\neq 0$: ambas rectas son
+asíntotas verticales. Análisis de signos cerca de $x=4$: si $x\to 4^-$,
+entonces $16-x^2\to 0^+$ y $f(x)\to +\infty$; si $x\to 4^+$, entonces
+$16-x^2\to 0^-$ y $f(x)\to -\infty$. Como $f$ es par ($f(-x)=f(x)$), cerca
+de $x=-4$ los papeles se invierten: $f(x)\to -\infty$ si $x\to -4^-$ y
+$f(x)\to +\infty$ si $x\to -4^+$.
+
+\textbf{Paso 2: Asíntota horizontal.} Dividiendo entre $x^2$:
+\[
+  \lim_{x\to\pm\infty}\frac{x^2}{16-x^2}
+  = \lim_{x\to\pm\infty}\frac{1}{\dfrac{16}{x^2}-1} = -1.
+\]
+
+\textbf{Paso 3: Conclusión.}
+\[
+  \boxed{\text{AV: } x=4 \text{ y } x=-4; \qquad \text{AH: } y=-1.}
+\]
+\end{myproof}
+\end{example}
+
+\begin{example}[Límite de tipo $1^\infty$]
+Calcular $\displaystyle\lim_{x\to 0}(1+x^2)^{\cot^2 x}$.
+
+\begin{myproof}
+\textbf{Paso 1: Reconocer la forma.} La base tiende a $1$ y el exponente a
+$+\infty$: forma indeterminada $1^\infty$. Se resuelve con el límite
+fundamental $e = \lim_{u\to 0}(1+u)^{1/u}$.
+
+\textbf{Paso 2: Reescribir con la estructura de $e$.}
+\[
+  (1+x^2)^{\cot^2 x}
+  = \Bigl[(1+x^2)^{1/x^2}\Bigr]^{x^2\cot^2 x}.
+\]
+La expresión entre corchetes tiende a $e$ (con $u=x^2\to 0$); resta
+calcular el límite del exponente.
+
+\textbf{Paso 3: Límite del exponente.} Usando $\dfrac{x}{\sin x}\to 1$:
+\[
+  x^2\cot^2 x = \left(\frac{x}{\sin x}\right)^{\!2}\cos^2 x
+  \;\longrightarrow\; 1^2\cdot 1 = 1.
+\]
+
+\textbf{Paso 4: Conclusión.}
+\[
+  \boxed{\lim_{x\to 0}(1+x^2)^{\cot^2 x} = e^{1} = e.}
+\]
+\end{myproof}
+\end{example}
 
 %%==========================================================
 \section{Continuidad}
@@ -517,6 +683,62 @@ Sea $f$ discontinua en $c$. Se distinguen:
 \end{itemize}
 \end{definition}
 
+La figura~\ref{fig:tipos_discontinuidad} esquematiza los tres tipos que
+aparecen con mayor frecuencia en este curso.
+
+\begin{figure}[H]
+\centering
+\begin{minipage}{0.32\textwidth}
+\centering
+\begin{tikzpicture}[>=latex, scale=0.85]
+  \draw[->] (-0.2,0) -- (2.6,0) node[right,font=\scriptsize] {$x$};
+  \draw[->] (0,-0.2) -- (0,2.8) node[above,font=\scriptsize] {$y$};
+  \draw[blue!70!black, thick] (0.2,0.9) -- (2.3,1.95);
+  \fill[white] (1.25,1.42) circle (2pt);
+  \draw[blue!70!black, thick] (1.25,1.42) circle (2pt);
+  \filldraw[blue!70!black] (1.25,2.3) circle (2pt);
+  \draw[dashed, gray] (1.25,0) -- (1.25,2.3);
+  \node[below, font=\scriptsize] at (1.25,0) {$c$};
+  \node[font=\small] at (1.3,-0.7) {removible};
+\end{tikzpicture}
+\end{minipage}
+\hfill
+\begin{minipage}{0.32\textwidth}
+\centering
+\begin{tikzpicture}[>=latex, scale=0.85]
+  \draw[->] (-0.2,0) -- (2.6,0) node[right,font=\scriptsize] {$x$};
+  \draw[->] (0,-0.2) -- (0,2.8) node[above,font=\scriptsize] {$y$};
+  \draw[blue!70!black, thick] (0.2,0.7) -- (1.25,1.2);
+  \fill[white] (1.25,1.2) circle (2pt);
+  \draw[blue!70!black, thick] (1.25,1.2) circle (2pt);
+  \draw[blue!70!black, thick] (1.25,1.9) -- (2.3,2.4);
+  \filldraw[blue!70!black] (1.25,1.9) circle (2pt);
+  \draw[dashed, gray] (1.25,0) -- (1.25,1.9);
+  \node[below, font=\scriptsize] at (1.25,0) {$c$};
+  \node[font=\small] at (1.3,-0.7) {de salto};
+\end{tikzpicture}
+\end{minipage}
+\hfill
+\begin{minipage}{0.32\textwidth}
+\centering
+\begin{tikzpicture}[>=latex, scale=0.85]
+  \draw[->] (-0.2,0) -- (2.6,0) node[right,font=\scriptsize] {$x$};
+  \draw[->] (0,-0.2) -- (0,2.8) node[above,font=\scriptsize] {$y$};
+  \draw[red!60, dashed] (1.25,0) -- (1.25,2.7);
+  \draw[blue!70!black, thick, domain=0.25:1.12, smooth, samples=40]
+      plot (\x, {0.35/(1.25-\x)});
+  \draw[blue!70!black, thick, domain=1.45:2.4, smooth, samples=40]
+      plot (\x, {0.5 + 0.3/(\x-1.25)});
+  \node[below, font=\scriptsize] at (1.25,0) {$c$};
+  \node[font=\small] at (1.3,-0.7) {infinita};
+\end{tikzpicture}
+\end{minipage}
+\caption{Tres tipos de discontinuidad en $x=c$: removible (el límite existe
+pero difiere de $f(c)$), de salto (límites laterales distintos) e infinita
+(asíntota vertical).}
+\label{fig:tipos_discontinuidad}
+\end{figure}
+
 \begin{rem}
 Una función acotada Riemann-integrable en $[a,b]$ puede tener
 discontinuidades, pero únicamente en un conjunto de \textbf{medida nula}
@@ -525,6 +747,36 @@ los racionales, pero sobre un conjunto de medida nula es
 Riemann-integrable, mientras que la función de Dirichlet discontinua en
 todos los reales no lo es.
 \end{rem}
+
+\begin{example}[Continuidad con parámetros]
+Encuentre los valores de $m$ y $n$ para que
+\[
+  f(x) =
+  \begin{cases}
+    mx & x<3, \\ n & x=3, \\ -2x+9 & x>3
+  \end{cases}
+\]
+sea continua en $\R$.
+
+\begin{myproof}
+\textbf{Paso 1: Localizar el punto crítico.} Cada tramo es lineal y, por
+tanto, continuo; el único punto en riesgo es el empalme $x=3$, donde deben
+coincidir los límites laterales y el valor $f(3)=n$.
+
+\textbf{Paso 2: Igualar límites laterales.}
+\[
+  \lim_{x\to 3^-}f(x) = 3m, \qquad
+  \lim_{x\to 3^+}f(x) = -6+9 = 3.
+\]
+La existencia del límite bilateral exige $3m = 3$, es decir, $m=1$.
+
+\textbf{Paso 3: Imponer la continuidad.} Se necesita además
+$f(3) = n = \lim_{x\to 3}f(x) = 3$:
+\[
+  \boxed{m = 1, \qquad n = 3.}
+\]
+\end{myproof}
+\end{example}
 
 %%==========================================================
 \section{El Teorema del Valor Intermedio}
@@ -727,11 +979,23 @@ Calcular $\displaystyle\lim_{x\to 0}\frac{\arcsin 2x}{\ln(1+4x)}$.
 \end{example}
 
 %%==========================================================
-\section{Problemas Propuestos}
+\section{Problemas propuestos}
 %%==========================================================
 
+\subsection{Límites algebraicos y por racionalización}
 
+% Básico
+\begin{prob}
+$\displaystyle\lim_{x\to 4}\frac{x^2-4x}{x^2-3x-4}$
+\end{prob}
 
+\begin{prob}
+Si $\lim_{x\to 1}f(x)=4$ y $\lim_{x\to 1}g(x)=-2$, calcule
+$\lim_{x\to 1}\frac{f(x)}{g(x)}$. Cite explícitamente las propiedades
+utilizadas.
+\end{prob}
+
+% Intermedio
 \begin{prob}
 $\displaystyle\lim_{h\to 0}\!\left(\frac{1}{h}-\frac{1}{h\sqrt{h+1}}\right)$
 \end{prob}
@@ -741,39 +1005,16 @@ $\displaystyle\lim_{x\to 4}\frac{x^2+5x+4}{x^2-3x-4}$
 \end{prob}
 
 \begin{prob}
-$\displaystyle\lim_{x\to 4}\frac{x^2-4x}{x^2-3x-4}$
-\end{prob}
-
-\begin{prob}
 $\displaystyle\lim_{x\to 3}\frac{2x^2+7x+3}{x^2-9}$
-\end{prob}
-
-\begin{prob}
-$\displaystyle\lim_{x\to 1}\frac{x^2-1}{x-1}$
-\end{prob}
-
-\begin{prob}
-$\displaystyle\lim_{x\to 1}\frac{x^4+2x+1}{x^2+2x+1}$
-\end{prob}
-
-\begin{prob}
-$\displaystyle\lim_{x\to 1}\frac{\sqrt{x}-1}{x-1}$
 \end{prob}
 
 \begin{prob}
 $\displaystyle\lim_{x\to 1}\frac{\sqrt{x}-\sqrt{x^2}}{x-1}$
 \end{prob}
 
+% Desafiante
 \begin{prob}
 $\displaystyle\lim_{x\to 0}\frac{\sqrt{2}-\sqrt{1+\cos x}}{\sin^2 x}$
-\end{prob}
-
-\begin{prob}
-$\displaystyle\lim_{x\to 2}\frac{x^3+8}{x^2+8}$
-\end{prob}
-
-\begin{prob}
-$\displaystyle\lim_{t\to 1}\!\left(\frac{t}{t+1}+\frac{1}{t+1}\right)$
 \end{prob}
 
 \begin{prob}
@@ -784,14 +1025,47 @@ $\displaystyle\lim_{t\to 0}\!\left(\frac{1}{\sqrt{1+t}}-\frac{1}{t}\right)$
 $\displaystyle\lim_{x\to 1}\!\left(\frac{x^4-x^3}{x^2-1}-\frac{x^3}{x^2-1}\right)$
 \end{prob}
 
-
-
 \begin{prob}
-$\displaystyle\lim_{u\to\pi/3}\frac{1-2\cos u}{\sin\!\left(u-\frac{\pi}{3}\right)}$
+¿Existe $a$ tal que el límite
+$\displaystyle\lim_{x\to -2}\frac{3x^2+ax+a+3}{x^2+x-2}$ exista?
+Si es así, encuentre $a$ y el valor del límite.
 \end{prob}
 
+% Banco extendido
 \begin{prob}
-$\displaystyle\lim_{x\to 1}\frac{\sin x-\cos x}{\cos 2x}$
+$\displaystyle\lim_{x\to 1}\frac{x^2-1}{x-1}$
+\end{prob}
+
+% Banco extendido
+\begin{prob}
+$\displaystyle\lim_{x\to 1}\frac{x^4+2x+1}{x^2+2x+1}$
+\end{prob}
+
+% Banco extendido
+\begin{prob}
+$\displaystyle\lim_{x\to 2}\frac{x^3+8}{x^2+8}$
+\end{prob}
+
+% Banco extendido
+\begin{prob}
+$\displaystyle\lim_{t\to 1}\!\left(\frac{t}{t+1}+\frac{1}{t+1}\right)$
+\end{prob}
+
+\subsection{Límites trigonométricos y por equivalentes}
+
+% Básico
+\begin{prob}
+$\displaystyle\lim_{x\to 0}\frac{\ln(1+x)}{x}$
+\end{prob}
+
+% Intermedio
+\begin{prob}
+$\displaystyle\lim_{x\to \pi/4}\frac{\sin x-\cos x}{\cos 2x}$
+\end{prob}
+
+% Desafiante
+\begin{prob}
+$\displaystyle\lim_{u\to\pi/3}\frac{1-2\cos u}{\sin\!\left(u-\frac{\pi}{3}\right)}$
 \end{prob}
 
 \begin{prob}
@@ -806,32 +1080,19 @@ $\displaystyle\lim_{x\to\pi/3}\frac{\tan^3 x-3\tan x}{\cos\!\left(x+\frac{\pi}{6
 $\displaystyle\lim_{x\to 0}\frac{x^2}{\sqrt{1+x\sin x}-\sqrt{\cos x}}$
 \end{prob}
 
-\begin{prob}
-$\displaystyle\lim_{x\to 0}\frac{\ln(1+x)}{x}$
-\end{prob}
+\subsection{Límites en el infinito y de tipo $1^\infty$}
 
-
-
-\begin{prob}
-$\displaystyle\lim_{x\to\infty}\!\left(\frac{x^2+1}{x^2-2}\right)^{x^2}$
-\end{prob}
-
-\begin{prob}
-$\displaystyle\lim_{x\to 0}(1+x^2)^{\cot^2 x}$
-\end{prob}
-
-\begin{prob}
-$\displaystyle\lim_{x\to 1}(1+\sin\pi x)^{\cot\pi x}$
-\end{prob}
-
-\begin{prob}
-$\displaystyle\lim_{x\to\infty}\frac{5x^2}{3x^2-5}$
-\end{prob}
-
+% Básico
 \begin{prob}
 $\displaystyle\lim_{x\to\infty}\frac{3x-7}{4x^2+x}$
 \end{prob}
 
+\begin{prob}
+$\displaystyle\lim_{n\to\infty}\frac{n}{\sqrt{n^2+1}}$.
+Determine si la sucesión es convergente.
+\end{prob}
+
+% Intermedio
 \begin{prob}
 $\displaystyle\lim_{x\to\pi/2}\tan x$ \; (analizar límites laterales).
 \end{prob}
@@ -842,27 +1103,17 @@ $\displaystyle\lim_{x\to\infty}\frac{x^2-x\sqrt{x^2-1}}{x}$
 \end{prob}
 
 \begin{prob}
-$\displaystyle\lim_{n\to\infty}\frac{n}{\sqrt{n^2+1}}$.
-Determine si la sucesión es convergente.
-\end{prob}
-
-\begin{prob}
 $\displaystyle\lim_{n\to\infty}\frac{n^2}{\sqrt{n^3+2n+1}}$.
 Determine si la sucesión es convergente.
 \end{prob}
 
-
-
+% Desafiante
 \begin{prob}
-Si $\lim_{x\to 1}f(x)=4$ y $\lim_{x\to 1}g(x)=-2$, calcule
-$\lim_{x\to 1}\frac{f(x)}{g(x)}$. Cite explícitamente las propiedades
-utilizadas.
+$\displaystyle\lim_{x\to\infty}\!\left(\frac{x^2+1}{x^2-2}\right)^{x^2}$
 \end{prob}
 
 \begin{prob}
-¿Existe $a$ tal que el límite
-$\displaystyle\lim_{x\to -2}\frac{3x^2+ax+a+3}{x^2+x-2}$ exista?
-Si es así, encuentre $a$ y el valor del límite.
+$\displaystyle\lim_{x\to 1}(1+\sin\pi x)^{\cot\pi x}$
 \end{prob}
 
 %\begin{prob}
@@ -874,17 +1125,14 @@ Si es así, encuentre $a$ y el valor del límite.
 %Justifique indicando el teorema utilizado.
 %\end{prob}
 
+\subsection{Asíntotas}
 
-
+% Básico
 \begin{prob}
-Encuentre las asíntotas verticales de $f(x)=\dfrac{x^2}{16-x^2}$ y
-verifique el tipo de infinito en cada una.
+Halle $\lim_{x\to -5}\frac{5}{x+5}$ e interprete geométricamente.
 \end{prob}
 
-\begin{prob}
-Encuentre las asíntotas horizontales de $f(x)=\dfrac{x^2}{16-x^2}$.
-\end{prob}
-
+% Intermedio
 \begin{prob}
 Encuentre todas las asíntotas horizontales y verticales de
 $f(x)=\dfrac{x^2}{x^2-4}$. Grafique indicando las asíntotas.
@@ -895,12 +1143,20 @@ Encuentre todas las asíntotas horizontales y verticales de
 $f(x)=\dfrac{3x^2+2x+1}{2x^2-3}$.
 \end{prob}
 
+\subsection{Continuidad}
+
+% Básico
 \begin{prob}
-Halle $\lim_{x\to -5}\frac{5}{x+5}$ e interprete geométricamente.
+Trace la gráfica de $f(x)=|\sin x|$ e indique y clasifique todos los
+puntos de discontinuidad, si los hay.
 \end{prob}
 
+\begin{prob}
+Trace la gráfica de $f(x)=|\cos x|$ e indique y clasifique todos los
+puntos de discontinuidad, si los hay.
+\end{prob}
 
-
+% Intermedio
 \begin{prob}
 Determinar los puntos de discontinuidad y su carácter para
 \[
@@ -913,10 +1169,6 @@ Encuentre los valores de $m$ y $n$ para que $f$ sea continua en $\R$:
 \begin{enumerate}[a)]
     \item $f(x) =
     \begin{cases}
-        mx & x<3 \\ n & x=3 \\ -2x+9 & x>3
-    \end{cases}$
-    \item $f(x) =
-    \begin{cases}
         mx-n & x<1 \\ 5 & x=1 \\ mn+2 & x>1
     \end{cases}$
     \item $f(x) =
@@ -924,22 +1176,6 @@ Encuentre los valores de $m$ y $n$ para que $f$ sea continua en $\R$:
         2x+1 & x\leq 3 \\ mx+n & 3<x<5 \\ 2x+5 & x\geq 5
     \end{cases}$
 \end{enumerate}
-\end{prob}
-
-\begin{prob}
-Estudie la continuidad de
-$f(x)=\dfrac{\sqrt{x^2-1}}{x^4-x^3-x^2+x}$
-clasificando cada punto de discontinuidad según su tipo.
-\end{prob}
-
-\begin{prob}
-Trace la gráfica de $f(x)=|\sin x|$ e indique y clasifique todos los
-puntos de discontinuidad, si los hay.
-\end{prob}
-
-\begin{prob}
-Trace la gráfica de $f(x)=|\cos x|$ e indique y clasifique todos los
-puntos de discontinuidad, si los hay.
 \end{prob}
 
 \begin{prob}
@@ -951,6 +1187,13 @@ primera onza y 22 adicionales por cada onza o fracción hasta 13 onzas.
 \end{enumerate}
 \end{prob}
 
+% Desafiante
+\begin{prob}
+Estudie la continuidad de
+$f(x)=\dfrac{\sqrt{x^2-1}}{x^4-x^3-x^2+x}$
+clasificando cada punto de discontinuidad según su tipo.
+\end{prob}
+
 \begin{prob}
 Suponga que $f$ es continua en $[0,1]$ excepto en $x=0.25$, y que
 $f(0)=1$, $f(1)=3$. Sea $N=2$. Trace dos posibles gráficas de $f$: una
@@ -958,15 +1201,15 @@ en que no satisfaga la conclusión del TVI, y otra en que sí la satisfaga
 aun sin cumplir la hipótesis de continuidad completa.
 \end{prob}
 
+\subsection{El Teorema del Valor Intermedio y problemas teóricos}
 
-
-\begin{prob}[El monje tibetano]
-Un monje sale del monasterio a las 7:00 y llega a la cima a las 19:00.
-Al día siguiente regresa por la misma ruta en el mismo horario. Mediante
-el TVI demuestre que existe un punto de la ruta que el monje cruzará
-exactamente a la misma hora en ambos días.
+% Básico
+\begin{prob}
+¿Tiene el polinomio $p(x)=x^{11}+x-1$ raíces en $(0,1)$? Justifique
+con el TVI.
 \end{prob}
 
+% Intermedio
 \begin{prob}
 Demuestre que existe un número real que es exactamente uno más que su
 propio cubo.
@@ -983,11 +1226,6 @@ menos una con volumen de $1500~\text{cm}^3$.
 \end{prob}
 
 \begin{prob}
-¿Tiene el polinomio $p(x)=x^{11}+x-1$ raíces en $(0,1)$? Justifique
-con el TVI.
-\end{prob}
-
-\begin{prob}
 La fuerza gravitacional sobre una masa unitaria a distancia $r$ del
 centro de la Tierra es
 \[
@@ -1000,7 +1238,13 @@ F(r)=
 ¿Es $F$ continua? Justifique formalmente.
 \end{prob}
 
-
+% Desafiante
+\begin{prob}[El monje tibetano]
+Un monje sale del monasterio a las 7:00 y llega a la cima a las 19:00.
+Al día siguiente regresa por la misma ruta en el mismo horario. Mediante
+el TVI demuestre que existe un punto de la ruta que el monje cruzará
+exactamente a la misma hora en ambos días.
+\end{prob}
 
 \begin{prob}
 Deduzca si cada afirmación es verdadera o falsa y justifique

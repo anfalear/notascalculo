@@ -163,19 +163,35 @@ Mínimo 15 propuestos por capítulo, máximo 40; graduación 25/50/25 con tags. 
 **Acción:** (a) diagrama ε-δ (banda ε, entorno δ, punto excluido — análogo a `fig:disco_epsilon_delta` de C3 pero en 1 variable); (b) tres discontinuidades (removible/salto/esencial) en minipages; (c) asíntota horizontal + vertical en una misma gráfica pgfplots.
 **Criterio de cierre:** 3 figuras estándar F8 en posición R2 (la ε-δ inmediatamente tras la definición formal, §l.74).
 **Líneas estimadas:** 110–170
-**Estado:** Pendiente
+**Estado:** Completado — 2026-07-17
+
+**Notas de ejecución (2026-07-17):**
+- (a) `fig:limite_epsilon_delta`: genérica (curva sinusoidal por $(c,L)$ excluido, banda azul $L\pm\epsilon$, entorno rojo $c\pm\delta$), inmediatamente tras el párrafo que sigue a la definición formal.
+- (b) `fig:tipos_discontinuidad`: 3 minipages (removible / de salto / infinita — la «esencial» del plan se materializó como infinita, acorde con la clasificación del capítulo que separa infinita y oscilante).
+- (c) `fig:asintotas`: $f(x)=1/(x-2)$ (la misma función que discute la rem ancla), AV $x=2$ roja + AH $y=0$, dos ramas con `restrict y to domain`.
 
 ### F9C1.09 — limites: anidar 2 myproof huérfanos + auditoría de 3 figuras
 **Acción:** anidar los 2 myproof fuera de entorno; completar caption/label en la figura no conforme (1 de 3).
 **Criterio de cierre:** 0 huérfanos; 3/3 figuras conformes.
 **Líneas estimadas:** 15–40
-**Estado:** Pendiente
+**Estado:** Completado — 2026-07-17
+
+**Notas de ejecución (2026-07-17):**
+- Los 2 myproof huérfanos eran demostraciones de **teoremas** (Unicidad del límite y $\sin x/x$), no de examples. Precedente verificado en los 6 caps AL cerrados: las pruebas de teoremas usan `proof` (0 casos de theorem+myproof). Se convirtieron a `\begin{proof}` en vez de anidarse.
+- Figura del encaje: `fig:encaje_areas` (caption ya existía) + ancla «véase la figura» → `\ref`.
+- `fig:epsilon_delta_demo`: tenía label sin ancla → ancla en Paso 2 y caption enriquecido (era «Interpretación geométrica del límite»).
+- 3/3 + 3 nuevas de .08 = 6/6 figuras conformes con ancla.
 
 ### F9C1.10 — limites: banco de 50 propuestos — graduación + Decisión F9C1.02 + elevaciones
 **Acción:** aplicar la decisión de exceso; graduar con tags; elevar 4–5 a resueltos cubriendo técnicas sin ejemplo: ε-δ de límite lineal, 0/0 por factorización, trigonométrico, continuidad en un punto, aplicación del TVI (recomendación GUIA §4).
 **Criterio de cierre:** banco ≤40 o excedentes marcados según decisión; tags completos; 4–5 resueltos nuevos validados.
 **Líneas estimadas:** 120–200
-**Estado:** Pendiente
+**Estado:** Completado — 2026-07-17
+
+**Notas de ejecución (2026-07-17):**
+- Las técnicas recomendadas por la GUIA ya tenían resuelto (ε-δ, 0/0, TVI ×2, laterales ×2, equivalentes ×4); las elevaciones se eligieron por técnicas realmente sin cubrir. **5 elevaciones aprobadas por el autor y SymPy-verificadas:** racionalización $(\sqrt x-1)/(x-1)=1/2$; infinito racional $5x^2/(3x^2-5)=5/3$ (primer resuelto de §Límites infinitos); asíntotas de $x^2/(16-x^2)$ (AV $\pm4$ con signos, AH $-1$; **fusiona 2 probs del banco**); tipo $1^\infty$ $(1+x^2)^{\cot^2x}=e$; continuidad con parámetros $m=1,n=3$ (primer resuelto de §Continuidad; literal a del prob m/n).
+- **Errata heredada corregida (aprobada por el autor):** $\lim_{x\to 1}\frac{\sin x-\cos x}{\cos 2x}$ → $x\to\pi/4$ (con 1 era sustitución directa ≈−0.72; con π/4 es el 0/0 clásico $=-\sqrt2/2$, SymPy-OK).
+- Banco reorganizado en **6 subsecciones** (algebraicos y racionalización / trigonométricos y equivalentes / infinito y $1^\infty$ / asíntotas / continuidad / TVI y teóricos) con tags B/I/D por subsección: 9B/17I/14D = 40 contados + **4 `% Banco extendido`** (duplicado del ejemplo $\frac{x^2-1}{x-1}$ + 3 sustituciones directas triviales). Nada eliminado; el prob comentado del sándwich se conservó comentado. Heading → `Problemas propuestos`.
 
 ### F9C1.11 — derivadas: figuras R2 nuevas
 **Acción:** (a) secante → tangente (dos secantes con h decreciente y la tangente límite, punto (x₀,f(x₀))); (b) árbol de dependencias de la regla de la cadena (nodos y ramas con derivadas parciales del caso y=f(u), u=g(x)).
@@ -390,9 +406,9 @@ Mínimo 15 propuestos por capítulo, máximo 40; graduación 25/50/25 con tags. 
 | F9C1.05 | `funciones.tex` | Auditoría 18 figuras | Completado | 2026-07-17 | 13 labels + 15 anclas; los «3 center» eran 2 tabulares + 1 interno conforme; 17/17 figs conformes (con las 2 de F9C1.06) |
 | F9C1.06 | `funciones.tex` | 3 figuras R2 nuevas | Completado | 2026-07-17 | fig:dominio_rango + fig:inversa_reflexion; (b) pre-satisfecha por fig:tramos_salto |
 | F9C1.07 | `funciones.tex` | Graduación + elevaciones | Completado | 2026-07-17 | 3 elevaciones aprobadas (inversa sin fórmula, autoinversa, mareas Fundy); banco 13 probs 3B/7I/3D con marcadores de grupo |
-| F9C1.08 | `limites.tex` | 3 figuras R2 nuevas | Pendiente | — | — |
-| F9C1.09 | `limites.tex` | 2 huérfanos + auditoría figuras | Pendiente | — | — |
-| F9C1.10 | `limites.tex` | Banco 50: decisión + tags + elevar 4–5 | Pendiente | — | — |
+| F9C1.08 | `limites.tex` | 3 figuras R2 nuevas | Completado | 2026-07-17 | fig:limite_epsilon_delta, fig:tipos_discontinuidad (3 minipages), fig:asintotas |
+| F9C1.09 | `limites.tex` | 2 huérfanos + auditoría figuras | Completado | 2026-07-17 | Huérfanos eran pruebas de teoremas → `proof` (precedente AL); fig:encaje_areas + ancla; 6/6 conformes |
+| F9C1.10 | `limites.tex` | Banco 50: decisión + tags + elevar 4–5 | Completado | 2026-07-17 | 5 elevaciones SymPy-OK; 6 subsecciones E4; 40 contados + 4 `% Banco extendido`; errata x→1→π/4 corregida; heading estándar |
 | F9C1.11 | `derivadas.tex` | 2 figuras R2 nuevas | Pendiente | — | — |
 | F9C1.12 | `derivadas.tex` | 3 huérfanos + 3 center + residuales | Pendiente | — | — |
 | F9C1.13 | `derivadas.tex` | Tags + elevar 3–4 + heading | Pendiente | — | — |
