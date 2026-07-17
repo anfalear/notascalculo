@@ -127,19 +127,33 @@ Mínimo 15 propuestos por capítulo, máximo 40; graduación 25/50/25 con tags. 
 **Acción:** protocolo F8.31 sobre las 13 figuras sin caption/label (incluye las galerías de catálogo pgfplots) y los 3 tikz en center. Lotes de ≤300 líneas si excede.
 **Criterio de cierre:** 18/18 conformes; galerías con captions descriptivos.
 **Líneas estimadas:** 120–250
-**Estado:** Pendiente
+**Estado:** Completado — 2026-07-17
+
+**Notas de ejecución (2026-07-17):**
+- Diagnóstico corregido: las 15 figure envs tenían **caption pero solo 2 label**; los «3 center» eran 2 tabulares (tablas trig/inversas, no figuras) + 1 `center` interno de `fig:caja-3d` (ya conforme) — **0 tikz sueltos reales**.
+- 13 labels nuevos: fig:costo_contenedor, fig:recta_vertical, fig:tramos_salto, fig:potencias_enteras, fig:potencias_racionales, fig:exponenciales, fig:logaritmicas, fig:seno_coseno, fig:tangente, fig:traslaciones_parabola, fig:amplitud_fase, fig:trig_inversas, fig:ventana_normanda (todos **después** del caption, regla F8b).
+- Anclas `\ref` añadidas para las 15 (incl. fig:caja y fig:caja-3d que tenían label sin ancla). 2 captions enriquecidos (tramos_salto, ventana_normanda).
 
 ### F9C1.06 — funciones: figuras R2 nuevas
 **Acción:** (a) gráfica genérica con dominio y rango proyectados con flechas a los ejes; (b) función por tramos con punto lleno/vacío en la discontinuidad; (c) reflexión sobre y=x para la inversa (f y f⁻¹).
 **Criterio de cierre:** 3 figuras estándar F8 tras las definiciones correspondientes (R2).
 **Líneas estimadas:** 90–150
-**Estado:** Pendiente
+**Estado:** Completado — 2026-07-17
+
+**Notas de ejecución (2026-07-17):**
+- (a) `fig:dominio_rango` tras la Definición de función: curva sinusoidal con extremos marcados, D_f proyectado al eje x (rojo), R_f al eje y (verde), proyecciones punteadas desde máximo interior y mínimo de borde.
+- (b) **pre-satisfecha** por `fig:tramos_salto` (ya existía como ejemplo con círculo abierto/punto sólido; conformada en F9C1.05) — no se duplicó.
+- (c) `fig:inversa_reflexion` tras el algoritmo de inversión: $e^x$ y $\ln x$ con $y=x$ punteada, par simétrico $(1,e)$–$(e,1)$ conectado, `axis equal image`.
 
 ### F9C1.07 — funciones: graduación + elevaciones
 **Acción:** tags en los 17 propuestos; elevar 2–3 a resueltos si cubren técnica sin ejemplo previo (composición con dominio, inversa con restricción); heading ya estándar (verificar).
 **Criterio de cierre:** banco graduado; elevaciones validadas por el autor.
 **Líneas estimadas:** 40–90
-**Estado:** Pendiente
+**Estado:** Completado — 2026-07-17
+
+**Notas de ejecución (2026-07-17):**
+- El banco real tenía 16 probs (no 17). 3 elevaciones aprobadas por el autor con protocolo de 4 pasos: (1) inversa sin fórmula explícita ($f=x^5+x^3+x$: $f^{-1}(3)=1$, $f(f^{-1}(2))=2$, $g^{-1}(4)=0$) en §Funciones inversas; (2) $f=\sqrt{1-x^2}$ en $[0,1]$ autoinversa (cuarto de circunferencia, conecta con fig:inversa_reflexion); (3) mareas bahía de Fundy $D(t)=7+5\cos[\frac{\pi}{6}(t-6.75)]$ — primer resuelto de §Transformaciones.
+- Banco reordenado B→I→D con marcadores de grupo: **3B** (dominios, paridad, cocientes incrementales) / **7I** (familias ×2, transformaciones $e^x$, tramos, transformaciones trig, operaciones, ecuaciones exp/log) / **3D** (cúbica por interpolación, descomposición de compuestas, modelado 12 literales). Heading ya estándar (verificado).
 
 ---
 
@@ -373,9 +387,9 @@ Mínimo 15 propuestos por capítulo, máximo 40; graduación 25/50/25 con tags. 
 | F9C1.02 | `.md` | Decisión exceso (limites 50 / sucfun 48) | Completado | 2026-07-06 | Nada se elimina: reorganizar por subsección (E4) y marcar excedentes con `% Banco extendido` (fuera de la cuota). Aplicación en F9C1.10 y F9C1.37. |
 | F9C1.03 | `preliminares.tex` | 2 figuras R2 + 5 center | Completado | 2026-07-17 | Autor aprobó ejecutar (cap. abre el libro tras retiro de politicas). 4 center→figure[H]; fig:supremo ampliada con franja ε; fig:vecindad ya existía. 10/10 figs conformes. Trampa `\inf` en caption → GUIA §2.3 |
 | F9C1.04 | `preliminares.tex` | Elevar 2–3 resueltos + tags | Completado | 2026-07-17 | 3 elevaciones aprobadas (AM-GM, valor absoluto por casos, sup/inf alternante); banco 8 probs reordenado B→I→D con marcadores de grupo; GUIA §2.4 actualizada con E4 |
-| F9C1.05 | `funciones.tex` | Auditoría 18 figuras | Pendiente | — | — |
-| F9C1.06 | `funciones.tex` | 3 figuras R2 nuevas | Pendiente | — | — |
-| F9C1.07 | `funciones.tex` | Graduación + elevaciones | Pendiente | — | — |
+| F9C1.05 | `funciones.tex` | Auditoría 18 figuras | Completado | 2026-07-17 | 13 labels + 15 anclas; los «3 center» eran 2 tabulares + 1 interno conforme; 17/17 figs conformes (con las 2 de F9C1.06) |
+| F9C1.06 | `funciones.tex` | 3 figuras R2 nuevas | Completado | 2026-07-17 | fig:dominio_rango + fig:inversa_reflexion; (b) pre-satisfecha por fig:tramos_salto |
+| F9C1.07 | `funciones.tex` | Graduación + elevaciones | Completado | 2026-07-17 | 3 elevaciones aprobadas (inversa sin fórmula, autoinversa, mareas Fundy); banco 13 probs 3B/7I/3D con marcadores de grupo |
 | F9C1.08 | `limites.tex` | 3 figuras R2 nuevas | Pendiente | — | — |
 | F9C1.09 | `limites.tex` | 2 huérfanos + auditoría figuras | Pendiente | — | — |
 | F9C1.10 | `limites.tex` | Banco 50: decisión + tags + elevar 4–5 | Pendiente | — | — |

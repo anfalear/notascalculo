@@ -17,6 +17,39 @@ El conjunto de todos los valores efectivamente alcanzados,
 se denomina \textbf{rango} o \textbf{imagen} de $f$, y satisface $R_f \subseteq \text{codominio}$. Escribimos $f: D_f \to \mathbb{R}$ para indicar que $f$ va del dominio al conjunto de los números reales. Es convención llamar a $x$ la \textbf{variable independiente} y a $y = f(x)$ la \textbf{variable dependiente}.
 \end{definition}
 
+La figura~\ref{fig:dominio_rango} ilustra geométricamente ambos conjuntos:
+el dominio se lee proyectando la gráfica sobre el eje $x$, y el rango,
+proyectándola sobre el eje $y$.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[>=latex, scale=1.1]
+   % Ejes
+   \draw[->] (-0.8,0) -- (5.3,0) node[right] {$x$};
+   \draw[->] (0,-0.8) -- (0,3.9) node[above] {$y$};
+   % Curva y = f(x) en [0.5, 4.5]
+   \draw[blue!70!black, very thick, domain=0.5:4.5, smooth, samples=60]
+      plot (\x, {2 + 1.2*sin(deg(1.1*(\x-0.7)))});
+   \node[blue!70!black, font=\small] at (3.4,3.1) {$y = f(x)$};
+   % Extremos de la curva
+   \filldraw[blue!70!black] (0.5,1.74) circle (1.8pt);
+   \filldraw[blue!70!black] (4.5,0.97) circle (1.8pt);
+   % Proyección del dominio (eje x)
+   \draw[dashed, gray] (0.5,1.74) -- (0.5,0);
+   \draw[dashed, gray] (4.5,0.97) -- (4.5,0);
+   \draw[red!70!black, very thick, |-|] (0.5,-0.45) -- (4.5,-0.45)
+      node[midway, below, font=\small] {$D_f$};
+   % Proyección del rango (eje y): máximo en (2.13, 3.2), mínimo en (4.5, 0.97)
+   \draw[dashed, gray] (2.13,3.2) -- (0,3.2);
+   \draw[dashed, gray] (4.5,0.97) -- (0,0.97);
+   \draw[green!55!black, very thick, |-|] (-0.45,0.97) -- (-0.45,3.2)
+      node[midway, left, font=\small] {$R_f$};
+\end{tikzpicture}
+\caption{Dominio y rango como proyecciones de la gráfica: $D_f$ es la sombra
+de la curva sobre el eje $x$; $R_f$, su sombra sobre el eje $y$.}
+\label{fig:dominio_rango}
+\end{figure}
+
 \begin{rem}[La regla del único valor de salida]
 La unicidad del valor de salida es la condición definitoria de una función. Si a un valor $x$ le correspondieran dos salidas distintas $y_1 \neq y_2$, la regla no sería una función. Esta unicidad se verifica gráficamente mediante la \emph{prueba de la recta vertical}.
 \end{rem}
@@ -167,7 +200,7 @@ x\,(\mathrm{m}) & C(x)\,(\$) \\\hline
 \end{array}
 \]
 
-\textbf{Visual:}
+\textbf{Visual:} véase la figura~\ref{fig:costo_contenedor}.
 \begin{figure}[H]
 \centering
 \begin{tikzpicture}[scale=0.85]
@@ -194,6 +227,7 @@ x\,(\mathrm{m}) & C(x)\,(\$) \\\hline
 \end{axis}
 \end{tikzpicture}
 \caption{Gráfica de $C(x)$ del Ejemplo \ref{ex:costo-contenedor}: el mínimo ocurre aproximadamente en $x \approx 1.65\,\mathrm{m}$.}
+\label{fig:costo_contenedor}
 \end{figure}
 \end{myproof}
 \end{example}
@@ -201,7 +235,7 @@ x\,(\mathrm{m}) & C(x)\,(\$) \\\hline
 Aunque conocer las cuatro representaciones de una función (verbal, numérica, algebraica y gráfica) es fundamental, en ocasiones una resulta más conveniente que las demás según el contexto. Por ello, es esencial seleccionar la representación más adecuada para cada situación particular. La siguiente es una propiedad clave para identificar gráficas de funciones:
 
 \begin{rem}[Prueba de la recta vertical]
-Una curva en el plano $xy$ es la gráfica de una función $y = f(x)$ \emph{si y solo si} ninguna recta vertical interseca la curva en más de un punto. Por ejemplo, la circunferencia $x^2 + y^2 = 1$ no es la gráfica de una función: la recta $x = 0.5$ la corta en dos puntos, $(0.5,\,\sqrt{3}/2)$ y $(0.5,\,-\sqrt{3}/2)$.
+Una curva en el plano $xy$ es la gráfica de una función $y = f(x)$ \emph{si y solo si} ninguna recta vertical interseca la curva en más de un punto. Por ejemplo, la circunferencia $x^2 + y^2 = 1$ no es la gráfica de una función: la recta $x = 0.5$ la corta en dos puntos, $(0.5,\,\sqrt{3}/2)$ y $(0.5,\,-\sqrt{3}/2)$ (figura~\ref{fig:recta_vertical}).
 
 \begin{figure}[H]
 \centering
@@ -214,6 +248,7 @@ Una curva en el plano $xy$ es la gráfica de una función $y = f(x)$ \emph{si y 
 \filldraw[red] (0.5,{-sqrt(3)/2}) circle (2pt) node[right, font=\small] {$(0.5,-\frac{\sqrt{3}}{2})$};
 \end{tikzpicture}
 \caption{La circunferencia unitaria falla la prueba de la recta vertical.}
+\label{fig:recta_vertical}
 \end{figure}
 \end{rem}
 
@@ -307,7 +342,7 @@ Trace la gráfica de
 \]
 Hay un salto en $x = 2$.
 
-\textbf{Paso 2 — Trazado por tramos:} Para $x < 2$: recta decreciente (pendiente $-\tfrac{1}{2}$), \emph{círculo abierto} en $(2, 2)$. Para $x \geq 2$: recta creciente (pendiente $2$), \emph{punto sólido} en $(2,-1)$.
+\textbf{Paso 2 — Trazado por tramos:} Para $x < 2$: recta decreciente (pendiente $-\tfrac{1}{2}$), \emph{círculo abierto} en $(2, 2)$. Para $x \geq 2$: recta creciente (pendiente $2$), \emph{punto sólido} en $(2,-1)$ (figura~\ref{fig:tramos_salto}).
 
 \begin{figure}[H]
 \centering
@@ -323,7 +358,8 @@ Hay un salto en $x = 2$.
 \draw[dashed, gray] (2,-2) -- (2,3.5);
 \node[below, font=\small] at (2,0) {$2$};
 \end{tikzpicture}
-\caption{Función por tramos con salto en $x=2$.}
+\caption{Función por tramos con salto en $x=2$: círculo abierto en $(2,2)$ (valor no alcanzado) y punto sólido en $(2,-1)$ (valor de la función).}
+\label{fig:tramos_salto}
 \end{figure}
 
 \textbf{Paso 3 — Conclusión:}
@@ -359,7 +395,8 @@ Estas reglas garantizan que $x^r$ produzca valores reales para todo $x$ en su do
 \end{rem}
 
 \begin{example}[Galería de funciones potencia]
-Las siguientes gráficas ilustran las funciones potencia más representativas:
+Las figuras~\ref{fig:potencias_enteras} y~\ref{fig:potencias_racionales}
+ilustran las funciones potencia más representativas:
 
 \begin{figure}[H]
 \centering
@@ -391,6 +428,7 @@ Las siguientes gráficas ilustran las funciones potencia más representativas:
 \end{axis}
 \end{tikzpicture}
 \caption{\emph{Izquierda:} potencias pares (simétricas respecto al eje $y$; $x^4$ más \emph{achatada} cerca del origen que $x^2$). \emph{Derecha:} potencias impares (simétricas respecto al origen).}
+\label{fig:potencias_enteras}
 \end{figure}
 
 \begin{figure}[H]
@@ -411,6 +449,7 @@ Las siguientes gráficas ilustran las funciones potencia más representativas:
 \end{axis}
 \end{tikzpicture}
 \caption{$f(x)=1/x$ con asíntota en $x=0$ ($D_f=\mathbb{R}\setminus\{0\}$); $g(x)=x^{2/3}$ con cúspide en el origen ($D_g=\mathbb{R}$).}
+\label{fig:potencias_racionales}
 \end{figure}
 \end{example}
 
@@ -427,6 +466,8 @@ El número $e \approx 2.71828\ldots$ (base de Euler) ocupa un lugar privilegiado
 \end{definition}
 
 \begin{example}[Exponenciales creciente y decreciente]
+La figura~\ref{fig:exponenciales} contrasta el crecimiento de $2^x$ con el
+decaimiento de $(1/2)^x$.
 \begin{figure}[H]
 \centering
 \begin{tikzpicture}[scale=1.0]
@@ -447,6 +488,7 @@ El número $e \approx 2.71828\ldots$ (base de Euler) ocupa un lugar privilegiado
 \end{axis}
 \end{tikzpicture}
 \caption{$f(x)=2^x$ creciente; $g(x)=(1/2)^x$ decreciente. Ambas pasan por $(0,1)$ y tienen asíntota $y=0$.}
+\label{fig:exponenciales}
 \end{figure}
 \end{example}
 
@@ -460,6 +502,8 @@ $D_f = (0,+\infty)$, $R_f = \mathbb{R}$. Pasa por $(1,0)$ y tiene asíntota vert
 \end{definition}
 
 \begin{example}[Logarítmica base 2 vs.\ logarítmica natural]
+La figura~\ref{fig:logaritmicas} compara $\log_2 x$ con $\ln x$ sobre su
+dominio común $(0,+\infty)$.
 \begin{figure}[H]
 \centering
 \begin{tikzpicture}[scale=1.0]
@@ -481,6 +525,7 @@ $D_f = (0,+\infty)$, $R_f = \mathbb{R}$. Pasa por $(1,0)$ y tiene asíntota vert
 \end{axis}
 \end{tikzpicture}
 \caption{$\log_2 x$ y $\ln x$ comparten el punto $(1,0)$; $\log_2 x > \ln x$ para $x > 1$ pues $\log_2 x = \ln x / \ln 2 \approx 1.44\ln x$.}
+\label{fig:logaritmicas}
 \end{figure}
 \end{example}
 
@@ -515,6 +560,8 @@ donde $k \in \mathbb{Z}$.
 \end{definition}
 
 \begin{example}[Gráficas de las funciones trigonométricas]
+Las figuras~\ref{fig:seno_coseno} y~\ref{fig:tangente} muestran las gráficas
+de las funciones trigonométricas fundamentales.
 \begin{figure}[H]
 \centering
 \begin{tikzpicture}[scale=0.85]
@@ -533,6 +580,7 @@ donde $k \in \mathbb{Z}$.
 \end{axis}
 \end{tikzpicture}
 \caption{$\sin x$ (azul) y $\cos x$ (naranja): período $2\pi$, amplitud 1. Observe que $\cos x = \sin(x+\pi/2)$.}
+\label{fig:seno_coseno}
 \end{figure}
 
 \begin{figure}[H]
@@ -560,6 +608,7 @@ donde $k \in \mathbb{Z}$.
 \end{axis}
 \end{tikzpicture}
 \caption{$\tan x$: período $\pi$, asíntotas verticales en $x = \pi/2 + k\pi$.}
+\label{fig:tangente}
 \end{figure}
 \end{example}
 
@@ -630,6 +679,9 @@ Dados $h, k \in \mathbb{R}$:
   \item $y = f(x-h)+k$: \textbf{traslación combinada}.
 \end{itemize}
 
+La figura~\ref{fig:traslaciones_parabola} ilustra los tres tipos de
+traslación aplicados a la parábola $y = x^2$.
+
 \begin{figure}[H]
 \centering
 \begin{tikzpicture}[scale=0.85]
@@ -650,6 +702,7 @@ Dados $h, k \in \mathbb{R}$:
 \end{axis}
 \end{tikzpicture}
 \caption{Traslaciones de $y=x^2$: el vértice se desplaza de $(0,0)$ a $(h,k)$.}
+\label{fig:traslaciones_parabola}
 \end{figure}
 
 % -----------------------------------------------------------
@@ -678,6 +731,9 @@ tiene los siguientes parámetros geométricos:
   \item \textbf{Desfase horizontal:} $b$ (desplaza el ciclo).
 \end{itemize}
 
+La figura~\ref{fig:amplitud_fase} identifica estos parámetros en un caso
+concreto.
+
 \begin{figure}[H]
 \centering
 \begin{tikzpicture}[scale=1.0]
@@ -698,10 +754,51 @@ tiene los siguientes parámetros geométricos:
 \end{axis}
 \end{tikzpicture}
 \caption{Parámetros de la forma amplitud-fase en $y=C+A\sin[a(t-b)]$.}
+\label{fig:amplitud_fase}
 \end{figure}
 
 
-Esta parametrización es fundamental para modelar fenómenos oscilatorios (resortes, ondas, circuitos AC) donde la amplitud, frecuencia y fase determinan el comportamiento físico observado.
+Esta parametrización es fundamental para modelar fenómenos oscilatorios (resortes, ondas, circuitos AC) donde la amplitud, frecuencia y fase determinan el comportamiento físico observado. El siguiente ejemplo la aplica a un fenómeno real.
+
+\begin{example}[Mareas de la bahía de Fundy]
+Las mareas más altas del mundo ocurren en la bahía de Fundy (Canadá). En
+Hopewell Cape, la profundidad mínima es $2.0\,\mathrm{m}$ y la máxima es
+$12.0\,\mathrm{m}$; el período de oscilación es de aproximadamente $12$
+horas y, el 30 de junio de 2009, la marea alta se produjo a las 6:45\,h.
+Determine una función $D(t)$ ---utilizando la función coseno--- que modele
+la profundidad del agua (en metros) en función del tiempo $t$ (horas
+después de la medianoche).
+
+\begin{myproof}
+\textbf{Paso 1 — Análisis gráfico y planteamiento.}
+La profundidad oscila entre $2$ y $12$ m con período de $12$ h: es un
+fenómeno sinusoidal de la forma $D(t) = C + A\cos[a(t-b)]$. Conviene el
+coseno porque alcanza su máximo exactamente cuando el argumento se anula:
+basta centrar el desfase $b$ en la hora de la marea alta.
+
+\textbf{Paso 2 — Fundamentación teórica.}
+En la forma amplitud-fase, la línea central $C$ es el promedio de los
+valores extremos, la amplitud $|A|$ es su semidiferencia y $a$ se obtiene
+del período mediante $T = 2\pi/|a|$.
+
+\textbf{Paso 3 — Procedimiento técnico.}
+\begin{align*}
+  C &= \frac{12.0 + 2.0}{2} = 7.0, &
+  A &= \frac{12.0 - 2.0}{2} = 5.0,\\
+  a &= \frac{2\pi}{T} = \frac{2\pi}{12} = \frac{\pi}{6}, &
+  b &= 6.75 \quad (\text{6:45\,h} = 6\tfrac{3}{4}\,\mathrm{h}).
+\end{align*}
+Verificación: $D(6.75) = 7 + 5\cos 0 = 12$ (marea alta) y
+$D(12.75) = 7 + 5\cos\pi = 2$ (marea baja, medio período después), en
+acuerdo con los datos.
+
+\textbf{Paso 4 — Conclusión y formalización.}
+\[
+  \boxed{D(t) = 7.0 + 5.0\,\cos\!\left[\frac{\pi}{6}\,(t - 6.75)\right]
+  \ \mathrm{m}.}
+\]
+\end{myproof}
+\end{example}
 
 % ============================================================
 \section{Funciones inversas}
@@ -741,8 +838,37 @@ Dado $y = f(x)$:
   \item Despejar $y$ en términos de $x$.
   \item El resultado es $y = f^{-1}(x)$.
 \end{enumerate}
-La gráfica de $f^{-1}$ es la reflexión de la gráfica de $f$ respecto a la recta $y = x$.
+La gráfica de $f^{-1}$ es la reflexión de la gráfica de $f$ respecto a la recta $y = x$ (figura~\ref{fig:inversa_reflexion}).
 \end{rem}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.0]
+\begin{axis}[
+    axis lines=middle, xlabel={$x$}, ylabel={$y$},
+    xmin=-2.6, xmax=4.2, ymin=-2.6, ymax=4.2,
+    width=9cm, height=9cm, samples=150,
+    axis equal image,
+    restrict y to domain=-2.6:4.2,
+]
+\addplot[blue, ultra thick, domain=-2.6:1.4] {exp(x)};
+\addplot[red, ultra thick, domain=0.08:4.1] {ln(x)};
+\addplot[dashed, gray, thick, domain=-2.6:4.1] {x};
+\filldraw[blue] (axis cs:1,2.718) circle (2pt);
+\filldraw[red]  (axis cs:2.718,1) circle (2pt);
+\draw[dashed, gray, thin] (axis cs:1,2.718) -- (axis cs:2.718,1);
+\node[blue, font=\small, anchor=west] at (axis cs:1.5,3.6) {$y=e^x$};
+\node[red, font=\small, anchor=north] at (axis cs:3.4,0.8) {$y=\ln x$};
+\node[gray, font=\small, anchor=north west] at (axis cs:2.75,2.75) {$y=x$};
+\node[blue, font=\small, anchor=west] at (axis cs:1.1,2.75) {$(1,e)$};
+\node[red, font=\small, anchor=south west] at (axis cs:2.75,1.15) {$(e,1)$};
+\end{axis}
+\end{tikzpicture}
+\caption{La gráfica de $f^{-1}$ es la reflexión de la de $f$ respecto a la
+recta $y=x$: cada punto $(a,b)$ de $f$ corresponde al punto $(b,a)$ de
+$f^{-1}$, como ilustran $e^x$ y $\ln x$.}
+\label{fig:inversa_reflexion}
+\end{figure}
 
 \begin{example}
 Determine la función inversa de
@@ -780,6 +906,84 @@ Determine la función inversa de
 \end{myproof}
 \end{example}
 
+\begin{example} Si $f(x) = x^5 + x^3 + x$, determine $f^{-1}(3)$ y
+$f(f^{-1}(2))$. Además, si $g(x) = 3 + x + e^x$, determine $g^{-1}(4)$.
+
+\begin{myproof}
+\textbf{Paso 1 — Análisis y planteamiento.}
+Despejar $y$ de $x = y^5 + y^3 + y$ es imposible con álgebra elemental: no
+hay fórmula explícita para $f^{-1}$. Sin embargo, evaluar $f^{-1}$ en un
+punto solo requiere responder: ¿qué entrada produce esa salida?
+
+\textbf{Paso 2 — Fundamentación teórica.}
+$f$ es suma de potencias impares, todas crecientes en $\mathbb{R}$, de modo
+que $f$ es estrictamente creciente y, por tanto, inyectiva: $f^{-1}$ existe
+y cada ecuación $f(x) = c$ tiene a lo sumo una solución. Lo mismo vale para
+$g$, suma de la identidad (creciente), la exponencial (creciente) y una
+constante. Además, por la identidad de composición, $f(f^{-1}(y)) = y$
+para todo $y \in R_f$.
+
+\textbf{Paso 3 — Procedimiento técnico.}
+
+\emph{Cálculo de $f^{-1}(3)$:} buscamos $x$ con $x^5+x^3+x = 3$. Ensayando
+$x=1$: $1+1+1 = 3$. Por inyectividad es la única solución, luego
+$f^{-1}(3) = 1$.
+
+\emph{Cálculo de $f(f^{-1}(2))$:} como $f$ es continua, creciente y no
+acotada, $2 \in R_f$; la identidad de composición da directamente
+$f(f^{-1}(2)) = 2$, sin necesidad de conocer el valor de $f^{-1}(2)$.
+
+\emph{Cálculo de $g^{-1}(4)$:} buscamos $x$ con $3 + x + e^x = 4$.
+Ensayando $x=0$: $3 + 0 + 1 = 4$. Por inyectividad, $g^{-1}(4) = 0$.
+
+\textbf{Paso 4 — Conclusión y formalización.}
+\[
+  \boxed{f^{-1}(3) = 1, \qquad f(f^{-1}(2)) = 2, \qquad g^{-1}(4) = 0.}
+\]
+\end{myproof}
+\end{example}
+
+\begin{example} Sea $f(x) = \sqrt{1-x^2}$ con dominio restringido
+$0 \leq x \leq 1$.
+\begin{enumerate}
+  \item Encuentre $f^{-1}$.
+  \item ¿Cómo se relaciona $f^{-1}$ con $f$?
+  \item Identifique geométricamente la gráfica de $f$ y explique la
+        relación hallada.
+\end{enumerate}
+
+\begin{myproof}
+\textbf{Paso 1 — Análisis y planteamiento.}
+Sin la restricción, $f$ no sería inyectiva (toma el mismo valor en $x$ y
+$-x$). En $[0,1]$, $f$ decrece de $f(0)=1$ a $f(1)=0$, de modo que es
+inyectiva, $R_f = [0,1]$ y la inversa existe.
+
+\textbf{Paso 2 — Fundamentación teórica.}
+Se aplica el algoritmo de inversión; al despejar la raíz se elige la rama
+no negativa porque $f^{-1}: [0,1] \to [0,1]$ debe devolver valores del
+dominio restringido.
+
+\textbf{Paso 3 — Procedimiento técnico.}
+De $x = \sqrt{1-y^2}$ con $0\le y\le 1$:
+\[
+  x^2 = 1 - y^2 \;\Rightarrow\; y^2 = 1 - x^2 \;\Rightarrow\;
+  y = \sqrt{1-x^2}, \quad 0 \leq x \leq 1.
+\]
+Es decir, $f^{-1}$ tiene la misma fórmula y el mismo dominio que $f$: la
+función es \emph{autoinversa}, $f^{-1} = f$.
+
+\textbf{Paso 4 — Conclusión y formalización.}
+La gráfica de $f$ es el cuarto de circunferencia unitaria del primer
+cuadrante ($x^2+y^2=1$ con $x,y \geq 0$), que es simétrico respecto a la
+recta $y=x$: al reflejarla queda idéntica, y por eso $f^{-1}=f$ (el
+mecanismo general de reflexión se ilustra en la
+figura~\ref{fig:inversa_reflexion}).
+\[
+  \boxed{f^{-1}(x) = \sqrt{1-x^2},\; 0\le x\le 1; \qquad f^{-1} = f.}
+\]
+\end{myproof}
+\end{example}
+
 % -----------------------------------------------------------
 \subsection{Funciones trigonométricas inversas}
 % -----------------------------------------------------------
@@ -805,6 +1009,8 @@ $\text{arccsc}\, x$ & $(-\infty,-1]\cup[1,+\infty)$ & $[-\pi/2,\pi/2]\setminus\{
 \end{definition}
 
 \begin{example}[Gráficas de $\arcsin$, $\arccos$ y $\arctan$]
+La figura~\ref{fig:trig_inversas} muestra las tres inversas trigonométricas
+principales sobre sus intervalos principales.
 \begin{figure}[H]
 \centering
 \begin{tikzpicture}[scale=0.85]
@@ -852,6 +1058,7 @@ $\text{arccsc}\, x$ & $(-\infty,-1]\cup[1,+\infty)$ & $[-\pi/2,\pi/2]\setminus\{
 \end{axis}
 \end{tikzpicture}
 \caption{Las tres inversas trigonométricas principales. Las líneas punteadas indican las asíntotas del rango.}
+\label{fig:trig_inversas}
 \end{figure}
 \end{example}
 
@@ -900,6 +1107,7 @@ Sea $y = \log_b x$, es decir $b^y = x$. Aplicando $\ln$ a ambos lados: $y \ln b 
 
 \section{Problemas propuestos}
 
+% Básico
 \begin{prob}
 Calcule el dominio natural de cada función. Exprese el resultado en notación de conjuntos, en notación de intervalos y represéntelo gráficamente en la recta real.
 \begin{multicols}{2}
@@ -944,6 +1152,7 @@ Para cada función, evalúe $f(a+h)$, $f(a+h)-f(a)$ y $\dfrac{f(a+h)-f(a)}{h}$ (
 \end{enumerate}
 \end{prob}
 
+% Intermedio
 \begin{prob}
 ¿Qué tienen en común todos los miembros de la familia $f(x) = 1 + m(x+3)$? Trace la gráfica de al menos cuatro funciones de esta familia y describa geométricamente la familia completa.
 \end{prob}
@@ -951,11 +1160,6 @@ Para cada función, evalúe $f(a+h)$, $f(a+h)-f(a)$ y $\dfrac{f(a+h)-f(a)}{h}$ (
 \begin{prob}
 ¿Qué tienen en común todos los miembros de la familia $f(x) = c - x$? Trace la gráfica de varias funciones de esta familia.
 \end{prob}
-
-\begin{prob}
-Encuentre una expresión para la función cúbica $f$ sabiendo que $f(1) = 6$ y $f(-1) = f(0) = f(2) = 0$.
-\end{prob}
-
 
 \begin{prob}
 Comenzando con la gráfica de $y = e^x$, encuentre la ecuación de la gráfica que resulta de:
@@ -975,10 +1179,6 @@ Trace la gráfica de cada función por tramos y determine su dominio y rango.
   \item $g(x) = \begin{cases} |x| & x < 2 \\ 4-x & x \geq 2 \end{cases}$
   \item $h(x) = \begin{cases} \sin x & 0 \leq x \leq \pi \\ e^{x-\pi} & x > \pi \end{cases}$
 \end{enumerate}
-\end{prob}
-
-\begin{prob}
-Las mareas más altas del mundo ocurren en la bahía de Fundy (Canadá). En Hopewell Cape, la profundidad mínima es $2.0\,\mathrm{m}$ y la máxima es $12.0\,\mathrm{m}$; el período de oscilación es de aproximadamente $12$ horas; el 30 de junio de 2009, la marea alta se produjo a las 6:45\,h. Determine una función $D(t)$ ---utilizando la función coseno--- que modele la profundidad del agua (en metros) en función del tiempo $t$ (horas después de la medianoche).
 \end{prob}
 
 \begin{prob}
@@ -1007,33 +1207,6 @@ Sean $f(x) = x^2-1$ y $g(x) = 2x+3$. Calcule y simplifique:
 \end{prob}
 
 \begin{prob}
-Para cada función compuesta, descompóngala en funciones elementales $f$ y $g$ tales que $h = f\circ g$. Calcule el dominio de $h$.
-\begin{multicols}{2}
-\begin{enumerate}
-  \item $h(x) = \sqrt{x^2-4}$
-  \item $h(x) = e^{\sin x}$
-  \item $h(x) = \ln(1+e^x)$
-  \item $h(x) = \cos^3(2x)$
-  \item $h(x) = \arctan\!\bigl(\sqrt{x}\bigr)$
-  \item $h(x) = \dfrac{1}{\sqrt{1-x^2}}$
-\end{enumerate}
-\end{multicols}
-\end{prob}
-
-\begin{prob}
-Si $f(x) = x^5 + x^3 + x$, determine $f^{-1}(3)$ y $f(f^{-1}(2))$. Además, si $g(x) = 3 + x + e^x$, determine $g^{-1}(4)$.
-\end{prob}
-
-\begin{prob}
-Sea $f(x) = \sqrt{1-x^2}$, $0 \leq x \leq 1$. 
-\begin{enumerate}
-  \item Encuentre $f^{-1}$. 
-  \item ¿Cómo se relaciona $f^{-1}$ con $f$? 
-  \item Identifique geométricamente la gráfica de $f$ y explique la relación hallada.
-\end{enumerate}
-\end{prob}
-
-\begin{prob}
 Resuelva cada ecuación para $x$.
 \begin{multicols}{2}
 \begin{enumerate}
@@ -1049,6 +1222,24 @@ Resuelva cada ecuación para $x$.
 \end{multicols}
 \end{prob}
 
+% Desafiante
+\begin{prob}
+Encuentre una expresión para la función cúbica $f$ sabiendo que $f(1) = 6$ y $f(-1) = f(0) = f(2) = 0$.
+\end{prob}
+
+\begin{prob}
+Para cada función compuesta, descompóngala en funciones elementales $f$ y $g$ tales que $h = f\circ g$. Calcule el dominio de $h$.
+\begin{multicols}{2}
+\begin{enumerate}
+  \item $h(x) = \sqrt{x^2-4}$
+  \item $h(x) = e^{\sin x}$
+  \item $h(x) = \ln(1+e^x)$
+  \item $h(x) = \cos^3(2x)$
+  \item $h(x) = \arctan\!\bigl(\sqrt{x}\bigr)$
+  \item $h(x) = \dfrac{1}{\sqrt{1-x^2}}$
+\end{enumerate}
+\end{multicols}
+\end{prob}
 
 \begin{prob} Construya una fórmula explícita para cada situación. Calcule y justifique el dominio.
 
@@ -1058,7 +1249,7 @@ Resuelva cada ecuación para $x$.
 \item Una caja rectangular abierta con 2 m\(^3\) de volumen tiene una base cuadrada. Exprese el área superficial de la caja en función de la longitud de uno de los lados de la base.
 
 
-\item Una ventana normanda tiene la forma de un rectángulo coronado por un semicírculo. Si el perímetro de la ventana es de 15 m, exprese el área \( A \) de la ventana en función del ancho \( x \) de la ventana.
+\item Una ventana normanda tiene la forma de un rectángulo coronado por un semicírculo (figura~\ref{fig:ventana_normanda}). Si el perímetro de la ventana es de 15 m, exprese el área \( A \) de la ventana en función del ancho \( x \) de la ventana.
 
 \begin{figure}[H]
 \centering
@@ -1083,7 +1274,8 @@ Resuelva cada ecuación para $x$.
     % Dibujar el contorno del semicírculo
     \draw (\x,\y) arc (0:180:\r);
 \end{tikzpicture}
-\caption{Ventana normanda}
+\caption{Ventana normanda: rectángulo de ancho $x$ coronado por un semicírculo.}
+\label{fig:ventana_normanda}
 \end{figure}
 
 \item En un país, el impuesto sobre la renta se calcula así: no hay impuesto para ingresos hasta \$10\,000; los ingresos entre \$10\,000 y \$20\,000 se gravan al 10\%; los ingresos superiores a \$20\,000 al 15\%.
@@ -1097,7 +1289,7 @@ Resuelva cada ecuación para $x$.
 
 \item Una página impresa contiene una región de impresión de 50 \(cm^2\), un margen de $1.5 cm$  en las partes superior e inferior y un margen de  $1.5 cm$ en los lados. Encuentre un modelo matemático que exprese el área total de la página como una función del ancho de la región de impresión. ¿Cuál es el dominio de esta función?
 
-\item Se va a construir una caja sin tapa, a partir de una hoja rectangular de cartón que tiene dimensiones de 12 por 20 centímetros, recortando cuadrados iguales de lado \(x\) en cada una de las esquinas y doblando los lados como se ilustra en la figura. Exprese el volumen \(V\) de la caja en función de \(x\).
+\item Se va a construir una caja sin tapa, a partir de una hoja rectangular de cartón que tiene dimensiones de 12 por 20 centímetros, recortando cuadrados iguales de lado \(x\) en cada una de las esquinas y doblando los lados como se ilustra en la figura~\ref{fig:caja}. Exprese el volumen \(V\) de la caja en función de \(x\).
 
 \begin{figure}[H]
 \centering
@@ -1154,7 +1346,7 @@ Resuelva cada ecuación para $x$.
 
 \item Un almacén que tiene un piso rectangular de \(15\,000\ \text{m}^2\) se construye de modo que tenga pasillos de \(2\ m\) de ancho en el frente y en el fondo del almacén, y pasillos de \(1.5\ m\) de ancho en los lados.  Encuentre un modelo matemático que exprese el área total del terreno donde se construirá el almacén y los pasillos como una función de la longitud del frente y del fondo del almacén.  ¿Cuál es el dominio de esta función?
  
-\item Una tienda de acampar (llamada también carpa para \textit{camping}) con forma de pirámide de base cuadrada se construye a partir de una pieza cuadrada de material de $5\ \text{m}$ de lado. En la base de la pirámide sea $x$ metros la distancia del centro a uno de sus lados como se muestra en la figura.   Encuentre un modelo matemático que exprese el volumen de la tienda de acampar como función de $x$ y calcule su dominio.
+\item Una tienda de acampar (llamada también carpa para \textit{camping}) con forma de pirámide de base cuadrada se construye a partir de una pieza cuadrada de material de $5\ \text{m}$ de lado. En la base de la pirámide sea $x$ metros la distancia del centro a uno de sus lados como se muestra en la figura~\ref{fig:caja-3d}.   Encuentre un modelo matemático que exprese el volumen de la tienda de acampar como función de $x$ y calcule su dominio.
 
 \begin{figure}[H]
 \begin{center}
