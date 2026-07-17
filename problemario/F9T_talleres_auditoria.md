@@ -86,19 +86,19 @@ llena Claude Code en Fase A. Veredictos: `CUBIERTO` / `PARCIAL` / `FALTA`.
 
 | ID | Descriptor | Técnica | Veredicto | Ref |
 |---|---|---|---|---|
-| T2.01 | lím ⟨e^{−3t}, t²/sen²t, cos 2t⟩ | límite por componentes | | |
-| T2.02 | lím ⟨cos t, t² sen(1/t), t²⟩ | teorema de compresión | | |
-| T2.03 | Tangente a ⟨t³,2t,sen(t−1)⟩ en t=1 | derivada, punto de anclaje | | |
-| T2.04 | T̂(0) de ⟨te^{−t}, 2arctan t, 2e^t⟩ | tangente unitario | | |
-| T2.05 | Astroide ⟨cos³t, sen³t⟩: no-suavidad y longitud en [0,π/2] | r'(t)=0, longitud de arco | | |
-| T2.06 | Longitud de ⟨e^t sen t, e^t cos t⟩, [0,π] | longitud de arco | | |
-| T2.07 | ⟨arccos(2t²−1), arcsen t⟩ es segmento de recta | identidades inversas | | |
-| T2.08 | a(t) constante: hallar r(t), tipo de curva, mínimo al origen | integración vectorial, optimización 1D | | |
-| T2.09 | Cilindro x²+y²=1 ∩ plano y+z=2: parametrizar, tangente en (0,1,1) | parametrización trigonométrica vs raíz | | |
-| T2.10 | Recta ⊥ al segmento entre centros de S1 y S2 (cuádricas) | completar cuadrados, vector director | | |
-| T2.11 | Intersección de curvas r(t) y s(u) (cos/sen/cos2t) | igualación por componentes | | |
-| T2.12 | Reparametrizar ⟨e^{2t}cos2t, 2, e^{2t}sen2t⟩ por longitud de arco | s(t), despeje t(s) | | |
-| T2.13 | Cónica x²+y²−2xy−2(x+y)+1=0: parábola rotada, parametrización, tangentes h/v | discriminante b²−4ac, cambio u,v | | |
+| T2.01 | lím ⟨e^{−3t}, t²/sen²t, cos 2t⟩ | límite por componentes | CUBIERTO | L158 (prob 3 incisos) + example L129 |
+| T2.02 | lím ⟨cos t, t² sen(1/t), t²⟩ | teorema de compresión | PARCIAL | L158; falta componente resuelta por emparedado (t²sen(1/t)) |
+| T2.03 | Tangente a ⟨t³,2t,sen(t−1)⟩ en t=1 | derivada, punto de anclaje | PARCIAL | L325; hay derivada/velocidad pero nunca se escribe la ecuación de la recta tangente |
+| T2.04 | T̂(0) de ⟨te^{−t}, 2arctan t, 2e^t⟩ | tangente unitario | FALTA | el vector tangente unitario no aparece en el cap. |
+| T2.05 | Astroide ⟨cos³t, sen³t⟩: no-suavidad y longitud en [0,π/2] | r'(t)=0, longitud de arco | PARCIAL | L608; longitud sí, falta discusión de suavidad (r'(t)=0) |
+| T2.06 | Longitud de ⟨e^t sen t, e^t cos t⟩, [0,π] | longitud de arco | CUBIERTO | L608 inciso c (idéntico) |
+| T2.07 | ⟨arccos(2t²−1), arcsen t⟩ es segmento de recta | identidades inversas | FALTA | sin equivalente |
+| T2.08 | a(t) constante: hallar r(t), tipo de curva, mínimo al origen | integración vectorial, optimización 1D | PARCIAL | L475; integral definida sí, falta PVI cinemático (a→v→r) con condiciones iniciales |
+| T2.09 | Cilindro x²+y²=1 ∩ plano y+z=2: parametrizar, tangente en (0,1,1) | parametrización trigonométrica vs raíz | FALTA | no hay parametrización de intersección de superficies |
+| T2.10 | Recta ⊥ al segmento entre centros de S1 y S2 (cuádricas) | completar cuadrados, vector director | FALTA | sin equivalente |
+| T2.11 | Intersección de curvas r(t) y s(u) (cos/sen/cos2t) | igualación por componentes | FALTA | sin equivalente |
+| T2.12 | Reparametrizar ⟨e^{2t}cos2t, 2, e^{2t}sen2t⟩ por longitud de arco | s(t), despeje t(s) | CUBIERTO | L723 (example) + propuesto L1667 |
+| T2.13 | Cónica x²+y²−2xy−2(x+y)+1=0: parábola rotada, parametrización, tangentes h/v | discriminante b²−4ac, cambio u,v | FALTA | no hay rotación de ejes/cónicas rotadas en el libro de Cálc. III |
 
 ### T3 — Dominio, límites, continuidad → `limvariasvariables.tex` (dominios: también `funvectoriales.tex`)
 
