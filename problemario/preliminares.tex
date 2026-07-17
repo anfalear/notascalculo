@@ -103,6 +103,51 @@ lo que distingue a $\mathbb{R}$ de $\mathbb{Q}$ es el \emph{Axioma del Supremo}
 de \emph{completitud}.
 \end{rem}
 
+El siguiente ejemplo muestra cómo los axiomas de orden, por sí solos, bastan
+para establecer desigualdades no triviales.
+
+\begin{example} Demostrar que si $a > 0$ y $b > 0$, entonces
+\[
+   \frac{a+b}{2} \;\geq\; \sqrt{ab},
+\]
+y que la igualdad se cumple si y solo si $a = b$
+(\emph{desigualdad aritmético-geométrica}).
+
+\begin{myproof}
+\textbf{Paso 1 – Análisis gráfico y planteamiento.}
+Se compara la \emph{media aritmética} de dos reales positivos con su
+\emph{media geométrica} $\sqrt{ab}$. Probar la desigualdad equivale a
+mostrar que $a + b - 2\sqrt{ab} \geq 0$, expresión que sugiere completar el
+cuadrado de una diferencia.
+
+\textbf{Paso 2 – Fundamentación teórica.}
+De los axiomas de orden (Teorema~\ref{thm:orden}) se sigue que
+$x^2 \geq 0$ para todo $x \in \mathbb{R}$: si $x > 0$, la compatibilidad
+con la multiplicación da $x \cdot x > 0$; si $x < 0$, entonces $-x > 0$ y
+$x^2 = (-x)(-x) > 0$; y $0^2 = 0$. Además, todo real positivo posee raíz
+cuadrada positiva (consecuencia de la completitud de $\mathbb{R}$,
+sección~\ref{subsec:supremo}).
+
+\textbf{Paso 3 – Procedimiento técnico.}
+Aplicamos $x^2 \geq 0$ con $x = \sqrt{a} - \sqrt{b}$:
+\[
+   0 \;\leq\; \left(\sqrt{a}-\sqrt{b}\right)^2 = a - 2\sqrt{ab} + b
+   \;\Rightarrow\; 2\sqrt{ab} \leq a + b
+   \;\Rightarrow\; \sqrt{ab} \leq \frac{a+b}{2},
+\]
+donde el último paso usa la compatibilidad con la multiplicación por
+$\tfrac{1}{2} > 0$. La igualdad se da exactamente cuando
+$\left(\sqrt{a}-\sqrt{b}\right)^2 = 0$, es decir, cuando
+$\sqrt{a} = \sqrt{b}$, lo que equivale a $a = b$.
+
+\textbf{Paso 4 – Conclusión y formalización.}
+\[
+   \boxed{\frac{a+b}{2} \;\geq\; \sqrt{ab} \;\; \text{para todo } a, b > 0,
+   \text{ con igualdad si y solo si } a = b.}
+\]
+\end{myproof}
+\end{example}
+
 % ----------------------------------------------------------------
 \subsection{La recta numérica y la propiedad de densidad}
 % ----------------------------------------------------------------
@@ -113,7 +158,8 @@ números reales pueden representarse sobre la \textbf{recta numérica}
 $O$, denominado \textit{origen}, que representa al número $0$; la dirección
 positiva apunta hacia la derecha y la negativa hacia la izquierda. Por el
 axioma de tricotomía, si $x_1 > 0$ entonces $x_1$ se ubica a la derecha del
-origen, y si $x_2 < 0$ se ubica a la izquierda.
+origen, y si $x_2 < 0$ se ubica a la izquierda
+(figura~\ref{fig:rectanumerica}).
 
 \begin{figure}[H]
 \centering
@@ -257,7 +303,8 @@ Dados $x, y \in \mathbb{R}$, se cumplen las siguientes propiedades:
 \textbf{Paso 1 – Análisis gráfico y planteamiento.}
 La ecuación $|2x-3| = 5$ pide los puntos de la recta cuya distancia a $3/2$
 (el cero del argumento) es $5/2$. Geométricamente esperamos exactamente dos
-soluciones simétricas respecto a $x = 3/2$.
+soluciones simétricas respecto a $x = 3/2$
+(figura~\ref{fig:valabs_ecuacion}).
 
 \textbf{Paso 2 – Fundamentación teórica.}
 Por la Definición~\ref{def:valorabsoluto}, $|u| = c$ con $c > 0$ equivale a
@@ -275,7 +322,8 @@ Aplicamos la equivalencia con $u = 2x-3$ y $c = 5$:
    \boxed{x = -1 \quad \text{o} \quad x = 4.}
 \]
 
-\begin{center}
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}[>=latex, scale=1.1]
    \draw[latex-latex, thick] (-2.5,0) -- (5.5,0);
    \filldraw[red!70!black] (-1,0) circle (2.5pt) node[above=4pt] {$-1$};
@@ -287,7 +335,10 @@ Aplicamos la equivalencia con $u = 2x-3$ y $c = 5$:
    \draw[blue!60, |-|] (1.5,-0.5) -- (4,-0.5)
       node[midway,below,font=\small]{$5/2$};
 \end{tikzpicture}
-\end{center}
+\caption{Soluciones de $|2x-3|=5$: los puntos $x=-1$ y $x=4$ equidistan
+$5/2$ del centro $x=3/2$.}
+\label{fig:valabs_ecuacion}
+\end{figure}
 \end{myproof}
 \end{example}
 
@@ -297,7 +348,7 @@ Aplicamos la equivalencia con $u = 2x-3$ y $c = 5$:
 \textbf{Paso 1 – Análisis gráfico y planteamiento.}
 La desigualdad pide los puntos $x$ cuya distancia a $-1/3$ (cero del argumento)
 sea a lo sumo $4/3$; es decir, una \emph{vecindad cerrada} de radio $4/3$
-centrada en $-1/3$.
+centrada en $-1/3$ (figura~\ref{fig:valabs_desigualdad}).
 
 \textbf{Paso 2 – Fundamentación teórica.}
 Para $c > 0$, la equivalencia $|u| \leq c \iff -c \leq u \leq c$ se deduce
@@ -318,7 +369,8 @@ Con $u = 3x+1$ y $c = 4$:
    \boxed{x \in \left[-\tfrac{5}{3},\;1\right].}
 \]
 
-\begin{center}
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}[>=latex, scale=1.2]
    \draw[latex-latex, thick] (-3,0) -- (2.5,0);
    % Intervalo solución
@@ -331,7 +383,68 @@ Con $u = 3x+1$ y $c = 4$:
    \filldraw[red!70!black] (-1/3,0) circle (2pt)
       node[above=4pt,font=\small]{$-\tfrac{1}{3}$};
 \end{tikzpicture}
-\end{center}
+\caption{Conjunto solución de $|3x+1|\leq 4$: vecindad cerrada de centro
+$-1/3$ y radio $4/3$, extremos incluidos.}
+\label{fig:valabs_desigualdad}
+\end{figure}
+\end{myproof}
+\end{example}
+
+\begin{example} Resolver $|x-2| + |x+1| = 5$.
+
+\begin{myproof}
+\textbf{Paso 1 – Análisis gráfico y planteamiento.}
+La ecuación pide los puntos $x$ cuya \emph{suma} de distancias a $2$ y a
+$-1$ es $5$. Como la distancia entre esos dos centros es $3 < 5$, se
+esperan dos soluciones: una a la izquierda de $-1$ y otra a la derecha de
+$2$ (figura~\ref{fig:valabs_suma}).
+
+\textbf{Paso 2 – Fundamentación teórica.}
+Por la Definición~\ref{def:valorabsoluto}, cada valor absoluto cambia de
+expresión en el cero de su argumento ($x = 2$ y $x = -1$). Estos dos
+puntos dividen la recta en tres regiones, y en cada una la ecuación se
+vuelve lineal.
+
+\textbf{Paso 3 – Procedimiento técnico.}
+
+\emph{Caso 1: $x < -1$.} Ambos argumentos son negativos:
+$(2-x) + (-x-1) = 1 - 2x = 5 \Rightarrow x = -2$. Como $-2 < -1$, es
+solución.
+
+\emph{Caso 2: $-1 \leq x < 2$.} Aquí $|x-2| = 2-x$ y $|x+1| = x+1$:
+$(2-x) + (x+1) = 3 \neq 5$. No hay solución: entre los dos centros la suma
+de distancias es constante e igual a $3$.
+
+\emph{Caso 3: $x \geq 2$.} Ambos argumentos son no negativos:
+$(x-2) + (x+1) = 2x - 1 = 5 \Rightarrow x = 3$. Como $3 \geq 2$, es
+solución.
+
+\textbf{Paso 4 – Conclusión y formalización.}
+\[
+   \boxed{x = -2 \quad \text{o} \quad x = 3.}
+\]
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[>=latex, scale=1.1]
+   \draw[latex-latex, thick] (-3.5,0) -- (4.5,0);
+   \filldraw[red!70!black] (-2,0) circle (2.5pt) node[above=4pt] {$-2$};
+   \filldraw[red!70!black]  (3,0) circle (2.5pt) node[above=4pt] {$3$};
+   \filldraw[blue!60!black] (-1,0) circle (2pt)
+      node[below=4pt,font=\small] {$-1$};
+   \filldraw[blue!60!black] (2,0) circle (2pt)
+      node[below=4pt,font=\small] {$2$};
+   \draw[blue!60, |-|] (-2,-0.55) -- (-1,-0.55)
+      node[midway,below,font=\small]{$1$};
+   \draw[blue!60, |-|] (-1,-0.55) -- (2,-0.55)
+      node[midway,below,font=\small]{$3$};
+   \draw[blue!60, |-|] (2,-0.55) -- (3,-0.55)
+      node[midway,below,font=\small]{$1$};
+\end{tikzpicture}
+\caption{Soluciones de $|x-2|+|x+1|=5$: cada solución suma distancia $5$ a
+los centros $-1$ y $2$ ($1+4$ desde $x=-2$; $4+1$ desde $x=3$).}
+\label{fig:valabs_suma}
+\end{figure}
 \end{myproof}
 \end{example}
 
@@ -412,9 +525,11 @@ Gráficamente, un extremo \emph{incluido} se representa con un círculo
 
 \begin{example}
 Los conjuntos $(-1,1)$, $[-2,3)$ y $(0,+\infty)$ son intervalos de los tipos
-abierto, semiabierto y abierto infinito, respectivamente. En la recta real:
+abierto, semiabierto y abierto infinito, respectivamente. La
+figura~\ref{fig:intervalo_abierto} representa el primero en la recta real.
 
-\begin{center}
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}[>=latex, scale=1.1]
    \draw[latex-latex, thick] (-3.2,0) -- (3.2,0);
    \draw[blue!70!black, very thick] (-1,0) -- (1,0);
@@ -424,7 +539,10 @@ abierto, semiabierto y abierto infinito, respectivamente. En la recta real:
    \node[below=6pt, font=\small] at  (1,0) {$1$};
    \node[above=6pt, blue!70!black, font=\small] at (0,0) {$(-1,1)$};
 \end{tikzpicture}
-\end{center}
+\caption{El intervalo abierto $(-1,1)$ en la recta real: los extremos
+excluidos se marcan con círculos vacíos.}
+\label{fig:intervalo_abierto}
+\end{figure}
 \end{example}
 
 % ----------------------------------------------------------------
@@ -435,7 +553,7 @@ La noción de vecindad es la pieza geométrica que conecta los intervalos con lo
 conceptos topológicos que son base del cálculo: límites, continuidad y
 derivadas. Intuitivamente, una vecindad de un punto $x_0$ es un intervalo
 abierto que lo contiene y cuya ``anchura'' queda determinada por el radio
-$\varepsilon$.
+$\varepsilon$ (figura~\ref{fig:vecindad}).
 
 \begin{definition}[Vecindad abierta]\label{def:vecindad}
 Dados $x_0 \in \mathbb{R}$ y $\varepsilon > 0$, la \textbf{vecindad de radio
@@ -526,6 +644,11 @@ Sea $S \subseteq \mathbb{R}$, $S \neq \emptyset$ y acotado superiormente.
 \end{itemize}
 \end{definition}
 
+La figura~\ref{fig:supremo} ilustra ambas nociones: toda cota superior queda
+a la derecha de $\sup S$ y, por ser este la \emph{menor} cota superior,
+cualquier franja $(\alpha - \varepsilon,\, \alpha]$ con $\varepsilon > 0$
+contiene al menos un punto de $S$.
+
 \begin{figure}[H]
 \centering
 \begin{tikzpicture}[>=latex, scale=1.15]
@@ -541,6 +664,12 @@ Sea $S \subseteq \mathbb{R}$, $S \neq \emptyset$ y acotado superiormente.
    \filldraw[red!80!black] (3.5,0) circle (3pt)
       node[below=5pt, font=\small, red!80!black]{$\sup S$};
    \draw[red!60, dashed, thin] (3.5,0) -- (3.5,0.3);
+   % Caracterización epsilon del supremo
+   \draw[red!60, dashed, thin] (2.7,-0.05) -- (2.7,0.9);
+   \node[red!80!black, font=\small, above] at (2.7,0.9) {$\alpha-\varepsilon$};
+   \filldraw[red!80!black] (3.1,0.3) circle (2pt);
+   \node[red!80!black, font=\small, above=10pt] at (3.35,0.9) {$x \in S$};
+   \draw[red!60, ->, thin] (3.3,1.0) -- (3.12,0.42);
    % cotas superiores
    \filldraw[blue!60] (4.3,0) circle (2pt)
       node[below=5pt, font=\small, blue!60]{$M_1$};
@@ -553,7 +682,10 @@ Sea $S \subseteq \mathbb{R}$, $S \neq \emptyset$ y acotado superiormente.
    \filldraw[orange!80!black] (1,0) circle (3pt)
       node[below=5pt, font=\small, orange!80!black]{$\inf S$};
 \end{tikzpicture}
-\caption{El supremo y el ínfimo}
+\caption{El supremo y el ínfimo de un conjunto acotado $S$. Con
+$\alpha = \sup S$: toda cota superior ($M_1$, $M_2$) queda a la derecha de
+$\alpha$, y para todo $\varepsilon > 0$ la franja
+$(\alpha-\varepsilon,\,\alpha]$ contiene algún $x \in S$.}
 \label{fig:supremo}
 \end{figure}
 
@@ -585,9 +717,10 @@ desarrolla sobre $\mathbb{R}$ y no sobre $\mathbb{Q}$.
 \textbf{Paso 1 – Análisis gráfico y planteamiento.}
 Los primeros valores son $\tfrac{1}{2}, \tfrac{2}{3}, \tfrac{3}{4},
 \tfrac{4}{5},\ldots$; la sucesión es creciente y se acerca a $1$ sin
-alcanzarlo.
+alcanzarlo (figura~\ref{fig:supremo_sucesion}).
 
-\begin{center}
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}[>=latex, scale=5]
    \draw[latex-latex, thick] (-0.3,0) -- (2,0);
    \foreach \n/\x in {1/0.5, 2/0.667, 3/0.75, 4/0.8, 5/0.833}{
@@ -599,7 +732,11 @@ alcanzarlo.
    \filldraw[green!50!black] (0.5,0) circle (1pt)
       node[below=5pt,font=\small,green!50!black]{$\tfrac{1}{2} = \inf S$};
 \end{tikzpicture}
-\end{center}
+\caption{Los puntos $\tfrac{n}{n+1}$ crecen hacia el supremo $1$ sin
+alcanzarlo; el mínimo $\tfrac{1}{2}$, que es el ínfimo, sí pertenece
+a $S$.}
+\label{fig:supremo_sucesion}
+\end{figure}
 
 \textbf{Paso 2 – Fundamentación teórica.}
 Se usará la Definición~\ref{def:supremo} con la propiedad de tricotomía
@@ -624,15 +761,73 @@ pertenece a $S$, luego $\inf S = \min S = \dfrac{1}{2}$.
 \end{myproof}
 \end{example}
 
+\begin{example} Determinar $\sup S$ e $\inf S$ para
+$S = \left\{\dfrac{(-1)^n}{n} : n \in \mathbb{N}\right\}$.
+
+\begin{myproof}
+\textbf{Paso 1 – Análisis gráfico y planteamiento.}
+Los primeros valores son $-1, \tfrac{1}{2}, -\tfrac{1}{3}, \tfrac{1}{4},
+-\tfrac{1}{5},\ldots$: los términos alternan de signo y se acercan a $0$
+por ambos lados (figura~\ref{fig:supremo_alternante}). A diferencia del
+ejemplo anterior, los candidatos a extremos aparecen aquí en los
+\emph{primeros} términos.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[>=latex, scale=4.5]
+   \draw[latex-latex, thick] (-1.25,0) -- (0.8,0);
+   \filldraw[black] (0,0) circle (0.8pt) node[below=3pt,font=\small] {$0$};
+   \foreach \l/\x in {{-1}/-1, {\frac{1}{2}}/0.5, {-\frac{1}{3}}/-0.333,
+      {\frac{1}{4}}/0.25, {-\frac{1}{5}}/-0.2}{
+      \filldraw[blue!60!black] (\x,0) circle (1pt)
+         node[above=3pt,font=\tiny]{$\l$};
+   }
+   \node[below=8pt,font=\small,orange!80!black] at (-1,0)
+      {$\inf S = \min S$};
+   \node[below=8pt,font=\small,red!80!black] at (0.5,0)
+      {$\sup S = \max S$};
+\end{tikzpicture}
+\caption{El conjunto $S = \{(-1)^n/n\}$ alterna de signo y se acumula en
+$0$; sus extremos $-1$ y $\tfrac{1}{2}$ se alcanzan en los dos primeros
+términos.}
+\label{fig:supremo_alternante}
+\end{figure}
+
+\textbf{Paso 2 – Fundamentación teórica.}
+Se usa la Definición~\ref{def:supremo}. Si una cota superior (inferior)
+pertenece al conjunto, entonces es automáticamente el supremo (ínfimo),
+pues ninguna cota puede ser menor (mayor) que un elemento del conjunto.
+
+\textbf{Paso 3 – Procedimiento técnico.}
+Separamos $S$ según la paridad de $n$.
+
+\emph{Términos positivos} ($n = 2k$ par): valen $\dfrac{1}{2k} \leq
+\dfrac{1}{2}$, con igualdad en $n = 2$.
+
+\emph{Términos negativos} ($n = 2k-1$ impar): valen
+$-\dfrac{1}{2k-1} \geq -1$, con igualdad en $n = 1$.
+
+Por lo tanto, todo elemento de $S$ satisface $-1 \leq s \leq \tfrac{1}{2}$,
+y ambos extremos pertenecen a $S$: son el mínimo y el máximo del conjunto.
+
+\textbf{Paso 4 – Conclusión y formalización.}
+\[
+   \boxed{\inf S = \min S = -1 \in S, \qquad
+   \sup S = \max S = \frac{1}{2} \in S.}
+\]
+\end{myproof}
+\end{example}
+
 % ----------------------------------------------------------------
 \section{Problemas propuestos}
 % ----------------------------------------------------------------
 
-Los problemas que siguen están organizados en tres bloques temáticos, de menor
-a mayor complejidad conceptual, siguiendo el hilo conductor del capítulo:
-axiomas de campo y orden, desigualdades y valor absoluto, y topología de la
-recta real. Para cada problema se recomienda aplicar el Proceso Sistemático de
-Resolución (análisis, plan, ejecución y validación) descrito a continuación.
+Los problemas que siguen están organizados en tres niveles de dificultad
+creciente —Básico, Intermedio y Desafiante— que recorren el hilo conductor
+del capítulo: ecuaciones y desigualdades, valor absoluto, axiomas de campo y
+orden, y topología de la recta real. Para cada problema se recomienda aplicar
+el Proceso Sistemático de Resolución (análisis, plan, ejecución y validación)
+descrito a continuación.
 
 \textbf{Proceso Sistemático de Resolución}
 
@@ -648,36 +843,7 @@ Resolución (análisis, plan, ejecución y validación) descrito a continuación
 \end{enumerate}
 
 
-\begin{prob}
-Utilizando los axiomas de campo y de orden (Teoremas~\ref{thm:campo}
-y~\ref{thm:orden}), demuestre o refute cada afirmación:
-\begin{enumerate}
-   \item Si $a < b$ y $c < 0$, entonces $ac > bc$.
-   \item Para todo $x \in \mathbb{R}$, $x^2 \geq 0$.
-   \item Si $a > 0$ y $b > 0$, entonces $\dfrac{a+b}{2} \geq \sqrt{ab}$
-         (desigualdad aritmético-geométrica; la igualdad se da si y solo si $a = b$).
-         \emph{Sugerencia:} considere $(\sqrt{a}-\sqrt{b})^2 \geq 0$.
-   \item Para todo $x \in \mathbb{R}$, $x^2 + x + 1 > 0$.
-   \item Si $0 < a < b$, entonces $\dfrac{1}{b} < \dfrac{1}{a}$.
-   \item Si $a, b > 0$, entonces $\dfrac{a}{b} + \dfrac{b}{a} \geq 2$.
-\end{enumerate}
-\end{prob}
-
-\begin{prob}
-Demuestre las siguientes identidades y desigualdades algebraicas:
-\begin{enumerate}
-   \item $(a-b)(a+b) = a^2 - b^2$ para todo $a, b \in \mathbb{R}$.
-   \item $(a+b)^3 = a^3 + 3a^2b + 3ab^2 + b^3$.
-   \item Para $n \in \mathbb{N}$ y $x \neq 1$:
-         $1 + x + x^2 + \cdots + x^n = \dfrac{x^{n+1}-1}{x-1}$.
-   \item \textbf{Desigualdad de Bernoulli:} Para $x > -1$ y $n \in
-         \mathbb{N}$, $(1+x)^n \geq 1 + nx$.
-   \item Para todo $a, b \in \mathbb{R}$:
-         $2(a^2+b^2) \geq (a+b)^2$.
-\end{enumerate}
-\end{prob}
-
-
+% Básico
 \begin{prob}
 Resuelva cada ecuación y desigualdad. Exprese las soluciones en notación de
 intervalo y represente el conjunto solución como vecindad en la recta real,
@@ -709,6 +875,7 @@ indicando centro $x_0$ y radio $\varepsilon$.
 \end{multicols}
 \end{prob}
 
+% Intermedio
 \begin{prob}
 Resuelva cada ecuación y desigualdad con valor absoluto. Para cada solución,
 identifique la vecindad $V_\varepsilon(x_0)$ equivalente e ilustre en la recta
@@ -721,7 +888,6 @@ real.
    \item $\left|\dfrac{2-3x}{5}\right| = 2$
    \item $\left|\dfrac{2x+5}{3}\right| < 1$
    \item $\dfrac{3}{|5-2x|} < 2$
-   \item $|x-2| + |x+1| = 5$
 \end{enumerate}
 \end{multicols}
 \end{prob}
@@ -744,18 +910,44 @@ solución en notación de intervalo.
 \end{prob}
 
 \begin{prob}
+Utilizando los axiomas de campo y de orden (Teoremas~\ref{thm:campo}
+y~\ref{thm:orden}), demuestre o refute cada afirmación:
+\begin{enumerate}
+   \item Si $a < b$ y $c < 0$, entonces $ac > bc$.
+   \item Para todo $x \in \mathbb{R}$, $x^2 \geq 0$.
+   \item Para todo $x \in \mathbb{R}$, $x^2 + x + 1 > 0$.
+   \item Si $0 < a < b$, entonces $\dfrac{1}{b} < \dfrac{1}{a}$.
+   \item Si $a, b > 0$, entonces $\dfrac{a}{b} + \dfrac{b}{a} \geq 2$.
+\end{enumerate}
+\end{prob}
+
+\begin{prob}
 Para cada conjunto, determine si está acotado (superior o inferiormente),
 calcule $\sup S$ e $\inf S$ cuando existan, e indique si el supremo o el
 ínfimo pertenecen al conjunto. Represente $S$ en la recta real e ilustre las
 cotas con la figura correspondiente al estilo de la Figura~\ref{fig:supremo}.
 
 \begin{enumerate}
-   \item $S = \left\{\dfrac{(-1)^n}{n} : n \in \mathbb{N}\right\}$.
    \item $S = \{x \in \mathbb{R} : x^2 < 3\}$.
    \item $S = \left\{1 - \dfrac{1}{2^n} : n \in \mathbb{N}\right\}$.
    \item $S = \{x \in \mathbb{Q} : x^2 \leq 5\}$.
    \item $S = (-\infty, \sqrt{7})$.
    \item $S = \left\{\dfrac{2n+1}{n} : n \in \mathbb{N}\right\}$.
+\end{enumerate}
+\end{prob}
+
+% Desafiante
+\begin{prob}
+Demuestre las siguientes identidades y desigualdades algebraicas:
+\begin{enumerate}
+   \item $(a-b)(a+b) = a^2 - b^2$ para todo $a, b \in \mathbb{R}$.
+   \item $(a+b)^3 = a^3 + 3a^2b + 3ab^2 + b^3$.
+   \item Para $n \in \mathbb{N}$ y $x \neq 1$:
+         $1 + x + x^2 + \cdots + x^n = \dfrac{x^{n+1}-1}{x-1}$.
+   \item \textbf{Desigualdad de Bernoulli:} Para $x > -1$ y $n \in
+         \mathbb{N}$, $(1+x)^n \geq 1 + nx$.
+   \item Para todo $a, b \in \mathbb{R}$:
+         $2(a^2+b^2) \geq (a+b)^2$.
 \end{enumerate}
 \end{prob}
 

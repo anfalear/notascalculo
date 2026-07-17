@@ -103,13 +103,25 @@ Mínimo 15 propuestos por capítulo, máximo 40; graduación 25/50/25 con tags. 
 **Acción:** (a) recta numérica con intervalo (a,b) y vecindad V_ε(x₀); (b) diagrama de supremo (conjunto acotado, s y franja s−ε con un punto del conjunto dentro). Convertir además las 5 figuras en `center` a `figure[H]` + caption + label + anchors.
 **Criterio de cierre:** 2 figuras nuevas estándar F8 en posición R2; 0 tikz fuera de figure.
 **Líneas estimadas:** 90–150
-**Estado:** Pendiente
+**Estado:** Completado — 2026-07-17
+
+**Notas de ejecución (2026-07-17):**
+- El diagnóstico estaba parcialmente desactualizado: `fig:vecindad` y `fig:supremo` **ya existían** con caption+label. R2(a) queda cubierto por `fig:vecindad` (ya conforme, se le añadió ancla) + la conversión de `fig:intervalo_abierto`; R2(b) se resolvió **ampliando** `fig:supremo` con la franja $(\alpha-\varepsilon,\alpha]$ + punto $x\in S$ + caption descriptivo + párrafo-ancla.
+- 4 tikz `center`→`figure[H]`+caption+label: `fig:valabs_ecuacion`, `fig:valabs_desigualdad`, `fig:intervalo_abierto`, `fig:supremo_sucesion`. El 5.º `center` del diagnóstico es la tabla de intervalos (tabular, no figura) — se conserva.
+- Anclas nuevas: `fig:rectanumerica`, `fig:vecindad`. Resultado: 10/10 figuras del cap. conformes, todas con ancla.
+- **Trampa babel-spanish descubierta:** `\inf` en `\caption` rompe el `.lof` (operador con tilde «ínf» vía `\es@a`, frágil en args móviles). Documentada en GUIA §2.3. `\sup` es seguro.
 
 ### F9C1.04 — preliminares: elevar resueltos + graduación
 **Acción:** elevar 2–3 de los 8 propuestos a resueltos (inducción, desigualdad por casos, cálculo de sup/inf — recomendación GUIA §4); tags de graduación en los restantes; si el banco queda <8, añadir 3–4 propuestos nuevos.
 **Criterio de cierre:** ≥2 resueltos nuevos con 4 pasos validados por el autor; banco graduado con tags.
 **Líneas estimadas:** 60–110
-**Estado:** Pendiente
+**Estado:** Completado — 2026-07-17
+
+**Notas de ejecución (2026-07-17):**
+- 3 elevaciones aprobadas por el autor, insertadas con protocolo de 4 pasos + boxed: (1) desigualdad AM-GM en §Axiomas de campo y orden (la subsección no tenía examples); (2) $|x-2|+|x+1|=5$ por 3 casos + `fig:valabs_suma` en §Valor absoluto (técnica sin ejemplo previo); (3) $\sup/\inf$ de $\{(-1)^n/n\}$ + `fig:supremo_alternante` en §Conjuntos acotados (extremos alcanzados — contraste con el ejemplo $\frac{n}{n+1}$).
+- Literales elevados retirados del banco (Probs. antiguos 1.3, 4.6, 6.1).
+- Banco reordenado B→I→D con marcadores de grupo (aprobado por el autor): Básico 1 prob (15 literales), Intermedio 4 probs (21 literales), Desafiante 3 probs (15 literales) — 8 probs, 51 literales. Párrafo introductorio actualizado (niveles en vez de bloques temáticos).
+- La actualización pendiente de GUIA §2.4 con la convención E4 (registrada en F9C1.01) se ejecutó aquí.
 
 ### F9C1.05 — funciones: auditoría de figuras (15 figure envs, 2 OK; 3 center)
 **Acción:** protocolo F8.31 sobre las 13 figuras sin caption/label (incluye las galerías de catálogo pgfplots) y los 3 tikz en center. Lotes de ≤300 líneas si excede.
@@ -359,8 +371,8 @@ Mínimo 15 propuestos por capítulo, máximo 40; graduación 25/50/25 con tags. 
 |---|---|---|---|---|---|
 | F9C1.01 | `.md` | Decisión E4 organización propuestos | Completado | 2026-07-06 | Heading único `Problemas propuestos`, última sección (tras `Problemas resueltos adicionales` si existe); subsecciones temáticas permitidas con tags internos; renombres al intervenir cada capítulo. |
 | F9C1.02 | `.md` | Decisión exceso (limites 50 / sucfun 48) | Completado | 2026-07-06 | Nada se elimina: reorganizar por subsección (E4) y marcar excedentes con `% Banco extendido` (fuera de la cuota). Aplicación en F9C1.10 y F9C1.37. |
-| F9C1.03 | `preliminares.tex` | 2 figuras R2 + 5 center | Pendiente | — | Auxiliar: decisión de alcance |
-| F9C1.04 | `preliminares.tex` | Elevar 2–3 resueltos + tags | Pendiente | — | Auxiliar: decisión de alcance |
+| F9C1.03 | `preliminares.tex` | 2 figuras R2 + 5 center | Completado | 2026-07-17 | Autor aprobó ejecutar (cap. abre el libro tras retiro de politicas). 4 center→figure[H]; fig:supremo ampliada con franja ε; fig:vecindad ya existía. 10/10 figs conformes. Trampa `\inf` en caption → GUIA §2.3 |
+| F9C1.04 | `preliminares.tex` | Elevar 2–3 resueltos + tags | Completado | 2026-07-17 | 3 elevaciones aprobadas (AM-GM, valor absoluto por casos, sup/inf alternante); banco 8 probs reordenado B→I→D con marcadores de grupo; GUIA §2.4 actualizada con E4 |
 | F9C1.05 | `funciones.tex` | Auditoría 18 figuras | Pendiente | — | — |
 | F9C1.06 | `funciones.tex` | 3 figuras R2 nuevas | Pendiente | — | — |
 | F9C1.07 | `funciones.tex` | Graduación + elevaciones | Pendiente | — | — |

@@ -97,6 +97,9 @@ Todo concepto con interpretación geométrica lleva figura TikZ inmediatamente d
 **pgfplots 2D:**
 - `axis equal image` en figuras de círculos, cónicas y curvas polares — sin excepción.
 
+**Captions (trampa babel-spanish, hallazgo 2026-07-17):**
+- **Nunca usar `\inf`, `\min`, `\max`, `\lim` dentro de `\caption`**: babel-spanish los redefine con tilde («ínf», «mín», «lím») vía `\es@a`, frágil en argumentos móviles — la entrada del `.lof` queda rota y la siguiente compilación falla con `Argument of \es@a has an extra }` / `Paragraph ended before \contentsline was complete`. Reformular la caption en prosa («el ínfimo», «el supremo»). `\sup` (sin tilde) sí es seguro. Si el `.lof` ya quedó roto, borrarlo y recompilar.
+
 ### 2.4 Organización de problemas propuestos
 
 ```latex
@@ -113,6 +116,9 @@ Todo concepto con interpretación geométrica lleva figura TikZ inmediatamente d
 - Mínimo 15 propuestos; máximo 40.
 - Distribución orientativa: ~25 % Básico, ~50 % Intermedio, ~25 % Desafiante.
 - Todos los subtemas del capítulo deben estar cubiertos.
+- **(Decisión E4, 2026-07-06)** `\section{Problemas propuestos}` (minúscula en «propuestos») es siempre la **última** sección del capítulo, precedida por `\section{Problemas resueltos adicionales}` cuando exista (Decisión F).
+- **(Decisión E4)** En capítulos largos se permiten subsecciones temáticas internas (patrón `apderivadas`), con los tres marcadores de graduación dentro de **cada** subsección.
+- **(Decisión F9C1.02)** Los problemas que excedan el máximo de 40 se marcan con `% Banco extendido` y quedan fuera de la cuota — nada se elimina.
 
 ### 2.5 Convención de `\label`
 
