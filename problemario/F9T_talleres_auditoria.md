@@ -104,18 +104,18 @@ llena Claude Code en Fase A. Veredictos: `CUBIERTO` / `PARCIAL` / `FALTA`.
 
 | ID | Descriptor | Técnica | Veredicto | Ref |
 |---|---|---|---|---|
-| T3.01 | Humidex f(T,h) tabla (Bucaramanga/IDEAM): estimación y límite de cociente incremental | interpretación de datos | | ver D3 |
-| T3.02 | Relacionar 4 funciones con superficies (ln(x²+y²−1), e^{−x²−y²}, cos(x²+y²), x²−y³) | curvas de nivel | | |
-| T3.03 | Dominio √((x+y)ln(x−y)) | desigualdades por casos | | |
-| T3.04 | Dominio ln(−x+2+y)/√((x−y+1)ln(x+y+1)) | casos combinados | | |
-| T3.05 | Dominio √(sen x · sen y) | periodicidad, tablero | | |
-| T3.06 | Dominio de ⟨ln(t²−1), √(sen t), cos(1/t)⟩ | intersección de dominios | | |
-| T3.07 | Gráfica de contorno: comportamiento de lím [f(h,0)−f(0,0)]/h | lectura de curvas de nivel | | |
-| T3.08 | lím (x³+4x²+2y²)/(2x²+y²) = 2 | trayectorias + emparedado | | |
-| T3.09 | f=xy²/(x²+y⁴): discontinua en (0,0) pero lím 0 por rectas | trayectoria x=y² | | |
-| T3.10 | Continuidad en (0,0) de la función de T3.08 con f(0,0)=2 | definición de continuidad | | |
-| T3.11 | Discontinuidad removible (misma función, f(0,0)=0) | redefinición | | |
-| T3.12 | f=(x³y−xy³)/(x²+y²): continuidad y f_x, f_y en (0,0) | compresión, parciales por definición | | |
+| T3.01 | Humidex f(T,h) tabla (Bucaramanga/IDEAM): estimación y límite de cociente incremental | interpretación de datos | FALTA | BLOQUEADO-D3; no hay problemas de interpretación de datos/tabla en el libro |
+| T3.02 | Relacionar 4 funciones con superficies (ln(x²+y²−1), e^{−x²−y²}, cos(x²+y²), x²−y³) | curvas de nivel | PARCIAL | fv L1696–L1801 (curvas de nivel abundantes); falta ejercicio de emparejamiento función↔superficie |
+| T3.03 | Dominio √((x+y)ln(x−y)) | desigualdades por casos | PARCIAL | fv L807 (√ y ln en cociente); falta producto dentro de la raíz con análisis de signos por casos |
+| T3.04 | Dominio ln(−x+2+y)/√((x−y+1)ln(x+y+1)) | casos combinados | PARCIAL | fv L807; misma carencia que T3.03, con combinación más compleja |
+| T3.05 | Dominio √(sen x · sen y) | periodicidad, tablero | FALTA | ningún dominio con estructura periódica/tablero |
+| T3.06 | Dominio de ⟨ln(t²−1), √(sen t), cos(1/t)⟩ | intersección de dominios | FALTA | hay continuidad de r(t) (fv L1644) pero no dominio de función vectorial |
+| T3.07 | Gráfica de contorno: comportamiento de lím [f(h,0)−f(0,0)]/h | lectura de curvas de nivel | FALTA | no hay problemas de lectura/estimación sobre mapa de contorno |
+| T3.08 | lím (x³+4x²+2y²)/(2x²+y²) = 2 | trayectorias + emparedado | CUBIERTO | lv L254 (racional, límite no nulo) + emparedado lv L638 |
+| T3.09 | f=xy²/(x²+y⁴): discontinua en (0,0) pero lím 0 por rectas | trayectoria x=y² | CUBIERTO | lv L377 (rectas 0, parábola ½); también example L148 |
+| T3.10 | Continuidad en (0,0) de la función de T3.08 con f(0,0)=2 | definición de continuidad | CUBIERTO | lv L798 (example por partes) + L892 |
+| T3.11 | Discontinuidad removible (misma función, f(0,0)=0) | redefinición | CUBIERTO | lv L717, L749, L768, L915 |
+| T3.12 | f=(x³y−xy³)/(x²+y²): continuidad y f_x, f_y en (0,0) | compresión, parciales por definición | CUBIERTO | lv L798 (continuidad) + pt L434 (parciales por definición en (0,0)) |
 
 ### T4 — Parciales y regla de la cadena → `planostangentes.tex` / `gradientes.tex`
 
