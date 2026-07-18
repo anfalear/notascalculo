@@ -191,27 +191,27 @@ llena Claude Code en Fase A. Veredictos: `CUBIERTO` / `PARCIAL` / `FALTA`.
 
 | ID | Descriptor | Técnica | Veredicto | Ref |
 |---|---|---|---|---|
-| T6.01 | Críticos de x²+y²−2x−4y | Hessiano | | |
-| T6.02 | Críticos de x³−3xy² (Hessiano nulo → trayectorias) | criterio inconcluso | | |
-| T6.03 | Lagrange: x+y en x²+y²=1 | 1 restricción | | |
-| T6.04 | Lagrange: xy en x²+4y²=4 | 1 restricción | | |
-| T6.05 | Lagrange: xyz en esfera unitaria | simetría | | |
-| T6.06 | Lata cilíndrica, costo tapa=2×lateral | Lagrange aplicado | | |
-| T6.07 | Caja con diagonal L: volumen máximo | sustitución + críticos | | |
-| T6.08 | Acme: min Σ distancias² a 3 puntos | críticos libres | | |
-| T6.09 | Paralelepípedo en elipsoide x²/a²+y²/b²+z²/c²=1 | implícita | | |
-| T6.10 | Tanque 256 pies³ sin tapa: min área | sustitución | | |
-| T6.11 | Caja en 9x²+36y²+4z²=36 | Lagrange | | |
-| T6.12 | Caja: área 1500, aristas 200 (máx y mín) | Lagrange 2 restricciones | | |
-| T6.13 | Curva intersección de 2 superficies más cercana al origen | Lagrange 2 restricciones | | |
-| T6.14 | Plano ∩ cono: punto más alto y más bajo de la elipse | Lagrange 2 restricciones | | |
-| T6.15 | ∬_{[0,1]²}(x+y) dA | doble directa | | |
-| T6.16 | ∬ e^{x²}: inversión del orden | Fubini | | |
-| T6.17 | ∬ x sobre 0≤y≤x≤2 | región tipo I | | |
-| T6.18 | ∬ (x+y) sobre triángulo (0,0),(1,0),(1,1) | región tipo I | | |
-| T6.19 | Volumen: x=4−y², z=0, z=x | doble como volumen | | |
-| T6.20 | Volumen: z=x²+4y² sobre región entre y²=x y x²=y | región entre parábolas | | |
-| T6.21 | Volumen en polares: z=10−3x²−3y² y z=4 | polares | | |
+| T6.01 | Críticos de x²+y²−2x−4y | Hessiano | CUBIERTO | mi L224 (example) + L909a (misma función) + L920 |
+| T6.02 | Críticos de x³−3xy² (Hessiano nulo → trayectorias) | criterio inconcluso | CUBIERTO | mi L937 (función idéntica, 3 incisos) + L948 (x²y², D=0) |
+| T6.03 | Lagrange: x+y en x²+y²=1 | 1 restricción | CUBIERTO | mi L869 (problema dual x²+y² s.a. x+y=1) + L967 |
+| T6.04 | Lagrange: xy en x²+4y²=4 | 1 restricción | CUBIERTO | mi L731 (example xy en circunferencia) + L967-1 |
+| T6.05 | Lagrange: xyz en esfera unitaria | simetría | CUBIERTO | mi L967 item 2 (idéntico) |
+| T6.06 | Lata cilíndrica, costo tapa=2×lateral | Lagrange aplicado | CUBIERTO | mi L425 (caja con costos ponderados 1.5×, resuelto) + L1006 (lata propuesta) |
+| T6.07 | Caja con diagonal L: volumen máximo | sustitución + críticos | CUBIERTO | mi L448 (caja vértice en plano) + L982 (caja con área dada); misma técnica |
+| T6.08 | Acme: min Σ distancias² a 3 puntos | críticos libres | PARCIAL | mi L309 (mín. distancia a plano, críticos libres); falta suma de distancias² a varios puntos |
+| T6.09 | Paralelepípedo en elipsoide x²/a²+y²/b²+z²/c²=1 | implícita | FALTA | no hay caja inscrita en elipsoide (cf. T5.27) |
+| T6.10 | Tanque 256 pies³ sin tapa: min área | sustitución | CUBIERTO | mi L494 (acuario, técnica idéntica) + L1024 (caja sin tapa) |
+| T6.11 | Caja en 9x²+36y²+4z²=36 | Lagrange | FALTA | cf. T6.09 (mismo vacío) |
+| T6.12 | Caja: área 1500, aristas 200 (máx y mín) | Lagrange 2 restricciones | FALTA | no hay Lagrange con 2 restricciones en el cap. |
+| T6.13 | Curva intersección de 2 superficies más cercana al origen | Lagrange 2 restricciones | FALTA | cf. T6.12 |
+| T6.14 | Plano ∩ cono: punto más alto y más bajo de la elipse | Lagrange 2 restricciones | FALTA | cf. T6.12 |
+| T6.15 | ∬_{[0,1]²}(x+y) dA | doble directa | CUBIERTO | ai L49 (example) + L294 (prob rectángulos) |
+| T6.16 | ∬ e^{x²}: inversión del orden | Fubini | CUBIERTO | ai L411 (cambio de orden resuelto) + propuestos L1525 (sen y²), L1530 (e^{x³}) |
+| T6.17 | ∬ x sobre 0≤y≤x≤2 | región tipo I | CUBIERTO | ai L336-2 (∬x entre parábolas) + L1519 (tipo II con x) |
+| T6.18 | ∬ (x+y) sobre triángulo (0,0),(1,0),(1,1) | región tipo I | CUBIERTO | ai L336-1 (x+y región general) + example L574 (triángulo) |
+| T6.19 | Volumen: x=4−y², z=0, z=x | doble como volumen | CUBIERTO | ai L1406 (tetraedro) + L1572 (volumen bajo z=3+x); misma técnica |
+| T6.20 | Volumen: z=x²+4y² sobre región entre y²=x y x²=y | región entre parábolas | CUBIERTO | ai L521 (example volumen) + L336-2 y L1512 (región entre parábolas) |
+| T6.21 | Volumen en polares: z=10−3x²−3y² y z=4 | polares | PARCIAL | ai L1536 (paraboloide hasta z=0 en polares); falta volumen entre paraboloide y plano z=c>0 (hallar la proyección) |
 
 ### T8 — Línea, Green, triples → `cap33.tex` / `cap34.tex` / `inttriples.tex`
 
@@ -335,6 +335,18 @@ REGLAS GENERALES
   .tex; anota la discrepancia en "## 8. Hallazgos".
 - Reporta al final de la sesión: fases completadas, commits, bloqueos abiertos.
 ```
+
+---
+
+## 8. Hallazgos
+
+- **H1 (T6, 2026-07-18):** el mapeo de la sección 2 asigna las integrales dobles de T6
+  a `multiplicadoresintdobles.tex`, pero ese archivo contiene SOLO optimización
+  (críticos, Lagrange, hessiano limitado). Las integrales dobles (Fubini, regiones,
+  polares, masa/centro de masa, jacobiano) viven en `apintdobles.tex` (1700 líneas).
+  Gana el `.tex`: T6.15–T6.21 se auditaron contra `apintdobles.tex` (abreviado `ai`).
+  Lo mismo aplicará a EX.04 y EX.10 (área de superficie está en `apintdobles.tex` §Área
+  de una superficie, L933).
 
 ---
 
