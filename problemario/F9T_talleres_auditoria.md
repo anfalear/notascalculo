@@ -395,6 +395,390 @@ REGLAS GENERALES
 
 ---
 
+## 7. Plan de inserción (Fase B, 2026-07-18)
+
+Ítems ordenados por prioridad: (1º) técnicas del examen sin cobertura o parciales,
+(2º) FALTA de talleres, (3º) PARCIAL. Ítems que comparten un mismo vacío se fusionan
+en un solo F9T.NN (se listan todos los orígenes). Convenciones: Tipo = prob resuelto |
+propuesto | ambos; Estimación S (<30 min) / M (30–90) / L (>90). Los enunciados están
+sujetos a la decisión D1 (por defecto: reformulación (b) talleres, isomorfos (c) para EX).
+
+### Prioridad 1 — Examen final
+
+### F9T.01 — [origen: EX.07, T5.18, T5.19] [destino: gradientes.tex, §Derivada direccional, tras L850]
+- Tipo: ambos
+- Enunciado: la temperatura de una placa es T(x,y)=kxy² (valores isomorfos). En un punto dado, halle TODAS las direcciones u con D_u T=0 e interprete: son las tangentes a la curva de nivel. Propuestos: incisos "dirección sin cambio" estilo T5.18/T5.19.
+- Solución: ∇T en el punto → D_u T=∇T·u=0 → sistema con ‖u‖=1 → dos direcciones opuestas ⊥ ∇T → interpretación geométrica.
+- Figura: SÍ → F9T.01f: curva de nivel por el punto, ∇T y las dos direcciones tangentes (TikZ 2D).
+- Estimación: M
+
+### F9T.02 — [origen: EX.02] [destino: inttriples.tex, §Coordenadas esféricas, tras la definición L566]
+- Tipo: ambos
+- Enunciado: identifique la superficie cartesiana dada por la ecuación esférica ρ sen²φ = c·cosφ (isomorfo; resultado: paraboloide). Propuestos: ρ=c·cosφ (esfera desplazada), φ=c (cono).
+- Solución: multiplicar por ρ → ρ²sen²φ=ρcosφ·c → x²+y²=cz → identificar.
+- Figura: NO
+- Estimación: S
+
+### F9T.03 — [origen: EX.03, T2.03] [destino: funvectoriales.tex, §Funciones vectoriales (derivada), tras L325]
+- Tipo: ambos
+- Enunciado: (i) recta tangente a r(t) en t=t₀ (cierra T2.03); (ii) una partícula abandona la trayectoria en t=t₀ y sigue por la tangente a velocidad constante: posición en t=t₁ (isomorfo de EX.03).
+- Solución: r'(t₀) → recta L(s)=r(t₀)+s·r'(t₀) → posición = r(t₀)+(t₁−t₀)r'(t₀).
+- Figura: SÍ → F9T.03f: curva, punto de salida y rayo tangente (TikZ 2D o pgfplots 3D según curva elegida).
+- Estimación: M
+
+### F9T.04 — [origen: EX.04] [destino: apintdobles.tex, §Integrales dobles en polares, tras L1184]
+- Tipo: ambos
+- Enunciado: convierta ∫₀¹∫_{x²}^{x} f dy dx a coordenadas polares (isomorfo): región entre recta y parábola → límites r desde 0 hasta r=tanθ·secθ y θ∈[0,π/4].
+- Solución: describir región → recta y=x: θ=π/4; parábola y=x²: r sinθ=r²cos²θ → r=tanθ secθ → armar la integral.
+- Figura: SÍ → F9T.04f: región entre y=x², y=x con rayo genérico θ (TikZ 2D).
+- Estimación: M
+
+### F9T.05 — [origen: EX.05] [destino: limvariasvariables.tex, §Continuidad, tras los ejemplos de clasificación]
+- Tipo: ambos
+- Enunciado: V/F (isomorfo): "g(x,y)=√(xy)/(x²+y²−c) es continua en la región |x|+|y|<r". Analizar dominio (xy≥0 falla en cuadrantes II/IV) y el denominador.
+- Solución: dominio de √(xy) → la región dada contiene puntos fuera del dominio → falsa (o ajustar región para variante verdadera); verificación de denominador ≠0.
+- Figura: NO
+- Estimación: S
+
+### F9T.06 — [origen: EX.09] [destino: inttriples.tex, §Coordenadas esféricas, tras el prob L672]
+- Tipo: prob resuelto
+- Enunciado: volumen (o ∭ f) de la región dentro de ρ=a, fuera de ρ=a·cosφ, sobre el plano xy (isomorfo de EX.09).
+- Solución: región: φ∈[0,π/2], ρ∈[a cosφ, a] → ∭ρ²senφ → integrar en ρ, luego φ, luego θ.
+- Figura: SÍ → F9T.06f: corte en el plano xz mostrando ambas esferas y la región (TikZ 2D).
+- Estimación: M
+
+### Prioridad 2 — FALTA de talleres
+
+### F9T.07 — [origen: T1.01] [destino: funvectoriales.tex, antes de §Superficies cuádricas]
+- Tipo: ambos
+- Enunciado: dada una cónica Ax²+By²+Cx+Dy+E=0 (hipérbola, valores tipo taller), obtener forma canónica por completar cuadrados y extraer centro, vértices, focos y asíntotas.
+- Solución: completar cuadrados → canónica → elementos → bosquejo.
+- Figura: SÍ → F9T.07f: hipérbola con asíntotas y focos (TikZ 2D).
+- Estimación: M
+
+### F9T.08 — [origen: T1.03] [destino: funvectoriales.tex, §Cuádricas (trazas), junto a paraboloides]
+- Tipo: propuesto
+- Enunciado: para el paraboloide −a x²+b y²=c z, halle la traza con x=0 e identifique vértice, foco y directriz de la parábola resultante.
+- Solución: sustituir → parábola canónica → 4p → elementos.
+- Figura: NO
+- Estimación: S
+
+### F9T.09 — [origen: T1.06] [destino: funvectoriales.tex, §Cuádricas, nueva subsec. breve "Cilindros"]
+- Tipo: ambos
+- Enunciado: mini-teoría (definición de cilindro: ecuación sin una variable) + prob: cilindro elíptico ax²+by²+cx+dy+e=0 → canónica, secciones z=c, bosquejo.
+- Solución: completar cuadrados → elipse trasladada → generatrices paralelas al eje z.
+- Figura: SÍ → F9T.09f: cilindro elíptico en 3D (pgfplots, shader=flat, samples≤20).
+- Estimación: M
+
+### F9T.10 — [origen: T1.11] [destino: funvectoriales.tex, §Funciones vectoriales (curvas), propuestos]
+- Tipo: propuesto
+- Enunciado: muestre que f(t)=(a·sinh t, b+c·cosh t) recorre una rama de hipérbola (identidad cosh²−sinh²=1) e indique cuál rama.
+- Solución: despejar sinh/cosh → identidad → hipérbola; cosh t≥1 selecciona la rama.
+- Figura: NO
+- Estimación: S
+
+### F9T.11 — [origen: T2.04] [destino: funvectoriales.tex, §Derivada de funciones vectoriales, tras la derivada]
+- Tipo: ambos
+- Enunciado: definición de vector tangente unitario T̂(t)=r'(t)/‖r'(t)‖ (rem breve) + prob: T̂(t₀) para una r(t) con componentes mixtas (isomorfo de T2.04).
+- Solución: r'(t) → evaluar → normalizar.
+- Figura: NO
+- Estimación: M
+
+### F9T.12 — [origen: T2.09] [destino: funvectoriales.tex, §Funciones vectoriales, tras curvas en el espacio]
+- Tipo: prob resuelto
+- Enunciado: parametrice la curva intersección del cilindro x²+y²=a² con el plano y+z=b y halle la recta tangente en un punto dado (isomorfo de T2.09).
+- Solución: x=a cos t, y=a sen t, z=b−a sen t → t₀ del punto → r'(t₀) → recta tangente. Comentar la alternativa con raíz (dos cartas).
+- Figura: SÍ → F9T.12f: cilindro + plano + curva intersección (pgfplots 3D, shader=flat).
+- Estimación: M
+
+### F9T.13 — [origen: T2.11] [destino: funvectoriales.tex, propuestos]
+- Tipo: propuesto
+- Enunciado: determine si las curvas r(t) y s(u) (componentes trigonométricas tipo taller) se intersectan y halle los puntos de intersección (parámetros independientes).
+- Solución: igualar componente a componente con parámetros distintos → resolver el sistema → verificar en la tercera componente.
+- Figura: NO
+- Estimación: S
+
+### F9T.14 — [origen: T2.10] [destino: funvectoriales.tex, propuestos]
+- Tipo: propuesto
+- Enunciado: dadas dos cuádricas S1, S2 con términos lineales (esferas/elipsoides), halle la recta perpendicular al plano dado que pasa por el punto medio del segmento entre sus centros (reformulación tipo taller).
+- Solución: completar cuadrados en ambas → centros → vector director → ecuación de la recta.
+- Figura: NO
+- Estimación: M
+
+### F9T.15 — [origen: T2.07] [destino: funvectoriales.tex, propuestos]
+- Tipo: propuesto
+- Enunciado: demuestre que r(t)=⟨arccos(2t²−1), arcsen t⟩, t∈[0,1], describe un segmento de recta (identidades de funciones inversas).
+- Solución: con t=sen θ: arccos(2sen²θ−1)=π−2θ y arcsen(sen θ)=θ → x+2y=π → segmento.
+- Figura: NO
+- Estimación: S
+
+### F9T.16 — [origen: T2.13] [destino: funvectoriales.tex, propuestos (o remitir a Álgebra Lineal)]
+- Tipo: propuesto
+- Enunciado: para la cónica x²+y²−2xy−2(x+y)+1=0: (i) discriminante B²−4AC=0 → parábola rotada; (ii) parametrización con el cambio u=x+y, v=x−y; (iii) puntos de tangente horizontal/vertical.
+- Solución: discriminante → rotación 45° → canónica en (u,v) → parametrizar → derivar.
+- Figura: SÍ → F9T.16f: parábola rotada con ejes u,v (TikZ 2D).
+- Estimación: L
+
+### F9T.17 — [origen: T3.05] [destino: funvectoriales.tex, §Funciones de varias variables (dominios), tras L807]
+- Tipo: prob resuelto
+- Enunciado: halle y grafique el dominio de f(x,y)=√(sen x · sen y): estructura de tablero por periodicidad.
+- Solución: sen x·sen y≥0 → ambos ≥0 o ambos ≤0 → cuadrícula [kπ,(k+1)π]×[mπ,(m+1)π] con k+m par.
+- Figura: SÍ → F9T.17f: tablero sombreado en [−2π,2π]² (TikZ 2D).
+- Estimación: M
+
+### F9T.18 — [origen: T3.06] [destino: funvectoriales.tex, §Funciones vectoriales (dominio/continuidad), junto a L1644]
+- Tipo: ambos
+- Enunciado: dominio de r(t)=⟨ln(t²−1), √(sen t), cos(1/t)⟩: intersección de los tres dominios componentes.
+- Solución: |t|>1 ∩ sen t≥0 ∩ t≠0 → intersección de intervalos → respuesta en notación de intervalos.
+- Figura: NO
+- Estimación: S
+
+### F9T.19 — [origen: T3.07] [destino: limvariasvariables.tex, §Límite (motivación) o §Continuidad, como prob con figura]
+- Tipo: prob resuelto
+- Enunciado: dada la gráfica de contorno de f (curvas de nivel con valores), estime el signo y comportamiento de lím_{h→0} [f(h,0)−f(0,0)]/h.
+- Solución: leer valores de nivel sobre el eje x → cociente incremental por lados → conclusión (existe/no existe, signo).
+- Figura: SÍ → F9T.19f: mapa de contorno sintético con niveles etiquetados (TikZ 2D).
+- Estimación: M
+
+### F9T.20 — [origen: T3.01] — BLOQUEADO-D3
+- Ítem creado; NO se planifica hasta decisión del coordinador sobre el problema humidex
+  (tabla de datos Bucaramanga/IDEAM, registro no-Apostol).
+
+### F9T.21 — [origen: T4.01] [destino: funvectoriales.tex, junto a F9T.09 (cilindros)]
+- Tipo: propuesto
+- Enunciado: bosqueje la gráfica de f(x,y)=cos x en R³ e identifíquela como cilindro (generatrices paralelas al eje y).
+- Solución: la ecuación no depende de y → trasladar la curva z=cos x.
+- Figura: SÍ → F9T.21f: superficie z=cos x (pgfplots 3D, shader=flat, samples≤20).
+- Estimación: S
+
+### F9T.22 — [origen: T4.10] [destino: planostangentes.tex, §Derivadas parciales, propuestos]
+- Tipo: propuesto
+- Enunciado: para f(x,y)=∫_x^y √(1+t³) dt, calcule f_x y f_y usando el 1er Teorema Fundamental del Cálculo.
+- Solución: f_y=√(1+y³); f_x=−√(1+x³) (límite inferior).
+- Figura: NO
+- Estimación: S
+
+### F9T.23 — [origen: T4.27, T4.28] [destino: gradientes.tex, §Regla de la cadena, tras el Caso 2 (L230)]
+- Tipo: ambos
+- Enunciado: rem breve (la parcial de una parcial vuelve a usar la cadena) + prob resuelto: w_rr para w=f(x,y), x=r cosθ, y=r senθ (o análogo polinomial). Propuesto: d²P/dt² para P=kT/V con T(t), V(t) dadas (contexto químico, isomorfo T4.28).
+- Solución: w_r por cadena → derivar w_r respecto a r reaplicando cadena a f_x y f_y → agrupar (f_xx, f_xy, f_yy).
+- Figura: NO
+- Estimación: L
+
+### F9T.24 — [origen: T5.10] [destino: gradientes.tex, §Gradiente, propuestos]
+- Tipo: propuesto
+- Enunciado: calcule el ángulo entre ∇f y ∇g en el punto dado (funciones tipo taller).
+- Solución: ambos gradientes → cosθ = (∇f·∇g)/(‖∇f‖‖∇g‖).
+- Figura: NO
+- Estimación: S
+
+### F9T.25 — [origen: T5.23, T5.25] [destino: gradientes.tex, §Derivada direccional, tras el teorema del máximo (L752)]
+- Tipo: ambos
+- Enunciado: (i) sabiendo D_u f y D_v f en un punto para dos direcciones dadas, reconstruya ∇f (sistema lineal 2×2); (ii) decida si existe u con D_u f=c cuando c>‖∇f‖ (no existe: |D_u f|≤‖∇f‖).
+- Solución: plantear ∇f·u=α, ∇f·v=β → resolver; para (ii) usar la cota |∇f·u|≤‖∇f‖.
+- Figura: NO
+- Estimación: M
+
+### F9T.26 — [origen: T5.22] [destino: gradientes.tex, propuestos (desafiante)]
+- Tipo: propuesto
+- Enunciado: halle a,b tales que la derivada direccional máxima de f=e^{ax+by}cos(x+y) en el origen valga c√2 y ocurra en la dirección de la bisectriz (isomorfo).
+- Solución: ∇f(0,0)=(a,b) → condiciones de dirección (a=b) y magnitud → resolver.
+- Figura: NO
+- Estimación: M
+
+### F9T.27 — [origen: T5.31, T5.32] [destino: gradientes.tex, §Plano tangente y gradiente, tras L997]
+- Tipo: ambos
+- Enunciado: (i) demuestre que toda recta normal a la esfera x²+y²+z²=R² pasa por el origen; (ii) demuestre que la esfera x²+y²+z²=R² y el cono x²+y²−z²=0 son ortogonales en su intersección (∇F·∇G=0).
+- Solución: (i) recta normal p+t∇F(p)=p(1+2t) → pasa por 0; (ii) producto punto de gradientes sobre la curva intersección usando x²+y²=z².
+- Figura: NO
+- Estimación: M
+
+### F9T.28 — [origen: T6.12, T6.13, T6.14] [destino: multiplicadoresintdobles.tex, nueva subsec. "Lagrange con dos restricciones" tras L903]
+- Tipo: ambos
+- Enunciado: teorema ∇f=λ∇g+μ∇h (enunciado sin prueba) + example resuelto (punto de la curva intersección de dos superficies más cercano al origen, isomorfo T6.13) + propuestos: caja con área y suma de aristas dadas (T6.12) y punto más alto/bajo de la elipse plano∩cono (T6.14).
+- Solución: sistema de 5 ecuaciones (3 de gradientes + 2 restricciones) → resolver por eliminación → comparar candidatos.
+- Figura: NO
+- Estimación: L
+
+### F9T.29 — [origen: T6.09, T6.11, T5.27] [destino: multiplicadoresintdobles.tex, §Lagrange, tras el example L731]
+- Tipo: ambos
+- Enunciado: paralelepípedo de volumen máximo inscrito en el elipsoide x²/a²+y²/b²+z²/c²=1 (resuelto en simbólico); propuesto isomorfo con valores numéricos (tipo T6.11/T5.27).
+- Solución: V=8xyz, Lagrange con g=x²/a²+y²/b²+z²/c²−1 → simetría → x=a/√3, etc.
+- Figura: NO
+- Estimación: M
+
+### F9T.30 — [origen: T8.02] [destino: cap34.tex, §Teorema de Green, tras el example L168]
+- Tipo: prob resuelto
+- Enunciado: evalúe ∫_C F·dr donde C es el arco (t, sen t), t∈[0,π] (curva abierta): cierre C con el segmento de regreso sobre el eje x, aplique Green y despeje la integral pedida; cuidado con la orientación.
+- Solución: C∪S cerrada → Green sobre la región → ∫_C = ∮ − ∫_S → calcular la doble y la del segmento.
+- Figura: SÍ → F9T.30f: arco de seno + segmento de cierre con flechas de orientación (TikZ 2D).
+- Estimación: M
+
+### Prioridad 3 — PARCIAL
+
+### F9T.31 — [origen: T1.02] [destino: funvectoriales.tex, §Cuádricas (trazas), junto a L1194]
+- Tipo: propuesto
+- Enunciado: para el hiperboloide ax²+by²−z²=1 y el plano z=c, muestre que la traza es una elipse y halle sus semiejes, vértices y focos.
+- Solución: sustituir z=c → dividir → semiejes → elementos.
+- Figura: NO
+- Estimación: S
+
+### F9T.32 — [origen: T1.04, T1.07, T1.08, T1.09, T1.10] [destino: funvectoriales.tex, §Cuádricas, tras los examples canónicos]
+- Tipo: ambos
+- Enunciado: prob resuelto: clasificar el elipsoide con términos lineales (completar cuadrados en las 3 variables, centro, semiejes, trazas por 3 planos — isomorfo T1.04). Propuestos: batería isomorfa de T1.07–T1.10 (paraboloide elíptico, hiperboloides de 1 y 2 hojas reorientados, paraboloide hiperbólico con términos lineales).
+- Solución: agrupar por variable → completar cuadrados → canónica trasladada → clasificación y elementos.
+- Figura: SÍ → F9T.32f: elipsoide trasladado con sus trazas (pgfplots 3D, shader=flat).
+- Estimación: L
+
+### F9T.33 — [origen: T2.02] [destino: funvectoriales.tex, §Límites de funciones vectoriales, tras L158]
+- Tipo: propuesto
+- Enunciado: lím_{t→0} ⟨cos t, t² sen(1/t), t²⟩ — la componente central por teorema de compresión.
+- Solución: 0≤|t²sen(1/t)|≤t² → emparedado → límite ⟨1,0,0⟩.
+- Figura: NO
+- Estimación: S
+
+### F9T.34 — [origen: T2.05] [destino: funvectoriales.tex, §Longitud de arco, junto a L608]
+- Tipo: propuesto
+- Enunciado: para el astroide r(t)=⟨cos³t, sen³t⟩: (i) muestre que r'(t)=0 en los múltiplos de π/2 (la curva no es suave allí); (ii) longitud en [0,π/2].
+- Solución: r'(t) → factorizar → ceros; ‖r'‖=3|sen t cos t| → integrar.
+- Figura: NO
+- Estimación: S
+
+### F9T.35 — [origen: T2.08] [destino: funvectoriales.tex, §Integrales de funciones vectoriales, tras L475]
+- Tipo: prob resuelto
+- Enunciado: PVI cinemático: dadas a(t) constante, v(0) y r(0), halle v(t) y r(t); identifique el tipo de curva y el instante de distancia mínima al origen.
+- Solución: integrar a → v (constante de v(0)) → integrar v → r (constante de r(0)) → ‖r(t)‖² minimizar en 1 variable.
+- Figura: NO
+- Estimación: M
+
+### F9T.36 — [origen: T3.02] [destino: funvectoriales.tex, §Curvas y superficies de nivel, tras L1696]
+- Tipo: prob resuelto
+- Enunciado: relacione cada función (ln(x²+y²−1), e^{−x²−y²}, cos(x²+y²), x²−y³ — o isomorfas) con su mapa de curvas de nivel, justificando por dominio, simetría radial y crecimiento.
+- Solución: análisis de dominio/anillos/periodicidad radial → emparejamiento razonado.
+- Figura: SÍ → F9T.36f: 4 minipaneles de curvas de nivel (TikZ 2D, contour manual con circunferencias/curvas).
+- Estimación: L
+
+### F9T.37 — [origen: T3.03, T3.04] [destino: funvectoriales.tex, §Funciones de varias variables (dominios), tras L807]
+- Tipo: ambos
+- Enunciado: prob resuelto: dominio de √((x+y)·ln(x−y)) por análisis de signos por casos (producto ≥0). Propuesto: dominio de ln(−x+2+y)/√((x−y+1)ln(x+y+1)) (isomorfo T3.04).
+- Solución: casos (ambos factores ≥0) ∪ (ambos ≤0) → intersecar con x−y>0 → describir región.
+- Figura: SÍ → F9T.37f: región del dominio sombreada con rectas frontera (TikZ 2D).
+- Estimación: M
+
+### F9T.38 — [origen: T4.11] [destino: planostangentes.tex, §Derivadas parciales, propuestos]
+- Tipo: propuesto
+- Enunciado: V=xyz (caja). Interprete ∂V/∂y como razón de cambio del volumen respecto al ancho con las demás dimensiones fijas; evalúe en un punto y explique unidades.
+- Solución: ∂V/∂y=xz → evaluar → interpretación.
+- Figura: NO
+- Estimación: S
+
+### F9T.39 — [origen: T4.12] [destino: planostangentes.tex, §Plano tangente, antes del protocolo L610]
+- Tipo: propuesto
+- Enunciado: muestre que T_x=⟨1,0,f_x⟩ y T_y=⟨0,1,f_y⟩ son tangentes a z=f(x,y) y que su producto cruz da el normal ⟨−f_x,−f_y,1⟩ del plano tangente.
+- Solución: curvas coordenadas → derivar → producto cruz → comparar con la fórmula del plano.
+- Figura: NO
+- Estimación: S
+
+### F9T.40 — [origen: T4.13] [destino: planostangentes.tex o gradientes.tex, propuestos]
+- Tipo: propuesto
+- Enunciado: deduzca que el plano tangente al elipsoide x²/a²+y²/b²+z²/c²=1 en (x₀,y₀,z₀) es xx₀/a²+yy₀/b²+zz₀/c²=1.
+- Solución: ∇F=⟨2x₀/a²,…⟩ → plano → simplificar usando que el punto satisface la ecuación.
+- Figura: NO
+- Estimación: S
+
+### F9T.41 — [origen: T4.19] [destino: planostangentes.tex, §Aproximación lineal, tras L835]
+- Tipo: propuesto
+- Enunciado: linealice f(x,y,z)=x³yz (isomorfo) en un punto dado y aproxime f en un punto cercano.
+- Solución: L=f(p)+f_x·Δx+f_y·Δy+f_z·Δz → evaluar.
+- Figura: NO
+- Estimación: S
+
+### F9T.42 — [origen: T4.22] [destino: planostangentes.tex, §Diferenciales, reemplazar el esbozo de prueba L907]
+- Tipo: prob resuelto (o elevar la prueba del teorema)
+- Enunciado: demuestre con detalle que si f es diferenciable en (x₀,y₀) entonces es continua allí.
+- Solución: Δz=f_xΔx+f_yΔy+ε₁Δx+ε₂Δy con ε→0 → Δz→0 → continuidad.
+- Figura: NO
+- Estimación: M
+
+### F9T.43 — [origen: T4.26] [destino: gradientes.tex, §Derivación implícita, tras el teorema L238]
+- Tipo: ambos
+- Enunciado: rem: caso F(x,y)=0 → dy/dx=−F_x/F_y + prob: dy/dx para cos(x+y)=y·sen x (isomorfo).
+- Solución: definir F → F_x, F_y → cociente; comparar con derivación implícita clásica.
+- Figura: NO
+- Estimación: S
+
+### F9T.44 — [origen: T5.06] [destino: gradientes.tex, §Derivada direccional, ampliar prob L691 o propuesto]
+- Tipo: propuesto
+- Enunciado: D_u f para f(x,y,z)=xy²z³ en un punto, con v=⟨2,1,−2⟩ (isomorfo, 3 variables).
+- Solución: ∇f → evaluar → normalizar v → producto punto.
+- Figura: NO
+- Estimación: S
+
+### F9T.45 — [origen: T5.26] [destino: multiplicadoresintdobles.tex, tras el example L224]
+- Tipo: prob resuelto
+- Enunciado: críticos de f=(x²+y²)e^{−(x²+y²)}: mínimo absoluto en el origen y una circunferencia completa de máximos (r²=1); el criterio D falla sobre la circunferencia → análisis radial g(r)=re^{−r}.
+- Solución: sustitución radial u=x²+y² → g(u)=ue^{−u} → g'=0 → u=1 → interpretar como conjunto de máximos.
+- Figura: NO
+- Estimación: M
+
+### F9T.46 — [origen: T6.08] [destino: multiplicadoresintdobles.tex, propuestos]
+- Tipo: propuesto
+- Enunciado: halle el punto que minimiza la suma de los cuadrados de las distancias a tres puntos dados (isomorfo Acme; respuesta: el centroide).
+- Solución: f=Σ‖p−p_i‖² → ∇f=0 → p=(p₁+p₂+p₃)/3 → D>0 confirma mínimo.
+- Figura: NO
+- Estimación: S
+
+### F9T.47 — [origen: T6.21] [destino: apintdobles.tex, propuestos (polares)]
+- Tipo: propuesto
+- Enunciado: volumen del sólido entre z=c y el paraboloide z=a−b(x²+y²), con a>c (isomorfo T6.21): hallar la proyección igualando superficies.
+- Solución: a−br²=c → r₀=√((a−c)/b) → V=∫∫(a−br²−c) r dr dθ.
+- Figura: NO
+- Estimación: S
+
+### F9T.48 — [origen: T8.01] [destino: cap34.tex, §Green, tras el example L168]
+- Tipo: prob resuelto
+- Enunciado: verifique el teorema de Green para F=(2x³−y³, x³+y³) (isomorfo) en el anillo 1≤x²+y²≤4: dos fronteras con orientaciones opuestas.
+- Solución: ∮ exterior − ∮ interior (parametrizar ambas) vs. ∬(N_x−M_y) dA en polares sobre el anillo.
+- Figura: SÍ → F9T.48f: anillo con orientaciones de las dos fronteras (TikZ 2D).
+- Estimación: M
+
+### F9T.49 — [origen: T8.03] [destino: cap34.tex, §Divergencia y rotacional, propuestos]
+- Tipo: propuesto
+- Enunciado: demuestre la identidad div(F×G)=G·(∇×F)−F·(∇×G). **Nota: el taller original tiene los términos con signo intercambiado; se inserta con el signo correcto.**
+- Solución: expandir F×G por componentes → derivar → reagrupar en los dos productos punto.
+- Figura: NO
+- Estimación: S
+
+### F9T.50 — [origen: T8.04] [destino: cap33.tex, §Independencia de la trayectoria, tras el example L728]
+- Tipo: prob resuelto
+- Enunciado: para F conservativo dado, defina f(x,y,z)=∫_C F·dr con C el segmento de (0,0,0) a (x,y,z); calcule f explícitamente y verifique ∇f=F.
+- Solución: r(t)=t⟨x,y,z⟩, t∈[0,1] → integrar en t → f cerrada → gradiente y comparación.
+- Figura: NO
+- Estimación: M
+
+### F9T.51 — [origen: T8.09] [destino: inttriples.tex, propuestos (o apintdobles)]
+- Tipo: propuesto
+- Enunciado: volumen del sólido entre los paraboloides z=x²+3y² y z=c−x²−3y² (isomorfo): proyección por igualación (elipse).
+- Solución: igualar → región elíptica → V=∬(techo−piso) dA, con cambio x=ar cosθ, y=br senθ (jacobiano abr).
+- Figura: NO
+- Estimación: S
+
+### F9T.52 — [origen: T8.10] [destino: inttriples.tex, tras el prob L321]
+- Tipo: prob resuelto
+- Enunciado: volumen del sólido acotado por z=√x, z=0, los planos y=0, y=b y x+z=2 (isomorfo T8.10): el techo cambia de superficie → partir la región en x.
+- Solución: intersección √x=2−x → x=1 → V=b[∫₀¹√x dx+∫₁²(2−x)dx].
+- Figura: SÍ → F9T.52f: corte en el plano xz mostrando √x y 2−x (TikZ 2D).
+- Estimación: M
+
+### F9T.53 — [origen: T8.13] [destino: inttriples.tex, §Masa y centro de masa, tras el example L254]
+- Tipo: prob resuelto
+- Enunciado: centro de masa de un sólido con ρ variable resuelto a mano (isomorfo T8.12/T8.13: cubo o caja con ρ=x²+y²+z² o ρ=x).
+- Solución: M, M_yz, M_xz, M_xy como triples iteradas → cocientes.
+- Figura: NO
+- Estimación: M
+
+---
+
 ## 8. Hallazgos
 
 - **H1 (T6, 2026-07-18):** el mapeo de la sección 2 asigna las integrales dobles de T6
