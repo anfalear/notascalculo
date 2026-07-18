@@ -121,34 +121,34 @@ llena Claude Code en Fase A. Veredictos: `CUBIERTO` / `PARCIAL` / `FALTA`.
 
 | ID | Descriptor | Destino | Veredicto | Ref |
 |---|---|---|---|---|
-| T4.01 | Bosquejo f(x,y)=cos x (cilindro) | funvectoriales o planostangentes | | |
-| T4.02 | Parciales de x²−x³y²+y⁴ | planostangentes | | |
-| T4.03 | z_x, z_y de x/y² | planostangentes | | |
-| T4.04 | f_x(1,2) de x³y²−4xy⁴+5 | planostangentes | | |
-| T4.05 | f_z de ln(x²+y²+z²) | planostangentes | | |
-| T4.06 | f_x de (x²+y²)^{2/3} incl. (0,0) por definición | planostangentes | | |
-| T4.07 | Segundas parciales de sen(x−2y); f_xy=f_yx | planostangentes | | |
-| T4.08 | Laplace: z=y/(x²+y²) | planostangentes | | |
-| T4.09 | Laplace: u=e^x sen y | planostangentes | | |
-| T4.10 | f=∫_x^y √(1+t³)dt: parciales vía 1TFC | planostangentes | | |
-| T4.11 | Razón de cambio de V=xyz respecto al ancho | planostangentes | | |
-| T4.12 | Vectores tangentes T_x, T_y a z=f(x,y) | planostangentes | | |
-| T4.13 | Plano tangente al elipsoide: forma xx₀/a²+yy₀/b²+zz₀/c²=1 | planostangentes o gradientes | | |
-| T4.14 | Elipsoide x²+2y²+3z²=1: tangente ∥ 3x−y+3z=1 | gradientes | | |
-| T4.15 | y=x²+z²: tangente ∥ x+2y+3z=1 | gradientes | | |
-| T4.16 | ∂z/∂x implícita en x²+y²+z²=25 | gradientes (§implícita) | | |
-| T4.17 | Tangente horizontal en z+x²+y²=6 | planostangentes | | |
-| T4.18 | dz total de z=x²y⁵ | planostangentes (§Diferenciales) | | |
-| T4.19 | Linealizar x³yz en (1,2,3) | planostangentes (§Linealización) | | |
-| T4.20 | Aproximar √(3.02²+3.99²) por diferenciales | planostangentes | | |
-| T4.21 | Placa circular: dA con r: 10→10.1 | planostangentes | | |
-| T4.22 | Diferenciable ⇒ continua (demostración) | planostangentes | | |
-| T4.23 | dz/dt con z=x²+y², x=sen t, y=cos t | gradientes (§cadena) | | |
-| T4.24 | ∂z/∂s con z=e^{xy}, x=s/t, y=t²s | gradientes | | |
-| T4.25 | ∂w/∂t, ∂w/∂s (w=xyz y w=x²+y²+z², 2 casos) | gradientes | | |
-| T4.26 | dy/dx implícita: cos(x+y)=y sen x | gradientes | | |
-| T4.27 | w_rr con cadena de 2º orden | gradientes | | |
-| T4.28 | d²P/dt² de P=kT/V (contexto químico) | gradientes | | |
+| T4.01 | Bosquejo f(x,y)=cos x (cilindro) | funvectoriales o planostangentes | FALTA | fv no trata cilindros (cf. T1.06); pt no tiene bosquejos de superficie |
+| T4.02 | Parciales de x²−x³y²+y⁴ | planostangentes | CUBIERTO | pt L951 (propuesto a) + example L158 |
+| T4.03 | z_x, z_y de x/y² | planostangentes | CUBIERTO | pt L158 (example a, cociente x/y en exponente) + L951 |
+| T4.04 | f_x(1,2) de x³y²−4xy⁴+5 | planostangentes | CUBIERTO | pt L655 (evalúa f_x(1,2), f_y(1,2) de x²y³) |
+| T4.05 | f_z de ln(x²+y²+z²) | planostangentes | CUBIERTO | pt L962 (propuesto h, función idéntica) + example L376 |
+| T4.06 | f_x de (x²+y²)^{2/3} incl. (0,0) por definición | planostangentes | CUBIERTO | pt L434 (parciales por definición en (0,0), función por partes) |
+| T4.07 | Segundas parciales de sen(x−2y); f_xy=f_yx | planostangentes | CUBIERTO | pt L250 (example + Clairaut) + propuestos L967, L979 |
+| T4.08 | Laplace: z=y/(x²+y²) | planostangentes | CUBIERTO | pt L495 (ln(x²+y²) satisface Laplace) + L1015 (armónica) |
+| T4.09 | Laplace: u=e^x sen y | planostangentes | CUBIERTO | pt L495 + L967 b (segundas de e^x cos y) |
+| T4.10 | f=∫_x^y √(1+t³)dt: parciales vía 1TFC | planostangentes | FALTA | no hay parciales vía Teorema Fundamental del Cálculo |
+| T4.11 | Razón de cambio de V=xyz respecto al ancho | planostangentes | PARCIAL | gr L117 (tasas de caja, pero vía cadena); falta interpretar una parcial sola como razón de cambio |
+| T4.12 | Vectores tangentes T_x, T_y a z=f(x,y) | planostangentes | PARCIAL | pt L60–L114 (interpretación geométrica + figura); falta problema que construya ⟨1,0,f_x⟩, ⟨0,1,f_y⟩ |
+| T4.13 | Plano tangente al elipsoide: forma xx₀/a²+yy₀/b²+zz₀/c²=1 | planostangentes o gradientes | PARCIAL | pt L690, L1003 (elipsoides numéricos); falta la deducción simbólica general |
+| T4.14 | Elipsoide x²+2y²+3z²=1: tangente ∥ 3x−y+3z=1 | gradientes | CUBIERTO | pt L711 + L736 (misma técnica: ∇ ∥ normal dado) |
+| T4.15 | y=x²+z²: tangente ∥ x+2y+3z=1 | gradientes | CUBIERTO | pt L711 (problema idéntico) |
+| T4.16 | ∂z/∂x implícita en x²+y²+z²=25 | gradientes (§implícita) | CUBIERTO | gr L335 + example L254 + propuestos L1023, L1046 |
+| T4.17 | Tangente horizontal en z+x²+y²=6 | planostangentes | CUBIERTO | pt L711 (tangente ∥ plano dado; caso normal ⟨0,0,1⟩ es idéntico) |
+| T4.18 | dz total de z=x²y⁵ | planostangentes (§Diferenciales) | CUBIERTO | pt L839 (definición) + L1041 (propuesto dw) |
+| T4.19 | Linealizar x³yz en (1,2,3) | planostangentes (§Linealización) | PARCIAL | pt L775, L807 (linealización en 2 variables); falta linealizar f(x,y,z) de 3 variables |
+| T4.20 | Aproximar √(3.02²+3.99²) por diferenciales | planostangentes | CUBIERTO | pt L775 (example casi idéntico: √(x²+y²) en (3,4)) |
+| T4.21 | Placa circular: dA con r: 10→10.1 | planostangentes | CUBIERTO | pt L1029 (error máximo en área de rectángulo con diferenciales) |
+| T4.22 | Diferenciable ⇒ continua (demostración) | planostangentes | PARCIAL | pt L904 (teorema con esbozo de 2 líneas); falta la demostración completa |
+| T4.23 | dz/dt con z=x²+y², x=sen t, y=cos t | gradientes (§cadena) | CUBIERTO | gr L28 (example Caso 1) + propuesto L1005 |
+| T4.24 | ∂z/∂s con z=e^{xy}, x=s/t, y=t²s | gradientes | CUBIERTO | gr L289 (z=e^{xy}, x=st, y=s+t, casi idéntico) + example L197 |
+| T4.25 | ∂w/∂t, ∂w/∂s (w=xyz y w=x²+y²+z², 2 casos) | gradientes | CUBIERTO | gr L289 (Caso 2) + L117 (cadena con 3 variables intermedias) |
+| T4.26 | dy/dx implícita: cos(x+y)=y sen x | gradientes | PARCIAL | gr L238–L363 (implícita solo para F(x,y,z)); falta el caso dy/dx=−F_x/F_y con F(x,y)=0 |
+| T4.27 | w_rr con cadena de 2º orden | gradientes | FALTA | no hay regla de la cadena de segundo orden en el cap. |
+| T4.28 | d²P/dt² de P=kT/V (contexto químico) | gradientes | FALTA | sin equivalente; requiere cadena de 2º orden (cf. T4.27) |
 
 ### T5 — Gradientes, direccionales, críticos → `gradientes.tex` / `multiplicadoresintdobles.tex`
 
