@@ -235,16 +235,16 @@ llena Claude Code en Fase A. Veredictos: `CUBIERTO` / `PARCIAL` / `FALTA`.
 
 | ID | Descriptor | Destino | Veredicto | Ref |
 |---|---|---|---|---|
-| EX.01 | V/F Clairaut: ¿∃f con f_x=2x+xy², f_y=2xy? | planostangentes | | |
-| EX.02 | Esféricas ρsen²φ=cosφ → identificar superficie cartesiana | inttriples §Cambio de variables | | |
-| EX.03 | Partícula sale por la tangente en t=1: posición en t=2 | funvectoriales | | |
-| EX.04 | ∫₀¹∫_{x²}^x f dydx a polares (opción múltiple) | multiplicadoresintdobles | | |
-| EX.05 | V/F continuidad de √(xy)/(x²+y²−25) en |x|+|y|<1 | limvariasvariables | | |
-| EX.06 | Depósito cilíndrico cerrado V=12: r y h óptimos | multiplicadores | | |
-| EX.07 | Direcciones con D_u T = 0, T=100xy² en (3,−4) | gradientes | | |
-| EX.08 | Extremos de y² con 5x⁴−y³+3y⁶=0 | multiplicadores | | |
-| EX.09 | ∭: dentro de ρ=1, fuera de ρ=cosφ, sobre plano xy (esféricas) | inttriples | | |
-| EX.10 | Área de superficie de f=1−x²+y sobre triángulo | cap34 o inttriples (según dónde viva área de superficie) | | |
+| EX.01 | V/F Clairaut: ¿∃f con f_x=2x+xy², f_y=2xy? | planostangentes | CUBIERTO | c33 L829 (¿campo conservativo? = misma técnica) + pt L979, L987 (V/F Clairaut) |
+| EX.02 | Esféricas ρsen²φ=cosφ → identificar superficie cartesiana | inttriples §Cambio de variables | FALTA | no hay identificación de superficie cartesiana desde ecuación esférica |
+| EX.03 | Partícula sale por la tangente en t=1: posición en t=2 | funvectoriales | PARCIAL | fv L325 (velocidad/derivada); falta recta tangente + movimiento sobre ella (cf. T2.03) |
+| EX.04 | ∫₀¹∫_{x²}^x f dydx a polares (opción múltiple) | apintdobles (ver H1) | PARCIAL | ai L1162 (cambio a polares, región circular); falta conversión de región NO circular (r=f(θ) de parábola/recta) |
+| EX.05 | V/F continuidad de √(xy)/(x²+y²−25) en \|x\|+\|y\|<1 | limvariasvariables | PARCIAL | lv L798, L892 (continuidad en regiones); falta V/F que combine el dominio (xy≥0) con la región dada |
+| EX.06 | Depósito cilíndrico cerrado V=12: r y h óptimos | multiplicadores | CUBIERTO | mi L1006 (lata cilíndrica 2 L, idéntico) |
+| EX.07 | Direcciones con D_u T = 0, T=100xy² en (3,−4) | gradientes | FALTA | no hay problema de direcciones con derivada direccional nula (cf. T5.18/T5.19) |
+| EX.08 | Extremos de y² con 5x⁴−y³+3y⁶=0 | multiplicadores | CUBIERTO | mi L731 (Lagrange) + L770/L797 (casos degenerados ∇g=0 y candidato falso) |
+| EX.09 | ∭: dentro de ρ=1, fuera de ρ=cosφ, sobre plano xy (esféricas) | inttriples | PARCIAL | it L672 (esféricas esfera∩cono) + L775 (entre esferas, solo planteo/CAS); falta límite interior ρ=cosφ (esfera desplazada) |
+| EX.10 | Área de superficie de f=1−x²+y sobre triángulo | apintdobles §Área de superficie (ver H1) | CUBIERTO | ai L1562 (plano sobre triángulo) + L942 (example paraboloide) + it L816 |
 
 ---
 
@@ -335,6 +335,63 @@ REGLAS GENERALES
   .tex; anota la discrepancia en "## 8. Hallazgos".
 - Reporta al final de la sesión: fases completadas, commits, bloqueos abiertos.
 ```
+
+---
+
+## 6. Resumen de auditoría (Fase A completa, 2026-07-18)
+
+### Totales por veredicto
+
+| Bloque | CUBIERTO | PARCIAL | FALTA | Total |
+|---|---|---|---|---|
+| T1 | 1 | 6 | 4 | 11 |
+| T2 | 3 | 4 | 6 | 13 |
+| T3 | 5 | 3 | 4 | 12 |
+| T4 | 18 | 6 | 4 | 28 |
+| T5 | 21 | 5 | 6 | 32 |
+| T6 | 14 | 2 | 5 | 21 |
+| T8 | 6 | 6 | 1 | 13 |
+| EX | 4 | 4 | 2 | 10 |
+| **Total** | **72** | **36** | **32** | **140** |
+
+### Estado por capítulo destino
+
+- `funvectoriales.tex` — el más débil: concentra los FALTA/PARCIAL de T1 (cónicas con
+  elementos, cilindros, completar cuadrados en cuádricas) y T2 (T̂ unitario, recta
+  tangente, intersección de superficies, cónicas rotadas), más los dominios de T3.02–06.
+- `limvariasvariables.tex` — bien cubierto (T3 núcleo de límites/continuidad completo);
+  vacíos solo en interpretación de datos (T3.01, bloqueado D3), contorno (T3.07) y EX.05.
+- `planostangentes.tex` — muy bien cubierto (18/28 de T4); vacíos puntuales: parciales
+  vía 1TFC (T4.10), vectores tangentes T_x/T_y, linealización en 3 variables.
+- `gradientes.tex` — bien cubierto en lo básico; vacíos: cadena de 2º orden (T4.27–28),
+  D_u nula (T5.18/19, EX.07), problemas inversos de ∇ (T5.22/23/25), ángulo entre
+  gradientes (T5.10), normales de esfera/superficies ortogonales (T5.31/32).
+- `multiplicadoresintdobles.tex` — optimización libre y Lagrange 1 restricción muy
+  cubiertos; vacío estructural: Lagrange con 2 restricciones (T6.12–14) y caja inscrita
+  en elipsoide (T5.27, T6.09, T6.11 — tres ítems del mismo vacío).
+- `apintdobles.tex` — muy bien cubierto; solo falta conversión a polares de regiones no
+  circulares (EX.04).
+- `inttriples.tex` — bien cubierto en cilíndricas/esféricas básicas; vacíos: superficie
+  desde ecuación esférica (EX.02), esfera desplazada ρ=cosφ (EX.09), volumen entre dos
+  paraboloides (T8.09), centro de masa 3D con ρ variable resuelto (T8.13).
+- `cap33.tex` / `cap34.tex` — línea/conservativos/Green bien cubiertos; vacíos: Green
+  cerrando curva abierta (T8.02), Green en anillo (T8.01), identidad div(F×G) (T8.03),
+  potencial como integral de línea (T8.04).
+
+### Los 5 vacíos más graves (técnicas del examen pesan doble)
+
+1. **EX.07 + T5.18/T5.19 — direcciones con D_u = 0** (tangente a la curva de nivel):
+   técnica del examen final sin ningún equivalente; además cierra los incisos "nivel" de
+   dos problemas contextualizados de taller.
+2. **EX.02 — identificar superficie cartesiana desde ecuación esférica**: técnica del
+   examen sin cobertura; encaja natural en `inttriples.tex` §Coordenadas esféricas.
+3. **Lagrange con 2 restricciones (T6.12, T6.13, T6.14)**: tres ítems FALTA por un
+   único vacío estructural del capítulo de optimización; el teorema ni se enuncia.
+4. **Bloque T2 de funciones vectoriales (6 FALTA)**: en particular T̂ unitario (T2.04),
+   recta tangente a una curva (T2.03→EX.03, enlaza con el examen) y parametrización de
+   la intersección de superficies (T2.09, clásico de examen).
+5. **Regla de la cadena de 2º orden (T4.27, T4.28)**: técnica estándar de evaluación
+   (w_rr, d²P/dt²) ausente de `gradientes.tex`.
 
 ---
 
