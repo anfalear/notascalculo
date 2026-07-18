@@ -33,30 +33,26 @@ cuenta como CUBIERTO aunque la función sea otra.
 | T8 | Int. de línea, Green e int. triples | `cap33.tex` + `cap34.tex` + `inttriples.tex` | §Int. línea, §Campos conservativos / §Green / §Triples, §Cambio de variables |
 | EX | Examen final Nov-2025 (transversal) | según ítem | según ítem |
 
-**Ausente:** Taller VII (por numeración, probablemente integrales dobles en polares /
-área de superficie / cambio de variables 2D). Verificar si existe y subirlo antes de
-cerrar la auditoría de `multiplicadoresintdobles.tex` y `cap34.tex`.
+**Taller VII:** confirmado que NO existe (D4 resuelta, 2026-07-18). El inventario
+queda completo con los 7 talleres + examen.
 
 ---
 
-## 3. Decisiones bloqueantes (responder ANTES de ejecutar Fase C)
+## 3. Decisiones bloqueantes — RESUELTAS (coordinador, 2026-07-18)
 
-- **D1 — Autoría/reformulación:** los talleres son material de la Escuela (posiblemente
-  de varios profesores). ¿Se integran los enunciados (a) textuales, (b) reformulados con
-  redacción propia y mismos valores, o (c) reformulados con valores nuevos (isomorfos)?
-  Recomendación: (c) para el Examen Final; (b) mínimo para talleres.
-- **D2 — Figuras:** los talleres usan capturas de GeoGebra; el libro exige TikZ/pgfplots
-  (R2, `shader=flat`, `samples≤20`). ¿Cada problema importado con figura genera un
-  ítem TikZ obligatorio, o se admite el estado intermedio "figura pendiente" con
-  `%TODO-FIG`? Recomendación: ítem TikZ separado, para no bloquear el texto.
-- **D3 — Problema humidex (T3.01):** problema de tabla/datos con contexto Bucaramanga-IDEAM.
-  Rompe el registro Apostol pero tiene valor didáctico local. ¿Se incluye como
-  "problema contextualizado" (quizá en un entorno `example` o recuadro propio) o se excluye?
-- **D4 — Taller VII:** ¿existe? Si sí, se añade al inventario antes de ejecutar.
-- **D5 — Enunciados "use GeoGebra":** muchos ítems dicen "realice un bosquejo con
-  GeoGebra". En el libro, ¿se conserva la instrucción (útil para el curso) o se
-  reemplaza por la figura TikZ ya resuelta? Recomendación: figura TikZ en la solución,
-  y en propuestos conservar "verifique con GeoGebra" como coletilla opcional.
+- **D1 — RESUELTA: (c) isomorfos para TODO** (talleres y examen): misma estructura y
+  técnica, valores nuevos, redacción propia del problemario.
+- **D2 — RESUELTA: TikZ obligatorio.** Toda figura se crea en TikZ/pgfplots siguiendo
+  `figuras_guia.tex` (shader=flat/flat corner, samples≤20, paleta blue!70!black /
+  red!70!black, \node separados con anchor explícito, figure[H]+caption+label).
+  No se admite el estado "figura pendiente".
+- **D3 — RESUELTA: se incluye un ISOMORFO de humidex** (problema contextualizado de
+  tabla de datos con estimación de parciales por cocientes incrementales, con contexto
+  y valores nuevos). Ver F9T.20.
+- **D4 — RESUELTA: el Taller VII NO existe.** Se elimina la advertencia del inventario;
+  nada queda bloqueado por este motivo.
+- **D5 — RESUELTA: figura TikZ siempre**, aunque el original sea captura de GeoGebra.
+  En propuestos se puede conservar "verifique con GeoGebra" como coletilla opcional.
 
 ---
 
@@ -400,8 +396,9 @@ REGLAS GENERALES
 Ítems ordenados por prioridad: (1º) técnicas del examen sin cobertura o parciales,
 (2º) FALTA de talleres, (3º) PARCIAL. Ítems que comparten un mismo vacío se fusionan
 en un solo F9T.NN (se listan todos los orígenes). Convenciones: Tipo = prob resuelto |
-propuesto | ambos; Estimación S (<30 min) / M (30–90) / L (>90). Los enunciados están
-sujetos a la decisión D1 (por defecto: reformulación (b) talleres, isomorfos (c) para EX).
+propuesto | ambos; Estimación S (<30 min) / M (30–90) / L (>90). Por D1 resuelta:
+**TODOS los enunciados se insertan como isomorfos** (estructura y técnica idénticas,
+valores y redacción nuevos). Por D2/D5: toda figura es TikZ según `figuras_guia.tex`.
 
 ### Prioridad 1 — Examen final
 
@@ -540,9 +537,17 @@ sujetos a la decisión D1 (por defecto: reformulación (b) talleres, isomorfos (
 - Figura: SÍ → F9T.19f: mapa de contorno sintético con niveles etiquetados (TikZ 2D).
 - Estimación: M
 
-### F9T.20 — [origen: T3.01] — BLOQUEADO-D3
-- Ítem creado; NO se planifica hasta decisión del coordinador sobre el problema humidex
-  (tabla de datos Bucaramanga/IDEAM, registro no-Apostol).
+### F9T.20 — [origen: T3.01] [destino: planostangentes.tex, §Derivadas parciales, tras el example L158] — DESBLOQUEADO (D3)
+- Tipo: prob resuelto
+- Enunciado: isomorfo de humidex — tabla de sensación térmica S(T,v) (temperatura del
+  aire vs. velocidad del viento, valores nuevos, contexto genérico de estación
+  meteorológica). Estimar ∂S/∂T y ∂S/∂v en un punto de la tabla mediante cocientes
+  incrementales (promedio de diferencias adelante/atrás) e interpretar unidades y signo.
+- Solución: leer valores vecinos de la tabla → cocientes [S(T+ΔT,v)−S(T,v)]/ΔT por
+  ambos lados → promediar → interpretación física; conectar con la definición de
+  parcial como límite del cociente incremental.
+- Figura: NO (la tabla se compone con `tabular`, no requiere TikZ).
+- Estimación: M
 
 ### F9T.21 — [origen: T4.01] [destino: funvectoriales.tex, junto a F9T.09 (cilindros)]
 - Tipo: propuesto
