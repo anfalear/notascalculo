@@ -154,38 +154,38 @@ llena Claude Code en Fase A. Veredictos: `CUBIERTO` / `PARCIAL` / `FALTA`.
 
 | ID | Descriptor | Destino | Veredicto | Ref |
 |---|---|---|---|---|
-| T5.01 | ∇ de x²−x³y²+y⁴ | gradientes | | |
-| T5.02 | ∇ de xy²/z³ | gradientes | | |
-| T5.03 | ∇ de e^{x²y}+ln(x+y) en (1,1) | gradientes | | |
-| T5.04 | Química s=ln(zy)/x: dirección máx + D_u en ⟨0,1,2⟩ | gradientes | | |
-| T5.05 | UGV en colina: dirección de máxima pendiente (suroeste) | gradientes | | |
-| T5.06 | D_u de xy²z³ en (1,1,1), v=⟨2,1,−2⟩ | gradientes | | |
-| T5.07 | D_u de e^x sen y en (0,π/4), v=i−j | gradientes | | |
-| T5.08 | Máx D_u de √(x²+y²) en (3,4) | gradientes | | |
-| T5.09 | ∇f=0 para x²+y²−4x+6y | gradientes | | |
-| T5.10 | Ángulo entre ∇f y ∇g en (1,1) | gradientes | | |
-| T5.11 | Críticos de x²+2y²−4x+8y | multiplicadores | | |
-| T5.12 | Críticos de x²+y²−4x+6y+10 | multiplicadores | | |
-| T5.13 | Máx crecimiento de √(x²+y²+z²) en (3,4,12) | gradientes | | |
-| T5.14 | D_u de arctan(y/x) hacia el origen | gradientes | | |
-| T5.15 | Críticos de x³+y³−3xy+5 (silla + mínimo) | multiplicadores | | |
-| T5.16 | Plano tangente a x²+2y²+3z²=23/3 vía ∇ | gradientes | | |
-| T5.17 | Insecto en caja: T=xyz(1−x)(2−y)(3−z), enfriarse máx | gradientes | | |
-| T5.18 | Montañeros T=ln(3xy+2x²−y): 3 incisos (dirección, D_u, nivel) | gradientes | | |
-| T5.19 | Reacción T=−x³+4x²y−3y²: 3 incisos | gradientes | | |
-| T5.20 | Potencial V=x²+y²+xy+5 en región y=(x−1)²−1, y=x | multiplicadores (extremos en región) | | |
-| T5.21 | Críticos de 4x²−16x+4y²−4y+20 en región (frontera 3 tramos) | multiplicadores | | |
-| T5.22 | Hallar a,b: D_u máx = 3√2 en bisectriz, f=e^{ax+by}cos(x+y) | gradientes | | |
-| T5.23 | ¿∃ u con D_u f=√2? (respuesta: no existe) | gradientes | | |
-| T5.24 | Extremos absolutos de x²+xy+y² en disco cerrado | multiplicadores | | |
-| T5.25 | ∇f(1,2) a partir de dos direccionales dadas | gradientes | | |
-| T5.26 | Críticos de (x²+y²)e^{−(x²+y²)}: mín absoluto + máx en circunferencia | multiplicadores | | |
-| T5.27 | Paralelepípedo inscrito en 16x²+4y²+9z²=144 | multiplicadores | | |
-| T5.28 | Vector normal a z=4x²+9y² en (1,1,13) | gradientes | | |
-| T5.29 | Plano tangente a xyz=1 en (1,1,1) | gradientes | | |
-| T5.30 | Recta normal a z=x²y en (2,1,4) (ecs. simétricas) | gradientes | | |
-| T5.31 | Toda normal a la esfera pasa por el origen | gradientes | | |
-| T5.32 | Ortogonalidad esfera x²+y²+z²=25 y cono x²+y²−z²=0 | gradientes | | |
+| T5.01 | ∇ de x²−x³y²+y⁴ | gradientes | CUBIERTO | gr L407 (example) + propuesto L1014 |
+| T5.02 | ∇ de xy²/z³ | gradientes | CUBIERTO | gr L1014 (propuestos c, d en 3 variables) |
+| T5.03 | ∇ de e^{x²y}+ln(x+y) en (1,1) | gradientes | CUBIERTO | gr L779 (∇ evaluado en punto) + L818 |
+| T5.04 | Química s=ln(zy)/x: dirección máx + D_u en ⟨0,1,2⟩ | gradientes | CUBIERTO | gr L691 (D_u) + L818 (dir. máx) + propuestos contextualizados L1037ss |
+| T5.05 | UGV en colina: dirección de máxima pendiente (suroeste) | gradientes | CUBIERTO | gr L1050 (montaña) + L1037 (insecto colina) |
+| T5.06 | D_u de xy²z³ en (1,1,1), v=⟨2,1,−2⟩ | gradientes | PARCIAL | gr L691 (D_u solo en 2 var) + L818c (∇ 3 var); falta D_u con vector dado en 3 variables |
+| T5.07 | D_u de e^x sen y en (0,π/4), v=i−j | gradientes | CUBIERTO | gr L645 (example idéntico salvo v) + L691b (e^x cos y, v=⟨1,−1⟩) |
+| T5.08 | Máx D_u de √(x²+y²) en (3,4) | gradientes | CUBIERTO | gr L818 (dirección y tasa máxima, 3 incisos) |
+| T5.09 | ∇f=0 para x²+y²−4x+6y | gradientes | CUBIERTO | mi L909a + L920 (críticos de cuadráticas) |
+| T5.10 | Ángulo entre ∇f y ∇g en (1,1) | gradientes | FALTA | no hay problema de ángulo entre dos gradientes |
+| T5.11 | Críticos de x²+2y²−4x+8y | multiplicadores | CUBIERTO | mi L224 (example) + propuesto L920 |
+| T5.12 | Críticos de x²+y²−4x+6y+10 | multiplicadores | CUBIERTO | mi L224 + L920 |
+| T5.13 | Máx crecimiento de √(x²+y²+z²) en (3,4,12) | gradientes | CUBIERTO | gr L818c (dir. y tasa máx en 3 variables) |
+| T5.14 | D_u de arctan(y/x) hacia el origen | gradientes | CUBIERTO | gr L779a (D_u en dirección de P a Q) |
+| T5.15 | Críticos de x³+y³−3xy+5 (silla + mínimo) | multiplicadores | CUBIERTO | mi L920 item 3 (x³+y³−3xy, idéntico salvo constante) |
+| T5.16 | Plano tangente a x²+2y²+3z²=23/3 vía ∇ | gradientes | CUBIERTO | gr L964 (prob a-b-c) + example L916 |
+| T5.17 | Insecto en caja: T=xyz(1−x)(2−y)(3−z), enfriarse máx | gradientes | CUBIERTO | gr L1059, L1073 (insecto enfriarse) + L1037 (3 var) |
+| T5.18 | Montañeros T=ln(3xy+2x²−y): 3 incisos (dirección, D_u, nivel) | gradientes | PARCIAL | gr L1037/L691 cubren 2 incisos; falta inciso "dirección sin cambio de T" (tangente a curva de nivel) |
+| T5.19 | Reacción T=−x³+4x²y−3y²: 3 incisos | gradientes | PARCIAL | misma carencia que T5.18 |
+| T5.20 | Potencial V=x²+y²+xy+5 en región y=(x−1)²−1, y=x | multiplicadores (extremos en región) | CUBIERTO | mi L572 (placa circular resuelta) + L909 (rect./círculo/triángulo) |
+| T5.21 | Críticos de 4x²−16x+4y²−4y+20 en región (frontera 3 tramos) | multiplicadores | CUBIERTO | mi L909c (triángulo, 3 tramos) + example L572 |
+| T5.22 | Hallar a,b: D_u máx = 3√2 en bisectriz, f=e^{ax+by}cos(x+y) | gradientes | FALTA | sin equivalente (problema inverso de parámetros) |
+| T5.23 | ¿∃ u con D_u f=√2? (respuesta: no existe) | gradientes | FALTA | no hay problema sobre el rango \|D_u f\|≤‖∇f‖ |
+| T5.24 | Extremos absolutos de x²+xy+y² en disco cerrado | multiplicadores | CUBIERTO | mi L909b (xy en disco) + example L572 |
+| T5.25 | ∇f(1,2) a partir de dos direccionales dadas | gradientes | FALTA | sin equivalente (reconstruir ∇f desde dos D_u, sistema lineal) |
+| T5.26 | Críticos de (x²+y²)e^{−(x²+y²)}: mín absoluto + máx en circunferencia | multiplicadores | PARCIAL | mi L224/L920 (críticos libres); falta función radial con máximos en toda una circunferencia |
+| T5.27 | Paralelepípedo inscrito en 16x²+4y²+9z²=144 | multiplicadores | PARCIAL | mi L982 (caja máx con restricción de área vía Lagrange); falta caja inscrita en elipsoide (cf. T6.09) |
+| T5.28 | Vector normal a z=4x²+9y² en (1,1,13) | gradientes | CUBIERTO | gr L916 (example) + L964 |
+| T5.29 | Plano tangente a xyz=1 en (1,1,1) | gradientes | CUBIERTO | gr L964c + pt L1036 (x²y+y²z+z²x=3 en (1,1,1)) |
+| T5.30 | Recta normal a z=x²y en (2,1,4) (ecs. simétricas) | gradientes | CUBIERTO | gr L964 (rectas normales en forma simétrica) |
+| T5.31 | Toda normal a la esfera pasa por el origen | gradientes | FALTA | sin equivalente (propiedad general demostrativa) |
+| T5.32 | Ortogonalidad esfera x²+y²+z²=25 y cono x²+y²−z²=0 | gradientes | FALTA | no hay problemas de superficies ortogonales (∇F⊥∇G en la intersección) |
 
 ### T6 — Optimización, Lagrange, int. dobles → `multiplicadoresintdobles.tex`
 
