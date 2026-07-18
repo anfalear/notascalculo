@@ -217,19 +217,19 @@ llena Claude Code en Fase A. Veredictos: `CUBIERTO` / `PARCIAL` / `FALTA`.
 
 | ID | Descriptor | Destino | Veredicto | Ref |
 |---|---|---|---|---|
-| T8.01 | Verificar Green: F=(2x³−y³, x³+y³) en anillo 1≤x²+y²≤4 | cap34 §Green | | |
-| T8.02 | Green con curva abierta (t,sen t): cerrar con segmento, orientación | cap34 §Green | | |
-| T8.03 | Identidad div(F×G)=G·rotF−F·rotG (ojo: verificar signo) | cap34 §Div y rot | | |
-| T8.04 | f(x,y,z)=∫_C F con C segmento al punto: hallar f y probar ∇f=F | cap33 §Conservativos | | |
-| T8.05 | ∫ de línea escalar: x+cos²z sobre hélice | cap33 §Línea escalar | | |
-| T8.06 | Campo conservativo → potencial → TFC de línea | cap33 §Conservativos | | |
-| T8.07 | ∭(x²+y²): paraboloide x²+y²=2z y plano z=2 (cilíndricas + Jacobiano) | inttriples | | |
-| T8.08 | Volumen: cono z²=x²+y² ∩ esfera x²+y²+z²=4 (esféricas) | inttriples | | |
-| T8.09 | Volumen: z=x²+3y² y z=12−x²/3 | inttriples o multiplicadores | | |
-| T8.10 | Volumen: z=√x, z=0, y∈[0,3], x+z=2 | inttriples | | |
-| T8.11 | Tetraedro (0,0,0),(⅓,0,0),(0,1,0),(0,0,1): volumen | inttriples | | |
-| T8.12 | Centro de masa del cubo unitario, ρ=x²+y²+z² | inttriples §Masa | | |
-| T8.13 | Centro de masa: y=x², y=3, z=0, z=6−⅔y², ρ=x | inttriples §Masa | | |
+| T8.01 | Verificar Green: F=(2x³−y³, x³+y³) en anillo 1≤x²+y²≤4 | cap34 §Green | PARCIAL | c34 L168 (verificación en disco) + L1391 (rectángulo); falta Green en anillo (región múltiplemente conexa, cf. c33 L920) |
+| T8.02 | Green con curva abierta (t,sen t): cerrar con segmento, orientación | cap34 §Green | FALTA | no hay Green cerrando una curva abierta con un segmento auxiliar |
+| T8.03 | Identidad div(F×G)=G·rotF−F·rotG (ojo: verificar signo) | cap34 §Div y rot | PARCIAL | c34 L1418 (identidad div(rot F)=0 propuesta); falta div(F×G)=G·(∇×F)−F·(∇×G) — al insertarla, corregir signo respecto al taller |
+| T8.04 | f(x,y,z)=∫_C F con C segmento al punto: hallar f y probar ∇f=F | cap33 §Conservativos | PARCIAL | c33 L728, L841 (potencial por integración parcial + TFC); falta construir f como integral de línea sobre segmento |
+| T8.05 | ∫ de línea escalar: x+cos²z sobre hélice | cap33 §Línea escalar | CUBIERTO | c33 L375 (example hélice) + L861 (masa de alambre helicoidal) + c34 L1372 |
+| T8.06 | Campo conservativo → potencial → TFC de línea | cap33 §Conservativos | CUBIERTO | c33 L728 (example con el flujo completo) + L812, L841; c34 L414 |
+| T8.07 | ∭(x²+y²): paraboloide x²+y²=2z y plano z=2 (cilíndricas + Jacobiano) | inttriples | CUBIERTO | it L538 (cilíndricas, integrando x²+y²) + example L514 (paraboloide) |
+| T8.08 | Volumen: cono z²=x²+y² ∩ esfera x²+y²+z²=4 (esféricas) | inttriples | CUBIERTO | it L672 (misma región esfera∩cono en esféricas) + L754 |
+| T8.09 | Volumen: z=x²+3y² y z=12−x²/3 | inttriples o multiplicadores | PARCIAL | it L802, L811 (paraboloide-plano); falta volumen entre dos paraboloides (proyección por igualación) |
+| T8.10 | Volumen: z=√x, z=0, y∈[0,3], x+z=2 | inttriples | PARCIAL | it L69, L321 (volúmenes rectangulares con planos); falta sólido con techo mixto (z=√x y plano) que exige partir la región |
+| T8.11 | Tetraedro (0,0,0),(⅓,0,0),(0,1,0),(0,0,1): volumen | inttriples | CUBIERTO | it L69 (example tetraedro) + propuestos L797, L807 |
+| T8.12 | Centro de masa del cubo unitario, ρ=x²+y²+z² | inttriples §Masa | CUBIERTO | it L711 (∭(x²+y²+z²) sobre el cubo = masa) + L222, L724 (centro de masa) |
+| T8.13 | Centro de masa: y=x², y=3, z=0, z=6−⅔y², ρ=x | inttriples §Masa | PARCIAL | it L222 (centro de masa con ρ constante) + L775 (ρ variable solo planteado/CAS); falta centro de masa 3D con ρ variable resuelto a mano |
 
 ### EX — Examen Final Nov-2025 (Tema 2)
 
