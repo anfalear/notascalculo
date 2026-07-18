@@ -437,7 +437,7 @@ valores y redacción nuevos). Por D2/D5: toda figura es TikZ según `figuras_gui
 - Figura: NO
 - Estimación: S
 
-### F9T.06 — [origen: EX.09] [destino: inttriples.tex, §Coordenadas esféricas, tras el prob L672]
+### F9T.06 — HECHO (2026-07-18) — [origen: EX.09] [destino: inttriples.tex, §Coordenadas esféricas, tras el prob L672]
 - Tipo: prob resuelto
 - Enunciado: volumen (o ∭ f) de la región dentro de ρ=a, fuera de ρ=a·cosφ, sobre el plano xy (isomorfo de EX.09).
 - Solución: región: φ∈[0,π/2], ρ∈[a cosφ, a] → ∭ρ²senφ → integrar en ρ, luego φ, luego θ.
