@@ -409,7 +409,7 @@ valores y redacción nuevos). Por D2/D5: toda figura es TikZ según `figuras_gui
 - Figura: SÍ → F9T.01f: curva de nivel por el punto, ∇T y las dos direcciones tangentes (TikZ 2D).
 - Estimación: M
 
-### F9T.02 — [origen: EX.02] [destino: inttriples.tex, §Coordenadas esféricas, tras la definición L566]
+### F9T.02 — HECHO (2026-07-18) — [origen: EX.02] [destino: inttriples.tex, §Coordenadas esféricas, tras la definición L566]
 - Tipo: ambos
 - Enunciado: identifique la superficie cartesiana dada por la ecuación esférica ρ sen²φ = c·cosφ (isomorfo; resultado: paraboloide). Propuestos: ρ=c·cosφ (esfera desplazada), φ=c (cono).
 - Solución: multiplicar por ρ → ρ²sen²φ=ρcosφ·c → x²+y²=cz → identificar.

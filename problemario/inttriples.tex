@@ -619,6 +619,37 @@ dV = \rho^2\sen\varphi\,d\rho\,d\varphi\,d\theta.
 \label{fig:coordenadas_esfericas}
 \end{figure}
 
+% [F9T.02 | origen: EX.02 | identificar superficie cartesiana desde ecuacion esferica]
+\begin{prob}
+Identifique la superficie descrita por la ecuación esférica
+\[
+\rho\,\sen^2\varphi = 4\cos\varphi
+\]
+y escríbala en coordenadas cartesianas.
+\begin{myproof}
+\textbf{Paso 1. Estrategia.}
+Se busca reescribir la ecuación en términos de las combinaciones $\rho^2=x^2+y^2+z^2$, $\rho\sen\varphi\cos\theta=x$, $\rho\sen\varphi\sen\theta=y$ y $\rho\cos\varphi=z$. Como aparece $\sen^2\varphi$ pero solo un factor $\rho$, conviene multiplicar ambos lados por $\rho$.
+
+\textbf{Paso 2. Multiplicar por $\rho$.}
+\[
+\rho^2\sen^2\varphi = 4\rho\cos\varphi.
+\]
+El lado izquierdo es $(\rho\sen\varphi)^2 = x^2+y^2$ y el lado derecho es $4z$:
+\[
+x^2+y^2 = 4z.
+\]
+(Multiplicar por $\rho$ solo agrega el punto $\rho=0$, que ya satisface la ecuación cartesiana: el origen pertenece a la superficie.)
+
+\textbf{Paso 3. Identificar la superficie.}
+La ecuación $x^2+y^2=4z$ es un \textbf{paraboloide circular} con vértice en el origen, eje sobre el eje $z$ y apertura hacia arriba.
+
+\textbf{Paso 4. Resultado.}
+\[
+\boxed{x^2+y^2=4z:\ \text{paraboloide circular con vértice en el origen y eje }z.}
+\]
+\end{myproof}
+\end{prob}
+
 \begin{theorem}[Integral triple en coordenadas esféricas]
 Si $D$ se describe como $\alpha\le\theta\le\beta$, $\varphi_1\le\varphi\le\varphi_2$, $0\le\rho\le g(\varphi,\theta)$, entonces
 \[
@@ -709,6 +740,16 @@ I_\varphi = \frac12\!\int_0^{\pi/4}\!\sen2\varphi\,d\varphi
 % Básico
 \begin{prob}
 Evaluar \(\iiint_D (x^2 + y^2 + z^2)\,dV\), donde \(D\) es el cubo \([0,1]^3\).
+\end{prob}
+
+% [F9T.02 | propuesto | identificacion de superficies esfericas]
+\begin{prob}
+Identifique la superficie cartesiana correspondiente a cada ecuación esférica. Justifique cada paso del cambio de coordenadas.
+\begin{enumerate}[a)]
+    \item $\rho=6\cos\varphi$
+    \item $\varphi=\dfrac{\pi}{4}$
+    \item $\rho\,\sen\varphi=3$
+\end{enumerate}
 \end{prob}
 
 \begin{prob}
