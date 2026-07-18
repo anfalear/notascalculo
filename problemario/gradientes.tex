@@ -849,6 +849,74 @@ Dirección: $\langle 1,1,2\rangle$. Tasa máxima: $\|\langle 1,1,2\rangle\|=\box
 \end{myproof}
 \end{prob}
 
+% [F9T.01 | origen: EX.07, T5.18, T5.19 | direcciones con derivada direccional nula]
+\begin{prob}
+La temperatura en una placa metálica está dada por $T(x,y)=80xy^2$, en grados Celsius. Desde el punto $P(2,-3)$:
+\begin{enumerate}[a)]
+    \item Halle todas las direcciones unitarias $\mathbf{u}$ en las que la derivada direccional es cero, es decir, $D_{\mathbf{u}}T(P)=0$.
+    \item Interprete geométricamente esas direcciones en relación con la curva de nivel de $T$ que pasa por $P$.
+\end{enumerate}
+\begin{myproof}
+\textbf{Paso 1. Gradiente en $P$.}
+\[
+\nabla T(x,y)=\langle 80y^2,\,160xy\rangle
+\implies \nabla T(2,-3)=\langle 720,\,-960\rangle=240\,\langle 3,-4\rangle.
+\]
+
+\textbf{Paso 2 (a). Condición $D_{\mathbf{u}}T(P)=0$.}
+Para $\mathbf{u}=\langle u_1,u_2\rangle$ unitario,
+\[
+D_{\mathbf{u}}T(P)=\nabla T(P)\cdot\mathbf{u}
+=240\,(3u_1-4u_2)=0
+\implies 3u_1=4u_2.
+\]
+Tomando $u_1=4t$, $u_2=3t$ y exigiendo $\|\mathbf{u}\|=1$: $25t^2=1$, luego $t=\pm\tfrac{1}{5}$. Hay exactamente dos direcciones, opuestas entre sí:
+\[
+\mathbf{u}_1=\left\langle \tfrac{4}{5},\,\tfrac{3}{5}\right\rangle,\qquad
+\mathbf{u}_2=\left\langle -\tfrac{4}{5},\,-\tfrac{3}{5}\right\rangle.
+\]
+
+\textbf{Paso 3 (b). Interpretación geométrica.}
+Ambas direcciones son perpendiculares a $\nabla T(P)$: son las direcciones \emph{tangentes} a la curva de nivel $T(x,y)=T(2,-3)=1440$, es decir, $xy^2=18$. Moverse a lo largo de la curva de nivel es la única forma de que la temperatura no cambie instantáneamente: el gradiente es normal a la curva de nivel y la derivada direccional se anula exactamente en las direcciones tangentes a ella.
+
+\textbf{Paso 4. Resultado.}
+\[
+\boxed{\mathbf{u}=\pm\left\langle \tfrac{4}{5},\,\tfrac{3}{5}\right\rangle:\ \text{las dos direcciones tangentes a la curva de nivel }xy^2=18\text{ en }P.}
+\]
+\end{myproof}
+\end{prob}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=0.85]
+    % Ejes
+    \draw[thin,->] (-0.5,0) -- (5.8,0) node[right] {$x$};
+    \draw[thin,->] (0,-4.9) -- (0,0.6) node[above] {$y$};
+    % Curva de nivel xy^2=18 (x=18/y^2), y in [-4.6,-1.9]
+    \draw[thick, blue!70!black, variable=\t, domain=-4.6:-1.9, samples=50, smooth]
+        plot ({18/(\t*\t)},{\t});
+    \node[anchor=west, blue!70!black] at (5.05,-1.9)
+        {\small $xy^2=18$};
+    % Punto P(2,-3)
+    \filldraw[red!70!black] (2,-3) circle (2pt);
+    \node[anchor=north east, red!70!black] at (1.9,-3.05) {\small $P(2,-3)$};
+    % Gradiente: direccion (3,-4)/5, escala 1.0
+    \draw[->, thick, red!70!black] (2,-3) -- (2.6,-3.8);
+    \node[anchor=west, red!70!black] at (2.65,-3.85) {\small $\nabla T$};
+    % Direcciones con D_u T = 0: +-(4,3)/5, escala 1.0
+    \draw[->, thick, red!70!black, dashed] (2,-3) -- (2.8,-2.4);
+    \node[anchor=west, red!70!black] at (2.85,-2.35) {\small $\mathbf{u}_1$};
+    \draw[->, thick, red!70!black, dashed] (2,-3) -- (1.2,-3.6);
+    \node[anchor=east, red!70!black] at (1.15,-3.65) {\small $\mathbf{u}_2$};
+    % Marcas de eje
+    \foreach \xv in {1,2,3,4,5}
+        \draw[thin] (\xv,0.07)--(\xv,-0.07) node[above] {\small $\xv$};
+    \foreach \yv in {-1,-2,-3,-4}
+        \draw[thin] (0.07,\yv)--(-0.07,\yv) node[left] {\small $\yv$};
+\end{tikzpicture}
+\caption{Direcciones $\mathbf{u}_1$, $\mathbf{u}_2$ con derivada direccional nula en $P(2,-3)$: son tangentes a la curva de nivel $xy^2=18$ (azul) y perpendiculares a $\nabla T(P)$}
+\label{fig:du_nula_curva_nivel}
+\end{figure}
 
 %%----------------------------------------------------------
 \section{Relación del plano tangente y la recta normal con el gradiente}
@@ -1071,6 +1139,16 @@ La temperatura de una placa en un punto $(x,y)$ está dada por la función $$T(x
 
 \begin{prob}
 Considere una placa rectangular comprendida por el plano $xy$ cuya temperatura está dada por $T(x,y)=5+x^{2}+5y^{2}$ para cada punto $(x,y).$ Determine la dirección que un insecto seguiría, empezando en el punto $(A,A+1)$ con el fin de enfriarse lo más rápido posible. Justifique su respuesta.
+\end{prob}
+
+% [F9T.01 | propuesto | origen: T5.18, T5.19 | 3 incisos con direccion sin cambio]
+\begin{prob}
+Durante una reacción química sobre una placa, la temperatura en cada punto es $T(x,y)=-2x^3+6x^2y-5y^2.$ Un sensor se encuentra en el punto $(1,1).$
+\begin{enumerate}[a)]
+    \item ¿En qué dirección debe desplazarse el sensor para que la temperatura aumente lo más rápido posible, y cuál es esa tasa máxima de cambio?
+    \item Calcule la derivada direccional de $T$ en $(1,1)$ en la dirección del vector $\mathbf{v}=\langle 3,-4\rangle.$
+    \item Halle todas las direcciones en las que la temperatura no cambia instantáneamente y explique su relación con la curva de nivel de $T$ que pasa por $(1,1).$
+\end{enumerate}
 \end{prob}
 
 \begin{prob}

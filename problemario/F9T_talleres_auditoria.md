@@ -402,7 +402,7 @@ valores y redacción nuevos). Por D2/D5: toda figura es TikZ según `figuras_gui
 
 ### Prioridad 1 — Examen final
 
-### F9T.01 — [origen: EX.07, T5.18, T5.19] [destino: gradientes.tex, §Derivada direccional, tras L850]
+### F9T.01 — HECHO (2026-07-18) — [origen: EX.07, T5.18, T5.19] [destino: gradientes.tex, §Derivada direccional, tras L850]
 - Tipo: ambos
 - Enunciado: la temperatura de una placa es T(x,y)=kxy² (valores isomorfos). En un punto dado, halle TODAS las direcciones u con D_u T=0 e interprete: son las tangentes a la curva de nivel. Propuestos: incisos "dirección sin cambio" estilo T5.18/T5.19.
 - Solución: ∇T en el punto → D_u T=∇T·u=0 → sistema con ‖u‖=1 → dos direcciones opuestas ⊥ ∇T → interpretación geométrica.
