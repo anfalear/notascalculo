@@ -503,7 +503,8 @@ Propuesto (2 incisos) insertado tras el propuesto de la curva plana $\langle t^2
 - Figura: SÍ → F9T.12f: cilindro + plano + curva intersección (pgfplots 3D, shader=flat).
 - Estimación: M
 
-### F9T.13 — [origen: T2.11] [destino: funvectoriales.tex, propuestos]
+### F9T.13 — HECHO (2026-07-21) — [destino: funvectoriales.tex, §Problemas propuestos, tras el propuesto F9T.10 de la hipérbola]
+Propuesto de intersección de dos curvas espaciales con parámetros independientes: $\mathbf r(t)=\langle 2\cos t,2\sen t,3t\rangle$ (hélice) y $\mathbf s(u)=\langle 2,u,u^2\rangle$; se pide hallar todos los puntos de intersección y los parámetros (respuesta interna: $t=0,u=0\to(2,0,0)$; se pinza $t$ desde $\cos t=1$, $u$ desde la 2.ª y se verifica la 3.ª). Sugerencia explícita sobre parámetros independientes + verificar la tercera ecuación. Sin figura. Compilación 800 pp, 0 errores, 2 pasadas.
 - Tipo: propuesto
 - Enunciado: determine si las curvas r(t) y s(u) (componentes trigonométricas tipo taller) se intersectan y halle los puntos de intersección (parámetros independientes).
 - Solución: igualar componente a componente con parámetros distintos → resolver el sistema → verificar en la tercera componente.
