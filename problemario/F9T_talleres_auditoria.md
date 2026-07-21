@@ -479,7 +479,8 @@ Nueva subsección «Cilindros» (mini-teoría: ecuación sin una variable → ge
 - Figura: SÍ → F9T.09f: cilindro elíptico en 3D (pgfplots, shader=flat, samples≤20).
 - Estimación: M
 
-### F9T.10 — [origen: T1.11] [destino: funvectoriales.tex, §Funciones vectoriales (curvas), propuestos]
+### F9T.10 — HECHO (2026-07-21) — [origen: T1.11] [destino: funvectoriales.tex, §Problemas propuestos, junto al propuesto de curvas paramétricas]
+Propuesto (2 incisos) insertado tras el propuesto de la curva plana $\langle t^2-t,t^3\rangle$: dada $\mathbf{f}(t)=\langle a\sinh t, b+c\cosh t\rangle$ ($a,c>0$), (a) por $\cosh^2-\sinh^2=1$ mostrar que la imagen es una hipérbola y hallar su ecuación cartesiana; (b) identificar la rama vía el signo de $\cosh t$. Notación: se usa `\sinh`/`\cosh` (convención del libro en apintegral.tex; no existe macro `\senh`). Sin figura. Compilación 798 pp, 0 errores, 2 pasadas.
 - Tipo: propuesto
 - Enunciado: muestre que f(t)=(a·sinh t, b+c·cosh t) recorre una rama de hipérbola (identidad cosh²−sinh²=1) e indique cuál rama.
 - Solución: despejar sinh/cosh → identidad → hipérbola; cosh t≥1 selecciona la rama.
