@@ -461,7 +461,9 @@ Nueva subsección de repaso (párrafo de clasificación por signos de A,B) + pro
 - Figura: SÍ → F9T.07f: hipérbola con asíntotas y focos (TikZ 2D).
 - Estimación: M
 
-### F9T.08 — [origen: T1.03] [destino: funvectoriales.tex, §Cuádricas (trazas), junto a paraboloides]
+### F9T.08 — HECHO (2026-07-21) — [origen: T1.03] [destino: funvectoriales.tex, propuestos §Intermedio, junto al propuesto de cónica de F9T.07]
+Propuesto isomorfo de T1.03 `Problema 17.67`: paraboloide −4x²+9y²=36z, traza x=0 → y²=4z → parábola vértice (0,0,0), foco (0,0,1), directriz z=−1 (4p=4, p=1, números limpios). Solo propuesto, sin figura. Compilación 798 pp, 0 errores, 2 pasadas. Verificado visualmente p. 424.
+
 - Tipo: propuesto
 - Enunciado: para el paraboloide −a x²+b y²=c z, halle la traza con x=0 e identifique vértice, foco y directriz de la parábola resultante.
 - Solución: sustituir → parábola canónica → 4p → elementos.
