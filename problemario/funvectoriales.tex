@@ -400,6 +400,112 @@ Regla de la cadena en las tres componentes:
 \end{myproof}
 \end{prob}
 
+\begin{prob}[Recta tangente y desprendimiento por la tangente]
+Una partícula se mueve en el plano siguiendo la trayectoria
+\[
+  \mathbf{r}(t)=\langle t^2+1,\; t^3-4t\rangle, \qquad t\ge 0,
+\]
+donde $t$ se mide en segundos.
+\begin{enumerate}[a)]
+  \item Halle la ecuación de la recta tangente a la trayectoria en el
+        instante $t=2$.
+  \item En el instante $t=2$ la partícula se desprende de la trayectoria y
+        continúa en línea recta con la velocidad (constante) que tenía en
+        ese instante. Determine su posición en $t=3$.
+\end{enumerate}
+\begin{myproof}
+\textbf{Paso 1: Vector velocidad.}
+Derivando componente a componente,
+\[
+  \mathbf{r}'(t)=\langle 2t,\; 3t^2-4\rangle.
+\]
+
+\textbf{Paso 2: Punto y velocidad en $t=2$.}
+\[
+  \mathbf{r}(2)=\langle 2^2+1,\; 2^3-4\cdot 2\rangle=\langle 5,\,0\rangle,
+  \qquad
+  \mathbf{r}'(2)=\langle 2\cdot 2,\; 3\cdot 2^2-4\rangle=\langle 4,\,8\rangle.
+\]
+
+\textbf{Paso 3: Recta tangente (apartado a).}
+La recta tangente pasa por $\mathbf{r}(2)=(5,0)$ con vector director
+$\mathbf{r}'(2)=\langle 4,8\rangle$:
+\[
+  \mathbf{L}(s)=\mathbf{r}(2)+s\,\mathbf{r}'(2)
+              =\langle 5+4s,\; 8s\rangle, \qquad s\in\mathbb{R}.
+\]
+Eliminando el parámetro ($s=y/8$ y $x=5+4\cdot y/8$) se obtiene la forma
+cartesiana
+\[
+  \boxed{\,y=2(x-5)=2x-10.\,}
+\]
+
+\textbf{Paso 4: Posición tras el desprendimiento (apartado b).}
+A partir de $t=2$ la partícula viaja con velocidad constante
+$\mathbf{r}'(2)$; su posición es
+\[
+  \mathbf{p}(t)=\mathbf{r}(2)+(t-2)\,\mathbf{r}'(2).
+\]
+En $t=3$ ha transcurrido $\Delta t=1\ \text{s}$, de modo que
+\[
+  \mathbf{p}(3)=\langle 5,0\rangle+(1)\langle 4,8\rangle
+              =\boxed{\langle 9,\,8\rangle.}
+\]
+\end{myproof}
+\end{prob}
+
+\begin{rem}
+El rayo de escape y la recta tangente son la \emph{misma} recta
+(figura~\ref{fig:recta_tangente_escape}); lo que cambia es el papel del
+parámetro: en el apartado (a) $s$ recorre toda la recta, mientras que en (b)
+el desplazamiento real es $(t-2)\,\mathbf{r}'(2)$, proporcional al tiempo
+transcurrido desde el desprendimiento.
+\end{rem}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+  width=11cm, height=9cm,
+  axis lines=middle,
+  xlabel={$x$}, ylabel={$y$},
+  xlabel style={anchor=west}, ylabel style={anchor=south},
+  xmin=-0.5, xmax=10, ymin=-4, ymax=9,
+  xtick={2,5,9}, ytick={-3,8},
+  tick label style={font=\small},
+  clip=false,
+]
+  % trayectoria r(t)
+  \addplot[domain=0:2.25, samples=80, smooth, very thick, blue!70!black]
+    ({x^2+1}, {x^3-4*x});
+  % extensión hacia atrás de la tangente
+  \draw[dashed, red!70!black]
+    (axis cs:5,0) -- (axis cs:3.8,-2.4);
+  % rayo de escape = vector velocidad r'(2)
+  \draw[->, very thick, red!70!black]
+    (axis cs:5,0) -- (axis cs:9,8);
+  % puntos
+  \addplot[only marks, mark=*, mark size=2pt, black]
+    coordinates {(5,0)};
+  \addplot[only marks, mark=*, mark size=2pt, red!70!black]
+    coordinates {(9,8)};
+  % etiquetas
+  \node[anchor=north west] at (axis cs:5,0) {$P=\mathbf{r}(2)$};
+  \node[anchor=west] at (axis cs:9,8)
+    {$\mathbf{r}(2)+\mathbf{r}'(2)$};
+  \node[anchor=north west, red!70!black] at (axis cs:7,4)
+    {$\mathbf{r}'(2)=\langle 4,8\rangle$};
+  \node[anchor=north east, blue!70!black] at (axis cs:2,-3)
+    {$\mathbf{r}(t)$};
+\end{axis}
+\end{tikzpicture}
+\caption{Trayectoria $\mathbf{r}(t)=\langle t^2+1,\,t^3-4t\rangle$ (azul),
+punto de desprendimiento $P=\mathbf{r}(2)=(5,0)$ y rayo tangente (rojo) que
+sigue la partícula con velocidad $\mathbf{r}'(2)=\langle 4,8\rangle$ hasta
+$(9,8)$ en $t=3$.}
+\label{fig:recta_tangente_escape}
+\end{figure}
+
 \subsection{Reglas de derivación para funciones vectoriales}
 
 Las siguientes reglas operativas son consecuencia directa de la
@@ -1668,6 +1774,16 @@ Calcular las siguientes integrales definidas e indefinidas:
 Encontrar la función longitud de arco $s(t)$ para $\mathbf{r}(t) = \langle t,\; t^2 \rangle$
 desde $t=0$. Reparametrizar la curva en términos de $s$ (expresar el
 resultado como integral si no es posible hallar una forma elemental).
+\end{prob}
+
+\begin{prob}
+Una partícula recorre la curva plana $\mathbf{r}(t)=\langle t^2-t,\; t^3\rangle$.
+\begin{enumerate}[a)]
+  \item Halle la recta tangente a la trayectoria en $t=1$.
+  \item Si en $t=1$ la partícula se suelta y continúa en línea recta con la
+        velocidad constante que tenía en ese instante, ¿en qué punto se
+        encuentra en $t=2$?
+\end{enumerate}
 \end{prob}
 
 \begin{prob}

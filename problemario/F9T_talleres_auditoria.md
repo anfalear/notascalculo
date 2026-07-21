@@ -416,7 +416,9 @@ valores y redacción nuevos). Por D2/D5: toda figura es TikZ según `figuras_gui
 - Figura: NO
 - Estimación: S
 
-### F9T.03 — [origen: EX.03, T2.03] [destino: funvectoriales.tex, §Funciones vectoriales (derivada), tras L325]
+### F9T.03 — HECHO (2026-07-21) — [origen: EX.03, T2.03] [destino: funvectoriales.tex, §Derivada de una función vectorial, tras el prob de derivadas L401]
+Prob resuelto `Problema 17.14` (r(t)=⟨t²+1,t³−4t⟩; t=2: r(2)=⟨5,0⟩, r'(2)=⟨4,8⟩; recta y=2x−10; posición en t=3 = ⟨9,8⟩) con protocolo 4 pasos + `rem` + figura TikZ `fig:recta_tangente_escape` (Fig. 17.2, p. 405). Propuesto isomorfo (r(t)=⟨t²−t,t³⟩, t=1: tangente y=3x+1, posición en t=2 = ⟨1,4⟩) tras el prob de longitud de arco. Compilación 794 pp, 0 errores, 2 pasadas. Verificado visualmente pp. 404–405.
+
 - Tipo: ambos
 - Enunciado: (i) recta tangente a r(t) en t=t₀ (cierra T2.03); (ii) una partícula abandona la trayectoria en t=t₀ y sigue por la tangente a velocidad constante: posición en t=t₁ (isomorfo de EX.03).
 - Solución: r'(t₀) → recta L(s)=r(t₀)+s·r'(t₀) → posición = r(t₀)+(t₁−t₀)r'(t₀).
@@ -793,6 +795,10 @@ valores y redacción nuevos). Por D2/D5: toda figura es TikZ según `figuras_gui
   Gana el `.tex`: T6.15–T6.21 se auditaron contra `apintdobles.tex` (abreviado `ai`).
   Lo mismo aplicará a EX.04 y EX.10 (área de superficie está en `apintdobles.tex` §Área
   de una superficie, L933).
+- **H2 (F9T.03, 2026-07-21):** `funvectoriales.tex` L85 tiene un `\sin` (en el `\caption`
+  de la hélice) — única ocurrencia del archivo frente a 51 de `\sen`; inconsistencia de
+  notación preexistente, fuera del alcance de F9T.03. No se corrigió (contrato: no editar
+  contenido ajeno al ítem). Pendiente de la ejecución global de E3 (`\sin`→`\sen`).
 
 ---
 
