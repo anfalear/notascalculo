@@ -425,7 +425,9 @@ Prob resuelto `Problema 17.14` (r(t)=⟨t²+1,t³−4t⟩; t=2: r(2)=⟨5,0⟩, 
 - Figura: SÍ → F9T.03f: curva, punto de salida y rayo tangente (TikZ 2D o pgfplots 3D según curva elegida).
 - Estimación: M
 
-### F9T.04 — [origen: EX.04] [destino: apintdobles.tex, §Integrales dobles en polares, tras L1184]
+### F9T.04 — HECHO (2026-07-21) — [origen: EX.04] [destino: apintdobles.tex, §Integrales dobles en coordenadas polares, tras el prob «Cambio a polares» del cuarto de disco L1184]
+Prob resuelto `Problema 31.36` (Cambio a polares en región no circular): I=∫₀²∫_{x²/2}^{x} x dy dx; recta y=x → θ=π/4, parábola y=x²/2 → r=2tanθsecθ; I=2/3 verificado por polares Y por cartesianas (cruce). Protocolo 4 pasos + figura TikZ `fig:cambio_polar_no_circular` (Fig. 31.7, p. 693, región lens con rayo genérico θ). Propuesto isomorfo (región entre y=x y y=√x) entre los propuestos polares. Compilación 796 pp, 0 errores, 2 pasadas. Verificado visualmente pp. 692–693.
+
 - Tipo: ambos
 - Enunciado: convierta ∫₀¹∫_{x²}^{x} f dy dx a coordenadas polares (isomorfo): región entre recta y parábola → límites r desde 0 hasta r=tanθ·secθ y θ∈[0,π/4].
 - Solución: describir región → recta y=x: θ=π/4; parábola y=x²: r sinθ=r²cos²θ → r=tanθ secθ → armar la integral.
@@ -799,6 +801,9 @@ Prob resuelto `Problema 17.14` (r(t)=⟨t²+1,t³−4t⟩; t=2: r(2)=⟨5,0⟩, 
   de la hélice) — única ocurrencia del archivo frente a 51 de `\sen`; inconsistencia de
   notación preexistente, fuera del alcance de F9T.03. No se corrigió (contrato: no editar
   contenido ajeno al ítem). Pendiente de la ejecución global de E3 (`\sin`→`\sen`).
+- **H3 (F9T.04, 2026-07-21):** `apintdobles.tex` mezcla notación: 81 `\sen` vs 17 `\sin`
+  (varios en captions y en el cuerpo). Contenido nuevo de F9T.04 usa `\sen`; el resto es
+  inconsistencia preexistente para la ejecución global de E3, no se tocó.
 
 ---
 

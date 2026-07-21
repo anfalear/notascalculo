@@ -1183,6 +1183,106 @@ Reescriba la integral \(\displaystyle \int_0^1\int_0^{\sqrt{1-x^2}} \sqrt{x^2+y^
 \end{myproof}
 \end{prob}
 
+\begin{prob}[Cambio a polares en una región no circular]
+Considere la integral $\displaystyle I=\int_0^2\int_{x^2/2}^{x} x\,dy\,dx$.
+\begin{enumerate}[a)]
+  \item Describa y dibuje la región de integración $R$.
+  \item Exprese $I$ en coordenadas polares.
+  \item Evalúe $I$ y verifíquelo calculando la integral en coordenadas
+        cartesianas.
+\end{enumerate}
+\begin{myproof}
+\textbf{Paso 1. Identificar la región.} Los límites $x^2/2\le y\le x$ con
+$x\in[0,2]$ describen la región comprendida entre la parábola $y=x^2/2$
+(frontera inferior) y la recta $y=x$ (frontera superior). Ambas curvas pasan
+por el origen y se cortan de nuevo en $(2,2)$, pues $x^2/2=x\Rightarrow
+x=0,\,2$ (figura~\ref{fig:cambio_polar_no_circular}).
+
+\textbf{Paso 2. Fronteras en polares.} Con $x=r\cos\theta$, $y=r\sen\theta$:
+\begin{itemize}
+  \item La recta $y=x$ equivale a $\tan\theta=1$, es decir $\theta=\pi/4$.
+  \item La parábola $y=x^2/2$ se convierte en
+        $r\sen\theta=\tfrac{1}{2}r^2\cos^2\theta$, de donde
+        $r=\dfrac{2\sen\theta}{\cos^2\theta}=2\tan\theta\sec\theta$.
+\end{itemize}
+El origen es el vértice común, así que para cada ángulo $\theta\in[0,\pi/4]$
+el rayo entra en $r=0$ y sale al cruzar la parábola. Por tanto
+\[
+  R:\quad 0\le\theta\le\frac{\pi}{4},\qquad
+          0\le r\le 2\tan\theta\sec\theta.
+\]
+
+\textbf{Paso 3. Convertir la integral.} Con $x=r\cos\theta$ y
+$dA=r\,dr\,d\theta$:
+\[
+  I=\int_0^{\pi/4}\!\!\int_0^{2\tan\theta\sec\theta}
+    (r\cos\theta)\,r\,dr\,d\theta
+   =\int_0^{\pi/4}\!\!\int_0^{2\tan\theta\sec\theta}
+    r^2\cos\theta\,dr\,d\theta.
+\]
+
+\textbf{Paso 4. Evaluar y verificar.} La integral interior es
+\[
+  \cos\theta\int_0^{2\tan\theta\sec\theta} r^2\,dr
+  =\cos\theta\cdot\frac{(2\tan\theta\sec\theta)^3}{3}
+  =\frac{8}{3}\,\frac{\sen^3\theta}{\cos^5\theta}
+  =\frac{8}{3}\tan^3\theta\sec^2\theta.
+\]
+Como $\dfrac{d}{d\theta}\tan\theta=\sec^2\theta$,
+\[
+  I=\frac{8}{3}\int_0^{\pi/4}\tan^3\theta\sec^2\theta\,d\theta
+   =\frac{8}{3}\left[\frac{\tan^4\theta}{4}\right]_0^{\pi/4}
+   =\frac{8}{3}\cdot\frac14=\frac23.
+\]
+En coordenadas cartesianas se obtiene el mismo valor:
+\[
+  I=\int_0^2 x\Bigl(x-\tfrac{x^2}{2}\Bigr)dx
+   =\int_0^2\Bigl(x^2-\tfrac{x^3}{2}\Bigr)dx
+   =\left[\frac{x^3}{3}-\frac{x^4}{8}\right]_0^2
+   =\frac83-2=\frac23.
+\]
+\[
+  \boxed{\,I=\int_0^{\pi/4}\!\!\int_0^{2\tan\theta\sec\theta}
+    r^2\cos\theta\,dr\,d\theta=\frac23.\,}
+\]
+\end{myproof}
+\end{prob}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.7]
+  % Región sombreada entre la parábola (inferior) y la recta (superior)
+  \fill[blue!12] plot[domain=0:2,samples=60] (\x,{(\x)^2/2}) -- cycle;
+  % Ejes
+  \draw[->,thin] (-0.2,0)--(2.6,0) node[anchor=north west]{$x$};
+  \draw[->,thin] (0,-0.2)--(0,2.5) node[anchor=south east]{$y$};
+  % Recta y=x
+  \draw[thick,blue!70!black] (0,0)--(2.3,2.3);
+  \node[anchor=south,blue!70!black,font=\small] at (1.15,1.30){$y=x$};
+  % Parábola y=x^2/2
+  \draw[thick,blue!70!black,domain=0:2.15,samples=60,smooth]
+     plot (\x,{(\x)^2/2});
+  \node[anchor=west,blue!70!black,font=\small] at (2.02,1.55)
+     {$y=\tfrac{x^2}{2}$};
+  % Rayo genérico de ángulo theta (sale en la parábola)
+  \draw[->,very thick,red!70!black] (0,0)--(1.155,0.667)
+     node[midway,anchor=north west,font=\small]{$r$};
+  % Ángulo theta
+  \draw[thin] (0.4,0) arc(0:30:0.4);
+  \node[font=\small] at (0.56,0.13){$\theta$};
+  % Etiqueta de la región
+  \node[font=\small] at (1.45,1.13){$R$};
+  % Punto de corte
+  \filldraw[black] (2,2) circle(0.02)
+     node[anchor=north west,font=\scriptsize]{$(2,2)$};
+\end{tikzpicture}
+\caption{Región $R$ comprendida entre la recta $y=x$ y la parábola
+  $y=x^2/2$ (isomorfa de la conversión a polares con región no circular).
+  Un rayo genérico de ángulo $\theta\in[0,\pi/4]$ recorre la región desde el
+  origen hasta la parábola, en $r=2\tan\theta\sec\theta$.}
+\label{fig:cambio_polar_no_circular}
+\end{figure}
+
 \begin{prob}[Aplicación combinada]
 Una lámina tiene la forma de la región dentro de la cardioide \(r=1+\cos\theta\) y densidad \(\rho(x,y)=r\) (en polares). Encuentre su masa y su centro de masa. (Sugerencia: use la simetría para determinar \(\bar{x}\), \(\bar{y}\).)
 \begin{myproof}
@@ -1582,6 +1682,12 @@ Evalúe $\displaystyle\iint_D e^{x^2+y^2}\,dA$ donde $D$ es el anillo $1\leq x^2
 
 \begin{prob}
 Considere la región $R$ limitada por las curvas $x^2+y^2=9$ y  $(x - 3)^{2} + y^{2} = 9.$ Use coordenadas polares para calcular la integral $\displaystyle\int\int_{R}  \left(x^2+y^2\right)\ dA$.
+\end{prob}
+
+\begin{prob}
+Reescriba en coordenadas polares la integral
+$\displaystyle\int_0^1\int_{x}^{\sqrt{x}} f(x,y)\,dy\,dx$, cuya región de
+integración está limitada por la recta $y=x$ y la curva $y=\sqrt{x}$.
 \end{prob}
 
 % [Original: líneas 1522-1524 | sin verificar | sin figura]
