@@ -127,28 +127,29 @@
 \ttl@tocsep 
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {17.1}{\ignorespaces Hélice $\mathbf {r}(t)=(\cos t,\sin t,\tfrac {t}{2})$, $t\in [0,2\pi ]$, con vector tangente en $t=\tfrac {\pi }{2}$}}{400}{figure.17.1}%
-\contentsline {figure}{\numberline {17.2}{\ignorespaces Trayectoria $\mathbf {r}(t)=\langle t^2+1,\,t^3-4t\rangle $ (azul), punto de desprendimiento $P=\mathbf {r}(2)=(5,0)$ y rayo tangente (rojo) que sigue la partícula con velocidad $\mathbf {r}'(2)=\langle 4,8\rangle $ hasta $(9,8)$ en $t=3$.}}{405}{figure.17.2}%
-\contentsline {figure}{\numberline {17.3}{\ignorespaces Dominio de $f(x,y)=\frac {\sqrt {x+y}}{\ln (x-y)}$ (región azul): acotado por $y=-x$ (incluida, trazo sólido) y $y=x$ (excluida, rayado), con la recta $y=x-1$ excluida del interior (punteada). El origen no pertenece al dominio.}}{411}{figure.17.3}%
-\contentsline {figure}{\numberline {17.4}{\ignorespaces Dominio de $f(x,y)=\sqrt {-5x^2-5y^2+25}$: disco $x^2+y^2\leq 5$}}{412}{figure.17.4}%
-\contentsline {figure}{\numberline {17.5}{\ignorespaces Dominio de $f(x,y)=\sqrt {-4x^2-y^2+8}$: elipse $4x^2+y^2\leq 8$}}{412}{figure.17.5}%
-\contentsline {figure}{\numberline {17.6}{\ignorespaces Dominio de $f(x,y)=\sqrt {-x^2-3y^2+2}$: elipse $x^2+3y^2\leq 2$}}{413}{figure.17.6}%
-\contentsline {figure}{\numberline {17.7}{\ignorespaces Dominio de $f(x,y)=\sqrt {-3x^2-3y^2+9}$: disco $x^2+y^2\leq 3$}}{413}{figure.17.7}%
-\contentsline {figure}{\numberline {17.8}{\ignorespaces Hipérbola $\dfrac {(x-2)^2}{9}-\dfrac {(y+1)^2}{16}=1$: centro $C(2,-1)$, vértices $V_1,V_2$, focos $F_1,F_2$ y asíntotas $y+1=\pm \tfrac 43(x-2)$.}}{415}{figure.17.8}%
-\contentsline {figure}{\numberline {17.9}{\ignorespaces Paraboloide elíptico $z=x^2+y^2$.}}{415}{figure.17.9}%
-\contentsline {figure}{\numberline {17.10}{\ignorespaces Paraboloide hiperbólico $z=x^2-y^2$ (silla de montar).}}{416}{figure.17.10}%
-\contentsline {figure}{\numberline {17.11}{\ignorespaces Cono circular $z^2=x^2+y^2$, con ambas napas.}}{416}{figure.17.11}%
-\contentsline {figure}{\numberline {17.12}{\ignorespaces Hiperboloide de una hoja $x^2+y^2-z^2=1$.}}{417}{figure.17.12}%
-\contentsline {figure}{\numberline {17.13}{\ignorespaces Hiperboloide de dos hojas $z^2-x^2-y^2=1$.}}{417}{figure.17.13}%
-\contentsline {figure}{\numberline {17.14}{\ignorespaces Cilindro elíptico $\dfrac {(x-2)^2}{9}+\dfrac {(y+1)^2}{4}=1$, con generatrices paralelas al eje $z$.}}{418}{figure.17.14}%
-\contentsline {figure}{\numberline {17.15}{\ignorespaces Paraboloide $z=x^2+y^2$: curvas de nivel $c=1,2,3,4$ en el plano $xy$ (izquierda) y superficie en $\mathbb {R}^3$ (derecha)}}{419}{figure.17.15}%
-\contentsline {figure}{\numberline {17.16}{\ignorespaces Curvas de nivel de $f(x,y)=x^2+y^2$ para $k=0,1,4,9$}}{420}{figure.17.16}%
-\contentsline {figure}{\numberline {17.17}{\ignorespaces Superficie de nivel $k=1$: esfera unitaria $x^2+y^2+z^2=1$.}}{420}{figure.17.17}%
-\contentsline {figure}{\numberline {17.18}{\ignorespaces Superficie de nivel $k=1$: elipsoide con semiejes $a=1$, $b=2$, $c=3$.}}{421}{figure.17.18}%
-\contentsline {figure}{\numberline {17.19}{\ignorespaces Familia de paraboloides $z=x^2+y^2-k$: $k=0$ vértice en $z=0$ (abajo) y $k=-1$ vértice en $z=1$ (arriba).}}{421}{figure.17.19}%
-\contentsline {figure}{\numberline {17.20}{\ignorespaces Dominio de $f(x,y)=\ln (1+8x^2+2y^2)$: todo $\mathbb {R}^2$}}{422}{figure.17.20}%
-\contentsline {figure}{\numberline {17.21}{\ignorespaces Curvas de nivel de $f(x,y)=\ln (1+8x^2+2y^2)$ para $z=0,1,2,4$}}{422}{figure.17.21}%
-\contentsline {figure}{\numberline {17.22}{\ignorespaces Dominio de $f(x,y)=\ln (1+4x^2+y^2)$: todo $\mathbb {R}^2$}}{423}{figure.17.22}%
-\contentsline {figure}{\numberline {17.23}{\ignorespaces Curvas de nivel de $f(x,y)=\ln (1+4x^2+y^2)$ para $z=0,1,2,5$}}{424}{figure.17.23}%
+\contentsline {figure}{\numberline {17.2}{\ignorespaces Curva $C$ (roja) de intersección del cilindro $x^2+y^2=4$ con el plano $y+z=3$ (verde), y la recta tangente en $P=(\sqrt 3,1,2)$ dirigida por $\mathbf {r}'(\tfrac {\pi }{6})=\langle -1,\sqrt 3,-\sqrt 3\rangle $.}}{401}{figure.17.2}%
+\contentsline {figure}{\numberline {17.3}{\ignorespaces Trayectoria $\mathbf {r}(t)=\langle t^2+1,\,t^3-4t\rangle $ (azul), punto de desprendimiento $P=\mathbf {r}(2)=(5,0)$ y rayo tangente (rojo) que sigue la partícula con velocidad $\mathbf {r}'(2)=\langle 4,8\rangle $ hasta $(9,8)$ en $t=3$.}}{406}{figure.17.3}%
+\contentsline {figure}{\numberline {17.4}{\ignorespaces Dominio de $f(x,y)=\frac {\sqrt {x+y}}{\ln (x-y)}$ (región azul): acotado por $y=-x$ (incluida, trazo sólido) y $y=x$ (excluida, rayado), con la recta $y=x-1$ excluida del interior (punteada). El origen no pertenece al dominio.}}{412}{figure.17.4}%
+\contentsline {figure}{\numberline {17.5}{\ignorespaces Dominio de $f(x,y)=\sqrt {-5x^2-5y^2+25}$: disco $x^2+y^2\leq 5$}}{413}{figure.17.5}%
+\contentsline {figure}{\numberline {17.6}{\ignorespaces Dominio de $f(x,y)=\sqrt {-4x^2-y^2+8}$: elipse $4x^2+y^2\leq 8$}}{413}{figure.17.6}%
+\contentsline {figure}{\numberline {17.7}{\ignorespaces Dominio de $f(x,y)=\sqrt {-x^2-3y^2+2}$: elipse $x^2+3y^2\leq 2$}}{414}{figure.17.7}%
+\contentsline {figure}{\numberline {17.8}{\ignorespaces Dominio de $f(x,y)=\sqrt {-3x^2-3y^2+9}$: disco $x^2+y^2\leq 3$}}{414}{figure.17.8}%
+\contentsline {figure}{\numberline {17.9}{\ignorespaces Hipérbola $\dfrac {(x-2)^2}{9}-\dfrac {(y+1)^2}{16}=1$: centro $C(2,-1)$, vértices $V_1,V_2$, focos $F_1,F_2$ y asíntotas $y+1=\pm \tfrac 43(x-2)$.}}{416}{figure.17.9}%
+\contentsline {figure}{\numberline {17.10}{\ignorespaces Paraboloide elíptico $z=x^2+y^2$.}}{416}{figure.17.10}%
+\contentsline {figure}{\numberline {17.11}{\ignorespaces Paraboloide hiperbólico $z=x^2-y^2$ (silla de montar).}}{417}{figure.17.11}%
+\contentsline {figure}{\numberline {17.12}{\ignorespaces Cono circular $z^2=x^2+y^2$, con ambas napas.}}{417}{figure.17.12}%
+\contentsline {figure}{\numberline {17.13}{\ignorespaces Hiperboloide de una hoja $x^2+y^2-z^2=1$.}}{418}{figure.17.13}%
+\contentsline {figure}{\numberline {17.14}{\ignorespaces Hiperboloide de dos hojas $z^2-x^2-y^2=1$.}}{418}{figure.17.14}%
+\contentsline {figure}{\numberline {17.15}{\ignorespaces Cilindro elíptico $\dfrac {(x-2)^2}{9}+\dfrac {(y+1)^2}{4}=1$, con generatrices paralelas al eje $z$.}}{419}{figure.17.15}%
+\contentsline {figure}{\numberline {17.16}{\ignorespaces Paraboloide $z=x^2+y^2$: curvas de nivel $c=1,2,3,4$ en el plano $xy$ (izquierda) y superficie en $\mathbb {R}^3$ (derecha)}}{420}{figure.17.16}%
+\contentsline {figure}{\numberline {17.17}{\ignorespaces Curvas de nivel de $f(x,y)=x^2+y^2$ para $k=0,1,4,9$}}{421}{figure.17.17}%
+\contentsline {figure}{\numberline {17.18}{\ignorespaces Superficie de nivel $k=1$: esfera unitaria $x^2+y^2+z^2=1$.}}{421}{figure.17.18}%
+\contentsline {figure}{\numberline {17.19}{\ignorespaces Superficie de nivel $k=1$: elipsoide con semiejes $a=1$, $b=2$, $c=3$.}}{422}{figure.17.19}%
+\contentsline {figure}{\numberline {17.20}{\ignorespaces Familia de paraboloides $z=x^2+y^2-k$: $k=0$ vértice en $z=0$ (abajo) y $k=-1$ vértice en $z=1$ (arriba).}}{422}{figure.17.20}%
+\contentsline {figure}{\numberline {17.21}{\ignorespaces Dominio de $f(x,y)=\ln (1+8x^2+2y^2)$: todo $\mathbb {R}^2$}}{423}{figure.17.21}%
+\contentsline {figure}{\numberline {17.22}{\ignorespaces Curvas de nivel de $f(x,y)=\ln (1+8x^2+2y^2)$ para $z=0,1,2,4$}}{423}{figure.17.22}%
+\contentsline {figure}{\numberline {17.23}{\ignorespaces Dominio de $f(x,y)=\ln (1+4x^2+y^2)$: todo $\mathbb {R}^2$}}{424}{figure.17.23}%
+\contentsline {figure}{\numberline {17.24}{\ignorespaces Curvas de nivel de $f(x,y)=\ln (1+4x^2+y^2)$ para $z=0,1,2,5$}}{425}{figure.17.24}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {18.1}{\ignorespaces Disco abierto $B\bigl ((x_0,y_0),\delta \bigr )$: todo punto $(x,y)$ con $0<\|(x,y)-(x_0,y_0)\|<\delta $ satisface $|f(x,y)-L|<\varepsilon $}}{430}{figure.18.1}%
 \contentsline {figure}{\numberline {18.2}{\ignorespaces Dos trayectorias hacia $(0,0)$ producen límites distintos para $f(x,y)=\tfrac {x^2y}{x^4+y^2}$}}{431}{figure.18.2}%

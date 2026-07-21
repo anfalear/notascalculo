@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (MiKTeX 25.4) (format=lualatex 2025.7.7)  21 JUL 2026 14:16
+This is LuaHBTeX, Version 1.22.0 (MiKTeX 25.4) (format=lualatex 2025.7.7)  21 JUL 2026 14:37
  restricted system commands enabled.
 **anfalearNotasCalculo.tex
 (./anfalearNotasCalculo.tex
@@ -5176,43 +5176,59 @@ e almost parallel (abs(cos(angle)) = 0.81276pt)! on input line 83.
 
 
 [399]
+Package pgfplots info on input line 167: Deactivating LUA version of plot expre
+ssion for plot 0 (type 'mesh'): x expression '2*cos(\u )' contains a TeX macro.
 
-LaTeX Info: Redefining \. on input line 155.
-LaTeX Info: Redefining \% on input line 155.
+Package pgfplots info on input line 167: Deactivating LUA version of plot expre
+ssion for plot 0 (type 'mesh'): y expression ' {2*sin(\u )}' contains a TeX mac
+ro.
+Package pgfplots info on input line 167: Deactivating LUA version of plot expre
+ssion for plot 0 (type 'mesh'): z expression ' {\v }' contains a TeX macro.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+LaTeX Info: Redefining \. on input line 187.
+LaTeX Info: Redefining \% on input line 187.
 [400]
 
-LaTeX Info: Redefining \. on input line 222.
-LaTeX Info: Redefining \% on input line 222.
+LaTeX Info: Redefining \. on input line 253.
+LaTeX Info: Redefining \% on input line 253.
 [401]
 
-LaTeX Info: Redefining \. on input line 309.
-LaTeX Info: Redefining \% on input line 309.
+LaTeX Info: Redefining \. on input line 320.
+LaTeX Info: Redefining \% on input line 320.
 [402]
+
+LaTeX Info: Redefining \. on input line 407.
+LaTeX Info: Redefining \% on input line 407.
+[403]
 Underfull \vbox (badness 2376) has occurred while \output is active []
 
 
 
-LaTeX Info: Redefining \. on input line 400.
-LaTeX Info: Redefining \% on input line 400.
-[403]
-
-LaTeX Info: Redefining \. on input line 463.
-LaTeX Info: Redefining \% on input line 463.
+LaTeX Info: Redefining \. on input line 498.
+LaTeX Info: Redefining \% on input line 498.
 [404]
 
-LaTeX Info: Redefining \. on input line 566.
-LaTeX Info: Redefining \% on input line 566.
+LaTeX Info: Redefining \. on input line 561.
+LaTeX Info: Redefining \% on input line 561.
 [405]
 
-LaTeX Info: Redefining \. on input line 670.
-LaTeX Info: Redefining \% on input line 670.
+LaTeX Info: Redefining \. on input line 664.
+LaTeX Info: Redefining \% on input line 664.
 [406]
 
-LaTeX Info: Redefining \. on input line 720.
-LaTeX Info: Redefining \% on input line 720.
+LaTeX Info: Redefining \. on input line 768.
+LaTeX Info: Redefining \% on input line 768.
 [407]
-Overfull \hbox (15.99913pt too wide) in paragraph at lines 729--763
-[][]\TU/TimesNewRoman(0)/b/n/12 Ejem-plo 17.27 \TU/TimesNewRoman(0)/m/n/12 (Lon-
+
+LaTeX Info: Redefining \. on input line 818.
+LaTeX Info: Redefining \% on input line 818.
+[408]
+Overfull \hbox (15.99913pt too wide) in paragraph at lines 827--861
+[][]\TU/TimesNewRoman(0)/b/n/12 Ejem-plo 17.29 \TU/TimesNewRoman(0)/m/n/12 (Lon-
 gi-tud de una hé-li-ce cir-cu-lar)\TU/TimesNewRoman(0)/b/n/12 . []\TU/TimesNew
 Roman(0)/m/n/12 Cal-cu-lar la lon-gi-tud de un ar-co de la hé-li-ce $\TU/Times
 NewRoman(0)/b/n/12 r\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t\OT1/cmr/m/n/12 ) = \OMS
@@ -5221,68 +5237,68 @@ NewRoman(0)/b/n/12 r\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t\OT1/cmr/m/n/12 ) = \OMS
 
 
 
-LaTeX Info: Redefining \. on input line 847.
-LaTeX Info: Redefining \% on input line 847.
-[408]
-
-LaTeX Info: Redefining \. on input line 879.
-LaTeX Info: Redefining \% on input line 879.
+LaTeX Info: Redefining \. on input line 945.
+LaTeX Info: Redefining \% on input line 945.
 [409]
 
-LaTeX Info: Redefining \. on input line 963.
-LaTeX Info: Redefining \% on input line 963.
+LaTeX Info: Redefining \. on input line 977.
+LaTeX Info: Redefining \% on input line 977.
 [410]
 
-LaTeX Info: Redefining \. on input line 1083.
-LaTeX Info: Redefining \% on input line 1083.
+LaTeX Info: Redefining \. on input line 1061.
+LaTeX Info: Redefining \% on input line 1061.
 [411]
 
-LaTeX Info: Redefining \. on input line 1139.
-LaTeX Info: Redefining \% on input line 1139.
+LaTeX Info: Redefining \. on input line 1181.
+LaTeX Info: Redefining \% on input line 1181.
 [412]
 
-LaTeX Info: Redefining \. on input line 1184.
-LaTeX Info: Redefining \% on input line 1184.
+LaTeX Info: Redefining \. on input line 1237.
+LaTeX Info: Redefining \% on input line 1237.
 [413]
 
-LaTeX Info: Redefining \. on input line 1291.
-LaTeX Info: Redefining \% on input line 1291.
+LaTeX Info: Redefining \. on input line 1282.
+LaTeX Info: Redefining \% on input line 1282.
 [414]
 
-LaTeX Info: Redefining \. on input line 1363.
-LaTeX Info: Redefining \% on input line 1363.
+LaTeX Info: Redefining \. on input line 1389.
+LaTeX Info: Redefining \% on input line 1389.
 [415]
-Package pgfplots info on input line 1445: Deactivating LUA version of plot expr
+
+LaTeX Info: Redefining \. on input line 1461.
+LaTeX Info: Redefining \% on input line 1461.
+[416]
+Package pgfplots info on input line 1543: Deactivating LUA version of plot expr
 ession for plot 0 (type 'mesh'): x expression 'sqrt(1+\v *\v )*cos(\u )' contai
 ns a TeX macro.
-Package pgfplots info on input line 1445: Deactivating LUA version of plot expr
+Package pgfplots info on input line 1543: Deactivating LUA version of plot expr
 ession for plot 0 (type 'mesh'): y expression ' {sqrt(1+\v *\v )*sin(\u )}' con
 tains a TeX macro.
-Package pgfplots info on input line 1445: Deactivating LUA version of plot expr
+Package pgfplots info on input line 1543: Deactivating LUA version of plot expr
 ession for plot 0 (type 'mesh'): z expression ' {\v }' contains a TeX macro.
 
 
-LaTeX Info: Redefining \. on input line 1451.
-LaTeX Info: Redefining \% on input line 1451.
-[416]
-
-LaTeX Info: Redefining \. on input line 1558.
-LaTeX Info: Redefining \% on input line 1558.
+LaTeX Info: Redefining \. on input line 1549.
+LaTeX Info: Redefining \% on input line 1549.
 [417]
-Package pgfplots info on input line 1573: Deactivating LUA version of plot expr
+
+LaTeX Info: Redefining \. on input line 1656.
+LaTeX Info: Redefining \% on input line 1656.
+[418]
+Package pgfplots info on input line 1671: Deactivating LUA version of plot expr
 ession for plot 0 (type 'mesh'): x expression '2+3*cos(\u )' contains a TeX mac
 ro.
-Package pgfplots info on input line 1573: Deactivating LUA version of plot expr
+Package pgfplots info on input line 1671: Deactivating LUA version of plot expr
 ession for plot 0 (type 'mesh'): y expression ' {-1+2*sin(\u )}' contains a TeX
  macro.
-Package pgfplots info on input line 1573: Deactivating LUA version of plot expr
+Package pgfplots info on input line 1671: Deactivating LUA version of plot expr
 ession for plot 0 (type 'mesh'): z expression ' {\v }' contains a TeX macro.
 
 
-LaTeX Info: Redefining \. on input line 1613.
-LaTeX Info: Redefining \% on input line 1613.
-[418]
-Overfull \hbox (4.74512pt too wide) in paragraph at lines 1617--1620
+LaTeX Info: Redefining \. on input line 1711.
+LaTeX Info: Redefining \% on input line 1711.
+[419]
+Overfull \hbox (4.74512pt too wide) in paragraph at lines 1715--1718
 []\TU/TimesNewRoman(0)/b/n/12 Ele-gir va-lo-res de $\OML/cmm/m/it/12 k$\TU/Time
 sNewRoman(0)/b/n/12 . \TU/TimesNewRoman(0)/m/n/12 Se-lec-cio-nar una se-cuen-cia
  de va-lo-res re-pre-sen-ta-ti-vos, por ejem-plo, $\OML/cmm/m/it/12 k \OT1/cmr/
@@ -5294,121 +5310,121 @@ OT1/cmr/m/n/12 1\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 2$
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94894pt,-0.31569pt) ar
-e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1668.
+e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1766.
 
  [warning /pgfplots/warning/ticklabel anchor undetermined]
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94894pt,-0.31569pt) ar
-e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1668.
+e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1766.
 
  [warning /pgfplots/warning/ticklabel anchor undetermined]
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94894pt,-0.31569pt) ar
-e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1668.
+e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1766.
 
  [warning /pgfplots/warning/ticklabel anchor undetermined]
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94894pt,-0.31569pt) ar
-e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1668.
+e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1766.
 
  [warning /pgfplots/warning/ticklabel anchor undetermined]
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94894pt,-0.31569pt) ar
-e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1668.
+e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1766.
 
  [warning /pgfplots/warning/ticklabel anchor undetermined]
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94894pt,-0.31569pt) ar
-e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1668.
+e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1766.
 
  [warning /pgfplots/warning/ticklabel anchor undetermined]
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94894pt,-0.31569pt) ar
-e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1668.
+e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1766.
 
  [warning /pgfplots/warning/ticklabel anchor undetermined]
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94894pt,-0.31569pt) ar
-e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1668.
+e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1766.
 
  [warning /pgfplots/warning/ticklabel anchor undetermined]
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(0.48035pt,0.87703pt) and the unit y vector (0.90419pt,0.42722pt) are 
-almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1668.
+almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1766.
 
  [warning /pgfplots/warning/ticklabel anchor undetermined]
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(0.48035pt,0.87703pt) and the unit y vector (0.90419pt,0.42722pt) are 
-almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1668.
+almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1766.
 
  [warning /pgfplots/warning/ticklabel anchor undetermined]
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(0.48035pt,0.87703pt) and the unit y vector (0.90419pt,0.42722pt) are 
-almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1668.
+almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1766.
 
  [warning /pgfplots/warning/ticklabel anchor undetermined]
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(0.48035pt,0.87703pt) and the unit y vector (0.90419pt,0.42722pt) are 
-almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1668.
+almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1766.
 
  [warning /pgfplots/warning/ticklabel anchor undetermined]
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(0.48035pt,0.87703pt) and the unit y vector (0.90419pt,0.42722pt) are 
-almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1668.
+almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1766.
 
  [warning /pgfplots/warning/ticklabel anchor undetermined]
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(0.48035pt,0.87703pt) and the unit y vector (0.90419pt,0.42722pt) are 
-almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1668.
+almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1766.
 
  [warning /pgfplots/warning/ticklabel anchor undetermined]
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(0.48035pt,0.87703pt) and the unit y vector (0.90419pt,0.42722pt) are 
-almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1668.
+almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1766.
 
  [warning /pgfplots/warning/ticklabel anchor undetermined]
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(0.48035pt,0.87703pt) and the unit y vector (0.90419pt,0.42722pt) are 
-almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1668.
+almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1766.
 
  [warning /pgfplots/warning/ticklabel anchor undetermined]
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(0.62912pt,-0.77728pt) and the unit x vector (0.94894pt,-0.31569pt) ar
-e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1668.
+e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1766.
 
  [warning /pgfplots/warning/ticklabel anchor undetermined]
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(0.62912pt,-0.77728pt) and the unit x vector (0.94894pt,-0.31569pt) ar
-e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1668.
+e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1766.
 
  [warning /pgfplots/warning/ticklabel anchor undetermined]
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(-0.48035pt,-0.87703pt) and the unit y vector (0.90419pt,0.42722pt) ar
-e almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1668.
+e almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1766.
 
  [warning /pgfplots/warning/ticklabel anchor undetermined]
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(-0.48035pt,-0.87703pt) and the unit y vector (0.90419pt,0.42722pt) ar
-e almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1668.
+e almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1766.
 
  [warning /pgfplots/warning/ticklabel anchor undetermined]
 
@@ -5416,59 +5432,58 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-LaTeX Info: Redefining \. on input line 1723.
-LaTeX Info: Redefining \% on input line 1723.
-[419]
-Package pgfplots info on input line 1764: Deactivating LUA version of plot expr
+LaTeX Info: Redefining \. on input line 1821.
+LaTeX Info: Redefining \% on input line 1821.
+[420]
+Package pgfplots info on input line 1862: Deactivating LUA version of plot expr
 ession for plot 0 (type 'mesh'): x expression 'cos(\u )*sin(\v )' contains a Te
 X macro.
-Package pgfplots info on input line 1764: Deactivating LUA version of plot expr
+Package pgfplots info on input line 1862: Deactivating LUA version of plot expr
 ession for plot 0 (type 'mesh'): y expression ' {sin(\u )*sin(\v )}' contains a
  TeX macro.
-Package pgfplots info on input line 1764: Deactivating LUA version of plot expr
+Package pgfplots info on input line 1862: Deactivating LUA version of plot expr
 ession for plot 0 (type 'mesh'): z expression ' {cos(\v )}' contains a TeX macr
 o.
-Package pgfplots info on input line 1806: Deactivating LUA version of plot expr
+Package pgfplots info on input line 1904: Deactivating LUA version of plot expr
 ession for plot 0 (type 'mesh'): x expression 'cos(\u )*sin(\v )' contains a Te
 X macro.
-Package pgfplots info on input line 1806: Deactivating LUA version of plot expr
+Package pgfplots info on input line 1904: Deactivating LUA version of plot expr
 ession for plot 0 (type 'mesh'): y expression ' {2*sin(\u )*sin(\v )}' contains
  a TeX macro.
-Package pgfplots info on input line 1806: Deactivating LUA version of plot expr
+Package pgfplots info on input line 1904: Deactivating LUA version of plot expr
 ession for plot 0 (type 'mesh'): z expression ' {3*cos(\v )}' contains a TeX ma
 cro.
 
 
-LaTeX Info: Redefining \. on input line 1816.
-LaTeX Info: Redefining \% on input line 1816.
-[420]
+LaTeX Info: Redefining \. on input line 1914.
+LaTeX Info: Redefining \% on input line 1914.
+[421]
 Underfull \vbox (badness 2617) has occurred while \output is active []
 
 
 
-LaTeX Info: Redefining \. on input line 1912.
-LaTeX Info: Redefining \% on input line 1912.
-[421]
-
-LaTeX Info: Redefining \. on input line 1918.
-LaTeX Info: Redefining \% on input line 1918.
+LaTeX Info: Redefining \. on input line 2010.
+LaTeX Info: Redefining \% on input line 2010.
 [422]
+
+LaTeX Info: Redefining \. on input line 2016.
+LaTeX Info: Redefining \% on input line 2016.
+[423]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-LaTeX Info: Redefining \. on input line 1963.
-LaTeX Info: Redefining \% on input line 1963.
-[423]
-
-LaTeX Info: Redefining \. on input line 1990.
-LaTeX Info: Redefining \% on input line 1990.
+LaTeX Info: Redefining \. on input line 2061.
+LaTeX Info: Redefining \% on input line 2061.
 [424]
 
-LaTeX Info: Redefining \. on input line 2078.
-LaTeX Info: Redefining \% on input line 2078.
+LaTeX Info: Redefining \. on input line 2088.
+LaTeX Info: Redefining \% on input line 2088.
 [425]
 
+LaTeX Info: Redefining \. on input line 2176.
+LaTeX Info: Redefining \% on input line 2176.
+[426]
 
 
 
@@ -5481,19 +5496,14 @@ LaTeX Info: Redefining \% on input line 2078.
 
 
 
-LaTeX Info: Redefining \. on input line 2155.
-LaTeX Info: Redefining \% on input line 2155.
-[426]) (./limvariasvariables.tex
+
+LaTeX Info: Redefining \. on input line 2253.
+LaTeX Info: Redefining \% on input line 2253.
+[427]) (./limvariasvariables.tex
 
 LaTeX Info: Redefining \. on input line 8.
 LaTeX Info: Redefining \% on input line 8.
-[427]
-
-LaTeX Info: Redefining \. on input line 8.
-LaTeX Info: Redefining \% on input line 8.
-[428
-
-]
+[428]
 Capítulo 18.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -5512,7 +5522,9 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[429]
+[429
+
+]
 
 LaTeX Info: Redefining \. on input line 184.
 LaTeX Info: Redefining \% on input line 184.
@@ -7877,72 +7889,72 @@ LaTeX Info: Redefining \. on input line 1205.
 LaTeX Info: Redefining \% on input line 1205.
 [774]
 
-LaTeX Info: Redefining \. on input line 1260.
-LaTeX Info: Redefining \% on input line 1260.
+LaTeX Info: Redefining \. on input line 1261.
+LaTeX Info: Redefining \% on input line 1261.
 [775]
 
-LaTeX Info: Redefining \. on input line 1315.
-LaTeX Info: Redefining \% on input line 1315.
+LaTeX Info: Redefining \. on input line 1316.
+LaTeX Info: Redefining \% on input line 1316.
 [776]
 
-LaTeX Info: Redefining \. on input line 1370.
-LaTeX Info: Redefining \% on input line 1370.
+LaTeX Info: Redefining \. on input line 1372.
+LaTeX Info: Redefining \% on input line 1372.
 [777]
 
-LaTeX Info: Redefining \. on input line 1424.
-LaTeX Info: Redefining \% on input line 1424.
+LaTeX Info: Redefining \. on input line 1426.
+LaTeX Info: Redefining \% on input line 1426.
 [778]
 
-LaTeX Info: Redefining \. on input line 1479.
-LaTeX Info: Redefining \% on input line 1479.
+LaTeX Info: Redefining \. on input line 1481.
+LaTeX Info: Redefining \% on input line 1481.
 [779]
 
-LaTeX Info: Redefining \. on input line 1534.
-LaTeX Info: Redefining \% on input line 1534.
+LaTeX Info: Redefining \. on input line 1536.
+LaTeX Info: Redefining \% on input line 1536.
 [780]
 
-LaTeX Info: Redefining \. on input line 1589.
-LaTeX Info: Redefining \% on input line 1589.
+LaTeX Info: Redefining \. on input line 1591.
+LaTeX Info: Redefining \% on input line 1591.
 [781]
 
-LaTeX Info: Redefining \. on input line 1644.
-LaTeX Info: Redefining \% on input line 1644.
+LaTeX Info: Redefining \. on input line 1646.
+LaTeX Info: Redefining \% on input line 1646.
 [782]
 
-LaTeX Info: Redefining \. on input line 1699.
-LaTeX Info: Redefining \% on input line 1699.
+LaTeX Info: Redefining \. on input line 1701.
+LaTeX Info: Redefining \% on input line 1701.
 [783]
 
-LaTeX Info: Redefining \. on input line 1755.
-LaTeX Info: Redefining \% on input line 1755.
+LaTeX Info: Redefining \. on input line 1757.
+LaTeX Info: Redefining \% on input line 1757.
 [784]
 
-LaTeX Info: Redefining \. on input line 1809.
-LaTeX Info: Redefining \% on input line 1809.
+LaTeX Info: Redefining \. on input line 1811.
+LaTeX Info: Redefining \% on input line 1811.
 [785]
 
-LaTeX Info: Redefining \. on input line 1864.
-LaTeX Info: Redefining \% on input line 1864.
+LaTeX Info: Redefining \. on input line 1866.
+LaTeX Info: Redefining \% on input line 1866.
 [786]
 
-LaTeX Info: Redefining \. on input line 1919.
-LaTeX Info: Redefining \% on input line 1919.
+LaTeX Info: Redefining \. on input line 1921.
+LaTeX Info: Redefining \% on input line 1921.
 [787]
 
-LaTeX Info: Redefining \. on input line 1974.
-LaTeX Info: Redefining \% on input line 1974.
+LaTeX Info: Redefining \. on input line 1976.
+LaTeX Info: Redefining \% on input line 1976.
 [788]
 
-LaTeX Info: Redefining \. on input line 2029.
-LaTeX Info: Redefining \% on input line 2029.
+LaTeX Info: Redefining \. on input line 2031.
+LaTeX Info: Redefining \% on input line 2031.
 [789]
 
-LaTeX Info: Redefining \. on input line 2084.
-LaTeX Info: Redefining \% on input line 2084.
+LaTeX Info: Redefining \. on input line 2086.
+LaTeX Info: Redefining \% on input line 2086.
 [790]
 
-LaTeX Info: Redefining \. on input line 2139.
-LaTeX Info: Redefining \% on input line 2139.
+LaTeX Info: Redefining \. on input line 2141.
+LaTeX Info: Redefining \% on input line 2141.
 [791])
 
 LaTeX Info: Redefining \. on input line 537.
@@ -7969,26 +7981,23 @@ x[]; y[]; z[]\OT1/cmr/m/n/12 )$
 LaTeX Info: Redefining \. on input line 121.
 LaTeX Info: Redefining \% on input line 121.
 [795]
-Underfull \vbox (badness 3333) has occurred while \output is active []
 
-
-
-LaTeX Info: Redefining \. on input line 160.
-LaTeX Info: Redefining \% on input line 160.
+LaTeX Info: Redefining \. on input line 159.
+LaTeX Info: Redefining \% on input line 159.
 [796]
-Overfull \hbox (2.72165pt too wide) in paragraph at lines 191--191
+Overfull \hbox (2.72165pt too wide) in paragraph at lines 192--192
  [][] [][]\TU/TimesNewRoman(0)/m/n/12 Fi-gu-ra ori-gi-nal (Su-do-ku 3D cu-be, [
 ]$\TU/lmtt/m/n/12 https://texample.net/tikz/examples/sudoku-[]3d-[]cube$[]\TU/T
 imesNewRoman(0)/m/n/12 )[] []  
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 4229) has occurred while \output is active []
 
 
 
-LaTeX Info: Redefining \. on input line 209.
-LaTeX Info: Redefining \% on input line 209.
+LaTeX Info: Redefining \. on input line 210.
+LaTeX Info: Redefining \% on input line 210.
 [797])
 \tf@lof=\write7
 
@@ -8022,15 +8031,15 @@ Package rerunfilecheck Info: File `anfalearNotasCalculo.out' has not changed.
 )
 
 Here is how much of LuaTeX's memory you used:
- 95928 strings out of 470205
+ 95952 strings out of 470205
  305221,4101490 words of node,token memory allocated
- 24421 words of node memory still in use:
-   32 hlist, 2 vlist, 14 rule, 3 glue, 4 kern, 1 glyph, 7563 attribute, 101 glue
-_spec, 3819 attribute_list, 2 write, 24 pdf_literal, 72 pdf_action, 24 pdf_color
+ 24481 words of node memory still in use:
+   32 hlist, 2 vlist, 14 rule, 3 glue, 4 kern, 1 glyph, 7581 attribute, 101 glue
+_spec, 3828 attribute_list, 2 write, 24 pdf_literal, 73 pdf_action, 24 pdf_color
 stack nodes
-   avail lists: 1:22,2:25683,3:16348,4:340,5:2078,6:114,7:11348,8:150,9:4399,10:
+   avail lists: 1:21,2:25686,3:16348,4:340,5:2078,6:113,7:11348,8:150,9:4399,10:
 32,11:1181
- 115001 multiletter control sequences out of 65536+600000
+ 115020 multiletter control sequences out of 65536+600000
  153 fonts using 36017359 bytes
  76i,22n,95p,1148b,3556s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/users/anfalear/appdata/local/programs/miktex/fonts/opentype/public/lm/lmmono
@@ -8069,9 +8078,9 @@ amsfonts/cm/cmsy8.pfb><C:/Users/anfalear/AppData/Local/Programs/MiKTeX/fonts/typ
 e1/public/amsfonts/latxfont/line10.pfb><C:/Users/anfalear/AppData/Local/Programs
 /MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/anfalear/AppDat
 a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on anfalearNotasCalculo.pdf (800 pages, 6821136 bytes).
+Output written on anfalearNotasCalculo.pdf (800 pages, 6837234 bytes).
 
-PDF statistics: 14926 PDF objects out of 15390 (max. 8388607)
- 7589 named destinations out of 8907 (max. 131072)
+PDF statistics: 14935 PDF objects out of 15390 (max. 8388607)
+ 7594 named destinations out of 8907 (max. 131072)
  3240 words of extra memory for PDF output out of 10000 (max. 100000000)
 

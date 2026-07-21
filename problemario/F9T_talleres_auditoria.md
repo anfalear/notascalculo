@@ -495,7 +495,8 @@ Propuesto (2 incisos) insertado tras el propuesto de la curva plana $\langle t^2
 - Figura: NO
 - Estimación: M
 
-### F9T.12 — [origen: T2.09] [destino: funvectoriales.tex, §Funciones vectoriales, tras curvas en el espacio]
+### F9T.12 — HECHO (2026-07-21) — [destino: funvectoriales.tex, §Funciones vectoriales, tras la figura de la hélice, antes de §Límite]
+`prob[Curva intersección de un cilindro y un plano]` resuelto (isomorfo T2.09, a=2/b=3): cilindro x²+y²=4 ∩ plano y+z=3 → r(t)=⟨2cos t, 2sen t, 3−2sen t⟩; punto P=(√3,1,2) ⇒ t₀=π/6; r'(π/6)=⟨−1,√3,−√3⟩; recta L(s)=⟨√3−s, 1+√3s, 2−√3s⟩. Protocolo 4 pasos + boxed. `rem` de las «dos cartas» (despejar y=±√(4−x²) da media curva + tangente vertical en x=±2). **Figura 3D** `fig:cilindro_plano_interseccion` (Fig. 17.2, p. 401): cilindro surf paramétrico opacity 0.30 + plano `\fill` verde translúcido + curva C roja + P + vector tangente. Compilación 800 pp, 0 errores, 2 pasadas. Verificado visualmente pp. 400–401 (figura y 4 pasos OK).
 - Tipo: prob resuelto
 - Enunciado: parametrice la curva intersección del cilindro x²+y²=a² con el plano y+z=b y halle la recta tangente en un punto dado (isomorfo de T2.09).
 - Solución: x=a cos t, y=a sen t, z=b−a sen t → t₀ del punto → r'(t₀) → recta tangente. Comentar la alternativa con raíz (dos cartas).

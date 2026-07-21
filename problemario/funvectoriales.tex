@@ -87,6 +87,104 @@ o \textbf{curva parametrizada}.
 \label{fig:helice_tangente}
 \end{figure}
 
+\begin{prob}[Curva intersección de un cilindro y un plano]
+Parametrice la curva $C$ de intersección del cilindro $x^2+y^2=4$ con el
+plano $y+z=3$, y halle la ecuación de la recta tangente a $C$ en el punto
+$P=(\sqrt{3},\,1,\,2)$.
+\begin{myproof}
+\textbf{Paso 1: Parametrización de $C$.}
+Los puntos del cilindro $x^2+y^2=4$ (radio $2$) se describen con
+$x=2\cos t$, $y=2\sen t$. La coordenada $z$ queda fijada por el plano:
+$z=3-y=3-2\sen t$. Por tanto
+\[
+  \mathbf{r}(t)=\langle 2\cos t,\; 2\sen t,\; 3-2\sen t\rangle,
+  \qquad t\in[0,2\pi).
+\]
+
+\textbf{Paso 2: Parámetro del punto $P$.}
+Igualando $\mathbf{r}(t_0)=P$:
+\[
+  2\cos t_0=\sqrt{3}\ \Rightarrow\ \cos t_0=\tfrac{\sqrt3}{2},
+  \qquad
+  2\sen t_0=1\ \Rightarrow\ \sen t_0=\tfrac12
+  \quad\Longrightarrow\quad t_0=\frac{\pi}{6}.
+\]
+La tercera componente es consistente: $z=3-2\cdot\tfrac12=2$. \checkmark
+
+\textbf{Paso 3: Vector tangente.}
+Derivando componente a componente,
+\[
+  \mathbf{r}'(t)=\langle -2\sen t,\; 2\cos t,\; -2\cos t\rangle,
+\]
+y en $t_0=\dfrac{\pi}{6}$,
+\[
+  \mathbf{r}'\!\left(\tfrac{\pi}{6}\right)
+  =\big\langle -2\cdot\tfrac12,\; 2\cdot\tfrac{\sqrt3}{2},\;
+              -2\cdot\tfrac{\sqrt3}{2}\big\rangle
+  =\langle -1,\; \sqrt{3},\; -\sqrt{3}\rangle.
+\]
+
+\textbf{Paso 4: Recta tangente.}
+Pasa por $P=(\sqrt3,1,2)$ con vector director
+$\mathbf{r}'(\tfrac{\pi}{6})$:
+\[
+  \mathbf{L}(s)=P+s\,\mathbf{r}'\!\left(\tfrac{\pi}{6}\right)
+              =\langle \sqrt{3}-s,\; 1+\sqrt{3}\,s,\; 2-\sqrt{3}\,s\rangle,
+  \qquad s\in\mathbb{R}.
+\]
+\[
+  \boxed{\ \mathbf{r}(t)=\langle 2\cos t,\, 2\sen t,\, 3-2\sen t\rangle,\qquad
+  \mathbf{L}(s)=\langle \sqrt3-s,\, 1+\sqrt3\,s,\, 2-\sqrt3\,s\rangle.\ }
+\]
+\end{myproof}
+\end{prob}
+
+\begin{rem}
+La parametrización trigonométrica recorre la curva \emph{completa} sin
+ambigüedad. Si en su lugar se despejara $y=\pm\sqrt{4-x^2}$, cada signo
+describiría solo media curva (\emph{dos cartas}) y el punto de empalme
+$x=\pm2$ tendría tangente vertical, donde $dy/dx$ no está definida; el
+parámetro $t$ evita ese problema.
+\end{rem}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[axis lines=center, xlabel=$x$, ylabel=$y$, zlabel=$z$,
+             xmin=-2.6,xmax=2.6,ymin=-2.6,ymax=2.6,zmin=0,zmax=5.2,
+             view={120}{18}, ticklabel style={font=\tiny},
+             width=8.5cm, height=8cm,
+             trig format plots=deg]
+  % Plano y+z=3 (fill translucido)
+  \fill[green!35!black, opacity=0.22]
+    (axis cs:-2.5,-2,5) -- (axis cs:2.5,-2,5) --
+    (axis cs:2.5,2,1)  -- (axis cs:-2.5,2,1) -- cycle;
+  % Cilindro x^2+y^2=4
+  \addplot3[surf, shader=flat corner, samples=20,
+            colormap/cool, opacity=0.30,
+            variable=\u, variable y=\v,
+            domain=0:360, y domain=0:5]
+           ({2*cos(\u)}, {2*sin(\u)}, {\v});
+  % Curva interseccion C
+  \addplot3[very thick, red!70!black, samples=60, samples y=0,
+            domain=0:360]
+           ({2*cos(x)}, {2*sin(x)}, {3-2*sin(x)});
+  % Punto P y vector tangente
+  \addplot3[only marks, mark=*, mark size=1.6pt, black]
+           coordinates {(1.732,1,2)};
+  \draw[->, very thick, red!70!black]
+    (axis cs:1.732,1,2) -- (axis cs:0.732,2.732,0.268);
+  \node[anchor=south west, font=\scriptsize] at (axis cs:1.732,1,2.1) {$P$};
+  \node[anchor=west, font=\scriptsize, red!70!black]
+    at (axis cs:0.732,2.732,0.268) {$\mathbf{r}'(\tfrac{\pi}{6})$};
+\end{axis}
+\end{tikzpicture}
+\caption{Curva $C$ (roja) de intersección del cilindro $x^2+y^2=4$ con el
+  plano $y+z=3$ (verde), y la recta tangente en $P=(\sqrt3,1,2)$ dirigida por
+  $\mathbf{r}'(\tfrac{\pi}{6})=\langle -1,\sqrt3,-\sqrt3\rangle$.}
+\label{fig:cilindro_plano_interseccion}
+\end{figure}
+
 \subsection{Límite de una función vectorial}
 
 El límite de una función vectorial describe el comportamiento del vector
