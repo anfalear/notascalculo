@@ -348,6 +348,41 @@ lo que equivale a que los límites de las componentes coincidan con los
 valores de las componentes en $a$.
 \end{proof}
 
+\begin{rem}[Dominio de una función vectorial]
+El dominio de $\mathbf{r}(t)=\langle f(t),g(t),h(t)\rangle$ es la
+\emph{intersección} de los dominios de sus componentes,
+$\operatorname{Dom}\mathbf{r}=\operatorname{Dom}f\cap\operatorname{Dom}g
+\cap\operatorname{Dom}h$. Por el teorema anterior, $\mathbf{r}$ es continua
+en cada punto de ese conjunto donde las tres componentes lo sean.
+\end{rem}
+
+\begin{prob}[Dominio de una función vectorial]
+Halle el dominio de $\mathbf{r}(t)=\big\langle \ln(t^2-1),\;
+\sqrt{\sen t},\; \cos(1/t)\big\rangle$.
+\begin{myproof}
+\textbf{Paso 1: Primera componente.}
+$\ln(t^2-1)$ exige $t^2-1>0$, es decir $|t|>1$:
+$t\in(-\infty,-1)\cup(1,\infty)$.
+
+\textbf{Paso 2: Segunda componente.}
+$\sqrt{\sen t}$ exige $\sen t\ge 0$, esto es
+$t\in\bigcup_{k\in\mathbb{Z}}[2k\pi,(2k+1)\pi]$.
+
+\textbf{Paso 3: Tercera componente.}
+$\cos(1/t)$ exige $t\neq 0$, condición ya garantizada por $|t|>1$.
+
+\textbf{Paso 4: Intersección.}
+Intersecando las tres condiciones (para $t>1$ el primer intervalo válido es
+$(1,\pi]$; para $t<-1$, los intervalos con $\sen t\ge0$ ya cumplen $|t|>1$):
+\[
+  \boxed{\ \operatorname{Dom}\mathbf{r}
+  =\Big(\bigcup_{k\ge 1}[-2k\pi,\,-(2k-1)\pi]\Big)
+   \;\cup\;(1,\pi]\;\cup\;
+   \Big(\bigcup_{k\ge 1}[2k\pi,(2k+1)\pi]\Big).\ }
+\]
+\end{myproof}
+\end{prob}
+
 \subsection{Derivada de una función vectorial}
 
 La derivada de una función vectorial mide la tasa de cambio del vector
@@ -1272,6 +1307,65 @@ espacio; las condiciones son análogas, y la descripción se da en
 términos de conjuntos de ternas $(x,y,z)$.
 \end{rem}
 
+\begin{prob}[Dominio con estructura de tablero]
+Halle y grafique el dominio de $f(x,y)=\sqrt{\sen x\,\sen y}$.
+\begin{myproof}
+\textbf{Paso 1: Condición del radicando.}
+Se requiere $\sen x\,\sen y\ge 0$: el producto de los dos senos no puede
+ser negativo.
+
+\textbf{Paso 2: Signo del seno por franjas.}
+En cada franja $(k\pi,(k+1)\pi)$ el seno tiene signo constante:
+$\operatorname{sgn}(\sen x)=(-1)^k$ para $x\in(k\pi,(k+1)\pi)$, y análogamente
+para $\sen y$.
+
+\textbf{Paso 3: Producto no negativo.}
+$\sen x\,\sen y\ge 0$ ocurre cuando ambos factores tienen el mismo signo, es
+decir cuando $x\in(k\pi,(k+1)\pi)$ y $y\in(m\pi,(m+1)\pi)$ con
+$(-1)^k=(-1)^m$, o sea $k+m$ \emph{par}. Además el producto es cero sobre las
+rectas $x=k\pi$ y $y=m\pi$, que también pertenecen al dominio.
+
+\textbf{Paso 4: Descripción del dominio.}
+El dominio es un \emph{tablero de ajedrez}:
+\[
+  \boxed{\ \operatorname{Dom}f=\bigcup_{\substack{k,m\in\mathbb{Z}\\ k+m\ \text{par}}}
+  [k\pi,(k+1)\pi]\times[m\pi,(m+1)\pi].\ }
+\]
+Los cuadrados sombreados de la figura~\ref{fig:dominio_tablero} lo ilustran en
+$[-2\pi,2\pi]^2$.
+\end{myproof}
+\end{prob}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+  \def\P{1.15}
+  % cuadrados del dominio: k+m par
+  \foreach \k in {-2,...,1}{
+    \foreach \m in {-2,...,1}{
+      \pgfmathsetmacro{\s}{Mod(\k+\m+4,2)}
+      \ifdim\s pt<0.5pt
+        \fill[blue!20] (\k*\P,\m*\P) rectangle ++(\P,\P);
+      \fi
+    }
+  }
+  % cuadricula
+  \draw[step=\P, gray!45, very thin] (-2*\P,-2*\P) grid (2*\P,2*\P);
+  % ejes
+  \draw[->,thin] (-2.45*\P,0)--(2.5*\P,0) node[right]{$x$};
+  \draw[->,thin] (0,-2.45*\P)--(0,2.5*\P) node[above]{$y$};
+  % marcas
+  \foreach \i/\lab in {-2/{-2\pi},-1/{-\pi},1/{\pi},2/{2\pi}}{
+    \draw (\i*\P,2pt)--(\i*\P,-2pt) node[below,font=\tiny]{$\lab$};
+    \draw (2pt,\i*\P)--(-2pt,\i*\P) node[left,font=\tiny]{$\lab$};
+  }
+\end{tikzpicture}
+\caption{Dominio de $f(x,y)=\sqrt{\sen x\,\sen y}$ (azul): tablero de cuadrados
+  $[k\pi,(k+1)\pi]\times[m\pi,(m+1)\pi]$ con $k+m$ par, unidos por las rectas
+  $x=k\pi$ y $y=m\pi$.}
+\label{fig:dominio_tablero}
+\end{figure}
+
 \subsection{Gráfica de una función de dos variables}
 
 La \textbf{gráfica} de una función de dos variables $f(x,y)$ es el
@@ -2131,6 +2225,15 @@ componente a componente y no olvide verificar la tercera ecuación.
 \end{prob}
 
 \begin{prob}
+Demuestre que la curva
+$\mathbf{r}(t)=\langle \arccos(2t^2-1),\; \arcsen t\rangle$, con
+$t\in[0,1]$, describe un \emph{segmento de recta}. Halle la ecuación
+cartesiana de la recta que lo contiene y las coordenadas de los extremos del
+segmento. \emph{Sugerencia:} sustituya $t=\sen\theta$ con
+$\theta\in[0,\tfrac{\pi}{2}]$ y use las identidades de las funciones inversas.
+\end{prob}
+
+\begin{prob}
 Determinar el dominio de las siguientes funciones de dos variables:
 \begin{enumerate}[a)]
   \item $f(x,y) = \sqrt{x+y}$.
@@ -2193,6 +2296,58 @@ Identifique la superficie $9y^2+4z^2-18y+16z-11=0$: escríbala en forma
 canónica, indique el eje del cilindro y describa sus secciones con los
 planos $x=k$.
 \end{prob}
+
+\begin{prob}
+Se dan las esferas
+\[
+  S_1:\ x^2+y^2+z^2-2x+4y-4=0,\qquad
+  S_2:\ x^2+y^2+z^2+6x-2y+2z-5=0,
+\]
+y el plano $\pi:\ 2x-y+2z=7$. Completando cuadrados, halle los centros de
+$S_1$ y $S_2$ y determine la ecuación vectorial de la recta perpendicular a
+$\pi$ que pasa por el punto medio del segmento que une dichos centros.
+\end{prob}
+
+\begin{prob}
+Considere la cónica $\mathcal{C}:\ x^2+y^2-2xy-2(x+y)+1=0$.
+\begin{enumerate}[a)]
+  \item Calcule el discriminante $B^2-4AC$ y clasifique la cónica.
+  \item Con el cambio de variables $u=x+y$, $v=x-y$, escriba la ecuación en
+        las coordenadas $(u,v)$ y obtenga una parametrización
+        $\mathbf{r}(s)=\langle x(s),y(s)\rangle$ de $\mathcal{C}$.
+  \item Determine los puntos de $\mathcal{C}$ con tangente horizontal y con
+        tangente vertical.
+\end{enumerate}
+La figura~\ref{fig:parabola_rotada} muestra $\mathcal{C}$ y los ejes girados.
+\end{prob}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[axis lines=middle, xlabel=$x$, ylabel=$y$,
+             axis equal image,
+             xmin=-1.5, xmax=4.5, ymin=-1.5, ymax=4.5,
+             xtick={1,2,3,4}, ytick={1,2,3,4},
+             ticklabel style={font=\tiny}, width=9.5cm]
+  % ejes girados u=x+y (recta y=x) y v=x-y (recta y=-x)
+  \draw[dashed, gray!70] (axis cs:-1.4,-1.4) -- (axis cs:4.2,4.2)
+    node[anchor=south west, black, font=\small] {$u$};
+  \draw[dashed, gray!70] (axis cs:-1.4,1.4) -- (axis cs:1.4,-1.4)
+    node[anchor=north west, black, font=\small] {$v$};
+  % conica parametrizada: x=(s+1)^2/4, y=(s-1)^2/4
+  \addplot[domain=-3:3, samples=90, smooth, very thick, blue!70!black]
+    ({(x+1)^2/4}, {(x-1)^2/4});
+  % vertice V=(1/4,1/4)
+  \addplot[only marks, mark=*, mark size=1.5pt, red!70!black]
+    coordinates {(0.25,0.25)};
+  \node[anchor=north west, font=\scriptsize, red!70!black]
+    at (axis cs:0.25,0.25) {$V$};
+\end{axis}
+\end{tikzpicture}
+\caption{La cónica $x^2+y^2-2xy-2(x+y)+1=0$ (azul) y los ejes girados
+  $u=x+y$, $v=x-y$; su vértice es $V=\left(\tfrac14,\tfrac14\right)$.}
+\label{fig:parabola_rotada}
+\end{figure}
 
 \begin{prob}
 Para la función $f(x,y) = x^2 + y^2$:

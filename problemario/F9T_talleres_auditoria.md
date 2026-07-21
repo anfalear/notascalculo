@@ -511,35 +511,40 @@ Propuesto de intersección de dos curvas espaciales con parámetros independient
 - Figura: NO
 - Estimación: S
 
-### F9T.14 — [origen: T2.10] [destino: funvectoriales.tex, propuestos]
+### F9T.14 — HECHO (2026-07-21, lote F9T.14–.18) — [destino: funvectoriales.tex, §Problemas propuestos, cluster cuádricas tras F9T.09]
+Propuesto (Problema 17.80): esferas S₁ x²+y²+z²−2x+4y−4=0 (centro (1,−2,0), r=3) y S₂ x²+y²+z²+6x−2y+2z−5=0 (centro (−3,1,−1), r=4), plano π 2x−y+2z=7; recta ⟂π por el punto medio M=(−1,−½,−½) → L(s)=M+s⟨2,−1,2⟩. Sin figura.
 - Tipo: propuesto
 - Enunciado: dadas dos cuádricas S1, S2 con términos lineales (esferas/elipsoides), halle la recta perpendicular al plano dado que pasa por el punto medio del segmento entre sus centros (reformulación tipo taller).
 - Solución: completar cuadrados en ambas → centros → vector director → ecuación de la recta.
 - Figura: NO
 - Estimación: M
 
-### F9T.15 — [origen: T2.07] [destino: funvectoriales.tex, propuestos]
+### F9T.15 — HECHO (2026-07-21, lote F9T.14–.18) — [destino: funvectoriales.tex, §Problemas propuestos, tras el propuesto F9T.13 de curvas]
+Propuesto: r(t)=⟨arccos(2t²−1), arcsen t⟩, t∈[0,1] describe un segmento; se pide recta cartesiana + extremos, con sugerencia t=senθ. Respuesta interna: x+2y=π, extremos (π,0) y (0,π/2). Sin figura.
 - Tipo: propuesto
 - Enunciado: demuestre que r(t)=⟨arccos(2t²−1), arcsen t⟩, t∈[0,1], describe un segmento de recta (identidades de funciones inversas).
 - Solución: con t=sen θ: arccos(2sen²θ−1)=π−2θ y arcsen(sen θ)=θ → x+2y=π → segmento.
 - Figura: NO
 - Estimación: S
 
-### F9T.16 — [origen: T2.13] [destino: funvectoriales.tex, propuestos (o remitir a Álgebra Lineal)]
+### F9T.16 — HECHO (2026-07-21, lote F9T.14–.18) — [destino: funvectoriales.tex, §Problemas propuestos, tras F9T.14; figura fig:parabola_rotada (Fig. 17.26, p. 428)]
+Propuesto 3 incisos (Problema 17.81): cónica x²+y²−2xy−2(x+y)+1=0. (a) B²−4AC=0→parábola; (b) u=x+y,v=x−y→v²=2u−1, parametrización x=(s+1)²/4, y=(s−1)²/4; (c) tangente horizontal (1,0), vertical (0,1). Figura 2D (pgfplots parametric axis equal) con parábola rotada + ejes u,v punteados + vértice V=(¼,¼). Verificada visualmente p. 428.
 - Tipo: propuesto
 - Enunciado: para la cónica x²+y²−2xy−2(x+y)+1=0: (i) discriminante B²−4AC=0 → parábola rotada; (ii) parametrización con el cambio u=x+y, v=x−y; (iii) puntos de tangente horizontal/vertical.
 - Solución: discriminante → rotación 45° → canónica en (u,v) → parametrizar → derivar.
 - Figura: SÍ → F9T.16f: parábola rotada con ejes u,v (TikZ 2D).
 - Estimación: L
 
-### F9T.17 — [origen: T3.05] [destino: funvectoriales.tex, §Funciones de varias variables (dominios), tras L807]
+### F9T.17 — HECHO (2026-07-21, lote F9T.14–.18) — [destino: funvectoriales.tex, §Funciones de varias variables, tras rem de dominio 3 variables; figura fig:dominio_tablero (Fig. 17.9, p. 416)]
+Prob resuelto (Problema 17.46, 4 pasos): dominio de f=√(sen x·sen y) = tablero ⋃_{k+m par}[kπ,(k+1)π]×[mπ,(m+1)π]. Figura 2D TikZ: 8 cuadrados sombreados en [−2π,2π]² con `\foreach`+`\pgfmathsetmacro{Mod(k+m+4,2)}`+`\ifdim...<0.5pt` (patrón paridad), cuadrícula, ejes, marcas en π. Verificada visualmente p. 416 (patrón ajedrez correcto).
 - Tipo: prob resuelto
 - Enunciado: halle y grafique el dominio de f(x,y)=√(sen x · sen y): estructura de tablero por periodicidad.
 - Solución: sen x·sen y≥0 → ambos ≥0 o ambos ≤0 → cuadrícula [kπ,(k+1)π]×[mπ,(m+1)π] con k+m par.
 - Figura: SÍ → F9T.17f: tablero sombreado en [−2π,2π]² (TikZ 2D).
 - Estimación: M
 
-### F9T.18 — [origen: T3.06] [destino: funvectoriales.tex, §Funciones vectoriales (dominio/continuidad), junto a L1644]
+### F9T.18 — HECHO (2026-07-21, lote F9T.14–.18) — [destino: funvectoriales.tex, fin de §Continuidad de una función vectorial]
+`rem[Dominio de una función vectorial]` (Dom r = intersección de dominios componentes; continuidad donde todas lo sean) + `prob` resuelto (4 pasos): dominio de r(t)=⟨ln(t²−1), √(sen t), cos(1/t)⟩ = ⋃_{k≥1}[−2kπ,−(2k−1)π] ∪ (1,π] ∪ ⋃_{k≥1}[2kπ,(2k+1)π]. Sin figura.
 - Tipo: ambos
 - Enunciado: dominio de r(t)=⟨ln(t²−1), √(sen t), cos(1/t)⟩: intersección de los tres dominios componentes.
 - Solución: |t|>1 ∩ sen t≥0 ∩ t≠0 → intersección de intervalos → respuesta en notación de intervalos.
