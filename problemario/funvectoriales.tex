@@ -506,6 +506,66 @@ $(9,8)$ en $t=3$.}
 \label{fig:recta_tangente_escape}
 \end{figure}
 
+\begin{rem}[Vector tangente unitario]
+Si $\mathbf{r}'(t)\neq\mathbf{0}$, el vector velocidad $\mathbf{r}'(t)$ apunta
+en la dirección tangente a la curva. Normalizándolo se obtiene el
+\textbf{vector tangente unitario}
+\[
+  \hat{\mathbf{T}}(t)=\frac{\mathbf{r}'(t)}{\|\mathbf{r}'(t)\|},
+\]
+que conserva la dirección del movimiento pero tiene norma $1$; describe la
+orientación de la trayectoria con independencia de la rapidez con que se
+recorra. Es la base para definir la curvatura y el triedro de Frenet.
+\end{rem}
+
+\begin{prob}[Vector tangente unitario]
+Halle el vector tangente unitario $\hat{\mathbf{T}}(t)$ de la curva
+\[
+  \mathbf{r}(t)=\langle e^{t}\cos t,\; e^{t}\sen t,\; e^{t}\rangle
+\]
+y evalúelo en $t=0$.
+\begin{myproof}
+\textbf{Paso 1: Vector velocidad.}
+Derivando componente a componente (regla del producto en las dos primeras),
+\[
+  \mathbf{r}'(t)=\big\langle e^{t}(\cos t-\sen t),\;
+                             e^{t}(\sen t+\cos t),\;
+                             e^{t}\big\rangle
+              = e^{t}\,\langle \cos t-\sen t,\; \sen t+\cos t,\; 1\rangle.
+\]
+
+\textbf{Paso 2: Rapidez $\|\mathbf{r}'(t)\|$.}
+Como $e^{t}>0$,
+\[
+  \|\mathbf{r}'(t)\|
+  = e^{t}\sqrt{(\cos t-\sen t)^2+(\sen t+\cos t)^2+1}.
+\]
+Desarrollando, $(\cos t-\sen t)^2+(\sen t+\cos t)^2=2$, de modo que
+\[
+  \|\mathbf{r}'(t)\|=e^{t}\sqrt{2+1}=\sqrt{3}\,e^{t}.
+\]
+
+\textbf{Paso 3: Normalizar.}
+El factor $e^{t}$ se cancela:
+\[
+  \hat{\mathbf{T}}(t)=\frac{\mathbf{r}'(t)}{\|\mathbf{r}'(t)\|}
+  =\frac{1}{\sqrt{3}}\,\langle \cos t-\sen t,\; \sen t+\cos t,\; 1\rangle.
+\]
+
+\textbf{Paso 4: Evaluar en $t=0$.}
+Con $\cos 0=1$ y $\sen 0=0$,
+\[
+  \hat{\mathbf{T}}(0)=\frac{1}{\sqrt{3}}\,\langle 1,\;1,\;1\rangle.
+\]
+\[
+  \boxed{\ \hat{\mathbf{T}}(t)
+  =\frac{1}{\sqrt{3}}\langle \cos t-\sen t,\; \sen t+\cos t,\; 1\rangle,
+  \qquad
+  \hat{\mathbf{T}}(0)=\frac{1}{\sqrt{3}}\langle 1,1,1\rangle.\ }
+\]
+\end{myproof}
+\end{prob}
+
 \subsection{Reglas de derivación para funciones vectoriales}
 
 Las siguientes reglas operativas son consecuencia directa de la

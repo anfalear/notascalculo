@@ -487,7 +487,8 @@ Propuesto (2 incisos) insertado tras el propuesto de la curva plana $\langle t^2
 - Figura: NO
 - Estimación: S
 
-### F9T.11 — [origen: T2.04] [destino: funvectoriales.tex, §Derivada de funciones vectoriales, tras la derivada]
+### F9T.11 — HECHO (2026-07-21) — [destino: funvectoriales.tex, fin de §Derivada de una función vectorial, tras la figura del rayo de escape, antes de §Reglas de derivación]
+`rem[Vector tangente unitario]` (def $\hat{\mathbf T}(t)=\mathbf r'/\|\mathbf r'\|$, norma 1, base de curvatura/Frenet) + `prob[Vector tangente unitario]` resuelto isomorfo T2.04: $\mathbf r(t)=\langle e^t\cos t, e^t\sen t, e^t\rangle$ → $\mathbf r'=e^t\langle\cos t-\sen t,\sen t+\cos t,1\rangle$, $\|\mathbf r'\|=\sqrt3\,e^t$ (cancela $e^t$), $\hat{\mathbf T}(t)=\frac1{\sqrt3}\langle\cos t-\sen t,\sen t+\cos t,1\rangle$, $\hat{\mathbf T}(0)=\frac1{\sqrt3}\langle1,1,1\rangle$. Protocolo 4 pasos + boxed. Sin figura. Compilación 800 pp, 0 errores, 2 pasadas.
 - Tipo: ambos
 - Enunciado: definición de vector tangente unitario T̂(t)=r'(t)/‖r'(t)‖ (rem breve) + prob: T̂(t₀) para una r(t) con componentes mixtas (isomorfo de T2.04).
 - Solución: r'(t) → evaluar → normalizar.
