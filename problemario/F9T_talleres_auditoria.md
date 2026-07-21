@@ -434,7 +434,9 @@ Prob resuelto `Problema 31.36` (Cambio a polares en región no circular): I=∫�
 - Figura: SÍ → F9T.04f: región entre y=x², y=x con rayo genérico θ (TikZ 2D).
 - Estimación: M
 
-### F9T.05 — [origen: EX.05] [destino: limvariasvariables.tex, §Continuidad, tras los ejemplos de clasificación]
+### F9T.05 — HECHO (2026-07-21) — [origen: EX.05] [destino: limvariasvariables.tex, §Continuidad, al final (tras el example de 3 variables L864)]
+Prob resuelto V/F `Problema 18.39` (Continuidad en una región: análisis de dominio): g(x,y)=√(xy)/(x²+y²−9) en D={|x|+|y|<2}. Denominador nunca se anula (x²+y²≤(|x|+|y|)²<4<9) pero radicando xy≥0 falla en cuadrantes II/IV (contraejemplo (−½,½)∈D) → **FALSA**. Protocolo 4 pasos + `\boxed{FALSA.}` + `rem` con el subconjunto D∩{xy≥0} donde sí es continua. Propuesto isomorfo (c=4, r=1). Sin figura. Compilación 796 pp, 0 errores, 2 pasadas. Verificado visualmente p. 437.
+
 - Tipo: ambos
 - Enunciado: V/F (isomorfo): "g(x,y)=√(xy)/(x²+y²−c) es continua en la región |x|+|y|<r". Analizar dominio (xy≥0 falla en cuadrantes II/IV) y el denominador.
 - Solución: dominio de √(xy) → la región dada contiene puntos fuera del dominio → falsa (o ajustar región para variante verdadera); verificación de denominador ≠0.
@@ -804,6 +806,16 @@ Prob resuelto `Problema 31.36` (Cambio a polares en región no circular): I=∫�
 - **H3 (F9T.04, 2026-07-21):** `apintdobles.tex` mezcla notación: 81 `\sen` vs 17 `\sin`
   (varios en captions y en el cuerpo). Contenido nuevo de F9T.04 usa `\sen`; el resto es
   inconsistencia preexistente para la ejecución global de E3, no se tocó.
+- **H4 (F9T.05, 2026-07-21):** `limvariasvariables.tex` tiene 4 `\sin` residuales
+  (78 `\sen`), todos en el example de continuidad por partes L813–816. Contenido nuevo
+  usa `\sen`; pendiente de E3.
+
+### Cierre de Prioridad 1 (Examen final)
+
+Con F9T.05 quedan **completos los 6 ítems de Prioridad 1** (técnicas del examen sin
+cobertura): F9T.01 (EX.07), F9T.02 (EX.02), F9T.03 (EX.03), F9T.04 (EX.04),
+F9T.05 (EX.05), F9T.06 (EX.09). Sigue la **Prioridad 2** (FALTA de talleres):
+F9T.07 en adelante.
 
 ---
 

@@ -863,6 +863,51 @@ $\boxed{\text{No existe}}$
 \end{myproof}
 \end{example}
 
+\begin{prob}[Continuidad en una región: análisis de dominio]
+Determine si la siguiente afirmación es \textbf{verdadera} o \textbf{falsa},
+justificando la respuesta:
+\begin{quote}
+\itshape La función $\displaystyle g(x,y)=\frac{\sqrt{xy}}{x^2+y^2-9}$ es
+continua en toda la región $D=\{(x,y):|x|+|y|<2\}$.
+\end{quote}
+\begin{myproof}
+\textbf{Paso 1. Dominio de $g$.} Para que $g(x,y)$ esté definida (con valor
+real) se requieren dos condiciones:
+\begin{itemize}
+  \item $\sqrt{xy}$ real $\Rightarrow xy\ge 0$ (cuadrantes I y III, incluidos
+        los ejes);
+  \item denominador no nulo $\Rightarrow x^2+y^2-9\neq 0$, es decir, $(x,y)$
+        no está sobre la circunferencia $x^2+y^2=9$ (radio $3$).
+\end{itemize}
+
+\textbf{Paso 2. El denominador en $D$.} Para todo $(x,y)\in D$ se cumple
+$x^2+y^2\le(|x|+|y|)^2<2^2=4<9$, de modo que $x^2+y^2-9<0$ y nunca se anula
+en $D$. La segunda condición se satisface en toda la región.
+
+\textbf{Paso 3. El radicando en $D$.} La región $D$ es el rombo abierto de
+vértices $(\pm2,0)$ y $(0,\pm2)$, que contiene puntos de los cuadrantes II y
+IV. Por ejemplo, $\bigl(-\tfrac12,\tfrac12\bigr)\in D$ pues
+$\lvert-\tfrac12\rvert+\lvert\tfrac12\rvert=1<2$, pero allí
+$xy=-\tfrac14<0$ y $\sqrt{xy}$ \emph{no} es un número real. En esos puntos
+$g$ ni siquiera está definida.
+
+\textbf{Paso 4. Conclusión.} Como $g$ no está definida en todos los puntos de
+$D$ (falla sobre las porciones de $D$ en los cuadrantes II y IV), no puede ser
+continua en toda la región. La afirmación es
+\[
+  \boxed{\text{FALSA.}}
+\]
+\end{myproof}
+\end{prob}
+
+\begin{rem}
+Sí es cierto, en cambio, que $g$ es continua en el subconjunto
+$D\cap\{xy\ge 0\}$ (la parte de $D$ en los cuadrantes I y III): allí
+$\sqrt{xy}$ es continua y el denominador es una función continua que no se
+anula, y el cociente de funciones continuas con denominador no nulo es
+continuo.
+\end{rem}
+
 \section{Problemas propuestos}
 
 % Básico
@@ -919,6 +964,12 @@ Dada la función $f(x,y)=\dfrac{x^3+y^3}{x^2+y^2}$ determine:
 \item De acuerdo al resultado obtenido en el anterior ítem, ¿es posible redefinir la función $f(x,y)$ para que sea continua en todo $\mathbb{R}^2$?
 \textit{Sugerencia:} Considere hacer una división de polinomios.
 \end{enumerate}
+\end{prob}
+
+\begin{prob}
+Decida, justificando, si la función $\displaystyle g(x,y)=
+\frac{\sqrt{xy}}{x^2+y^2-4}$ es continua en la región $|x|+|y|<1$. En caso
+negativo, indique el mayor subconjunto de esa región en el que sí lo es.
 \end{prob}
 
 
