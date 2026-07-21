@@ -470,7 +470,9 @@ Propuesto isomorfo de T1.03 `Problema 17.67`: paraboloide −4x²+9y²=36z, traz
 - Figura: NO
 - Estimación: S
 
-### F9T.09 — [origen: T1.06] [destino: funvectoriales.tex, §Cuádricas, nueva subsec. breve "Cilindros"]
+### F9T.09 — HECHO (2026-07-21) — [origen: T1.06] [destino: funvectoriales.tex, nueva §«Cilindros» tras §Superficies cuádricas, antes de §Curvas y superficies de nivel]
+Nueva subsección «Cilindros» (mini-teoría: ecuación sin una variable → generatrices ∥ eje ausente) + prob resuelto `Problema 17.47` (cilindro elíptico isomorfo 4x²+9y²−16x+18y−11=0 → (x−2)²/9+(y+1)²/4=1, centro (2,−1), a=3/b=2, secciones z=k idénticas). Protocolo 4 pasos + figura pgfplots 3D `fig:cilindro_eliptico` (Fig. 17.14, p. 418, paramétrica surf `variable=\u/\v`). Propuesto isomorfo (cilindro eje ∥ x: 9y²+4z²−18y+16z−11=0) tras propuestos F9T.07/.08. Compilación 798 pp, 0 errores, 2 pasadas. Verificado visualmente pp. 417–418 (figura re-renderizada: OK tras fix).
+
 - Tipo: ambos
 - Enunciado: mini-teoría (definición de cilindro: ecuación sin una variable) + prob: cilindro elíptico ax²+by²+cx+dy+e=0 → canónica, secciones z=c, bosquejo.
 - Solución: completar cuadrados → elipse trasladada → generatrices paralelas al eje z.
@@ -813,6 +815,10 @@ Propuesto isomorfo de T1.03 `Problema 17.67`: paraboloide −4x²+9y²=36z, traz
 - **H4 (F9T.05, 2026-07-21):** `limvariasvariables.tex` tiene 4 `\sin` residuales
   (78 `\sen`), todos en el example de continuidad por partes L813–816. Contenido nuevo
   usa `\sen`; pendiente de E3.
+- **H5 (F9T.09, 2026-07-21) — nota pgfplots:** en un `\addplot3[surf,...]` PARAMÉTRICO
+  (`variable=\u, variable y=\v`), añadir `samples y=2` hace que la superficie **no se
+  dibuje en absoluto** (solo quedan los ejes). Usar `samples=20` para ambas direcciones
+  (patrón del hiperboloide preexistente). Detectado en `fig:cilindro_eliptico`; corregido.
 
 ### Cierre de Prioridad 1 (Examen final)
 

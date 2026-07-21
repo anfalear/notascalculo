@@ -1449,6 +1449,75 @@ $(0,0,\pm1)$.
 \end{myproof}
 \end{example}
 
+\subsection{Cilindros}
+
+Una \textbf{superficie cilíndrica} (o \textbf{cilindro}) es la superficie
+generada por una recta —la \emph{generatriz}— que se desplaza paralela a un
+eje fijo apoyándose sobre una curva plana —la \emph{directriz}—. En
+coordenadas cartesianas, toda ecuación en la que \textbf{falta una de las
+tres variables} representa un cilindro cuyas generatrices son paralelas al
+eje de la variable ausente. Por ejemplo, $x^2+y^2=1$ en $\mathbb{R}^3$ es un
+cilindro circular de eje $z$, cuya directriz es la circunferencia
+$x^2+y^2=1$ del plano $xy$.
+
+\begin{prob}[Cilindro elíptico]
+Identifique la superficie $4x^2+9y^2-16x+18y-11=0$, escríbala en forma
+canónica, describa sus secciones con los planos $z=k$ y esbócela.
+\begin{myproof}
+\textbf{Paso 1. Reconocer el tipo.} La ecuación no contiene la variable $z$:
+se trata de un \textbf{cilindro} con generatrices paralelas al eje $z$; su
+forma queda determinada por la curva directriz del plano $xy$.
+
+\textbf{Paso 2. Completar cuadrados.}
+\[
+  4(x^2-4x)+9(y^2+2y)=11,
+\]
+\[
+  4\bigl[(x-2)^2-4\bigr]+9\bigl[(y+1)^2-1\bigr]=11
+  \;\Longrightarrow\;
+  4(x-2)^2+9(y+1)^2=36.
+\]
+Dividiendo entre $36$:
+\[
+  \frac{(x-2)^2}{9}+\frac{(y+1)^2}{4}=1.
+\]
+La directriz es una \textbf{elipse} de centro $(2,-1)$, con semieje $a=3$ en
+la dirección $x$ y semieje $b=2$ en la dirección $y$.
+
+\textbf{Paso 3. Secciones $z=k$.} Como $z$ no aparece en la ecuación, la
+sección con cualquier plano horizontal $z=k$ es \emph{la misma} elipse
+$\dfrac{(x-2)^2}{9}+\dfrac{(y+1)^2}{4}=1$. La superficie es un
+\textbf{cilindro elíptico} cuyo eje es la recta vertical $x=2$, $y=-1$
+(figura~\ref{fig:cilindro_eliptico}).
+
+\textbf{Paso 4. Resultado.}
+\[
+  \boxed{\ \frac{(x-2)^2}{9}+\frac{(y+1)^2}{4}=1:\ \text{cilindro elíptico de
+  eje } (2,-1,z).\ }
+\]
+\end{myproof}
+\end{prob}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[axis lines=center, xlabel=$x$, ylabel=$y$, zlabel=$z$,
+             xmin=-2,xmax=6,ymin=-4,ymax=2,zmin=0,zmax=5,
+             view={130}{25}, ticklabel style={font=\tiny},
+             width=6.5cm, height=6cm]
+  \addplot3[surf, shader=flat corner, samples=20,
+            colormap/cool, opacity=0.78,
+            variable=\u, variable y=\v,
+            domain=0:360, y domain=0:5,
+            trig format plots=deg]
+           ({2+3*cos(\u)}, {-1+2*sin(\u)}, {\v});
+\end{axis}
+\end{tikzpicture}
+\caption{Cilindro elíptico $\dfrac{(x-2)^2}{9}+\dfrac{(y+1)^2}{4}=1$, con
+  generatrices paralelas al eje $z$.}
+\label{fig:cilindro_eliptico}
+\end{figure}
+
 \subsection{Curvas y superficies de nivel}
 
 Las \textbf{curvas de nivel} son una herramienta fundamental para
@@ -1934,6 +2003,12 @@ determine su centro, vértices, focos y asíntotas.
 \begin{prob}
 Para el paraboloide $-4x^2+9y^2=36z$, halle la traza con el plano $x=0$ e
 identifique el vértice, el foco y la directriz de la parábola resultante.
+\end{prob}
+
+\begin{prob}
+Identifique la superficie $9y^2+4z^2-18y+16z-11=0$: escríbala en forma
+canónica, indique el eje del cilindro y describa sus secciones con los
+planos $x=k$.
 \end{prob}
 
 \begin{prob}
