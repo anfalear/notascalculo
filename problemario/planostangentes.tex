@@ -198,6 +198,55 @@ f_y = \frac{2y}{x^2+y^2}}
 \end{myproof}
 \end{example}
 
+\begin{example}[Estimación de derivadas parciales a partir de una tabla]
+La tabla registra la \emph{sensación térmica} $S$ (en $^\circ$C) en función de
+la temperatura del aire $T$ (en $^\circ$C) y la velocidad del viento $v$ (en
+km/h) medidas en una estación meteorológica:
+\begin{center}
+\begin{tabular}{c|cccc}
+$S(T,v)$ & $v=10$ & $v=20$ & $v=30$ & $v=40$ \\ \hline
+$T=-10$  & $-15$  & $-18$  & $-20$  & $-21$  \\
+$T=-5$   & $-9$   & $-12$  & $-14$  & $-15$  \\
+$T=0$    & $-3$   & $-5$   & $-7$   & $-8$   \\
+$T=5$    & $3$    & $1$    & $-1$   & $-2$   \\
+\end{tabular}
+\end{center}
+Estime $\partial S/\partial T$ y $\partial S/\partial v$ en el punto
+$(T,v)=(-5,20)$ e interprete sus unidades y signos.
+\begin{myproof}
+\textbf{Paso 1. Las parciales como cociente incremental.}
+Cada parcial es el límite de un cociente incremental; con datos tabulados lo
+aproximamos por \emph{diferencias centradas} (promediando los dos lados) a
+partir de los valores vecinos en la misma columna o fila.
+
+\textbf{Paso 2. $\partial S/\partial T$ en $(-5,20)$ (columna $v=20$ fija).}
+Con las filas vecinas $T=-10$ y $T=0$:
+\[
+  \frac{\partial S}{\partial T}\approx
+  \frac{S(0,20)-S(-10,20)}{0-(-10)}
+  =\frac{-5-(-18)}{10}=\frac{13}{10}=1.3.
+\]
+
+\textbf{Paso 3. $\partial S/\partial v$ en $(-5,20)$ (fila $T=-5$ fija).}
+Con las columnas vecinas $v=10$ y $v=30$:
+\[
+  \frac{\partial S}{\partial v}\approx
+  \frac{S(-5,30)-S(-5,10)}{30-10}
+  =\frac{-14-(-9)}{20}=\frac{-5}{20}=-0.25.
+\]
+
+\textbf{Paso 4. Interpretación.}
+\[
+  \boxed{\ \frac{\partial S}{\partial T}\approx 1.3,\qquad
+  \frac{\partial S}{\partial v}\approx -0.25\ \tfrac{^\circ\text{C}}{\text{km/h}}.\ }
+\]
+$\partial S/\partial T>0$: al subir la temperatura del aire aumenta la
+sensación térmica (algo amplificada, $1.3\,^\circ$C por cada $^\circ$C).
+$\partial S/\partial v<0$: más viento produce una sensación más fría, a razón
+de unos $0.25\,^\circ$C por cada km/h adicional.
+\end{myproof}
+\end{example}
+
 % ------------------------------------------------------------
 % DERIVADAS PARCIALES DE ORDEN SUPERIOR
 % ------------------------------------------------------------
@@ -962,6 +1011,12 @@ Calcule las primeras derivadas parciales de las siguientes funciones:
     \item $f(x,y,z)=\ln(x^2+y^2+z^2)$
 \end{enumerate}
 \end{multicols}
+\end{prob}
+
+\begin{prob}
+Sea $f(x,y)=\displaystyle\int_x^y \sqrt{1+t^3}\,dt$. Calcule $f_x$ y $f_y$
+aplicando el Teorema Fundamental del Cálculo (observe que $x$ es el límite
+inferior y $y$ el superior).
 \end{prob}
 
 \begin{prob}

@@ -328,6 +328,53 @@ ys+x = (s+t)s+st = s^2+st+st = s^2+2st = s(s+2t).
 \end{myproof}
 \end{prob}
 
+\begin{rem}[Derivadas de segundo orden por la cadena]
+Al derivar por segunda vez, cada parcial $f_x$ y $f_y$ \emph{sigue siendo}
+función de las variables intermedias, de modo que se le vuelve a aplicar la
+regla de la cadena. Conviene tratar $f_x$ y $f_y$ como nuevas funciones y
+derivarlas igual que a $f$.
+\end{rem}
+
+\begin{prob}[Segunda derivada en coordenadas polares]
+Sea $w=f(x,y)$ con $x=r\cos\theta$, $y=r\,\sen\theta$. Exprese
+$\dfrac{\partial^2 w}{\partial r^2}$ en términos de las parciales de $f$.
+\begin{myproof}
+\textbf{Paso 1. Primera derivada $w_r$.}
+Como $x_r=\cos\theta$ y $y_r=\sen\theta$,
+\[
+  w_r=f_x\,x_r+f_y\,y_r=f_x\cos\theta+f_y\,\sen\theta.
+\]
+
+\textbf{Paso 2. Derivar de nuevo respecto a $r$.}
+Al derivar respecto a $r$, $\theta$ es constante y $f_x$, $f_y$ son funciones
+de $(x,y)$; reaplicando la cadena:
+\[
+  \frac{\partial}{\partial r}(f_x)=f_{xx}\cos\theta+f_{xy}\,\sen\theta,\qquad
+  \frac{\partial}{\partial r}(f_y)=f_{yx}\cos\theta+f_{yy}\,\sen\theta.
+\]
+
+\textbf{Paso 3. Combinar.}
+\[
+  w_{rr}=\cos\theta\,\frac{\partial}{\partial r}(f_x)
+        +\sen\theta\,\frac{\partial}{\partial r}(f_y).
+\]
+
+\textbf{Paso 4. Resultado.}
+Usando $f_{xy}=f_{yx}$,
+\[
+  \boxed{\ \frac{\partial^2 w}{\partial r^2}
+  =f_{xx}\cos^2\theta+2f_{xy}\cos\theta\,\sen\theta+f_{yy}\,\sen^2\theta.\ }
+\]
+\end{myproof}
+\end{prob}
+
+\begin{prob}
+La presión de un gas ideal es $P=\dfrac{kT}{V}$, con $k$ constante. En cierto
+proceso la temperatura y el volumen varían con el tiempo según $T(t)=T_0+at$ y
+$V(t)=V_0+bt$. Halle $\dfrac{dP}{dt}$ y $\dfrac{d^2P}{dt^2}$ en términos de
+$t$ (use la regla de la cadena y la derivada de un cociente).
+\end{prob}
+
 
 
 

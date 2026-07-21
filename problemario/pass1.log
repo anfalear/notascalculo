@@ -1920,11 +1920,6 @@ Underfull \vbox (badness 1142) has occurred while \output is active
 [413]
 Underfull \vbox (badness 4634) has occurred while \output is active
 [414]
-
-LaTeX Warning: Reference `fig:dominio_tablero' on page 415 undefined on input l
-ine 1334.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active
 [415]
 [416]
@@ -1935,7 +1930,12 @@ Underfull \vbox (badness 1389) has occurred while \output is active
 Underfull \vbox (badness 1194) has occurred while \output is active
 [419]
 [420]
-Overfull \hbox (4.74512pt too wide) in paragraph at lines 1809--1812
+
+LaTeX Warning: Reference `fig:cilindro_coseno' on page 421 undefined on input l
+ine 1777.
+
+
+Overfull \hbox (4.74512pt too wide) in paragraph at lines 1833--1836
 []\TU/TimesNewRoman(0)/b/n/12 Ele-gir va-lo-res de $\OML/cmm/m/it/12 k$\TU/Time
 sNewRoman(0)/b/n/12 . \TU/TimesNewRoman(0)/m/n/12 Se-lec-cio-nar una se-cuen-ci
 a de va-lo-res re-pre-sen-ta-ti-vos, por ejem-plo, $\OML/cmm/m/it/12 k \OT1/cmr
@@ -1943,120 +1943,114 @@ a de va-lo-res re-pre-sen-ta-ti-vos, por ejem-plo, $\OML/cmm/m/it/12 k \OT1/cmr
 /12 ^^@\OT1/cmr/m/n/12 1\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 0\OML/cmm/m/it/12 ; 
 \OT1/cmr/m/n/12 1\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 2$
 
-Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
- vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94894pt,-0.31569pt) ar
-e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1860.
-
-
-Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
- vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94894pt,-0.31569pt) ar
-e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1860.
-
-
-Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
- vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94894pt,-0.31569pt) ar
-e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1860.
-
-
-Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
- vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94894pt,-0.31569pt) ar
-e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1860.
-
-
-Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
- vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94894pt,-0.31569pt) ar
-e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1860.
-
-
-Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
- vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94894pt,-0.31569pt) ar
-e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1860.
-
-
-Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
- vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94894pt,-0.31569pt) ar
-e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1860.
-
-
-Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
- vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94894pt,-0.31569pt) ar
-e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1860.
-
-
-Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
- vector -(0.48035pt,0.87703pt) and the unit y vector (0.90419pt,0.42722pt) are 
-almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1860.
-
-
-Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
- vector -(0.48035pt,0.87703pt) and the unit y vector (0.90419pt,0.42722pt) are 
-almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1860.
-
-
-Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
- vector -(0.48035pt,0.87703pt) and the unit y vector (0.90419pt,0.42722pt) are 
-almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1860.
-
-
-Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
- vector -(0.48035pt,0.87703pt) and the unit y vector (0.90419pt,0.42722pt) are 
-almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1860.
-
-
-Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
- vector -(0.48035pt,0.87703pt) and the unit y vector (0.90419pt,0.42722pt) are 
-almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1860.
-
-
-Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
- vector -(0.48035pt,0.87703pt) and the unit y vector (0.90419pt,0.42722pt) are 
-almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1860.
-
-
-Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
- vector -(0.48035pt,0.87703pt) and the unit y vector (0.90419pt,0.42722pt) are 
-almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1860.
-
-
-Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
- vector -(0.48035pt,0.87703pt) and the unit y vector (0.90419pt,0.42722pt) are 
-almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1860.
-
-
-Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
- vector -(0.62912pt,-0.77728pt) and the unit x vector (0.94894pt,-0.31569pt) ar
-e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1860.
-
-
-Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
- vector -(0.62912pt,-0.77728pt) and the unit x vector (0.94894pt,-0.31569pt) ar
-e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1860.
-
-
-Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
- vector -(-0.48035pt,-0.87703pt) and the unit y vector (0.90419pt,0.42722pt) ar
-e almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1860.
-
-
-Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
- vector -(-0.48035pt,-0.87703pt) and the unit y vector (0.90419pt,0.42722pt) ar
-e almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1860.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active
 [421]
+
+Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
+ vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94894pt,-0.31569pt) ar
+e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1884.
+
+
+Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
+ vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94894pt,-0.31569pt) ar
+e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1884.
+
+
+Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
+ vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94894pt,-0.31569pt) ar
+e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1884.
+
+
+Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
+ vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94894pt,-0.31569pt) ar
+e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1884.
+
+
+Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
+ vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94894pt,-0.31569pt) ar
+e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1884.
+
+
+Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
+ vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94894pt,-0.31569pt) ar
+e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1884.
+
+
+Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
+ vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94894pt,-0.31569pt) ar
+e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1884.
+
+
+Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
+ vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94894pt,-0.31569pt) ar
+e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1884.
+
+
+Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
+ vector -(0.48035pt,0.87703pt) and the unit y vector (0.90419pt,0.42722pt) are 
+almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1884.
+
+
+Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
+ vector -(0.48035pt,0.87703pt) and the unit y vector (0.90419pt,0.42722pt) are 
+almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1884.
+
+
+Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
+ vector -(0.48035pt,0.87703pt) and the unit y vector (0.90419pt,0.42722pt) are 
+almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1884.
+
+
+Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
+ vector -(0.48035pt,0.87703pt) and the unit y vector (0.90419pt,0.42722pt) are 
+almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1884.
+
+
+Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
+ vector -(0.48035pt,0.87703pt) and the unit y vector (0.90419pt,0.42722pt) are 
+almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1884.
+
+
+Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
+ vector -(0.48035pt,0.87703pt) and the unit y vector (0.90419pt,0.42722pt) are 
+almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1884.
+
+
+Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
+ vector -(0.48035pt,0.87703pt) and the unit y vector (0.90419pt,0.42722pt) are 
+almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1884.
+
+
+Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
+ vector -(0.48035pt,0.87703pt) and the unit y vector (0.90419pt,0.42722pt) are 
+almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1884.
+
+
+Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
+ vector -(0.62912pt,-0.77728pt) and the unit x vector (0.94894pt,-0.31569pt) ar
+e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1884.
+
+
+Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
+ vector -(0.62912pt,-0.77728pt) and the unit x vector (0.94894pt,-0.31569pt) ar
+e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1884.
+
+
+Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
+ vector -(-0.48035pt,-0.87703pt) and the unit y vector (0.90419pt,0.42722pt) ar
+e almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1884.
+
+
+Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
+ vector -(-0.48035pt,-0.87703pt) and the unit y vector (0.90419pt,0.42722pt) ar
+e almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1884.
+
+
 [422]
-Underfull \vbox (badness 2635) has occurred while \output is active
 [423]
 [424]
 [425]
 [426]
 [427]
-
-LaTeX Warning: Reference `fig:parabola_rotada' on page 428 undefined on input l
-ine 2321.
-
-
 [428]
 
 
@@ -2097,14 +2091,22 @@ Underfull \vbox (badness 1603) has occurred while \output is active
 [437]
 [438]
 [439]
+
+LaTeX Warning: Reference `fig:contorno_cociente' on page 440 undefined on input
+ line 691.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active
 [440]
 [441]
 [442]
+[443]
 
 
 
-[443]) (./planostangentes.tex
-[444]
+[444]) (./planostangentes.tex
+[445]
+[446]
 Capítulo 19.
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
@@ -2137,7 +2139,7 @@ Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
 e almost parallel (abs(cos(angle)) = 0.83966pt)! on input line 110.
 
 
-[445]
+[447]
 Missing character: There is no ✓ (U+2713) in font "name:Times New Roman:mode=
 node;script=latn;language=dflt;+tlig;"!
 Missing character: There is no ✓ (U+2713) in font "name:Times New Roman:mode=
@@ -2148,182 +2150,182 @@ Missing character: There is no ✓ (U+2713) in font "name:Times New Roman:mode=
 node;script=latn;language=dflt;+tlig;"!
 
 Underfull \vbox (badness 1062) has occurred while \output is active
-[446
+[448
 Missing character: There is no ✓ (U+2713) in font "name:Times New Roman:mode=
 node;script=latn;language=dflt;+tlig;"!
 Missing character: There is no ✓ (U+2713) in font "name:Times New Roman:mode=
 node;script=latn;language=dflt;+tlig;"!
 ]
-[447]
-[448]
 [449]
 [450]
-
-Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
- vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94899pt,-0.31569pt) ar
-e almost parallel (abs(cos(angle)) = 0.84239pt)! on input line 603.
-
-
-Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
- vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94899pt,-0.31569pt) ar
-e almost parallel (abs(cos(angle)) = 0.84239pt)! on input line 603.
-
-
-Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
- vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94899pt,-0.31569pt) ar
-e almost parallel (abs(cos(angle)) = 0.84239pt)! on input line 603.
-
-
-Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
- vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94899pt,-0.31569pt) ar
-e almost parallel (abs(cos(angle)) = 0.84239pt)! on input line 603.
-
-
-Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
- vector -(0.48035pt,0.87703pt) and the unit y vector (0.90417pt,0.4272pt) are a
-lmost parallel (abs(cos(angle)) = 0.80898pt)! on input line 603.
-
-
-Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
- vector -(0.48035pt,0.87703pt) and the unit y vector (0.90417pt,0.4272pt) are a
-lmost parallel (abs(cos(angle)) = 0.80898pt)! on input line 603.
-
-
-Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
- vector -(0.48035pt,0.87703pt) and the unit y vector (0.90417pt,0.4272pt) are a
-lmost parallel (abs(cos(angle)) = 0.80898pt)! on input line 603.
-
-
-Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
- vector -(0.48035pt,0.87703pt) and the unit y vector (0.90417pt,0.4272pt) are a
-lmost parallel (abs(cos(angle)) = 0.80898pt)! on input line 603.
-
-
-Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
- vector -(0.62912pt,-0.77728pt) and the unit x vector (0.94899pt,-0.31569pt) ar
-e almost parallel (abs(cos(angle)) = 0.84239pt)! on input line 603.
-
-
-Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
- vector -(0.62912pt,-0.77728pt) and the unit x vector (0.94899pt,-0.31569pt) ar
-e almost parallel (abs(cos(angle)) = 0.84239pt)! on input line 603.
-
-
-Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
- vector -(-0.48035pt,-0.87703pt) and the unit y vector (0.90417pt,0.4272pt) are
- almost parallel (abs(cos(angle)) = 0.80898pt)! on input line 603.
-
-
-Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
- vector -(-0.48035pt,-0.87703pt) and the unit y vector (0.90417pt,0.4272pt) are
- almost parallel (abs(cos(angle)) = 0.80898pt)! on input line 603.
-
-
-Underfull \vbox (badness 2057) has occurred while \output is active
 [451]
 [452]
 [453]
+
+Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
+ vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94899pt,-0.31569pt) ar
+e almost parallel (abs(cos(angle)) = 0.84239pt)! on input line 652.
+
+
+Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
+ vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94899pt,-0.31569pt) ar
+e almost parallel (abs(cos(angle)) = 0.84239pt)! on input line 652.
+
+
+Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
+ vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94899pt,-0.31569pt) ar
+e almost parallel (abs(cos(angle)) = 0.84239pt)! on input line 652.
+
+
+Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
+ vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94899pt,-0.31569pt) ar
+e almost parallel (abs(cos(angle)) = 0.84239pt)! on input line 652.
+
+
+Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
+ vector -(0.48035pt,0.87703pt) and the unit y vector (0.90417pt,0.4272pt) are a
+lmost parallel (abs(cos(angle)) = 0.80898pt)! on input line 652.
+
+
+Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
+ vector -(0.48035pt,0.87703pt) and the unit y vector (0.90417pt,0.4272pt) are a
+lmost parallel (abs(cos(angle)) = 0.80898pt)! on input line 652.
+
+
+Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
+ vector -(0.48035pt,0.87703pt) and the unit y vector (0.90417pt,0.4272pt) are a
+lmost parallel (abs(cos(angle)) = 0.80898pt)! on input line 652.
+
+
+Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
+ vector -(0.48035pt,0.87703pt) and the unit y vector (0.90417pt,0.4272pt) are a
+lmost parallel (abs(cos(angle)) = 0.80898pt)! on input line 652.
+
+
+Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
+ vector -(0.62912pt,-0.77728pt) and the unit x vector (0.94899pt,-0.31569pt) ar
+e almost parallel (abs(cos(angle)) = 0.84239pt)! on input line 652.
+
+
+Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
+ vector -(0.62912pt,-0.77728pt) and the unit x vector (0.94899pt,-0.31569pt) ar
+e almost parallel (abs(cos(angle)) = 0.84239pt)! on input line 652.
+
+
+Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
+ vector -(-0.48035pt,-0.87703pt) and the unit y vector (0.90417pt,0.4272pt) are
+ almost parallel (abs(cos(angle)) = 0.80898pt)! on input line 652.
+
+
+Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
+ vector -(-0.48035pt,-0.87703pt) and the unit y vector (0.90417pt,0.4272pt) are
+ almost parallel (abs(cos(angle)) = 0.80898pt)! on input line 652.
+
+
 [454]
+Underfull \vbox (badness 2846) has occurred while \output is active
 [455]
-Overfull \vbox (4.59724pt too high) has occurred while \output is active
-Overfull \vbox (5.74193pt too high) has occurred while \output is active
-
-
-
 [456]
-
-
-) (./gradientes.tex
+Underfull \vbox (badness 1205) has occurred while \output is active
 [457]
 [458]
+
+
+
+
+
+
+[459]) (./gradientes.tex
+[460]
 Capítulo 20.
 
-[459]
+[461]
 Overfull \hbox (93.90405pt too wide) detected at line 137
  $\OT1/cmr/m/n/12 = (2(3) + 2(9))(\OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 0[]5) + (
 2(5) + 2(9))(0[]3) + (2(3) + 2(5))(0[]3) = 24(\OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/
 12 0[]5) + 28(0[]3) + 16(0[]3) = \OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 12 + 8[]4 
 + 4[]8 = 1[]2 \OML/cmm/m/it/12 m[]\OT1/cmr/m/n/12 /\OML/cmm/m/it/12 s:$ 
 
-[460]
-[461]
 [462]
 [463]
 [464]
 [465]
-
-Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
- vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94112pt,-0.33818pt) ar
-e almost parallel (abs(cos(angle)) = 0.85492pt)! on input line 600.
-
-
-Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
- vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94112pt,-0.33818pt) ar
-e almost parallel (abs(cos(angle)) = 0.85492pt)! on input line 600.
-
-
-Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
- vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94112pt,-0.33818pt) ar
-e almost parallel (abs(cos(angle)) = 0.85492pt)! on input line 600.
-
-
-Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
- vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94112pt,-0.33818pt) ar
-e almost parallel (abs(cos(angle)) = 0.85492pt)! on input line 600.
-
-
-Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
- vector -(0.48035pt,0.87703pt) and the unit y vector (0.89076pt,0.45462pt) are 
-almost parallel (abs(cos(angle)) = 0.82658pt)! on input line 600.
-
-
-Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
- vector -(0.48035pt,0.87703pt) and the unit y vector (0.89076pt,0.45462pt) are 
-almost parallel (abs(cos(angle)) = 0.82658pt)! on input line 600.
-
-
-Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
- vector -(0.48035pt,0.87703pt) and the unit y vector (0.89076pt,0.45462pt) are 
-almost parallel (abs(cos(angle)) = 0.82658pt)! on input line 600.
-
-
-Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
- vector -(0.48035pt,0.87703pt) and the unit y vector (0.89076pt,0.45462pt) are 
-almost parallel (abs(cos(angle)) = 0.82658pt)! on input line 600.
-
-
-Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
- vector -(0.62912pt,-0.77728pt) and the unit x vector (0.94112pt,-0.33818pt) ar
-e almost parallel (abs(cos(angle)) = 0.85492pt)! on input line 600.
-
-
-Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
- vector -(0.62912pt,-0.77728pt) and the unit x vector (0.94112pt,-0.33818pt) ar
-e almost parallel (abs(cos(angle)) = 0.85492pt)! on input line 600.
-
-
-Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
- vector -(-0.48035pt,-0.87703pt) and the unit y vector (0.89076pt,0.45462pt) ar
-e almost parallel (abs(cos(angle)) = 0.82658pt)! on input line 600.
-
-
-Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
- vector -(-0.48035pt,-0.87703pt) and the unit y vector (0.89076pt,0.45462pt) ar
-e almost parallel (abs(cos(angle)) = 0.82658pt)! on input line 600.
-
-
 [466]
 [467]
+
+Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
+ vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94112pt,-0.33818pt) ar
+e almost parallel (abs(cos(angle)) = 0.85492pt)! on input line 647.
+
+
+Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
+ vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94112pt,-0.33818pt) ar
+e almost parallel (abs(cos(angle)) = 0.85492pt)! on input line 647.
+
+
+Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
+ vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94112pt,-0.33818pt) ar
+e almost parallel (abs(cos(angle)) = 0.85492pt)! on input line 647.
+
+
+Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
+ vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94112pt,-0.33818pt) ar
+e almost parallel (abs(cos(angle)) = 0.85492pt)! on input line 647.
+
+
+Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
+ vector -(0.48035pt,0.87703pt) and the unit y vector (0.89076pt,0.45462pt) are 
+almost parallel (abs(cos(angle)) = 0.82658pt)! on input line 647.
+
+
+Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
+ vector -(0.48035pt,0.87703pt) and the unit y vector (0.89076pt,0.45462pt) are 
+almost parallel (abs(cos(angle)) = 0.82658pt)! on input line 647.
+
+
+Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
+ vector -(0.48035pt,0.87703pt) and the unit y vector (0.89076pt,0.45462pt) are 
+almost parallel (abs(cos(angle)) = 0.82658pt)! on input line 647.
+
+
+Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
+ vector -(0.48035pt,0.87703pt) and the unit y vector (0.89076pt,0.45462pt) are 
+almost parallel (abs(cos(angle)) = 0.82658pt)! on input line 647.
+
+
+Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
+ vector -(0.62912pt,-0.77728pt) and the unit x vector (0.94112pt,-0.33818pt) ar
+e almost parallel (abs(cos(angle)) = 0.85492pt)! on input line 647.
+
+
+Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
+ vector -(0.62912pt,-0.77728pt) and the unit x vector (0.94112pt,-0.33818pt) ar
+e almost parallel (abs(cos(angle)) = 0.85492pt)! on input line 647.
+
+
+Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
+ vector -(-0.48035pt,-0.87703pt) and the unit y vector (0.89076pt,0.45462pt) ar
+e almost parallel (abs(cos(angle)) = 0.82658pt)! on input line 647.
+
+
+Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
+ vector -(-0.48035pt,-0.87703pt) and the unit y vector (0.89076pt,0.45462pt) ar
+e almost parallel (abs(cos(angle)) = 0.82658pt)! on input line 647.
+
+
 [468]
 [469]
 [470]
 [471]
-
-
-
-[472]) (./multiplicadoresintdobles.tex
+Underfull \vbox (badness 2285) has occurred while \output is active
+[472]
 [473]
 [474]
+
+
+
+[475]) (./multiplicadoresintdobles.tex
+[476]
 Capítulo 21.
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
@@ -2387,21 +2389,8 @@ e almost parallel (abs(cos(angle)) = 0.80904pt)! on input line 92.
 
 
 Underfull \vbox (badness 1708) has occurred while \output is active
-[475]
-[476]
 [477]
-
-
-
-
-
-
-
 [478]
-
-
-
-
 [479]
 
 
@@ -2410,8 +2399,21 @@ Underfull \vbox (badness 1708) has occurred while \output is active
 
 
 
-Underfull \vbox (badness 3098) has occurred while \output is active
 [480]
+
+
+
+
+[481]
+
+
+
+
+
+
+
+Underfull \vbox (badness 3098) has occurred while \output is active
+[482]
 
 
 
@@ -2420,25 +2422,25 @@ Underfull \vbox (badness 3098) has occurred while \output is active
 
 
 Underfull \vbox (badness 1009) has occurred while \output is active
-[481]
-Underfull \vbox (badness 1194) has occurred while \output is active
-[482]
-
-
-
-
 [483]
+Underfull \vbox (badness 1194) has occurred while \output is active
 [484]
+
+
+
+
 [485]
-Underfull \vbox (badness 10000) has occurred while \output is active
 [486]
-Underfull \vbox (badness 5592) has occurred while \output is active
 [487]
+Underfull \vbox (badness 10000) has occurred while \output is active
 [488]
-
-
-
+Underfull \vbox (badness 5592) has occurred while \output is active
 [489]
+[490]
+
+
+
+[491]
 Overfull \hbox (0.115pt too wide) in paragraph at lines 1002--1003
 [][]\TU/TimesNewRoman(0)/b/n/12 Pro-ble-ma 21.50. []\TU/TimesNewRoman(0)/m/n/12
  De-ter-mi-ne el pun-to so-bre el plano $\OT1/cmr/m/n/12 3\OML/cmm/m/it/12 x \O
@@ -2448,29 +2450,27 @@ cmr/m/n/12 = \OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 3$ \TU/TimesNewRoman(0)/m/n/12
 mr/m/n/12 2\OML/cmm/m/it/12 A; \OT1/cmr/m/n/12 5\OML/cmm/m/it/12 A\OT1/cmr/m/n/
 12 )\OML/cmm/m/it/12 :$
 )
-[490] (./vvpropios.tex
-[491]
-[492]
+[492] (./vvpropios.tex
+[493]
+[494]
 Capítulo 22.
 
 Underfull \vbox (badness 6944) has occurred while \output is active
-[493]
+[495]
 Overfull \hbox (5.97473pt too wide) in paragraph at lines 64--65
 []\TU/TimesNewRoman(0)/b/n/12 Mul-ti-pli-ci-dad al-ge-brai-ca\TU/TimesNewRoman(
 0)/m/n/12 : Nú-me-ro de ve-ces que $\OML/cmm/m/it/12 ^^U$ \TU/TimesNewRoman(0)
 /m/n/12 apa-re-ce co-mo raíz del po-li-no-mio ca-rac-te-rís-ti-co $[]\OT1/cmr
 /m/n/12 (\OML/cmm/m/it/12 ^^UI \OMS/cmsy/m/n/12 ^^@
 
-[494]
+[496]
 Underfull \hbox (badness 10000) in paragraph at lines 150--158
 [][]\TU/TimesNewRoman(0)/b/n/12 So-lu-ción:[] Pa-so 1. \TU/TimesNewRoman(0)/m/
 n/12 Cal-cu-la-mos el po-li-no-mio ca-rac-te-rís-ti-co: $[]\OT1/cmr/m/n/12 (\O
 ML/cmm/m/it/12 ^^UI \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 A\OT1/cmr/m/n/12 ) =
 
-[495]
-Underfull \vbox (badness 10000) has occurred while \output is active
-[496]
 [497]
+Underfull \vbox (badness 10000) has occurred while \output is active
 [498]
 [499]
 [500]
@@ -2480,6 +2480,8 @@ Underfull \vbox (badness 10000) has occurred while \output is active
 [504]
 [505]
 [506]
+[507]
+[508]
 Overfull \hbox (4.91805pt too wide) detected at line 958
  $\OT1/cmr/m/n/12 3[] \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 a 
 \OT1/cmr/m/n/12 + 4)3 + (4\OML/cmm/m/it/12 a \OT1/cmr/m/n/12 + 1) = 0  =[]\OMS/
@@ -2489,8 +2491,6 @@ mr/m/n/12 + 1 = 0  =[]\OMS/cmsy/m/n/12 )  \OT1/cmr/m/n/12 (4\OML/cmm/m/it/12 a
 \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 3\OML/cmm/m/it/12 a\OT1/cmr/m/n/12 ) + (9 
 \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 12 + 1) = 0  =[]\OMS/cmsy/m/n/12 )  []$ 
 
-[507]
-[508]
 [509]
 [510]
 [511]
@@ -2498,14 +2498,16 @@ mr/m/n/12 + 1 = 0  =[]\OMS/cmsy/m/n/12 )  \OT1/cmr/m/n/12 (4\OML/cmm/m/it/12 a
 [513]
 [514]
 [515]
-[516]) (./translineales.tex
+[516]
 [517]
-[518]
-Capítulo 23.
-
+[518]) (./translineales.tex
 [519]
 [520]
+Capítulo 23.
+
 [521]
+[522]
+[523]
 Overfull \hbox (8.19984pt too wide) in paragraph at lines 223--224
 \TU/TimesNewRoman(0)/m/n/12 una ba-se de $[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 T
 \OT1/cmr/m/n/12 )$\TU/TimesNewRoman(0)/m/n/12 . Co-mo $[]\OT1/cmr/m/n/12 (\OML/
@@ -2514,10 +2516,10 @@ cmm/m/it/12 V\OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 n$\TU/TimesNewRoman(0)/m/n/12
 TimesNewRoman(0)/m/n/12 : $\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 v[]; [] ; v[]; v[
 ]; [] ; v[]\OMS/cmsy/m/n/12 g$\TU/TimesNewRoman(0)/m/n/12 . 
 
-[522]
-[523]
 [524]
 [525]
+[526]
+[527]
 Overfull \hbox (1.92943pt too wide) in paragraph at lines 471--472
 []\TU/TimesNewRoman(0)/m/n/12 Sea $\OML/cmm/m/it/12 V$ \TU/TimesNewRoman(0)/m/n
 /12 un es-pa-cio vec-to-rial so-bre $\U/msb/m/n/12 R$ \TU/TimesNewRoman(0)/m/n/
@@ -2526,39 +2528,39 @@ Overfull \hbox (1.92943pt too wide) in paragraph at lines 471--472
 12 B \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 v[]; [] ; v[]\OMS/cms
 y/m/n/12 g$
 
-[526]
-[527]
+[528]
+[529]
 Overfull \hbox (74.4474pt too wide) detected at line 602
 []
 
 Overfull \hbox (9.42995pt too wide) detected at line 607
 []
 
-[528]
-[529]
 [530]
 [531]
+[532]
+[533]
 Overfull \hbox (25.63403pt too wide) detected at line 854
 []
 
-[532]
-Underfull \vbox (badness 10000) has occurred while \output is active
-[533]
 [534]
+Underfull \vbox (badness 10000) has occurred while \output is active
 [535]
 [536]
 [537]
-Underfull \vbox (badness 10000) has occurred while \output is active
 [538]
 [539]
+Underfull \vbox (badness 10000) has occurred while \output is active
 [540]
 [541]
-Underfull \vbox (badness 1168) has occurred while \output is active
 [542]
 [543]
+Underfull \vbox (badness 1168) has occurred while \output is active
 [544]
 [545]
 [546]
+[547]
+[548]
 Overfull \hbox (49.70276pt too wide) in paragraph at lines 1880--1893
 \TU/TimesNewRoman(0)/m/n/12 ción li-neal y $[]$ con $\OML/cmm/m/it/12 k \OMS/c
 msy/m/n/12 ^^T \OML/cmm/m/it/12 m$ \TU/TimesNewRoman(0)/m/n/12 es un con-jun-to
@@ -2566,68 +2568,68 @@ msy/m/n/12 ^^T \OML/cmm/m/it/12 m$ \TU/TimesNewRoman(0)/m/n/12 es un con-jun-to
 12 , en-ton-ces $[]$
 
 Underfull \vbox (badness 2521) has occurred while \output is active
-[547]
-[548]
 [549]
-Underfull \vbox (badness 10000) has occurred while \output is active
 [550]
 [551]
-[552]
 Underfull \vbox (badness 10000) has occurred while \output is active
+[552]
 [553]
+[554]
+Underfull \vbox (badness 10000) has occurred while \output is active
+[555]
 Underfull \hbox (badness 10000) in paragraph at lines 2342--2342
 []\TU/TimesNewRoman(0)/m/n/12 Fi-gu-ra 23.18: []Figura ori-gi-nal (Su-do-ku 3D 
 cu-be, []$\TU/lmtt/m/n/12 https://texample.net/tikz/examples/
 
 Underfull \vbox (badness 10000) has occurred while \output is active
-[554]
+[556]
 Underfull \vbox (badness 10000) has occurred while \output is active
-[555]
-[556])
 [557]
-[558] (./sucesionesyseries.tex
+[558])
 [559]
-[560]
-Capítulo 24.
-
+[560] (./sucesionesyseries.tex
 [561]
 [562]
+Capítulo 24.
+
 [563]
 [564]
 [565]
 [566]
 [567]
-Underfull \vbox (badness 10000) has occurred while \output is active
 [568]
 [569]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 774.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 774.
-
-
+Underfull \vbox (badness 10000) has occurred while \output is active
 [570]
 [571]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 774.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 774.
+
+
 [572]
-Underfull \vbox (badness 10000) has occurred while \output is active
 [573]
 [574]
+Underfull \vbox (badness 10000) has occurred while \output is active
 [575]
-[576]) (./sucesionesyseriesfunciones.tex
+[576]
 [577]
-[578]
+[578]) (./sucesionesyseriesfunciones.tex
+[579]
+[580]
 Capítulo 25.
 
-[579]
-Underfull \vbox (badness 10000) has occurred while \output is active
-[580]
-Underfull \vbox (badness 10000) has occurred while \output is active
 [581]
-Underfull \vbox (badness 2932) has occurred while \output is active
+Underfull \vbox (badness 10000) has occurred while \output is active
 [582]
+Underfull \vbox (badness 10000) has occurred while \output is active
+[583]
+Underfull \vbox (badness 2932) has occurred while \output is active
+[584]
 Overfull \hbox (3.32472pt too wide) in paragraph at lines 442--449
 \TU/TimesNewRoman(0)/m/it/12 Una de-mos-tra-ción cons-truc-ti-va ele-gan-te ut
 i-li-za los po-li-no-mios de Berns-tein $\OML/cmm/m/it/12 B[]\OT1/cmr/m/n/12 (\
@@ -2636,14 +2638,12 @@ L/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 k\OT1/cmr/m/n/12 /\OML/cmm/m/i
 t/12 n\OT1/cmr/m/n/12 )[]\OML/cmm/m/it/12 x[]\OT1/cmr/m/n/12 (1 \OMS/cmsy/m/n/1
 2 ^^@
 
-[583]
-[584]
 [585]
 [586]
 [587]
-Underfull \vbox (badness 1436) has occurred while \output is active
 [588]
 [589]
+Underfull \vbox (badness 1436) has occurred while \output is active
 [590]
 [591]
 [592]
@@ -2651,26 +2651,28 @@ Underfull \vbox (badness 1436) has occurred while \output is active
 [594]
 [595]
 [596]
-[597])
+[597]
 [598]
+[599])
+[600]
 Overfull \hbox (5.27039pt too wide) in paragraph at lines 515--515
  [][][]\TU/lmss/bx/n/30 VIII 
 ("./cap27_EDOs primer orden.tex"
-[599]
-[600]
-Capítulo 26.
-
 [601]
 [602]
+Capítulo 26.
+
 [603]
 [604]
 [605]
 [606]
 [607]
-Underfull \vbox (badness 2027) has occurred while \output is active
 [608]
-[609]) ("./cap28_EDOs orden n.tex"
+[609]
+Underfull \vbox (badness 2027) has occurred while \output is active
 [610]
+[611]) ("./cap28_EDOs orden n.tex"
+[612]
 Capítulo 27.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -2681,14 +2683,14 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 3.
 
 
-[611]
-[612]
 [613]
 [614]
 [615]
 [616]
 [617]
 [618]
+[619]
+[620]
 Underfull \hbox (badness 1019) in paragraph at lines 596--598
 [][]\TU/TimesNewRoman(0)/b/n/12 So-lu-ción:[] \TU/TimesNewRoman(0)/m/n/12 Ho-m
 o-gé-nea: $\OML/cmm/m/it/12 r \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 ^^F\OT1/cmr/m
@@ -2707,7 +2709,7 @@ OML/cmm/m/it/12 y \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 c[] []\OT1/cmr/m/n/12 (2 [
 ] \OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) + \OML/cmm/m/it/12 c[] []\OT1/cmr/m/n/12 
 (2 [] \OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )$\TU/TimesNewRoman(0)/m/n/12 .
 
-[619]
+[621]
 Underfull \hbox (badness 1178) in paragraph at lines 673--675
 [][]\TU/TimesNewRoman(0)/b/n/12 So-lu-ción:[] $\OML/cmm/m/it/12 y[] \OT1/cmr/m
 /n/12 = \OML/cmm/m/it/12 e[]; y[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 xe[]; W \O
@@ -2716,9 +2718,9 @@ it/12 g \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 e[] [] x$\TU/TimesNewRoman(0)/m/n/12
  . $\OML/cmm/m/it/12 u[] \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 ^^@[] \OT1/cmr/m/n/
 12 =
 
-[620]) ("./cap29_Sistemas de EDOs.tex"
-[621]
-[622]
+[622]) ("./cap29_Sistemas de EDOs.tex"
+[623]
+[624]
 Capítulo 28.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -2729,61 +2731,49 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 50.
 
 
-[623]
-[624]
 [625]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 281.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 281.
-
-
 [626]
 [627]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 281.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 281.
+
+
 [628]
 [629]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 740.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 740.
-
-
 [630]
 [631]
-Underfull \vbox (badness 3343) has occurred while \output is active
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 740.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 740.
+
+
 [632]
 [633]
+Underfull \vbox (badness 3343) has occurred while \output is active
 [634]
 [635]
 [636]
 [637]
 [638]
-Underfull \vbox (badness 1242) has occurred while \output is active
 [639]
-[640]) ("./cap30_Sol EDOs Series Potencias.tex"
+[640]
+Underfull \vbox (badness 1242) has occurred while \output is active
 [641]
-[642]
+[642]) ("./cap30_Sol EDOs Series Potencias.tex"
+[643]
+[644]
 Capítulo 29.
 
-[643]
-
-Package fancyhdr Warning: \headheight is too small (15.0pt): 
-(fancyhdr)                Make it at least 29.47003pt, for example:
-(fancyhdr)                \setlength{\headheight}{29.47003pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-14.47003pt}.
-
-[644]
 [645]
-Overfull \hbox (11.23534pt too wide) detected at line 228
- $[]\OML/cmm/m/it/12 :$ 
-
 
 Package fancyhdr Warning: \headheight is too small (15.0pt): 
 (fancyhdr)                Make it at least 29.47003pt, for example:
@@ -2793,6 +2783,9 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 
 [646]
 [647]
+Overfull \hbox (11.23534pt too wide) detected at line 228
+ $[]\OML/cmm/m/it/12 :$ 
+
 
 Package fancyhdr Warning: \headheight is too small (15.0pt): 
 (fancyhdr)                Make it at least 29.47003pt, for example:
@@ -2819,7 +2812,7 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-14.47003pt}.
 
 [652]
-[653]) ("./cap31_Transformada de Laplace.tex"
+[653]
 
 Package fancyhdr Warning: \headheight is too small (15.0pt): 
 (fancyhdr)                Make it at least 29.47003pt, for example:
@@ -2828,14 +2821,23 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-14.47003pt}.
 
 [654]
+[655]) ("./cap31_Transformada de Laplace.tex"
+
+Package fancyhdr Warning: \headheight is too small (15.0pt): 
+(fancyhdr)                Make it at least 29.47003pt, for example:
+(fancyhdr)                \setlength{\headheight}{29.47003pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-14.47003pt}.
+
+[656]
 Capítulo 30.
 
-[655]
-[656]
 [657]
 [658]
 [659]
 [660]
+[661]
+[662]
 Overfull \hbox (3.13022pt too wide) in paragraph at lines 422--446
 [][]\TU/TimesNewRoman(0)/b/n/12 Ejem-plo 30.25 \TU/TimesNewRoman(0)/m/n/12 (Fra
 c-ción con de-no-mi-na-dor cua-drá-ti-co irre-du-ci-ble sin com-ple-tar)\TU/T
@@ -2843,9 +2845,9 @@ imesNewRoman(0)/b/n/12 . []\TU/TimesNewRoman(0)/m/n/12 Cal-cu-lar $\OMS/cmsy/m/
 n/12 L[] []$\TU/TimesNewRoman(0)/m/n/12 . 
 
 Underfull \vbox (badness 10000) has occurred while \output is active
-[661]
-[662]
 [663]
+[664]
+[665]
 Underfull \hbox (badness 1024) in paragraph at lines 625--626
 []\TU/TimesNewRoman(0)/m/n/12 Se-gun-da par-te: $\OMS/cmsy/m/n/12 L[] [] \OT1/c
 mr/m/n/12 = \OML/cmm/m/it/12 u\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t \OMS/cmsy/m/n
@@ -2853,18 +2855,18 @@ mr/m/n/12 = \OML/cmm/m/it/12 u\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t \OMS/cmsy/m/n
 \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 u\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t \OMS/cm
 sy/m/n/12 ^^@ \OML/cmm/m/it/12 ^^Y\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^A
 
-[664]
-[665]
 [666]
-Underfull \vbox (badness 4582) has occurred while \output is active
 [667]
 [668]
+Underfull \vbox (badness 4582) has occurred while \output is active
 [669]
 [670]
 [671]
 [672]
 [673]
 [674]
+[675]
+[676]
 Overfull \hbox (2.7039pt too wide) in paragraph at lines 1291--1299
 [][]\TU/TimesNewRoman(0)/b/n/12 Pro-ble-ma 30.73 \TU/TimesNewRoman(0)/m/n/12 (P
 VI con for-za-mien-to de-fi-ni-do por tra-mos)\TU/TimesNewRoman(0)/b/n/12 . []\
@@ -2872,31 +2874,31 @@ TU/TimesNewRoman(0)/m/n/12 Re-sol-ver $\OML/cmm/m/it/12 y[] \OT1/cmr/m/n/12 + 4
 \OML/cmm/m/it/12 y \OT1/cmr/m/n/12 = []$\TU/TimesNewRoman(0)/m/n/12 , $\OML/cmm
 /m/it/12 y\OT1/cmr/m/n/12 (0) = 0\OML/cmm/m/it/12 ;  y[]\OT1/cmr/m/n/12 (0) =
 
-[675])
-[676] (./apintdobles.tex
-[677]
-[678]
+[677])
+[678] (./apintdobles.tex
+[679]
+[680]
 Capítulo 31.
 
-[679]
+[681]
 Overfull \hbox (8.39333pt too wide) in paragraph at lines 43--44
 [][]\TU/TimesNewRoman(0)/b/n/12 Ele-gir or-den de in-te-gra-ción.
 
-[680]
-[681]
-Underfull \vbox (badness 10000) has occurred while \output is active
 [682]
 [683]
+Underfull \vbox (badness 10000) has occurred while \output is active
 [684]
 [685]
 [686]
+[687]
+[688]
 Overfull \hbox (18.96085pt too wide) detected at line 610
  $\OML/cmm/m/it/12 M[] \OT1/cmr/m/n/12 = [] [][](\OML/cmm/m/it/12 x[] \OMS/cmsy
 /m/n/12 ^^@ \OT1/cmr/m/n/12 2\OML/cmm/m/it/12 x[] \OT1/cmr/m/n/12 + \OML/cmm/m/
 it/12 x[]\OT1/cmr/m/n/12 ) \OML/cmm/m/it/12 dx \OT1/cmr/m/n/12 = [] [] = [] [] 
 = [] [] = [] \OMS/cmsy/m/n/12 ^^A [] \OT1/cmr/m/n/12 = []\OML/cmm/m/it/12 :$ 
 
-[687]
+[689]
 Overfull \hbox (31.48766pt too wide) detected at line 652
  $\OML/cmm/m/it/12 I[] \OT1/cmr/m/n/12 = [][] [][] \OML/cmm/m/it/12 y[]\OT1/cmr
 /m/n/12 (\OML/cmm/m/it/12 x \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 y\OT1/cmr/m/n/12
@@ -2911,42 +2913,42 @@ Overfull \hbox (62.738pt too wide) detected at line 661
 cmr/m/n/12 = [][] [] \OML/cmm/m/it/12 dx \OT1/cmr/m/n/12 = [][] = [] + [] = 4 +
  [] = []\OML/cmm/m/it/12 :$ 
 
-[688]
-Underfull \vbox (badness 10000) has occurred while \output is active
-[689]
 [690]
+Underfull \vbox (badness 10000) has occurred while \output is active
 [691]
 [692]
-Underfull \vbox (badness 10000) has occurred while \output is active
 [693]
+[694]
+Underfull \vbox (badness 10000) has occurred while \output is active
+[695]
 Overfull \hbox (16.21873pt too wide) detected at line 1005
  $\OML/cmm/m/it/12 V \OT1/cmr/m/n/12 = [][]  [] \OML/cmm/m/it/12 d^^R \OT1/cmr/
 m/n/12 = [][] = [] \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 (0 \OMS/cmsy/m/n/12 ^^@
  \OT1/cmr/m/n/12 1 + 0) = [] + 1 + []\OML/cmm/m/it/12 :$ 
 
-[694]
-Underfull \vbox (badness 5681) has occurred while \output is active
-[695]
-Underfull \vbox (badness 10000) has occurred while \output is active
 [696]
-Underfull \vbox (badness 4001) has occurred while \output is active
+Underfull \vbox (badness 5681) has occurred while \output is active
 [697]
 Underfull \vbox (badness 10000) has occurred while \output is active
 [698]
+Underfull \vbox (badness 4001) has occurred while \output is active
 [699]
+Underfull \vbox (badness 10000) has occurred while \output is active
 [700]
 [701]
 [702]
 [703]
-[704]) (./inttriples.tex
+[704]
 [705]
-[706]
-Capítulo 32.
-
+[706]) (./inttriples.tex
 [707]
 [708]
+Capítulo 32.
+
 [709]
 [710]
+[711]
+[712]
 Overfull \hbox (62.56044pt too wide) detected at line 240
  $[][] [][] [][] \OML/cmm/m/it/12 x dz dy dx \OT1/cmr/m/n/12 = [][] [][] \OML/c
 mm/m/it/12 x\OT1/cmr/m/n/12 (1 \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 x \OMS/cms
@@ -2966,8 +2968,6 @@ m/it/12 x\OT1/cmr/m/n/12 ) [][] \OML/cmm/m/it/12 u[] du \OMS/cmsy/m/n/12 ^^@ []
 /it/12 x\OT1/cmr/m/n/12 )[] \OMS/cmsy/m/n/12 ^^@ [] \OT1/cmr/m/n/12 = []\OML/cm
 m/m/it/12 :$ 
 
-[711]
-[712]
 [713]
 [714]
 [715]
@@ -2975,13 +2975,13 @@ m/m/it/12 :$
 [717]
 [718]
 [719]
-[720]) (./cap33.tex
+[720]
 [721]
-[722]
-Capítulo 33.
-
+[722]) (./cap33.tex
 [723]
 [724]
+Capítulo 33.
+
 [725]
 [726]
 [727]
@@ -2990,6 +2990,8 @@ Capítulo 33.
 [730]
 [731]
 [732]
+[733]
+[734]
 Overfull \hbox (15.66623pt too wide) in paragraph at lines 862--865
 [][]\TU/TimesNewRoman(0)/b/n/12 Pro-ble-ma 33.40 \TU/TimesNewRoman(0)/m/n/12 (A
 pli-ca-ción: ma-sa de un alam-bre)\TU/TimesNewRoman(0)/b/n/12 . []\TU/TimesNew
@@ -2998,19 +3000,19 @@ Roman(0)/m/n/12 Un alam-bre tie-ne la for-ma de la hé-li-ce $\TU/TimesNewRoman
 mm/m/it/12 t; \OT1/cmr/m/n/12 2 [] \OML/cmm/m/it/12 t; t\OT1/cmr/m/n/12 )$\TU/T
 imesNewRoman(0)/m/n/12 ,
 
-[733]) (./cap34.tex
-[734]
+[735]) (./cap34.tex
+[736]
 Capítulo 34.
 
-[735]
-[736]
 [737]
+[738]
+[739]
 Missing character: There is no ✓ (U+2713) in font "name:Times New Roman:mode=
 node;script=latn;language=dflt;+tlig;"!
 Missing character: There is no ✓ (U+2713) in font "name:Times New Roman:mode=
 node;script=latn;language=dflt;+tlig;"!
 
-[738]
+[740]
 
 
 Missing character: There is no ✓ (U+2713) in font "name:Times New Roman:mode=
@@ -3039,7 +3041,7 @@ Missing character: There is no ✓ (U+2713) in font "name:Times New Roman:mode=
 node;script=latn;language=dflt;+tlig;"!
 
 Underfull \vbox (badness 1708) has occurred while \output is active
-[739
+[741
 Missing character: There is no ✓ (U+2713) in font "name:Times New Roman:mode=
 node;script=latn;language=dflt;+tlig;"!
 Missing character: There is no ✓ (U+2713) in font "name:Times New Roman:mode=
@@ -3055,11 +3057,11 @@ node;script=latn;language=dflt;+tlig;"!
 Missing character: There is no ✓ (U+2713) in font "name:Times New Roman:mode=
 node;script=latn;language=dflt;+tlig;"!
 ]
-[740]
-[741]
 [742]
-Underfull \vbox (badness 10000) has occurred while \output is active
 [743]
+[744]
+Underfull \vbox (badness 10000) has occurred while \output is active
+[745]
 Overfull \hbox (62.44156pt too wide) detected at line 749
  $\OML/cmm/m/it/12 M[] \OT1/cmr/m/n/12 = [][] [][](\OML/cmm/m/it/12 R [] ^^^ []
  ^^R\OT1/cmr/m/n/12 )(\OML/cmm/m/it/12 R [] ^^^\OT1/cmr/m/n/12 )(\OML/cmm/m/it/
@@ -3069,84 +3071,82 @@ L/cmm/m/it/12 R[]  [][]  [] ^^R d^^R \OMS/cmsy/m/n/12 ^^A [][]  [][] \OML/cmm/m
 ^^A \OT1/cmr/m/n/12 1 \OMS/cmsy/m/n/12 ^^A [] \OT1/cmr/m/n/12 = []\OML/cmm/m/it
 /12 :$ 
 
-[744]
-Underfull \vbox (badness 1048) has occurred while \output is active
-[745]
-
-Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
- vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94893pt,-0.3157pt) are
- almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 818.
-
-
-Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
- vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94893pt,-0.3157pt) are
- almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 818.
-
-
-Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
- vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94893pt,-0.3157pt) are
- almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 818.
-
-
-Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
- vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94893pt,-0.3157pt) are
- almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 818.
-
-
-Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
- vector -(0.48035pt,0.87703pt) and the unit y vector (0.90413pt,0.42719pt) are 
-almost parallel (abs(cos(angle)) = 0.80893pt)! on input line 818.
-
-
-Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
- vector -(0.48035pt,0.87703pt) and the unit y vector (0.90413pt,0.42719pt) are 
-almost parallel (abs(cos(angle)) = 0.80893pt)! on input line 818.
-
-
-Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
- vector -(0.48035pt,0.87703pt) and the unit y vector (0.90413pt,0.42719pt) are 
-almost parallel (abs(cos(angle)) = 0.80893pt)! on input line 818.
-
-
-Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
- vector -(0.48035pt,0.87703pt) and the unit y vector (0.90413pt,0.42719pt) are 
-almost parallel (abs(cos(angle)) = 0.80893pt)! on input line 818.
-
-
-Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
- vector -(0.62912pt,-0.77728pt) and the unit x vector (0.94893pt,-0.3157pt) are
- almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 818.
-
-
-Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
- vector -(0.62912pt,-0.77728pt) and the unit x vector (0.94893pt,-0.3157pt) are
- almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 818.
-
-
-Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
- vector -(-0.48035pt,-0.87703pt) and the unit y vector (0.90413pt,0.42719pt) ar
-e almost parallel (abs(cos(angle)) = 0.80893pt)! on input line 818.
-
-
-Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
- vector -(-0.48035pt,-0.87703pt) and the unit y vector (0.90413pt,0.42719pt) ar
-e almost parallel (abs(cos(angle)) = 0.80893pt)! on input line 818.
-
-
 [746]
+Underfull \vbox (badness 1048) has occurred while \output is active
 [747]
+
+Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
+ vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94893pt,-0.3157pt) are
+ almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 818.
+
+
+Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
+ vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94893pt,-0.3157pt) are
+ almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 818.
+
+
+Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
+ vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94893pt,-0.3157pt) are
+ almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 818.
+
+
+Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
+ vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94893pt,-0.3157pt) are
+ almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 818.
+
+
+Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
+ vector -(0.48035pt,0.87703pt) and the unit y vector (0.90413pt,0.42719pt) are 
+almost parallel (abs(cos(angle)) = 0.80893pt)! on input line 818.
+
+
+Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
+ vector -(0.48035pt,0.87703pt) and the unit y vector (0.90413pt,0.42719pt) are 
+almost parallel (abs(cos(angle)) = 0.80893pt)! on input line 818.
+
+
+Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
+ vector -(0.48035pt,0.87703pt) and the unit y vector (0.90413pt,0.42719pt) are 
+almost parallel (abs(cos(angle)) = 0.80893pt)! on input line 818.
+
+
+Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
+ vector -(0.48035pt,0.87703pt) and the unit y vector (0.90413pt,0.42719pt) are 
+almost parallel (abs(cos(angle)) = 0.80893pt)! on input line 818.
+
+
+Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
+ vector -(0.62912pt,-0.77728pt) and the unit x vector (0.94893pt,-0.3157pt) are
+ almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 818.
+
+
+Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
+ vector -(0.62912pt,-0.77728pt) and the unit x vector (0.94893pt,-0.3157pt) are
+ almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 818.
+
+
+Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
+ vector -(-0.48035pt,-0.87703pt) and the unit y vector (0.90413pt,0.42719pt) ar
+e almost parallel (abs(cos(angle)) = 0.80893pt)! on input line 818.
+
+
+Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
+ vector -(-0.48035pt,-0.87703pt) and the unit y vector (0.90413pt,0.42719pt) ar
+e almost parallel (abs(cos(angle)) = 0.80893pt)! on input line 818.
+
+
 [748]
 [749]
 [750]
 [751]
 [752]
+[753]
+[754]
 
 
 
-[753])
-[754] (./anfalearNotasCalculo.loe
-[755]
-[756]
+[755])
+[756] (./anfalearNotasCalculo.loe
 [757]
 [758]
 [759]
@@ -3183,28 +3183,30 @@ e almost parallel (abs(cos(angle)) = 0.80893pt)! on input line 818.
 [790]
 [791]
 [792]
-[793])
-[794] (./anfalearNotasCalculo.lof
-[795]
-[796]
+[793]
+[794]
+[795])
+[796] (./anfalearNotasCalculo.lof
+[797]
+[798]
 Overfull \hbox (5.8835pt too wide) in paragraph at lines 75--75
  [][] [][]\TU/TimesNewRoman(0)/m/n/12 Re-pre-sen-ta-ción bi-di-men-sio-nal de 
 una rec-ta en el es-pa-cio tri-di-men-sio-nal $\U/msb/m/n/12 R[]$\TU/TimesNewRo
 man(0)/m/n/12 . El pun-to $\OML/cmm/m/it/12 P\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 
 x[]; y[]; z[]\OT1/cmr/m/n/12 )$ 
 
-[797]
-[798]
-Overfull \hbox (2.72165pt too wide) in paragraph at lines 192--192
+[799]
+[800]
+Overfull \hbox (2.72165pt too wide) in paragraph at lines 194--194
  [][] [][]\TU/TimesNewRoman(0)/m/n/12 Fi-gu-ra ori-gi-nal (Su-do-ku 3D cu-be, [
 ]$\TU/lmtt/m/n/12 https://texample.net/tikz/examples/sudoku-[]3d-[]cube$[]\TU/T
 imesNewRoman(0)/m/n/12 )[] []  
 
-Underfull \vbox (badness 4229) has occurred while \output is active
-[799]) (./anfalearNotasCalculo.bbl
-[800]
-[801])
-[802] (./anfalearNotasCalculo.aux)
+Underfull \vbox (badness 2253) has occurred while \output is active
+[801]) (./anfalearNotasCalculo.bbl
+[802]
+[803])
+[804] (./anfalearNotasCalculo.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -3213,106 +3215,138 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 )
 (see the transcript file for additional information)
- 24541 words of node memory still in use:
-   32 hlist, 2 vlist, 14 rule, 3 glue, 4 kern, 1 glyph, 7601 attribute, 101 glu
-e_spec, 3838 attribute_list, 2 write, 24 pdf_literal, 73 pdf_action, 24 pdf_col
+ 24631 words of node memory still in use:
+   32 hlist, 2 vlist, 14 rule, 3 glue, 4 kern, 1 glyph, 7627 attribute, 101 glu
+e_spec, 3851 attribute_list, 2 write, 24 pdf_literal, 75 pdf_action, 24 pdf_col
 orstack nodes
-   avail lists: 1:22,2:31416,3:19197,4:340,5:2079,6:113,7:11348,8:150,9:4399,10
+   avail lists: 1:22,2:31377,3:19197,4:340,5:2079,6:111,7:11348,8:150,9:4399,10
 :32,11:1181
 
-warning  (pdf backend): unreferenced destination with name 'prob.17.62'
+warning  (pdf backend): unreferenced destination with name 'prob.20.39'
 
-warning  (pdf backend): unreferenced destination with name 'prob.17.61'
+warning  (pdf backend): unreferenced destination with name 'prob.20.38'
 
-warning  (pdf backend): unreferenced destination with name 'prob.17.60'
+warning  (pdf backend): unreferenced destination with name 'prob.20.37'
 
-warning  (pdf backend): unreferenced destination with name 'example.17.59'
+warning  (pdf backend): unreferenced destination with name 'example.20.36'
 
-warning  (pdf backend): unreferenced destination with name 'example.17.57'
+warning  (pdf backend): unreferenced destination with name 'pasos.20.35'
 
-warning  (pdf backend): unreferenced destination with name 'rem.17.56'
+warning  (pdf backend): unreferenced destination with name 'definition.20.34'
 
-warning  (pdf backend): unreferenced destination with name 'example.17.55'
+warning  (pdf backend): unreferenced destination with name 'rem.20.33'
 
-warning  (pdf backend): unreferenced destination with name 'pasos.17.54'
+warning  (pdf backend): unreferenced destination with name 'prob.20.32'
 
-warning  (pdf backend): unreferenced destination with name 'definition.17.53'
+warning  (pdf backend): unreferenced destination with name 'prob.20.31'
 
-warning  (pdf backend): unreferenced destination with name 'definition.17.52'
+warning  (pdf backend): unreferenced destination with name 'example.20.30'
 
-warning  (pdf backend): unreferenced destination with name 'prob.17.51'
+warning  (pdf backend): unreferenced destination with name 'rem.20.29'
 
-warning  (pdf backend): unreferenced destination with name 'example.17.48'
+warning  (pdf backend): unreferenced destination with name 'theorem.20.28'
 
-warning  (pdf backend): unreferenced destination with name 'example.17.47'
+warning  (pdf backend): unreferenced destination with name 'prob.20.27'
 
-warning  (pdf backend): unreferenced destination with name 'example.17.46'
+warning  (pdf backend): unreferenced destination with name 'example.20.26'
 
-warning  (pdf backend): unreferenced destination with name 'prob.17.45'
+warning  (pdf backend): unreferenced destination with name 'pasos.20.25'
 
-warning  (pdf backend): unreferenced destination with name 'rem.17.44'
+warning  (pdf backend): unreferenced destination with name 'rem.20.24'
 
-warning  (pdf backend): unreferenced destination with name 'rem.17.43'
+warning  (pdf backend): unreferenced destination with name 'theorem.20.23'
 
-warning  (pdf backend): unreferenced destination with name 'prob.17.40'
+warning  (pdf backend): unreferenced destination with name 'rem.20.22'
 
-warning  (pdf backend): unreferenced destination with name 'prob.17.39'
+warning  (pdf backend): unreferenced destination with name 'definition.20.21'
 
-warning  (pdf backend): unreferenced destination with name 'example.17.38'
+warning  (pdf backend): unreferenced destination with name 'theorem.20.19'
 
-warning  (pdf backend): unreferenced destination with name 'pasos.17.37'
+warning  (pdf backend): unreferenced destination with name 'example.20.18'
 
-warning  (pdf backend): unreferenced destination with name 'definition.17.36'
+warning  (pdf backend): unreferenced destination with name 'rem.20.17'
 
-warning  (pdf backend): unreferenced destination with name 'definition.17.35'
+warning  (pdf backend): unreferenced destination with name 'definition.20.16'
 
-warning  (pdf backend): unreferenced destination with name 'example.17.34'
+warning  (pdf backend): unreferenced destination with name 'prob.20.15'
 
-warning  (pdf backend): unreferenced destination with name 'rem.17.33'
+warning  (pdf backend): unreferenced destination with name 'prob.19.34'
 
-warning  (pdf backend): unreferenced destination with name 'definition.17.32'
+warning  (pdf backend): unreferenced destination with name 'example.19.33'
 
-warning  (pdf backend): unreferenced destination with name 'prob.17.31'
+warning  (pdf backend): unreferenced destination with name 'theorem.19.31'
 
-warning  (pdf backend): unreferenced destination with name 'rem.17.30'
+warning  (pdf backend): unreferenced destination with name 'rem.19.29'
 
-warning  (pdf backend): unreferenced destination with name 'example.17.29'
+warning  (pdf backend): unreferenced destination with name 'definition.19.28'
 
-warning  (pdf backend): unreferenced destination with name 'pasos.17.28'
+warning  (pdf backend): unreferenced destination with name 'prob.19.27'
 
-warning  (pdf backend): unreferenced destination with name 'rem.17.27'
+warning  (pdf backend): unreferenced destination with name 'example.19.26'
 
-warning  (pdf backend): unreferenced destination with name 'example.17.25'
+warning  (pdf backend): unreferenced destination with name 'definition.19.25'
 
-warning  (pdf backend): unreferenced destination with name 'theorem.17.24'
+warning  (pdf backend): unreferenced destination with name 'prob.19.22'
 
-warning  (pdf backend): unreferenced destination with name 'definition.17.23'
+warning  (pdf backend): unreferenced destination with name 'rem.19.21'
 
-warning  (pdf backend): unreferenced destination with name 'definition.17.22'
+warning  (pdf backend): unreferenced destination with name 'prob.19.20'
 
-warning  (pdf backend): unreferenced destination with name 'rem.17.21'
+warning  (pdf backend): unreferenced destination with name 'example.19.19'
 
-warning  (pdf backend): unreferenced destination with name 'theorem.17.20'
+warning  (pdf backend): unreferenced destination with name 'pasos.19.18'
 
-warning  (pdf backend): unreferenced destination with name 'prob.17.19'
+warning  (pdf backend): unreferenced destination with name 'rem.19.17'
 
-warning  (pdf backend): unreferenced destination with name 'rem.17.18'
+warning  (pdf backend): unreferenced destination with name 'prob.19.13'
 
-warning  (pdf backend): unreferenced destination with name 'rem.17.17'
+warning  (pdf backend): unreferenced destination with name 'example.19.10'
 
-warning  (pdf backend): unreferenced destination with name 'prob.17.16'
+warning  (pdf backend): unreferenced destination with name 'rem.19.9'
 
-warning  (pdf backend): unreferenced destination with name 'prob.17.15'
+warning  (pdf backend): unreferenced destination with name 'theorem.19.8'
 
-warning  (pdf backend): unreferenced destination with name 'example.17.14'
+warning  (pdf backend): unreferenced destination with name 'rem.19.7'
 
-warning  (pdf backend): unreferenced destination with name 'rem.17.13'
+warning  (pdf backend): unreferenced destination with name 'definition.19.6'
 
-warning  (pdf backend): unreferenced destination with name 'rem.17.12'
+warning  (pdf backend): unreferenced destination with name 'prob.18.41'
 
-warning  (pdf backend): unreferenced destination with name 'theorem.17.11'
+warning  (pdf backend): unreferenced destination with name 'rem.18.40'
 
-warning  (pdf backend): unreferenced destination with name 'definition.17.10'
+warning  (pdf backend): unreferenced destination with name 'prob.18.39'
+
+warning  (pdf backend): unreferenced destination with name 'example.18.38'
+
+warning  (pdf backend): unreferenced destination with name 'definition.18.37'
+
+warning  (pdf backend): unreferenced destination with name 'example.18.36'
+
+warning  (pdf backend): unreferenced destination with name 'theorem.18.35'
+
+warning  (pdf backend): unreferenced destination with name 'prob.18.33'
+
+warning  (pdf backend): unreferenced destination with name 'rem.18.32'
+
+warning  (pdf backend): unreferenced destination with name 'definition.18.31'
+
+warning  (pdf backend): unreferenced destination with name 'prob.18.30'
+
+warning  (pdf backend): unreferenced destination with name 'rem.18.29'
+
+warning  (pdf backend): unreferenced destination with name 'definition.18.28'
+
+warning  (pdf backend): unreferenced destination with name 'prob.17.63'
+
+warning  (pdf backend): unreferenced destination with name 'example.17.60'
+
+warning  (pdf backend): unreferenced destination with name 'rem.17.59'
+
+warning  (pdf backend): unreferenced destination with name 'example.17.58'
+
+warning  (pdf backend): unreferenced destination with name 'pasos.17.57'
+
+warning  (pdf backend): unreferenced destination with name 'definition.17.55'
 <c:/users/anfalear/appdata/local/programs/miktex/fonts/opentype/public/lm/lmmon
 o10-regular.otf><c:/users/anfalear/appdata/local/programs/miktex/fonts/opentype
 /public/lm/lmsans10-boldoblique.otf><c:/users/anfalear/appdata/local/programs/m
@@ -3350,5 +3384,5 @@ a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/latxfont/line10.pfb><C:/Use
 rs/anfalear/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/m
 sam10.pfb><C:/Users/anfalear/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
 msfonts/symbols/msbm10.pfb>
-Output written on anfalearNotasCalculo.pdf (802 pages, 6859038 bytes).
+Output written on anfalearNotasCalculo.pdf (804 pages, 6888399 bytes).
 Transcript written on anfalearNotasCalculo.log.

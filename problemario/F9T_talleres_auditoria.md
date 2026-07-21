@@ -551,14 +551,16 @@ Prob resuelto (Problema 17.46, 4 pasos): dominio de f=√(sen x·sen y) = tabler
 - Figura: NO
 - Estimación: S
 
-### F9T.19 — [origen: T3.07] [destino: limvariasvariables.tex, §Límite (motivación) o §Continuidad, como prob con figura]
+### F9T.19 — HECHO (2026-07-21, lote F9T.19–.23) — [destino: limvariasvariables.tex, fin de §Límite, antes de §Continuidad; fig:contorno_cociente (Fig. 18.3, p. 441)]
+Prob resuelto (4 pasos): estimar lím_{h→0}[f(h,0)−f(0,0)]/h leyendo un mapa de contorno sintético (niveles 10/20/30/40 cortan el eje x en ≈−1.5/−0.5/0.5/1.5; origen entre 20 y 30 → f(0,0)≈25). Cociente por ambos lados ≈+10>0 = ∂f/∂x. Figura TikZ 2D: 4 curvas de nivel combadas etiquetadas + ejes + O rojo + cortes. Verificada visualmente p. 441.
 - Tipo: prob resuelto
 - Enunciado: dada la gráfica de contorno de f (curvas de nivel con valores), estime el signo y comportamiento de lím_{h→0} [f(h,0)−f(0,0)]/h.
 - Solución: leer valores de nivel sobre el eje x → cociente incremental por lados → conclusión (existe/no existe, signo).
 - Figura: SÍ → F9T.19f: mapa de contorno sintético con niveles etiquetados (TikZ 2D).
 - Estimación: M
 
-### F9T.20 — [origen: T3.01] [destino: planostangentes.tex, §Derivadas parciales, tras el example L158] — DESBLOQUEADO (D3)
+### F9T.20 — HECHO (2026-07-21, lote F9T.19–.23) — [destino: planostangentes.tex, §Derivadas parciales, tras el example de reglas operativas]
+Prob resuelto (isomorfo humidex, 4 pasos): tabla `tabular` de sensación térmica S(T,v) (T∈{−10,−5,0,5}°C × v∈{10,20,30,40} km/h). Estimar ∂S/∂T y ∂S/∂v en (−5,20) por diferencias centradas → ∂S/∂T≈1.3 (>0), ∂S/∂v≈−0.25 °C/(km/h) (<0), con interpretación de unidades y signos. Sin figura (tabular).
 - Tipo: prob resuelto
 - Enunciado: isomorfo de humidex — tabla de sensación térmica S(T,v) (temperatura del
   aire vs. velocidad del viento, valores nuevos, contexto genérico de estación
@@ -570,21 +572,24 @@ Prob resuelto (Problema 17.46, 4 pasos): dominio de f=√(sen x·sen y) = tabler
 - Figura: NO (la tabla se compone con `tabular`, no requiere TikZ).
 - Estimación: M
 
-### F9T.21 — [origen: T4.01] [destino: funvectoriales.tex, junto a F9T.09 (cilindros)]
+### F9T.21 — HECHO (2026-07-21, lote F9T.19–.23) — [destino: funvectoriales.tex, fin de §Cilindros; fig:cilindro_coseno (Fig. 17.17, p. 421)]
+Propuesto: bosquejar z=cos x en R³, identificarlo como cilindro (directriz z=cos x en plano xz, generatrices ∥ eje y). Figura pgfplots 3D surf no paramétrico `{cos(deg(x))}` samples=20, domain x∈[−3.6,3.6], y domain [0,3]. Verificada visualmente p. 421 (cresta cosenoidal extruida en y).
 - Tipo: propuesto
 - Enunciado: bosqueje la gráfica de f(x,y)=cos x en R³ e identifíquela como cilindro (generatrices paralelas al eje y).
 - Solución: la ecuación no depende de y → trasladar la curva z=cos x.
 - Figura: SÍ → F9T.21f: superficie z=cos x (pgfplots 3D, shader=flat, samples≤20).
 - Estimación: S
 
-### F9T.22 — [origen: T4.10] [destino: planostangentes.tex, §Derivadas parciales, propuestos]
+### F9T.22 — HECHO (2026-07-21, lote F9T.19–.23) — [destino: planostangentes.tex, §Problemas propuestos, tras el 1.er propuesto de parciales]
+Propuesto: f(x,y)=∫_x^y √(1+t³)dt, calcular f_x y f_y por el TFC (respuesta interna f_y=√(1+y³), f_x=−√(1+x³)). Sin figura.
 - Tipo: propuesto
 - Enunciado: para f(x,y)=∫_x^y √(1+t³) dt, calcule f_x y f_y usando el 1er Teorema Fundamental del Cálculo.
 - Solución: f_y=√(1+y³); f_x=−√(1+x³) (límite inferior).
 - Figura: NO
 - Estimación: S
 
-### F9T.23 — [origen: T4.27, T4.28] [destino: gradientes.tex, §Regla de la cadena, tras el Caso 2 (L230)]
+### F9T.23 — HECHO (2026-07-21, lote F9T.19–.23) — [destino: gradientes.tex, §Regla de la cadena, tras el ejemplo del Caso 2]
+`rem[Derivadas de segundo orden por la cadena]` + `prob` resuelto (4 pasos): w_rr para w=f(x,y), x=r cosθ, y=r senθ → w_rr = f_xx cos²θ + 2f_xy cosθ senθ + f_yy sen²θ. Propuesto: P=kT/V con T(t)=T₀+at, V(t)=V₀+bt → dP/dt y d²P/dt² (contexto gas ideal, isomorfo T4.28). Sin figura.
 - Tipo: ambos
 - Enunciado: rem breve (la parcial de una parcial vuelve a usar la cadena) + prob resuelto: w_rr para w=f(x,y), x=r cosθ, y=r senθ (o análogo polinomial). Propuesto: d²P/dt² para P=kT/V con T(t), V(t) dadas (contexto químico, isomorfo T4.28).
 - Solución: w_r por cadena → derivar w_r respecto a r reaplicando cadena a f_x y f_y → agrupar (f_xx, f_xy, f_yy).

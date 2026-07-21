@@ -687,6 +687,70 @@ Sea $f(x,y)=\dfrac{\arctan(xy)}{xy}.$ Observe que:
 \end{myproof}
 \end{prob}
 
+\begin{prob}[Cociente incremental leído en un mapa de contorno]
+La figura~\ref{fig:contorno_cociente} muestra el mapa de contorno de una
+función $f(x,y)$, con sus curvas de nivel etiquetadas. Estime
+\[
+  \lim_{h\to 0}\frac{f(h,0)-f(0,0)}{h}
+\]
+e indique su signo y su significado.
+\begin{myproof}
+\textbf{Paso 1. Valor en el origen.}
+El origen queda entre las curvas de nivel $20$ (que corta el eje $x$ en
+$x\approx-0.5$) y $30$ (en $x\approx 0.5$); interpolando, $f(0,0)\approx 25$.
+
+\textbf{Paso 2. Valores vecinos sobre el eje $x$.}
+Sobre el eje $x$, hacia la derecha la curva $30$ pasa por $(0.5,0)$ y hacia la
+izquierda la curva $20$ por $(-0.5,0)$:
+\[ f(0.5,0)\approx 30,\qquad f(-0.5,0)\approx 20. \]
+
+\textbf{Paso 3. Cociente incremental por ambos lados.}
+\[
+  \frac{f(0.5,0)-f(0,0)}{0.5}\approx\frac{30-25}{0.5}=10,\qquad
+  \frac{f(-0.5,0)-f(0,0)}{-0.5}\approx\frac{20-25}{-0.5}=10.
+\]
+
+\textbf{Paso 4. Conclusión.}
+Las estimaciones por la derecha y por la izquierda coinciden, así que el
+límite existe y
+\[
+  \boxed{\ \lim_{h\to 0}\frac{f(h,0)-f(0,0)}{h}\approx +10>0.\ }
+\]
+Es la razón de cambio de $f$ en la dirección $+x$: al avanzar sobre el eje
+$x$, $f$ crece unas $10$ unidades por unidad de longitud.
+\end{myproof}
+\end{prob}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.1]
+  \draw[->,thin] (-2.6,0)--(2.6,0) node[right]{$x$};
+  \draw[->,thin] (0,-2.1)--(0,2.2) node[above]{$y$};
+  % curvas de nivel (ligeramente combadas); etiqueta = valor
+  \draw[thick,blue!60!black,smooth]
+    plot coordinates {(-1.65,-1.9) (-1.5,0) (-1.65,1.9)};
+  \node[blue!60!black,font=\small] at (-1.5,2.05) {$10$};
+  \draw[thick,blue!60!black,smooth]
+    plot coordinates {(-0.65,-1.9) (-0.5,0) (-0.65,1.9)};
+  \node[blue!60!black,font=\small] at (-0.5,2.05) {$20$};
+  \draw[thick,blue!60!black,smooth]
+    plot coordinates {(0.35,-1.9) (0.5,0) (0.35,1.9)};
+  \node[blue!60!black,font=\small] at (0.5,2.05) {$30$};
+  \draw[thick,blue!60!black,smooth]
+    plot coordinates {(1.35,-1.9) (1.5,0) (1.35,1.9)};
+  \node[blue!60!black,font=\small] at (1.5,2.05) {$40$};
+  % origen y cortes
+  \filldraw[red!70!black] (0,0) circle(1.6pt)
+    node[anchor=north east,font=\scriptsize]{$O$};
+  \filldraw[black] (-0.5,0) circle(1.2pt);
+  \filldraw[black] (0.5,0) circle(1.2pt);
+\end{tikzpicture}
+\caption{Mapa de contorno de $f$: las curvas de nivel $10,20,30,40$ cortan el
+  eje $x$ en $x\approx-1.5,-0.5,0.5,1.5$. El origen $O$ queda entre los
+  niveles $20$ y $30$.}
+\label{fig:contorno_cociente}
+\end{figure}
+
 \section{Continuidad}
 % ------------------------------------------------------------
 % CONTINUIDAD
