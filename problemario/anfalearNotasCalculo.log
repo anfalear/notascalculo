@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (MiKTeX 25.4) (format=lualatex 2025.7.7)  21 JUL 2026 08:27
+This is LuaHBTeX, Version 1.22.0 (MiKTeX 25.4) (format=lualatex 2025.7.7)  21 JUL 2026 08:44
  restricted system commands enabled.
 **anfalearNotasCalculo.tex
 (./anfalearNotasCalculo.tex
@@ -1977,17 +1977,20 @@ LaTeX Info: Redefining \% on input line 142.
 LaTeX Info: Redefining \. on input line 190.
 LaTeX Info: Redefining \% on input line 190.
 [7]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 
 LaTeX Info: Redefining \. on input line 236.
 LaTeX Info: Redefining \% on input line 236.
 [8]
 
-LaTeX Info: Redefining \. on input line 284.
-LaTeX Info: Redefining \% on input line 284.
+LaTeX Info: Redefining \. on input line 282.
+LaTeX Info: Redefining \% on input line 282.
 [9]
 
-LaTeX Info: Redefining \. on input line 336.
-LaTeX Info: Redefining \% on input line 336.
+LaTeX Info: Redefining \. on input line 333.
+LaTeX Info: Redefining \% on input line 333.
 [10])
 \tf@toc=\write6
 
@@ -2175,7 +2178,7 @@ f>
 jo-eps-converted-to.pdf representacioncomplejo.eps>
 (epstopdf)             \includegraphics on input line 700.
 Package epstopdf Info: Output file is already uptodate.
-<representacioncomplejo-eps-converted-to.pdf, id=2352, 662.475pt x 479.7925pt>
+<representacioncomplejo-eps-converted-to.pdf, id=2357, 662.475pt x 479.7925pt>
 File: representacioncomplejo-eps-converted-to.pdf Graphic file (type pdf)
 <use representacioncomplejo-eps-converted-to.pdf>
 Package luatex.def Info: representacioncomplejo-eps-converted-to.pdf  used on i
@@ -5244,33 +5247,31 @@ LaTeX Info: Redefining \. on input line 1108.
 LaTeX Info: Redefining \% on input line 1108.
 [412]
 
-LaTeX Info: Redefining \. on input line 1171.
-LaTeX Info: Redefining \% on input line 1171.
+LaTeX Info: Redefining \. on input line 1195.
+LaTeX Info: Redefining \% on input line 1195.
 [413]
-Underfull \vbox (badness 1389) has occurred while \output is active []
 
-
-
-LaTeX Info: Redefining \. on input line 1255.
-LaTeX Info: Redefining \% on input line 1255.
+LaTeX Info: Redefining \. on input line 1241.
+LaTeX Info: Redefining \% on input line 1241.
 [414]
-Package pgfplots info on input line 1293: Deactivating LUA version of plot expr
+
+LaTeX Info: Redefining \. on input line 1346.
+LaTeX Info: Redefining \% on input line 1346.
+[415]
+Package pgfplots info on input line 1385: Deactivating LUA version of plot expr
 ession for plot 0 (type 'mesh'): x expression 'sqrt(1+\v *\v )*cos(\u )' contai
 ns a TeX macro.
-Package pgfplots info on input line 1293: Deactivating LUA version of plot expr
+Package pgfplots info on input line 1385: Deactivating LUA version of plot expr
 ession for plot 0 (type 'mesh'): y expression ' {sqrt(1+\v *\v )*sin(\u )}' con
 tains a TeX macro.
-Package pgfplots info on input line 1293: Deactivating LUA version of plot expr
+Package pgfplots info on input line 1385: Deactivating LUA version of plot expr
 ession for plot 0 (type 'mesh'): z expression ' {\v }' contains a TeX macro.
 
-Underfull \vbox (badness 1194) has occurred while \output is active []
 
-
-
-LaTeX Info: Redefining \. on input line 1340.
-LaTeX Info: Redefining \% on input line 1340.
-[415]
-Overfull \hbox (4.74512pt too wide) in paragraph at lines 1396--1399
+LaTeX Info: Redefining \. on input line 1432.
+LaTeX Info: Redefining \% on input line 1432.
+[416]
+Overfull \hbox (4.74512pt too wide) in paragraph at lines 1488--1491
 []\TU/TimesNewRoman(0)/b/n/12 Ele-gir va-lo-res de $\OML/cmm/m/it/12 k$\TU/Time
 sNewRoman(0)/b/n/12 . \TU/TimesNewRoman(0)/m/n/12 Se-lec-cio-nar una se-cuen-cia
  de va-lo-res re-pre-sen-ta-ti-vos, por ejem-plo, $\OML/cmm/m/it/12 k \OT1/cmr/
@@ -5282,148 +5283,148 @@ OT1/cmr/m/n/12 1\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 2$
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94894pt,-0.31569pt) ar
-e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1447.
+e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1539.
 
  [warning /pgfplots/warning/ticklabel anchor undetermined]
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94894pt,-0.31569pt) ar
-e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1447.
+e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1539.
 
  [warning /pgfplots/warning/ticklabel anchor undetermined]
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94894pt,-0.31569pt) ar
-e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1447.
+e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1539.
 
  [warning /pgfplots/warning/ticklabel anchor undetermined]
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94894pt,-0.31569pt) ar
-e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1447.
+e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1539.
 
  [warning /pgfplots/warning/ticklabel anchor undetermined]
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94894pt,-0.31569pt) ar
-e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1447.
+e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1539.
 
  [warning /pgfplots/warning/ticklabel anchor undetermined]
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94894pt,-0.31569pt) ar
-e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1447.
+e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1539.
 
  [warning /pgfplots/warning/ticklabel anchor undetermined]
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94894pt,-0.31569pt) ar
-e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1447.
+e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1539.
 
  [warning /pgfplots/warning/ticklabel anchor undetermined]
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94894pt,-0.31569pt) ar
-e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1447.
+e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1539.
 
  [warning /pgfplots/warning/ticklabel anchor undetermined]
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(0.48035pt,0.87703pt) and the unit y vector (0.90419pt,0.42722pt) are 
-almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1447.
+almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1539.
 
  [warning /pgfplots/warning/ticklabel anchor undetermined]
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(0.48035pt,0.87703pt) and the unit y vector (0.90419pt,0.42722pt) are 
-almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1447.
+almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1539.
 
  [warning /pgfplots/warning/ticklabel anchor undetermined]
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(0.48035pt,0.87703pt) and the unit y vector (0.90419pt,0.42722pt) are 
-almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1447.
+almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1539.
 
  [warning /pgfplots/warning/ticklabel anchor undetermined]
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(0.48035pt,0.87703pt) and the unit y vector (0.90419pt,0.42722pt) are 
-almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1447.
+almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1539.
 
  [warning /pgfplots/warning/ticklabel anchor undetermined]
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(0.48035pt,0.87703pt) and the unit y vector (0.90419pt,0.42722pt) are 
-almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1447.
+almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1539.
 
  [warning /pgfplots/warning/ticklabel anchor undetermined]
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(0.48035pt,0.87703pt) and the unit y vector (0.90419pt,0.42722pt) are 
-almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1447.
+almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1539.
 
  [warning /pgfplots/warning/ticklabel anchor undetermined]
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(0.48035pt,0.87703pt) and the unit y vector (0.90419pt,0.42722pt) are 
-almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1447.
+almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1539.
 
  [warning /pgfplots/warning/ticklabel anchor undetermined]
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(0.48035pt,0.87703pt) and the unit y vector (0.90419pt,0.42722pt) are 
-almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1447.
+almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1539.
 
  [warning /pgfplots/warning/ticklabel anchor undetermined]
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(0.62912pt,-0.77728pt) and the unit x vector (0.94894pt,-0.31569pt) ar
-e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1447.
+e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1539.
 
  [warning /pgfplots/warning/ticklabel anchor undetermined]
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(0.62912pt,-0.77728pt) and the unit x vector (0.94894pt,-0.31569pt) ar
-e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1447.
+e almost parallel (abs(cos(angle)) = 0.84236pt)! on input line 1539.
 
  [warning /pgfplots/warning/ticklabel anchor undetermined]
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(-0.48035pt,-0.87703pt) and the unit y vector (0.90419pt,0.42722pt) ar
-e almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1447.
+e almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1539.
 
  [warning /pgfplots/warning/ticklabel anchor undetermined]
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(-0.48035pt,-0.87703pt) and the unit y vector (0.90419pt,0.42722pt) ar
-e almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1447.
+e almost parallel (abs(cos(angle)) = 0.80899pt)! on input line 1539.
 
  [warning /pgfplots/warning/ticklabel anchor undetermined]
 
 
-LaTeX Info: Redefining \. on input line 1454.
-LaTeX Info: Redefining \% on input line 1454.
-[416]
-
-LaTeX Info: Redefining \. on input line 1509.
-LaTeX Info: Redefining \% on input line 1509.
+LaTeX Info: Redefining \. on input line 1546.
+LaTeX Info: Redefining \% on input line 1546.
 [417]
-Package pgfplots info on input line 1543: Deactivating LUA version of plot expr
+
+LaTeX Info: Redefining \. on input line 1601.
+LaTeX Info: Redefining \% on input line 1601.
+[418]
+Package pgfplots info on input line 1635: Deactivating LUA version of plot expr
 ession for plot 0 (type 'mesh'): x expression 'cos(\u )*sin(\v )' contains a Te
 X macro.
-Package pgfplots info on input line 1543: Deactivating LUA version of plot expr
+Package pgfplots info on input line 1635: Deactivating LUA version of plot expr
 ession for plot 0 (type 'mesh'): y expression ' {sin(\u )*sin(\v )}' contains a
  TeX macro.
-Package pgfplots info on input line 1543: Deactivating LUA version of plot expr
+Package pgfplots info on input line 1635: Deactivating LUA version of plot expr
 ession for plot 0 (type 'mesh'): z expression ' {cos(\v )}' contains a TeX macr
 o.
-Package pgfplots info on input line 1585: Deactivating LUA version of plot expr
+Package pgfplots info on input line 1677: Deactivating LUA version of plot expr
 ession for plot 0 (type 'mesh'): x expression 'cos(\u )*sin(\v )' contains a Te
 X macro.
-Package pgfplots info on input line 1585: Deactivating LUA version of plot expr
+Package pgfplots info on input line 1677: Deactivating LUA version of plot expr
 ession for plot 0 (type 'mesh'): y expression ' {2*sin(\u )*sin(\v )}' contains
  a TeX macro.
-Package pgfplots info on input line 1585: Deactivating LUA version of plot expr
+Package pgfplots info on input line 1677: Deactivating LUA version of plot expr
 ession for plot 0 (type 'mesh'): z expression ' {3*cos(\v )}' contains a TeX ma
 cro.
 
@@ -5431,26 +5432,25 @@ Underfull \vbox (badness 2635) has occurred while \output is active []
 
 
 
-LaTeX Info: Redefining \. on input line 1636.
-LaTeX Info: Redefining \% on input line 1636.
-[418]
-
-LaTeX Info: Redefining \. on input line 1691.
-LaTeX Info: Redefining \% on input line 1691.
+LaTeX Info: Redefining \. on input line 1728.
+LaTeX Info: Redefining \% on input line 1728.
 [419]
 
-LaTeX Info: Redefining \. on input line 1742.
-LaTeX Info: Redefining \% on input line 1742.
+LaTeX Info: Redefining \. on input line 1783.
+LaTeX Info: Redefining \% on input line 1783.
 [420]
 
-LaTeX Info: Redefining \. on input line 1766.
-LaTeX Info: Redefining \% on input line 1766.
+LaTeX Info: Redefining \. on input line 1834.
+LaTeX Info: Redefining \% on input line 1834.
 [421]
 
-LaTeX Info: Redefining \. on input line 1841.
-LaTeX Info: Redefining \% on input line 1841.
+LaTeX Info: Redefining \. on input line 1858.
+LaTeX Info: Redefining \% on input line 1858.
 [422]
 
+LaTeX Info: Redefining \. on input line 1935.
+LaTeX Info: Redefining \% on input line 1935.
+[423]
 
 
 
@@ -5463,13 +5463,20 @@ LaTeX Info: Redefining \% on input line 1841.
 
 
 
-LaTeX Info: Redefining \. on input line 1918.
-LaTeX Info: Redefining \% on input line 1918.
-[423]) (./limvariasvariables.tex
+
+LaTeX Info: Redefining \. on input line 2014.
+LaTeX Info: Redefining \% on input line 2014.
+[424]) (./limvariasvariables.tex
 
 LaTeX Info: Redefining \. on input line 8.
 LaTeX Info: Redefining \% on input line 8.
-[424]
+[425]
+
+LaTeX Info: Redefining \. on input line 8.
+LaTeX Info: Redefining \% on input line 8.
+[426
+
+]
 Capítulo 18.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -5488,13 +5495,11 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[425
-
-]
+[427]
 
 LaTeX Info: Redefining \. on input line 184.
 LaTeX Info: Redefining \% on input line 184.
-[426]
+[428]
 
 Package amsmath Warning: Foreign command \atop;
 (amsmath)                \frac or \genfrac should be used instead
@@ -5504,49 +5509,49 @@ Package amsmath Warning: Foreign command \atop;
 
 LaTeX Info: Redefining \. on input line 250.
 LaTeX Info: Redefining \% on input line 250.
-[427]
+[429]
 
 LaTeX Info: Redefining \. on input line 307.
 LaTeX Info: Redefining \% on input line 307.
-[428]
+[430]
 
 LaTeX Info: Redefining \. on input line 408.
 LaTeX Info: Redefining \% on input line 408.
-[429]
+[431]
 Underfull \vbox (badness 1603) has occurred while \output is active []
 
 
 
 LaTeX Info: Redefining \. on input line 454.
 LaTeX Info: Redefining \% on input line 454.
-[430]
+[432]
 Package hyperref Info: bookmark level for unknown prop defaults to 0 on input l
 ine 476.
 
 
 LaTeX Info: Redefining \. on input line 525.
 LaTeX Info: Redefining \% on input line 525.
-[431]
+[433]
 
 LaTeX Info: Redefining \. on input line 612.
 LaTeX Info: Redefining \% on input line 612.
-[432]
+[434]
 
 LaTeX Info: Redefining \. on input line 675.
 LaTeX Info: Redefining \% on input line 675.
-[433]
+[435]
 
 LaTeX Info: Redefining \. on input line 732.
 LaTeX Info: Redefining \% on input line 732.
-[434]
+[436]
 
 LaTeX Info: Redefining \. on input line 784.
 LaTeX Info: Redefining \% on input line 784.
-[435]
+[437]
 
 LaTeX Info: Redefining \. on input line 869.
 LaTeX Info: Redefining \% on input line 869.
-[436]
+[438]
 
 
 
@@ -5556,11 +5561,11 @@ LaTeX Info: Redefining \% on input line 869.
 
 LaTeX Info: Redefining \. on input line 952.
 LaTeX Info: Redefining \% on input line 952.
-[437]) (./planostangentes.tex
+[439]) (./planostangentes.tex
 
 LaTeX Info: Redefining \. on input line 5.
 LaTeX Info: Redefining \% on input line 5.
-[438]
+[440]
 Capítulo 19.
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
@@ -5600,7 +5605,7 @@ e almost parallel (abs(cos(angle)) = 0.83966pt)! on input line 110.
  [warning /pgfplots/warning/ticklabel anchor undetermined]
 
 
-[439
+[441
 
 ]
 Missing character: There is no ✓ (U+2713) in font "name:Times New Roman:mode=n
@@ -5618,7 +5623,7 @@ Underfull \vbox (badness 1062) has occurred while \output is active []
 
 LaTeX Info: Redefining \. on input line 198.
 LaTeX Info: Redefining \% on input line 198.
-[440
+[442
 Missing character: There is no ✓ (U+2713) in font "name:Times New Roman:mode=n
 ode;script=latn;language=dflt;+tlig;"!
 Missing character: There is no ✓ (U+2713) in font "name:Times New Roman:mode=n
@@ -5627,19 +5632,19 @@ ode;script=latn;language=dflt;+tlig;"!
 
 LaTeX Info: Redefining \. on input line 305.
 LaTeX Info: Redefining \% on input line 305.
-[441]
+[443]
 
 LaTeX Info: Redefining \. on input line 359.
 LaTeX Info: Redefining \% on input line 359.
-[442]
+[444]
 
 LaTeX Info: Redefining \. on input line 431.
 LaTeX Info: Redefining \% on input line 431.
-[443]
+[445]
 
 LaTeX Info: Redefining \. on input line 525.
 LaTeX Info: Redefining \% on input line 525.
-[444]
+[446]
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94899pt,-0.31569pt) ar
@@ -5719,23 +5724,23 @@ Underfull \vbox (badness 2057) has occurred while \output is active []
 
 LaTeX Info: Redefining \. on input line 609.
 LaTeX Info: Redefining \% on input line 609.
-[445]
+[447]
 
 LaTeX Info: Redefining \. on input line 682.
 LaTeX Info: Redefining \% on input line 682.
-[446]
+[448]
 
 LaTeX Info: Redefining \. on input line 756.
 LaTeX Info: Redefining \% on input line 756.
-[447]
+[449]
 
 LaTeX Info: Redefining \. on input line 804.
 LaTeX Info: Redefining \% on input line 804.
-[448]
+[450]
 
 LaTeX Info: Redefining \. on input line 897.
 LaTeX Info: Redefining \% on input line 897.
-[449]
+[451]
 Overfull \vbox (4.59724pt too high) has occurred while \output is active []
 
 
@@ -5751,7 +5756,7 @@ Overfull \vbox (5.74193pt too high) has occurred while \output is active []
 
 LaTeX Info: Redefining \. on input line 964.
 LaTeX Info: Redefining \% on input line 964.
-[450]
+[452]
 
 
 
@@ -5761,17 +5766,17 @@ LaTeX Info: Redefining \% on input line 964.
 
 LaTeX Info: Redefining \. on input line 5.
 LaTeX Info: Redefining \% on input line 5.
-[451]
+[453]
 
 LaTeX Info: Redefining \. on input line 5.
 LaTeX Info: Redefining \% on input line 5.
-[452
+[454
 
 ]
 Capítulo 20.
 
 
-[453]
+[455]
 Overfull \hbox (93.90405pt too wide) detected at line 137
  $\OT1/cmr/m/n/12 = (2(3) + 2(9))(\OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 0[]5) + (2
 (5) + 2(9))(0[]3) + (2(3) + 2(5))(0[]3) = 24(\OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/1
@@ -5782,27 +5787,27 @@ Overfull \hbox (93.90405pt too wide) detected at line 137
 
 LaTeX Info: Redefining \. on input line 143.
 LaTeX Info: Redefining \% on input line 143.
-[454]
+[456]
 
 LaTeX Info: Redefining \. on input line 190.
 LaTeX Info: Redefining \% on input line 190.
-[455]
+[457]
 
 LaTeX Info: Redefining \. on input line 248.
 LaTeX Info: Redefining \% on input line 248.
-[456]
+[458]
 
 LaTeX Info: Redefining \. on input line 328.
 LaTeX Info: Redefining \% on input line 328.
-[457]
+[459]
 
 LaTeX Info: Redefining \. on input line 430.
 LaTeX Info: Redefining \% on input line 430.
-[458]
+[460]
 
 LaTeX Info: Redefining \. on input line 522.
 LaTeX Info: Redefining \% on input line 522.
-[459]
+[461]
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94112pt,-0.33818pt) ar
@@ -5879,27 +5884,27 @@ e almost parallel (abs(cos(angle)) = 0.82658pt)! on input line 600.
 
 LaTeX Info: Redefining \. on input line 629.
 LaTeX Info: Redefining \% on input line 629.
-[460]
+[462]
 
 LaTeX Info: Redefining \. on input line 740.
 LaTeX Info: Redefining \% on input line 740.
-[461]
+[463]
 
 LaTeX Info: Redefining \. on input line 815.
 LaTeX Info: Redefining \% on input line 815.
-[462]
+[464]
 
 LaTeX Info: Redefining \. on input line 886.
 LaTeX Info: Redefining \% on input line 886.
-[463]
+[465]
 
 LaTeX Info: Redefining \. on input line 955.
 LaTeX Info: Redefining \% on input line 955.
-[464]
+[466]
 
 LaTeX Info: Redefining \. on input line 1064.
 LaTeX Info: Redefining \% on input line 1064.
-[465]
+[467]
 
 
 
@@ -5909,15 +5914,15 @@ LaTeX Info: Redefining \% on input line 1064.
 
 LaTeX Info: Redefining \. on input line 1114.
 LaTeX Info: Redefining \% on input line 1114.
-[466]) (./multiplicadoresintdobles.tex
+[468]) (./multiplicadoresintdobles.tex
 
 LaTeX Info: Redefining \. on input line 5.
 LaTeX Info: Redefining \% on input line 5.
-[467]
+[469]
 
 LaTeX Info: Redefining \. on input line 5.
 LaTeX Info: Redefining \% on input line 5.
-[468
+[470
 
 ]
 Capítulo 21.
@@ -5998,15 +6003,15 @@ Underfull \vbox (badness 1708) has occurred while \output is active []
 
 
 
-[469]
+[471]
 
 LaTeX Info: Redefining \. on input line 168.
 LaTeX Info: Redefining \% on input line 168.
-[470]
+[472]
 
 LaTeX Info: Redefining \. on input line 295.
 LaTeX Info: Redefining \% on input line 295.
-[471]
+[473]
 
 
 
@@ -6024,7 +6029,7 @@ LaTeX Info: Redefining \% on input line 295.
 
 LaTeX Info: Redefining \. on input line 347.
 LaTeX Info: Redefining \% on input line 347.
-[472]
+[474]
 
 
 
@@ -6036,7 +6041,7 @@ LaTeX Info: Redefining \% on input line 347.
 
 LaTeX Info: Redefining \. on input line 421.
 LaTeX Info: Redefining \% on input line 421.
-[473]
+[475]
 
 
 
@@ -6057,7 +6062,7 @@ Underfull \vbox (badness 3098) has occurred while \output is active []
 
 LaTeX Info: Redefining \. on input line 491.
 LaTeX Info: Redefining \% on input line 491.
-[474]
+[476]
 
 
 
@@ -6078,14 +6083,14 @@ Underfull \vbox (badness 1009) has occurred while \output is active []
 
 LaTeX Info: Redefining \. on input line 531.
 LaTeX Info: Redefining \% on input line 531.
-[475]
+[477]
 Underfull \vbox (badness 1194) has occurred while \output is active []
 
 
 
 LaTeX Info: Redefining \. on input line 550.
 LaTeX Info: Redefining \% on input line 550.
-[476]
+[478]
 
 
 
@@ -6097,33 +6102,33 @@ LaTeX Info: Redefining \% on input line 550.
 
 LaTeX Info: Redefining \. on input line 604.
 LaTeX Info: Redefining \% on input line 604.
-[477]
+[479]
 
 LaTeX Info: Redefining \. on input line 662.
 LaTeX Info: Redefining \% on input line 662.
-[478]
+[480]
 
 LaTeX Info: Redefining \. on input line 764.
 LaTeX Info: Redefining \% on input line 764.
-[479]
+[481]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
 LaTeX Info: Redefining \. on input line 795.
 LaTeX Info: Redefining \% on input line 795.
-[480]
+[482]
 Underfull \vbox (badness 5592) has occurred while \output is active []
 
 
 
 LaTeX Info: Redefining \. on input line 799.
 LaTeX Info: Redefining \% on input line 799.
-[481]
+[483]
 
 LaTeX Info: Redefining \. on input line 866.
 LaTeX Info: Redefining \% on input line 866.
-[482]
+[484]
 
 
 
@@ -6133,7 +6138,7 @@ LaTeX Info: Redefining \% on input line 866.
 
 LaTeX Info: Redefining \. on input line 953.
 LaTeX Info: Redefining \% on input line 953.
-[483]
+[485]
 Overfull \hbox (0.115pt too wide) in paragraph at lines 1002--1003
 [][]\TU/TimesNewRoman(0)/b/n/12 Pro-ble-ma 21.50. []\TU/TimesNewRoman(0)/m/n/12
  De-ter-mi-ne el pun-to so-bre el plano $\OT1/cmr/m/n/12 3\OML/cmm/m/it/12 x \O
@@ -6148,13 +6153,13 @@ mr/m/n/12 2\OML/cmm/m/it/12 A; \OT1/cmr/m/n/12 5\OML/cmm/m/it/12 A\OT1/cmr/m/n/
 
 LaTeX Info: Redefining \. on input line 501.
 LaTeX Info: Redefining \% on input line 501.
-[484] (./vvpropios.tex
+[486] (./vvpropios.tex
 
-[485
+[487
 
 ]
 
-[486
+[488
 
 ]
 Capítulo 22.
@@ -6163,7 +6168,7 @@ Underfull \vbox (badness 6944) has occurred while \output is active []
 
 
 
-[487]
+[489]
 Overfull \hbox (5.97473pt too wide) in paragraph at lines 64--65
 []\TU/TimesNewRoman(0)/b/n/12 Mul-ti-pli-ci-dad al-ge-brai-ca\TU/TimesNewRoman(
 0)/m/n/12 : Nú-me-ro de ve-ces que $\OML/cmm/m/it/12 $ \TU/TimesNewRoman(0)/m
@@ -6175,7 +6180,7 @@ Overfull \hbox (5.97473pt too wide) in paragraph at lines 64--65
 
 LaTeX Info: Redefining \. on input line 85.
 LaTeX Info: Redefining \% on input line 85.
-[488]
+[490]
 Underfull \hbox (badness 10000) in paragraph at lines 150--158
 [][]\TU/TimesNewRoman(0)/b/n/12 So-lu-ción:[] Pa-so 1. \TU/TimesNewRoman(0)/m/
 n/12 Cal-cu-la-mos el po-li-no-mio ca-rac-te-rís-ti-co: $[]\OT1/cmr/m/n/12 (\O
@@ -6186,54 +6191,54 @@ ML/cmm/m/it/12 I \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 A\OT1/cmr/m/n/12 ) =
 
 LaTeX Info: Redefining \. on input line 220.
 LaTeX Info: Redefining \% on input line 220.
-[489]
+[491]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
 LaTeX Info: Redefining \. on input line 279.
 LaTeX Info: Redefining \% on input line 279.
-[490]
+[492]
 
 LaTeX Info: Redefining \. on input line 339.
 LaTeX Info: Redefining \% on input line 339.
-[491]
+[493]
 
 LaTeX Info: Redefining \. on input line 413.
 LaTeX Info: Redefining \% on input line 413.
-[492]
+[494]
 
 LaTeX Info: Redefining \. on input line 474.
 LaTeX Info: Redefining \% on input line 474.
-[493]
+[495]
 
 LaTeX Info: Redefining \. on input line 564.
 LaTeX Info: Redefining \% on input line 564.
-[494]
+[496]
 
 LaTeX Info: Redefining \. on input line 606.
 LaTeX Info: Redefining \% on input line 606.
-[495]
+[497]
 
 LaTeX Info: Redefining \. on input line 643.
 LaTeX Info: Redefining \% on input line 643.
-[496]
+[498]
 
 LaTeX Info: Redefining \. on input line 716.
 LaTeX Info: Redefining \% on input line 716.
-[497]
+[499]
 
 LaTeX Info: Redefining \. on input line 794.
 LaTeX Info: Redefining \% on input line 794.
-[498]
+[500]
 
 LaTeX Info: Redefining \. on input line 844.
 LaTeX Info: Redefining \% on input line 844.
-[499]
+[501]
 
 LaTeX Info: Redefining \. on input line 915.
 LaTeX Info: Redefining \% on input line 915.
-[500]
+[502]
 Overfull \hbox (4.91805pt too wide) detected at line 958
  $\OT1/cmr/m/n/12 3[] \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 a 
 \OT1/cmr/m/n/12 + 4)3 + (4\OML/cmm/m/it/12 a \OT1/cmr/m/n/12 + 1) = 0  =[]\OMS/
@@ -6248,65 +6253,65 @@ mr/m/n/12 + 1 = 0  =[]\OMS/cmsy/m/n/12 )  \OT1/cmr/m/n/12 (4\OML/cmm/m/it/12 a
 
 LaTeX Info: Redefining \. on input line 1011.
 LaTeX Info: Redefining \% on input line 1011.
-[501]
+[503]
 
 LaTeX Info: Redefining \. on input line 1037.
 LaTeX Info: Redefining \% on input line 1037.
-[502]
+[504]
 
 LaTeX Info: Redefining \. on input line 1091.
 LaTeX Info: Redefining \% on input line 1091.
-[503]
+[505]
 
 LaTeX Info: Redefining \. on input line 1160.
 LaTeX Info: Redefining \% on input line 1160.
-[504]
+[506]
 
 LaTeX Info: Redefining \. on input line 1223.
 LaTeX Info: Redefining \% on input line 1223.
-[505]
+[507]
 
 LaTeX Info: Redefining \. on input line 1287.
 LaTeX Info: Redefining \% on input line 1287.
-[506]
+[508]
 
 LaTeX Info: Redefining \. on input line 1360.
 LaTeX Info: Redefining \% on input line 1360.
-[507]
+[509]
 
 LaTeX Info: Redefining \. on input line 1412.
 LaTeX Info: Redefining \% on input line 1412.
-[508]
+[510]
 
 LaTeX Info: Redefining \. on input line 1494.
 LaTeX Info: Redefining \% on input line 1494.
-[509]
+[511]
 
 LaTeX Info: Redefining \. on input line 1566.
 LaTeX Info: Redefining \% on input line 1566.
-[510]) (./translineales.tex
+[512]) (./translineales.tex
 
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-[511]
+[513]
 
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-[512
+[514
 
 ]
 Capítulo 23.
 
 
-[513]
+[515]
 
 LaTeX Info: Redefining \. on input line 107.
 LaTeX Info: Redefining \% on input line 107.
-[514]
+[516]
 
 LaTeX Info: Redefining \. on input line 155.
 LaTeX Info: Redefining \% on input line 155.
-[515]
+[517]
 Overfull \hbox (8.19984pt too wide) in paragraph at lines 223--224
 \TU/TimesNewRoman(0)/m/n/12 una ba-se de $[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 T\OT1/cmr/m/n/12 )$\TU/TimesNewRoman(0)/m/n/12 . Co-mo $[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 V\OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 n$\TU/TimesNewRoman(0)/m/n/12 , es po-si-ble com-ple-tar es-ta ba-se a una ba-se de $\OML/cmm/m/it/12 V$\TU/TimesNewRoman(0)/m/n/12 : $\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 v[]; [] ; v[]; v[]; [] ; v[]\OMS/cmsy/m/n/12 g$\TU/TimesNewRoman(0)/m/n/12 . 
  []
@@ -6315,19 +6320,19 @@ Overfull \hbox (8.19984pt too wide) in paragraph at lines 223--224
 
 LaTeX Info: Redefining \. on input line 227.
 LaTeX Info: Redefining \% on input line 227.
-[516]
+[518]
 
 LaTeX Info: Redefining \. on input line 283.
 LaTeX Info: Redefining \% on input line 283.
-[517]
+[519]
 
 LaTeX Info: Redefining \. on input line 357.
 LaTeX Info: Redefining \% on input line 357.
-[518]
+[520]
 
 LaTeX Info: Redefining \. on input line 412.
 LaTeX Info: Redefining \% on input line 412.
-[519]
+[521]
 Overfull \hbox (1.92943pt too wide) in paragraph at lines 471--472
 []\TU/TimesNewRoman(0)/m/n/12 Sea $\OML/cmm/m/it/12 V$ \TU/TimesNewRoman(0)/m/n
 /12 un es-pa-cio vec-to-rial so-bre $\U/msb/m/n/12 R$ \TU/TimesNewRoman(0)/m/n/
@@ -6341,11 +6346,11 @@ y/m/n/12 g$
 
 LaTeX Info: Redefining \. on input line 478.
 LaTeX Info: Redefining \% on input line 478.
-[520]
+[522]
 
 LaTeX Info: Redefining \. on input line 561.
 LaTeX Info: Redefining \% on input line 561.
-[521]
+[523]
 Overfull \hbox (74.4474pt too wide) detected at line 602
 []
  []
@@ -6359,19 +6364,19 @@ Overfull \hbox (9.42995pt too wide) detected at line 607
 
 LaTeX Info: Redefining \. on input line 617.
 LaTeX Info: Redefining \% on input line 617.
-[522]
+[524]
 
 LaTeX Info: Redefining \. on input line 690.
 LaTeX Info: Redefining \% on input line 690.
-[523]
+[525]
 
 LaTeX Info: Redefining \. on input line 754.
 LaTeX Info: Redefining \% on input line 754.
-[524]
+[526]
 
 LaTeX Info: Redefining \. on input line 808.
 LaTeX Info: Redefining \% on input line 808.
-[525]
+[527]
 Overfull \hbox (25.63403pt too wide) detected at line 854
 []
  []
@@ -6380,72 +6385,72 @@ Overfull \hbox (25.63403pt too wide) detected at line 854
 
 LaTeX Info: Redefining \. on input line 876.
 LaTeX Info: Redefining \% on input line 876.
-[526]
+[528]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
 LaTeX Info: Redefining \. on input line 940.
 LaTeX Info: Redefining \% on input line 940.
-[527]
+[529]
 
 LaTeX Info: Redefining \. on input line 1006.
 LaTeX Info: Redefining \% on input line 1006.
-[528]
+[530]
 
 LaTeX Info: Redefining \. on input line 1083.
 LaTeX Info: Redefining \% on input line 1083.
-[529]
+[531]
 
 LaTeX Info: Redefining \. on input line 1168.
 LaTeX Info: Redefining \% on input line 1168.
-[530]
+[532]
 
 LaTeX Info: Redefining \. on input line 1227.
 LaTeX Info: Redefining \% on input line 1227.
-[531]
+[533]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
 LaTeX Info: Redefining \. on input line 1292.
 LaTeX Info: Redefining \% on input line 1292.
-[532]
+[534]
 
 LaTeX Info: Redefining \. on input line 1339.
 LaTeX Info: Redefining \% on input line 1339.
-[533]
+[535]
 
 LaTeX Info: Redefining \. on input line 1439.
 LaTeX Info: Redefining \% on input line 1439.
-[534]
+[536]
 
 LaTeX Info: Redefining \. on input line 1487.
 LaTeX Info: Redefining \% on input line 1487.
-[535]
+[537]
 Underfull \vbox (badness 1168) has occurred while \output is active []
 
 
 
 LaTeX Info: Redefining \. on input line 1536.
 LaTeX Info: Redefining \% on input line 1536.
-[536]
+[538]
 
 LaTeX Info: Redefining \. on input line 1612.
 LaTeX Info: Redefining \% on input line 1612.
-[537]
+[539]
 
 LaTeX Info: Redefining \. on input line 1687.
 LaTeX Info: Redefining \% on input line 1687.
-[538]
+[540]
 
 LaTeX Info: Redefining \. on input line 1779.
 LaTeX Info: Redefining \% on input line 1779.
-[539]
+[541]
 
 LaTeX Info: Redefining \. on input line 1847.
 LaTeX Info: Redefining \% on input line 1847.
-[540]
+[542]
 Overfull \hbox (49.70276pt too wide) in paragraph at lines 1880--1893
 \TU/TimesNewRoman(0)/m/n/12 ción li-neal y $[]$ con $\OML/cmm/m/it/12 k \OMS/c
 msy/m/n/12  \OML/cmm/m/it/12 m$ \TU/TimesNewRoman(0)/m/n/12 es un con-jun-to li
@@ -6460,37 +6465,37 @@ Underfull \vbox (badness 2521) has occurred while \output is active []
 
 LaTeX Info: Redefining \. on input line 1893.
 LaTeX Info: Redefining \% on input line 1893.
-[541]
+[543]
 
 LaTeX Info: Redefining \. on input line 1962.
 LaTeX Info: Redefining \% on input line 1962.
-[542]
+[544]
 
 LaTeX Info: Redefining \. on input line 2001.
 LaTeX Info: Redefining \% on input line 2001.
-[543]
+[545]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
 LaTeX Info: Redefining \. on input line 2090.
 LaTeX Info: Redefining \% on input line 2090.
-[544]
+[546]
 
 LaTeX Info: Redefining \. on input line 2177.
 LaTeX Info: Redefining \% on input line 2177.
-[545]
+[547]
 
 LaTeX Info: Redefining \. on input line 2251.
 LaTeX Info: Redefining \% on input line 2251.
-[546]
+[548]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
 LaTeX Info: Redefining \. on input line 2288.
 LaTeX Info: Redefining \% on input line 2288.
-[547]
+[549]
 Underfull \hbox (badness 10000) in paragraph at lines 2342--2342
 []\TU/TimesNewRoman(0)/m/n/12 Fi-gu-ra 23.18: []Figura ori-gi-nal (Su-do-ku 3D 
 cu-be, []$\TU/lmtt/m/n/12 https://texample.net/tikz/examples/
@@ -6503,42 +6508,42 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 LaTeX Info: Redefining \. on input line 2407.
 LaTeX Info: Redefining \% on input line 2407.
-[548]
+[550]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
 LaTeX Info: Redefining \. on input line 2472.
 LaTeX Info: Redefining \% on input line 2472.
-[549]
+[551]
 
 LaTeX Info: Redefining \. on input line 2566.
 LaTeX Info: Redefining \% on input line 2566.
-[550])
+[552])
 
 LaTeX Info: Redefining \. on input line 508.
 LaTeX Info: Redefining \% on input line 508.
-[551]
+[553]
 
 LaTeX Info: Redefining \. on input line 508.
 LaTeX Info: Redefining \% on input line 508.
-[552
+[554
 
 ] (./sucesionesyseries.tex
 
-[553]
+[555]
 
-[554
+[556
 
 ]
 Capítulo 24.
 
 
-[555]
+[557]
 
 LaTeX Info: Redefining \. on input line 122.
 LaTeX Info: Redefining \% on input line 122.
-[556]
+[558]
 Package pgfplots info on input line 208: fill between: activating layered graph
 ics
 Package pgfplots info on input line 208: Setting layers 'axis background,axis g
@@ -6548,11 +6553,11 @@ rid,axis ticks,axis lines,axis tick labels,pre main,main,axis descriptions,axis
 
 LaTeX Info: Redefining \. on input line 230.
 LaTeX Info: Redefining \% on input line 230.
-[557]
+[559]
 
 LaTeX Info: Redefining \. on input line 322.
 LaTeX Info: Redefining \% on input line 322.
-[558]
+[560]
 Package pgfplots info on input line 382: fill between: activating layered graph
 ics
 Package pgfplots info on input line 382: Setting layers 'axis background,axis g
@@ -6562,26 +6567,26 @@ rid,axis ticks,axis lines,axis tick labels,pre main,main,axis descriptions,axis
 
 LaTeX Info: Redefining \. on input line 496.
 LaTeX Info: Redefining \% on input line 496.
-[559]
+[561]
 
 LaTeX Info: Redefining \. on input line 496.
 LaTeX Info: Redefining \% on input line 496.
-[560]
+[562]
 
 LaTeX Info: Redefining \. on input line 586.
 LaTeX Info: Redefining \% on input line 586.
-[561]
+[563]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
 LaTeX Info: Redefining \. on input line 667.
 LaTeX Info: Redefining \% on input line 667.
-[562]
+[564]
 
 LaTeX Info: Redefining \. on input line 712.
 LaTeX Info: Redefining \% on input line 712.
-[563]
+[565]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 774.
@@ -6599,7 +6604,7 @@ rid,axis ticks,axis lines,axis tick labels,pre main,main,axis descriptions,axis
 
 LaTeX Info: Redefining \. on input line 844.
 LaTeX Info: Redefining \% on input line 844.
-[564]
+[566]
 Package pgfplots info on input line 896: fill between: activating layered graph
 ics
 Package pgfplots info on input line 896: Setting layers 'axis background,axis g
@@ -6609,65 +6614,65 @@ rid,axis ticks,axis lines,axis tick labels,pre main,main,axis descriptions,axis
 
 LaTeX Info: Redefining \. on input line 920.
 LaTeX Info: Redefining \% on input line 920.
-[565]
+[567]
 
 LaTeX Info: Redefining \. on input line 964.
 LaTeX Info: Redefining \% on input line 964.
-[566]
+[568]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
 LaTeX Info: Redefining \. on input line 1050.
 LaTeX Info: Redefining \% on input line 1050.
-[567]
+[569]
 
 LaTeX Info: Redefining \. on input line 1169.
 LaTeX Info: Redefining \% on input line 1169.
-[568]
+[570]
 
 LaTeX Info: Redefining \. on input line 1229.
 LaTeX Info: Redefining \% on input line 1229.
-[569]
+[571]
 
 LaTeX Info: Redefining \. on input line 1278.
 LaTeX Info: Redefining \% on input line 1278.
-[570]) (./sucesionesyseriesfunciones.tex
+[572]) (./sucesionesyseriesfunciones.tex
 
 LaTeX Info: Redefining \. on input line 7.
 LaTeX Info: Redefining \% on input line 7.
-[571]
+[573]
 
 LaTeX Info: Redefining \. on input line 7.
 LaTeX Info: Redefining \% on input line 7.
-[572
+[574
 
 ]
 Capítulo 25.
 
 
-[573]
+[575]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
 LaTeX Info: Redefining \. on input line 219.
 LaTeX Info: Redefining \% on input line 219.
-[574]
+[576]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
 LaTeX Info: Redefining \. on input line 297.
 LaTeX Info: Redefining \% on input line 297.
-[575]
+[577]
 Underfull \vbox (badness 2932) has occurred while \output is active []
 
 
 
 LaTeX Info: Redefining \. on input line 413.
 LaTeX Info: Redefining \% on input line 413.
-[576]
+[578]
 Overfull \hbox (3.32472pt too wide) in paragraph at lines 442--449
 \TU/TimesNewRoman(0)/m/it/12 Una de-mos-tra-ción cons-truc-ti-va ele-gan-te uti
 -li-za los po-li-no-mios de Berns-tein $\OML/cmm/m/it/12 B[]\OT1/cmr/m/n/12 (\O
@@ -6681,126 +6686,126 @@ ML/cmm/m/it/12 f\OT1/cmr/m/n/12 )(\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) = [] \OML
 
 LaTeX Info: Redefining \. on input line 464.
 LaTeX Info: Redefining \% on input line 464.
-[577]
+[579]
 
 LaTeX Info: Redefining \. on input line 560.
 LaTeX Info: Redefining \% on input line 560.
-[578]
+[580]
 
 LaTeX Info: Redefining \. on input line 669.
 LaTeX Info: Redefining \% on input line 669.
-[579]
+[581]
 
 LaTeX Info: Redefining \. on input line 744.
 LaTeX Info: Redefining \% on input line 744.
-[580]
+[582]
 
 LaTeX Info: Redefining \. on input line 898.
 LaTeX Info: Redefining \% on input line 898.
-[581]
+[583]
 Underfull \vbox (badness 1436) has occurred while \output is active []
 
 
 
 LaTeX Info: Redefining \. on input line 922.
 LaTeX Info: Redefining \% on input line 922.
-[582]
+[584]
 
 LaTeX Info: Redefining \. on input line 997.
 LaTeX Info: Redefining \% on input line 997.
-[583]
+[585]
 
 LaTeX Info: Redefining \. on input line 1107.
 LaTeX Info: Redefining \% on input line 1107.
-[584]
+[586]
 
 LaTeX Info: Redefining \. on input line 1179.
 LaTeX Info: Redefining \% on input line 1179.
-[585]
+[587]
 
 LaTeX Info: Redefining \. on input line 1260.
 LaTeX Info: Redefining \% on input line 1260.
-[586]
+[588]
 
 LaTeX Info: Redefining \. on input line 1331.
 LaTeX Info: Redefining \% on input line 1331.
-[587]
+[589]
 
 LaTeX Info: Redefining \. on input line 1420.
 LaTeX Info: Redefining \% on input line 1420.
-[588]
+[590]
 
 LaTeX Info: Redefining \. on input line 1497.
 LaTeX Info: Redefining \% on input line 1497.
-[589]
+[591]
 
 LaTeX Info: Redefining \. on input line 1626.
 LaTeX Info: Redefining \% on input line 1626.
-[590]
+[592]
 
 LaTeX Info: Redefining \. on input line 1697.
 LaTeX Info: Redefining \% on input line 1697.
-[591])
+[593])
 
 LaTeX Info: Redefining \. on input line 515.
 LaTeX Info: Redefining \% on input line 515.
-[592]
+[594]
 Overfull \hbox (5.27039pt too wide) in paragraph at lines 515--515
  [][][]\TU/lmss/bx/n/30 VIII 
  []
 
 ("./cap27_EDOs primer orden.tex"
 
-[593
+[595
 
 ]
 
-[594
+[596
 
 ]
 Capítulo 26.
 
 
-[595]
+[597]
 
 LaTeX Info: Redefining \. on input line 112.
 LaTeX Info: Redefining \% on input line 112.
-[596]
+[598]
 
 LaTeX Info: Redefining \. on input line 203.
 LaTeX Info: Redefining \% on input line 203.
-[597]
+[599]
 
 LaTeX Info: Redefining \. on input line 250.
 LaTeX Info: Redefining \% on input line 250.
-[598]
+[600]
 
 LaTeX Info: Redefining \. on input line 340.
 LaTeX Info: Redefining \% on input line 340.
-[599]
+[601]
 
 LaTeX Info: Redefining \. on input line 380.
 LaTeX Info: Redefining \% on input line 380.
-[600]
+[602]
 
 LaTeX Info: Redefining \. on input line 420.
 LaTeX Info: Redefining \% on input line 420.
-[601]
+[603]
 Underfull \vbox (badness 2027) has occurred while \output is active []
 
 
 
 LaTeX Info: Redefining \. on input line 469.
 LaTeX Info: Redefining \% on input line 469.
-[602]
+[604]
 
 LaTeX Info: Redefining \. on input line 522.
 LaTeX Info: Redefining \% on input line 522.
-[603]) ("./cap28_EDOs orden n.tex"
+[605]) ("./cap28_EDOs orden n.tex"
 
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-[604]
+[606]
 Capítulo 27.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -6812,37 +6817,37 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 
-[605
+[607
 
 ]
 
 LaTeX Info: Redefining \. on input line 140.
 LaTeX Info: Redefining \% on input line 140.
-[606]
+[608]
 
 LaTeX Info: Redefining \. on input line 239.
 LaTeX Info: Redefining \% on input line 239.
-[607]
+[609]
 
 LaTeX Info: Redefining \. on input line 312.
 LaTeX Info: Redefining \% on input line 312.
-[608]
+[610]
 
 LaTeX Info: Redefining \. on input line 384.
 LaTeX Info: Redefining \% on input line 384.
-[609]
+[611]
 
 LaTeX Info: Redefining \. on input line 460.
 LaTeX Info: Redefining \% on input line 460.
-[610]
+[612]
 
 LaTeX Info: Redefining \. on input line 527.
 LaTeX Info: Redefining \% on input line 527.
-[611]
+[613]
 
 LaTeX Info: Redefining \. on input line 591.
 LaTeX Info: Redefining \% on input line 591.
-[612]
+[614]
 Underfull \hbox (badness 1019) in paragraph at lines 596--598
 [][]\TU/TimesNewRoman(0)/b/n/12 So-lu-ción:[] \TU/TimesNewRoman(0)/m/n/12 Ho-mo
 -gé-nea: $\OML/cmm/m/it/12 r \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 \OT1/cmr/m/n/
@@ -6867,7 +6872,7 @@ L/cmm/m/it/12 y \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 c[] []\OT1/cmr/m/n/12 (2 []
 
 LaTeX Info: Redefining \. on input line 647.
 LaTeX Info: Redefining \% on input line 647.
-[613]
+[615]
 Underfull \hbox (badness 1178) in paragraph at lines 673--675
 [][]\TU/TimesNewRoman(0)/b/n/12 So-lu-ción:[] $\OML/cmm/m/it/12 y[] \OT1/cmr/m
 /n/12 = \OML/cmm/m/it/12 e[]; y[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 xe[]; W \O
@@ -6881,15 +6886,15 @@ it/12 g \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 e[] [] x$\TU/TimesNewRoman(0)/m/n/12
 
 LaTeX Info: Redefining \. on input line 689.
 LaTeX Info: Redefining \% on input line 689.
-[614]) ("./cap29_Sistemas de EDOs.tex"
+[616]) ("./cap29_Sistemas de EDOs.tex"
 
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-[615]
+[617]
 
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-[616
+[618
 
 ]
 Capítulo 28.
@@ -6903,15 +6908,15 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 
-[617]
+[619]
 
 LaTeX Info: Redefining \. on input line 168.
 LaTeX Info: Redefining \% on input line 168.
-[618]
+[620]
 
 LaTeX Info: Redefining \. on input line 278.
 LaTeX Info: Redefining \% on input line 278.
-[619]
+[621]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 281.
@@ -6924,19 +6929,19 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 LaTeX Info: Redefining \. on input line 304.
 LaTeX Info: Redefining \% on input line 304.
-[620]
+[622]
 
 LaTeX Info: Redefining \. on input line 452.
 LaTeX Info: Redefining \% on input line 452.
-[621]
+[623]
 
 LaTeX Info: Redefining \. on input line 537.
 LaTeX Info: Redefining \% on input line 537.
-[622]
+[624]
 
 LaTeX Info: Redefining \. on input line 737.
 LaTeX Info: Redefining \% on input line 737.
-[623]
+[625]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 740.
@@ -6949,67 +6954,67 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 LaTeX Info: Redefining \. on input line 818.
 LaTeX Info: Redefining \% on input line 818.
-[624]
+[626]
 
 LaTeX Info: Redefining \. on input line 957.
 LaTeX Info: Redefining \% on input line 957.
-[625]
+[627]
 Underfull \vbox (badness 3343) has occurred while \output is active []
 
 
 
 LaTeX Info: Redefining \. on input line 1061.
 LaTeX Info: Redefining \% on input line 1061.
-[626]
+[628]
 
 LaTeX Info: Redefining \. on input line 1157.
 LaTeX Info: Redefining \% on input line 1157.
-[627]
+[629]
 
 LaTeX Info: Redefining \. on input line 1263.
 LaTeX Info: Redefining \% on input line 1263.
-[628]
+[630]
 
 LaTeX Info: Redefining \. on input line 1278.
 LaTeX Info: Redefining \% on input line 1278.
-[629]
+[631]
 
 LaTeX Info: Redefining \. on input line 1393.
 LaTeX Info: Redefining \% on input line 1393.
-[630]
+[632]
 
 LaTeX Info: Redefining \. on input line 1520.
 LaTeX Info: Redefining \% on input line 1520.
-[631]
+[633]
 
 LaTeX Info: Redefining \. on input line 1653.
 LaTeX Info: Redefining \% on input line 1653.
-[632]
+[634]
 Underfull \vbox (badness 1242) has occurred while \output is active []
 
 
 
 LaTeX Info: Redefining \. on input line 1837.
 LaTeX Info: Redefining \% on input line 1837.
-[633]
+[635]
 
 LaTeX Info: Redefining \. on input line 1922.
 LaTeX Info: Redefining \% on input line 1922.
-[634]) ("./cap30_Sol EDOs Series Potencias.tex"
+[636]) ("./cap30_Sol EDOs Series Potencias.tex"
 
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-[635]
+[637]
 
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-[636
+[638
 
 ]
 Capítulo 29.
 
 
-[637]
+[639]
 
 LaTeX Info: Redefining \. on input line 108.
 LaTeX Info: Redefining \% on input line 108.
@@ -7020,11 +7025,11 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-14.47003pt}.
 
-[638]
+[640]
 
 LaTeX Info: Redefining \. on input line 176.
 LaTeX Info: Redefining \% on input line 176.
-[639]
+[641]
 Overfull \hbox (11.23534pt too wide) detected at line 228
  $[]\OML/cmm/m/it/12 :$ 
  []
@@ -7040,11 +7045,11 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-14.47003pt}.
 
-[640]
+[642]
 
 LaTeX Info: Redefining \. on input line 310.
 LaTeX Info: Redefining \% on input line 310.
-[641]
+[643]
 
 LaTeX Info: Redefining \. on input line 385.
 LaTeX Info: Redefining \% on input line 385.
@@ -7055,11 +7060,11 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-14.47003pt}.
 
-[642]
+[644]
 
 LaTeX Info: Redefining \. on input line 441.
 LaTeX Info: Redefining \% on input line 441.
-[643]
+[645]
 
 LaTeX Info: Redefining \. on input line 520.
 LaTeX Info: Redefining \% on input line 520.
@@ -7070,11 +7075,11 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-14.47003pt}.
 
-[644]
+[646]
 
 LaTeX Info: Redefining \. on input line 564.
 LaTeX Info: Redefining \% on input line 564.
-[645]
+[647]
 
 LaTeX Info: Redefining \. on input line 607.
 LaTeX Info: Redefining \% on input line 607.
@@ -7085,11 +7090,11 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-14.47003pt}.
 
-[646]
+[648]
 
 LaTeX Info: Redefining \. on input line 675.
 LaTeX Info: Redefining \% on input line 675.
-[647]) ("./cap31_Transformada de Laplace.tex"
+[649]) ("./cap31_Transformada de Laplace.tex"
 
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
@@ -7100,33 +7105,33 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-14.47003pt}.
 
-[648]
+[650]
 Capítulo 30.
 
 
-[649
+[651
 
 ]
 
 LaTeX Info: Redefining \. on input line 118.
 LaTeX Info: Redefining \% on input line 118.
-[650]
+[652]
 
 LaTeX Info: Redefining \. on input line 180.
 LaTeX Info: Redefining \% on input line 180.
-[651]
+[653]
 
 LaTeX Info: Redefining \. on input line 242.
 LaTeX Info: Redefining \% on input line 242.
-[652]
+[654]
 
 LaTeX Info: Redefining \. on input line 306.
 LaTeX Info: Redefining \% on input line 306.
-[653]
+[655]
 
 LaTeX Info: Redefining \. on input line 380.
 LaTeX Info: Redefining \% on input line 380.
-[654]
+[656]
 Overfull \hbox (3.13022pt too wide) in paragraph at lines 422--446
 [][]\TU/TimesNewRoman(0)/b/n/12 Ejem-plo 30.25 \TU/TimesNewRoman(0)/m/n/12 (Frac
 -ción con de-no-mi-na-dor cua-drá-ti-co irre-du-ci-ble sin com-ple-tar)\TU/Ti
@@ -7141,15 +7146,15 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 LaTeX Info: Redefining \. on input line 446.
 LaTeX Info: Redefining \% on input line 446.
-[655]
+[657]
 
 LaTeX Info: Redefining \. on input line 492.
 LaTeX Info: Redefining \% on input line 492.
-[656]
+[658]
 
 LaTeX Info: Redefining \. on input line 566.
 LaTeX Info: Redefining \% on input line 566.
-[657]
+[659]
 Underfull \hbox (badness 1024) in paragraph at lines 625--626
 []\TU/TimesNewRoman(0)/m/n/12 Se-gun-da par-te: $\OMS/cmsy/m/n/12 L[] [] \OT1/c
 mr/m/n/12 = \OML/cmm/m/it/12 u\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t \OMS/cmsy/m/n
@@ -7162,50 +7167,50 @@ mr/m/n/12 = \OML/cmm/m/it/12 u\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t \OMS/cmsy/m/n
 
 LaTeX Info: Redefining \. on input line 631.
 LaTeX Info: Redefining \% on input line 631.
-[658]
+[660]
 
 LaTeX Info: Redefining \. on input line 718.
 LaTeX Info: Redefining \% on input line 718.
-[659]
+[661]
 
 LaTeX Info: Redefining \. on input line 756.
 LaTeX Info: Redefining \% on input line 756.
-[660]
+[662]
 Underfull \vbox (badness 4582) has occurred while \output is active []
 
 
 
 LaTeX Info: Redefining \. on input line 839.
 LaTeX Info: Redefining \% on input line 839.
-[661]
+[663]
 
 LaTeX Info: Redefining \. on input line 889.
 LaTeX Info: Redefining \% on input line 889.
-[662]
+[664]
 
 LaTeX Info: Redefining \. on input line 958.
 LaTeX Info: Redefining \% on input line 958.
-[663]
+[665]
 
 LaTeX Info: Redefining \. on input line 1036.
 LaTeX Info: Redefining \% on input line 1036.
-[664]
+[666]
 
 LaTeX Info: Redefining \. on input line 1077.
 LaTeX Info: Redefining \% on input line 1077.
-[665]
+[667]
 
 LaTeX Info: Redefining \. on input line 1150.
 LaTeX Info: Redefining \% on input line 1150.
-[666]
+[668]
 
 LaTeX Info: Redefining \. on input line 1208.
 LaTeX Info: Redefining \% on input line 1208.
-[667]
+[669]
 
 LaTeX Info: Redefining \. on input line 1275.
 LaTeX Info: Redefining \% on input line 1275.
-[668]
+[670]
 Overfull \hbox (2.7039pt too wide) in paragraph at lines 1291--1299
 [][]\TU/TimesNewRoman(0)/b/n/12 Pro-ble-ma 30.73 \TU/TimesNewRoman(0)/m/n/12 (PV
 I con for-za-mien-to de-fi-ni-do por tra-mos)\TU/TimesNewRoman(0)/b/n/12 . []\T
@@ -7218,23 +7223,23 @@ m/it/12 y\OT1/cmr/m/n/12 (0) = 0\OML/cmm/m/it/12 ;  y[]\OT1/cmr/m/n/12 (0) =
 
 LaTeX Info: Redefining \. on input line 1328.
 LaTeX Info: Redefining \% on input line 1328.
-[669])
+[671])
 
 LaTeX Info: Redefining \. on input line 525.
 LaTeX Info: Redefining \% on input line 525.
-[670] (./apintdobles.tex
+[672] (./apintdobles.tex
 
-[671
+[673
 
 ]
 
-[672
+[674
 
 ]
 Capítulo 31.
 
 
-[673]
+[675]
 Overfull \hbox (8.39333pt too wide) in paragraph at lines 43--44
 [][]\TU/TimesNewRoman(0)/b/n/12 Ele-gir or-den de in-te-gra-ción.
  []
@@ -7243,34 +7248,34 @@ Overfull \hbox (8.39333pt too wide) in paragraph at lines 43--44
 
 LaTeX Info: Redefining \. on input line 104.
 LaTeX Info: Redefining \% on input line 104.
-[674]
+[676]
 
 LaTeX Info: Redefining \. on input line 238.
 LaTeX Info: Redefining \% on input line 238.
-[675]
+[677]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
 LaTeX Info: Redefining \. on input line 293.
 LaTeX Info: Redefining \% on input line 293.
-[676]
+[678]
 
 LaTeX Info: Redefining \. on input line 341.
 LaTeX Info: Redefining \% on input line 341.
-[677]
+[679]
 
 LaTeX Info: Redefining \. on input line 413.
 LaTeX Info: Redefining \% on input line 413.
-[678]
+[680]
 
 LaTeX Info: Redefining \. on input line 467.
 LaTeX Info: Redefining \% on input line 467.
-[679]
+[681]
 
 LaTeX Info: Redefining \. on input line 549.
 LaTeX Info: Redefining \% on input line 549.
-[680]
+[682]
 Overfull \hbox (18.96085pt too wide) detected at line 610
  $\OML/cmm/m/it/12 M[] \OT1/cmr/m/n/12 = [] [][](\OML/cmm/m/it/12 x[] \OMS/cmsy
 /m/n/12 ^^@ \OT1/cmr/m/n/12 2\OML/cmm/m/it/12 x[] \OT1/cmr/m/n/12 + \OML/cmm/m/
@@ -7282,7 +7287,7 @@ it/12 x[]\OT1/cmr/m/n/12 ) \OML/cmm/m/it/12 dx \OT1/cmr/m/n/12 = [] [] = [] []
 
 LaTeX Info: Redefining \. on input line 631.
 LaTeX Info: Redefining \% on input line 631.
-[681]
+[683]
 Overfull \hbox (31.48766pt too wide) detected at line 652
  $\OML/cmm/m/it/12 I[] \OT1/cmr/m/n/12 = [][] [][] \OML/cmm/m/it/12 y[]\OT1/cmr
 /m/n/12 (\OML/cmm/m/it/12 x \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 y\OT1/cmr/m/n/12
@@ -7303,33 +7308,33 @@ cmr/m/n/12 = [][] [] \OML/cmm/m/it/12 dx \OT1/cmr/m/n/12 = [][] = [] + [] = 4 + 
 
 LaTeX Info: Redefining \. on input line 671.
 LaTeX Info: Redefining \% on input line 671.
-[682]
+[684]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
 LaTeX Info: Redefining \. on input line 764.
 LaTeX Info: Redefining \% on input line 764.
-[683]
+[685]
 
 LaTeX Info: Redefining \. on input line 764.
 LaTeX Info: Redefining \% on input line 764.
-[684]
+[686]
 
 LaTeX Info: Redefining \. on input line 800.
 LaTeX Info: Redefining \% on input line 800.
-[685]
+[687]
 
 LaTeX Info: Redefining \. on input line 899.
 LaTeX Info: Redefining \% on input line 899.
-[686]
+[688]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
 LaTeX Info: Redefining \. on input line 938.
 LaTeX Info: Redefining \% on input line 938.
-[687]
+[689]
 Overfull \hbox (16.21873pt too wide) detected at line 1005
  $\OML/cmm/m/it/12 V \OT1/cmr/m/n/12 = [][]  [] \OML/cmm/m/it/12 d \OT1/cmr/m/
 n/12 = [][] = [] \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 (0 \OMS/cmsy/m/n/12 ^^@ \
@@ -7340,85 +7345,85 @@ OT1/cmr/m/n/12 1 + 0) = [] + 1 + []\OML/cmm/m/it/12 :$
 
 LaTeX Info: Redefining \. on input line 1010.
 LaTeX Info: Redefining \% on input line 1010.
-[688]
+[690]
 Underfull \vbox (badness 5681) has occurred while \output is active []
 
 
 
 LaTeX Info: Redefining \. on input line 1085.
 LaTeX Info: Redefining \% on input line 1085.
-[689]
+[691]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
 LaTeX Info: Redefining \. on input line 1136.
 LaTeX Info: Redefining \% on input line 1136.
-[690]
+[692]
 Underfull \vbox (badness 4001) has occurred while \output is active []
 
 
 
 LaTeX Info: Redefining \. on input line 1189.
 LaTeX Info: Redefining \% on input line 1189.
-[691]
+[693]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
 LaTeX Info: Redefining \. on input line 1285.
 LaTeX Info: Redefining \% on input line 1285.
-[692]
+[694]
 
 LaTeX Info: Redefining \. on input line 1340.
 LaTeX Info: Redefining \% on input line 1340.
-[693]
+[695]
 
 LaTeX Info: Redefining \. on input line 1482.
 LaTeX Info: Redefining \% on input line 1482.
-[694]
+[696]
 
 LaTeX Info: Redefining \. on input line 1541.
 LaTeX Info: Redefining \% on input line 1541.
-[695]
+[697]
 
 LaTeX Info: Redefining \. on input line 1600.
 LaTeX Info: Redefining \% on input line 1600.
-[696]
+[698]
 
 LaTeX Info: Redefining \. on input line 1691.
 LaTeX Info: Redefining \% on input line 1691.
-[697]
+[699]
 
 LaTeX Info: Redefining \. on input line 1772.
 LaTeX Info: Redefining \% on input line 1772.
-[698]) (./inttriples.tex
+[700]) (./inttriples.tex
 
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-[699]
+[701]
 
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-[700
+[702
 
 ]
 Capítulo 32.
 
 
-[701]
+[703]
 
 LaTeX Info: Redefining \. on input line 94.
 LaTeX Info: Redefining \% on input line 94.
-[702]
+[704]
 
 LaTeX Info: Redefining \. on input line 152.
 LaTeX Info: Redefining \% on input line 152.
-[703]
+[705]
 
 LaTeX Info: Redefining \. on input line 210.
 LaTeX Info: Redefining \% on input line 210.
-[704]
+[706]
 Overfull \hbox (62.56044pt too wide) detected at line 240
  $[][] [][] [][] \OML/cmm/m/it/12 x dz dy dx \OT1/cmr/m/n/12 = [][] [][] \OML/c
 mm/m/it/12 x\OT1/cmr/m/n/12 (1 \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 x \OMS/cms
@@ -7438,93 +7443,93 @@ Overfull \hbox (108.8181pt too wide) detected at line 279
 
 LaTeX Info: Redefining \. on input line 290.
 LaTeX Info: Redefining \% on input line 290.
-[705]
+[707]
 
 LaTeX Info: Redefining \. on input line 343.
 LaTeX Info: Redefining \% on input line 343.
-[706]
+[708]
 
 LaTeX Info: Redefining \. on input line 399.
 LaTeX Info: Redefining \% on input line 399.
-[707]
+[709]
 
 LaTeX Info: Redefining \. on input line 506.
 LaTeX Info: Redefining \% on input line 506.
-[708]
+[710]
 
 LaTeX Info: Redefining \. on input line 566.
 LaTeX Info: Redefining \% on input line 566.
-[709]
+[711]
 
 LaTeX Info: Redefining \. on input line 668.
 LaTeX Info: Redefining \% on input line 668.
-[710]
+[712]
 
 LaTeX Info: Redefining \. on input line 735.
 LaTeX Info: Redefining \% on input line 735.
-[711]
+[713]
 
 LaTeX Info: Redefining \. on input line 804.
 LaTeX Info: Redefining \% on input line 804.
-[712]
+[714]
 
 LaTeX Info: Redefining \. on input line 861.
 LaTeX Info: Redefining \% on input line 861.
-[713]
+[715]
 
 LaTeX Info: Redefining \. on input line 919.
 LaTeX Info: Redefining \% on input line 919.
-[714]) (./cap33.tex
+[716]) (./cap33.tex
 
 LaTeX Info: Redefining \. on input line 5.
 LaTeX Info: Redefining \% on input line 5.
-[715]
+[717]
 
 LaTeX Info: Redefining \. on input line 5.
 LaTeX Info: Redefining \% on input line 5.
-[716
+[718
 
 ]
 Capítulo 33.
 
 
-[717]
+[719]
 
 LaTeX Info: Redefining \. on input line 184.
 LaTeX Info: Redefining \% on input line 184.
-[718]
+[720]
 
 LaTeX Info: Redefining \. on input line 256.
 LaTeX Info: Redefining \% on input line 256.
-[719]
+[721]
 
 LaTeX Info: Redefining \. on input line 335.
 LaTeX Info: Redefining \% on input line 335.
-[720]
+[722]
 
 LaTeX Info: Redefining \. on input line 441.
 LaTeX Info: Redefining \% on input line 441.
-[721]
+[723]
 
 LaTeX Info: Redefining \. on input line 482.
 LaTeX Info: Redefining \% on input line 482.
-[722]
+[724]
 
 LaTeX Info: Redefining \. on input line 588.
 LaTeX Info: Redefining \% on input line 588.
-[723]
+[725]
 
 LaTeX Info: Redefining \. on input line 649.
 LaTeX Info: Redefining \% on input line 649.
-[724]
+[726]
 
 LaTeX Info: Redefining \. on input line 772.
 LaTeX Info: Redefining \% on input line 772.
-[725]
+[727]
 
 LaTeX Info: Redefining \. on input line 817.
 LaTeX Info: Redefining \% on input line 817.
-[726]
+[728]
 Overfull \hbox (15.66623pt too wide) in paragraph at lines 862--865
 [][]\TU/TimesNewRoman(0)/b/n/12 Pro-ble-ma 33.40 \TU/TimesNewRoman(0)/m/n/12 (Ap
 li-ca-ción: ma-sa de un alam-bre)\TU/TimesNewRoman(0)/b/n/12 . []\TU/TimesNewR
@@ -7538,25 +7543,25 @@ mesNewRoman(0)/m/n/12 ,
 
 LaTeX Info: Redefining \. on input line 900.
 LaTeX Info: Redefining \% on input line 900.
-[727]) (./cap34.tex
+[729]) (./cap34.tex
 
 LaTeX Info: Redefining \. on input line 5.
 LaTeX Info: Redefining \% on input line 5.
-[728]
+[730]
 Capítulo 34.
 
 
-[729
+[731
 
 ]
 
 LaTeX Info: Redefining \. on input line 213.
 LaTeX Info: Redefining \% on input line 213.
-[730]
+[732]
 
 LaTeX Info: Redefining \. on input line 272.
 LaTeX Info: Redefining \% on input line 272.
-[731]
+[733]
 Missing character: There is no ✓ (U+2713) in font "name:Times New Roman:mode=n
 ode;script=latn;language=dflt;+tlig;"!
 Missing character: There is no ✓ (U+2713) in font "name:Times New Roman:mode=n
@@ -7565,7 +7570,7 @@ ode;script=latn;language=dflt;+tlig;"!
 
 LaTeX Info: Redefining \. on input line 372.
 LaTeX Info: Redefining \% on input line 372.
-[732]
+[734]
 
 
 
@@ -7602,7 +7607,7 @@ Underfull \vbox (badness 1708) has occurred while \output is active []
 
 LaTeX Info: Redefining \. on input line 434.
 LaTeX Info: Redefining \% on input line 434.
-[733
+[735
 Missing character: There is no ✓ (U+2713) in font "name:Times New Roman:mode=n
 ode;script=latn;language=dflt;+tlig;"!
 Missing character: There is no ✓ (U+2713) in font "name:Times New Roman:mode=n
@@ -7621,22 +7626,22 @@ ode;script=latn;language=dflt;+tlig;"!
 
 LaTeX Info: Redefining \. on input line 489.
 LaTeX Info: Redefining \% on input line 489.
-[734]
+[736]
 
 LaTeX Info: Redefining \. on input line 535.
 LaTeX Info: Redefining \% on input line 535.
-[735]
+[737]
 
 LaTeX Info: Redefining \. on input line 652.
 LaTeX Info: Redefining \% on input line 652.
-[736]
+[738]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
 LaTeX Info: Redefining \. on input line 692.
 LaTeX Info: Redefining \% on input line 692.
-[737]
+[739]
 Overfull \hbox (62.44156pt too wide) detected at line 749
  $\OML/cmm/m/it/12 M[] \OT1/cmr/m/n/12 = [][] [][](\OML/cmm/m/it/12 R []  [] \OT1/cmr/m/n/12 )(\OML/cmm/m/it/12 R [] \OT1/cmr/m/n/12 )(\OML/cmm/m/it/12 R[] [] \OT1/cmr/m/n/12 ) \OML/cmm/m/it/12 d d \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 R[]  [][]  []  d \OMS/cmsy/m/n/12  [][]  [][] \OML/cmm/m/it/12  []  d \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 R[] \OMS/cmsy/m/n/12  \OT1/cmr/m/n/12 1 \OMS/cmsy/m/n/12  [] \OT1/cmr/m/n/12 = []\OML/cmm/m/it/12 :$ 
  []
@@ -7645,14 +7650,14 @@ Overfull \hbox (62.44156pt too wide) detected at line 749
 
 LaTeX Info: Redefining \. on input line 761.
 LaTeX Info: Redefining \% on input line 761.
-[738]
+[740]
 Underfull \vbox (badness 1048) has occurred while \output is active []
 
 
 
 LaTeX Info: Redefining \. on input line 794.
 LaTeX Info: Redefining \% on input line 794.
-[739]
+[741]
 
 Package pgfplots Warning: the ticklabel anchor cannot be determined, the normal
  vector -(-0.62912pt,0.77728pt) and the unit x vector (0.94893pt,-0.3157pt) are
@@ -7729,31 +7734,31 @@ e almost parallel (abs(cos(angle)) = 0.80893pt)! on input line 818.
 
 LaTeX Info: Redefining \. on input line 893.
 LaTeX Info: Redefining \% on input line 893.
-[740]
+[742]
 
 LaTeX Info: Redefining \. on input line 948.
 LaTeX Info: Redefining \% on input line 948.
-[741]
+[743]
 
 LaTeX Info: Redefining \. on input line 1035.
 LaTeX Info: Redefining \% on input line 1035.
-[742]
+[744]
 
 LaTeX Info: Redefining \. on input line 1118.
 LaTeX Info: Redefining \% on input line 1118.
-[743]
+[745]
 
 LaTeX Info: Redefining \. on input line 1155.
 LaTeX Info: Redefining \% on input line 1155.
-[744]
+[746]
 
 LaTeX Info: Redefining \. on input line 1278.
 LaTeX Info: Redefining \% on input line 1278.
-[745]
+[747]
 
 LaTeX Info: Redefining \. on input line 1327.
 LaTeX Info: Redefining \% on input line 1327.
-[746]
+[748]
 
 
 
@@ -7763,178 +7768,178 @@ LaTeX Info: Redefining \% on input line 1327.
 
 LaTeX Info: Redefining \. on input line 1407.
 LaTeX Info: Redefining \% on input line 1407.
-[747])
+[749])
 
 LaTeX Info: Redefining \. on input line 535.
 LaTeX Info: Redefining \% on input line 535.
-[748] (./anfalearNotasCalculo.loe
+[750] (./anfalearNotasCalculo.loe
 
-[749]
+[751]
 
 LaTeX Info: Redefining \. on input line 105.
 LaTeX Info: Redefining \% on input line 105.
-[750]
+[752]
 
 LaTeX Info: Redefining \. on input line 160.
 LaTeX Info: Redefining \% on input line 160.
-[751]
+[753]
 
 LaTeX Info: Redefining \. on input line 215.
 LaTeX Info: Redefining \% on input line 215.
-[752]
+[754]
 
 LaTeX Info: Redefining \. on input line 270.
 LaTeX Info: Redefining \% on input line 270.
-[753]
+[755]
 
 LaTeX Info: Redefining \. on input line 325.
 LaTeX Info: Redefining \% on input line 325.
-[754]
+[756]
 
 LaTeX Info: Redefining \. on input line 380.
 LaTeX Info: Redefining \% on input line 380.
-[755]
+[757]
 
 LaTeX Info: Redefining \. on input line 435.
 LaTeX Info: Redefining \% on input line 435.
-[756]
+[758]
 
 LaTeX Info: Redefining \. on input line 490.
 LaTeX Info: Redefining \% on input line 490.
-[757]
+[759]
 
 LaTeX Info: Redefining \. on input line 545.
 LaTeX Info: Redefining \% on input line 545.
-[758]
+[760]
 
 LaTeX Info: Redefining \. on input line 600.
 LaTeX Info: Redefining \% on input line 600.
-[759]
+[761]
 
 LaTeX Info: Redefining \. on input line 655.
 LaTeX Info: Redefining \% on input line 655.
-[760]
+[762]
 
 LaTeX Info: Redefining \. on input line 710.
 LaTeX Info: Redefining \% on input line 710.
-[761]
+[763]
 
 LaTeX Info: Redefining \. on input line 765.
 LaTeX Info: Redefining \% on input line 765.
-[762]
+[764]
 
 LaTeX Info: Redefining \. on input line 820.
 LaTeX Info: Redefining \% on input line 820.
-[763]
+[765]
 
 LaTeX Info: Redefining \. on input line 875.
 LaTeX Info: Redefining \% on input line 875.
-[764]
+[766]
 
 LaTeX Info: Redefining \. on input line 930.
 LaTeX Info: Redefining \% on input line 930.
-[765]
+[767]
 
 LaTeX Info: Redefining \. on input line 985.
 LaTeX Info: Redefining \% on input line 985.
-[766]
+[768]
 
 LaTeX Info: Redefining \. on input line 1040.
 LaTeX Info: Redefining \% on input line 1040.
-[767]
+[769]
 
 LaTeX Info: Redefining \. on input line 1095.
 LaTeX Info: Redefining \% on input line 1095.
-[768]
+[770]
 
 LaTeX Info: Redefining \. on input line 1150.
 LaTeX Info: Redefining \% on input line 1150.
-[769]
+[771]
 
 LaTeX Info: Redefining \. on input line 1205.
 LaTeX Info: Redefining \% on input line 1205.
-[770]
+[772]
 
 LaTeX Info: Redefining \. on input line 1260.
 LaTeX Info: Redefining \% on input line 1260.
-[771]
+[773]
 
 LaTeX Info: Redefining \. on input line 1315.
 LaTeX Info: Redefining \% on input line 1315.
-[772]
+[774]
 
 LaTeX Info: Redefining \. on input line 1370.
 LaTeX Info: Redefining \% on input line 1370.
-[773]
+[775]
 
 LaTeX Info: Redefining \. on input line 1424.
 LaTeX Info: Redefining \% on input line 1424.
-[774]
+[776]
 
 LaTeX Info: Redefining \. on input line 1479.
 LaTeX Info: Redefining \% on input line 1479.
-[775]
+[777]
 
 LaTeX Info: Redefining \. on input line 1534.
 LaTeX Info: Redefining \% on input line 1534.
-[776]
+[778]
 
 LaTeX Info: Redefining \. on input line 1589.
 LaTeX Info: Redefining \% on input line 1589.
-[777]
+[779]
 
 LaTeX Info: Redefining \. on input line 1644.
 LaTeX Info: Redefining \% on input line 1644.
-[778]
+[780]
 
 LaTeX Info: Redefining \. on input line 1699.
 LaTeX Info: Redefining \% on input line 1699.
-[779]
+[781]
 
 LaTeX Info: Redefining \. on input line 1754.
 LaTeX Info: Redefining \% on input line 1754.
-[780]
+[782]
 
 LaTeX Info: Redefining \. on input line 1809.
 LaTeX Info: Redefining \% on input line 1809.
-[781]
+[783]
 
 LaTeX Info: Redefining \. on input line 1864.
 LaTeX Info: Redefining \% on input line 1864.
-[782]
+[784]
 
 LaTeX Info: Redefining \. on input line 1919.
 LaTeX Info: Redefining \% on input line 1919.
-[783]
+[785]
 
 LaTeX Info: Redefining \. on input line 1974.
 LaTeX Info: Redefining \% on input line 1974.
-[784]
+[786]
 
 LaTeX Info: Redefining \. on input line 2029.
 LaTeX Info: Redefining \% on input line 2029.
-[785]
+[787]
 
 LaTeX Info: Redefining \. on input line 2084.
 LaTeX Info: Redefining \% on input line 2084.
-[786]
+[788]
 
 LaTeX Info: Redefining \. on input line 2139.
 LaTeX Info: Redefining \% on input line 2139.
-[787])
+[789])
 
 LaTeX Info: Redefining \. on input line 537.
 LaTeX Info: Redefining \% on input line 537.
-[788] (./anfalearNotasCalculo.lof
+[790] (./anfalearNotasCalculo.lof
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 
 
-[789]
+[791]
 
 LaTeX Info: Redefining \. on input line 73.
 LaTeX Info: Redefining \% on input line 73.
-[790]
+[792]
 Overfull \hbox (5.8835pt too wide) in paragraph at lines 75--75
  [][] [][]\TU/TimesNewRoman(0)/m/n/12 Re-pre-sen-ta-ción bi-di-men-sio-nal de 
 una rec-ta en el es-pa-cio tri-di-men-sio-nal $\U/msb/m/n/12 R[]$\TU/TimesNewRo
@@ -7946,15 +7951,15 @@ x[]; y[]; z[]\OT1/cmr/m/n/12 )$
 
 LaTeX Info: Redefining \. on input line 121.
 LaTeX Info: Redefining \% on input line 121.
-[791]
-Underfull \vbox (badness 2368) has occurred while \output is active []
+[793]
+Underfull \vbox (badness 2103) has occurred while \output is active []
 
 
 
 LaTeX Info: Redefining \. on input line 160.
 LaTeX Info: Redefining \% on input line 160.
-[792]
-Overfull \hbox (2.72165pt too wide) in paragraph at lines 189--189
+[794]
+Overfull \hbox (2.72165pt too wide) in paragraph at lines 190--190
  [][] [][]\TU/TimesNewRoman(0)/m/n/12 Fi-gu-ra ori-gi-nal (Su-do-ku 3D cu-be, [
 ]$\TU/lmtt/m/n/12 https://texample.net/tikz/examples/sudoku-[]3d-[]cube$[]\TU/T
 imesNewRoman(0)/m/n/12 )[] []  
@@ -7962,9 +7967,9 @@ imesNewRoman(0)/m/n/12 )[] []
 
 
 
-LaTeX Info: Redefining \. on input line 211.
-LaTeX Info: Redefining \% on input line 211.
-[793])
+LaTeX Info: Redefining \. on input line 210.
+LaTeX Info: Redefining \% on input line 210.
+[795])
 \tf@lof=\write7
 
 \openout7 = anfalearNotasCalculo.lof
@@ -7972,15 +7977,15 @@ LaTeX Info: Redefining \% on input line 211.
 
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-[794]
+[796]
 
-[795
+[797
 
 ])
 
 LaTeX Info: Redefining \. on input line 546.
 LaTeX Info: Redefining \% on input line 546.
-[796]
+[798]
 \tf@loe=\write8
 
 \openout8 = anfalearNotasCalculo.loe
@@ -7993,19 +7998,19 @@ LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-06-09>
  ***********
 Package rerunfilecheck Info: File `anfalearNotasCalculo.out' has not changed.
-(rerunfilecheck)             Checksum: 15B04A4F4428D47EA89612C3B054381D;82650.
+(rerunfilecheck)             Checksum: 2242461FFBA7ED610C5FB734F6BF7B46;82849.
 )
 
 Here is how much of LuaTeX's memory you used:
- 95819 strings out of 470205
+ 95894 strings out of 470205
  305221,4101490 words of node,token memory allocated
- 24241 words of node memory still in use:
-   32 hlist, 2 vlist, 14 rule, 3 glue, 4 kern, 1 glyph, 7505 attribute, 101 glue
-_spec, 3790 attribute_list, 2 write, 24 pdf_literal, 71 pdf_action, 24 pdf_color
+ 24313 words of node memory still in use:
+   32 hlist, 2 vlist, 14 rule, 3 glue, 4 kern, 1 glyph, 7527 attribute, 101 glue
+_spec, 3801 attribute_list, 2 write, 24 pdf_literal, 72 pdf_action, 24 pdf_color
 stack nodes
-   avail lists: 1:23,2:31452,3:19197,4:340,5:2076,6:115,7:11348,8:150,9:4399,10:
+   avail lists: 1:22,2:31476,3:19209,4:340,5:2077,6:114,7:11348,8:150,9:4399,10:
 32,11:1181
- 114918 multiletter control sequences out of 65536+600000
+ 114985 multiletter control sequences out of 65536+600000
  153 fonts using 36017359 bytes
  76i,22n,95p,1148b,3556s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/users/anfalear/appdata/local/programs/miktex/fonts/opentype/public/lm/lmmono
@@ -8044,9 +8049,9 @@ amsfonts/cm/cmsy8.pfb><C:/Users/anfalear/AppData/Local/Programs/MiKTeX/fonts/typ
 e1/public/amsfonts/latxfont/line10.pfb><C:/Users/anfalear/AppData/Local/Programs
 /MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/anfalear/AppDat
 a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on anfalearNotasCalculo.pdf (796 pages, 6783317 bytes).
+Output written on anfalearNotasCalculo.pdf (798 pages, 6797534 bytes).
 
-PDF statistics: 14864 PDF objects out of 15390 (max. 8388607)
- 7563 named destinations out of 8907 (max. 131072)
- 3224 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 14888 PDF objects out of 15390 (max. 8388607)
+ 7571 named destinations out of 8907 (max. 131072)
+ 3232 words of extra memory for PDF output out of 10000 (max. 100000000)
 

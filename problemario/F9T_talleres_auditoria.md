@@ -452,7 +452,9 @@ Prob resuelto V/F `Problema 18.39` (Continuidad en una región: análisis de dom
 
 ### Prioridad 2 — FALTA de talleres
 
-### F9T.07 — [origen: T1.01] [destino: funvectoriales.tex, antes de §Superficies cuádricas]
+### F9T.07 — HECHO (2026-07-21) — [origen: T1.01] [destino: funvectoriales.tex, nueva §«Secciones cónicas: repaso» antes de §Superficies cuádricas L1140]
+Nueva subsección de repaso (párrafo de clasificación por signos de A,B) + prob resuelto `Problema 17.41` (hipérbola isomorfa 16x²−9y²−64x−18y−89=0 → (x−2)²/9−(y+1)²/16=1; terna 3-4-5: a=3,b=4,c=5; centro (2,−1), vértices (5,−1)/(−1,−1), focos (7,−1)/(−3,−1), asíntotas y+1=±4/3(x−2), e=5/3). Protocolo 4 pasos + `\boxed{}` + figura TikZ `fig:hiperbola_canonica` (Fig. 17.8, p. 414; ramas por forma exponencial de cosh/senh). Propuesto isomorfo (hipérbola vertical 9x²−16y²+36x+96y+36=0) en propuestos §Intermedio. Compilación 798 pp, 0 errores, 2 pasadas. Verificado visualmente p. 414. Inicia Prioridad 2.
+
 - Tipo: ambos
 - Enunciado: dada una cónica Ax²+By²+Cx+Dy+E=0 (hipérbola, valores tipo taller), obtener forma canónica por completar cuadrados y extraer centro, vértices, focos y asíntotas.
 - Solución: completar cuadrados → canónica → elementos → bosquejo.

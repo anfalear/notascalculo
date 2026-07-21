@@ -1137,6 +1137,98 @@ el cono. La identificación y el trazado de estas superficies se
 presenta en la subsección siguiente.
 \end{rem}
 
+\subsection{Secciones cónicas: repaso}
+
+Antes de estudiar las superficies cuádricas conviene recordar las
+\textbf{secciones cónicas}, sus análogas en el plano. Una ecuación de
+segundo grado sin término cruzado,
+\[
+  Ax^2+By^2+Cx+Dy+E=0,
+\]
+representa (salvo casos degenerados) una elipse si $A$ y $B$ tienen el mismo
+signo, una hipérbola si tienen signos opuestos y una parábola si uno de ellos
+es nulo. El procedimiento para identificarla consiste en \textbf{completar
+cuadrados} y llevarla a su forma canónica.
+
+\begin{prob}[Elementos de una hipérbola por completar cuadrados]
+Identifique la cónica $16x^2-9y^2-64x-18y-89=0$ y determine su centro,
+vértices, focos, asíntotas y excentricidad.
+\begin{myproof}
+\textbf{Paso 1. Agrupar y completar cuadrados.} Separamos por variable y
+factorizamos los coeficientes principales:
+\[
+  16(x^2-4x)-9(y^2+2y)=89.
+\]
+Como $x^2-4x=(x-2)^2-4$ y $y^2+2y=(y+1)^2-1$,
+\[
+  16\bigl[(x-2)^2-4\bigr]-9\bigl[(y+1)^2-1\bigr]=89,
+\]
+\[
+  16(x-2)^2-9(y+1)^2-64+9=89
+  \;\Longrightarrow\;
+  16(x-2)^2-9(y+1)^2=144.
+\]
+
+\textbf{Paso 2. Forma canónica.} Dividiendo entre $144$:
+\[
+  \frac{(x-2)^2}{9}-\frac{(y+1)^2}{16}=1.
+\]
+Es una \textbf{hipérbola} de eje transversal horizontal, con $a^2=9$,
+$b^2=16$ y centro $(h,k)=(2,-1)$.
+
+\textbf{Paso 3. Parámetros.} $a=3$, $b=4$ y
+$c=\sqrt{a^2+b^2}=\sqrt{9+16}=5$; la excentricidad es
+$e=\dfrac{c}{a}=\dfrac{5}{3}$.
+
+\textbf{Paso 4. Elementos y bosquejo.}
+\begin{itemize}
+  \item Centro: $C(2,-1)$.
+  \item Vértices: $(h\pm a,\,k)=(5,-1)$ y $(-1,-1)$.
+  \item Focos: $(h\pm c,\,k)=(7,-1)$ y $(-3,-1)$.
+  \item Asíntotas: $y+1=\pm\dfrac{b}{a}(x-2)=\pm\dfrac{4}{3}(x-2)$.
+\end{itemize}
+El trazado se muestra en la figura~\ref{fig:hiperbola_canonica}.
+\[
+  \boxed{\ \frac{(x-2)^2}{9}-\frac{(y+1)^2}{16}=1,\quad
+  C(2,-1),\ a=3,\ b=4,\ c=5,\ e=\tfrac53.\ }
+\]
+\end{myproof}
+\end{prob}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=0.5]
+  % Ejes
+  \draw[->,thin] (-5,0)--(9.3,0) node[anchor=north west]{$x$};
+  \draw[->,thin] (0,-7.3)--(0,5.7) node[anchor=south east]{$y$};
+  % Asíntotas: y+1 = ±(4/3)(x-2)
+  \draw[dashed,gray!70] (-2.5,-7)--(6.5,5);
+  \draw[dashed,gray!70] (-2.5,5)--(6.5,-7);
+  % Rama derecha: (2+3cosh t, -1+4senh t)
+  \draw[very thick,blue!70!black,domain=-1.1:1.1,samples=60,smooth]
+    plot ({2+1.5*(exp(\x)+exp(-\x))},{-1+2*(exp(\x)-exp(-\x))});
+  % Rama izquierda
+  \draw[very thick,blue!70!black,domain=-1.1:1.1,samples=60,smooth]
+    plot ({2-1.5*(exp(\x)+exp(-\x))},{-1+2*(exp(\x)-exp(-\x))});
+  % Centro
+  \filldraw[black] (2,-1) circle(0.11)
+    node[anchor=south west,font=\small]{$C$};
+  % Vértices
+  \filldraw[blue!70!black] (5,-1) circle(0.11);
+  \filldraw[blue!70!black] (-1,-1) circle(0.11);
+  \node[anchor=north,font=\scriptsize] at (5,-1.35){$V_1(5,-1)$};
+  \node[anchor=north,font=\scriptsize] at (-1,-1.35){$V_2(-1,-1)$};
+  % Focos
+  \filldraw[red!70!black] (7,-1) circle(0.13);
+  \filldraw[red!70!black] (-3,-1) circle(0.13);
+  \node[anchor=south,font=\scriptsize,red!70!black] at (7,-0.6){$F_1(7,-1)$};
+  \node[anchor=south,font=\scriptsize,red!70!black] at (-3,-0.6){$F_2(-3,-1)$};
+\end{tikzpicture}
+\caption{Hipérbola $\dfrac{(x-2)^2}{9}-\dfrac{(y+1)^2}{16}=1$: centro $C(2,-1)$,
+  vértices $V_1,V_2$, focos $F_1,F_2$ y asíntotas $y+1=\pm\tfrac43(x-2)$.}
+\label{fig:hiperbola_canonica}
+\end{figure}
+
 \subsection{Superficies cuádricas}
 \label{sec:superficies-cuadricas}
 
@@ -1832,6 +1924,11 @@ Identificar y esbozar la gráfica de las siguientes funciones:
   \item $z = \sqrt{9 - x^2 - y^2}$ (semiesfera).
   \item $z = x^2 + y^2$ (paraboloide circular).
 \end{enumerate}
+\end{prob}
+
+\begin{prob}
+Identifique la cónica $9x^2-16y^2+36x+96y+36=0$ completando cuadrados y
+determine su centro, vértices, focos y asíntotas.
 \end{prob}
 
 \begin{prob}
