@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (MiKTeX 25.4) (format=lualatex 2025.7.7)  22 JUL 2026 09:40
+This is LuaHBTeX, Version 1.22.0 (MiKTeX 25.4) (format=lualatex 2025.7.7)  22 JUL 2026 11:22
  restricted system commands enabled.
 **anfalearNotasCalculo.tex
 (./anfalearNotasCalculo.tex
@@ -2840,16 +2840,19 @@ LaTeX Info: Redefining \. on input line 2056.
 LaTeX Info: Redefining \% on input line 2056.
 [130]
 
-LaTeX Info: Redefining \. on input line 2119.
-LaTeX Info: Redefining \% on input line 2119.
+LaTeX Info: Redefining \. on input line 2121.
+LaTeX Info: Redefining \% on input line 2121.
 [131]
+Underfull \vbox (badness 5893) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 2215.
-LaTeX Info: Redefining \% on input line 2215.
+
+
+LaTeX Info: Redefining \. on input line 2241.
+LaTeX Info: Redefining \% on input line 2241.
 [132]
 
-LaTeX Info: Redefining \. on input line 2337.
-LaTeX Info: Redefining \% on input line 2337.
+LaTeX Info: Redefining \. on input line 2338.
+LaTeX Info: Redefining \% on input line 2338.
 [133]
 
 
@@ -2857,20 +2860,17 @@ LaTeX Info: Redefining \% on input line 2337.
 
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-
-LaTeX Info: Redefining \. on input line 2411.
-LaTeX Info: Redefining \% on input line 2411.
+LaTeX Info: Redefining \. on input line 2417.
+LaTeX Info: Redefining \% on input line 2417.
 [134]
 
-LaTeX Info: Redefining \. on input line 2573.
-LaTeX Info: Redefining \% on input line 2573.
+LaTeX Info: Redefining \. on input line 2582.
+LaTeX Info: Redefining \% on input line 2582.
 [135]
 
-LaTeX Info: Redefining \. on input line 2733.
-LaTeX Info: Redefining \% on input line 2733.
+LaTeX Info: Redefining \. on input line 2743.
+LaTeX Info: Redefining \% on input line 2743.
 [136]
 
 
@@ -2879,8 +2879,8 @@ LaTeX Info: Redefining \% on input line 2733.
 
 
 
-LaTeX Info: Redefining \. on input line 2852.
-LaTeX Info: Redefining \% on input line 2852.
+LaTeX Info: Redefining \. on input line 2867.
+LaTeX Info: Redefining \% on input line 2867.
 [137])
 
 LaTeX Info: Redefining \. on input line 466.
@@ -8189,7 +8189,7 @@ LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-06-09>
  ***********
 Package rerunfilecheck Info: File `anfalearNotasCalculo.out' has not changed.
-(rerunfilecheck)             Checksum: D74FA2224E0A7B950D757016D83014CC;83266.
+(rerunfilecheck)             Checksum: 44461CF4143940E84F0D40A3B27962E1;83258.
 )
 
 Here is how much of LuaTeX's memory you used:
@@ -8240,7 +8240,7 @@ amsfonts/cm/cmsy8.pfb><C:/Users/anfalear/AppData/Local/Programs/MiKTeX/fonts/typ
 e1/public/amsfonts/latxfont/line10.pfb><C:/Users/anfalear/AppData/Local/Programs
 /MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/anfalear/AppDat
 a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on anfalearNotasCalculo.pdf (818 pages, 7029034 bytes).
+Output written on anfalearNotasCalculo.pdf (818 pages, 7029007 bytes).
 
 PDF statistics: 15282 PDF objects out of 15390 (max. 8388607)
  7749 named destinations out of 8907 (max. 131072)
