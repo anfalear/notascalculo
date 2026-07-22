@@ -409,12 +409,12 @@ Mínimo 15 propuestos por capítulo, máximo 40; graduación 25/50/25 con tags. 
 | F9C1.08 | `limites.tex` | 3 figuras R2 nuevas | Completado | 2026-07-17 | fig:limite_epsilon_delta, fig:tipos_discontinuidad (3 minipages), fig:asintotas |
 | F9C1.09 | `limites.tex` | 2 huérfanos + auditoría figuras | Completado | 2026-07-17 | Huérfanos eran pruebas de teoremas → `proof` (precedente AL); fig:encaje_areas + ancla; 6/6 conformes |
 | F9C1.10 | `limites.tex` | Banco 50: decisión + tags + elevar 4–5 | Completado | 2026-07-17 | 5 elevaciones SymPy-OK; 6 subsecciones E4; 40 contados + 4 `% Banco extendido`; errata x→1→π/4 corregida; heading estándar |
-| F9C1.11 | `derivadas.tex` | 2 figuras R2 nuevas | Pendiente | — | — |
-| F9C1.12 | `derivadas.tex` | 3 huérfanos + 3 center + residuales | Pendiente | — | — |
-| F9C1.13 | `derivadas.tex` | Tags + elevar 3–4 + heading | Pendiente | — | — |
-| F9C1.14 | `apderivadas.tex` | Center lote 1 (~10) | Pendiente | — | — |
-| F9C1.15 | `apderivadas.tex` | Center lote 2 (~11) + 5 figure envs | Pendiente | — | — |
-| F9C1.16 | `apderivadas.tex` | 3 figuras R2 nuevas | Pendiente | — | — |
+| F9C1.11 | `derivadas.tex` | 2 figuras R2 nuevas | Completado | 2026-07-22 | fig:secante_tangente (2 secantes→tangente) + fig:arbol_cadena (árbol y→u→x). Verificadas visualmente pp. 90/94 |
+| F9C1.12 | `derivadas.tex` | 3 huérfanos + 3 center + residuales | Completado | 2026-07-22 | 3 huérfanos (continuidad, prod., cadena) eran pruebas de teoremas → `proof` + `\qquad\square` retirado (qed auto). **Hallazgo: los 3 `center` son tablas (tabular), no tikz → sin conversión.** Extra: 3 figuras de propuestos con `\label` antes de `\caption` corregidas (circder/trider/lamparader) |
+| F9C1.13 | `derivadas.tex` | Tags + elevar 3–4 + heading | Completado | 2026-07-22 | Heading→minúscula; 37 propuestos reagrupados 10B/19I/8D con marcadores (script preserva bloques íntegros). **Elevaciones OMITIDAS (decisión del autor): cobertura de ejemplos ya completa** |
+| F9C1.14 | `apderivadas.tex` | Center lote 1 (~10) | Completado | 2026-07-22 | **Hallazgo: de los 21 `center`, solo 9 son tikz; 12 son tablas.** Convertidos a figure[H]+caption+label: caja_abierta_recorte, lata_cilindrica, tuberia_rio (cuerpo) |
+| F9C1.15 | `apderivadas.tex` | Center lote 2 (~11) + 5 figure envs | Completado | 2026-07-22 | 6 tikz-center de propuestos→figure (cuadrado_inscrito, nino_globo, trote_nado, cine_angulo, astas_cable, grafica_fprima). 5 figure envs no conformes completados: tanque_conico, escalera_pared, monotonia_x3, bosquejo_racional (+label), concavidad_x4 (label antes de caption). Bloque figura comentado L~2469 dejado como dead-code |
+| F9C1.16 | `apderivadas.tex` | 3 figuras R2 nuevas | Completado | 2026-07-22 | **Hallazgo: (a) crecimiento/decrec. y (b) concavidad YA existían (figs monotonia_x3/concavidad_x4).** Solo faltaba (c) TVM → fig:tvm_secante_tangente (secante+tangente paralela en c). Verificada p.124 |
 | F9C1.17 | `apderivadas.tex` | Tags por subsección + elevaciones | Pendiente | — | — |
 | F9C1.18 | `tecintegracion.tex` | Banco 4 → 15–20 graduado | Pendiente | — | — |
 | F9C1.19 | `tecintegracion.tex` | Triángulos sust. trig + familia F(x)+C | Pendiente | — | — |

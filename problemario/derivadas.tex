@@ -54,6 +54,43 @@ pendiente de la recta secante cuando un punto se desplaza hacia el otro
 a lo largo de la curva. Ambas son expresiones del mismo concepto y se
 usan indistintamente según conveniencia.
 
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.7]
+  % ejes
+  \draw[->,thin] (-0.2,0)--(3.2,0) node[right]{$x$};
+  \draw[->,thin] (0,-0.2)--(0,3.3) node[above]{$y$};
+  % curva f(x)=0.35x^2+0.4
+  \draw[very thick,blue!70!black,domain=0.15:2.95,samples=60,smooth]
+    plot(\x,{0.35*\x*\x+0.4});
+  \node[blue!70!black,anchor=west,font=\small] at (2.5,3.1) {$y=f(x)$};
+  % puntos
+  \coordinate (P)  at (0.8,0.624);
+  \coordinate (Q2) at (1.8,1.534);
+  \coordinate (Q1) at (2.6,2.766);
+  % secantes
+  \draw[red!55!black] (0.5,0.267)--(2.9,3.123);
+  \draw[red!75!black] (0.4,0.260)--(2.2,1.898);
+  % tangente en P (pendiente f'(0.8)=0.56)
+  \draw[very thick,green!45!black] (0.2,0.288)--(2.45,1.548);
+  % marcas
+  \filldraw (P) circle(0.9pt) node[below right,font=\small]{$P$};
+  \filldraw (Q1) circle(0.9pt) node[above left,font=\small]{$Q_1$};
+  \filldraw (Q2) circle(0.9pt) node[above left,font=\small]{$Q_2$};
+  % etiquetas
+  \node[green!45!black,font=\small,anchor=north west] at (2.05,1.12) {tangente};
+  \node[red!70!black,font=\small,anchor=south east] at (2.78,2.72) {secantes};
+  % Q -> P
+  \draw[->,gray,thin] (2.45,2.5)--(1.95,1.7);
+  \draw[->,gray,thin] (1.68,1.4)--(1.02,0.72);
+\end{tikzpicture}
+\caption{La recta secante por $P=(x_0,f(x_0))$ y un punto
+  $Q=(x_0+h,f(x_0+h))$ tiende a la recta \emph{tangente} en $P$ cuando
+  $Q\to P$ (es decir, $h\to 0$); su pendiente
+  $\dfrac{f(x_0+h)-f(x_0)}{h}$ tiende a $f'(x_0)$.}
+\label{fig:secante_tangente}
+\end{figure}
+
 Cuando la derivada existe en \emph{todo} punto de un intervalo, se obtiene
 una nueva función $f'$ llamada la \textbf{función derivada} de $f$:
 \[
@@ -149,7 +186,7 @@ Una de las propiedades importantes de la derivada se resume a continuación:
 Si $f$ es derivable en $c$, entonces $f$ es continua en $c$.
 \end{theorem}
 
-\begin{myproof}
+\begin{proof}
 Debemos mostrar que $\lim_{x\to c}f(x) = f(c)$, es decir, que
 $\lim_{x\to c}[f(x)-f(c)] = 0$. Para $x\neq c$:
 \[
@@ -158,9 +195,9 @@ f(x)-f(c) = \frac{f(x)-f(c)}{x-c}\cdot(x-c).
 Tomando el límite cuando $x\to c$ y usando que el primer factor converge
 a $f'(c)$ y el segundo a $0$:
 \[
-\lim_{x\to c}[f(x)-f(c)] = f'(c)\cdot 0 = 0. \qquad\square
+\lim_{x\to c}[f(x)-f(c)] = f'(c)\cdot 0 = 0.
 \]
-\end{myproof}
+\end{proof}
 
 \begin{rem}
 \textbf{El recíproco es falso}: la continuidad no implica derivabilidad.
@@ -199,8 +236,8 @@ Sean $f$ y $g$ funciones derivables, $k,n\in\R$:
     = \dfrac{g(x)f'(x)-f(x)g'(x)}{[g(x)]^2}$, \; con $g(x)\neq 0$.
 \end{enumerate}
 \end{theorem}
-Para ilustrar, a continuación se demuestra la regla del producto: 
-\begin{myproof}
+Para ilustrar, a continuación se demuestra la regla del producto:
+\begin{proof}
 Sea $F(x) = f(x)g(x)$. Sumando y restando $f(x)g(x+h)$ en el numerador del cociente incremental:
 \begin{align*}
 F'(x) &= \lim_{h\to 0}\frac{f(x+h)g(x+h)-f(x)g(x)}{h} \\
@@ -211,9 +248,9 @@ F'(x) &= \lim_{h\to 0}\frac{f(x+h)g(x+h)-f(x)g(x)}{h} \\
 Como $g$ es derivable y por tanto continua, $\lim_{h\to 0}g(x+h)=g(x)$.
 Tomando el límite:
 \[
-F'(x) = g(x)f'(x) + f(x)g'(x). \qquad\square
+F'(x) = g(x)f'(x) + f(x)g'(x).
 \]
-\end{myproof}
+\end{proof}
 
 \begin{rem}
 Las reglas 3 y 4 expresan que $D_x$ es un \textbf{operador lineal}: $D_x(af+bg) = aD_x f + bD_x g$ para constantes $a,b$. Esta propiedad implica que la derivada de cualquier polinomio se obtiene
@@ -317,7 +354,7 @@ En notación de Leibniz, si $y=f(u)$ y $u=g(x)$ entonces
 \)
 \end{theorem}
 La demostración de la regla de la cadena se realiza así:
-\begin{myproof}
+\begin{proof}
 Definimos la función auxiliar
 \[
 \phi(k) =
@@ -335,9 +372,9 @@ de modo que $\phi$ es continua en $k=0$ y satisface $f(g(x)+k)-f(g(x))
 Cuando $h\to 0$, $k\to 0$ (por continuidad de $g$), así que
 $\phi(k)\to\phi(0)=f'(g(x))$ y el segundo factor tiende a $g'(x)$:
 \[
-h'(x) = f'(g(x))\cdot g'(x). \qquad\square
+h'(x) = f'(g(x))\cdot g'(x).
 \]
-\end{myproof}
+\end{proof}
 
 \begin{rem}
 La demostración directa con el cociente $\frac{\Delta y}{\Delta x}=
@@ -357,6 +394,25 @@ corrige exactamente este problema al redefinir el cociente cuando el denominador
     \item Multiplicar por la derivada de la función interior: $g'(x)$.
 \end{enumerate}
 \end{rem}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[every node/.style={font=\small}]
+  \node (y) at (0,2.2) {$y$};
+  \node (u) at (0,1.1) {$u$};
+  \node (x) at (0,0)   {$x$};
+  \draw[->,very thick,blue!70!black] (y)--(u)
+    node[midway,right=2pt] {$\dfrac{dy}{du}$};
+  \draw[->,very thick,blue!70!black] (u)--(x)
+    node[midway,right=2pt] {$\dfrac{du}{dx}$};
+  \node[anchor=west,red!70!black] at (1.9,1.1)
+    {$\dfrac{dy}{dx}=\dfrac{dy}{du}\cdot\dfrac{du}{dx}$};
+\end{tikzpicture}
+\caption{Árbol de dependencias de la regla de la cadena para $y=f(u)$,
+  $u=g(x)$: la tasa de cambio total $dy/dx$ es el producto de las tasas
+  a lo largo de la cadena $y\to u\to x$.}
+\label{fig:arbol_cadena}
+\end{figure}
 
 
 \begin{example}[Regla de la cadena: $\sen(x^2)$]
@@ -928,10 +984,10 @@ $D_x(\ln u) = \frac{u'}{u}$.
 \end{rem}
 
 %%==========================================================
-\section{Problemas Propuestos}
+\section{Problemas propuestos}
 %%==========================================================
 
-
+% Básico
 \begin{prob}
 Use la definición de derivada para calcular $f'(x)$ en cada caso:
 \begin{multicols}{2}
@@ -944,19 +1000,6 @@ Use la definición de derivada para calcular $f'(x)$ en cada caso:
     \item $f(x) = \sqrt[3]{x}$
 \end{enumerate}
 \end{multicols}
-\end{prob}
-
-\begin{prob}
-Determine si $f(x) = |x^2-4|$ es derivable en $x=2$ y en $x=-2$.
-Justifique calculando los límites laterales del cociente incremental.
-\end{prob}
-
-\begin{prob}
-Encuentre los valores de $a$ y $b$ para que
-\[
-f(x) = \begin{cases} ax^2+1 & x\leq 1 \\ bx+2 & x>1 \end{cases}
-\]
-sea derivable en $x=1$.
 \end{prob}
 
 \begin{prob}
@@ -980,18 +1023,6 @@ Derive cada función. No simplifique.
 \end{prob}
 
 \begin{prob}
-Derive usando la regla de la cadena:
-\begin{multicols}{2}
-\begin{enumerate}
-    \item $f(x) = \cos^3(\sen x)$
-    \item $g(x) = e^{\sqrt{\ln x}}$
-    \item $h(x) = \ln\!\left(\dfrac{\sqrt{1+x^2}}{1-x}\right)$
-    \item $k(x) = \arcsin(e^{-x^2})$
-\end{enumerate}
-\end{multicols}
-\end{prob}
-
-\begin{prob}
 Calcule $f''(x)$ para cada función:
 \begin{multicols}{2}
 \begin{enumerate}
@@ -1006,13 +1037,83 @@ Calcule $f''(x)$ para cada función:
 \end{prob}
 
 \begin{prob}
-Demuestre que $y = A\sen(\omega t) + B\cos(\omega t)$ satisface la ecuación
-$y'' + \omega^2 y = 0$.
+Una partícula se mueve según $s(t) = t^3 - 6t^2 + 9t + 2$ donde la
+distancia se mide en metros y el tiempo en segundos.
+\begin{enumerate}[a)]
+    \item Encuentre la velocidad y aceleración en función de $t$.
+    \item ¿Cuándo está en reposo la partícula?
+    \item ¿Cuándo se mueve en sentido positivo?
+    \item Calcule la aceleración cuando la velocidad es cero.
+\end{enumerate}
 \end{prob}
 
 \begin{prob}
-Si $f(x) = x^n$, pruebe por inducción que $f^{(k)}(x) = \dfrac{n!}{(n-k)!}x^{n-k}$
-para $k \leq n$, y $f^{(k)}(x) = 0$ para $k > n$.
+Encuentre la ecuación de la recta tangente y la recta normal a la curva
+$y = x^3 - 4x$ en el punto $(2, 0)$.
+\end{prob}
+
+\begin{prob}
+Sea $y = \sqrt{x}$.
+\begin{enumerate}[a)]
+    \item Halle la pendiente de la recta tangente en un punto genérico $x=a$.
+    \item Encuentre las ecuaciones de las tangentes en $(1,1)$ y $(4,2)$.
+\end{enumerate}
+\end{prob}
+
+\begin{prob}
+Encuentre la ecuación de la recta perpendicular a la recta tangente en
+el punto $(1, 2)$ sobre la gráfica de $f(x) = -4x^2 + 6x$.
+\end{prob}
+
+\begin{prob}
+Halle la ecuación de la recta tangente a $y = f(x)$ en $x = 5$,
+sabiendo que $f(5) = 3$ y $f'(5) = 4$.
+\end{prob}
+
+\begin{prob}
+Dibuje la gráfica de una función $f$ para la cual $f(0) = 0$,
+$f'(0) = 3$, $f(1) = 0$ y $f(2) = 1$.
+\end{prob}
+
+\begin{prob}
+Una piedra se suelta desde un edificio de $256$ ft de altura.
+(Aceleración de la gravedad: $32$ ft/s$^2$.)
+\begin{enumerate}[(a)]
+    \item Determine la ecuación del movimiento de la piedra.
+    \item Determine la velocidad instantánea en función de $t$.
+    \item Determine cuándo llega al suelo y con qué rapidez lo hace.
+\end{enumerate}
+\end{prob}
+
+% Intermedio
+\begin{prob}
+Determine si $f(x) = |x^2-4|$ es derivable en $x=2$ y en $x=-2$.
+Justifique calculando los límites laterales del cociente incremental.
+\end{prob}
+
+\begin{prob}
+Encuentre los valores de $a$ y $b$ para que
+\[
+f(x) = \begin{cases} ax^2+1 & x\leq 1 \\ bx+2 & x>1 \end{cases}
+\]
+sea derivable en $x=1$.
+\end{prob}
+
+\begin{prob}
+Derive usando la regla de la cadena:
+\begin{multicols}{2}
+\begin{enumerate}
+    \item $f(x) = \cos^3(\sen x)$
+    \item $g(x) = e^{\sqrt{\ln x}}$
+    \item $h(x) = \ln\!\left(\dfrac{\sqrt{1+x^2}}{1-x}\right)$
+    \item $k(x) = \arcsin(e^{-x^2})$
+\end{enumerate}
+\end{multicols}
+\end{prob}
+
+\begin{prob}
+Demuestre que $y = A\sen(\omega t) + B\cos(\omega t)$ satisface la ecuación
+$y'' + \omega^2 y = 0$.
 \end{prob}
 
 \begin{prob}
@@ -1073,28 +1174,11 @@ Use diferenciación logarítmica para derivar:
 \end{multicols}
 \end{prob}
 
-
-\begin{prob}
-Una partícula se mueve según $s(t) = t^3 - 6t^2 + 9t + 2$ donde la
-distancia se mide en metros y el tiempo en segundos.
-\begin{enumerate}[a)]
-    \item Encuentre la velocidad y aceleración en función de $t$.
-    \item ¿Cuándo está en reposo la partícula?
-    \item ¿Cuándo se mueve en sentido positivo?
-    \item Calcule la aceleración cuando la velocidad es cero.
-\end{enumerate}
-\end{prob}
-
 \begin{prob}
 La posición de un objeto oscilante está dada por $s(t) = A\cos(\omega t+\phi)$.
 Demuestre que la aceleración es proporcional al negativo de la posición,
 es decir, $s''(t) = -\omega^2 s(t)$, la cual se conoce como la ley de Hooke
 para oscilación armónica.
-\end{prob}
-
-\begin{prob}
-Encuentre la ecuación de la recta tangente y la recta normal a la curva
-$y = x^3 - 4x$ en el punto $(2, 0)$.
 \end{prob}
 
 \begin{prob}
@@ -1109,14 +1193,6 @@ Dado el polinomio cúbico $f(x) = x^3 - 3x^2 - 9x + 5$:
 \end{prob}
 
 \begin{prob}
-Sea $y = \sqrt{x}$.
-\begin{enumerate}[a)]
-    \item Halle la pendiente de la recta tangente en un punto genérico $x=a$.
-    \item Encuentre las ecuaciones de las tangentes en $(1,1)$ y $(4,2)$.
-\end{enumerate}
-\end{prob}
-
-\begin{prob}
 Si se lanza una roca verticalmente hacia arriba en el planeta Marte con
 una velocidad inicial de $10~\text{m/s}$, su altura (en metros) después
 de $t$ segundos es $H(t) = 10t - 1.86t^2$.
@@ -1126,33 +1202,6 @@ de $t$ segundos es $H(t) = 10t - 1.86t^2$.
     \item ¿Cuándo caerá la roca a la superficie?
     \item ¿Con qué velocidad chocará la roca contra la superficie?
 \end{enumerate}
-\end{prob}
-
-\begin{prob}
-Suponga que un círculo de radio $r$ y centro $(0, c)$ está inscrito en
-la parábola $y = x^2$ como lo muestra la figura \ref{circder}. En el punto
-de tangencia, las pendientes de ambas curvas deben coincidir. Encuentre
-la pendiente de la circunferencia implícitamente y muestre que en el
-punto de tangencia $y = c - \dfrac{1}{2}$. Luego use las ecuaciones
-de la circunferencia y la parábola para mostrar que
-$c = r^2 + \dfrac{1}{4}$.
-
-\begin{figure}[H]\label{circder}
-\centering
-
-\begin{tikzpicture}[scale=1.4]
-  \draw[->] (-2.3,0) -- (2.3,0) node[anchor=west] {$x$};
-  \draw[->] (0,-0.5) -- (0,3.9) node[anchor=south] {$y$};
-  \draw[blue,thick,domain=-2:2,samples=100] plot (\x,{\x*\x})
-    node[above right] {$y = x^2$};
-  \draw[thick] (0,1.94) circle [radius=1.3];
-  \filldraw (0,1.94) circle (0.04) node[right] {$(0, c)$};
-  \filldraw[red] (1.046,{1.046*1.046}) circle (0.05);
-  \filldraw[red] (-1.046,{1.046*1.046}) circle (0.05);
-\end{tikzpicture}
-
-\caption{Un círculo de radio $r$ inscrito en la parábola $y = x^2$.}
-\end{figure}
 \end{prob}
 
 \begin{prob}
@@ -1198,43 +1247,6 @@ Determine el valor de verdad de las siguientes afirmaciones. Justifique adecuada
 
 \end{enumerate}
 \end{prob}
-
-\begin{prob}
-Encuentre la ecuación de la recta perpendicular a la recta tangente en
-el punto $(1, 2)$ sobre la gráfica de $f(x) = -4x^2 + 6x$.
-\end{prob}
-
-\begin{prob}
-Halle la ecuación de la recta tangente a $y = f(x)$ en $x = 5$,
-sabiendo que $f(5) = 3$ y $f'(5) = 4$.
-\end{prob}
-
-\begin{prob}
-Dibuje la gráfica de una función $f$ para la cual $f(0) = 0$,
-$f'(0) = 3$, $f(1) = 0$ y $f(2) = 1$.
-\end{prob}
-
-\begin{prob}
-Suponiendo que cada una de las ecuaciones define una función derivable
-de $x$, encuentre $\dfrac{dy}{dx}$. Exprese cada derivada en su forma
-más simplificada posible.
-\begin{enumerate}
-    \item $y = \tan^2 x + \ln(\cos x)$.
-    \item $xy + \arctan\!\left(\dfrac{x}{y}\right) = 0$.
-    \item $y = x^{x^{x^3}}$.
-    \item $y = \dfrac{1}{\sen^4 x+1}
-          +\ln\!\left(\dfrac{\sen^4 x}{\sen^4 x+1}\right)$.
-    \item $\arctan\!\left(\dfrac{x}{y}\right)
-          = \dfrac{1}{2}\ln(x^2+y^2)$.
-    \item $y = x^{x^{3^x}}$.
-    \item $y = \ln\!\left(\dfrac{\sqrt{3}-\sqrt{2}\cos x}
-          {\sqrt{3}+\sqrt{2}\cos x}\right)$.
-    \item $\sqrt[3]{x^2}+\sqrt[3]{y^2}=\sqrt[3]{a^2}$.
-    \item $y = 3^{x^{x^x}}$.
-\end{enumerate}
-\end{prob}
-
-
 
 \begin{prob}
 Lea cuidadosamente cada pregunta y seleccione la opción correcta.
@@ -1300,13 +1312,82 @@ Compruebe que estas rectas se cortan en el punto de abscisa
 $\dfrac{p+q}{2}$.
 \end{prob}
 
+\begin{prob}
+Una banda elástica cuelga de un gancho con una masa sujeta en su extremo
+inferior. Al jalarse y soltarse, la masa vibra con movimiento armónico
+descrito por $s(t)=2\cos t+3\sen t$, $t\geq 0$, donde $s$ está en
+centímetros y $t$ en segundos (positivo hacia abajo).
+\begin{enumerate}[(a)]
+    \item Encuentre la velocidad y la aceleración en el instante $t$.
+    \item Dibuje las gráficas de velocidad y aceleración.
+    \item ¿Para qué valor de $t$ ocurre por primera vez que $s(t)=0$?
+    ¿Qué significa físicamente?
+    \item ¿Para qué $t$ es cero por primera vez la velocidad?
+    Determine la elongación máxima de la banda.
+\end{enumerate}
+\textit{Sugerencia:} Use la función arcotangente para encontrar los
+valores de $t$.
+\end{prob}
 
+% Desafiante
+\begin{prob}
+Si $f(x) = x^n$, pruebe por inducción que $f^{(k)}(x) = \dfrac{n!}{(n-k)!}x^{n-k}$
+para $k \leq n$, y $f^{(k)}(x) = 0$ para $k > n$.
+\end{prob}
+
+\begin{prob}
+Suponga que un círculo de radio $r$ y centro $(0, c)$ está inscrito en
+la parábola $y = x^2$ como lo muestra la figura \ref{circder}. En el punto
+de tangencia, las pendientes de ambas curvas deben coincidir. Encuentre
+la pendiente de la circunferencia implícitamente y muestre que en el
+punto de tangencia $y = c - \dfrac{1}{2}$. Luego use las ecuaciones
+de la circunferencia y la parábola para mostrar que
+$c = r^2 + \dfrac{1}{4}$.
+
+\begin{figure}[H]
+\centering
+
+\begin{tikzpicture}[scale=1.4]
+  \draw[->] (-2.3,0) -- (2.3,0) node[anchor=west] {$x$};
+  \draw[->] (0,-0.5) -- (0,3.9) node[anchor=south] {$y$};
+  \draw[blue,thick,domain=-2:2,samples=100] plot (\x,{\x*\x})
+    node[above right] {$y = x^2$};
+  \draw[thick] (0,1.94) circle [radius=1.3];
+  \filldraw (0,1.94) circle (0.04) node[right] {$(0, c)$};
+  \filldraw[red] (1.046,{1.046*1.046}) circle (0.05);
+  \filldraw[red] (-1.046,{1.046*1.046}) circle (0.05);
+\end{tikzpicture}
+
+\caption{Un círculo de radio $r$ inscrito en la parábola $y = x^2$.}
+\label{circder}
+\end{figure}
+\end{prob}
+
+\begin{prob}
+Suponiendo que cada una de las ecuaciones define una función derivable
+de $x$, encuentre $\dfrac{dy}{dx}$. Exprese cada derivada en su forma
+más simplificada posible.
+\begin{enumerate}
+    \item $y = \tan^2 x + \ln(\cos x)$.
+    \item $xy + \arctan\!\left(\dfrac{x}{y}\right) = 0$.
+    \item $y = x^{x^{x^3}}$.
+    \item $y = \dfrac{1}{\sen^4 x+1}
+          +\ln\!\left(\dfrac{\sen^4 x}{\sen^4 x+1}\right)$.
+    \item $\arctan\!\left(\dfrac{x}{y}\right)
+          = \dfrac{1}{2}\ln(x^2+y^2)$.
+    \item $y = x^{x^{3^x}}$.
+    \item $y = \ln\!\left(\dfrac{\sqrt{3}-\sqrt{2}\cos x}
+          {\sqrt{3}+\sqrt{2}\cos x}\right)$.
+    \item $\sqrt[3]{x^2}+\sqrt[3]{y^2}=\sqrt[3]{a^2}$.
+    \item $y = 3^{x^{x^x}}$.
+\end{enumerate}
+\end{prob}
 
 \begin{prob}
 Encuentre los puntos $P$ y $Q$ sobre la parábola $y=1-x^2$ de modo que
 el triángulo formado por el eje $x$ y las rectas tangentes en $P$ y $Q$
 sea equilátero. Vea la figura \ref{trider}.
-\begin{figure}[H]\label{trider}
+\begin{figure}[H]
 \centering
 
 % Valores exactos: P=(-1/sqrt(3), 2/3), Q=(1/sqrt(3), 2/3)
@@ -1324,6 +1405,7 @@ sea equilátero. Vea la figura \ref{trider}.
     node[above right] {$Q$};
 \end{tikzpicture}
 \caption{Triángulo equilátero formado por el eje $x$ y las rectas tangentes.}
+\label{trider}
 \end{figure}
 \end{prob}
 
@@ -1351,7 +1433,7 @@ el eje $x$ está colocada la lámpara?
 
 % La recta de la lámpara (3,2) pasa por (-1,1) (punto de tangencia)
 % y llega hasta (-5,0) en el borde de la sombra.
-\begin{figure}[H]\label{lamparader}
+\begin{figure}[H]
 \centering
 \begin{tikzpicture}[scale=0.9]
   \draw[->] (-5.8,0) -- (4,0) node[right] {$x$};
@@ -1367,35 +1449,9 @@ el eje $x$ está colocada la lámpara?
 \end{tikzpicture}
 \caption{Lámpara en $(3,h)$, elipse $x^2+4y^2=5$
 y borde de sombra en $(-5,0)$.}
+\label{lamparader}
 \end{figure}
 
-\end{prob}
-
-\begin{prob}
-Una banda elástica cuelga de un gancho con una masa sujeta en su extremo
-inferior. Al jalarse y soltarse, la masa vibra con movimiento armónico
-descrito por $s(t)=2\cos t+3\sen t$, $t\geq 0$, donde $s$ está en
-centímetros y $t$ en segundos (positivo hacia abajo).
-\begin{enumerate}[(a)]
-    \item Encuentre la velocidad y la aceleración en el instante $t$.
-    \item Dibuje las gráficas de velocidad y aceleración.
-    \item ¿Para qué valor de $t$ ocurre por primera vez que $s(t)=0$?
-    ¿Qué significa físicamente?
-    \item ¿Para qué $t$ es cero por primera vez la velocidad?
-    Determine la elongación máxima de la banda.
-\end{enumerate}
-\textit{Sugerencia:} Use la función arcotangente para encontrar los
-valores de $t$.
-\end{prob}
-
-\begin{prob}
-Una piedra se suelta desde un edificio de $256$ ft de altura.
-(Aceleración de la gravedad: $32$ ft/s$^2$.)
-\begin{enumerate}[(a)]
-    \item Determine la ecuación del movimiento de la piedra.
-    \item Determine la velocidad instantánea en función de $t$.
-    \item Determine cuándo llega al suelo y con qué rapidez lo hace.
-\end{enumerate}
 \end{prob}
 
 \begin{prob}

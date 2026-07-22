@@ -116,6 +116,10 @@ cuando el agua tiene $4$ m de profundidad?
         node[right, font=\small] {$\dfrac{dh}{dt}=?$};
 
 \end{tikzpicture}
+\caption{Corte transversal del tanque cónico invertido: por semejanza de
+  triángulos, el radio de la superficie libre es proporcional a la
+  profundidad $h$ del agua.}
+\label{fig:tanque_conico}
 \end{figure}
 \textbf{Paso 1. Diagrama y variables.}
 Se tiene un cono invertido de altura total $H=12$ m y radio basal
@@ -229,7 +233,9 @@ superior cuando la base está a $6$ m de la pared?
         {$x^2+y^2=100$};
 
 \end{tikzpicture}
-
+\caption{Escalera de $10$ m apoyada en la pared: al alejarse la base a razón
+  $dx/dt$, el extremo superior desciende, ligados por $x^2+y^2=100$.}
+\label{fig:escalera_pared}
 \end{figure}
 La escalera, la pared y el suelo forman un triángulo rectángulo. Las
 cantidades que cambian con el tiempo son:
@@ -556,6 +562,7 @@ máximo local y un mínimo local de $f$.
 \end{tikzpicture}
 \caption{Monotonía de $f(x)=x^3-3x$: la curva se colorea según el signo
 de $f'$.}
+\label{fig:monotonia_x3}
 \end{figure}
 \end{myproof}
 \end{example}
@@ -636,7 +643,7 @@ f(0)=0, \qquad f(2)=16-32=-16.
 % ============================================================
 % GRÁFICA: Concavidad de f(x) = x^4 - 4x^3
 % ============================================================
-\begin{figure}[H]\label{x4+3x3}
+\begin{figure}[H]
 \centering
 % ============================================================
 % AJUSTE DE PROPORCIONES:
@@ -703,6 +710,7 @@ f(0)=0, \qquad f(2)=16-32=-16.
 \caption{Concavidad de $f(x)=x^4-4x^3$: en azul los tramos donde
 $f''>0$ (curva abre hacia arriba) y en rojo donde $f''<0$ (curva abre
 hacia abajo). Los puntos negros señalan los puntos de inflexión.}
+\label{fig:concavidad_x4}
 \end{figure}
 \end{myproof}
 \end{example}
@@ -847,7 +855,7 @@ $x=2$, que son los únicos puntos de inflexión.
 \[
 \boxed{\text{Mínimo local: }(3,-27);\quad\text{inflexiones: }(0,0)\text{ y }(2,-16).}
 \]
-El bosquejo de la función puede revisarse nuevamente en la figura \ref{x4+3x3}.
+El bosquejo de la función puede revisarse nuevamente en la figura \ref{fig:concavidad_x4}.
 \end{myproof}
 \end{example}
 
@@ -1056,6 +1064,7 @@ $(2,+\infty)$  & $-$ & $+$ & decreciente, cóncava $\uparrow$ \\
 \caption{Bosquejo de $f(x)=\dfrac{x^2}{x^2-4}$. Las ramas azules son
 cóncavas hacia arriba y las rojas hacia abajo. Las líneas grises
 punteadas indican las asíntotas $x=\pm2$ e $y=1$.}
+\label{fig:bosquejo_racional}
 \end{figure}
 \end{myproof}
 \end{example}
@@ -1112,7 +1121,8 @@ Sea $x$ el lado (en cm) de cada cuadrado recortado en las esquinas.
 Al doblar los bordes, la caja resultante tiene:
 base de $(24-2x)\times(9-2x)$ cm y altura $x$ cm.
 
-\begin{center}
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}[>=stealth, xscale=0.38, yscale=0.38]
   % Hoja completa
   \draw[thick] (0,0) rectangle (24,9);
@@ -1173,7 +1183,11 @@ base de $(24-2x)\times(9-2x)$ cm y altura $x$ cm.
   \draw[<->] (11.5,0,0)--(11.5,2,0)
         node[midway,right,font=\small]{$x$};
 \end{tikzpicture}
-\end{center}
+\caption{Construcción de la caja abierta: se recortan cuadrados de lado $x$
+  en las esquinas de la lámina de $24\times 9$ cm y se doblan los bordes,
+  quedando una base de $(24-2x)\times(9-2x)$ y altura $x$.}
+\label{fig:caja_abierta_recorte}
+\end{figure}
 
 \textbf{Paso 2. Función objetivo.}
 
@@ -1230,7 +1244,8 @@ utilizado.
 
 Sean $r$ el radio de la base y $h$ la altura del cilindro.
 
-\begin{center}
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}[>=stealth, scale=0.8]
   % Cilindro abierto
   % Base inferior (elipse)
@@ -1257,7 +1272,10 @@ Sean $r$ el radio de la base y $h$ la altura del cilindro.
   \node[font=\scriptsize, blue!60!black] at (2.9,1)
         {Lateral: $2\pi r h$};
 \end{tikzpicture}
-\end{center}
+\caption{Lata cilíndrica abierta de radio $r$ y altura $h$: el material total
+  es el área de la base $\pi r^2$ más la pared lateral $2\pi r h$.}
+\label{fig:lata_cilindrica}
+\end{figure}
 
 \textbf{Paso 2. Función objetivo.}
 
@@ -1318,7 +1336,8 @@ Sea $C$ el punto de cruce en la orilla de $B$, y sea $x$ la distancia
 horizontal desde el punto directamente opuesto a $A$ hasta $C$, con
 $x\in[0,8]$.
 
-\begin{center}
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}[>=stealth, xscale=1.0, yscale=1.0]
   % Orillas del río
   \fill[blue!12] (0,-0.1) rectangle (8.5,1.5);
@@ -1364,7 +1383,11 @@ $x\in[0,8]$.
   % Ángulo recto P
   \draw (0.2,0) -- (0.2,0.2) -- (0,0.2);
 \end{tikzpicture}
-\end{center}
+\caption{Tendido de tubería: cruce del río (ancho $3$ km) desde $A$ hasta el
+  punto $C$ a distancia $x$ de $P$, y tramo terrestre $C\to B$ de longitud
+  $8-x$. El tramo submarino mide $\sqrt{9+x^2}$.}
+\label{fig:tuberia_rio}
+\end{figure}
 
 \textbf{Paso 2. Función objetivo.}
 
@@ -1452,6 +1475,43 @@ promedio $60$ km/h), en algún instante exacto su velocidad instantánea
 fue exactamente $60$ km/h. El siguiente ejemplo muestra que el TVM no
 es un resultado independiente, sino una consecuencia directa del Lema
 de Rolle.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.4,>=stealth]
+  \draw[->,thin] (-0.2,0)--(7,0) node[right]{$x$};
+  \draw[->,thin] (0,-0.2)--(0,4) node[above]{$y$};
+  % curva f(x)=1.2 sqrt(x)+0.5
+  \draw[very thick,blue!70!black,domain=0.3:6.3,samples=60,smooth]
+    plot(\x,{1.2*sqrt(\x)+0.5});
+  \node[blue!70!black,anchor=west,font=\small] at (5.1,3.75) {$y=f(x)$};
+  % puntos A, B
+  \coordinate (A) at (0.5,1.348);
+  \coordinate (B) at (6,3.439);
+  % secante (pendiente 0.38)
+  \draw[red!70!black,thick] (0.2,1.234)--(6.5,3.629);
+  % tangente en c=2.49 (misma pendiente)
+  \draw[very thick,green!45!black] (1.2,1.904)--(3.85,2.911);
+  % verticales
+  \draw[dashed,gray] (2.49,0)--(2.49,2.394);
+  \draw[dashed,gray] (0.5,0)--(A);
+  \draw[dashed,gray] (6,0)--(B);
+  % marcas
+  \filldraw (A) circle(1pt) node[above left,font=\small]{$A$};
+  \filldraw (B) circle(1pt) node[above left,font=\small]{$B$};
+  \filldraw (2.49,2.394) circle(1pt);
+  \node[below,font=\small] at (0.5,-0.02) {$a$};
+  \node[below,font=\small] at (2.49,-0.02) {$c$};
+  \node[below,font=\small] at (6,-0.02) {$b$};
+  % etiquetas de rectas
+  \node[red!70!black,font=\small,anchor=south east] at (5.6,3.05) {secante};
+  \node[green!45!black,font=\small,anchor=north west] at (2.6,2.15) {tangente en $c$};
+\end{tikzpicture}
+\caption{Teorema del Valor Medio: existe $c\in(a,b)$ donde la recta tangente
+  (verde) es paralela a la secante (roja) que une $A=(a,f(a))$ con
+  $B=(b,f(b))$; en ese punto $f'(c)=\dfrac{f(b)-f(a)}{b-a}$.}
+\label{fig:tvm_secante_tangente}
+\end{figure}
 
 \begin{example}[Demostración del TVM a partir de Rolle]
 Demostrar el Teorema del Valor Medio a partir del Lema de Rolle.
@@ -2127,14 +2187,18 @@ en que el cono queda totalmente sumergido?
 \begin{prob}
 Un cuadrado está inscrito en un círculo de radio $r$. ¿A qué razón
 cambia el área del cuadrado cuando el radio del círculo crece a razón
-de $4$ pulg/min? Vea la figura:
-\begin{center}
+de $4$ pulg/min? Vea la figura~\ref{fig:cuadrado_inscrito}.
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}[scale=0.9]
   \draw[thick] (0,0) circle (2);
   \draw[thick] (-1.414,-1.414) rectangle (1.414,1.414);
   \draw[<->,dashed] (0,0)--(2,0) node[midway,above]{$r$};
 \end{tikzpicture}
-\end{center}
+\caption{Cuadrado inscrito en una circunferencia de radio $r$: la diagonal
+  del cuadrado es el diámetro $2r$, de modo que su lado es $r\sqrt2$.}
+\label{fig:cuadrado_inscrito}
+\end{figure}
 \end{prob}
 
 \begin{prob}
@@ -2149,7 +2213,8 @@ respecto al camino (Eje $y$). Si en el tiempo $t=0$ el niño se encuentra en
 el punto del camino más cercano al globo, ¿con qué rapidez incrementa la
 distancia entre ellos $3$ segundos después?
 
-\begin{center}
+\begin{figure}[H]
+\centering
 \tdplotsetmaincoords{70}{110}
 \begin{tikzpicture}[tdplot_main_coords, scale=0.08, >=stealth]
 
@@ -2189,7 +2254,11 @@ distancia entre ellos $3$ segundos después?
     \draw[thin] (45,45,2)-- (45,43,2) -- (45,43,0);  % en elevación
 
 \end{tikzpicture}
-\end{center}
+\caption{Niño en bicicleta sobre el eje $x$ y globo que asciende
+  manteniendo una separación lateral fija de $45$ ft; $L(t)$ es la distancia
+  entre ambos a los $3$ s.}
+\label{fig:nino_globo}
+\end{figure}
 \end{prob}
 
 % Requiere en el preámbulo: \usepackage{amsmath,amssymb,float,tikz}
@@ -2318,8 +2387,9 @@ condiciones simultáneamente:
 La gráfica a continuación es la de la derivada $f'$ de una cierta
 función $f$. A partir de ella determine los intervalos de crecimiento
 y decrecimiento de $f$, sus extremos locales, sus intervalos de
-concavidad y realice un bosquejo de $f$.
-\begin{center}
+concavidad y realice un bosquejo de $f$ (figura~\ref{fig:grafica_fprima}).
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}[scale=0.8]
   \draw[step=1cm,gray!40,very thin] (-4,-2) grid (3,8);
   \draw[thick,->] (-4,0) -- (3.5,0) node[right] {$x$};
@@ -2333,7 +2403,11 @@ concavidad y realice un bosquejo de $f$.
   \foreach \y in {-2,0,...,8}
     \draw (0.1,\y)--(-0.1,\y) node[left]{\y};
 \end{tikzpicture}
-\end{center}
+\caption{Gráfica de la derivada $f'$: los ceros de $f'$ señalan los posibles
+  extremos de $f$, el signo de $f'$ su monotonía, y el crecimiento o
+  decrecimiento de $f'$ la concavidad de $f$.}
+\label{fig:grafica_fprima}
+\end{figure}
 \end{prob}
 
 
@@ -2519,7 +2593,8 @@ punto~$C$ en la costa y luego nadar en línea recta desde $C$ hasta $B$.
   \item ¿Llegará al helicóptero antes de que deba partir?
 \end{enumerate}
 
-\begin{center}
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}[scale=0.72, >=stealth, line join=round,
                     every node/.style={font=\small}]
 
@@ -2588,7 +2663,11 @@ punto~$C$ en la costa y luego nadar en línea recta desde $C$ hasta $B$.
   \node[brown!60!black] at (3.5,4.28) {\footnotesize Costa (Isla 2)};
 
 \end{tikzpicture}
-\end{center}
+\caption{Trayecto mixto: se trota de $A$ a $C$ (distancia $x$ a lo largo de
+  la costa, $12$ km de $A$ a $D$) y se nada de $C$ al helicóptero $B$, situado
+  $5$ km mar adentro. Se minimiza el tiempo total.}
+\label{fig:trote_nado}
+\end{figure}
 \end{prob}
 
 \begin{prob}
@@ -2606,7 +2685,8 @@ Ana asiste a una sala de cine cuya pantalla se modela como un segmento vertical 
 \]
 aplicada a los ángulos que forman las líneas de visión con la horizontal.
 
-\begin{center}
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}[scale=1.1, >=stealth, line join=round, every node/.style={font=\small}]
   % Ejes coordenados
   \draw[->] (-0.5,0) -- (3.5,0) node[below] {$x$};
@@ -2641,9 +2721,12 @@ aplicada a los ángulos que forman las líneas de visión con la horizontal.
   % Ángulo θ en C
   \path (0,1) coordinate (A) (0,3) coordinate (B);
   \pic [draw, thick, angle radius=0.6cm, angle eccentricity=1.3, "$\theta$"] {angle = B--C--A};
-  
+
 \end{tikzpicture}
-\end{center}
+\caption{Ángulo de visión $\theta$ de la pantalla $AB$ (segmento vertical
+  entre $A(0,1)$ y $B(0,3)$) desde un asiento $C=(x,x)$ sobre la recta $y=x$.}
+\label{fig:cine_angulo}
+\end{figure}
 \end{prob}
 
 \begin{prob}[Optimización de la longitud del cable]
@@ -2651,7 +2734,8 @@ Dos astas de bandera se encuentran instaladas verticalmente sobre un terreno pla
 
 Se conoce que la altura de la primera asta es de $2$ metros y la altura de la segunda es de $1$ metro. Determine la distancia $x$ desde la base de la asta más alta hasta el punto de anclaje en el suelo, de modo que la longitud total del cable ($d_1 + d_2$) sea mínima.
 
-\begin{center}
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}[scale=1.2, >=stealth, line join=round]
   % Definición de puntos geométricos
   \coordinate (Top1) at (0,2);
@@ -2688,7 +2772,11 @@ Se conoce que la altura de la primera asta es de $2$ metros y la altura de la se
   \node[below, font=\large, color=black!80!black] at (2.5, 0) {$y$};
 
 \end{tikzpicture}
-\end{center}
+\caption{Dos astas verticales (alturas $2$ m y $1$ m, bases separadas $3$ m)
+  unidas por un cable anclado en el suelo a distancia $x$ de la base más alta;
+  se minimiza la longitud total $d_1+d_2$.}
+\label{fig:astas_cable}
+\end{figure}
 \end{prob}
 
 

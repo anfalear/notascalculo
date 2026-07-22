@@ -47,14 +47,28 @@
 \contentsline {figure}{\numberline {4.5}{\ignorespaces $f(x)=1/(x-2)$: asíntota vertical $x=2$ (los valores crecen sin cota al acercarse a $2$) y asíntota horizontal $y=0$ (la función se aplana hacia el eje $x$ cuando $x\to \pm \infty $).}}{79}{figure.4.5}%
 \contentsline {figure}{\numberline {4.6}{\ignorespaces Tres tipos de discontinuidad en $x=c$: removible (el límite existe pero difiere de $f(c)$), de salto (límites laterales distintos) e infinita (asíntota vertical).}}{81}{figure.4.6}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Un círculo de radio $r$ inscrito en la parábola $y = x^2$.}}{104}{figure.5.1}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Triángulo equilátero formado por el eje $x$ y las rectas tangentes.}}{106}{figure.5.2}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Lámpara en $(3,h)$, elipse $x^2+4y^2=5$ y borde de sombra en $(-5,0)$.}}{106}{figure.5.3}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces La recta secante por $P=(x_0,f(x_0))$ y un punto $Q=(x_0+h,f(x_0+h))$ tiende a la recta \emph {tangente} en $P$ cuando $Q\to P$ (es decir, $h\to 0$); su pendiente $\dfrac {f(x_0+h)-f(x_0)}{h}$ tiende a $f'(x_0)$.}}{90}{figure.5.1}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Árbol de dependencias de la regla de la cadena para $y=f(u)$, $u=g(x)$: la tasa de cambio total $dy/dx$ es el producto de las tasas a lo largo de la cadena $y\to u\to x$.}}{94}{figure.5.2}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Un círculo de radio $r$ inscrito en la parábola $y = x^2$.}}{107}{figure.5.3}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Triángulo equilátero formado por el eje $x$ y las rectas tangentes.}}{107}{figure.5.4}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Lámpara en $(3,h)$, elipse $x^2+4y^2=5$ y borde de sombra en $(-5,0)$.}}{108}{figure.5.5}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Monotonía de $f(x)=x^3-3x$: la curva se colorea según el signo de $f'$.}}{114}{figure.6.1}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Concavidad de $f(x)=x^4-4x^3$: en azul los tramos donde $f''>0$ (curva abre hacia arriba) y en rojo donde $f''<0$ (curva abre hacia abajo). Los puntos negros señalan los puntos de inflexión.}}{116}{figure.6.2}%
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Bosquejo de $f(x)=\dfrac {x^2}{x^2-4}$. Las ramas azules son cóncavas hacia arriba y las rojas hacia abajo. Las líneas grises punteadas indican las asíntotas $x=\pm 2$ e $y=1$.}}{120}{figure.6.3}%
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Disposición geométrica del mecanismo y definición de variables.}}{133}{figure.6.4}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Corte transversal del tanque cónico invertido: por semejanza de triángulos, el radio de la superficie libre es proporcional a la profundidad $h$ del agua.}}{110}{figure.6.1}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Escalera de $10$ m apoyada en la pared: al alejarse la base a razón $dx/dt$, el extremo superior desciende, ligados por $x^2+y^2=100$.}}{111}{figure.6.2}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Monotonía de $f(x)=x^3-3x$: la curva se colorea según el signo de $f'$.}}{114}{figure.6.3}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Concavidad de $f(x)=x^4-4x^3$: en azul los tramos donde $f''>0$ (curva abre hacia arriba) y en rojo donde $f''<0$ (curva abre hacia abajo). Los puntos negros señalan los puntos de inflexión.}}{116}{figure.6.4}%
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Bosquejo de $f(x)=\dfrac {x^2}{x^2-4}$. Las ramas azules son cóncavas hacia arriba y las rojas hacia abajo. Las líneas grises punteadas indican las asíntotas $x=\pm 2$ e $y=1$.}}{120}{figure.6.5}%
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Construcción de la caja abierta: se recortan cuadrados de lado $x$ en las esquinas de la lámina de $24\times 9$ cm y se doblan los bordes, quedando una base de $(24-2x)\times (9-2x)$ y altura $x$.}}{121}{figure.6.6}%
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Lata cilíndrica abierta de radio $r$ y altura $h$: el material total es el área de la base $\pi r^2$ más la pared lateral $2\pi r h$.}}{122}{figure.6.7}%
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Tendido de tubería: cruce del río (ancho $3$ km) desde $A$ hasta el punto $C$ a distancia $x$ de $P$, y tramo terrestre $C\to B$ de longitud $8-x$. El tramo submarino mide $\sqrt {9+x^2}$.}}{123}{figure.6.8}%
+\contentsline {figure}{\numberline {6.9}{\ignorespaces Teorema del Valor Medio: existe $c\in (a,b)$ donde la recta tangente (verde) es paralela a la secante (roja) que une $A=(a,f(a))$ con $B=(b,f(b))$; en ese punto $f'(c)=\dfrac {f(b)-f(a)}{b-a}$.}}{124}{figure.6.9}%
+\contentsline {figure}{\numberline {6.10}{\ignorespaces Cuadrado inscrito en una circunferencia de radio $r$: la diagonal del cuadrado es el diámetro $2r$, de modo que su lado es $r\sqrt 2$.}}{132}{figure.6.10}%
+\contentsline {figure}{\numberline {6.11}{\ignorespaces Niño en bicicleta sobre el eje $x$ y globo que asciende manteniendo una separación lateral fija de $45$ ft; $L(t)$ es la distancia entre ambos a los $3$ s.}}{133}{figure.6.11}%
+\contentsline {figure}{\numberline {6.12}{\ignorespaces Disposición geométrica del mecanismo y definición de variables.}}{133}{figure.6.12}%
+\contentsline {figure}{\numberline {6.13}{\ignorespaces Gráfica de la derivada $f'$: los ceros de $f'$ señalan los posibles extremos de $f$, el signo de $f'$ su monotonía, y el crecimiento o decrecimiento de $f'$ la concavidad de $f$.}}{135}{figure.6.13}%
+\contentsline {figure}{\numberline {6.14}{\ignorespaces Trayecto mixto: se trota de $A$ a $C$ (distancia $x$ a lo largo de la costa, $12$ km de $A$ a $D$) y se nada de $C$ al helicóptero $B$, situado $5$ km mar adentro. Se minimiza el tiempo total.}}{136}{figure.6.14}%
+\contentsline {figure}{\numberline {6.15}{\ignorespaces Ángulo de visión $\theta $ de la pantalla $AB$ (segmento vertical entre $A(0,1)$ y $B(0,3)$) desde un asiento $C=(x,x)$ sobre la recta $y=x$.}}{136}{figure.6.15}%
+\contentsline {figure}{\numberline {6.16}{\ignorespaces Dos astas verticales (alturas $2$ m y $1$ m, bases separadas $3$ m) unidas por un cable anclado en el suelo a distancia $x$ de la base más alta; se minimiza la longitud total $d_1+d_2$.}}{137}{figure.6.16}%
 \ttl@tocsep 
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {7.1}{\ignorespaces Representación de un vector geométrico}}{141}{figure.7.1}%
