@@ -418,8 +418,8 @@ Se construirá un canal abierto con sección transversal en la forma de un  trap
 \draw (6.522193481246748,3.676709871884418) node[anchor=north west] {$x\cos \theta$};
 \draw (0.5969064751573918,3.7967156846659744) node[anchor=north west] {$x\cos \theta$};
 \draw (3.3420394425354987,-0.0734717775392221) node[anchor=north west] {$50-2x$};
-\draw (2.1419813147199327,1.936625586551849) node[anchor=north west] {$x \sin \theta$};
-\draw (4.5,1.9216248599541543) node[anchor=north west] {$x \sin \theta$};
+\draw (2.1419813147199327,1.936625586551849) node[anchor=north west] {$x \sen \theta$};
+\draw (4.5,1.9216248599541543) node[anchor=north west] {$x \sen \theta$};
 \draw (7.242228357936088,1.5766081482071794) node[anchor=north west] {$x$};
 \draw [line width=2.pt,domain=-0.9631690910028438:9.64234461356722] plot(\x,{(-0.-0.*\x)/6.});
 \draw[color=black] (6.8,0.38405038369046196) node[anchor=center] {$\theta$};
@@ -437,23 +437,23 @@ Por la figura puede observarse que:
 \begin{itemize}
 \item $B=2x\cos \theta + 50-2x.$
 \item $b=50-2x.$
-\item $h=x\sin \theta.$
+\item $h=x\sen \theta.$
 \end{itemize}
 \end{multicols}
 Lo cual implica que la función de área queda determinada por
 \begin{align*}
-A(x,\theta)&=\dfrac{1}{2}\left[ 2x\cos \theta+(50-2x)+(50-2x) \right]x\sin \theta,\\
-&=\left(x\cos \theta+(50-2x)\right)x\sin \theta,\\
-&=x^2\cos\theta \sin \theta+50x\sin \theta-2x^2\sin \theta.
+A(x,\theta)&=\dfrac{1}{2}\left[ 2x\cos \theta+(50-2x)+(50-2x) \right]x\sen \theta,\\
+&=\left(x\cos \theta+(50-2x)\right)x\sen \theta,\\
+&=x^2\cos\theta \sen \theta+50x\sen \theta-2x^2\sen \theta.
 \end{align*}
 \textbf{Paso 2. Derivadas parciales.}
 Como los puntos críticos de la función están donde las dos primeras derivadas parciales son cero, se hace el cálculo de estas derivadas y después se encuentran los puntos donde son simultáneamente cero. Así,
 \begin{itemize}
-\item $\dfrac{\partial A}{\partial x}=2x\cos\theta\sin\theta +50\sin \theta -4x\sin \theta.$
-\item $\dfrac{\partial A}{\partial \theta}=50 x \cos \theta -2 x^2\cos \theta +x^2\left(cos^{2}\theta-\sin^{2}\theta\right)=50 x \cos \theta -2 x^2\cos \theta +x^2\left(2cos^{2}\theta-1\right).$  
+\item $\dfrac{\partial A}{\partial x}=2x\cos\theta\sen\theta +50\sen \theta -4x\sen \theta.$
+\item $\dfrac{\partial A}{\partial \theta}=50 x \cos \theta -2 x^2\cos \theta +x^2\left(cos^{2}\theta-\sen^{2}\theta\right)=50 x \cos \theta -2 x^2\cos \theta +x^2\left(2cos^{2}\theta-1\right).$  
 \end{itemize}
 \textbf{Paso 3. Puntos críticos.}
-Si $\dfrac{\partial A}{\partial x}=0$ entonces $\sin \theta \left( 2x\cos\theta +50-4x \right)=0.$ Como $\sin \theta=0$ si $\theta =0$ o $\theta =\pi$ se descartan esos puntos, por lo cual se tomará el caso cuando $2x\cos\theta +50-4x =0,$ lo cual implica que $\cos \theta=\dfrac{2x-25}{x}.$
+Si $\dfrac{\partial A}{\partial x}=0$ entonces $\sen \theta \left( 2x\cos\theta +50-4x \right)=0.$ Como $\sen \theta=0$ si $\theta =0$ o $\theta =\pi$ se descartan esos puntos, por lo cual se tomará el caso cuando $2x\cos\theta +50-4x =0,$ lo cual implica que $\cos \theta=\dfrac{2x-25}{x}.$
 Como las primeras derivadas parciales deben ser cero simultáneamente, puede hacerse el reemplazo $\cos \theta=\dfrac{2x-25}{x}$ en la ecuación $\dfrac{\partial A}{\partial \theta}=0.$ 
 De esta manera, haciendo los cálculos correspondientes se obtiene que
 \begin{align*}

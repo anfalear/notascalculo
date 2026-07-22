@@ -1996,18 +1996,18 @@ absoluto es menor que $0.00001$.
 \end{myproof}
 \end{example}
 
-\begin{example}[Aproximación lineal de $\sin 31^\circ$]
-Usar la aproximación lineal para estimar $\sin 31^\circ$.
+\begin{example}[Aproximación lineal de $\sen 31^\circ$]
+Usar la aproximación lineal para estimar $\sen 31^\circ$.
 \begin{myproof}
 \textbf{Paso 1. Elegir el punto base.}
 
 Se trabaja en radianes: $31^\circ = \dfrac{31\pi}{180}$ rad, cercano
-a $a=\dfrac{\pi}{6}$ ($=30^\circ$), para el que $\sin\dfrac{\pi}{6}=\dfrac{1}{2}$
+a $a=\dfrac{\pi}{6}$ ($=30^\circ$), para el que $\sen\dfrac{\pi}{6}=\dfrac{1}{2}$
 es exacto.
 
 \textbf{Paso 2. Calcular $f'(a)$.}
 
-Con $f(x)=\sin x$:
+Con $f(x)=\sen x$:
 \[
 f'(x)=\cos x \implies f'\!\left(\frac{\pi}{6}\right)=\cos\frac{\pi}{6}
 =\frac{\sqrt{3}}{2}.
@@ -2017,10 +2017,10 @@ f'(x)=\cos x \implies f'\!\left(\frac{\pi}{6}\right)=\cos\frac{\pi}{6}
 
 El incremento es $\Delta x=\dfrac{\pi}{180}$ rad ($=1^\circ$):
 \[
-\sin 31^\circ \approx \frac{1}{2}+\frac{\sqrt{3}}{2}\cdot\frac{\pi}{180}
+\sen 31^\circ \approx \frac{1}{2}+\frac{\sqrt{3}}{2}\cdot\frac{\pi}{180}
 \approx 0.5000 + 0.0151 = \boxed{0.5151}.
 \]
-El valor exacto es $\sin 31^\circ\approx 0.5150\ldots$; error menor que $0.0001$.
+El valor exacto es $\sen 31^\circ\approx 0.5150\ldots$; error menor que $0.0001$.
 \end{myproof}
 \end{example}
 
@@ -2263,7 +2263,7 @@ Encuentre los extremos absolutos de cada función en el intervalo dado:
 \begin{enumerate}[a)]
     \item $f(x)=x^3-3x+1$ en $[-2,2]$
     \item $f(x)=\dfrac{x}{x^2+1}$ en $[-2,2]$
-    \item $f(x)=\sin x + \cos x$ en $[0,2\pi]$
+    \item $f(x)=\sen x + \cos x$ en $[0,2\pi]$
     \item $f(x)=x^{2/3}(x-1)$ en $[-1,2]$
 \end{enumerate}
 \end{prob}
@@ -2387,9 +2387,9 @@ máxima.
 %\]
 %donde $b$ es el ancho del fondo y $s$ la longitud de cada talud inclinado. El ángulo de inclinación de los taludes respecto a la horizontal es $\theta\in\bigl(0,\tfrac{\pi}{2}\bigr)$.
 %
-%La profundidad del canal es $h = s\sin\theta$, y el área de la sección
+%La profundidad del canal es $h = s\sen\theta$, y el área de la sección
 %transversal mojada es \[
-%  A \;=\; (b + s\cos\theta)\,s\sin\theta.
+%  A \;=\; (b + s\cos\theta)\,s\sen\theta.
 %\]
 %Como el caudal es proporcional a $A$, maximizar el caudal equivale a maximizar $A$. Se pide resolver los siguientes ítem:
 %\begin{enumerate}
@@ -2448,7 +2448,7 @@ máxima.
 %  %--- altura h ---------------------------------------------------------------
 %  \draw[<->, red!70!black, thin]
 %    (-\dx-0.35, 0) -- (-\dx-0.35, \h)
-%    node[midway, left] {$h = s\sin\theta$};
+%    node[midway, left] {$h = s\sen\theta$};
 %
 %  %--- línea auxiliar horizontal (para el ángulo) -----------------------------
 %  \draw[gray, dashed, thin] (A) -- ++(-0.5, 0);
@@ -2702,7 +2702,7 @@ de $c$ garantizado por el teorema.
 \end{prob}
 
 \begin{prob}
-Use el TVM para demostrar que $|\sin a - \sin b| \leq |a-b|$ para
+Use el TVM para demostrar que $|\sen a - \sen b| \leq |a-b|$ para
 todo $a,b\in\R$.
 \end{prob}
 
@@ -2743,16 +2743,16 @@ Usando trigonometría, ¿por qué para $x\neq\pi/2$ es posible
 Calcule cada límite:
 \begin{multicols}{2}
 \begin{enumerate}
-    \item $\displaystyle\lim_{x\to 0}\frac{x-\sin x}{x^3}$
+    \item $\displaystyle\lim_{x\to 0}\frac{x-\sen x}{x^3}$
     \item $\displaystyle\lim_{x\to\infty}\frac{\ln x}{x^p}$, $p>0$
     \item $\displaystyle\lim_{x\to 0^+}x^p\ln x$, $p>0$
     \item $\displaystyle\lim_{x\to\infty}x^{1/x}$
-    \item $\displaystyle\lim_{x\to 0}\frac{e^x-e^{-x}-2x}{x-\sin x}$
+    \item $\displaystyle\lim_{x\to 0}\frac{e^x-e^{-x}-2x}{x-\sen x}$
     \item $\displaystyle\lim_{x\to 0}(\csc x - \cot x)$
     \item $\displaystyle\lim_{x\to 0}\left(\frac{1}{x^2}-\cot^2 x\right)$
     \item $\displaystyle\lim_{x\to 1}\frac{x^x-x}{1-x+\ln x}$
     \item $\displaystyle\lim_{x\to\infty}\left(\sqrt{x^2+x}-x\right)$
-    \item $\displaystyle\lim_{x\to 0^+}(\tan x)^{\sin x}$
+    \item $\displaystyle\lim_{x\to 0^+}(\tan x)^{\sen x}$
 \end{enumerate}
 \end{multicols}
 \end{prob}

@@ -263,7 +263,7 @@ f'(x) = \frac{(x^3-1)(2x)-(x^2+3)(3x^2)}{(x^3-1)^2}.
 
 \begin{theorem}[Derivadas de las funciones trigonométricas básicas]
 \[
-D_x(\sin x) = \cos x, \qquad D_x(\cos x) = -\sin x,
+D_x(\sen x) = \cos x, \qquad D_x(\cos x) = -\sen x,
 \]
 \[
 D_x(\tan x) = \sec^2 x, \qquad D_x(\cot x) = -\csc^2 x,
@@ -273,23 +273,23 @@ D_x(\sec x) = \sec x\tan x, \qquad D_x(\csc x) = -\csc x\cot x.
 \]
 \end{theorem}
 
-\begin{example}[Derivada de $\sin x$ por definición]
-Demuestre que $D_x(\sin x) = \cos x$.
+\begin{example}[Derivada de $\sen x$ por definición]
+Demuestre que $D_x(\sen x) = \cos x$.
 
 \begin{myproof}
 
 \textbf{Paso 1: Aplicar la identidad de suma del seno.}
 \begin{align*}
-D_x(\sin x)
-&= \lim_{h\to 0}\frac{\sin(x+h)-\sin x}{h}
-= \lim_{h\to 0}\frac{\sin x\cos h+\cos x\sin h-\sin x}{h}\\
-&= \lim_{h\to 0}\left[\sin x\cdot\frac{\cos h-1}{h}
-  +\cos x\cdot\frac{\sin h}{h}\right].
+D_x(\sen x)
+&= \lim_{h\to 0}\frac{\sen(x+h)-\sen x}{h}
+= \lim_{h\to 0}\frac{\sen x\cos h+\cos x\sen h-\sen x}{h}\\
+&= \lim_{h\to 0}\left[\sen x\cdot\frac{\cos h-1}{h}
+  +\cos x\cdot\frac{\sen h}{h}\right].
 \end{align*}
 
 \textbf{Paso 2: Aplicar los límites trigonométricos fundamentales.}
 \[
-\boxed{D_x(\sin x) = \sin x\cdot 0 + \cos x\cdot 1 = \cos x.}
+\boxed{D_x(\sen x) = \sen x\cdot 0 + \cos x\cdot 1 = \cos x.}
 \]
 \end{myproof}
 \end{example}
@@ -297,8 +297,8 @@ D_x(\sin x)
 \begin{rem}
 Las cuatro derivadas restantes se obtienen combinando los dos resultados
 básicos con las identidades trigonométricas y la regla del cociente.
-Por ejemplo, $D_x(\tan x) = D_x\!\left(\frac{\sin x}{\cos x}\right)
-= \frac{\cos^2 x+\sin^2 x}{\cos^2 x} = \sec^2 x$.
+Por ejemplo, $D_x(\tan x) = D_x\!\left(\frac{\sen x}{\cos x}\right)
+= \frac{\cos^2 x+\sen^2 x}{\cos^2 x} = \sec^2 x$.
 \end{rem}
 
 %%==========================================================
@@ -359,13 +359,13 @@ corrige exactamente este problema al redefinir el cociente cuando el denominador
 \end{rem}
 
 
-\begin{example}[Regla de la cadena: $\sin(x^2)$]
-Derivar $y = \sin(x^2)$.
+\begin{example}[Regla de la cadena: $\sen(x^2)$]
+Derivar $y = \sen(x^2)$.
 
 \begin{myproof}
 
 \textbf{Paso 1: Identificar las capas.}
-$f(u)=\sin u$, $g(x)=x^2$; $f'(u)=\cos u$, $g'(x)=2x$.
+$f(u)=\sen u$, $g(x)=x^2$; $f'(u)=\cos u$, $g'(x)=2x$.
 
 \textbf{Paso 2: Aplicar la regla de la cadena.}
 \[
@@ -389,18 +389,18 @@ $f(u)=u^{10}$, $g(x)=3x^2+5$; $f'(u)=10u^9$, $g'(x)=6x$.
 \end{myproof}
 \end{example}
 
-\begin{example}[Regla de la cadena: $\sqrt{\sin(e^x)}$]
-Derivar $y = \sqrt{\sin(e^x)}$.
+\begin{example}[Regla de la cadena: $\sqrt{\sen(e^x)}$]
+Derivar $y = \sqrt{\sen(e^x)}$.
 
 \begin{myproof}
 
 \textbf{Paso 1: Identificar las tres capas.}
-$f(u)=\sqrt{u}$, $g(v)=\sin v$, $p(x)=e^x$.
+$f(u)=\sqrt{u}$, $g(v)=\sen v$, $p(x)=e^x$.
 
 \textbf{Paso 2: Aplicar la regla de la cadena.}
 \[
-\boxed{y' = \frac{1}{2\sqrt{\sin(e^x)}}\cdot\cos(e^x)\cdot e^x
-= \frac{e^x\cos(e^x)}{2\sqrt{\sin(e^x)}}.}
+\boxed{y' = \frac{1}{2\sqrt{\sen(e^x)}}\cdot\cos(e^x)\cdot e^x
+= \frac{e^x\cos(e^x)}{2\sqrt{\sen(e^x)}}.}
 \]
 \end{myproof}
 \end{example}
@@ -476,14 +476,14 @@ Derivar $f(x) = e^{3x^2-1}$.
 \end{myproof}
 \end{example}
 
-\begin{example}[Derivada de $\ln(\sin x)$]
-Derivar $f(x) = \ln(\sin x)$.
+\begin{example}[Derivada de $\ln(\sen x)$]
+Derivar $f(x) = \ln(\sen x)$.
 
 \begin{myproof}
 
 \textbf{Paso 1: Aplicar la regla de la cadena.}
 \[
-\boxed{f'(x) = \dfrac{1}{\sin x}\cdot\cos x = \cot x.}
+\boxed{f'(x) = \dfrac{1}{\sen x}\cdot\cos x = \cot x.}
 \]
 \end{myproof}
 \end{example}
@@ -546,18 +546,18 @@ y' = 4x^3-9x^2+2, \quad y'' = 12x^2-18x, \quad y''' = 24x-18.
 \end{example}
 
 \begin{example}[Verificación de una ecuación diferencial]
-Demostrar que $y = e^x\sin x$ satisface $y''-2y'+2y=0$.
+Demostrar que $y = e^x\sen x$ satisface $y''-2y'+2y=0$.
 
 \begin{myproof}
 
 \textbf{Paso 1: Calcular $y'$ y $y''$.}
 \[
-y' = e^x(\sin x+\cos x), \qquad y'' = 2e^x\cos x.
+y' = e^x(\sen x+\cos x), \qquad y'' = 2e^x\cos x.
 \]
 
 \textbf{Paso 2: Sustituir y verificar.}
 \[
-\boxed{y''-2y'+2y = 2e^x\cos x - 2e^x(\sin x+\cos x) + 2e^x\sin x = 0.}
+\boxed{y''-2y'+2y = 2e^x\cos x - 2e^x(\sen x+\cos x) + 2e^x\sen x = 0.}
 \]
 \end{myproof}
 \end{example}
@@ -785,21 +785,21 @@ Derivar $y = x^x$ \quad $(x>0)$.
 \end{myproof}
 \end{example}
 
-\begin{example}[Derivación logarítmica: $y = (\sin x)^{\cos x}$]
-Derivar $y = (\sin x)^{\cos x}$.
+\begin{example}[Derivación logarítmica: $y = (\sen x)^{\cos x}$]
+Derivar $y = (\sen x)^{\cos x}$.
 
 \begin{myproof}
 
 \textbf{Paso 1: Tomar logaritmo y derivar implícitamente.}
 \[
-\ln y = \cos x\cdot\ln(\sin x) \implies
-\frac{y'}{y} = -\sin x\ln(\sin x)+\frac{\cos^2 x}{\sin x}.
+\ln y = \cos x\cdot\ln(\sen x) \implies
+\frac{y'}{y} = -\sen x\ln(\sen x)+\frac{\cos^2 x}{\sen x}.
 \]
 
 \textbf{Paso 2: Despejar $y'$.}
 \[
-\boxed{y' = (\sin x)^{\cos x}\!\left(\frac{\cos^2 x}{\sin x}
--\sin x\ln(\sin x)\right).}
+\boxed{y' = (\sen x)^{\cos x}\!\left(\frac{\cos^2 x}{\sen x}
+-\sen x\ln(\sen x)\right).}
 \]
 \end{myproof}
 \end{example}
@@ -835,7 +835,7 @@ Demuestre que $D_x(\arcsin x) = \dfrac{1}{\sqrt{1-x^2}}$.
 \begin{myproof}
 
 \textbf{Paso 1: Reformular y derivar implícitamente.}
-Sea $y=\arcsin x$, es decir, $\sin y = x$ con $y\in\left[-\frac{\pi}{2},
+Sea $y=\arcsin x$, es decir, $\sen y = x$ con $y\in\left[-\frac{\pi}{2},
 \frac{\pi}{2}\right]$:
 \[
 \cos y\cdot\frac{dy}{dx} = 1 \implies \frac{dy}{dx} = \frac{1}{\cos y}.
@@ -843,7 +843,7 @@ Sea $y=\arcsin x$, es decir, $\sin y = x$ con $y\in\left[-\frac{\pi}{2},
 
 \textbf{Paso 2: Eliminar $y$ con la identidad pitagórica.}
 En el intervalo dado $\cos y \geq 0$, luego
-$\cos y = \sqrt{1-\sin^2 y} = \sqrt{1-x^2}$.
+$\cos y = \sqrt{1-\sen^2 y} = \sqrt{1-x^2}$.
 
 \textbf{Paso 3: Sustituir.}
 \[
@@ -903,8 +903,8 @@ D_x(a^x) & a^x\ln a \\
 D_x(\ln x) & \dfrac{1}{x} \\
 D_x(\log_a x) & \dfrac{1}{x\ln a} \\[4pt]
 \midrule
-D_x(\sin x) & \cos x \\
-D_x(\cos x) & -\sin x \\
+D_x(\sen x) & \cos x \\
+D_x(\cos x) & -\sen x \\
 D_x(\tan x) & \sec^2 x \\
 D_x(\cot x) & -\csc^2 x \\
 D_x(\sec x) & \sec x\tan x \\
@@ -923,7 +923,7 @@ D_x(\text{arccsc}\,x) & \dfrac{-1}{|x|\sqrt{x^2-1}} \\[4pt]
 \begin{rem}
 Toda fórmula de la tabla admite una versión general por la regla de la
 cadena: reemplazando $x$ por una función derivable $u(x)$, se multiplica
-por $u'(x)$. Por ejemplo, $D_x(\sin u) = \cos u\cdot u'$ o
+por $u'(x)$. Por ejemplo, $D_x(\sen u) = \cos u\cdot u'$ o
 $D_x(\ln u) = \frac{u'}{u}$.
 \end{rem}
 
@@ -969,7 +969,7 @@ Derive cada función. No simplifique.
     \item $p(x) = (3x-1)^5$
     \item $q(x) = \dfrac{(x+1)^3}{x^2}$
     \item $r(x) = \sqrt{x^2+2x+5}$
-    \item $s(x) = x^2\sin x - 3\cos x$
+    \item $s(x) = x^2\sen x - 3\cos x$
     \item $t(x) = \dfrac{\tan x}{1+\sec x}$
     \item $u(x) = \ln(x^2+1)$
     \item $v(x) = e^{x^2}\cos x$
@@ -983,7 +983,7 @@ Derive cada función. No simplifique.
 Derive usando la regla de la cadena:
 \begin{multicols}{2}
 \begin{enumerate}
-    \item $f(x) = \cos^3(\sin x)$
+    \item $f(x) = \cos^3(\sen x)$
     \item $g(x) = e^{\sqrt{\ln x}}$
     \item $h(x) = \ln\!\left(\dfrac{\sqrt{1+x^2}}{1-x}\right)$
     \item $k(x) = \arcsin(e^{-x^2})$
@@ -996,7 +996,7 @@ Calcule $f''(x)$ para cada función:
 \begin{multicols}{2}
 \begin{enumerate}
     \item $f(x) = x^5 - 2x^3 + x$
-    \item $f(x) = \sin(2x)$
+    \item $f(x) = \sen(2x)$
     \item $f(x) = xe^x$
     \item $f(x) = \ln x$
     \item $f(x) = \arctan x$
@@ -1006,7 +1006,7 @@ Calcule $f''(x)$ para cada función:
 \end{prob}
 
 \begin{prob}
-Demuestre que $y = A\sin(\omega t) + B\cos(\omega t)$ satisface la ecuación
+Demuestre que $y = A\sen(\omega t) + B\cos(\omega t)$ satisface la ecuación
 $y'' + \omega^2 y = 0$.
 \end{prob}
 
@@ -1019,7 +1019,7 @@ para $k \leq n$, y $f^{(k)}(x) = 0$ para $k > n$.
 Encuentre una fórmula cerrada para la $n$-ésima derivada de:
 \begin{enumerate}[a)]
     \item $f(x) = e^{ax}$
-    \item $f(x) = \sin x$
+    \item $f(x) = \sen x$
     \item $f(x) = \ln x$
     \item $f(x) = \dfrac{1}{1-x}$
 \end{enumerate}
@@ -1031,11 +1031,11 @@ Encuentre $\dfrac{dy}{dx}$ mediante diferenciación implícita:
 \begin{enumerate}
     \item $x^2+y^2 = r^2$
     \item $x^3+y^3 = 1$
-    \item $\sin(x+y) = xy$
+    \item $\sen(x+y) = xy$
     \item $e^{xy} = x+y$
     \item $\ln(x^2+y^2) = \arctan\!\dfrac{y}{x}$
     \item $\sqrt{x}+\sqrt{y} = \sqrt{a}$
-    \item $y\sin x = x\cos y$
+    \item $y\sen x = x\cos y$
     \item $x^{2/3}+y^{2/3} = 1$
 \end{enumerate}
 \end{multicols}
@@ -1061,13 +1061,13 @@ Enuncie el teorema de la derivada de la función inversa que utiliza.
 Use diferenciación logarítmica para derivar:
 \begin{multicols}{2}
 \begin{enumerate}
-    \item $y = x^{\sin x}$
+    \item $y = x^{\sen x}$
     \item $y = (\ln x)^x$
     \item $y = \dfrac{x^2\sqrt{x+1}}{(2x-1)^3}$
     \item $y = \left(\dfrac{x+1}{x-1}\right)^{3/2}$
     \item $y = (\cos x)^x$
     \item $y = x^{x^2}$
-    \item $y = \dfrac{x^5\sin^2 x}{\sqrt{1+x^2}}$
+    \item $y = \dfrac{x^5\sen^2 x}{\sqrt{1+x^2}}$
     \item $y = (1+x)^{1/x}$
 \end{enumerate}
 \end{multicols}
@@ -1163,16 +1163,16 @@ Determine el valor de verdad de las siguientes afirmaciones. Justifique adecuada
     \item Si $f'(c)=0$, entonces $f$ tiene un extremo local en $c$.
     \item $D_x[f(x)g(x)] = f'(x)g'(x)$.
     \item Si $f(x)=g(x)$ para todo $x$, entonces $f'(x)=g'(x)$.
-    \item $\dfrac{d}{dx}[\sin^2 x + \cos^2 x] = 2\sin x\cos x -
-    2\cos x\sin x = 0$.
+    \item $\dfrac{d}{dx}[\sen^2 x + \cos^2 x] = 2\sen x\cos x -
+    2\cos x\sen x = 0$.
     \item Si $f'(x) = g'(x)$ para todo $x$, entonces $f=g$.
     \item $(f\circ g)'(x) = f'(g(x))\cdot g'(x)$.
     \item Si $f$ es par, entonces $f'$ es impar.
     \item Si $f$ es impar, entonces $f'$ es par.
     \item La expresión
     $\displaystyle\lim_{x\to\frac{\pi}{2}}
-    \frac{\sin x-1}{x-\frac{\pi}{2}}$
-    es la derivada de $f(x)=\sin x$ en $x=\dfrac{\pi}{2}$.
+    \frac{\sen x-1}{x-\frac{\pi}{2}}$
+    es la derivada de $f(x)=\sen x$ en $x=\dfrac{\pi}{2}$.
 
     \item Si $y=f(x)g(x)$, entonces
     $\dfrac{d^2y}{dx^2}=f(x)g''(x)+g(x)f''(x)$.
@@ -1222,8 +1222,8 @@ más simplificada posible.
     \item $y = \tan^2 x + \ln(\cos x)$.
     \item $xy + \arctan\!\left(\dfrac{x}{y}\right) = 0$.
     \item $y = x^{x^{x^3}}$.
-    \item $y = \dfrac{1}{\sin^4 x+1}
-          +\ln\!\left(\dfrac{\sin^4 x}{\sin^4 x+1}\right)$.
+    \item $y = \dfrac{1}{\sen^4 x+1}
+          +\ln\!\left(\dfrac{\sen^4 x}{\sen^4 x+1}\right)$.
     \item $\arctan\!\left(\dfrac{x}{y}\right)
           = \dfrac{1}{2}\ln(x^2+y^2)$.
     \item $y = x^{x^{3^x}}$.
@@ -1248,23 +1248,23 @@ Lea cuidadosamente cada pregunta y seleccione la opción correcta.
         \item[d.] No existe recta tangente en ese punto.
     \end{itemize}
 
-    \item Si $f(x)=\cos\!\left(\sqrt{\sin(\tan(\pi x))}\right)$,
+    \item Si $f(x)=\cos\!\left(\sqrt{\sen(\tan(\pi x))}\right)$,
     entonces $f'(x)$ es:
     \begin{itemize}
         \item[a.] $\dfrac{\pi\sec^2(\pi x)
         \cos(\tan(\pi x))
-        \sin\!\left(\sqrt{\sin(\tan(\pi x))}\right)}
-        {2\sqrt{\sin(\tan(\pi x))}}$
+        \sen\!\left(\sqrt{\sen(\tan(\pi x))}\right)}
+        {2\sqrt{\sen(\tan(\pi x))}}$
 
         \item[b.] $\dfrac{\pi\sec^2(\pi x)
         \cos(\tan(\pi x))
-        \sin\!\left(\sqrt{\sin(\tan(\pi x))}\right)}
+        \sen\!\left(\sqrt{\sen(\tan(\pi x))}\right)}
         {2\sqrt{\cos(\tan(\pi x))}}$
 
         \item[c.] $-\dfrac{\pi\sec^2(\pi x)
         \cos(\tan(\pi x))
-        \sin\!\left(\sqrt{\sin(\tan(\pi x))}\right)}
-        {2\sqrt{\sin(\tan(\pi x))}}$
+        \sen\!\left(\sqrt{\sen(\tan(\pi x))}\right)}
+        {2\sqrt{\sen(\tan(\pi x))}}$
 
         \item[d.] Ninguna de las anteriores.
     \end{itemize}
@@ -1374,7 +1374,7 @@ y borde de sombra en $(-5,0)$.}
 \begin{prob}
 Una banda elástica cuelga de un gancho con una masa sujeta en su extremo
 inferior. Al jalarse y soltarse, la masa vibra con movimiento armónico
-descrito por $s(t)=2\cos t+3\sin t$, $t\geq 0$, donde $s$ está en
+descrito por $s(t)=2\cos t+3\sen t$, $t\geq 0$, donde $s$ está en
 centímetros y $t$ en segundos (positivo hacia abajo).
 \begin{enumerate}[(a)]
     \item Encuentre la velocidad y la aceleración en el instante $t$.

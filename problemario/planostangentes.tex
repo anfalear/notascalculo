@@ -359,17 +359,17 @@ Calcular $f_{xxx}$ y $f_{xxy}$ para $f(x,y)=\cos(x^2 y)$.
 \begin{myproof}
 \textbf{Paso 1. Primera derivada respecto a $x$:}
 \[
-f_x = -\sin(x^2 y)\cdot 2xy = -2xy\sin(x^2 y).
+f_x = -\sen(x^2 y)\cdot 2xy = -2xy\sen(x^2 y).
 \]
 
 \textbf{Paso 2. Segunda derivada respecto a $x$:}
 \[
-f_{xx} = \frac{\partial}{\partial x}[-2xy\sin(x^2 y)].
+f_{xx} = \frac{\partial}{\partial x}[-2xy\sen(x^2 y)].
 \]
 Usamos la regla del producto:
 \[
-f_{xx} = -2y\sin(x^2 y) - 2xy\cos(x^2 y)\cdot 2xy
-= -2y\sin(x^2 y) - 4x^2 y^2 \cos(x^2 y).
+f_{xx} = -2y\sen(x^2 y) - 2xy\cos(x^2 y)\cdot 2xy
+= -2y\sen(x^2 y) - 4x^2 y^2 \cos(x^2 y).
 \]
 
 \textbf{Paso 3. Tercera derivada respecto a $x$:}
@@ -378,32 +378,32 @@ f_{xxx} = \frac{\partial}{\partial x} f_{xx}.
 \]
 \[
 f_{xxx} = -2y\cos(x^2 y)\cdot 2xy
--8xy^2\cos(x^2 y) - 4x^2 y^2(-\sin(x^2 y))\cdot 2xy.
+-8xy^2\cos(x^2 y) - 4x^2 y^2(-\sen(x^2 y))\cdot 2xy.
 \]
 \[
 f_{xxx} = -4xy^2\cos(x^2 y) - 8xy^2\cos(x^2 y)
-+ 8x^3 y^3 \sin(x^2 y).
++ 8x^3 y^3 \sen(x^2 y).
 \]
 \[
-\boxed{f_{xxx} = -12xy^2\cos(x^2 y) + 8x^3 y^3 \sin(x^2 y)}
+\boxed{f_{xxx} = -12xy^2\cos(x^2 y) + 8x^3 y^3 \sen(x^2 y)}
 \]
 
 \textbf{Paso 4. Derivada mixta $f_{xxy}$:}
 Derivamos $f_{xx}$ respecto a $y$:
 \[
-f_{xxy} = \frac{\partial}{\partial y}[-2y\sin(x^2 y) - 4x^2 y^2 \cos(x^2 y)].
+f_{xxy} = \frac{\partial}{\partial y}[-2y\sen(x^2 y) - 4x^2 y^2 \cos(x^2 y)].
 \]
 \[
-f_{xxy} = -2\sin(x^2 y) - 2y\cos(x^2 y)\cdot x^2
--8x^2 y\cos(x^2 y) - 4x^2 y^2 (-\sin(x^2 y))\cdot x^2.
+f_{xxy} = -2\sen(x^2 y) - 2y\cos(x^2 y)\cdot x^2
+-8x^2 y\cos(x^2 y) - 4x^2 y^2 (-\sen(x^2 y))\cdot x^2.
 \]
 \[
-\boxed{f_{xxy} = -2\sin(x^2 y) - 2x^2 y\cos(x^2 y)
--8x^2 y\cos(x^2 y) + 4x^4 y^2\sin(x^2 y)}
+\boxed{f_{xxy} = -2\sen(x^2 y) - 2x^2 y\cos(x^2 y)
+-8x^2 y\cos(x^2 y) + 4x^4 y^2\sen(x^2 y)}
 \]
 \[
-\boxed{f_{xxy} = -2\sin(x^2 y) -10x^2 y\cos(x^2 y)
-+ 4x^4 y^2\sin(x^2 y)}
+\boxed{f_{xxy} = -2\sen(x^2 y) -10x^2 y\cos(x^2 y)
++ 4x^4 y^2\sen(x^2 y)}
 \]
 \end{myproof}
 \end{example}
@@ -424,29 +424,29 @@ derivadas cruzadas sean continuas.
 
 \begin{example}[Derivadas parciales en tres variables]
 Calcular $\frac{\partial f}{\partial x}$, $\frac{\partial f}{\partial y}$
-y $\frac{\partial f}{\partial z}$ para $f(x,y,z)=e^{xy}\sin z$.
+y $\frac{\partial f}{\partial z}$ para $f(x,y,z)=e^{xy}\sen z$.
 \begin{myproof}
 \textbf{Paso 1. Derivada parcial $f_x$.}
 Se tratan $y, z$ como constantes; se aplica la regla de la cadena a $e^{xy}$:
 \[
-f_x = y e^{xy}\sin z.
+f_x = y e^{xy}\sen z.
 \]
 
 \textbf{Paso 2. Derivada parcial $f_y$.}
 Se tratan $x, z$ como constantes:
 \[
-f_y = x e^{xy}\sin z.
+f_y = x e^{xy}\sen z.
 \]
 
 \textbf{Paso 3. Derivada parcial $f_z$.}
-Se tratan $x, y$ como constantes; se deriva $\sin z$:
+Se tratan $x, y$ como constantes; se deriva $\sen z$:
 \[
 f_z = e^{xy}\cos z.
 \]
 
 \textbf{Paso 4. Resultado.}
 \[
-\boxed{f_x=ye^{xy}\sin z,\quad f_y=xe^{xy}\sin z,\quad f_z=e^{xy}\cos z}
+\boxed{f_x=ye^{xy}\sen z,\quad f_y=xe^{xy}\sen z,\quad f_z=e^{xy}\cos z}
 \]
 \end{myproof}
 \end{example}
@@ -516,22 +516,22 @@ Aunque $f_x(0,0)$ y $f_y(0,0)$ existen, puede verificarse que $f$ \emph{no} es d
 \end{prob}
 
 \begin{prob}
-Demuestre que la función $u(x,t)=\sin(x-at)$ satisface la ecuación de
+Demuestre que la función $u(x,t)=\sen(x-at)$ satisface la ecuación de
 onda unidimensional $u_{tt}=a^2 u_{xx}$.
 \begin{myproof}
 \textbf{Paso 1. Segunda derivada respecto a $x$.}
 \[
-u_x = \cos(x-at),\qquad u_{xx} = -\sin(x-at).
+u_x = \cos(x-at),\qquad u_{xx} = -\sen(x-at).
 \]
 
 \textbf{Paso 2. Segunda derivada respecto a $t$.}
 \[
-u_t = -a\cos(x-at),\qquad u_{tt} = -a^2\sin(x-at).
+u_t = -a\cos(x-at),\qquad u_{tt} = -a^2\sen(x-at).
 \]
 
 \textbf{Paso 3. Verificar la ecuación.}
 \[
-a^2 u_{xx} = a^2\bigl(-\sin(x-at)\bigr) = -a^2\sin(x-at) = u_{tt}.\quad\checkmark
+a^2 u_{xx} = a^2\bigl(-\sen(x-at)\bigr) = -a^2\sen(x-at) = u_{tt}.\quad\checkmark
 \]
 
 \textbf{Paso 4. Resultado.}
@@ -1024,7 +1024,7 @@ Calcule las primeras derivadas parciales de las siguientes funciones:
     \item $f(x,y)=e^{x^2+y^2}$
     \item $f(x,y)=\ln(x^2+y^2+1)$
     \item $f(x,y)=\arctan(y/x)$
-    \item $f(x,y)=\sin(x^2 y)$
+    \item $f(x,y)=\sen(x^2 y)$
     \item $f(x,y)=x^y$ ($x>0$)
     \item $f(x,y,z)=x^2 y z^3$
     \item $f(x,y,z)=\ln(x^2+y^2+z^2)$
@@ -1045,7 +1045,7 @@ Calcule todas las derivadas parciales de segundo orden de:
     \item $f(x,y)=x^3 y^2$
     \item $f(x,y)=e^x\cos y$
     \item $f(x,y)=\ln(x^2+y^2)$
-    \item $f(x,y)=\sin(x+y)$
+    \item $f(x,y)=\sen(x+y)$
 \end{enumerate}
 \end{multicols}
 \end{prob}

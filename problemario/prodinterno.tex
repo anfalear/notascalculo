@@ -113,16 +113,16 @@ Sea $V$ un espacio vectorial con producto interno real, entonces
 \end{itemize}
 \end{definition}
 
-\begin{example}[Ortogonalidad de $\cos x$ y $\sin x$ en ${\mathcal{C}[0,\pi]}$]
-Calcule $\langle \cos x, \sin x \rangle$ en $\mathcal{C}[0, \pi]$ con $\langle f, g \rangle = \int_0^\pi f(x)g(x)\,dx$ y determine si $f \perp g$.
+\begin{example}[Ortogonalidad de $\cos x$ y $\sen x$ en ${\mathcal{C}[0,\pi]}$]
+Calcule $\langle \cos x, \sen x \rangle$ en $\mathcal{C}[0, \pi]$ con $\langle f, g \rangle = \int_0^\pi f(x)g(x)\,dx$ y determine si $f \perp g$.
 \begin{myproof}
 \textbf{Paso 1. Evaluar el producto interno.}
 \[
-\langle \cos x, \sin x \rangle = \int_0^\pi \sin x \cos x\,dx = \left[ \frac{\sin^2 x}{2} \right]_0^\pi = \frac{\sin^2 \pi}{2} - \frac{\sin^2 0}{2} = 0.
+\langle \cos x, \sen x \rangle = \int_0^\pi \sen x \cos x\,dx = \left[ \frac{\sen^2 x}{2} \right]_0^\pi = \frac{\sen^2 \pi}{2} - \frac{\sen^2 0}{2} = 0.
 \]
 
-\textbf{Paso 2. Concluir ortogonalidad.} Como $\langle \cos x, \sin x \rangle = 0$, los vectores son ortogonales.
-$$\boxed{\langle \cos x,\, \sin x \rangle = 0,\quad \cos x \perp \sin x \text{ en } \mathcal{C}[0,\pi].}$$
+\textbf{Paso 2. Concluir ortogonalidad.} Como $\langle \cos x, \sen x \rangle = 0$, los vectores son ortogonales.
+$$\boxed{\langle \cos x,\, \sen x \rangle = 0,\quad \cos x \perp \sen x \text{ en } \mathcal{C}[0,\pi].}$$
 \end{myproof}
 \end{example}
 
@@ -931,13 +931,13 @@ La matriz $M$ es la matriz de Vandermonde de los nodos $x_i$; cuando los $x_i$ s
 \begin{definition}[Serie de Fourier]
 Para $f$ periódica en $[0, 2\pi]$, con producto interno $\langle f, g \rangle = \int_0^{2\pi} f(x) g(x)  dx$:
 \[
-f(x) \approx a_0 + \sum_{k=1}^n (a_k \cos kx + b_k \sin kx)
+f(x) \approx a_0 + \sum_{k=1}^n (a_k \cos kx + b_k \sen kx)
 \]
 donde:
 \begin{align*}
 a_0 &= \frac{1}{2\pi} \int_0^{2\pi} f(x)  dx \\
 a_k &= \frac{1}{\pi} \int_0^{2\pi} f(x) \cos kx  dx \\
-b_k &= \frac{1}{\pi} \int_0^{2\pi} f(x) \sin kx  dx
+b_k &= \frac{1}{\pi} \int_0^{2\pi} f(x) \sen kx  dx
 \end{align*}
 \end{definition}
 
@@ -949,15 +949,15 @@ Calcule la serie de Fourier correspondiente para las siguientes funciones en el 
 \item $f(x)=x^2+2x+1.$
 \end{enumerate}
 \begin{myproof}
-\textbf{Paso 1. Estrategia.} Las tres funciones son polinomios, así que basta aplicar las fórmulas de la definición. Como todos los integrandos se reducen a combinaciones de $x^j\cos kx$ y $x^j\sin kx$ con $j \leq 2$, calculamos una vez por partes las integrales auxiliares sobre $[0,2\pi]$, válidas para todo entero $k \geq 1$:
+\textbf{Paso 1. Estrategia.} Las tres funciones son polinomios, así que basta aplicar las fórmulas de la definición. Como todos los integrandos se reducen a combinaciones de $x^j\cos kx$ y $x^j\sen kx$ con $j \leq 2$, calculamos una vez por partes las integrales auxiliares sobre $[0,2\pi]$, válidas para todo entero $k \geq 1$:
 \[
-\int_0^{2\pi}\! \cos kx\,dx = \int_0^{2\pi}\! \sin kx\,dx = 0, \qquad
+\int_0^{2\pi}\! \cos kx\,dx = \int_0^{2\pi}\! \sen kx\,dx = 0, \qquad
 \int_0^{2\pi}\! x\cos kx\,dx = 0, \qquad
-\int_0^{2\pi}\! x\sin kx\,dx = -\frac{2\pi}{k},
+\int_0^{2\pi}\! x\sen kx\,dx = -\frac{2\pi}{k},
 \]
 \[
 \int_0^{2\pi}\! x^2\cos kx\,dx = \frac{4\pi}{k^2}, \qquad
-\int_0^{2\pi}\! x^2\sin kx\,dx = -\frac{4\pi^2}{k}.
+\int_0^{2\pi}\! x^2\sen kx\,dx = -\frac{4\pi^2}{k}.
 \]
 Conviene subrayar que el intervalo es $[0,2\pi]$ y no $[-\pi,\pi]$: aquí no hay simetría par ni impar que anule coeficientes, y en particular no aparecen factores $(-1)^k$.
 
@@ -968,10 +968,10 @@ a_k = \frac{1}{\pi}\cdot 0 = 0, \qquad
 b_k = \frac{1}{\pi}\left(-\frac{2\pi}{k}\right) = -\frac{2}{k}.
 \]
 \[
-f(x) \sim \pi - 2 \sum_{k=1}^{\infty} \frac{\sin(kx)}{k}
+f(x) \sim \pi - 2 \sum_{k=1}^{\infty} \frac{\sen(kx)}{k}
 \]
 
-\textbf{Paso 3. Parte $b)$: $f(x)=8$.} Al ser constante, $a_0 = \frac{1}{2\pi}\cdot 8 \cdot 2\pi = 8$, mientras que $a_k$ y $b_k$ son múltiplos de $\int_0^{2\pi}\cos kx\,dx$ y $\int_0^{2\pi}\sin kx\,dx$, ambas nulas. Luego $a_k = b_k = 0$ y la serie se reduce a su término constante:
+\textbf{Paso 3. Parte $b)$: $f(x)=8$.} Al ser constante, $a_0 = \frac{1}{2\pi}\cdot 8 \cdot 2\pi = 8$, mientras que $a_k$ y $b_k$ son múltiplos de $\int_0^{2\pi}\cos kx\,dx$ y $\int_0^{2\pi}\sen kx\,dx$, ambas nulas. Luego $a_k = b_k = 0$ y la serie se reduce a su término constante:
 \[
 f(x) \sim 8
 \]
@@ -986,9 +986,9 @@ Reuniendo las tres series:
 \[
 \boxed{
 \begin{aligned}
-a)\ & f(x) \sim \pi - 2 \sum_{k=1}^{\infty} \frac{\sin(kx)}{k} \\
+a)\ & f(x) \sim \pi - 2 \sum_{k=1}^{\infty} \frac{\sen(kx)}{k} \\
 b)\ & f(x) \sim 8 \\
-c)\ & f(x) \sim \left( \frac{4\pi^2}{3} + 2\pi + 1 \right) + \sum_{k=1}^{\infty} \left[ \frac{4}{k^2} \cos(kx) - \frac{4(\pi+1)}{k} \sin(kx) \right]
+c)\ & f(x) \sim \left( \frac{4\pi^2}{3} + 2\pi + 1 \right) + \sum_{k=1}^{\infty} \left[ \frac{4}{k^2} \cos(kx) - \frac{4(\pi+1)}{k} \sen(kx) \right]
 \end{aligned}
 }
 \]
@@ -1008,16 +1008,16 @@ Desarrollo en serie de potencias alrededor de $x=a$ con coeficientes $a_j = f^{(
 \begin{theorem}[Fórmula de Euler]\label{demformeuler}
 Para $\theta \in \mathbb{R}$:
 \[
-e^{i\theta} = \cos \theta + i \sin \theta
+e^{i\theta} = \cos \theta + i \sen \theta
 \]
 \begin{proof}
 Por series de Taylor:
 \begin{align*}
 e^{ix} &= \sum_{k=0}^\infty \frac{(ix)^k}{k!} \\
 \cos x &= \sum_{k=0}^\infty \frac{(-1)^k x^{2k}}{(2k)!} \\
-\sin x &= \sum_{k=0}^\infty \frac{(-1)^k x^{2k+1}}{(2k+1)!}
+\sen x &= \sum_{k=0}^\infty \frac{(-1)^k x^{2k+1}}{(2k+1)!}
 \end{align*}
-Se verifica $e^{ix} = \cos x + i \sin x$.
+Se verifica $e^{ix} = \cos x + i \sen x$.
 \end{proof}
 \end{theorem}
 
@@ -1123,14 +1123,14 @@ a_0 = \frac{1}{2\pi}\int_0^{2\pi} (9x^2+4x)\,dx = \frac{1}{2\pi}\left(9\cdot\fra
 a_k = \frac{1}{\pi}\left(9\cdot\frac{4\pi}{k^2} + 4\cdot 0\right) = \frac{36}{k^2}.
 \]
 
-\textbf{Paso 3. Coeficientes $b_k$.} Con $\int_0^{2\pi} x\sin kx\,dx = -\frac{2\pi}{k}$ y $\int_0^{2\pi} x^2\sin kx\,dx = -\frac{4\pi^2}{k}$:
+\textbf{Paso 3. Coeficientes $b_k$.} Con $\int_0^{2\pi} x\sen kx\,dx = -\frac{2\pi}{k}$ y $\int_0^{2\pi} x^2\sen kx\,dx = -\frac{4\pi^2}{k}$:
 \[
 b_k = \frac{1}{\pi}\left(9\left(-\frac{4\pi^2}{k}\right) + 4\left(-\frac{2\pi}{k}\right)\right) = -\frac{36\pi + 8}{k}.
 \]
 
 \textbf{Paso 4. Serie.}
 \[
-\boxed{f(x) \sim (12\pi^2 + 4\pi) + \sum_{k=1}^{\infty} \left[ \frac{36}{k^2} \cos(kx) - \frac{36\pi + 8}{k} \sin(kx) \right]}
+\boxed{f(x) \sim (12\pi^2 + 4\pi) + \sum_{k=1}^{\infty} \left[ \frac{36}{k^2} \cos(kx) - \frac{36\pi + 8}{k} \sen(kx) \right]}
 \]
 \end{myproof}
 \end{prob}
@@ -1280,14 +1280,14 @@ a_0 = \frac{1}{2\pi}\int_0^{2\pi} (9x+7)\,dx = \frac{1}{2\pi}\left(9\cdot 2\pi^2
 
 \textbf{Paso 2. Coeficientes $a_k$.} Como $\int_0^{2\pi} \cos kx\,dx = 0$ y $\int_0^{2\pi} x\cos kx\,dx = 0$, se tiene $a_k = 0$.
 
-\textbf{Paso 3. Coeficientes $b_k$.} Con $\int_0^{2\pi} \sin kx\,dx = 0$ y $\int_0^{2\pi} x\sin kx\,dx = -\frac{2\pi}{k}$:
+\textbf{Paso 3. Coeficientes $b_k$.} Con $\int_0^{2\pi} \sen kx\,dx = 0$ y $\int_0^{2\pi} x\sen kx\,dx = -\frac{2\pi}{k}$:
 \[
 b_k = \frac{1}{\pi}\cdot 9\left(-\frac{2\pi}{k}\right) = -\frac{18}{k}.
 \]
 
 \textbf{Paso 4. Serie.}
 \[
-\boxed{f(x) \sim (9\pi + 7) - 18 \sum_{k=1}^{\infty} \frac{\sin(kx)}{k}}
+\boxed{f(x) \sim (9\pi + 7) - 18 \sum_{k=1}^{\infty} \frac{\sen(kx)}{k}}
 \]
 \end{myproof}
 \end{prob}
@@ -1385,14 +1385,14 @@ a_0 = \frac{1}{2\pi}\int_0^{2\pi} (5x+7)\,dx = \frac{1}{2\pi}\left(5\cdot 2\pi^2
 
 \textbf{Paso 2. Coeficientes $a_k$.} Como $\int_0^{2\pi} \cos kx\,dx = 0$ y $\int_0^{2\pi} x\cos kx\,dx = 0$, se tiene $a_k = 0$.
 
-\textbf{Paso 3. Coeficientes $b_k$.} Con $\int_0^{2\pi} x\sin kx\,dx = -\frac{2\pi}{k}$:
+\textbf{Paso 3. Coeficientes $b_k$.} Con $\int_0^{2\pi} x\sen kx\,dx = -\frac{2\pi}{k}$:
 \[
 b_k = \frac{1}{\pi}\cdot 5\left(-\frac{2\pi}{k}\right) = -\frac{10}{k}.
 \]
 
 \textbf{Paso 4. Serie.}
 \[
-\boxed{f(x) \sim (5\pi + 7) - 10 \sum_{k=1}^{\infty} \frac{\sin(kx)}{k}}
+\boxed{f(x) \sim (5\pi + 7) - 10 \sum_{k=1}^{\infty} \frac{\sen(kx)}{k}}
 \]
 \end{myproof}
 \end{prob}
@@ -1518,14 +1518,14 @@ a_0 = \frac{1}{2\pi}\int_0^{2\pi} (7x+2)\,dx = \frac{1}{2\pi}\left(7\cdot 2\pi^2
 
 \textbf{Paso 2. Coeficientes $a_k$.} Como $\int_0^{2\pi} \cos kx\,dx = 0$ y $\int_0^{2\pi} x\cos kx\,dx = 0$, se tiene $a_k = 0$.
 
-\textbf{Paso 3. Coeficientes $b_k$.} Con $\int_0^{2\pi} x\sin kx\,dx = -\frac{2\pi}{k}$:
+\textbf{Paso 3. Coeficientes $b_k$.} Con $\int_0^{2\pi} x\sen kx\,dx = -\frac{2\pi}{k}$:
 \[
 b_k = \frac{1}{\pi}\cdot 7\left(-\frac{2\pi}{k}\right) = -\frac{14}{k}.
 \]
 
 \textbf{Paso 4. Serie.}
 \[
-\boxed{f(x) \sim (7\pi + 2) - 14 \sum_{k=1}^{\infty} \frac{\sin(kx)}{k}}
+\boxed{f(x) \sim (7\pi + 2) - 14 \sum_{k=1}^{\infty} \frac{\sen(kx)}{k}}
 \]
 \end{myproof}
 \end{prob}

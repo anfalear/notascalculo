@@ -5,7 +5,7 @@
 \contentsline {figure}{\numberline {1.2}{\ignorespaces Soluciones de $|2x-3|=5$: los puntos $x=-1$ y $x=4$ equidistan $5/2$ del centro $x=3/2$.}}{18}{figure.1.2}%
 \contentsline {figure}{\numberline {1.3}{\ignorespaces Conjunto solución de $|3x+1|\leq 4$: vecindad cerrada de centro $-1/3$ y radio $4/3$, extremos incluidos.}}{19}{figure.1.3}%
 \contentsline {figure}{\numberline {1.4}{\ignorespaces Soluciones de $|x-2|+|x+1|=5$: cada solución suma distancia $5$ a los centros $-1$ y $2$ ($1+4$ desde $x=-2$; $4+1$ desde $x=3$).}}{19}{figure.1.4}%
-\contentsline {figure}{\numberline {1.5}{\ignorespaces Representación en el círculo unitario: $x = \cos \theta $, $y = \sin \theta $, con $x^2 + y^2 = 1$.}}{20}{figure.1.5}%
+\contentsline {figure}{\numberline {1.5}{\ignorespaces Representación en el círculo unitario: $x = \cos \theta $, $y = \mathop {\mathgroup \symoperators sen}\nolimits \theta $, con $x^2 + y^2 = 1$.}}{20}{figure.1.5}%
 \contentsline {figure}{\numberline {1.6}{\ignorespaces El intervalo abierto $(-1,1)$ en la recta real: los extremos excluidos se marcan con círculos vacíos.}}{20}{figure.1.6}%
 \contentsline {figure}{\numberline {1.7}{\ignorespaces Vecindad abierta $V_\varepsilon (x_0) = (x_0-\varepsilon ,\, x_0+\varepsilon )$: intervalo centrado en $x_0$ de radio $\varepsilon $.}}{21}{figure.1.7}%
 \contentsline {figure}{\numberline {1.8}{\ignorespaces El supremo y el ínfimo de un conjunto acotado $S$. Con $\alpha = \sup S$: toda cota superior ($M_1$, $M_2$) queda a la derecha de $\alpha $, y para todo $\varepsilon > 0$ la franja $(\alpha -\varepsilon ,\,\alpha ]$ contiene algún $x \in S$.}}{21}{figure.1.8}%
@@ -30,10 +30,10 @@
 \contentsline {figure}{\numberline {3.6}{\ignorespaces $f(x)=1/x$ con asíntota en $x=0$ ($D_f=\mathbb {R}\setminus \{0\}$); $g(x)=x^{2/3}$ con cúspide en el origen ($D_g=\mathbb {R}$).}}{59}{figure.3.6}%
 \contentsline {figure}{\numberline {3.7}{\ignorespaces $f(x)=2^x$ creciente; $g(x)=(1/2)^x$ decreciente. Ambas pasan por $(0,1)$ y tienen asíntota $y=0$.}}{60}{figure.3.7}%
 \contentsline {figure}{\numberline {3.8}{\ignorespaces $\log _2 x$ y $\ln x$ comparten el punto $(1,0)$; $\log _2 x > \ln x$ para $x > 1$ pues $\log _2 x = \ln x / \ln 2 \approx 1.44\ln x$.}}{60}{figure.3.8}%
-\contentsline {figure}{\numberline {3.9}{\ignorespaces $\sin x$ (azul) y $\cos x$ (naranja): período $2\pi $, amplitud 1. Observe que $\cos x = \sin (x+\pi /2)$.}}{61}{figure.3.9}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces $\mathop {\mathgroup \symoperators sen}\nolimits x$ (azul) y $\cos x$ (naranja): período $2\pi $, amplitud 1. Observe que $\cos x = \mathop {\mathgroup \symoperators sen}\nolimits (x+\pi /2)$.}}{61}{figure.3.9}%
 \contentsline {figure}{\numberline {3.10}{\ignorespaces $\tan x$: período $\pi $, asíntotas verticales en $x = \pi /2 + k\pi $.}}{61}{figure.3.10}%
 \contentsline {figure}{\numberline {3.11}{\ignorespaces Traslaciones de $y=x^2$: el vértice se desplaza de $(0,0)$ a $(h,k)$.}}{62}{figure.3.11}%
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Parámetros de la forma amplitud-fase en $y=C+A\sin [a(t-b)]$.}}{63}{figure.3.12}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Parámetros de la forma amplitud-fase en $y=C+A\mathop {\mathgroup \symoperators sen}\nolimits [a(t-b)]$.}}{63}{figure.3.12}%
 \contentsline {figure}{\numberline {3.13}{\ignorespaces La gráfica de $f^{-1}$ es la reflexión de la de $f$ respecto a la recta $y=x$: cada punto $(a,b)$ de $f$ corresponde al punto $(b,a)$ de $f^{-1}$, como ilustran $e^x$ y $\ln x$.}}{65}{figure.3.13}%
 \contentsline {figure}{\numberline {3.14}{\ignorespaces Las tres inversas trigonométricas principales. Las líneas punteadas indican las asíntotas del rango.}}{67}{figure.3.14}%
 \contentsline {figure}{\numberline {3.15}{\ignorespaces Ventana normanda: rectángulo de ancho $x$ coronado por un semicírculo.}}{70}{figure.3.15}%
@@ -126,114 +126,120 @@
 \contentsline {figure}{\numberline {16.4}{\ignorespaces Altura de un triángulo}}{385}{figure.16.4}%
 \ttl@tocsep 
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {17.1}{\ignorespaces Hélice $\mathbf {r}(t)=(\cos t,\sin t,\tfrac {t}{2})$, $t\in [0,2\pi ]$, con vector tangente en $t=\tfrac {\pi }{2}$}}{400}{figure.17.1}%
+\contentsline {figure}{\numberline {17.1}{\ignorespaces Hélice $\mathbf {r}(t)=(\cos t,\mathop {\mathgroup \symoperators sen}\nolimits t,\tfrac {t}{2})$, $t\in [0,2\pi ]$, con vector tangente en $t=\tfrac {\pi }{2}$}}{400}{figure.17.1}%
 \contentsline {figure}{\numberline {17.2}{\ignorespaces Curva $C$ (roja) de intersección del cilindro $x^2+y^2=4$ con el plano $y+z=3$ (verde), y la recta tangente en $P=(\sqrt 3,1,2)$ dirigida por $\mathbf {r}'(\tfrac {\pi }{6})=\langle -1,\sqrt 3,-\sqrt 3\rangle $.}}{401}{figure.17.2}%
 \contentsline {figure}{\numberline {17.3}{\ignorespaces Trayectoria $\mathbf {r}(t)=\langle t^2+1,\,t^3-4t\rangle $ (azul), punto de desprendimiento $P=\mathbf {r}(2)=(5,0)$ y rayo tangente (rojo) que sigue la partícula con velocidad $\mathbf {r}'(2)=\langle 4,8\rangle $ hasta $(9,8)$ en $t=3$.}}{406}{figure.17.3}%
 \contentsline {figure}{\numberline {17.4}{\ignorespaces Dominio de $f(x,y)=\frac {\sqrt {x+y}}{\ln (x-y)}$ (región azul): acotado por $y=-x$ (incluida, trazo sólido) y $y=x$ (excluida, rayado), con la recta $y=x-1$ excluida del interior (punteada). El origen no pertenece al dominio.}}{413}{figure.17.4}%
-\contentsline {figure}{\numberline {17.5}{\ignorespaces Dominio de $f(x,y)=\sqrt {-5x^2-5y^2+25}$: disco $x^2+y^2\leq 5$}}{413}{figure.17.5}%
-\contentsline {figure}{\numberline {17.6}{\ignorespaces Dominio de $f(x,y)=\sqrt {-4x^2-y^2+8}$: elipse $4x^2+y^2\leq 8$}}{414}{figure.17.6}%
-\contentsline {figure}{\numberline {17.7}{\ignorespaces Dominio de $f(x,y)=\sqrt {-x^2-3y^2+2}$: elipse $x^2+3y^2\leq 2$}}{414}{figure.17.7}%
-\contentsline {figure}{\numberline {17.8}{\ignorespaces Dominio de $f(x,y)=\sqrt {-3x^2-3y^2+9}$: disco $x^2+y^2\leq 3$}}{415}{figure.17.8}%
-\contentsline {figure}{\numberline {17.9}{\ignorespaces Dominio de $f(x,y)=\sqrt {\mathop {\mathgroup \symoperators sen}\nolimits x\,\mathop {\mathgroup \symoperators sen}\nolimits y}$ (azul): tablero de cuadrados $[k\pi ,(k+1)\pi ]\times [m\pi ,(m+1)\pi ]$ con $k+m$ par, unidos por las rectas $x=k\pi $ y $y=m\pi $.}}{416}{figure.17.9}%
-\contentsline {figure}{\numberline {17.10}{\ignorespaces Hipérbola $\dfrac {(x-2)^2}{9}-\dfrac {(y+1)^2}{16}=1$: centro $C(2,-1)$, vértices $V_1,V_2$, focos $F_1,F_2$ y asíntotas $y+1=\pm \tfrac 43(x-2)$.}}{417}{figure.17.10}%
-\contentsline {figure}{\numberline {17.11}{\ignorespaces Paraboloide elíptico $z=x^2+y^2$.}}{418}{figure.17.11}%
-\contentsline {figure}{\numberline {17.12}{\ignorespaces Paraboloide hiperbólico $z=x^2-y^2$ (silla de montar).}}{418}{figure.17.12}%
-\contentsline {figure}{\numberline {17.13}{\ignorespaces Cono circular $z^2=x^2+y^2$, con ambas napas.}}{419}{figure.17.13}%
-\contentsline {figure}{\numberline {17.14}{\ignorespaces Hiperboloide de una hoja $x^2+y^2-z^2=1$.}}{419}{figure.17.14}%
-\contentsline {figure}{\numberline {17.15}{\ignorespaces Hiperboloide de dos hojas $z^2-x^2-y^2=1$.}}{420}{figure.17.15}%
-\contentsline {figure}{\numberline {17.16}{\ignorespaces Cilindro elíptico $\dfrac {(x-2)^2}{9}+\dfrac {(y+1)^2}{4}=1$, con generatrices paralelas al eje $z$.}}{421}{figure.17.16}%
-\contentsline {figure}{\numberline {17.17}{\ignorespaces Cilindro $z=\cos x$: la directriz es la curva $z=\cos x$ del plano $xz$ y las generatrices son paralelas al eje $y$.}}{421}{figure.17.17}%
-\contentsline {figure}{\numberline {17.18}{\ignorespaces Paraboloide $z=x^2+y^2$: curvas de nivel $c=1,2,3,4$ en el plano $xy$ (izquierda) y superficie en $\mathbb {R}^3$ (derecha)}}{422}{figure.17.18}%
-\contentsline {figure}{\numberline {17.19}{\ignorespaces Curvas de nivel de $f(x,y)=x^2+y^2$ para $k=0,1,4,9$}}{422}{figure.17.19}%
-\contentsline {figure}{\numberline {17.20}{\ignorespaces Superficie de nivel $k=1$: esfera unitaria $x^2+y^2+z^2=1$.}}{423}{figure.17.20}%
-\contentsline {figure}{\numberline {17.21}{\ignorespaces Superficie de nivel $k=1$: elipsoide con semiejes $a=1$, $b=2$, $c=3$.}}{423}{figure.17.21}%
-\contentsline {figure}{\numberline {17.22}{\ignorespaces Familia de paraboloides $z=x^2+y^2-k$: $k=0$ vértice en $z=0$ (abajo) y $k=-1$ vértice en $z=1$ (arriba).}}{424}{figure.17.22}%
-\contentsline {figure}{\numberline {17.23}{\ignorespaces Dominio de $f(x,y)=\ln (1+8x^2+2y^2)$: todo $\mathbb {R}^2$}}{424}{figure.17.23}%
-\contentsline {figure}{\numberline {17.24}{\ignorespaces Curvas de nivel de $f(x,y)=\ln (1+8x^2+2y^2)$ para $z=0,1,2,4$}}{425}{figure.17.24}%
-\contentsline {figure}{\numberline {17.25}{\ignorespaces Dominio de $f(x,y)=\ln (1+4x^2+y^2)$: todo $\mathbb {R}^2$}}{425}{figure.17.25}%
-\contentsline {figure}{\numberline {17.26}{\ignorespaces Curvas de nivel de $f(x,y)=\ln (1+4x^2+y^2)$ para $z=0,1,2,5$}}{426}{figure.17.26}%
-\contentsline {figure}{\numberline {17.27}{\ignorespaces La cónica $x^2+y^2-2xy-2(x+y)+1=0$ (azul) y los ejes girados $u=x+y$, $v=x-y$; su vértice es $V=\left (\tfrac 14,\tfrac 14\right )$.}}{428}{figure.17.27}%
+\contentsline {figure}{\numberline {17.5}{\ignorespaces Dominio de $f(x,y)=\sqrt {(x+y)\ln (x-y)}$: $R_1$ ($x-y\ge 1$, $x+y\ge 0$) y $R_2$ ($0<x-y\le 1$, $x+y\le 0$). La recta $y=x$ (rayada) está excluida; $x-y=1$ y $x+y=0$ están incluidas.}}{414}{figure.17.5}%
+\contentsline {figure}{\numberline {17.6}{\ignorespaces Dominio de $f(x,y)=\sqrt {-5x^2-5y^2+25}$: disco $x^2+y^2\leq 5$}}{415}{figure.17.6}%
+\contentsline {figure}{\numberline {17.7}{\ignorespaces Dominio de $f(x,y)=\sqrt {-4x^2-y^2+8}$: elipse $4x^2+y^2\leq 8$}}{415}{figure.17.7}%
+\contentsline {figure}{\numberline {17.8}{\ignorespaces Dominio de $f(x,y)=\sqrt {-x^2-3y^2+2}$: elipse $x^2+3y^2\leq 2$}}{416}{figure.17.8}%
+\contentsline {figure}{\numberline {17.9}{\ignorespaces Dominio de $f(x,y)=\sqrt {-3x^2-3y^2+9}$: disco $x^2+y^2\leq 3$}}{416}{figure.17.9}%
+\contentsline {figure}{\numberline {17.10}{\ignorespaces Dominio de $f(x,y)=\sqrt {\mathop {\mathgroup \symoperators sen}\nolimits x\,\mathop {\mathgroup \symoperators sen}\nolimits y}$ (azul): tablero de cuadrados $[k\pi ,(k+1)\pi ]\times [m\pi ,(m+1)\pi ]$ con $k+m$ par, unidos por las rectas $x=k\pi $ y $y=m\pi $.}}{417}{figure.17.10}%
+\contentsline {figure}{\numberline {17.11}{\ignorespaces Hipérbola $\dfrac {(x-2)^2}{9}-\dfrac {(y+1)^2}{16}=1$: centro $C(2,-1)$, vértices $V_1,V_2$, focos $F_1,F_2$ y asíntotas $y+1=\pm \tfrac 43(x-2)$.}}{418}{figure.17.11}%
+\contentsline {figure}{\numberline {17.12}{\ignorespaces Paraboloide elíptico $z=x^2+y^2$.}}{419}{figure.17.12}%
+\contentsline {figure}{\numberline {17.13}{\ignorespaces Paraboloide hiperbólico $z=x^2-y^2$ (silla de montar).}}{419}{figure.17.13}%
+\contentsline {figure}{\numberline {17.14}{\ignorespaces Cono circular $z^2=x^2+y^2$, con ambas napas.}}{420}{figure.17.14}%
+\contentsline {figure}{\numberline {17.15}{\ignorespaces Hiperboloide de una hoja $x^2+y^2-z^2=1$.}}{420}{figure.17.15}%
+\contentsline {figure}{\numberline {17.16}{\ignorespaces Hiperboloide de dos hojas $z^2-x^2-y^2=1$.}}{421}{figure.17.16}%
+\contentsline {figure}{\numberline {17.17}{\ignorespaces Elipsoide $\dfrac {(x-1)^2}{9}+\dfrac {(y+2)^2}{4}+z^2=1$ de centro $(1,-2,0)$ y semiejes $3$, $2$, $1$.}}{422}{figure.17.17}%
+\contentsline {figure}{\numberline {17.18}{\ignorespaces Cilindro elíptico $\dfrac {(x-2)^2}{9}+\dfrac {(y+1)^2}{4}=1$, con generatrices paralelas al eje $z$.}}{422}{figure.17.18}%
+\contentsline {figure}{\numberline {17.19}{\ignorespaces Cilindro $z=\cos x$: la directriz es la curva $z=\cos x$ del plano $xz$ y las generatrices son paralelas al eje $y$.}}{423}{figure.17.19}%
+\contentsline {figure}{\numberline {17.20}{\ignorespaces Paraboloide $z=x^2+y^2$: curvas de nivel $c=1,2,3,4$ en el plano $xy$ (izquierda) y superficie en $\mathbb {R}^3$ (derecha)}}{424}{figure.17.20}%
+\contentsline {figure}{\numberline {17.21}{\ignorespaces Curvas de nivel de $f(x,y)=x^2+y^2$ para $k=0,1,4,9$}}{424}{figure.17.21}%
+\contentsline {figure}{\numberline {17.22}{\ignorespaces Superficie de nivel $k=1$: esfera unitaria $x^2+y^2+z^2=1$.}}{425}{figure.17.22}%
+\contentsline {figure}{\numberline {17.23}{\ignorespaces Superficie de nivel $k=1$: elipsoide con semiejes $a=1$, $b=2$, $c=3$.}}{425}{figure.17.23}%
+\contentsline {figure}{\numberline {17.24}{\ignorespaces Familia de paraboloides $z=x^2+y^2-k$: $k=0$ vértice en $z=0$ (abajo) y $k=-1$ vértice en $z=1$ (arriba).}}{426}{figure.17.24}%
+\contentsline {figure}{\numberline {17.25}{\ignorespaces Dominio de $f(x,y)=\ln (1+8x^2+2y^2)$: todo $\mathbb {R}^2$}}{426}{figure.17.25}%
+\contentsline {figure}{\numberline {17.26}{\ignorespaces Curvas de nivel de $f(x,y)=\ln (1+8x^2+2y^2)$ para $z=0,1,2,4$}}{427}{figure.17.26}%
+\contentsline {figure}{\numberline {17.27}{\ignorespaces Dominio de $f(x,y)=\ln (1+4x^2+y^2)$: todo $\mathbb {R}^2$}}{427}{figure.17.27}%
+\contentsline {figure}{\numberline {17.28}{\ignorespaces Curvas de nivel de $f(x,y)=\ln (1+4x^2+y^2)$ para $z=0,1,2,5$}}{428}{figure.17.28}%
+\contentsline {figure}{\numberline {17.29}{\ignorespaces Mapas de contorno: (I) circunferencias, (II) parábolas, (III) hipérbolas con asíntotas $y=\pm x$, (IV) hipérbolas con asíntotas los ejes.}}{429}{figure.17.29}%
+\contentsline {figure}{\numberline {17.30}{\ignorespaces La cónica $x^2+y^2-2xy-2(x+y)+1=0$ (azul) y los ejes girados $u=x+y$, $v=x-y$; su vértice es $V=\left (\tfrac 14,\tfrac 14\right )$.}}{432}{figure.17.30}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {18.1}{\ignorespaces Disco abierto $B\bigl ((x_0,y_0),\delta \bigr )$: todo punto $(x,y)$ con $0<\|(x,y)-(x_0,y_0)\|<\delta $ satisface $|f(x,y)-L|<\varepsilon $}}{432}{figure.18.1}%
-\contentsline {figure}{\numberline {18.2}{\ignorespaces Dos trayectorias hacia $(0,0)$ producen límites distintos para $f(x,y)=\tfrac {x^2y}{x^4+y^2}$}}{433}{figure.18.2}%
-\contentsline {figure}{\numberline {18.3}{\ignorespaces Mapa de contorno de $f$: las curvas de nivel $10,20,30,40$ cortan el eje $x$ en $x\approx -1.5,-0.5,0.5,1.5$. El origen $O$ queda entre los niveles $20$ y $30$.}}{441}{figure.18.3}%
+\contentsline {figure}{\numberline {18.1}{\ignorespaces Disco abierto $B\bigl ((x_0,y_0),\delta \bigr )$: todo punto $(x,y)$ con $0<\|(x,y)-(x_0,y_0)\|<\delta $ satisface $|f(x,y)-L|<\varepsilon $}}{436}{figure.18.1}%
+\contentsline {figure}{\numberline {18.2}{\ignorespaces Dos trayectorias hacia $(0,0)$ producen límites distintos para $f(x,y)=\tfrac {x^2y}{x^4+y^2}$}}{437}{figure.18.2}%
+\contentsline {figure}{\numberline {18.3}{\ignorespaces Mapa de contorno de $f$: las curvas de nivel $10,20,30,40$ cortan el eje $x$ en $x\approx -1.5,-0.5,0.5,1.5$. El origen $O$ queda entre los niveles $20$ y $30$.}}{445}{figure.18.3}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {19.1}{\ignorespaces Interpretación geométrica de las derivadas parciales: la curva roja (corte $y=y_0$) tiene recta tangente (roja punteada) con pendiente $f_x(x_0,y_0)$; la curva azul (corte $x=x_0$) tiene recta tangente (azul punteada) con pendiente $f_y(x_0,y_0)$.}}{448}{figure.19.1}%
-\contentsline {figure}{\numberline {19.2}{\ignorespaces Plano tangente (naranja) a $z=x^2+y^2$ en $(1,0,1)$ con vector normal $\mathbf {n}$ perpendicular al plano}}{454}{figure.19.2}%
-\contentsline {figure}{\numberline {19.3}{\ignorespaces Aproximación lineal: $dz$ (plano tangente) aproxima $\Delta z$ (cambio real en la superficie) para incrementos pequeños $\Delta x$}}{458}{figure.19.3}%
+\contentsline {figure}{\numberline {19.1}{\ignorespaces Interpretación geométrica de las derivadas parciales: la curva roja (corte $y=y_0$) tiene recta tangente (roja punteada) con pendiente $f_x(x_0,y_0)$; la curva azul (corte $x=x_0$) tiene recta tangente (azul punteada) con pendiente $f_y(x_0,y_0)$.}}{452}{figure.19.1}%
+\contentsline {figure}{\numberline {19.2}{\ignorespaces Plano tangente (naranja) a $z=x^2+y^2$ en $(1,0,1)$ con vector normal $\mathbf {n}$ perpendicular al plano}}{458}{figure.19.2}%
+\contentsline {figure}{\numberline {19.3}{\ignorespaces Aproximación lineal: $dz$ (plano tangente) aproxima $\Delta z$ (cambio real en la superficie) para incrementos pequeños $\Delta x$}}{462}{figure.19.3}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {20.1}{\ignorespaces Curvas de nivel de $f(x,y)=x^2+\tfrac {y^2}{4}$ (elipses) con vectores $\nabla f$ en cuatro puntos, perpendiculares a las curvas de nivel}}{468}{figure.20.1}%
-\contentsline {figure}{\numberline {20.2}{\ignorespaces Derivada direccional $D_{\mathbf {u}}f(P)$ como pendiente de la curva de intersección de la superficie $z=f(x,y)$ con el plano vertical en dirección $\mathbf {u}$}}{469}{figure.20.2}%
-\contentsline {figure}{\numberline {20.3}{\ignorespaces Direcciones $\mathbf {u}_1$, $\mathbf {u}_2$ con derivada direccional nula en $P(2,-3)$: son tangentes a la curva de nivel $xy^2=18$ (azul) y perpendiculares a $\nabla T(P)$}}{473}{figure.20.3}%
-\contentsline {figure}{\numberline {20.4}{\ignorespaces Triángulo con lados $x$, $y$ y ángulo $\theta $ para el problema de razón de cambio.}}{476}{figure.20.4}%
+\contentsline {figure}{\numberline {20.1}{\ignorespaces Curvas de nivel de $f(x,y)=x^2+\tfrac {y^2}{4}$ (elipses) con vectores $\nabla f$ en cuatro puntos, perpendiculares a las curvas de nivel}}{472}{figure.20.1}%
+\contentsline {figure}{\numberline {20.2}{\ignorespaces Derivada direccional $D_{\mathbf {u}}f(P)$ como pendiente de la curva de intersección de la superficie $z=f(x,y)$ con el plano vertical en dirección $\mathbf {u}$}}{473}{figure.20.2}%
+\contentsline {figure}{\numberline {20.3}{\ignorespaces Direcciones $\mathbf {u}_1$, $\mathbf {u}_2$ con derivada direccional nula en $P(2,-3)$: son tangentes a la curva de nivel $xy^2=18$ (azul) y perpendiculares a $\nabla T(P)$}}{477}{figure.20.3}%
+\contentsline {figure}{\numberline {20.4}{\ignorespaces Triángulo con lados $x$, $y$ y ángulo $\theta $ para el problema de razón de cambio.}}{481}{figure.20.4}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {21.1}{\ignorespaces Punto de silla en el origen de $z=x^2-y^2$: curvatura positiva en dirección $x$ (azul) y negativa en dirección $y$ (rojo)}}{478}{figure.21.1}%
-\contentsline {figure}{\numberline {21.2}{\ignorespaces Sección transversal del canal abierto en forma de trapecio con ángulos iguales $\theta $ en la base; $x$ es la longitud del lado doblado.}}{481}{figure.21.2}%
-\contentsline {figure}{\numberline {21.3}{\ignorespaces Método de Lagrange: el óptimo ocurre donde una curva de nivel de $f$ (elipse azul) es tangente a la restricción $g=0$ (recta roja); en ese punto $\nabla f \parallel \nabla g$}}{487}{figure.21.3}%
-\contentsline {figure}{\numberline {21.4}{\ignorespaces Curva $y^3=x^2$ con cúspide en $(0,0)$; el mínimo de la distancia al origen ocurre en ese punto, pero $\nabla g=\mathbf {0}$ y el método de Lagrange falla.}}{489}{figure.21.4}%
+\contentsline {figure}{\numberline {21.1}{\ignorespaces Punto de silla en el origen de $z=x^2-y^2$: curvatura positiva en dirección $x$ (azul) y negativa en dirección $y$ (rojo)}}{484}{figure.21.1}%
+\contentsline {figure}{\numberline {21.2}{\ignorespaces Sección transversal del canal abierto en forma de trapecio con ángulos iguales $\theta $ en la base; $x$ es la longitud del lado doblado.}}{488}{figure.21.2}%
+\contentsline {figure}{\numberline {21.3}{\ignorespaces Método de Lagrange: el óptimo ocurre donde una curva de nivel de $f$ (elipse azul) es tangente a la restricción $g=0$ (recta roja); en ese punto $\nabla f \parallel \nabla g$}}{494}{figure.21.3}%
+\contentsline {figure}{\numberline {21.4}{\ignorespaces Curva $y^3=x^2$ con cúspide en $(0,0)$; el mínimo de la distancia al origen ocurre en ese punto, pero $\nabla g=\mathbf {0}$ y el método de Lagrange falla.}}{496}{figure.21.4}%
 \ttl@tocsep 
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {22.1}{\ignorespaces Acción de la matriz $A=\left (\begin {smallmatrix}2&1\\1&2\end {smallmatrix}\right )$ sobre dos vectores. El vector propio $\mathbf {v}=(1,1)$ no cambia de dirección: solo se estira, $A\mathbf {v}=3\mathbf {v}$, y su recta $E_{3}$ queda invariante. En cambio, el vector genérico $\mathbf {w}=(1,0)$ sí gira: $A\mathbf {w}=(2,1)$ no es múltiplo de $\mathbf {w}$.}}{496}{figure.22.1}%
-\contentsline {figure}{\numberline {22.2}{\ignorespaces La diagonalización $A=PDP^{-1}$ como cambio de base. Para aplicar $A$ se puede pasar a coordenadas de vectores propios con $P^{-1}$, escalar cada componente con la matriz diagonal $D$ y volver a coordenadas canónicas con $P$: ambos caminos del diagrama producen el mismo resultado, $A\mathbf {x}=PDP^{-1}\mathbf {x}$.}}{502}{figure.22.2}%
+\contentsline {figure}{\numberline {22.1}{\ignorespaces Acción de la matriz $A=\left (\begin {smallmatrix}2&1\\1&2\end {smallmatrix}\right )$ sobre dos vectores. El vector propio $\mathbf {v}=(1,1)$ no cambia de dirección: solo se estira, $A\mathbf {v}=3\mathbf {v}$, y su recta $E_{3}$ queda invariante. En cambio, el vector genérico $\mathbf {w}=(1,0)$ sí gira: $A\mathbf {w}=(2,1)$ no es múltiplo de $\mathbf {w}$.}}{506}{figure.22.1}%
+\contentsline {figure}{\numberline {22.2}{\ignorespaces La diagonalización $A=PDP^{-1}$ como cambio de base. Para aplicar $A$ se puede pasar a coordenadas de vectores propios con $P^{-1}$, escalar cada componente con la matriz diagonal $D$ y volver a coordenadas canónicas con $P$: ambos caminos del diagrama producen el mismo resultado, $A\mathbf {x}=PDP^{-1}\mathbf {x}$.}}{512}{figure.22.2}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {23.1}{\ignorespaces Diagrama conmutativo de la composición $T_2 \circ T_1: U \to W$.}}{528}{figure.23.1}%
-\contentsline {figure}{\numberline {23.2}{\ignorespaces Diagrama conmutativo de la matriz asociada a una transformación lineal.}}{530}{figure.23.2}%
-\contentsline {figure}{\numberline {23.3}{\ignorespaces El cuadrado unitario (azul punteado) y su imagen (rojo) bajo una rotación de $\pi /6$ (izquierda) y una cizalla horizontal (derecha).}}{536}{figure.23.3}%
-\contentsline {figure}{\numberline {23.4}{\ignorespaces Reflexión respecto a la recta $y = x$.}}{536}{figure.23.4}%
-\contentsline {figure}{\numberline {23.5}{\ignorespaces Rotación de un punto respecto al origen.}}{537}{figure.23.5}%
-\contentsline {figure}{\numberline {23.6}{\ignorespaces Escalado de una región en el plano.}}{537}{figure.23.6}%
-\contentsline {figure}{\numberline {23.7}{\ignorespaces Reflexión de la casita respecto al eje $y$.}}{537}{figure.23.7}%
-\contentsline {figure}{\numberline {23.8}{\ignorespaces La casita ampliada al doble.}}{538}{figure.23.8}%
-\contentsline {figure}{\numberline {23.9}{\ignorespaces Reflexión de la casita respecto al eje $x$.}}{538}{figure.23.9}%
-\contentsline {figure}{\numberline {23.10}{\ignorespaces Figura original en el plano}}{552}{figure.23.10}%
-\contentsline {figure}{\numberline {23.11}{\ignorespaces Reflexión respecto a la recta $y = x$.}}{553}{figure.23.11}%
-\contentsline {figure}{\numberline {23.12}{\ignorespaces Estiramiento y reflexión respecto al eje $y$.}}{553}{figure.23.12}%
-\contentsline {figure}{\numberline {23.13}{\ignorespaces Proyección sobre el eje $x$.}}{553}{figure.23.13}%
-\contentsline {figure}{\numberline {23.14}{\ignorespaces Proyección sobre el eje $y$.}}{554}{figure.23.14}%
-\contentsline {figure}{\numberline {23.15}{\ignorespaces Transformación general invertible.}}{554}{figure.23.15}%
-\contentsline {figure}{\numberline {23.16}{\ignorespaces Escalado anisotrópico.}}{555}{figure.23.16}%
-\contentsline {figure}{\numberline {23.17}{\ignorespaces Rotación de $30^\circ $ respecto al origen.}}{556}{figure.23.17}%
-\contentsline {figure}{\numberline {23.18}{\ignorespaces Figura original (Sudoku 3D cube, \url {https://texample.net/tikz/examples/sudoku-3d-cube})}}{556}{figure.23.18}%
-\contentsline {figure}{\numberline {23.19}{\ignorespaces Reflexión respecto al plano $XY$ (inversión de $z$).}}{557}{figure.23.19}%
-\contentsline {figure}{\numberline {23.20}{\ignorespaces Reflejo y estiramiento en $x$, estiramiento en $z$.}}{557}{figure.23.20}%
-\contentsline {figure}{\numberline {23.21}{\ignorespaces Proyección sobre el plano $YZ$.}}{558}{figure.23.21}%
-\contentsline {figure}{\numberline {23.22}{\ignorespaces Rotación de $30^\circ $ en el plano $YZ$ alrededor del eje $x$.}}{558}{figure.23.22}%
+\contentsline {figure}{\numberline {23.1}{\ignorespaces Diagrama conmutativo de la composición $T_2 \circ T_1: U \to W$.}}{538}{figure.23.1}%
+\contentsline {figure}{\numberline {23.2}{\ignorespaces Diagrama conmutativo de la matriz asociada a una transformación lineal.}}{540}{figure.23.2}%
+\contentsline {figure}{\numberline {23.3}{\ignorespaces El cuadrado unitario (azul punteado) y su imagen (rojo) bajo una rotación de $\pi /6$ (izquierda) y una cizalla horizontal (derecha).}}{546}{figure.23.3}%
+\contentsline {figure}{\numberline {23.4}{\ignorespaces Reflexión respecto a la recta $y = x$.}}{546}{figure.23.4}%
+\contentsline {figure}{\numberline {23.5}{\ignorespaces Rotación de un punto respecto al origen.}}{547}{figure.23.5}%
+\contentsline {figure}{\numberline {23.6}{\ignorespaces Escalado de una región en el plano.}}{547}{figure.23.6}%
+\contentsline {figure}{\numberline {23.7}{\ignorespaces Reflexión de la casita respecto al eje $y$.}}{547}{figure.23.7}%
+\contentsline {figure}{\numberline {23.8}{\ignorespaces La casita ampliada al doble.}}{548}{figure.23.8}%
+\contentsline {figure}{\numberline {23.9}{\ignorespaces Reflexión de la casita respecto al eje $x$.}}{548}{figure.23.9}%
+\contentsline {figure}{\numberline {23.10}{\ignorespaces Figura original en el plano}}{562}{figure.23.10}%
+\contentsline {figure}{\numberline {23.11}{\ignorespaces Reflexión respecto a la recta $y = x$.}}{563}{figure.23.11}%
+\contentsline {figure}{\numberline {23.12}{\ignorespaces Estiramiento y reflexión respecto al eje $y$.}}{563}{figure.23.12}%
+\contentsline {figure}{\numberline {23.13}{\ignorespaces Proyección sobre el eje $x$.}}{563}{figure.23.13}%
+\contentsline {figure}{\numberline {23.14}{\ignorespaces Proyección sobre el eje $y$.}}{564}{figure.23.14}%
+\contentsline {figure}{\numberline {23.15}{\ignorespaces Transformación general invertible.}}{564}{figure.23.15}%
+\contentsline {figure}{\numberline {23.16}{\ignorespaces Escalado anisotrópico.}}{565}{figure.23.16}%
+\contentsline {figure}{\numberline {23.17}{\ignorespaces Rotación de $30^\circ $ respecto al origen.}}{566}{figure.23.17}%
+\contentsline {figure}{\numberline {23.18}{\ignorespaces Figura original (Sudoku 3D cube, \url {https://texample.net/tikz/examples/sudoku-3d-cube})}}{566}{figure.23.18}%
+\contentsline {figure}{\numberline {23.19}{\ignorespaces Reflexión respecto al plano $XY$ (inversión de $z$).}}{567}{figure.23.19}%
+\contentsline {figure}{\numberline {23.20}{\ignorespaces Reflejo y estiramiento en $x$, estiramiento en $z$.}}{567}{figure.23.20}%
+\contentsline {figure}{\numberline {23.21}{\ignorespaces Proyección sobre el plano $YZ$.}}{568}{figure.23.21}%
+\contentsline {figure}{\numberline {23.22}{\ignorespaces Rotación de $30^\circ $ en el plano $YZ$ alrededor del eje $x$.}}{568}{figure.23.22}%
 \ttl@tocsep 
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\ttl@tocsep 
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \ttl@tocsep 
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {31.1}{\ignorespaces (a) Región tipo I: $y\in [g_1(x),g_2(x)]$ para cada $x\in [a,b]$. (b) Región tipo II: $x\in [h_1(y),h_2(y)]$ para cada $y\in [c,d]$}}{683}{figure.31.1}%
-\contentsline {figure}{\numberline {31.2}{\ignorespaces La misma región $D$ (entre $y=x^2$ e $y=x$) descrita como tipo I $\DOTSI \intop \ilimits@ _0^1\!\DOTSI \intop \ilimits@ _{x^2}^{x}dy\,dx$ (a) o tipo II $\DOTSI \intop \ilimits@ _0^1\!\DOTSI \intop \ilimits@ _{y}^{\sqrt {y}}dx\,dy$ (b)}}{685}{figure.31.2}%
-\contentsline {figure}{\numberline {31.3}{\ignorespaces Lámina rectangular $[0,4]\times [0,3]$ con densidad $\rho (x,y)=y+1$.}}{691}{figure.31.3}%
-\contentsline {figure}{\numberline {31.4}{\ignorespaces Lámina acotada por $y=e^x$, $y=0$, $x=0$, $x=1$ con densidad $\rho (x,y)=2-x+y$.}}{692}{figure.31.4}%
-\contentsline {figure}{\numberline {31.5}{\ignorespaces Lámina rectangular de ancho $b$ y altura $h$ con densidad uniforme $\rho =1$.}}{693}{figure.31.5}%
-\contentsline {figure}{\numberline {31.6}{\ignorespaces Coordenadas polares: el punto $P$ satisface $x=r\cos \theta $, $y=r\sin \theta $; el rectángulo polar (azul) tiene área $dA = r\,dr\,d\theta $}}{694}{figure.31.6}%
-\contentsline {figure}{\numberline {31.7}{\ignorespaces Región $R$ comprendida entre la recta $y=x$ y la parábola $y=x^2/2$ (isomorfa de la conversión a polares con región no circular). Un rayo genérico de ángulo $\theta \in [0,\pi /4]$ recorre la región desde el origen hasta la parábola, en $r=2\tan \theta \sec \theta $.}}{701}{figure.31.7}%
-\contentsline {figure}{\numberline {31.8}{\ignorespaces El jacobiano $|J|$ es el factor de escala de área: el cuadrado $R^*=[0,1]^2$ en $(u,v)$ se transforma en la región $R$ de área $|J|$ en $(x,y)$}}{702}{figure.31.8}%
-\contentsline {figure}{\numberline {31.9}{\ignorespaces Lámina acotada por la curva polar $r=2\mathop {\mathgroup \symoperators sen}\nolimits \theta $ con densidad $\rho (r,\theta )=r$.}}{703}{figure.31.9}%
-\contentsline {figure}{\numberline {31.10}{\ignorespaces Región del primer ejercicio}}{704}{figure.31.10}%
-\contentsline {figure}{\numberline {31.11}{\ignorespaces Figura para el problema 1.}}{704}{figure.31.11}%
-\contentsline {figure}{\numberline {31.12}{\ignorespaces Región del segundo ejercicio}}{706}{figure.31.12}%
-\contentsline {figure}{\numberline {31.13}{\ignorespaces Región del segundo ejercicio (segunda variante)}}{706}{figure.31.13}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {32.1}{\ignorespaces Coordenadas cilíndricas $(r,\theta ,z)$: $x=r\cos \theta $, $y=r\mathop {\mathgroup \symoperators sen}\nolimits \theta $, $z=z$; el elemento de volumen es $dV=r\,dr\,d\theta \,dz$}}{716}{figure.32.1}%
-\contentsline {figure}{\numberline {32.2}{\ignorespaces Coordenadas esféricas $(\rho ,\varphi ,\theta )$: $x=\rho \mathop {\mathgroup \symoperators sen}\nolimits \varphi \cos \theta $, $y=\rho \mathop {\mathgroup \symoperators sen}\nolimits \varphi \mathop {\mathgroup \symoperators sen}\nolimits \theta $, $z=\rho \cos \varphi $; el elemento de volumen es $dV=\rho ^2\mathop {\mathgroup \symoperators sen}\nolimits \varphi \,d\rho \,d\varphi \,d\theta $}}{718}{figure.32.2}%
-\contentsline {figure}{\numberline {32.3}{\ignorespaces Corte en el plano $xz$ del sólido $\Omega $: dentro de la esfera $\rho =2$ (azul), fuera de la esfera desplazada $\rho =2\cos \varphi $ (roja) y sobre el plano $xy$}}{720}{figure.32.3}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {33.1}{\ignorespaces Campo gradiente $\nabla f=(2x,\,\tfrac {y}{2})$ (flechas rojas) perpendicular a las curvas de nivel $f(x,y)=c$ (elipses azules) de $f(x,y)=x^2+\tfrac {y^2}{4}$}}{726}{figure.33.1}%
-\contentsline {figure}{\numberline {33.2}{\ignorespaces Campo conservativo $\mathbf {F}(x,y)=(x,y)=\nabla \!\left (\tfrac {x^2+y^2}{2}\right )$: las flechas apuntan radialmente; la integral sobre cualquier curva cerrada $C$ es cero}}{726}{figure.33.2}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {34.1}{\ignorespaces Orientación positiva de $C$: la región $R$ queda siempre a la izquierda; la curva se recorre en sentido antihorario}}{737}{figure.34.1}%
-\contentsline {figure}{\numberline {34.2}{\ignorespaces Región tipo\,I en la demostración del Teorema de Green: la franja vertical entre $g_1(x)$ y $g_2(x)$ muestra la aplicación del TFC en $y$. La orientación positiva (antihoraria) de $C$ implica que $C_1$ recorre el borde inferior $\to $ y $C_2$ el superior $\leftarrow $, originando el signo negativo en $-\DOTSI \MultiIntegral {2}_R \partial M/\partial y\,dA$.}}{738}{figure.34.2}%
-\contentsline {figure}{\numberline {34.3}{\ignorespaces Campo vectorial $\mathbf {F}(x,y)=(-y,\,x)$: vectores tangentes a círculos concéntricos orientados en sentido antihorario ($\nabla \cdot \mathbf {F}=0$;\tmspace +\thickmuskip {.2777em} $\nabla \times \mathbf {F}=2\mathbf {k}$)}}{739}{figure.34.3}%
-\contentsline {figure}{\numberline {34.4}{\ignorespaces Superficie orientada $z=4-x^2-y^2$ con vectores normales $\mathbf {n}$ consistentes; invertir la orientación cambia el signo del flujo}}{748}{figure.34.4}%
-\contentsline {figure}{\numberline {34.5}{\ignorespaces Cancelación de flujos en caras interiores (flechas rojas opuestas) en el Teorema de la Divergencia: cada cara interna tiene un flujo entrante de una celda y un flujo saliente de la celda vecina, que se anulan. Solo la frontera exterior $\partial Q$ contribuye al flujo neto (flechas azules).}}{750}{figure.34.5}%
-\contentsline {figure}{\numberline {34.6}{\ignorespaces Superficie orientada $S$ con borde $\partial S$ (rojo): la orientación de $\partial S$ sigue la regla de la mano derecha respecto de $\mathbf {n}$. Las micro-circulaciones del rotacional (arcos grises) se cancelan entre parches adyacentes; al sumar sobre toda $S$, solo queda la circulación total sobre $\partial S$.}}{753}{figure.34.6}%
+\addvspace {10\p@ }
+\ttl@tocsep 
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {31.1}{\ignorespaces (a) Región tipo I: $y\in [g_1(x),g_2(x)]$ para cada $x\in [a,b]$. (b) Región tipo II: $x\in [h_1(y),h_2(y)]$ para cada $y\in [c,d]$}}{693}{figure.31.1}%
+\contentsline {figure}{\numberline {31.2}{\ignorespaces La misma región $D$ (entre $y=x^2$ e $y=x$) descrita como tipo I $\DOTSI \intop \ilimits@ _0^1\!\DOTSI \intop \ilimits@ _{x^2}^{x}dy\,dx$ (a) o tipo II $\DOTSI \intop \ilimits@ _0^1\!\DOTSI \intop \ilimits@ _{y}^{\sqrt {y}}dx\,dy$ (b)}}{695}{figure.31.2}%
+\contentsline {figure}{\numberline {31.3}{\ignorespaces Lámina rectangular $[0,4]\times [0,3]$ con densidad $\rho (x,y)=y+1$.}}{701}{figure.31.3}%
+\contentsline {figure}{\numberline {31.4}{\ignorespaces Lámina acotada por $y=e^x$, $y=0$, $x=0$, $x=1$ con densidad $\rho (x,y)=2-x+y$.}}{702}{figure.31.4}%
+\contentsline {figure}{\numberline {31.5}{\ignorespaces Lámina rectangular de ancho $b$ y altura $h$ con densidad uniforme $\rho =1$.}}{703}{figure.31.5}%
+\contentsline {figure}{\numberline {31.6}{\ignorespaces Coordenadas polares: el punto $P$ satisface $x=r\cos \theta $, $y=r\mathop {\mathgroup \symoperators sen}\nolimits \theta $; el rectángulo polar (azul) tiene área $dA = r\,dr\,d\theta $}}{704}{figure.31.6}%
+\contentsline {figure}{\numberline {31.7}{\ignorespaces Región $R$ comprendida entre la recta $y=x$ y la parábola $y=x^2/2$ (isomorfa de la conversión a polares con región no circular). Un rayo genérico de ángulo $\theta \in [0,\pi /4]$ recorre la región desde el origen hasta la parábola, en $r=2\tan \theta \sec \theta $.}}{711}{figure.31.7}%
+\contentsline {figure}{\numberline {31.8}{\ignorespaces El jacobiano $|J|$ es el factor de escala de área: el cuadrado $R^*=[0,1]^2$ en $(u,v)$ se transforma en la región $R$ de área $|J|$ en $(x,y)$}}{712}{figure.31.8}%
+\contentsline {figure}{\numberline {31.9}{\ignorespaces Lámina acotada por la curva polar $r=2\mathop {\mathgroup \symoperators sen}\nolimits \theta $ con densidad $\rho (r,\theta )=r$.}}{713}{figure.31.9}%
+\contentsline {figure}{\numberline {31.10}{\ignorespaces Región del primer ejercicio}}{714}{figure.31.10}%
+\contentsline {figure}{\numberline {31.11}{\ignorespaces Figura para el problema 1.}}{714}{figure.31.11}%
+\contentsline {figure}{\numberline {31.12}{\ignorespaces Región del segundo ejercicio}}{716}{figure.31.12}%
+\contentsline {figure}{\numberline {31.13}{\ignorespaces Región del segundo ejercicio (segunda variante)}}{716}{figure.31.13}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {32.1}{\ignorespaces Sección del sólido en el plano $xz$. El techo es $z=\sqrt x$ para $0\le x\le 1$ y $z=2-x$ para $1\le x\le 2$; ambas curvas se cortan en $(1,1)$. El volumen es el área de $R$ multiplicada por el grosor $3$ en $y$.}}{726}{figure.32.1}%
+\contentsline {figure}{\numberline {32.2}{\ignorespaces Coordenadas cilíndricas $(r,\theta ,z)$: $x=r\cos \theta $, $y=r\mathop {\mathgroup \symoperators sen}\nolimits \theta $, $z=z$; el elemento de volumen es $dV=r\,dr\,d\theta \,dz$}}{728}{figure.32.2}%
+\contentsline {figure}{\numberline {32.3}{\ignorespaces Coordenadas esféricas $(\rho ,\varphi ,\theta )$: $x=\rho \mathop {\mathgroup \symoperators sen}\nolimits \varphi \cos \theta $, $y=\rho \mathop {\mathgroup \symoperators sen}\nolimits \varphi \mathop {\mathgroup \symoperators sen}\nolimits \theta $, $z=\rho \cos \varphi $; el elemento de volumen es $dV=\rho ^2\mathop {\mathgroup \symoperators sen}\nolimits \varphi \,d\rho \,d\varphi \,d\theta $}}{729}{figure.32.3}%
+\contentsline {figure}{\numberline {32.4}{\ignorespaces Corte en el plano $xz$ del sólido $\Omega $: dentro de la esfera $\rho =2$ (azul), fuera de la esfera desplazada $\rho =2\cos \varphi $ (roja) y sobre el plano $xy$}}{732}{figure.32.4}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {33.1}{\ignorespaces Campo gradiente $\nabla f=(2x,\,\tfrac {y}{2})$ (flechas rojas) perpendicular a las curvas de nivel $f(x,y)=c$ (elipses azules) de $f(x,y)=x^2+\tfrac {y^2}{4}$}}{736}{figure.33.1}%
+\contentsline {figure}{\numberline {33.2}{\ignorespaces Campo conservativo $\mathbf {F}(x,y)=(x,y)=\nabla \!\left (\tfrac {x^2+y^2}{2}\right )$: las flechas apuntan radialmente; la integral sobre cualquier curva cerrada $C$ es cero}}{736}{figure.33.2}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {34.1}{\ignorespaces Orientación positiva de $C$: la región $R$ queda siempre a la izquierda; la curva se recorre en sentido antihorario}}{747}{figure.34.1}%
+\contentsline {figure}{\numberline {34.2}{\ignorespaces Región tipo\,I en la demostración del Teorema de Green: la franja vertical entre $g_1(x)$ y $g_2(x)$ muestra la aplicación del TFC en $y$. La orientación positiva (antihoraria) de $C$ implica que $C_1$ recorre el borde inferior $\to $ y $C_2$ el superior $\leftarrow $, originando el signo negativo en $-\DOTSI \MultiIntegral {2}_R \partial M/\partial y\,dA$.}}{748}{figure.34.2}%
+\contentsline {figure}{\numberline {34.3}{\ignorespaces Arco $C:\,y=\mathop {\mathgroup \symoperators sen}\nolimits x$ de $(0,0)$ a $(\pi ,0)$ (azul), cerrado con el segmento $S$ del eje $x$ (rojo). La región $R$ queda encerrada; su frontera se recorre en sentido positivo tomando el segmento de $(0,0)$ a $(\pi ,0)$ y luego el arco de regreso.}}{750}{figure.34.3}%
+\contentsline {figure}{\numberline {34.4}{\ignorespaces Anillo $1\le x^2+y^2\le 4$. La frontera exterior $C_2$ se recorre en sentido antihorario y la interior $C_1$ en sentido horario, dejando la región $R$ siempre a la izquierda.}}{751}{figure.34.4}%
+\contentsline {figure}{\numberline {34.5}{\ignorespaces Campo vectorial $\mathbf {F}(x,y)=(-y,\,x)$: vectores tangentes a círculos concéntricos orientados en sentido antihorario ($\nabla \cdot \mathbf {F}=0$;\tmspace +\thickmuskip {.2777em} $\nabla \times \mathbf {F}=2\mathbf {k}$)}}{751}{figure.34.5}%
+\contentsline {figure}{\numberline {34.6}{\ignorespaces Superficie orientada $z=4-x^2-y^2$ con vectores normales $\mathbf {n}$ consistentes; invertir la orientación cambia el signo del flujo}}{760}{figure.34.6}%
+\contentsline {figure}{\numberline {34.7}{\ignorespaces Cancelación de flujos en caras interiores (flechas rojas opuestas) en el Teorema de la Divergencia: cada cara interna tiene un flujo entrante de una celda y un flujo saliente de la celda vecina, que se anulan. Solo la frontera exterior $\partial Q$ contribuye al flujo neto (flechas azules).}}{762}{figure.34.7}%
+\contentsline {figure}{\numberline {34.8}{\ignorespaces Superficie orientada $S$ con borde $\partial S$ (rojo): la orientación de $\partial S$ sigue la regla de la mano derecha respecto de $\mathbf {n}$. Las micro-circulaciones del rotacional (arcos grises) se cancelan entre parches adyacentes; al sumar sobre toda $S$, solo queda la circulación total sobre $\partial S$.}}{765}{figure.34.8}%
 \contentsfinish 

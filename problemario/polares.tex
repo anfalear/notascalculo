@@ -271,7 +271,7 @@ Riemann de segmentos rectilíneos, se obtiene la fórmula.
 \end{theorem}
 
 \begin{example}[Circunferencia vía parámetros]
-Para $x = R\cos t$, $y = R\sin t$, $t \in [0, 2\pi]$, calcule la longitud
+Para $x = R\cos t$, $y = R\sen t$, $t \in [0, 2\pi]$, calcule la longitud
 de la circunferencia.
 
 \begin{myproof}
@@ -301,7 +301,7 @@ con escala concreta usamos $R = 1$.
            mark=at position 0.75 with {\arrow[blue,line width=1.2pt]{stealth}}
          }}]
         ({cos(x)}, {sin(x)});
-\addlegendentry{$C:\,(R\cos t,\;R\sin t)$}
+\addlegendentry{$C:\,(R\cos t,\;R\sen t)$}
 % Radio ilustrativo
 \draw[dashed, gray!70, thick] (axis cs:0,0) -- (axis cs:0.707,0.707);
 \node[font=\small, gray!80!black] at (axis cs:0.28, 0.45) {$R$};
@@ -324,13 +324,13 @@ con escala concreta usamos $R = 1$.
 \textbf{Paso 2: Elemento diferencial de arco.}
 Derivamos las funciones componentes respecto a $t$:
 \[
-  \frac{dx}{dt} = -R\sin t, \qquad \frac{dy}{dt} = R\cos t.
+  \frac{dx}{dt} = -R\sen t, \qquad \frac{dy}{dt} = R\cos t.
 \]
 El elemento de longitud de arco $ds = \sqrt{(dx/dt)^2 + (dy/dt)^2}\,dt$
 se simplifica mediante la identidad pitagórica:
 \[
-  ds = \sqrt{R^2\sin^2 t + R^2\cos^2 t}\;dt
-     = \sqrt{R^2\underbrace{(\sin^2 t + \cos^2 t)}_{=\,1}}\;dt
+  ds = \sqrt{R^2\sen^2 t + R^2\cos^2 t}\;dt
+     = \sqrt{R^2\underbrace{(\sen^2 t + \cos^2 t)}_{=\,1}}\;dt
      = R\,dt.
 \]
 La velocidad de recorrido es constante e igual a $R$, independientemente
@@ -357,7 +357,7 @@ circunferencia, lo que valida la fórmula de longitud de arco paramétrica.
 \begin{example}[Longitud de la cicloide]
 Una \textbf{cicloide} es la trayectoria de un punto en el borde de una rueda
 de radio $a$ que rueda sin deslizar. Sus ecuaciones son
-$x = a(t - \sin t)$, $y = a(1 - \cos t)$, $t \in [0, 2\pi]$.
+$x = a(t - \sen t)$, $y = a(1 - \cos t)$, $t \in [0, 2\pi]$.
 Demuestre que la longitud de un arco completo es $8a$.
 
 \begin{myproof}
@@ -392,30 +392,30 @@ $t = 2\pi$ con coordenadas $(2\pi a, 0)$.
 \textbf{Paso 2: Elemento diferencial.}
 \[
   \frac{dx}{dt} = a(1 - \cos t), \qquad
-  \frac{dy}{dt} = a\sin t.
+  \frac{dy}{dt} = a\sen t.
 \]
 \begin{align*}
   \left(\frac{dx}{dt}\right)^{\!2}
   + \left(\frac{dy}{dt}\right)^{\!2}
-  &= a^2(1-\cos t)^2 + a^2\sin^2 t \\
-  &= a^2\bigl(1 - 2\cos t + \cos^2 t + \sin^2 t\bigr)
+  &= a^2(1-\cos t)^2 + a^2\sen^2 t \\
+  &= a^2\bigl(1 - 2\cos t + \cos^2 t + \sen^2 t\bigr)
    = a^2(2 - 2\cos t)\\
   &= 2a^2(1 - \cos t).
 \end{align*}
 
 \textbf{Paso 3: Identidad trigonométrica clave.}
 Usamos la identidad de ángulo mitad:
-$1 - \cos t = 2\sin^2\!\tfrac{t}{2}$. Por tanto:
+$1 - \cos t = 2\sen^2\!\tfrac{t}{2}$. Por tanto:
 \[
-  ds = \sqrt{2a^2 \cdot 2\sin^2\tfrac{t}{2}}\;dt
-     = 2a\left|\sin\tfrac{t}{2}\right|dt.
+  ds = \sqrt{2a^2 \cdot 2\sen^2\tfrac{t}{2}}\;dt
+     = 2a\left|\sen\tfrac{t}{2}\right|dt.
 \]
-En $[0, 2\pi]$ se tiene $\sin(t/2) \geq 0$, con lo que el valor absoluto
+En $[0, 2\pi]$ se tiene $\sen(t/2) \geq 0$, con lo que el valor absoluto
 desaparece.
 
 \textbf{Paso 4: Evaluación.}
 \begin{align*}
-  L &= \int_{0}^{2\pi} 2a\sin\tfrac{t}{2}\;dt
+  L &= \int_{0}^{2\pi} 2a\sen\tfrac{t}{2}\;dt
      = 2a\left[-2\cos\tfrac{t}{2}\right]_{0}^{2\pi} \\
     &= 2a\bigl(-2\cos\pi + 2\cos 0\bigr)
      = 2a\bigl(2 + 2\bigr) = 8a.
@@ -455,7 +455,7 @@ Un punto $P$ en el plano se especifica por $(r, \theta)$, donde:
 \end{enumerate}
 La conversión cartesiana es:
 \[
-  x = r\cos\theta, \quad y = r\sin\theta,
+  x = r\cos\theta, \quad y = r\sen\theta,
   \quad r^2 = x^2 + y^2, \quad \tan\theta = \tfrac{y}{x}.
 \]
 
@@ -476,7 +476,7 @@ La conversión cartesiana es:
     ({cos(40)},0) node[below, black, font=\small] {$x = r\cos\theta$}
     -- ({cos(40)},{sin(40)});
   \draw[dashed, gray!60]
-    (0,{sin(40)}) node[left, black, font=\small] {$y=r\sin\theta$}
+    (0,{sin(40)}) node[left, black, font=\small] {$y=r\sen\theta$}
     -- ({cos(40)},{sin(40)});
   % Etiqueta r sobre el rayo
   \node[blue!70!black, font=\small] at ({cos(40)/2 - 0.08},{sin(40)/2 + 0.06})
@@ -710,7 +710,7 @@ Bucle derecho: $\theta \in [-\pi/4,\,\pi/4]$.
 \begin{align*}
   A_{\text{bucle}}
   &= \frac{a^2}{2}\int_{-\pi/4}^{\pi/4}\cos(2\theta)\,d\theta
-   = \frac{a^2}{2}\left[\frac{\sin 2\theta}{2}\right]_{-\pi/4}^{\pi/4}
+   = \frac{a^2}{2}\left[\frac{\sen 2\theta}{2}\right]_{-\pi/4}^{\pi/4}
    = \frac{a^2}{2}\cdot 1.
 \end{align*}
 \[
@@ -794,8 +794,8 @@ $\theta = \alpha$, $\theta = \beta$ es:
 \end{theorem}
 
 % --- Ejemplo: área de un pétalo de rosa ---
-\begin{example}[Área de un pétalo de la rosa $r = 3\sin(3\theta)$]
-Analice la curva polar $r = 3\sin(3\theta)$ y calcule el área de un solo
+\begin{example}[Área de un pétalo de la rosa $r = 3\sen(3\theta)$]
+Analice la curva polar $r = 3\sen(3\theta)$ y calcule el área de un solo
 pétalo.
 
 \begin{myproof}
@@ -806,11 +806,11 @@ pétalo.
 de longitud $|r|_{\max} = 3$.
 
 \emph{Simetría:} reemplazando $\theta$ por $\pi - \theta$:
-$\sin(3(\pi-\theta)) = \sin(3\pi - 3\theta) = -\sin(3\theta - 3\pi) = \sin(3\theta)$
+$\sen(3(\pi-\theta)) = \sen(3\pi - 3\theta) = -\sen(3\theta - 3\pi) = \sen(3\theta)$
 (usando periodicidad). La curva es simétrica respecto al eje $\theta = \pi/2$.
 
 Un pétalo se genera al variar $\theta$ en un intervalo donde $r \geq 0$.
-El pétalo principal: $r = 0$ cuando $\sin(3\theta) = 0$, es decir,
+El pétalo principal: $r = 0$ cuando $\sen(3\theta) = 0$, es decir,
 $3\theta = 0$ y $3\theta = \pi$, luego $\theta \in [0, \pi/3]$.
 
 \begin{center}
@@ -824,7 +824,7 @@ $3\theta = 0$ y $3\theta = \pi$, luego $\theta \in [0, \pi/3]$.
   tick style={color=black}, grid=both, grid style={gray!20}
 ]
 \addplot[thick, blue] ({3*sin(3*x)*cos(x)}, {3*sin(3*x)*sin(x)});
-\addlegendentry{$r = 3\sin(3\theta)$}
+\addlegendentry{$r = 3\sen(3\theta)$}
 % Sombreado del pétalo principal (0 a 60 grados)
 \addplot[name path=petalo, orange!60, domain=0:60, samples=80]
   ({3*sin(3*x)*cos(x)}, {3*sin(3*x)*sin(x)});
@@ -840,21 +840,21 @@ $3\theta = 0$ y $3\theta = \pi$, luego $\theta \in [0, \pi/3]$.
 
 \textbf{Paso 2: Elemento diferencial.}
 \[
-  dA = \frac{1}{2}r^2\,d\theta = \frac{1}{2}[3\sin(3\theta)]^2\,d\theta
-     = \frac{9}{2}\sin^2(3\theta)\,d\theta.
+  dA = \frac{1}{2}r^2\,d\theta = \frac{1}{2}[3\sen(3\theta)]^2\,d\theta
+     = \frac{9}{2}\sen^2(3\theta)\,d\theta.
 \]
 
 \textbf{Paso 3: Límites de integración.}
 El pétalo principal corresponde a $\theta \in [0, \pi/3]$, intervalo donde
-$r = 3\sin(3\theta) \geq 0$.
+$r = 3\sen(3\theta) \geq 0$.
 
 \textbf{Paso 4: Evaluación.}
-Utilizamos la identidad $\sin^2 u = \frac{1-\cos 2u}{2}$ con $u = 3\theta$:
+Utilizamos la identidad $\sen^2 u = \frac{1-\cos 2u}{2}$ con $u = 3\theta$:
 \begin{align*}
-  A &= \int_{0}^{\pi/3} \frac{9}{2}\sin^2(3\theta)\,d\theta
+  A &= \int_{0}^{\pi/3} \frac{9}{2}\sen^2(3\theta)\,d\theta
      = \frac{9}{2}\int_{0}^{\pi/3} \frac{1 - \cos 6\theta}{2}\,d\theta \\[4pt]
-    &= \frac{9}{4}\left[\theta - \frac{\sin 6\theta}{6}\right]_{0}^{\pi/3}\\[4pt]
-    &= \frac{9}{4}\left[\left(\frac{\pi}{3} - \frac{\sin 2\pi}{6}\right)
+    &= \frac{9}{4}\left[\theta - \frac{\sen 6\theta}{6}\right]_{0}^{\pi/3}\\[4pt]
+    &= \frac{9}{4}\left[\left(\frac{\pi}{3} - \frac{\sen 2\pi}{6}\right)
        - \left(0 - 0\right)\right]
      = \frac{9}{4}\cdot\frac{\pi}{3}.
 \end{align*}
@@ -867,7 +867,7 @@ Utilizamos la identidad $\sin^2 u = \frac{1-\cos 2u}{2}$ con $u = 3\theta$:
 % --- Ejemplo: intersección de curvas polares ---
 \begin{example}[Intersección de dos cardioides y área de la región común]
 Encuentre los puntos de intersección entre las cardioides
-$r = 1 + \cos\theta$ y $r = 1 - \sin\theta$, y plantee la integral para el
+$r = 1 + \cos\theta$ y $r = 1 - \sen\theta$, y plantee la integral para el
 área de la región delimitada por $r = 1 + \cos\theta$ entre los ángulos de
 cruce.
 
@@ -875,7 +875,7 @@ cruce.
 
 \textbf{Paso 1: Análisis gráfico y región.}
 La cardioide $r = 1 + \cos\theta$ apunta hacia la derecha; la cardioide
-$r = 1 - \sin\theta$ apunta hacia abajo. Se cruzan en dos puntos visibles
+$r = 1 - \sen\theta$ apunta hacia abajo. Se cruzan en dos puntos visibles
 y comparten el polo.
 
 \begin{center}
@@ -893,7 +893,7 @@ y comparten el polo.
 \addlegendentry{$r = 1+\cos\theta$}
 \addplot[name path=c2, thick, red]
   ({(1-sin(\x))*cos(\x)}, {(1-sin(\x))*sin(\x)});
-\addlegendentry{$r = 1-\sin\theta$}
+\addlegendentry{$r = 1-\sen\theta$}
 % Puntos de intersección
 \node[circle,fill=black,inner sep=2.5pt]
   at (axis cs:{(1-0.7071)*cos(135)},{(1-0.7071)*sin(135)}) {};
@@ -916,8 +916,8 @@ $dA = \tfrac{1}{2}r^2(\theta)\,d\theta$.
 \textbf{Paso 3: Límites de integración.}
 Igualamos:
 \[
-  1 + \cos\theta = 1 - \sin\theta
-  \implies \cos\theta + \sin\theta = 0
+  1 + \cos\theta = 1 - \sen\theta
+  \implies \cos\theta + \sen\theta = 0
   \implies \tan\theta = -1.
 \]
 En $[0, 2\pi)$: $\theta = \dfrac{3\pi}{4}$ y $\theta = \dfrac{7\pi}{4}$.
@@ -937,8 +937,8 @@ Para el área barrida por la cardioide $r = 1 + \cos\theta$ entre los
   &= \frac{1}{2}\int_{3\pi/4}^{7\pi/4}
      \!\bigl(1 + 2\cos\theta + \cos^2\!\theta\bigr)\,d\theta \\[4pt]
   &= \frac{1}{2}
-     \left[\theta + 2\sin\theta
-           + \frac{\theta}{2} + \frac{\sin 2\theta}{4}
+     \left[\theta + 2\sen\theta
+           + \frac{\theta}{2} + \frac{\sen 2\theta}{4}
      \right]_{3\pi/4}^{7\pi/4} \\[4pt]
   &= \frac{3\pi}{4} - \sqrt{2}.
 \end{align*}
@@ -965,11 +965,11 @@ $[\alpha, \beta]$, entonces su longitud es:
       \sqrt{r(\theta)^2 + [r'(\theta)]^2}\;d\theta.
 \]
 \begin{proof}
-Usando las relaciones $x = r\cos\theta$, $y = r\sin\theta$ y diferenciando:
-$x' = r'\cos\theta - r\sin\theta$, $y' = r'\sin\theta + r\cos\theta$.
+Usando las relaciones $x = r\cos\theta$, $y = r\sen\theta$ y diferenciando:
+$x' = r'\cos\theta - r\sen\theta$, $y' = r'\sen\theta + r\cos\theta$.
 Entonces
-$(x')^2 + (y')^2 = (r')^2(\cos^2\theta + \sin^2\theta)
- + r^2(\sin^2\theta + \cos^2\theta) = (r')^2 + r^2$.
+$(x')^2 + (y')^2 = (r')^2(\cos^2\theta + \sen^2\theta)
+ + r^2(\sen^2\theta + \cos^2\theta) = (r')^2 + r^2$.
 Sustituyendo en la fórmula paramétrica se obtiene el resultado.
 \end{proof}
 \end{theorem}
@@ -1115,7 +1115,7 @@ que el parámetro $t$ crece.
     \item $x = 4t^2,\quad y = 4t;\quad -1 \leq t \leq 2$
     \item $x = 2\sec t,\quad y = \tan t;\quad
           -\dfrac{\pi}{2} < t < \dfrac{\pi}{2}$
-    \item $x = 4\sin t - 2,\quad y = 3\cos t + 1;\quad 0 \leq t \leq 2\pi$
+    \item $x = 4\sen t - 2,\quad y = 3\cos t + 1;\quad 0 \leq t \leq 2\pi$
 \end{enumerate}
 \end{prob}
 
@@ -1140,7 +1140,7 @@ Considere la curva paramétrica definida por $x = t^2 - 4$ e $y = t^3 - 3t$.
 \end{prob}
 
 \begin{prob}
-La cicloide está definida paramétricamente por $x = t - \sin t$ e
+La cicloide está definida paramétricamente por $x = t - \sen t$ e
 $y = 1 - \cos t$, para $0 \leq t \leq 2\pi$. Plantee y evalúe la integral
 definida que representa el área de la región plana acotada superiormente
 por un arco completo de la cicloide e inferiormente por el eje $x$.
@@ -1151,14 +1151,14 @@ Plantee y evalúe la integral definida que representa la longitud de arco de
 cada curva paramétrica en el intervalo indicado.
 \begin{enumerate}
     \item $x = 1 + t^{3/2},\quad y = 2 + t^{3/2},\quad 0 \leq t \leq 9$
-    \item $x = \cos t + t\sin t,\quad y = \sin t - t\cos t,\quad
+    \item $x = \cos t + t\sen t,\quad y = \sen t - t\cos t,\quad
           0 \leq t \leq 2\pi$
 \end{enumerate}
 \end{prob}
 
 \begin{prob}
 Halle el área de la superficie de revolución generada al hacer girar el arco
-de la curva paramétrica $x = \cos^3 t$, $y = \sin^3 t$, con
+de la curva paramétrica $x = \cos^3 t$, $y = \sen^3 t$, con
 $0 \leq t \leq \pi/2$, alrededor del eje $x$. Incluya el planteamiento
 completo de la integral antes de proceder con su evaluación.
 \end{prob}
@@ -1172,7 +1172,7 @@ Incluya un bosquejo de la curva en el plano.
     \item $r = 6\cos\theta$
     \item $r = \dfrac{3}{\cos\theta}$
     \item $r^2\cos 2\theta = 9$
-    \item $r^2 - 6r(\cos\theta + \sin\theta) + 9 = 0$
+    \item $r^2 - 6r(\cos\theta + \sen\theta) + 9 = 0$
 \end{enumerate}
 \end{prob}
 
@@ -1182,7 +1182,7 @@ $r = 3 + 3\cos\theta$ en el punto donde $\theta = \dfrac{\pi}{6}$.
 \end{prob}
 
 \begin{prob}
-Dada la curva polar $r = 1 - \sin\theta$, determine las coordenadas polares
+Dada la curva polar $r = 1 - \sen\theta$, determine las coordenadas polares
 $(r,\theta)$ de todos los puntos de la curva en los que la recta tangente es
 horizontal. Considere $0 \leq \theta < 2\pi$ y justifique el tratamiento
 analítico de los posibles puntos en que $dy/d\theta$ y $dx/d\theta$ se
@@ -1197,7 +1197,7 @@ indicada en cada caso.
           Establezca los ángulos exactos en los que $r = 0$ para fijar los
           límites de integración.
     \item El área encerrada por un solo pétalo de la rosa polar
-          $r = 3\sin(3\theta)$. Indique el número total de pétalos y
+          $r = 3\sen(3\theta)$. Indique el número total de pétalos y
           justifique la elección del intervalo de integración.
 \end{enumerate}
 \end{prob}
@@ -1208,10 +1208,10 @@ problemas de áreas.
 \begin{enumerate}
     \item Determine el área total de la región acotada por el cardioide
           $r = 5 - 5\cos\theta$.
-    \item Encuentre los puntos de intersección de $r = 5\sin\theta$ y
-          $r = 2 + \sin\theta$. Calcule el área de la región que se
-          encuentra dentro del círculo $r = 5\sin\theta$ y fuera del
-          caracol $r = 2 + \sin\theta$.
+    \item Encuentre los puntos de intersección de $r = 5\sen\theta$ y
+          $r = 2 + \sen\theta$. Calcule el área de la región que se
+          encuentra dentro del círculo $r = 5\sen\theta$ y fuera del
+          caracol $r = 2 + \sen\theta$.
 \end{enumerate}
 \end{prob}
 
@@ -1223,7 +1223,7 @@ cada curva polar en el intervalo indicado.
           hasta $\theta = 2\pi$.
     \item El cardioide $r = a(1 - \cos\theta)$, para $0 \leq \theta \leq 2\pi$.
           \emph{Sugerencia:} aplique la identidad de ángulo mitad
-          $1 - \cos\theta = 2\sin^2(\theta/2)$ para resolver la raíz
+          $1 - \cos\theta = 2\sen^2(\theta/2)$ para resolver la raíz
           cuadrada del integrando.
 \end{enumerate}
 \end{prob}

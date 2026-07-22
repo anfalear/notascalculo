@@ -170,15 +170,15 @@ $\lim_{n \to \infty} c_n = L$.
 
 
 \begin{example}
-Calcule $\displaystyle\lim_{n \to \infty} \frac{n\sin^2 n}{n^2+1}$ y
+Calcule $\displaystyle\lim_{n \to \infty} \frac{n\sen^2 n}{n^2+1}$ y
 visualice por qué la sucesión converge.
 \begin{myproof}
 \textbf{Paso 1: Análisis de términos y comportamiento.}
-Los primeros valores de $a_n = \dfrac{n\sin^2 n}{n^2+1}$ son:
+Los primeros valores de $a_n = \dfrac{n\sen^2 n}{n^2+1}$ son:
 $a_1 \approx 0.706$, $a_2 \approx 0.166$, $a_3 \approx 0.010$,
 $a_4 \approx 0.146$, $a_5 \approx 0.226$, \ldots\ Los puntos oscilan
 de forma irregular pero parecen comprimirse hacia~$0$. La clave es la
-acotación de $\sin^2 n \in [0,1]$.
+acotación de $\sen^2 n \in [0,1]$.
 
 \begin{center}
 \begin{tikzpicture}
@@ -214,18 +214,18 @@ Los puntos oscilan irregularmente pero quedan atrapados entre $0$ y
 $\frac{n}{n^2+1}$. Esto invita al \textbf{Teorema del Emparedado}.
 
 \textbf{Paso 3: Verificación de hipótesis.}
-Como $\sin^2 n \in [0,1]$ para todo $n$, se tiene:
+Como $\sen^2 n \in [0,1]$ para todo $n$, se tiene:
 \[
-  0 \leq \frac{n\sin^2 n}{n^2+1} \leq \frac{n}{n^2+1}.
+  0 \leq \frac{n\sen^2 n}{n^2+1} \leq \frac{n}{n^2+1}.
 \]
 Ambas cotas tienen límite $0$ cuando $n \to \infty$:
 $\lim_{n\to\infty} 0 = 0$ y $\lim_{n\to\infty} \dfrac{n}{n^2+1} = 0$.
 
 \textbf{Paso 4: Evaluación.}
 \begin{align*}
-  0 \leq \frac{n\sin^2 n}{n^2+1} &\leq \frac{n}{n^2+1} \xrightarrow[n\to\infty]{} 0. \\[4pt]
+  0 \leq \frac{n\sen^2 n}{n^2+1} &\leq \frac{n}{n^2+1} \xrightarrow[n\to\infty]{} 0. \\[4pt]
   \text{Por el Teorema del Emparedado: } &\lim_{n \to \infty}
-  \frac{n\sin^2 n}{n^2+1} = \boxed{0}.
+  \frac{n\sen^2 n}{n^2+1} = \boxed{0}.
 \end{align*}
 \end{myproof}
 \end{example}
@@ -510,7 +510,7 @@ Dos sucesiones infinitesimales $\alpha_n \to 0$ y $\beta_n \to 0$ son
 \begin{rem}
 Las equivalencias más útiles cuando $t \to 0$ son:
 \[
-  \sin t \sim t, \quad \tan t \sim t, \quad e^t - 1 \sim t,
+  \sen t \sim t, \quad \tan t \sim t, \quad e^t - 1 \sim t,
   \quad \ln(1+t) \sim t, \quad (1+t)^\alpha - 1 \sim \alpha t.
 \]
 Estas sustituciones \emph{solo son válidas en factores de un producto o
@@ -1272,7 +1272,7 @@ Para la serie $\displaystyle\sum_{n=0}^\infty \left(\frac{2}{3}\right)^n
   \item Aplique el criterio de la integral para determinar la naturaleza
         de $\displaystyle\sum_{n=1}^\infty \frac{\ln n}{n^2}$.
   \item Utilice comparación en el límite para analizar
-        $\displaystyle\sum_{n=1}^\infty \frac{n^2+\sin n}{n^4+\cos^2 n}$.
+        $\displaystyle\sum_{n=1}^\infty \frac{n^2+\sen n}{n^4+\cos^2 n}$.
         Justifique la elección de la serie comparadora.
 \end{enumerate}
 \end{prob}
@@ -1326,7 +1326,7 @@ El criterio del cociente es inconcluso para $\displaystyle\sum_{n=1}^\infty
 
 \begin{prob}
 Demuestre la convergencia de $\displaystyle\sum_{n=1}^\infty
-\frac{\sin(n\theta)}{n^2}$ para cualquier $\theta \in \mathbb{R}$
+\frac{\sen(n\theta)}{n^2}$ para cualquier $\theta \in \mathbb{R}$
 utilizando comparación directa con $\sum 1/n^2$. Explique por qué la
 convergencia es \textbf{absoluta}.
 \end{prob}

@@ -254,7 +254,7 @@ los límites y el orden de resta en cada tramo.
 \end{rem}
 
 \begin{example}
-Halle el área de la región acotada por $f(x)=\sin x$ y $g(x)=\cos x$ en
+Halle el área de la región acotada por $f(x)=\sen x$ y $g(x)=\cos x$ en
 $[0,2\pi]$.
 
 \begin{myproof}
@@ -262,9 +262,9 @@ $[0,2\pi]$.
 En $[0,2\pi]$ las curvas se cruzan en $x=\pi/4$ y $x=5\pi/4$.
 Analizando signos:
 \begin{itemize}
-  \item En $\bigl[0,\tfrac{\pi}{4}\bigr]$: $\cos x\geq\sin x$.
-  \item En $\bigl[\tfrac{\pi}{4},\tfrac{5\pi}{4}\bigr]$: $\sin x\geq\cos x$.
-  \item En $\bigl[\tfrac{5\pi}{4},2\pi\bigr]$: $\cos x\geq\sin x$.
+  \item En $\bigl[0,\tfrac{\pi}{4}\bigr]$: $\cos x\geq\sen x$.
+  \item En $\bigl[\tfrac{\pi}{4},\tfrac{5\pi}{4}\bigr]$: $\sen x\geq\cos x$.
+  \item En $\bigl[\tfrac{5\pi}{4},2\pi\bigr]$: $\cos x\geq\sen x$.
 \end{itemize}
 \begin{center}
 % ---------------------------------------------------------------
@@ -308,7 +308,7 @@ Analizando signos:
 %--- curvas encima del relleno ---
 \addplot[domain=0:6.2832, samples=300, blue!80!black, thick]
         {sin(deg(x))}
-        node[pos=0.28, above, font=\small] {$\sin x$};
+        node[pos=0.28, above, font=\small] {$\sen x$};
 \addplot[domain=0:6.2832, samples=300, red!80!black,  thick]
         {cos(deg(x))}
         node[pos=0.10, above right, font=\small] {$\cos x$};
@@ -319,7 +319,7 @@ Analizando signos:
 \end{tikzpicture}
 \end{center}
 \textbf{Paso 2: Elemento diferencial.}
-$dA = |\sin x - \cos x|\,dx$, dividido en tres tramos.
+$dA = |\sen x - \cos x|\,dx$, dividido en tres tramos.
 
 \textbf{Paso 3: Límites.}
 $\bigl[0,\tfrac\pi4\bigr]$, $\bigl[\tfrac\pi4,\tfrac{5\pi}4\bigr]$,
@@ -327,12 +327,12 @@ $\bigl[\tfrac{5\pi}4,2\pi\bigr]$.
 
 \textbf{Paso 4: Evaluación.}
 \begin{align*}
-  A &= \int_0^{\pi/4}(\cos x-\sin x)\,dx
-     + \int_{\pi/4}^{5\pi/4}(\sin x-\cos x)\,dx
-     + \int_{5\pi/4}^{2\pi}(\cos x-\sin x)\,dx \\
-    &= \bigl[\sin x+\cos x\bigr]_0^{\pi/4}
-     + \bigl[-\cos x-\sin x\bigr]_{\pi/4}^{5\pi/4}
-     + \bigl[\sin x+\cos x\bigr]_{5\pi/4}^{2\pi} \\
+  A &= \int_0^{\pi/4}(\cos x-\sen x)\,dx
+     + \int_{\pi/4}^{5\pi/4}(\sen x-\cos x)\,dx
+     + \int_{5\pi/4}^{2\pi}(\cos x-\sen x)\,dx \\
+    &= \bigl[\sen x+\cos x\bigr]_0^{\pi/4}
+     + \bigl[-\cos x-\sen x\bigr]_{\pi/4}^{5\pi/4}
+     + \bigl[\sen x+\cos x\bigr]_{5\pi/4}^{2\pi} \\
     &= \!\left(\tfrac{\sqrt2}{2}+\tfrac{\sqrt2}{2}-(0+1)\right)
       +\!\left(\tfrac{\sqrt2}{2}+\tfrac{\sqrt2}{2}
           -\!\left(-\tfrac{\sqrt2}{2}-\tfrac{\sqrt2}{2}\right)\right)
@@ -2075,7 +2075,7 @@ Determine el área de la región acotada por las gráficas de $f(x) = x^2 + 2x -
 \end{prob}
 
 \begin{prob}
-Calcule el área de la región encerrada entre $y = \sin x$ y $y = \frac{1}{2}$ para $0 \leq x \leq \frac{17\pi}{6}$.
+Calcule el área de la región encerrada entre $y = \sen x$ y $y = \frac{1}{2}$ para $0 \leq x \leq \frac{17\pi}{6}$.
 \end{prob}
 
 \begin{prob}

@@ -235,21 +235,21 @@ generalmente más eficiente para integrales definidas.
 \subsection{Ejemplos}
 
 \begin{example}[Sustitución simple: potencia de seno]
-Calcular $\displaystyle\int \sin^5 x \cos x\, dx$.
+Calcular $\displaystyle\int \sen^5 x \cos x\, dx$.
 
 \begin{myproof}
 
 \textbf{Paso 1: Elegir la sustitución.}
-$\cos x$ es la derivada de $\sin x$: $u = \sin x$, $du = \cos x\, dx$.
+$\cos x$ es la derivada de $\sen x$: $u = \sen x$, $du = \cos x\, dx$.
 
 \textbf{Paso 2: Cambiar de variable e integrar.}
 \[
-\int \sin^5 x \cos x\, dx = \int u^5\, du = \frac{u^6}{6} + C.
+\int \sen^5 x \cos x\, dx = \int u^5\, du = \frac{u^6}{6} + C.
 \]
 
 \textbf{Paso 3: Regresar a la variable original.}
 \[
-\boxed{\int \sin^5 x \cos x\, dx = \frac{\sin^6 x}{6} + C.}
+\boxed{\int \sen^5 x \cos x\, dx = \frac{\sen^6 x}{6} + C.}
 \]
 \end{myproof}
 \end{example}
@@ -301,7 +301,7 @@ Calcular $\displaystyle\int \tan x\, dx$.
 \begin{myproof}
 
 \textbf{Paso 1: Reescribir e identificar la sustitución.}
-$\tan x = \frac{\sin x}{\cos x}$; tomamos $u = \cos x$, $du = -\sin x\, dx$.
+$\tan x = \frac{\sen x}{\cos x}$; tomamos $u = \cos x$, $du = -\sen x\, dx$.
 
 \textbf{Paso 2: Integrar.}
 \[
@@ -381,9 +381,9 @@ para $dv$).
 La regla LIATE es una \emph{guía}, no una ley. Existen tres patrones que la
 trascienden: (1) la \textbf{aplicación repetida}, cuando el integrando es un
 polinomio multiplicado por una exponencial o trigonométrica (como $\int x^2
-e^x\,dx$ o $\int x^2 \sin x\,dx$); (2) el truco de escribir $f(x) = f(x)
+e^x\,dx$ o $\int x^2 \sen x\,dx$); (2) el truco de escribir $f(x) = f(x)
 \cdot 1$ para integrar sola una función como $\ln x$ o $\arcsin x$; y (3)
-la \textbf{integral cíclica}, cuando el integrando del tipo $e^{ax}\sin(bx)$
+la \textbf{integral cíclica}, cuando el integrando del tipo $e^{ax}\sen(bx)$
 reaparece en el lado derecho, permitiendo resolver algebraicamente.
 \end{rem}
 
@@ -444,26 +444,26 @@ $u = \arcsin x$, $dv = dx$; $du = \dfrac{dx}{\sqrt{1-x^2}}$, $v = x$.
 \end{myproof}
 \end{example}
 
-\begin{example}[Integración por partes repetida: $x^2 \sin x$]
-Calcular $\displaystyle\int x^2 \sin x\, dx$.
+\begin{example}[Integración por partes repetida: $x^2 \sen x$]
+Calcular $\displaystyle\int x^2 \sen x\, dx$.
 
 \begin{myproof}
 
 \textbf{Paso 1: Primera ronda.}
-$u = x^2$, $dv = \sin x\,dx$; $du = 2x\,dx$, $v = -\cos x$:
+$u = x^2$, $dv = \sen x\,dx$; $du = 2x\,dx$, $v = -\cos x$:
 \[
-\int x^2 \sin x\, dx = -x^2\cos x + 2\int x\cos x\, dx.
+\int x^2 \sen x\, dx = -x^2\cos x + 2\int x\cos x\, dx.
 \]
 
 \textbf{Paso 2: Segunda ronda sobre $\int x\cos x\,dx$.}
-$u = x$, $dv = \cos x\,dx$; $du = dx$, $v = \sin x$:
+$u = x$, $dv = \cos x\,dx$; $du = dx$, $v = \sen x$:
 \[
-\int x\cos x\, dx = x\sin x - \int \sin x\, dx = x\sin x + \cos x + C.
+\int x\cos x\, dx = x\sen x - \int \sen x\, dx = x\sen x + \cos x + C.
 \]
 
 \textbf{Paso 3: Combinar.}
 \[
-\boxed{\int x^2 \sin x\, dx = -x^2\cos x + 2x\sin x + 2\cos x + C.}
+\boxed{\int x^2 \sen x\, dx = -x^2\cos x + 2x\sen x + 2\cos x + C.}
 \]
 \end{myproof}
 \end{example}
@@ -508,29 +508,29 @@ $+$ & $0$ & $\dfrac{1}{16}e^{2x}$ \\
 \end{myproof}
 \end{example}
 
-\begin{example}[Integral cíclica: $e^x \sin x$]
-Calcular $\displaystyle\int e^x \sin x\, dx$.
+\begin{example}[Integral cíclica: $e^x \sen x$]
+Calcular $\displaystyle\int e^x \sen x\, dx$.
 
 \begin{myproof}
 
 \textbf{Paso 1: Primera aplicación de partes.}
-$u = \sin x$, $dv = e^x\,dx$; $du = \cos x\,dx$, $v = e^x$:
+$u = \sen x$, $dv = e^x\,dx$; $du = \cos x\,dx$, $v = e^x$:
 \[
-\int e^x \sin x\, dx = e^x \sin x - \int e^x \cos x\, dx.
+\int e^x \sen x\, dx = e^x \sen x - \int e^x \cos x\, dx.
 \]
 
 \textbf{Paso 2: Segunda aplicación sobre $\int e^x\cos x\,dx$.}
-$u = \cos x$, $dv = e^x\,dx$; $du = -\sin x\,dx$, $v = e^x$:
+$u = \cos x$, $dv = e^x\,dx$; $du = -\sen x\,dx$, $v = e^x$:
 \[
-\int e^x \cos x\, dx = e^x\cos x + \int e^x \sin x\, dx.
+\int e^x \cos x\, dx = e^x\cos x + \int e^x \sen x\, dx.
 \]
 
 \textbf{Paso 3: Despejar la integral cíclica.}
 \[
-\int e^x \sin x\, dx = e^x\sin x - e^x\cos x - \int e^x\sin x\, dx.
+\int e^x \sen x\, dx = e^x\sen x - e^x\cos x - \int e^x\sen x\, dx.
 \]
 \[
-\boxed{\int e^x\sin x\, dx = \frac{e^x(\sin x - \cos x)}{2} + C.}
+\boxed{\int e^x\sen x\, dx = \frac{e^x(\sen x - \cos x)}{2} + C.}
 \]
 \end{myproof}
 \end{example}
@@ -540,12 +540,12 @@ El ejemplo anterior ilustra la \textbf{integral cíclica}: al aplicar
 integración por partes dos veces a un producto del tipo $e^{ax}\cdot
 \text{trig}(bx)$, la integral original reaparece y puede despejarse
 algebraicamente. Este patrón se presenta invariablemente para
-$\int e^{ax}\sin(bx)\,dx$ e $\int e^{ax}\cos(bx)\,dx$, cuyo resultado
+$\int e^{ax}\sen(bx)\,dx$ e $\int e^{ax}\cos(bx)\,dx$, cuyo resultado
 general es
 \[
-\int e^{ax}\sin(bx)\,dx = \frac{e^{ax}(a\sin bx - b\cos bx)}{a^2+b^2}+C,
+\int e^{ax}\sen(bx)\,dx = \frac{e^{ax}(a\sen bx - b\cos bx)}{a^2+b^2}+C,
 \qquad
-\int e^{ax}\cos(bx)\,dx = \frac{e^{ax}(a\cos bx + b\sin bx)}{a^2+b^2}+C.
+\int e^{ax}\cos(bx)\,dx = \frac{e^{ax}(a\cos bx + b\sen bx)}{a^2+b^2}+C.
 \]
 \end{wow}
 
@@ -562,7 +562,7 @@ sino comprenderse como relaciones geométricas.
 \begin{theorem}[Identidades pitagóricas]
 Para todo $x \in \R$ donde las funciones estén definidas:
 \[
-\sin^2 x + \cos^2 x = 1, \qquad
+\sen^2 x + \cos^2 x = 1, \qquad
 1 + \tan^2 x = \sec^2 x, \qquad
 \cot^2 x + 1 = \csc^2 x.
 \]
@@ -570,18 +570,18 @@ Para todo $x \in \R$ donde las funciones estén definidas:
 
 \begin{theorem}[Identidades de reducción de potencia y ángulo doble]
 \[
-\sin^2 x = \frac{1 - \cos 2x}{2}, \qquad
+\sen^2 x = \frac{1 - \cos 2x}{2}, \qquad
 \cos^2 x = \frac{1 + \cos 2x}{2}, \qquad
-\sin x \cos x = \frac{\sin 2x}{2}.
+\sen x \cos x = \frac{\sen 2x}{2}.
 \]
 \end{theorem}
 
 \begin{theorem}[Fórmulas de producto a suma]
 \[
-\sin A \cos B = \tfrac{1}{2}[\sin(A+B) + \sin(A-B)],
+\sen A \cos B = \tfrac{1}{2}[\sen(A+B) + \sen(A-B)],
 \]
 \[
-\sin A \sin B = \tfrac{1}{2}[\cos(A-B) - \cos(A+B)],
+\sen A \sen B = \tfrac{1}{2}[\cos(A-B) - \cos(A+B)],
 \]
 \[
 \cos A \cos B = \tfrac{1}{2}[\cos(A-B) + \cos(A+B)].
@@ -589,10 +589,10 @@ Para todo $x \in \R$ donde las funciones estén definidas:
 \end{theorem}
 
 \begin{rem}
-Las identidades de reducción de potencia $\sin^2 x = \frac{1-\cos 2x}{2}$
+Las identidades de reducción de potencia $\sen^2 x = \frac{1-\cos 2x}{2}$
 y $\cos^2 x = \frac{1+\cos 2x}{2}$ son las herramientas más frecuentes en
 la integración de potencias pares. Su uso iterativo permite reducir
-cualquier potencia entera de $\sin x$ o $\cos x$ a una combinación lineal
+cualquier potencia entera de $\sen x$ o $\cos x$ a una combinación lineal
 de funciones de ángulos múltiples, que se integran directamente.
 \end{rem}
 
@@ -600,39 +600,39 @@ de funciones de ángulos múltiples, que se integran directamente.
 \section{Integración de Potencias Trigonométricas}
 %----------------------------------------------------------
 
-\subsection{Integrales de la forma $\int \sin^m x \cos^n x \, dx$}
+\subsection{Integrales de la forma $\int \sen^m x \cos^n x \, dx$}
 
 La estrategia depende de la paridad de los exponentes. La idea central es
 aislar un diferencial natural para sustitución algebraica y convertir el
 resto del integrando a la nueva variable.
 
 \begin{pasos}
-\textbf{Caso 1: $m$ impar.} Separar $\sin^m x = \sin^{m-1}\!x\cdot\sin x$,
-reservar $\sin x\,dx$ para la sustitución $u = \cos x$ ($du = -\sin x\,dx$),
-y convertir $\sin^{m-1}\!x$ a cosenos con $\sin^2 x = 1-\cos^2 x$.
+\textbf{Caso 1: $m$ impar.} Separar $\sen^m x = \sen^{m-1}\!x\cdot\sen x$,
+reservar $\sen x\,dx$ para la sustitución $u = \cos x$ ($du = -\sen x\,dx$),
+y convertir $\sen^{m-1}\!x$ a cosenos con $\sen^2 x = 1-\cos^2 x$.
 
 \textbf{Caso 2: $n$ impar.} Separar $\cos^n x = \cos^{n-1}\!x\cdot\cos x$,
-reservar $\cos x\,dx$ para $u = \sin x$ ($du = \cos x\,dx$), y convertir
-$\cos^{n-1}\!x$ a senos con $\cos^2 x = 1-\sin^2 x$.
+reservar $\cos x\,dx$ para $u = \sen x$ ($du = \cos x\,dx$), y convertir
+$\cos^{n-1}\!x$ a senos con $\cos^2 x = 1-\sen^2 x$.
 
 \textbf{Caso 3: $m$ y $n$ ambos pares.} No hay sustitución algebraica
 directa. Aplicar las identidades de reducción de potencia para disminuir
 los exponentes hasta obtener integrales de ángulos múltiples.
 \end{pasos}
 
-\begin{example}[Potencias trigonométricas: $\sin^3 x \cos^2 x$]
-Calcular $\displaystyle\int \sin^3 x \cos^2 x \, dx$.
+\begin{example}[Potencias trigonométricas: $\sen^3 x \cos^2 x$]
+Calcular $\displaystyle\int \sen^3 x \cos^2 x \, dx$.
 
 \begin{myproof}
 
 \textbf{Paso 1: Identificar el caso y separar el diferencial.}
-Exponente de $\sin x$ impar ($m=3$): Caso~1. Reservamos $\sin x\,dx$ para $u=\cos x$:
+Exponente de $\sen x$ impar ($m=3$): Caso~1. Reservamos $\sen x\,dx$ para $u=\cos x$:
 \[
-\int \sin^3 x \cos^2 x \, dx
-= \int \sin^2 x \cos^2 x \cdot \sin x \, dx.
+\int \sen^3 x \cos^2 x \, dx
+= \int \sen^2 x \cos^2 x \cdot \sen x \, dx.
 \]
 
-\textbf{Paso 2: Sustituir $u = \cos x$, $\sin^2 x = 1-u^2$.}
+\textbf{Paso 2: Sustituir $u = \cos x$, $\sen^2 x = 1-u^2$.}
 \[
 = -\int (1-u^2)u^2\, du = -\int(u^2 - u^4)\, du
 = -\frac{u^3}{3} + \frac{u^5}{5} + C.
@@ -640,25 +640,25 @@ Exponente de $\sin x$ impar ($m=3$): Caso~1. Reservamos $\sin x\,dx$ para $u=\co
 
 \textbf{Paso 3: Regresar a $x$.}
 \[
-\boxed{\int \sin^3 x \cos^2 x \, dx = -\frac{\cos^3 x}{3} + \frac{\cos^5 x}{5} + C.}
+\boxed{\int \sen^3 x \cos^2 x \, dx = -\frac{\cos^3 x}{3} + \frac{\cos^5 x}{5} + C.}
 \]
 \end{myproof}
 \end{example}
 
-\begin{example}[Potencias pares: $\sin^2 x \cos^2 x$]
-Calcular $\displaystyle\int \sin^2 x \cos^2 x \, dx$.
+\begin{example}[Potencias pares: $\sen^2 x \cos^2 x$]
+Calcular $\displaystyle\int \sen^2 x \cos^2 x \, dx$.
 
 \begin{myproof}
 
 \textbf{Paso 1: Aplicar identidades de reducción.}
-Ambos exponentes pares (Caso~3). Usamos $\sin x\cos x = \frac{\sin 2x}{2}$:
+Ambos exponentes pares (Caso~3). Usamos $\sen x\cos x = \frac{\sen 2x}{2}$:
 \[
-\sin^2 x\cos^2 x = \frac{\sin^2 2x}{4} = \frac{1-\cos 4x}{8}.
+\sen^2 x\cos^2 x = \frac{\sen^2 2x}{4} = \frac{1-\cos 4x}{8}.
 \]
 
 \textbf{Paso 2: Integrar.}
 \[
-\boxed{\int \sin^2 x\cos^2 x\, dx = \frac{x}{8} - \frac{\sin 4x}{32} + C.}
+\boxed{\int \sen^2 x\cos^2 x\, dx = \frac{x}{8} - \frac{\sen 4x}{32} + C.}
 \]
 \end{myproof}
 \end{example}
@@ -666,19 +666,19 @@ Ambos exponentes pares (Caso~3). Usamos $\sin x\cos x = \frac{\sin 2x}{2}$:
 \begin{theorem}[Fórmulas de reducción]
 Para $n \geq 2$ entero:
 \[
-\int \sin^n x \, dx
-= -\frac{\sin^{n-1}\!x\cos x}{n} + \frac{n-1}{n}\int \sin^{n-2}\!x\, dx,
+\int \sen^n x \, dx
+= -\frac{\sen^{n-1}\!x\cos x}{n} + \frac{n-1}{n}\int \sen^{n-2}\!x\, dx,
 \]
 \[
 \int \cos^n x \, dx
-= \frac{\cos^{n-1}\!x\sin x}{n} + \frac{n-1}{n}\int \cos^{n-2}\!x\, dx.
+= \frac{\cos^{n-1}\!x\sen x}{n} + \frac{n-1}{n}\int \cos^{n-2}\!x\, dx.
 \]
 \end{theorem}
 
 \begin{rem}
 Las fórmulas de reducción se demuestran por integración por partes. Permiten
 bajar el exponente dos unidades en cada aplicación hasta llegar a $\int
-\sin x\,dx$ o $\int \cos x\,dx$ (si $n$ es impar), o a $\int dx$ (si $n$
+\sen x\,dx$ o $\int \cos x\,dx$ (si $n$ es impar), o a $\int dx$ (si $n$
 es par). Son especialmente útiles para potencias altas y para establecer
 identidades recursivas.
 \end{rem}
@@ -758,7 +758,7 @@ de arco de la parábola y en la integración de $\int\sec^5 x\,dx$ mediante
 la fórmula de reducción para secantes.
 \end{rem}
 
-\subsection{Integrales de productos $\sin(mx)\cos(nx)$, $\sin(mx)\sin(nx)$,
+\subsection{Integrales de productos $\sen(mx)\cos(nx)$, $\sen(mx)\sen(nx)$,
 $\cos(mx)\cos(nx)$}
 
 Cuando el integrando es un producto de trigonométricas con distintos ángulos,
@@ -766,19 +766,19 @@ se utilizan las fórmulas de producto a suma para convertirlo en una suma de
 funciones simples integrable término a término.
 
 \begin{example}[Producto de trigonométricas con distintos ángulos]
-Calcular $\displaystyle\int \sin(3x)\cos(5x)\, dx$.
+Calcular $\displaystyle\int \sen(3x)\cos(5x)\, dx$.
 
 \begin{myproof}
 
 \textbf{Paso 1: Convertir el producto a suma.}
 \[
-\sin(3x)\cos(5x) = \tfrac{1}{2}[\sin 8x + \sin(-2x)]
-= \tfrac{1}{2}[\sin 8x - \sin 2x].
+\sen(3x)\cos(5x) = \tfrac{1}{2}[\sen 8x + \sen(-2x)]
+= \tfrac{1}{2}[\sen 8x - \sen 2x].
 \]
 
 \textbf{Paso 2: Integrar término a término.}
 \[
-\boxed{\int\sin(3x)\cos(5x)\,dx
+\boxed{\int\sen(3x)\cos(5x)\,dx
 = -\frac{\cos 8x}{16}+\frac{\cos 2x}{4}+C.}
 \]
 \end{myproof}
@@ -810,7 +810,7 @@ trigonométricas en términos de $x$.
 
 \subsection{Caso 1: Radical $\sqrt{a^2 - u^2}$}
 
-Sustitución: $u = a\sin\theta$, $\theta \in \left[-\frac{\pi}{2},
+Sustitución: $u = a\sen\theta$, $\theta \in \left[-\frac{\pi}{2},
 \frac{\pi}{2}\right]$; $du = a\cos\theta\,d\theta$;
 $\sqrt{a^2-u^2} = a\cos\theta$.
 
@@ -831,7 +831,7 @@ Calcular $\displaystyle\int \dfrac{dx}{\sqrt{9-x^2}}$.
 
 \begin{myproof}
 
-\textbf{Paso 1: Aplicar $x=3\sin\theta$.}
+\textbf{Paso 1: Aplicar $x=3\sen\theta$.}
 $dx=3\cos\theta\,d\theta$, $\sqrt{9-x^2}=3\cos\theta$.
 
 \textbf{Paso 2: Integrar.}
@@ -851,17 +851,17 @@ Calcular $\displaystyle\int x^2\sqrt{4-x^2}\,dx$.
 
 \begin{myproof}
 
-\textbf{Paso 1: Aplicar $x=2\sin\theta$.}
-$dx=2\cos\theta\,d\theta$, $\sqrt{4-x^2}=2\cos\theta$, $x^2=4\sin^2\theta$:
+\textbf{Paso 1: Aplicar $x=2\sen\theta$.}
+$dx=2\cos\theta\,d\theta$, $\sqrt{4-x^2}=2\cos\theta$, $x^2=4\sen^2\theta$:
 \[
-\int 4\sin^2\!\theta\cdot 2\cos\theta\cdot 2\cos\theta\,d\theta
-= 16\int\sin^2\!\theta\cos^2\!\theta\,d\theta
+\int 4\sen^2\!\theta\cdot 2\cos\theta\cdot 2\cos\theta\,d\theta
+= 16\int\sen^2\!\theta\cos^2\!\theta\,d\theta
 = 4\int\frac{1-\cos 4\theta}{2}\,d\theta
-= 2\theta - \frac{\sin 4\theta}{2}+C.
+= 2\theta - \frac{\sen 4\theta}{2}+C.
 \]
 
 \textbf{Paso 2: Regresar a $x$ con el triángulo de referencia.}
-$\theta=\arcsin\!\left(\frac{x}{2}\right)$, $\sin\theta=\frac{x}{2}$, $\cos\theta=\frac{\sqrt{4-x^2}}{2}$; $\sin 4\theta=4\sin\theta\cos\theta(1-2\sin^2\theta)$:
+$\theta=\arcsin\!\left(\frac{x}{2}\right)$, $\sen\theta=\frac{x}{2}$, $\cos\theta=\frac{\sqrt{4-x^2}}{2}$; $\sen 4\theta=4\sen\theta\cos\theta(1-2\sen^2\theta)$:
 \[
 \boxed{\int x^2\sqrt{4-x^2}\,dx
 = 2\arcsin\!\left(\frac{x}{2}\right)
@@ -957,7 +957,7 @@ $\tan\theta=\frac{\sqrt{x^2-9}}{3}$, $\theta=\operatorname{arcsec}\!\!\left(\fra
 \text{Radical} & \text{Sustitución} & \text{Diferencial}
 & \text{Simplificación} \\
 \midrule
-\sqrt{a^2-u^2} & u=a\sin\theta & du=a\cos\theta\,d\theta
+\sqrt{a^2-u^2} & u=a\sen\theta & du=a\cos\theta\,d\theta
 & \sqrt{a^2-u^2}=a\cos\theta \\[4pt]
 \sqrt{a^2+u^2} & u=a\tan\theta & du=a\sec^2\theta\,d\theta
 & \sqrt{a^2+u^2}=a\sec\theta \\[4pt]
@@ -1203,14 +1203,14 @@ por partes o fracciones parciales según corresponda:
 \item $\displaystyle\int x^2 e^x\,dx$
 \item $\displaystyle\int\cos^2 x\,dx$
 \item $\displaystyle\int\frac{xe^x}{(x+1)^2}\,dx$
-\item $\displaystyle\int\sin t\ln(\cos t)\,dt$
+\item $\displaystyle\int\sen t\ln(\cos t)\,dt$
 \item $\displaystyle\int x\sec^2 x\,dx$
 \item $\displaystyle\int x\arctan x\,dx$
 \item $\displaystyle\int e^x\cos x\,dx$
 \item $\displaystyle\int\sqrt{20-8x-x^2}\,dx$
 \item $\displaystyle\int\frac{5x-1}{x^2-1}\,dx$
 \item $\displaystyle\int\frac{3x-13}{(x+2)(x-5)}\,dx$
-\item $\displaystyle\int\cos x\sqrt{4-\sin^2 x}\,dx$
+\item $\displaystyle\int\cos x\sqrt{4-\sen^2 x}\,dx$
 \item $\displaystyle\int\frac{2x^2+3x+2}{x^3+4x^2+6x+4}\,dx$
 \item $\displaystyle\int\frac{1}{9x^4+x^2}\,dx$
 \item $\displaystyle\int\frac{e^{5x}}{(e^{2x}+1)^2}\,dx$
@@ -1229,20 +1229,20 @@ por partes o fracciones parciales según corresponda:
 Calcule las siguientes integrales de potencias trigonométricas:
 \begin{multicols}{2}
 \begin{enumerate}
-\item $\displaystyle\int\sin^2(5x)\,dx$
+\item $\displaystyle\int\sen^2(5x)\,dx$
 \item $\displaystyle\int\cos^3 x\,dx$
-\item $\displaystyle\int\sin^3 x\cos^2 x\,dx$
+\item $\displaystyle\int\sen^3 x\cos^2 x\,dx$
 \item $\displaystyle\int\sec^4(5x)\,dx$
 \item $\displaystyle\int\tan^2 x\,dx$
 \item $\displaystyle\int\sec(7x)\,dx$
-\item $\displaystyle\int\sin x\cos x\,dx$
-\item $\displaystyle\int\sin^4(6x)\,dx$
+\item $\displaystyle\int\sen x\cos x\,dx$
+\item $\displaystyle\int\sen^4(6x)\,dx$
 \item $\displaystyle\int\tan^3\!\left(\tfrac{x}{2}\right)\sec^2\!\left(\tfrac{x}{2}\right)dx$
 \item $\displaystyle\int\frac{\tan^3 x}{\sqrt{\sec x}}\,dx$
 \item $\displaystyle\int\tan^3(2x)\sec(2x)\,dx$
-\item $\displaystyle\int\sin^3 x\cos^4 x\,dx$
+\item $\displaystyle\int\sen^3 x\cos^4 x\,dx$
 \item $\displaystyle\int\sec^5 x\,dx$
-\item $\displaystyle\int\sin^4 x\cos^2 x\,dx$
+\item $\displaystyle\int\sen^4 x\cos^2 x\,dx$
 \item $\displaystyle\int\tan^2 x\sec^5 x\,dx$
 \end{enumerate}
 \end{multicols}
@@ -1263,7 +1263,7 @@ Calcule las siguientes integrales usando sustitución trigonométrica:
 \item $\displaystyle\int\frac{x^2}{\sqrt{2x-x^2}}\,dx$
 \item $\displaystyle\int\frac{x}{\sqrt{x^2+6x+12}}\,dx$
 \item $\displaystyle\int\frac{dx}{x\sqrt{4x^2+9}}$
-\item $\displaystyle\int\frac{\cos x}{\sqrt{1+\sin^2 x}}\,dx$
+\item $\displaystyle\int\frac{\cos x}{\sqrt{1+\sen^2 x}}\,dx$
 \item $\displaystyle\int\sqrt{x^2+2x}\,dx$
 \item $\displaystyle\int\frac{dz}{z\sqrt{25-4z^2}}$
 \item $\displaystyle\int\frac{x^2}{\sqrt{5-4x^2}}\,dx$
@@ -1276,12 +1276,12 @@ Calcule las siguientes integrales usando sustitución trigonométrica:
 \begin{enumerate}
 \item $\displaystyle\int\sqrt{\tan x}\,dx$
 \item $\displaystyle\int\frac{dx}{x^6+1}$
-\item $\displaystyle\int\frac{dx}{1+\sin^2 x}$
+\item $\displaystyle\int\frac{dx}{1+\sen^2 x}$
 \item $\displaystyle\int\frac{dx}{x\sqrt{x^n+1}}$
 \item $\displaystyle\int\frac{x^2}{(2x-x^2)^{3/2}}\,dx$
 \item $\displaystyle\int\frac{dx}{x^4\sqrt{x^2-9}}$
-\item $\displaystyle\int\frac{dx}{2-\sin x}$
-\item $\displaystyle\int_0^{\pi/2}\sin^n x\,dx$
+\item $\displaystyle\int\frac{dx}{2-\sen x}$
+\item $\displaystyle\int_0^{\pi/2}\sen^n x\,dx$
 \end{enumerate}
 \end{multicols}
 \end{prob}

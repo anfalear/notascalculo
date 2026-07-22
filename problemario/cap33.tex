@@ -374,21 +374,21 @@ f(x(t), y(t)) = t + 2t = 3t.
 
 \begin{example}[Integral de línea en el espacio]
 Calcule \(\displaystyle \int_C (x^2 + y^2 + z^2)\,ds\), donde \(C\) es
-la hélice circular \(\mathbf{r}(t) = (\cos t, \sin t, t)\),
+la hélice circular \(\mathbf{r}(t) = (\cos t, \sen t, t)\),
 \(0 \le t \le 2\pi\).
 \begin{myproof}
 \textbf{Paso 1. Parametrización dada.}
-\(x(t) = \cos t,\; y(t) = \sin t,\; z(t) = t\).
+\(x(t) = \cos t,\; y(t) = \sen t,\; z(t) = t\).
 
 \textbf{Paso 2. Rapidez.}
 \[
-\mathbf{r}'(t) = (-\sin t, \cos t, 1) \implies
-\|\mathbf{r}'(t)\| = \sqrt{\sin^2 t + \cos^2 t + 1} = \sqrt{2}.
+\mathbf{r}'(t) = (-\sen t, \cos t, 1) \implies
+\|\mathbf{r}'(t)\| = \sqrt{\sen^2 t + \cos^2 t + 1} = \sqrt{2}.
 \]
 
 \textbf{Paso 3. Sustitución.}
 \[
-f(x,y,z) = x^2 + y^2 + z^2 = \cos^2 t + \sin^2 t + t^2 = 1 + t^2.
+f(x,y,z) = x^2 + y^2 + z^2 = \cos^2 t + \sen^2 t + t^2 = 1 + t^2.
 \]
 
 \textbf{Paso 4. Integrar.}
@@ -848,7 +848,7 @@ siguientes campos y trayectorias:
   \item \(\mathbf{F}(x,y)=(x^2,y^2)\), \(C\): arco de \(y=x^2\) de
   \((0,0)\) a \((1,1)\), con \(x=t\), \(y=t^2\), \(0\le t\le 1\).
   \item \(\mathbf{F}(x,y,z)=(x,y,z)\), \(C\): hélice
-  \(\mathbf{r}(t)=(\cos t,\sin t,t)\), \(0\le t\le \pi\).
+  \(\mathbf{r}(t)=(\cos t,\sen t,t)\), \(0\le t\le \pi\).
 \end{enumerate}
 \end{prob}
 
@@ -873,7 +873,7 @@ Utilice esta observación para calcular la longitud de la curva
 Determine si los siguientes campos son conservativos. En caso
 afirmativo, halle una función potencial.
 \begin{enumerate}[a)]
-  \item \(\mathbf{F}(x,y) = (e^x \cos y)\,\mathbf{i} - (e^x \sin y)\,\mathbf{j}\).
+  \item \(\mathbf{F}(x,y) = (e^x \cos y)\,\mathbf{i} - (e^x \sen y)\,\mathbf{j}\).
   \item \(\mathbf{F}(x,y) = (y^2 + 2xy)\,\mathbf{i} + (x^2 + 2xy)\,\mathbf{j}\).
   \item \(\mathbf{F}(x,y,z) = (yz, xz, xy)\).
   \item \(\mathbf{F}(x,y) = \left(\dfrac{-y}{x^2+y^2},
@@ -903,7 +903,7 @@ Sea \(\mathbf{F}(x,y) = (2xy + e^y,\; x^2 + xe^y)\).
 
 \begin{prob}[Aplicación: masa de un alambre]
 Un alambre tiene la forma de la hélice \(\mathbf{r}(t) = (2\cos t,
-2\sin t, t)\), \(0 \le t \le 4\pi\). Su densidad lineal en cada punto
+2\sen t, t)\), \(0 \le t \le 4\pi\). Su densidad lineal en cada punto
 es \(\rho(x,y,z) = x^2 + y^2 + z^2\). Calcule la masa total del alambre.
 \end{prob}
 
@@ -939,7 +939,7 @@ Use esta fórmula para calcular:
   \item El área encerrada por la elipse
   \(\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1\).
   \item El área encerrada por la astroide
-  \(x = \cos^3 t\), \(y = \sin^3 t\), \(t\in[0,2\pi]\).
+  \(x = \cos^3 t\), \(y = \sen^3 t\), \(t\in[0,2\pi]\).
 \end{enumerate}
 \end{prob}
 

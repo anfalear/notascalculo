@@ -318,12 +318,12 @@ Calcule las siguientes integrales dobles:
 
 \textbf{Paso 1. Integral interior en $y$.}
 \[
-\int_0^{\pi/2} \cos(x+y)\,dy = \bigl[\sin(x+y)\bigr]_0^{\pi/2} = \sin\!\left(x+\tfrac{\pi}{2}\right)-\sin x = \cos x - \sin x.
+\int_0^{\pi/2} \cos(x+y)\,dy = \bigl[\sen(x+y)\bigr]_0^{\pi/2} = \sen\!\left(x+\tfrac{\pi}{2}\right)-\sen x = \cos x - \sen x.
 \]
 
 \textbf{Paso 2. Integral exterior en $x$.}
 \[
-\int_0^{\pi/2}(\cos x - \sin x)\,dx = \bigl[\sin x + \cos x\bigr]_0^{\pi/2}
+\int_0^{\pi/2}(\cos x - \sen x)\,dx = \bigl[\sen x + \cos x\bigr]_0^{\pi/2}
 = (1+0)-(0+1) = 0.
 \]
 \textbf{Paso 3. Resultado.}
@@ -805,7 +805,7 @@ I_y&=\int_{0}^{h}\int_{0}^{b} x^2\,dx\,dy = \int_{0}^{h}\frac{b^3}{3}\,dy = \fra
 
 Cuando la región de integración o la función presentan simetría circular, es conveniente usar coordenadas polares. Recordemos la relación:
 \[
-x = r\cos\theta,\qquad y = r\sin\theta,
+x = r\cos\theta,\qquad y = r\sen\theta,
 \]
 donde \(r\ge 0\) es la distancia al origen y \(\theta\in[0,2\pi)\) es el ángulo polar.
 
@@ -846,12 +846,12 @@ Esta fórmula se obtiene del área de un sector circular infinitesimal: un rect�
   \draw[dashed,gray!80] (0.819,0.574)--(0.819,0)
     node[anchor=north,font=\scriptsize] {$r\cos\theta$};
   \draw[dashed,gray!80] (0.819,0.574)--(0,0.574)
-    node[anchor=east,font=\scriptsize] {$r\sin\theta$};
+    node[anchor=east,font=\scriptsize] {$r\sen\theta$};
   % Ángulo theta
   \draw[thin] (0.20,0) arc(0:35:0.20);
   \node[font=\small] at (0.30,0.08) {$\theta$};
 \end{tikzpicture}
-\caption{Coordenadas polares: el punto $P$ satisface $x=r\cos\theta$, $y=r\sin\theta$;
+\caption{Coordenadas polares: el punto $P$ satisface $x=r\cos\theta$, $y=r\sen\theta$;
   el rectángulo polar (azul) tiene área $dA = r\,dr\,d\theta$}
 \label{fig:coordenadas_polares}
 \end{figure}
@@ -862,13 +862,13 @@ D = \{(r,\theta): \alpha\le \theta\le \beta,\; r_1(\theta)\le r\le r_2(\theta)\}
 \]
 Entonces la integral doble se convierte en
 \[
-\iint_D f(x,y)\,dA = \int_{\alpha}^{\beta}\int_{r_1(\theta)}^{r_2(\theta)} f(r\cos\theta,r\sin\theta)\,r\,dr\,d\theta.
+\iint_D f(x,y)\,dA = \int_{\alpha}^{\beta}\int_{r_1(\theta)}^{r_2(\theta)} f(r\cos\theta,r\sen\theta)\,r\,dr\,d\theta.
 \]
 
 \begin{pasos}[Evaluación de una integral doble en coordenadas polares]
 \begin{enumerate}
     \item \textbf{Dibujar e identificar la región.} Reconocer si tiene forma circular, sectorial o radial. Determinar los límites de \(\theta\) y de \(r\).
-    \item \textbf{Convertir la función.} Sustituir \(x=r\cos\theta\), \(y=r\sin\theta\).
+    \item \textbf{Convertir la función.} Sustituir \(x=r\cos\theta\), \(y=r\sen\theta\).
     \item \textbf{Incluir el factor \(r\).} Reemplazar \(dA\) por \(r\,dr\,d\theta\).
     \item \textbf{Establecer la integral iterada.} Escribir \(\int_\alpha^\beta \int_{r_1(\theta)}^{r_2(\theta)} F(r,\theta)\,r\,dr\,d\theta\).
     \item \textbf{Integrar.} Primero en \(r\), luego en \(\theta\).
@@ -919,7 +919,7 @@ A = \int_0^{2\pi}\int_0^{1+\cos\theta} r\,dr\,d\theta
 \textbf{Paso 3. Integrar.}
 \[
 A = \frac{1}{2}\int_0^{2\pi}\left(\frac{3}{2}+2\cos\theta+\frac{1}{2}\cos2\theta\right)d\theta
-= \frac{1}{2}\left[\frac{3}{2}\theta+2\sin\theta+\frac{1}{4}\sin2\theta\right]_0^{2\pi}
+= \frac{1}{2}\left[\frac{3}{2}\theta+2\sen\theta+\frac{1}{4}\sen2\theta\right]_0^{2\pi}
 = \frac{1}{2}\left(\frac{3}{2}\cdot 2\pi\right)
 = \frac{3\pi}{2}.
 \]
@@ -985,21 +985,21 @@ V=\iint_D(2x+3y+1)\,dA.
 
 \textbf{Paso 1. Convertir a polares.}
 \[
-V=\int_0^{\pi/2}\int_0^1(2r\cos\theta+3r\sin\theta+1)\,r\,dr\,d\theta
-=\int_0^{\pi/2}\int_0^1(2r^2\cos\theta+3r^2\sin\theta+r)\,dr\,d\theta.
+V=\int_0^{\pi/2}\int_0^1(2r\cos\theta+3r\sen\theta+1)\,r\,dr\,d\theta
+=\int_0^{\pi/2}\int_0^1(2r^2\cos\theta+3r^2\sen\theta+r)\,dr\,d\theta.
 \]
 
 \textbf{Paso 2. Integral interior en $r$.}
 \[
-\int_0^1(2r^2\cos\theta+3r^2\sin\theta+r)\,dr
-=\left[\frac{2r^3}{3}\cos\theta+r^3\sin\theta+\frac{r^2}{2}\right]_0^1
-=\frac{2\cos\theta}{3}+\sin\theta+\frac{1}{2}.
+\int_0^1(2r^2\cos\theta+3r^2\sen\theta+r)\,dr
+=\left[\frac{2r^3}{3}\cos\theta+r^3\sen\theta+\frac{r^2}{2}\right]_0^1
+=\frac{2\cos\theta}{3}+\sen\theta+\frac{1}{2}.
 \]
 
 \textbf{Paso 3. Integral exterior en $\theta$.}
 \[
-V=\int_0^{\pi/2}\!\left(\frac{2\cos\theta}{3}+\sin\theta+\frac{1}{2}\right)d\theta
-=\left[\frac{2\sin\theta}{3}-\cos\theta+\frac{\theta}{2}\right]_0^{\pi/2}
+V=\int_0^{\pi/2}\!\left(\frac{2\cos\theta}{3}+\sen\theta+\frac{1}{2}\right)d\theta
+=\left[\frac{2\sen\theta}{3}-\cos\theta+\frac{\theta}{2}\right]_0^{\pi/2}
 =\left(\frac{2}{3}-0+\frac{\pi}{4}\right)-(0-1+0)
 =\frac{2}{3}+1+\frac{\pi}{4}.
 \]
@@ -1125,8 +1125,8 @@ A=\int_{-\pi/3}^{\pi/3}\int_1^{2\cos\theta}r\,dr\,d\theta
 \frac{4\cos^2\theta-1}{2}=\frac{1+2\cos2\theta}{2}.
 \]
 \[
-A=\frac{1}{2}\bigl[\theta+\sin2\theta\bigr]_{-\pi/3}^{\pi/3}
-=\frac{1}{2}\!\left(\frac{2\pi}{3}+2\sin\frac{2\pi}{3}\right)
+A=\frac{1}{2}\bigl[\theta+\sen2\theta\bigr]_{-\pi/3}^{\pi/3}
+=\frac{1}{2}\!\left(\frac{2\pi}{3}+2\sen\frac{2\pi}{3}\right)
 =\frac{1}{2}\!\left(\frac{2\pi}{3}+\sqrt{3}\right).
 \]
 \textbf{Paso 4. Resultado.}
@@ -1624,7 +1624,7 @@ Describa la región $D$: $0\leq y\leq 4$, $\dfrac{y}{2}\leq x\leq 2$ como una re
 
 \begin{prob}
 Cambie el orden de integración y evalúe:
-$\displaystyle\int_0^1\!\int_x^1 \sin(y^2)\,dy\,dx$.
+$\displaystyle\int_0^1\!\int_x^1 \sen(y^2)\,dy\,dx$.
 \end{prob}
 
 \begin{prob}

@@ -196,17 +196,17 @@ orientada positivamente debe ser $8\pi$.
 
 \textbf{Verificación directa.}
 Parametrizamos la circunferencia como $\mathbf{r}(t)=\langle 2\cos t,
-2\sin t \rangle$, $0 \le t \le 2\pi$. Entonces
+2\sen t \rangle$, $0 \le t \le 2\pi$. Entonces
 \[
-\mathbf{F}(\mathbf{r}(t)) = \langle -2\sin t, 2\cos t \rangle,
-\quad \mathbf{r}'(t) = \langle -2\sin t, 2\cos t \rangle.
+\mathbf{F}(\mathbf{r}(t)) = \langle -2\sen t, 2\cos t \rangle,
+\quad \mathbf{r}'(t) = \langle -2\sen t, 2\cos t \rangle.
 \]
 Por tanto,
 \[
 \oint_C \mathbf{F}\cdot d\mathbf{r}
-= \int_0^{2\pi} \langle -2\sin t, 2\cos t \rangle \cdot
-\langle -2\sin t, 2\cos t \rangle \, dt
-= \int_0^{2\pi} 4(\sin^2 t + \cos^2 t)\,dt
+= \int_0^{2\pi} \langle -2\sen t, 2\cos t \rangle \cdot
+\langle -2\sen t, 2\cos t \rangle \, dt
+= \int_0^{2\pi} 4(\sen^2 t + \cos^2 t)\,dt
 = \int_0^{2\pi} 4\,dt = 8\pi.
 \]
 La igualdad se cumple: $\boxed{8\pi = 8\pi}$.
@@ -521,8 +521,8 @@ función potencial.
 \begin{enumerate}[(a)]
     \item $\mathbf{F}(x,y)=\langle 2x, 2y \rangle$
     \item $\mathbf{F}(x,y)=\langle y^2, 2xy \rangle$
-    \item $\mathbf{F}(x,y)=\langle \cos y, -x\sin y \rangle$
-    \item $\mathbf{F}(x,y)=\langle e^x \cos y, -e^x \sin y \rangle$
+    \item $\mathbf{F}(x,y)=\langle \cos y, -x\sen y \rangle$
+    \item $\mathbf{F}(x,y)=\langle e^x \cos y, -e^x \sen y \rangle$
     \item $\mathbf{F}(x,y,z)=\langle 2x, 2y, 2z \rangle$
     \item $\mathbf{F}(x,y,z)=\langle yz, xz, xy \rangle$
 \end{enumerate}
@@ -766,9 +766,9 @@ I = \iint_R (x+y^2)\sqrt{1+4x^2+4y^2}\,dA.
 \]
 
 \textbf{Paso 5: Evaluar la integral doble.}
-Pasamos a coordenadas polares: $x=r\cos\theta,\; y=r\sin\theta$, con $0\le r\le 2$, $0\le\theta\le 2\pi$. La región es $R$, así que $dA = r\,dr\,d\theta$. El integrando se convierte en
+Pasamos a coordenadas polares: $x=r\cos\theta,\; y=r\sen\theta$, con $0\le r\le 2$, $0\le\theta\le 2\pi$. La región es $R$, así que $dA = r\,dr\,d\theta$. El integrando se convierte en
 \[
-\bigl(r\cos\theta + r^2\sin^2\theta\bigr)\sqrt{1+4r^2}\cdot r.
+\bigl(r\cos\theta + r^2\sen^2\theta\bigr)\sqrt{1+4r^2}\cdot r.
 \]
 La parte con $\cos\theta$ se anula al integrar en $\theta$:
 \[
@@ -776,7 +776,7 @@ La parte con $\cos\theta$ se anula al integrar en $\theta$:
 \]
 Queda
 \[
-I = \int_0^{2\pi}\sin^2\theta\,d\theta \int_0^2 r^3\sqrt{1+4r^2}\,dr.
+I = \int_0^{2\pi}\sen^2\theta\,d\theta \int_0^2 r^3\sqrt{1+4r^2}\,dr.
 \]
 La primera integral es $\pi$. Para la segunda, hacemos $u=1+4r^2$, $du=8r\,dr$, y $r^2=(u-1)/4$:
 \[
@@ -813,30 +813,30 @@ Calcule $\displaystyle \iint_S (x^2+y^2)\,dS$, donde $S$ es la esfera $x^2+y^2+z
 \textbf{Paso 1: Parametrizar.}
 Usamos coordenadas esféricas:
 \[
-\mathbf{r}(\phi,\theta)=\langle 2\sin\phi\cos\theta,\; 2\sin\phi\sin\theta,\; 2\cos\phi \rangle,
+\mathbf{r}(\phi,\theta)=\langle 2\sen\phi\cos\theta,\; 2\sen\phi\sen\theta,\; 2\cos\phi \rangle,
 \]
 con $\phi\in[0,\pi]$, $\theta\in[0,2\pi]$.
 
 \textbf{Paso 2: Calcular el elemento de área.}
-Sabemos que para una esfera de radio $R$, $\|\mathbf{r}_\phi \times \mathbf{r}_\theta\| = R^2\sin\phi$. Aquí $R=2$, así que
+Sabemos que para una esfera de radio $R$, $\|\mathbf{r}_\phi \times \mathbf{r}_\theta\| = R^2\sen\phi$. Aquí $R=2$, así que
 \[
-dS = 4\sin\phi\,d\phi\,d\theta.
+dS = 4\sen\phi\,d\phi\,d\theta.
 \]
 
 \textbf{Paso 3: Formar el integrando.}
-Sobre la esfera, $x^2+y^2 = 4\sin^2\phi$. Por tanto,
+Sobre la esfera, $x^2+y^2 = 4\sen^2\phi$. Por tanto,
 \[
-(x^2+y^2)\,dS = (4\sin^2\phi)(4\sin\phi)\,d\phi\,d\theta = 16\sin^3\phi\,d\phi\,d\theta.
+(x^2+y^2)\,dS = (4\sen^2\phi)(4\sen\phi)\,d\phi\,d\theta = 16\sen^3\phi\,d\phi\,d\theta.
 \]
 
 \textbf{Paso 4: Reducir a integral doble.}
 \[
-I = \int_0^{2\pi}\int_0^\pi 16\sin^3\phi\,d\phi\,d\theta.
+I = \int_0^{2\pi}\int_0^\pi 16\sen^3\phi\,d\phi\,d\theta.
 \]
 
 \textbf{Paso 5: Evaluar.}
 \[
-I = 16(2\pi)\int_0^\pi \sin^3\phi\,d\phi
+I = 16(2\pi)\int_0^\pi \sen^3\phi\,d\phi
 = 32\pi \cdot \frac{4}{3}
 = \frac{128\pi}{3}.
 \]
@@ -872,13 +872,13 @@ La integral de superficie escalar permite extender las aplicaciones físicas de 
 Halle la masa y el centro de masa de la porción de la esfera $x^2+y^2+z^2=R^2$ situada en el primer octante ($x,y,z\ge 0$), si su densidad superficial es $\rho(x,y,z)=z$.
 \begin{myproof}
 \textbf{Paso 1.}
-Usamos $\mathbf{r}(\phi,\theta)=\langle R\sin\phi\cos\theta, R\sin\phi\sin\theta, R\cos\phi\rangle$, con $\phi,\theta\in[0,\pi/2]$. El elemento de área es $dS=R^2\sin\phi\,d\phi\,d\theta$.
+Usamos $\mathbf{r}(\phi,\theta)=\langle R\sen\phi\cos\theta, R\sen\phi\sen\theta, R\cos\phi\rangle$, con $\phi,\theta\in[0,\pi/2]$. El elemento de área es $dS=R^2\sen\phi\,d\phi\,d\theta$.
 
 \textbf{Paso 2.}
 \[
 m = \iint_S z\,dS
-= \int_0^{\pi/2}\int_0^{\pi/2} (R\cos\phi)(R^2\sin\phi)\,d\phi\,d\theta
-= R^3 \cdot \frac{\pi}{2} \int_0^{\pi/2} \sin\phi\cos\phi\,d\phi
+= \int_0^{\pi/2}\int_0^{\pi/2} (R\cos\phi)(R^2\sen\phi)\,d\phi\,d\theta
+= R^3 \cdot \frac{\pi}{2} \int_0^{\pi/2} \sen\phi\cos\phi\,d\phi
 = R^3 \cdot \frac{\pi}{2} \cdot \frac{1}{2}
 = \frac{\pi R^3}{4}.
 \]
@@ -889,16 +889,16 @@ Por simetría $x\leftrightarrow y$ (el dominio y la densidad $\rho=z$ son invari
 M_{xy} = \iint_S z\,\rho\,dS = \iint_S z^2\,dS.
 \]
 \[
-M_{xy} = \int_0^{\pi/2}\int_0^{\pi/2} (R^2\cos^2\phi)(R^2\sin\phi)\,d\phi\,d\theta
-= R^4 \cdot \frac{\pi}{2} \int_0^{\pi/2} \cos^2\phi\sin\phi\,d\phi.
+M_{xy} = \int_0^{\pi/2}\int_0^{\pi/2} (R^2\cos^2\phi)(R^2\sen\phi)\,d\phi\,d\theta
+= R^4 \cdot \frac{\pi}{2} \int_0^{\pi/2} \cos^2\phi\sen\phi\,d\phi.
 \]
 La integral en $\phi$ es $\dfrac{1}{3}$. Luego $M_{xy} = \dfrac{\pi R^4}{6}$.
 
 Para calcular $\bar{x}=\bar{y}$, se necesita $M_{yz} = \iint_S x\,\rho\,dS = \iint_S xz\,dS$:
 \[
 M_{yz}
-= \int_0^{\pi/2}\int_0^{\pi/2}(R\sin\phi\cos\theta)(R\cos\phi)(R^2\sin\phi)\,d\phi\,d\theta
-= R^4\!\int_0^{\pi/2}\!\cos\theta\,d\theta\cdot\int_0^{\pi/2}\!\sin^2\phi\cos\phi\,d\phi
+= \int_0^{\pi/2}\int_0^{\pi/2}(R\sen\phi\cos\theta)(R\cos\phi)(R^2\sen\phi)\,d\phi\,d\theta
+= R^4\!\int_0^{\pi/2}\!\cos\theta\,d\theta\cdot\int_0^{\pi/2}\!\sen^2\phi\cos\phi\,d\phi
 = R^4\cdot 1\cdot\frac{1}{3} = \frac{R^4}{3}.
 \]
 
@@ -1013,27 +1013,27 @@ La normal hacia afuera en un cilindro radial apunta en la dirección de $\langle
 
 \textbf{Paso 2: Parametrizar.}
 \[
-\mathbf{r}(\theta,z)=\langle \cos\theta,\; \sin\theta,\; z \rangle,
+\mathbf{r}(\theta,z)=\langle \cos\theta,\; \sen\theta,\; z \rangle,
 \quad 0\le\theta\le 2\pi,\; 0\le z\le 2.
 \]
 
 \textbf{Paso 3: Calcular el vector normal.}
 \[
-\mathbf{r}_\theta = \langle -\sin\theta,\; \cos\theta,\; 0 \rangle,\quad
+\mathbf{r}_\theta = \langle -\sen\theta,\; \cos\theta,\; 0 \rangle,\quad
 \mathbf{r}_z = \langle 0,\; 0,\; 1 \rangle.
 \]
 \[
 \mathbf{r}_\theta \times \mathbf{r}_z
-= \langle \cos\theta,\; \sin\theta,\; 0 \rangle.
+= \langle \cos\theta,\; \sen\theta,\; 0 \rangle.
 \]
 Este vector apunta hacia afuera, que es exactamente la orientación pedida.
 
 \textbf{Paso 4: Sustituir el campo.}
-Sobre el cilindro, $\mathbf{F}(\mathbf{r}(\theta,z)) = \langle \cos\theta, \sin\theta, z\rangle$. Entonces
+Sobre el cilindro, $\mathbf{F}(\mathbf{r}(\theta,z)) = \langle \cos\theta, \sen\theta, z\rangle$. Entonces
 \[
 \mathbf{F}\cdot(\mathbf{r}_\theta \times \mathbf{r}_z)
-= \langle \cos\theta,\sin\theta,z\rangle \cdot \langle \cos\theta,\sin\theta,0\rangle
-= \cos^2\theta+\sin^2\theta = 1.
+= \langle \cos\theta,\sen\theta,z\rangle \cdot \langle \cos\theta,\sen\theta,0\rangle
+= \cos^2\theta+\sen^2\theta = 1.
 \]
 
 \textbf{Paso 5: Evaluar la integral doble.}
@@ -1211,7 +1211,7 @@ Por el teorema de la divergencia,
 \]
 
 \textbf{Paso 4: Evaluar la integral triple.}
-Usamos coordenadas cilíndricas: $x=r\cos\theta$, $y=r\sin\theta$, $z=z$. El paraboloide es $z=1-r^2$, con $0\le r\le 1$, $0\le\theta\le 2\pi$, $0\le z\le 1-r^2$. El elemento de volumen es $dV = r\,dz\,dr\,d\theta$.
+Usamos coordenadas cilíndricas: $x=r\cos\theta$, $y=r\sen\theta$, $z=z$. El paraboloide es $z=1-r^2$, con $0\le r\le 1$, $0\le\theta\le 2\pi$, $0\le z\le 1-r^2$. El elemento de volumen es $dV = r\,dz\,dr\,d\theta$.
 \[
 \iiint_Q 2z\,dV
 = 2\int_0^{2\pi}\int_0^1\int_0^{1-r^2} z\,r\,dz\,dr\,d\theta.
@@ -1417,9 +1417,9 @@ La integral es
 \]
 
 \textbf{Paso 4: Calcular la integral de línea (verificación).}
-Parametrizamos el borde: $\mathbf{r}(t)=\langle 2\cos t, 2\sin t, 0\rangle$, $0\le t\le 2\pi$. Entonces $\mathbf{F}=\langle -2\sin t, 2\cos t, 0\rangle$, $d\mathbf{r}=\langle -2\sin t, 2\cos t, 0\rangle dt$. El producto punto es
+Parametrizamos el borde: $\mathbf{r}(t)=\langle 2\cos t, 2\sen t, 0\rangle$, $0\le t\le 2\pi$. Entonces $\mathbf{F}=\langle -2\sen t, 2\cos t, 0\rangle$, $d\mathbf{r}=\langle -2\sen t, 2\cos t, 0\rangle dt$. El producto punto es
 \[
-(-2\sin t)(-2\sin t) + (2\cos t)(2\cos t) = 4\sin^2 t + 4\cos^2 t = 4.
+(-2\sen t)(-2\sen t) + (2\cos t)(2\cos t) = 4\sen^2 t + 4\cos^2 t = 4.
 \]
 Luego
 \[
@@ -1463,10 +1463,10 @@ Por simetría, $\iint_S x\,dS = \iint_S y\,dS = 0$ (la región es simétrica res
 \[
 \iint_S z\,dS.
 \]
-Usamos coordenadas esféricas para el hemisferio de radio 1: $z=\cos\phi$, $dS=\sin\phi\,d\phi\,d\theta$, con $\phi\in[0,\pi/2]$, $\theta\in[0,2\pi]$.
+Usamos coordenadas esféricas para el hemisferio de radio 1: $z=\cos\phi$, $dS=\sen\phi\,d\phi\,d\theta$, con $\phi\in[0,\pi/2]$, $\theta\in[0,2\pi]$.
 \[
 \iint_S z\,dS
-= \int_0^{2\pi}\int_0^{\pi/2} \cos\phi\sin\phi\,d\phi\,d\theta
+= \int_0^{2\pi}\int_0^{\pi/2} \cos\phi\sen\phi\,d\phi\,d\theta
 = 2\pi \cdot \frac{1}{2} = \pi.
 \]
 Por tanto, el flujo del rotacional es $\pi$.
@@ -1492,7 +1492,7 @@ Calcule la divergencia y el rotacional de los siguientes campos:
 \begin{enumerate}[(a)]
     \item $\mathbf{F}(x,y,z)=\langle x^2, y^2, z^2 \rangle$
     \item $\mathbf{F}(x,y,z)=\langle yz, xz, xy \rangle$
-    \item $\mathbf{F}(x,y,z)=\langle e^x, \sin y, \cos z \rangle$
+    \item $\mathbf{F}(x,y,z)=\langle e^x, \sen y, \cos z \rangle$
     \item $\mathbf{F}(x,y,z)=\langle -y, x, 0 \rangle$
 \end{enumerate}
 \end{multicols}
@@ -1533,7 +1533,7 @@ Calcule la integral $\displaystyle\int_{C}(\cos x+2yz)\,dx+(\sen y+2xz)\,dy+(z+2
 
 \begin{prob}
 Un campo de fuerzas $\mathbf{F}(x,y) = \langle e^x \cos y + y,
--e^x \sin y + x \rangle$ actúa sobre una partícula.
+-e^x \sen y + x \rangle$ actúa sobre una partícula.
 \begin{enumerate}[(a)]
     \item Demuestre que $\mathbf{F}$ es conservativo.
     \item Encuentre la función potencial $f$.

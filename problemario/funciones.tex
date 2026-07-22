@@ -547,7 +547,7 @@ Las seis funciones trigonométricas fundamentales se definen con $x \in \mathbb{
 \hline
 \textbf{Función} & \textbf{Dominio} & \textbf{Rango} & \textbf{Período} & \textbf{Paridad} \\
 \hline
-$\sin x$ & $\mathbb{R}$ & $[-1,1]$ & $2\pi$ & impar \\
+$\sen x$ & $\mathbb{R}$ & $[-1,1]$ & $2\pi$ & impar \\
 $\cos x$ & $\mathbb{R}$ & $[-1,1]$ & $2\pi$ & par \\
 $\tan x$ & $\mathbb{R}\setminus\{\pi/2+k\pi\}$ & $\mathbb{R}$ & $\pi$ & impar \\
 $\cot x$ & $\mathbb{R}\setminus\{k\pi\}$ & $\mathbb{R}$ & $\pi$ & impar \\
@@ -574,12 +574,12 @@ de las funciones trigonométricas fundamentales.
     legend pos=north east,
 ]
 \addplot[blue, thick] {sin(deg(x))};
-\addlegendentry{$\sin x$}
+\addlegendentry{$\sen x$}
 \addplot[orange, thick] {cos(deg(x))};
 \addlegendentry{$\cos x$}
 \end{axis}
 \end{tikzpicture}
-\caption{$\sin x$ (azul) y $\cos x$ (naranja): período $2\pi$, amplitud 1. Observe que $\cos x = \sin(x+\pi/2)$.}
+\caption{$\sen x$ (azul) y $\cos x$ (naranja): período $2\pi$, amplitud 1. Observe que $\cos x = \sen(x+\pi/2)$.}
 \label{fig:seno_coseno}
 \end{figure}
 
@@ -643,9 +643,9 @@ Identifique la composición en $y = \sqrt{1-x^2}$ y halle su dominio.
 \end{example}
 
 \begin{rem}[Composiciones múltiples]
-La función $h(x) = \ln(\sin(x^2+1))$ es la composición $h = \ln \circ \sin \circ p$, donde $p(x)=x^2+1$. Para hallar su dominio se imponen las restricciones de adentro hacia afuera: $p(x)=x^2+1 \geq 1 > 0$ (sin restricción); $\sin(p(x))$ debe ser positivo para que $\ln$ esté definido. Luego
+La función $h(x) = \ln(\sen(x^2+1))$ es la composición $h = \ln \circ \sen \circ p$, donde $p(x)=x^2+1$. Para hallar su dominio se imponen las restricciones de adentro hacia afuera: $p(x)=x^2+1 \geq 1 > 0$ (sin restricción); $\sen(p(x))$ debe ser positivo para que $\ln$ esté definido. Luego
 \[
-  D_h = \{\, x \in \mathbb{R} : \sin(x^2+1) > 0 \,\}.
+  D_h = \{\, x \in \mathbb{R} : \sen(x^2+1) > 0 \,\}.
 \]
 \end{rem}
 
@@ -719,9 +719,9 @@ Sea $c > 0$, $c \neq 1$:
   \item $y = f(-x)$: \textbf{reflexión respecto al eje $y$} (no altera paridad).
 \end{itemize}
 
-Para $\sin$ y $\cos$, la forma generalizada
+Para $\sen$ y $\cos$, la forma generalizada
 \[
-  y = C + A\sin\bigl[a(t - b)\bigr] \quad \text{o} \quad y = C + A\cos\bigl[a(t - b)\bigr]
+  y = C + A\sen\bigl[a(t - b)\bigr] \quad \text{o} \quad y = C + A\cos\bigl[a(t - b)\bigr]
 \]
 tiene los siguientes parámetros geométricos:
 \begin{itemize}
@@ -750,10 +750,10 @@ concreto.
 \draw[<->, purple, thick] (axis cs:0.5,-1.2) -- (axis cs:5.74,-1.2)
     node[midway, below, font=\small] {$T=2\pi/1.2\approx5.24$};
 \node[below, font=\small] at (axis cs:3.5,-1.6)
-    {$y=0.5+1.5\sin[1.2(t+0.3)]$};
+    {$y=0.5+1.5\sen[1.2(t+0.3)]$};
 \end{axis}
 \end{tikzpicture}
-\caption{Parámetros de la forma amplitud-fase en $y=C+A\sin[a(t-b)]$.}
+\caption{Parámetros de la forma amplitud-fase en $y=C+A\sen[a(t-b)]$.}
 \label{fig:amplitud_fase}
 \end{figure}
 
@@ -1119,7 +1119,7 @@ Calcule el dominio natural de cada función. Exprese el resultado en notación d
   \item $\sqrt{\dfrac{(x^2+1)(x-3)}{x^2-9}}$
   \item $\sqrt{\dfrac{x^2-x}{x^2-2x}}$
   \item $x^2+8x+1$
-  \item $\dfrac{\cos x}{1-\sin x}$
+  \item $\dfrac{\cos x}{1-\sen x}$
   \item $\dfrac{1}{1-\tan x}$
   \item $\sqrt{\ln(x-1)}$
   \item $\arcsin(2x-1)$
@@ -1135,7 +1135,7 @@ Determine si las siguientes funciones son par, impar o ninguna de las dos. Justi
   \item $f(x)=\dfrac{x^2}{x^4+1}$
   \item $f(x)=1+3x^3-x^5$
   \item $f(x)=x^3+x^2$
-  \item $f(x)=\dfrac{\sin x}{x}$
+  \item $f(x)=\dfrac{\sen x}{x}$
   \item $f(x)=e^{x^2}$
   \item $f(x)=x|x|$
 \end{enumerate}
@@ -1177,14 +1177,14 @@ Trace la gráfica de cada función por tramos y determine su dominio y rango.
 \begin{enumerate}
   \item $f(x) = \begin{cases} x+1 & x \leq -1 \\ x^2 & -1 < x < 1 \\ 2-x & x \geq 1 \end{cases}$
   \item $g(x) = \begin{cases} |x| & x < 2 \\ 4-x & x \geq 2 \end{cases}$
-  \item $h(x) = \begin{cases} \sin x & 0 \leq x \leq \pi \\ e^{x-\pi} & x > \pi \end{cases}$
+  \item $h(x) = \begin{cases} \sen x & 0 \leq x \leq \pi \\ e^{x-\pi} & x > \pi \end{cases}$
 \end{enumerate}
 \end{prob}
 
 \begin{prob}
 Grafique las siguientes funciones especificando transformaciones respecto a la función elemental más cercana. Para cada una, indique amplitud, período, dominio y rango.
 \begin{enumerate}
-  \item $f(x) = 3\sin(2x - \pi)$
+  \item $f(x) = 3\sen(2x - \pi)$
   \item $g(x) = -2\cos\!\bigl(\tfrac{x}{3}\bigr) + 1$
   \item $h(x) = \tan(x + \pi/4)$
   \item $k(x) = 2^{-x} - 1$
@@ -1232,7 +1232,7 @@ Para cada función compuesta, descompóngala en funciones elementales $f$ y $g$ 
 \begin{multicols}{2}
 \begin{enumerate}
   \item $h(x) = \sqrt{x^2-4}$
-  \item $h(x) = e^{\sin x}$
+  \item $h(x) = e^{\sen x}$
   \item $h(x) = \ln(1+e^x)$
   \item $h(x) = \cos^3(2x)$
   \item $h(x) = \arctan\!\bigl(\sqrt{x}\bigr)$

@@ -922,7 +922,7 @@ Toda matriz $A \in \mathbb{M}_2(\mathbb{R})$ define una transformación lineal $
     \draw[->] (0.55,0) arc [start angle=0, end angle=30, radius=0.55];
     \node at (0.75,0.16) {\small $\theta$};
 \end{tikzpicture}\\[4pt]
-{\small $A = \begin{pmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{pmatrix}$, $\theta = \dfrac{\pi}{6}$}
+{\small $A = \begin{pmatrix} \cos\theta & -\sen\theta \\ \sen\theta & \cos\theta \end{pmatrix}$, $\theta = \dfrac{\pi}{6}$}
 \end{minipage}\hfill
 \begin{minipage}{0.48\textwidth}\centering
 \begin{tikzpicture}[scale=1.3]
@@ -975,15 +975,15 @@ A continuación se presentan algunos ejemplos clásicos de transformaciones line
     La matriz de rotación de un ángulo $\theta$ es
     \[
     T_{R_\theta} = \begin{pmatrix}
-        \cos\theta & -\sin\theta \\
-        \sin\theta & \cos\theta
+        \cos\theta & -\sen\theta \\
+        \sen\theta & \cos\theta
     \end{pmatrix}
     \]
     Por ejemplo, para rotar el punto $(1,4)$ un ángulo $\frac{\pi}{4}$ radianes:
     \[
     \begin{pmatrix}
-        \cos\frac{\pi}{4} & -\sin\frac{\pi}{4} \\
-        \sin\frac{\pi}{4} & \cos\frac{\pi}{4}
+        \cos\frac{\pi}{4} & -\sen\frac{\pi}{4} \\
+        \sen\frac{\pi}{4} & \cos\frac{\pi}{4}
     \end{pmatrix}
     \begin{pmatrix}1\\4\end{pmatrix}
     = \frac{\sqrt{2}}{2} \begin{pmatrix} -3 \\ 5 \end{pmatrix}
@@ -1608,31 +1608,31 @@ M_{B'}^{-1} \cdot T\left(\begin{pmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{pmatrix}\
 
 % Intermedio
 \begin{prob}
-Defina $W = \operatorname{span}\{1, \sin x, \cos x\}$ como subespacio de $\mathcal{C}[0,2\pi]$ y sea $T: W \rightarrow \mathbb{R}^3$ la transformación lineal definida por evaluación en $0$, $\pi$ y $2\pi$:
+Defina $W = \operatorname{span}\{1, \sen x, \cos x\}$ como subespacio de $\mathcal{C}[0,2\pi]$ y sea $T: W \rightarrow \mathbb{R}^3$ la transformación lineal definida por evaluación en $0$, $\pi$ y $2\pi$:
 \[
 T(f(x)) = \begin{pmatrix} f(0) \\ f(\pi) \\ f(2\pi) \end{pmatrix}.
 \]
 Calcule:
 
 \begin{enumerate}[$a)$]
-\item $T(1 + \sin x + \cos x)$.
+\item $T(1 + \sen x + \cos x)$.
 \begin{myproof}
-\textbf{Paso 1.} Evaluamos $f(x) = 1 + \sin x + \cos x$ en los tres puntos:
+\textbf{Paso 1.} Evaluamos $f(x) = 1 + \sen x + \cos x$ en los tres puntos:
 \[
 f(0) = 1 + 0 + 1 = 2, \qquad
 f(\pi) = 1 + 0 - 1 = 0, \qquad
 f(2\pi) = 1 + 0 + 1 = 2.
 \]
 
-\textbf{Paso 2.} $\boxed{T(1 + \sin x + \cos x) = \begin{pmatrix} 2 \\ 0 \\ 2 \end{pmatrix}}$
+\textbf{Paso 2.} $\boxed{T(1 + \sen x + \cos x) = \begin{pmatrix} 2 \\ 0 \\ 2 \end{pmatrix}}$
 \end{myproof}
 
-\item La matriz de representación de $T$ respecto a la base $\{1, \sin x, \cos x\}$ de $W$.
+\item La matriz de representación de $T$ respecto a la base $\{1, \sen x, \cos x\}$ de $W$.
 \begin{myproof}
 \textbf{Paso 1.} Calculamos la imagen de cada vector de la base:
 \[
 T(1) = \begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix}, \quad
-T(\sin x) = \begin{pmatrix} \sin 0 \\ \sin \pi \\ \sin 2\pi \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}, \quad
+T(\sen x) = \begin{pmatrix} \sen 0 \\ \sen \pi \\ \sen 2\pi \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}, \quad
 T(\cos x) = \begin{pmatrix} \cos 0 \\ \cos \pi \\ \cos 2\pi \end{pmatrix} = \begin{pmatrix} 1 \\ -1 \\ 1 \end{pmatrix}.
 \]
 
@@ -1648,7 +1648,7 @@ T(\cos x) = \begin{pmatrix} \cos 0 \\ \cos \pi \\ \cos 2\pi \end{pmatrix} = \beg
 
 \item Una base para el kernel de $T$.
 \begin{myproof}
-\textbf{Paso 1.} Buscamos $f = a_1 \cdot 1 + a_2 \sin x + a_3 \cos x$ tal que $T(f) = 0$, es decir:
+\textbf{Paso 1.} Buscamos $f = a_1 \cdot 1 + a_2 \sen x + a_3 \cos x$ tal que $T(f) = 0$, es decir:
 \[
 f(0)    = a_1 + a_3 = 0, \quad
 f(\pi)  = a_1 - a_3 = 0, \quad
@@ -1657,7 +1657,7 @@ f(2\pi) = a_1 + a_3 = 0.
 
 \textbf{Paso 2.} Sumando y restando la primera y segunda ecuación: $a_1 = 0$ y $a_3 = 0$; el coeficiente $a_2$ queda libre.
 
-\textbf{Paso 3.} $\boxed{\ker(T) = \operatorname{span}\{\sin x\}}$; la nulidad es $1$.
+\textbf{Paso 3.} $\boxed{\ker(T) = \operatorname{span}\{\sen x\}}$; la nulidad es $1$.
 \end{myproof}
 
 \item Una base para la imagen de $T$.
@@ -2250,7 +2250,7 @@ ytick={-1.0,0.0,...,4.0},]
     \end{figure}
     \end{myproof}
 
-    \item $\begin{pmatrix} \cos\left( \frac{\pi}{6} \right) & -\sin\left( \frac{\pi}{6} \right) \\ \sin\left( \frac{\pi}{6} \right) & \cos\left( \frac{\pi}{6} \right) \end{pmatrix}$
+    \item $\begin{pmatrix} \cos\left( \frac{\pi}{6} \right) & -\sen\left( \frac{\pi}{6} \right) \\ \sen\left( \frac{\pi}{6} \right) & \cos\left( \frac{\pi}{6} \right) \end{pmatrix}$
     \begin{myproof}
     \textbf{Efecto geométrico:} Rotación antihoraria de $\frac{\pi}{6}$ radianes ($30^\circ$) respecto al origen.
 
@@ -2471,7 +2471,7 @@ Dada la figura tridimensional de la Figura~\ref{fig:sudoku_original}, determine 
     \end{figure}
     \end{myproof}
     
-    \item $\begin{pmatrix} 1 & 0 & 0 \\ 0 & \cos\left( \frac{\pi}{6} \right) & -\sin\left( \frac{\pi}{6} \right) \\ 0 & \sin\left( \frac{\pi}{6} \right) & \cos\left( \frac{\pi}{6} \right) \end{pmatrix}$
+    \item $\begin{pmatrix} 1 & 0 & 0 \\ 0 & \cos\left( \frac{\pi}{6} \right) & -\sen\left( \frac{\pi}{6} \right) \\ 0 & \sen\left( \frac{\pi}{6} \right) & \cos\left( \frac{\pi}{6} \right) \end{pmatrix}$
     \begin{myproof}
     \textbf{Descripción:} Rotación de $30^\circ$ en el plano $YZ$ alrededor del eje $x$.
 

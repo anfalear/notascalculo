@@ -137,7 +137,7 @@ y hay infinitas trayectorias posibles.
     \item \textbf{Manipulación algebraica.} Factorizar, racionalizar o
     simplificar para eliminar indeterminaciones.
     \item \textbf{Coordenadas polares.} Si el punto de aproximación es
-    el origen, usar $x=r\cos\theta$, $y=r\sin\theta$. Si el límite
+    el origen, usar $x=r\cos\theta$, $y=r\sen\theta$. Si el límite
     cuando $r\to 0$ es independiente de $\theta$, el límite existe; si
     depende de $\theta$, no existe.
     \item \textbf{Teorema del emparedado.} Acotar $|f(x,y)-L|$ por
@@ -533,25 +533,25 @@ f(x,y) = \frac{x^2 y}{x^2 + y^2}.
 Estudiar $\lim_{(x,y)\to(0,0)} f(x,y)$.
 \begin{myproof}
 \textbf{Paso 1. Coordenadas polares.} Hacemos $x=r\cos\theta$,
-$y=r\sin\theta$. Entonces
+$y=r\sen\theta$. Entonces
 \[
-f(r\cos\theta, r\sin\theta)
-= \frac{(r\cos\theta)^2(r\sin\theta)}
-       {(r\cos\theta)^2+(r\sin\theta)^2}
-= \frac{r^3\cos^2\theta\sin\theta}{r^2}
-= r\cos^2\theta\sin\theta.
+f(r\cos\theta, r\sen\theta)
+= \frac{(r\cos\theta)^2(r\sen\theta)}
+       {(r\cos\theta)^2+(r\sen\theta)^2}
+= \frac{r^3\cos^2\theta\sen\theta}{r^2}
+= r\cos^2\theta\sen\theta.
 \]
 
 \textbf{Paso 2. Límite cuando $r\to 0$.}
 Para cualquier $\theta$ fijo,
 \[
-\lim_{r\to 0} r\cos^2\theta\sin\theta = 0,
+\lim_{r\to 0} r\cos^2\theta\sen\theta = 0,
 \]
-pues $|\cos^2\theta\sin\theta| \leq 1$ y $r\to 0$.
+pues $|\cos^2\theta\sen\theta| \leq 1$ y $r\to 0$.
 
 \textbf{Paso 3. Independencia de $\theta$.}
-El valor $r\cos^2\theta\sin\theta\to 0$ para cualquier $\theta$ fijo,
-pues $|\cos^2\theta\sin\theta|\leq 1$ y $r\to 0$.
+El valor $r\cos^2\theta\sen\theta\to 0$ para cualquier $\theta$ fijo,
+pues $|\cos^2\theta\sen\theta|\leq 1$ y $r\to 0$.
 
 \textbf{Paso 4. Resultado.}
 $\displaystyle\lim_{(x,y)\to(0,0)} f(x,y) = 0$.
@@ -874,10 +874,10 @@ con denominador $x^2+y^2>0$, luego es continua en
 $\mathbb{R}^2\setminus\{(0,0)\}$.
 
 \textbf{Paso 2:} Verificamos la continuidad en $(0,0)$ con coordenadas polares
-($x=r\cos\theta$, $y=r\sin\theta$):
+($x=r\cos\theta$, $y=r\sen\theta$):
 \[
-\frac{x^2 y}{x^2+y^2} = \frac{r^3\cos^2\theta\sin\theta}{r^2}
-= r\cos^2\theta\sin\theta \;\xrightarrow{r\to 0}\; 0.
+\frac{x^2 y}{x^2+y^2} = \frac{r^3\cos^2\theta\sen\theta}{r^2}
+= r\cos^2\theta\sen\theta \;\xrightarrow{r\to 0}\; 0.
 \]
 Luego $\lim_{(x,y)\to(0,0)} f(x,y)=0=f(0,0)$, así que $f$ es continua en $(0,0)$.
 
@@ -984,7 +984,7 @@ Calcule los siguientes límites o demuestre que no existen:
     \item $\displaystyle\lim_{(x,y)\to(0,0)} \frac{x^3+y^3}{x^2+y^2}$
     \item $\displaystyle\lim_{(x,y)\to(0,0)} \frac{x^2 y^2}{x^4+y^4}$
     \item $\displaystyle\lim_{(x,y)\to(0,0)} \frac{x^2 y}{x^4+y^2}$
-    \item $\displaystyle\lim_{(x,y)\to(0,0)} \frac{\sin(x^2+y^2)}{x^2+y^2}$
+    \item $\displaystyle\lim_{(x,y)\to(0,0)} \frac{\sen(x^2+y^2)}{x^2+y^2}$
     \item $\displaystyle\lim_{(x,y)\to(0,0)} \frac{1-\cos(xy)}{x^2 y^2}$
     \item $\displaystyle\lim_{(x,y)\to(0,0)} \frac{x y}{\sqrt{x^2+y^2}}$
     \item $\displaystyle\lim_{(x,y)\to (0,0)} \dfrac{xy}{x^2+y^2}$

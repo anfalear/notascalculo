@@ -383,13 +383,13 @@ entre $h$ y $g$ que convergen al mismo valor, $f$ tampoco tiene escapatoria.
 Su aplicación más célebre es el límite trigonométrico fundamental.
 
 \begin{theorem} Demuestre que \(
-  \lim_{x \to 0} \frac{\sin x}{x} = 1.
+  \lim_{x \to 0} \frac{\sen x}{x} = 1.
 \)
 \end{theorem}
 
 \begin{proof}
 Sea $0<x<\dfrac{\pi}{2}$. Considérese el círculo unitario centrado en el
-origen y los puntos $O=(0,0)$, $A=(1,0)$, $B=(\cos x,\sin x)$ sobre dicho
+origen y los puntos $O=(0,0)$, $A=(1,0)$, $B=(\cos x,\sen x)$ sobre dicho
 círculo, y $T=(1,\tan x)$ sobre la recta $x=1$ (véase la
 figura~\ref{fig:encaje_areas}).
 
@@ -450,14 +450,14 @@ figura~\ref{fig:encaje_areas}).
   \node[below, font=\scriptsize, gray!80!black]
         at (\cosA/2,-0.055) {$\cos x$};
   \node[right, font=\scriptsize, gray!80!black]
-        at (\cosA+0.02,\sinA/2) {$\sin x$};
+        at (\cosA+0.02,\sinA/2) {$\sen x$};
   \node[right, font=\scriptsize, gray!80!black]
         at (1.03,\tanA/2) {$\tan x$};
 
   % Etiquetas de áreas
   \node[font=\scriptsize, blue!70!black]
         at ({(1+\cosA)/3+0.04},{\sinA/4})
-        {$\tfrac{1}{2}\sin x$};
+        {$\tfrac{1}{2}\sen x$};
   \node[font=\scriptsize, teal!70!black]
         at ({0.55*cos(\ang/2+5)},{0.55*sin(\ang/2+5)})
         {$\tfrac{x}{2}$};
@@ -472,43 +472,43 @@ triángulo circunscrito.}
 
 \noindent Comparando las tres áreas coloreadas se obtiene la cadena
 \[
-  \underbrace{\tfrac{1}{2}\sin x}_{\triangle\,OAB}
+  \underbrace{\tfrac{1}{2}\sen x}_{\triangle\,OAB}
   \;\leq\;
   \underbrace{\tfrac{x}{2}}_{\text{sector}}
   \;\leq\;
   \underbrace{\tfrac{1}{2}\tan x}_{\triangle\,OAT}.
 \]
-Dividiendo por $\dfrac{1}{2}\sin x > 0$ y usando que
-$\tan x = \sin x/\cos x$:
+Dividiendo por $\dfrac{1}{2}\sen x > 0$ y usando que
+$\tan x = \sen x/\cos x$:
 \[
-  1 \;\leq\; \frac{x}{\sin x} \;\leq\; \frac{1}{\cos x}.
+  1 \;\leq\; \frac{x}{\sen x} \;\leq\; \frac{1}{\cos x}.
 \]
 Tomando recíprocos (lo que invierte las desigualdades):
 \[
-  \cos x \;\leq\; \frac{\sin x}{x} \;\leq\; 1.
+  \cos x \;\leq\; \frac{\sen x}{x} \;\leq\; 1.
 \]
 Como $\displaystyle\lim_{x\to 0^+}\cos x = 1$, el Teorema del Encaje da
 \[
-  \lim_{x\to 0^+}\frac{\sin x}{x}=1.
+  \lim_{x\to 0^+}\frac{\sen x}{x}=1.
 \]
-La función $f(x)=\dfrac{\sin x}{x}$ es par (pues $\sin(-x)=-\sin x$), de
+La función $f(x)=\dfrac{\sen x}{x}$ es par (pues $\sen(-x)=-\sen x$), de
 modo que $f(-x)=f(x)$ y, en consecuencia,
 \[
-  \lim_{x\to 0^-}\frac{\sin x}{x}
-  = \lim_{x\to 0^+}\frac{\sin(-x)}{-x}
-  = \lim_{x\to 0^+}\frac{\sin x}{x} = 1.
+  \lim_{x\to 0^-}\frac{\sen x}{x}
+  = \lim_{x\to 0^+}\frac{\sen(-x)}{-x}
+  = \lim_{x\to 0^+}\frac{\sen x}{x} = 1.
 \]
 Al coincidir ambos límites laterales se concluye
 \(
-  \lim_{x \to 0} \frac{\sin x}{x} = 1.
+  \lim_{x \to 0} \frac{\sen x}{x} = 1.
 \)
 \end{proof}
 
 \begin{rem}
-Como corolario inmediato, usando la identidad $1-\cos x = 2\sin^2\!\frac{x}{2}$,
+Como corolario inmediato, usando la identidad $1-\cos x = 2\sen^2\!\frac{x}{2}$,
 se puede demostrar que $\lim_{x\to 0}\dfrac{1-\cos x}{x} = 0$. Estos dos
 límites son la base sobre la que se construyen las fórmulas de derivación de
-$\sin x$ y $\cos x$.
+$\sen x$ y $\cos x$.
 \end{rem}
 
 %%==========================================================
@@ -630,9 +630,9 @@ fundamental $e = \lim_{u\to 0}(1+u)^{1/u}$.
 La expresión entre corchetes tiende a $e$ (con $u=x^2\to 0$); resta
 calcular el límite del exponente.
 
-\textbf{Paso 3: Límite del exponente.} Usando $\dfrac{x}{\sin x}\to 1$:
+\textbf{Paso 3: Límite del exponente.} Usando $\dfrac{x}{\sen x}\to 1$:
 \[
-  x^2\cot^2 x = \left(\frac{x}{\sin x}\right)^{\!2}\cos^2 x
+  x^2\cot^2 x = \left(\frac{x}{\sen x}\right)^{\!2}\cos^2 x
   \;\longrightarrow\; 1^2\cdot 1 = 1.
 \]
 
@@ -679,7 +679,7 @@ Sea $f$ discontinua en $c$. Se distinguen:
   \item \textbf{Infinita:} al menos un límite lateral es $\pm\infty$;
         corresponde a una asíntota vertical.
   \item \textbf{Oscilante:} el límite no existe por oscilación sin
-        convergencia, como $\sin\!\left(\dfrac{1}{x}\right)$ en $x=0$.
+        convergencia, como $\sen\!\left(\dfrac{1}{x}\right)$ en $x=0$.
 \end{itemize}
 \end{definition}
 
@@ -859,7 +859,7 @@ Sean $\alpha$, $\beta$ infinitesimales para $x\to a$:
 
 \begin{rem}
 $\alpha\sim\beta$ si y solo si $\alpha-\beta = o(\alpha)$. Por ejemplo,
-$\sin x\sim x$ cuando $x\to 0$ porque $x-\sin x\sim\dfrac{x^3}{6}$, que
+$\sen x\sim x$ cuando $x\to 0$ porque $x-\sen x\sim\dfrac{x^3}{6}$, que
 tiende a cero mucho más rápido que $x$.
 \end{rem}
 
@@ -885,11 +885,11 @@ A continuación se muestra la tabla de equivalencias fundamentales cuando $x\to 
   \toprule
   f(x) & g(x) & \textbf{Justificación} \\
   \midrule
-  \sin x        & x                    & $\lim_{x\to 0}\dfrac{\sin x}{x}=1$ \\[4pt]
+  \sen x        & x                    & $\lim_{x\to 0}\dfrac{\sen x}{x}=1$ \\[4pt]
   \tan x        & x                    & $\lim_{x\to 0}\dfrac{\tan x}{x}=1$ \\[4pt]
-  \arcsin x     & x                    & consecuencia de $\sin x\sim x$ \\[4pt]
+  \arcsin x     & x                    & consecuencia de $\sen x\sim x$ \\[4pt]
   \arctan x     & x                    & consecuencia de $\tan x\sim x$ \\[4pt]
-  1-\cos x      & \dfrac{x^2}{2}       & identidad $1-\cos x = 2\sin^2\!\dfrac{x}{2}$ \\[4pt]
+  1-\cos x      & \dfrac{x^2}{2}       & identidad $1-\cos x = 2\sen^2\!\dfrac{x}{2}$ \\[4pt]
   \ln(1+x)      & x                    & $(\ln x)'\big|_{x=1}=1$ \\[4pt]
   e^x-1         & x                    & $(e^x)'\big|_{x=0}=1$ \\[4pt]
   a^x-1         & x\ln a               & cambio de base $a^x = e^{x\ln a}$ \\[4pt]
@@ -903,24 +903,24 @@ A continuación se muestra la tabla de equivalencias fundamentales cuando $x\to 
 Todas las equivalencias de la tabla son instancias del desarrollo de Taylor
 de primer orden: si $f(0)=0$, entonces $f(x)\sim f'(0)\cdot x$ cuando
 $x\to 0$. Esto convierte la tabla entera en el corolario de una sola idea:
-$(\sin x)'|_0=1$ da $\sin x\sim x$; $(\ln(1+x))'|_0=1$ da
+$(\sen x)'|_0=1$ da $\sen x\sim x$; $(\ln(1+x))'|_0=1$ da
 $\ln(1+x)\sim x$; $((1+x)^\alpha)'|_0=\alpha$ da
 $(1+x)^\alpha-1\sim\alpha x$. No es necesario memorizar cada entrada por
 separado.
 \end{rem}
 
-\begin{example}[Límite por equivalentes: $\ln(1+3x)/\sin 2x$]
-Calcular $\displaystyle\lim_{x\to 0}\frac{\ln(1+3x)}{\sin 2x}$.
+\begin{example}[Límite por equivalentes: $\ln(1+3x)/\sen 2x$]
+Calcular $\displaystyle\lim_{x\to 0}\frac{\ln(1+3x)}{\sen 2x}$.
 
 \begin{myproof}
 \textbf{Paso 1: Identificar infinitesimales equivalentes.} Cuando $x\to 0$:
 \[
-  \ln(1+3x)\sim 3x, \qquad \sin 2x\sim 2x.
+  \ln(1+3x)\sim 3x, \qquad \sen 2x\sim 2x.
 \]
 
 \textbf{Paso 2: Sustituir y simplificar.}
 \[
-  \lim_{x\to 0}\frac{\ln(1+3x)}{\sin 2x}
+  \lim_{x\to 0}\frac{\ln(1+3x)}{\sen 2x}
   = \lim_{x\to 0}\frac{3x}{2x} = \boxed{\dfrac{3}{2}.}
 \]
 \end{myproof}
@@ -943,18 +943,18 @@ Calcular $\displaystyle\lim_{x\to 0}\frac{e^{5x}-1}{\tan 3x}$.
 \end{myproof}
 \end{example}
 
-\begin{example}[Límite por equivalentes: $(1-\cos x)/(x\sin x)$]
-Calcular $\displaystyle\lim_{x\to 0}\frac{1-\cos x}{x\sin x}$.
+\begin{example}[Límite por equivalentes: $(1-\cos x)/(x\sen x)$]
+Calcular $\displaystyle\lim_{x\to 0}\frac{1-\cos x}{x\sen x}$.
 
 \begin{myproof}
 \textbf{Paso 1: Identificar infinitesimales equivalentes.} Cuando $x\to 0$:
 \[
-  1-\cos x\sim\frac{x^2}{2}, \qquad \sin x\sim x.
+  1-\cos x\sim\frac{x^2}{2}, \qquad \sen x\sim x.
 \]
 
 \textbf{Paso 2: Sustituir y simplificar.}
 \[
-  \lim_{x\to 0}\frac{1-\cos x}{x\sin x}
+  \lim_{x\to 0}\frac{1-\cos x}{x\sen x}
   = \lim_{x\to 0}\frac{x^2/2}{x\cdot x}
   = \lim_{x\to 0}\frac{x^2/2}{x^2} = \boxed{\dfrac{1}{2}.}
 \]
@@ -1014,7 +1014,7 @@ $\displaystyle\lim_{x\to 1}\frac{\sqrt{x}-\sqrt{x^2}}{x-1}$
 
 % Desafiante
 \begin{prob}
-$\displaystyle\lim_{x\to 0}\frac{\sqrt{2}-\sqrt{1+\cos x}}{\sin^2 x}$
+$\displaystyle\lim_{x\to 0}\frac{\sqrt{2}-\sqrt{1+\cos x}}{\sen^2 x}$
 \end{prob}
 
 \begin{prob}
@@ -1060,16 +1060,16 @@ $\displaystyle\lim_{x\to 0}\frac{\ln(1+x)}{x}$
 
 % Intermedio
 \begin{prob}
-$\displaystyle\lim_{x\to \pi/4}\frac{\sin x-\cos x}{\cos 2x}$
+$\displaystyle\lim_{x\to \pi/4}\frac{\sen x-\cos x}{\cos 2x}$
 \end{prob}
 
 % Desafiante
 \begin{prob}
-$\displaystyle\lim_{u\to\pi/3}\frac{1-2\cos u}{\sin\!\left(u-\frac{\pi}{3}\right)}$
+$\displaystyle\lim_{u\to\pi/3}\frac{1-2\cos u}{\sen\!\left(u-\frac{\pi}{3}\right)}$
 \end{prob}
 
 \begin{prob}
-$\displaystyle\lim_{x\to\pi/2}\frac{2\sin^2 x+\sin x-1}{2\sin^2 x-3\sin x+1}$
+$\displaystyle\lim_{x\to\pi/2}\frac{2\sen^2 x+\sen x-1}{2\sen^2 x-3\sen x+1}$
 \end{prob}
 
 \begin{prob}
@@ -1077,7 +1077,7 @@ $\displaystyle\lim_{x\to\pi/3}\frac{\tan^3 x-3\tan x}{\cos\!\left(x+\frac{\pi}{6
 \end{prob}
 
 \begin{prob}
-$\displaystyle\lim_{x\to 0}\frac{x^2}{\sqrt{1+x\sin x}-\sqrt{\cos x}}$
+$\displaystyle\lim_{x\to 0}\frac{x^2}{\sqrt{1+x\sen x}-\sqrt{\cos x}}$
 \end{prob}
 
 \subsection{Límites en el infinito y de tipo $1^\infty$}
@@ -1113,7 +1113,7 @@ $\displaystyle\lim_{x\to\infty}\!\left(\frac{x^2+1}{x^2-2}\right)^{x^2}$
 \end{prob}
 
 \begin{prob}
-$\displaystyle\lim_{x\to 1}(1+\sin\pi x)^{\cot\pi x}$
+$\displaystyle\lim_{x\to 1}(1+\sen\pi x)^{\cot\pi x}$
 \end{prob}
 
 %\begin{prob}
@@ -1147,7 +1147,7 @@ $f(x)=\dfrac{3x^2+2x+1}{2x^2-3}$.
 
 % Básico
 \begin{prob}
-Trace la gráfica de $f(x)=|\sin x|$ e indique y clasifique todos los
+Trace la gráfica de $f(x)=|\sen x|$ e indique y clasifique todos los
 puntos de discontinuidad, si los hay.
 \end{prob}
 

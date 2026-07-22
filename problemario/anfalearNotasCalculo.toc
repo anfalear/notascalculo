@@ -100,9 +100,9 @@
 \contentsline {subsection}{\numberline {8.2.3}Ejemplos}{178}{subsection.8.2.3}%
 \contentsline {section}{\numberline {8.3}Identidades Trigonométricas Esenciales}{181}{section.8.3}%
 \contentsline {section}{\numberline {8.4}Integración de Potencias Trigonométricas}{181}{section.8.4}%
-\contentsline {subsection}{\numberline {8.4.1}Integrales de la forma $\DOTSI \intop \ilimits@ \sin ^m x \cos ^n x \, dx$}{181}{subsection.8.4.1}%
+\contentsline {subsection}{\numberline {8.4.1}Integrales de la forma $\DOTSI \intop \ilimits@ \mathop {\mathgroup \symoperators sen}\nolimits ^m x \cos ^n x \, dx$}{181}{subsection.8.4.1}%
 \contentsline {subsection}{\numberline {8.4.2}Integrales de la forma $\DOTSI \intop \ilimits@ \tan ^m x \sec ^n x \, dx$}{182}{subsection.8.4.2}%
-\contentsline {subsection}{\numberline {8.4.3}Integrales de productos $\sin (mx)\cos (nx)$, $\sin (mx)\sin (nx)$, $\cos (mx)\cos (nx)$}{183}{subsection.8.4.3}%
+\contentsline {subsection}{\numberline {8.4.3}Integrales de productos $\mathop {\mathgroup \symoperators sen}\nolimits (mx)\cos (nx)$, $\mathop {\mathgroup \symoperators sen}\nolimits (mx)\mathop {\mathgroup \symoperators sen}\nolimits (nx)$, $\cos (mx)\cos (nx)$}{183}{subsection.8.4.3}%
 \contentsline {section}{\numberline {8.5}Sustitución Trigonométrica}{184}{section.8.5}%
 \contentsline {subsection}{\numberline {8.5.1}Idea geométrica y fundamento}{184}{subsection.8.5.1}%
 \contentsline {subsection}{\numberline {8.5.2}Caso 1: Radical $\sqrt {a^2 - u^2}$}{184}{subsection.8.5.2}%
@@ -197,174 +197,175 @@
 \contentsline {subsection}{\numberline {17.1.3}Derivada de una función vectorial}{403}{subsection.17.1.3}%
 \contentsline {subsection}{\numberline {17.1.4}Reglas de derivación para funciones vectoriales}{407}{subsection.17.1.4}%
 \contentsline {subsection}{\numberline {17.1.5}Integral de una función vectorial}{407}{subsection.17.1.5}%
-\contentsline {subsection}{\numberline {17.1.6}Longitud de arco de una curva parametrizada}{408}{subsection.17.1.6}%
+\contentsline {subsection}{\numberline {17.1.6}Longitud de arco de una curva parametrizada}{409}{subsection.17.1.6}%
 \contentsline {subsection}{\numberline {17.1.7}Función longitud de arco y parametrización por longitud de arco}{411}{subsection.17.1.7}%
 \contentsline {section}{\numberline {17.2}Funciones de varias variables}{412}{section.17.2}%
-\contentsline {subsection}{\numberline {17.2.1}Gráfica de una función de dos variables}{416}{subsection.17.2.1}%
-\contentsline {subsection}{\numberline {17.2.2}Secciones cónicas: repaso}{416}{subsection.17.2.2}%
-\contentsline {subsection}{\numberline {17.2.3}Superficies cuádricas}{417}{subsection.17.2.3}%
-\contentsline {subsection}{\numberline {17.2.4}Cilindros}{420}{subsection.17.2.4}%
-\contentsline {subsection}{\numberline {17.2.5}Curvas y superficies de nivel}{421}{subsection.17.2.5}%
-\contentsline {section}{\numberline {17.3}Problemas propuestos}{426}{section.17.3}%
-\contentsline {chapter}{\numberline {18}Límites y continuidad en $\mathbb {R}^n$}{431}{chapter.18}%
-\contentsline {section}{\numberline {18.1}Límite y continuidad de una función de varias variables}{431}{section.18.1}%
-\contentsline {section}{\numberline {18.2}Propiedades algebraicas de los límites}{438}{section.18.2}%
-\contentsline {section}{\numberline {18.3}Teorema del emparedadp (sándwich) en varias variables}{439}{section.18.3}%
-\contentsline {section}{\numberline {18.4}Continuidad}{441}{section.18.4}%
-\contentsline {section}{\numberline {18.5}Problemas propuestos}{444}{section.18.5}%
-\contentsline {chapter}{\numberline {19}Diferenciación parcial, plano tangente y diferenciabilidad}{447}{chapter.19}%
-\contentsline {section}{\numberline {19.1}Derivadas parciales}{447}{section.19.1}%
-\contentsline {section}{\numberline {19.2}Plano tangente}{454}{section.19.2}%
-\contentsline {section}{\numberline {19.3}Aproximación lineal y linealización}{456}{section.19.3}%
-\contentsline {section}{\numberline {19.4}Diferenciales}{458}{section.19.4}%
-\contentsline {section}{\numberline {19.5}Problemas propuestos}{459}{section.19.5}%
-\contentsline {chapter}{\numberline {20}Regla de la cadena, derivada direccional y gradientes}{461}{chapter.20}%
-\contentsline {section}{\numberline {20.1}Regla de la cadena}{461}{section.20.1}%
-\contentsline {section}{\numberline {20.2}Derivación implícita}{464}{section.20.2}%
-\contentsline {section}{\numberline {20.3}Gradiente}{467}{section.20.3}%
-\contentsline {section}{\numberline {20.4}Derivada direccional}{468}{section.20.4}%
-\contentsline {section}{\numberline {20.5}Relación del plano tangente y la recta normal con el gradiente}{473}{section.20.5}%
-\contentsline {section}{\numberline {20.6}Problemas propuestos}{475}{section.20.6}%
-\contentsline {chapter}{\numberline {21}Optimización: extremos libres y con restricciones}{477}{chapter.21}%
-\contentsline {section}{\numberline {21.1}Definiciones básicas}{477}{section.21.1}%
-\contentsline {section}{\numberline {21.2}Criterio de la segunda derivada}{478}{section.21.2}%
-\contentsline {section}{\numberline {21.3}Optimización restringida y multiplicadores de Lagrange}{485}{section.21.3}%
-\contentsline {section}{\numberline {21.4}Teorema de los Multiplicadores de Lagrange}{487}{section.21.4}%
-\contentsline {section}{\numberline {21.5}Criterio de la segunda derivada restringida (hessiano limitado)}{490}{section.21.5}%
-\contentsline {section}{\numberline {21.6}Problemas propuestos}{491}{section.21.6}%
-\contentsline {part}{VI\hspace {1em}Álgebra Lineal avanzada}{493}{part.6}%
-\contentsline {chapter}{\numberline {22}Valores y vectores propios}{495}{chapter.22}%
-\contentsline {section}{\numberline {22.1}Valores y vectores propios}{495}{section.22.1}%
-\contentsline {section}{\numberline {22.2}Diagonalización y potencias de matrices}{501}{section.22.2}%
-\contentsline {subsection}{\numberline {22.2.1}La forma canónica de Jordan}{503}{subsection.22.2.1}%
-\contentsline {section}{\numberline {22.3}Aplicación: sistemas de ecuaciones diferenciales lineales}{504}{section.22.3}%
-\contentsline {section}{\numberline {22.4}El teorema de Cayley-Hamilton}{507}{section.22.4}%
-\contentsline {section}{\numberline {22.5}Valores propios e invertibilidad}{507}{section.22.5}%
-\contentsline {section}{\numberline {22.6}Problemas resueltos adicionales}{508}{section.22.6}%
-\contentsline {section}{\numberline {22.7}Algunas aplicaciones adicionales}{516}{section.22.7}%
-\contentsline {section}{\numberline {22.8}Problemas propuestos}{518}{section.22.8}%
-\contentsline {chapter}{\numberline {23}Transformaciones lineales}{521}{chapter.23}%
-\contentsline {section}{\numberline {23.1}Transformaciones lineales}{521}{section.23.1}%
-\contentsline {section}{\numberline {23.2}Núcleo, imagen y el teorema de la dimensión}{523}{section.23.2}%
-\contentsline {section}{\numberline {23.3}Composición, invertibilidad e isomorfismos}{527}{section.23.3}%
-\contentsline {section}{\numberline {23.4}Matriz asociada a una transformación lineal}{530}{section.23.4}%
-\contentsline {section}{\numberline {23.5}Transformaciones geométricas en el plano}{535}{section.23.5}%
-\contentsline {section}{\numberline {23.6}Problemas resueltos adicionales}{538}{section.23.6}%
-\contentsline {section}{\numberline {23.7}Problemas propuestos}{558}{section.23.7}%
-\contentsline {part}{VII\hspace {1em}Sucesiones y Series}{561}{part.7}%
-\contentsline {chapter}{\numberline {24}Sucesiones y Series de Números Reales}{563}{chapter.24}%
-\contentsline {section}{\numberline {24.1}Sucesiones de números reales}{563}{section.24.1}%
-\contentsline {subsection}{\numberline {24.1.1}El Principio de Inducción Matemática}{564}{subsection.24.1.1}%
-\contentsline {subsection}{\numberline {24.1.2}Monotonía, acotación y convergencia}{566}{subsection.24.1.2}%
-\contentsline {subsection}{\numberline {24.1.3}Herramientas avanzadas para límites de sucesiones}{569}{subsection.24.1.3}%
-\contentsline {subsection}{\numberline {24.1.4}Problemas propuestos — Sucesiones}{571}{subsection.24.1.4}%
-\contentsline {section}{\numberline {24.2}Series infinitas: sumas que aspiran a converger}{572}{section.24.2}%
-\contentsline {subsection}{\numberline {24.2.1}Series clásicas: geométrica, telescópica y $p$-series}{572}{subsection.24.2.1}%
-\contentsline {subsection}{\numberline {24.2.2}Criterios de convergencia para series de términos positivos}{573}{subsection.24.2.2}%
-\contentsline {subsection}{\numberline {24.2.3}Convergencia absoluta y series de signo variable}{576}{subsection.24.2.3}%
-\contentsline {subsection}{\numberline {24.2.4}Problemas propuestos — Series infinitas}{578}{subsection.24.2.4}%
-\contentsline {chapter}{\numberline {25}Sucesiones y series de funciones}{581}{chapter.25}%
-\contentsline {section}{\numberline {25.1}Sucesiones de funciones}{581}{section.25.1}%
-\contentsline {subsection}{\numberline {25.1.1}Problemas propuestos: Sucesiones de funciones}{585}{subsection.25.1.1}%
-\contentsline {section}{\numberline {25.2}Series de funciones}{587}{section.25.2}%
-\contentsline {subsection}{\numberline {25.2.1}Problemas propuestos: Series de funciones}{590}{subsection.25.2.1}%
-\contentsline {section}{\numberline {25.3}Series de potencias}{591}{section.25.3}%
-\contentsline {subsection}{\numberline {25.3.1}Problemas propuestos: Series de potencias}{597}{subsection.25.3.1}%
-\contentsline {section}{\numberline {25.4}Complementos avanzados}{597}{section.25.4}%
-\contentsline {subsection}{\numberline {25.4.1}Problemas propuestos: Complementos avanzados}{599}{subsection.25.4.1}%
-\contentsline {part}{VIII\hspace {1em}Ecuaciones Diferenciales Ordinarias}{601}{part.8}%
-\contentsline {chapter}{\numberline {26}Ecuaciones diferenciales de primer orden}{603}{chapter.26}%
-\contentsline {section}{\numberline {26.1}Definiciones básicas}{603}{section.26.1}%
-\contentsline {section}{\numberline {26.2}Ecuaciones de variables separables}{603}{section.26.2}%
-\contentsline {section}{\numberline {26.3}Ecuaciones lineales de primer orden}{605}{section.26.3}%
-\contentsline {section}{\numberline {26.4}Ecuaciones exactas}{606}{section.26.4}%
-\contentsline {section}{\numberline {26.5}Ecuación de Bernoulli}{607}{section.26.5}%
-\contentsline {section}{\numberline {26.6}Aplicaciones}{608}{section.26.6}%
-\contentsline {subsection}{\numberline {26.6.1}Ley de enfriamiento de Newton}{608}{subsection.26.6.1}%
-\contentsline {subsection}{\numberline {26.6.2}Circuito RL con fuente senoidal}{609}{subsection.26.6.2}%
-\contentsline {section}{\numberline {26.7}Problemas propuestos}{610}{section.26.7}%
-\contentsline {chapter}{\numberline {27}Ecuaciones diferenciales lineales de orden superior}{613}{chapter.27}%
-\contentsline {section}{\numberline {27.1}Teoría general de las EDO lineales de orden $n$}{613}{section.27.1}%
-\contentsline {section}{\numberline {27.2}Ecuaciones homogéneas con coeficientes constantes}{614}{section.27.2}%
-\contentsline {section}{\numberline {27.3}Método de coeficientes indeterminados}{615}{section.27.3}%
-\contentsline {section}{\numberline {27.4}Método de variación de parámetros}{616}{section.27.4}%
-\contentsline {section}{\numberline {27.5}Ecuación de Cauchy-Euler}{618}{section.27.5}%
-\contentsline {section}{\numberline {27.6}Aplicaciones}{619}{section.27.6}%
-\contentsline {subsection}{\numberline {27.6.1}Oscilador armónico masa-resorte}{619}{subsection.27.6.1}%
-\contentsline {subsection}{\numberline {27.6.2}Circuitos RLC en serie}{619}{subsection.27.6.2}%
-\contentsline {subsection}{\numberline {27.6.3}Vigas (ecuación de Euler-Bernoulli)}{619}{subsection.27.6.3}%
-\contentsline {section}{\numberline {27.7}Problemas propuestos}{620}{section.27.7}%
-\contentsline {chapter}{\numberline {28}Sistemas lineales de ecuaciones diferenciales}{625}{chapter.28}%
-\contentsline {section}{\numberline {28.1}Sistemas de primer orden y notación matricial}{625}{section.28.1}%
-\contentsline {subsection}{\numberline {28.1.1}Forma general y notación vectorial}{625}{subsection.28.1.1}%
-\contentsline {subsection}{\numberline {28.1.2}Reescritura de una EDO de orden $n$ como sistema}{626}{subsection.28.1.2}%
-\contentsline {section}{\numberline {28.2}Método de eliminación (reducción a una EDO de orden superior)}{627}{section.28.2}%
-\contentsline {section}{\numberline {28.3}Sistemas homogéneos con coeficientes constantes: $\mathbf {X}'=A\mathbf {X}$}{628}{section.28.3}%
-\contentsline {subsection}{\numberline {28.3.1}Caso 1: Valores propios reales distintos}{629}{subsection.28.3.1}%
-\contentsline {subsection}{\numberline {28.3.2}Caso 2: Valores propios complejos conjugados}{630}{subsection.28.3.2}%
-\contentsline {subsection}{\numberline {28.3.3}Caso 3: Valores propios reales repetidos}{631}{subsection.28.3.3}%
-\contentsline {section}{\numberline {28.4}Sistemas no homogéneos: $\mathbf {X}'=A\mathbf {X}+\mathbf {F}(t)$}{632}{section.28.4}%
-\contentsline {subsection}{\numberline {28.4.1}Método de coeficientes indeterminados para sistemas}{632}{subsection.28.4.1}%
-\contentsline {subsection}{\numberline {28.4.2}Método de variación de parámetros matricial}{634}{subsection.28.4.2}%
-\contentsline {section}{\numberline {28.5}Aplicaciones}{635}{section.28.5}%
-\contentsline {subsection}{\numberline {28.5.1}Sistemas masa-resorte acoplados}{635}{subsection.28.5.1}%
-\contentsline {subsection}{\numberline {28.5.2}Circuitos eléctricos con dos mallas}{636}{subsection.28.5.2}%
-\contentsline {subsection}{\numberline {28.5.3}Modelos de población: sistemas lineales de competencia}{637}{subsection.28.5.3}%
-\contentsline {section}{\numberline {28.6}Problemas propuestos}{638}{section.28.6}%
-\contentsline {chapter}{\numberline {29}Soluciones en series de potencias para ecuaciones diferenciales}{645}{chapter.29}%
-\contentsline {section}{\numberline {29.1}Repaso de series de potencias}{645}{section.29.1}%
-\contentsline {section}{\numberline {29.2}Soluciones alrededor de puntos ordinarios}{647}{section.29.2}%
-\contentsline {section}{\numberline {29.3}Puntos singulares regulares e irregulares}{649}{section.29.3}%
-\contentsline {section}{\numberline {29.4}Aplicaciones y funciones especiales}{652}{section.29.4}%
-\contentsline {subsection}{\numberline {29.4.1}Funciones de Bessel en problemas con simetría cilíndrica}{652}{subsection.29.4.1}%
-\contentsline {subsection}{\numberline {29.4.2}Polinomios de Legendre en problemas con simetría esférica}{652}{subsection.29.4.2}%
-\contentsline {section}{\numberline {29.5}Problemas propuestos}{653}{section.29.5}%
-\contentsline {chapter}{\numberline {30}Transformada de Laplace}{657}{chapter.30}%
-\contentsline {section}{\numberline {30.1}Definición y condiciones de existencia}{657}{section.30.1}%
-\contentsline {section}{\numberline {30.2}Propiedades fundamentales de la transformada}{659}{section.30.2}%
-\contentsline {section}{\numberline {30.3}Transformada inversa de Laplace}{662}{section.30.3}%
-\contentsline {section}{\numberline {30.4}Función escalón unitario (Heaviside) y segundo teorema de traslación}{664}{section.30.4}%
-\contentsline {section}{\numberline {30.5}Función impulso unitario (delta de Dirac)}{665}{section.30.5}%
-\contentsline {section}{\numberline {30.6}Teorema de convolución}{667}{section.30.6}%
-\contentsline {section}{\numberline {30.7}Resolución de problemas de valor inicial (PVI) con Laplace}{668}{section.30.7}%
-\contentsline {section}{\numberline {30.8}Resolución de sistemas de EDO con Laplace}{671}{section.30.8}%
-\contentsline {section}{\numberline {30.9}Aplicaciones}{672}{section.30.9}%
-\contentsline {subsection}{\numberline {30.9.1}Circuitos RLC con interruptor}{672}{subsection.30.9.1}%
-\contentsline {subsection}{\numberline {30.9.2}Sistemas mecánicos con forzamiento discontinuo}{673}{subsection.30.9.2}%
-\contentsline {subsection}{\numberline {30.9.3}Respuesta impulsiva y función de Green}{674}{subsection.30.9.3}%
-\contentsline {section}{\numberline {30.10}Problemas propuestos}{674}{section.30.10}%
-\contentsline {part}{IX\hspace {1em}Cálculo integral en varias variables}{679}{part.9}%
-\contentsline {chapter}{\numberline {31}Integrales dobles y sus aplicaciones}{681}{chapter.31}%
-\contentsline {section}{\numberline {31.1}Integral doble sobre un rectángulo}{681}{section.31.1}%
-\contentsline {section}{\numberline {31.2}Propiedades de la integral doble}{681}{section.31.2}%
-\contentsline {section}{\numberline {31.3}Integrales dobles sobre regiones generales}{682}{section.31.3}%
-\contentsline {section}{\numberline {31.4}Volumen bajo una superficie y áreas de regiones planas}{687}{section.31.4}%
-\contentsline {section}{\numberline {31.5}Masa y centro de masa de una lámina plana}{687}{section.31.5}%
-\contentsline {section}{\numberline {31.6}Momentos de inercia}{688}{section.31.6}%
-\contentsline {section}{\numberline {31.7}Integrales dobles en coordenadas polares}{694}{section.31.7}%
-\contentsline {section}{\numberline {31.8}Área de una superficie}{696}{section.31.8}%
-\contentsline {section}{\numberline {31.9}Cambio de variables en integrales dobles}{702}{section.31.9}%
-\contentsline {section}{\numberline {31.10}Problemas propuestos}{703}{section.31.10}%
-\contentsline {chapter}{\numberline {32}Integrales triples}{709}{chapter.32}%
-\contentsline {section}{\numberline {32.1}Integrales triples en coordenadas rectangulares}{709}{section.32.1}%
-\contentsline {section}{\numberline {32.2}Masa, centros de masa y momentos de inercia}{712}{section.32.2}%
-\contentsline {section}{\numberline {32.3}Cambio de variables en integrales triples}{715}{section.32.3}%
-\contentsline {section}{\numberline {32.4}Problemas propuestos}{721}{section.32.4}%
-\contentsline {chapter}{\numberline {33}Campos vectoriales e integrales de línea}{725}{chapter.33}%
-\contentsline {section}{\numberline {33.1}Campos Vectoriales}{725}{section.33.1}%
-\contentsline {section}{\numberline {33.2}Integral de línea de un campo escalar}{728}{section.33.2}%
-\contentsline {section}{\numberline {33.3}Integral de línea de un campo vectorial}{730}{section.33.3}%
-\contentsline {section}{\numberline {33.4}Independencia de la trayectoria y campos conservativos}{732}{section.33.4}%
-\contentsline {section}{\numberline {33.5}Problemas propuestos}{734}{section.33.5}%
-\contentsline {chapter}{\numberline {34}Integrales de superficie y teoremas integrales}{737}{chapter.34}%
-\contentsline {section}{\numberline {34.1}Teorema de Green}{737}{section.34.1}%
-\contentsline {section}{\numberline {34.2}Divergencia y rotacional}{739}{section.34.2}%
-\contentsline {section}{\numberline {34.3}Superficies paramétricas y orientación}{743}{section.34.3}%
-\contentsline {section}{\numberline {34.4}Integral de superficie de un campo escalar}{744}{section.34.4}%
-\contentsline {section}{\numberline {34.5}Masa, centro de masa y momentos de inercia sobre superficies}{746}{section.34.5}%
-\contentsline {section}{\numberline {34.6}Integral de superficie de un campo vectorial (flujo)}{748}{section.34.6}%
-\contentsline {section}{\numberline {34.7}Teorema de la divergencia}{749}{section.34.7}%
-\contentsline {section}{\numberline {34.8}Teorema de Stokes}{752}{section.34.8}%
-\contentsline {section}{\numberline {34.9}Problemas propuestos}{755}{section.34.9}%
-\contentsline {chapter}{Bibliografía}{806}{chapter*.2}%
+\contentsline {subsection}{\numberline {17.2.1}Gráfica de una función de dos variables}{417}{subsection.17.2.1}%
+\contentsline {subsection}{\numberline {17.2.2}Secciones cónicas: repaso}{417}{subsection.17.2.2}%
+\contentsline {subsection}{\numberline {17.2.3}Superficies cuádricas}{418}{subsection.17.2.3}%
+\contentsline {subsection}{\numberline {17.2.4}Cilindros}{422}{subsection.17.2.4}%
+\contentsline {subsection}{\numberline {17.2.5}Curvas y superficies de nivel}{423}{subsection.17.2.5}%
+\contentsline {section}{\numberline {17.3}Problemas propuestos}{429}{section.17.3}%
+\contentsline {chapter}{\numberline {18}Límites y continuidad en $\mathbb {R}^n$}{435}{chapter.18}%
+\contentsline {section}{\numberline {18.1}Límite y continuidad de una función de varias variables}{435}{section.18.1}%
+\contentsline {section}{\numberline {18.2}Propiedades algebraicas de los límites}{442}{section.18.2}%
+\contentsline {section}{\numberline {18.3}Teorema del emparedadp (sándwich) en varias variables}{443}{section.18.3}%
+\contentsline {section}{\numberline {18.4}Continuidad}{445}{section.18.4}%
+\contentsline {section}{\numberline {18.5}Problemas propuestos}{448}{section.18.5}%
+\contentsline {chapter}{\numberline {19}Diferenciación parcial, plano tangente y diferenciabilidad}{451}{chapter.19}%
+\contentsline {section}{\numberline {19.1}Derivadas parciales}{451}{section.19.1}%
+\contentsline {section}{\numberline {19.2}Plano tangente}{458}{section.19.2}%
+\contentsline {section}{\numberline {19.3}Aproximación lineal y linealización}{460}{section.19.3}%
+\contentsline {section}{\numberline {19.4}Diferenciales}{462}{section.19.4}%
+\contentsline {section}{\numberline {19.5}Problemas propuestos}{463}{section.19.5}%
+\contentsline {chapter}{\numberline {20}Regla de la cadena, derivada direccional y gradientes}{465}{chapter.20}%
+\contentsline {section}{\numberline {20.1}Regla de la cadena}{465}{section.20.1}%
+\contentsline {section}{\numberline {20.2}Derivación implícita}{468}{section.20.2}%
+\contentsline {section}{\numberline {20.3}Gradiente}{471}{section.20.3}%
+\contentsline {section}{\numberline {20.4}Derivada direccional}{473}{section.20.4}%
+\contentsline {section}{\numberline {20.5}Relación del plano tangente y la recta normal con el gradiente}{478}{section.20.5}%
+\contentsline {section}{\numberline {20.6}Problemas propuestos}{480}{section.20.6}%
+\contentsline {chapter}{\numberline {21}Optimización: extremos libres y con restricciones}{483}{chapter.21}%
+\contentsline {section}{\numberline {21.1}Definiciones básicas}{483}{section.21.1}%
+\contentsline {section}{\numberline {21.2}Criterio de la segunda derivada}{484}{section.21.2}%
+\contentsline {section}{\numberline {21.3}Optimización restringida y multiplicadores de Lagrange}{492}{section.21.3}%
+\contentsline {section}{\numberline {21.4}Teorema de los Multiplicadores de Lagrange}{493}{section.21.4}%
+\contentsline {section}{\numberline {21.5}Criterio de la segunda derivada restringida (hessiano limitado)}{497}{section.21.5}%
+\contentsline {subsection}{\numberline {21.5.1}Optimización con dos restricciones}{499}{subsection.21.5.1}%
+\contentsline {section}{\numberline {21.6}Problemas propuestos}{499}{section.21.6}%
+\contentsline {part}{VI\hspace {1em}Álgebra Lineal avanzada}{503}{part.6}%
+\contentsline {chapter}{\numberline {22}Valores y vectores propios}{505}{chapter.22}%
+\contentsline {section}{\numberline {22.1}Valores y vectores propios}{505}{section.22.1}%
+\contentsline {section}{\numberline {22.2}Diagonalización y potencias de matrices}{511}{section.22.2}%
+\contentsline {subsection}{\numberline {22.2.1}La forma canónica de Jordan}{513}{subsection.22.2.1}%
+\contentsline {section}{\numberline {22.3}Aplicación: sistemas de ecuaciones diferenciales lineales}{514}{section.22.3}%
+\contentsline {section}{\numberline {22.4}El teorema de Cayley-Hamilton}{517}{section.22.4}%
+\contentsline {section}{\numberline {22.5}Valores propios e invertibilidad}{517}{section.22.5}%
+\contentsline {section}{\numberline {22.6}Problemas resueltos adicionales}{518}{section.22.6}%
+\contentsline {section}{\numberline {22.7}Algunas aplicaciones adicionales}{526}{section.22.7}%
+\contentsline {section}{\numberline {22.8}Problemas propuestos}{528}{section.22.8}%
+\contentsline {chapter}{\numberline {23}Transformaciones lineales}{531}{chapter.23}%
+\contentsline {section}{\numberline {23.1}Transformaciones lineales}{531}{section.23.1}%
+\contentsline {section}{\numberline {23.2}Núcleo, imagen y el teorema de la dimensión}{533}{section.23.2}%
+\contentsline {section}{\numberline {23.3}Composición, invertibilidad e isomorfismos}{537}{section.23.3}%
+\contentsline {section}{\numberline {23.4}Matriz asociada a una transformación lineal}{540}{section.23.4}%
+\contentsline {section}{\numberline {23.5}Transformaciones geométricas en el plano}{545}{section.23.5}%
+\contentsline {section}{\numberline {23.6}Problemas resueltos adicionales}{548}{section.23.6}%
+\contentsline {section}{\numberline {23.7}Problemas propuestos}{568}{section.23.7}%
+\contentsline {part}{VII\hspace {1em}Sucesiones y Series}{571}{part.7}%
+\contentsline {chapter}{\numberline {24}Sucesiones y Series de Números Reales}{573}{chapter.24}%
+\contentsline {section}{\numberline {24.1}Sucesiones de números reales}{573}{section.24.1}%
+\contentsline {subsection}{\numberline {24.1.1}El Principio de Inducción Matemática}{574}{subsection.24.1.1}%
+\contentsline {subsection}{\numberline {24.1.2}Monotonía, acotación y convergencia}{576}{subsection.24.1.2}%
+\contentsline {subsection}{\numberline {24.1.3}Herramientas avanzadas para límites de sucesiones}{579}{subsection.24.1.3}%
+\contentsline {subsection}{\numberline {24.1.4}Problemas propuestos — Sucesiones}{581}{subsection.24.1.4}%
+\contentsline {section}{\numberline {24.2}Series infinitas: sumas que aspiran a converger}{582}{section.24.2}%
+\contentsline {subsection}{\numberline {24.2.1}Series clásicas: geométrica, telescópica y $p$-series}{582}{subsection.24.2.1}%
+\contentsline {subsection}{\numberline {24.2.2}Criterios de convergencia para series de términos positivos}{583}{subsection.24.2.2}%
+\contentsline {subsection}{\numberline {24.2.3}Convergencia absoluta y series de signo variable}{586}{subsection.24.2.3}%
+\contentsline {subsection}{\numberline {24.2.4}Problemas propuestos — Series infinitas}{588}{subsection.24.2.4}%
+\contentsline {chapter}{\numberline {25}Sucesiones y series de funciones}{591}{chapter.25}%
+\contentsline {section}{\numberline {25.1}Sucesiones de funciones}{591}{section.25.1}%
+\contentsline {subsection}{\numberline {25.1.1}Problemas propuestos: Sucesiones de funciones}{595}{subsection.25.1.1}%
+\contentsline {section}{\numberline {25.2}Series de funciones}{597}{section.25.2}%
+\contentsline {subsection}{\numberline {25.2.1}Problemas propuestos: Series de funciones}{600}{subsection.25.2.1}%
+\contentsline {section}{\numberline {25.3}Series de potencias}{601}{section.25.3}%
+\contentsline {subsection}{\numberline {25.3.1}Problemas propuestos: Series de potencias}{607}{subsection.25.3.1}%
+\contentsline {section}{\numberline {25.4}Complementos avanzados}{607}{section.25.4}%
+\contentsline {subsection}{\numberline {25.4.1}Problemas propuestos: Complementos avanzados}{609}{subsection.25.4.1}%
+\contentsline {part}{VIII\hspace {1em}Ecuaciones Diferenciales Ordinarias}{611}{part.8}%
+\contentsline {chapter}{\numberline {26}Ecuaciones diferenciales de primer orden}{613}{chapter.26}%
+\contentsline {section}{\numberline {26.1}Definiciones básicas}{613}{section.26.1}%
+\contentsline {section}{\numberline {26.2}Ecuaciones de variables separables}{613}{section.26.2}%
+\contentsline {section}{\numberline {26.3}Ecuaciones lineales de primer orden}{615}{section.26.3}%
+\contentsline {section}{\numberline {26.4}Ecuaciones exactas}{616}{section.26.4}%
+\contentsline {section}{\numberline {26.5}Ecuación de Bernoulli}{617}{section.26.5}%
+\contentsline {section}{\numberline {26.6}Aplicaciones}{618}{section.26.6}%
+\contentsline {subsection}{\numberline {26.6.1}Ley de enfriamiento de Newton}{618}{subsection.26.6.1}%
+\contentsline {subsection}{\numberline {26.6.2}Circuito RL con fuente senoidal}{619}{subsection.26.6.2}%
+\contentsline {section}{\numberline {26.7}Problemas propuestos}{620}{section.26.7}%
+\contentsline {chapter}{\numberline {27}Ecuaciones diferenciales lineales de orden superior}{623}{chapter.27}%
+\contentsline {section}{\numberline {27.1}Teoría general de las EDO lineales de orden $n$}{623}{section.27.1}%
+\contentsline {section}{\numberline {27.2}Ecuaciones homogéneas con coeficientes constantes}{624}{section.27.2}%
+\contentsline {section}{\numberline {27.3}Método de coeficientes indeterminados}{625}{section.27.3}%
+\contentsline {section}{\numberline {27.4}Método de variación de parámetros}{626}{section.27.4}%
+\contentsline {section}{\numberline {27.5}Ecuación de Cauchy-Euler}{628}{section.27.5}%
+\contentsline {section}{\numberline {27.6}Aplicaciones}{629}{section.27.6}%
+\contentsline {subsection}{\numberline {27.6.1}Oscilador armónico masa-resorte}{629}{subsection.27.6.1}%
+\contentsline {subsection}{\numberline {27.6.2}Circuitos RLC en serie}{629}{subsection.27.6.2}%
+\contentsline {subsection}{\numberline {27.6.3}Vigas (ecuación de Euler-Bernoulli)}{629}{subsection.27.6.3}%
+\contentsline {section}{\numberline {27.7}Problemas propuestos}{630}{section.27.7}%
+\contentsline {chapter}{\numberline {28}Sistemas lineales de ecuaciones diferenciales}{635}{chapter.28}%
+\contentsline {section}{\numberline {28.1}Sistemas de primer orden y notación matricial}{635}{section.28.1}%
+\contentsline {subsection}{\numberline {28.1.1}Forma general y notación vectorial}{635}{subsection.28.1.1}%
+\contentsline {subsection}{\numberline {28.1.2}Reescritura de una EDO de orden $n$ como sistema}{636}{subsection.28.1.2}%
+\contentsline {section}{\numberline {28.2}Método de eliminación (reducción a una EDO de orden superior)}{637}{section.28.2}%
+\contentsline {section}{\numberline {28.3}Sistemas homogéneos con coeficientes constantes: $\mathbf {X}'=A\mathbf {X}$}{638}{section.28.3}%
+\contentsline {subsection}{\numberline {28.3.1}Caso 1: Valores propios reales distintos}{639}{subsection.28.3.1}%
+\contentsline {subsection}{\numberline {28.3.2}Caso 2: Valores propios complejos conjugados}{640}{subsection.28.3.2}%
+\contentsline {subsection}{\numberline {28.3.3}Caso 3: Valores propios reales repetidos}{641}{subsection.28.3.3}%
+\contentsline {section}{\numberline {28.4}Sistemas no homogéneos: $\mathbf {X}'=A\mathbf {X}+\mathbf {F}(t)$}{642}{section.28.4}%
+\contentsline {subsection}{\numberline {28.4.1}Método de coeficientes indeterminados para sistemas}{642}{subsection.28.4.1}%
+\contentsline {subsection}{\numberline {28.4.2}Método de variación de parámetros matricial}{644}{subsection.28.4.2}%
+\contentsline {section}{\numberline {28.5}Aplicaciones}{645}{section.28.5}%
+\contentsline {subsection}{\numberline {28.5.1}Sistemas masa-resorte acoplados}{645}{subsection.28.5.1}%
+\contentsline {subsection}{\numberline {28.5.2}Circuitos eléctricos con dos mallas}{646}{subsection.28.5.2}%
+\contentsline {subsection}{\numberline {28.5.3}Modelos de población: sistemas lineales de competencia}{647}{subsection.28.5.3}%
+\contentsline {section}{\numberline {28.6}Problemas propuestos}{648}{section.28.6}%
+\contentsline {chapter}{\numberline {29}Soluciones en series de potencias para ecuaciones diferenciales}{655}{chapter.29}%
+\contentsline {section}{\numberline {29.1}Repaso de series de potencias}{655}{section.29.1}%
+\contentsline {section}{\numberline {29.2}Soluciones alrededor de puntos ordinarios}{657}{section.29.2}%
+\contentsline {section}{\numberline {29.3}Puntos singulares regulares e irregulares}{659}{section.29.3}%
+\contentsline {section}{\numberline {29.4}Aplicaciones y funciones especiales}{662}{section.29.4}%
+\contentsline {subsection}{\numberline {29.4.1}Funciones de Bessel en problemas con simetría cilíndrica}{662}{subsection.29.4.1}%
+\contentsline {subsection}{\numberline {29.4.2}Polinomios de Legendre en problemas con simetría esférica}{662}{subsection.29.4.2}%
+\contentsline {section}{\numberline {29.5}Problemas propuestos}{663}{section.29.5}%
+\contentsline {chapter}{\numberline {30}Transformada de Laplace}{667}{chapter.30}%
+\contentsline {section}{\numberline {30.1}Definición y condiciones de existencia}{667}{section.30.1}%
+\contentsline {section}{\numberline {30.2}Propiedades fundamentales de la transformada}{669}{section.30.2}%
+\contentsline {section}{\numberline {30.3}Transformada inversa de Laplace}{672}{section.30.3}%
+\contentsline {section}{\numberline {30.4}Función escalón unitario (Heaviside) y segundo teorema de traslación}{674}{section.30.4}%
+\contentsline {section}{\numberline {30.5}Función impulso unitario (delta de Dirac)}{675}{section.30.5}%
+\contentsline {section}{\numberline {30.6}Teorema de convolución}{677}{section.30.6}%
+\contentsline {section}{\numberline {30.7}Resolución de problemas de valor inicial (PVI) con Laplace}{678}{section.30.7}%
+\contentsline {section}{\numberline {30.8}Resolución de sistemas de EDO con Laplace}{681}{section.30.8}%
+\contentsline {section}{\numberline {30.9}Aplicaciones}{682}{section.30.9}%
+\contentsline {subsection}{\numberline {30.9.1}Circuitos RLC con interruptor}{682}{subsection.30.9.1}%
+\contentsline {subsection}{\numberline {30.9.2}Sistemas mecánicos con forzamiento discontinuo}{683}{subsection.30.9.2}%
+\contentsline {subsection}{\numberline {30.9.3}Respuesta impulsiva y función de Green}{684}{subsection.30.9.3}%
+\contentsline {section}{\numberline {30.10}Problemas propuestos}{684}{section.30.10}%
+\contentsline {part}{IX\hspace {1em}Cálculo integral en varias variables}{689}{part.9}%
+\contentsline {chapter}{\numberline {31}Integrales dobles y sus aplicaciones}{691}{chapter.31}%
+\contentsline {section}{\numberline {31.1}Integral doble sobre un rectángulo}{691}{section.31.1}%
+\contentsline {section}{\numberline {31.2}Propiedades de la integral doble}{691}{section.31.2}%
+\contentsline {section}{\numberline {31.3}Integrales dobles sobre regiones generales}{692}{section.31.3}%
+\contentsline {section}{\numberline {31.4}Volumen bajo una superficie y áreas de regiones planas}{697}{section.31.4}%
+\contentsline {section}{\numberline {31.5}Masa y centro de masa de una lámina plana}{697}{section.31.5}%
+\contentsline {section}{\numberline {31.6}Momentos de inercia}{698}{section.31.6}%
+\contentsline {section}{\numberline {31.7}Integrales dobles en coordenadas polares}{704}{section.31.7}%
+\contentsline {section}{\numberline {31.8}Área de una superficie}{706}{section.31.8}%
+\contentsline {section}{\numberline {31.9}Cambio de variables en integrales dobles}{712}{section.31.9}%
+\contentsline {section}{\numberline {31.10}Problemas propuestos}{713}{section.31.10}%
+\contentsline {chapter}{\numberline {32}Integrales triples}{719}{chapter.32}%
+\contentsline {section}{\numberline {32.1}Integrales triples en coordenadas rectangulares}{719}{section.32.1}%
+\contentsline {section}{\numberline {32.2}Masa, centros de masa y momentos de inercia}{722}{section.32.2}%
+\contentsline {section}{\numberline {32.3}Cambio de variables en integrales triples}{727}{section.32.3}%
+\contentsline {section}{\numberline {32.4}Problemas propuestos}{732}{section.32.4}%
+\contentsline {chapter}{\numberline {33}Campos vectoriales e integrales de línea}{735}{chapter.33}%
+\contentsline {section}{\numberline {33.1}Campos Vectoriales}{735}{section.33.1}%
+\contentsline {section}{\numberline {33.2}Integral de línea de un campo escalar}{738}{section.33.2}%
+\contentsline {section}{\numberline {33.3}Integral de línea de un campo vectorial}{740}{section.33.3}%
+\contentsline {section}{\numberline {33.4}Independencia de la trayectoria y campos conservativos}{742}{section.33.4}%
+\contentsline {section}{\numberline {33.5}Problemas propuestos}{745}{section.33.5}%
+\contentsline {chapter}{\numberline {34}Integrales de superficie y teoremas integrales}{747}{chapter.34}%
+\contentsline {section}{\numberline {34.1}Teorema de Green}{747}{section.34.1}%
+\contentsline {section}{\numberline {34.2}Divergencia y rotacional}{751}{section.34.2}%
+\contentsline {section}{\numberline {34.3}Superficies paramétricas y orientación}{755}{section.34.3}%
+\contentsline {section}{\numberline {34.4}Integral de superficie de un campo escalar}{756}{section.34.4}%
+\contentsline {section}{\numberline {34.5}Masa, centro de masa y momentos de inercia sobre superficies}{758}{section.34.5}%
+\contentsline {section}{\numberline {34.6}Integral de superficie de un campo vectorial (flujo)}{759}{section.34.6}%
+\contentsline {section}{\numberline {34.7}Teorema de la divergencia}{761}{section.34.7}%
+\contentsline {section}{\numberline {34.8}Teorema de Stokes}{764}{section.34.8}%
+\contentsline {section}{\numberline {34.9}Problemas propuestos}{767}{section.34.9}%
+\contentsline {chapter}{Bibliografía}{818}{chapter*.2}%
 \contentsfinish 

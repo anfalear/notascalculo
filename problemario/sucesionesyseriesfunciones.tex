@@ -351,7 +351,7 @@ uniforme de \emph{las derivadas}, no de las funciones.
 
 % ----------------------------------------------------------
 \begin{example}[Intercambio fallido de limite y derivada]
-Sea $f_n\colon\mathbb{R}\to\mathbb{R}$ definida por $f_n(x)=\sin(nx)/n$.
+Sea $f_n\colon\mathbb{R}\to\mathbb{R}$ definida por $f_n(x)=\sen(nx)/n$.
 Demuestre que $f_n$ converge uniformemente a $0$ en $\mathbb{R}$, pero
 que el límite de las derivadas $f_n'$ no coincide con la derivada del
 límite. Explique por qué esto no contradice el teorema de
@@ -381,7 +381,7 @@ intercambio límite-derivada.
 \end{tikzpicture}
 \end{center}
 
-Las funciones $f_n(x) = \sin(nx)/n$ se aplanan uniformemente hacia el
+Las funciones $f_n(x) = \sen(nx)/n$ se aplanan uniformemente hacia el
 eje $x$: la amplitud decae como $1/n$. Pero su frecuencia oscilatoria
 se dispara y la \textquotedblleft pendiente instantánea\textquotedblright\
 no se estabiliza: las derivadas oscilan perpetuamente entre $-1$ y $1$.
@@ -395,7 +395,7 @@ Teorema~\ref{thm:prop_uniforme}.3.
 \textbf{Paso 3: Verificación de hipótesis.}
 
 Para todo $x \in \mathbb{R}$:
-$|f_n(x)| = |\sin(nx)/n| \leq 1/n \to 0$.
+$|f_n(x)| = |\sen(nx)/n| \leq 1/n \to 0$.
 Luego $f_n \rightrightarrows 0$ uniformemente. Sin embargo,
 $f_n'(x) = \cos(nx)$ oscila entre $-1$ y $1$ para casi todo $x$,
 y $\lim_{n\to\infty} f_n'(x)$ no existe. La hipótesis de convergencia
@@ -471,7 +471,7 @@ Estudie la convergencia puntual y uniforme de
           Compare su comportamiento asintótico con el del ejemplo
           explorador $nxe^{-nx}$. ¿La convergencia es uniforme?
 \end{prob}
-\begin{prob}Sea $f_n(x) = \dfrac{\sin(nx)}{n+x}$ en $[0, \infty)$.
+\begin{prob}Sea $f_n(x) = \dfrac{\sen(nx)}{n+x}$ en $[0, \infty)$.
           Pruebe que converge uniformemente a cero utilizando el
           criterio del supremo.
 \end{prob}
@@ -609,7 +609,7 @@ convergente.
 \begin{example}[Convergencia uniforme de una serie trigonometrica por el criterio-M]
 Estudie la convergencia de la serie de funciones
 \[
-    S(x) = \sum_{n=1}^\infty \frac{\sin(nx)}{n^2}, \qquad x \in \mathbb{R}.
+    S(x) = \sum_{n=1}^\infty \frac{\sen(nx)}{n^2}, \qquad x \in \mathbb{R}.
 \]
 Determine si converge uniformemente y deduzca propiedades de
 continuidad e integrabilidad de la función suma.
@@ -654,14 +654,14 @@ $x$, y verificamos que $\sum M_n$ converge.
 
 Para todo $x \in \mathbb{R}$ y todo $n \in \mathbb{N}$:
 \[
-    \left|\frac{\sin(nx)}{n^2}\right| \leq \frac{1}{n^2} =: M_n.
+    \left|\frac{\sen(nx)}{n^2}\right| \leq \frac{1}{n^2} =: M_n.
 \]
 La serie $\sum_{n=1}^\infty 1/n^2 = \pi^2/6$ converge ($p$-serie con
 $p=2>1$).
 
 \textbf{Paso 4: Evaluación y conclusión.}
 \[
-    \boxed{\sum_{n=1}^\infty \frac{\sin(nx)}{n^2}
+    \boxed{\sum_{n=1}^\infty \frac{\sen(nx)}{n^2}
     \text{ converge absoluta y uniformemente en } \mathbb{R}.}
 \]
 En consecuencia, la función suma $S(x)$ es continua en $\mathbb{R}$
@@ -765,7 +765,7 @@ Sean $\{a_n(x)\}$ y $\{b_n(x)\}$ funciones definidas en $X$.
 Estos criterios son esenciales cuando el criterio-$M$ no puede
 aplicarse (caso en que no existe mayorante numérico convergente).
 Permiten manejar series de signos alternantes o series con oscilaciones
-acotadas, como $\sum \sin(nx)/n$ en $[\delta, 2\pi-\delta]$ con
+acotadas, como $\sum \sen(nx)/n$ en $[\delta, 2\pi-\delta]$ con
 $\delta>0$, cuya convergencia uniforme se establece por Dirichlet
 pero no por el criterio-$M$.
 \end{rem}
@@ -937,7 +937,7 @@ regla.
           la serie geométrica $\dfrac{1}{1+x} = \sum_{n=0}^\infty
           (-x)^n$.
 \end{prob}
-\begin{prob} Sea $f(x) = \sum_{n=1}^\infty \dfrac{\sin(n^2 x)}{n^3}$
+\begin{prob} Sea $f(x) = \sum_{n=1}^\infty \dfrac{\sen(n^2 x)}{n^3}$
           en $\mathbb{R}$. Pruebe que $f$ es diferenciable y calcule
           $f'(x)$ derivando término a término. Justifique el paso.
 \end{prob}
@@ -1300,7 +1300,7 @@ Las siguientes series ($c=0$) son las piedras angulares del cálculo
 infinitesimal y del análisis:
 \begin{align*}
     e^x &= \sum_{n=0}^\infty \frac{x^n}{n!}, \quad x \in \mathbb{R}.\\
-    \sin x &= \sum_{n=0}^\infty \frac{(-1)^n x^{2n+1}}{(2n+1)!},
+    \sen x &= \sum_{n=0}^\infty \frac{(-1)^n x^{2n+1}}{(2n+1)!},
     \quad \cos x = \sum_{n=0}^\infty \frac{(-1)^n x^{2n}}{(2n)!},
     \quad x \in \mathbb{R}.\\
     \ln(1+x) &= \sum_{n=1}^\infty \frac{(-1)^{n-1}x^n}{n},
@@ -1321,7 +1321,7 @@ radios de convergencia (véase el Teorema~\ref{thm:algebra_series}).
 Usando desarrollos en serie de potencias, resuelva cada uno de los
 siguientes problemas:
 \begin{enumerate}
-    \item[(a)] Calcule $\displaystyle\lim_{x \to 0} \frac{\sin x - x}{x^3}$.
+    \item[(a)] Calcule $\displaystyle\lim_{x \to 0} \frac{\sen x - x}{x^3}$.
     \item[(b)] Calcule $\displaystyle\lim_{x \to 0} (\cos x)^{1/x^2}$.
     \item[(c)] Exprese $\displaystyle\int_0^1 e^{-x^2}\,dx$ como una
     serie numérica y aproxime su valor.
@@ -1370,7 +1370,7 @@ primitiva elemental, y (d) estimación del error.
 
 En todos los casos sustituimos las series conocidas y operamos
 algebraicamente dentro del radio de convergencia, que en estas
-aplicaciones es $\mathbb{R}$ para $e^x$, $\sin x$, $\cos x$, y
+aplicaciones es $\mathbb{R}$ para $e^x$, $\sen x$, $\cos x$, y
 $|x|<1$ para $\ln(1+x)$.
 
 \textbf{Paso 4: Evaluación y conclusión.}
@@ -1378,7 +1378,7 @@ $|x|<1$ para $\ln(1+x)$.
 \begin{enumerate}
     \item[(a)] \textbf{Límite indeterminado $0/0$}:
     \begin{align*}
-        \lim_{x \to 0} \frac{\sin x - x}{x^3}
+        \lim_{x \to 0} \frac{\sen x - x}{x^3}
         &= \lim_{x \to 0}
            \frac{\bigl(x - \tfrac{x^3}{6} + \tfrac{x^5}{120}
                  - \cdots\bigr) - x}{x^3}
@@ -1457,7 +1457,7 @@ $|x|<1$ para $\ln(1+x)$.
 
 \end{prob}
 \begin{prob} Desarrolle en serie de Maclaurin las funciones
-          $f(x) = \sin x$, $g(x) = e^x$ y $h(x) = (1+x)^\alpha$ con
+          $f(x) = \sen x$, $g(x) = e^x$ y $h(x) = (1+x)^\alpha$ con
           $\alpha \in \mathbb{R}$. Especifique el radio de
           convergencia en cada caso.
 \end{prob}
@@ -1662,7 +1662,7 @@ la aritmética de los reales, el análisis de funciones y los métodos
 de aproximación. La unicidad garantiza que las manipulaciones
 algebraicas son consistentes; el álgebra de Cauchy permite multiplicar
 series como si fueran polinomios; y la estabilidad bajo composición
-permite expandir funciones compuestas como $e^{\sin x}$ o
+permite expandir funciones compuestas como $e^{\sen x}$ o
 $\ln(1 + \arctan x)$ en serie alrededor de cualquier punto de su
 dominio. Estas herramientas son la base del análisis complejo, de la
 teoría de ecuaciones diferenciales ordinarias, de la física matemática
@@ -1693,7 +1693,7 @@ y de los métodos numéricos modernos.
 \begin{prob} Usando el producto de Cauchy, calcule los primeros cinco
           términos de la serie de Maclaurin de:
           \begin{enumerate}
-              \item[(a)] $e^x \sin x$,
+              \item[(a)] $e^x \sen x$,
               \item[(b)] $\dfrac{1}{1-x}\cdot\ln(1+x)$.
           \end{enumerate}
 \end{prob}
