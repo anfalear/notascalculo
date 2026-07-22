@@ -857,6 +857,38 @@ F9T.07 en adelante.
 
 ---
 
+## 10. Fase D — Auditoría del protocolo de 4 pasos en C3 (F9T.54–.57)
+
+**Motivo (2026-07-22):** el autor detectó resueltos de C3 sin el protocolo de 4 pasos
+(`Paso N.` + `\boxed{}`). Diagnóstico por script (`audit_pasos_c3.py`): de **184 `myproof`**
+en los 9 archivos de C3, **22 no usan el token "Paso N."**. Los 3 archivos de integrales
+avanzadas (`inttriples`, `cap33`, `cap34`) y `apintdobles`/`multiplicadoresintdobles` ya
+están **100 % conformes**. Los huecos se concentran en 4 archivos.
+
+**Criterio (Fase 8 F8.44–.47):** computacionales → `Paso N.` + `\boxed{}`; multiparte →
+estrategia común (Paso 1) + protocolo por literal; demostraciones ≤4 líneas y descripciones
+puramente geométricas → excepción documentada. **Decisión del autor (2026-07-22):** los
+resueltos con `\begin{enumerate}`+`\textbf{etiqueta}` (estilo antiguo de planostangentes/
+gradientes) **se normalizan a `Paso N.`** para uniformidad total (no cuentan como conformes).
+
+**Modo:** 1 ítem por archivo, editar solo el destino, 2 pasadas lualatex, 0 errores,
+commit `F9T-D:`, marcar HECHO. Bloque de 4 ítems:
+
+| Ítem | Archivo | myproof sin Paso | Naturaleza |
+|---|---|---|---|
+| **F9T.54** | `limvariasvariables.tex` | 9 | Límites de 2 var. por trayectorias, literales `(a)(b)` en prosa → `Paso N.` |
+| **F9T.55** | `funvectoriales.tex` | 7 | 1 derivada comp.-a-comp., 4 dominio (casi idénticos), 2 multiparte |
+| **F9T.56** | `planostangentes.tex` | 3 | Plano tangente / linealización / diferenciable: enumerate+`\textbf` → `Paso N.` |
+| **F9T.57** | `gradientes.tex` | 3 | Regla de la cadena (2 casos) + derivación implícita: enumerate+`\textbf` → `Paso N.` |
+
+Ubicaciones (líneas al 2026-07-22): F9T.54 → L214, L235, L418, L439, L668, L680, L787, L819,
+L838. F9T.55 → L499, L1297, L1325, L1353, L1382, L2240, L2295. F9T.56 → L672, L826, L985.
+F9T.57 → L33, L199, L289. (Recontar antes de editar: las líneas se desplazan tras cada edición.)
+
+**Estado:** F9T.54 Pendiente · F9T.55 Pendiente · F9T.56 Pendiente · F9T.57 Pendiente.
+
+---
+
 ## Anexo — Estado actual de los capítulos (2026-07-17)
 
 | Archivo | Capítulo | Líneas | Entornos de problema (aprox.) |
