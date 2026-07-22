@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (MiKTeX 25.4) (format=lualatex 2025.7.7)  22 JUL 2026 11:22
+This is LuaHBTeX, Version 1.22.0 (MiKTeX 25.4) (format=lualatex 2025.7.7)  22 JUL 2026 14:54
  restricted system commands enabled.
 **anfalearNotasCalculo.tex
 (./anfalearNotasCalculo.tex
@@ -5629,58 +5629,53 @@ Package amsmath Warning: Foreign command \atop;
 
 
 
-LaTeX Info: Redefining \. on input line 250.
-LaTeX Info: Redefining \% on input line 250.
+LaTeX Info: Redefining \. on input line 253.
+LaTeX Info: Redefining \% on input line 253.
 [437]
 
-LaTeX Info: Redefining \. on input line 307.
-LaTeX Info: Redefining \% on input line 307.
+LaTeX Info: Redefining \. on input line 310.
+LaTeX Info: Redefining \% on input line 310.
 [438]
 
-LaTeX Info: Redefining \. on input line 408.
-LaTeX Info: Redefining \% on input line 408.
+LaTeX Info: Redefining \. on input line 383.
+LaTeX Info: Redefining \% on input line 383.
 [439]
-Underfull \vbox (badness 1603) has occurred while \output is active []
 
-
-
-LaTeX Info: Redefining \. on input line 454.
-LaTeX Info: Redefining \% on input line 454.
+LaTeX Info: Redefining \. on input line 460.
+LaTeX Info: Redefining \% on input line 460.
 [440]
 Package hyperref Info: bookmark level for unknown prop defaults to 0 on input l
-ine 476.
+ine 482.
 
 
-LaTeX Info: Redefining \. on input line 525.
-LaTeX Info: Redefining \% on input line 525.
+LaTeX Info: Redefining \. on input line 531.
+LaTeX Info: Redefining \% on input line 531.
 [441]
 
-LaTeX Info: Redefining \. on input line 612.
-LaTeX Info: Redefining \% on input line 612.
+LaTeX Info: Redefining \. on input line 618.
+LaTeX Info: Redefining \% on input line 618.
 [442]
 
-LaTeX Info: Redefining \. on input line 675.
-LaTeX Info: Redefining \% on input line 675.
+LaTeX Info: Redefining \. on input line 691.
+LaTeX Info: Redefining \% on input line 691.
 [443]
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-
-LaTeX Info: Redefining \. on input line 753.
-LaTeX Info: Redefining \% on input line 753.
+LaTeX Info: Redefining \. on input line 744.
+LaTeX Info: Redefining \% on input line 744.
 [444]
 
-LaTeX Info: Redefining \. on input line 804.
-LaTeX Info: Redefining \% on input line 804.
+LaTeX Info: Redefining \. on input line 823.
+LaTeX Info: Redefining \% on input line 823.
 [445]
 
-LaTeX Info: Redefining \. on input line 889.
-LaTeX Info: Redefining \% on input line 889.
+LaTeX Info: Redefining \. on input line 883.
+LaTeX Info: Redefining \% on input line 883.
 [446]
 
-LaTeX Info: Redefining \. on input line 964.
-LaTeX Info: Redefining \% on input line 964.
+LaTeX Info: Redefining \. on input line 962.
+LaTeX Info: Redefining \% on input line 962.
 [447]
+Overfull \vbox (8.63286pt too high) has occurred while \output is active []
 
 
 
@@ -5688,8 +5683,10 @@ LaTeX Info: Redefining \% on input line 964.
 
 
 
-LaTeX Info: Redefining \. on input line 1037.
-LaTeX Info: Redefining \% on input line 1037.
+
+
+LaTeX Info: Redefining \. on input line 1031.
+LaTeX Info: Redefining \% on input line 1031.
 [448]) (./planostangentes.tex
 
 LaTeX Info: Redefining \. on input line 5.
@@ -8193,15 +8190,15 @@ Package rerunfilecheck Info: File `anfalearNotasCalculo.out' has not changed.
 )
 
 Here is how much of LuaTeX's memory you used:
- 96806 strings out of 470205
+ 96785 strings out of 470205
  305230,4101490 words of node,token memory allocated
- 25399 words of node memory still in use:
-   32 hlist, 2 vlist, 14 rule, 3 glue, 4 kern, 1 glyph, 7841 attribute, 101 glue
-_spec, 3958 attribute_list, 2 write, 24 pdf_literal, 96 pdf_action, 24 pdf_color
+ 25447 words of node memory still in use:
+   32 hlist, 2 vlist, 14 rule, 3 glue, 4 kern, 1 glyph, 7857 attribute, 101 glue
+_spec, 3966 attribute_list, 2 write, 24 pdf_literal, 96 pdf_action, 24 pdf_color
 stack nodes
-   avail lists: 1:21,2:31071,3:19197,4:340,5:2084,6:95,7:11348,8:150,9:4399,10:3
+   avail lists: 1:21,2:31047,3:19197,4:340,5:2075,6:95,7:11348,8:150,9:4399,10:3
 2,11:1181
- 115719 multiletter control sequences out of 65536+600000
+ 115720 multiletter control sequences out of 65536+600000
  153 fonts using 36017359 bytes
  76i,22n,95p,1148b,3556s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/users/anfalear/appdata/local/programs/miktex/fonts/opentype/public/lm/lmmono
@@ -8240,9 +8237,9 @@ amsfonts/cm/cmsy8.pfb><C:/Users/anfalear/AppData/Local/Programs/MiKTeX/fonts/typ
 e1/public/amsfonts/latxfont/line10.pfb><C:/Users/anfalear/AppData/Local/Programs
 /MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/anfalear/AppDat
 a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on anfalearNotasCalculo.pdf (818 pages, 7029007 bytes).
+Output written on anfalearNotasCalculo.pdf (818 pages, 7029127 bytes).
 
-PDF statistics: 15282 PDF objects out of 15390 (max. 8388607)
- 7749 named destinations out of 8907 (max. 131072)
+PDF statistics: 15259 PDF objects out of 15390 (max. 8388607)
+ 7727 named destinations out of 8907 (max. 131072)
  3248 words of extra memory for PDF output out of 10000 (max. 100000000)
 

@@ -885,7 +885,15 @@ Ubicaciones (líneas al 2026-07-22): F9T.54 → L214, L235, L418, L439, L668, L6
 L838. F9T.55 → L499, L1297, L1325, L1353, L1382, L2240, L2295. F9T.56 → L672, L826, L985.
 F9T.57 → L33, L199, L289. (Recontar antes de editar: las líneas se desplazan tras cada edición.)
 
-**Estado:** F9T.54 Pendiente · F9T.55 Pendiente · F9T.56 Pendiente · F9T.57 Pendiente.
+**Estado:** F9T.54 **HECHO** (2026-07-22) · F9T.55 Pendiente · F9T.56 Pendiente · F9T.57 Pendiente.
+
+**F9T.54 HECHO (2026-07-22):** los 9 `myproof` de `limvariasvariables.tex` normalizados a
+`Paso N.` + `\boxed{}`. Cuatro de límites por trayectorias (recta $y=mx$/$y=kx$, familia
+$y=mx^2$, diagonal $y=x$) con literales `a)b)` en prosa → Paso 1 (trayectoria) / Paso 2–3
+(segunda trayectoria + conclusión); de paso se corrigió la inconsistencia $y=mx$ que calculaba
+con $k$ (ahora coherente en $m$). Dos de teorema del emparedado ($x\cos(1/y)$, $\arctan(xy)/xy$)
+con acotación rigurosa vía $|x|$. Tres de discontinuidad/removibilidad (a)/(b) → Paso 1
+(indeterminación) / Paso 2 (límite) / Paso 3 (removibilidad, boxed). 818 pp, 0 errores, 2 pasadas.
 
 ---
 
