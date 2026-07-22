@@ -1701,6 +1701,60 @@ $(0,0,\pm1)$.
 \end{myproof}
 \end{example}
 
+\begin{example}[Elipsoide con términos lineales]
+Clasifique la superficie $4x^2+9y^2+36z^2-8x+36y+4=0$: halle su centro, sus
+semiejes y sus trazas con los planos coordenados trasladados.
+\begin{myproof}
+\textbf{Paso 1. Agrupar y completar cuadrados.}
+\[
+  4(x^2-2x)+9(y^2+4y)+36z^2+4=0.
+\]
+Como $x^2-2x=(x-1)^2-1$ y $y^2+4y=(y+2)^2-4$,
+\[
+  4(x-1)^2-4+9(y+2)^2-36+36z^2+4=0
+  \;\Rightarrow\; 4(x-1)^2+9(y+2)^2+36z^2=36.
+\]
+
+\textbf{Paso 2. Forma canónica.}
+Dividiendo entre $36$,
+\[
+  \frac{(x-1)^2}{9}+\frac{(y+2)^2}{4}+\frac{z^2}{1}=1.
+\]
+Es un \emph{elipsoide} de centro $C(1,-2,0)$ y semiejes $a=3$, $b=2$, $c=1$.
+
+\textbf{Paso 3. Trazas con los planos por el centro.}
+$z=0$: $\dfrac{(x-1)^2}{9}+\dfrac{(y+2)^2}{4}=1$ (elipse);
+$x=1$: $\dfrac{(y+2)^2}{4}+z^2=1$ (elipse);
+$y=-2$: $\dfrac{(x-1)^2}{9}+z^2=1$ (elipse).
+
+\textbf{Paso 4. Resultado.}
+\[
+  \boxed{\ \frac{(x-1)^2}{9}+\frac{(y+2)^2}{4}+z^2=1:\ \text{elipsoide},\
+  C(1,-2,0),\ a=3,\,b=2,\,c=1.\ }
+\]
+La superficie se muestra en la figura~\ref{fig:elipsoide_trasladado}.
+\end{myproof}
+\end{example}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[axis lines=center, xlabel=$x$, ylabel=$y$, zlabel=$z$,
+             xmin=-2.5,xmax=4.5,ymin=-4.5,ymax=0.8,zmin=-1.6,zmax=1.6,
+             view={125}{22}, ticklabel style={font=\tiny},
+             width=8cm, height=7cm, trig format plots=deg]
+  \addplot3[surf, shader=flat corner, samples=20,
+            variable=\u, variable y=\v,
+            domain=0:180, y domain=0:360,
+            colormap/cool, opacity=0.80]
+    ({1+3*sin(\u)*cos(\v)}, {-2+2*sin(\u)*sin(\v)}, {cos(\u)});
+\end{axis}
+\end{tikzpicture}
+\caption{Elipsoide $\dfrac{(x-1)^2}{9}+\dfrac{(y+2)^2}{4}+z^2=1$ de centro
+  $(1,-2,0)$ y semiejes $3$, $2$, $1$.}
+\label{fig:elipsoide_trasladado}
+\end{figure}
+
 \subsection{Cilindros}
 
 Una \textbf{superficie cilíndrica} (o \textbf{cilindro}) es la superficie
@@ -2194,7 +2248,11 @@ Determinar si las siguientes funciones vectoriales son continuas en $t=0$:
 \end{enumerate}
 \end{prob}
 
-
+\begin{prob}
+Calcule $\displaystyle\lim_{t\to 0}\left\langle \cos t,\ t^2\sen(1/t),\ t^2
+\right\rangle$. Justifique el límite de la componente central mediante el
+teorema de compresión (emparedado).
+\end{prob}
 
 \begin{prob}
 Calcular las siguientes integrales definidas e indefinidas:
@@ -2319,6 +2377,22 @@ identifique el vértice, el foco y la directriz de la parábola resultante.
 Identifique la superficie $9y^2+4z^2-18y+16z-11=0$: escríbala en forma
 canónica, indique el eje del cilindro y describa sus secciones con los
 planos $x=k$.
+\end{prob}
+
+\begin{prob}
+Para el hiperboloide $4x^2+9y^2-z^2=1$ y el plano $z=c$ (con $c$ constante),
+muestre que la traza es una elipse. Halle sus semiejes en función de $c$, sus
+vértices y sus focos.
+\end{prob}
+
+\begin{prob}
+Clasifique cada superficie completando cuadrados; halle su centro o vértice y
+sus elementos:
+\begin{enumerate}[a)]
+  \item $z=x^2+2y^2-2x+8y$ (paraboloide elíptico).
+  \item $9x^2+4y^2-36z^2=36$ (hiperboloide de una hoja).
+  \item $z=x^2-y^2+2x-4y$ (paraboloide hiperbólico).
+\end{enumerate}
 \end{prob}
 
 \begin{prob}

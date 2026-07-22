@@ -902,6 +902,86 @@ el candidato es mínimo si $(-1)^{m}\bar{H}>0$:
 \end{myproof}
 \end{prob}
 
+\begin{example}[Paralelepípedo de volumen máximo inscrito en un elipsoide]
+Halle el volumen máximo de una caja rectangular de caras paralelas a los
+planos coordenados inscrita en el elipsoide
+$\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}+\dfrac{z^2}{c^2}=1$.
+\begin{myproof}
+\textbf{Paso 1. Función y restricción.}
+Por simetría, el vértice en el primer octante es $(x,y,z)$ con $x,y,z>0$ y la
+caja tiene volumen $V=8xyz$, sujeto a
+$g=\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}+\dfrac{z^2}{c^2}-1=0$.
+
+\textbf{Paso 2. Ecuaciones de Lagrange.}
+De $\nabla V=\lambda\nabla g$:
+\[
+  8yz=\lambda\frac{2x}{a^2},\qquad
+  8xz=\lambda\frac{2y}{b^2},\qquad
+  8xy=\lambda\frac{2z}{c^2}.
+\]
+
+\textbf{Paso 3. Simetría.}
+Multiplicando la primera por $x$, la segunda por $y$ y la tercera por $z$, los
+lados izquierdos coinciden ($=8xyz$), de modo que
+\[
+  \frac{x^2}{a^2}=\frac{y^2}{b^2}=\frac{z^2}{c^2}.
+\]
+Con la restricción, cada término vale $\tfrac13$, luego
+$x=\dfrac{a}{\sqrt3}$, $y=\dfrac{b}{\sqrt3}$, $z=\dfrac{c}{\sqrt3}$.
+
+\textbf{Paso 4. Volumen máximo.}
+\[
+  \boxed{\ V_{\max}=8\cdot\frac{a}{\sqrt3}\cdot\frac{b}{\sqrt3}\cdot
+  \frac{c}{\sqrt3}=\frac{8abc}{3\sqrt3}.\ }
+\]
+\end{myproof}
+\end{example}
+
+\subsection{Optimización con dos restricciones}
+
+Cuando se busca un extremo de $f$ sobre la curva definida por \emph{dos}
+restricciones $g=0$ y $h=0$, la condición necesaria involucra dos
+multiplicadores.
+
+\begin{theorem}[Multiplicadores de Lagrange con dos restricciones]
+Sea $f$ con un extremo en $P$ sobre la curva $g(\mathbf x)=0$,
+$h(\mathbf x)=0$, y supóngase que $\nabla g(P)$ y $\nabla h(P)$ son
+linealmente independientes. Entonces existen escalares $\lambda,\mu$ tales que
+\[
+  \nabla f(P)=\lambda\,\nabla g(P)+\mu\,\nabla h(P).
+\]
+\end{theorem}
+
+\begin{example}[Punto más cercano al origen sobre la intersección de dos planos]
+Halle el punto de la recta intersección de los planos $x+y+z=1$ y
+$x-y+2z=2$ más cercano al origen.
+\begin{myproof}
+\textbf{Paso 1. Función y restricciones.}
+Minimizamos $f=x^2+y^2+z^2$ con $g=x+y+z-1=0$ y $h=x-y+2z-2=0$.
+
+\textbf{Paso 2. Ecuaciones de Lagrange.}
+De $\nabla f=\lambda\nabla g+\mu\nabla h$:
+\[
+  2x=\lambda+\mu,\qquad 2y=\lambda-\mu,\qquad 2z=\lambda+2\mu.
+\]
+
+\textbf{Paso 3. Sustituir en las restricciones.}
+Con $x=\tfrac{\lambda+\mu}{2}$, $y=\tfrac{\lambda-\mu}{2}$,
+$z=\tfrac{\lambda+2\mu}{2}$:
+\[
+  x+y+z=\frac{3\lambda+2\mu}{2}=1,\qquad
+  x-y+2z=\frac{2\lambda+6\mu}{2}=2,
+\]
+esto es $3\lambda+2\mu=2$ y $\lambda+3\mu=2$, de donde $\lambda=\tfrac27$ y
+$\mu=\tfrac47$.
+
+\textbf{Paso 4. Punto y distancia.}
+\[
+  \boxed{\ \left(\tfrac37,\,-\tfrac17,\,\tfrac57\right),\qquad
+  d=\sqrt{x^2+y^2+z^2}=\sqrt{\tfrac57}.\ }
+\]
+\end{myproof}
+\end{example}
 
 \section{Problemas propuestos}
 
@@ -986,6 +1066,22 @@ Encuentre las dimensiones de una caja rectangular cerrada (con tapa) con volumen
 
 \begin{prob}
 Encuentre el área máxima de un triángulo rectángulo cuyo perímetro es $16$.
+\end{prob}
+
+\begin{prob}
+Halle el volumen máximo de una caja rectangular de caras paralelas a los
+planos coordenados inscrita en el elipsoide
+$\dfrac{x^2}{9}+\dfrac{y^2}{16}+\dfrac{z^2}{4}=1$.
+\end{prob}
+
+\begin{prob}[Dos restricciones]
+Determine las dimensiones de la caja rectangular de volumen máximo cuya área
+superficial es $64$ y la suma de las longitudes de sus $12$ aristas es $48$.
+\end{prob}
+
+\begin{prob}[Dos restricciones]
+Halle los valores máximo y mínimo de $z$ sobre la curva intersección del plano
+$x+y+z=1$ con el cilindro $x^2+y^2=1$.
 \end{prob}
 
 \begin{prob}

@@ -965,6 +965,42 @@ Ambas direcciones son perpendiculares a $\nabla T(P)$: son las direcciones \emph
 \label{fig:du_nula_curva_nivel}
 \end{figure}
 
+\begin{prob}[Reconstrucción del gradiente a partir de derivadas direccionales]
+En un punto $P$ se sabe que la derivada direccional de $f$ vale $2\sqrt2$ en
+la dirección $\mathbf{u}=\tfrac1{\sqrt2}\langle 1,1\rangle$ y $\sqrt2$ en la
+dirección $\mathbf{v}=\tfrac1{\sqrt2}\langle 1,-1\rangle$.
+\begin{enumerate}[a)]
+  \item Determine $\nabla f(P)$.
+  \item ¿Existe alguna dirección $\mathbf{w}$ con $D_{\mathbf{w}}f(P)=4$?
+\end{enumerate}
+\begin{myproof}
+\textbf{Paso 1. Plantear el sistema.}
+Sea $\nabla f(P)=\langle a,b\rangle$. Como $D_{\mathbf u}f=\nabla f\cdot\mathbf u$,
+\[
+  \frac{a+b}{\sqrt2}=2\sqrt2,\qquad \frac{a-b}{\sqrt2}=\sqrt2,
+\]
+es decir $a+b=4$ y $a-b=2$.
+
+\textbf{Paso 2. Resolver (a).}
+Sumando y restando, $a=3$ y $b=1$:
+\[
+  \nabla f(P)=\langle 3,1\rangle,\qquad \|\nabla f(P)\|=\sqrt{10}.
+\]
+
+\textbf{Paso 3. Cota para (b).}
+Para toda dirección unitaria $\mathbf w$,
+$|D_{\mathbf w}f(P)|=|\nabla f\cdot\mathbf w|\le\|\nabla f(P)\|=\sqrt{10}\approx 3.16$.
+
+\textbf{Paso 4. Conclusión.}
+Como $4>\sqrt{10}$, \emph{no existe} tal dirección:
+\[
+  \boxed{\ \nabla f(P)=\langle 3,1\rangle;\quad
+  \text{no hay }\mathbf w\text{ con }D_{\mathbf w}f(P)=4,\ \text{pues }
+  |D_{\mathbf w}f|\le\sqrt{10}.\ }
+\]
+\end{myproof}
+\end{prob}
+
 %%----------------------------------------------------------
 \section{Relación del plano tangente y la recta normal con el gradiente}
 %%----------------------------------------------------------
@@ -1111,6 +1147,45 @@ Recta: $\dfrac{x-1}{1}=\dfrac{y}{2}=\dfrac{z-1}{1}$.
 \end{myproof}
 \end{prob}
 
+\begin{prob}[Rectas normales y superficies ortogonales]
+\begin{enumerate}[a)]
+  \item Demuestre que toda recta normal a la esfera $x^2+y^2+z^2=R^2$ pasa por
+        el origen.
+  \item Demuestre que la esfera $x^2+y^2+z^2=R^2$ y el cono $x^2+y^2=z^2$ se
+        cortan ortogonalmente (sus normales son perpendiculares en cada punto
+        de la intersección).
+\end{enumerate}
+\begin{myproof}
+\textbf{Paso 1 (a). Recta normal a la esfera.}
+Con $F=x^2+y^2+z^2-R^2$ se tiene $\nabla F=2\langle x,y,z\rangle$, así que en
+$P=(x_0,y_0,z_0)$ la recta normal es
+\[
+  \mathbf{L}(t)=P+t\,\nabla F(P)=(1+2t)\,\langle x_0,y_0,z_0\rangle.
+\]
+Para $t=-\tfrac12$ resulta $\mathbf L(-\tfrac12)=\mathbf 0$: la recta pasa por
+el origen. $\checkmark$
+
+\textbf{Paso 2 (b). Gradientes de las dos superficies.}
+Sea $F=x^2+y^2+z^2-R^2$ y $G=x^2+y^2-z^2$. Entonces
+\[
+  \nabla F=2\langle x,y,z\rangle,\qquad \nabla G=2\langle x,y,-z\rangle.
+\]
+
+\textbf{Paso 3. Producto escalar sobre la intersección.}
+\[
+  \nabla F\cdot\nabla G=4\,(x^2+y^2-z^2).
+\]
+En los puntos de intersección se cumple la ecuación del cono $x^2+y^2=z^2$,
+luego $x^2+y^2-z^2=0$.
+
+\textbf{Paso 4. Conclusión.}
+\[
+  \boxed{\ \nabla F\cdot\nabla G=0\ \text{sobre la intersección: las
+  superficies son ortogonales.}\ }
+\]
+\end{myproof}
+\end{prob}
+
 
 %%==========================================================
 
@@ -1125,6 +1200,17 @@ Use la regla de la cadena para hallar $dz/dt$ si $z = \cos(x + 2y)$, $x = t^2$ e
 El voltaje en los extremos de un conductor aumenta a una tasa de $9\ \text{V/min}$ y la resistencia disminuye a razón de $0{,}5\ \Omega/\text{min}$. Si $I=V/R$, calcule la tasa a la que cambia la corriente $I$ cuando $R=70\ \Omega$ y $V=60\ \text{V}$.
 \end{prob}
 
+\begin{prob}
+Sean $f(x,y)=x^2-y^2$ y $g(x,y)=2xy$. Calcule el ángulo entre $\nabla f$ y
+$\nabla g$ en el punto $(2,1)$ e interprete el resultado en términos de las
+curvas de nivel de $f$ y $g$.
+\end{prob}
+
+\begin{prob}[Desafiante]
+Halle constantes $a,b$ tales que la derivada direccional máxima de
+$f(x,y)=e^{ax+by}\cos(x+y)$ en el origen valga $2\sqrt2$ y ocurra en la
+dirección de la bisectriz del primer cuadrante.
+\end{prob}
 
 \begin{prob}[Gradiente y derivada direccional]
 Calcule el gradiente de las siguientes funciones:

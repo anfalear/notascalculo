@@ -596,49 +596,49 @@ Propuesto: f(x,y)=∫_x^y √(1+t³)dt, calcular f_x y f_y por el TFC (respuesta
 - Figura: NO
 - Estimación: L
 
-### F9T.24 — [origen: T5.10] [destino: gradientes.tex, §Gradiente, propuestos]
+### F9T.24 — HECHO (2026-07-21) — [origen: T5.10] [destino: gradientes.tex, §Gradiente, propuestos]
 - Tipo: propuesto
 - Enunciado: calcule el ángulo entre ∇f y ∇g en el punto dado (funciones tipo taller).
 - Solución: ambos gradientes → cosθ = (∇f·∇g)/(‖∇f‖‖∇g‖).
 - Figura: NO
 - Estimación: S
 
-### F9T.25 — [origen: T5.23, T5.25] [destino: gradientes.tex, §Derivada direccional, tras el teorema del máximo (L752)]
+### F9T.25 — HECHO (2026-07-21) — [origen: T5.23, T5.25] [destino: gradientes.tex, §Derivada direccional, tras el teorema del máximo (L752)]
 - Tipo: ambos
 - Enunciado: (i) sabiendo D_u f y D_v f en un punto para dos direcciones dadas, reconstruya ∇f (sistema lineal 2×2); (ii) decida si existe u con D_u f=c cuando c>‖∇f‖ (no existe: |D_u f|≤‖∇f‖).
 - Solución: plantear ∇f·u=α, ∇f·v=β → resolver; para (ii) usar la cota |∇f·u|≤‖∇f‖.
 - Figura: NO
 - Estimación: M
 
-### F9T.26 — [origen: T5.22] [destino: gradientes.tex, propuestos (desafiante)]
+### F9T.26 — HECHO (2026-07-21) — [origen: T5.22] [destino: gradientes.tex, propuestos (desafiante)]
 - Tipo: propuesto
 - Enunciado: halle a,b tales que la derivada direccional máxima de f=e^{ax+by}cos(x+y) en el origen valga c√2 y ocurra en la dirección de la bisectriz (isomorfo).
 - Solución: ∇f(0,0)=(a,b) → condiciones de dirección (a=b) y magnitud → resolver.
 - Figura: NO
 - Estimación: M
 
-### F9T.27 — [origen: T5.31, T5.32] [destino: gradientes.tex, §Plano tangente y gradiente, tras L997]
+### F9T.27 — HECHO (2026-07-21) — [origen: T5.31, T5.32] [destino: gradientes.tex, §Plano tangente y gradiente, tras L997]
 - Tipo: ambos
 - Enunciado: (i) demuestre que toda recta normal a la esfera x²+y²+z²=R² pasa por el origen; (ii) demuestre que la esfera x²+y²+z²=R² y el cono x²+y²−z²=0 son ortogonales en su intersección (∇F·∇G=0).
 - Solución: (i) recta normal p+t∇F(p)=p(1+2t) → pasa por 0; (ii) producto punto de gradientes sobre la curva intersección usando x²+y²=z².
 - Figura: NO
 - Estimación: M
 
-### F9T.28 — [origen: T6.12, T6.13, T6.14] [destino: multiplicadoresintdobles.tex, nueva subsec. "Lagrange con dos restricciones" tras L903]
+### F9T.28 — HECHO (2026-07-21) — [origen: T6.12, T6.13, T6.14] [destino: multiplicadoresintdobles.tex, nueva subsec. "Lagrange con dos restricciones" tras L903]
 - Tipo: ambos
 - Enunciado: teorema ∇f=λ∇g+μ∇h (enunciado sin prueba) + example resuelto (punto de la curva intersección de dos superficies más cercano al origen, isomorfo T6.13) + propuestos: caja con área y suma de aristas dadas (T6.12) y punto más alto/bajo de la elipse plano∩cono (T6.14).
 - Solución: sistema de 5 ecuaciones (3 de gradientes + 2 restricciones) → resolver por eliminación → comparar candidatos.
 - Figura: NO
 - Estimación: L
 
-### F9T.29 — [origen: T6.09, T6.11, T5.27] [destino: multiplicadoresintdobles.tex, §Lagrange, tras el example L731]
+### F9T.29 — HECHO (2026-07-21) — [origen: T6.09, T6.11, T5.27] [destino: multiplicadoresintdobles.tex, §Lagrange, tras el example L731]
 - Tipo: ambos
 - Enunciado: paralelepípedo de volumen máximo inscrito en el elipsoide x²/a²+y²/b²+z²/c²=1 (resuelto en simbólico); propuesto isomorfo con valores numéricos (tipo T6.11/T5.27).
 - Solución: V=8xyz, Lagrange con g=x²/a²+y²/b²+z²/c²−1 → simetría → x=a/√3, etc.
 - Figura: NO
 - Estimación: M
 
-### F9T.30 — [origen: T8.02] [destino: cap34.tex, §Teorema de Green, tras el example L168]
+### F9T.30 — HECHO (2026-07-21) — [origen: T8.02] [destino: cap34.tex, §Teorema de Green, tras el example L168]
 - Tipo: prob resuelto
 - Enunciado: evalúe ∫_C F·dr donde C es el arco (t, sen t), t∈[0,π] (curva abierta): cierre C con el segmento de regreso sobre el eje x, aplique Green y despeje la integral pedida; cuidado con la orientación.
 - Solución: C∪S cerrada → Green sobre la región → ∫_C = ∮ − ∫_S → calcular la doble y la del segmento.
@@ -647,21 +647,21 @@ Propuesto: f(x,y)=∫_x^y √(1+t³)dt, calcular f_x y f_y por el TFC (respuesta
 
 ### Prioridad 3 — PARCIAL
 
-### F9T.31 — [origen: T1.02] [destino: funvectoriales.tex, §Cuádricas (trazas), junto a L1194]
+### F9T.31 — HECHO (2026-07-21) — [origen: T1.02] [destino: funvectoriales.tex, §Cuádricas (trazas), junto a L1194]
 - Tipo: propuesto
 - Enunciado: para el hiperboloide ax²+by²−z²=1 y el plano z=c, muestre que la traza es una elipse y halle sus semiejes, vértices y focos.
 - Solución: sustituir z=c → dividir → semiejes → elementos.
 - Figura: NO
 - Estimación: S
 
-### F9T.32 — [origen: T1.04, T1.07, T1.08, T1.09, T1.10] [destino: funvectoriales.tex, §Cuádricas, tras los examples canónicos]
+### F9T.32 — HECHO (2026-07-21) — [origen: T1.04, T1.07, T1.08, T1.09, T1.10] [destino: funvectoriales.tex, §Cuádricas, tras los examples canónicos]
 - Tipo: ambos
 - Enunciado: prob resuelto: clasificar el elipsoide con términos lineales (completar cuadrados en las 3 variables, centro, semiejes, trazas por 3 planos — isomorfo T1.04). Propuestos: batería isomorfa de T1.07–T1.10 (paraboloide elíptico, hiperboloides de 1 y 2 hojas reorientados, paraboloide hiperbólico con términos lineales).
 - Solución: agrupar por variable → completar cuadrados → canónica trasladada → clasificación y elementos.
 - Figura: SÍ → F9T.32f: elipsoide trasladado con sus trazas (pgfplots 3D, shader=flat).
 - Estimación: L
 
-### F9T.33 — [origen: T2.02] [destino: funvectoriales.tex, §Límites de funciones vectoriales, tras L158]
+### F9T.33 — HECHO (2026-07-21) — [origen: T2.02] [destino: funvectoriales.tex, §Límites de funciones vectoriales, tras L158]
 - Tipo: propuesto
 - Enunciado: lím_{t→0} ⟨cos t, t² sen(1/t), t²⟩ — la componente central por teorema de compresión.
 - Solución: 0≤|t²sen(1/t)|≤t² → emparedado → límite ⟨1,0,0⟩.

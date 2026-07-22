@@ -213,6 +213,71 @@ La igualdad se cumple: $\boxed{8\pi = 8\pi}$.
 \end{myproof}
 \end{example}
 
+\begin{example}[Green sobre una curva abierta]
+Evalúe $\displaystyle\int_C \mathbf F\cdot d\mathbf r$ para
+$\mathbf F(x,y)=\langle x^2+y,\ 4x-y^2\rangle$, donde $C$ es el arco de la
+curva $y=\sen x$ recorrido desde $(0,0)$ hasta $(\pi,0)$.
+\begin{myproof}
+\textbf{Paso 1. Cerrar la curva.}
+$C$ es abierta; la cerramos con el segmento $S$ del eje $x$, de modo que
+$C\cup S$ encierra la región $R=\{0\le x\le\pi,\ 0\le y\le\sen x\}$
+(figura~\ref{fig:green_curva_abierta}). La \emph{frontera orientada
+positivamente} $\partial R$ recorre el segmento del eje $x$ de $(0,0)$ a
+$(\pi,0)$ y luego el arco de seno de $(\pi,0)$ de regreso a $(0,0)$ (así $R$
+queda a la izquierda).
+
+\textbf{Paso 2. Aplicar Green.}
+Con $M=x^2+y$ y $N=4x-y^2$: $N_x-M_y=4-1=3$. Por tanto
+\[
+  \oint_{\partial R}\mathbf F\cdot d\mathbf r=\iint_R 3\,dA
+  =3\int_0^\pi \sen x\,dx=3\cdot 2=6.
+\]
+
+\textbf{Paso 3. Descomponer y usar la orientación.}
+$\partial R$ consta del segmento de $(0,0)$ a $(\pi,0)$ y del arco de $(\pi,0)$
+a $(0,0)$, que es $C$ \emph{recorrido al revés}; así
+$\oint_{\partial R}=\int_{\text{seg}}-\int_C$. Sobre el segmento ($y=0$,
+$dy=0$, $x:0\to\pi$): $\mathbf F\cdot d\mathbf r=x^2\,dx$, luego
+$\int_{\text{seg}}=\int_0^\pi x^2\,dx=\dfrac{\pi^3}{3}$.
+
+\textbf{Paso 4. Despejar la integral pedida.}
+De $6=\dfrac{\pi^3}{3}-\int_C$,
+\[
+  \boxed{\ \int_C\mathbf F\cdot d\mathbf r=\frac{\pi^3}{3}-6.\ }
+\]
+\end{myproof}
+\end{example}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.5]
+  % region bajo el arco
+  \fill[blue!12] plot[domain=0:3.1416,samples=60,variable=\x]
+    ({\x},{sin(deg(\x))}) -- (0,0) -- cycle;
+  % ejes
+  \draw[->,thin] (-0.3,0)--(3.8,0) node[right]{$x$};
+  \draw[->,thin] (0,-0.3)--(0,1.4) node[above]{$y$};
+  % arco C
+  \draw[very thick,blue!70!black,domain=0:3.1416,samples=60,smooth,variable=\x]
+    plot ({\x},{sin(deg(\x))});
+  \draw[->,very thick,blue!70!black] (1.62,0.9962)--(1.45,0.9925);
+  \node[blue!70!black] at (1.3,1.12) {$C$};
+  % segmento S
+  \draw[very thick,red!70!black] (3.1416,0)--(0,0);
+  \draw[->,very thick,red!70!black] (1.4,0)--(1.75,0);
+  \node[red!70!black,below] at (2.4,-0.03) {$S$};
+  % marcas
+  \node[below] at (3.1416,-0.03) {$\pi$};
+  \filldraw (0,0) circle(0.6pt); \filldraw (3.1416,0) circle(0.6pt);
+  \node[blue!40!black] at (1.55,0.4) {$R$};
+\end{tikzpicture}
+\caption{Arco $C:\,y=\sen x$ de $(0,0)$ a $(\pi,0)$ (azul), cerrado con el
+  segmento $S$ del eje $x$ (rojo). La región $R$ queda encerrada; su frontera
+  se recorre en sentido positivo tomando el segmento de $(0,0)$ a $(\pi,0)$ y
+  luego el arco de regreso.}
+\label{fig:green_curva_abierta}
+\end{figure}
+
 %%==========================================================
 \section{Divergencia y rotacional}
 %%==========================================================
