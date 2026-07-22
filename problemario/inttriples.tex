@@ -290,6 +290,46 @@ M = \frac{1}{24}\cdot\frac{1}{30} = \frac{1}{720}.
 \end{myproof}
 \end{example}
 
+%%==========================================================
+\begin{prob}[Centro de masa con densidad variable]
+Un sólido ocupa la caja $D=[0,2]\times[0,1]\times[0,1]$ y tiene densidad
+$\rho(x,y,z)=x$. Determine su masa y su centro de masa.
+\begin{myproof}
+\textbf{Paso 1. Masa.}
+\[
+M=\iiint_D x\,dV=\int_0^2\!\!\int_0^1\!\!\int_0^1 x\,dz\,dy\,dx
+=\int_0^2 x\,dx=2.
+\]
+
+\textbf{Paso 2. Momento respecto al plano $yz$ (da $\bar x$).}
+\[
+M_{yz}=\iiint_D x\cdot\rho\,dV=\int_0^2\!\!\int_0^1\!\!\int_0^1 x^2\,dz\,dy\,dx
+=\int_0^2 x^2\,dx=\frac83.
+\]
+
+\textbf{Paso 3. Momentos respecto a los planos $xz$ y $xy$.}
+Como $\rho=x$ separa las variables,
+\[
+M_{xz}=\iiint_D y\,x\,dV=\Bigl(\int_0^2 x\,dx\Bigr)\Bigl(\int_0^1 y\,dy\Bigr)\Bigl(\int_0^1 dz\Bigr)=2\cdot\tfrac12\cdot1=1,
+\]
+\[
+M_{xy}=\iiint_D z\,x\,dV=\Bigl(\int_0^2 x\,dx\Bigr)\Bigl(\int_0^1 dy\Bigr)\Bigl(\int_0^1 z\,dz\Bigr)=2\cdot1\cdot\tfrac12=1.
+\]
+
+\textbf{Paso 4. Centro de masa.}
+\[
+\bar x=\frac{M_{yz}}{M}=\frac{8/3}{2}=\frac43,\qquad
+\bar y=\frac{M_{xz}}{M}=\frac12,\qquad
+\bar z=\frac{M_{xy}}{M}=\frac12.
+\]
+\[
+\boxed{\ (\bar x,\bar y,\bar z)=\Bigl(\tfrac43,\ \tfrac12,\ \tfrac12\Bigr).\ }
+\]
+El centro de masa está desplazado hacia $x$ grande respecto al centroide
+geométrico $x=1$, como era de esperar, pues la densidad crece con $x$.
+\end{myproof}
+\end{prob}
+
 \begin{example}[Momento de inercia respecto al eje \(z\)]
 Calcular \(I_z\) para el cubo \(D = [0,1]^3\) con densidad constante \(\rho = 1\).
 \begin{myproof}
@@ -342,6 +382,71 @@ V = \int_0^1\!\Bigl(\tfrac{3}{2}-x\Bigr)dx
 \]
 \end{myproof}
 \end{prob}
+
+%%==========================================================
+\begin{prob}[Sólido cuyo techo cambia de superficie]
+Calcule el volumen del sólido acotado por $z=\sqrt{x}$, $z=0$, los planos
+$y=0$, $y=3$ y el plano $x+z=2$.
+\begin{myproof}
+\textbf{Paso 1. Analizar la sección en el plano $xz$.}
+El sólido tiene grosor constante en $y$ (de $0$ a $3$), de modo que $V=3A$,
+con $A$ el área de la región $R$ del plano $xz$ acotada por $z=\sqrt x$,
+$z=0$ y $z=2-x$. Las curvas $z=\sqrt x$ y $z=2-x$ se cortan donde
+\[
+\sqrt x=2-x\ \Rightarrow\ x=(2-x)^2\ \Rightarrow\ x^2-5x+4=0\ \Rightarrow\ x=1
+\]
+(la raíz $x=4$ se descarta, pues daría $z=2-x=-2<0$); el corte es
+$(x,z)=(1,1)$ (figura~\ref{fig:solido_techo}).
+
+\textbf{Paso 2. Partir la región en $x$.}
+El techo cambia de superficie en $x=1$: para $0\le x\le 1$ la tapa es
+$z=\sqrt x$; para $1\le x\le 2$ es la recta $z=2-x$. Entonces
+\[
+A=\int_0^1\sqrt{x}\,dx+\int_1^2(2-x)\,dx.
+\]
+
+\textbf{Paso 3. Evaluar.}
+\[
+\int_0^1\sqrt x\,dx=\frac23,\qquad
+\int_1^2(2-x)\,dx=\Bigl[2x-\tfrac{x^2}{2}\Bigr]_1^2=2-\tfrac32=\frac12,
+\]
+de modo que $A=\dfrac23+\dfrac12=\dfrac76$.
+
+\textbf{Paso 4. Volumen.}
+\[
+V=3A=3\cdot\frac76=\boxed{\dfrac{7}{2}}.
+\]
+\end{myproof}
+\end{prob}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.9]
+  % region R
+  \fill[blue!12] plot[domain=0:1,samples=40,variable=\x]({\x},{sqrt(\x)})
+     -- plot[domain=1:2,samples=40,variable=\x]({\x},{2-\x}) -- (0,0) -- cycle;
+  % ejes
+  \draw[->,thin] (-0.2,0)--(2.4,0) node[right]{$x$};
+  \draw[->,thin] (0,-0.2)--(0,1.4) node[above]{$z$};
+  % curva z=sqrt(x)
+  \draw[very thick,blue!70!black,domain=0:1,samples=40,smooth,variable=\x]
+    plot ({\x},{sqrt(\x)});
+  \node[blue!70!black] at (0.5,1.0) {$z=\sqrt{x}$};
+  % recta z=2-x
+  \draw[very thick,red!70!black] (1,1)--(2,0);
+  \node[red!70!black] at (1.75,0.6) {$z=2-x$};
+  % punto de corte
+  \filldraw (1,1) circle(0.6pt);
+  \draw[dashed,thin] (1,0)--(1,1);
+  \node[below] at (1,-0.03) {$1$};
+  \node[below] at (2,-0.03) {$2$};
+  \node[blue!40!black] at (0.78,0.28) {$R$};
+\end{tikzpicture}
+\caption{Sección del sólido en el plano $xz$. El techo es $z=\sqrt x$ para
+  $0\le x\le1$ y $z=2-x$ para $1\le x\le2$; ambas curvas se cortan en
+  $(1,1)$. El volumen es el área de $R$ multiplicada por el grosor $3$ en $y$.}
+\label{fig:solido_techo}
+\end{figure}
 
 
 
@@ -946,6 +1051,14 @@ Determine si la siguiente afirmación es falsa o verdadera. Justifique su respue
 
 \begin{prob}
 Calcule  la  integral triple $$\displaystyle\int\int\int_{\Omega}y^2\  dV,$$ donde $\Omega$ es la región acotada por las curvas $x^2+z=1,$  $y^2+z=1$ y el plano $xy$. \textbf{Respuesta:} $\approx 0.2222$.
+\end{prob}
+
+\begin{prob}[Volumen entre dos paraboloides elípticos]
+Determine el volumen del sólido comprendido entre los paraboloides
+$z=x^2+3y^2$ y $z=8-x^2-3y^2$. (Sugerencia: iguale las superficies para
+hallar la proyección elíptica sobre el plano $xy$ y use el cambio
+$x=2r\cos\theta$, $y=\tfrac{2}{\sqrt3}\,r\,\sen\theta$, cuyo jacobiano es
+$\tfrac{4}{\sqrt3}\,r$.)
 \end{prob}
 
 

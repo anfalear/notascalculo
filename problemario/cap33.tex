@@ -778,6 +778,49 @@ $C$, la diferencia $f(B)-f(A)$ no se altera. Por tanto, la constante
 de integración es irrelevante para el cálculo de la integral de línea.
 \end{rem}
 
+%%==========================================================
+\begin{prob}[Construcción del potencial por integración sobre un segmento]
+Sea $\mathbf F(x,y,z)=\langle y+z,\ x+z,\ x+y\rangle$. Sabiendo que
+$\mathbf F$ es conservativo, defina
+\[
+f(x,y,z)=\int_C \mathbf F\cdot d\mathbf r,
+\]
+donde $C$ es el segmento recto que une el origen con $(x,y,z)$. Calcule $f$
+explícitamente y verifique que $\nabla f=\mathbf F$.
+\begin{myproof}
+\textbf{Paso 1. Parametrizar el segmento.}
+$\mathbf r(t)=t\langle x,y,z\rangle$, $t\in[0,1]$, con
+$\mathbf r'(t)=\langle x,y,z\rangle$. Sobre $C$,
+\[
+\mathbf F(\mathbf r(t))
+=\langle ty+tz,\ tx+tz,\ tx+ty\rangle
+=t\langle y+z,\ x+z,\ x+y\rangle.
+\]
+
+\textbf{Paso 2. Producto escalar.}
+\[
+\mathbf F(\mathbf r(t))\cdot\mathbf r'(t)
+=t\bigl[(y+z)x+(x+z)y+(x+y)z\bigr]
+=t\,(2xy+2xz+2yz).
+\]
+
+\textbf{Paso 3. Integrar en $t$.}
+\[
+f(x,y,z)=\int_0^1 2t\,(xy+xz+yz)\,dt
+=2(xy+xz+yz)\cdot\frac12=xy+xz+yz.
+\]
+
+\textbf{Paso 4. Verificar $\nabla f=\mathbf F$.}
+\[
+\nabla f=\langle y+z,\ x+z,\ x+y\rangle=\mathbf F.\qquad\checkmark
+\]
+Como $\mathbf F$ es conservativo, la integral no depende de la trayectoria y
+esta construcción sobre el segmento produce, en efecto, una función potencial:
+\[
+\boxed{\,f(x,y,z)=xy+xz+yz\,}.
+\]
+\end{myproof}
+\end{prob}
 
 \section{Problemas propuestos}
 

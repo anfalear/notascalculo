@@ -279,6 +279,83 @@ De $6=\dfrac{\pi^3}{3}-\int_C$,
 \end{figure}
 
 %%==========================================================
+\begin{prob}[Teorema de Green en una región con agujero]
+Verifique el teorema de Green para el campo
+$\mathbf F(x,y)=\langle 2x^3-y^3,\ x^3+y^3\rangle$ sobre el anillo
+$R:\,1\le x^2+y^2\le 4$.
+\begin{myproof}
+\textbf{Paso 1. Integrando de la integral doble.}
+Con $M=2x^3-y^3$ y $N=x^3+y^3$,
+\[
+\frac{\partial N}{\partial x}-\frac{\partial M}{\partial y}
+=3x^2-(-3y^2)=3(x^2+y^2).
+\]
+
+\textbf{Paso 2. Integral doble en polares.}
+El anillo es $1\le r\le 2$, $0\le\theta\le 2\pi$, con $x^2+y^2=r^2$:
+\[
+\iint_R 3(x^2+y^2)\,dA
+=3\int_0^{2\pi}\!\!\int_1^2 r^2\cdot r\,dr\,d\theta
+=3\cdot 2\pi\cdot\Bigl[\tfrac{r^4}{4}\Bigr]_1^2
+=6\pi\cdot\frac{15}{4}=\frac{45\pi}{2}.
+\]
+
+\textbf{Paso 3. La frontera orientada.}
+La frontera positiva de $R$ consta de la circunferencia exterior $C_2$ (radio
+$2$, sentido antihorario) y la interior $C_1$ (radio $1$, sentido horario),
+de modo que la región queda siempre a la izquierda
+(figura~\ref{fig:green_anillo}). Por tanto
+\[
+\oint_{\partial R}\mathbf F\cdot d\mathbf r
+=\oint_{C_2}\mathbf F\cdot d\mathbf r-\oint_{C_1}\mathbf F\cdot d\mathbf r,
+\]
+donde ambas integrales de la derecha se recorren en sentido antihorario.
+
+\textbf{Paso 4. Integral de línea sobre una circunferencia de radio $R$.}
+Con $x=R\cos t$, $y=R\sen t$, $t\in[0,2\pi]$, un cálculo directo da
+\[
+\oint_{x^2+y^2=R^2}\mathbf F\cdot d\mathbf r
+=R^4\int_0^{2\pi}\bigl(\cos^4 t+\sen^4 t\bigr)dt
+=R^4\cdot\frac{3\pi}{2},
+\]
+pues los términos $-2\cos^3 t\,\sen t$ y $\sen^3 t\,\cos t$ integran $0$ en el
+periodo, mientras $\int_0^{2\pi}\cos^4 t\,dt=\int_0^{2\pi}\sen^4 t\,dt=\tfrac{3\pi}{4}$.
+
+\textbf{Paso 5. Comparar.}
+\[
+\oint_{\partial R}\mathbf F\cdot d\mathbf r
+=2^4\cdot\frac{3\pi}{2}-1^4\cdot\frac{3\pi}{2}
+=24\pi-\frac{3\pi}{2}=\frac{45\pi}{2}.
+\]
+Coincide con la integral doble: $\boxed{\dfrac{45\pi}{2}=\dfrac{45\pi}{2}}$.
+\end{myproof}
+\end{prob}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.1]
+  % anillo
+  \fill[blue!12,even odd rule] (0,0) circle (2) (0,0) circle (1);
+  % ejes
+  \draw[->,thin] (-2.6,0)--(2.6,0) node[right]{$x$};
+  \draw[->,thin] (0,-2.6)--(0,2.6) node[above]{$y$};
+  % circunferencia exterior C2 (antihoraria)
+  \draw[very thick,blue!70!black] (0,0) circle (2);
+  \draw[->,very thick,blue!70!black] (2,-0.03)--(2,0.03);
+  \node[blue!70!black] at (2.1,0.6) {$C_2$};
+  % circunferencia interior C1 (horaria)
+  \draw[very thick,red!70!black] (0,0) circle (1);
+  \draw[->,very thick,red!70!black] (1,0.03)--(1,-0.03);
+  \node[red!70!black] at (0.32,0.82) {$C_1$};
+  \node[blue!40!black] at (1.45,1.15) {$R$};
+\end{tikzpicture}
+\caption{Anillo $1\le x^2+y^2\le 4$. La frontera exterior $C_2$ se recorre en
+  sentido antihorario y la interior $C_1$ en sentido horario, dejando la
+  región $R$ siempre a la izquierda.}
+\label{fig:green_anillo}
+\end{figure}
+
+%%==========================================================
 \section{Divergencia y rotacional}
 %%==========================================================
 
@@ -552,6 +629,18 @@ La condición se cumple en el dominio $D=\mathbb{R}^2\setminus\{(0,0)\}$.
 \]
 \textbf{Paso 4. Conclusión.} Aunque $\partial N/\partial x=\partial M/\partial y$, el dominio $D=\mathbb{R}^2\setminus\{(0,0)\}$ tiene un agujero en el origen: \emph{no es simplemente conexo}. El TFC exige dominio simplemente conexo, condición que no se cumple. $\mathbf{F}$ no tiene potencial global en $D$, por lo que $\oint_C\mathbf{F}\cdot d\mathbf{r}=2\pi\ne0$ no contradice el TFC.
 \end{myproof}
+\end{prob}
+
+\begin{prob}[Identidad vectorial de la divergencia de un producto cruz]
+Demuestre la identidad
+\[
+\operatorname{div}(\mathbf F\times\mathbf G)
+=\mathbf G\cdot(\nabla\times\mathbf F)-\mathbf F\cdot(\nabla\times\mathbf G),
+\]
+válida para campos $\mathbf F,\mathbf G$ de clase $C^1$ en $\mathbb R^3$.
+(Sugerencia: escriba $\mathbf F\times\mathbf G$ por componentes, aplique la
+divergencia junto con la regla del producto para derivadas y reagrupe los
+términos en los dos productos punto.)
 \end{prob}
 
 Las integrales de línea permitieron sumar campos a lo largo de curvas. Ahora elevamos esa idea una dimensión: en lugar de recorrer un camino, \emph{barremos} una superficie. Este cambio trae consigo dos novedades fundamentales. La primera es geométrica: una superficie tiene curvatura y orientación, y el elemento diferencial debe capturar su área verdadera, no su proyección plana. La segunda es física: si un campo vectorial representa el flujo de un fluido, la cantidad que atraviesa una superficie por unidad de tiempo es exactamente la integral de superficie del campo. Los teoremas de la divergencia y de Stokes cierran el círculo del cálculo vectorial: relacionan lo que ocurre en el interior de un volumen o sobre una superficie con lo que ocurre en su frontera, generalizando el Teorema Fundamental del Cálculo a dos y tres dimensiones.

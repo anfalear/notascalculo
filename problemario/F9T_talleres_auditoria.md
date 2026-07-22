@@ -738,70 +738,70 @@ Propuesto: f(x,y)=∫_x^y √(1+t³)dt, calcular f_x y f_y por el TFC (respuesta
 - Figura: NO
 - Estimación: S
 
-### F9T.44 — [origen: T5.06] [destino: gradientes.tex, §Derivada direccional, ampliar prob L691 o propuesto]
+### F9T.44 — HECHO (2026-07-22) — [origen: T5.06] [destino: gradientes.tex, §Problemas propuestos]
 - Tipo: propuesto
 - Enunciado: D_u f para f(x,y,z)=xy²z³ en un punto, con v=⟨2,1,−2⟩ (isomorfo, 3 variables).
 - Solución: ∇f → evaluar → normalizar v → producto punto.
 - Figura: NO
 - Estimación: S
 
-### F9T.45 — [origen: T5.26] [destino: multiplicadoresintdobles.tex, tras el example L224]
+### F9T.45 — HECHO (2026-07-22) — [origen: T5.26] [destino: multiplicadoresintdobles.tex, tras el example del punto de silla]
 - Tipo: prob resuelto
 - Enunciado: críticos de f=(x²+y²)e^{−(x²+y²)}: mínimo absoluto en el origen y una circunferencia completa de máximos (r²=1); el criterio D falla sobre la circunferencia → análisis radial g(r)=re^{−r}.
 - Solución: sustitución radial u=x²+y² → g(u)=ue^{−u} → g'=0 → u=1 → interpretar como conjunto de máximos.
 - Figura: NO
 - Estimación: M
 
-### F9T.46 — [origen: T6.08] [destino: multiplicadoresintdobles.tex, propuestos]
+### F9T.46 — HECHO (2026-07-22) — [origen: T6.08] [destino: multiplicadoresintdobles.tex, propuestos]
 - Tipo: propuesto
 - Enunciado: halle el punto que minimiza la suma de los cuadrados de las distancias a tres puntos dados (isomorfo Acme; respuesta: el centroide).
 - Solución: f=Σ‖p−p_i‖² → ∇f=0 → p=(p₁+p₂+p₃)/3 → D>0 confirma mínimo.
 - Figura: NO
 - Estimación: S
 
-### F9T.47 — [origen: T6.21] [destino: apintdobles.tex, propuestos (polares)]
+### F9T.47 — HECHO (2026-07-22) — [origen: T6.21] [destino: apintdobles.tex, propuestos (polares)]
 - Tipo: propuesto
 - Enunciado: volumen del sólido entre z=c y el paraboloide z=a−b(x²+y²), con a>c (isomorfo T6.21): hallar la proyección igualando superficies.
 - Solución: a−br²=c → r₀=√((a−c)/b) → V=∫∫(a−br²−c) r dr dθ.
 - Figura: NO
 - Estimación: S
 
-### F9T.48 — [origen: T8.01] [destino: cap34.tex, §Green, tras el example L168]
+### F9T.48 — HECHO (2026-07-22) — [origen: T8.01] [destino: cap34.tex, §Green, tras los examples; fig:green_anillo]
 - Tipo: prob resuelto
 - Enunciado: verifique el teorema de Green para F=(2x³−y³, x³+y³) (isomorfo) en el anillo 1≤x²+y²≤4: dos fronteras con orientaciones opuestas.
 - Solución: ∮ exterior − ∮ interior (parametrizar ambas) vs. ∬(N_x−M_y) dA en polares sobre el anillo.
 - Figura: SÍ → F9T.48f: anillo con orientaciones de las dos fronteras (TikZ 2D).
 - Estimación: M
 
-### F9T.49 — [origen: T8.03] [destino: cap34.tex, §Divergencia y rotacional, propuestos]
+### F9T.49 — HECHO (2026-07-22) — [origen: T8.03] [destino: cap34.tex, §Divergencia y rotacional, propuestos]
 - Tipo: propuesto
 - Enunciado: demuestre la identidad div(F×G)=G·(∇×F)−F·(∇×G). **Nota: el taller original tiene los términos con signo intercambiado; se inserta con el signo correcto.**
 - Solución: expandir F×G por componentes → derivar → reagrupar en los dos productos punto.
 - Figura: NO
 - Estimación: S
 
-### F9T.50 — [origen: T8.04] [destino: cap33.tex, §Independencia de la trayectoria, tras el example L728]
+### F9T.50 — HECHO (2026-07-22) — [origen: T8.04] [destino: cap33.tex, §Independencia de la trayectoria, tras el example]
 - Tipo: prob resuelto
 - Enunciado: para F conservativo dado, defina f(x,y,z)=∫_C F·dr con C el segmento de (0,0,0) a (x,y,z); calcule f explícitamente y verifique ∇f=F.
 - Solución: r(t)=t⟨x,y,z⟩, t∈[0,1] → integrar en t → f cerrada → gradiente y comparación.
 - Figura: NO
 - Estimación: M
 
-### F9T.51 — [origen: T8.09] [destino: inttriples.tex, propuestos (o apintdobles)]
+### F9T.51 — HECHO (2026-07-22) — [origen: T8.09] [destino: inttriples.tex, propuestos]
 - Tipo: propuesto
 - Enunciado: volumen del sólido entre los paraboloides z=x²+3y² y z=c−x²−3y² (isomorfo): proyección por igualación (elipse).
 - Solución: igualar → región elíptica → V=∬(techo−piso) dA, con cambio x=ar cosθ, y=br senθ (jacobiano abr).
 - Figura: NO
 - Estimación: S
 
-### F9T.52 — [origen: T8.10] [destino: inttriples.tex, tras el prob L321]
+### F9T.52 — HECHO (2026-07-22) — [origen: T8.10] [destino: inttriples.tex, tras el prob del volumen; fig:solido_techo]
 - Tipo: prob resuelto
 - Enunciado: volumen del sólido acotado por z=√x, z=0, los planos y=0, y=b y x+z=2 (isomorfo T8.10): el techo cambia de superficie → partir la región en x.
 - Solución: intersección √x=2−x → x=1 → V=b[∫₀¹√x dx+∫₁²(2−x)dx].
 - Figura: SÍ → F9T.52f: corte en el plano xz mostrando √x y 2−x (TikZ 2D).
 - Estimación: M
 
-### F9T.53 — [origen: T8.13] [destino: inttriples.tex, §Masa y centro de masa, tras el example L254]
+### F9T.53 — HECHO (2026-07-22) — [origen: T8.13] [destino: inttriples.tex, §Masa y centro de masa, tras el example de masa variable]
 - Tipo: prob resuelto
 - Enunciado: centro de masa de un sólido con ρ variable resuelto a mano (isomorfo T8.12/T8.13: cubo o caja con ρ=x²+y²+z² o ρ=x).
 - Solución: M, M_yz, M_xz, M_xy como triples iteradas → cocientes.
@@ -819,20 +819,34 @@ Propuesto: f(x,y)=∫_x^y √(1+t³)dt, calcular f_x y f_y por el TFC (respuesta
   Gana el `.tex`: T6.15–T6.21 se auditaron contra `apintdobles.tex` (abreviado `ai`).
   Lo mismo aplicará a EX.04 y EX.10 (área de superficie está en `apintdobles.tex` §Área
   de una superficie, L933).
-- **H2 (F9T.03, 2026-07-21):** `funvectoriales.tex` L85 tiene un `\sin` (en el `\caption`
-  de la hélice) — única ocurrencia del archivo frente a 51 de `\sen`; inconsistencia de
-  notación preexistente, fuera del alcance de F9T.03. No se corrigió (contrato: no editar
-  contenido ajeno al ítem). Pendiente de la ejecución global de E3 (`\sin`→`\sen`).
-- **H3 (F9T.04, 2026-07-21):** `apintdobles.tex` mezcla notación: 81 `\sen` vs 17 `\sin`
-  (varios en captions y en el cuerpo). Contenido nuevo de F9T.04 usa `\sen`; el resto es
-  inconsistencia preexistente para la ejecución global de E3, no se tocó.
-- **H4 (F9T.05, 2026-07-21):** `limvariasvariables.tex` tiene 4 `\sin` residuales
-  (78 `\sen`), todos en el example de continuidad por partes L813–816. Contenido nuevo
-  usa `\sen`; pendiente de E3.
+- **H2 (F9T.03, 2026-07-21) — RESUELTO (2026-07-22 vía E3):** `funvectoriales.tex` tenía
+  `\sin` residual (en el `\caption` de la hélice y otros). Normalizado a `\sen`.
+- **H3 (F9T.04, 2026-07-21) — RESUELTO (2026-07-22 vía E3):** `apintdobles.tex` mezclaba
+  `\sen`/`\sin`. Normalizado a `\sen`.
+- **H4 (F9T.05, 2026-07-21) — RESUELTO (2026-07-22 vía E3):** `limvariasvariables.tex`
+  tenía `\sin` residuales en el example de continuidad por partes. Normalizado a `\sen`.
 - **H5 (F9T.09, 2026-07-21) — nota pgfplots:** en un `\addplot3[surf,...]` PARAMÉTRICO
   (`variable=\u, variable y=\v`), añadir `samples y=2` hace que la superficie **no se
   dibuje en absoluto** (solo quedan los ejes). Usar `samples=20` para ambas direcciones
   (patrón del hiperboloide preexistente). Detectado en `fig:cilindro_eliptico`; corregido.
+
+- **E3 — EJECUCIÓN GLOBAL (2026-07-22):** normalización `\sin`→`\sen` en TODO el libro,
+  no solo C3. Patrón `\\sin(?![A-Za-z])` a nivel de bytes → **620 reemplazos en 28
+  archivos** (`.tex`), `\sin` suelto residual = 0. `\sinh` y `\arcsin` preservados
+  (verificado por conteo antes/después en cada archivo). 818 pp, 0 errores, 2 pasadas
+  lualatex, ningún `\sen` sin definir. Con esto quedan cerrados H2/H3/H4 y liquidada la
+  tarea pendiente E3 que afectaba también a AL y C1 (p. ej. `tecintegracion` 113,
+  `derivadas` 73, `polares` 57, `cap34` 51, `limites` 48, `prodinterno` 33).
+
+---
+
+## 9. Cierre de la Fase 9-T (2026-07-22)
+
+**FASE 9-T COMPLETA.** Fases A (auditoría, 140 ítems), B (plan de inserción, 53 ítems) y
+C (ejecución) cerradas: **53/53 ítems F9T.01–.53 HECHOS**. Los 5 lotes de la Fase C
+(F9T.01–.06 Prioridad 1; .07–.18; .19–.23; .24–.33; .34–.43; .44–.53) integrados y
+verificados. **Hallazgos:** H1 y H5 resueltos en su momento; H2/H3/H4 resueltos vía la
+ejecución global de E3. No quedan pendientes de la Fase 9-T. PDF: 818 pp, 0 errores.
 
 ### Cierre de Prioridad 1 (Examen final)
 

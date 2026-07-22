@@ -306,6 +306,56 @@ ni otro.
 \end{rem}
 
 %%==========================================================
+\begin{prob}[Un continuo de máximos: cuando el criterio $D$ falla]
+Determine y clasifique los puntos críticos de
+$f(x,y)=(x^2+y^2)\,e^{-(x^2+y^2)}$.
+\begin{myproof}
+\textbf{Paso 1. Puntos críticos.}
+Como $f$ depende de $x,y$ solo a través de $u=x^2+y^2$, conviene escribir
+\[
+f_x=2x\,e^{-u}(1-u),\qquad f_y=2y\,e^{-u}(1-u),\qquad u=x^2+y^2.
+\]
+Puesto que $e^{-u}>0$, el sistema $f_x=f_y=0$ se satisface cuando
+\[
+x(1-u)=0\quad\text{y}\quad y(1-u)=0.
+\]
+Hay dos posibilidades: el origen $(0,0)$, o bien $u=1$, es decir, \emph{toda}
+la circunferencia $x^2+y^2=1$.
+
+\textbf{Paso 2. El origen.}
+Como $f(x,y)=u\,e^{-u}\ge 0$ para todo $(x,y)$ y $f(0,0)=0$, el origen es un
+\textbf{mínimo absoluto}.
+
+\textbf{Paso 3. La circunferencia: el criterio $D$ falla.}
+Sobre $x^2+y^2=1$ el criterio de la segunda derivada es inconcluso ($D=0$):
+los puntos críticos no están aislados, forman una curva completa, y el
+hessiano es singular en la dirección tangente a ella. Se recurre a un
+análisis radial.
+
+\textbf{Paso 4. Análisis radial.}
+Escribimos $f$ como función de $u=x^2+y^2\ge 0$:
+\[
+g(u)=u\,e^{-u},\qquad g'(u)=e^{-u}(1-u).
+\]
+Entonces $g'(u)>0$ para $0\le u<1$ y $g'(u)<0$ para $u>1$: $g$ crece hasta
+$u=1$ y luego decrece hacia $0$. Por tanto $u=1$ da el máximo de $g$, con
+valor $g(1)=e^{-1}$.
+
+\textbf{Paso 5. Conclusión.}
+\[
+\boxed{\;
+\begin{aligned}
+&\text{Mínimo absoluto en }(0,0),\ \text{con }f=0;\\
+&\text{máximos absolutos en toda la circunferencia }x^2+y^2=1,\ \text{con }f=e^{-1}.
+\end{aligned}\;}
+\]
+El valor máximo se alcanza en un conjunto infinito de puntos —una
+circunferencia completa—, situación que el criterio de la segunda derivada,
+pensado para puntos aislados, no puede diagnosticar.
+\end{myproof}
+\end{prob}
+
+%%==========================================================
 \begin{prob}
 Determine el punto sobre el plano $x-y+z=9$ que está más cerca al punto $(1,2,5).$
 \begin{myproof}
@@ -1118,5 +1168,17 @@ Determine el punto sobre el plano $x-y+z=9$ que está más cerca al punto $(A,8A
 
 \begin{prob}
 Encuentre las dimensiones de una caja rectangular abierta (sin tapa) con volumen máximo si su área superficial es igual a $75\ cm^2$ .
+\end{prob}
+
+\begin{prob}[El centroide minimiza la suma de distancias al cuadrado]
+Dados tres puntos $P_1=(1,2)$, $P_2=(5,4)$ y $P_3=(3,9)$, halle el punto
+$(x,y)$ que minimiza la suma de los cuadrados de sus distancias a los tres
+puntos,
+\[
+f(x,y)=\sum_{i=1}^{3}\bigl[(x-x_i)^2+(y-y_i)^2\bigr].
+\]
+Muestre que el punto crítico es el centroide
+$(x,y)=\tfrac13(P_1+P_2+P_3)$ y que el criterio de la segunda derivada
+confirma que se trata de un mínimo.
 \end{prob}
 
