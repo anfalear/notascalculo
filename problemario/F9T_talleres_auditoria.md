@@ -668,70 +668,70 @@ Propuesto: f(x,y)=∫_x^y √(1+t³)dt, calcular f_x y f_y por el TFC (respuesta
 - Figura: NO
 - Estimación: S
 
-### F9T.34 — [origen: T2.05] [destino: funvectoriales.tex, §Longitud de arco, junto a L608]
+### F9T.34 — HECHO (2026-07-21) — [origen: T2.05] [destino: funvectoriales.tex, §Longitud de arco, junto a L608]
 - Tipo: propuesto
 - Enunciado: para el astroide r(t)=⟨cos³t, sen³t⟩: (i) muestre que r'(t)=0 en los múltiplos de π/2 (la curva no es suave allí); (ii) longitud en [0,π/2].
 - Solución: r'(t) → factorizar → ceros; ‖r'‖=3|sen t cos t| → integrar.
 - Figura: NO
 - Estimación: S
 
-### F9T.35 — [origen: T2.08] [destino: funvectoriales.tex, §Integrales de funciones vectoriales, tras L475]
+### F9T.35 — HECHO (2026-07-21) — [origen: T2.08] [destino: funvectoriales.tex, §Integrales de funciones vectoriales, tras L475]
 - Tipo: prob resuelto
 - Enunciado: PVI cinemático: dadas a(t) constante, v(0) y r(0), halle v(t) y r(t); identifique el tipo de curva y el instante de distancia mínima al origen.
 - Solución: integrar a → v (constante de v(0)) → integrar v → r (constante de r(0)) → ‖r(t)‖² minimizar en 1 variable.
 - Figura: NO
 - Estimación: M
 
-### F9T.36 — [origen: T3.02] [destino: funvectoriales.tex, §Curvas y superficies de nivel, tras L1696]
+### F9T.36 — HECHO (2026-07-21) — [origen: T3.02] [destino: funvectoriales.tex, §Curvas y superficies de nivel, tras L1696]
 - Tipo: prob resuelto
 - Enunciado: relacione cada función (ln(x²+y²−1), e^{−x²−y²}, cos(x²+y²), x²−y³ — o isomorfas) con su mapa de curvas de nivel, justificando por dominio, simetría radial y crecimiento.
 - Solución: análisis de dominio/anillos/periodicidad radial → emparejamiento razonado.
 - Figura: SÍ → F9T.36f: 4 minipaneles de curvas de nivel (TikZ 2D, contour manual con circunferencias/curvas).
 - Estimación: L
 
-### F9T.37 — [origen: T3.03, T3.04] [destino: funvectoriales.tex, §Funciones de varias variables (dominios), tras L807]
+### F9T.37 — HECHO (2026-07-21) — [origen: T3.03, T3.04] [destino: funvectoriales.tex, §Funciones de varias variables (dominios), tras L807]
 - Tipo: ambos
 - Enunciado: prob resuelto: dominio de √((x+y)·ln(x−y)) por análisis de signos por casos (producto ≥0). Propuesto: dominio de ln(−x+2+y)/√((x−y+1)ln(x+y+1)) (isomorfo T3.04).
 - Solución: casos (ambos factores ≥0) ∪ (ambos ≤0) → intersecar con x−y>0 → describir región.
 - Figura: SÍ → F9T.37f: región del dominio sombreada con rectas frontera (TikZ 2D).
 - Estimación: M
 
-### F9T.38 — [origen: T4.11] [destino: planostangentes.tex, §Derivadas parciales, propuestos]
+### F9T.38 — HECHO (2026-07-21) — [origen: T4.11] [destino: planostangentes.tex, §Derivadas parciales, propuestos]
 - Tipo: propuesto
 - Enunciado: V=xyz (caja). Interprete ∂V/∂y como razón de cambio del volumen respecto al ancho con las demás dimensiones fijas; evalúe en un punto y explique unidades.
 - Solución: ∂V/∂y=xz → evaluar → interpretación.
 - Figura: NO
 - Estimación: S
 
-### F9T.39 — [origen: T4.12] [destino: planostangentes.tex, §Plano tangente, antes del protocolo L610]
+### F9T.39 — HECHO (2026-07-21) — [origen: T4.12] [destino: planostangentes.tex, §Plano tangente, antes del protocolo L610]
 - Tipo: propuesto
 - Enunciado: muestre que T_x=⟨1,0,f_x⟩ y T_y=⟨0,1,f_y⟩ son tangentes a z=f(x,y) y que su producto cruz da el normal ⟨−f_x,−f_y,1⟩ del plano tangente.
 - Solución: curvas coordenadas → derivar → producto cruz → comparar con la fórmula del plano.
 - Figura: NO
 - Estimación: S
 
-### F9T.40 — [origen: T4.13] [destino: planostangentes.tex o gradientes.tex, propuestos]
+### F9T.40 — HECHO (2026-07-21) — [origen: T4.13] [destino: planostangentes.tex o gradientes.tex, propuestos]
 - Tipo: propuesto
 - Enunciado: deduzca que el plano tangente al elipsoide x²/a²+y²/b²+z²/c²=1 en (x₀,y₀,z₀) es xx₀/a²+yy₀/b²+zz₀/c²=1.
 - Solución: ∇F=⟨2x₀/a²,…⟩ → plano → simplificar usando que el punto satisface la ecuación.
 - Figura: NO
 - Estimación: S
 
-### F9T.41 — [origen: T4.19] [destino: planostangentes.tex, §Aproximación lineal, tras L835]
+### F9T.41 — HECHO (2026-07-21) — [origen: T4.19] [destino: planostangentes.tex, §Aproximación lineal, tras L835]
 - Tipo: propuesto
 - Enunciado: linealice f(x,y,z)=x³yz (isomorfo) en un punto dado y aproxime f en un punto cercano.
 - Solución: L=f(p)+f_x·Δx+f_y·Δy+f_z·Δz → evaluar.
 - Figura: NO
 - Estimación: S
 
-### F9T.42 — [origen: T4.22] [destino: planostangentes.tex, §Diferenciales, reemplazar el esbozo de prueba L907]
+### F9T.42 — HECHO (2026-07-21) — [origen: T4.22] [destino: planostangentes.tex, §Diferenciales, reemplazar el esbozo de prueba L907]
 - Tipo: prob resuelto (o elevar la prueba del teorema)
 - Enunciado: demuestre con detalle que si f es diferenciable en (x₀,y₀) entonces es continua allí.
 - Solución: Δz=f_xΔx+f_yΔy+ε₁Δx+ε₂Δy con ε→0 → Δz→0 → continuidad.
 - Figura: NO
 - Estimación: M
 
-### F9T.43 — [origen: T4.26] [destino: gradientes.tex, §Derivación implícita, tras el teorema L238]
+### F9T.43 — HECHO (2026-07-21) — [origen: T4.26] [destino: gradientes.tex, §Derivación implícita, tras el teorema L238]
 - Tipo: ambos
 - Enunciado: rem: caso F(x,y)=0 → dy/dx=−F_x/F_y + prob: dy/dx para cos(x+y)=y·sen x (isomorfo).
 - Solución: definir F → F_x, F_y → cociente; comparar con derivación implícita clásica.

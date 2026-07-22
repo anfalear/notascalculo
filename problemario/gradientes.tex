@@ -242,6 +242,39 @@ Si una ecuación $F(x, y, z) = 0$ define implícitamente a $z$ como una función
 \]
 \end{theorem}
 
+\begin{rem}[Caso de una ecuación $F(x,y)=0$]
+Si una ecuación $F(x,y)=0$ define implícitamente $y=y(x)$, el mismo argumento
+(regla de la cadena aplicada a $F(x,y(x))=0$) da
+\[
+  \frac{dy}{dx}=-\frac{F_x}{F_y},\qquad F_y\neq 0.
+\]
+\end{rem}
+
+\begin{prob}
+Halle $\dfrac{dy}{dx}$ si $\cos(x+y)=y\,\sen x$.
+\begin{myproof}
+\textbf{Paso 1. Definir $F$.}
+$F(x,y)=\cos(x+y)-y\,\sen x=0$.
+
+\textbf{Paso 2. Parciales.}
+\[
+  F_x=-\sen(x+y)-y\cos x,\qquad
+  F_y=-\sen(x+y)-\sen x.
+\]
+
+\textbf{Paso 3. Aplicar la fórmula.}
+\[
+  \frac{dy}{dx}=-\frac{F_x}{F_y}
+  =-\frac{-\sen(x+y)-y\cos x}{-\sen(x+y)-\sen x}.
+\]
+
+\textbf{Paso 4. Simplificar.}
+\[
+  \boxed{\ \frac{dy}{dx}=-\frac{\sen(x+y)+y\cos x}{\sen(x+y)+\sen x}.\ }
+\]
+\end{myproof}
+\end{prob}
+
 \begin{pasos}[Protocolo para derivación implícita de $z$ definida por $F(x, y, z) = 0$] Es posible aplicar el siguiente protocolo para calcular la derivada implícita en varias variables:
 \begin{enumerate}
     \item \textbf{Definir la función $F$}: Reordenar la ecuación para que un lado sea $0$ y definir $F(x, y, z)$ como el otro lado.

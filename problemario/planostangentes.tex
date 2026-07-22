@@ -954,7 +954,26 @@ La noción de diferenciabilidad formaliza la condición bajo la cual un plano ta
 Si $f$ es diferenciable en un punto $(x_0, y_0)$, entonces $f$ es continua en ese punto.
 \end{theorem}
 \begin{proof}
-La demostración sigue la misma línea que para funciones de una variable: si $\Delta x$ y $\Delta y$ tienden a cero, el incremento $\Delta z$ también tiende a cero gracias a la definición de diferenciabilidad, lo que implica continuidad.
+\textbf{Paso 1. Escribir el incremento.} Por definición de diferenciabilidad en
+$(x_0,y_0)$, el incremento $\Delta z=f(x_0+\Delta x,\,y_0+\Delta y)-f(x_0,y_0)$
+puede escribirse como
+\[
+  \Delta z=f_x(x_0,y_0)\,\Delta x+f_y(x_0,y_0)\,\Delta y
+           +\varepsilon_1\,\Delta x+\varepsilon_2\,\Delta y,
+\]
+donde $\varepsilon_1,\varepsilon_2\to 0$ cuando $(\Delta x,\Delta y)\to(0,0)$.
+
+\textbf{Paso 2. Tomar el límite.} Cada uno de los cuatro sumandos es el producto
+de un factor acotado (las parciales, constantes en el punto fijo, o los
+$\varepsilon_i\to 0$) por $\Delta x$ o $\Delta y$, factores que tienden a $0$.
+En consecuencia
+\[
+  \lim_{(\Delta x,\Delta y)\to(0,0)}\Delta z=0.
+\]
+
+\textbf{Paso 3. Concluir.} Esto equivale a
+$\displaystyle\lim_{(\Delta x,\Delta y)\to(0,0)}f(x_0+\Delta x,\,y_0+\Delta y)=f(x_0,y_0)$,
+que es precisamente la continuidad de $f$ en $(x_0,y_0)$.
 \end{proof}
 
 \begin{theorem}[Criterio de diferenciabilidad]
@@ -1079,6 +1098,18 @@ Si la ecuación $F(x,y,z)=x^3+y^3+z^3-3xyz=0$ define implícitamente $z=z(x,y)$,
 $\dfrac{\partial z}{\partial x}$ y $\dfrac{\partial z}{\partial y}$ en el punto $(1,1,1)$.
 \end{prob}
 
+\begin{prob}
+El volumen de una caja rectangular es $V=xyz$. Interprete $\partial V/\partial y$
+como la razón de cambio del volumen respecto al ancho $y$ manteniendo $x$ y $z$
+fijos; calcúlela, evalúela en $(x,y,z)=(3,4,2)$ e indique sus unidades cuando
+las longitudes se miden en centímetros.
+\end{prob}
+
+\begin{prob}
+Halle la linealización $L(x,y,z)$ de $f(x,y,z)=x^3yz$ en el punto $(1,2,1)$ y
+úsela para aproximar $f(1{,}05,\;1{,}9,\;1{,}1)$.
+\end{prob}
+
 
 % Desafiante
 \begin{prob}
@@ -1100,6 +1131,23 @@ en $w$ cuando $(x,y,z)$ pasa de $(2,\,0,\,1)$ a $(2{,}1,\;0{,}1,\;0{,}9)$.
 \begin{prob}
 Si $z$ está definida implícitamente por la ecuación $e^z-z=xy+1$,
 encuentre $\dfrac{\partial z}{\partial x}$ y $\dfrac{\partial z}{\partial y}$.
+\end{prob}
+
+\begin{prob}
+Sea $z=f(x,y)$ diferenciable. Sobre la superficie considere las curvas
+coordenadas $\mathbf r_1(x)=(x,y_0,f(x,y_0))$ y $\mathbf r_2(y)=(x_0,y,f(x_0,y))$.
+Muestre que sus vectores tangentes en $(x_0,y_0)$ son
+$\mathbf T_x=\langle 1,0,f_x\rangle$ y $\mathbf T_y=\langle 0,1,f_y\rangle$, y que
+$\mathbf T_x\times\mathbf T_y=\langle -f_x,-f_y,1\rangle$ es el vector normal del
+plano tangente.
+\end{prob}
+
+\begin{prob}
+Deduzca que el plano tangente al elipsoide
+$\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}+\dfrac{z^2}{c^2}=1$ en un punto
+$(x_0,y_0,z_0)$ de la superficie es
+$\dfrac{x x_0}{a^2}+\dfrac{y y_0}{b^2}+\dfrac{z z_0}{c^2}=1$.
+(Sugerencia: use $\nabla F$ y que el punto satisface la ecuación del elipsoide.)
 \end{prob}
 
 % ============================================================

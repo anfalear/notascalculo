@@ -803,6 +803,46 @@ Calcular
 \end{myproof}
 \end{example}
 
+\begin{example}[Problema de valor inicial en cinemática]
+Una partícula tiene aceleración constante $\mathbf a(t)=\langle 0,0,2\rangle$,
+velocidad inicial $\mathbf v(0)=\langle 3,4,0\rangle$ y posición inicial
+$\mathbf r(0)=\langle 0,0,-3\rangle$. Halle $\mathbf v(t)$ y $\mathbf r(t)$,
+identifique el tipo de curva que describe y el instante en que la partícula
+está más cerca del origen.
+\begin{myproof}
+\textbf{Paso 1. Integrar la aceleración.}
+\[
+  \mathbf v(t)=\int\mathbf a(t)\,dt=\langle 0,0,2t\rangle+\mathbf C_1.
+\]
+Con $\mathbf v(0)=\langle 3,4,0\rangle$ resulta $\mathbf C_1=\langle 3,4,0\rangle$,
+luego $\mathbf v(t)=\langle 3,\,4,\,2t\rangle$.
+
+\textbf{Paso 2. Integrar la velocidad.}
+\[
+  \mathbf r(t)=\int\mathbf v(t)\,dt=\langle 3t,\,4t,\,t^2\rangle+\mathbf C_2.
+\]
+Con $\mathbf r(0)=\langle 0,0,-3\rangle$ se obtiene $\mathbf C_2=\langle 0,0,-3\rangle$, así
+\[
+  \boxed{\ \mathbf r(t)=\langle 3t,\,4t,\,t^2-3\rangle.\ }
+\]
+
+\textbf{Paso 3. Tipo de curva.}
+Como $x=3t$, $y=4t$ satisfacen $4x-3y=0$, la curva vive en el plano vertical
+$4x=3y$; en él, con $s=\sqrt{x^2+y^2}=5|t|$ se tiene $z=t^2-3=\tfrac{s^2}{25}-3$:
+es una \emph{parábola}.
+
+\textbf{Paso 4. Instante de distancia mínima.}
+\[
+  \|\mathbf r(t)\|^2=9t^2+16t^2+(t^2-3)^2=t^4+19t^2+9.
+\]
+Derivando, $\dfrac{d}{dt}\|\mathbf r\|^2=4t^3+38t=2t(2t^2+19)$, que se anula
+solo en $t=0$ (pues $2t^2+19>0$). Allí hay mínimo, y
+\[
+  \boxed{\ t=0:\quad \|\mathbf r(0)\|=\|\langle 0,0,-3\rangle\|=3.\ }
+\]
+\end{myproof}
+\end{example}
+
 \subsection{Longitud de arco de una curva parametrizada}
 \label{subsec:arc-length}
 
@@ -978,6 +1018,15 @@ por tanto $|\mathbf{r}'(t)|=\sqrt{2}\,e^t$.
   \boxed{L=\sqrt{2}(e^{\pi}-1).}
 \]
 \end{myproof}
+\end{prob}
+
+\begin{prob}[Astroide: un punto no suave]
+Considere el astroide $\mathbf r(t)=\langle \cos^3 t,\ \sen^3 t\rangle$.
+\begin{enumerate}[a)]
+  \item Muestre que $\mathbf r'(t)=\mathbf 0$ en los múltiplos de $\pi/2$, de
+        modo que la curva no es suave allí (tiene cúspides).
+  \item Calcule la longitud del arco correspondiente a $0\le t\le\pi/2$.
+\end{enumerate}
 \end{prob}
 
 \subsection{Función longitud de arco y parametrización por longitud de arco}
@@ -1187,6 +1236,61 @@ El dominio es la intersección de estas tres regiones.
 \]
 \end{myproof}
 \end{example}
+
+\begin{example}[Dominio con un producto bajo la raíz: análisis por casos]
+Determine el dominio de
+\[
+  f(x,y)=\sqrt{(x+y)\,\ln(x-y)}.
+\]
+\begin{myproof}
+\textbf{Paso 1. Restricciones.}
+El logaritmo exige $x-y>0$; la raíz exige radicando no negativo:
+$(x+y)\ln(x-y)\ge 0$. Un producto es $\ge 0$ cuando ambos factores tienen el
+mismo signo, así que estudiamos el signo de $\ln(x-y)$.
+
+\textbf{Paso 2. Signo del logaritmo.}
+$\ln(x-y)\ge 0\iff x-y\ge 1$ y $\ln(x-y)\le 0\iff 0<x-y\le 1$.
+
+\textbf{Paso 3. Los dos casos.}
+\begin{itemize}
+  \item \emph{Ambos factores $\ge 0$:} $x-y\ge 1$ y $x+y\ge 0$.
+  \item \emph{Ambos factores $\le 0$:} $0<x-y\le 1$ y $x+y\le 0$.
+\end{itemize}
+En $x-y=1$ el radicando es $0$ (permitido).
+
+\textbf{Paso 4. Dominio.}
+\[
+  \boxed{\ D=\{x-y\ge 1,\ x+y\ge 0\}\ \cup\ \{0<x-y\le 1,\ x+y\le 0\}.\ }
+\]
+La región se muestra en la figura~\ref{fig:dominio_producto_raiz}.
+\end{myproof}
+\end{example}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=0.85]
+  \fill[blue!12] (0.5,-0.5)--(3,2)--(3,-3)--cycle;
+  \fill[blue!12] (0,0)--(-3,-3)--(-2,-3)--(0.5,-0.5)--cycle;
+  \draw[gray!25,thin] (-3,-3) grid (3,3);
+  \draw[->] (-3.3,0)--(3.5,0) node[right]{$x$};
+  \draw[->] (0,-3.3)--(0,3.5) node[above]{$y$};
+  \draw[thick,dashed,red!70!black] (-3,-3)--(3,3) node[above left]{\small $y=x$};
+  \draw[thick,blue!70!black] (-2,-3)--(3,2) node[right]{\small $x-y=1$};
+  \draw[thick,green!45!black] (-3,3)--(3,-3) node[below right]{\small $x+y=0$};
+  \node[blue!45!black] at (2.1,-1.1) {$R_1$};
+  \node[blue!45!black] at (-1.6,-2.2) {$R_2$};
+\end{tikzpicture}
+\caption{Dominio de $f(x,y)=\sqrt{(x+y)\ln(x-y)}$: $R_1$ ($x-y\ge 1$,
+  $x+y\ge 0$) y $R_2$ ($0<x-y\le 1$, $x+y\le 0$). La recta $y=x$ (rayada) está
+  excluida; $x-y=1$ y $x+y=0$ están incluidas.}
+\label{fig:dominio_producto_raiz}
+\end{figure}
+
+\begin{prob}
+Determine el dominio de
+$\displaystyle f(x,y)=\frac{\ln(2-x+y)}{\sqrt{(x-y+1)\,\ln(x+y+1)}}$,
+describiendo la región del plano mediante análisis de signos por casos.
+\end{prob}
 
 \begin{prob}
 Determine el dominio de la función $f(x,y)=\sqrt{-5x^2-5y^2+25}$. Haga una representación gráfica de este dominio en el plano.
@@ -2232,6 +2336,79 @@ La gráfica de las curvas de nivel se presenta a continuación:
 \end{enumerate}
 \end{myproof}
 \end{prob}
+
+\begin{figure}[H]
+\centering
+\begin{minipage}{0.30\textwidth}\centering
+\begin{tikzpicture}[scale=0.5]
+  \draw[->](-2.7,0)--(2.7,0); \draw[->](0,-2.7)--(0,2.7);
+  \foreach \r in {0.8,1.5,2.2} \draw[blue!70!black,thick] (0,0) circle(\r);
+  \node at (0,-3.15) {\small (I)};
+\end{tikzpicture}
+\end{minipage}\hfil
+\begin{minipage}{0.30\textwidth}\centering
+\begin{tikzpicture}[scale=0.5]
+  \draw[->](-2.7,0)--(2.7,0); \draw[->](0,-2.7)--(0,2.7);
+  \foreach \k in {-1.6,-0.2,1.2}
+    \draw[blue!70!black,thick,domain=-2:2,samples=40,smooth,variable=\x]
+      plot ({\x},{0.45*\x*\x+\k});
+  \node at (0,-3.15) {\small (II)};
+\end{tikzpicture}
+\end{minipage}
+
+\vspace{4mm}
+\begin{minipage}{0.30\textwidth}\centering
+\begin{tikzpicture}[scale=0.5]
+  \draw[gray!55,dashed](-2.4,-2.4)--(2.4,2.4);
+  \draw[gray!55,dashed](-2.4,2.4)--(2.4,-2.4);
+  \draw[->](-2.7,0)--(2.7,0); \draw[->](0,-2.7)--(0,2.7);
+  \draw[blue!70!black,thick,domain=-1.4:1.4,samples=40,variable=\t] plot ({cosh(\t)},{sinh(\t)});
+  \draw[blue!70!black,thick,domain=-1.4:1.4,samples=40,variable=\t] plot ({-cosh(\t)},{sinh(\t)});
+  \draw[red!60!black,thick,domain=-1.4:1.4,samples=40,variable=\t] plot ({sinh(\t)},{cosh(\t)});
+  \draw[red!60!black,thick,domain=-1.4:1.4,samples=40,variable=\t] plot ({sinh(\t)},{-cosh(\t)});
+  \node at (0,-3.15) {\small (III)};
+\end{tikzpicture}
+\end{minipage}\hfil
+\begin{minipage}{0.30\textwidth}\centering
+\begin{tikzpicture}[scale=0.5]
+  \draw[->](-2.7,0)--(2.7,0); \draw[->](0,-2.7)--(0,2.7);
+  \draw[blue!70!black,thick,domain=0.42:2.4,samples=40,variable=\x] plot ({\x},{1/\x});
+  \draw[blue!70!black,thick,domain=-2.4:-0.42,samples=40,variable=\x] plot ({\x},{1/\x});
+  \draw[red!60!black,thick,domain=0.42:2.4,samples=40,variable=\x] plot ({\x},{-1/\x});
+  \draw[red!60!black,thick,domain=-2.4:-0.42,samples=40,variable=\x] plot ({\x},{-1/\x});
+  \node at (0,-3.15) {\small (IV)};
+\end{tikzpicture}
+\end{minipage}
+\caption{Mapas de contorno: (I) circunferencias, (II) parábolas, (III)
+  hipérbolas con asíntotas $y=\pm x$, (IV) hipérbolas con asíntotas los ejes.}
+\label{fig:emparejar_contornos}
+\end{figure}
+
+\begin{example}[Emparejar funciones con sus mapas de contorno]
+Relacione cada función con su mapa de curvas de nivel
+(figura~\ref{fig:emparejar_contornos}), justificando por la forma de las
+curvas y sus simetrías:
+\[
+  f_1=x^2+y^2,\quad f_2=y-x^2,\quad f_3=x^2-y^2,\quad f_4=xy.
+\]
+\begin{myproof}
+\textbf{Paso 1. $f_1=x^2+y^2$.} Las curvas $x^2+y^2=k$ ($k>0$) son
+circunferencias concéntricas; el valor crece con el radio. $\Rightarrow$ (I).
+
+\textbf{Paso 2. $f_2=y-x^2$.} Las curvas $y=x^2+k$ son parábolas idénticas
+trasladadas verticalmente. $\Rightarrow$ (II).
+
+\textbf{Paso 3. $f_3=x^2-y^2$.} Las curvas $x^2-y^2=k$ son hipérbolas con
+asíntotas $y=\pm x$ (abren en $x$ si $k>0$, en $y$ si $k<0$). $\Rightarrow$ (III).
+
+\textbf{Paso 4. $f_4=xy$.} Las curvas $xy=k$ son hipérbolas equiláteras cuyas
+asíntotas son los ejes coordenados. $\Rightarrow$ (IV).
+\[
+  \boxed{\ f_1\!\to\!\text{(I)},\quad f_2\!\to\!\text{(II)},\quad
+  f_3\!\to\!\text{(III)},\quad f_4\!\to\!\text{(IV)}.\ }
+\]
+\end{myproof}
+\end{example}
 
 \section{Problemas propuestos}
 \label{sec:problems-L1.1}
