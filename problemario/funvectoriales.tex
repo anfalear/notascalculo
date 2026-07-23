@@ -497,10 +497,16 @@ Calcular la derivada de las siguientes funciones vectoriales:
   \item $\mathbf{r}(t) = \langle \sen(2t),\; \cos(2t),\; e^{-t} \rangle$.
 \end{enumerate}
 \begin{myproof}
-La derivada de una función vectorial se obtiene derivando componente a componente.
+\textbf{Paso 1.} Estrategia. La derivada de una función vectorial se obtiene
+derivando componente a componente:
+\[
+  \mathbf{r}(t)=\langle x(t),y(t),z(t)\rangle
+  \;\Longrightarrow\;
+  \mathbf{r}'(t)=\langle x'(t),y'(t),z'(t)\rangle,
+\]
+de modo que cada apartado se reduce a tres derivadas de una variable.
 
-\textbf{Apartado a)} $\mathbf{r}(t)=\langle t^2+1,\;e^{2t},\;\cos(3t)\rangle$.
-
+\textbf{Paso 2.} Apartado a) $\mathbf{r}(t)=\langle t^2+1,\;e^{2t},\;\cos(3t)\rangle$.
 Regla de la cadena en la segunda y tercera componente:
 \[
   \mathbf{r}'(t)=\langle 2t,\;2e^{2t},\;-3\sen(3t)\rangle.
@@ -509,8 +515,7 @@ Regla de la cadena en la segunda y tercera componente:
   \boxed{\mathbf{r}'(t) = \langle 2t,\;2e^{2t},\;-3\sen(3t)\rangle.}
 \]
 
-\textbf{Apartado b)} $\mathbf{r}(t)=\langle \ln(t+1),\;\arctan t,\;\sqrt{t+1}\rangle$.
-
+\textbf{Paso 3.} Apartado b) $\mathbf{r}(t)=\langle \ln(t+1),\;\arctan t,\;\sqrt{t+1}\rangle$.
 Derivando cada componente por separado:
 \begin{align*}
   \frac{d}{dt}\ln(t+1)   &= \frac{1}{t+1}, \\[4pt]
@@ -521,8 +526,7 @@ Derivando cada componente por separado:
   \boxed{\mathbf{r}'(t) = \left\langle \frac{1}{t+1},\;\frac{1}{1+t^2},\;\frac{1}{2\sqrt{t+1}}\right\rangle.}
 \]
 
-\textbf{Apartado c)} $\mathbf{r}(t)=\langle \sen(2t),\;\cos(2t),\;e^{-t}\rangle$.
-
+\textbf{Paso 4.} Apartado c) $\mathbf{r}(t)=\langle \sen(2t),\;\cos(2t),\;e^{-t}\rangle$.
 Regla de la cadena en las tres componentes:
 \[
   \mathbf{r}'(t)=\langle 2\cos(2t),\;-2\sen(2t),\;-e^{-t}\rangle.
@@ -1295,12 +1299,24 @@ describiendo la región del plano mediante análisis de signos por casos.
 \begin{prob}
 Determine el dominio de la función $f(x,y)=\sqrt{-5x^2-5y^2+25}$. Haga una representación gráfica de este dominio en el plano.
 \begin{myproof}
-Sea $f(x,y)=\sqrt{-5x^2-5y^2+25}.$ El dominio de la función está dado por los valores de $(x,y)$ que satisfacen la desigualdad $-5x^2-5y^2+25\geq 0.$ Desarrollando esta desigualdad se tiene que:
+\textbf{Paso 1.} Condición de existencia. La raíz cuadrada solo está definida
+sobre radicandos no negativos, de modo que el dominio de
+$f(x,y)=\sqrt{-5x^2-5y^2+25}$ es el conjunto de puntos $(x,y)$ que satisfacen
+$-5x^2-5y^2+25\geq 0.$
+
+\textbf{Paso 2.} Simplificación de la desigualdad.
 \begin{align*}
--5x^2-5y^2+25\geq 0 \Leftrightarrow -(5x^2+5y^2)+25\geq 0 \Leftrightarrow 5x^2+5y^2\leq 25.
+-5x^2-5y^2+25\geq 0 \Leftrightarrow -(5x^2+5y^2)+25\geq 0 \Leftrightarrow 5x^2+5y^2\leq 25
+\Leftrightarrow x^2+y^2\leq 5.
 \end{align*}
-Lo cual indica que el dominio de la función son los puntos que están sobre la frontera y el interior de la elipse $5x^2+5y^2=25.$
-La gráfica de este dominio se presenta a continuación como la parte rayada dentro de la elipse:
+
+\textbf{Paso 3.} Descripción de la región. La condición $x^2+y^2\leq 5$ define
+el disco cerrado centrado en el origen y de radio $\sqrt{5}$ (interior más
+frontera de la circunferencia $x^2+y^2=5$):
+\[
+  \boxed{D_f=\{(x,y)\in\mathbb{R}^2:\;x^2+y^2\leq 5\}.}
+\]
+La gráfica de este dominio se presenta a continuación como la región sombreada:
 \begin{figure}[H]
 \centering
 \begin{tikzpicture}[scale=1.0]
@@ -1323,12 +1339,23 @@ La gráfica de este dominio se presenta a continuación como la parte rayada den
 \begin{prob}
 Determine el dominio de la función $f(x,y)=\sqrt{-4x^2-y^2+8}$. Haga una representación gráfica de este dominio en el plano.
 \begin{myproof}
-Sea $f(x,y)=\sqrt{-4x^2-y^2+8}.$ El dominio de la función está dado por los valores de $(x,y)$ que satisfacen la desigualdad $-4x^2-y^2+8\geq 0.$ Desarrollando esta desigualdad se tiene que:
+\textbf{Paso 1.} Condición de existencia. La raíz cuadrada exige radicando no
+negativo, así que el dominio de $f(x,y)=\sqrt{-4x^2-y^2+8}$ lo forman los
+puntos $(x,y)$ con $-4x^2-y^2+8\geq 0.$
+
+\textbf{Paso 2.} Simplificación de la desigualdad.
 \begin{align*}
--4x^2-y^2+8\geq 0 \Leftrightarrow -(4x^2+y^2)+8\geq 0 \Leftrightarrow 4x^2+y^2\leq 8.
+-4x^2-y^2+8\geq 0 \Leftrightarrow -(4x^2+y^2)+8\geq 0 \Leftrightarrow 4x^2+y^2\leq 8
+\Leftrightarrow \frac{x^2}{2}+\frac{y^2}{8}\leq 1.
 \end{align*}
-Lo cual indica que el dominio de la función son los puntos que están sobre la frontera y el interior de la elipse $4x^2+y^2=8.$
-La gráfica de este dominio se presenta a continuación como la parte rayada dentro de la elipse:
+
+\textbf{Paso 3.} Descripción de la región. Se trata de la elipse
+$\dfrac{x^2}{2}+\dfrac{y^2}{8}=1$ junto con su interior: centro en el origen,
+semieje horizontal $\sqrt{2}$ y semieje vertical $\sqrt{8}=2\sqrt{2}$:
+\[
+  \boxed{D_f=\{(x,y)\in\mathbb{R}^2:\;4x^2+y^2\leq 8\}.}
+\]
+La gráfica de este dominio se presenta a continuación como la región sombreada:
 \begin{figure}[H]
 \centering
 \begin{tikzpicture}[scale=0.95]
@@ -1351,12 +1378,23 @@ La gráfica de este dominio se presenta a continuación como la parte rayada den
 \begin{prob}
 Determine el dominio de la función $f(x,y)=\sqrt{-x^2-3y^2+2}$. Haga una representación gráfica de este dominio en el plano.
 \begin{myproof}
-Sea $f(x,y)=\sqrt{-x^2-3y^2+2}.$ El dominio de la función está dado por los valores de $(x,y)$ que satisfacen la desigualdad $-x^2-3y^2+2\geq 0.$ Desarrollando esta desigualdad se tiene que:
+\textbf{Paso 1.} Condición de existencia. El radicando debe ser no negativo, de
+manera que el dominio de $f(x,y)=\sqrt{-x^2-3y^2+2}$ está formado por los
+puntos $(x,y)$ con $-x^2-3y^2+2\geq 0.$
+
+\textbf{Paso 2.} Simplificación de la desigualdad.
 \begin{align*}
--x^2-3y^2+2\geq 0 \Leftrightarrow -(x^2+3y^2)+2\geq 0 \Leftrightarrow x^2+3y^2\leq 2.
+-x^2-3y^2+2\geq 0 \Leftrightarrow -(x^2+3y^2)+2\geq 0 \Leftrightarrow x^2+3y^2\leq 2
+\Leftrightarrow \frac{x^2}{2}+\frac{y^2}{2/3}\leq 1.
 \end{align*}
-Lo cual indica que el dominio de la función son los puntos que están sobre la frontera y el interior de la elipse $x^2+3y^2=2.$
-La gráfica de este dominio se presenta a continuación como la parte rayada dentro de la elipse:
+
+\textbf{Paso 3.} Descripción de la región. Es la elipse
+$\dfrac{x^2}{2}+\dfrac{y^2}{2/3}=1$ con su interior: centro en el origen,
+semieje horizontal $\sqrt{2}$ y semieje vertical $\sqrt{2/3}$:
+\[
+  \boxed{D_f=\{(x,y)\in\mathbb{R}^2:\;x^2+3y^2\leq 2\}.}
+\]
+La gráfica de este dominio se presenta a continuación como la región sombreada:
 \begin{figure}[H]
 \centering
 \begin{tikzpicture}[scale=1.3]
@@ -1380,12 +1418,23 @@ La gráfica de este dominio se presenta a continuación como la parte rayada den
 \begin{prob}
 Determine el dominio de la función $f(x,y)=\sqrt{-3x^2-3y^2+9}$. Haga una representación gráfica de este dominio en el plano.
 \begin{myproof}
-Sea $f(x,y)=\sqrt{-3x^2-3y^2+9}.$ El dominio de la función está dado por los valores de $(x,y)$ que satisfacen la desigualdad $-3x^2-3y^2+9\geq 0.$ Desarrollando esta desigualdad se tiene que:
+\textbf{Paso 1.} Condición de existencia. La raíz cuadrada requiere radicando no
+negativo, luego el dominio de $f(x,y)=\sqrt{-3x^2-3y^2+9}$ son los puntos
+$(x,y)$ que cumplen $-3x^2-3y^2+9\geq 0.$
+
+\textbf{Paso 2.} Simplificación de la desigualdad.
 \begin{align*}
--3x^2-3y^2+9\geq 0 \Leftrightarrow -(3x^2+3y^2)+9\geq 0 \Leftrightarrow 3x^2+3y^2\leq 9.
+-3x^2-3y^2+9\geq 0 \Leftrightarrow -(3x^2+3y^2)+9\geq 0 \Leftrightarrow 3x^2+3y^2\leq 9
+\Leftrightarrow x^2+y^2\leq 3.
 \end{align*}
-Lo cual indica que el dominio de la función son los puntos que están sobre la frontera y el interior de la elipse $3x^2+3y^2=9.$
-La gráfica de este dominio se presenta a continuación como la parte rayada dentro de la elipse:
+
+\textbf{Paso 3.} Descripción de la región. Como los coeficientes de $x^2$ y
+$y^2$ coinciden, la región es un disco cerrado: el centrado en el origen de
+radio $\sqrt{3}$ (interior y frontera de la circunferencia $x^2+y^2=3$):
+\[
+  \boxed{D_f=\{(x,y)\in\mathbb{R}^2:\;x^2+y^2\leq 3\}.}
+\]
+La gráfica de este dominio se presenta a continuación como la región sombreada:
 \begin{figure}[H]
 \centering
 \begin{tikzpicture}[scale=1.1]
@@ -2238,8 +2287,14 @@ Tome la función $f(x,y)=\ln\left(1+8x^2+2y^2\right).$
     \item Construya en el plano las curvas de nivel para los valores $z=0,1,2,4.$
 \end{enumerate}
 \begin{myproof}
-\begin{enumerate}[(a)]
-\item Sea $f(x,y)=\ln\left(1+8x^2+2y^2\right).$ El dominio de la función está dado por los valores de $(x,y)$ que satisfacen la desigualdad $1+8x^2+2y^2> 0.$ Desarrollando esta desigualdad se tiene que cualquier punto del plano la satisface, por lo tanto, el dominio de la función es el plano $\mathbb{R}^2.$ Un bosquejo puede ser el siguiente
+\textbf{Paso 1.} Dominio (apartado a). El logaritmo exige argumento
+estrictamente positivo, es decir $1+8x^2+2y^2>0.$ Como $8x^2\geq 0$ y
+$2y^2\geq 0$ para todo $(x,y)$, el argumento es siempre $\geq 1>0$: la
+desigualdad se satisface en todo punto del plano y por lo tanto
+\[
+  \boxed{D_f=\mathbb{R}^2.}
+\]
+Un bosquejo puede ser el siguiente
 \begin{figure}[H]
 \centering
 \begin{tikzpicture}[scale=0.65]
@@ -2252,18 +2307,35 @@ Tome la función $f(x,y)=\ln\left(1+8x^2+2y^2\right).$
 \caption{Dominio de $f(x,y)=\ln(1+8x^2+2y^2)$: todo $\mathbb{R}^2$}
 \label{fig:dom_ln_8x2_2y2}
 \end{figure}
-\item Al calcular las curvas de nivel se tiene que:
-\begin{itemize}
-\item Para $z=0$ la ecuación es $0=\ln\left( 1+8x^2+2y^2 \right).$ Solucionando:
+\textbf{Paso 2.} Ecuación general de las curvas de nivel (apartado b). Igualando
+$f(x,y)=z$ y aplicando la exponencial a ambos lados:
 \begin{align*}
-0=\ln\left( 1+8x^2+2y^2 \right)&\Rightarrow \mathrm{e}^{0}=\mathrm{e}^{\ln\left( 1+8x^2+2y^2 \right)}\\ &\Rightarrow 1=1+2y^2+8x^2 \Rightarrow 0=2y^2+8x^2\\ &\Rightarrow  x=0\text{ y } y=0.
+z=\ln\left( 1+8x^2+2y^2 \right)
+&\Rightarrow \mathrm{e}^{z}=\mathrm{e}^{\ln\left( 1+8x^2+2y^2 \right)}=1+8x^2+2y^2\\
+&\Rightarrow 8x^2+2y^2=\mathrm{e}^{z}-1.
 \end{align*}
- y así la curva de nivel es el punto $(0,0).$
+Para $z>0$ el lado derecho es positivo y la curva es la elipse
+\[
+  \frac{x^2}{(\mathrm{e}^{z}-1)/8}+\frac{y^2}{(\mathrm{e}^{z}-1)/2}=1,
+  \qquad a_x=\sqrt{\frac{\mathrm{e}^{z}-1}{8}},\quad a_y=\sqrt{\frac{\mathrm{e}^{z}-1}{2}},
+\]
+de modo que $a_y=2a_x$ en todos los niveles. Para $z=0$ el lado derecho se anula
+y la curva degenera en un punto; para $z<0$ no hay solución (el rango de $f$ es
+$[0,\infty)$).
+
+\textbf{Paso 3.} Los cuatro niveles pedidos.
+\begin{itemize}
+\item Para $z=0$: $8x^2+2y^2=0$, lo que obliga a $x=0$ y $y=0$; la curva de nivel se reduce al punto $(0,0).$
 \item Para $z=1$: $(e-1) = 8x^2+2y^2$, elipse con semiejes $a_x=\sqrt{(e-1)/8}\approx 0.463$, $a_y=\sqrt{(e-1)/2}\approx 0.927$.
 \item Para $z=2$: $(e^2-1) = 8x^2+2y^2$, elipse con semiejes $a_x\approx 0.894$, $a_y\approx 1.787$.
 \item Para $z=4$: $(e^4-1) = 8x^2+2y^2$, elipse con semiejes $a_x\approx 2.589$, $a_y\approx 5.177$.
 \end{itemize}
-La gráfica de las curvas de nivel se presenta a continuación:
+\[
+  \boxed{8x^2+2y^2=\mathrm{e}^{z}-1:\;\text{elipses concéntricas para }z>0,\;
+  \text{el punto }(0,0)\text{ para }z=0.}
+\]
+
+\textbf{Paso 4.} Gráfica. Las curvas de nivel se presentan a continuación:
 \begin{figure}[H]
 \centering
 \begin{tikzpicture}[scale=0.85]
@@ -2282,7 +2354,6 @@ La gráfica de las curvas de nivel se presenta a continuación:
 \caption{Curvas de nivel de $f(x,y)=\ln(1+8x^2+2y^2)$ para $z=0,1,2,4$}
 \label{fig:nivel_ln_8x2_2y2}
 \end{figure}
-\end{enumerate}
 \end{myproof}
 \end{prob}
 
@@ -2293,8 +2364,14 @@ Tome la función $f(x,y)=\ln\left(1+4x^2+y^2\right).$
     \item Construya en el plano las curvas de nivel para los valores $z=0,1,2,5.$
 \end{enumerate}
 \begin{myproof}
-\begin{enumerate}[(a)]
-\item Sea $f(x,y)=\ln\left(1+4x^2+y^2\right).$ El dominio de la función está dado por los valores de $(x,y)$ que satisfacen la desigualdad $1+4x^2+y^2> 0.$ Desarrollando esta desigualdad se tiene que cualquier punto del plano la satisface, por lo tanto, el dominio de la función es el plano $\mathbb{R}^2.$ Un bosquejo puede ser el siguiente
+\textbf{Paso 1.} Dominio (apartado a). El logaritmo exige argumento
+estrictamente positivo, esto es $1+4x^2+y^2>0.$ Puesto que $4x^2\geq 0$ y
+$y^2\geq 0$, el argumento vale al menos $1$ en todo punto, de modo que la
+condición se cumple en todo el plano:
+\[
+  \boxed{D_f=\mathbb{R}^2.}
+\]
+Un bosquejo puede ser el siguiente
 \begin{figure}[H]
 \centering
 \begin{tikzpicture}[scale=0.65]
@@ -2307,14 +2384,34 @@ Tome la función $f(x,y)=\ln\left(1+4x^2+y^2\right).$
 \caption{Dominio de $f(x,y)=\ln(1+4x^2+y^2)$: todo $\mathbb{R}^2$}
 \label{fig:dom_ln_4x2_y2}
 \end{figure}
-\item Al calcular las curvas de nivel se tiene que:
+\textbf{Paso 2.} Ecuación general de las curvas de nivel (apartado b). Igualando
+$f(x,y)=z$ y exponenciando:
+\begin{align*}
+z=\ln\left( 1+4x^2+y^2 \right)
+&\Rightarrow \mathrm{e}^{z}=1+4x^2+y^2
+\Rightarrow 4x^2+y^2=\mathrm{e}^{z}-1.
+\end{align*}
+Para $z>0$ se obtiene la elipse
+\[
+  \frac{x^2}{(\mathrm{e}^{z}-1)/4}+\frac{y^2}{\mathrm{e}^{z}-1}=1,
+  \qquad a_x=\sqrt{\frac{\mathrm{e}^{z}-1}{4}},\quad a_y=\sqrt{\mathrm{e}^{z}-1},
+\]
+de nuevo con $a_y=2a_x$. Para $z=0$ la curva degenera en el origen y para $z<0$
+el conjunto de nivel es vacío.
+
+\textbf{Paso 3.} Los cuatro niveles pedidos.
 \begin{itemize}
-\item Para $z=0$: el punto $(0,0)$.
+\item Para $z=0$: $4x^2+y^2=0$, es decir el punto $(0,0)$.
 \item Para $z=1$: $(e-1) = 4x^2+y^2$, elipse con semiejes $a_x\approx 0.655$, $a_y\approx 1.310$.
 \item Para $z=2$: $(e^2-1) = 4x^2+y^2$, elipse con semiejes $a_x\approx 1.264$, $a_y\approx 2.528$.
 \item Para $z=5$: $(e^5-1) = 4x^2+y^2$, elipse con semiejes $a_x\approx 6.071$, $a_y\approx 12.141$.
 \end{itemize}
-La gráfica de las curvas de nivel se presenta a continuación:
+\[
+  \boxed{4x^2+y^2=\mathrm{e}^{z}-1:\;\text{elipses concéntricas para }z>0,\;
+  \text{el punto }(0,0)\text{ para }z=0.}
+\]
+
+\textbf{Paso 4.} Gráfica. Las curvas de nivel se presentan a continuación:
 \begin{figure}[H]
 \centering
 \begin{tikzpicture}[scale=0.55]
@@ -2333,7 +2430,6 @@ La gráfica de las curvas de nivel se presenta a continuación:
 \caption{Curvas de nivel de $f(x,y)=\ln(1+4x^2+y^2)$ para $z=0,1,2,5$}
 \label{fig:nivel_ln_4x2_y2}
 \end{figure}
-\end{enumerate}
 \end{myproof}
 \end{prob}
 

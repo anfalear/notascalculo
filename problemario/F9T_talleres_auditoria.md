@@ -885,7 +885,7 @@ Ubicaciones (líneas al 2026-07-22): F9T.54 → L214, L235, L418, L439, L668, L6
 L838. F9T.55 → L499, L1297, L1325, L1353, L1382, L2240, L2295. F9T.56 → L672, L826, L985.
 F9T.57 → L33, L199, L289. (Recontar antes de editar: las líneas se desplazan tras cada edición.)
 
-**Estado:** F9T.54 **HECHO** (2026-07-22) · F9T.55 Pendiente · F9T.56 Pendiente · F9T.57 Pendiente.
+**Estado:** F9T.54 **HECHO** (2026-07-22) · F9T.55 **HECHO** (2026-07-23) · F9T.56 Pendiente · F9T.57 Pendiente.
 
 **F9T.54 HECHO (2026-07-22):** los 9 `myproof` de `limvariasvariables.tex` normalizados a
 `Paso N.` + `\boxed{}`. Cuatro de límites por trayectorias (recta $y=mx$/$y=kx$, familia
@@ -894,6 +894,23 @@ $y=mx^2$, diagonal $y=x$) con literales `a)b)` en prosa → Paso 1 (trayectoria)
 con $k$ (ahora coherente en $m$). Dos de teorema del emparedado ($x\cos(1/y)$, $\arctan(xy)/xy$)
 con acotación rigurosa vía $|x|$. Tres de discontinuidad/removibilidad (a)/(b) → Paso 1
 (indeterminación) / Paso 2 (límite) / Paso 3 (removibilidad, boxed). 818 pp, 0 errores, 2 pasadas.
+
+**F9T.55 HECHO (2026-07-23):** los 7 `myproof` de `funvectoriales.tex` normalizados
+(35/35 conformes tras el ítem). (1) Derivada componente a componente con apartados
+a)/b)/c) → Paso 1 Estrategia (regla general) + un paso por apartado, 3 `\boxed{}`
+conservados. (2)–(5) Los cuatro dominios de raíz cuadrada → Paso 1 (condición de
+radicando $\geq 0$) / Paso 2 (simplificación de la desigualdad, ahora reducida a
+forma canónica $x^2+y^2\leq r^2$ o $x^2/a^2+y^2/b^2\leq 1$) / Paso 3 (descripción de
+la región + `\boxed{D_f}`). **Corrección de fondo:** dos de esos dominios
+($5x^2+5y^2\leq 25$ y $3x^2+3y^2\leq 9$) llamaban «elipse» a lo que es una
+**circunferencia** (coeficientes iguales) — reescritos como disco de radio $\sqrt5$
+y $\sqrt3$; además «la parte rayada» → «la región sombreada» (el relleno es gris,
+no rayado). (6)–(7) Los dos de dominio + curvas de nivel de $\ln(1+ax^2+by^2)$
+estaban en `enumerate[(a)]` → Paso 1 (dominio $=\mathbb{R}^2$, con el argumento de
+que el argumento del log es $\geq 1$) / Paso 2 (**ecuación general** $ax^2+by^2=e^z-1$
+deducida por exponenciación, con semiejes en función de $z$ y la observación
+$a_y=2a_x$; degeneración en $z=0$ y conjunto vacío en $z<0$) / Paso 3 (los cuatro
+niveles pedidos, boxed) / Paso 4 (gráfica). 818 pp, 0 errores, 2 pasadas.
 
 ---
 
