@@ -77,7 +77,6 @@ que involucra límites en ambos extremos.
 \begin{example}[Área bajo una campana exponencial decreciente]
 Calcule el valor de la integral impropia
 $\displaystyle\int_{0}^{\infty} x\,e^{-x}\,dx$.
-\end{example}
 \begin{myproof}
 \textbf{Paso 1: Análisis gráfico y región.}
 
@@ -144,12 +143,12 @@ Tomando el límite (la forma $\infty/\infty$ se resuelve con L'Hôpital):
   \boxed{\int_{0}^{\infty} xe^{-x}\,dx = 1.}
 \]
 \end{myproof}
+\end{example}
 
 % ------------------------------------------------------------
 \begin{example}[Integral con límites infinitos en ambos extremos]
 Determine si $\displaystyle\int_{-\infty}^{\infty}\frac{dx}{1+x^2}$ converge y, en caso
 afirmativo, calcule su valor.
-\end{example}
 \begin{myproof}
 \textbf{Paso 1: Análisis gráfico y región.}
 
@@ -206,6 +205,7 @@ Usando $\int\tfrac{dx}{1+x^2}=\arctan(x)+C$:
   \boxed{\int_{-\infty}^{\infty}\frac{dx}{1+x^2} = \pi.}
 \]
 \end{myproof}
+\end{example}
 
 % ============================================================
 \section{Funciones de densidad de probabilidad}
@@ -257,7 +257,6 @@ Encuentre el valor de la constante $k>0$ para que la función
   f(x) = \begin{cases} ke^{-3x} & x\geq 0 \\ 0 & x<0 \end{cases}
 \]
 sea una función de densidad de probabilidad. Luego, dibuje la función resultante.
-\end{example}
 \begin{myproof}
 \textbf{Paso 1: Análisis gráfico y región.}
 
@@ -310,6 +309,7 @@ Por tanto $k=3$, y la FDP normalizada es:
   \boxed{f(x)=3e^{-3x},\quad x\geq 0.}
 \]
 \end{myproof}
+\end{example}
 
 \begin{theorem}[Media y varianza de una variable aleatoria continua]
 La \textbf{media} $\mu$ (valor esperado) y la \textbf{varianza} $\sigma^2$ de una variable
@@ -358,7 +358,6 @@ La vida útil $X$ (en miles de horas) de un sensor de presión sigue la FDP
   \item Calcule la probabilidad de que el sensor falle antes de las $500$ horas ($X<0.5$).
   \item Determine la vida útil media $\mu$ y la varianza $\sigma^2$.
 \end{enumerate}
-\end{example}
 \begin{myproof}
 \textbf{Paso 1: Análisis gráfico y región.}
 
@@ -435,6 +434,7 @@ E(X^2)
          \sigma^2=\tfrac{1}{4}.}
 \]
 \end{myproof}
+\end{example}
 
 % ============================================================
 \section{Integrandos no acotados y discontinuidades}
@@ -489,7 +489,6 @@ destruyendo la definición de convergencia.
 % ------------------------------------------------------------
 \begin{example}[Discontinuidad en el extremo inferior]
 Analice la convergencia de $\displaystyle\int_{0}^{1}\frac{dx}{\sqrt{x}}$.
-\end{example}
 \begin{myproof}
 \textbf{Paso 1: Análisis gráfico y región.}
 
@@ -538,12 +537,12 @@ El punto problemático es $x=0$. Introducimos $t\to 0^+$ e integramos sobre $[t,
   \boxed{\int_0^1\frac{dx}{\sqrt{x}} = 2 \quad (\text{converge}).}
 \]
 \end{myproof}
+\end{example}
 
 % ------------------------------------------------------------
 \begin{example}[Discontinuidad en un punto interior]
 Evalúe, si converge,
 $\displaystyle\int_{0}^{3}\frac{dx}{(x-1)^{2/3}}$.
-\end{example}
 \begin{myproof}
 \textbf{Paso 1: Análisis gráfico y región.}
 
@@ -614,6 +613,7 @@ Ambos límites son finitos, por lo tanto la integral \textbf{converge} y:
   \boxed{\int_0^3\frac{dx}{(x-1)^{2/3}} = 3 + 3\sqrt[3]{2} \approx 6.78.}
 \]
 \end{myproof}
+\end{example}
 
 % ============================================================
 \section{La paradoja de la trompeta de Gabriel}
@@ -641,7 +641,6 @@ como $1/x^2$ a medida que $x\to\infty$, lo cual es perfectamente consistente.
 \begin{example}[Volumen finito y área superficial infinita de la trompeta]
 Demuestre que el volumen de la trompeta de Gabriel es $V=\pi$ (finito), pero que su área
 superficial es infinita.
-\end{example}
 \begin{myproof}
 \textbf{Paso 1: Análisis gráfico y región.}
 
@@ -710,6 +709,7 @@ Por el criterio de comparación directa, la integral del área \textbf{diverge}.
   \boxed{V = \pi \quad \text{(finito)} \qquad \text{y} \qquad A = +\infty \quad \text{(diverge).}}
 \]
 \end{myproof}
+\end{example}
 
 % ============================================================
 %  PROBLEMAS PROPUESTOS — INTEGRALES IMPROPIAS

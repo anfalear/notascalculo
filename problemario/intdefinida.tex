@@ -1,10 +1,14 @@
 \chapter{La Integral Definida}
+\label{cap:intdefinida}
 
 \section{Antecedentes Históricos: De Arquímedes a Leibniz}
 
 El problema de calcular el área de regiones con fronteras curvas es uno de los más antiguos de la matemática. Los geómetras griegos sabían calcular áreas de polígonos ---dividiendo la figura en triángulos---, pero la extensión de este procedimiento a curvas arbitrarias representaba un obstáculo conceptual de primer orden. La solución más refinada de la antigüedad fue propuesta por \textbf{Arquímedes de Siracusa} (287--212 a.C.) en su tratado \emph{Cuadratura de la parábola} y en \emph{La medida del círculo}: el célebre \textbf{método de exhaución}. La idea consiste en inscribir y circunscribir polígonos regulares de $n$ lados en la región de interés; a medida que $n$ crece, las áreas poligonales acotan al área verdadera por arriba y por abajo con precisión creciente, y el área exacta es el único valor que no puede ser excluido por ninguna aproximación. Arquímedes demostró con este método que el área del círculo de radio $r$ es $\pi r^2$, y que el área bajo la parábola $y = x^2$ entre $0$ y $1$ es $\frac{1}{3}$.
 
-\begin{center}
+La Figura~\ref{fig:exhaucion_circulo} ilustra el método sobre el círculo.
+
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}[scale=1.8]
     \draw[thick] (0,0) circle (1);
     % Polígono inscrito n=6
@@ -14,10 +18,12 @@ El problema de calcular el área de regiones con fronteras curvas es uno de los 
     \draw[red, thick]
         (0:1) -- (30:1) -- (60:1) -- (90:1) -- (120:1) -- (150:1) --
         (180:1) -- (210:1) -- (240:1) -- (270:1) -- (300:1) -- (330:1) -- cycle;
-    \node[below] at (0,-1.25)
-        {\small Azul: $n=6$; \; Rojo: $n=12$; \; Negro: círculo exacto};
 \end{tikzpicture}
-\end{center}
+\caption{Método de exhaución de Arquímedes: polígonos regulares inscritos en
+el círculo (azul, $n=6$; rojo, $n=12$). Al crecer $n$ el área del polígono se
+aproxima al área del círculo (negro) por defecto.}
+\label{fig:exhaucion_circulo}
+\end{figure}
 
 \begin{rem}
 El método de exhaución de Arquímedes anticipa conceptualmente el límite, aunque sin la formulación algebraica que desarrollarían Newton y Leibniz dos mil años después. Lo que separa a Arquímedes del cálculo moderno no es la intuición, sino el lenguaje simbólico. Fue Gottfried Wilhelm Leibniz quien en 1675 introdujo la notación $\int f(x)\,dx$ ---donde el signo $\int$ es una ``S'' alargada de \emph{summa}--- y estableció las reglas de manipulación de diferenciales que permiten calcular integrales de manera sistemática.
@@ -54,9 +60,10 @@ R_P = \sum_{i=1}^{n} f(\bar{x}_i)\,\Delta x_i.
 \]
 \end{definition}
 
-Geométricamente, cada término $f(\bar{x}_i)\,\Delta x_i$ es el área con signo de un rectángulo de base $\Delta x_i$ y altura $f(\bar{x}_i)$: positiva si $f(\bar{x}_i) > 0$, negativa si $f(\bar{x}_i) < 0$.
+Geométricamente, cada término $f(\bar{x}_i)\,\Delta x_i$ es el área con signo de un rectángulo de base $\Delta x_i$ y altura $f(\bar{x}_i)$: positiva si $f(\bar{x}_i) > 0$, negativa si $f(\bar{x}_i) < 0$. La Figura~\ref{fig:suma_riemann} muestra la construcción.
 
-\begin{center}
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}[scale=1.1]
     \draw[->] (-0.3,0) -- (5.2,0) node[right] {$x$};
     \draw[->] (0,-0.3) -- (0,3.8) node[above] {$y$};
@@ -77,10 +84,13 @@ Geométricamente, cada término $f(\bar{x}_i)\,\Delta x_i$ es el área con signo
     % Etiquetas
     \node[below] at (0.5,0) {\small $a$};
     \node[below] at (4.7,0) {\small $b$};
-    \node[below] at (2.6,-0.6)
-        {\small Suma de Riemann con $n = 7$ (punto derecho)};
 \end{tikzpicture}
-\end{center}
+\caption{Suma de Riemann con $n=7$ subintervalos, tomando como punto de
+muestra el extremo derecho de cada uno. La suma de las áreas de los
+rectángulos aproxima el área bajo la curva; al refinar la partición
+($\|P\|\to 0$) la aproximación tiende a la integral definida.}
+\label{fig:suma_riemann}
+\end{figure}
 
 \begin{rem}
 Según la elección del punto muestra $\bar{x}_i$, la suma de Riemann toma nombres especiales. Si $\bar{x}_i = x_{i-1}$ se llama \textbf{suma por la izquierda}; si $\bar{x}_i = x_i$, \textbf{suma por la derecha}; si $\bar{x}_i = \frac{x_{i-1}+x_i}{2}$, \textbf{suma del punto medio}. Para funciones monótonas, las sumas por la izquierda y por la derecha proporcionan cotas inferior y superior del área exacta, lo que da lugar a las \textbf{sumas de Darboux}.
@@ -134,7 +144,8 @@ Si $f$ es continua en $[a,b]$, entonces $f$ es integrable en $[a,b]$. Más aún,
 La interpretación geométrica de la integral definida depende del signo de $f$. Si $f(x)\geq 0$ en $[a,b]$, la integral representa el área de la región comprendida entre la gráfica de $f$ y el eje $x$. Si $f$ toma valores negativos en alguna parte del intervalo, la integral representa el \textbf{área neta}: el área de las regiones sobre el eje $x$ menos el área de las regiones bajo el eje $x$.
 \end{rem}
 
-\begin{center}
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}[scale=1.1]
     \draw[->] (-0.3,0) -- (5.2,0) node[right] {$x$};
     \draw[->] (0,-1.8) -- (0,2.5) node[above] {$y$};
@@ -152,10 +163,13 @@ La interpretación geométrica de la integral definida depende del signo de $f$.
     \node[below] at (4.8,0) {\small $b$};
     \node[above] at (1.57, 1.5) {\small $A^+$};
     \node[below] at (3.93,-1.5) {\small $A^-$};
-    \node[below] at (2.6,-2.1)
-        {\small $\int_a^b f = A^+ - A^-$ (área neta)};
 \end{tikzpicture}
-\end{center}
+\caption{Interpretación de la integral definida como \emph{área neta}: la
+región sobre el eje $x$ (verde, $A^+$) aporta con signo positivo y la región
+bajo el eje (roja, $A^-$) con signo negativo, de modo que
+$\int_a^b f = A^+ - A^-$.}
+\label{fig:area_neta}
+\end{figure}
 
 \section{Propiedades de la Integral Definida}
 
@@ -233,7 +247,8 @@ F(x) = \int_{a}^{x} f(t)\,dt, \qquad x \in [a,b].
 \]
 \end{definition}
 
-\begin{center}
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}[scale=1.1]
     \fill[blue!15, domain=1:3.5, samples=100]
         plot (\x, {sin(\x r) + 2}) -- (3.5,0) -- (1,0) -- cycle;
@@ -245,7 +260,11 @@ F(x) = \int_{a}^{x} f(t)\,dt, \qquad x \in [a,b].
     \draw[dashed, thick] (3.5,0) node[below] {$x$} -- (3.5,{sin(3.5 r)+2});
     \node at (2.3,1.1) {$F(x)=\displaystyle\int_a^x f(t)\,dt$};
 \end{tikzpicture}
-\end{center}
+\caption{Función de acumulación $F(x)=\int_a^x f(t)\,dt$: el área sombreada
+depende del extremo derecho móvil $x$. El TFC1 afirma que la razón a la que
+crece esta área al desplazar $x$ es exactamente $f(x)$.}
+\label{fig:funcion_acumulacion}
+\end{figure}
 
 \begin{theorem}[Primer Teorema Fundamental del Cálculo --- TFC1]
 Si $f$ es continua en $[a,b]$, entonces la función de acumulación $F(x) = \int_{a}^{x} f(t)\,dt$ es diferenciable en $(a,b)$ y
@@ -326,6 +345,26 @@ Una antiderivada de $2x^2 - 3x + 2$ es $G(x) = \frac{2x^3}{3} - \frac{3x^2}{2} +
 \end{myproof}
 \end{example}
 
+\subsection{Sustitución en integrales definidas}
+
+Las técnicas de integración del Capítulo~\ref{cap:tecintegracion} se
+enunciaron para integrales indefinidas. La regla de sustitución admite una
+versión directa para integrales definidas, que evita el paso de regresar a
+la variable original.
+
+\begin{theorem}[Regla de sustitución --- integral definida]
+\label{thm:sustitucion-definida}
+Si $g'$ es continua en $[a,b]$ y $f$ es continua en el rango de $g$,
+entonces
+\[
+\int_a^b f(g(x))\, g'(x)\, dx = \int_{g(a)}^{g(b)} f(u)\, du.
+\]
+\end{theorem}
+
+Al transformar los límites de integración junto con la variable, se evita
+la necesidad de regresar a la variable original. Este enfoque es
+generalmente más eficiente para integrales definidas.
+
 \begin{example}[Integral definida por sustitución]
 Calcular $\displaystyle\int_{0}^{1}\frac{x+1}{(x^2+2x+6)^2}\,dx$ usando sustitución.
 
@@ -369,7 +408,8 @@ f(c) = \frac{1}{b-a}\int_{a}^{b} f(x)\,dx, \qquad \text{equivalentemente,} \qqua
 \]
 \end{theorem}
 
-\begin{center}
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}[scale=1.15]
     % Área bajo la curva
     \fill[blue!15, domain=0.5:4.5, samples=100]
@@ -391,10 +431,13 @@ f(c) = \frac{1}{b-a}\int_{a}^{b} f(x)\,dx, \qquad \text{equivalentemente,} \qqua
     % Etiquetas
     \node[below] at (0.5,0) {\small $a$};
     \node[below] at (4.5,0) {\small $b$};
-    \node[below] at (2.5,-0.65)
-        {\small $f(c)(b-a) = \int_a^b f(x)\,dx$};
 \end{tikzpicture}
-\end{center}
+\caption{Teorema del Valor Medio para Integrales: existe $c\in(a,b)$ tal que
+el rectángulo de base $b-a$ y altura $f(c)=\bar f$ (verde) tiene exactamente
+la misma área que la región bajo la curva, es decir
+$f(c)(b-a)=\int_a^b f(x)\,dx$.}
+\label{fig:tvm_integrales}
+\end{figure}
 
 \begin{rem}
 El Teorema del Valor Medio para Integrales es consecuencia directa del TFC2 y del Teorema del Valor Medio para Derivadas aplicado a la función de acumulación $F(x) = \int_a^x f(t)\,dt$: como $F$ es continua en $[a,b]$ y diferenciable en $(a,b)$, existe $c \in (a,b)$ con $F'(c) = \frac{F(b)-F(a)}{b-a}$, que es exactamente $f(c) = \frac{1}{b-a}\int_a^b f(x)\,dx$.
@@ -433,18 +476,12 @@ Este resultado, tratado en la formulación de Spivak, tiene aplicaciones en el a
 \end{rem}
 
 
-\section{Problemas Propuestos}
+\section{Problemas propuestos}
 
-\begin{prob}
-Evaluar $\displaystyle\int_{0}^{3}(2x-1)\,dx$ como límite de sumas de Riemann usando puntos derechos con $n$ subintervalos iguales. Verifique el resultado usando el TFC2.
-\end{prob}
+% Básico
 
 \begin{prob}
 Se sabe que $\displaystyle\int_{1}^{5} f(x)\,dx = 7$ y $\displaystyle\int_{1}^{3} f(x)\,dx = 4$. Calcular $\displaystyle\int_{3}^{5} f(x)\,dx$.
-\end{prob}
-
-\begin{prob}
-Acotar $\displaystyle\int_{0}^{1} e^x\,dx$ usando la propiedad de acotamiento. Verifique que el valor exacto $e-1 \approx 1.718$ cae en el intervalo obtenido.
 \end{prob}
 
 \begin{prob}
@@ -462,11 +499,25 @@ Calcular las siguientes integrales usando el TFC2:
 \end{prob}
 
 \begin{prob}
-Sea $G(x) = \displaystyle\int_{0}^{x^3} \sen(t^2)\,dt$. Calcular $G'(x)$.
+Si $f$ es continua, $\displaystyle\int_{0}^{3} f(x)\,dx = 10$ y $\displaystyle\int_{3}^{5} f(x)\,dx = -2$, calcular $\displaystyle\int_{0}^{5} f(x)\,dx$ y $\displaystyle\int_{5}^{0} f(x)\,dx$.
 \end{prob}
 
 \begin{prob}
-Sea $F(x) = \displaystyle\int_{x}^{x^2} \cos t\,dt$. Calcular $F'(x)$ usando el TFC1 y la propiedad de aditividad de la integral.
+Calcular $\displaystyle\int_{0}^{1} x\,e^{x^2}\,dx$.
+\end{prob}
+
+% Intermedio
+
+\begin{prob}
+Evaluar $\displaystyle\int_{0}^{3}(2x-1)\,dx$ como límite de sumas de Riemann usando puntos derechos con $n$ subintervalos iguales. Verifique el resultado usando el TFC2.
+\end{prob}
+
+\begin{prob}
+Acotar $\displaystyle\int_{0}^{1} e^x\,dx$ usando la propiedad de acotamiento. Verifique que el valor exacto $e-1 \approx 1.718$ cae en el intervalo obtenido.
+\end{prob}
+
+\begin{prob}
+Sea $G(x) = \displaystyle\int_{0}^{x^3} \sen(t^2)\,dt$. Calcular $G'(x)$.
 \end{prob}
 
 \begin{prob}
@@ -482,14 +533,6 @@ Encontrar el valor promedio de $f(x) = \sen x$ en $[0,\pi]$ y el punto $c \in (0
 \end{prob}
 
 \begin{prob}
-Si $f$ es continua, $\displaystyle\int_{0}^{3} f(x)\,dx = 10$ y $\displaystyle\int_{3}^{5} f(x)\,dx = -2$, calcular $\displaystyle\int_{0}^{5} f(x)\,dx$ y $\displaystyle\int_{5}^{0} f(x)\,dx$.
-\end{prob}
-
-\begin{prob}
-Calcular $\displaystyle\int_{0}^{1} x\,e^{x^2}\,dx$.
-\end{prob}
-
-\begin{prob}
 Una partícula se mueve con velocidad $v(t) = t^2 - 4t + 3$ m/s. Calcular:
 \begin{enumerate}[(a)]
     \item El desplazamiento neto en el intervalo $[0,4]$.
@@ -499,6 +542,12 @@ Una partícula se mueve con velocidad $v(t) = t^2 - 4t + 3$ m/s. Calcular:
 
 \begin{prob}
 Encontrar el valor de $c$ garantizado por el Teorema del Valor Medio para Integrales para $f(x) = x^3$ en $[0,2]$. Verificar que $c \in (0,2)$.
+\end{prob}
+
+% Desafiante
+
+\begin{prob}
+Sea $F(x) = \displaystyle\int_{x}^{x^2} \cos t\,dt$. Calcular $F'(x)$ usando el TFC1 y la propiedad de aditividad de la integral.
 \end{prob}
 
 \begin{prob}

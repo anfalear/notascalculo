@@ -1,4 +1,5 @@
 \chapter{Integrales indefinidas y técnicas de integración}
+\label{cap:tecintegracion}
 
 Múltiples operaciones matemáticas vienen en pares de inversas: la suma y la
 resta, la multiplicación y la división, la potenciación y la radicación. Para
@@ -39,6 +40,47 @@ infinitas, pues para cada valor de $C$ la función $F(x)+C$ sigue siendo
 antiderivada de $f$. Por esta razón, al calcular integrales indefinidas
 siempre se añade $+C$ —la llamada \textbf{constante de integración}— al
 resultado.
+
+Geométricamente, todas las antiderivadas de una misma función forman una
+\textbf{familia de curvas paralelas}: cada una se obtiene de otra por una
+traslación vertical, y en un valor de $x$ fijo todas tienen la misma
+pendiente, precisamente $f(x)$. La Figura~\ref{fig:familia_antiderivadas}
+ilustra esta situación para $f(x)=x^2$.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+  width=0.78\textwidth, height=6.4cm,
+  axis lines=middle, xlabel={$x$}, ylabel={$y$},
+  xmin=-2.4, xmax=2.9, ymin=-4.6, ymax=4.8,
+  xtick={-2,-1,1,2}, ytick={-4,-2,2,4},
+  samples=80, domain=-2:2,
+  label style={font=\small}, tick label style={font=\small},
+  clip=false,
+]
+  \addplot[blue!70!black, thick] {x^3/3+2};
+  \addplot[blue!70!black, thick] {x^3/3+1};
+  \addplot[blue!70!black, very thick] {x^3/3};
+  \addplot[blue!70!black, thick] {x^3/3-1};
+  \addplot[blue!70!black, thick] {x^3/3-2};
+  \node[right, font=\small, blue!70!black] at (axis cs:2,2.67) {$C=2$};
+  \node[right, font=\small, blue!70!black] at (axis cs:2,0.67) {$C=0$};
+  \node[right, font=\small, blue!70!black] at (axis cs:2,-1.33) {$C=-2$};
+  % tangentes paralelas en x=1
+  \addplot[red!70!black, dashed, thick, domain=0.3:1.7] {x-1+1/3+2};
+  \addplot[red!70!black, dashed, thick, domain=0.3:1.7] {x-1+1/3};
+  \addplot[red!70!black, dashed, thick, domain=0.3:1.7] {x-1+1/3-2};
+  \draw[gray, dotted, thick] (axis cs:1,-4.2) -- (axis cs:1,4.2);
+  \node[below, font=\small, gray] at (axis cs:1,-4.2) {$x=1$};
+\end{axis}
+\end{tikzpicture}
+\caption{Familia de antiderivadas $F(x)=\frac{x^3}{3}+C$ de $f(x)=x^2$. Las
+curvas son traslaciones verticales unas de otras y sus rectas tangentes en
+un mismo $x$ (aquí $x=1$, en rojo) son paralelas, pues todas tienen
+pendiente $f(1)=1$.}
+\label{fig:familia_antiderivadas}
+\end{figure}
 
 Al ser operaciones inversas, es natural pensar que si
 $D_{x}(\sen x)=\cos x$ entonces $\int \cos x\,\ dx=\sen x +C$. Esto nos
@@ -88,7 +130,7 @@ $k$ una constante. Entonces:
 \end{enumerate}
 \end{theorem}
 
-\begin{myproof}
+\begin{proof}
 Sean $F$ y $G$ antiderivadas de $f$ y $g$ respectivamente, es decir,
 $F'(x)=f(x)$ y $G'(x)=g(x)$.
 
@@ -118,7 +160,7 @@ se concluye que
   \int \bigl[f(x)-g(x)\bigr]\,\ dx = F(x)-G(x)+C
   = \int f(x)\,\ dx - \int g(x)\,\ dx. \qedhere
 \]
-\end{myproof}
+\end{proof}
 
 \begin{theorem}[Regla generalizada de la potencia]
 \label{teo:potencia-generalizada}
@@ -130,7 +172,7 @@ Entonces
 \]
 \end{theorem}
 
-\begin{myproof}
+\begin{proof}
 Basta verificar que la derivada del lado derecho coincide con el integrando.
 Aplicando la regla de la cadena:
 \[
@@ -138,7 +180,7 @@ Aplicando la regla de la cadena:
   = \frac{1}{r+1}\cdot(r+1)\bigl[g(x)\bigr]^{r}\cdot g'(x)
   = \bigl[g(x)\bigr]^{r}g'(x). \qedhere
 \]
-\end{myproof}
+\end{proof}
 
 El Segundo Teorema Fundamental del Cálculo, el cual estudiaremos en el
 próximo capítulo, convierte el problema de calcular una integral definida en
@@ -218,19 +260,14 @@ trigonométrica, o la expresión elevada a una potencia. Si la primera
 elección no simplifica la integral, se debe intentar otra.
 \end{rem}
 
-\subsection{Sustitución en integrales definidas}
-
-\begin{theorem}[Regla de sustitución --- integral definida]
-Si $g'$ es continua en $[a,b]$ y $f$ es continua en el rango de $g$,
-entonces
-\[
-\int_a^b f(g(x))\, g'(x)\, dx = \int_{g(a)}^{g(b)} f(u)\, du.
-\]
-\end{theorem}
-
-Al transformar los límites de integración junto con la variable, se evita
-la necesidad de regresar a la variable original. Este enfoque es
-generalmente más eficiente para integrales definidas.
+\begin{rem}[Sustitución en integrales definidas]
+La regla de sustitución también admite una versión para integrales
+definidas, en la que se transforman los límites de integración junto con la
+variable y se evita regresar a la variable original. Como su enunciado
+presupone la noción de integral definida, se trata en el
+Capítulo~\ref{cap:intdefinida}, en la sección dedicada a los teoremas
+fundamentales (véase el Teorema~\ref{thm:sustitucion-definida}).
+\end{rem}
 
 \subsection{Ejemplos}
 
@@ -801,6 +838,13 @@ forma del radical; (2) transformar el integrando y el diferencial completo
 a la variable $\theta$; (3) evaluar la integral trigonométrica resultante y
 utilizar el \textbf{triángulo de referencia} para regresar a $x$.
 
+Los tres radicales que aparecen en la práctica dan lugar a tres triángulos
+rectángulos de referencia, uno por caso
+(Figuras~\ref{fig:triangulo_caso1}, \ref{fig:triangulo_caso2}
+y~\ref{fig:triangulo_caso3}): en cada uno el radical es uno de los lados, y
+la sustitución se lee directamente del cateto o la hipotenusa que contiene a
+$u$.
+
 \begin{rem}
 En integrales definidas es más eficiente transformar los límites al hacer la
 sustitución y no regresar a $x$. En integrales indefinidas, el triángulo de
@@ -814,7 +858,8 @@ Sustitución: $u = a\sen\theta$, $\theta \in \left[-\frac{\pi}{2},
 \frac{\pi}{2}\right]$; $du = a\cos\theta\,d\theta$;
 $\sqrt{a^2-u^2} = a\cos\theta$.
 
-\begin{center}
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}[scale=1.5]
     \draw[thick] (0,0) -- (2,0) -- (2,1.5) -- cycle;
     \draw (1.8,0) -- (1.8,0.2) -- (2,0.2);
@@ -824,7 +869,9 @@ $\sqrt{a^2-u^2} = a\cos\theta$.
     \draw (0.4,0) arc (0:36.87:0.4);
     \node at (0.65,0.15) {$\theta$};
 \end{tikzpicture}
-\end{center}
+\caption{Triángulo de referencia del Caso 1, $\sqrt{a^2-u^2}$. Con $u=a\sen\theta$ el radical es el cateto adyacente, $\sqrt{a^2-u^2}=a\cos\theta$.}
+\label{fig:triangulo_caso1}
+\end{figure}
 
 \begin{example}[Sustitución trigonométrica: $\sqrt{a^2-x^2}$]
 Calcular $\displaystyle\int \dfrac{dx}{\sqrt{9-x^2}}$.
@@ -876,7 +923,8 @@ Sustitución: $u=a\tan\theta$, $\theta\in\left(-\frac{\pi}{2},
 \frac{\pi}{2}\right)$; $du=a\sec^2\theta\,d\theta$;
 $\sqrt{a^2+u^2}=a\sec\theta$.
 
-\begin{center}
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}[scale=1.5]
     \draw[thick] (0,0) -- (2,0) -- (2,1.5) -- cycle;
     \draw (1.8,0) -- (1.8,0.2) -- (2,0.2);
@@ -886,7 +934,9 @@ $\sqrt{a^2+u^2}=a\sec\theta$.
     \draw (0.4,0) arc (0:36.87:0.4);
     \node at (0.65,0.15) {$\theta$};
 \end{tikzpicture}
-\end{center}
+\caption{Triángulo de referencia del Caso 2, $\sqrt{a^2+u^2}$. Con $u=a\tan\theta$ el radical es la hipotenusa, $\sqrt{a^2+u^2}=a\sec\theta$.}
+\label{fig:triangulo_caso2}
+\end{figure}
 
 \begin{example}[Sustitución trigonométrica: $\sqrt{x^2+a^2}$]
 Calcular $\displaystyle\int\dfrac{dx}{\sqrt{x^2+16}}$.
@@ -914,7 +964,8 @@ Sustitución: $u=a\sec\theta$, $\theta\in\left[0,\frac{\pi}{2}\right)\cup
 \left(\frac{\pi}{2},\pi\right]$; $du=a\sec\theta\tan\theta\,d\theta$;
 $\sqrt{u^2-a^2}=a\tan\theta$.
 
-\begin{center}
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}[scale=1.5]
     \draw[thick] (0,0) -- (2,0) -- (2,1.5) -- cycle;
     \draw (1.8,0) -- (1.8,0.2) -- (2,0.2);
@@ -924,7 +975,9 @@ $\sqrt{u^2-a^2}=a\tan\theta$.
     \draw (0.4,0) arc (0:36.87:0.4);
     \node at (0.65,0.15) {$\theta$};
 \end{tikzpicture}
-\end{center}
+\caption{Triángulo de referencia del Caso 3, $\sqrt{u^2-a^2}$. Con $u=a\sec\theta$ el radical es el cateto opuesto, $\sqrt{u^2-a^2}=a\tan\theta$.}
+\label{fig:triangulo_caso3}
+\end{figure}
 
 \begin{example}[Sustitución trigonométrica: $\sqrt{x^2-a^2}$]
 Calcular $\displaystyle\int\dfrac{\sqrt{x^2-9}}{x}\,dx$.
@@ -1185,7 +1238,7 @@ ejercicios.
 \end{rem}
 
 %----------------------------------------------------------
-\section{Ejercicios propuestos}
+\section{Problemas propuestos}
 %----------------------------------------------------------
 
 \begin{prob}
@@ -1193,31 +1246,39 @@ Calcule las siguientes integrales usando sustitución simple, integración
 por partes o fracciones parciales según corresponda:
 \begin{multicols}{2}
 \begin{enumerate}
+% Básico
 \item $\displaystyle\int\sqrt{1-4y}\,dy$
 \item $\displaystyle\int x^4\sqrt{3x^5-5}\,dx$
 \item $\displaystyle\int y^2\sec^2(y^3)\,dy$
 \item $\displaystyle\int\frac{x^2-4x+6}{x^3-6x^2+18x}\,dx$
-\item $\displaystyle\int x^2 e^x\cos x\,dx$
 \item $\displaystyle\int\frac{x^2+2x}{\sqrt{x^3+3x^2+1}}\,dx$
 \item $\displaystyle\int\sec x\tan x\cos(\sec x)\,dx$
-\item $\displaystyle\int x^2 e^x\,dx$
 \item $\displaystyle\int\cos^2 x\,dx$
-\item $\displaystyle\int\frac{xe^x}{(x+1)^2}\,dx$
+\item $\displaystyle\int\frac{\ln x}{x}\,dx$
+\item $\displaystyle\int x e^{x}\,dx$
+% Intermedio
+\item $\displaystyle\int x^2 e^x\,dx$
+\item $\displaystyle\int x^2\ln x\,dx$
+\item $\displaystyle\int\frac{3x+5}{(x-1)(x^2+1)}\,dx$
+\item $\displaystyle\int\frac{dx}{x^2+4x+13}$
 \item $\displaystyle\int\sen t\ln(\cos t)\,dt$
 \item $\displaystyle\int x\sec^2 x\,dx$
 \item $\displaystyle\int x\arctan x\,dx$
 \item $\displaystyle\int e^x\cos x\,dx$
-\item $\displaystyle\int\sqrt{20-8x-x^2}\,dx$
 \item $\displaystyle\int\frac{5x-1}{x^2-1}\,dx$
 \item $\displaystyle\int\frac{3x-13}{(x+2)(x-5)}\,dx$
 \item $\displaystyle\int\cos x\sqrt{4-\sen^2 x}\,dx$
-\item $\displaystyle\int\frac{2x^2+3x+2}{x^3+4x^2+6x+4}\,dx$
-\item $\displaystyle\int\frac{1}{9x^4+x^2}\,dx$
-\item $\displaystyle\int\frac{e^{5x}}{(e^{2x}+1)^2}\,dx$
 \item $\displaystyle\int\frac{\ln x}{x^2}\,dx$
 \item $\displaystyle\int\frac{2x^2-x-20}{x^2+x-6}\,dx$
 \item $\displaystyle\int\frac{2x^2-5x+1}{x^3-2x^2-x+2}\,dx$
 \item $\displaystyle\int\frac{x^3+2x^2-3x+1}{x^2-1}\,dx$
+% Desafiante
+\item $\displaystyle\int x^2 e^x\cos x\,dx$
+\item $\displaystyle\int\frac{xe^x}{(x+1)^2}\,dx$
+\item $\displaystyle\int\sqrt{20-8x-x^2}\,dx$
+\item $\displaystyle\int\frac{2x^2+3x+2}{x^3+4x^2+6x+4}\,dx$
+\item $\displaystyle\int\frac{1}{9x^4+x^2}\,dx$
+\item $\displaystyle\int\frac{e^{5x}}{(e^{2x}+1)^2}\,dx$
 \item $\displaystyle\int\frac{x^2}{(x-1)^2(x^2+4)}\,dx$
 \item $\displaystyle\int\frac{2x^3-5x^2+4x-1}{(x^2+1)^2}\,dx$
 \item $\displaystyle\int\frac{x^2\ln x}{x^2+1}\,dx$
@@ -1229,18 +1290,22 @@ por partes o fracciones parciales según corresponda:
 Calcule las siguientes integrales de potencias trigonométricas:
 \begin{multicols}{2}
 \begin{enumerate}
+% Básico
 \item $\displaystyle\int\sen^2(5x)\,dx$
 \item $\displaystyle\int\cos^3 x\,dx$
 \item $\displaystyle\int\sen^3 x\cos^2 x\,dx$
-\item $\displaystyle\int\sec^4(5x)\,dx$
 \item $\displaystyle\int\tan^2 x\,dx$
-\item $\displaystyle\int\sec(7x)\,dx$
 \item $\displaystyle\int\sen x\cos x\,dx$
+% Intermedio
+\item $\displaystyle\int\sec^4(5x)\,dx$
+\item $\displaystyle\int\sec(7x)\,dx$
 \item $\displaystyle\int\sen^4(6x)\,dx$
 \item $\displaystyle\int\tan^3\!\left(\tfrac{x}{2}\right)\sec^2\!\left(\tfrac{x}{2}\right)dx$
-\item $\displaystyle\int\frac{\tan^3 x}{\sqrt{\sec x}}\,dx$
 \item $\displaystyle\int\tan^3(2x)\sec(2x)\,dx$
 \item $\displaystyle\int\sen^3 x\cos^4 x\,dx$
+\item $\displaystyle\int_{0}^{\pi/2}\sen^4 x\,dx$
+% Desafiante
+\item $\displaystyle\int\frac{\tan^3 x}{\sqrt{\sec x}}\,dx$
 \item $\displaystyle\int\sec^5 x\,dx$
 \item $\displaystyle\int\sen^4 x\cos^2 x\,dx$
 \item $\displaystyle\int\tan^2 x\sec^5 x\,dx$
@@ -1252,21 +1317,24 @@ Calcule las siguientes integrales de potencias trigonométricas:
 Calcule las siguientes integrales usando sustitución trigonométrica:
 \begin{multicols}{2}
 \begin{enumerate}
+% Básico
 \item $\displaystyle\int\frac{dx}{\sqrt{9-x^2}}$
 \item $\displaystyle\int\frac{dx}{x^2+4}$
+\item $\displaystyle\int\frac{dx}{\sqrt{x^2-7}}$
+\item $\displaystyle\int\frac{\cos x}{\sqrt{1+\sen^2 x}}\,dx$
+% Intermedio
 \item $\displaystyle\int\sqrt{1-4x^2}\,dx$
 \item $\displaystyle\int\frac{x^2}{\sqrt{16-x^2}}\,dx$
-\item $\displaystyle\int\frac{dx}{\sqrt{x^2-7}}$
 \item $\displaystyle\int\frac{dt}{t^2\sqrt{t^2-16}}$
 \item $\displaystyle\int\frac{dx}{(x^2+4)^{3/2}}$
 \item $\displaystyle\int\sqrt{a^2-x^2}\,dx$
-\item $\displaystyle\int\frac{x^2}{\sqrt{2x-x^2}}\,dx$
 \item $\displaystyle\int\frac{x}{\sqrt{x^2+6x+12}}\,dx$
+\item $\displaystyle\int\frac{x^2}{\sqrt{5-4x^2}}\,dx$
+% Desafiante
+\item $\displaystyle\int\frac{x^2}{\sqrt{2x-x^2}}\,dx$
 \item $\displaystyle\int\frac{dx}{x\sqrt{4x^2+9}}$
-\item $\displaystyle\int\frac{\cos x}{\sqrt{1+\sen^2 x}}\,dx$
 \item $\displaystyle\int\sqrt{x^2+2x}\,dx$
 \item $\displaystyle\int\frac{dz}{z\sqrt{25-4z^2}}$
-\item $\displaystyle\int\frac{x^2}{\sqrt{5-4x^2}}\,dx$
 \end{enumerate}
 \end{multicols}
 \end{prob}
@@ -1274,6 +1342,7 @@ Calcule las siguientes integrales usando sustitución trigonométrica:
 \begin{prob}[Problemas de referencia \emph{--- Spivak, Cap.~19 y Larson}]
 \begin{multicols}{2}
 \begin{enumerate}
+% Desafiante (bloque completo)
 \item $\displaystyle\int\sqrt{\tan x}\,dx$
 \item $\displaystyle\int\frac{dx}{x^6+1}$
 \item $\displaystyle\int\frac{dx}{1+\sen^2 x}$
