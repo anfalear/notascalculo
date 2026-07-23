@@ -31,30 +31,32 @@ Use la regla de la cadena para hallar $dz/dt$ para
 z = x^2 y - \sen y, \quad x = \sqrt{t^2 + 1}, \quad y = e^t.
 \]
 \begin{myproof}
-Seguimos el protocolo para la regla de la cadena (Caso 1).
-\begin{enumerate}
-    \item \textbf{Identificar dependencias}: $z$ depende de $t$ a través de $x(t) = \sqrt{t^2+1}$ y $y(t) = e^t$.
-    \item \textbf{Calcular derivadas parciales}:
-    \[
-    \frac{\partial z}{\partial x} = 2xy, \quad \frac{\partial z}{\partial y} = x^2 - \cos y.
-    \]
-    \item \textbf{Calcular derivadas ordinarias}:
-    \[
-    \frac{dx}{dt} = \frac{t}{\sqrt{t^2+1}}, \quad \frac{dy}{dt} = e^t.
-    \]
-    \item \textbf{Sustituir y sumar}:
-    \[
-    \frac{dz}{dt} = (2xy)\frac{dx}{dt} + (x^2 - \cos y)\frac{dy}{dt}.
-    \]
-    Sustituyendo $x$ e $y$:
-    \[
-    \frac{dz}{dt} = 2\left(\sqrt{t^2+1}\right)(e^t)\left(\frac{t}{\sqrt{t^2+1}}\right) + \left((t^2+1) - \cos(e^t)\right)(e^t).
-    \]
-    Simplificando:
-    \[
-    \frac{dz}{dt} = 2t e^t + \left(t^2 + 1 - \cos(e^t)\right)e^t = \boxed{\left(t^2 + 2t + 1 - \cos(e^t)\right)e^t}.
-    \]
-\end{enumerate}
+\textbf{Paso 1.} Identificar las dependencias. La variable $z$ depende de $t$
+únicamente a través de las variables intermedias $x(t) = \sqrt{t^2+1}$ y
+$y(t) = e^t$, de modo que aplica el Caso 1 de la regla de la cadena.
+
+\textbf{Paso 2.} Derivadas parciales de $z$.
+\[
+\frac{\partial z}{\partial x} = 2xy, \quad \frac{\partial z}{\partial y} = x^2 - \cos y.
+\]
+
+\textbf{Paso 3.} Derivadas ordinarias de las variables intermedias.
+\[
+\frac{dx}{dt} = \frac{t}{\sqrt{t^2+1}}, \quad \frac{dy}{dt} = e^t.
+\]
+
+\textbf{Paso 4.} Sustituir y sumar.
+\[
+\frac{dz}{dt} = (2xy)\frac{dx}{dt} + (x^2 - \cos y)\frac{dy}{dt}.
+\]
+Sustituyendo $x$ e $y$:
+\[
+\frac{dz}{dt} = 2\left(\sqrt{t^2+1}\right)(e^t)\left(\frac{t}{\sqrt{t^2+1}}\right) + \left((t^2+1) - \cos(e^t)\right)(e^t).
+\]
+Simplificando (el radical se cancela en el primer sumando):
+\[
+\frac{dz}{dt} = 2t e^t + \left(t^2 + 1 - \cos(e^t)\right)e^t = \boxed{\left(t^2 + 2t + 1 - \cos(e^t)\right)e^t}.
+\]
 \end{myproof}
 \end{example}
 
@@ -197,35 +199,39 @@ Si $z = f(x, y)$ es diferenciable y $x = g(s, t)$, $y = h(s, t)$ son diferenciab
 \begin{example}[Regla de la cadena, Caso 2]
 Si $z = \sen(xy)$, donde $x = s^2 + t$ e $y = \ln(s t)$, calcule $\partial z/\partial s$ y $\partial z/\partial t$.
 \begin{myproof}
-Seguimos el protocolo para la regla de la cadena (Caso 2).
-\begin{enumerate}
-    \item \textbf{Identificar dependencias}: $z$ depende de $s$ y $t$ a través de $x(s,t) = s^2 + t$ e $y(s,t) = \ln(st)$.
-    \item \textbf{Calcular derivadas parciales de $z$}:
-    \[
-    \frac{\partial z}{\partial x} = y \cos(xy), \quad \frac{\partial z}{\partial y} = x \cos(xy).
-    \]
-    \item \textbf{Calcular derivadas de $x$ e $y$}:
-    \[
-    \frac{\partial x}{\partial s} = 2s, \quad \frac{\partial x}{\partial t} = 1,
-    \]
-    \[
-    \frac{\partial y}{\partial s} = \frac{1}{s}, \quad \frac{\partial y}{\partial t} = \frac{1}{t}.
-    \]
-    \item \textbf{Sustituir y sumar}:
-    \[
-    \frac{\partial z}{\partial s} = (y \cos(xy))(2s) + (x \cos(xy))\left(\frac{1}{s}\right)
-    \]
-    \[
-    \frac{\partial z}{\partial t} = (y \cos(xy))(1) + (x \cos(xy))\left(\frac{1}{t}\right).
-    \]
-    Sustituyendo $x$ e $y$:
-    \[
-    \frac{\partial z}{\partial s} = \boxed{\cos((s^2+t)\ln(st))\left(2s \ln(st) + \frac{s^2+t}{s}\right)},
-    \]
-    \[
-    \frac{\partial z}{\partial t} = \boxed{\cos((s^2+t)\ln(st))\left(\ln(st) + \frac{s^2+t}{t}\right)}.
-    \]
-\end{enumerate}
+\textbf{Paso 1.} Identificar las dependencias. Ahora $z$ depende de \emph{dos}
+variables independientes $s$ y $t$ a través de $x(s,t) = s^2 + t$ e
+$y(s,t) = \ln(st)$, de modo que aplica el Caso 2 y hay que calcular dos
+parciales. Se supone $s,t>0$ para que $\ln(st)$ esté definido.
+
+\textbf{Paso 2.} Derivadas parciales de $z$.
+\[
+\frac{\partial z}{\partial x} = y \cos(xy), \quad \frac{\partial z}{\partial y} = x \cos(xy).
+\]
+
+\textbf{Paso 3.} Derivadas de las variables intermedias. Usando
+$\ln(st)=\ln s+\ln t$ en el segundo renglón:
+\[
+\frac{\partial x}{\partial s} = 2s, \quad \frac{\partial x}{\partial t} = 1,
+\]
+\[
+\frac{\partial y}{\partial s} = \frac{1}{s}, \quad \frac{\partial y}{\partial t} = \frac{1}{t}.
+\]
+
+\textbf{Paso 4.} Sustituir y sumar.
+\[
+\frac{\partial z}{\partial s} = (y \cos(xy))(2s) + (x \cos(xy))\left(\frac{1}{s}\right)
+\]
+\[
+\frac{\partial z}{\partial t} = (y \cos(xy))(1) + (x \cos(xy))\left(\frac{1}{t}\right).
+\]
+Sustituyendo $x$ e $y$:
+\[
+\frac{\partial z}{\partial s} = \boxed{\cos((s^2+t)\ln(st))\left(2s \ln(st) + \frac{s^2+t}{s}\right)},
+\]
+\[
+\frac{\partial z}{\partial t} = \boxed{\cos((s^2+t)\ln(st))\left(\ln(st) + \frac{s^2+t}{t}\right)}.
+\]
 \end{myproof}
 \end{example}
 
@@ -287,35 +293,38 @@ $F(x,y)=\cos(x+y)-y\,\sen x=0$.
 \begin{example}[Derivación implícita]
 Dada la ecuación $3yz^2 - e^{4x}\cos(4z) - 3y^2 = 4$, calcule $\partial z/\partial x$ y $\partial z/\partial y$.
 \begin{myproof}
-Seguimos el protocolo para derivación implícita.
-\begin{enumerate}
-    \item \textbf{Definir $F$}:
-    \[
-    F(x, y, z) = 3yz^2 - e^{4x}\cos(4z) - 3y^2 - 4.
-    \]
-    \item \textbf{Calcular las derivadas parciales de $F$}:
-    \[
-    F_x = -4e^{4x}\cos(4z),
-    \]
-    \[
-    F_y = 3z^2 - 6y,
-    \]
-    \[
-    F_z = 6yz + 4e^{4x}\sen(4z).
-    \]
-    \item \textbf{Aplicar las fórmulas}:
-    \[
-    \frac{\partial z}{\partial x} = -\frac{F_x}{F_z} = -\frac{-4e^{4x}\cos(4z)}{6yz + 4e^{4x}\sen(4z)} = \frac{4e^{4x}\cos(4z)}{6yz + 4e^{4x}\sen(4z)},
-    \]
-    \[
-    \frac{\partial z}{\partial y} = -\frac{F_y}{F_z} = -\frac{3z^2 - 6y}{6yz + 4e^{4x}\sen(4z)} = \frac{6y - 3z^2}{6yz + 4e^{4x}\sen(4z)}.
-    \]
-    \item \textbf{Simplificar y concluir}:
-    \[
-    \boxed{\frac{\partial z}{\partial x} = \frac{4e^{4x}\cos(4z)}{6yz + 4e^{4x}\sen(4z)}},\qquad
-    \boxed{\frac{\partial z}{\partial y} = \frac{6y - 3z^2}{6yz + 4e^{4x}\sen(4z)}}.
-    \]
-\end{enumerate}
+\textbf{Paso 1.} Definir $F$. Pasamos todo a un lado de la ecuación para dejar
+$F(x,y,z)=0$:
+\[
+F(x, y, z) = 3yz^2 - e^{4x}\cos(4z) - 3y^2 - 4.
+\]
+
+\textbf{Paso 2.} Derivadas parciales de $F$. En cada una se tratan las otras dos
+variables como constantes; nótese la regla de la cadena en $\cos(4z)$ al derivar
+respecto de $z$:
+\[
+F_x = -4e^{4x}\cos(4z),
+\]
+\[
+F_y = 3z^2 - 6y,
+\]
+\[
+F_z = 6yz + 4e^{4x}\sen(4z).
+\]
+
+\textbf{Paso 3.} Aplicar las fórmulas. Donde $F_z\neq 0$:
+\[
+\frac{\partial z}{\partial x} = -\frac{F_x}{F_z} = -\frac{-4e^{4x}\cos(4z)}{6yz + 4e^{4x}\sen(4z)} = \frac{4e^{4x}\cos(4z)}{6yz + 4e^{4x}\sen(4z)},
+\]
+\[
+\frac{\partial z}{\partial y} = -\frac{F_y}{F_z} = -\frac{3z^2 - 6y}{6yz + 4e^{4x}\sen(4z)} = \frac{6y - 3z^2}{6yz + 4e^{4x}\sen(4z)}.
+\]
+
+\textbf{Paso 4.} Conclusión.
+\[
+\boxed{\frac{\partial z}{\partial x} = \frac{4e^{4x}\cos(4z)}{6yz + 4e^{4x}\sen(4z)}},\qquad
+\boxed{\frac{\partial z}{\partial y} = \frac{6y - 3z^2}{6yz + 4e^{4x}\sen(4z)}}.
+\]
 \end{myproof}
 \end{example}
 

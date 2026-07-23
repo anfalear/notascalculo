@@ -885,7 +885,11 @@ Ubicaciones (líneas al 2026-07-22): F9T.54 → L214, L235, L418, L439, L668, L6
 L838. F9T.55 → L499, L1297, L1325, L1353, L1382, L2240, L2295. F9T.56 → L672, L826, L985.
 F9T.57 → L33, L199, L289. (Recontar antes de editar: las líneas se desplazan tras cada edición.)
 
-**Estado:** F9T.54 **HECHO** (2026-07-22) · F9T.55 **HECHO** (2026-07-23) · F9T.56 Pendiente · F9T.57 Pendiente.
+**Estado: FASE D COMPLETA (4/4).** F9T.54 **HECHO** (2026-07-22) · F9T.55 **HECHO** (2026-07-23)
+· F9T.56 **HECHO** (2026-07-23) · F9T.57 **HECHO** (2026-07-23). Re-auditoría final por script:
+**184/184 `myproof` de C3 con el token `Paso N.`, 0 excepciones** en los 9 archivos
+(limvariasvariables 23, funvectoriales 35, planostangentes 18, gradientes 21,
+multiplicadoresintdobles 15, apintdobles 28, inttriples 17, cap33 7, cap34 20).
 
 **F9T.54 HECHO (2026-07-22):** los 9 `myproof` de `limvariasvariables.tex` normalizados a
 `Paso N.` + `\boxed{}`. Cuatro de límites por trayectorias (recta $y=mx$/$y=kx$, familia
@@ -911,6 +915,28 @@ que el argumento del log es $\geq 1$) / Paso 2 (**ecuación general** $ax^2+by^2
 deducida por exponenciación, con semiejes en función de $z$ y la observación
 $a_y=2a_x$; degeneración en $z=0$ y conjunto vacío en $z<0$) / Paso 3 (los cuatro
 niveles pedidos, boxed) / Paso 4 (gráfica). 818 pp, 0 errores, 2 pasadas.
+
+**F9T.56 y F9T.57 HECHOS (2026-07-23, en un solo lote):** los 6 `myproof` restantes
+usaban el patrón `enumerate` + `\item \textbf{Acción}:` heredado de los entornos
+`pasos` que los preceden; se convirtieron a `\textbf{Paso N.}` en prosa (mismo
+contenido matemático, verificado íntegro antes de editar: los 6 estaban correctos).
+Aportes de contenido añadidos al reescribir:
+- `planostangentes.tex` — (1) plano tangente al paraboloide: se explicita que $f$ es
+  polinómica (luego diferenciable) y el valor $f(1,1)=3$, y el Paso 2 cita la fórmula
+  que se está sustituyendo; (2) linealización de $\sqrt{x^2+y^2}$: se justifica la
+  diferenciabilidad en $(3,4)$ (parciales continuas, radicando no nulo), se acota el
+  error de la aproximación ($<2\times10^{-3}$) y el `\boxed{}` final recoge $L$ **y**
+  la aproximación (antes solo encajaba el número `4.98`); (3) $xe^{xy}$: se separa el
+  Paso 1 (parciales + criterio de diferenciabilidad) del Paso 2 (evaluación en el
+  punto, usando $e^0=1$) y se añade el valor real $1.1e^{-0.11}\approx0.9854$ para
+  contrastar la aproximación.
+- `gradientes.tex` — (1) regla de la cadena Caso 1: se nombra la cancelación del
+  radical en la simplificación; (2) Caso 2: se subraya que hay **dos** variables
+  independientes (por eso dos parciales), se declara la hipótesis $s,t>0$ que exige
+  $\ln(st)$ y se justifica $\partial y/\partial s=1/s$ vía $\ln(st)=\ln s+\ln t$;
+  (3) derivación implícita: se nombra la regla de la cadena en $\cos(4z)$ y se añade
+  la condición $F_z\neq 0$ bajo la cual valen las fórmulas.
+818 pp, 0 errores, 2 pasadas.
 
 ---
 
