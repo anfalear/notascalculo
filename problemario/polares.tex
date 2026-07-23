@@ -96,7 +96,10 @@ admite dos ramas). Para $t = 2$ se obtiene el punto de tangencia $(4,\,2)$.
 La recta tangente tiene pendiente $m = 9/4$ y pasa por dicho punto,
 con ecuación $y = \tfrac{9}{4}x - 7$.
  
-\begin{center}
+La Figura~\ref{fig:param_tangente_nodo} muestra la curva, el nodo y la tangente.
+
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}
 \begin{axis}[
   width=0.62\textwidth, height=0.40\textheight,
@@ -119,7 +122,9 @@ con ecuación $y = \tfrac{9}{4}x - 7$.
 \node[below right, font=\small] at (axis cs:3,0) {nodo};
 \end{axis}
 \end{tikzpicture}
-\end{center}
+\caption{Curva paramétrica con un nodo: la recta tangente en $(4,2)$ tiene pendiente $m=9/4$ y ecuación $y=\tfrac{9}{4}x-7$.}
+\label{fig:param_tangente_nodo}
+\end{figure}
  
 \textbf{Paso 2: Derivadas paramétricas.}
 Derivando respecto a $t$:
@@ -173,7 +178,10 @@ la derecha. Evaluamos los extremos del arco:
 Toda la curva queda \emph{por debajo} del eje $x$, por lo que el área
 calculada tendrá signo negativo y tomaremos su valor absoluto al final.
 
-\begin{center}
+La Figura~\ref{fig:param_area_bajo_eje} muestra la región.
+
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}
 \begin{axis}[
   width=0.65\textwidth, height=0.46\textheight,
@@ -210,7 +218,9 @@ calculada tendrá signo negativo y tomaremos su valor absoluto al final.
      {Región sombreada};
 \end{axis}
 \end{tikzpicture}
-\end{center}
+\caption{Curva paramétrica situada íntegramente por debajo del eje $x$ entre $P_0(0,-5)$ y $P_1(8,-1)$: el área encerrada resulta con signo negativo, por lo que se toma su valor absoluto.}
+\label{fig:param_area_bajo_eje}
+\end{figure}
 
 \textbf{Paso 2: Elemento diferencial.}
 El área (con signo) bajo la curva paramétrica es $dA = y\,dx$.
@@ -281,7 +291,10 @@ La parametrización describe una circunferencia de radio $R$ centrada en el
 origen, recorrida en sentido antihorario al aumentar $t$. Para visualizar
 con escala concreta usamos $R = 1$.
 
-\begin{center}
+La Figura~\ref{fig:param_circunferencia} muestra la circunferencia y el radio.
+
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}
 \begin{axis}[
   width=0.55\textwidth, height=0.55\textwidth,
@@ -319,7 +332,9 @@ con escala concreta usamos $R = 1$.
 \node[below left, font=\small] at (axis cs:0,0) {$O$};
 \end{axis}
 \end{tikzpicture}
-\end{center}
+\caption{Circunferencia de radio $R$ centrada en el origen, parametrizada y recorrida en sentido antihorario al crecer $t$ (se ilustra con $R=1$).}
+\label{fig:param_circunferencia}
+\end{figure}
 
 \textbf{Paso 2: Elemento diferencial de arco.}
 Derivamos las funciones componentes respecto a $t$:
@@ -367,7 +382,10 @@ La cicloide parte del origen en $t=0$, alcanza su cúspide superior en
 $t = \pi$ con coordenadas $(\pi a, 2a)$, y regresa al eje $x$ en
 $t = 2\pi$ con coordenadas $(2\pi a, 0)$.
 
-\begin{center}
+La Figura~\ref{fig:cicloide} muestra un arco completo.
+
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}
 \begin{axis}[
   width=0.75\textwidth, height=0.32\textheight,
@@ -387,7 +405,9 @@ $t = 2\pi$ con coordenadas $(2\pi a, 0)$.
 \node[below] at (axis cs:6.28318,0) {$(2\pi a,0)$};
 \end{axis}
 \end{tikzpicture}
-\end{center}
+\caption{Un arco de cicloide: parte del origen en $t=0$, alcanza la cúspide $(\pi a,2a)$ en $t=\pi$ y regresa al eje $x$ en $(2\pi a,0)$ cuando $t=2\pi$.}
+\label{fig:cicloide}
+\end{figure}
 
 \textbf{Paso 2: Elemento diferencial.}
 \[
@@ -459,7 +479,10 @@ La conversión cartesiana es:
   \quad r^2 = x^2 + y^2, \quad \tan\theta = \tfrac{y}{x}.
 \]
 
-\begin{center}
+La Figura~\ref{fig:coordenadas_polares_punto} ilustra $r$ y $\theta$.
+
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}[scale=2.2]
   % Ejes cartesianos
   \draw[->, thick, gray!60] (-0.2,0) -- (1.6,0) node[right] {eje polar ($x$)};
@@ -493,7 +516,9 @@ La conversión cartesiana es:
   \draw[thick] ({cos(40)}, 0.02) -- ({cos(40)}, -0.02);
   \draw[thick] (0.02, {sin(40)}) -- (-0.02, {sin(40)});
 \end{tikzpicture}
-\end{center}
+\caption{Coordenadas polares de un punto: el radio $r$ y el ángulo $\theta$ medido desde el eje polar, junto con las relaciones $x=r\cos\theta$, $y=r\sen\theta$.}
+\label{fig:coordenadas_polares_punto}
+\end{figure}
 \end{definition}
 
 \begin{rem} Es importante tener en cuenta las siguientes observaciones:
@@ -552,7 +577,10 @@ cerrada con un punto cúspide en el polo. Para $a = 1$: el radio máximo
 $r = 2$ se alcanza en $\theta = 0$, el mínimo $r = 0$ (cúspide) en
 $\theta = \pi$. Es simétrica respecto al eje polar.
 
-\begin{center}
+La Figura~\ref{fig:cardioide} muestra la cardioide.
+
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}
 \begin{axis}[
   width=0.52\textwidth, height=0.52\textwidth,
@@ -576,7 +604,9 @@ $\theta = \pi$. Es simétrica respecto al eje polar.
 \node[above, font=\small] at (axis cs:0.5,0.866) {$r=1,\;\theta=\tfrac{\pi}{2}$};
 \end{axis}
 \end{tikzpicture}
-\end{center}
+\caption{Cardioide $r=a(1+\cos\theta)$: curva cerrada con cúspide en el polo, radio máximo $r=2a$ en $\theta=0$ y simetría respecto al eje polar.}
+\label{fig:cardioide}
+\end{figure}
 
 \textbf{Paso 2: Elemento diferencial.}
 El área encerrada usa $dA = \tfrac{1}{2}r^2\,d\theta =
@@ -603,7 +633,10 @@ máxima es $|a|$. La regla de paridad determina el número de pétalos.
 Ilustramos $r = \cos(3\theta)$ (3 pétalos, $n$ impar) y
 $r = \cos(2\theta)$ (4 pétalos, $n$ par).
 
-\begin{center}
+La Figura~\ref{fig:rosas_polares} compara ambos casos de paridad.
+
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}
 \begin{axis}[
   width=0.48\textwidth, height=0.48\textwidth,
@@ -636,7 +669,9 @@ $r = \cos(2\theta)$ (4 pétalos, $n$ par).
   ({cos(2*\x)*cos(\x)}, {cos(2*\x)*sin(\x)});
 \end{axis}
 \end{tikzpicture}
-\end{center}
+\caption{Rosas polares $r=\cos(n\theta)$: con $n$ impar se obtienen $n$ pétalos (aquí $r=\cos 3\theta$, 3 pétalos) y con $n$ par se obtienen $2n$ pétalos (aquí $r=\cos 2\theta$, 4 pétalos).}
+\label{fig:rosas_polares}
+\end{figure}
 
 \textbf{Paso 2: Elemento diferencial.}
 $dA = \tfrac{1}{2}a^2\cos^2(n\theta)\,d\theta$.
@@ -667,7 +702,10 @@ donde $\cos(2\theta) \geq 0$, es decir, $\theta \in [-\pi/4,\,\pi/4]$
 (bucle derecho) y $\theta \in [3\pi/4,\,5\pi/4]$ (bucle izquierdo).
 Su ancho máximo es $r = a$ en $\theta = 0$.
 
-\begin{center}
+La Figura~\ref{fig:lemniscata} muestra los dos bucles.
+
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}
 \begin{axis}[
   width=0.60\textwidth, height=0.38\textwidth,
@@ -698,7 +736,9 @@ Su ancho máximo es $r = a$ en $\theta = 0$.
 \node[below, font=\small] at (axis cs:0,0) {polo};
 \end{axis}
 \end{tikzpicture}
-\end{center}
+\caption{Lemniscata $r^2=a^2\cos(2\theta)$: dos bucles simétricos definidos donde $\cos(2\theta)\geq 0$, con ancho máximo $r=a$ en $\theta=0$.}
+\label{fig:lemniscata}
+\end{figure}
 
 \textbf{Paso 2: Elemento diferencial.}
 $dA = \tfrac{1}{2}r^2\,d\theta = \tfrac{a^2}{2}\cos(2\theta)\,d\theta$.
@@ -726,7 +766,10 @@ A diferencia de las curvas cerradas anteriores, la espiral se aleja
 indefinidamente del polo al crecer $\theta$. Para $a = 1/(2\pi)$, cada
 vuelta completa aumenta $r$ en exactamente $1$ unidad.
 
-\begin{center}
+La Figura~\ref{fig:espiral_arquimedes} muestra la espiral.
+
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}
 \begin{axis}[
   width=0.58\textwidth, height=0.58\textwidth,
@@ -756,7 +799,9 @@ vuelta completa aumenta $r$ en exactamente $1$ unidad.
 \node[below left, font=\small] at (axis cs:0,0) {polo};
 \end{axis}
 \end{tikzpicture}
-\end{center}
+\caption{Espiral de Arquímedes $r=a\theta$: a diferencia de las curvas cerradas, se aleja indefinidamente del polo; con $a=1/(2\pi)$ cada vuelta aumenta $r$ en una unidad.}
+\label{fig:espiral_arquimedes}
+\end{figure}
 
 \textbf{Paso 2: Elemento diferencial.}
 $dA = \tfrac{1}{2}r^2\,d\theta = \tfrac{1}{2}a^2\theta^2\,d\theta$.
@@ -813,7 +858,10 @@ Un pétalo se genera al variar $\theta$ en un intervalo donde $r \geq 0$.
 El pétalo principal: $r = 0$ cuando $\sen(3\theta) = 0$, es decir,
 $3\theta = 0$ y $3\theta = \pi$, luego $\theta \in [0, \pi/3]$.
 
-\begin{center}
+La Figura~\ref{fig:rosa_area_petalo} muestra el pétalo cuya área se calcula.
+
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}
 \begin{axis}[
   width=0.6\textwidth, height=0.6\textwidth,
@@ -836,7 +884,9 @@ $3\theta = 0$ y $3\theta = \pi$, luego $\theta \in [0, \pi/3]$.
 \node at (axis cs:-1.8,-2.0) {\small Pétalo};
 \end{axis}
 \end{tikzpicture}
-\end{center}
+\caption{Rosa $r=\sen(3\theta)$: el pétalo principal se genera al variar $\theta\in[0,\pi/3]$, intervalo donde $r\geq 0$; su área se calcula con $\tfrac12\int r^2\,d\theta$.}
+\label{fig:rosa_area_petalo}
+\end{figure}
 
 \textbf{Paso 2: Elemento diferencial.}
 \[
@@ -878,7 +928,10 @@ La cardioide $r = 1 + \cos\theta$ apunta hacia la derecha; la cardioide
 $r = 1 - \sen\theta$ apunta hacia abajo. Se cruzan en dos puntos visibles
 y comparten el polo.
 
-\begin{center}
+La Figura~\ref{fig:dos_cardioides_area} muestra ambas cardioides y sus cortes.
+
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}
 \begin{axis}[
   width=0.65\textwidth, height=0.55\textwidth,
@@ -907,7 +960,9 @@ y comparten el polo.
   {$P_2$};
 \end{axis}
 \end{tikzpicture}
-\end{center}
+\caption{Dos cardioides, $r=1+\cos\theta$ (hacia la derecha) y $r=1-\sen\theta$ (hacia abajo): se cruzan en dos puntos y comparten el polo, lo que delimita la región común.}
+\label{fig:dos_cardioides_area}
+\end{figure}
 
 \textbf{Paso 2: Elemento diferencial.}
 El diferencial de área en polares es un sector circular:
@@ -986,7 +1041,10 @@ lineal: a mayor ángulo, mayor radio. El arco cuya longitud calcularemos
 va desde el polo hasta el punto $(2\pi, 0)$ en cartesianas, después de
 una vuelta completa.
 
-\begin{center}
+La Figura~\ref{fig:espiral_longitud_arco} muestra el arco medido.
+
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}
 \begin{axis}[
   width=0.60\textwidth, height=0.60\textwidth,
@@ -1022,7 +1080,9 @@ una vuelta completa.
   at (axis cs:0.6, 0.85) {$r=\theta$};
 \end{axis}
 \end{tikzpicture}
-\end{center}
+\caption{Arco de espiral cuyo longitud se calcula: crecimiento lineal $r$ frente a $\theta$, desde el polo hasta el punto $(2\pi,0)$ en cartesianas tras una vuelta completa.}
+\label{fig:espiral_longitud_arco}
+\end{figure}
 
 \textbf{Paso 2: Elemento diferencial de arco.}
 Para $r(\theta) = \theta$ se tiene $r'(\theta) = 1$, luego:
@@ -1105,6 +1165,8 @@ $s \approx \pi \cdot 6{,}361 + \tfrac{1}{2}\ln(12{,}645)
 \section{Problemas propuestos}
 
 
+% Básico
+
 \begin{prob}
 Para cada curva dada en forma paramétrica, elimine el parámetro para obtener
 la ecuación cartesiana equivalente e identifique la curva resultante. Trace un
@@ -1129,15 +1191,7 @@ del parámetro.
 \end{enumerate}
 \end{prob}
 
-\begin{prob}
-Considere la curva paramétrica definida por $x = t^2 - 4$ e $y = t^3 - 3t$.
-\begin{enumerate}
-    \item Determine las coordenadas cartesianas $(x, y)$ de todos los puntos
-          de la curva en los que la recta tangente es horizontal.
-    \item Calcule la segunda derivada $\dfrac{d^2y}{dx^2}$ y evalúela en
-          $t = 2$ para determinar la concavidad de la curva en ese punto.
-\end{enumerate}
-\end{prob}
+% Intermedio
 
 \begin{prob}
 La cicloide está definida paramétricamente por $x = t - \sen t$ e
@@ -1157,14 +1211,6 @@ cada curva paramétrica en el intervalo indicado.
 \end{prob}
 
 \begin{prob}
-Halle el área de la superficie de revolución generada al hacer girar el arco
-de la curva paramétrica $x = \cos^3 t$, $y = \sen^3 t$, con
-$0 \leq t \leq \pi/2$, alrededor del eje $x$. Incluya el planteamiento
-completo de la integral antes de proceder con su evaluación.
-\end{prob}
-
-
-\begin{prob}
 Para cada ecuación polar, obtenga una ecuación cartesiana equivalente e
 identifique la curva resultante (recta, circunferencia, cónica, etc.).
 Incluya un bosquejo de la curva en el plano.
@@ -1179,14 +1225,6 @@ Incluya un bosquejo de la curva en el plano.
 \begin{prob}
 Calcule la pendiente de la recta tangente a la curva polar
 $r = 3 + 3\cos\theta$ en el punto donde $\theta = \dfrac{\pi}{6}$.
-\end{prob}
-
-\begin{prob}
-Dada la curva polar $r = 1 - \sen\theta$, determine las coordenadas polares
-$(r,\theta)$ de todos los puntos de la curva en los que la recta tangente es
-horizontal. Considere $0 \leq \theta < 2\pi$ y justifique el tratamiento
-analítico de los posibles puntos en que $dy/d\theta$ y $dx/d\theta$ se
-anulan simultáneamente.
 \end{prob}
 
 \begin{prob}
@@ -1213,6 +1251,33 @@ problemas de áreas.
           encuentra dentro del círculo $r = 5\sen\theta$ y fuera del
           caracol $r = 2 + \sen\theta$.
 \end{enumerate}
+\end{prob}
+
+% Desafiante
+
+\begin{prob}
+Considere la curva paramétrica definida por $x = t^2 - 4$ e $y = t^3 - 3t$.
+\begin{enumerate}
+    \item Determine las coordenadas cartesianas $(x, y)$ de todos los puntos
+          de la curva en los que la recta tangente es horizontal.
+    \item Calcule la segunda derivada $\dfrac{d^2y}{dx^2}$ y evalúela en
+          $t = 2$ para determinar la concavidad de la curva en ese punto.
+\end{enumerate}
+\end{prob}
+
+\begin{prob}
+Halle el área de la superficie de revolución generada al hacer girar el arco
+de la curva paramétrica $x = \cos^3 t$, $y = \sen^3 t$, con
+$0 \leq t \leq \pi/2$, alrededor del eje $x$. Incluya el planteamiento
+completo de la integral antes de proceder con su evaluación.
+\end{prob}
+
+\begin{prob}
+Dada la curva polar $r = 1 - \sen\theta$, determine las coordenadas polares
+$(r,\theta)$ de todos los puntos de la curva en los que la recta tangente es
+horizontal. Considere $0 \leq \theta < 2\pi$ y justifique el tratamiento
+analítico de los posibles puntos en que $dy/d\theta$ y $dx/d\theta$ se
+anulan simultáneamente.
 \end{prob}
 
 \begin{prob}

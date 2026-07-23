@@ -81,7 +81,10 @@ Demuestre que para todo $n \geq 1$: $\displaystyle \sum_{i=1}^n i^2 = \frac{n(n+
 \textbf{Paso 1: Análisis de términos y comportamiento.}
 Los primeros términos de la suma parcial son $S_1 = 1$, $S_2 = 5$, $S_3 = 14$, $S_4 = 30$. Observamos un crecimiento polinómico. 
 
-\begin{center}
+La Figura~\ref{fig:suma_parcial_cuadrados} muestra las primeras sumas parciales.
+
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}[scale=0.8]
     \draw[->] (0,0) -- (5,0) node[right] {$n$};
     \draw[->] (0,0) -- (0,4) node[above] {$S_n$};
@@ -91,7 +94,9 @@ Los primeros términos de la suma parcial son $S_1 = 1$, $S_2 = 5$, $S_3 = 14$, 
     \draw[dashed, red!50] plot[domain=0.5:4.2] (\x, {(\x*(\x+1)*(2*\x+1)/36)});
     \node at (2.5,-0.5) {\small Discretización de la suma parcial};
 \end{tikzpicture}
-\end{center}
+\caption{Sumas parciales $S_n=\sum_{k=1}^n k^2$: los valores $S_1=1,\,S_2=5,\,S_3=14,\,S_4=30$ crecen sin cota, coherente con la fórmula cerrada $n(n+1)(2n+1)/6$.}
+\label{fig:suma_parcial_cuadrados}
+\end{figure}
 
 \textbf{Paso 2: Elección del criterio.}
 Dado que la proposición está definida sobre $\mathbb{N}$, utilizaremos el \textbf{Principio de Inducción Matemática}.
@@ -129,8 +134,43 @@ informal es: \emph{por mucho que exijamos que $a_n$ esté cerca de $L$ (margen
 $\varepsilon$), siempre existe un umbral $N$ a partir del cual todos los
 términos satisfacen esa exigencia.} Geometricamente, se trata de que todos
 los puntos $(n, a_n)$ con $n > N$ queden dentro de la banda horizontal
-$(L-\varepsilon, L+\varepsilon)$.
+$(L-\varepsilon, L+\varepsilon)$, como ilustra la
+Figura~\ref{fig:sucesion_convergente_banda}.
 \end{rem}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+  width=0.82\textwidth, height=6cm,
+  axis lines=middle, xlabel={$n$}, ylabel={$a_n$},
+  xmin=0, xmax=15.5, ymin=-0.15, ymax=2.35,
+  ytick={1}, yticklabels={$L$},
+  xtick={5}, xticklabels={$N$},
+  label style={font=\small}, tick label style={font=\small}, clip=false,
+]
+  % banda L +- eps
+  \addplot[draw=none, fill=blue!12, domain=0:15.3] {1.28} \closedcycle;
+  \addplot[draw=none, fill=white, domain=0:15.3] {0.72} \closedcycle;
+  \draw[blue!55!black, thick] (axis cs:0,1.28) -- (axis cs:15.3,1.28)
+        node[right, font=\small] {$L+\varepsilon$};
+  \draw[blue!55!black, thick] (axis cs:0,0.72) -- (axis cs:15.3,0.72)
+        node[right, font=\small] {$L-\varepsilon$};
+  \draw[gray, densely dashed] (axis cs:0,1) -- (axis cs:15.3,1);
+  \draw[gray, densely dashed] (axis cs:5,-0.15) -- (axis cs:5,1.28);
+  % puntos de una sucesion oscilante convergente a 1
+  \addplot[only marks, mark=*, mark size=1.4pt, red!70!black]
+    coordinates {(1,2.0)(2,0.4)(3,1.55)(4,0.62)(5,1.32)
+                 (6,0.85)(7,1.16)(8,0.9)(9,1.1)(10,0.94)
+                 (11,1.06)(12,0.97)(13,1.04)(14,0.98)(15,1.02)};
+\end{axis}
+\end{tikzpicture}
+\caption{Convergencia de una sucesión: $a_n\to L$ significa que para cada
+margen $\varepsilon>0$ existe un umbral $N$ tal que todos los términos con
+$n>N$ caen dentro de la banda $(L-\varepsilon,\,L+\varepsilon)$. Solo un
+número finito de términos (los de índice $n\leq N$) puede quedar fuera.}
+\label{fig:sucesion_convergente_banda}
+\end{figure}
 
 \begin{theorem}[Unicidad del límite]
 Si una sucesión converge, su límite es único.
@@ -180,7 +220,10 @@ $a_4 \approx 0.146$, $a_5 \approx 0.226$, \ldots\ Los puntos oscilan
 de forma irregular pero parecen comprimirse hacia~$0$. La clave es la
 acotación de $\sen^2 n \in [0,1]$.
 
-\begin{center}
+La Figura~\ref{fig:sucesion_sen2_sobre_n} muestra la oscilación amortiguada.
+
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}
 \begin{axis}[
   width=0.68\textwidth, height=0.42\textwidth,
@@ -207,7 +250,9 @@ acotación de $\sen^2 n \in [0,1]$.
 \addlegendentry{Sucesión $a_n$}
 \end{axis}
 \end{tikzpicture}
-\end{center}
+\caption{Términos de $a_n=\sen^2 n/n$: oscilan de forma irregular por el numerador $\sen^2 n\in[0,1]$, pero quedan comprimidos hacia $0$ por el factor $1/n$.}
+\label{fig:sucesion_sen2_sobre_n}
+\end{figure}
 
 \textbf{Paso 2: Elección del criterio.}
 Los puntos oscilan irregularmente pero quedan atrapados entre $0$ y
@@ -280,7 +325,10 @@ Calculamos los primeros términos de la sucesión:
 $a_1 = 0.5$, $a_2 = 1$, $a_3 = 1.125$, $a_4 = 1$, $a_5 = 0.78125$.
 Observamos que la sucesión aumenta inicialmente, pero a partir de $n=3$, los términos empiezan a disminuir. El crecimiento exponencial del denominador ($2^n$) eventualmente supera al crecimiento polinomial del numerador ($n^2$).
 
-\begin{center}
+La Figura~\ref{fig:sucesion_no_monotona} muestra la región decreciente.
+
+\begin{figure}[H]
+\centering
     \begin{tikzpicture}[scale=0.8]
         \draw[->] (0,0) -- (6,0) node[right] {$n$};
         \draw[->] (0,0) -- (0,2) node[above] {$a_n$};
@@ -293,7 +341,9 @@ Observamos que la sucesión aumenta inicialmente, pero a partir de $n=3$, los t�
         \draw[dashed, gray] (3,0) -- (3,1.125);
         \node[below, red] at (4.5,-0.2) {\small Región decreciente};
     \end{tikzpicture}
-\end{center}
+\caption{Sucesión no monótona: crece hasta $n=3$ ($a_3=1.125$) y decrece después. El comportamiento monótono solo aparece a partir de cierto índice.}
+\label{fig:sucesion_no_monotona}
+\end{figure}
 
 \textbf{Paso 2: Elección del criterio.}
 Para demostrar que es decreciente ($a_{n+1} \leq a_n$), utilizaremos el \textbf{Criterio del Cociente} comparándolo con la unidad, y validaremos la desigualdad resultante mediante el \textbf{Principio de Inducción} para asegurar que se cumple $\forall n \geq 3$.
@@ -355,7 +405,10 @@ Calculamos: $a_1 = 0.5$, $a_2 = 0.875$, $a_3 \approx 0.617$,
 $a_4 \approx 0.810$, $a_5 \approx 0.672$, \ldots\ Los términos oscilan
 en torno a un valor que parece estabilizarse en $[0.6,0.9]$.
 
-\begin{center}
+La Figura~\ref{fig:sucesion_recursiva_convergente} muestra la convergencia oscilante.
+
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}
 \begin{axis}[
   width=0.65\textwidth, height=0.42\textwidth,
@@ -381,7 +434,9 @@ en torno a un valor que parece estabilizarse en $[0.6,0.9]$.
 \addlegendentry{$a_n$}
 \end{axis}
 \end{tikzpicture}
-\end{center}
+\caption{Sucesión recursiva cuyos términos oscilan y se estabilizan hacia el límite $L=\sqrt{3}-1$, dentro de la banda $[0.6,0.9]$.}
+\label{fig:sucesion_recursiva_convergente}
+\end{figure}
 
 \textbf{Paso 2: Acotación precisa de la sucesión.}
 Probemos por inducción que $\frac{1}{2} \le a_n \le \frac{7}{8}$ para todo $n \in \mathbb{N}$.
@@ -574,11 +629,16 @@ que el denominador $x^2 \to 0^+$, de modo que
   \lim_{x\to 0^+}\frac{1+\ln x}{x^2} = -\infty.
 \]
 
-\begin{center}
+La Figura~\ref{fig:limite_lhopital_continuo} muestra el comportamiento de la extensión continua.
+
+\begin{figure}[H]
+\centering
   \textit{(El signo negativo refleja que $n^{1/n} > e^{1/n}$ para
   todo $n \geq 3$, ya que $\ln n > 1$ implica que la tasa
   $(\ln n)/n$ supera a $1/n$.)}
-\end{center}
+\caption{Extensión continua $f(x)=(1+\ln x)/x^2$ usada para aplicar L'Hôpital: cerca de $x\to 0^+$ el cociente tiende a $-\infty$, lo que determina el límite de la sucesión asociada.}
+\label{fig:limite_lhopital_continuo}
+\end{figure}
 \[
   \lim_{n\to\infty} n^3\!\left(e^{1/n} - \sqrt[n]{n}\right)
   = \boxed{-\infty.}
@@ -614,7 +674,10 @@ Definimos $a_n = \sum_{k=1}^n k^{1/3}$ y $b_n = n^{4/3}$. Los primeros
 cocientes son: $n=1$: $1$; $n=5$: $0.814$; $n=10$: $0.789$;
 $n=50$: $0.763$; $n=100$: $0.758$, sugiriendo convergencia a $3/4$.
 
-\begin{center}
+La Figura~\ref{fig:cociente_stolz} muestra la convergencia del cociente.
+
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}
 \begin{axis}[
   width=0.62\textwidth, height=0.40\textwidth,
@@ -634,7 +697,9 @@ $n=50$: $0.763$; $n=100$: $0.758$, sugiriendo convergencia a $3/4$.
 \addlegendentry{$\frac{a_n}{n^{4/3}}$}
 \end{axis}
 \end{tikzpicture}
-\end{center}
+\caption{Cocientes $a_n/b_n$ con $a_n=\sum k^{1/3}$ y $b_n=n^{4/3}$: los valores $0.814,\,0.789,\,0.763,\,0.758$ sugieren convergencia a $3/4$ (criterio de Stolz-Cesàro).}
+\label{fig:cociente_stolz}
+\end{figure}
 
 \textbf{Paso 2: Elección del criterio.}
 Como $b_n = n^{4/3}$ es estrictamente creciente y $b_n \to +\infty$,
@@ -671,6 +736,8 @@ de modo que:
 \subsection{Problemas propuestos — Sucesiones}
 % ------------------------------------------------------------
 
+% Básico
+
 \begin{prob}
 \begin{enumerate}
   \item Determine si $a_n = \dfrac{(-1)^n n^2}{n^2+3}$ converge. Justifique
@@ -679,6 +746,8 @@ de modo que:
         racionalizando.
 \end{enumerate}
 \end{prob}
+
+% Intermedio
 
 \begin{prob}
 Sea $a_1 = 2$ y $a_{n+1} = \sqrt{6 + a_n}$.
@@ -703,6 +772,14 @@ Sea $a_1 = 2$ y $a_{n+1} = \sqrt{6 + a_n}$.
 \end{prob}
 
 \begin{prob}
+Calcule $\displaystyle\lim_{n\to\infty}\left(1+\frac{2}{n}\right)^{3n}$
+y $\displaystyle\lim_{n\to\infty}n\!\left(\ln\!\left(1+\frac{3}{n}\right)
+-\frac{3}{n+1}\right)$. Interprete ambos resultados.
+\end{prob}
+
+% Desafiante
+
+\begin{prob}
 Determine el límite de las siguientes sucesiones utilizando infinitesimales
 equivalentes:
 \begin{enumerate}
@@ -719,12 +796,6 @@ Sea $\{a_n\}$ de Cauchy con $a_n \in \mathbb{Q}$ para todo $n$.
   \item Dé un ejemplo concreto donde el límite sea irracional,
         comprobando que la sucesión efectivamente es de Cauchy.
 \end{enumerate}
-\end{prob}
-
-\begin{prob}
-Calcule $\displaystyle\lim_{n\to\infty}\left(1+\frac{2}{n}\right)^{3n}$
-y $\displaystyle\lim_{n\to\infty}n\!\left(\ln\!\left(1+\frac{3}{n}\right)
--\frac{3}{n+1}\right)$. Interprete ambos resultados.
 \end{prob}
 
 
@@ -785,6 +856,42 @@ Para $a \neq 0$ y $r \in \mathbb{R}$:
 \]
 \end{theorem}
 
+El caso $a=r=\tfrac12$ admite una demostración visual: la serie
+$\sum_{n=1}^\infty \tfrac{1}{2^n}=\tfrac12+\tfrac14+\tfrac18+\cdots$ llena
+exactamente el cuadrado unitario (Figura~\ref{fig:serie_geometrica_cuadrado}),
+lo que confirma que su suma es $1=\dfrac{1/2}{1-1/2}$.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=3.2]
+  \draw[thick] (0,0) rectangle (1,1);
+  % 1/2 (mitad izquierda)
+  \fill[blue!30] (0,0) rectangle (0.5,1);
+  \node[font=\small] at (0.25,0.5) {$\tfrac12$};
+  % 1/4 (arriba derecha-inferior)
+  \fill[blue!18] (0.5,0) rectangle (1,0.5);
+  \node[font=\small] at (0.75,0.25) {$\tfrac14$};
+  % 1/8
+  \fill[blue!30] (0.5,0.5) rectangle (0.75,1);
+  \node[font=\footnotesize] at (0.625,0.75) {$\tfrac18$};
+  % 1/16
+  \fill[blue!18] (0.75,0.5) rectangle (1,0.75);
+  \node[font=\scriptsize] at (0.875,0.625) {$\tfrac{1}{16}$};
+  % 1/32
+  \fill[blue!30] (0.75,0.75) rectangle (0.875,1);
+  % 1/64
+  \fill[blue!18] (0.875,0.75) rectangle (1,0.875);
+  \draw[thin,gray] (0,0) rectangle (1,1);
+  \node[right, font=\small] at (1.05,0.5)
+        {$\displaystyle\sum_{n=1}^{\infty}\frac{1}{2^{n}}=1$};
+\end{tikzpicture}
+\caption{Demostración visual de $\sum_{n=1}^\infty 2^{-n}=1$: cada término
+cubre la mitad del área restante del cuadrado unitario ($\tfrac12$, luego
+$\tfrac14$, $\tfrac18$, \ldots), de modo que la unión de todos los rectángulos
+llena el cuadrado completo de área $1$.}
+\label{fig:serie_geometrica_cuadrado}
+\end{figure}
+
 \begin{theorem}[Series $p$]
 La serie $\displaystyle\sum_{n=1}^\infty \frac{1}{n^p}$ converge si y
 solo si $p > 1$.
@@ -798,7 +905,10 @@ Los primeros términos son $a_1 = 3/4$, $a_2 = 3/10$, $a_3 = 3/18$,
 $a_4 = 3/28$, \ldots Las sumas parciales crecen monótonamente y parecen
 acercarse a un valor finito cercano a $11/6$.
 
-\begin{center}
+La Figura~\ref{fig:serie_sumas_parciales_convergente} muestra las sumas parciales.
+
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}
 \begin{axis}[
   width=0.65\textwidth, height=0.42\textwidth,
@@ -820,7 +930,9 @@ acercarse a un valor finito cercano a $11/6$.
 \addlegendentry{Sumas parciales $S_N$}
 \end{axis}
 \end{tikzpicture}
-\end{center}
+\caption{Sumas parciales de una serie de términos positivos: crecen monótonamente y se acercan a un valor finito cercano a $11/6$, indicio de convergencia.}
+\label{fig:serie_sumas_parciales_convergente}
+\end{figure}
 
 \textbf{Paso 2: Elección del criterio.}
 Descomposición en fracciones parciales para exponer la estructura
@@ -873,7 +985,10 @@ $a_2 \approx 0.520$, $a_5 \approx 0.122$, $a_{10} \approx 0.047$,
 $a_{100} \approx 0.00217$. Los términos decrecen lentamente, pero la
 velocidad de decaimiento parece suficiente para convergencia.
 
-\begin{center}
+La Figura~\ref{fig:terminos_decaimiento_lento} muestra el decaimiento de los términos.
+
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}
 \begin{axis}[
   width=0.65\textwidth, height=0.42\textwidth,
@@ -895,7 +1010,9 @@ velocidad de decaimiento parece suficiente para convergencia.
 \addlegendentry{Términos $a_n$}
 \end{axis}
 \end{tikzpicture}
-\end{center}
+\caption{Términos $a_n$ que decrecen lentamente ($a_{100}\approx 0.00217$): el análisis gráfico sugiere convergencia, pero exige un criterio (integral o comparación) para confirmarla.}
+\label{fig:terminos_decaimiento_lento}
+\end{figure}
 
 \textbf{Paso 2: Elección del criterio.}
 $f(x) = \dfrac{1}{x(\ln x)^2}$ es continua, positiva y decreciente en
@@ -1001,7 +1118,10 @@ $a_4 = 3^4\cdot 24/256 \approx 6.33$, $a_5 \approx 6.08$. Los términos
 crecen inicialmente y luego parecen decrecer. La presencia de $n!$ y
 $n^n$ hace ideal el criterio del cociente.
 
-\begin{center}
+La Figura~\ref{fig:terminos_criterio_cociente} muestra el comportamiento de los términos.
+
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}
 \begin{axis}[
   width=0.62\textwidth, height=0.40\textwidth,
@@ -1019,7 +1139,9 @@ $n^n$ hace ideal el criterio del cociente.
 \addlegendentry{$a_n = \dfrac{3^n n!}{n^n}$}
 \end{axis}
 \end{tikzpicture}
-\end{center}
+\caption{Términos con $n!$ y $n^n$ que crecen y luego decrecen: la presencia de factoriales y potencias hace idóneo el criterio del cociente.}
+\label{fig:terminos_criterio_cociente}
+\end{figure}
 
 \textbf{Paso 2: Elección del criterio.}
 La estructura $n!$ y $n^n$ favorece el criterio del cociente.
@@ -1120,7 +1242,10 @@ $S_1=1$, $S_2\approx 0.293$, $S_3\approx 0.871$, $S_4\approx 0.371$,
 $S_5\approx 0.818$, \ldots Las sumas parciales oscilan entre dos
 envolventes que se comprimen hacia el límite $\approx 0.605$.
 
-\begin{center}
+La Figura~\ref{fig:serie_alternante_envolventes} muestra las envolventes.
+
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}
 \begin{axis}[
   width=0.65\textwidth, height=0.42\textwidth,
@@ -1141,7 +1266,9 @@ envolventes que se comprimen hacia el límite $\approx 0.605$.
 \addlegendentry{Sumas parciales $S_N$}
 \end{axis}
 \end{tikzpicture}
-\end{center}
+\caption{Sumas parciales de una serie alternante: oscilan entre dos envolventes que se comprimen hacia el límite $\approx 0.605$, tal como garantiza el criterio de Leibniz.}
+\label{fig:serie_alternante_envolventes}
+\end{figure}
 
 \textbf{Paso 2: Elección del criterio.}
 La serie es alternada: se aplica el Criterio de Leibniz.
@@ -1234,17 +1361,7 @@ Como $\rho = 3/2 > 1$, la serie \textbf{converge}:
 % ============================================================
 
 
-\begin{prob}
-\begin{enumerate}
-  \item Calcule la suma exacta de $\displaystyle\sum_{n=1}^\infty
-        \frac{4}{(4n-1)(4n+3)}$ hallando la descomposición telescópica
-        del término general.
-  \item Determine si $\displaystyle\sum_{n=1}^\infty\frac{2n+1}{n^2(n+1)^2}$
-        converge y, en caso afirmativo, calcule su suma.
-        (\textit{Sugerencia}: $\dfrac{2n+1}{n^2(n+1)^2}=
-        \dfrac{1}{n^2}-\dfrac{1}{(n+1)^2}$.)
-\end{enumerate}
-\end{prob}
+% Básico
 
 \begin{prob}
 Aplique el criterio del término $n$-ésimo para decidir sin cálculo adicional:
@@ -1265,7 +1382,19 @@ Para la serie $\displaystyle\sum_{n=0}^\infty \left(\frac{2}{3}\right)^n
 \end{enumerate}
 \end{prob}
 
+% Intermedio
 
+\begin{prob}
+\begin{enumerate}
+  \item Calcule la suma exacta de $\displaystyle\sum_{n=1}^\infty
+        \frac{4}{(4n-1)(4n+3)}$ hallando la descomposición telescópica
+        del término general.
+  \item Determine si $\displaystyle\sum_{n=1}^\infty\frac{2n+1}{n^2(n+1)^2}$
+        converge y, en caso afirmativo, calcule su suma.
+        (\textit{Sugerencia}: $\dfrac{2n+1}{n^2(n+1)^2}=
+        \dfrac{1}{n^2}-\dfrac{1}{(n+1)^2}$.)
+\end{enumerate}
+\end{prob}
 
 \begin{prob}
 \begin{enumerate}
@@ -1283,8 +1412,6 @@ Determine la convergencia de $\displaystyle\sum_{n=1}^\infty
 $p$-serie adecuada. Identifique el exponente $p$ que captura el
 comportamiento asintótico del término general.
 \end{prob}
-
-
 
 \begin{prob}
 Determine la convergencia de las siguientes series:
@@ -1308,7 +1435,7 @@ Para la serie $\displaystyle\sum_{n=1}^\infty \frac{(-1)^{n-1}}{n^{3/2}}$:
 \end{enumerate}
 \end{prob}
 
-
+% Desafiante
 
 \begin{prob}
 El criterio del cociente es inconcluso para $\displaystyle\sum_{n=1}^\infty

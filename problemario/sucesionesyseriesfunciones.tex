@@ -80,8 +80,42 @@ permitiendo el intercambio seguro de límites, integrales y derivadas.
 Geométricamente, la convergencia uniforme equivale a que las gráficas
 de $f_n$ queden atrapadas dentro de una banda de anchura $2\varepsilon$
 alrededor de la gráfica de $f$, para todo $n$ suficientemente grande;
-y esta banda se estrecha hasta desaparecer cuando $\varepsilon\to 0$.
+y esta banda se estrecha hasta desaparecer cuando $\varepsilon\to 0$
+(Figura~\ref{fig:ssf_banda_uniforme}).
 \end{rem}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+  width=0.8\textwidth, height=6cm,
+  axis lines=middle, xlabel={$x$}, ylabel={$y$},
+  xmin=-0.15, xmax=6.4, ymin=-1.5, ymax=1.9,
+  xtick=\empty, ytick=\empty,
+  domain=0:6.2, samples=150, clip=false,
+  label style={font=\small},
+]
+  % banda f +- eps alrededor de f(x)=sin(x)/2 (funcion limite)
+  \addplot[name path=fu, draw=none, domain=0:6.2] {0.5*sin(deg(x))+0.35};
+  \addplot[name path=fl, draw=none, domain=0:6.2] {0.5*sin(deg(x))-0.35};
+  \addplot[blue!12] fill between[of=fu and fl];
+  \addplot[blue!70!black, very thick, domain=0:6.2] {0.5*sin(deg(x))}
+        node[right, font=\small] {$f$};
+  % una f_n atrapada dentro de la banda
+  \addplot[red!70!black, thick, domain=0:6.2]
+        {0.5*sin(deg(x)) + 0.22*sin(deg(3*x))*exp(-0.15*x)}
+        node[pos=0.62, above, font=\small] {$f_n$};
+  \draw[<->, gray] (axis cs:5.0,{0.5*sin(deg(5.0))-0.35})
+        -- (axis cs:5.0,{0.5*sin(deg(5.0))+0.35})
+        node[midway, right, font=\footnotesize] {$2\varepsilon$};
+\end{axis}
+\end{tikzpicture}
+\caption{Convergencia uniforme $f_n\rightrightarrows f$: para $n$ suficientemente
+grande, la gráfica completa de $f_n$ queda atrapada dentro de la banda de
+anchura $2\varepsilon$ alrededor de $f$. Un único $N(\varepsilon)$ sirve para
+todos los $x$ a la vez, y la banda se estrecha al hacer $\varepsilon\to 0$.}
+\label{fig:ssf_banda_uniforme}
+\end{figure}
 
 % ----------------------------------------------------------
 \begin{example}[Convergencia puntual pero no uniforme]
@@ -91,7 +125,10 @@ la convergencia es uniforme en $[0,1]$ y en $[0,r]$ para $0<r<1$ fijo.
 \begin{myproof}
 \textbf{Paso 1: Análisis gráfico y comportamiento.}
 
-\begin{center}
+La Figura~\ref{fig:ssf_puntual_no_uniforme} muestra las primeras $f_n$.
+
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}[scale=4]
     \draw[->] (0,0) -- (1.15,0) node[below] {$x$};
     \draw[->] (0,0) -- (0,1.15) node[left]  {$y$};
@@ -110,7 +147,9 @@ la convergencia es uniforme en $[0,1]$ y en $[0,r]$ para $0<r<1$ fijo.
     \draw[<-] (0.93,0.48) -- (1.1,0.55)
         node[right, font=\tiny] {pico residual};
 \end{tikzpicture}
-\end{center}
+\caption{Sucesión de funciones que converge puntualmente pero no uniformemente: aunque cada $f_n$ tiende al límite en cada punto, el error máximo sobre el intervalo no tiende a cero.}
+\label{fig:ssf_puntual_no_uniforme}
+\end{figure}
 
 La familia $\{x^n\}$ aplana progresivamente la curva hacia el eje $x$
 para $x \in [0,1)$, pero se mantiene fija en $1$ cuando $x=1$. La
@@ -169,7 +208,10 @@ la convergencia es uniforme en $[0,1]$.
 \begin{myproof}
 \textbf{Paso 1: Análisis gráfico y comportamiento.}
 
-\begin{center}
+La Figura~\ref{fig:ssf_colapso_rectas} muestra el colapso de las rectas.
+
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}[scale=4]
     \draw[->] (0,0) -- (1.15,0) node[below] {$x$};
     \draw[->] (0,0) -- (0,1.15) node[left]  {$y$};
@@ -188,7 +230,9 @@ la convergencia es uniforme en $[0,1]$.
         (0,0.12) -- (1,0.12)
         node[right, font=\tiny] {$\varepsilon$};
 \end{tikzpicture}
-\end{center}
+\caption{Sucesión de funciones lineales que converge uniformemente en $[0,1]$: el error máximo $\sup|f_n-f|$ tiende a cero al aumentar $n$.}
+\label{fig:ssf_colapso_rectas}
+\end{figure}
 
 La familia $\{x/n\}$ consiste en rectas que pivotan en el origen y se
 colapsan hacia el eje $x$. La distancia vertical máxima decrece de
@@ -228,7 +272,10 @@ en $[0,+\infty)$.
 \begin{myproof}
 \textbf{Paso 1: Análisis gráfico y comportamiento.}
 
-\begin{center}
+La Figura~\ref{fig:ssf_pico_viajero} muestra el pico desplazándose.
+
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}[xscale=2.8, yscale=3.5]
     \draw[->] (0,0) -- (3.6,0) node[below] {$x$};
     \draw[->] (0,0) -- (0,1.3)  node[left]  {$y$};
@@ -256,7 +303,9 @@ en $[0,+\infty)$.
     \draw[<-, gray!60, thin] (0.5,{exp(-1)+0.05}) -- (0.8,1.1)
         node[right, font=\tiny] {picos en $x_n=1/n$};
 \end{tikzpicture}
-\end{center}
+\caption{Pico viajero: la joroba de altura fija se desplaza hacia la derecha al crecer $n$. La convergencia es puntual a $0$ pero no uniforme en $[0,\infty)$, pues el supremo no decae.}
+\label{fig:ssf_pico_viajero}
+\end{figure}
 
 La sucesión $f_n(x) = nxe^{-nx}$ exhibe un comportamiento asintótico
 fascinante: el pico se \emph{estrecha} y se \emph{desplaza} hacia el
@@ -359,7 +408,10 @@ intercambio límite-derivada.
 \begin{myproof}
 \textbf{Paso 1: Análisis gráfico y comportamiento.}
 
-\begin{center}
+La Figura~\ref{fig:ssf_intercambio_derivada} muestra las funciones y sus pendientes.
+
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}[xscale=1.0, yscale=3.2]
     \draw[->] (-3.5,0) -- (3.7,0) node[below] {$x$};
     \draw[->] (0,-0.9) -- (0,0.9)  node[left] {$y$};
@@ -379,7 +431,9 @@ intercambio límite-derivada.
         plot (\x, {sin(10*deg(\x))/10})
         node[above] {\small $f_{10}$};
 \end{tikzpicture}
-\end{center}
+\caption{Ejemplo donde el límite de las derivadas no coincide con la derivada del límite: la sucesión converge uniformemente pero las derivadas no, de modo que el intercambio límite-derivada falla.}
+\label{fig:ssf_intercambio_derivada}
+\end{figure}
 
 Las funciones $f_n(x) = \sen(nx)/n$ se aplanan uniformemente hacia el
 eje $x$: la amplitud decae como $1/n$. Pero su frecuencia oscilatoria
@@ -452,42 +506,76 @@ interpolación de Lagrange, los splines y los métodos espectrales.
 \subsection{Problemas propuestos: Sucesiones de funciones}
 
 
+% Básico
+
 \begin{prob} Determine el límite puntual de
           $f_n(x) = \dfrac{x^n}{1+x^n}$ en $[0, \infty)$ y analice
           si la convergencia es uniforme en $[0,1]$, $[1,\infty)$ y
           $[0,\infty)$.
 \end{prob}
+
 \begin{prob}
 Estudie la convergencia puntual y uniforme de
           $f_n(x) = \dfrac{nx}{1+n^2x^2}$ en $\mathbb{R}$.
           ¿En qué subintervalos la convergencia se vuelve uniforme?
 \end{prob}
+
+\begin{prob}Sea $f_n(x) = \dfrac{\sen(nx)}{n+x}$ en $[0, \infty)$.
+          Pruebe que converge uniformemente a cero utilizando el
+          criterio del supremo.
+\end{prob}
+
+% Intermedio
+
 \begin{prob}Considere $f_n(x) = \sqrt{x^2 + 1/n}$ en $\mathbb{R}$.
           Demuestre que converge uniformemente a $|x|$ y explique por
           qué este ejemplo es relevante para la aproximación de
           funciones no derivables.
 \end{prob}
+
 \begin{prob}Analice la sucesión $f_n(x) = n^2 x e^{-nx}$ en $[0,1]$.
           Compare su comportamiento asintótico con el del ejemplo
           explorador $nxe^{-nx}$. ¿La convergencia es uniforme?
 \end{prob}
-\begin{prob}Sea $f_n(x) = \dfrac{\sen(nx)}{n+x}$ en $[0, \infty)$.
-          Pruebe que converge uniformemente a cero utilizando el
-          criterio del supremo.
-\end{prob}
+
 \begin{prob} Determine para qué valores de $\alpha > 0$ la sucesión
           $f_n(x) = \dfrac{1}{n^\alpha + x}$ converge uniformemente
           en $[0, \infty)$.
 \end{prob}
+
 \begin{prob} Sea $f_n(x) = \dfrac{x}{1+nx^2}$ en $[0,1]$. Calcule
           $\lim_{n\to\infty} \int_0^1 f_n(x)\,dx$ y verifíquelo
           intercambiando límite e integral. Justifique por qué el
           intercambio es válido.
 \end{prob}
+
 \begin{prob}Considere $f_n(x) = x^n/n$ en $[0,1]$. Estudie la
           convergencia de $\{f_n\}$ y $\{f_n'\}$. ¿Se cumple
           $\lim f_n' = (\lim f_n)'$ en todo el intervalo?
 \end{prob}
+
+\begin{prob} Considere $f_n(x) = \cos(nx)/n$ en $\mathbb{R}$. Pruebe que
+          $f_n \rightrightarrows 0$ pero que la sucesión de derivadas
+          no converge puntualmente en ningún $x$ múltiplo de $\pi$.
+          Explique la aparente contradicción con el
+          Teorema~\ref{thm:prop_uniforme}.3.
+\end{prob}
+
+\begin{prob}Sea $f_n(x) = (1 + x/n)^n$ en $[0,1]$. Demuestre que
+          converge uniformemente a $e^x$ y utilice este hecho para
+          justificar que
+          $\lim_{n\to\infty} \int_0^1 (1 + x/n)^n\,dx = e - 1$.
+
+\end{prob}
+
+\begin{prob}Utilice el Teorema de Dini para demostrar que
+          $f_n(x) = x^{1/n}$ converge uniformemente a $1$ en $[1,2]$.
+          ¿Por qué no se puede aplicar el teorema directamente en
+          $(0,1)$?
+\end{prob}
+
+% Desafiante
+
 \begin{prob}Defina
           $f_n(x) = \begin{cases}
               nx     & 0 \leq x \leq 1/n,  \\
@@ -498,41 +586,29 @@ Estudie la convergencia puntual y uniforme de
           $\lim \int_0^1 f_n$ y compárelo con $\int_0^1 \lim f_n$.
           ¿Qué propiedad falla?
 \end{prob}
+
 \begin{prob} Sea $\{f_n\}$ una sucesión de funciones continuas en $[a,b]$
           que converge uniformemente a $f$. Demuestre que $\{f_n\}$
           está uniformemente acotada para $n$ suficientemente grande.
 \end{prob}
-\begin{prob} Considere $f_n(x) = \cos(nx)/n$ en $\mathbb{R}$. Pruebe que
-          $f_n \rightrightarrows 0$ pero que la sucesión de derivadas
-          no converge puntualmente en ningún $x$ múltiplo de $\pi$.
-          Explique la aparente contradicción con el
-          Teorema~\ref{thm:prop_uniforme}.3.
-\end{prob}
-\begin{prob}Sea $f_n(x) = (1 + x/n)^n$ en $[0,1]$. Demuestre que
-          converge uniformemente a $e^x$ y utilice este hecho para
-          justificar que
-          $\lim_{n\to\infty} \int_0^1 (1 + x/n)^n\,dx = e - 1$.
 
-\end{prob}
-\begin{prob}Utilice el Teorema de Dini para demostrar que
-          $f_n(x) = x^{1/n}$ converge uniformemente a $1$ en $[1,2]$.
-          ¿Por qué no se puede aplicar el teorema directamente en
-          $(0,1)$?
-\end{prob}
 \begin{prob}Construya una sucesión de funciones continuas $\{f_n\}$ en
           $[0,1]$ que converja puntualmente a una función discontinua.
           Explique por qué este ejemplo no contradice el Teorema de
           Dini.
 \end{prob}
+
 \begin{prob} Sea $\{f_n\}$ una sucesión de funciones monótonas crecientes
           en $[a,b]$ que converge puntualmente a una función continua
           $f$. ¿Es suficiente esto para asegurar convergencia
           uniforme? Justifique con un ejemplo o con una demostración.
 \end{prob}
+
 \begin{prob}Demuestre que el espacio $C[a,b]$ es completo bajo la norma
           del supremo utilizando el Criterio de Cauchy para
           convergencia uniforme.
 \end{prob}
+
 \begin{prob} Utilizando los polinomios de Bernstein
           $B_n(f)(x) = \sum_{k=0}^n f\!\left(\frac{k}{n}\right)
           \binom{n}{k} x^k (1-x)^{n-k}$,
@@ -540,6 +616,7 @@ Estudie la convergencia puntual y uniforme de
           Teorema~\ref{thm:weierstrass_aprox} para $f(x)=x^2$ en
           $[0,1]$.
 \end{prob}
+
 \begin{prob} Sea $f_n \rightrightarrows f$ en $[a,b]$ y $g$ una función
           continua acotada en $\mathbb{R}$. Pruebe que
           $g \circ f_n \rightrightarrows g \circ f$ en $[a,b]$.
@@ -617,7 +694,10 @@ continuidad e integrabilidad de la función suma.
 \begin{myproof}
 \textbf{Paso 1: Análisis gráfico y comportamiento.}
 
-\begin{center}
+La Figura~\ref{fig:ssf_serie_trig_M} muestra las sumas parciales.
+
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}[xscale=1.1, yscale=1.5]
     \draw[->] (-3.5,0) -- (3.7,0) node[below] {$x$};
     \draw[->] (0,-1.1) -- (0,1.8)  node[left] {$y$};
@@ -638,7 +718,9 @@ continuidad e integrabilidad de la función suma.
                   + sin(5*deg(\x))/25 + sin(6*deg(\x))/36})
         node[above right] {\small $S_6$};
 \end{tikzpicture}
-\end{center}
+\caption{Serie trigonométrica cuya convergencia uniforme se establece con el criterio-M de Weierstrass: las sumas parciales se aproximan uniformemente a la función suma, continua e integrable.}
+\label{fig:ssf_serie_trig_M}
+\end{figure}
 
 Las sumas parciales presentan oscilaciones de amplitud decreciente. A
 medida que $N$ aumenta, $S_N$ se estabiliza visiblemente en todo el
@@ -681,7 +763,10 @@ compacto $[0,r]$ con $r<1$.
 \begin{myproof}
 \textbf{Paso 1: Análisis gráfico y comportamiento.}
 
-\begin{center}
+La Figura~\ref{fig:ssf_geometrica_compactos} compara el comportamiento en $[0,r]$ y cerca de $1$.
+
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}[xscale=4, yscale=2.5]
     \draw[->] (-0.1,0) -- (1.15,0) node[below] {$x$};
     \draw[->] (0,-0.3) -- (0,1.2)  node[left]  {$y$};
@@ -702,7 +787,9 @@ compacto $[0,r]$ con $r<1$.
         plot (\x, {\x - \x^2 + \x^3 - \x^4 + \x^5 - \x^6 + \x^7 - \x^8})
         node[right=2pt] {\small $S_8$};
 \end{tikzpicture}
-\end{center}
+\caption{Serie geométrica alternada $\sum(-x)^n$: converge uniformemente en cada compacto $[0,r]$ con $r<1$, pero no en todo $(-1,1)$, donde la convergencia se degrada cerca de los extremos.}
+\label{fig:ssf_geometrica_compactos}
+\end{figure}
 
 Las sumas parciales oscilan alrededor de $S(x)=x/(1+x)$ con amplitud
 decreciente para cada $x\in[0,1)$ fijo. Cerca de $x=1$, la amplitud
@@ -812,7 +899,10 @@ en ningún punto.
 \begin{myproof}
 \textbf{Paso 1: Análisis gráfico y comportamiento.}
 
-\begin{center}
+La Figura~\ref{fig:ssf_weierstrass} muestra su gráfica fractal.
+
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}
 \begin{axis}[
     width=9cm, height=6cm,
@@ -855,7 +945,9 @@ en ningún punto.
 
 \end{axis}
 \end{tikzpicture}
-\end{center}
+\caption{Función de Weierstrass: suma uniformemente convergente de cosenos con frecuencias crecientes, continua en todo punto pero derivable en ninguno por su estructura autosemejante.}
+\label{fig:ssf_weierstrass}
+\end{figure}
 
 Cada suma parcial $W_N(x) = \sum_{n=0}^N a^n\cos(b^n\pi x)$ añade
 oscilaciones de frecuencia $b^n$ veces mayor que la anterior y
@@ -902,28 +994,58 @@ regla.
 \subsection{Problemas propuestos: Series de funciones}
 
 
-\begin{prob}
- Determine si $\sum_{n=1}^\infty \dfrac{\cos(nx)}{n^3}$
-          converge uniformemente en $\mathbb{R}$. En caso afirmativo,
-          justifique que la función suma es continua y de clase $C^1$.
-\end{prob}
+% Básico
+
 \begin{prob}Estudie la convergencia uniforme de
           $\sum_{n=0}^\infty \dfrac{x^n}{2^n}$ en $[-1, 1]$ y en
           $[-r, r]$ con $0 < r < 2$. ¿Puede aplicarse el criterio-$M$
           en todo $(-2, 2)$?
 \end{prob}
+
+% Intermedio
+
+\begin{prob}
+ Determine si $\sum_{n=1}^\infty \dfrac{\cos(nx)}{n^3}$
+          converge uniformemente en $\mathbb{R}$. En caso afirmativo,
+          justifique que la función suma es continua y de clase $C^1$.
+\end{prob}
+
 \begin{prob}Demuestre que $\sum_{n=1}^\infty \dfrac{(-1)^n\, x}{n^2 + x^2}$
           converge absoluta y uniformemente en $\mathbb{R}$.
           ¿La función suma es par o impar?
 \end{prob}
+
 \begin{prob} Analice la convergencia uniforme de
           $\sum_{n=1}^\infty n^2 e^{-nx}$ en $[\delta, \infty)$
           para $\delta > 0$. ¿Qué ocurre en $(0, \infty)$?
 \end{prob}
+
 \begin{prob} Sea $f(x) = \sum_{n=1}^\infty \dfrac{x^n}{n^2}$ en $[-1,1]$.
           Pruebe la convergencia uniforme y calcule
           $\int_0^1 f(x)\,dx$ integrando término a término.
 \end{prob}
+
+\begin{prob} Justifique que
+          $\ln(1+x) = \sum_{n=1}^\infty \dfrac{(-1)^{n+1}x^n}{n}$
+          en $[-r, r]$ con $0 < r < 1$, integrando término a término
+          la serie geométrica $\dfrac{1}{1+x} = \sum_{n=0}^\infty
+          (-x)^n$.
+\end{prob}
+
+\begin{prob} A partir de $\dfrac{1}{1-x} = \sum_{n=0}^\infty x^n$,
+          derive término a término para obtener la serie de
+          $\dfrac{1}{(1-x)^2}$ e integre para obtener la de
+          $-\ln(1-x)$. Especifique el dominio de validez en cada caso.
+\end{prob}
+
+\begin{prob} Sea $g(x) = \sum_{n=0}^\infty \dfrac{(-1)^n x^{2n}}{(2n)!}$.
+          Pruebe que $g$ converge uniformemente en $[-R, R]$ para
+          cualquier $R>0$, que $g''(x) = -g(x)$ y concluya que
+          $g(x) = \cos x$.
+\end{prob}
+
+% Desafiante
+
 \begin{prob} Demuestre que si $\sum M_n < \infty$ y $|u_n(x)| \leq M_n$
           en $X$, entonces $\sum u_n$ define una función continua en
           $X$ siempre que cada $u_n$ sea continua en $X$. (Es decir,
@@ -931,30 +1053,17 @@ regla.
           más el Teorema~\ref{thm:series_uniforme}.1.)
 
 \end{prob}
-\begin{prob} Justifique que
-          $\ln(1+x) = \sum_{n=1}^\infty \dfrac{(-1)^{n+1}x^n}{n}$
-          en $[-r, r]$ con $0 < r < 1$, integrando término a término
-          la serie geométrica $\dfrac{1}{1+x} = \sum_{n=0}^\infty
-          (-x)^n$.
-\end{prob}
+
 \begin{prob} Sea $f(x) = \sum_{n=1}^\infty \dfrac{\sen(n^2 x)}{n^3}$
           en $\mathbb{R}$. Pruebe que $f$ es diferenciable y calcule
           $f'(x)$ derivando término a término. Justifique el paso.
 \end{prob}
-\begin{prob} A partir de $\dfrac{1}{1-x} = \sum_{n=0}^\infty x^n$,
-          derive término a término para obtener la serie de
-          $\dfrac{1}{(1-x)^2}$ e integre para obtener la de
-          $-\ln(1-x)$. Especifique el dominio de validez en cada caso.
-\end{prob}
-\begin{prob} Sea $g(x) = \sum_{n=0}^\infty \dfrac{(-1)^n x^{2n}}{(2n)!}$.
-          Pruebe que $g$ converge uniformemente en $[-R, R]$ para
-          cualquier $R>0$, que $g''(x) = -g(x)$ y concluya que
-          $g(x) = \cos x$.
-\end{prob}
+
 \begin{prob} Sea $h(x) = \sum_{n=1}^\infty \dfrac{x^n}{n}$ en $(-1,1)$.
           Demuestre que $h'(x) = 1/(1-x)$. ¿Puede concluir que
           $h(x) = -\ln(1-x)$? Justifique.
 \end{prob}
+
 \begin{prob} Evalúe $\int_0^1 \dfrac{\arctan x}{x}\,dx$ usando la serie
           de $\arctan x$ e integrando término a término. Verifique la
           validez del intercambio e identifique la suma como una
@@ -1003,8 +1112,45 @@ La serie:
           (debe analizarse por separado en cada caso).
 \end{enumerate}
 Además, la convergencia es \textbf{uniforme} en todo subintervalo
-compacto $[c-r, c+r]$ con $0 < r < R$.
+compacto $[c-r, c+r]$ con $0 < r < R$. La
+Figura~\ref{fig:ssf_radio_recta} resume el panorama sobre la recta real.
 \end{theorem}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.0]
+  % recta
+  \draw[->] (-5.6,0) -- (5.6,0) node[right] {$x$};
+  % zona de convergencia
+  \fill[blue!15] (-2.5,-0.16) rectangle (2.5,0.16);
+  % divergencia
+  \node[above, font=\small, red!70!black] at (-4.0,0.18) {diverge};
+  \node[above, font=\small, red!70!black] at ( 4.0,0.18) {diverge};
+  \node[above, font=\small, blue!70!black] at (0,0.2)
+        {converge absolutamente};
+  % marcas c, c-R, c+R
+  \foreach \x/\lab in {0/{$c$}, -2.5/{$c-R$}, 2.5/{$c+R$}} {
+     \draw[thick] (\x,-0.16) -- (\x,0.16);
+     \node[below, font=\small] at (\x,-0.2) {\lab};
+  }
+  \filldraw[black] (0,0) circle (1.4pt);
+  % extremos: analisis aparte
+  \draw[red!70!black, thick] (-2.5,0) circle (2.4pt);
+  \draw[red!70!black, thick] ( 2.5,0) circle (2.4pt);
+  \node[below, font=\footnotesize, red!70!black] at (-2.5,-0.55)
+        {analizar aparte};
+  \node[below, font=\footnotesize, red!70!black] at ( 2.5,-0.55)
+        {analizar aparte};
+  % llave del radio
+  \draw[decorate, decoration={brace, amplitude=5pt}]
+        (0,0.55) -- (2.5,0.55) node[midway, above, font=\small] {$R$};
+\end{tikzpicture}
+\caption{Radio de convergencia sobre la recta real: una serie de potencias
+centrada en $c$ converge absolutamente en el intervalo abierto $(c-R,\,c+R)$,
+diverge fuera de $[c-R,\,c+R]$, y en los extremos $x=c\pm R$ el comportamiento
+debe analizarse por separado en cada caso.}
+\label{fig:ssf_radio_recta}
+\end{figure}
 
 \begin{rem}
 Cuando la fórmula de Cauchy--Hadamard es difícil de manejar, el radio
@@ -1031,7 +1177,10 @@ el radio sea finito.
 \begin{myproof}
 \textbf{Paso 1: Análisis gráfico y comportamiento.}
 
-\begin{center}
+La Figura~\ref{fig:ssf_radios_canonicos} ilustra los cuatro casos.
+
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}[xscale=1.5, yscale=1.5]
     % Ejes y recta numérica
     \draw[->] (-3.5,0) -- (3.5,0) node[below] {$x$};
@@ -1056,7 +1205,9 @@ el radio sea finito.
         \draw (\x,0.05) -- (\x,-0.05) node[below] {\small$\x$};
     }
 \end{tikzpicture}
-\end{center}
+\caption{Cuatro casos canónicos de radio de convergencia, incluido el caso $R=\infty$ de la serie de $e^x$, que converge en toda la recta.}
+\label{fig:ssf_radios_canonicos}
+\end{figure}
 
 Los cuatro casos canónicos muestran la variedad de comportamientos: desde
 convergencia en todo $\mathbb{R}$ hasta convergencia en un único punto,
@@ -1119,7 +1270,10 @@ contenidos en el interior del intervalo de convergencia.
 \begin{myproof}
 \textbf{Paso 1: Análisis gráfico y comportamiento.}
 
-\begin{center}
+La Figura~\ref{fig:ssf_derivacion_geometrica} muestra la función suma y sus aproximaciones.
+
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}[xscale=4.5, yscale=0.55]
     \draw[->] (-0.1,0) -- (1.1,0) node[below] {$x$};
     \draw[->] (0,-0.5) -- (0,7.5)  node[left]  {$y$};
@@ -1139,7 +1293,9 @@ contenidos en el interior del intervalo de convergencia.
     \draw[gray!50, dashed, very thin] (1,-0.5) -- (1,7)
         node[above, font=\tiny] {$R=1$};
 \end{tikzpicture}
-\end{center}
+\caption{Suma en forma cerrada obtenida derivando término a término la serie geométrica: la operación es válida en el interior del intervalo de convergencia.}
+\label{fig:ssf_derivacion_geometrica}
+\end{figure}
 
 Las sumas parciales convergen rápidamente en el interior de $(-1,1)$,
 pero se disparan verticalmente al acercarse al borde $x=1$.
@@ -1185,7 +1341,10 @@ y deduzca el valor de la serie alternada $\sum_{n=1}^\infty (-1)^n/n$.
 \begin{myproof}
 \textbf{Paso 1: Análisis gráfico y comportamiento.}
 
-\begin{center}
+La Figura~\ref{fig:ssf_serie_logaritmica} muestra las sumas parciales aproximando a $\ln(1+x)$.
+
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}[xscale=3.8, yscale=1.2]
     \draw[->] (-1.15,0) -- (1.15,0) node[below] {$x$};
     \draw[->] (0,-1.3) -- (0,1.8)   node[left]  {$y$};
@@ -1209,7 +1368,9 @@ y deduzca el valor de la serie alternada $\sum_{n=1}^\infty (-1)^n/n$.
     \fill[blue!60] (-1, {-ln(2)}) circle (1.5pt)
         node[left, font=\tiny] {$-\ln 2$};
 \end{tikzpicture}
-\end{center}
+\caption{Serie logarítmica $\sum(-1)^{n+1}x^n/n$: la suma por integración término a término da $\ln(1+x)$, y el Teorema de Abel permite evaluar en $x=1$ para obtener $\sum(-1)^n/n=-\ln 2$.}
+\label{fig:ssf_serie_logaritmica}
+\end{figure}
 
 En el interior $(-1,1)$, las sumas parciales convergen a $-\ln(1-x)$.
 El borde $x=-1$ aparece como punto especial: la serie alterna
@@ -1332,7 +1493,10 @@ siguientes problemas:
 \begin{myproof}
 \textbf{Paso 1: Análisis gráfico y comportamiento.}
 
-\begin{center}
+La Figura~\ref{fig:ssf_aplicaciones_potencias} ilustra la aproximación y su error.
+
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}[xscale=3.5, yscale=2.5]
     \draw[->] (-1.1,0) -- (1.1,0) node[below] {$x$};
     \draw[->] (0,-0.2) -- (0,1.3)  node[left]  {$y$};
@@ -1354,7 +1518,9 @@ siguientes problemas:
         plot (\x, {1 - \x^2 + \x^4/2 - \x^6/6 + \x^8/24})
         node[right=1pt] {\small $P_8$};
 \end{tikzpicture}
-\end{center}
+\caption{Aplicaciones de las series de potencias: cálculo de límites, integrales sin primitiva elemental y estimación del error de truncamiento mediante el resto.}
+\label{fig:ssf_aplicaciones_potencias}
+\end{figure}
 
 Los polinomios de Taylor de $e^{-x^2}$ aproximan cada vez mejor la
 gaussiana en $[-1,1]$, permitiendo integrar una función sin primitiva
@@ -1420,6 +1586,15 @@ $|x|<1$ para $\ln(1+x)$.
 \subsection{Problemas propuestos: Series de potencias}
 
 
+% Básico
+
+\begin{prob} Sea $\sum a_n x^n$ con radio $R=3$. Determine el radio de
+          convergencia de $\sum a_n x^{2n}$, $\sum n a_n x^{n-1}$ y
+          $\sum a_n x^n / (n+1)$.
+\end{prob}
+
+% Intermedio
+
 \begin{prob}
  Determine el radio y el dominio de convergencia de cada
           serie, incluyendo los extremos:
@@ -1435,47 +1610,55 @@ $|x|<1$ para $\ln(1+x)$.
           \end{enumerate}
 
 \end{prob}
+
 \begin{prob} Pruebe que $\sum_{n=0}^\infty x^n/n!$ converge
           uniformemente en $[-R,R]$ para cualquier $R > 0$, y
           concluya que la función suma es de clase $C^\infty$ en
           $\mathbb{R}$.
 \end{prob}
-\begin{prob} Sea $\sum a_n x^n$ con radio $R=3$. Determine el radio de
-          convergencia de $\sum a_n x^{2n}$, $\sum n a_n x^{n-1}$ y
-          $\sum a_n x^n / (n+1)$.
-\end{prob}
+
 \begin{prob} Encuentre la función suma de
           $\sum_{n=2}^\infty n(n-1)x^{n-2}$ en su dominio de
           convergencia, derivando adecuadamente la serie geométrica.
 \end{prob}
-\begin{prob} Demuestre que si $\limsup|a_n|^{1/n} = 0$, entonces la
-          serie de potencias $\sum a_n x^n$ tiene radio $R = \infty$.
-\end{prob}
-\begin{prob} Compare los radios de convergencia de $\sum a_n x^n$ y
-          $\sum a_n^2 x^n$ si el radio de la primera es $R$. Derive
-          una fórmula para el radio de la segunda en términos de $R$.
 
-\end{prob}
 \begin{prob} Desarrolle en serie de Maclaurin las funciones
           $f(x) = \sen x$, $g(x) = e^x$ y $h(x) = (1+x)^\alpha$ con
           $\alpha \in \mathbb{R}$. Especifique el radio de
           convergencia en cada caso.
 \end{prob}
+
 \begin{prob} Calcule la serie de Taylor de $f(x) = \ln(1+x)$ en $x_0=0$
           y úsela para estimar $\ln(1.1)$ con error menor que
           $10^{-4}$.
 \end{prob}
+
 \begin{prob} Utilice la serie de $\arctan x$ para demostrar la fórmula
           de Leibniz: $\pi/4 = 1 - 1/3 + 1/5 - 1/7 + \cdots$
 \end{prob}
+
+% Desafiante
+
+\begin{prob} Demuestre que si $\limsup|a_n|^{1/n} = 0$, entonces la
+          serie de potencias $\sum a_n x^n$ tiene radio $R = \infty$.
+\end{prob}
+
+\begin{prob} Compare los radios de convergencia de $\sum a_n x^n$ y
+          $\sum a_n^2 x^n$ si el radio de la primera es $R$. Derive
+          una fórmula para el radio de la segunda en términos de $R$.
+
+\end{prob}
+
 \begin{prob} Desarrolle $f(x) = 1/(1-x-x^2)$ en serie de potencias
           alrededor de $x=0$. ¿Qué relación tienen los coeficientes
           con la sucesión de Fibonacci?
 \end{prob}
+
 \begin{prob} Calcule $\int_0^{0.5} e^{-x^2}\,dx$ con error menor que
           $10^{-5}$ usando la serie de potencias de $e^{-x^2}$.
 
 \end{prob}
+
 \begin{prob} Resuelva la ecuación de Airy $y'' = xy$ buscando una
           solución en serie de potencias $y = \sum_{n=0}^\infty a_n
           x^n$. Determine la recurrencia para los coeficientes y
@@ -1555,7 +1738,10 @@ en ningún entorno de ese punto.
 \begin{myproof}
 \textbf{Paso 1: Análisis gráfico y comportamiento.}
 
-\begin{center}
+La Figura~\ref{fig:ssf_suave_no_analitica} muestra la función junto a su serie de Taylor nula.
+
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}[xscale=2.5, yscale=2.5]
     \draw[->] (-1.6,0) -- (1.6,0) node[below] {$x$};
     \draw[->] (0,-0.2) -- (0,1.3)  node[left]  {$y$};
@@ -1573,7 +1759,9 @@ en ningún entorno de ese punto.
         node[right, font=\tiny] {``plana'' en $0$:
             $\varphi^{(n)}(0)=0$};
 \end{tikzpicture}
-\end{center}
+\caption{Función $C^\infty$ que no es analítica en el origen: todas sus derivadas se anulan en $0$, por lo que su serie de Taylor es idénticamente nula y no representa a la función en ningún entorno.}
+\label{fig:ssf_suave_no_analitica}
+\end{figure}
 
 La función $\varphi(x)$ es positiva fuera del origen y se aplana
 drásticamente cerca de $x=0$: su gráfica llega al origen con todas
@@ -1673,23 +1861,15 @@ y de los métodos numéricos modernos.
 \subsection{Problemas propuestos: Complementos avanzados}
 
 
+% Intermedio
+
 \begin{prob}
  Demuestre que toda función analítica par tiene únicamente
           potencias pares en su expansión de Maclaurin, y que toda
           función impar tiene únicamente potencias impares. Use este
           hecho para simplificar la serie de $\sinh x$ y $\cosh x$.
 \end{prob}
-\begin{prob} Adapte el argumento de Fourier para demostrar la
-          irracionalidad de $e^2$: suponga $e^2 = p/q$ y obtenga
-          una contradicción similar a la del
-          Teorema~\ref{thm:irrac_e}.
-\end{prob}
-\begin{prob} Construya explícitamente, usando la función plana
-          $\varphi(x) = e^{-1/x^2}$, una función $\psi \in
-          C^\infty(\mathbb{R})$ que satisfaga $\psi(x)=1$ para
-          $|x|\leq 1$ y $\psi(x)=0$ para $|x|\geq 2$.
-          (Esta es una \emph{función meseta}.)
-\end{prob}
+
 \begin{prob} Usando el producto de Cauchy, calcule los primeros cinco
           términos de la serie de Maclaurin de:
           \begin{enumerate}
@@ -1697,15 +1877,32 @@ y de los métodos numéricos modernos.
               \item[(b)] $\dfrac{1}{1-x}\cdot\ln(1+x)$.
           \end{enumerate}
 \end{prob}
-\begin{prob} Sea $f(x) = \sum_{n=0}^\infty a_n x^n$ con radio $R > 0$.
-          Demuestre que $F(x) = \int_0^x f(t)\,dt$ tiene radio de
-          convergencia igual a $R$ y calcula sus coeficientes en
-          términos de los $a_n$.
 
-\end{prob}
 \begin{prob} (Ecuación diferencial por series) Encuentre la solución
           en serie de potencias de $y' = xy$ con $y(0)=1$, determine
           su radio de convergencia e identifique la función suma
           en forma cerrada.
+
+\end{prob}
+
+% Desafiante
+
+\begin{prob} Adapte el argumento de Fourier para demostrar la
+          irracionalidad de $e^2$: suponga $e^2 = p/q$ y obtenga
+          una contradicción similar a la del
+          Teorema~\ref{thm:irrac_e}.
+\end{prob}
+
+\begin{prob} Construya explícitamente, usando la función plana
+          $\varphi(x) = e^{-1/x^2}$, una función $\psi \in
+          C^\infty(\mathbb{R})$ que satisfaga $\psi(x)=1$ para
+          $|x|\leq 1$ y $\psi(x)=0$ para $|x|\geq 2$.
+          (Esta es una \emph{función meseta}.)
+\end{prob}
+
+\begin{prob} Sea $f(x) = \sum_{n=0}^\infty a_n x^n$ con radio $R > 0$.
+          Demuestre que $F(x) = \int_0^x f(t)\,dt$ tiene radio de
+          convergencia igual a $R$ y calcula sus coeficientes en
+          términos de los $a_n$.
 
 \end{prob}

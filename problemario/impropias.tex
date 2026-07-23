@@ -70,6 +70,41 @@ límite.
 \end{itemize}
 \end{rem}
 
+Geométricamente, una integral impropia de primer tipo es el \textbf{límite de
+un área que crece} al desplazar la frontera móvil $t$ hacia el infinito
+(Figura~\ref{fig:impropia_area_creciente}): si al avanzar $t\to\infty$ el área
+acumulada $A(t)=\int_a^t f$ tiende a un valor finito, la integral converge; si
+crece sin cota, diverge.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+  width=0.72\textwidth, height=5.6cm,
+  axis lines=middle, xlabel={$x$}, ylabel={$y$},
+  xmin=-0.3, xmax=6.4, ymin=-0.1, ymax=1.25,
+  xtick={1,4}, xticklabels={$a$,$t$}, ytick=\empty,
+  domain=0.35:6, samples=120,
+  label style={font=\small}, tick label style={font=\small}, clip=false,
+]
+  \addplot[draw=none, fill=blue!18, domain=1:4] {1/x} \closedcycle;
+  \addplot[blue!70!black, thick, domain=0.85:6] {1/x};
+  \draw[dashed, gray] (axis cs:1,0) -- (axis cs:1,1);
+  \draw[->, red!70!black, thick] (axis cs:4,0.55) -- (axis cs:5.4,0.55)
+        node[above, font=\small] {$t\to\infty$};
+  \draw[dashed, gray] (axis cs:4,0) -- (axis cs:4,0.25);
+  \node[font=\small, blue!70!black] at (axis cs:2.2,0.33)
+        {$A(t)=\displaystyle\int_a^t f$};
+  \node[right, font=\small, blue!70!black] at (axis cs:5.6,0.9) {$y=f(x)$};
+\end{axis}
+\end{tikzpicture}
+\caption{Interpretación de la integral impropia de primer tipo como límite de
+un área: la región sombreada $A(t)=\int_a^t f(x)\,dx$ crece al desplazar la
+frontera móvil $t$ hacia la derecha. La integral $\int_a^\infty f$ converge si
+$A(t)$ tiende a un valor finito cuando $t\to\infty$.}
+\label{fig:impropia_area_creciente}
+\end{figure}
+
 A continuación ilustramos el procedimiento paso a paso, desde el caso más sencillo hasta el
 que involucra límites en ambos extremos.
 
@@ -86,7 +121,10 @@ $0$ cuando $x\to\infty$. La región de integración es el área infinita bajo la
 hacia la derecha; visualizamos el límite superior $b$ como una \textbf{frontera móvil} que avanza
 indefinidamente.
 
-\begin{center}
+La Figura~\ref{fig:impropia_xe_menosx} muestra la región.
+
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}
 \begin{axis}[
     width=0.62\textwidth, height=0.38\textheight,
@@ -112,7 +150,9 @@ indefinidamente.
 \node[blue!70!black] at (axis cs:2.2,0.16) {Región $[0,b]$};
 \end{axis}
 \end{tikzpicture}
-\end{center}
+\caption{Región bajo $f(x)=xe^{-x}$ para $x\geq 0$: parte del origen, alcanza su máximo en $x=1$ y decae a $0$. El área infinita hacia la derecha se calcula como límite con la frontera móvil $b\to\infty$.}
+\label{fig:impropia_xe_menosx}
+\end{figure}
 
 \textbf{Paso 2: Elemento diferencial.}
 Considerando franjas verticales de altura $f(x)$ y base $dx$:
@@ -156,7 +196,10 @@ La función $f(x)=\tfrac{1}{1+x^2}$ es \textbf{par}, positiva en todo $\mathbb{R
 máximo $f(0)=1$ y posee asíntota horizontal $y=0$. La región bajo la curva se extiende
 infinitamente a ambos lados del eje $y$.
 
-\begin{center}
+La Figura~\ref{fig:impropia_lorentziana} muestra la región simétrica.
+
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}
 \begin{axis}[
     width=0.62\textwidth, height=0.38\textheight,
@@ -176,7 +219,9 @@ infinitamente a ambos lados del eje $y$.
 \filldraw[black] (axis cs:0,1) circle (1.8pt) node[right] {\small $(0,1)$};
 \end{axis}
 \end{tikzpicture}
-\end{center}
+\caption{La función par $f(x)=\tfrac{1}{1+x^2}$ con máximo $f(0)=1$ y asíntota horizontal $y=0$. La región bajo la curva se extiende infinitamente a ambos lados, por lo que la integral se parte en $c=0$.}
+\label{fig:impropia_lorentziana}
+\end{figure}
 
 \textbf{Paso 2: Elemento diferencial.}
 \[
@@ -265,7 +310,10 @@ $[0,\infty)$, por lo que la \emph{Verificación 1} se cumple automáticamente. L
 normalización (Verificación 2) es la ecuación que determina $k$: exigimos que el área total bajo
 la curva sea exactamente $1$.
 
-\begin{center}
+La Figura~\ref{fig:densidad_normalizacion} ilustra la condición de normalización.
+
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}
 \begin{axis}[
     width=0.58\textwidth, height=0.36\textheight,
@@ -285,7 +333,9 @@ la curva sea exactamente $1$.
 \node[orange!70!red] at (axis cs:0.85,0.90) {Área$=1$};
 \end{axis}
 \end{tikzpicture}
-\end{center}
+\caption{Densidad de probabilidad: el parámetro $k$ se fija exigiendo que el área total bajo la curva valga exactamente $1$ (condición de normalización).}
+\label{fig:densidad_normalizacion}
+\end{figure}
 
 \textbf{Paso 2: Elemento diferencial.}
 \[
@@ -364,7 +414,10 @@ La vida útil $X$ (en miles de horas) de un sensor de presión sigue la FDP
 La función parte de $f(0)=2$, decrece exponencialmente y tiende a $0$. La región azul representa
 $P(X<0.5)$; la totalidad del área bajo la curva es $1$.
 
-\begin{center}
+La Figura~\ref{fig:densidad_probabilidad_intervalo} muestra $P(X<0.5)$ como área.
+
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}
 \begin{axis}[
     width=0.60\textwidth, height=0.37\textheight,
@@ -386,7 +439,9 @@ $P(X<0.5)$; la totalidad del área bajo la curva es $1$.
     {\small $P(X{<}0.5)$};
 \end{axis}
 \end{tikzpicture}
-\end{center}
+\caption{Densidad exponencial con $f(0)=2$: el área azul representa $P(X<0.5)$, una fracción del área total, que es $1$.}
+\label{fig:densidad_probabilidad_intervalo}
+\end{figure}
 
 \textbf{Paso 2: Elemento diferencial.}
 \[
@@ -496,7 +551,10 @@ La función $f(x)=x^{-1/2}$ crece sin cota cuando $x\to 0^+$, pero decrece rápi
 es infinita en \emph{altura} pero confinada horizontalmente al intervalo $(0,1]$; la intuición
 visual sugiere que el área podría ser finita porque la función cae muy rápido.
 
-\begin{center}
+La Figura~\ref{fig:impropia_singularidad_raiz} muestra la región de altura infinita.
+
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}
 \begin{axis}[
     width=0.56\textwidth, height=0.37\textheight,
@@ -516,7 +574,9 @@ visual sugiere que el área podría ser finita porque la función cae muy rápid
 \node[teal!75!black] at (axis cs:0.55,1.85) {Área $=2$};
 \end{axis}
 \end{tikzpicture}
-\end{center}
+\caption{Región bajo $f(x)=x^{-1/2}$ en $(0,1]$: infinita en altura por la singularidad en $x=0^+$, pero confinada horizontalmente. El decaimiento rápido hace que el área sea finita.}
+\label{fig:impropia_singularidad_raiz}
+\end{figure}
 
 \textbf{Paso 2: Elemento diferencial.}
 \[
@@ -551,7 +611,10 @@ lados de $x=1$ y exhibe una \textbf{cúspide vertical asintótica}. Es \emph{obl
 integral en $[0,1)$ y $(1,3]$; de lo contrario se aplica el TFC a una función discontinua y se
 obtiene un valor erróneo.
 
-\begin{center}
+La Figura~\ref{fig:impropia_discontinuidad_interior} muestra la discontinuidad interior.
+
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}
 \begin{axis}[
     width=0.62\textwidth, height=0.39\textheight,
@@ -582,7 +645,9 @@ obtiene un valor erróneo.
 \node[violet!80!black] at (axis cs:2.0,1.5) {\small Der.};
 \end{axis}
 \end{tikzpicture}
-\end{center}
+\caption{Integrando con cúspide vertical asintótica en $x=1$: es obligatorio separar la integral en $[0,1)$ (Izq.) y $(1,3]$ (Der.), pues aplicar el TFC a través de la discontinuidad da un resultado erróneo.}
+\label{fig:impropia_discontinuidad_interior}
+\end{figure}
 
 \textbf{Paso 2: Elemento diferencial.}
 \[
@@ -648,7 +713,10 @@ La curva $y=1/x$ rota alrededor del eje $x$ para $x\geq 1$. Los discos perpendic
 tienen radio $R(x)=1/x$. La región generatriz es el área entre la curva, el eje $x$ y la recta
 $x=1$.
 
-\begin{center}
+La Figura~\ref{fig:trompeta_gabriel} muestra la región generatriz.
+
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}
 \begin{axis}[
     width=0.65\textwidth, height=0.40\textheight,
@@ -672,7 +740,9 @@ $x=1$.
 \node[blue!60!black] at (axis cs:3.4,0.18) {Región generatriz};
 \end{axis}
 \end{tikzpicture}
-\end{center}
+\caption{Trompeta de Gabriel: la curva $y=1/x$ para $x\geq 1$ girada alrededor del eje $x$. Los discos perpendiculares tienen radio $R(x)=1/x$; el sólido tiene volumen finito pero área de superficie infinita.}
+\label{fig:trompeta_gabriel}
+\end{figure}
 
 \textbf{Paso 2: Elemento diferencial.}
 \begin{itemize}
@@ -714,13 +784,15 @@ Por el criterio de comparación directa, la integral del área \textbf{diverge}.
 % ============================================================
 %  PROBLEMAS PROPUESTOS — INTEGRALES IMPROPIAS
 % ============================================================
-\section{Problemas Propuestos}
+\section{Problemas propuestos}
 
 Recuerde aplicar los criterios de convergencia y las definiciones de límite
 estudiadas en clase para justificar la existencia de cada valor en las
 integrales impropias. En todos los casos, el desarrollo analítico completo
 constituye parte esencial de la solución.
 
+
+% Básico
 
 \begin{prob}
 Determine si las siguientes integrales impropias de Tipo~I (con al menos
@@ -750,16 +822,6 @@ divergen.
 \end{prob}
 
 \begin{prob}
-Determine si la siguiente integral converge y, de ser así, encuentre su
-valor exacto:
-\[
-    \int_{-\infty}^{\infty} \frac{e^x}{1 + e^{2x}} \, dx.
-\]
-\textit{Sugerencia: divida la integral en los intervalos $(-\infty, 0]$ y
-$[0, +\infty)$, y utilice la sustitución $u = e^x$ en cada parte.}
-\end{prob}
-
-\begin{prob}
 Analice la convergencia de las siguientes integrales impropias de Tipo~II,
 cuyo integrando presenta una discontinuidad infinita en uno o ambos
 extremos del intervalo de integración. Si la integral converge, determine
@@ -774,6 +836,18 @@ su valor exacto.
 \end{enumerate}
 \end{prob}
 
+% Intermedio
+
+\begin{prob}
+Determine si la siguiente integral converge y, de ser así, encuentre su
+valor exacto:
+\[
+    \int_{-\infty}^{\infty} \frac{e^x}{1 + e^{2x}} \, dx.
+\]
+\textit{Sugerencia: divida la integral en los intervalos $(-\infty, 0]$ y
+$[0, +\infty)$, y utilice la sustitución $u = e^x$ en cada parte.}
+\end{prob}
+
 \begin{prob}
 Evalúe las siguientes integrales impropias, en las cuales el integrando
 presenta una discontinuidad infinita en un punto interior $c$ del intervalo
@@ -786,7 +860,6 @@ $[a, b]$ (con $a < c < b$), o demuestre que divergen.
     \item $\displaystyle \int_{-1}^{1} \frac{1}{\sqrt{|x|}} \, dx$
 \end{enumerate}
 \end{prob}
-
 
 \begin{prob}
 La siguiente integral es impropia por dos razones simultáneas: el
@@ -809,6 +882,70 @@ cada parte por separado y, si ambas convergen, calcule el valor exacto:
     \int_{0}^{\infty} x^{-1/3} e^{-x} \, dx.
 \]
 \end{prob}
+
+\begin{prob}
+Utilice el Teorema de Comparación Directa o el Teorema de Comparación en
+el Límite para determinar la convergencia o divergencia de cada integral.
+No es necesario calcular el valor exacto; es suficiente identificar con
+precisión la función de comparación y justificar rigurosamente la
+conclusión.
+\begin{enumerate}
+    \item $\displaystyle \int_{1}^{\infty} e^{-x^2} \, dx$
+    \item $\displaystyle \int_{1}^{\infty} \frac{\sen^2 x}{x^2} \, dx$
+    \item $\displaystyle \int_{2}^{\infty} \frac{dx}{\sqrt{x^4 - 1}}$
+    \item $\displaystyle \int_{1}^{\infty} \frac{x + 1}{\sqrt{x^4 + x}} \, dx$
+    \item $\displaystyle \int_{1}^{\infty} \frac{\arctan x}{1 + x^2} \, dx$
+\end{enumerate}
+\end{prob}
+
+\begin{prob}
+Para cada una de las siguientes integrales, determine si converge o
+diverge. Justifique su respuesta mediante un criterio de comparación
+apropiado, identificando explícitamente la función auxiliar utilizada y
+verificando las hipótesis del criterio elegido.
+\begin{enumerate}
+    \item $\displaystyle \int_{0}^{1} \frac{\sen x}{x^{3/2}} \, dx$
+    \item $\displaystyle \int_{1}^{\infty} \frac{x^2 + 1}{x^4 + x^2 + 1} \, dx$
+    \item $\displaystyle \int_{1}^{\infty} \frac{\ln x}{x^{3/2}} \, dx$
+    \item $\displaystyle \int_{0}^{1} \frac{e^x - 1}{x^{1/2}} \, dx$
+    \item $\displaystyle \int_{2}^{\infty} \frac{1}{\ln x} \, dx$
+\end{enumerate}
+\end{prob}
+
+\begin{prob}[Longitud de arco]
+La longitud de arco de una curva $y = f(x)$ sobre el intervalo $[a, b]$
+está dada por la integral
+\[
+    L = \int_{a}^{b} \sqrt{1 + \left[f'(x)\right]^2} \, dx.
+\]
+\begin{enumerate}
+    \item Muestre que la longitud de la curva $y = \sqrt{1 - x^2}$ sobre
+          $[0,1)$ está dada por una integral impropia de Tipo~II y evalúe
+          dicha integral.
+    \item Interprete geométricamente el resultado obtenido.
+\end{enumerate}
+\end{prob}
+
+\begin{prob}[Física — Trabajo gravitacional]
+La fuerza de atracción gravitacional entre la Tierra (masa $M$) y un objeto
+de masa $m$ situado a una distancia $r$ de su centro es
+\[
+    F(r) = \frac{GMm}{r^2},
+\]
+donde $G$ es la constante de gravitación universal y $R$ denota el radio
+de la Tierra.
+\begin{enumerate}
+    \item Plantee la integral impropia que representa el trabajo necesario
+          para trasladar el objeto desde la superficie terrestre ($r = R$)
+          hasta el infinito.
+    \item Evalúe dicha integral y exprese el resultado en términos de $G$,
+          $M$, $m$ y $R$.
+    \item Explique por qué la convergencia de esta integral implica que
+          existe una velocidad de escape finita.
+\end{enumerate}
+\end{prob}
+
+% Desafiante
 
 \begin{prob}
 Considere la integral
@@ -853,35 +990,6 @@ integral
 \end{enumerate}
 \end{prob}
 
-\begin{prob}
-Utilice el Teorema de Comparación Directa o el Teorema de Comparación en
-el Límite para determinar la convergencia o divergencia de cada integral.
-No es necesario calcular el valor exacto; es suficiente identificar con
-precisión la función de comparación y justificar rigurosamente la
-conclusión.
-\begin{enumerate}
-    \item $\displaystyle \int_{1}^{\infty} e^{-x^2} \, dx$
-    \item $\displaystyle \int_{1}^{\infty} \frac{\sen^2 x}{x^2} \, dx$
-    \item $\displaystyle \int_{2}^{\infty} \frac{dx}{\sqrt{x^4 - 1}}$
-    \item $\displaystyle \int_{1}^{\infty} \frac{x + 1}{\sqrt{x^4 + x}} \, dx$
-    \item $\displaystyle \int_{1}^{\infty} \frac{\arctan x}{1 + x^2} \, dx$
-\end{enumerate}
-\end{prob}
-
-\begin{prob}
-Para cada una de las siguientes integrales, determine si converge o
-diverge. Justifique su respuesta mediante un criterio de comparación
-apropiado, identificando explícitamente la función auxiliar utilizada y
-verificando las hipótesis del criterio elegido.
-\begin{enumerate}
-    \item $\displaystyle \int_{0}^{1} \frac{\sen x}{x^{3/2}} \, dx$
-    \item $\displaystyle \int_{1}^{\infty} \frac{x^2 + 1}{x^4 + x^2 + 1} \, dx$
-    \item $\displaystyle \int_{1}^{\infty} \frac{\ln x}{x^{3/2}} \, dx$
-    \item $\displaystyle \int_{0}^{1} \frac{e^x - 1}{x^{1/2}} \, dx$
-    \item $\displaystyle \int_{2}^{\infty} \frac{1}{\ln x} \, dx$
-\end{enumerate}
-\end{prob}
-
 \begin{prob}[Función Gamma]
 La función Gamma se define para $n > 0$ como:
 \[
@@ -912,39 +1020,6 @@ probabilidad
     \item Calcule $P(X > 20)$ mediante la evaluación de la integral
           impropia pertinente.
     \item Determine el valor esperado $E[X] = \displaystyle\int_{0}^{\infty} x\,f(x)\,dx$.
-\end{enumerate}
-\end{prob}
-
-\begin{prob}[Longitud de arco]
-La longitud de arco de una curva $y = f(x)$ sobre el intervalo $[a, b]$
-está dada por la integral
-\[
-    L = \int_{a}^{b} \sqrt{1 + \left[f'(x)\right]^2} \, dx.
-\]
-\begin{enumerate}
-    \item Muestre que la longitud de la curva $y = \sqrt{1 - x^2}$ sobre
-          $[0,1)$ está dada por una integral impropia de Tipo~II y evalúe
-          dicha integral.
-    \item Interprete geométricamente el resultado obtenido.
-\end{enumerate}
-\end{prob}
-
-\begin{prob}[Física — Trabajo gravitacional]
-La fuerza de atracción gravitacional entre la Tierra (masa $M$) y un objeto
-de masa $m$ situado a una distancia $r$ de su centro es
-\[
-    F(r) = \frac{GMm}{r^2},
-\]
-donde $G$ es la constante de gravitación universal y $R$ denota el radio
-de la Tierra.
-\begin{enumerate}
-    \item Plantee la integral impropia que representa el trabajo necesario
-          para trasladar el objeto desde la superficie terrestre ($r = R$)
-          hasta el infinito.
-    \item Evalúe dicha integral y exprese el resultado en términos de $G$,
-          $M$, $m$ y $R$.
-    \item Explique por qué la convergencia de esta integral implica que
-          existe una velocidad de escape finita.
 \end{enumerate}
 \end{prob}
 

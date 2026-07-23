@@ -425,16 +425,16 @@ Mínimo 15 propuestos por capítulo, máximo 40; graduación 25/50/25 con tags. 
 | F9C1.25 | `apintegral.tex` | Auditoría 17 residuales | Completado | 2026-07-23 | 4 `\qedhere` en `proof` conservados (L187/516/996/1146); 13 en `myproof` eliminados (GUIA §2.2). |
 | F9C1.26 | `apintegral.tex` | Tags banco 41 | Completado | 2026-07-23 | 7 subsecciones temáticas E4 + marcador B/I/D (7B/22I/12D); el Putnam (#38) marcado `% Banco extendido` (excedente sobre 40). |
 | F9C1.27 | `impropias.tex` | Anidar 7 myproof (bug estructural total) | Completado | 2026-07-23 | Los 7 `\end{example}` reencapsulan su `myproof` (script `fix_huerfanos.py`); contenido interno intacto. huérfanos 7→0. |
-| F9C1.28 | `impropias.tex` | 7 center + figura R2 nueva | Pendiente | — | — |
-| F9C1.29 | `impropias.tex` | Tags + heading | Pendiente | — | — |
-| F9C1.30 | `polares.tex` | 12 center (preservar axis equal image) | Pendiente | — | — |
-| F9C1.31 | `polares.tex` | Tags + cobertura de subtemas | Pendiente | — | — |
-| F9C1.32 | `sucesionesyseries.tex` | 10 center | Pendiente | — | — |
-| F9C1.33 | `sucesionesyseries.tex` | 2 figuras R2 nuevas | Pendiente | — | — |
-| F9C1.34 | `sucesionesyseries.tex` | Tags en 2 subsecciones | Pendiente | — | — |
-| F9C1.35 | `sucesionesyseriesfunciones.tex` | 12 center | Pendiente | — | — |
-| F9C1.36 | `sucesionesyseriesfunciones.tex` | 2 figuras R2 nuevas | Pendiente | — | — |
-| F9C1.37 | `sucesionesyseriesfunciones.tex` | Banco 48: decisión + tags ×4 subsecciones | Pendiente | — | — |
+| F9C1.28 | `impropias.tex` | 7 center + figura R2 nueva | Completado | 2026-07-23 | 7 center→figure[H]+caption+label+ancla (campana xe⁻ˣ, lorentziana, densidad, singularidad raíz, discontinuidad interior, trompeta de Gabriel); figura R2 nueva `fig:impropia_area_creciente` (área como límite con frontera móvil $t\to\infty$) tras la def. de 1er tipo. |
+| F9C1.29 | `impropias.tex` | Tags + heading | Completado | 2026-07-23 | Heading `Propuestos`→`propuestos`; 16 prob 3B/8I/5D con marcador de grupo. |
+| F9C1.30 | `polares.tex` | 12 center (preservar axis equal image) | Completado | 2026-07-23 | 12 center→figure con caption+label+ancla (nodo/tangente, área bajo eje, circunferencia, cicloide, coordenadas polares, cardioide, rosas, lemniscata, espiral, área pétalo, dos cardioides, longitud espiral). `axis equal image` preservado (sigue en 7 curvas polares). |
+| F9C1.31 | `polares.tex` | Tags + cobertura de subtemas | Completado | 2026-07-23 | 12 prob 2B/6I/4D. **Cobertura ya completa** (paramétricas: cartesiana/tangente/concavidad/área/longitud/superficie; polares: cartesiana/tangente/área bucle-pétalo-cardioide-intersección/longitud) → no hicieron falta nuevos. |
+| F9C1.32 | `sucesionesyseries.tex` | 10 center | Completado | 2026-07-23 | 10 center→figure (sumas parciales, sen²n/n, no monótona, recursiva, L'Hôpital continuo, Stolz, serie telescópica, decaimiento lento, criterio cociente, alternante). |
+| F9C1.33 | `sucesionesyseries.tex` | 2 figuras R2 nuevas | Completado | 2026-07-23 | `fig:sucesion_convergente_banda` (puntos aₙ con banda $(L-\varepsilon,L+\varepsilon)$, tras la rem ε-N) y `fig:serie_geometrica_cuadrado` (rectángulos $1/2ⁿ$ llenando el cuadrado unitario, tras el teorema de la serie geométrica). |
+| F9C1.34 | `sucesionesyseries.tex` | Tags en 2 subsecciones | Completado | 2026-07-23 | Sucesiones 1B/3I/2D (6 prob); Series 2B/5I/3D (10 prob). |
+| F9C1.35 | `sucesionesyseriesfunciones.tex` | 12 center | Completado | 2026-07-23 | 12 center→figure anclados por título de `example` (puntual/uniforme, colapso rectas, pico viajero, intercambio derivada, criterio-M, geométrica compactos, Weierstrass, radios canónicos, derivación geométrica, serie logarítmica, aplicaciones, suave no analítica). |
+| F9C1.36 | `sucesionesyseriesfunciones.tex` | 2 figuras R2 nuevas | Completado | 2026-07-23 | `fig:ssf_banda_uniforme` (fₙ atrapada en banda $2\varepsilon$, tras la rem de cuantificadores) y `fig:ssf_radio_recta` (recta con zonas converge/diverge/analizar aparte + llave $R$, tras el teo. de Cauchy-Hadamard). |
+| F9C1.37 | `sucesionesyseriesfunciones.tex` | Banco 48: decisión + tags ×4 subsecciones | Completado | 2026-07-23 | 48 prob en 4 subsecciones (18/12/12/6) tagueados: Suc. func. 3B/8I/7D, Ser. func. 1B/7I/4D, Ser. pot. 1B/6I/5D, Complementos 0B/3I/3D. **Decisión F9C1.02 (exceso) ya resuelta estructuralmente** por la partición E4 en 4 subsecciones — ninguna excede la cuota. |
 | F9C1.38 | 12 archivos | Headings unificados | Pendiente | — | — |
 | F9C1.39 | bloque C1/C2 | Auditoría R3 centrales | Pendiente | — | — |
 | F9C1.40 | maestro | Compilación + re-inventario | Pendiente | — | — |
