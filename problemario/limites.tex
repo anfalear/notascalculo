@@ -378,6 +378,19 @@ $c$ (salvo posiblemente en $c$), y
 entonces $\lim_{x\to c}f(x)=L$.
 \end{theorem}
 
+\begin{proof}
+Sea $\varepsilon>0$. Como $\lim_{x\to c}h(x)=L$, existe $\delta_1>0$ tal que
+$L-\varepsilon<h(x)$ siempre que $0<|x-c|<\delta_1$. Como
+$\lim_{x\to c}g(x)=L$, existe $\delta_2>0$ tal que $g(x)<L+\varepsilon$ siempre
+que $0<|x-c|<\delta_2$. Tomando $\delta=\min(\delta_1,\delta_2)$, para
+$0<|x-c|<\delta$ se encadenan las desigualdades de la hipótesis:
+\[
+  L-\varepsilon<h(x)\leq f(x)\leq g(x)<L+\varepsilon,
+\]
+es decir, $|f(x)-L|<\varepsilon$. Como $\varepsilon>0$ es arbitrario,
+$\lim_{x\to c}f(x)=L$.
+\end{proof}
+
 La idea geométrica es transparente: si $f$ queda permanentemente comprimida
 entre $h$ y $g$ que convergen al mismo valor, $f$ tampoco tiene escapatoria.
 Su aplicación más célebre es el límite trigonométrico fundamental.
@@ -787,6 +800,22 @@ Si $f$ es continua en $[a,b]$ y $k$ es cualquier número estrictamente
 comprendido entre $f(a)$ y $f(b)$ (con $f(a)\neq f(b)$), entonces existe
 al menos un $c\in(a,b)$ tal que $f(c)=k$.
 \end{theorem}
+
+\begin{proof}[Esquema]
+Supóngase, sin pérdida de generalidad, $f(a)<k<f(b)$ (el otro caso es
+análogo con $-f$). Considérese el conjunto
+\[
+  S=\{x\in[a,b]:f(x)<k\}.
+\]
+$S$ es no vacío ($a\in S$) y está acotado superiormente por $b$, de modo que,
+por la \textbf{completitud de $\R$}, existe $c=\sup S\in[a,b]$. La continuidad
+de $f$ descarta las dos desigualdades estrictas: si fuese $f(c)<k$, por
+continuidad $f$ seguiría siendo $<k$ en un entorno de $c$, y habría puntos de
+$S$ mayores que $c$, contradiciendo que $c$ es cota superior; si fuese
+$f(c)>k$, por continuidad $f>k$ en un entorno de $c$, y $c-\eta$ sería cota
+superior de $S$ menor que $c$, contradiciendo que $c$ es la mínima. Por tanto
+$f(c)=k$, y como $f(a)\neq k\neq f(b)$, necesariamente $c\in(a,b)$.
+\end{proof}
 
 El TVI es un resultado de \emph{existencia}, no de construcción. Su
 demostración descansa sobre la \textbf{completitud de $\R$}: la ausencia de

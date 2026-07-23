@@ -208,6 +208,14 @@ $\lim_{n \to \infty} a_n = \lim_{n \to \infty} b_n = L$, entonces
 $\lim_{n \to \infty} c_n = L$.
 \end{theorem}
 
+\begin{proof}
+Sea $\varepsilon>0$. Por hipótesis existen $N_1,N_2$ tales que
+$|a_n-L|<\varepsilon$ para $n>N_1$ y $|b_n-L|<\varepsilon$ para $n>N_2$. Sea
+$N=\max(N_0,N_1,N_2)$. Para $n>N$ se tiene
+$L-\varepsilon<a_n\leq c_n\leq b_n<L+\varepsilon$, es decir,
+$|c_n-L|<\varepsilon$. Como $\varepsilon>0$ es arbitrario,
+$\lim_{n\to\infty}c_n=L$.
+\end{proof}
 
 \begin{example}
 Calcule $\displaystyle\lim_{n \to \infty} \frac{n\sen^2 n}{n^2+1}$ y
@@ -733,7 +741,7 @@ de modo que:
 \end{example}
 
 % ------------------------------------------------------------
-\subsection{Problemas propuestos — Sucesiones}
+\subsection{Problemas propuestos: Sucesiones}
 % ------------------------------------------------------------
 
 % Básico
@@ -1050,6 +1058,20 @@ Sean $\sum a_n$ y $\sum b_n$ con $a_n, b_n \geq 0$.
 \end{itemize}
 \end{theorem}
 
+\begin{proof}[Esquema]
+Para la \textbf{comparación directa}, sean $A_n=\sum_{k=1}^n a_k$ y
+$B_n=\sum_{k=1}^n b_k$ las sumas parciales. Al ser todos los términos no
+negativos, ambas sucesiones son no decrecientes. Si $\sum b_n$ converge,
+$\{B_n\}$ está acotada, y de $a_n\leq b_n$ (para $n\geq N$) se sigue que
+$\{A_n\}$ también está acotada; una sucesión no decreciente y acotada
+superiormente converge, luego $\sum a_n$ converge. La afirmación sobre
+divergencia es el contrarrecíproco. Para la \textbf{comparación en el límite},
+si $a_n/b_n\to L\in(0,\infty)$, existen constantes $0<c<C$ y un índice $N$
+tales que $c\,b_n\leq a_n\leq C\,b_n$ para $n\geq N$; aplicando la comparación
+directa en ambos sentidos se concluye que las dos series tienen la misma
+naturaleza.
+\end{proof}
+
 \begin{example}
 Estudie la convergencia de $\displaystyle\sum_{n=1}^\infty
 \frac{2n^2+1}{n^4-n+2}$.
@@ -1089,6 +1111,17 @@ Sea $a_n > 0$ y $L = \displaystyle\lim_{n\to\infty}\dfrac{a_{n+1}}{a_n}$.
   \item $L = 1 \implies$ inconcluso.
 \end{itemize}
 \end{theorem}
+
+\begin{proof}[Esquema]
+Supóngase $L<1$ y elíjase $r$ con $L<r<1$. Como $a_{n+1}/a_n\to L$, existe $N$
+tal que $a_{n+1}/a_n<r$ para $n\geq N$; iterando, $a_{N+k}<r^k a_N$. Así, la
+cola $\sum_{k\geq 0}a_{N+k}$ queda dominada por la serie geométrica convergente
+$a_N\sum_{k\geq 0} r^k$, y por comparación directa $\sum a_n$ converge. Si
+$L>1$, entonces $a_{n+1}>a_n$ a partir de cierto índice, de modo que $a_n\not\to
+0$ y la serie diverge por el criterio del término $n$-ésimo. El caso $L=1$ es
+inconcluso, como muestran $\sum 1/n$ (diverge) y $\sum 1/n^2$ (converge), ambas
+con $L=1$.
+\end{proof}
 
 \begin{theorem}[Criterio de la raíz — Cauchy]
 Sea $R = \displaystyle\lim_{n\to\infty}\sqrt[n]{|a_n|}$.
@@ -1357,7 +1390,7 @@ Como $\rho = 3/2 > 1$, la serie \textbf{converge}:
 \end{example}
 
 % ============================================================
-\subsection{Problemas propuestos — Series infinitas}
+\subsection{Problemas propuestos: Series infinitas}
 % ============================================================
 
 

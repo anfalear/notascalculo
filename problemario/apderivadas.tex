@@ -1454,6 +1454,15 @@ Si $f$ es continua en $[a,b]$, derivable en $(a,b)$ y $f(a)=f(b)$,
 entonces existe al menos un $c\in(a,b)$ tal que $f'(c)=0$.
 \end{lemma}
 
+\begin{proof}[Esquema]
+Por el Teorema del Valor Extremo de Weierstrass, $f$ alcanza en $[a,b]$ un
+máximo y un mínimo absolutos. Si ambos se alcanzan en los extremos, entonces
+$f$ es constante (pues $f(a)=f(b)$) y $f'(c)=0$ para todo $c\in(a,b)$. En caso
+contrario, al menos uno de los dos extremos absolutos se alcanza en un punto
+interior $c\in(a,b)$; siendo $f$ derivable allí, el Teorema de Fermat garantiza
+que $f'(c)=0$.
+\end{proof}
+
 El Teorema del Valor Medio generaliza esta idea eliminando la exigencia
 de que los extremos tengan la misma imagen: ahora se garantiza la
 existencia de un punto donde la pendiente de la tangente coincide con

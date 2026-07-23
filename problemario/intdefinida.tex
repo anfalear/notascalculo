@@ -273,6 +273,24 @@ F'(x) = \frac{d}{dx}\left[\int_{a}^{x} f(t)\,dt\right] = f(x).
 \]
 \end{theorem}
 
+\begin{proof}
+Fijemos $x\in(a,b)$. Para $h\neq 0$ suficientemente pequeño, por la
+aditividad de la integral,
+\[
+  F(x+h)-F(x)=\int_a^{x+h}f(t)\,dt-\int_a^{x}f(t)\,dt=\int_{x}^{x+h}f(t)\,dt.
+\]
+Como $f$ es continua en $x$, dado $\varepsilon>0$ existe $\delta>0$ tal que
+$|f(t)-f(x)|<\varepsilon$ siempre que $|t-x|<\delta$. Entonces, para
+$0<|h|<\delta$, usando que $\int_{x}^{x+h}f(x)\,dt=f(x)\,h$,
+\[
+  \left|\frac{F(x+h)-F(x)}{h}-f(x)\right|
+  =\left|\frac{1}{h}\int_{x}^{x+h}\bigl(f(t)-f(x)\bigr)\,dt\right|
+  \leq\frac{1}{|h|}\,|h|\,\varepsilon=\varepsilon.
+\]
+Como $\varepsilon>0$ es arbitrario, el límite del cociente incremental existe
+y vale $f(x)$, es decir, $F'(x)=f(x)$.
+\end{proof}
+
 El TFC1 afirma que la tasa de cambio instantánea del área acumulada bajo $f$ hasta el punto $x$ es exactamente el valor de $f$ en ese punto: si la función es grande en $x$, el área crece rápidamente; si es pequeña, crece despacio.
 
 \begin{example}[Derivada de una función de acumulación (TFC1)]
@@ -320,6 +338,19 @@ Si $f$ es continua en $[a,b]$ y $G$ es \textbf{cualquier antiderivada} de $f$ en
 \int_{a}^{b} f(x)\,dx = G(b) - G(a) \;=\; \Big[G(x)\Big]_{a}^{b}.
 \]
 \end{theorem}
+
+\begin{proof}
+Sea $F(x)=\int_a^x f(t)\,dt$ la función de acumulación. Por el TFC1,
+$F'(x)=f(x)$, de modo que $F$ es una antiderivada de $f$ en $[a,b]$. Si $G$ es
+cualquier otra antiderivada, entonces $(G-F)'=f-f=0$ en $(a,b)$, y una función
+con derivada nula en un intervalo es constante; luego $G(x)=F(x)+C$ para alguna
+constante $C$. Evaluando en los extremos y restando, la constante se cancela:
+\[
+  G(b)-G(a)=\bigl(F(b)+C\bigr)-\bigl(F(a)+C\bigr)=F(b)-F(a)
+  =\int_a^b f(t)\,dt-\int_a^a f(t)\,dt=\int_a^b f(x)\,dx,
+\]
+pues $\int_a^a f=0$.
+\end{proof}
 
 Este teorema transforma el cálculo de áreas en un problema algebraico: basta hallar una antiderivada de $f$ y evaluar la diferencia en los extremos. La notación $\Big[G(x)\Big]_a^b$ es estándar y representa $G(b) - G(a)$.
 

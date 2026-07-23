@@ -435,9 +435,9 @@ Mínimo 15 propuestos por capítulo, máximo 40; graduación 25/50/25 con tags. 
 | F9C1.35 | `sucesionesyseriesfunciones.tex` | 12 center | Completado | 2026-07-23 | 12 center→figure anclados por título de `example` (puntual/uniforme, colapso rectas, pico viajero, intercambio derivada, criterio-M, geométrica compactos, Weierstrass, radios canónicos, derivación geométrica, serie logarítmica, aplicaciones, suave no analítica). |
 | F9C1.36 | `sucesionesyseriesfunciones.tex` | 2 figuras R2 nuevas | Completado | 2026-07-23 | `fig:ssf_banda_uniforme` (fₙ atrapada en banda $2\varepsilon$, tras la rem de cuantificadores) y `fig:ssf_radio_recta` (recta con zonas converge/diverge/analizar aparte + llave $R$, tras el teo. de Cauchy-Hadamard). |
 | F9C1.37 | `sucesionesyseriesfunciones.tex` | Banco 48: decisión + tags ×4 subsecciones | Completado | 2026-07-23 | 48 prob en 4 subsecciones (18/12/12/6) tagueados: Suc. func. 3B/8I/7D, Ser. func. 1B/7I/4D, Ser. pot. 1B/6I/5D, Complementos 0B/3I/3D. **Decisión F9C1.02 (exceso) ya resuelta estructuralmente** por la partición E4 en 4 subsecciones — ninguna excede la cuota. |
-| F9C1.38 | 12 archivos | Headings unificados | Pendiente | — | — |
-| F9C1.39 | bloque C1/C2 | Auditoría R3 centrales | Pendiente | — | — |
-| F9C1.40 | maestro | Compilación + re-inventario | Pendiente | — | — |
+| F9C1.38 | 12 archivos | Headings unificados | Completado | 2026-07-23 | Todos ya en `\section{Problemas propuestos}` (minúscula) tras los lotes previos; grep de `Propuest` con P mayúscula = 0. Única normalización: separador de subsección en sucesionesyseries `—`→`:` (para casar con ssfunciones). |
+| F9C1.39 | bloque C1/C2 | Auditoría R3 centrales | Completado | 2026-07-23 | Audit por script (`audit_r3.py`). **8 esquemas/pruebas añadidos** a centrales sin prueba: TFC1 y TFC2 (intdefinida, vía continuidad y vía TFC1+constante), sándwich (limites, ε-δ), TVI (limites, esquema por completitud/sup), Rolle (apderivadas, vía Weierstrass+Fermat), emparedado de sucesiones + comparación directa/límite + criterio del cociente (sucesionesyseries), criterio-M de Weierstrass + Cauchy-Hadamard (ssfunciones). Ver tabla R3 en Notas. TVM de Lagrange ya estaba demostrado (ejemplo vía Rolle). |
+| F9C1.40 | maestro | Compilación + re-inventario | Completado | 2026-07-23 | Re-inventario (`reinv.py`/`reinv2.py`): **0 tikz fuera de figure, 0 myproof huérfanos, 0 headings con variante** en los 12 archivos; los `center` residuales envuelven tablas (uso correcto). Compilación: 2 pasadas lualatex, 0 errores, **830 pp**, 0 warnings de referencia. |
 
 **Total: 40 ítems** (38 núcleo + 2 de preliminares sujetos a decisión de alcance).
 
@@ -451,3 +451,23 @@ Mínimo 15 propuestos por capítulo, máximo 40; graduación 25/50/25 con tags. 
 - Cada resuelto nuevo (elevaciones) se presenta al autor antes de escribirlo al archivo.
 - Los excesos de banco (limites, sucfun) no se recortan sin la decisión F9C1.02 cerrada.
 - La matemática está verificada (Fases 1–5, V1–V4): este plan no re-deriva resultados; cualquier inconsistencia detectada se registra y escala.
+
+### Tabla R3 — tratamiento de teoremas centrales (F9C1.39, 2026-07-23)
+
+| Teorema central | Archivo | Estado |
+|---|---|---|
+| Unicidad del límite | limites, sucesionesyseries | Ya demostrado (proof) |
+| Del encaje / sándwich | limites | **Prueba añadida** (ε-δ) |
+| Teorema del Valor Intermedio | limites | **Esquema añadido** (completitud, sup) |
+| Lema de Rolle | apderivadas | **Esquema añadido** (Weierstrass + Fermat) |
+| Valor Medio de Lagrange | apderivadas | Ya demostrado (ejemplo vía Rolle) |
+| TFC1 | intdefinida | **Prueba añadida** (continuidad, cociente incremental) |
+| TFC2 | intdefinida | **Prueba añadida** (vía TFC1 + constante) |
+| Teorema del emparedado (sucesiones) | sucesionesyseries | **Prueba añadida** (ε) |
+| Comparación directa y en el límite | sucesionesyseries | **Esquema añadido** (sumas parciales acotadas) |
+| Criterio del cociente (D'Alembert) | sucesionesyseries | **Esquema añadido** (dominación geométrica) |
+| Criterio-$M$ de Weierstrass | sucesionesyseriesfunciones | **Esquema añadido** (cola uniforme) |
+| Radio de convergencia (Cauchy-Hadamard) | sucesionesyseriesfunciones | **Esquema añadido** (criterio raíz + criterio-M) |
+| Leyes de límites / derivación / integración, identidades trig, TVM para integrales, Leibniz, Raabe, Dini, Borel | varios | Enunciado (referencia — no centrales o de prueba extensa fuera de alcance) |
+
+**F9C1 COMPLETO: 40/40 ítems (2026-07-23).**

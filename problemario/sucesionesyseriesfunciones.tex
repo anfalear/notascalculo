@@ -672,6 +672,22 @@ $\sum_{n=1}^\infty u_n(x)$ converge \textbf{absoluta y uniformemente}
 en $X$.
 \end{theorem}
 
+\begin{proof}[Esquema]
+Para cada $x\in X$ fijo, $\sum|u_n(x)|\leq\sum M_n<\infty$, de modo que la serie
+converge absolutamente (comparación directa); llamemos $S(x)$ a su suma. Falta
+ver que la convergencia de las sumas parciales $S_N(x)=\sum_{n=1}^N u_n(x)$ es
+\emph{uniforme}. Para todo $x\in X$ y $N\geq 1$,
+\[
+  |S(x)-S_N(x)|=\Bigl|\sum_{n>N}u_n(x)\Bigr|
+  \leq\sum_{n>N}|u_n(x)|\leq\sum_{n>N}M_n.
+\]
+La cota de la derecha \textbf{no depende de $x$} y es la cola de una serie
+numérica convergente, por lo que tiende a $0$ cuando $N\to\infty$. Así, dado
+$\varepsilon>0$ existe $N_0$ (común a todos los $x$) tal que
+$\sup_{x\in X}|S(x)-S_N(x)|<\varepsilon$ para $N\geq N_0$, que es precisamente
+la convergencia uniforme.
+\end{proof}
+
 \begin{rem}
 El criterio-$M$ es el caballo de batalla para establecer convergencia
 uniforme en series de funciones. Su elegancia reside en que reduce
@@ -1115,6 +1131,25 @@ Además, la convergencia es \textbf{uniforme} en todo subintervalo
 compacto $[c-r, c+r]$ con $0 < r < R$. La
 Figura~\ref{fig:ssf_radio_recta} resume el panorama sobre la recta real.
 \end{theorem}
+
+\begin{proof}[Esquema]
+Escríbase $\alpha=\limsup_{n\to\infty}|a_n|^{1/n}$ y $R=1/\alpha$ (con las
+convenciones $R=\infty$ si $\alpha=0$ y $R=0$ si $\alpha=\infty$). Aplicando el
+\textbf{criterio de la raíz} a $\sum|a_n(x-c)^n|$,
+\[
+  \limsup_{n\to\infty}\bigl|a_n(x-c)^n\bigr|^{1/n}
+  =|x-c|\,\limsup_{n\to\infty}|a_n|^{1/n}=\frac{|x-c|}{R}.
+\]
+Si $|x-c|<R$ este límite superior es $<1$ y la serie converge absolutamente; si
+$|x-c|>R$ es $>1$ y el término general no tiende a $0$, luego diverge. Esto
+prueba (1) y (2), y muestra que $R$ es único. Para la convergencia uniforme en
+$[c-r,c+r]$ con $r<R$: para $|x-c|\leq r$ se tiene
+$|a_n(x-c)^n|\leq|a_n|r^n=:M_n$, y como $r<R$ la serie $\sum M_n$ converge (por
+lo ya demostrado en el punto interior $x=c+r$); el \textbf{criterio-$M$} de
+Weierstrass da entonces la convergencia uniforme. El comportamiento en los
+extremos $x=c\pm R$ no queda determinado por este argumento y exige análisis
+separado.
+\end{proof}
 
 \begin{figure}[H]
 \centering
