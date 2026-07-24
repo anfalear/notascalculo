@@ -1,0 +1,175 @@
+\begin{theindex}
+
+  \item base (espacio vectorial), \hyperpage{355}
+    \subitem invariancia del número de elementos, \hyperpage{357}
+    \subitem ortogonal, expansión, \hyperpage{379}
+    \subitem teorema de la base incompleta, \hyperpage{357}
+    \subitem unicidad de representación, \hyperpage{356}
+  \item bola unitaria, \hyperpage{373}
+
+  \indexspace
+
+  \item Cauchy-Schwarz, desigualdad de, \hyperpage{375}
+    \subitem consecuencias, \hyperpage{375}
+  \item Cayley-Hamilton, teorema de, \hyperpage{519}
+  \item combinación lineal, \hyperpage{307}, \hyperpage{352}
+  \item complemento ortogonal, \hyperpage{377}
+    \subitem propiedades, \hyperpage{377}
+  \item conjunto ortogonal y ortonormal, \hyperpage{379}
+  \item Cramer, regla de, \hyperpage{317}
+
+  \indexspace
+
+  \item De Moivre, teorema de, \hyperpage{33}
+  \item descomposición ortogonal, \hyperpage{380}
+  \item determinante, \hyperpage{276}
+    \subitem expansión por cofactores, \hyperpage{279}
+    \subitem propiedades, \hyperpage{282}
+  \item dimensión (espacio vectorial), \hyperpage{357}
+    \subitem de subespacios, \hyperpage{357}
+    \subitem propiedades, \hyperpage{357}
+
+  \indexspace
+
+  \item espacio vectorial, \hyperpage{345}
+    \subitem dimensión finita, \hyperpage{355}
+  \item espacios fundamentales, \hyperpage{358}
+    \subitem base del espacio columna, \hyperpage{359}
+    \subitem caracterización de consistencia, \hyperpage{359}
+    \subitem invariancia bajo operaciones fila, \hyperpage{359}
+    \subitem relaciones fundamentales (producto interno), 
+		\hyperpage{378}
+    \subitem teorema fundamental, \hyperpage{360}
+  \item Euler, fórmula de, \hyperpage{30}, \hyperpage{388}
+
+  \indexspace
+
+  \item forma escalonada, \hyperpage{270}
+  \item forma escalonada reducida, \hyperpage{271}
+    \subitem unicidad, \hyperpage{273}
+
+  \indexspace
+
+  \item grafo dirigido, \hyperpage{265}
+  \item Gram-Schmidt, proceso de, \hyperpage{380}
+
+  \indexspace
+
+  \item independencia lineal, \hyperpage{354}
+    \subitem test, \hyperpage{354}
+  \item isomorfismo, \hyperpage{540}
+    \subitem con $\mathbb{R}^n$, \hyperpage{540}
+
+  \indexspace
+
+  \item Jordan, forma canónica de, \hyperpage{515}
+    \subitem bloque, \hyperpage{515}
+
+  \indexspace
+
+  \item lema de intercambio, \hyperpage{356}
+
+  \indexspace
+
+  \item matrices equivalentes por filas, \hyperpage{270}
+  \item matriz, \hyperpage{263}
+    \subitem adjunta, \hyperpage{284}
+    \subitem antisimétrica, \hyperpage{267}
+    \subitem de adyacencia, \hyperpage{265}
+    \subitem de cambio de base, \hyperpage{358}
+    \subitem diagonal, \hyperpage{266}
+    \subitem diagonalizable, \hyperpage{513}
+      \subsubitem condición, \hyperpage{513}
+    \subitem elemental, \hyperpage{269}
+    \subitem invertible, \hyperpage{268}
+      \subsubitem caracterización, \hyperpage{274}, \hyperpage{284}, 
+		\hyperpage{315}, \hyperpage{361}, \hyperpage{519}
+    \subitem multiplicación, \hyperpage{263}
+    \subitem multiplicación por escalar, \hyperpage{263}
+    \subitem simétrica, \hyperpage{267}
+    \subitem suma, \hyperpage{263}
+    \subitem transpuesta, \hyperpage{264}
+    \subitem triangular, \hyperpage{267}
+  \item menor (matriz), \hyperpage{278}
+  \item mínimos cuadrados, \hyperpage{383}
+    \subitem ecuaciones normales, \hyperpage{383}
+    \subitem mejor aproximación, \hyperpage{383}
+    \subitem solución única, \hyperpage{385}
+
+  \indexspace
+
+  \item norma inducida, \hyperpage{373}
+  \item número complejo, \hyperpage{27}
+    \subitem forma polar, \hyperpage{30}
+      \subsubitem multiplicación y división, \hyperpage{30}
+    \subitem módulo y argumento, \hyperpage{30}
+    \subitem operaciones básicas, \hyperpage{27}
+    \subitem propiedades de campo, \hyperpage{27}
+
+  \indexspace
+
+  \item operaciones elementales de fila, \hyperpage{268}
+  \item ortogonalidad, \hyperpage{374}
+
+  \indexspace
+
+  \item Pitágoras, teorema de, \hyperpage{376}
+  \item polinomio
+    \subitem raíces conjugadas, \hyperpage{35}
+    \subitem raíz, \hyperpage{34}
+  \item producto interno, \hyperpage{373}
+    \subitem complejo, \hyperpage{374}
+    \subitem propiedades (complejo), \hyperpage{374}
+  \item proyección ortogonal, \hyperpage{379}
+
+  \indexspace
+
+  \item rango de una matriz, \hyperpage{273}
+    \subitem propiedades, \hyperpage{273}
+  \item rango-nulidad, teorema del, \hyperpage{359}
+  \item regla de Sarrus, \hyperpage{280}
+  \item Rouché-Frobenius, teorema de, \hyperpage{313}
+
+  \indexspace
+
+  \item serie de Fourier, \hyperpage{387}
+  \item sistema de ecuaciones lineales, \hyperpage{308}
+    \subitem homogéneo, \hyperpage{308}
+      \subsubitem propiedades, \hyperpage{316}
+    \subitem tipos de solución, \hyperpage{308}
+  \item subespacio generado, \hyperpage{352}
+    \subitem propiedad minimal, \hyperpage{352}
+  \item subespacio vectorial, \hyperpage{348}
+    \subitem intersección finita, \hyperpage{350}
+    \subitem test, \hyperpage{348}
+
+  \indexspace
+
+  \item teorema fundamental del álgebra, \hyperpage{34}
+  \item transformación lineal, \hyperpage{533}
+    \subitem composición, \hyperpage{539}
+    \subitem inversa, \hyperpage{540}
+    \subitem inyectiva, \hyperpage{537}
+    \subitem kernel e imagen, \hyperpage{535}
+    \subitem matriz asociada, \hyperpage{542}
+    \subitem rango y nulidad, \hyperpage{536}
+    \subitem sobreyectiva, \hyperpage{537}
+    \subitem teorema de la dimensión, \hyperpage{537}
+  \item traza de una matriz, \hyperpage{267}
+    \subitem propiedades, \hyperpage{267}
+
+  \indexspace
+
+  \item valores y vectores propios, \hyperpage{507}
+    \subitem caracterización, \hyperpage{508}
+    \subitem multiplicidad algebraica y geométrica, \hyperpage{508}
+    \subitem potencias, \hyperpage{509}
+  \item variables básicas y libres, \hyperpage{312}
+  \item vector de coordenadas, \hyperpage{356}
+
+  \indexspace
+
+  \item Wronskiano, \hyperpage{355}
+    \subitem criterio, \hyperpage{355}
+
+\end{theindex}

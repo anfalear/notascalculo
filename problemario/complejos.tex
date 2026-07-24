@@ -4,7 +4,7 @@ Los números complejos son una extensión de los números reales que surgieron d
 
 \section{Propiedades básicas}
 
-\begin{definition}[Número complejo]
+\begin{definition}[Número complejo]\index{número complejo}
 Un número complejo es un número de la forma $$z=x+iy$$ donde $x$ y $y$ son números reales e $i$ es la unidad imaginaria definida como $i^2=-1$. El valor $x$ se denomina \textbf{parte real} y el valor $y$ \textbf{parte imaginaria}. El conjunto de todos los números complejos se denota por $\mathbb{C}$.
 \end{definition}
 
@@ -14,7 +14,7 @@ En ingeniería, la unidad imaginaria suele representarse como $j$ en lugar de $i
 
 En este capítulo se estudiarán las propiedades básicas de los números complejos y su representación geométrica en el plano complejo. Se inicia con la definición de las operaciones básicas:
 
-\begin{definition}[Operaciones básicas]
+\begin{definition}[Operaciones básicas]\index{número complejo!operaciones básicas}
 Sean $z_1=x_1+iy_1$ y $z_2=x_2+iy_2$ números complejos, se definen:
 \begin{itemize}
 \item \textbf{Suma:} $z_1+z_2=\left( x_1+x_2 \right) + i\left( y_1+y_2 \right)$.
@@ -25,7 +25,7 @@ Sean $z_1=x_1+iy_1$ y $z_2=x_2+iy_2$ números complejos, se definen:
 
 Estas operaciones dotan a los números complejos de la estructura de \textbf{campo}, fundamental para espacios vectoriales (ver Definición \ref{defespvectorial}). La demostración de las siguientes propiedades se propone como ejercicio.
 
-\begin{theorem}[Propiedades de campo de los números complejos]
+\begin{theorem}[Propiedades de campo de los números complejos]\index{número complejo!propiedades de campo}
 Sean $z_1,z_2$ y $z_3 \in \mathbb{C}$, entonces:
 \begin{enumerate}[$1.$]
 \item \textbf{Cerradura bajo la suma y la multiplicación:} $z_1+z_2$ y $z_1z_2$ $\in \mathbb{C}$.
@@ -179,7 +179,7 @@ ytick={-4.0,-3.0,...,1.0},]
 
 Haciendo uso de las coordenadas polares, podemos obtener otra representación del número complejo $z$:
 
-\begin{definition}[Módulo y argumento]\label{modnumcom}
+\begin{definition}[Módulo y argumento]\label{modnumcom}\index{número complejo!módulo y argumento}
 Sea $z=x+iy$ un número complejo, y $P$ el punto en el plano cartesiano que lo representa. El \textbf{módulo} de $z$, denotado por $\abs{z}$, es la distancia desde el origen $O$ hasta el punto $P$, dado por $\abs{z}=\sqrt{x^2+y^2}$. El \textbf{argumento} de $z$, denotado por $\text{arg}(z)$, es el ángulo medido desde la parte positiva del eje real hasta el segmento $\overline{OP}$. Aunque el argumento puede tomar cualquier valor que difiera en múltiplos de $2\pi$, se suele considerar el \textbf{argumento principal} en el intervalo $[0,2\pi)$.
 \end{definition}
 
@@ -212,18 +212,18 @@ La Figura~\ref{fig:modulo_argumento} ilustra ambas cantidades: el módulo mide l
 
 Antes de presentar la forma polar, introducimos una de las fórmulas más importantes en matemáticas, cuya demostración se hará en el Teorema \ref{demformeuler}.
 
-\begin{theorem}[Fórmula de Euler]\label{formeuler} Para cualquier número real $\theta$:
+\begin{theorem}[Fórmula de Euler]\label{formeuler}\index{Euler, fórmula de} Para cualquier número real $\theta$:
 $$\mathrm{e}^{i\theta}=\cos \theta + i \sen \theta.$$
 \end{theorem}
 
-\begin{definition}[Forma polar] 
+\begin{definition}[Forma polar]\index{número complejo!forma polar}
 Sea $z=x+iy$ un número complejo con módulo $\abs{z}$ y argumento $\theta=\text{arg}(z)$. La forma polar de $z$ se expresa como:
 $$z=\abs{z}\mathrm{e}^{i\theta}.$$
 \end{definition}
 
 Una ventaja significativa de la forma polar es la simplificación de las operaciones de multiplicación y división:
 
-\begin{theorem}[Multiplicación y división en forma polar]
+\begin{theorem}[Multiplicación y división en forma polar]\index{número complejo!forma polar!multiplicación y división}
 Sean $z_1=\abs{z_1}\mathrm{e}^{i\theta_1}$ y $z_2=\abs{z_2}\mathrm{e}^{i\theta_2}$ números complejos. Entonces:
 \begin{enumerate}[$1.$]
 \item $z_1z_2=\abs{z_1}\abs{z_2}\mathrm{e}^{i(\theta_1 + \theta_2)}.$
@@ -398,7 +398,7 @@ Esto corresponde a todos los puntos del plano complejo cuya distancia al origen 
 
 De la multiplicación de números complejos en forma polar se derivan las siguientes propiedades importantes:
 
-\begin{theorem}[Potencias y raíces enésimas de un número complejo]\label{thm:cap02:demoivre} Sea $z=\abs{z}\mathrm{e}^{i\theta}$ un número complejo y $n$ un entero positivo, entonces:
+\begin{theorem}[Potencias y raíces enésimas de un número complejo]\label{thm:cap02:demoivre}\index{De Moivre, teorema de} Sea $z=\abs{z}\mathrm{e}^{i\theta}$ un número complejo y $n$ un entero positivo, entonces:
 \begin{enumerate}[$1.$]
 \item $z^{n}=\abs{z}^n\mathrm{e}^{in\theta}$.
 \item \textbf{Fórmula de De Moivre:} $\sqrt[n]{z}=\sqrt[n]{\abs{z}}\cdot \mathrm{e}^{i\frac{\theta+2k\pi}{n}}$ donde $k=0,1,\dots , n-1$.
@@ -491,13 +491,13 @@ La fórmula de De Moivre revela la geometría de las raíces: las $n$ raíces $n
 
 \section{Teorema Fundamental del Álgebra}
 
-\begin{definition}[Raíz de un polinomio] 
+\begin{definition}[Raíz de un polinomio]\index{polinomio!raíz}
 Sea $p(z)$ un polinomio con coeficientes complejos. Diremos que $\alpha \in \mathbb{C}$ es una raíz de $p(z)$ si $p(\alpha)=0$. Es decir, $\alpha$ es una solución de la ecuación polinómica $p(z)=0$.
 \end{definition}
 
 El cálculo de las raíces de un polinomio puede ser un problema muy difícil y se estudia ampliamente en matemáticas, en una rama llamada análisis numérico. Debido a los alcances de este curso, se tratarán polinomios especiales con coeficientes complejos (que incluyen los de coeficientes reales como caso particular) para los cuales sea fácil calcular su factorización. Sin embargo, el siguiente teorema no distingue el tipo de polinomio a estudiar. Este teorema es un resultado muy importante demostrado, entre otros, por \textbf{Carl Friedrich Gauss} (1777--1855), un célebre matemático alemán que nombraremos bastante en este curso.
 
-\begin{theorem}[Teorema Fundamental del Álgebra]\label{tfam}
+\begin{theorem}[Teorema Fundamental del Álgebra]\label{tfam}\index{teorema fundamental del álgebra}
 Todo polinomio no constante $p(z)$ de grado $n \geq 1$ con coeficientes complejos tiene exactamente $n$ raíces en $\mathbb{C}$, contando sus multiplicidades algebraicas.
 \end{theorem}
 
@@ -575,7 +575,7 @@ $z_1 = e^{i\frac{\pi}{8}},$ $z_2 = e^{i\frac{5\pi}{8}},$ $z_3 = e^{i\frac{9\pi}{
 
 Cuando el polinomio tiene coeficientes reales, sus raíces complejas no aparecen de cualquier manera: lo hacen en parejas conjugadas.
 
-\begin{theorem}[Raíces conjugadas de un polinomio real]\label{thm:cap02:raicesconjugadas}
+\begin{theorem}[Raíces conjugadas de un polinomio real]\label{thm:cap02:raicesconjugadas}\index{polinomio!raíces conjugadas}
 Sea $p(x)=a_nx^n+\cdots+a_1x+a_0$ un polinomio con coeficientes reales. Si $\alpha \in \mathbb{C}$ es una raíz de $p(x)$, entonces su conjugado $\overline{\alpha}$ también es una raíz de $p(x)$.
 \end{theorem}
 

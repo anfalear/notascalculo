@@ -4,7 +4,7 @@ Algunos espacios vectoriales poseen una propiedad particular llamada producto in
 
 \section{Producto interno}
 
-\begin{definition}[Espacio vectorial con producto interno]
+\begin{definition}[Espacio vectorial con producto interno]\index{producto interno}
 Sea $V$ un espacio vectorial real (Definición \ref{defespvectorial}). Un \textbf{producto interno} es una función $\langle \cdot, \cdot \rangle: V \times V \to \mathbb{R}$ que satisface:
 \begin{enumerate}[$1.$]
     \item $\langle \mathbf{u},\mathbf{v} \rangle = \langle \mathbf{v},\mathbf{u} \rangle$ (Simetría)
@@ -37,12 +37,12 @@ $$\boxed{\langle \mathbf{u}, \mathbf{v} \rangle = u_1v_1 + u_2v_2 \text{ define 
 En $\mathbb{R}^2$, la función $\langle \mathbf{u}, \mathbf{v} \rangle = 2u_1v_1 + 3u_2v_2$ para $\mathbf{u} = (u_1, u_2)$, $\mathbf{v} = (v_1, v_2)$ define un producto interno. La verificación de axiomas es análoga al ejemplo anterior.
 \end{example}
 
-\begin{definition}[Norma inducida]
+\begin{definition}[Norma inducida]\index{norma inducida}
 Dado $V$ con producto interno, la \textbf{norma inducida} de $\mathbf{u} \in V$ está dada por \(\|\mathbf{u}\| = \sqrt{\langle \mathbf{u}, \mathbf{u} \rangle}
 .\)
 \end{definition}
 
-\begin{definition}[Bola unitaria]
+\begin{definition}[Bola unitaria]\index{bola unitaria}
 La \textbf{bola unitaria} de $V$ es el conjunto \(
 \mathcal{B}_V = \{ \mathbf{x} \in V : \|\mathbf{x}\| = 1 \}.\)
 \begin{itemize}
@@ -59,7 +59,7 @@ La \textbf{bola unitaria} de $V$ es el conjunto \(
 \end{enumerate}
 \end{rem}
 
-\begin{definition}[Producto interno en espacios vectoriales complejos]
+\begin{definition}[Producto interno en espacios vectoriales complejos]\index{producto interno!complejo}
 Sea $V$ un espacio vectorial complejo. Un \textit{producto interno} es una función $\langle \cdot, \cdot \rangle: V \times V \to \mathbb{C}$ que satisface:
 \begin{enumerate}[$1.$]
     \item $\langle \mathbf{u}, \mathbf{v} \rangle = \overline{\langle \mathbf{v}, \mathbf{u} \rangle}$ (Simetría conjugada)
@@ -69,7 +69,7 @@ Sea $V$ un espacio vectorial complejo. Un \textit{producto interno} es una funci
 \end{enumerate}
 \end{definition}
 
-\begin{theorem}[Propiedades del producto interno en espacios vectoriales complejos]
+\begin{theorem}[Propiedades del producto interno en espacios vectoriales complejos]\index{producto interno!propiedades (complejo)}
 Sea $V$ un espacio vectorial complejo con producto interno. Para todo $\mathbf{u}, \mathbf{v} \in V$ y $k \in \mathbb{C}$ se cumple que $\langle \mathbf{u}, k\mathbf{v} \rangle = \overline{k} \langle \mathbf{u}, \mathbf{v} \rangle$ (Conjugación en la segunda variable)
 \end{theorem}
 
@@ -104,7 +104,7 @@ $$\boxed{\langle \mathbf{u}, \mathbf{v} \rangle = \sum_{k=1}^n u_k \overline{v_k
 
 \section{Norma, ángulo y desigualdad de Cauchy-Schwarz}
 
-\begin{definition}[Ortogonalidad y ángulo]
+\begin{definition}[Ortogonalidad y ángulo]\index{ortogonalidad}
 Sea $V$ un espacio vectorial con producto interno real, entonces 
 \begin{itemize}
     \item $\mathbf{u}$ y $\mathbf{v}$ son \textit{ortogonales} ($\mathbf{u} \perp \mathbf{v}$) si $\langle \mathbf{u}, \mathbf{v} \rangle = 0$
@@ -127,7 +127,7 @@ $$\boxed{\langle \cos x,\, \sen x \rangle = 0,\quad \cos x \perp \sen x \text{ e
 \end{example}
 
 
-\begin{theorem}[Desigualdad de Cauchy-Schwarz]\label{thm:cap07:cauchy-schwarz}
+\begin{theorem}[Desigualdad de Cauchy-Schwarz]\label{thm:cap07:cauchy-schwarz}\index{Cauchy-Schwarz, desigualdad de}
 Sea $V$ un espacio vectorial con producto interno real y sean $\mathbf{u}, \mathbf{v} \in V$. Entonces:
 \[
 |\langle \mathbf{u}, \mathbf{v} \rangle| \leq \|\mathbf{u}\| \cdot \|\mathbf{v}\|
@@ -156,7 +156,7 @@ La igualdad se cumple cuando el discriminante es cero, lo que ocurre si y solo s
 \end{proof}
 \end{theorem}
 
-\begin{theorem}[Consecuencias de Cauchy-Schwarz]
+\begin{theorem}[Consecuencias de Cauchy-Schwarz]\index{Cauchy-Schwarz, desigualdad de!consecuencias}
 En un espacio vectorial real con producto interno:
 \begin{enumerate}
     \item \textbf{Desigualdad triangular:} $\|\mathbf{u} + \mathbf{v}\| \leq \|\mathbf{u}\| + \|\mathbf{v}\|$
@@ -185,7 +185,7 @@ En un espacio vectorial real con producto interno:
 \end{enumerate}
 \end{theorem}
 
-\begin{theorem}[Teorema de Pitágoras]
+\begin{theorem}[Teorema de Pitágoras]\index{Pitágoras, teorema de}
 Si $\mathbf{u} \perp \mathbf{v}$ en un espacio vectorial con producto interno real, entonces \(
 \|\mathbf{u} + \mathbf{v}\|^2 = \|\mathbf{u}\|^2 + \|\mathbf{v}\|^2
 .\)
@@ -255,14 +255,14 @@ donde $\theta$ es el ángulo entre $\mathbf{u}$ y $\mathbf{v}$.
 
 \section{Ortogonalidad y complemento ortogonal}
 
-\begin{definition}[Complemento ortogonal]
+\begin{definition}[Complemento ortogonal]\index{complemento ortogonal}
 Sea $W$ un subespacio de un espacio vectorial $V$ con producto interno. El \textbf{complemento ortogonal} de $W$, denotado $W^\perp$, es el conjunto:
 \[
 W^\perp = \{ \mathbf{v} \in V : \langle \mathbf{v}, \mathbf{w} \rangle = 0 \ \forall \mathbf{w} \in W \}
 \]
 \end{definition}
 
-\begin{theorem}[Propiedades del complemento ortogonal]
+\begin{theorem}[Propiedades del complemento ortogonal]\index{complemento ortogonal!propiedades}
 Sea $W$ un subespacio vectorial de $V$ (espacio vectorial con producto interno real). Entonces:
 \begin{enumerate}
     \item $W^\perp$ es subespacio vectorial de $V$
@@ -313,7 +313,7 @@ Por tanto, $\dim W^\perp = n - \dim W$.
 \end{enumerate}
 \end{proof}
 
-\begin{theorem}[Relaciones fundamentales para una matriz]
+\begin{theorem}[Relaciones fundamentales para una matriz]\index{espacios fundamentales!relaciones fundamentales (producto interno)}
 Sea $A$ una matriz $m \times n$ con entradas reales. Entonces:
 \begin{enumerate}
     \item $\mathcal{N}(A) = (\mathcal{R}(A))^\perp$ en $\mathbb{R}^n$
@@ -366,7 +366,7 @@ $$\boxed{W^\perp = \operatorname{span}\!\left\{ \begin{pmatrix} -2 \\ 7/2 \\ 1 \
 
 \section{Bases ortogonales y proceso de Gram-Schmidt}
 
-\begin{definition}[Conjunto ortogonal y ortonormal]
+\begin{definition}[Conjunto ortogonal y ortonormal]\index{conjunto ortogonal y ortonormal}
 Un conjunto $S = \{ \mathbf{v}_1, \dots, \mathbf{v}_k \}$ en $V$ (con producto interno) es \textbf{ortogonal} si $\langle \mathbf{v}_i, \mathbf{v}_j \rangle = 0$ para $i \neq j$ y es \textbf{ortonormal} si es ortogonal y $\|\mathbf{v}_i\| = 1$ para todo $i.$
 \end{definition}
 
@@ -387,7 +387,7 @@ c_j \langle \mathbf{v}_j, \mathbf{v}_j \rangle = c_j \|\mathbf{v}_j\|^2 = 0
 \end{proof}
 
 
-\begin{definition}[Proyección ortogonal]
+\begin{definition}[Proyección ortogonal]\index{proyección ortogonal}
 Sea $V$ espacio vectorial con producto interno real y $\mathbf{u}, \mathbf{v} \in V$ con $\mathbf{v} \neq \mathbf{0}$. La \textbf{proyección ortogonal} de $\mathbf{u}$ sobre $\mathbf{v}$ es: \(
 \operatorname{proy}_{\mathbf{v}} \mathbf{u} = \frac{\langle \mathbf{u}, \mathbf{v} \rangle}{\|\mathbf{v}\|^2} \mathbf{v}
 \)
@@ -413,7 +413,7 @@ Sea $V$ espacio vectorial con producto interno real y $\mathbf{u}, \mathbf{v} \i
 \label{fig:proyeccion_ortogonal}
 \end{figure}
 
-\begin{theorem}[Expansión en base ortogonal]
+\begin{theorem}[Expansión en base ortogonal]\index{base (espacio vectorial)!ortogonal, expansión}
 Sea $S = \{ \mathbf{v}_1, \dots, \mathbf{v}_n \}$ una base ortogonal de $V$ (espacio vectorial con producto interno real). Para todo $\mathbf{u} \in V$ \(
 \mathbf{u} = \sum_{i=1}^n \operatorname{proy}_{\mathbf{v}_i} \mathbf{u} = \sum_{i=1}^n \frac{\langle \mathbf{u}, \mathbf{v}_i \rangle}{\|\mathbf{v}_i\|^2} \mathbf{v}_i
 \)
@@ -442,7 +442,7 @@ Sustituyendo en la combinación lineal:\(
 \end{proof}
 \end{theorem}
 
-\begin{theorem}[Descomposición ortogonal]
+\begin{theorem}[Descomposición ortogonal]\index{descomposición ortogonal}
 Sea $W$ subespacio de dimensión finita de $V$ (espacio vectorial con producto interno real). Para todo $\mathbf{u} \in V$, existen únicos $\mathbf{w} \in W$ y $\mathbf{w}^\perp \in W^\perp$ tales que:
 \[
 \mathbf{u} = \mathbf{w} + \mathbf{w}^\perp
@@ -477,7 +477,7 @@ Pero $\langle \mathbf{w}, \mathbf{v}_i \rangle = \langle \mathbf{u} - \mathbf{w}
 \end{proof}
 \end{theorem}
 
-\begin{theorem}[Proceso de Gram-Schmidt]\label{thm:cap07:gram-schmidt}
+\begin{theorem}[Proceso de Gram-Schmidt]\label{thm:cap07:gram-schmidt}\index{Gram-Schmidt, proceso de}
 Todo espacio vectorial de dimensión finita con producto interno posee una base ortogonal.
 \begin{proof}
 Sea $\{ \mathbf{u}_1, \dots, \mathbf{u}_n \}$ base cualquiera de $V$. Construimos una base ortogonal $\{ \mathbf{v}_1, \dots, \mathbf{v}_n \}$ recursivamente:
@@ -616,13 +616,13 @@ es una base ortogonal de $\mathcal{P}_2(\mathbb{R})$ para este producto interno.
 
 \section{Proyección ortogonal y mínimos cuadrados}
 
-\begin{definition}[Aproximación por mínimos cuadrados]
+\begin{definition}[Aproximación por mínimos cuadrados]\index{mínimos cuadrados}
 Sea $A \in \mathcal{M}_{m \times n}(\mathbb{R})$ y $b \in \mathbb{R}^m$. Si el sistema $Ax = b$ no tiene solución exacta (es decir, $b \notin \mathcal{C}(A)$), se busca $x$ tal que $Ax$ sea el vector más cercano posible a $b$, minimizando el error cuadrático: \(
 \min_{x} \|b - Ax\|
 .\) La mejor aproximación es el vector $Ax$ tal que $Ax = \operatorname{proy}_{\mathcal{C}(A)}(b)$.
 \end{definition}
 
-\begin{theorem}[Mejor aproximación]
+\begin{theorem}[Mejor aproximación]\index{mínimos cuadrados!mejor aproximación}
 Sea $W$ subespacio de $V$ (espacio vectorial con producto interno real, dimensión finita) y $b \in V$. La proyección ortogonal $\operatorname{proy}_W(b)$ es el único vector en $W$ que minimiza la distancia a $b$:
 \[
 \|b - \operatorname{proy}_W(b)\| \leq \|b - w\| \quad \forall w \in W
@@ -640,7 +640,7 @@ La igualdad se da solo cuando $w = \operatorname{proy}_W(b)$.
 \end{proof}
 \end{theorem}
 
-\begin{theorem}[Ecuaciones normales]
+\begin{theorem}[Ecuaciones normales]\index{mínimos cuadrados!ecuaciones normales}
 Dado $A \in \mathbb{R}^{m \times n}$ y $b \in \mathbb{R}^m$, el vector $x$ que minimiza $\|b - Ax\|$ satisface:
 \[
 A^T A x = A^T b
@@ -765,7 +765,7 @@ $$\boxed{X = \left(-\dfrac{31}{91},\ -\dfrac{4}{7},\ \dfrac{46}{65}\right),\quad
 \end{myproof}
 \end{example}
 
-\begin{theorem}[Solución única]
+\begin{theorem}[Solución única]\index{mínimos cuadrados!solución única}
 Si las columnas de $A$ son linealmente independientes, entonces:
 \begin{enumerate}
     \item $A^T A$ es invertible
@@ -928,7 +928,7 @@ La matriz $M$ es la matriz de Vandermonde de los nodos $x_i$; cuando los $x_i$ s
 
 \section{Series de Fourier}
 
-\begin{definition}[Serie de Fourier]
+\begin{definition}[Serie de Fourier]\index{serie de Fourier}
 Para $f$ periódica en $[0, 2\pi]$, con producto interno $\langle f, g \rangle = \int_0^{2\pi} f(x) g(x)  dx$:
 \[
 f(x) \approx a_0 + \sum_{k=1}^n (a_k \cos kx + b_k \sen kx)
@@ -1005,7 +1005,7 @@ Desarrollo en serie de potencias alrededor de $x=a$ con coeficientes $a_j = f^{(
 \end{proof}
 \end{lemma}
 
-\begin{theorem}[Fórmula de Euler]\label{demformeuler}
+\begin{theorem}[Fórmula de Euler]\label{demformeuler}\index{Euler, fórmula de}
 Para $\theta \in \mathbb{R}$:
 \[
 e^{i\theta} = \cos \theta + i \sen \theta

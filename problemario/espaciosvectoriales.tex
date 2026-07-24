@@ -4,7 +4,7 @@ En este capítulo se exploran los conceptos relacionados con los fundamentos te�
 \section{Espacios vectoriales}
 El concepto central del álgebra lineal son los espacios vectoriales. A continuación se presenta su definición: 
 
-\begin{definition}[Espacio vectorial sobre un campo $\mathbb{F}$] \label{defespvectorial}
+\begin{definition}[Espacio vectorial sobre un campo $\mathbb{F}$]\index{espacio vectorial} \label{defespvectorial}
 Un conjunto $V$ no vacío es llamado \textbf{espacio vectorial sobre un campo $\mathbb{F}$} si para sus objetos, llamados vectores, se han definido dos operaciones: la suma de vectores y el producto de un vector por un elemento de $\mathbb{F}$, llamado producto por un escalar, que están sujetas a los siguientes diez axiomas. A continuación, $u$, $v$ y $w$ son vectores, y $k$, $m$ son escalares del campo $\mathbb{F}$:
 
 \begin{enumerate}[$1.$] 
@@ -169,7 +169,7 @@ $$\boxed{(c)\ \text{Es un espacio vectorial real.}}$$
 \section{Subespacios vectoriales}
 En $\mathbb{R}^3$, se puede demostrar que las rectas y planos que pasan por el origen son espacios vectoriales con las mismas operaciones. Algunos de los axiomas se "heredan" del espacio "huésped", lo que nos permite identificar más fácilmente espacios vectoriales como subconjuntos de uno más grande. El objetivo de esta sección es identificar los subconjuntos que cumplen esta condición.
 
-\begin{definition}[Subespacio vectorial]\label{defsubespacio} Sea $V$ un espacio vectorial sobre un campo $\mathbb{F}.$ Un subconjunto no vacío $W$ de $V$ es llamado \textbf{subespacio vectorial} de $V$ si es un espacio vectorial bajo las operaciones de suma vectorial y producto por un escalar definidas en $V.$
+\begin{definition}[Subespacio vectorial]\label{defsubespacio}\index{subespacio vectorial} Sea $V$ un espacio vectorial sobre un campo $\mathbb{F}.$ Un subconjunto no vacío $W$ de $V$ es llamado \textbf{subespacio vectorial} de $V$ si es un espacio vectorial bajo las operaciones de suma vectorial y producto por un escalar definidas en $V.$
 \end{definition}
 
 \begin{rem}A partir de ahora, cuando se hable de subespacio, se hará referencia a un subespacio vectorial.
@@ -196,7 +196,7 @@ En $\mathbb{R}^3$, se puede demostrar que las rectas y planos que pasan por el o
 \label{fig:subespacio_en_V}
 \end{figure}
 
-\begin{theorem}[Test del subespacio]\label{testsubespacio} Sea $V$ un espacio vectorial y $W$ un subconjunto de $V$. $W$ es subespacio vectorial de $V$ si y solo si se cumplen las siguientes condiciones:
+\begin{theorem}[Test del subespacio]\label{testsubespacio}\index{subespacio vectorial!test} Sea $V$ un espacio vectorial y $W$ un subconjunto de $V$. $W$ es subespacio vectorial de $V$ si y solo si se cumplen las siguientes condiciones:
 \begin{enumerate}[$a)$]
 \item El vector nulo de $V$ está en $W,$ i.e., ${\bf{0}}\in W.$
 \item Si los vectores $u,v\in W$ entonces $u+v\in W.$
@@ -310,7 +310,7 @@ $$\boxed{(c)\ W \text{ no es subespacio (no es cerrado bajo multiplicación por 
 \end{example}
 
 
-\begin{theorem}[La intersección finita de subespacios es subespacio]\label{interseccionsubespacios}
+\begin{theorem}[La intersección finita de subespacios es subespacio]\label{interseccionsubespacios}\index{subespacio vectorial!intersección finita}
 Sean $W_1,$ $W_2,\dots, W_n$ subespacios de $V$. Entonces $W_1\cap W_2 \cap \cdots \cap W_n =\bigcap_{i=1}^{n} W_i\text{ es subespacio de }V.$
 
 \begin{proof} Debe probarse que $\bigcap_{i=1}^{n} W_i$ cumple las condiciones del Teorema \ref{testsubespacio}. Como cada $W_i$ es un subespacio de $V,$ entonces cada uno contiene al vector cero, por lo tanto, el vector cero está en su intersección. Sean $u,v\in \bigcap_{i=1}^{n} W_i,$ entonces $u,v\in W_i$ para cada $i.$ Como cada $W_i$ es un subespacio, $u+v\in W_i$ para cada $i,$ y así $u+v\in \bigcap_{i=1}^{n} W_i.$ Finalmente, si $u\in \bigcap_{i=1}^{n} W_i$ y $k$ es un escalar, entonces $u\in W_i$ para cada $i,$ por lo cual $ku\in W_i$ para cada $i,$ y así $ku\in \bigcap_{i=1}^{n} W_i.$
@@ -370,12 +370,12 @@ $$\boxed{\mathcal{N}(A) = \operatorname{span}\!\left\{\begin{pmatrix}-1\\1\\0\en
 \section{Combinaciones lineales y generados}
 Las combinaciones lineales permitirán describir un vector en términos de otros vectores del espacio. Se introducen su definición y el concepto de generado:
 
-\begin{definition}[Combinación lineal]\label{def:comblineal}
+\begin{definition}[Combinación lineal]\label{def:comblineal}\index{combinación lineal}
 Sea $V$ un espacio vectorial sobre un cuerpo $\mathbb{F}$. Se dice que un vector $w \in V$ es \textbf{combinación lineal} de los vectores $v_1,v_2,\dots, v_n \in V$ si existen escalares $\alpha_1,\alpha_2,\dots,\alpha_n \in \mathbb{F}$ tales que  \(w = \alpha_1 v_1 + \alpha_2 v_2 + \cdots + \alpha_n v_n.\)
 Los escalares $\alpha_i$ se denominan \textbf{coeficientes de la combinación lineal}.
 \end{definition}
 
-\begin{definition}[Subespacio generado] \label{defgenerado}
+\begin{definition}[Subespacio generado]\index{subespacio generado} \label{defgenerado}
 El conjunto de todas las combinaciones lineales de los vectores $v_1,v_2,\dots, v_n$ se denomina \textbf{subespacio generado} por estos vectores. Se denota $\operatorname{gen}\{v_1,v_2,\dots, v_n\}$ o $\operatorname{span}\{v_1,v_2,\dots, v_n\}$.
 \end{definition}
 
@@ -399,7 +399,7 @@ El conjunto de todas las combinaciones lineales de los vectores $v_1,v_2,\dots, 
 \label{fig:gen_dos_vectores}
 \end{figure}
 
-\begin{theorem}[El generado es el menor subespacio que contiene a los generadores]
+\begin{theorem}[El generado es el menor subespacio que contiene a los generadores]\index{subespacio generado!propiedad minimal}
 El conjunto $\operatorname{gen}\{v_1,v_2,\dots, v_n\}$ de todas las combinaciones lineales de los vectores $v_1,v_2,\dots, v_n$ es un subespacio de $V$, y además es el subespacio más pequeño de $V$ que los contiene.
 \end{theorem}
 
@@ -501,13 +501,13 @@ Como hemos demostrado $\operatorname{gen}(S_1) \subseteq \operatorname{gen}(S_2)
 
 \section{Independencia lineal}
 
-\begin{definition}[Independencia lineal] 
+\begin{definition}[Independencia lineal]\index{independencia lineal}
 Sea $S = \{v_1, v_2, \dots, v_n\}$ un conjunto de vectores en un espacio vectorial $V$ sobre un cuerpo $\mathbb{F}$. Diremos que $S$ es \textbf{linealmente independiente} (abreviado \textit{l.i.}) si la única combinación lineal que produce el vector nulo es la trivial, es decir, si:
 $$k_1v_1 + k_2v_2 + \cdots + k_nv_n = \mathbf{0} \quad \text{implica} \quad k_1 = k_2 = \cdots = k_n = 0.$$
 Si $S$ no es linealmente independiente, se dirá que es \textbf{linealmente dependiente} (abreviado \textit{l.d.}).
 \end{definition}
 
-\begin{theorem}[Test de independencia lineal]
+\begin{theorem}[Test de independencia lineal]\index{independencia lineal!test}
 Un conjunto $S = \{v_1, v_2, \dots, v_n\}$ es linealmente independiente si y solo si la única solución de la ecuación:
 $$k_1v_1 + k_2v_2 + \cdots + k_nv_n = \mathbf{0}$$
 es la solución trivial $k_1 = k_2 = \dots = k_n = 0$.
@@ -553,7 +553,7 @@ $$\boxed{\lambda = 1 \quad \text{o} \quad \lambda = -\tfrac{1}{2}.}$$
 \end{myproof}
 \end{example}
 
-\begin{definition}[Wronskiano]
+\begin{definition}[Wronskiano]\index{Wronskiano}
 Para funciones $f_1,\dots,f_n$ $(n-1)$-veces diferenciables en $(-\infty, \infty)$, el \textbf{Wronskiano} es:
 $$W(x) = \begin{vmatrix} 
 f_1(x) & f_2(x) & \cdots & f_n(x) \\
@@ -563,7 +563,7 @@ f_1^{(n-1)}(x) & f_2^{(n-1)}(x) & \cdots & f_n^{(n-1)}(x)
 \end{vmatrix}$$
 \end{definition}
 
-\begin{theorem}[Criterio del Wronskiano]
+\begin{theorem}[Criterio del Wronskiano]\index{Wronskiano!criterio}
 Si $W(x) \not\equiv 0$ en $(-\infty, \infty)$, entonces $\{f_1,\dots,f_n\}$ es l.i. en $\mathcal{C}^{n-1}(-\infty, \infty)$.
 \begin{proof}
 Probamos el contrarrecíproco. Si $\{f_1,\dots,f_n\}$ es l.d., existen escalares $c_1,\dots,c_n$ no todos nulos tales que $c_1f_1(x)+\cdots+c_nf_n(x)=0$ para todo $x$. Derivando esta identidad $k$ veces se obtiene $c_1f_1^{(k)}(x)+\cdots+c_nf_n^{(k)}(x)=0$ para $k=0,1,\dots,n-1$. Es decir, para cada $x$ fijo las columnas de la matriz del Wronskiano satisfacen una relación lineal no trivial con los mismos coeficientes $c_i$, de modo que su determinante se anula: $W(x)=0$ para todo $x$, esto es, $W \equiv 0$.
@@ -574,11 +574,11 @@ Probamos el contrarrecíproco. Si $\{f_1,\dots,f_n\}$ es l.d., existen escalares
 
 Esta sección aborda uno de los conceptos fundamentales en álgebra lineal: la capacidad de representar cualquier vector mediante un conjunto específico de vectores conocido como \textbf{base}. Una base en un espacio vectorial permite generar cualquier vector mediante combinaciones lineales, determinar la dimensión del espacio, y estudiar propiedades fundamentales.
 
-\begin{definition}[Espacio vectorial de dimensión finita] 
+\begin{definition}[Espacio vectorial de dimensión finita]\index{espacio vectorial!dimensión finita}
 Un espacio vectorial $V$ sobre $\mathbb{K}$ es de \textbf{dimensión finita} si existe un conjunto finito que genera $V$. En caso contrario, es de \textbf{dimensión infinita}.
 \end{definition}
 
-\begin{definition}[Base] 
+\begin{definition}[Base]\index{base (espacio vectorial)}
 Un conjunto $S = \{v_1, \dots, v_n\}$ es \textbf{base} de $V$ si:
 \begin{enumerate}
 \item $S$ genera $V$ ($\operatorname{span}(S) = V$)
@@ -618,7 +618,7 @@ $$\boxed{\text{Las matrices son l.d. y no forman base de } \mathcal{M}_{2\times 
 \end{myproof}
 \end{example}
 
-\begin{theorem}[Unicidad de la representación]\label{thm:unicidad-representacion}
+\begin{theorem}[Unicidad de la representación]\label{thm:unicidad-representacion}\index{base (espacio vectorial)!unicidad de representación}
 Si $S = \{v_1,\dots,v_n\}$ es base de $V$, entonces todo $u \in V$ tiene representación única $u = \sum_{i=1}^n k_i v_i$.	
 \begin{proof}
 Supongamos dos representaciones $u = \sum_{i=1}^n k_i v_i = \sum_{i=1}^n c_i v_i$. Entonces:
@@ -627,29 +627,29 @@ Como $S$ es linealmente independiente, necesariamente $k_i - c_i = 0$ para todo 
 \end{proof}
 \end{theorem}
 
-\begin{definition}[Vector de coordenadas]\label{def:vectorcoordenadas}
+\begin{definition}[Vector de coordenadas]\label{def:vectorcoordenadas}\index{vector de coordenadas}
 Para una base \textit{ordenada} $S = \{v_1,\dots,v_n\}$ y $u = \sum_{i=1}^n k_i v_i$, el \textbf{vector de coordenadas} es $[u]_S = (k_1,\dots,k_n)^T$.
 \end{definition}
 
-\begin{theorem}[Lema de intercambio]\label{thm:cap06:lema-intercambio}
+\begin{theorem}[Lema de intercambio]\label{thm:cap06:lema-intercambio}\index{lema de intercambio}
 Sea $V$ un espacio vectorial. Si $\{u_1, \ldots, u_m\}$ es linealmente independiente y $\{v_1, \ldots, v_n\}$ genera $V$, entonces $m \leq n$.
 \begin{proof}
 Esbozamos el argumento de intercambio (Steinitz). Como $\{v_1,\ldots,v_n\}$ genera $V$, $u_1$ es combinación lineal de los $v_i$ con algún coeficiente no nulo — digamos el de $v_1$, reordenando si es necesario. Despejando $v_1$ se ve que $\{u_1, v_2, \ldots, v_n\}$ también genera $V$: hemos intercambiado $v_1$ por $u_1$. Repetimos con $u_2$: al escribirlo en términos de $\{u_1, v_2,\ldots,v_n\}$, algún $v_j$ tiene coeficiente no nulo (si todos fueran cero, $u_2$ sería combinación de $u_1$, contra la independencia), y ese $v_j$ se intercambia por $u_2$. Si fuera $m > n$, tras $n$ pasos el conjunto generador sería $\{u_1,\ldots,u_n\}$ y entonces $u_{n+1}$ sería combinación lineal de $u_1,\ldots,u_n$, contradiciendo que $\{u_1,\ldots,u_m\}$ es linealmente independiente. Por tanto $m \leq n$.
 \end{proof}
 \end{theorem}
 
-\begin{theorem}[Invariancia del número de elementos en una base]\label{thm:cap06:invariancia-base}
+\begin{theorem}[Invariancia del número de elementos en una base]\label{thm:cap06:invariancia-base}\index{base (espacio vectorial)!invariancia del número de elementos}
 Todas las bases de un espacio vectorial de dimensión finita tienen el mismo número de vectores.
 \begin{proof}
 Sean $B_1 = \{u_1, \ldots, u_m\}$ y $B_2 = \{v_1, \ldots, v_n\}$ dos bases de $V$. Como $B_1$ es linealmente independiente y $B_2$ genera $V$, por el Lema de intercambio (Teorema \ref{thm:cap06:lema-intercambio}) tenemos $m \leq n$. Análogamente, como $B_2$ es linealmente independiente y $B_1$ genera $V$, tenemos $n \leq m$. Por tanto, $m = n$.
 \end{proof}
 \end{theorem}
 
-\begin{definition}[Dimensión]
+\begin{definition}[Dimensión]\index{dimensión (espacio vectorial)}
 La \textbf{dimensión} de $V$ ($\dim V$) es el número de vectores en cualquier base de $V$. Por convención, $\dim \{\mathbf{0}\} = 0$.
 \end{definition}
 
-\begin{theorem}[Propiedades dimensionales]
+\begin{theorem}[Propiedades dimensionales]\index{dimensión (espacio vectorial)!propiedades}
 Si $\dim V = n$, entonces:
 \begin{enumerate}
 \item Cualquier conjunto con más de $n$ vectores es linealmente dependiente.
@@ -665,7 +665,7 @@ Si $\dim V = n$, entonces:
 \end{proof}
 \end{theorem}
 
-\begin{theorem}[Teorema de la base incompleta]
+\begin{theorem}[Teorema de la base incompleta]\index{base (espacio vectorial)!teorema de la base incompleta}
 Sea $V$ con $\dim V = n$:
 \begin{enumerate}
 \item Si $S$ genera $V$ pero es linealmente dependiente, se pueden eliminar vectores para obtener una base.
@@ -678,7 +678,7 @@ Sea $V$ con $\dim V = n$:
 \end{proof}
 \end{theorem}
 
-\begin{theorem}[Dimensión de subespacios]
+\begin{theorem}[Dimensión de subespacios]\index{dimensión (espacio vectorial)!de subespacios}
 Si $W \subseteq V$ es subespacio y $\dim V < \infty$, entonces:
 \begin{enumerate}
 \item $\dim W \leq \dim V$
@@ -692,7 +692,7 @@ Si $W \subseteq V$ es subespacio y $\dim V < \infty$, entonces:
 \end{proof}
 \end{theorem}
 
-\begin{definition}[Matriz de cambio de base]
+\begin{definition}[Matriz de cambio de base]\index{matriz!de cambio de base}
 Dadas bases $B = \{v_1,\dots,v_n\}$ y $B' = \{w_1,\dots,w_n\}$ de $V$, la \textbf{matriz de cambio de base} de $B$ a $B'$ es $P_{B\to B'} = ([v_1]_{B'} \mid \cdots \mid [v_n]_{B'})$, donde $[v_i]_{B'}$ es el vector de coordenadas de $v_i$ respecto a $B'$. Esta matriz satisface $[u]_{B'} = P_{B\to B'}[u]_B$ para todo $u \in V$.
 \end{definition}
 
@@ -721,7 +721,7 @@ $$\boxed{\{(1,-4,2,-3),\ (-3,8,-2,5),\ (1,0,0,0),\ (0,1,0,0)\} \text{ es base de
 
 Los espacios fundamentales de una matriz proporcionan una comprensión profunda de la estructura algebraica y geométrica de las transformaciones lineales. Estos espacios están íntimamente relacionados con la resolución de sistemas lineales y las propiedades de rango de matrices.
 
-\begin{definition}[Espacios fundamentales]
+\begin{definition}[Espacios fundamentales]\index{espacios fundamentales}
 Para $A \in \mathcal{M}_{m \times n}(\mathbb{R})$:
 \begin{itemize}
     \item \textbf{Espacio fila:} $\mathcal{R}(A) = \operatorname{span}\{\text{filas de } A\}$
@@ -774,7 +774,7 @@ $$\boxed{\mathcal{N}(A) = \operatorname{span}\!\left\{ \begin{pmatrix}-79/72\\5/
 \end{myproof}
 \end{example}
 
-\begin{theorem}[Caracterización de consistencia]
+\begin{theorem}[Caracterización de consistencia]\index{espacios fundamentales!caracterización de consistencia}
 El sistema $A\mathbf{x} = \mathbf{b}$ es consistente si y solo si $\mathbf{b} \in \mathcal{C}(A)$.
 \begin{proof}
 $(\Rightarrow)$ Si $A\mathbf{x} = \mathbf{b}$ tiene solución $\mathbf{x} = \mathbf{x}_0$, entonces $\mathbf{b} = A\mathbf{x}_0 = \sum_{i=1}^n x_{0i} \mathbf{a}_i$, donde $\mathbf{a}_i$ son las columnas de $A$. Por tanto, $\mathbf{b} \in \mathcal{C}(A)$.
@@ -783,7 +783,7 @@ $(\Leftarrow)$ Si $\mathbf{b} \in \mathcal{C}(A)$, entonces $\mathbf{b} = \sum_{
 \end{proof}
 \end{theorem}
 
-\begin{theorem}[Invariancia bajo operaciones fila]
+\begin{theorem}[Invariancia bajo operaciones fila]\index{espacios fundamentales!invariancia bajo operaciones fila}
 Si $B$ se obtiene de $A$ por operaciones elementales de fila, entonces:
 \begin{itemize}
     \item $\mathcal{N}(A) = \mathcal{N}(B)$
@@ -798,21 +798,21 @@ Las operaciones elementales de fila corresponden a multiplicar por matrices inve
 \end{proof}
 \end{theorem}
 
-\begin{theorem}[Base del espacio columna]
+\begin{theorem}[Base del espacio columna]\index{espacios fundamentales!base del espacio columna}
 Las columnas de $A$ correspondientes a las columnas pivote en su forma escalonada reducida forman una base para $\mathcal{C}(A)$.
 \begin{proof}
 Sea $R$ la forma escalonada reducida de $A$, y sean $j_1, \ldots, j_r$ las posiciones de las columnas pivote. Las columnas $\mathbf{a}_{j_1}, \ldots, \mathbf{a}_{j_r}$ de $A$ son linealmente independientes porque las columnas correspondientes de $R$ lo son (forman parte de la base canónica). Además, cualquier columna de $A$ es combinación lineal de estas columnas pivote, pues las operaciones fila preservan las relaciones de dependencia lineal entre columnas.
 \end{proof}
 \end{theorem}
 
-\begin{theorem}[Teorema del rango-nulidad]\label{thm:cap06:rango-nulidad}
+\begin{theorem}[Teorema del rango-nulidad]\label{thm:cap06:rango-nulidad}\index{rango-nulidad, teorema del}
 Para $A \in \mathcal{M}_{m \times n}(\mathbb{R})$: $\dim \mathcal{N}(A) + \dim \mathcal{R}(A) = n.$
 \begin{proof}
 Sea $r = \operatorname{rango}(A) = \dim \mathcal{R}(A)$. En la forma escalonada reducida de $A$, hay $r$ columnas pivote y $n-r$ columnas no pivote. El sistema homogéneo $A\mathbf{x} = \mathbf{0}$ tiene $n-r$ variables libres, cada una correspondiente a una columna no pivote. Por tanto, $\dim \mathcal{N}(A) = n-r$, y se cumple $\dim \mathcal{N}(A) + \dim \mathcal{R}(A) = (n-r) + r = n$.
 \end{proof}
 \end{theorem}
 
-\begin{theorem}[Teorema fundamental de los espacios fundamentales]
+\begin{theorem}[Teorema fundamental de los espacios fundamentales]\index{espacios fundamentales!teorema fundamental}
 Para $A \in \mathcal{M}_{m \times n}(\mathbb{R})$:
 \begin{enumerate}
 \item $\mathcal{N}(A) \perp \mathcal{R}(A^T)$ en $\mathbb{R}^n$
@@ -889,7 +889,7 @@ $$\boxed{A = \begin{pmatrix} -2 & 4 & 1 & 0 \\ -5 & 8 & 0 & 1 \end{pmatrix}}$$
 \end{myproof}
 \end{example}
 
-\begin{theorem}[Caracterización de matrices invertibles - Versión 4]\label{thm:invertible-equiv-v4}
+\begin{theorem}[Caracterización de matrices invertibles - Versión 4]\label{thm:invertible-equiv-v4}\index{matriz!invertible!caracterización}
 Sea $A$ una matriz cuadrada de orden $n \times n$. Las siguientes afirmaciones son equivalentes:
 \begin{enumerate}
     \item $A$ es invertible.

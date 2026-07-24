@@ -3,25 +3,25 @@ Las matrices son objetos fundamentales en matemáticas aplicadas, utilizadas en 
 
 \section{Propiedades básicas}
 
-\begin{definition}[Matriz] Una \textbf{matriz} es un arreglo rectangular de números (reales o complejos) organizados en $m$ filas y $n$ columnas, denotado como $A = (a_{ij})$. Se llama \textbf{cuadrada} si $m = n$.
+\begin{definition}[Matriz]\index{matriz} Una \textbf{matriz} es un arreglo rectangular de números (reales o complejos) organizados en $m$ filas y $n$ columnas, denotado como $A = (a_{ij})$. Se llama \textbf{cuadrada} si $m = n$.
 \end{definition}
 
 \begin{example}[Identificación de entradas de una matriz] $A = \begin{pmatrix} 3 & 0 \\ -1 & 2 \\ 9 & 5 \end{pmatrix}$ es $3 \times 2$, donde $a_{22} = 2$.
 \end{example}
 
-\begin{definition}[Suma de matrices] Dadas dos matrices $A$ y $B$ de tamaño $m \times n$, la suma se define como $A + B = (a_{ij} + b_{ij})$.
+\begin{definition}[Suma de matrices]\index{matriz!suma} Dadas dos matrices $A$ y $B$ de tamaño $m \times n$, la suma se define como $A + B = (a_{ij} + b_{ij})$.
 \end{definition}
 
 \begin{example}[Suma de dos matrices $2\times 2$] $\begin{pmatrix} 5 & 8 \\ 6 & 1 \end{pmatrix} + \begin{pmatrix} -7 & 8 \\ 6 & 4 \end{pmatrix} = \begin{pmatrix} -2 & 16 \\ 12 & 5 \end{pmatrix}.$
 \end{example}
 
-\begin{definition}[Multiplicación por escalar]
+\begin{definition}[Multiplicación por escalar]\index{matriz!multiplicación por escalar}
 Dado $k \in \mathbb{R}$ o $\mathbb{C}$, $kA = (k \cdot a_{ij})$.
 \end{definition}
 \begin{example}[Producto por escalar de una matriz $4\times 4$] $5 \cdot \begin{pmatrix} 0 & 2 & 0 & 9 \\ 1 & 0 & 0 & 1 \\ 0 & 1 & 3 & 0 \\ 2 & 5 & 1 & 3 \end{pmatrix} = \begin{pmatrix} 0 & 10 & 0 & 45 \\ 5 & 0 & 0 & 5 \\ 0 & 5 & 15 & 0 \\ 10 & 25 & 5 & 15 \end{pmatrix}.$
 \end{example}
 
-\begin{definition}[Multiplicación de matrices]
+\begin{definition}[Multiplicación de matrices]\index{matriz!multiplicación}
 Para $A$ de tamaño $m \times n$ y $B$ de tamaño $n \times p$, el producto $AB$ tiene tamaño $m \times p$ y $(AB)_{ij} = \sum_{k=1}^n a_{ik}b_{kj}$.
 \end{definition}
 
@@ -84,7 +84,7 @@ $c_{22} = (-1)\cdot6 + 4\cdot2 + 6\cdot(0.5) + 2\cdot5 = -6 + 8 + 3 + 10 = 15.$
 \end{myproof}
 \end{example}
 
-\begin{definition}[Matriz transpuesta]
+\begin{definition}[Matriz transpuesta]\index{matriz!transpuesta}
 Para $A = (a_{ij})$ de tamaño $m \times n$, su transpuesta $A^T = (a_{ji})$ es de tamaño $n \times m$.
 \end{definition}
 \begin{example}[Transpuesta de una matriz $2\times 4$] $\begin{pmatrix} 2 & -1 & 6 & 4 \\ 8 & 9 & -4 & 7 \end{pmatrix}^T = \begin{pmatrix} 2 & 8 \\ -1 & 9 \\ 6 & -4 \\ 4 & 7 \end{pmatrix}$
@@ -148,7 +148,7 @@ D = \begin{pmatrix} 0 & 2 & 0 & 9 \\ 1 & 0 & 0 & 1 \\ 0 & 1 & 3 & 0 \\ 2 & 5 & 1
 \end{myproof}
 \end{example}
 
-\begin{definition}[Grafo dirigido]
+\begin{definition}[Grafo dirigido]\index{grafo dirigido}\index{matriz!de adyacencia}
 Un grafo dirigido $G = (V,E)$ consiste en un conjunto de vértices $V = \{v_1, \dots, v_n\}$ y un conjunto de aristas $E \subseteq V \times V$. Su matriz de adyacencia $A = (a_{ij})$ es una matriz $n \times n$ donde:
 \(
 a_{ij} = 
@@ -294,7 +294,7 @@ Escriba una matriz que represente la cantidad total de dinero obtenido cada mes.
 \end{myproof}
 \end{example}
 
-\begin{definition}[Matriz diagonal]
+\begin{definition}[Matriz diagonal]\index{matriz!diagonal}
 Una matriz cuadrada $D = (d_{ij})$ es \textbf{diagonal} si $d_{ij} = 0$ para todo $i \neq j$. Es decir, todos los elementos fuera de la diagonal principal son cero.
 \end{definition}
 
@@ -309,7 +309,7 @@ a & 0 \\
 \end{pmatrix}$ son diagonales.
 \end{example}
 
-\begin{definition}[Matriz triangular]
+\begin{definition}[Matriz triangular]\index{matriz!triangular}
 Una matriz cuadrada es:
 \begin{itemize}
 \item \textbf{Triangular superior:} Elementos bajo la diagonal principal son cero ($a_{ij}=0$ si $i>j$)
@@ -320,7 +320,7 @@ Una matriz cuadrada es:
 \begin{example}[Matrices triangulares superior e inferior] $\begin{pmatrix} 2 & 9 \\ 0 & 4 \end{pmatrix}$ es una matriz triangular superior y una matriz triangular inferior es $\begin{pmatrix} 1 & 0 \\ 3 & 5 \end{pmatrix}.$
 \end{example}
 
-\begin{definition}[Matriz simétrica] Una matriz cuadrada $A$ es \textbf{simétrica} si $A^T = A$ ($a_{ij} = a_{ji}$). Los elementos son simétricos respecto a la diagonal principal.
+\begin{definition}[Matriz simétrica]\index{matriz!simétrica} Una matriz cuadrada $A$ es \textbf{simétrica} si $A^T = A$ ($a_{ij} = a_{ji}$). Los elementos son simétricos respecto a la diagonal principal.
 \end{definition}
 
 \begin{example}[Matriz simétrica] La matriz
@@ -331,7 +331,7 @@ $\begin{pmatrix}
 \end{pmatrix}$ es simétrica.
 \end{example}
 
-\begin{definition}[Matriz antisimétrica] Una matriz cuadrada $A$ es \textbf{antisimétrica} si $A^T = -A$ ($a_{ij} = -a_{ji}$). Los elementos diagonales son cero.
+\begin{definition}[Matriz antisimétrica]\index{matriz!antisimétrica} Una matriz cuadrada $A$ es \textbf{antisimétrica} si $A^T = -A$ ($a_{ij} = -a_{ji}$). Los elementos diagonales son cero.
 \end{definition}
 
 \begin{example}[Matrices antisimétricas] Las matrices
@@ -345,14 +345,14 @@ $\begin{pmatrix}
 \end{pmatrix}$ son antisimétricas.
 \end{example}
 
-\begin{definition}[Traza de una matriz] \label{def:traza}
+\begin{definition}[Traza de una matriz]\index{traza de una matriz} \label{def:traza}
 La traza de una matriz cuadrada $A$ es la suma de sus elementos diagonales, es decir, \( \operatorname{tr}(A) = \sum_{i=1}^n a_{ii} .\)
 \end{definition}
 
 \begin{example}[Traza de una matriz $2\times 2$] Para $B = \begin{pmatrix} 2 & 5 \\ -1 & 3 \end{pmatrix}$, su traza es $\operatorname{tr}(B) = 2 + 3 = 5$.
 \end{example}
 
-\begin{theorem}[Algunas propiedades de la traza, las matrices simétricas y antisimétricas]\label{thm:proptraza} Dada una matriz cuadrada $A$, su traza tiene las siguientes propiedades:
+\begin{theorem}[Algunas propiedades de la traza, las matrices simétricas y antisimétricas]\label{thm:proptraza}\index{traza de una matriz!propiedades} Dada una matriz cuadrada $A$, su traza tiene las siguientes propiedades:
 \begin{enumerate}
 \item \textbf{Traza de antisimétrica:} Si $A$ es antisimétrica, entonces $\operatorname{tr}(A) = 0$
   
@@ -402,7 +402,7 @@ $S + K = \begin{pmatrix} 1 & 3 \\ 3 & 3 \end{pmatrix} + \begin{pmatrix} 0 & 1 \\
 
 \section{Matrices invertibles}
 
-\begin{definition}[Matriz invertible]
+\begin{definition}[Matriz invertible]\index{matriz!invertible}
 Una matriz cuadrada $A$ de orden $n \times n$ se dice \textbf{invertible} (o \textbf{no singular}) si existe una matriz $B$ de orden $n \times n$ tal que:
 $$AB = BA = I_n$$
 donde $I_n$ es la matriz identidad de orden $n$. La matriz $B$ se llama la \textbf{inversa} de $A$ y se denota por $A^{-1}$.
@@ -423,7 +423,7 @@ Ambos requieren una fundamentación teórica sólida, esencial en álgebra linea
 \end{theorem}
 \subsection{Método de eliminación gaussiana}
 
-\begin{definition}[Operaciones elementales de fila]
+\begin{definition}[Operaciones elementales de fila]\index{operaciones elementales de fila}
 Son transformaciones reversibles sobre las filas definidas así:
 \begin{enumerate}
 \item \textbf{Combinación lineal:} $k f_i + f_j \to f_j$ \\
@@ -463,7 +463,7 @@ Cada operación tiene inversa:
   \end{itemize}
 \end{rem}
 
-\begin{definition}[Matriz elemental]
+\begin{definition}[Matriz elemental]\index{matriz!elemental}
 Una matriz elemental $E$ de orden $n \times n$ es la matriz obtenida al aplicar \textbf{una operación elemental de fila} a la matriz identidad $I_n$. Existen tres tipos:
 
 \begin{enumerate}
@@ -496,7 +496,7 @@ Una matriz elemental $E$ de orden $n \times n$ es la matriz obtenida al aplicar 
 \end{enumerate}
 \end{theorem}
 
-\begin{definition}[Matrices equivalentes por filas]
+\begin{definition}[Matrices equivalentes por filas]\index{matrices equivalentes por filas}
 Dos matrices $A$ y $B$ son equivalentes por filas $$A \sim_f B$$ si $B$ se obtiene de $A$ mediante una secuencia finita de operaciones elementales de fila:
 \(A \xrightarrow{\text{op}_1} A_1 \xrightarrow{\text{op}_2} \cdots \xrightarrow{\text{op}_k} B \)  o equivalentemente \( B = E_k \cdots E_1 A
 \)
@@ -533,7 +533,7 @@ Las matrices elementales son $E_1 = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}
 \end{myproof}
 \end{example}
 
-\begin{definition}[Forma escalonada]\label{def:escalonada}
+\begin{definition}[Forma escalonada]\label{def:escalonada}\index{forma escalonada}
 Una matriz está en \textbf{forma escalonada} si cumple:
 \begin{enumerate}
 \item Todas las filas nulas están en la parte inferior.
@@ -585,7 +585,7 @@ Note que $\begin{pmatrix}
 \end{myproof}
 \end{example}
 
-\begin{definition}[Forma escalonada reducida]\label{def:escalonada-reducida}
+\begin{definition}[Forma escalonada reducida]\label{def:escalonada-reducida}\index{forma escalonada reducida}
 Una matriz está en \textbf{forma escalonada reducida} si cumple:
 \begin{enumerate}
 \item Está en forma escalonada (cumple la definición \ref{def:escalonada})
@@ -716,14 +716,14 @@ $\boxed{\begin{pmatrix} \boxed{1} & 0 & 0 \\ 0 & \boxed{1} & 0.5 \\ 0 & 0 & 0 \e
 \end{myproof}
 \end{example}
 
-\begin{theorem}[Unicidad de la forma escalonada reducida]
+\begin{theorem}[Unicidad de la forma escalonada reducida]\index{forma escalonada reducida!unicidad}
 Toda matriz es equivalente por filas a una \textbf{única} matriz en forma escalonada reducida.
 
 \begin{proof}
 Se demuestra mediante el algoritmo de Gauss-Jordan, que aplica operaciones elementales de forma sistemática para alcanzar una matriz única.
 \end{proof}
 \end{theorem}
-\begin{definition}[Rango de una matriz]\label{def:rango}
+\begin{definition}[Rango de una matriz]\label{def:rango}\index{rango de una matriz}
 Sea \( A \) una matriz \( m \times n \). El \textbf{rango} de \( A \), denotado \( \operatorname{rango}(A) \) o \( \operatorname{rank}(A) \), es:
 \begin{itemize}
 \item El número de filas no nulas en su \textbf{forma escalonada} (Definición \ref{def:escalonada})
@@ -731,7 +731,7 @@ Sea \( A \) una matriz \( m \times n \). El \textbf{rango} de \( A \), denotado 
 \end{itemize}
 \end{definition}
 
-\begin{theorem}[Propiedades fundamentales del rango]\label{thm:rango-prop}
+\begin{theorem}[Propiedades fundamentales del rango]\label{thm:rango-prop}\index{rango de una matriz!propiedades}
 Para cualquier matriz \( A \):
 \begin{enumerate}
 \item \( 0 \leq \operatorname{rango}(A) \leq \min\{m, n\} \)
@@ -770,7 +770,7 @@ $\boxed{\operatorname{rango}(A) = 1, \quad \operatorname{rango}(B) = 3}$
 \end{myproof}
 \end{example}
 
-\begin{theorem}[Caracterización de matrices invertibles, version 1]\label{thm:invertible-equiv}
+\begin{theorem}[Caracterización de matrices invertibles, version 1]\label{thm:invertible-equiv}\index{matriz!invertible!caracterización}
 Sea $A$ una matriz cuadrada de orden $n \times n$. Las siguientes afirmaciones son equivalentes:
 \begin{enumerate}
     \item $A$ es invertible.
@@ -929,7 +929,7 @@ Use el Algoritmo de eliminación gaussiana (Lema \ref{lem:gauss-jordan}) para ca
 \section{Determinantes}
 Hasta este momento hemos visto que una matriz cuadrada $A$ es invertible si su rango equivale al número de filas y columnas. Existe una función llamada \textit{determinante} (denotada como \(\det(A)\)) que asocia cada matriz cuadrada a un número y satisface una propiedad fundamental: \(\det(A) = 0\) si y solo si la matriz no es invertible \cite{araujo2014algebra}. Esta función proporciona así un criterio numérico decisivo para determinar la invertibilidad de matrices cuadradas.
 
-\begin{definition}[Determinante de una matriz $2\times 2$. \cite{araujo2014algebra}]
+\begin{definition}[Determinante de una matriz $2\times 2$. \cite{araujo2014algebra}]\index{determinante}
 \label{def:det2x2}
 Para una matriz cuadrada de orden \(2\): \(
 A = \begin{pmatrix}
@@ -1059,7 +1059,7 @@ La expansión por cofactores sintetiza este análisis:
 \]
 \end{rem}
 
-\begin{definition}[Menor de una matriz \cite{araujo2014algebra}]
+\begin{definition}[Menor de una matriz \cite{araujo2014algebra}]\index{menor (matriz)}
 \label{def:menor}
 Dada una matriz $A$ de tamaño $n \times n$, el \textbf{menor} $M_{ij}$ es la submatriz de tamaño $(n-1)\times(n-1)$ obtenida al eliminar:
 \begin{itemize}
@@ -1175,7 +1175,7 @@ $\boxed{\det(A) = 0}$ — la matriz $A$ es singular (no invertible).
 \end{myproof}
 \end{example}
 
-\begin{theorem}[Invariancia del determinante en la expansión por cofactores]
+\begin{theorem}[Invariancia del determinante en la expansión por cofactores]\index{determinante!expansión por cofactores}
 \label{rem:invariance-det}
 El valor del determinante de una matriz cuadrada es independiente de la fila o columna seleccionada para su cálculo mediante expansión por cofactores. Formalmente, para cualquier matriz $A_{n\times n}$ y cualquier elección de $1 \leq i,j \leq n$:
 \[
@@ -1222,7 +1222,7 @@ $\boxed{\det(A) = -43}$
 
 
 
-\begin{theorem}[Regla de Sarrus para matrices $3\times 3$]
+\begin{theorem}[Regla de Sarrus para matrices $3\times 3$]\index{regla de Sarrus}
 \label{thm:sarrus}
 
 El determinante de una matriz $A = \begin{pmatrix}
@@ -1439,7 +1439,7 @@ $C_{32} = (-1)^{3+2}(56) = -56$
 \end{example}
 
 
-\begin{theorem}[Propiedades del determinante]\label{thm:det-prop}
+\begin{theorem}[Propiedades del determinante]\label{thm:det-prop}\index{determinante!propiedades}
 Sea $A$ una matriz cuadrada de orden $n \times n$. Entonces:
 
 \begin{enumerate}
@@ -1517,7 +1517,7 @@ A_4 = \begin{pmatrix}
 El propósito principal de estudiar los determinantes es tener una herramienta práctica para determinar si una matriz es invertible. El teorema \ref{thm:invertible-equiv-v2} nos confirma que calcular $\det(A)$ y verificar si es diferente de cero es equivalente a todas las demás caracterizaciones de invertibilidad que hemos visto. Esto convierte al determinante en un criterio computacional eficiente: en lugar de reducir la matriz a su forma escalonada o intentar expresarla como producto de matrices elementales, simplemente calculamos un número y verificamos si es cero o no.
 \end{rem}
 
-\begin{theorem}[Propiedad fundamental de la matriz adjunta]\label{thm:adjunta}
+\begin{theorem}[Propiedad fundamental de la matriz adjunta]\label{thm:adjunta}\index{matriz!adjunta}
 Sea $A$ una matriz cuadrada de orden $n \times n$. Definimos:
 
 \begin{enumerate}
@@ -1575,7 +1575,7 @@ A \cdot \text{adj}(A) = \begin{pmatrix}
 \end{proof}
 
 
-\begin{theorem}[Caracterización de matrices invertibles - Versión 2]\label{thm:invertible-equiv-v2}
+\begin{theorem}[Caracterización de matrices invertibles - Versión 2]\label{thm:invertible-equiv-v2}\index{matriz!invertible!caracterización}
 Sea $A$ una matriz cuadrada de orden $n \times n$. Las siguientes afirmaciones son equivalentes:
 \begin{enumerate}
     \item $A$ es invertible.

@@ -3,7 +3,7 @@ En este capítulo se estudian los valores y vectores propios de una matriz cuadr
 
 \section{Valores y vectores propios}
 
-\begin{definition}[Valores y vectores propios]
+\begin{definition}[Valores y vectores propios]\index{valores y vectores propios}
 	Sea $A$ una matriz cuadrada $n\times n$. Un vector no nulo $\mathbf{v}\in \mathbb{R}^n$ es llamado \textbf{vector propio} (también conocido como \textbf{autovector} o \textbf{eigenvector}) de la matriz $A$ asociado al \textbf{valor propio} $\lambda \in \mathbb{R}$ (también llamado \textbf{autovalor} o \textbf{eigenvalor}) si satisface la ecuación:
 	$$\boxed{A\mathbf{v} = \lambda \mathbf{v}}$$
 	
@@ -58,7 +58,7 @@ En este capítulo se estudian los valores y vectores propios de una matriz cuadr
 
 Según el teorema fundamental del álgebra (Teorema \ref{tfam}), todo polinomio no constante de grado $n$ con coeficientes complejos tiene exactamente $n$ raíces complejas contando multiplicidades. En el contexto del álgebra lineal, los valores $\lambda$ que son raíces del polinomio característico de $A$ se denominan \textbf{valores propios} de $A$.
 
-\begin{definition}[Multiplicidad algebraica y geométrica]\label{multiplicidadgeometrica}
+\begin{definition}[Multiplicidad algebraica y geométrica]\label{multiplicidadgeometrica}\index{valores y vectores propios!multiplicidad algebraica y geométrica}
 Para cada valor propio $\lambda$ de una matriz $A$, se definen:
 \begin{itemize}
     \item \textbf{Multiplicidad algebraica}: Número de veces que $\lambda$ aparece como raíz del polinomio característico $\det(\lambda I - A) = 0$.
@@ -76,7 +76,7 @@ Considere ahora la matriz $B = \begin{pmatrix} a & 0 \\ 0 & a \end{pmatrix}$. Su
 \end{rem}
 
 
-\begin{theorem}[Caracterización de valores propios]\label{teo:caracterizacion}
+\begin{theorem}[Caracterización de valores propios]\label{teo:caracterizacion}\index{valores y vectores propios!caracterización}
 Sea $A \in M_n(\mathbb{R})$. Las siguientes afirmaciones son equivalentes:
 \begin{enumerate}[$(1)$]
     \item $\lambda$ es un valor propio de $A$.
@@ -119,7 +119,7 @@ Por el Teorema \ref{teo:caracterizacion}:
 Como $A$ es invertible si y solo si $\det(A) \neq 0$, el resultado sigue.
 \end{proof}
 
-\begin{theorem}[Potencia de valores propios]\label{teo:potencia}
+\begin{theorem}[Potencia de valores propios]\label{teo:potencia}\index{valores y vectores propios!potencias}
 Si $\lambda$ es valor propio de $A \in M_n(\mathbb{R})$ con vector propio asociado $\mathbf{x}$, entonces para todo $k \in \mathbb{Z}^+$, $\lambda^k$ es valor propio de $A^k$ con el mismo vector propio $\mathbf{x}$.
 \end{theorem}
 
@@ -430,12 +430,12 @@ Estos valores propios complejos permiten interpretar la acción de la matriz com
 
 \section{Diagonalización y potencias de matrices}
 
-\begin{definition}[Matriz diagonalizable]
+\begin{definition}[Matriz diagonalizable]\index{matriz!diagonalizable}
 Una matriz $A \in M_n(\mathbb{R})$ es \textbf{diagonalizable} si existe una matriz invertible $P$ y una matriz diagonal $D$ tales que: \(A = PDP^{-1}.\)
 \end{definition}
 
 
-\begin{theorem}[Condición de diagonalización]\label{thm:cap08:diagonalizacion}
+\begin{theorem}[Condición de diagonalización]\label{thm:cap08:diagonalizacion}\index{matriz!diagonalizable!condición}
 Sea $A \in M_n(\mathbb{R})$. Las siguientes afirmaciones son equivalentes:
 \begin{enumerate}[$(1)$]
     \item $A$ es diagonalizable.
@@ -569,7 +569,7 @@ A^6 \begin{pmatrix} 4 \\ 3 \end{pmatrix}
 
 Cuando alguna multiplicidad geométrica es menor que la algebraica, la matriz no es diagonalizable: no hay suficientes vectores propios linealmente independientes para formar la matriz $P$. Aun así, toda matriz puede llevarse a una forma «casi diagonal», que es su representación canónica en el caso general.
 
-\begin{definition}[Bloque de Jordan]
+\begin{definition}[Bloque de Jordan]\index{Jordan, forma canónica de!bloque}
 Un \textbf{bloque de Jordan} de tamaño $k$ asociado al valor propio $\lambda$ es la matriz $J_k(\lambda)\in M_k(\mathbb{C})$ que tiene $\lambda$ en toda la diagonal, $1$ en la superdiagonal y $0$ en las demás entradas:
 \[
 J_1(\lambda)=\begin{pmatrix}\lambda\end{pmatrix}, \qquad
@@ -578,7 +578,7 @@ J_3(\lambda)=\begin{pmatrix}\lambda & 1 & 0\\ 0 & \lambda & 1\\ 0 & 0 & \lambda\
 \]
 \end{definition}
 
-\begin{theorem}[Forma canónica de Jordan]\label{thm:cap08:jordan}
+\begin{theorem}[Forma canónica de Jordan]\label{thm:cap08:jordan}\index{Jordan, forma canónica de}
 Toda matriz $A\in M_n(\mathbb{C})$ es semejante a una matriz formada por bloques de Jordan: existe una matriz invertible $P$ tal que
 \[
 A = P\, J\, P^{-1}, \qquad
@@ -787,7 +787,7 @@ y_2(x) = \dfrac{7}{4} e^{7x} - \dfrac{3}{4} e^{-x}
 
 \section{El teorema de Cayley-Hamilton}
 
-\begin{theorem}[Cayley-Hamilton]
+\begin{theorem}[Cayley-Hamilton]\index{Cayley-Hamilton, teorema de}
 Sea $A \in M_n(F)$ una matriz cuadrada de orden $n$ sobre un cuerpo $F$. Sea $p_A(\lambda) = \det(\lambda I - A)$ el polinomio característico de $A$. Entonces,
 \[
 p_A(A) = 0
@@ -823,7 +823,7 @@ lo que prueba el teorema de Cayley-Hamilton: toda matriz cuadrada anula su propi
 
 \section{Valores propios e invertibilidad}
 
-\begin{theorem}[Caracterización de matrices invertibles - Versión 5]
+\begin{theorem}[Caracterización de matrices invertibles - Versión 5]\index{matriz!invertible!caracterización}
 Sea $A$ una matriz $n\times n$, las siguientes afirmaciones son equivalentes: \begin{enumerate}
     \item $A$ es invertible.
     \item La forma escalonada reducida de $A$ es la matriz identidad $I_n$.
