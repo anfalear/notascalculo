@@ -1714,495 +1714,570 @@
 \contentsline {definition}{\ifthmt@listswap Definición~26.2\else \numberline {26.2}Definición\fi }{621}{definition.26.2}%
 \contentsline {definition}{\ifthmt@listswap Definición~26.3\else \numberline {26.3}Definición\fi }{621}{definition.26.3}%
 \contentsline {definition}{\ifthmt@listswap Definición~26.4\else \numberline {26.4}Definición\fi }{621}{definition.26.4}%
-\contentsline {rem}{\ifthmt@listswap Observación~26.5\else \numberline {26.5}Observación\fi }{621}{rem.26.5}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~26.6\else \numberline {26.6}Ejemplo\fi \thmtformatoptarg {Crecimiento poblacional de Malthus}}{622}{example.26.6}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~26.7\else \numberline {26.7}Ejemplo\fi \thmtformatoptarg {Decaimiento radiactivo}}{622}{example.26.7}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~26.8\else \numberline {26.8}Ejemplo\fi \thmtformatoptarg {Circuito RL en serie}}{623}{example.26.8}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~26.9\else \numberline {26.9}Ejemplo\fi \thmtformatoptarg {Problema de mezclas}}{623}{example.26.9}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~26.10\else \numberline {26.10}Ejemplo\fi \thmtformatoptarg {Ecuación exacta}}{624}{example.26.10}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~26.11\else \numberline {26.11}Ejemplo\fi \thmtformatoptarg {Factor integrante dependiente de x}}{625}{example.26.11}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~26.12\else \numberline {26.12}Ejemplo\fi \thmtformatoptarg {Ecuación de Bernoulli}}{625}{example.26.12}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~26.13\else \numberline {26.13}Ejemplo\fi \thmtformatoptarg {Enfriamiento de un objeto}}{626}{example.26.13}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~26.14\else \numberline {26.14}Ejemplo\fi \thmtformatoptarg {Respuesta forzada senoidal}}{627}{example.26.14}%
-\contentsline {prob}{\ifthmt@listswap Problema~26.15\else \numberline {26.15}Problema\fi }{628}{prob.26.15}%
-\contentsline {prob}{\ifthmt@listswap Problema~26.16\else \numberline {26.16}Problema\fi }{628}{prob.26.16}%
-\contentsline {prob}{\ifthmt@listswap Problema~26.17\else \numberline {26.17}Problema\fi }{628}{prob.26.17}%
-\contentsline {prob}{\ifthmt@listswap Problema~26.18\else \numberline {26.18}Problema\fi }{628}{prob.26.18}%
-\contentsline {prob}{\ifthmt@listswap Problema~26.19\else \numberline {26.19}Problema\fi }{628}{prob.26.19}%
-\contentsline {prob}{\ifthmt@listswap Problema~26.20\else \numberline {26.20}Problema\fi }{628}{prob.26.20}%
-\contentsline {prob}{\ifthmt@listswap Problema~26.21\else \numberline {26.21}Problema\fi }{628}{prob.26.21}%
-\contentsline {prob}{\ifthmt@listswap Problema~26.22\else \numberline {26.22}Problema\fi }{629}{prob.26.22}%
-\contentsline {prob}{\ifthmt@listswap Problema~26.23\else \numberline {26.23}Problema\fi }{629}{prob.26.23}%
-\contentsline {prob}{\ifthmt@listswap Problema~26.24\else \numberline {26.24}Problema\fi }{629}{prob.26.24}%
-\contentsline {prob}{\ifthmt@listswap Problema~26.25\else \numberline {26.25}Problema\fi }{629}{prob.26.25}%
-\contentsline {prob}{\ifthmt@listswap Problema~26.26\else \numberline {26.26}Problema\fi }{629}{prob.26.26}%
-\contentsline {prob}{\ifthmt@listswap Problema~26.27\else \numberline {26.27}Problema\fi }{629}{prob.26.27}%
-\contentsline {prob}{\ifthmt@listswap Problema~26.28\else \numberline {26.28}Problema\fi }{629}{prob.26.28}%
-\contentsline {prob}{\ifthmt@listswap Problema~26.29\else \numberline {26.29}Problema\fi }{630}{prob.26.29}%
-\contentsline {prob}{\ifthmt@listswap Problema~26.30\else \numberline {26.30}Problema\fi }{630}{prob.26.30}%
-\contentsline {prob}{\ifthmt@listswap Problema~26.31\else \numberline {26.31}Problema\fi }{630}{prob.26.31}%
-\contentsline {prob}{\ifthmt@listswap Problema~26.32\else \numberline {26.32}Problema\fi }{630}{prob.26.32}%
-\contentsline {prob}{\ifthmt@listswap Problema~26.33\else \numberline {26.33}Problema\fi }{630}{prob.26.33}%
+\contentsline {theorem}{\ifthmt@listswap Teorema~26-5\else \numberline {26-5}Teorema\fi \thmtformatoptarg {Existencia y unicidad (Picard--Lindelöf)}}{622}{theorem.26.5}%
+\contentsline {rem}{\ifthmt@listswap Observación~26.6\else \numberline {26.6}Observación\fi }{622}{rem.26.6}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~26.7\else \numberline {26.7}Ejemplo\fi \thmtformatoptarg {Crecimiento poblacional de Malthus}}{623}{example.26.7}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~26.8\else \numberline {26.8}Ejemplo\fi \thmtformatoptarg {Decaimiento radiactivo}}{623}{example.26.8}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~26.9\else \numberline {26.9}Ejemplo\fi \thmtformatoptarg {Separable con condición inicial}}{623}{example.26.9}%
+\contentsline {theorem}{\ifthmt@listswap Teorema~26-10\else \numberline {26-10}Teorema\fi \thmtformatoptarg {Solución general de la EDO lineal de primer orden}}{624}{theorem.26.10}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~26.11\else \numberline {26.11}Ejemplo\fi \thmtformatoptarg {Circuito RL en serie}}{624}{example.26.11}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~26.12\else \numberline {26.12}Ejemplo\fi \thmtformatoptarg {Problema de mezclas}}{625}{example.26.12}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~26.13\else \numberline {26.13}Ejemplo\fi \thmtformatoptarg {Lineal con factor integrante trigonométrico}}{626}{example.26.13}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~26.14\else \numberline {26.14}Ejemplo\fi \thmtformatoptarg {Inversión: lineal en $x(y)$}}{626}{example.26.14}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~26.15\else \numberline {26.15}Ejemplo\fi \thmtformatoptarg {Ecuación homogénea}}{626}{example.26.15}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~26.16\else \numberline {26.16}Ejemplo\fi \thmtformatoptarg {Ecuación exacta}}{627}{example.26.16}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~26.17\else \numberline {26.17}Ejemplo\fi \thmtformatoptarg {Factor integrante dependiente de x}}{628}{example.26.17}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~26.18\else \numberline {26.18}Ejemplo\fi \thmtformatoptarg {Ecuación de Bernoulli}}{628}{example.26.18}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~26.19\else \numberline {26.19}Ejemplo\fi \thmtformatoptarg {Enfriamiento de un objeto}}{630}{example.26.19}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~26.20\else \numberline {26.20}Ejemplo\fi \thmtformatoptarg {Respuesta forzada senoidal}}{631}{example.26.20}%
+\contentsline {prob}{\ifthmt@listswap Problema~26.21\else \numberline {26.21}Problema\fi }{631}{prob.26.21}%
+\contentsline {prob}{\ifthmt@listswap Problema~26.22\else \numberline {26.22}Problema\fi }{631}{prob.26.22}%
+\contentsline {prob}{\ifthmt@listswap Problema~26.23\else \numberline {26.23}Problema\fi }{632}{prob.26.23}%
+\contentsline {prob}{\ifthmt@listswap Problema~26.24\else \numberline {26.24}Problema\fi }{632}{prob.26.24}%
+\contentsline {prob}{\ifthmt@listswap Problema~26.25\else \numberline {26.25}Problema\fi }{632}{prob.26.25}%
+\contentsline {prob}{\ifthmt@listswap Problema~26.26\else \numberline {26.26}Problema\fi }{632}{prob.26.26}%
+\contentsline {prob}{\ifthmt@listswap Problema~26.27\else \numberline {26.27}Problema\fi }{632}{prob.26.27}%
+\contentsline {prob}{\ifthmt@listswap Problema~26.28\else \numberline {26.28}Problema\fi }{632}{prob.26.28}%
+\contentsline {prob}{\ifthmt@listswap Problema~26.29\else \numberline {26.29}Problema\fi }{632}{prob.26.29}%
+\contentsline {prob}{\ifthmt@listswap Problema~26.30\else \numberline {26.30}Problema\fi }{632}{prob.26.30}%
+\contentsline {prob}{\ifthmt@listswap Problema~26.31\else \numberline {26.31}Problema\fi }{633}{prob.26.31}%
+\contentsline {prob}{\ifthmt@listswap Problema~26.32\else \numberline {26.32}Problema\fi }{633}{prob.26.32}%
+\contentsline {prob}{\ifthmt@listswap Problema~26.33\else \numberline {26.33}Problema\fi }{633}{prob.26.33}%
+\contentsline {prob}{\ifthmt@listswap Problema~26.34\else \numberline {26.34}Problema\fi }{633}{prob.26.34}%
+\contentsline {prob}{\ifthmt@listswap Problema~26.35\else \numberline {26.35}Problema\fi }{633}{prob.26.35}%
+\contentsline {prob}{\ifthmt@listswap Problema~26.36\else \numberline {26.36}Problema\fi }{633}{prob.26.36}%
+\contentsline {prob}{\ifthmt@listswap Problema~26.37\else \numberline {26.37}Problema\fi }{633}{prob.26.37}%
+\contentsline {prob}{\ifthmt@listswap Problema~26.38\else \numberline {26.38}Problema\fi }{633}{prob.26.38}%
+\contentsline {prob}{\ifthmt@listswap Problema~26.39\else \numberline {26.39}Problema\fi }{633}{prob.26.39}%
+\contentsline {prob}{\ifthmt@listswap Problema~26.40\else \numberline {26.40}Problema\fi }{634}{prob.26.40}%
+\contentsline {prob}{\ifthmt@listswap Problema~26.41\else \numberline {26.41}Problema\fi }{634}{prob.26.41}%
+\contentsline {prob}{\ifthmt@listswap Problema~26.42\else \numberline {26.42}Problema\fi }{634}{prob.26.42}%
+\contentsline {prob}{\ifthmt@listswap Problema~26.43\else \numberline {26.43}Problema\fi }{634}{prob.26.43}%
+\contentsline {prob}{\ifthmt@listswap Problema~26.44\else \numberline {26.44}Problema\fi }{634}{prob.26.44}%
+\contentsline {prob}{\ifthmt@listswap Problema~26.45\else \numberline {26.45}Problema\fi }{634}{prob.26.45}%
+\contentsline {prob}{\ifthmt@listswap Problema~26.46\else \numberline {26.46}Problema\fi }{634}{prob.26.46}%
+\contentsline {prob}{\ifthmt@listswap Problema~26.47\else \numberline {26.47}Problema\fi }{634}{prob.26.47}%
+\contentsline {prob}{\ifthmt@listswap Problema~26.48\else \numberline {26.48}Problema\fi }{634}{prob.26.48}%
+\contentsline {prob}{\ifthmt@listswap Problema~26.49\else \numberline {26.49}Problema\fi }{634}{prob.26.49}%
+\contentsline {prob}{\ifthmt@listswap Problema~26.50\else \numberline {26.50}Problema\fi }{634}{prob.26.50}%
 \addvspace {10\p@ }
-\contentsline {definition}{\ifthmt@listswap Definición~27.1\else \numberline {27.1}Definición\fi }{631}{definition.27.1}%
-\contentsline {theorem}{\ifthmt@listswap Teorema~27-2\else \numberline {27-2}Teorema\fi \thmtformatoptarg {Principio de superposición}}{631}{theorem.27.2}%
-\contentsline {definition}{\ifthmt@listswap Definición~27.3\else \numberline {27.3}Definición\fi }{631}{definition.27.3}%
-\contentsline {theorem}{\ifthmt@listswap Teorema~27-4\else \numberline {27-4}Teorema\fi \thmtformatoptarg {Criterio de independencia lineal}}{631}{theorem.27.4}%
-\contentsline {theorem}{\ifthmt@listswap Teorema~27-5\else \numberline {27-5}Teorema\fi \thmtformatoptarg {Estructura de la solución general}}{631}{theorem.27.5}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~27.6\else \numberline {27.6}Ejemplo\fi \thmtformatoptarg {Verificación del wronskiano para dos soluciones}}{631}{example.27.6}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~27.7\else \numberline {27.7}Ejemplo\fi \thmtformatoptarg {Solución general usando superposición}}{632}{example.27.7}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~27.8\else \numberline {27.8}Ejemplo\fi \thmtformatoptarg {EDO lineal de tercer orden}}{632}{example.27.8}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~27.9\else \numberline {27.9}Ejemplo\fi \thmtformatoptarg {Ecuación no homogénea y solución general}}{632}{example.27.9}%
-\contentsline {theorem}{\ifthmt@listswap Teorema~27-10\else \numberline {27-10}Teorema\fi \thmtformatoptarg {Casos de las raíces}}{633}{theorem.27.10}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~27.11\else \numberline {27.11}Ejemplo\fi \thmtformatoptarg {Raíces reales distintas}}{633}{example.27.11}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~27.12\else \numberline {27.12}Ejemplo\fi \thmtformatoptarg {Raíces reales repetidas}}{633}{example.27.12}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~27.13\else \numberline {27.13}Ejemplo\fi \thmtformatoptarg {Raíces complejas conjugadas}}{633}{example.27.13}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~27.14\else \numberline {27.14}Ejemplo\fi \thmtformatoptarg {Ecuación de tercer orden con raíces mixtas}}{633}{example.27.14}%
-\contentsline {definition}{\ifthmt@listswap Definición~27.15\else \numberline {27.15}Definición\fi \thmtformatoptarg {Tabla de formas de $y_p$}}{633}{definition.27.15}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~27.16\else \numberline {27.16}Ejemplo\fi \thmtformatoptarg {Término forzado polinomial}}{633}{example.27.16}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~27.17\else \numberline {27.17}Ejemplo\fi \thmtformatoptarg {Término exponencial}}{634}{example.27.17}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~27.18\else \numberline {27.18}Ejemplo\fi \thmtformatoptarg {Término seno/coseno}}{634}{example.27.18}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~27.19\else \numberline {27.19}Ejemplo\fi \thmtformatoptarg {Producto de exponencial y polinomio}}{634}{example.27.19}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~27.20\else \numberline {27.20}Ejemplo\fi \thmtformatoptarg {$g(x) = \sec x$}}{635}{example.27.20}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~27.21\else \numberline {27.21}Ejemplo\fi \thmtformatoptarg {$g(x) = \ln x$}}{635}{example.27.21}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~27.22\else \numberline {27.22}Ejemplo\fi \thmtformatoptarg {$g(x) = e^x$ con coeficientes variables}}{635}{example.27.22}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~27.23\else \numberline {27.23}Ejemplo\fi \thmtformatoptarg {$g(x) = \tan x$}}{635}{example.27.23}%
-\contentsline {theorem}{\ifthmt@listswap Teorema~27-24\else \numberline {27-24}Teorema\fi \thmtformatoptarg {Casos}}{636}{theorem.27.24}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~27.25\else \numberline {27.25}Ejemplo\fi \thmtformatoptarg {Raíces reales distintas}}{636}{example.27.25}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~27.26\else \numberline {27.26}Ejemplo\fi \thmtformatoptarg {Raíces repetidas}}{636}{example.27.26}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~27.27\else \numberline {27.27}Ejemplo\fi \thmtformatoptarg {Raíces complejas}}{636}{example.27.27}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~27.28\else \numberline {27.28}Ejemplo\fi \thmtformatoptarg {Ecuación no homogénea de Cauchy-Euler}}{636}{example.27.28}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~27.29\else \numberline {27.29}Ejemplo\fi \thmtformatoptarg {Oscilador subamortiguado}}{637}{example.27.29}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~27.30\else \numberline {27.30}Ejemplo\fi \thmtformatoptarg {Oscilador forzado sin amortiguamiento}}{637}{example.27.30}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~27.31\else \numberline {27.31}Ejemplo\fi \thmtformatoptarg {Circuito RLC sin fuente}}{637}{example.27.31}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~27.32\else \numberline {27.32}Ejemplo\fi \thmtformatoptarg {Viga en voladizo con carga uniforme}}{638}{example.27.32}%
-\contentsline {prob}{\ifthmt@listswap Problema~27.33\else \numberline {27.33}Problema\fi }{638}{prob.27.33}%
-\contentsline {prob}{\ifthmt@listswap Problema~27.34\else \numberline {27.34}Problema\fi }{638}{prob.27.34}%
-\contentsline {prob}{\ifthmt@listswap Problema~27.35\else \numberline {27.35}Problema\fi }{638}{prob.27.35}%
-\contentsline {prob}{\ifthmt@listswap Problema~27.36\else \numberline {27.36}Problema\fi }{638}{prob.27.36}%
-\contentsline {prob}{\ifthmt@listswap Problema~27.37\else \numberline {27.37}Problema\fi }{638}{prob.27.37}%
-\contentsline {prob}{\ifthmt@listswap Problema~27.38\else \numberline {27.38}Problema\fi }{638}{prob.27.38}%
-\contentsline {prob}{\ifthmt@listswap Problema~27.39\else \numberline {27.39}Problema\fi }{639}{prob.27.39}%
-\contentsline {prob}{\ifthmt@listswap Problema~27.40\else \numberline {27.40}Problema\fi }{639}{prob.27.40}%
-\contentsline {prob}{\ifthmt@listswap Problema~27.41\else \numberline {27.41}Problema\fi }{639}{prob.27.41}%
-\contentsline {prob}{\ifthmt@listswap Problema~27.42\else \numberline {27.42}Problema\fi }{639}{prob.27.42}%
-\contentsline {prob}{\ifthmt@listswap Problema~27.43\else \numberline {27.43}Problema\fi }{639}{prob.27.43}%
-\contentsline {prob}{\ifthmt@listswap Problema~27.44\else \numberline {27.44}Problema\fi }{639}{prob.27.44}%
-\contentsline {prob}{\ifthmt@listswap Problema~27.45\else \numberline {27.45}Problema\fi }{639}{prob.27.45}%
-\contentsline {prob}{\ifthmt@listswap Problema~27.46\else \numberline {27.46}Problema\fi }{639}{prob.27.46}%
-\contentsline {prob}{\ifthmt@listswap Problema~27.47\else \numberline {27.47}Problema\fi }{640}{prob.27.47}%
-\contentsline {prob}{\ifthmt@listswap Problema~27.48\else \numberline {27.48}Problema\fi }{640}{prob.27.48}%
-\contentsline {prob}{\ifthmt@listswap Problema~27.49\else \numberline {27.49}Problema\fi }{640}{prob.27.49}%
-\contentsline {prob}{\ifthmt@listswap Problema~27.50\else \numberline {27.50}Problema\fi }{640}{prob.27.50}%
-\contentsline {prob}{\ifthmt@listswap Problema~27.51\else \numberline {27.51}Problema\fi }{640}{prob.27.51}%
-\contentsline {prob}{\ifthmt@listswap Problema~27.52\else \numberline {27.52}Problema\fi }{640}{prob.27.52}%
+\contentsline {definition}{\ifthmt@listswap Definición~27.1\else \numberline {27.1}Definición\fi }{635}{definition.27.1}%
+\contentsline {theorem}{\ifthmt@listswap Teorema~27-2\else \numberline {27-2}Teorema\fi \thmtformatoptarg {Principio de superposición}}{635}{theorem.27.2}%
+\contentsline {definition}{\ifthmt@listswap Definición~27.3\else \numberline {27.3}Definición\fi }{635}{definition.27.3}%
+\contentsline {theorem}{\ifthmt@listswap Teorema~27-4\else \numberline {27-4}Teorema\fi \thmtformatoptarg {Criterio de independencia lineal}}{635}{theorem.27.4}%
+\contentsline {rem}{\ifthmt@listswap Observación~27.5\else \numberline {27.5}Observación\fi }{635}{rem.27.5}%
+\contentsline {theorem}{\ifthmt@listswap Teorema~27-6\else \numberline {27-6}Teorema\fi \thmtformatoptarg {Estructura de la solución general}}{636}{theorem.27.6}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~27.7\else \numberline {27.7}Ejemplo\fi \thmtformatoptarg {Verificación del wronskiano para dos soluciones}}{636}{example.27.7}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~27.8\else \numberline {27.8}Ejemplo\fi \thmtformatoptarg {Solución general usando superposición}}{636}{example.27.8}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~27.9\else \numberline {27.9}Ejemplo\fi \thmtformatoptarg {EDO lineal de tercer orden}}{636}{example.27.9}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~27.10\else \numberline {27.10}Ejemplo\fi \thmtformatoptarg {Ecuación no homogénea y solución general}}{636}{example.27.10}%
+\contentsline {theorem}{\ifthmt@listswap Teorema~27-11\else \numberline {27-11}Teorema\fi \thmtformatoptarg {Casos de las raíces}}{637}{theorem.27.11}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~27.12\else \numberline {27.12}Ejemplo\fi \thmtformatoptarg {Raíces reales distintas}}{637}{example.27.12}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~27.13\else \numberline {27.13}Ejemplo\fi \thmtformatoptarg {Raíces reales repetidas}}{637}{example.27.13}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~27.14\else \numberline {27.14}Ejemplo\fi \thmtformatoptarg {Raíces complejas conjugadas}}{637}{example.27.14}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~27.15\else \numberline {27.15}Ejemplo\fi \thmtformatoptarg {Ecuación de tercer orden con raíces mixtas}}{637}{example.27.15}%
+\contentsline {definition}{\ifthmt@listswap Definición~27.16\else \numberline {27.16}Definición\fi \thmtformatoptarg {Tabla de formas de $y_p$}}{638}{definition.27.16}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~27.17\else \numberline {27.17}Ejemplo\fi \thmtformatoptarg {Término forzado polinomial}}{638}{example.27.17}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~27.18\else \numberline {27.18}Ejemplo\fi \thmtformatoptarg {Término exponencial}}{638}{example.27.18}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~27.19\else \numberline {27.19}Ejemplo\fi \thmtformatoptarg {Término seno/coseno}}{638}{example.27.19}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~27.20\else \numberline {27.20}Ejemplo\fi \thmtformatoptarg {Producto de exponencial y polinomio}}{638}{example.27.20}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~27.21\else \numberline {27.21}Ejemplo\fi \thmtformatoptarg {Coeficientes indeterminados con resonancia}}{639}{example.27.21}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~27.22\else \numberline {27.22}Ejemplo\fi \thmtformatoptarg {$g(x) = \sec x$}}{639}{example.27.22}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~27.23\else \numberline {27.23}Ejemplo\fi \thmtformatoptarg {$g(x) = \ln x$}}{639}{example.27.23}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~27.24\else \numberline {27.24}Ejemplo\fi \thmtformatoptarg {$g(x) = e^x$ con coeficientes variables}}{640}{example.27.24}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~27.25\else \numberline {27.25}Ejemplo\fi \thmtformatoptarg {$g(x) = \tan x$}}{640}{example.27.25}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~27.26\else \numberline {27.26}Ejemplo\fi \thmtformatoptarg {Variación de parámetros con $\tan x$}}{640}{example.27.26}%
+\contentsline {theorem}{\ifthmt@listswap Teorema~27-27\else \numberline {27-27}Teorema\fi \thmtformatoptarg {Casos}}{641}{theorem.27.27}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~27.28\else \numberline {27.28}Ejemplo\fi \thmtformatoptarg {Raíces reales distintas}}{641}{example.27.28}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~27.29\else \numberline {27.29}Ejemplo\fi \thmtformatoptarg {Raíces repetidas}}{641}{example.27.29}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~27.30\else \numberline {27.30}Ejemplo\fi \thmtformatoptarg {Raíces complejas}}{641}{example.27.30}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~27.31\else \numberline {27.31}Ejemplo\fi \thmtformatoptarg {Ecuación no homogénea de Cauchy-Euler}}{641}{example.27.31}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~27.32\else \numberline {27.32}Ejemplo\fi \thmtformatoptarg {Cauchy-Euler con raíces reales distintas}}{641}{example.27.32}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~27.33\else \numberline {27.33}Ejemplo\fi \thmtformatoptarg {Oscilador subamortiguado}}{642}{example.27.33}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~27.34\else \numberline {27.34}Ejemplo\fi \thmtformatoptarg {Oscilador forzado sin amortiguamiento}}{642}{example.27.34}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~27.35\else \numberline {27.35}Ejemplo\fi \thmtformatoptarg {Oscilador libre no amortiguado (PVI)}}{642}{example.27.35}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~27.36\else \numberline {27.36}Ejemplo\fi \thmtformatoptarg {Circuito RLC sin fuente}}{643}{example.27.36}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~27.37\else \numberline {27.37}Ejemplo\fi \thmtformatoptarg {Circuito RLC con fuente constante (PVI)}}{643}{example.27.37}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~27.38\else \numberline {27.38}Ejemplo\fi \thmtformatoptarg {Viga en voladizo con carga uniforme}}{644}{example.27.38}%
+\contentsline {prob}{\ifthmt@listswap Problema~27.39\else \numberline {27.39}Problema\fi }{644}{prob.27.39}%
+\contentsline {prob}{\ifthmt@listswap Problema~27.40\else \numberline {27.40}Problema\fi }{644}{prob.27.40}%
+\contentsline {prob}{\ifthmt@listswap Problema~27.41\else \numberline {27.41}Problema\fi }{644}{prob.27.41}%
+\contentsline {prob}{\ifthmt@listswap Problema~27.42\else \numberline {27.42}Problema\fi }{644}{prob.27.42}%
+\contentsline {prob}{\ifthmt@listswap Problema~27.43\else \numberline {27.43}Problema\fi }{645}{prob.27.43}%
+\contentsline {prob}{\ifthmt@listswap Problema~27.44\else \numberline {27.44}Problema\fi }{645}{prob.27.44}%
+\contentsline {prob}{\ifthmt@listswap Problema~27.45\else \numberline {27.45}Problema\fi }{645}{prob.27.45}%
+\contentsline {prob}{\ifthmt@listswap Problema~27.46\else \numberline {27.46}Problema\fi }{645}{prob.27.46}%
+\contentsline {prob}{\ifthmt@listswap Problema~27.47\else \numberline {27.47}Problema\fi }{645}{prob.27.47}%
+\contentsline {prob}{\ifthmt@listswap Problema~27.48\else \numberline {27.48}Problema\fi }{645}{prob.27.48}%
+\contentsline {prob}{\ifthmt@listswap Problema~27.49\else \numberline {27.49}Problema\fi }{645}{prob.27.49}%
+\contentsline {prob}{\ifthmt@listswap Problema~27.50\else \numberline {27.50}Problema\fi }{645}{prob.27.50}%
+\contentsline {prob}{\ifthmt@listswap Problema~27.51\else \numberline {27.51}Problema\fi }{646}{prob.27.51}%
+\contentsline {prob}{\ifthmt@listswap Problema~27.52\else \numberline {27.52}Problema\fi }{646}{prob.27.52}%
+\contentsline {prob}{\ifthmt@listswap Problema~27.53\else \numberline {27.53}Problema\fi }{646}{prob.27.53}%
+\contentsline {prob}{\ifthmt@listswap Problema~27.54\else \numberline {27.54}Problema\fi }{646}{prob.27.54}%
+\contentsline {prob}{\ifthmt@listswap Problema~27.55\else \numberline {27.55}Problema\fi }{646}{prob.27.55}%
+\contentsline {prob}{\ifthmt@listswap Problema~27.56\else \numberline {27.56}Problema\fi }{646}{prob.27.56}%
+\contentsline {prob}{\ifthmt@listswap Problema~27.57\else \numberline {27.57}Problema\fi }{646}{prob.27.57}%
+\contentsline {prob}{\ifthmt@listswap Problema~27.58\else \numberline {27.58}Problema\fi }{646}{prob.27.58}%
+\contentsline {prob}{\ifthmt@listswap Problema~27.59\else \numberline {27.59}Problema\fi }{646}{prob.27.59}%
+\contentsline {prob}{\ifthmt@listswap Problema~27.60\else \numberline {27.60}Problema\fi }{646}{prob.27.60}%
+\contentsline {prob}{\ifthmt@listswap Problema~27.61\else \numberline {27.61}Problema\fi }{646}{prob.27.61}%
+\contentsline {prob}{\ifthmt@listswap Problema~27.62\else \numberline {27.62}Problema\fi }{646}{prob.27.62}%
+\contentsline {prob}{\ifthmt@listswap Problema~27.63\else \numberline {27.63}Problema\fi }{646}{prob.27.63}%
+\contentsline {prob}{\ifthmt@listswap Problema~27.64\else \numberline {27.64}Problema\fi }{646}{prob.27.64}%
+\contentsline {prob}{\ifthmt@listswap Problema~27.65\else \numberline {27.65}Problema\fi }{646}{prob.27.65}%
+\contentsline {prob}{\ifthmt@listswap Problema~27.66\else \numberline {27.66}Problema\fi }{646}{prob.27.66}%
+\contentsline {prob}{\ifthmt@listswap Problema~27.67\else \numberline {27.67}Problema\fi }{646}{prob.27.67}%
 \addvspace {10\p@ }
-\contentsline {definition}{\ifthmt@listswap Definición~28.1\else \numberline {28.1}Definición\fi }{643}{definition.28.1}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~28.2\else \numberline {28.2}Ejemplo\fi \thmtformatoptarg {Conversión de una EDO de segundo orden a sistema}}{644}{example.28.2}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~28.3\else \numberline {28.3}Ejemplo\fi \thmtformatoptarg {Conversión de una EDO no homogénea de tercer orden}}{644}{example.28.3}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~28.4\else \numberline {28.4}Ejemplo\fi \thmtformatoptarg {Método de eliminación, sistema homogéneo}}{645}{example.28.4}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~28.5\else \numberline {28.5}Ejemplo\fi \thmtformatoptarg {Método de eliminación, sistema no homogéneo}}{645}{example.28.5}%
-\contentsline {theorem}{\ifthmt@listswap Teorema~28-6\else \numberline {28-6}Teorema\fi }{646}{theorem.28.6}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~28.7\else \numberline {28.7}Ejemplo\fi \thmtformatoptarg {Valores propios reales distintos, sistema 2x2}}{647}{example.28.7}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~28.8\else \numberline {28.8}Ejemplo\fi \thmtformatoptarg {Valores propios reales distintos, sistema 3x3}}{647}{example.28.8}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~28.9\else \numberline {28.9}Ejemplo\fi \thmtformatoptarg {Valores propios complejos}}{648}{example.28.9}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~28.10\else \numberline {28.10}Ejemplo\fi \thmtformatoptarg {Valor propio repetido con un solo vector propio, matriz 2x2}}{649}{example.28.10}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~28.11\else \numberline {28.11}Ejemplo\fi \thmtformatoptarg {Valor propio repetido con cadena de longitud 2 en 3x3}}{649}{example.28.11}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~28.12\else \numberline {28.12}Ejemplo\fi \thmtformatoptarg {Coeficientes indeterminados, $\mathbf {F}(t)$ constante}}{651}{example.28.12}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~28.13\else \numberline {28.13}Ejemplo\fi \thmtformatoptarg {Coeficientes indeterminados, $\mathbf {F}(t)$ exponencial}}{651}{example.28.13}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~28.14\else \numberline {28.14}Ejemplo\fi \thmtformatoptarg {Variación de parámetros}}{652}{example.28.14}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~28.15\else \numberline {28.15}Ejemplo\fi \thmtformatoptarg {Sistema masa-resorte con dos masas}}{654}{example.28.15}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~28.16\else \numberline {28.16}Ejemplo\fi \thmtformatoptarg {Circuito acoplado}}{654}{example.28.16}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~28.17\else \numberline {28.17}Ejemplo\fi \thmtformatoptarg {Modelo depredador-presa linealizado}}{656}{example.28.17}%
-\contentsline {prob}{\ifthmt@listswap Problema~28.18\else \numberline {28.18}Problema\fi }{656}{prob.28.18}%
-\contentsline {prob}{\ifthmt@listswap Problema~28.19\else \numberline {28.19}Problema\fi }{656}{prob.28.19}%
-\contentsline {prob}{\ifthmt@listswap Problema~28.20\else \numberline {28.20}Problema\fi }{657}{prob.28.20}%
-\contentsline {prob}{\ifthmt@listswap Problema~28.21\else \numberline {28.21}Problema\fi }{657}{prob.28.21}%
-\contentsline {prob}{\ifthmt@listswap Problema~28.22\else \numberline {28.22}Problema\fi }{657}{prob.28.22}%
-\contentsline {prob}{\ifthmt@listswap Problema~28.23\else \numberline {28.23}Problema\fi }{657}{prob.28.23}%
-\contentsline {prob}{\ifthmt@listswap Problema~28.24\else \numberline {28.24}Problema\fi }{658}{prob.28.24}%
-\contentsline {prob}{\ifthmt@listswap Problema~28.25\else \numberline {28.25}Problema\fi }{658}{prob.28.25}%
-\contentsline {prob}{\ifthmt@listswap Problema~28.26\else \numberline {28.26}Problema\fi }{658}{prob.28.26}%
-\contentsline {prob}{\ifthmt@listswap Problema~28.27\else \numberline {28.27}Problema\fi }{658}{prob.28.27}%
-\contentsline {prob}{\ifthmt@listswap Problema~28.28\else \numberline {28.28}Problema\fi }{659}{prob.28.28}%
-\contentsline {prob}{\ifthmt@listswap Problema~28.29\else \numberline {28.29}Problema\fi }{659}{prob.28.29}%
-\contentsline {prob}{\ifthmt@listswap Problema~28.30\else \numberline {28.30}Problema\fi }{659}{prob.28.30}%
-\contentsline {prob}{\ifthmt@listswap Problema~28.31\else \numberline {28.31}Problema\fi }{659}{prob.28.31}%
-\contentsline {prob}{\ifthmt@listswap Problema~28.32\else \numberline {28.32}Problema\fi }{660}{prob.28.32}%
-\contentsline {prob}{\ifthmt@listswap Problema~28.33\else \numberline {28.33}Problema\fi }{660}{prob.28.33}%
-\contentsline {prob}{\ifthmt@listswap Problema~28.34\else \numberline {28.34}Problema\fi }{660}{prob.28.34}%
-\contentsline {prob}{\ifthmt@listswap Problema~28.35\else \numberline {28.35}Problema\fi }{660}{prob.28.35}%
-\contentsline {prob}{\ifthmt@listswap Problema~28.36\else \numberline {28.36}Problema\fi }{661}{prob.28.36}%
-\contentsline {prob}{\ifthmt@listswap Problema~28.37\else \numberline {28.37}Problema\fi }{661}{prob.28.37}%
+\contentsline {definition}{\ifthmt@listswap Definición~28.1\else \numberline {28.1}Definición\fi }{647}{definition.28.1}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~28.2\else \numberline {28.2}Ejemplo\fi \thmtformatoptarg {Conversión de una EDO de segundo orden a sistema}}{648}{example.28.2}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~28.3\else \numberline {28.3}Ejemplo\fi \thmtformatoptarg {Conversión de una EDO no homogénea de tercer orden}}{648}{example.28.3}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~28.4\else \numberline {28.4}Ejemplo\fi \thmtformatoptarg {Método de eliminación, sistema homogéneo}}{649}{example.28.4}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~28.5\else \numberline {28.5}Ejemplo\fi \thmtformatoptarg {Método de eliminación, sistema no homogéneo}}{649}{example.28.5}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~28.6\else \numberline {28.6}Ejemplo\fi \thmtformatoptarg {Eliminación con raíces reales distintas}}{650}{example.28.6}%
+\contentsline {theorem}{\ifthmt@listswap Teorema~28-7\else \numberline {28-7}Teorema\fi \thmtformatoptarg {Estructura del espacio de soluciones}}{651}{theorem.28.7}%
+\contentsline {rem}{\ifthmt@listswap Observación~28.8\else \numberline {28.8}Observación\fi }{651}{rem.28.8}%
+\contentsline {theorem}{\ifthmt@listswap Teorema~28-9\else \numberline {28-9}Teorema\fi \thmtformatoptarg {Solución general por vectores propios}}{651}{theorem.28.9}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~28.10\else \numberline {28.10}Ejemplo\fi \thmtformatoptarg {Valores propios reales distintos, sistema 2x2}}{651}{example.28.10}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~28.11\else \numberline {28.11}Ejemplo\fi \thmtformatoptarg {Valores propios reales distintos, sistema 3x3}}{652}{example.28.11}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~28.12\else \numberline {28.12}Ejemplo\fi \thmtformatoptarg {Valores propios reales distintos (matriz simétrica)}}{652}{example.28.12}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~28.13\else \numberline {28.13}Ejemplo\fi \thmtformatoptarg {Valores propios complejos}}{653}{example.28.13}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~28.14\else \numberline {28.14}Ejemplo\fi \thmtformatoptarg {Valores propios complejos conjugados}}{653}{example.28.14}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~28.15\else \numberline {28.15}Ejemplo\fi \thmtformatoptarg {Valor propio repetido con un solo vector propio, matriz 2x2}}{654}{example.28.15}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~28.16\else \numberline {28.16}Ejemplo\fi \thmtformatoptarg {Valor propio repetido con cadena de longitud 2 en 3x3}}{655}{example.28.16}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~28.17\else \numberline {28.17}Ejemplo\fi \thmtformatoptarg {Valor propio repetido defectivo (matriz 2x2)}}{655}{example.28.17}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~28.18\else \numberline {28.18}Ejemplo\fi \thmtformatoptarg {Coeficientes indeterminados, $\mathbf {F}(t)$ constante}}{656}{example.28.18}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~28.19\else \numberline {28.19}Ejemplo\fi \thmtformatoptarg {Coeficientes indeterminados, $\mathbf {F}(t)$ exponencial}}{657}{example.28.19}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~28.20\else \numberline {28.20}Ejemplo\fi \thmtformatoptarg {Coeficientes indeterminados: forzamiento constante, espectro complejo}}{658}{example.28.20}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~28.21\else \numberline {28.21}Ejemplo\fi \thmtformatoptarg {Variación de parámetros}}{658}{example.28.21}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~28.22\else \numberline {28.22}Ejemplo\fi \thmtformatoptarg {Sistema masa-resorte con dos masas}}{659}{example.28.22}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~28.23\else \numberline {28.23}Ejemplo\fi \thmtformatoptarg {Circuito acoplado}}{661}{example.28.23}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~28.24\else \numberline {28.24}Ejemplo\fi \thmtformatoptarg {Modelo depredador-presa linealizado}}{662}{example.28.24}%
+\contentsline {prob}{\ifthmt@listswap Problema~28.25\else \numberline {28.25}Problema\fi }{662}{prob.28.25}%
+\contentsline {prob}{\ifthmt@listswap Problema~28.26\else \numberline {28.26}Problema\fi }{663}{prob.28.26}%
+\contentsline {prob}{\ifthmt@listswap Problema~28.27\else \numberline {28.27}Problema\fi }{663}{prob.28.27}%
+\contentsline {prob}{\ifthmt@listswap Problema~28.28\else \numberline {28.28}Problema\fi }{663}{prob.28.28}%
+\contentsline {prob}{\ifthmt@listswap Problema~28.29\else \numberline {28.29}Problema\fi }{663}{prob.28.29}%
+\contentsline {prob}{\ifthmt@listswap Problema~28.30\else \numberline {28.30}Problema\fi }{664}{prob.28.30}%
+\contentsline {prob}{\ifthmt@listswap Problema~28.31\else \numberline {28.31}Problema\fi }{664}{prob.28.31}%
+\contentsline {prob}{\ifthmt@listswap Problema~28.32\else \numberline {28.32}Problema\fi }{664}{prob.28.32}%
+\contentsline {prob}{\ifthmt@listswap Problema~28.33\else \numberline {28.33}Problema\fi }{665}{prob.28.33}%
+\contentsline {prob}{\ifthmt@listswap Problema~28.34\else \numberline {28.34}Problema\fi }{665}{prob.28.34}%
+\contentsline {prob}{\ifthmt@listswap Problema~28.35\else \numberline {28.35}Problema\fi }{665}{prob.28.35}%
+\contentsline {prob}{\ifthmt@listswap Problema~28.36\else \numberline {28.36}Problema\fi }{665}{prob.28.36}%
+\contentsline {prob}{\ifthmt@listswap Problema~28.37\else \numberline {28.37}Problema\fi }{665}{prob.28.37}%
+\contentsline {prob}{\ifthmt@listswap Problema~28.38\else \numberline {28.38}Problema\fi }{666}{prob.28.38}%
+\contentsline {prob}{\ifthmt@listswap Problema~28.39\else \numberline {28.39}Problema\fi }{666}{prob.28.39}%
+\contentsline {prob}{\ifthmt@listswap Problema~28.40\else \numberline {28.40}Problema\fi }{666}{prob.28.40}%
+\contentsline {prob}{\ifthmt@listswap Problema~28.41\else \numberline {28.41}Problema\fi }{666}{prob.28.41}%
+\contentsline {prob}{\ifthmt@listswap Problema~28.42\else \numberline {28.42}Problema\fi }{666}{prob.28.42}%
+\contentsline {prob}{\ifthmt@listswap Problema~28.43\else \numberline {28.43}Problema\fi }{666}{prob.28.43}%
+\contentsline {prob}{\ifthmt@listswap Problema~28.44\else \numberline {28.44}Problema\fi }{666}{prob.28.44}%
+\contentsline {prob}{\ifthmt@listswap Problema~28.45\else \numberline {28.45}Problema\fi }{666}{prob.28.45}%
+\contentsline {prob}{\ifthmt@listswap Problema~28.46\else \numberline {28.46}Problema\fi }{666}{prob.28.46}%
+\contentsline {prob}{\ifthmt@listswap Problema~28.47\else \numberline {28.47}Problema\fi }{666}{prob.28.47}%
+\contentsline {prob}{\ifthmt@listswap Problema~28.48\else \numberline {28.48}Problema\fi }{666}{prob.28.48}%
+\contentsline {prob}{\ifthmt@listswap Problema~28.49\else \numberline {28.49}Problema\fi }{667}{prob.28.49}%
+\contentsline {prob}{\ifthmt@listswap Problema~28.50\else \numberline {28.50}Problema\fi }{667}{prob.28.50}%
+\contentsline {prob}{\ifthmt@listswap Problema~28.51\else \numberline {28.51}Problema\fi }{667}{prob.28.51}%
+\contentsline {prob}{\ifthmt@listswap Problema~28.52\else \numberline {28.52}Problema\fi }{667}{prob.28.52}%
+\contentsline {prob}{\ifthmt@listswap Problema~28.53\else \numberline {28.53}Problema\fi }{667}{prob.28.53}%
+\contentsline {prob}{\ifthmt@listswap Problema~28.54\else \numberline {28.54}Problema\fi }{667}{prob.28.54}%
 \addvspace {10\p@ }
-\contentsline {definition}{\ifthmt@listswap Definición~29.1\else \numberline {29.1}Definición\fi \thmtformatoptarg {Serie de potencias}}{663}{definition.29.1}%
-\contentsline {definition}{\ifthmt@listswap Definición~29.2\else \numberline {29.2}Definición\fi \thmtformatoptarg {Radio de convergencia}}{663}{definition.29.2}%
-\contentsline {theorem}{\ifthmt@listswap Teorema~29-3\else \numberline {29-3}Teorema\fi \thmtformatoptarg {Diferenciación e integración término a término}}{663}{theorem.29.3}%
-\contentsline {rem}{\ifthmt@listswap Observación~29.4\else \numberline {29.4}Observación\fi }{664}{rem.29.4}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~29.5\else \numberline {29.5}Ejemplo\fi \thmtformatoptarg {Cálculo del radio de convergencia}}{664}{example.29.5}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~29.6\else \numberline {29.6}Ejemplo\fi \thmtformatoptarg {Serie de Taylor de la función exponencial}}{664}{example.29.6}%
-\contentsline {definition}{\ifthmt@listswap Definición~29.7\else \numberline {29.7}Definición\fi \thmtformatoptarg {Punto ordinario y singular}}{665}{definition.29.7}%
-\contentsline {theorem}{\ifthmt@listswap Teorema~29-8\else \numberline {29-8}Teorema\fi \thmtformatoptarg {Existencia de soluciones en serie}}{665}{theorem.29.8}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~29.9\else \numberline {29.9}Ejemplo\fi \thmtformatoptarg {Ecuación de Airy}}{665}{example.29.9}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~29.10\else \numberline {29.10}Ejemplo\fi \thmtformatoptarg {Ecuación de Hermite}}{666}{example.29.10}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~29.11\else \numberline {29.11}Ejemplo\fi \thmtformatoptarg {Ecuación con coeficientes polinomiales sencilla}}{667}{example.29.11}%
-\contentsline {definition}{\ifthmt@listswap Definición~29.12\else \numberline {29.12}Definición\fi \thmtformatoptarg {Punto singular regular}}{667}{definition.29.12}%
-\contentsline {theorem}{\ifthmt@listswap Teorema~29-13\else \numberline {29-13}Teorema\fi \thmtformatoptarg {Método de Frobenius}}{668}{theorem.29.13}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~29.14\else \numberline {29.14}Ejemplo\fi \thmtformatoptarg {Ecuación de Bessel de orden 0}}{668}{example.29.14}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~29.15\else \numberline {29.15}Ejemplo\fi \thmtformatoptarg {Ecuación de Bessel de orden $\nu $ no entero}}{669}{example.29.15}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~29.16\else \numberline {29.16}Ejemplo\fi \thmtformatoptarg {Bessel de orden entero positivo, caso 3}}{669}{example.29.16}%
-\contentsline {rem}{\ifthmt@listswap Observación~29.17\else \numberline {29.17}Observación\fi \thmtformatoptarg {Ecuación de Legendre}}{670}{rem.29.17}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~29.18\else \numberline {29.18}Ejemplo\fi \thmtformatoptarg {Separación de variables en una esfera}}{671}{example.29.18}%
-\contentsline {prob}{\ifthmt@listswap Problema~29.19\else \numberline {29.19}Problema\fi }{671}{prob.29.19}%
-\contentsline {prob}{\ifthmt@listswap Problema~29.20\else \numberline {29.20}Problema\fi }{671}{prob.29.20}%
-\contentsline {prob}{\ifthmt@listswap Problema~29.21\else \numberline {29.21}Problema\fi }{671}{prob.29.21}%
-\contentsline {prob}{\ifthmt@listswap Problema~29.22\else \numberline {29.22}Problema\fi }{672}{prob.29.22}%
-\contentsline {prob}{\ifthmt@listswap Problema~29.23\else \numberline {29.23}Problema\fi }{672}{prob.29.23}%
-\contentsline {prob}{\ifthmt@listswap Problema~29.24\else \numberline {29.24}Problema\fi }{672}{prob.29.24}%
-\contentsline {prob}{\ifthmt@listswap Problema~29.25\else \numberline {29.25}Problema\fi }{672}{prob.29.25}%
-\contentsline {prob}{\ifthmt@listswap Problema~29.26\else \numberline {29.26}Problema\fi }{673}{prob.29.26}%
-\contentsline {prob}{\ifthmt@listswap Problema~29.27\else \numberline {29.27}Problema\fi }{673}{prob.29.27}%
-\contentsline {prob}{\ifthmt@listswap Problema~29.28\else \numberline {29.28}Problema\fi }{673}{prob.29.28}%
-\contentsline {prob}{\ifthmt@listswap Problema~29.29\else \numberline {29.29}Problema\fi }{673}{prob.29.29}%
-\contentsline {prob}{\ifthmt@listswap Problema~29.30\else \numberline {29.30}Problema\fi }{673}{prob.29.30}%
-\contentsline {prob}{\ifthmt@listswap Problema~29.31\else \numberline {29.31}Problema\fi }{673}{prob.29.31}%
-\contentsline {prob}{\ifthmt@listswap Problema~29.32\else \numberline {29.32}Problema\fi }{673}{prob.29.32}%
-\contentsline {prob}{\ifthmt@listswap Problema~29.33\else \numberline {29.33}Problema\fi }{674}{prob.29.33}%
-\contentsline {prob}{\ifthmt@listswap Problema~29.34\else \numberline {29.34}Problema\fi }{674}{prob.29.34}%
+\contentsline {rem}{\ifthmt@listswap Observación~29.1\else \numberline {29.1}Observación\fi }{669}{rem.29.1}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~29.2\else \numberline {29.2}Ejemplo\fi \thmtformatoptarg {Cálculo del radio de convergencia}}{669}{example.29.2}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~29.3\else \numberline {29.3}Ejemplo\fi \thmtformatoptarg {Serie de Taylor de la función exponencial}}{670}{example.29.3}%
+\contentsline {definition}{\ifthmt@listswap Definición~29.4\else \numberline {29.4}Definición\fi \thmtformatoptarg {Punto ordinario y singular}}{670}{definition.29.4}%
+\contentsline {theorem}{\ifthmt@listswap Teorema~29-5\else \numberline {29-5}Teorema\fi \thmtformatoptarg {Existencia de soluciones en serie}}{670}{theorem.29.5}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~29.6\else \numberline {29.6}Ejemplo\fi \thmtformatoptarg {Ecuación de Airy}}{671}{example.29.6}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~29.7\else \numberline {29.7}Ejemplo\fi \thmtformatoptarg {Ecuación de Hermite}}{672}{example.29.7}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~29.8\else \numberline {29.8}Ejemplo\fi \thmtformatoptarg {Ecuación con coeficientes polinomiales sencilla}}{673}{example.29.8}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~29.9\else \numberline {29.9}Ejemplo\fi \thmtformatoptarg {Serie de potencias que recupera una solución elemental}}{673}{example.29.9}%
+\contentsline {definition}{\ifthmt@listswap Definición~29.10\else \numberline {29.10}Definición\fi \thmtformatoptarg {Punto singular regular}}{674}{definition.29.10}%
+\contentsline {theorem}{\ifthmt@listswap Teorema~29-11\else \numberline {29-11}Teorema\fi \thmtformatoptarg {Método de Frobenius}}{674}{theorem.29.11}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~29.12\else \numberline {29.12}Ejemplo\fi \thmtformatoptarg {Ecuación indicial}}{674}{example.29.12}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~29.13\else \numberline {29.13}Ejemplo\fi \thmtformatoptarg {Ecuación de Bessel de orden 0}}{675}{example.29.13}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~29.14\else \numberline {29.14}Ejemplo\fi \thmtformatoptarg {Ecuación de Bessel de orden $\nu $ no entero}}{676}{example.29.14}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~29.15\else \numberline {29.15}Ejemplo\fi \thmtformatoptarg {Bessel de orden entero positivo, caso 3}}{676}{example.29.15}%
+\contentsline {rem}{\ifthmt@listswap Observación~29.16\else \numberline {29.16}Observación\fi \thmtformatoptarg {Ecuación de Legendre}}{676}{rem.29.16}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~29.17\else \numberline {29.17}Ejemplo\fi \thmtformatoptarg {Polinomio de Legendre por la fórmula de Rodrigues}}{678}{example.29.17}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~29.18\else \numberline {29.18}Ejemplo\fi \thmtformatoptarg {Separación de variables en una esfera}}{678}{example.29.18}%
+\contentsline {prob}{\ifthmt@listswap Problema~29.19\else \numberline {29.19}Problema\fi }{679}{prob.29.19}%
+\contentsline {prob}{\ifthmt@listswap Problema~29.20\else \numberline {29.20}Problema\fi }{679}{prob.29.20}%
+\contentsline {prob}{\ifthmt@listswap Problema~29.21\else \numberline {29.21}Problema\fi }{679}{prob.29.21}%
+\contentsline {prob}{\ifthmt@listswap Problema~29.22\else \numberline {29.22}Problema\fi }{679}{prob.29.22}%
+\contentsline {prob}{\ifthmt@listswap Problema~29.23\else \numberline {29.23}Problema\fi }{679}{prob.29.23}%
+\contentsline {prob}{\ifthmt@listswap Problema~29.24\else \numberline {29.24}Problema\fi }{680}{prob.29.24}%
+\contentsline {prob}{\ifthmt@listswap Problema~29.25\else \numberline {29.25}Problema\fi }{680}{prob.29.25}%
+\contentsline {prob}{\ifthmt@listswap Problema~29.26\else \numberline {29.26}Problema\fi }{680}{prob.29.26}%
+\contentsline {prob}{\ifthmt@listswap Problema~29.27\else \numberline {29.27}Problema\fi }{680}{prob.29.27}%
+\contentsline {prob}{\ifthmt@listswap Problema~29.28\else \numberline {29.28}Problema\fi }{680}{prob.29.28}%
+\contentsline {prob}{\ifthmt@listswap Problema~29.29\else \numberline {29.29}Problema\fi }{680}{prob.29.29}%
+\contentsline {prob}{\ifthmt@listswap Problema~29.30\else \numberline {29.30}Problema\fi }{681}{prob.29.30}%
+\contentsline {prob}{\ifthmt@listswap Problema~29.31\else \numberline {29.31}Problema\fi }{681}{prob.29.31}%
+\contentsline {prob}{\ifthmt@listswap Problema~29.32\else \numberline {29.32}Problema\fi }{681}{prob.29.32}%
+\contentsline {prob}{\ifthmt@listswap Problema~29.33\else \numberline {29.33}Problema\fi }{681}{prob.29.33}%
+\contentsline {prob}{\ifthmt@listswap Problema~29.34\else \numberline {29.34}Problema\fi }{681}{prob.29.34}%
+\contentsline {prob}{\ifthmt@listswap Problema~29.35\else \numberline {29.35}Problema\fi }{681}{prob.29.35}%
+\contentsline {prob}{\ifthmt@listswap Problema~29.36\else \numberline {29.36}Problema\fi }{681}{prob.29.36}%
+\contentsline {prob}{\ifthmt@listswap Problema~29.37\else \numberline {29.37}Problema\fi }{681}{prob.29.37}%
+\contentsline {prob}{\ifthmt@listswap Problema~29.38\else \numberline {29.38}Problema\fi }{681}{prob.29.38}%
+\contentsline {prob}{\ifthmt@listswap Problema~29.39\else \numberline {29.39}Problema\fi }{681}{prob.29.39}%
+\contentsline {prob}{\ifthmt@listswap Problema~29.40\else \numberline {29.40}Problema\fi }{681}{prob.29.40}%
+\contentsline {prob}{\ifthmt@listswap Problema~29.41\else \numberline {29.41}Problema\fi }{682}{prob.29.41}%
+\contentsline {prob}{\ifthmt@listswap Problema~29.42\else \numberline {29.42}Problema\fi }{682}{prob.29.42}%
+\contentsline {prob}{\ifthmt@listswap Problema~29.43\else \numberline {29.43}Problema\fi }{682}{prob.29.43}%
+\contentsline {prob}{\ifthmt@listswap Problema~29.44\else \numberline {29.44}Problema\fi }{682}{prob.29.44}%
 \addvspace {10\p@ }
-\contentsline {definition}{\ifthmt@listswap Definición~30.1\else \numberline {30.1}Definición\fi }{675}{definition.30.1}%
-\contentsline {rem}{\ifthmt@listswap Observación~30.2\else \numberline {30.2}Observación\fi }{675}{rem.30.2}%
-\contentsline {definition}{\ifthmt@listswap Definición~30.3\else \numberline {30.3}Definición\fi \thmtformatoptarg {Orden exponencial}}{675}{definition.30.3}%
-\contentsline {theorem}{\ifthmt@listswap Teorema~30-4\else \numberline {30-4}Teorema\fi \thmtformatoptarg {Condiciones suficientes de existencia}}{675}{theorem.30.4}%
-\contentsline {rem}{\ifthmt@listswap Observación~30.5\else \numberline {30.5}Observación\fi }{675}{rem.30.5}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~30.6\else \numberline {30.6}Ejemplo\fi \thmtformatoptarg {Cálculo directo de la transformada de $f(t)=1$}}{675}{example.30.6}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~30.7\else \numberline {30.7}Ejemplo\fi \thmtformatoptarg {Cálculo directo de la transformada de $f(t)=e^{at}$}}{676}{example.30.7}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~30.8\else \numberline {30.8}Ejemplo\fi \thmtformatoptarg {Cálculo de $\mathcal {L}\{\cos (bt)\}$ mediante definición}}{676}{example.30.8}%
-\contentsline {theorem}{\ifthmt@listswap Teorema~30-9\else \numberline {30-9}Teorema\fi \thmtformatoptarg {Linealidad}}{677}{theorem.30.9}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~30.10\else \numberline {30.10}Ejemplo\fi \thmtformatoptarg {Uso de linealidad}}{677}{example.30.10}%
-\contentsline {theorem}{\ifthmt@listswap Teorema~30-11\else \numberline {30-11}Teorema\fi \thmtformatoptarg {Primer teorema de traslación (desplazamiento en $s$)}}{677}{theorem.30.11}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~30.12\else \numberline {30.12}Ejemplo\fi \thmtformatoptarg {Aplicación del primer teorema de traslación}}{677}{example.30.12}%
-\contentsline {theorem}{\ifthmt@listswap Teorema~30-13\else \numberline {30-13}Teorema\fi \thmtformatoptarg {Transformada de derivadas}}{678}{theorem.30.13}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~30.14\else \numberline {30.14}Ejemplo\fi \thmtformatoptarg {Transformada de derivada para resolver PVI}}{678}{example.30.14}%
-\contentsline {theorem}{\ifthmt@listswap Teorema~30-15\else \numberline {30-15}Teorema\fi \thmtformatoptarg {Transformada de integrales}}{678}{theorem.30.15}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~30.16\else \numberline {30.16}Ejemplo\fi \thmtformatoptarg {Transformada de una integral}}{678}{example.30.16}%
-\contentsline {theorem}{\ifthmt@listswap Teorema~30-17\else \numberline {30-17}Teorema\fi \thmtformatoptarg {Derivada de la transformada (multiplicación por $t$)}}{679}{theorem.30.17}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~30.18\else \numberline {30.18}Ejemplo\fi \thmtformatoptarg {Multiplicación por $t$}}{679}{example.30.18}%
-\contentsline {theorem}{\ifthmt@listswap Teorema~30-19\else \numberline {30-19}Teorema\fi \thmtformatoptarg {División por $t$}}{679}{theorem.30.19}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~30.20\else \numberline {30.20}Ejemplo\fi \thmtformatoptarg {Transformada de $(\mathop {\mathgroup \symoperators sen}\nolimits t)/t$}}{679}{example.30.20}%
-\contentsline {definition}{\ifthmt@listswap Definición~30.21\else \numberline {30.21}Definición\fi }{680}{definition.30.21}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~30.22\else \numberline {30.22}Ejemplo\fi \thmtformatoptarg {Fracciones parciales: raíces reales distintas}}{680}{example.30.22}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~30.23\else \numberline {30.23}Ejemplo\fi \thmtformatoptarg {Raíces repetidas}}{680}{example.30.23}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~30.24\else \numberline {30.24}Ejemplo\fi \thmtformatoptarg {Factores cuadráticos irreducibles: completación de cuadrados}}{681}{example.30.24}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~30.25\else \numberline {30.25}Ejemplo\fi \thmtformatoptarg {Fracción con denominador cuadrático irreducible sin completar}}{681}{example.30.25}%
-\contentsline {definition}{\ifthmt@listswap Definición~30.26\else \numberline {30.26}Definición\fi \thmtformatoptarg {Escalón unitario}}{682}{definition.30.26}%
-\contentsline {rem}{\ifthmt@listswap Observación~30.27\else \numberline {30.27}Observación\fi }{682}{rem.30.27}%
-\contentsline {theorem}{\ifthmt@listswap Teorema~30-28\else \numberline {30-28}Teorema\fi \thmtformatoptarg {Segundo teorema de traslación (desplazamiento en $t$)}}{682}{theorem.30.28}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~30.29\else \numberline {30.29}Ejemplo\fi \thmtformatoptarg {Transformada de un escalón activado}}{682}{example.30.29}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~30.30\else \numberline {30.30}Ejemplo\fi \thmtformatoptarg {Transformada de $u(t-a) g(t)$ con $g$ arbitraria}}{683}{example.30.30}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~30.31\else \numberline {30.31}Ejemplo\fi \thmtformatoptarg {Inversa con escalón}}{683}{example.30.31}%
-\contentsline {definition}{\ifthmt@listswap Definición~30.32\else \numberline {30.32}Definición\fi \thmtformatoptarg {Delta de Dirac}}{683}{definition.30.32}%
-\contentsline {rem}{\ifthmt@listswap Observación~30.33\else \numberline {30.33}Observación\fi }{683}{rem.30.33}%
-\contentsline {theorem}{\ifthmt@listswap Teorema~30-34\else \numberline {30-34}Teorema\fi \thmtformatoptarg {Transformada de la delta}}{683}{theorem.30.34}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~30.35\else \numberline {30.35}Ejemplo\fi \thmtformatoptarg {Respuesta impulsiva: PVI con delta}}{684}{example.30.35}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~30.36\else \numberline {30.36}Ejemplo\fi \thmtformatoptarg {Sistema masa-resorte con impulso}}{684}{example.30.36}%
-\contentsline {definition}{\ifthmt@listswap Definición~30.37\else \numberline {30.37}Definición\fi }{685}{definition.30.37}%
-\contentsline {rem}{\ifthmt@listswap Observación~30.38\else \numberline {30.38}Observación\fi }{685}{rem.30.38}%
-\contentsline {theorem}{\ifthmt@listswap Teorema~30-39\else \numberline {30-39}Teorema\fi \thmtformatoptarg {Teorema de convolución}}{685}{theorem.30.39}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~30.40\else \numberline {30.40}Ejemplo\fi \thmtformatoptarg {Inversa de un producto usando convolución}}{685}{example.30.40}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~30.41\else \numberline {30.41}Ejemplo\fi \thmtformatoptarg {Resolución de una EDO mediante convolución}}{686}{example.30.41}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~30.42\else \numberline {30.42}Ejemplo\fi \thmtformatoptarg {Ecuación integral de Volterra}}{686}{example.30.42}%
-\contentsline {rem}{\ifthmt@listswap Observación~30.43\else \numberline {30.43}Observación\fi }{686}{rem.30.43}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~30.44\else \numberline {30.44}Ejemplo\fi \thmtformatoptarg {PVI con forzamiento continuo}}{687}{example.30.44}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~30.45\else \numberline {30.45}Ejemplo\fi \thmtformatoptarg {PVI con forzamiento discontinuo (escalón)}}{687}{example.30.45}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~30.46\else \numberline {30.46}Ejemplo\fi \thmtformatoptarg {PVI con impulso (delta)}}{688}{example.30.46}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~30.47\else \numberline {30.47}Ejemplo\fi \thmtformatoptarg {PVI mixto con escalón}}{688}{example.30.47}%
-\contentsline {rem}{\ifthmt@listswap Observación~30.48\else \numberline {30.48}Observación\fi }{689}{rem.30.48}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~30.49\else \numberline {30.49}Ejemplo\fi \thmtformatoptarg {Sistema homogéneo 2×2}}{689}{example.30.49}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~30.50\else \numberline {30.50}Ejemplo\fi \thmtformatoptarg {Sistema no homogéneo}}{690}{example.30.50}%
-\contentsline {rem}{\ifthmt@listswap Observación~30.51\else \numberline {30.51}Observación\fi }{690}{rem.30.51}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~30.52\else \numberline {30.52}Ejemplo\fi \thmtformatoptarg {Circuito RLC con conexión escalón}}{690}{example.30.52}%
-\contentsline {rem}{\ifthmt@listswap Observación~30.53\else \numberline {30.53}Observación\fi }{691}{rem.30.53}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~30.54\else \numberline {30.54}Ejemplo\fi \thmtformatoptarg {Respuesta a una fuerza escalón}}{691}{example.30.54}%
-\contentsline {rem}{\ifthmt@listswap Observación~30.55\else \numberline {30.55}Observación\fi }{692}{rem.30.55}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~30.56\else \numberline {30.56}Ejemplo\fi \thmtformatoptarg {Función de Green para un sistema críticamente amortiguado}}{692}{example.30.56}%
-\contentsline {prob}{\ifthmt@listswap Problema~30.57\else \numberline {30.57}Problema\fi \thmtformatoptarg {Cálculo directo}}{692}{prob.30.57}%
-\contentsline {prob}{\ifthmt@listswap Problema~30.58\else \numberline {30.58}Problema\fi \thmtformatoptarg {Primer teorema de traslación}}{692}{prob.30.58}%
-\contentsline {prob}{\ifthmt@listswap Problema~30.59\else \numberline {30.59}Problema\fi \thmtformatoptarg {Transformada de derivada}}{692}{prob.30.59}%
-\contentsline {prob}{\ifthmt@listswap Problema~30.60\else \numberline {30.60}Problema\fi \thmtformatoptarg {Multiplicación por $t$}}{693}{prob.30.60}%
-\contentsline {prob}{\ifthmt@listswap Problema~30.61\else \numberline {30.61}Problema\fi \thmtformatoptarg {División por $t$}}{693}{prob.30.61}%
-\contentsline {prob}{\ifthmt@listswap Problema~30.62\else \numberline {30.62}Problema\fi \thmtformatoptarg {Fracciones parciales raíces reales}}{693}{prob.30.62}%
-\contentsline {prob}{\ifthmt@listswap Problema~30.63\else \numberline {30.63}Problema\fi \thmtformatoptarg {Raíces repetidas}}{693}{prob.30.63}%
-\contentsline {prob}{\ifthmt@listswap Problema~30.64\else \numberline {30.64}Problema\fi \thmtformatoptarg {Completación de cuadrados}}{693}{prob.30.64}%
-\contentsline {prob}{\ifthmt@listswap Problema~30.65\else \numberline {30.65}Problema\fi \thmtformatoptarg {Segundo teorema de traslación directo}}{693}{prob.30.65}%
-\contentsline {prob}{\ifthmt@listswap Problema~30.66\else \numberline {30.66}Problema\fi \thmtformatoptarg {Inversa con escalón}}{694}{prob.30.66}%
-\contentsline {prob}{\ifthmt@listswap Problema~30.67\else \numberline {30.67}Problema\fi \thmtformatoptarg {Transformada de escalón general}}{694}{prob.30.67}%
-\contentsline {prob}{\ifthmt@listswap Problema~30.68\else \numberline {30.68}Problema\fi \thmtformatoptarg {Delta de Dirac directa}}{694}{prob.30.68}%
-\contentsline {prob}{\ifthmt@listswap Problema~30.69\else \numberline {30.69}Problema\fi \thmtformatoptarg {Convolución para inversa}}{694}{prob.30.69}%
-\contentsline {prob}{\ifthmt@listswap Problema~30.70\else \numberline {30.70}Problema\fi \thmtformatoptarg {PVI continuo}}{694}{prob.30.70}%
-\contentsline {prob}{\ifthmt@listswap Problema~30.71\else \numberline {30.71}Problema\fi \thmtformatoptarg {PVI con escalón}}{695}{prob.30.71}%
-\contentsline {prob}{\ifthmt@listswap Problema~30.72\else \numberline {30.72}Problema\fi \thmtformatoptarg {PVI con delta}}{695}{prob.30.72}%
-\contentsline {prob}{\ifthmt@listswap Problema~30.73\else \numberline {30.73}Problema\fi \thmtformatoptarg {PVI con forzamiento definido por tramos}}{695}{prob.30.73}%
-\contentsline {prob}{\ifthmt@listswap Problema~30.74\else \numberline {30.74}Problema\fi \thmtformatoptarg {Sistema 2×2 homogéneo}}{695}{prob.30.74}%
-\contentsline {prob}{\ifthmt@listswap Problema~30.75\else \numberline {30.75}Problema\fi \thmtformatoptarg {Sistema no homogéneo 2×2}}{695}{prob.30.75}%
-\contentsline {prob}{\ifthmt@listswap Problema~30.76\else \numberline {30.76}Problema\fi \thmtformatoptarg {Aplicación: circuito RLC}}{696}{prob.30.76}%
-\contentsline {prob}{\ifthmt@listswap Problema~30.77\else \numberline {30.77}Problema\fi \thmtformatoptarg {Aplicación: masa-resorte con impulso}}{696}{prob.30.77}%
+\contentsline {definition}{\ifthmt@listswap Definición~30.1\else \numberline {30.1}Definición\fi }{683}{definition.30.1}%
+\contentsline {rem}{\ifthmt@listswap Observación~30.2\else \numberline {30.2}Observación\fi }{683}{rem.30.2}%
+\contentsline {definition}{\ifthmt@listswap Definición~30.3\else \numberline {30.3}Definición\fi \thmtformatoptarg {Orden exponencial}}{683}{definition.30.3}%
+\contentsline {theorem}{\ifthmt@listswap Teorema~30-4\else \numberline {30-4}Teorema\fi \thmtformatoptarg {Condiciones suficientes de existencia}}{683}{theorem.30.4}%
+\contentsline {rem}{\ifthmt@listswap Observación~30.5\else \numberline {30.5}Observación\fi }{683}{rem.30.5}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~30.6\else \numberline {30.6}Ejemplo\fi \thmtformatoptarg {Cálculo directo de la transformada de $f(t)=1$}}{684}{example.30.6}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~30.7\else \numberline {30.7}Ejemplo\fi \thmtformatoptarg {Cálculo directo de la transformada de $f(t)=e^{at}$}}{684}{example.30.7}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~30.8\else \numberline {30.8}Ejemplo\fi \thmtformatoptarg {Cálculo de $\mathcal {L}\{\cos (bt)\}$ mediante definición}}{684}{example.30.8}%
+\contentsline {theorem}{\ifthmt@listswap Teorema~30-9\else \numberline {30-9}Teorema\fi \thmtformatoptarg {Linealidad}}{685}{theorem.30.9}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~30.10\else \numberline {30.10}Ejemplo\fi \thmtformatoptarg {Uso de linealidad}}{685}{example.30.10}%
+\contentsline {theorem}{\ifthmt@listswap Teorema~30-11\else \numberline {30-11}Teorema\fi \thmtformatoptarg {Primer teorema de traslación (desplazamiento en $s$)}}{686}{theorem.30.11}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~30.12\else \numberline {30.12}Ejemplo\fi \thmtformatoptarg {Aplicación del primer teorema de traslación}}{686}{example.30.12}%
+\contentsline {theorem}{\ifthmt@listswap Teorema~30-13\else \numberline {30-13}Teorema\fi \thmtformatoptarg {Transformada de derivadas}}{686}{theorem.30.13}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~30.14\else \numberline {30.14}Ejemplo\fi \thmtformatoptarg {Transformada de derivada para resolver PVI}}{686}{example.30.14}%
+\contentsline {theorem}{\ifthmt@listswap Teorema~30-15\else \numberline {30-15}Teorema\fi \thmtformatoptarg {Transformada de integrales}}{687}{theorem.30.15}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~30.16\else \numberline {30.16}Ejemplo\fi \thmtformatoptarg {Transformada de una integral}}{687}{example.30.16}%
+\contentsline {theorem}{\ifthmt@listswap Teorema~30-17\else \numberline {30-17}Teorema\fi \thmtformatoptarg {Derivada de la transformada (multiplicación por $t$)}}{687}{theorem.30.17}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~30.18\else \numberline {30.18}Ejemplo\fi \thmtformatoptarg {Multiplicación por $t$}}{687}{example.30.18}%
+\contentsline {theorem}{\ifthmt@listswap Teorema~30-19\else \numberline {30-19}Teorema\fi \thmtformatoptarg {División por $t$}}{687}{theorem.30.19}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~30.20\else \numberline {30.20}Ejemplo\fi \thmtformatoptarg {Transformada de $(\mathop {\mathgroup \symoperators sen}\nolimits t)/t$}}{687}{example.30.20}%
+\contentsline {definition}{\ifthmt@listswap Definición~30.21\else \numberline {30.21}Definición\fi }{688}{definition.30.21}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~30.22\else \numberline {30.22}Ejemplo\fi \thmtformatoptarg {Fracciones parciales: raíces reales distintas}}{688}{example.30.22}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~30.23\else \numberline {30.23}Ejemplo\fi \thmtformatoptarg {Raíces repetidas}}{689}{example.30.23}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~30.24\else \numberline {30.24}Ejemplo\fi \thmtformatoptarg {Factores cuadráticos irreducibles: completación de cuadrados}}{689}{example.30.24}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~30.25\else \numberline {30.25}Ejemplo\fi \thmtformatoptarg {Fracción con denominador cuadrático irreducible sin completar}}{690}{example.30.25}%
+\contentsline {definition}{\ifthmt@listswap Definición~30.26\else \numberline {30.26}Definición\fi \thmtformatoptarg {Escalón unitario}}{690}{definition.30.26}%
+\contentsline {rem}{\ifthmt@listswap Observación~30.27\else \numberline {30.27}Observación\fi }{690}{rem.30.27}%
+\contentsline {theorem}{\ifthmt@listswap Teorema~30-28\else \numberline {30-28}Teorema\fi \thmtformatoptarg {Segundo teorema de traslación (desplazamiento en $t$)}}{691}{theorem.30.28}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~30.29\else \numberline {30.29}Ejemplo\fi \thmtformatoptarg {Transformada de un escalón activado}}{691}{example.30.29}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~30.30\else \numberline {30.30}Ejemplo\fi \thmtformatoptarg {Transformada de $u(t-a) g(t)$ con $g$ arbitraria}}{691}{example.30.30}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~30.31\else \numberline {30.31}Ejemplo\fi \thmtformatoptarg {Inversa con escalón}}{691}{example.30.31}%
+\contentsline {definition}{\ifthmt@listswap Definición~30.32\else \numberline {30.32}Definición\fi \thmtformatoptarg {Delta de Dirac}}{692}{definition.30.32}%
+\contentsline {rem}{\ifthmt@listswap Observación~30.33\else \numberline {30.33}Observación\fi }{692}{rem.30.33}%
+\contentsline {theorem}{\ifthmt@listswap Teorema~30-34\else \numberline {30-34}Teorema\fi \thmtformatoptarg {Transformada de la delta}}{692}{theorem.30.34}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~30.35\else \numberline {30.35}Ejemplo\fi \thmtformatoptarg {Respuesta impulsiva: PVI con delta}}{692}{example.30.35}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~30.36\else \numberline {30.36}Ejemplo\fi \thmtformatoptarg {Sistema masa-resorte con impulso}}{693}{example.30.36}%
+\contentsline {definition}{\ifthmt@listswap Definición~30.37\else \numberline {30.37}Definición\fi }{693}{definition.30.37}%
+\contentsline {rem}{\ifthmt@listswap Observación~30.38\else \numberline {30.38}Observación\fi }{693}{rem.30.38}%
+\contentsline {theorem}{\ifthmt@listswap Teorema~30-39\else \numberline {30-39}Teorema\fi \thmtformatoptarg {Teorema de convolución}}{694}{theorem.30.39}%
+\contentsline {rem}{\ifthmt@listswap Observación~30.40\else \numberline {30.40}Observación\fi }{694}{rem.30.40}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~30.41\else \numberline {30.41}Ejemplo\fi \thmtformatoptarg {Inversa de un producto usando convolución}}{694}{example.30.41}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~30.42\else \numberline {30.42}Ejemplo\fi \thmtformatoptarg {Resolución de una EDO mediante convolución}}{695}{example.30.42}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~30.43\else \numberline {30.43}Ejemplo\fi \thmtformatoptarg {Ecuación integral de Volterra}}{695}{example.30.43}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~30.44\else \numberline {30.44}Ejemplo\fi \thmtformatoptarg {Inversa de $1/(s^2+1)^2$ por convolución}}{696}{example.30.44}%
+\contentsline {rem}{\ifthmt@listswap Observación~30.45\else \numberline {30.45}Observación\fi }{696}{rem.30.45}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~30.46\else \numberline {30.46}Ejemplo\fi \thmtformatoptarg {PVI con forzamiento continuo}}{696}{example.30.46}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~30.47\else \numberline {30.47}Ejemplo\fi \thmtformatoptarg {PVI con forzamiento discontinuo (escalón)}}{697}{example.30.47}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~30.48\else \numberline {30.48}Ejemplo\fi \thmtformatoptarg {PVI con impulso (delta)}}{697}{example.30.48}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~30.49\else \numberline {30.49}Ejemplo\fi \thmtformatoptarg {PVI mixto con escalón}}{698}{example.30.49}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~30.50\else \numberline {30.50}Ejemplo\fi \thmtformatoptarg {PVI con forzamiento definido por tramos}}{698}{example.30.50}%
+\contentsline {rem}{\ifthmt@listswap Observación~30.51\else \numberline {30.51}Observación\fi }{699}{rem.30.51}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~30.52\else \numberline {30.52}Ejemplo\fi \thmtformatoptarg {Sistema homogéneo 2×2}}{699}{example.30.52}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~30.53\else \numberline {30.53}Ejemplo\fi \thmtformatoptarg {Sistema no homogéneo}}{699}{example.30.53}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~30.54\else \numberline {30.54}Ejemplo\fi \thmtformatoptarg {Sistema $2\times 2$ resuelto con Laplace}}{700}{example.30.54}%
+\contentsline {rem}{\ifthmt@listswap Observación~30.55\else \numberline {30.55}Observación\fi }{701}{rem.30.55}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~30.56\else \numberline {30.56}Ejemplo\fi \thmtformatoptarg {Circuito RLC con conexión escalón}}{701}{example.30.56}%
+\contentsline {rem}{\ifthmt@listswap Observación~30.57\else \numberline {30.57}Observación\fi }{701}{rem.30.57}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~30.58\else \numberline {30.58}Ejemplo\fi \thmtformatoptarg {Respuesta a una fuerza escalón}}{701}{example.30.58}%
+\contentsline {rem}{\ifthmt@listswap Observación~30.59\else \numberline {30.59}Observación\fi }{702}{rem.30.59}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~30.60\else \numberline {30.60}Ejemplo\fi \thmtformatoptarg {Función de Green para un sistema críticamente amortiguado}}{702}{example.30.60}%
+\contentsline {prob}{\ifthmt@listswap Problema~30.61\else \numberline {30.61}Problema\fi \thmtformatoptarg {Cálculo directo}}{702}{prob.30.61}%
+\contentsline {prob}{\ifthmt@listswap Problema~30.62\else \numberline {30.62}Problema\fi \thmtformatoptarg {Primer teorema de traslación}}{703}{prob.30.62}%
+\contentsline {prob}{\ifthmt@listswap Problema~30.63\else \numberline {30.63}Problema\fi \thmtformatoptarg {Transformada de derivada}}{703}{prob.30.63}%
+\contentsline {prob}{\ifthmt@listswap Problema~30.64\else \numberline {30.64}Problema\fi \thmtformatoptarg {Multiplicación por $t$}}{703}{prob.30.64}%
+\contentsline {prob}{\ifthmt@listswap Problema~30.65\else \numberline {30.65}Problema\fi \thmtformatoptarg {División por $t$}}{703}{prob.30.65}%
+\contentsline {prob}{\ifthmt@listswap Problema~30.66\else \numberline {30.66}Problema\fi \thmtformatoptarg {Fracciones parciales raíces reales}}{703}{prob.30.66}%
+\contentsline {prob}{\ifthmt@listswap Problema~30.67\else \numberline {30.67}Problema\fi \thmtformatoptarg {Raíces repetidas}}{703}{prob.30.67}%
+\contentsline {prob}{\ifthmt@listswap Problema~30.68\else \numberline {30.68}Problema\fi \thmtformatoptarg {Completación de cuadrados}}{704}{prob.30.68}%
+\contentsline {prob}{\ifthmt@listswap Problema~30.69\else \numberline {30.69}Problema\fi \thmtformatoptarg {Segundo teorema de traslación directo}}{704}{prob.30.69}%
+\contentsline {prob}{\ifthmt@listswap Problema~30.70\else \numberline {30.70}Problema\fi \thmtformatoptarg {Inversa con escalón}}{704}{prob.30.70}%
+\contentsline {prob}{\ifthmt@listswap Problema~30.71\else \numberline {30.71}Problema\fi \thmtformatoptarg {Transformada de escalón general}}{704}{prob.30.71}%
+\contentsline {prob}{\ifthmt@listswap Problema~30.72\else \numberline {30.72}Problema\fi \thmtformatoptarg {Delta de Dirac directa}}{704}{prob.30.72}%
+\contentsline {prob}{\ifthmt@listswap Problema~30.73\else \numberline {30.73}Problema\fi \thmtformatoptarg {PVI continuo}}{704}{prob.30.73}%
+\contentsline {prob}{\ifthmt@listswap Problema~30.74\else \numberline {30.74}Problema\fi \thmtformatoptarg {PVI con escalón}}{705}{prob.30.74}%
+\contentsline {prob}{\ifthmt@listswap Problema~30.75\else \numberline {30.75}Problema\fi \thmtformatoptarg {PVI con delta}}{705}{prob.30.75}%
+\contentsline {prob}{\ifthmt@listswap Problema~30.76\else \numberline {30.76}Problema\fi \thmtformatoptarg {Sistema no homogéneo 2×2}}{705}{prob.30.76}%
+\contentsline {prob}{\ifthmt@listswap Problema~30.77\else \numberline {30.77}Problema\fi \thmtformatoptarg {Aplicación: circuito RLC}}{705}{prob.30.77}%
+\contentsline {prob}{\ifthmt@listswap Problema~30.78\else \numberline {30.78}Problema\fi \thmtformatoptarg {Aplicación: masa-resorte con impulso}}{705}{prob.30.78}%
+\contentsline {prob}{\ifthmt@listswap Problema~30.79\else \numberline {30.79}Problema\fi }{706}{prob.30.79}%
+\contentsline {prob}{\ifthmt@listswap Problema~30.80\else \numberline {30.80}Problema\fi }{706}{prob.30.80}%
+\contentsline {prob}{\ifthmt@listswap Problema~30.81\else \numberline {30.81}Problema\fi }{706}{prob.30.81}%
+\contentsline {prob}{\ifthmt@listswap Problema~30.82\else \numberline {30.82}Problema\fi }{706}{prob.30.82}%
+\contentsline {prob}{\ifthmt@listswap Problema~30.83\else \numberline {30.83}Problema\fi }{706}{prob.30.83}%
+\contentsline {prob}{\ifthmt@listswap Problema~30.84\else \numberline {30.84}Problema\fi }{706}{prob.30.84}%
+\contentsline {prob}{\ifthmt@listswap Problema~30.85\else \numberline {30.85}Problema\fi }{706}{prob.30.85}%
+\contentsline {prob}{\ifthmt@listswap Problema~30.86\else \numberline {30.86}Problema\fi }{706}{prob.30.86}%
+\contentsline {prob}{\ifthmt@listswap Problema~30.87\else \numberline {30.87}Problema\fi }{706}{prob.30.87}%
+\contentsline {prob}{\ifthmt@listswap Problema~30.88\else \numberline {30.88}Problema\fi }{706}{prob.30.88}%
+\contentsline {prob}{\ifthmt@listswap Problema~30.89\else \numberline {30.89}Problema\fi }{706}{prob.30.89}%
+\contentsline {prob}{\ifthmt@listswap Problema~30.90\else \numberline {30.90}Problema\fi }{706}{prob.30.90}%
+\contentsline {prob}{\ifthmt@listswap Problema~30.91\else \numberline {30.91}Problema\fi }{706}{prob.30.91}%
+\contentsline {prob}{\ifthmt@listswap Problema~30.92\else \numberline {30.92}Problema\fi }{706}{prob.30.92}%
+\contentsline {prob}{\ifthmt@listswap Problema~30.93\else \numberline {30.93}Problema\fi }{706}{prob.30.93}%
 \addvspace {10\p@ }
-\contentsline {theorem}{\ifthmt@listswap Teorema~31-1\else \numberline {31-1}Teorema\fi \thmtformatoptarg {Integrabilidad}}{699}{theorem.31.1}%
-\contentsline {theorem}{\ifthmt@listswap Teorema~31-2\else \numberline {31-2}Teorema\fi \thmtformatoptarg {Fubini}}{699}{theorem.31.2}%
-\contentsline {pasos}{\ifthmt@listswap Construcción~31.3\else \numberline {31.3}Construcción\fi \thmtformatoptarg {Evaluación de una integral doble sobre un rectángulo}}{700}{pasos.31.3}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~31.4\else \numberline {31.4}Ejemplo\fi \thmtformatoptarg {Integral doble sobre un rectángulo}}{700}{example.31.4}%
-\contentsline {definition}{\ifthmt@listswap Definición~31.5\else \numberline {31.5}Definición\fi \thmtformatoptarg {Región tipo I ($y$-simple)}}{700}{definition.31.5}%
-\contentsline {definition}{\ifthmt@listswap Definición~31.6\else \numberline {31.6}Definición\fi \thmtformatoptarg {Región tipo II ($x$-simple)}}{700}{definition.31.6}%
-\contentsline {pasos}{\ifthmt@listswap Construcción~31.7\else \numberline {31.7}Construcción\fi \thmtformatoptarg {Integral doble sobre una región general}}{701}{pasos.31.7}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~31.8\else \numberline {31.8}Ejemplo\fi \thmtformatoptarg {Región tipo I}}{701}{example.31.8}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~31.9\else \numberline {31.9}Ejemplo\fi \thmtformatoptarg {Región tipo II}}{701}{example.31.9}%
-\contentsline {rem}{\ifthmt@listswap Observación~31.10\else \numberline {31.10}Observación\fi }{702}{rem.31.10}%
-\contentsline {prob}{\ifthmt@listswap Problema~31.11\else \numberline {31.11}Problema\fi \thmtformatoptarg {Integrales dobles sobre rectángulos}}{703}{prob.31.11}%
-\contentsline {prob}{\ifthmt@listswap Problema~31.12\else \numberline {31.12}Problema\fi \thmtformatoptarg {Regiones generales}}{703}{prob.31.12}%
-\contentsline {prob}{\ifthmt@listswap Problema~31.13\else \numberline {31.13}Problema\fi \thmtformatoptarg {Cambio de orden de integración}}{705}{prob.31.13}%
-\contentsline {rem}{\ifthmt@listswap Observación~31.14\else \numberline {31.14}Observación\fi }{706}{rem.31.14}%
-\contentsline {prob}{\ifthmt@listswap Problema~31.15\else \numberline {31.15}Problema\fi }{706}{prob.31.15}%
-\contentsline {pasos}{\ifthmt@listswap Construcción~31.16\else \numberline {31.16}Construcción\fi \thmtformatoptarg {Cálculo de magnitudes de una lámina mediante integral doble}}{706}{pasos.31.16}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~31.17\else \numberline {31.17}Ejemplo\fi \thmtformatoptarg {Volumen bajo un paraboloide sobre un rectángulo}}{707}{example.31.17}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~31.18\else \numberline {31.18}Ejemplo\fi \thmtformatoptarg {Área de una región plana}}{707}{example.31.18}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~31.19\else \numberline {31.19}Ejemplo\fi \thmtformatoptarg {Masa y centro de masa de una lámina triangular}}{707}{example.31.19}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~31.20\else \numberline {31.20}Ejemplo\fi \thmtformatoptarg {Momentos de inercia de una lámina rectangular}}{708}{example.31.20}%
-\contentsline {prob}{\ifthmt@listswap Problema~31.21\else \numberline {31.21}Problema\fi }{709}{prob.31.21}%
-\contentsline {prob}{\ifthmt@listswap Problema~31.22\else \numberline {31.22}Problema\fi }{709}{prob.31.22}%
-\contentsline {prob}{\ifthmt@listswap Problema~31.23\else \numberline {31.23}Problema\fi }{711}{prob.31.23}%
-\contentsline {pasos}{\ifthmt@listswap Construcción~31.24\else \numberline {31.24}Construcción\fi \thmtformatoptarg {Evaluación de una integral doble en coordenadas polares}}{712}{pasos.31.24}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~31.25\else \numberline {31.25}Ejemplo\fi \thmtformatoptarg {Integral sobre un disco}}{713}{example.31.25}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~31.26\else \numberline {31.26}Ejemplo\fi \thmtformatoptarg {Área de una región dentro de una cardioide}}{713}{example.31.26}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~31.27\else \numberline {31.27}Ejemplo\fi \thmtformatoptarg {Área de un paraboloide}}{714}{example.31.27}%
-\contentsline {rem}{\ifthmt@listswap Observación~31.28\else \numberline {31.28}Observación\fi }{714}{rem.31.28}%
-\contentsline {prob}{\ifthmt@listswap Problema~31.29\else \numberline {31.29}Problema\fi \thmtformatoptarg {Volumen}}{714}{prob.31.29}%
-\contentsline {prob}{\ifthmt@listswap Problema~31.30\else \numberline {31.30}Problema\fi \thmtformatoptarg {Masa y centro de masa}}{715}{prob.31.30}%
-\contentsline {prob}{\ifthmt@listswap Problema~31.31\else \numberline {31.31}Problema\fi \thmtformatoptarg {Momentos de inercia}}{715}{prob.31.31}%
-\contentsline {prob}{\ifthmt@listswap Problema~31.32\else \numberline {31.32}Problema\fi \thmtformatoptarg {Integral en polares}}{716}{prob.31.32}%
-\contentsline {prob}{\ifthmt@listswap Problema~31.33\else \numberline {31.33}Problema\fi \thmtformatoptarg {Área en polares}}{716}{prob.31.33}%
-\contentsline {prob}{\ifthmt@listswap Problema~31.34\else \numberline {31.34}Problema\fi \thmtformatoptarg {Área superficial}}{717}{prob.31.34}%
-\contentsline {prob}{\ifthmt@listswap Problema~31.35\else \numberline {31.35}Problema\fi \thmtformatoptarg {Cambio a polares}}{717}{prob.31.35}%
-\contentsline {prob}{\ifthmt@listswap Problema~31.36\else \numberline {31.36}Problema\fi \thmtformatoptarg {Cambio a polares en una región no circular}}{718}{prob.31.36}%
-\contentsline {prob}{\ifthmt@listswap Problema~31.37\else \numberline {31.37}Problema\fi \thmtformatoptarg {Aplicación combinada}}{719}{prob.31.37}%
-\contentsline {definition}{\ifthmt@listswap Definición~31.38\else \numberline {31.38}Definición\fi \thmtformatoptarg {Transformación y jacobiano en $\mathbb {R}^2$}}{720}{definition.31.38}%
-\contentsline {theorem}{\ifthmt@listswap Teorema~31-39\else \numberline {31-39}Teorema\fi \thmtformatoptarg {Cambio de variables en integrales dobles}}{720}{theorem.31.39}%
-\contentsline {rem}{\ifthmt@listswap Observación~31.40\else \numberline {31.40}Observación\fi }{720}{rem.31.40}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~31.41\else \numberline {31.41}Ejemplo\fi \thmtformatoptarg {Coordenadas polares como caso del Jacobiano}}{720}{example.31.41}%
-\contentsline {prob}{\ifthmt@listswap Problema~31.42\else \numberline {31.42}Problema\fi }{720}{prob.31.42}%
-\contentsline {prob}{\ifthmt@listswap Problema~31.43\else \numberline {31.43}Problema\fi }{721}{prob.31.43}%
-\contentsline {prob}{\ifthmt@listswap Problema~31.44\else \numberline {31.44}Problema\fi }{721}{prob.31.44}%
-\contentsline {prob}{\ifthmt@listswap Problema~31.45\else \numberline {31.45}Problema\fi }{721}{prob.31.45}%
-\contentsline {prob}{\ifthmt@listswap Problema~31.46\else \numberline {31.46}Problema\fi }{721}{prob.31.46}%
-\contentsline {prob}{\ifthmt@listswap Problema~31.47\else \numberline {31.47}Problema\fi }{722}{prob.31.47}%
-\contentsline {prob}{\ifthmt@listswap Problema~31.48\else \numberline {31.48}Problema\fi }{722}{prob.31.48}%
-\contentsline {prob}{\ifthmt@listswap Problema~31.49\else \numberline {31.49}Problema\fi }{722}{prob.31.49}%
-\contentsline {prob}{\ifthmt@listswap Problema~31.50\else \numberline {31.50}Problema\fi }{723}{prob.31.50}%
-\contentsline {prob}{\ifthmt@listswap Problema~31.51\else \numberline {31.51}Problema\fi }{723}{prob.31.51}%
-\contentsline {prob}{\ifthmt@listswap Problema~31.52\else \numberline {31.52}Problema\fi }{723}{prob.31.52}%
-\contentsline {prob}{\ifthmt@listswap Problema~31.53\else \numberline {31.53}Problema\fi }{723}{prob.31.53}%
-\contentsline {prob}{\ifthmt@listswap Problema~31.54\else \numberline {31.54}Problema\fi }{723}{prob.31.54}%
-\contentsline {prob}{\ifthmt@listswap Problema~31.55\else \numberline {31.55}Problema\fi }{723}{prob.31.55}%
-\contentsline {prob}{\ifthmt@listswap Problema~31.56\else \numberline {31.56}Problema\fi }{723}{prob.31.56}%
-\contentsline {prob}{\ifthmt@listswap Problema~31.57\else \numberline {31.57}Problema\fi }{723}{prob.31.57}%
-\contentsline {prob}{\ifthmt@listswap Problema~31.58\else \numberline {31.58}Problema\fi }{723}{prob.31.58}%
-\contentsline {prob}{\ifthmt@listswap Problema~31.59\else \numberline {31.59}Problema\fi }{723}{prob.31.59}%
-\contentsline {prob}{\ifthmt@listswap Problema~31.60\else \numberline {31.60}Problema\fi }{723}{prob.31.60}%
-\contentsline {prob}{\ifthmt@listswap Problema~31.61\else \numberline {31.61}Problema\fi }{723}{prob.31.61}%
-\contentsline {prob}{\ifthmt@listswap Problema~31.62\else \numberline {31.62}Problema\fi }{723}{prob.31.62}%
-\contentsline {prob}{\ifthmt@listswap Problema~31.63\else \numberline {31.63}Problema\fi }{723}{prob.31.63}%
-\contentsline {prob}{\ifthmt@listswap Problema~31.64\else \numberline {31.64}Problema\fi }{723}{prob.31.64}%
-\contentsline {prob}{\ifthmt@listswap Problema~31.65\else \numberline {31.65}Problema\fi }{723}{prob.31.65}%
-\contentsline {prob}{\ifthmt@listswap Problema~31.66\else \numberline {31.66}Problema\fi }{723}{prob.31.66}%
-\contentsline {prob}{\ifthmt@listswap Problema~31.67\else \numberline {31.67}Problema\fi }{723}{prob.31.67}%
-\contentsline {prob}{\ifthmt@listswap Problema~31.68\else \numberline {31.68}Problema\fi }{724}{prob.31.68}%
-\contentsline {prob}{\ifthmt@listswap Problema~31.69\else \numberline {31.69}Problema\fi }{724}{prob.31.69}%
-\contentsline {prob}{\ifthmt@listswap Problema~31.70\else \numberline {31.70}Problema\fi }{724}{prob.31.70}%
-\contentsline {prob}{\ifthmt@listswap Problema~31.71\else \numberline {31.71}Problema\fi }{724}{prob.31.71}%
-\contentsline {prob}{\ifthmt@listswap Problema~31.72\else \numberline {31.72}Problema\fi }{724}{prob.31.72}%
-\contentsline {prob}{\ifthmt@listswap Problema~31.73\else \numberline {31.73}Problema\fi }{724}{prob.31.73}%
-\contentsline {prob}{\ifthmt@listswap Problema~31.74\else \numberline {31.74}Problema\fi }{724}{prob.31.74}%
-\contentsline {prob}{\ifthmt@listswap Problema~31.75\else \numberline {31.75}Problema\fi }{724}{prob.31.75}%
-\contentsline {prob}{\ifthmt@listswap Problema~31.76\else \numberline {31.76}Problema\fi }{725}{prob.31.76}%
-\contentsline {prob}{\ifthmt@listswap Problema~31.77\else \numberline {31.77}Problema\fi }{725}{prob.31.77}%
-\contentsline {prob}{\ifthmt@listswap Problema~31.78\else \numberline {31.78}Problema\fi }{725}{prob.31.78}%
-\contentsline {prob}{\ifthmt@listswap Problema~31.79\else \numberline {31.79}Problema\fi }{725}{prob.31.79}%
-\contentsline {prob}{\ifthmt@listswap Problema~31.80\else \numberline {31.80}Problema\fi \thmtformatoptarg {Volumen bajo un paraboloide, por encima de un plano}}{725}{prob.31.80}%
+\contentsline {theorem}{\ifthmt@listswap Teorema~31-1\else \numberline {31-1}Teorema\fi \thmtformatoptarg {Integrabilidad}}{709}{theorem.31.1}%
+\contentsline {theorem}{\ifthmt@listswap Teorema~31-2\else \numberline {31-2}Teorema\fi \thmtformatoptarg {Fubini}}{709}{theorem.31.2}%
+\contentsline {pasos}{\ifthmt@listswap Construcción~31.3\else \numberline {31.3}Construcción\fi \thmtformatoptarg {Evaluación de una integral doble sobre un rectángulo}}{710}{pasos.31.3}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~31.4\else \numberline {31.4}Ejemplo\fi \thmtformatoptarg {Integral doble sobre un rectángulo}}{710}{example.31.4}%
+\contentsline {definition}{\ifthmt@listswap Definición~31.5\else \numberline {31.5}Definición\fi \thmtformatoptarg {Región tipo I ($y$-simple)}}{710}{definition.31.5}%
+\contentsline {definition}{\ifthmt@listswap Definición~31.6\else \numberline {31.6}Definición\fi \thmtformatoptarg {Región tipo II ($x$-simple)}}{710}{definition.31.6}%
+\contentsline {pasos}{\ifthmt@listswap Construcción~31.7\else \numberline {31.7}Construcción\fi \thmtformatoptarg {Integral doble sobre una región general}}{711}{pasos.31.7}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~31.8\else \numberline {31.8}Ejemplo\fi \thmtformatoptarg {Región tipo I}}{711}{example.31.8}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~31.9\else \numberline {31.9}Ejemplo\fi \thmtformatoptarg {Región tipo II}}{711}{example.31.9}%
+\contentsline {rem}{\ifthmt@listswap Observación~31.10\else \numberline {31.10}Observación\fi }{712}{rem.31.10}%
+\contentsline {prob}{\ifthmt@listswap Problema~31.11\else \numberline {31.11}Problema\fi \thmtformatoptarg {Integrales dobles sobre rectángulos}}{713}{prob.31.11}%
+\contentsline {prob}{\ifthmt@listswap Problema~31.12\else \numberline {31.12}Problema\fi \thmtformatoptarg {Regiones generales}}{713}{prob.31.12}%
+\contentsline {prob}{\ifthmt@listswap Problema~31.13\else \numberline {31.13}Problema\fi \thmtformatoptarg {Cambio de orden de integración}}{715}{prob.31.13}%
+\contentsline {rem}{\ifthmt@listswap Observación~31.14\else \numberline {31.14}Observación\fi }{716}{rem.31.14}%
+\contentsline {prob}{\ifthmt@listswap Problema~31.15\else \numberline {31.15}Problema\fi }{716}{prob.31.15}%
+\contentsline {pasos}{\ifthmt@listswap Construcción~31.16\else \numberline {31.16}Construcción\fi \thmtformatoptarg {Cálculo de magnitudes de una lámina mediante integral doble}}{716}{pasos.31.16}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~31.17\else \numberline {31.17}Ejemplo\fi \thmtformatoptarg {Volumen bajo un paraboloide sobre un rectángulo}}{717}{example.31.17}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~31.18\else \numberline {31.18}Ejemplo\fi \thmtformatoptarg {Área de una región plana}}{717}{example.31.18}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~31.19\else \numberline {31.19}Ejemplo\fi \thmtformatoptarg {Masa y centro de masa de una lámina triangular}}{717}{example.31.19}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~31.20\else \numberline {31.20}Ejemplo\fi \thmtformatoptarg {Momentos de inercia de una lámina rectangular}}{718}{example.31.20}%
+\contentsline {prob}{\ifthmt@listswap Problema~31.21\else \numberline {31.21}Problema\fi }{719}{prob.31.21}%
+\contentsline {prob}{\ifthmt@listswap Problema~31.22\else \numberline {31.22}Problema\fi }{719}{prob.31.22}%
+\contentsline {prob}{\ifthmt@listswap Problema~31.23\else \numberline {31.23}Problema\fi }{721}{prob.31.23}%
+\contentsline {pasos}{\ifthmt@listswap Construcción~31.24\else \numberline {31.24}Construcción\fi \thmtformatoptarg {Evaluación de una integral doble en coordenadas polares}}{722}{pasos.31.24}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~31.25\else \numberline {31.25}Ejemplo\fi \thmtformatoptarg {Integral sobre un disco}}{723}{example.31.25}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~31.26\else \numberline {31.26}Ejemplo\fi \thmtformatoptarg {Área de una región dentro de una cardioide}}{723}{example.31.26}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~31.27\else \numberline {31.27}Ejemplo\fi \thmtformatoptarg {Área de un paraboloide}}{724}{example.31.27}%
+\contentsline {rem}{\ifthmt@listswap Observación~31.28\else \numberline {31.28}Observación\fi }{724}{rem.31.28}%
+\contentsline {prob}{\ifthmt@listswap Problema~31.29\else \numberline {31.29}Problema\fi \thmtformatoptarg {Volumen}}{724}{prob.31.29}%
+\contentsline {prob}{\ifthmt@listswap Problema~31.30\else \numberline {31.30}Problema\fi \thmtformatoptarg {Masa y centro de masa}}{725}{prob.31.30}%
+\contentsline {prob}{\ifthmt@listswap Problema~31.31\else \numberline {31.31}Problema\fi \thmtformatoptarg {Momentos de inercia}}{725}{prob.31.31}%
+\contentsline {prob}{\ifthmt@listswap Problema~31.32\else \numberline {31.32}Problema\fi \thmtformatoptarg {Integral en polares}}{726}{prob.31.32}%
+\contentsline {prob}{\ifthmt@listswap Problema~31.33\else \numberline {31.33}Problema\fi \thmtformatoptarg {Área en polares}}{726}{prob.31.33}%
+\contentsline {prob}{\ifthmt@listswap Problema~31.34\else \numberline {31.34}Problema\fi \thmtformatoptarg {Área superficial}}{727}{prob.31.34}%
+\contentsline {prob}{\ifthmt@listswap Problema~31.35\else \numberline {31.35}Problema\fi \thmtformatoptarg {Cambio a polares}}{727}{prob.31.35}%
+\contentsline {prob}{\ifthmt@listswap Problema~31.36\else \numberline {31.36}Problema\fi \thmtformatoptarg {Cambio a polares en una región no circular}}{728}{prob.31.36}%
+\contentsline {prob}{\ifthmt@listswap Problema~31.37\else \numberline {31.37}Problema\fi \thmtformatoptarg {Aplicación combinada}}{729}{prob.31.37}%
+\contentsline {definition}{\ifthmt@listswap Definición~31.38\else \numberline {31.38}Definición\fi \thmtformatoptarg {Transformación y jacobiano en $\mathbb {R}^2$}}{730}{definition.31.38}%
+\contentsline {theorem}{\ifthmt@listswap Teorema~31-39\else \numberline {31-39}Teorema\fi \thmtformatoptarg {Cambio de variables en integrales dobles}}{730}{theorem.31.39}%
+\contentsline {rem}{\ifthmt@listswap Observación~31.40\else \numberline {31.40}Observación\fi }{730}{rem.31.40}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~31.41\else \numberline {31.41}Ejemplo\fi \thmtformatoptarg {Coordenadas polares como caso del Jacobiano}}{730}{example.31.41}%
+\contentsline {prob}{\ifthmt@listswap Problema~31.42\else \numberline {31.42}Problema\fi }{730}{prob.31.42}%
+\contentsline {prob}{\ifthmt@listswap Problema~31.43\else \numberline {31.43}Problema\fi }{731}{prob.31.43}%
+\contentsline {prob}{\ifthmt@listswap Problema~31.44\else \numberline {31.44}Problema\fi }{731}{prob.31.44}%
+\contentsline {prob}{\ifthmt@listswap Problema~31.45\else \numberline {31.45}Problema\fi }{731}{prob.31.45}%
+\contentsline {prob}{\ifthmt@listswap Problema~31.46\else \numberline {31.46}Problema\fi }{731}{prob.31.46}%
+\contentsline {prob}{\ifthmt@listswap Problema~31.47\else \numberline {31.47}Problema\fi }{732}{prob.31.47}%
+\contentsline {prob}{\ifthmt@listswap Problema~31.48\else \numberline {31.48}Problema\fi }{732}{prob.31.48}%
+\contentsline {prob}{\ifthmt@listswap Problema~31.49\else \numberline {31.49}Problema\fi }{732}{prob.31.49}%
+\contentsline {prob}{\ifthmt@listswap Problema~31.50\else \numberline {31.50}Problema\fi }{733}{prob.31.50}%
+\contentsline {prob}{\ifthmt@listswap Problema~31.51\else \numberline {31.51}Problema\fi }{733}{prob.31.51}%
+\contentsline {prob}{\ifthmt@listswap Problema~31.52\else \numberline {31.52}Problema\fi }{733}{prob.31.52}%
+\contentsline {prob}{\ifthmt@listswap Problema~31.53\else \numberline {31.53}Problema\fi }{733}{prob.31.53}%
+\contentsline {prob}{\ifthmt@listswap Problema~31.54\else \numberline {31.54}Problema\fi }{733}{prob.31.54}%
+\contentsline {prob}{\ifthmt@listswap Problema~31.55\else \numberline {31.55}Problema\fi }{733}{prob.31.55}%
+\contentsline {prob}{\ifthmt@listswap Problema~31.56\else \numberline {31.56}Problema\fi }{733}{prob.31.56}%
+\contentsline {prob}{\ifthmt@listswap Problema~31.57\else \numberline {31.57}Problema\fi }{733}{prob.31.57}%
+\contentsline {prob}{\ifthmt@listswap Problema~31.58\else \numberline {31.58}Problema\fi }{733}{prob.31.58}%
+\contentsline {prob}{\ifthmt@listswap Problema~31.59\else \numberline {31.59}Problema\fi }{733}{prob.31.59}%
+\contentsline {prob}{\ifthmt@listswap Problema~31.60\else \numberline {31.60}Problema\fi }{733}{prob.31.60}%
+\contentsline {prob}{\ifthmt@listswap Problema~31.61\else \numberline {31.61}Problema\fi }{733}{prob.31.61}%
+\contentsline {prob}{\ifthmt@listswap Problema~31.62\else \numberline {31.62}Problema\fi }{733}{prob.31.62}%
+\contentsline {prob}{\ifthmt@listswap Problema~31.63\else \numberline {31.63}Problema\fi }{733}{prob.31.63}%
+\contentsline {prob}{\ifthmt@listswap Problema~31.64\else \numberline {31.64}Problema\fi }{733}{prob.31.64}%
+\contentsline {prob}{\ifthmt@listswap Problema~31.65\else \numberline {31.65}Problema\fi }{733}{prob.31.65}%
+\contentsline {prob}{\ifthmt@listswap Problema~31.66\else \numberline {31.66}Problema\fi }{733}{prob.31.66}%
+\contentsline {prob}{\ifthmt@listswap Problema~31.67\else \numberline {31.67}Problema\fi }{733}{prob.31.67}%
+\contentsline {prob}{\ifthmt@listswap Problema~31.68\else \numberline {31.68}Problema\fi }{734}{prob.31.68}%
+\contentsline {prob}{\ifthmt@listswap Problema~31.69\else \numberline {31.69}Problema\fi }{734}{prob.31.69}%
+\contentsline {prob}{\ifthmt@listswap Problema~31.70\else \numberline {31.70}Problema\fi }{734}{prob.31.70}%
+\contentsline {prob}{\ifthmt@listswap Problema~31.71\else \numberline {31.71}Problema\fi }{734}{prob.31.71}%
+\contentsline {prob}{\ifthmt@listswap Problema~31.72\else \numberline {31.72}Problema\fi }{734}{prob.31.72}%
+\contentsline {prob}{\ifthmt@listswap Problema~31.73\else \numberline {31.73}Problema\fi }{734}{prob.31.73}%
+\contentsline {prob}{\ifthmt@listswap Problema~31.74\else \numberline {31.74}Problema\fi }{734}{prob.31.74}%
+\contentsline {prob}{\ifthmt@listswap Problema~31.75\else \numberline {31.75}Problema\fi }{734}{prob.31.75}%
+\contentsline {prob}{\ifthmt@listswap Problema~31.76\else \numberline {31.76}Problema\fi }{735}{prob.31.76}%
+\contentsline {prob}{\ifthmt@listswap Problema~31.77\else \numberline {31.77}Problema\fi }{735}{prob.31.77}%
+\contentsline {prob}{\ifthmt@listswap Problema~31.78\else \numberline {31.78}Problema\fi }{735}{prob.31.78}%
+\contentsline {prob}{\ifthmt@listswap Problema~31.79\else \numberline {31.79}Problema\fi }{735}{prob.31.79}%
+\contentsline {prob}{\ifthmt@listswap Problema~31.80\else \numberline {31.80}Problema\fi \thmtformatoptarg {Volumen bajo un paraboloide, por encima de un plano}}{735}{prob.31.80}%
 \addvspace {10\p@ }
-\contentsline {definition}{\ifthmt@listswap Definición~32.1\else \numberline {32.1}Definición\fi \thmtformatoptarg {Integral triple}}{727}{definition.32.1}%
-\contentsline {theorem}{\ifthmt@listswap Teorema~32-2\else \numberline {32-2}Teorema\fi \thmtformatoptarg {Teorema de Fubini para integrales triples}}{727}{theorem.32.2}%
-\contentsline {rem}{\ifthmt@listswap Observación~32.3\else \numberline {32.3}Observación\fi }{728}{rem.32.3}%
-\contentsline {pasos}{\ifthmt@listswap Construcción~32.4\else \numberline {32.4}Construcción\fi \thmtformatoptarg {Evaluación de una integral triple en coordenadas rectangulares}}{728}{pasos.32.4}%
-\contentsline {rem}{\ifthmt@listswap Observación~32.5\else \numberline {32.5}Observación\fi }{728}{rem.32.5}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~32.6\else \numberline {32.6}Ejemplo\fi \thmtformatoptarg {Volumen de un tetraedro}}{728}{example.32.6}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~32.7\else \numberline {32.7}Ejemplo\fi \thmtformatoptarg {Integral de una función sobre el tetraedro}}{729}{example.32.7}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~32.8\else \numberline {32.8}Ejemplo\fi \thmtformatoptarg {Volumen de un sólido bajo un paraboloide}}{729}{example.32.8}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~32.9\else \numberline {32.9}Ejemplo\fi \thmtformatoptarg {Cambio de orden de integración (tema con asterisco)}}{730}{example.32.9}%
-\contentsline {definition}{\ifthmt@listswap Definición~32.10\else \numberline {32.10}Definición\fi \thmtformatoptarg {Masa por unidad de volumen}}{730}{definition.32.10}%
-\contentsline {definition}{\ifthmt@listswap Definición~32.11\else \numberline {32.11}Definición\fi \thmtformatoptarg {Centro de masa en 3D}}{730}{definition.32.11}%
-\contentsline {definition}{\ifthmt@listswap Definición~32.12\else \numberline {32.12}Definición\fi \thmtformatoptarg {Momentos de inercia}}{731}{definition.32.12}%
-\contentsline {rem}{\ifthmt@listswap Observación~32.13\else \numberline {32.13}Observación\fi }{731}{rem.32.13}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~32.14\else \numberline {32.14}Ejemplo\fi \thmtformatoptarg {Masa y centro de masa con densidad constante}}{731}{example.32.14}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~32.15\else \numberline {32.15}Ejemplo\fi \thmtformatoptarg {Masa con densidad variable}}{731}{example.32.15}%
-\contentsline {prob}{\ifthmt@listswap Problema~32.16\else \numberline {32.16}Problema\fi \thmtformatoptarg {Centro de masa con densidad variable}}{732}{prob.32.16}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~32.17\else \numberline {32.17}Ejemplo\fi \thmtformatoptarg {Momento de inercia respecto al eje \(z\)}}{733}{example.32.17}%
-\contentsline {prob}{\ifthmt@listswap Problema~32.18\else \numberline {32.18}Problema\fi }{733}{prob.32.18}%
-\contentsline {prob}{\ifthmt@listswap Problema~32.19\else \numberline {32.19}Problema\fi \thmtformatoptarg {Sólido cuyo techo cambia de superficie}}{734}{prob.32.19}%
-\contentsline {prob}{\ifthmt@listswap Problema~32.20\else \numberline {32.20}Problema\fi }{734}{prob.32.20}%
-\contentsline {rem}{\ifthmt@listswap Observación~32.21\else \numberline {32.21}Observación\fi }{735}{rem.32.21}%
-\contentsline {definition}{\ifthmt@listswap Definición~32.22\else \numberline {32.22}Definición\fi \thmtformatoptarg {Jacobiano en $\mathbb {R}^3$}}{735}{definition.32.22}%
-\contentsline {theorem}{\ifthmt@listswap Teorema~32-23\else \numberline {32-23}Teorema\fi \thmtformatoptarg {Cambio de variables en integrales triples}}{735}{theorem.32.23}%
-\contentsline {definition}{\ifthmt@listswap Definición~32.24\else \numberline {32.24}Definición\fi \thmtformatoptarg {Coordenadas cilíndricas}}{735}{definition.32.24}%
-\contentsline {theorem}{\ifthmt@listswap Teorema~32-25\else \numberline {32-25}Teorema\fi \thmtformatoptarg {Integral triple en coordenadas cilíndricas}}{736}{theorem.32.25}%
-\contentsline {pasos}{\ifthmt@listswap Construcción~32.26\else \numberline {32.26}Construcción\fi \thmtformatoptarg {Evaluación en coordenadas cilíndricas}}{736}{pasos.32.26}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~32.27\else \numberline {32.27}Ejemplo\fi \thmtformatoptarg {Volumen de un sólido con simetría cilíndrica}}{736}{example.32.27}%
-\contentsline {prob}{\ifthmt@listswap Problema~32.28\else \numberline {32.28}Problema\fi }{737}{prob.32.28}%
-\contentsline {definition}{\ifthmt@listswap Definición~32.29\else \numberline {32.29}Definición\fi \thmtformatoptarg {Coordenadas esféricas}}{737}{definition.32.29}%
-\contentsline {prob}{\ifthmt@listswap Problema~32.30\else \numberline {32.30}Problema\fi }{737}{prob.32.30}%
-\contentsline {theorem}{\ifthmt@listswap Teorema~32-31\else \numberline {32-31}Teorema\fi \thmtformatoptarg {Integral triple en coordenadas esféricas}}{738}{theorem.32.31}%
-\contentsline {pasos}{\ifthmt@listswap Construcción~32.32\else \numberline {32.32}Construcción\fi \thmtformatoptarg {Evaluación en coordenadas esféricas}}{738}{pasos.32.32}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~32.33\else \numberline {32.33}Ejemplo\fi \thmtformatoptarg {Volumen de una bola}}{738}{example.32.33}%
-\contentsline {prob}{\ifthmt@listswap Problema~32.34\else \numberline {32.34}Problema\fi }{739}{prob.32.34}%
-\contentsline {prob}{\ifthmt@listswap Problema~32.35\else \numberline {32.35}Problema\fi }{739}{prob.32.35}%
-\contentsline {prob}{\ifthmt@listswap Problema~32.36\else \numberline {32.36}Problema\fi }{740}{prob.32.36}%
-\contentsline {prob}{\ifthmt@listswap Problema~32.37\else \numberline {32.37}Problema\fi }{740}{prob.32.37}%
-\contentsline {prob}{\ifthmt@listswap Problema~32.38\else \numberline {32.38}Problema\fi }{740}{prob.32.38}%
-\contentsline {prob}{\ifthmt@listswap Problema~32.39\else \numberline {32.39}Problema\fi }{740}{prob.32.39}%
-\contentsline {prob}{\ifthmt@listswap Problema~32.40\else \numberline {32.40}Problema\fi }{740}{prob.32.40}%
-\contentsline {prob}{\ifthmt@listswap Problema~32.41\else \numberline {32.41}Problema\fi }{740}{prob.32.41}%
-\contentsline {prob}{\ifthmt@listswap Problema~32.42\else \numberline {32.42}Problema\fi }{740}{prob.32.42}%
-\contentsline {prob}{\ifthmt@listswap Problema~32.43\else \numberline {32.43}Problema\fi }{741}{prob.32.43}%
-\contentsline {prob}{\ifthmt@listswap Problema~32.44\else \numberline {32.44}Problema\fi }{741}{prob.32.44}%
-\contentsline {prob}{\ifthmt@listswap Problema~32.45\else \numberline {32.45}Problema\fi }{741}{prob.32.45}%
-\contentsline {prob}{\ifthmt@listswap Problema~32.46\else \numberline {32.46}Problema\fi }{741}{prob.32.46}%
-\contentsline {prob}{\ifthmt@listswap Problema~32.47\else \numberline {32.47}Problema\fi }{741}{prob.32.47}%
-\contentsline {prob}{\ifthmt@listswap Problema~32.48\else \numberline {32.48}Problema\fi }{741}{prob.32.48}%
-\contentsline {prob}{\ifthmt@listswap Problema~32.49\else \numberline {32.49}Problema\fi }{741}{prob.32.49}%
-\contentsline {prob}{\ifthmt@listswap Problema~32.50\else \numberline {32.50}Problema\fi }{741}{prob.32.50}%
-\contentsline {prob}{\ifthmt@listswap Problema~32.51\else \numberline {32.51}Problema\fi }{742}{prob.32.51}%
-\contentsline {prob}{\ifthmt@listswap Problema~32.52\else \numberline {32.52}Problema\fi }{742}{prob.32.52}%
-\contentsline {prob}{\ifthmt@listswap Problema~32.53\else \numberline {32.53}Problema\fi }{742}{prob.32.53}%
-\contentsline {prob}{\ifthmt@listswap Problema~32.54\else \numberline {32.54}Problema\fi }{742}{prob.32.54}%
-\contentsline {prob}{\ifthmt@listswap Problema~32.55\else \numberline {32.55}Problema\fi }{742}{prob.32.55}%
-\contentsline {prob}{\ifthmt@listswap Problema~32.56\else \numberline {32.56}Problema\fi }{742}{prob.32.56}%
-\contentsline {prob}{\ifthmt@listswap Problema~32.57\else \numberline {32.57}Problema\fi }{742}{prob.32.57}%
-\contentsline {prob}{\ifthmt@listswap Problema~32.58\else \numberline {32.58}Problema\fi }{742}{prob.32.58}%
-\contentsline {prob}{\ifthmt@listswap Problema~32.59\else \numberline {32.59}Problema\fi }{742}{prob.32.59}%
-\contentsline {prob}{\ifthmt@listswap Problema~32.60\else \numberline {32.60}Problema\fi }{742}{prob.32.60}%
-\contentsline {prob}{\ifthmt@listswap Problema~32.61\else \numberline {32.61}Problema\fi }{742}{prob.32.61}%
-\contentsline {prob}{\ifthmt@listswap Problema~32.62\else \numberline {32.62}Problema\fi }{742}{prob.32.62}%
-\contentsline {prob}{\ifthmt@listswap Problema~32.63\else \numberline {32.63}Problema\fi }{742}{prob.32.63}%
-\contentsline {prob}{\ifthmt@listswap Problema~32.64\else \numberline {32.64}Problema\fi \thmtformatoptarg {Volumen entre dos paraboloides elípticos}}{742}{prob.32.64}%
+\contentsline {definition}{\ifthmt@listswap Definición~32.1\else \numberline {32.1}Definición\fi \thmtformatoptarg {Integral triple}}{737}{definition.32.1}%
+\contentsline {theorem}{\ifthmt@listswap Teorema~32-2\else \numberline {32-2}Teorema\fi \thmtformatoptarg {Teorema de Fubini para integrales triples}}{737}{theorem.32.2}%
+\contentsline {rem}{\ifthmt@listswap Observación~32.3\else \numberline {32.3}Observación\fi }{738}{rem.32.3}%
+\contentsline {pasos}{\ifthmt@listswap Construcción~32.4\else \numberline {32.4}Construcción\fi \thmtformatoptarg {Evaluación de una integral triple en coordenadas rectangulares}}{738}{pasos.32.4}%
+\contentsline {rem}{\ifthmt@listswap Observación~32.5\else \numberline {32.5}Observación\fi }{738}{rem.32.5}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~32.6\else \numberline {32.6}Ejemplo\fi \thmtformatoptarg {Volumen de un tetraedro}}{738}{example.32.6}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~32.7\else \numberline {32.7}Ejemplo\fi \thmtformatoptarg {Integral de una función sobre el tetraedro}}{739}{example.32.7}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~32.8\else \numberline {32.8}Ejemplo\fi \thmtformatoptarg {Volumen de un sólido bajo un paraboloide}}{739}{example.32.8}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~32.9\else \numberline {32.9}Ejemplo\fi \thmtformatoptarg {Cambio de orden de integración (tema con asterisco)}}{740}{example.32.9}%
+\contentsline {definition}{\ifthmt@listswap Definición~32.10\else \numberline {32.10}Definición\fi \thmtformatoptarg {Masa por unidad de volumen}}{740}{definition.32.10}%
+\contentsline {definition}{\ifthmt@listswap Definición~32.11\else \numberline {32.11}Definición\fi \thmtformatoptarg {Centro de masa en 3D}}{740}{definition.32.11}%
+\contentsline {definition}{\ifthmt@listswap Definición~32.12\else \numberline {32.12}Definición\fi \thmtformatoptarg {Momentos de inercia}}{741}{definition.32.12}%
+\contentsline {rem}{\ifthmt@listswap Observación~32.13\else \numberline {32.13}Observación\fi }{741}{rem.32.13}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~32.14\else \numberline {32.14}Ejemplo\fi \thmtformatoptarg {Masa y centro de masa con densidad constante}}{741}{example.32.14}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~32.15\else \numberline {32.15}Ejemplo\fi \thmtformatoptarg {Masa con densidad variable}}{741}{example.32.15}%
+\contentsline {prob}{\ifthmt@listswap Problema~32.16\else \numberline {32.16}Problema\fi \thmtformatoptarg {Centro de masa con densidad variable}}{742}{prob.32.16}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~32.17\else \numberline {32.17}Ejemplo\fi \thmtformatoptarg {Momento de inercia respecto al eje \(z\)}}{743}{example.32.17}%
+\contentsline {prob}{\ifthmt@listswap Problema~32.18\else \numberline {32.18}Problema\fi }{743}{prob.32.18}%
+\contentsline {prob}{\ifthmt@listswap Problema~32.19\else \numberline {32.19}Problema\fi \thmtformatoptarg {Sólido cuyo techo cambia de superficie}}{744}{prob.32.19}%
+\contentsline {prob}{\ifthmt@listswap Problema~32.20\else \numberline {32.20}Problema\fi }{744}{prob.32.20}%
+\contentsline {rem}{\ifthmt@listswap Observación~32.21\else \numberline {32.21}Observación\fi }{745}{rem.32.21}%
+\contentsline {definition}{\ifthmt@listswap Definición~32.22\else \numberline {32.22}Definición\fi \thmtformatoptarg {Jacobiano en $\mathbb {R}^3$}}{745}{definition.32.22}%
+\contentsline {theorem}{\ifthmt@listswap Teorema~32-23\else \numberline {32-23}Teorema\fi \thmtformatoptarg {Cambio de variables en integrales triples}}{745}{theorem.32.23}%
+\contentsline {definition}{\ifthmt@listswap Definición~32.24\else \numberline {32.24}Definición\fi \thmtformatoptarg {Coordenadas cilíndricas}}{745}{definition.32.24}%
+\contentsline {theorem}{\ifthmt@listswap Teorema~32-25\else \numberline {32-25}Teorema\fi \thmtformatoptarg {Integral triple en coordenadas cilíndricas}}{746}{theorem.32.25}%
+\contentsline {pasos}{\ifthmt@listswap Construcción~32.26\else \numberline {32.26}Construcción\fi \thmtformatoptarg {Evaluación en coordenadas cilíndricas}}{746}{pasos.32.26}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~32.27\else \numberline {32.27}Ejemplo\fi \thmtformatoptarg {Volumen de un sólido con simetría cilíndrica}}{746}{example.32.27}%
+\contentsline {prob}{\ifthmt@listswap Problema~32.28\else \numberline {32.28}Problema\fi }{747}{prob.32.28}%
+\contentsline {definition}{\ifthmt@listswap Definición~32.29\else \numberline {32.29}Definición\fi \thmtformatoptarg {Coordenadas esféricas}}{747}{definition.32.29}%
+\contentsline {prob}{\ifthmt@listswap Problema~32.30\else \numberline {32.30}Problema\fi }{747}{prob.32.30}%
+\contentsline {theorem}{\ifthmt@listswap Teorema~32-31\else \numberline {32-31}Teorema\fi \thmtformatoptarg {Integral triple en coordenadas esféricas}}{748}{theorem.32.31}%
+\contentsline {pasos}{\ifthmt@listswap Construcción~32.32\else \numberline {32.32}Construcción\fi \thmtformatoptarg {Evaluación en coordenadas esféricas}}{748}{pasos.32.32}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~32.33\else \numberline {32.33}Ejemplo\fi \thmtformatoptarg {Volumen de una bola}}{748}{example.32.33}%
+\contentsline {prob}{\ifthmt@listswap Problema~32.34\else \numberline {32.34}Problema\fi }{749}{prob.32.34}%
+\contentsline {prob}{\ifthmt@listswap Problema~32.35\else \numberline {32.35}Problema\fi }{749}{prob.32.35}%
+\contentsline {prob}{\ifthmt@listswap Problema~32.36\else \numberline {32.36}Problema\fi }{750}{prob.32.36}%
+\contentsline {prob}{\ifthmt@listswap Problema~32.37\else \numberline {32.37}Problema\fi }{750}{prob.32.37}%
+\contentsline {prob}{\ifthmt@listswap Problema~32.38\else \numberline {32.38}Problema\fi }{750}{prob.32.38}%
+\contentsline {prob}{\ifthmt@listswap Problema~32.39\else \numberline {32.39}Problema\fi }{750}{prob.32.39}%
+\contentsline {prob}{\ifthmt@listswap Problema~32.40\else \numberline {32.40}Problema\fi }{750}{prob.32.40}%
+\contentsline {prob}{\ifthmt@listswap Problema~32.41\else \numberline {32.41}Problema\fi }{750}{prob.32.41}%
+\contentsline {prob}{\ifthmt@listswap Problema~32.42\else \numberline {32.42}Problema\fi }{750}{prob.32.42}%
+\contentsline {prob}{\ifthmt@listswap Problema~32.43\else \numberline {32.43}Problema\fi }{751}{prob.32.43}%
+\contentsline {prob}{\ifthmt@listswap Problema~32.44\else \numberline {32.44}Problema\fi }{751}{prob.32.44}%
+\contentsline {prob}{\ifthmt@listswap Problema~32.45\else \numberline {32.45}Problema\fi }{751}{prob.32.45}%
+\contentsline {prob}{\ifthmt@listswap Problema~32.46\else \numberline {32.46}Problema\fi }{751}{prob.32.46}%
+\contentsline {prob}{\ifthmt@listswap Problema~32.47\else \numberline {32.47}Problema\fi }{751}{prob.32.47}%
+\contentsline {prob}{\ifthmt@listswap Problema~32.48\else \numberline {32.48}Problema\fi }{751}{prob.32.48}%
+\contentsline {prob}{\ifthmt@listswap Problema~32.49\else \numberline {32.49}Problema\fi }{751}{prob.32.49}%
+\contentsline {prob}{\ifthmt@listswap Problema~32.50\else \numberline {32.50}Problema\fi }{751}{prob.32.50}%
+\contentsline {prob}{\ifthmt@listswap Problema~32.51\else \numberline {32.51}Problema\fi }{752}{prob.32.51}%
+\contentsline {prob}{\ifthmt@listswap Problema~32.52\else \numberline {32.52}Problema\fi }{752}{prob.32.52}%
+\contentsline {prob}{\ifthmt@listswap Problema~32.53\else \numberline {32.53}Problema\fi }{752}{prob.32.53}%
+\contentsline {prob}{\ifthmt@listswap Problema~32.54\else \numberline {32.54}Problema\fi }{752}{prob.32.54}%
+\contentsline {prob}{\ifthmt@listswap Problema~32.55\else \numberline {32.55}Problema\fi }{752}{prob.32.55}%
+\contentsline {prob}{\ifthmt@listswap Problema~32.56\else \numberline {32.56}Problema\fi }{752}{prob.32.56}%
+\contentsline {prob}{\ifthmt@listswap Problema~32.57\else \numberline {32.57}Problema\fi }{752}{prob.32.57}%
+\contentsline {prob}{\ifthmt@listswap Problema~32.58\else \numberline {32.58}Problema\fi }{752}{prob.32.58}%
+\contentsline {prob}{\ifthmt@listswap Problema~32.59\else \numberline {32.59}Problema\fi }{752}{prob.32.59}%
+\contentsline {prob}{\ifthmt@listswap Problema~32.60\else \numberline {32.60}Problema\fi }{752}{prob.32.60}%
+\contentsline {prob}{\ifthmt@listswap Problema~32.61\else \numberline {32.61}Problema\fi }{752}{prob.32.61}%
+\contentsline {prob}{\ifthmt@listswap Problema~32.62\else \numberline {32.62}Problema\fi }{752}{prob.32.62}%
+\contentsline {prob}{\ifthmt@listswap Problema~32.63\else \numberline {32.63}Problema\fi }{752}{prob.32.63}%
+\contentsline {prob}{\ifthmt@listswap Problema~32.64\else \numberline {32.64}Problema\fi \thmtformatoptarg {Volumen entre dos paraboloides elípticos}}{752}{prob.32.64}%
 \addvspace {10\p@ }
-\contentsline {definition}{\ifthmt@listswap Definición~33.1\else \numberline {33.1}Definición\fi \thmtformatoptarg {Campo vectorial}}{743}{definition.33.1}%
-\contentsline {rem}{\ifthmt@listswap Observación~33.2\else \numberline {33.2}Observación\fi }{743}{rem.33.2}%
-\contentsline {definition}{\ifthmt@listswap Definición~33.3\else \numberline {33.3}Definición\fi \thmtformatoptarg {Continuidad y diferenciabilidad de un campo vectorial}}{743}{definition.33.3}%
-\contentsline {definition}{\ifthmt@listswap Definición~33.4\else \numberline {33.4}Definición\fi \thmtformatoptarg {Campo vectorial gradiente}}{744}{definition.33.4}%
-\contentsline {rem}{\ifthmt@listswap Observación~33.5\else \numberline {33.5}Observación\fi \thmtformatoptarg {Interpretación geométrica del gradiente}}{744}{rem.33.5}%
-\contentsline {definition}{\ifthmt@listswap Definición~33.6\else \numberline {33.6}Definición\fi \thmtformatoptarg {Campo vectorial conservativo}}{744}{definition.33.6}%
-\contentsline {theorem}{\ifthmt@listswap Teorema~33-7\else \numberline {33-7}Teorema\fi \thmtformatoptarg {Caracterización de campos conservativos en el plano}}{744}{theorem.33.7}%
-\contentsline {rem}{\ifthmt@listswap Observación~33.8\else \numberline {33.8}Observación\fi }{745}{rem.33.8}%
-\contentsline {rem}{\ifthmt@listswap Observación~33.9\else \numberline {33.9}Observación\fi \thmtformatoptarg {Propiedades de los campos conservativos}}{745}{rem.33.9}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~33.10\else \numberline {33.10}Ejemplo\fi \thmtformatoptarg {Verificación de campo conservativo en el plano}}{745}{example.33.10}%
-\contentsline {definition}{\ifthmt@listswap Definición~33.11\else \numberline {33.11}Definición\fi \thmtformatoptarg {Integral de línea sobre un campo escalar}}{746}{definition.33.11}%
-\contentsline {rem}{\ifthmt@listswap Observación~33.12\else \numberline {33.12}Observación\fi }{746}{rem.33.12}%
-\contentsline {pasos}{\ifthmt@listswap Construcción~33.13\else \numberline {33.13}Construcción\fi \thmtformatoptarg {Evaluación de una integral de línea de campo escalar}}{746}{pasos.33.13}%
-\contentsline {theorem}{\ifthmt@listswap Teorema~33-14\else \numberline {33-14}Teorema\fi \thmtformatoptarg {Teorema de evaluación para integral de línea de campo escalar}}{746}{theorem.33.14}%
-\contentsline {rem}{\ifthmt@listswap Observación~33.15\else \numberline {33.15}Observación\fi \thmtformatoptarg {Curvas suaves por partes}}{747}{rem.33.15}%
-\contentsline {rem}{\ifthmt@listswap Observación~33.16\else \numberline {33.16}Observación\fi \thmtformatoptarg {Independencia de la orientación para campos escalares}}{747}{rem.33.16}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~33.17\else \numberline {33.17}Ejemplo\fi \thmtformatoptarg {Integral de línea de un campo escalar en el plano}}{747}{example.33.17}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~33.18\else \numberline {33.18}Ejemplo\fi \thmtformatoptarg {Integral de línea en el espacio}}{747}{example.33.18}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~33.19\else \numberline {33.19}Ejemplo\fi \thmtformatoptarg {Integral sobre una curva suave por partes}}{747}{example.33.19}%
-\contentsline {definition}{\ifthmt@listswap Definición~33.20\else \numberline {33.20}Definición\fi \thmtformatoptarg {Integral de línea de un campo vectorial}}{749}{definition.33.20}%
-\contentsline {rem}{\ifthmt@listswap Observación~33.21\else \numberline {33.21}Observación\fi }{749}{rem.33.21}%
-\contentsline {pasos}{\ifthmt@listswap Construcción~33.22\else \numberline {33.22}Construcción\fi \thmtformatoptarg {Cálculo de una integral de línea de un campo vectorial}}{749}{pasos.33.22}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~33.23\else \numberline {33.23}Ejemplo\fi \thmtformatoptarg {Trabajo de una fuerza variable}}{749}{example.33.23}%
-\contentsline {rem}{\ifthmt@listswap Observación~33.24\else \numberline {33.24}Observación\fi }{750}{rem.33.24}%
-\contentsline {definition}{\ifthmt@listswap Definición~33.25\else \numberline {33.25}Definición\fi \thmtformatoptarg {Campo conservativo}}{750}{definition.33.25}%
-\contentsline {theorem}{\ifthmt@listswap Teorema~33-26\else \numberline {33-26}Teorema\fi \thmtformatoptarg {Independencia de la trayectoria}}{750}{theorem.33.26}%
-\contentsline {theorem}{\ifthmt@listswap Teorema~33-27\else \numberline {33-27}Teorema\fi \thmtformatoptarg {Teorema fundamental de las integrales de línea}}{751}{theorem.33.27}%
-\contentsline {rem}{\ifthmt@listswap Observación~33.28\else \numberline {33.28}Observación\fi }{751}{rem.33.28}%
-\contentsline {pasos}{\ifthmt@listswap Construcción~33.29\else \numberline {33.29}Construcción\fi \thmtformatoptarg {Determinación de un campo conservativo y su potencial}}{751}{pasos.33.29}%
-\contentsline {rem}{\ifthmt@listswap Observación~33.30\else \numberline {33.30}Observación\fi }{751}{rem.33.30}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~33.31\else \numberline {33.31}Ejemplo\fi \thmtformatoptarg {Aplicación del teorema fundamental}}{751}{example.33.31}%
-\contentsline {rem}{\ifthmt@listswap Observación~33.32\else \numberline {33.32}Observación\fi }{752}{rem.33.32}%
-\contentsline {prob}{\ifthmt@listswap Problema~33.33\else \numberline {33.33}Problema\fi \thmtformatoptarg {Construcción del potencial por integración sobre un segmento}}{752}{prob.33.33}%
-\contentsline {prob}{\ifthmt@listswap Problema~33.34\else \numberline {33.34}Problema\fi \thmtformatoptarg {Integrales de línea escalares}}{753}{prob.33.34}%
-\contentsline {prob}{\ifthmt@listswap Problema~33.35\else \numberline {33.35}Problema\fi \thmtformatoptarg {Integral de línea vectorial directa}}{753}{prob.33.35}%
-\contentsline {prob}{\ifthmt@listswap Problema~33.36\else \numberline {33.36}Problema\fi \thmtformatoptarg {Teorema fundamental para integrales de línea}}{753}{prob.33.36}%
-\contentsline {prob}{\ifthmt@listswap Problema~33.37\else \numberline {33.37}Problema\fi \thmtformatoptarg {Caso especial: integral de longitud de arco}}{753}{prob.33.37}%
-\contentsline {prob}{\ifthmt@listswap Problema~33.38\else \numberline {33.38}Problema\fi \thmtformatoptarg {Campos vectoriales conservativos}}{753}{prob.33.38}%
-\contentsline {prob}{\ifthmt@listswap Problema~33.39\else \numberline {33.39}Problema\fi \thmtformatoptarg {Campo conservativo en \(\mathbb {R}^3\) y potencial}}{753}{prob.33.39}%
-\contentsline {prob}{\ifthmt@listswap Problema~33.40\else \numberline {33.40}Problema\fi \thmtformatoptarg {Campo con forma especial}}{753}{prob.33.40}%
-\contentsline {prob}{\ifthmt@listswap Problema~33.41\else \numberline {33.41}Problema\fi \thmtformatoptarg {Aplicación: masa de un alambre}}{753}{prob.33.41}%
-\contentsline {prob}{\ifthmt@listswap Problema~33.42\else \numberline {33.42}Problema\fi \thmtformatoptarg {Curvas suaves por partes}}{754}{prob.33.42}%
-\contentsline {prob}{\ifthmt@listswap Problema~33.43\else \numberline {33.43}Problema\fi \thmtformatoptarg {Relación entre gradiente e integral de línea}}{754}{prob.33.43}%
-\contentsline {prob}{\ifthmt@listswap Problema~33.44\else \numberline {33.44}Problema\fi \thmtformatoptarg {Teorema de Green: aplicación directa}}{754}{prob.33.44}%
-\contentsline {prob}{\ifthmt@listswap Problema~33.45\else \numberline {33.45}Problema\fi \thmtformatoptarg {Green para calcular áreas}}{754}{prob.33.45}%
-\contentsline {prob}{\ifthmt@listswap Problema~33.46\else \numberline {33.46}Problema\fi \thmtformatoptarg {Análisis conceptual}}{754}{prob.33.46}%
-\contentsline {prob}{\ifthmt@listswap Problema~33.47\else \numberline {33.47}Problema\fi \thmtformatoptarg {Campo de vórtice y dominio no simplemente conexo}}{754}{prob.33.47}%
-\contentsline {prob}{\ifthmt@listswap Problema~33.48\else \numberline {33.48}Problema\fi \thmtformatoptarg {Green: cálculo estratégico}}{754}{prob.33.48}%
+\contentsline {definition}{\ifthmt@listswap Definición~33.1\else \numberline {33.1}Definición\fi \thmtformatoptarg {Campo vectorial}}{753}{definition.33.1}%
+\contentsline {rem}{\ifthmt@listswap Observación~33.2\else \numberline {33.2}Observación\fi }{753}{rem.33.2}%
+\contentsline {definition}{\ifthmt@listswap Definición~33.3\else \numberline {33.3}Definición\fi \thmtformatoptarg {Continuidad y diferenciabilidad de un campo vectorial}}{753}{definition.33.3}%
+\contentsline {definition}{\ifthmt@listswap Definición~33.4\else \numberline {33.4}Definición\fi \thmtformatoptarg {Campo vectorial gradiente}}{754}{definition.33.4}%
+\contentsline {rem}{\ifthmt@listswap Observación~33.5\else \numberline {33.5}Observación\fi \thmtformatoptarg {Interpretación geométrica del gradiente}}{754}{rem.33.5}%
+\contentsline {definition}{\ifthmt@listswap Definición~33.6\else \numberline {33.6}Definición\fi \thmtformatoptarg {Campo vectorial conservativo}}{754}{definition.33.6}%
+\contentsline {theorem}{\ifthmt@listswap Teorema~33-7\else \numberline {33-7}Teorema\fi \thmtformatoptarg {Caracterización de campos conservativos en el plano}}{754}{theorem.33.7}%
+\contentsline {rem}{\ifthmt@listswap Observación~33.8\else \numberline {33.8}Observación\fi }{755}{rem.33.8}%
+\contentsline {rem}{\ifthmt@listswap Observación~33.9\else \numberline {33.9}Observación\fi \thmtformatoptarg {Propiedades de los campos conservativos}}{755}{rem.33.9}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~33.10\else \numberline {33.10}Ejemplo\fi \thmtformatoptarg {Verificación de campo conservativo en el plano}}{755}{example.33.10}%
+\contentsline {definition}{\ifthmt@listswap Definición~33.11\else \numberline {33.11}Definición\fi \thmtformatoptarg {Integral de línea sobre un campo escalar}}{756}{definition.33.11}%
+\contentsline {rem}{\ifthmt@listswap Observación~33.12\else \numberline {33.12}Observación\fi }{756}{rem.33.12}%
+\contentsline {pasos}{\ifthmt@listswap Construcción~33.13\else \numberline {33.13}Construcción\fi \thmtformatoptarg {Evaluación de una integral de línea de campo escalar}}{756}{pasos.33.13}%
+\contentsline {theorem}{\ifthmt@listswap Teorema~33-14\else \numberline {33-14}Teorema\fi \thmtformatoptarg {Teorema de evaluación para integral de línea de campo escalar}}{756}{theorem.33.14}%
+\contentsline {rem}{\ifthmt@listswap Observación~33.15\else \numberline {33.15}Observación\fi \thmtformatoptarg {Curvas suaves por partes}}{757}{rem.33.15}%
+\contentsline {rem}{\ifthmt@listswap Observación~33.16\else \numberline {33.16}Observación\fi \thmtformatoptarg {Independencia de la orientación para campos escalares}}{757}{rem.33.16}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~33.17\else \numberline {33.17}Ejemplo\fi \thmtformatoptarg {Integral de línea de un campo escalar en el plano}}{757}{example.33.17}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~33.18\else \numberline {33.18}Ejemplo\fi \thmtformatoptarg {Integral de línea en el espacio}}{757}{example.33.18}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~33.19\else \numberline {33.19}Ejemplo\fi \thmtformatoptarg {Integral sobre una curva suave por partes}}{757}{example.33.19}%
+\contentsline {definition}{\ifthmt@listswap Definición~33.20\else \numberline {33.20}Definición\fi \thmtformatoptarg {Integral de línea de un campo vectorial}}{759}{definition.33.20}%
+\contentsline {rem}{\ifthmt@listswap Observación~33.21\else \numberline {33.21}Observación\fi }{759}{rem.33.21}%
+\contentsline {pasos}{\ifthmt@listswap Construcción~33.22\else \numberline {33.22}Construcción\fi \thmtformatoptarg {Cálculo de una integral de línea de un campo vectorial}}{759}{pasos.33.22}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~33.23\else \numberline {33.23}Ejemplo\fi \thmtformatoptarg {Trabajo de una fuerza variable}}{759}{example.33.23}%
+\contentsline {rem}{\ifthmt@listswap Observación~33.24\else \numberline {33.24}Observación\fi }{760}{rem.33.24}%
+\contentsline {definition}{\ifthmt@listswap Definición~33.25\else \numberline {33.25}Definición\fi \thmtformatoptarg {Campo conservativo}}{760}{definition.33.25}%
+\contentsline {theorem}{\ifthmt@listswap Teorema~33-26\else \numberline {33-26}Teorema\fi \thmtformatoptarg {Independencia de la trayectoria}}{760}{theorem.33.26}%
+\contentsline {theorem}{\ifthmt@listswap Teorema~33-27\else \numberline {33-27}Teorema\fi \thmtformatoptarg {Teorema fundamental de las integrales de línea}}{761}{theorem.33.27}%
+\contentsline {rem}{\ifthmt@listswap Observación~33.28\else \numberline {33.28}Observación\fi }{761}{rem.33.28}%
+\contentsline {pasos}{\ifthmt@listswap Construcción~33.29\else \numberline {33.29}Construcción\fi \thmtformatoptarg {Determinación de un campo conservativo y su potencial}}{761}{pasos.33.29}%
+\contentsline {rem}{\ifthmt@listswap Observación~33.30\else \numberline {33.30}Observación\fi }{761}{rem.33.30}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~33.31\else \numberline {33.31}Ejemplo\fi \thmtformatoptarg {Aplicación del teorema fundamental}}{761}{example.33.31}%
+\contentsline {rem}{\ifthmt@listswap Observación~33.32\else \numberline {33.32}Observación\fi }{762}{rem.33.32}%
+\contentsline {prob}{\ifthmt@listswap Problema~33.33\else \numberline {33.33}Problema\fi \thmtformatoptarg {Construcción del potencial por integración sobre un segmento}}{762}{prob.33.33}%
+\contentsline {prob}{\ifthmt@listswap Problema~33.34\else \numberline {33.34}Problema\fi \thmtformatoptarg {Integrales de línea escalares}}{763}{prob.33.34}%
+\contentsline {prob}{\ifthmt@listswap Problema~33.35\else \numberline {33.35}Problema\fi \thmtformatoptarg {Integral de línea vectorial directa}}{763}{prob.33.35}%
+\contentsline {prob}{\ifthmt@listswap Problema~33.36\else \numberline {33.36}Problema\fi \thmtformatoptarg {Teorema fundamental para integrales de línea}}{763}{prob.33.36}%
+\contentsline {prob}{\ifthmt@listswap Problema~33.37\else \numberline {33.37}Problema\fi \thmtformatoptarg {Caso especial: integral de longitud de arco}}{763}{prob.33.37}%
+\contentsline {prob}{\ifthmt@listswap Problema~33.38\else \numberline {33.38}Problema\fi \thmtformatoptarg {Campos vectoriales conservativos}}{763}{prob.33.38}%
+\contentsline {prob}{\ifthmt@listswap Problema~33.39\else \numberline {33.39}Problema\fi \thmtformatoptarg {Campo conservativo en \(\mathbb {R}^3\) y potencial}}{763}{prob.33.39}%
+\contentsline {prob}{\ifthmt@listswap Problema~33.40\else \numberline {33.40}Problema\fi \thmtformatoptarg {Campo con forma especial}}{763}{prob.33.40}%
+\contentsline {prob}{\ifthmt@listswap Problema~33.41\else \numberline {33.41}Problema\fi \thmtformatoptarg {Aplicación: masa de un alambre}}{763}{prob.33.41}%
+\contentsline {prob}{\ifthmt@listswap Problema~33.42\else \numberline {33.42}Problema\fi \thmtformatoptarg {Curvas suaves por partes}}{764}{prob.33.42}%
+\contentsline {prob}{\ifthmt@listswap Problema~33.43\else \numberline {33.43}Problema\fi \thmtformatoptarg {Relación entre gradiente e integral de línea}}{764}{prob.33.43}%
+\contentsline {prob}{\ifthmt@listswap Problema~33.44\else \numberline {33.44}Problema\fi \thmtformatoptarg {Teorema de Green: aplicación directa}}{764}{prob.33.44}%
+\contentsline {prob}{\ifthmt@listswap Problema~33.45\else \numberline {33.45}Problema\fi \thmtformatoptarg {Green para calcular áreas}}{764}{prob.33.45}%
+\contentsline {prob}{\ifthmt@listswap Problema~33.46\else \numberline {33.46}Problema\fi \thmtformatoptarg {Análisis conceptual}}{764}{prob.33.46}%
+\contentsline {prob}{\ifthmt@listswap Problema~33.47\else \numberline {33.47}Problema\fi \thmtformatoptarg {Campo de vórtice y dominio no simplemente conexo}}{764}{prob.33.47}%
+\contentsline {prob}{\ifthmt@listswap Problema~33.48\else \numberline {33.48}Problema\fi \thmtformatoptarg {Green: cálculo estratégico}}{764}{prob.33.48}%
 \addvspace {10\p@ }
-\contentsline {definition}{\ifthmt@listswap Definición~34.1\else \numberline {34.1}Definición\fi \thmtformatoptarg {Curva cerrada simple y orientación positiva}}{755}{definition.34.1}%
-\contentsline {theorem}{\ifthmt@listswap Teorema~34-2\else \numberline {34-2}Teorema\fi \thmtformatoptarg {Teorema de Green}}{755}{theorem.34.2}%
-\contentsline {rem}{\ifthmt@listswap Observación~34.3\else \numberline {34.3}Observación\fi }{756}{rem.34.3}%
-\contentsline {pasos}{\ifthmt@listswap Construcción~34.4\else \numberline {34.4}Construcción\fi \thmtformatoptarg {Aplicación del teorema de Green}}{756}{pasos.34.4}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~34.5\else \numberline {34.5}Ejemplo\fi \thmtformatoptarg {Verificación de Green}}{756}{example.34.5}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~34.6\else \numberline {34.6}Ejemplo\fi \thmtformatoptarg {Green sobre una curva abierta}}{757}{example.34.6}%
-\contentsline {prob}{\ifthmt@listswap Problema~34.7\else \numberline {34.7}Problema\fi \thmtformatoptarg {Teorema de Green en una región con agujero}}{758}{prob.34.7}%
-\contentsline {definition}{\ifthmt@listswap Definición~34.8\else \numberline {34.8}Definición\fi \thmtformatoptarg {Divergencia}}{759}{definition.34.8}%
-\contentsline {definition}{\ifthmt@listswap Definición~34.9\else \numberline {34.9}Definición\fi \thmtformatoptarg {Rotacional}}{759}{definition.34.9}%
-\contentsline {rem}{\ifthmt@listswap Observación~34.10\else \numberline {34.10}Observación\fi \thmtformatoptarg {Interpretación física}}{760}{rem.34.10}%
-\contentsline {rem}{\ifthmt@listswap Observación~34.11\else \numberline {34.11}Observación\fi \thmtformatoptarg {Campos conservativos y rotacional}}{760}{rem.34.11}%
-\contentsline {rem}{\ifthmt@listswap Observación~34.12\else \numberline {34.12}Observación\fi \thmtformatoptarg {El teorema de Green como herramienta de cálculo}}{760}{rem.34.12}%
-\contentsline {prob}{\ifthmt@listswap Problema~34.13\else \numberline {34.13}Problema\fi }{760}{prob.34.13}%
-\contentsline {prob}{\ifthmt@listswap Problema~34.14\else \numberline {34.14}Problema\fi }{761}{prob.34.14}%
-\contentsline {prob}{\ifthmt@listswap Problema~34.15\else \numberline {34.15}Problema\fi }{761}{prob.34.15}%
-\contentsline {prob}{\ifthmt@listswap Problema~34.16\else \numberline {34.16}Problema\fi }{762}{prob.34.16}%
-\contentsline {prob}{\ifthmt@listswap Problema~34.17\else \numberline {34.17}Problema\fi }{762}{prob.34.17}%
-\contentsline {prob}{\ifthmt@listswap Problema~34.18\else \numberline {34.18}Problema\fi \thmtformatoptarg {Identidad vectorial de la divergencia de un producto cruz}}{762}{prob.34.18}%
-\contentsline {rem}{\ifthmt@listswap Observación~34.19\else \numberline {34.19}Observación\fi }{763}{rem.34.19}%
-\contentsline {definition}{\ifthmt@listswap Definición~34.20\else \numberline {34.20}Definición\fi \thmtformatoptarg {Superficie paramétrica suave}}{763}{definition.34.20}%
-\contentsline {definition}{\ifthmt@listswap Definición~34.21\else \numberline {34.21}Definición\fi \thmtformatoptarg {Orientación de una superficie}}{763}{definition.34.21}%
-\contentsline {rem}{\ifthmt@listswap Observación~34.22\else \numberline {34.22}Observación\fi }{763}{rem.34.22}%
-\contentsline {definition}{\ifthmt@listswap Definición~34.23\else \numberline {34.23}Definición\fi \thmtformatoptarg {Integral de superficie escalar}}{764}{definition.34.23}%
-\contentsline {rem}{\ifthmt@listswap Observación~34.24\else \numberline {34.24}Observación\fi }{764}{rem.34.24}%
-\contentsline {pasos}{\ifthmt@listswap Construcción~34.25\else \numberline {34.25}Construcción\fi }{764}{pasos.34.25}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~34.26\else \numberline {34.26}Ejemplo\fi \thmtformatoptarg {Integral escalar sobre un paraboloide}}{764}{example.34.26}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~34.27\else \numberline {34.27}Ejemplo\fi \thmtformatoptarg {Integral escalar sobre una esfera}}{765}{example.34.27}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~34.28\else \numberline {34.28}Ejemplo\fi \thmtformatoptarg {Centro de masa de una superficie esférica}}{766}{example.34.28}%
-\contentsline {prob}{\ifthmt@listswap Problema~34.29\else \numberline {34.29}Problema\fi }{767}{prob.34.29}%
-\contentsline {definition}{\ifthmt@listswap Definición~34.30\else \numberline {34.30}Definición\fi \thmtformatoptarg {Flujo de un campo vectorial}}{768}{definition.34.30}%
-\contentsline {rem}{\ifthmt@listswap Observación~34.31\else \numberline {34.31}Observación\fi }{768}{rem.34.31}%
-\contentsline {pasos}{\ifthmt@listswap Construcción~34.32\else \numberline {34.32}Construcción\fi }{768}{pasos.34.32}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~34.33\else \numberline {34.33}Ejemplo\fi \thmtformatoptarg {Flujo a través de un cilindro}}{768}{example.34.33}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~34.34\else \numberline {34.34}Ejemplo\fi \thmtformatoptarg {Flujo a través de un cono}}{769}{example.34.34}%
-\contentsline {theorem}{\ifthmt@listswap Teorema~34-35\else \numberline {34-35}Teorema\fi \thmtformatoptarg {Teorema de la divergencia}}{769}{theorem.34.35}%
-\contentsline {rem}{\ifthmt@listswap Observación~34.36\else \numberline {34.36}Observación\fi }{770}{rem.34.36}%
-\contentsline {pasos}{\ifthmt@listswap Construcción~34.37\else \numberline {34.37}Construcción\fi }{770}{pasos.34.37}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~34.38\else \numberline {34.38}Ejemplo\fi \thmtformatoptarg {Verificación del teorema de la divergencia para una esfera}}{770}{example.34.38}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~34.39\else \numberline {34.39}Ejemplo\fi \thmtformatoptarg {Aplicación del teorema de la divergencia}}{771}{example.34.39}%
-\contentsline {prob}{\ifthmt@listswap Problema~34.40\else \numberline {34.40}Problema\fi }{771}{prob.34.40}%
-\contentsline {prob}{\ifthmt@listswap Problema~34.41\else \numberline {34.41}Problema\fi }{771}{prob.34.41}%
-\contentsline {prob}{\ifthmt@listswap Problema~34.42\else \numberline {34.42}Problema\fi }{772}{prob.34.42}%
-\contentsline {theorem}{\ifthmt@listswap Teorema~34-43\else \numberline {34-43}Teorema\fi \thmtformatoptarg {Teorema de Stokes}}{772}{theorem.34.43}%
-\contentsline {rem}{\ifthmt@listswap Observación~34.44\else \numberline {34.44}Observación\fi }{773}{rem.34.44}%
-\contentsline {pasos}{\ifthmt@listswap Construcción~34.45\else \numberline {34.45}Construcción\fi }{773}{pasos.34.45}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~34.46\else \numberline {34.46}Ejemplo\fi \thmtformatoptarg {Verificación de Stokes para un paraboloide}}{773}{example.34.46}%
-\contentsline {example}{\ifthmt@listswap Ejemplo~34.47\else \numberline {34.47}Ejemplo\fi \thmtformatoptarg {Aplicación de Stokes a un hemisferio}}{774}{example.34.47}%
-\contentsline {prob}{\ifthmt@listswap Problema~34.48\else \numberline {34.48}Problema\fi }{775}{prob.34.48}%
-\contentsline {prob}{\ifthmt@listswap Problema~34.49\else \numberline {34.49}Problema\fi }{775}{prob.34.49}%
-\contentsline {prob}{\ifthmt@listswap Problema~34.50\else \numberline {34.50}Problema\fi }{775}{prob.34.50}%
-\contentsline {prob}{\ifthmt@listswap Problema~34.51\else \numberline {34.51}Problema\fi }{775}{prob.34.51}%
-\contentsline {prob}{\ifthmt@listswap Problema~34.52\else \numberline {34.52}Problema\fi }{775}{prob.34.52}%
-\contentsline {prob}{\ifthmt@listswap Problema~34.53\else \numberline {34.53}Problema\fi }{775}{prob.34.53}%
-\contentsline {prob}{\ifthmt@listswap Problema~34.54\else \numberline {34.54}Problema\fi }{775}{prob.34.54}%
-\contentsline {prob}{\ifthmt@listswap Problema~34.55\else \numberline {34.55}Problema\fi }{775}{prob.34.55}%
-\contentsline {prob}{\ifthmt@listswap Problema~34.56\else \numberline {34.56}Problema\fi }{775}{prob.34.56}%
-\contentsline {prob}{\ifthmt@listswap Problema~34.57\else \numberline {34.57}Problema\fi }{776}{prob.34.57}%
-\contentsline {prob}{\ifthmt@listswap Problema~34.58\else \numberline {34.58}Problema\fi }{776}{prob.34.58}%
-\contentsline {prob}{\ifthmt@listswap Problema~34.59\else \numberline {34.59}Problema\fi }{776}{prob.34.59}%
-\contentsline {prob}{\ifthmt@listswap Problema~34.60\else \numberline {34.60}Problema\fi }{776}{prob.34.60}%
-\contentsline {prob}{\ifthmt@listswap Problema~34.61\else \numberline {34.61}Problema\fi }{776}{prob.34.61}%
-\contentsline {prob}{\ifthmt@listswap Problema~34.62\else \numberline {34.62}Problema\fi }{776}{prob.34.62}%
-\contentsline {prob}{\ifthmt@listswap Problema~34.63\else \numberline {34.63}Problema\fi }{776}{prob.34.63}%
+\contentsline {definition}{\ifthmt@listswap Definición~34.1\else \numberline {34.1}Definición\fi \thmtformatoptarg {Curva cerrada simple y orientación positiva}}{765}{definition.34.1}%
+\contentsline {theorem}{\ifthmt@listswap Teorema~34-2\else \numberline {34-2}Teorema\fi \thmtformatoptarg {Teorema de Green}}{765}{theorem.34.2}%
+\contentsline {rem}{\ifthmt@listswap Observación~34.3\else \numberline {34.3}Observación\fi }{766}{rem.34.3}%
+\contentsline {pasos}{\ifthmt@listswap Construcción~34.4\else \numberline {34.4}Construcción\fi \thmtformatoptarg {Aplicación del teorema de Green}}{766}{pasos.34.4}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~34.5\else \numberline {34.5}Ejemplo\fi \thmtformatoptarg {Verificación de Green}}{766}{example.34.5}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~34.6\else \numberline {34.6}Ejemplo\fi \thmtformatoptarg {Green sobre una curva abierta}}{767}{example.34.6}%
+\contentsline {prob}{\ifthmt@listswap Problema~34.7\else \numberline {34.7}Problema\fi \thmtformatoptarg {Teorema de Green en una región con agujero}}{768}{prob.34.7}%
+\contentsline {definition}{\ifthmt@listswap Definición~34.8\else \numberline {34.8}Definición\fi \thmtformatoptarg {Divergencia}}{769}{definition.34.8}%
+\contentsline {definition}{\ifthmt@listswap Definición~34.9\else \numberline {34.9}Definición\fi \thmtformatoptarg {Rotacional}}{769}{definition.34.9}%
+\contentsline {rem}{\ifthmt@listswap Observación~34.10\else \numberline {34.10}Observación\fi \thmtformatoptarg {Interpretación física}}{770}{rem.34.10}%
+\contentsline {rem}{\ifthmt@listswap Observación~34.11\else \numberline {34.11}Observación\fi \thmtformatoptarg {Campos conservativos y rotacional}}{770}{rem.34.11}%
+\contentsline {rem}{\ifthmt@listswap Observación~34.12\else \numberline {34.12}Observación\fi \thmtformatoptarg {El teorema de Green como herramienta de cálculo}}{770}{rem.34.12}%
+\contentsline {prob}{\ifthmt@listswap Problema~34.13\else \numberline {34.13}Problema\fi }{770}{prob.34.13}%
+\contentsline {prob}{\ifthmt@listswap Problema~34.14\else \numberline {34.14}Problema\fi }{771}{prob.34.14}%
+\contentsline {prob}{\ifthmt@listswap Problema~34.15\else \numberline {34.15}Problema\fi }{771}{prob.34.15}%
+\contentsline {prob}{\ifthmt@listswap Problema~34.16\else \numberline {34.16}Problema\fi }{772}{prob.34.16}%
+\contentsline {prob}{\ifthmt@listswap Problema~34.17\else \numberline {34.17}Problema\fi }{772}{prob.34.17}%
+\contentsline {prob}{\ifthmt@listswap Problema~34.18\else \numberline {34.18}Problema\fi \thmtformatoptarg {Identidad vectorial de la divergencia de un producto cruz}}{772}{prob.34.18}%
+\contentsline {rem}{\ifthmt@listswap Observación~34.19\else \numberline {34.19}Observación\fi }{773}{rem.34.19}%
+\contentsline {definition}{\ifthmt@listswap Definición~34.20\else \numberline {34.20}Definición\fi \thmtformatoptarg {Superficie paramétrica suave}}{773}{definition.34.20}%
+\contentsline {definition}{\ifthmt@listswap Definición~34.21\else \numberline {34.21}Definición\fi \thmtformatoptarg {Orientación de una superficie}}{773}{definition.34.21}%
+\contentsline {rem}{\ifthmt@listswap Observación~34.22\else \numberline {34.22}Observación\fi }{773}{rem.34.22}%
+\contentsline {definition}{\ifthmt@listswap Definición~34.23\else \numberline {34.23}Definición\fi \thmtformatoptarg {Integral de superficie escalar}}{774}{definition.34.23}%
+\contentsline {rem}{\ifthmt@listswap Observación~34.24\else \numberline {34.24}Observación\fi }{774}{rem.34.24}%
+\contentsline {pasos}{\ifthmt@listswap Construcción~34.25\else \numberline {34.25}Construcción\fi }{774}{pasos.34.25}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~34.26\else \numberline {34.26}Ejemplo\fi \thmtformatoptarg {Integral escalar sobre un paraboloide}}{774}{example.34.26}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~34.27\else \numberline {34.27}Ejemplo\fi \thmtformatoptarg {Integral escalar sobre una esfera}}{775}{example.34.27}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~34.28\else \numberline {34.28}Ejemplo\fi \thmtformatoptarg {Centro de masa de una superficie esférica}}{776}{example.34.28}%
+\contentsline {prob}{\ifthmt@listswap Problema~34.29\else \numberline {34.29}Problema\fi }{777}{prob.34.29}%
+\contentsline {definition}{\ifthmt@listswap Definición~34.30\else \numberline {34.30}Definición\fi \thmtformatoptarg {Flujo de un campo vectorial}}{778}{definition.34.30}%
+\contentsline {rem}{\ifthmt@listswap Observación~34.31\else \numberline {34.31}Observación\fi }{778}{rem.34.31}%
+\contentsline {pasos}{\ifthmt@listswap Construcción~34.32\else \numberline {34.32}Construcción\fi }{778}{pasos.34.32}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~34.33\else \numberline {34.33}Ejemplo\fi \thmtformatoptarg {Flujo a través de un cilindro}}{778}{example.34.33}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~34.34\else \numberline {34.34}Ejemplo\fi \thmtformatoptarg {Flujo a través de un cono}}{779}{example.34.34}%
+\contentsline {theorem}{\ifthmt@listswap Teorema~34-35\else \numberline {34-35}Teorema\fi \thmtformatoptarg {Teorema de la divergencia}}{779}{theorem.34.35}%
+\contentsline {rem}{\ifthmt@listswap Observación~34.36\else \numberline {34.36}Observación\fi }{780}{rem.34.36}%
+\contentsline {pasos}{\ifthmt@listswap Construcción~34.37\else \numberline {34.37}Construcción\fi }{780}{pasos.34.37}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~34.38\else \numberline {34.38}Ejemplo\fi \thmtformatoptarg {Verificación del teorema de la divergencia para una esfera}}{780}{example.34.38}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~34.39\else \numberline {34.39}Ejemplo\fi \thmtformatoptarg {Aplicación del teorema de la divergencia}}{781}{example.34.39}%
+\contentsline {prob}{\ifthmt@listswap Problema~34.40\else \numberline {34.40}Problema\fi }{781}{prob.34.40}%
+\contentsline {prob}{\ifthmt@listswap Problema~34.41\else \numberline {34.41}Problema\fi }{781}{prob.34.41}%
+\contentsline {prob}{\ifthmt@listswap Problema~34.42\else \numberline {34.42}Problema\fi }{782}{prob.34.42}%
+\contentsline {theorem}{\ifthmt@listswap Teorema~34-43\else \numberline {34-43}Teorema\fi \thmtformatoptarg {Teorema de Stokes}}{782}{theorem.34.43}%
+\contentsline {rem}{\ifthmt@listswap Observación~34.44\else \numberline {34.44}Observación\fi }{783}{rem.34.44}%
+\contentsline {pasos}{\ifthmt@listswap Construcción~34.45\else \numberline {34.45}Construcción\fi }{783}{pasos.34.45}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~34.46\else \numberline {34.46}Ejemplo\fi \thmtformatoptarg {Verificación de Stokes para un paraboloide}}{783}{example.34.46}%
+\contentsline {example}{\ifthmt@listswap Ejemplo~34.47\else \numberline {34.47}Ejemplo\fi \thmtformatoptarg {Aplicación de Stokes a un hemisferio}}{784}{example.34.47}%
+\contentsline {prob}{\ifthmt@listswap Problema~34.48\else \numberline {34.48}Problema\fi }{785}{prob.34.48}%
+\contentsline {prob}{\ifthmt@listswap Problema~34.49\else \numberline {34.49}Problema\fi }{785}{prob.34.49}%
+\contentsline {prob}{\ifthmt@listswap Problema~34.50\else \numberline {34.50}Problema\fi }{785}{prob.34.50}%
+\contentsline {prob}{\ifthmt@listswap Problema~34.51\else \numberline {34.51}Problema\fi }{785}{prob.34.51}%
+\contentsline {prob}{\ifthmt@listswap Problema~34.52\else \numberline {34.52}Problema\fi }{785}{prob.34.52}%
+\contentsline {prob}{\ifthmt@listswap Problema~34.53\else \numberline {34.53}Problema\fi }{785}{prob.34.53}%
+\contentsline {prob}{\ifthmt@listswap Problema~34.54\else \numberline {34.54}Problema\fi }{785}{prob.34.54}%
+\contentsline {prob}{\ifthmt@listswap Problema~34.55\else \numberline {34.55}Problema\fi }{785}{prob.34.55}%
+\contentsline {prob}{\ifthmt@listswap Problema~34.56\else \numberline {34.56}Problema\fi }{785}{prob.34.56}%
+\contentsline {prob}{\ifthmt@listswap Problema~34.57\else \numberline {34.57}Problema\fi }{786}{prob.34.57}%
+\contentsline {prob}{\ifthmt@listswap Problema~34.58\else \numberline {34.58}Problema\fi }{786}{prob.34.58}%
+\contentsline {prob}{\ifthmt@listswap Problema~34.59\else \numberline {34.59}Problema\fi }{786}{prob.34.59}%
+\contentsline {prob}{\ifthmt@listswap Problema~34.60\else \numberline {34.60}Problema\fi }{786}{prob.34.60}%
+\contentsline {prob}{\ifthmt@listswap Problema~34.61\else \numberline {34.61}Problema\fi }{786}{prob.34.61}%
+\contentsline {prob}{\ifthmt@listswap Problema~34.62\else \numberline {34.62}Problema\fi }{786}{prob.34.62}%
+\contentsline {prob}{\ifthmt@listswap Problema~34.63\else \numberline {34.63}Problema\fi }{786}{prob.34.63}%

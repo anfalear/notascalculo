@@ -278,6 +278,32 @@ y(t)=e^{-t}(c_2\cos t-c_1\sen t)+t-\frac12
 \end{myproof}
 \end{example}
 
+\begin{example}[Eliminación con raíces reales distintas]
+Resolver por eliminación el sistema $x'=2x+3y$, $y'=x+2y$.
+
+\begin{myproof}
+\textbf{Paso 1.} Despejar $y$ de la primera ecuación y derivar:
+\[
+y=\frac{x'-2x}{3},\qquad y'=\frac{x''-2x'}{3}.
+\]
+
+\textbf{Paso 2.} Sustituir en la segunda ecuación $y'=x+2y$ y simplificar:
+\[
+\frac{x''-2x'}{3}=x+2\cdot\frac{x'-2x}{3}\;\Longrightarrow\; x''-4x'+x=0.
+\]
+
+\textbf{Paso 3.} Ecuación característica $r^2-4r+1=0$, con raíces $r=2\pm\sqrt{3}$:
+\[
+x(t)=c_1 e^{(2+\sqrt{3})t}+c_2 e^{(2-\sqrt{3})t}.
+\]
+
+\textbf{Paso 4.} Recuperar $y=(x'-2x)/3$:
+\[
+\boxed{x(t)=c_1 e^{(2+\sqrt{3})t}+c_2 e^{(2-\sqrt{3})t},\quad y(t)=\tfrac{\sqrt{3}}{3}\big(c_1 e^{(2+\sqrt{3})t}-c_2 e^{(2-\sqrt{3})t}\big).}
+\]
+\end{myproof}
+\end{example}
+
 \section{Sistemas homogéneos con coeficientes constantes: $\mathbf{X}'=A\mathbf{X}$}
 
 Consideremos el sistema homogéneo con $A\in\mathbb{R}^{n\times n}$ constante:
@@ -290,7 +316,15 @@ Buscamos soluciones de la forma $\mathbf{X}=e^{\lambda t}\mathbf{v}$, con $\math
 \]
 Por tanto, $\lambda$ debe ser un valor propio de $A$ y $\mathbf{v}$ un vector propio asociado. Los métodos para calcular valores y vectores propios, junto con una primera aplicación de la diagonalización a estos sistemas, se desarrollaron en el Capítulo~\ref{vvpropios}.
 
-\begin{theorem}
+\begin{theorem}[Estructura del espacio de soluciones]\label{thm:cap29:estructura}
+El conjunto de soluciones del sistema homogéneo $\mathbf{X}'=A\mathbf{X}$, con $A\in\mathbb{R}^{n\times n}$ constante, es un \textbf{espacio vectorial de dimensión $n$}. Si $\mathbf{X}_1,\dots,\mathbf{X}_n$ son soluciones linealmente independientes, la \textbf{matriz fundamental} $\Phi(t)=[\,\mathbf{X}_1(t)\;\cdots\;\mathbf{X}_n(t)\,]$ reúne una base y toda solución se escribe $\mathbf{X}(t)=\Phi(t)\mathbf{c}$ para un único $\mathbf{c}\in\mathbb{R}^n$. Las soluciones son independientes si y solo si su wronskiano $\det\Phi(t)$ es no nulo (basta comprobarlo en un punto, por la fórmula de Abel).
+\end{theorem}
+
+\begin{rem}
+Este resultado enlaza directamente con el álgebra lineal del Capítulo~\ref{vvpropios}: proponer soluciones $\mathbf{X}=e^{\lambda t}\mathbf{v}$ traduce el problema al \emph{espectro} de $A$. Los tres casos que siguen —valores propios reales distintos, complejos conjugados y repetidos— son exactamente las tres formas del espectro, y la diagonalizabilidad de $A$ decide si existe una base completa de vectores propios o hay que recurrir a vectores propios generalizados.
+\end{rem}
+
+\begin{theorem}[Solución general por vectores propios]\label{thm:cap29:solucion-general}
 Si $A$ tiene $n$ vectores propios linealmente independientes $\mathbf{v}_1,\dots,\mathbf{v}_n$ correspondientes a los valores propios $\lambda_1,\dots,\lambda_n$ (no necesariamente distintos), entonces la solución general del sistema homogéneo es
 \[
 \mathbf{X}(t)=c_1 e^{\lambda_1 t}\mathbf{v}_1+c_2 e^{\lambda_2 t}\mathbf{v}_2+\cdots+c_n e^{\lambda_n t}\mathbf{v}_n.
@@ -452,6 +486,23 @@ Tomamos $\mathbf{v}_3=(0,0,1)^T$.
 \end{myproof}
 \end{example}
 
+\begin{example}[Valores propios reales distintos (matriz simétrica)]
+Resolver $\mathbf{X}'=\begin{pmatrix}2&1\\1&2\end{pmatrix}\mathbf{X}$.
+
+\begin{myproof}
+\textbf{Paso 1.} Valores propios: $\det(A-\lambda I)=(2-\lambda)^2-1=(\lambda-1)(\lambda-3)$, luego $\lambda_1=1$, $\lambda_2=3$.
+
+\textbf{Paso 2.} Vectores propios: para $\lambda=1$, $(A-I)\mathbf{v}=0\Rightarrow v_1+v_2=0$, $\mathbf{v}_1=(1,-1)^T$; para $\lambda=3$, $-v_1+v_2=0$, $\mathbf{v}_2=(1,1)^T$.
+
+\textbf{Paso 3.} Cada par $(\lambda_i,\mathbf{v}_i)$ produce una solución $e^{\lambda_i t}\mathbf{v}_i$; al ser independientes, forman un conjunto fundamental.
+
+\textbf{Paso 4.} Solución general:
+\[
+\boxed{\mathbf{X}(t)=c_1 e^{t}\begin{pmatrix}1\\-1\end{pmatrix}+c_2 e^{3t}\begin{pmatrix}1\\1\end{pmatrix}.}
+\]
+\end{myproof}
+\end{example}
+
 \subsection{Caso 2: Valores propios complejos conjugados}
 
 Si $A$ tiene coeficientes reales y $\lambda=\alpha+i\beta$ es un valor propio con vector propio $\mathbf{v}=\mathbf{u}+i\mathbf{w}$ (con $\mathbf{u},\mathbf{w}\in\mathbb{R}^n$), entonces la contribución real a la solución es
@@ -533,6 +584,23 @@ c_1(-\cos t-\sen t)+c_2(\cos t-\sen t)\\
 c_1\cos t+c_2\sen t
 \end{pmatrix}
 }
+\]
+\end{myproof}
+\end{example}
+
+\begin{example}[Valores propios complejos conjugados]
+Resolver $\mathbf{X}'=\begin{pmatrix}1&-2\\2&1\end{pmatrix}\mathbf{X}$.
+
+\begin{myproof}
+\textbf{Paso 1.} $\det(A-\lambda I)=(1-\lambda)^2+4=0\Rightarrow \lambda=1\pm 2i$.
+
+\textbf{Paso 2.} Vector propio para $\lambda=1+2i$: $(A-(1+2i)I)\mathbf{v}=0\Rightarrow -2i\,v_1-2v_2=0$, es decir $v_2=-i v_1$; tomamos $\mathbf{v}=(1,-i)^T=(1,0)^T+i(0,-1)^T$.
+
+\textbf{Paso 3.} Con $\alpha=1$, la parte real y la imaginaria de $e^{(1+2i)t}\mathbf{v}$ proporcionan las dos soluciones reales independientes.
+
+\textbf{Paso 4.} Solución general:
+\[
+\boxed{\mathbf{X}(t)=e^{t}\left(c_1\begin{pmatrix}\cos 2t\\ \sen 2t\end{pmatrix}+c_2\begin{pmatrix}-\sen 2t\\ \cos 2t\end{pmatrix}\right).}
 \]
 \end{myproof}
 \end{example}
@@ -736,6 +804,63 @@ c_3
 \]
 \end{myproof}
 \end{example}
+
+\begin{example}[Valor propio repetido defectivo (matriz 2x2)]
+Resolver $\mathbf{X}'=\begin{pmatrix}5&1\\-1&3\end{pmatrix}\mathbf{X}$.
+
+\begin{myproof}
+\textbf{Paso 1.} $\det(A-\lambda I)=(5-\lambda)(3-\lambda)+1=\lambda^2-8\lambda+16=(\lambda-4)^2$: valor propio doble $\lambda=4$.
+
+\textbf{Paso 2.} $(A-4I)\mathbf{v}=0\Rightarrow v_1+v_2=0$; hay un \emph{único} vector propio $\mathbf{v}=(1,-1)^T$ (matriz defectiva).
+
+\textbf{Paso 3.} Vector propio generalizado: $(A-4I)\mathbf{w}=\mathbf{v}\Rightarrow w_1+w_2=1$; elegimos $\mathbf{w}=(1,0)^T$.
+
+\textbf{Paso 4.} Solución general con la cadena $\{\mathbf{v},\mathbf{w}\}$:
+\[
+\boxed{\mathbf{X}(t)=e^{4t}\!\left(c_1\begin{pmatrix}1\\-1\end{pmatrix}+c_2\left(t\begin{pmatrix}1\\-1\end{pmatrix}+\begin{pmatrix}1\\0\end{pmatrix}\right)\right).}
+\]
+\end{myproof}
+\end{example}
+
+Los tres casos anteriores tienen una lectura geométrica en el \textbf{plano de fases}, donde cada solución se dibuja como una trayectoria $(x_1(t),x_2(t))$. El signo y la naturaleza de los valores propios determinan la forma del retrato (Figura~\ref{fig:plano_fases}): valores reales del mismo signo dan un \emph{nodo}, complejos conjugados un \emph{foco} (espiral), y reales de signo opuesto un \emph{punto silla}.
+
+\begin{figure}[H]
+\centering
+\begin{minipage}{0.32\textwidth}
+\centering
+\begin{tikzpicture}[scale=0.85]
+\draw[->,gray!60](-2.1,0)--(2.1,0); \draw[->,gray!60](0,-2.1)--(0,2.1);
+\foreach \sx in {1,-1}{\foreach \sy in {1,-1}{
+\draw[blue!70!black,thick,->] plot[domain=0:3,samples=40,variable=\t]({\sx*1.7*exp(-\t)},{\sy*1.7*exp(-2*\t)});
+}}
+\end{tikzpicture}\\[-2pt]
+{\scriptsize (a) nodo estable\\ $\lambda_{1,2}<0$ reales}
+\end{minipage}\hfill
+\begin{minipage}{0.32\textwidth}
+\centering
+\begin{tikzpicture}[scale=0.85]
+\draw[->,gray!60](-2.1,0)--(2.1,0); \draw[->,gray!60](0,-2.1)--(0,2.1);
+\draw[blue!70!black,thick,->] plot[domain=0:900,samples=200,variable=\t]({1.9*exp(-0.002*\t)*cos(\t)},{1.9*exp(-0.002*\t)*sin(\t)});
+\end{tikzpicture}\\[-2pt]
+{\scriptsize (b) foco estable\\ $\lambda=\alpha\pm i\beta$, $\alpha<0$}
+\end{minipage}\hfill
+\begin{minipage}{0.32\textwidth}
+\centering
+\begin{tikzpicture}[scale=0.85]
+\draw[->,gray!60](-2.1,0)--(2.1,0); \draw[->,gray!60](0,-2.1)--(0,2.1);
+\foreach \s in {1,-1}{\foreach \u in {1,-1}{
+\draw[blue!70!black,thick] plot[domain=-1.3:1.3,samples=40,variable=\t]({\s*0.45*exp(\t)},{\u*0.9*exp(-\t)});
+}}
+\draw[red!70!black,thick,->](0.15,0)--(1.95,0);
+\draw[red!70!black,thick,->](-0.15,0)--(-1.95,0);
+\draw[teal!70!black,thick,->](0,1.95)--(0,0.15);
+\draw[teal!70!black,thick,->](0,-1.95)--(0,-0.15);
+\end{tikzpicture}\\[-2pt]
+{\scriptsize (c) punto silla\\ $\lambda_1<0<\lambda_2$}
+\end{minipage}
+\caption{Retratos de fase de $\mathbf{X}'=A\mathbf{X}$ según el espectro de $A$: (a) \emph{nodo} —valores propios reales del mismo signo, trayectorias que entran (o salen) del origen; (b) \emph{foco} —valores propios complejos, espiral; (c) \emph{punto silla} —valores propios reales de signo opuesto, con separatrices estable (verde, entra) e inestable (roja, sale).}
+\label{fig:plano_fases}
+\end{figure}
 
 \section{Sistemas no homogéneos: $\mathbf{X}'=A\mathbf{X}+\mathbf{F}(t)$}
 
@@ -957,6 +1082,23 @@ e^t
 \end{myproof}
 \end{example}
 
+\begin{example}[Coeficientes indeterminados: forzamiento constante, espectro complejo]
+Resolver $\mathbf{X}'=\begin{pmatrix}1&2\\-2&1\end{pmatrix}\mathbf{X}+\begin{pmatrix}0\\1\end{pmatrix}$.
+
+\begin{myproof}
+\textbf{Paso 1.} Homogénea: $\lambda=1\pm 2i$, luego $\mathbf{X}_h=e^{t}\left(c_1(\cos 2t,-\sen 2t)^T+c_2(\sen 2t,\cos 2t)^T\right)$.
+
+\textbf{Paso 2.} Como el forzamiento es constante y $A$ es invertible, proponemos $\mathbf{X}_p=\mathbf{a}$ constante: $A\mathbf{a}+(0,1)^T=0$.
+
+\textbf{Paso 3.} Resolver $a_1+2a_2=0$, $-2a_1+a_2=-1$: obtenemos $a_1=\tfrac{2}{5}$, $a_2=-\tfrac{1}{5}$.
+
+\textbf{Paso 4.} Solución general $\mathbf{X}=\mathbf{X}_h+\mathbf{a}$:
+\[
+\boxed{\mathbf{X}(t)=e^{t}\!\left(c_1\begin{pmatrix}\cos 2t\\-\sen 2t\end{pmatrix}+c_2\begin{pmatrix}\sen 2t\\ \cos 2t\end{pmatrix}\right)+\begin{pmatrix}2/5\\-1/5\end{pmatrix}.}
+\]
+\end{myproof}
+\end{example}
+
 \subsection{Método de variación de parámetros matricial}
 
 Para sistemas $\mathbf{X}'=A(t)\mathbf{X}+\mathbf{F}(t)$, si $\Phi(t)$ es una matriz fundamental (cuyas columnas son soluciones linealmente independientes del sistema homogéneo), entonces una solución particular es
@@ -1065,9 +1207,10 @@ t\cos t-\sen t\ln|\cos t|\\
 
 \subsection{Sistemas masa-resorte acoplados}
 
-Consideremos dos masas $m_1,m_2$ unidas entre sí y a paredes fijas mediante resortes de constantes $k_1,k_2,k_3$, como se muestra en la figura.
+Consideremos dos masas $m_1,m_2$ unidas entre sí y a paredes fijas mediante resortes de constantes $k_1,k_2,k_3$, como se muestra en la Figura~\ref{fig:masas_acopladas}.
 
-\begin{center}
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}[scale=1.2]
 \draw[thick] (-3,0) -- (-1,0);
 \draw[decorate,decoration={coil,amplitude=4pt,segment length=4pt}] (-1,0) -- (0,0);
@@ -1086,7 +1229,9 @@ Consideremos dos masas $m_1,m_2$ unidas entre sí y a paredes fijas mediante res
 \draw[<->] (0,-0.8) -- (0.8,-0.8) node[midway,below] {$x_1$};
 \draw[<->] (2.2,-0.8) -- (3,-0.8) node[midway,below] {$x_2$};
 \end{tikzpicture}
-\end{center}
+\caption{Dos masas $m_1,m_2$ acopladas por tres resortes ($k_1,k_2,k_3$) entre paredes fijas. Los desplazamientos $x_1,x_2$ desde el equilibrio satisfacen un sistema lineal de segundo orden acoplado.}
+\label{fig:masas_acopladas}
+\end{figure}
 
 Las posiciones de equilibrio son $x_1=x_2=0$. Las ecuaciones de movimiento son
 \[
@@ -1166,7 +1311,31 @@ L_1 i_1' + R_1 i_1 + M i_2' &= E_1(t),\\
 M i_1' + L_2 i_2' + R_2 i_2 &= E_2(t).
 \end{aligned}
 \]
-Si $L_1L_2-M^2\neq 0$, podemos despejar las derivadas y obtener un sistema de primer orden.
+Si $L_1L_2-M^2\neq 0$, podemos despejar las derivadas y obtener un sistema de primer orden. La Figura~\ref{fig:dos_mallas} muestra las dos mallas con sus corrientes $i_1,i_2$ y el acoplamiento por inductancia mutua $M$.
+
+\begin{figure}[H]
+\centering
+\begin{circuitikz}[american, scale=1.0, transform shape]
+% malla izquierda
+\draw (0,0) to[V, l=$E_1(t)$] (0,3)
+      to[R, l=$R_1$] (2.6,3)
+      to[L, l=$L_1$] (2.6,0) -- (0,0);
+% malla derecha
+\draw (2.6,3) to[R, l=$R_2$] (5.2,3)
+      to[L, l=$L_2$] (5.2,1.4)
+      to[V, l=$E_2(t)$] (5.2,0) -- (2.6,0);
+% acoplamiento mutuo entre L1 y L2
+\draw[<->,dashed,gray] (2.8,1.75)--(5.0,1.75);
+\node[gray,fill=white,inner sep=1.5pt] at (3.9,1.75) {\small $M$};
+% corrientes de malla
+\node at (1.3,1.4) {\small $i_1$};
+\draw[->,gray] ([shift=(30:0.45)]1.3,1.4) arc (30:310:0.45);
+\node at (3.9,0.85) {\small $i_2$};
+\draw[->,gray] ([shift=(30:0.42)]3.9,0.85) arc (30:310:0.42);
+\end{circuitikz}
+\caption{Circuito de dos mallas acopladas por inductancia mutua $M$. Las corrientes $i_1(t),i_2(t)$ satisfacen $L_1i_1'+R_1i_1+Mi_2'=E_1$ y $Mi_1'+L_2i_2'+R_2i_2=E_2$.}
+\label{fig:dos_mallas}
+\end{figure}
 
 \begin{example}[Circuito acoplado]
 Sean $L_1=2$, $L_2=1$, $M=1$, $R_1=3$, $R_2=2$, $E_1(t)=0$, $E_2(t)=e^{-t}$. Plantear el sistema y resolver.
@@ -1328,11 +1497,11 @@ Para $\lambda=-2$: $(A+2I)\mathbf{v}=0\Rightarrow
 \end{myproof}
 \end{example}
 
-\section{Problemas propuestos}
+\section{Problemas resueltos adicionales}
 
+% Básico
 \begin{prob}
 Convertir la EDO $y'''+2y''-5y'+y=\cos t$ en un sistema de primer orden.
-\end{prob}
 \begin{myproof}
 Definir $x_1=y,\; x_2=y',\; x_3=y''$. Entonces:
 \[
@@ -1355,10 +1524,11 @@ Forma matricial:
 }
 \]
 \end{myproof}
+\end{prob}
 
+% Básico
 \begin{prob}
 Escribir el sistema asociado a $y^{(4)}-3y''+2y'= e^{2t}$.
-\end{prob}
 \begin{myproof}
 Tomamos $x_1=y,\; x_2=y',\; x_3=y'',\; x_4=y'''$. Entonces:
 \[
@@ -1382,36 +1552,9 @@ Sistema:
 }
 \]
 \end{myproof}
-
-\begin{prob}
-Usar el método de eliminación para resolver:
-\[
-\begin{cases}
-x'=2x+3y,\\
-y'=x+2y.
-\end{cases}
-\]
 \end{prob}
-\begin{myproof}
-De la primera, $y=(x'-2x)/3$. Derivando: $y'=(x''-2x')/3$. Sustituir en segunda:
-\[
-\frac{x''-2x'}{3}=x+2\frac{x'-2x}{3}=x+\frac{2x'-4x}{3}.
-\]
-Multiplicar por 3: $x''-2x'=3x+2x'-4x\Rightarrow x''-4x'+x=0$.
-Ecuación característica: $r^2-4r+1=0\Rightarrow r=2\pm\sqrt{3}$.
-Entonces $x(t)=c_1 e^{(2+\sqrt{3})t}+c_2 e^{(2-\sqrt{3})t}$.
-\[
-y=\frac{x'-2x}{3}=\frac{(2+\sqrt{3})c_1 e^{(2+\sqrt{3})t}+(2-\sqrt{3})c_2 e^{(2-\sqrt{3})t}-2x}{3}
-=\frac{\sqrt{3}}{3}c_1 e^{(2+\sqrt{3})t}-\frac{\sqrt{3}}{3}c_2 e^{(2-\sqrt{3})t}.
-\]
-\[
-\boxed{
-x(t)=c_1 e^{(2+\sqrt{3})t}+c_2 e^{(2-\sqrt{3})t},\quad
-y(t)=\frac{\sqrt{3}}{3}c_1 e^{(2+\sqrt{3})t}-\frac{\sqrt{3}}{3}c_2 e^{(2-\sqrt{3})t}.
-}
-\]
-\end{myproof}
 
+% Intermedio
 \begin{prob}
 Resolver por eliminación:
 \[
@@ -1420,7 +1563,6 @@ x'=x-y,\\
 y'=x+3y.
 \end{cases}
 \]
-\end{prob}
 \begin{myproof}
 $y=x-x'$, $y'=x'-x''$. Sustituir en $y'=x+3y$:
 $x'-x''=x+3(x-x')=4x-3x'\Rightarrow x''-4x'+4x=0$.
@@ -1434,39 +1576,15 @@ y(t)=-(c_1+c_2)e^{2t}-c_2 t e^{2t}.
 }
 \]
 \end{myproof}
-
-\begin{prob}
-Resolver el sistema homogéneo $\mathbf{X}'=
-\begin{pmatrix}
-2&1\\
-1&2
-\end{pmatrix}\mathbf{X}$.
 \end{prob}
-\begin{myproof}
-Valores propios: $\det(A-\lambda I)=(2-\lambda)^2-1=(\lambda-1)(\lambda-3)$. $\lambda_1=1,\lambda_2=3$.
-Vectores propios: para $\lambda=1$: $(A-I)\mathbf{v}=0\Rightarrow v_1+v_2=0$, $\mathbf{v}_1=(1,-1)^T$. Para $\lambda=3$: $(A-3I)\mathbf{v}=0\Rightarrow -v_1+v_2=0$, $\mathbf{v}_2=(1,1)^T$.
-Solución:
-\[
-\boxed{
-\mathbf{X}(t)=c_1 e^t
-\begin{pmatrix}
-1\\-1
-\end{pmatrix}
-+c_2 e^{3t}
-\begin{pmatrix}
-1\\1
-\end{pmatrix}.
-}
-\]
-\end{myproof}
 
+% Básico
 \begin{prob}
 Resolver $\mathbf{X}'=
 \begin{pmatrix}
 2&0\\
 1&3
 \end{pmatrix}\mathbf{X}$.
-\end{prob}
 \begin{myproof}
 Valores propios: $\lambda_1=2,\lambda_2=3$. Vectores: para $\lambda=2$: $(A-2I)\mathbf{v}=0\Rightarrow
 \begin{pmatrix}
@@ -1489,43 +1607,15 @@ Solución:
 }
 \]
 \end{myproof}
-
-\begin{prob}
-Resolver $\mathbf{X}'=
-\begin{pmatrix}
-1&-2\\
-2&1
-\end{pmatrix}\mathbf{X}$.
 \end{prob}
-\begin{myproof}
-Valores propios: $\lambda=1\pm2i$. Vector propio para $\lambda=1+2i$: $(A-(1+2i)I)\mathbf{v}=0\Rightarrow
-\begin{pmatrix}
--2i&-2\\
-2&-2i
-\end{pmatrix}\Rightarrow -2i v_1-2v_2=0\Rightarrow v_2=-i v_1$. Tomamos $\mathbf{v}=(1,-i)^T=(1,0)^T+i(0,-1)^T$. $\mathbf{u}=(1,0),\mathbf{w}=(0,-1)$.
-Solución real:
-\[
-\boxed{
-\mathbf{X}(t)=e^t\left(c_1
-\begin{pmatrix}
-\cos 2t\\ \sen 2t
-\end{pmatrix}
-+c_2
-\begin{pmatrix}
--\sen 2t\\ \cos 2t
-\end{pmatrix}\right).
-}
-\]
-(Nota: la segunda componente de $\mathbf{u}$ es 0, y de $\mathbf{w}$ es -1, por lo que la combinación da las dos soluciones.)
-\end{myproof}
 
+% Intermedio
 \begin{prob}
 Resolver $\mathbf{X}'=
 \begin{pmatrix}
 -1&2\\
 -1&-1
 \end{pmatrix}\mathbf{X}$.
-\end{prob}
 \begin{myproof}
 Valores propios: $\lambda=-1\pm i\sqrt{2}$? Calculemos: $\det(A-\lambda I)=(-1-\lambda)^2+2=(\lambda+1)^2+2=0\Rightarrow \lambda=-1\pm i\sqrt{2}$.
 Vector propio para $\lambda=-1+i\sqrt{2}$: $(A-(-1+i\sqrt{2})I)\mathbf{v}=0\Rightarrow
@@ -1549,51 +1639,9 @@ Solución:
 }
 \]
 \end{myproof}
-
-\begin{prob}
-Resolver $\mathbf{X}'=
-\begin{pmatrix}
-5&1\\
--1&3
-\end{pmatrix}\mathbf{X}$.
 \end{prob}
-\begin{myproof}
-Valores propios: $\det(A-\lambda I)=(5-\lambda)(3-\lambda)+1=\lambda^2-8\lambda+16=(\lambda-4)^2$.
-Vector propio: $(A-4I)\mathbf{v}=0\Rightarrow
-\begin{pmatrix}
-1&1\\
--1&-1
-\end{pmatrix}\Rightarrow v_1+v_2=0$, $\mathbf{v}=(1,-1)^T$.
-Vector generalizado: $(A-4I)\mathbf{w}=\mathbf{v}\Rightarrow
-\begin{pmatrix}
-1&1\\
--1&-1
-\end{pmatrix}\mathbf{w}=(1,-1)^T\Rightarrow w_1+w_2=1$. Elegimos $\mathbf{w}=(1,0)^T$.
-Solución:
-\[
-\boxed{
-\mathbf{X}(t)=e^{4t}\left(c_1
-\begin{pmatrix}
-1\\-1
-\end{pmatrix}
-+c_2\left(t
-\begin{pmatrix}
-1\\-1
-\end{pmatrix}
-+
-\begin{pmatrix}
-1\\0
-\end{pmatrix}\right)\right)
-=
-e^{4t}
-\begin{pmatrix}
-c_1+c_2(t+1)\\
--c_1-c_2 t
-\end{pmatrix}.
-}
-\]
-\end{myproof}
 
+% Desafiante
 \begin{prob}
 Resolver $\mathbf{X}'=
 \begin{pmatrix}
@@ -1601,7 +1649,6 @@ Resolver $\mathbf{X}'=
 0&1&2\\
 0&0&1
 \end{pmatrix}\mathbf{X}$.
-\end{prob}
 \begin{myproof}
 $\lambda=1$ triple. Vector propio $(A-I)\mathbf{v}=0\Rightarrow
 \begin{pmatrix}
@@ -1651,45 +1698,9 @@ Solución:
 }
 \]
 \end{myproof}
-
-\begin{prob}
-Resolver $\mathbf{X}'=
-\begin{pmatrix}
-1&2\\
--2&1
-\end{pmatrix}\mathbf{X}
-+
-\begin{pmatrix}
-0\\1
-\end{pmatrix}$ por coeficientes indeterminados.
 \end{prob}
-\begin{myproof}
-Homogénea: $\lambda=1\pm2i$, $\mathbf{X}_h=e^t(c_1(\cos2t,-\sen2t)^T+c_2(\sen2t,\cos2t)^T)$.
-Particular constante $\mathbf{a}$: $A\mathbf{a}=-(0,1)^T\Rightarrow
-\begin{pmatrix}
-1&2\\
--2&1
-\end{pmatrix}\mathbf{a}=(0,-1)^T$.
-Resolviendo: $a_1+2a_2=0,\;-2a_1+a_2=-1$. De la primera $a_1=-2a_2$, sustituir: $4a_2+a_2=-1\Rightarrow a_2=-1/5,\; a_1=2/5$.
-Solución:
-\[
-\boxed{
-\mathbf{X}(t)=e^t\left(c_1
-\begin{pmatrix}
-\cos2t\\-\sen2t
-\end{pmatrix}
-+c_2
-\begin{pmatrix}
-\sen2t\\\cos2t
-\end{pmatrix}\right)
-+
-\begin{pmatrix}
-2/5\\-1/5
-\end{pmatrix}.
-}
-\]
-\end{myproof}
 
+% Intermedio
 \begin{prob}
 Resolver $\mathbf{X}'=
 \begin{pmatrix}
@@ -1700,7 +1711,6 @@ Resolver $\mathbf{X}'=
 \begin{pmatrix}
 e^{2t}\\e^{3t}
 \end{pmatrix}$ por coeficientes indeterminados.
-\end{prob}
 \begin{myproof}
 Homogénea: $\mathbf{X}_h=c_1 e^{2t}(1,0)^T+c_2 e^{3t}(0,1)^T$.
 Como $2$ y $3$ son valores propios, proponemos $\mathbf{X}_p=t e^{2t}\mathbf{a}+ t e^{3t}\mathbf{b}$.
@@ -1729,7 +1739,9 @@ t e^{3t}
 }
 \]
 \end{myproof}
+\end{prob}
 
+% Desafiante
 \begin{prob}
 Resolver $\mathbf{X}'=
 \begin{pmatrix}
@@ -1740,7 +1752,6 @@ Resolver $\mathbf{X}'=
 \begin{pmatrix}
 \tan t\\0
 \end{pmatrix}$ mediante variación de parámetros.
-\end{prob}
 \begin{myproof}
 $\Phi(t)=
 \begin{pmatrix}
@@ -1799,10 +1810,11 @@ Solución:
 }
 \]
 \end{myproof}
+\end{prob}
 
+% Desafiante
 \begin{prob}
 ( Aplicación masa-resorte ) Resolver el sistema de masas acopladas con $m_1=2,\; m_2=1,\; k_1=1,\; k_2=2,\; k_3=1$.
-\end{prob}
 \begin{myproof}
 Ecuaciones:
 \[
@@ -1835,10 +1847,11 @@ Ambos negativos, así que las frecuencias son $\omega_1=\sqrt{-\lambda_1}$, $\om
 \]
 con los vectores propios correspondientes.
 \end{myproof}
+\end{prob}
 
+% Intermedio
 \begin{prob}
 ( Aplicación circuito ) Resolver el sistema de mallas con $L_1=1,\; L_2=1,\; M=0,\; R_1=2,\; R_2=3,\; E_1=0,\; E_2=5$.
-\end{prob}
 \begin{myproof}
 Sin acoplamiento: $i_1'+2i_1=0\Rightarrow i_1=c_1 e^{-2t}$. $i_2'+3i_2=5\Rightarrow i_2=c_2 e^{-3t}+\frac53$.
 Solución:
@@ -1848,7 +1861,9 @@ i_1(t)=c_1 e^{-2t},\quad i_2(t)=c_2 e^{-3t}+\frac53.
 }
 \]
 \end{myproof}
+\end{prob}
 
+% Básico
 \begin{prob}
 ( Modelo de población ) Clasificar el punto crítico de
 \[
@@ -1857,7 +1872,6 @@ x'=x+2y,\\
 y'=2x+y.
 \end{cases}
 \]
-\end{prob}
 \begin{myproof}
 $A=
 \begin{pmatrix}
@@ -1865,14 +1879,15 @@ $A=
 2&1
 \end{pmatrix}$, valores propios $\lambda=3,-1$. Uno positivo, uno negativo, por tanto el origen es un \emph{punto silla}.
 \end{myproof}
+\end{prob}
 
+% Intermedio
 \begin{prob}
 Resolver el sistema $\mathbf{X}'=
 \begin{pmatrix}
 1&2\\
 2&1
 \end{pmatrix}\mathbf{X}$ y clasificar.
-\end{prob}
 \begin{myproof}
 $\lambda_1=3,\; \lambda_2=-1$. Vectores: para $\lambda=3$: $\mathbf{v}_1=(1,1)^T$; para $\lambda=-1$: $\mathbf{v}_2=(1,-1)^T$.
 Solución:
@@ -1889,7 +1904,9 @@ Solución:
 }
 \]
 \end{myproof}
+\end{prob}
 
+% Intermedio
 \begin{prob}
 Resolver $\mathbf{X}'=
 \begin{pmatrix}
@@ -1897,7 +1914,6 @@ Resolver $\mathbf{X}'=
 -1&-1
 \end{pmatrix}\mathbf{X}$
 y clasificar.
-\end{prob}
 \begin{myproof}
 Valores propios: $\det(A-\lambda I)=(-1-\lambda)^2+4=0\Rightarrow \lambda=-1\pm2i$. Parte real negativa, por lo que el origen es un \emph{foco estable}. Vector propio para $\lambda=-1+2i$: $(A-(-1+2i)I)\mathbf{v}=0\Rightarrow
 \begin{pmatrix}
@@ -1920,7 +1936,9 @@ Solución:
 }
 \]
 \end{myproof}
+\end{prob}
 
+% Intermedio
 \begin{prob}
 Resolver $\mathbf{X}'=
 \begin{pmatrix}
@@ -1928,7 +1946,6 @@ Resolver $\mathbf{X}'=
 -1&1
 \end{pmatrix}\mathbf{X}$
 y clasificar.
-\end{prob}
 \begin{myproof}
 $\lambda=1\pm i$. Parte real positiva, origen es un \emph{foco inestable}. Vector propio para $\lambda=1+i$: $(A-(1+i)I)\mathbf{v}=0\Rightarrow
 \begin{pmatrix}
@@ -1949,7 +1966,9 @@ Solución:
 }
 \]
 \end{myproof}
+\end{prob}
 
+% Básico
 \begin{prob}
 Resolver $\mathbf{X}'=
 \begin{pmatrix}
@@ -1957,7 +1976,6 @@ Resolver $\mathbf{X}'=
 1&0
 \end{pmatrix}\mathbf{X}$
 y clasificar.
-\end{prob}
 \begin{myproof}
 $\lambda=\pm i$, parte real cero, origen es un \emph{centro}. Solución:
 \[
@@ -1973,4 +1991,69 @@ $\lambda=\pm i$, parte real cero, origen es un \emph{centro}. Solución:
 }
 \]
 \end{myproof}
+\end{prob}
 
+\section{Problemas propuestos}
+
+% Básico
+\begin{prob}
+Convierta la EDO $y''+3y'+2y=0$ en un sistema de primer orden de dos ecuaciones.
+\end{prob}
+
+\begin{prob}
+Resolver $\mathbf{X}'=\begin{pmatrix}3&0\\0&-2\end{pmatrix}\mathbf{X}$.
+\end{prob}
+
+\begin{prob}
+Resolver $\mathbf{X}'=\begin{pmatrix}1&2\\0&3\end{pmatrix}\mathbf{X}$.
+\end{prob}
+
+\begin{prob}
+Clasificar el origen de $\mathbf{X}'=\begin{pmatrix}0&2\\-2&0\end{pmatrix}\mathbf{X}$.
+\end{prob}
+
+% Intermedio
+\begin{prob}
+Resolver por eliminación el sistema $x'=x+y$, $y'=4x+y$.
+\end{prob}
+
+\begin{prob}
+Resolver $\mathbf{X}'=\begin{pmatrix}3&-2\\4&-1\end{pmatrix}\mathbf{X}$ (valores propios complejos).
+\end{prob}
+
+\begin{prob}
+Resolver $\mathbf{X}'=\begin{pmatrix}3&-1\\1&1\end{pmatrix}\mathbf{X}$ (valor propio repetido).
+\end{prob}
+
+\begin{prob}
+Resolver $\mathbf{X}'=\begin{pmatrix}-1&1\\0&-2\end{pmatrix}\mathbf{X}+\begin{pmatrix}2\\3\end{pmatrix}$ (coeficientes indeterminados).
+\end{prob}
+
+\begin{prob}
+Resolver $\mathbf{X}'=\begin{pmatrix}1&0\\0&2\end{pmatrix}\mathbf{X}+\begin{pmatrix}e^{-t}\\ t\end{pmatrix}$.
+\end{prob}
+
+\begin{prob}
+Resolver y clasificar el origen de $\mathbf{X}'=\begin{pmatrix}1&3\\3&1\end{pmatrix}\mathbf{X}$.
+\end{prob}
+
+\begin{prob}
+Resolver y clasificar el origen de $\mathbf{X}'=\begin{pmatrix}-2&1\\1&-2\end{pmatrix}\mathbf{X}$.
+\end{prob}
+
+\begin{prob}
+Clasificar el origen de $\mathbf{X}'=\begin{pmatrix}-1&-4\\1&-1\end{pmatrix}\mathbf{X}$.
+\end{prob}
+
+% Desafiante
+\begin{prob}
+Resolver el sistema $3\times 3$ $\mathbf{X}'=\begin{pmatrix}1&0&0\\0&0&-2\\0&1&0\end{pmatrix}\mathbf{X}$ (un valor propio real y un par complejo).
+\end{prob}
+
+\begin{prob}
+Resolver por variación de parámetros $\mathbf{X}'=\begin{pmatrix}0&1\\-1&0\end{pmatrix}\mathbf{X}+\begin{pmatrix}\sec t\\0\end{pmatrix}$.
+\end{prob}
+
+\begin{prob}
+Resolver $\mathbf{X}'=\begin{pmatrix}2&0\\0&2\end{pmatrix}\mathbf{X}+\begin{pmatrix}e^{2t}\\0\end{pmatrix}$ e identifique el efecto de la resonancia (la forzante coincide con el valor propio).
+\end{prob}

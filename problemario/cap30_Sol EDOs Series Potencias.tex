@@ -2,39 +2,18 @@
 
 \section{Repaso de series de potencias}
 
-\begin{definition}[Serie de potencias]
-  Una \textbf{serie de potencias} centrada en $x_0$ es una serie de la forma
-  \begin{equation}
-    \sum_{n=0}^{\infty} a_n (x-x_0)^n,
-  \end{equation}
-  donde $a_n$ son coeficientes reales (o complejos) y $x$ es una variable real.
-\end{definition}
+Las series de potencias, su radio de convergencia y sus propiedades de derivación e integración término a término se desarrollaron en detalle en el Capítulo~\ref{cap:ssfunciones}. Recordamos aquí únicamente lo indispensable para resolver ecuaciones diferenciales.
 
-\begin{definition}[Radio de convergencia]
-  Para una serie de potencias $\sum_{n=0}^{\infty} a_n (x-x_0)^n$, existe un número $R \in [0,\infty]$, llamado \textbf{radio de convergencia}, tal que la serie converge absolutamente si $|x-x_0|<R$ y diverge si $|x-x_0|>R$. El radio se calcula mediante
-  \begin{equation}
-    R = \frac{1}{\limsup_{n\to\infty} \sqrt[n]{|a_n|}}
-    \quad\text{o}\quad
-    R = \lim_{n\to\infty} \left|\frac{a_n}{a_{n+1}}\right|,
-  \end{equation}
-  cuando los límites existen.
-\end{definition}
-
-\begin{theorem}[Diferenciación e integración término a término]
-  Sea $f(x)=\sum_{n=0}^{\infty} a_n (x-x_0)^n$ con radio de convergencia $R>0$. Entonces:
-  \begin{enumerate}
-    \item $f$ es derivable en $(x_0-R,x_0+R)$ y
-    \begin{equation}
-      f'(x)=\sum_{n=1}^{\infty} n a_n (x-x_0)^{n-1},
-    \end{equation}
-    con el mismo radio de convergencia $R$.
-    \item Para cualquier $x$ en el intervalo de convergencia,
-    \begin{equation}
-      \int_{x_0}^{x} f(t)\,dt = \sum_{n=0}^{\infty} \frac{a_n}{n+1} (x-x_0)^{n+1},
-    \end{equation}
-    también con radio $R$.
-  \end{enumerate}
-\end{theorem}
+Una \textbf{serie de potencias} centrada en $x_0$ es una expresión $\sum_{n=0}^{\infty} a_n (x-x_0)^n$ (Definición~\ref{def:serie_potencias}). Por el Teorema~\ref{thm:radio_convergencia}, tiene asociado un \textbf{radio de convergencia} $R \in [0,\infty]$ tal que la serie converge absolutamente si $|x-x_0|<R$ y diverge si $|x-x_0|>R$, con
+\begin{equation}
+  R = \frac{1}{\limsup_{n\to\infty} \sqrt[n]{|a_n|}}
+  \quad\text{o}\quad
+  R = \lim_{n\to\infty} \left|\frac{a_n}{a_{n+1}}\right|
+\end{equation}
+(cuando el segundo límite existe). Dentro de $(x_0-R,\,x_0+R)$ la serie define una función infinitamente derivable que puede \textbf{derivarse e integrarse término a término} sin alterar el radio (Teorema~\ref{thm:prop_pot}); en particular,
+\begin{equation}
+  f'(x)=\sum_{n=1}^{\infty} n a_n (x-x_0)^{n-1}.
+\end{equation}
 
 \begin{rem}
   Las series de Taylor y Maclaurin son casos particulares de series de potencias. Recordemos las expansiones fundamentales:
@@ -110,12 +89,36 @@
 \end{definition}
 
 \begin{theorem}[Existencia de soluciones en serie]
+\label{thm:cap30:existencia-serie}
   Si $x_0$ es un punto ordinario de la EDO $y''+P(x)y'+Q(x)y=0$, entonces existen dos soluciones linealmente independientes de la forma
   \[
     y(x)=\sum_{n=0}^{\infty} a_n (x-x_0)^n,
   \]
-  con radio de convergencia al menos igual a la distancia de $x_0$ al punto singular más próximo.
+  con radio de convergencia (en el sentido del Teorema~\ref{thm:radio_convergencia}) al menos igual a la distancia de $x_0$ al punto singular más próximo (Figura~\ref{fig:radio_singularidades}).
 \end{theorem}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.0]
+\draw[->,gray!60] (-3.4,0)--(3.5,0) node[right]{\small $\operatorname{Re}$};
+\draw[->,gray!60] (0,-2.0)--(0,2.2) node[above]{\small $\operatorname{Im}$};
+% punto ordinario de expansion
+\filldraw[blue!70!black] (0.6,0) circle (1.8pt);
+\node[blue!70!black,below] at (0.6,-0.08) {\small $x_0$};
+% singularidad cercana
+\draw[red!70!black,thick] (1.2,-1.0)++(-0.13,-0.13)--++(0.26,0.26) (1.2,-1.0)++(-0.13,0.13)--++(0.26,-0.26);
+\node[red!70!black,right] at (1.3,-1.0) {\small singularidad};
+% singularidad lejana
+\draw[red!70!black,thick] (-2.4,1.2)++(-0.13,-0.13)--++(0.26,0.26) (-2.4,1.2)++(-0.13,0.13)--++(0.26,-0.26);
+\node[red!70!black,left] at (-2.5,1.2) {\small singularidad};
+% radio de convergencia = distancia a la mas cercana
+\draw[dashed,teal!70!black,thick] (0.6,0) circle ({sqrt(0.36+1)});
+\draw[teal!70!black,thick,->] (0.6,0)--(1.2,-1.0);
+\node[teal!70!black] at (1.2,-0.35) {\small $R$};
+\end{tikzpicture}
+\caption{El desarrollo en serie alrededor de un punto ordinario $x_0$ converge al menos en el disco de radio $R$ igual a la distancia a la singularidad más cercana de la ecuación (en el plano complejo).}
+\label{fig:radio_singularidades}
+\end{figure}
 
 El método consiste en sustituir la serie en la ecuación, desplazar los índices para igualar las potencias de $(x-x_0)$ y obtener una relación de recurrencia para los coeficientes $a_n$.
 
@@ -289,6 +292,29 @@ El método consiste en sustituir la serie en la ecuación, desplazar los índice
   \end{myproof}
 \end{example}
 
+\begin{example}[Serie de potencias que recupera una solución elemental]
+  Resuelva $y''-2y'+y=0$ alrededor de $x_0=0$ mediante series y confirme que reproduce la solución conocida.
+  \begin{myproof}
+    \textbf{Paso 1.} Con $y=\sum a_n x^n$:
+    \[
+      \sum n(n-1)a_n x^{n-2}-2\sum n a_n x^{n-1}+\sum a_n x^n=0.
+    \]
+
+    \textbf{Paso 2.} Desplazando índices a la potencia común $x^m$:
+    \[
+      (m+2)(m+1)a_{m+2}-2(m+1)a_{m+1}+a_m=0.
+    \]
+
+    \textbf{Paso 3.} La recurrencia $a_{m+2}=\dfrac{2(m+1)a_{m+1}-a_m}{(m+2)(m+1)}$ con $a_0,a_1$ libres da $a_n=\dfrac{a_0+n(a_1-a_0)}{n!}$.
+
+    \textbf{Paso 4.} Sumando, $y=a_0\sum \frac{x^n}{n!}+(a_1-a_0)\sum \frac{n\,x^n}{n!}=e^x\big(a_0+(a_1-a_0)x\big)$, es decir
+    \[
+      \boxed{y=e^x(C_1+C_2 x),}
+    \]
+    que coincide con la solución por raíz doble $r=1$ de la ecuación característica.
+  \end{myproof}
+\end{example}
+
 \section{Puntos singulares regulares e irregulares}
 
 \begin{definition}[Punto singular regular]
@@ -304,6 +330,7 @@ El método consiste en sustituir la serie en la ecuación, desplazar los índice
 \end{definition}
 
 \begin{theorem}[Método de Frobenius]
+\label{thm:cap30:frobenius}
   Si $x_0$ es un punto singular regular, entonces existe al menos una solución de la forma
   \[
     y(x) = (x-x_0)^r \sum_{n=0}^{\infty} a_n (x-x_0)^n,\qquad a_0\neq 0,
@@ -328,6 +355,25 @@ Las raíces $r_1\ge r_2$ determinan la forma de las soluciones linealmente indep
     \]
   \item Si $r_1-r_2\in \mathbb Z^+$, la segunda solución puede contener logaritmo, o bien se obtiene mediante variación de parámetros a partir de $y_1$.
 \end{enumerate}
+
+\begin{example}[Ecuación indicial]
+  Halle la ecuación indicial de $x^2 y''+x y'+(x^2-1)y=0$ en $x=0$.
+  \begin{myproof}
+    \textbf{Paso 1.} En forma estándar $y''+\frac{1}{x}y'+\frac{x^2-1}{x^2}y=0$: $P(x)=1/x$, $Q(x)=(x^2-1)/x^2$.
+
+    \textbf{Paso 2.} Coeficientes indiciales: $p_0=\lim_{x\to0}xP(x)=1$, $q_0=\lim_{x\to0}x^2 Q(x)=-1$.
+
+    \textbf{Paso 3.} La ecuación indicial es $r(r-1)+p_0 r+q_0=0$:
+    \[
+      r(r-1)+r-1=r^2-1=0.
+    \]
+
+    \textbf{Paso 4.} Raíces $r=\pm1$; su diferencia $2$ es un entero, por lo que la segunda solución de Frobenius puede requerir un término logarítmico.
+    \[
+      \boxed{r^2-1=0,\quad r=\pm1.}
+    \]
+  \end{myproof}
+\end{example}
 
 \begin{example}[Ecuación de Bessel de orden 0]
   Resuelva
@@ -468,7 +514,22 @@ con condición de borde $u(a,\theta,t)=0$. Separando variables en coordenadas po
 \[
   r^2 R'' + r R' + (k^2 r^2 - m^2)R = 0.
 \]
-Las frecuencias permitidas están dadas por las raíces de $J_m(k a)=0$. La ortogonalidad de las funciones de Bessel permite desarrollar soluciones en series de Fourier-Bessel.
+Las frecuencias permitidas están dadas por las raíces de $J_m(k a)=0$ (Figura~\ref{fig:bessel}). La ortogonalidad de las funciones de Bessel permite desarrollar soluciones en series de Fourier-Bessel.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[width=12cm,height=6cm,xlabel={\small $x$},ylabel={\small $J_\nu(x)$},
+  xmin=0,xmax=15,ymin=-0.55,ymax=1.05,axis lines=left,thick,no markers,
+  legend pos=north east,legend cell align=left,grid=both,grid style={gray!18}]
+\addplot[blue!70!black,smooth] coordinates {(0.00,1.0000) (0.40,0.9604) (0.80,0.8463) (1.20,0.6711) (1.60,0.4554) (2.00,0.2239) (2.40,0.0025) (2.80,-0.1850) (3.20,-0.3202) (3.60,-0.3918) (4.00,-0.3971) (4.40,-0.3423) (4.80,-0.2404) (5.20,-0.1103) (5.60,0.0270) (6.00,0.1506) (6.40,0.2433) (6.80,0.2931) (7.20,0.2951) (7.60,0.2516) (8.00,0.1717) (8.40,0.0692) (8.80,-0.0392) (9.20,-0.1367) (9.60,-0.2090) (10.00,-0.2459) (10.40,-0.2434) (10.80,-0.2032) (11.20,-0.1330) (11.60,-0.0446) (12.00,0.0477) (12.40,0.1296) (12.80,0.1887) (13.20,0.2167) (13.60,0.2101) (14.00,0.1711) (14.40,0.1065) (14.80,0.0271) (15.00,-0.0142)};\addlegendentry{$J_0$}
+\addplot[red!70!black,smooth] coordinates {(0.00,0.0000) (0.40,0.1960) (0.80,0.3688) (1.20,0.4983) (1.60,0.5699) (2.00,0.5767) (2.40,0.5202) (2.80,0.4097) (3.20,0.2613) (3.60,0.0955) (4.00,-0.0660) (4.40,-0.2028) (4.80,-0.2985) (5.20,-0.3432) (5.60,-0.3343) (6.00,-0.2767) (6.40,-0.1816) (6.80,-0.0652) (7.20,0.0543) (7.60,0.1592) (8.00,0.2346) (8.40,0.2708) (8.80,0.2641) (9.20,0.2174) (9.60,0.1395) (10.00,0.0435) (10.40,-0.0555) (10.80,-0.1422) (11.20,-0.2039) (11.60,-0.2320) (12.00,-0.2234) (12.40,-0.1807) (12.80,-0.1114) (13.20,-0.0271) (13.60,0.0590) (14.00,0.1334) (14.40,0.1850) (14.80,0.2066) (15.00,0.2051)};\addlegendentry{$J_1$}
+\addplot[teal!70!black,smooth] coordinates {(0.00,0.0000) (0.40,0.0197) (0.80,0.0758) (1.20,0.1593) (1.60,0.2570) (2.00,0.3528) (2.40,0.4310) (2.80,0.4777) (3.20,0.4835) (3.60,0.4448) (4.00,0.3641) (4.40,0.2501) (4.80,0.1161) (5.20,-0.0217) (5.60,-0.1464) (6.00,-0.2429) (6.40,-0.3001) (6.80,-0.3123) (7.20,-0.2800) (7.60,-0.2097) (8.00,-0.1130) (8.40,-0.0047) (8.80,0.0993) (9.20,0.1840) (9.60,0.2380) (10.00,0.2546) (10.40,0.2327) (10.80,0.1769) (11.20,0.0966) (11.60,0.0046) (12.00,-0.0849) (12.40,-0.1587) (12.80,-0.2061) (13.20,-0.2208) (13.60,-0.2015) (14.00,-0.1520) (14.40,-0.0808) (14.80,0.0008) (15.00,0.0416)};\addlegendentry{$J_2$}
+\end{axis}
+\end{tikzpicture}
+\caption{Funciones de Bessel de primera especie $J_0,J_1,J_2$. Oscilan con amplitud decreciente ($\sim x^{-1/2}$); sus infinitos ceros determinan las frecuencias propias en problemas con simetría cilíndrica.}
+\label{fig:bessel}
+\end{figure}
 
 \subsection{Polinomios de Legendre en problemas con simetría esférica}
 
@@ -487,6 +548,39 @@ Estos polinomios son ortogonales en $[-1,1]$:
 \[
   \int_{-1}^{1} P_m(x) P_n(x)\,dx = \frac{2}{2n+1}\delta_{mn}.
 \]
+Los primeros cuatro se muestran en la Figura~\ref{fig:legendre}.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[width=10cm,height=6cm,xlabel={\small $x$},ylabel={\small $P_n(x)$},
+  domain=-1:1,samples=80,xmin=-1.05,xmax=1.05,ymin=-1.1,ymax=1.15,axis lines=middle,thick,no markers,
+  legend pos=north west,legend cell align=left,legend style={font=\scriptsize}]
+\addplot[blue!70!black]{1};\addlegendentry{$P_0$}
+\addplot[red!70!black]{x};\addlegendentry{$P_1$}
+\addplot[teal!70!black]{0.5*(3*x^2-1)};\addlegendentry{$P_2$}
+\addplot[orange!85!black]{0.5*(5*x^3-3*x)};\addlegendentry{$P_3$}
+\end{axis}
+\end{tikzpicture}
+\caption{Polinomios de Legendre $P_0,\dots,P_3$ en $[-1,1]$. Cada $P_n$ tiene $n$ ceros en el intervalo, satisface $P_n(1)=1$ y tiene la paridad de $n$; son mutuamente ortogonales.}
+\label{fig:legendre}
+\end{figure}
+
+\begin{example}[Polinomio de Legendre por la fórmula de Rodrigues]
+  Obtenga $P_2(x)$ a partir de la fórmula de Rodrigues.
+  \begin{myproof}
+    \textbf{Paso 1.} Con $\ell=2$: $P_2(x)=\dfrac{1}{2^2\,2!}\dfrac{d^2}{dx^2}(x^2-1)^2$.
+
+    \textbf{Paso 2.} Desarrollar $(x^2-1)^2=x^4-2x^2+1$.
+
+    \textbf{Paso 3.} Derivar dos veces: $\dfrac{d^2}{dx^2}(x^4-2x^2+1)=12x^2-4$.
+
+    \textbf{Paso 4.} Dividir por $2^2\,2!=8$:
+    \[
+      \boxed{P_2(x)=\frac{12x^2-4}{8}=\frac{3x^2-1}{2}.}
+    \]
+  \end{myproof}
+\end{example}
 
 \begin{example}[Separación de variables en una esfera]
   Resuelva la ecuación de Laplace en el interior de una esfera de radio $a$ con condición de borde $\Phi(a,\theta)=f(\theta)$ (independiente de $\varphi$).
@@ -520,8 +614,9 @@ Estos polinomios son ortogonales en $[-1,1]$:
   \end{myproof}
 \end{example}
 
-\section{Problemas propuestos}
+\section{Problemas resueltos adicionales}
 
+% Básico
 \begin{prob}
   Determine el radio de convergencia de la serie $\displaystyle\sum_{n=0}^{\infty} \frac{(2n)!}{(n!)^2} (x-1)^n$.
   \begin{myproof}
@@ -536,6 +631,7 @@ Estos polinomios son ortogonales en $[-1,1]$:
   \end{myproof}
 \end{prob}
 
+% Básico
 \begin{prob}
   Encuentre el radio de convergencia de $\displaystyle\sum_{n=1}^{\infty} \frac{n!}{n^n} x^n$.
   \begin{myproof}
@@ -548,22 +644,7 @@ Estos polinomios son ortogonales en $[-1,1]$:
   \end{myproof}
 \end{prob}
 
-\begin{prob}
-  Resuelva alrededor de $x_0=0$: $y'' - 2y' + y = 0$ mediante series de potencias.
-  \begin{myproof}
-    Sea $y=\sum a_n x^n$. Sustituyendo:
-    \[
-      \sum n(n-1)a_n x^{n-2} - 2\sum n a_n x^{n-1} + \sum a_n x^n=0.
-    \]
-    Desplazando índices:
-    \[
-      \sum_{m=0}^{\infty} [(m+2)(m+1)a_{m+2} - 2(m+1)a_{m+1} + a_m]x^m=0.
-    \]
-    Recurrencia: $a_{m+2} = \frac{2(m+1)a_{m+1} - a_m}{(m+2)(m+1)}$.
-    Con $a_0,a_1$ arbitrarios, la solución es $y=e^x(a_0+(a_1-a_0)x)$, que coincide con la conocida. $\boxed{y=e^x(C_1+C_2 x)}$.
-  \end{myproof}
-\end{prob}
-
+% Intermedio
 \begin{prob}
   Resuelva $y'' + x^2 y = 0$ alrededor de $x_0=0$.
   \begin{myproof}
@@ -586,6 +667,7 @@ Estos polinomios son ortogonales en $[-1,1]$:
   \end{myproof}
 \end{prob}
 
+% Intermedio
 \begin{prob}
   Determine si $x=0$ es punto ordinario o singular para $x^2 y'' + (1+x)y' + 3y=0$.
   \begin{myproof}
@@ -593,13 +675,7 @@ Estos polinomios son ortogonales en $[-1,1]$:
   \end{myproof}
 \end{prob}
 
-\begin{prob}
-  Para la ecuación $x^2 y'' + x y' + (x^2-1)y=0$, encuentre la ecuación indicial en $x=0$.
-  \begin{myproof}
-    $P=1/x$, $Q=1-1/x^2$. $p_0=1$, $q_0=-1$. Ecuación indicial: $r(r-1)+r-1=0 \Rightarrow r^2-1=0$. Raíces $r=\pm1$. $\boxed{r^2-1=0}$.
-  \end{myproof}
-\end{prob}
-
+% Desafiante
 \begin{prob}
   Obtenga la primera solución de Frobenius para $2x^2 y'' + 3x y' + (x^2-1)y=0$ alrededor de $x=0$.
   \begin{myproof}
@@ -607,6 +683,7 @@ Estos polinomios son ortogonales en $[-1,1]$:
   \end{myproof}
 \end{prob}
 
+% Básico
 \begin{prob}
   Resuelva $x^2 y'' + x y' + (x^2-4)y=0$ (Bessel de orden $2$) y escriba la solución general.
   \begin{myproof}
@@ -614,6 +691,7 @@ Estos polinomios son ortogonales en $[-1,1]$:
   \end{myproof}
 \end{prob}
 
+% Intermedio
 \begin{prob}
   Muestre que la serie $\sum_{k=0}^{\infty} \frac{(-1)^k x^{2k}}{2^{2k}(k!)^2}$ satisface la ecuación de Bessel de orden $0$.
   \begin{myproof}
@@ -621,6 +699,7 @@ Estos polinomios son ortogonales en $[-1,1]$:
   \end{myproof}
 \end{prob}
 
+% Intermedio
 \begin{prob}
   Identifique si la serie $\sum_{k=0}^{\infty} \frac{(-1)^k (2k)!}{2^{2k}(k!)^2} x^{2k}$ corresponde a alguna función especial.
   \begin{myproof}
@@ -628,13 +707,7 @@ Estos polinomios son ortogonales en $[-1,1]$:
   \end{myproof}
 \end{prob}
 
-\begin{prob}
-  Demuestre que $P_2(x)=\frac{1}{2}(3x^2-1)$ usando la fórmula de Rodrigues.
-  \begin{myproof}
-    $P_2(x)=\frac{1}{2^2 2!}\frac{d^2}{dx^2}(x^2-1)^2 = \frac{1}{8}\frac{d^2}{dx^2}(x^4-2x^2+1) = \frac{1}{8}(12x^2-4)=\frac{3x^2-1}{2}$. $\boxed{P_2(x)=\frac{3x^2-1}{2}}$.
-  \end{myproof}
-\end{prob}
-
+% Básico
 \begin{prob}
   Verifique la ortogonalidad de $P_0$ y $P_1$ en $[-1,1]$.
   \begin{myproof}
@@ -642,6 +715,7 @@ Estos polinomios son ortogonales en $[-1,1]$:
   \end{myproof}
 \end{prob}
 
+% Básico
 \begin{prob}
   Resuelva $y'' + \frac{1}{x} y' + \left(1-\frac{1}{4x^2}\right)y=0$ alrededor de $x=0$.
   \begin{myproof}
@@ -649,6 +723,7 @@ Estos polinomios son ortogonales en $[-1,1]$:
   \end{myproof}
 \end{prob}
 
+% Intermedio
 \begin{prob}
   Dada la ecuación de Hermite con $n=1$, encuentre la solución polinomial.
   \begin{myproof}
@@ -675,6 +750,7 @@ Estos polinomios son ortogonales en $[-1,1]$:
   \end{myproof}
 \end{prob}
 
+% Intermedio
 \begin{prob}
   Encuentre la relación de recurrencia para la ecuación de Legendre con $n=2$ alrededor de $x=0$.
   \begin{myproof}
@@ -686,6 +762,7 @@ Estos polinomios son ortogonales en $[-1,1]$:
   \end{myproof}
 \end{prob}
 
+% Intermedio
 \begin{prob}
   Resuelva $y'' + x y' + y=0$ usando series de potencias y encuentre los primeros 4 términos no nulos de cada solución.
   \begin{myproof}
@@ -698,3 +775,59 @@ Estos polinomios son ortogonales en $[-1,1]$:
   \end{myproof}
 \end{prob}
 
+\section{Problemas propuestos}
+
+% Básico
+\begin{prob}
+Halle el radio de convergencia de $\displaystyle\sum_{n=0}^{\infty} \frac{x^n}{3^n}$.
+\end{prob}
+
+\begin{prob}
+Halle el radio de convergencia de $\displaystyle\sum_{n=1}^{\infty} \frac{n^2}{2^n}(x+1)^n$.
+\end{prob}
+
+\begin{prob}
+Use la fórmula de Rodrigues para obtener $P_3(x)$.
+\end{prob}
+
+\begin{prob}
+Verifique que $P_1(x)=x$ y $P_3(x)=\tfrac12(5x^3-3x)$ son ortogonales en $[-1,1]$.
+\end{prob}
+
+% Intermedio
+\begin{prob}
+Clasifique $x=0$ (ordinario, singular regular o singular irregular) para $x^2 y'' + x y' + (x^2-\tfrac14)y=0$.
+\end{prob}
+
+\begin{prob}
+Resuelva $y'' - 2x y' + 4y = 0$ (Hermite con $n=2$) y halle la solución polinomial.
+\end{prob}
+
+\begin{prob}
+Encuentre la ecuación indicial de $x^2 y'' + x y' + (x^2-9)y=0$ en $x=0$.
+\end{prob}
+
+\begin{prob}
+Halle la relación de recurrencia de la solución en serie de $y'' + x^2 y' + y = 0$ alrededor de $x=0$.
+\end{prob}
+
+\begin{prob}
+Resuelva $(1-x^2)y'' - 2x y' + 12y = 0$ (Legendre con $n=3$) y halle la solución polinomial.
+\end{prob}
+
+\begin{prob}
+Determine el radio de convergencia \emph{garantizado} para las soluciones en serie de $(x^2+4)y'' + y = 0$ alrededor de $x=0$.
+\end{prob}
+
+\begin{prob}
+Muestre que $\displaystyle\sum_{k=0}^{\infty} \frac{(-1)^k}{2^{2k+1}\,k!\,(k+1)!}\,x^{2k+1}$ es la función de Bessel $J_1(x)$.
+\end{prob}
+
+% Desafiante
+\begin{prob}
+Obtenga la primera solución de Frobenius de $2x^2 y'' - x y' + (1+x)y = 0$ en $x=0$: halle la ecuación indicial y los tres primeros términos no nulos.
+\end{prob}
+
+\begin{prob}
+Para la ecuación de Bessel de orden $\nu=3/2$, dé las raíces indiciales y exprese la solución general sabiendo que $J_{1/2}$ y $J_{-1/2}$ son funciones elementales.
+\end{prob}

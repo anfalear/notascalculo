@@ -266,34 +266,36 @@ En todo escenario, los 59 myproof huérfanos de caps 27–29 se corrigen (anidar
 | Ítem | Archivo(s) | Acción | Estado | Fecha | Notas |
 |---|---|---|---|---|---|
 | F9ED.01 | `.md` | Decisión G registrada | Completado | 2026-07-06 | Misma convención F (F-i conservadora), sin subcaso EDO: elevar 4–6 por cap.; resto íntegro en `Problemas resueltos adicionales`; sin solucionario aparte; huérfanos 27–29 se reencajan. Ítems 🔒G desbloqueados. |
-| F9ED.02 | `cap27` | Teoremas existencia-unicidad + lineal (R3) | Pendiente | — | Cap. sin teoremas hoy |
-| F9ED.03 | `cap27` | Figura campo de pendientes + soluciones | Pendiente | — | — |
-| F9ED.04 | `cap27` | Figuras RL (circuitikz) + enfriamiento | Pendiente | — | — |
-| F9ED.05 | `cap27` | Decisión G ×19 + tags | Pendiente | — | 19 huérfanos |
-| F9ED.06 | `cap27` | Párrafo de conexión del bloque ED | Pendiente | — | Coordinado con Decisión E1 |
-| F9ED.07 | `cap28` | Figura masa-resorte-amortiguador | Pendiente | — | — |
-| F9ED.08 | `cap28` | Figura 4 regímenes + resonancia | Pendiente | — | — |
-| F9ED.09 | `cap28` | Figura RLC + analogía | Pendiente | — | — |
-| F9ED.10 | `cap28` | Decisión G ×20 + tags | Pendiente | — | 20 huérfanos |
-| F9ED.11 | `cap28` | Auditoría R3 Wronskiano/superposición | Pendiente | — | — |
-| F9ED.12 | `cap29` | Encapsular tikz masas acopladas | Pendiente | — | Único tikz del bloque |
-| F9ED.13 | `cap29` | Figura plano de fases (3 casos) | Pendiente | — | — |
-| F9ED.14 | `cap29` | Figura 2 mallas (circuitikz) | Pendiente | — | — |
-| F9ED.15 | `cap29` | Teorema estructura sistemas (R3) | Pendiente | — | Solo 1 theorem hoy |
-| F9ED.16 | `cap29` | Decisión G ×20 + tags | Pendiente | — | 20 huérfanos |
-| F9ED.17 | `cap30` | Figuras Bessel + Legendre | Pendiente | — | Precalcular Bessel (Python→coords) |
-| F9ED.18 | `cap30` | Figura puntos singulares + radio | Pendiente | — | — |
-| F9ED.19 | `cap30` | Decisión G ×16 + tags | Pendiente | — | myproof dentro (estilo A) |
-| F9ED.20 | `cap30` | Auditoría R3 + \ref a C2 | Pendiente | — | — |
-| F9ED.21 | `cap31` | Figuras Heaviside + Dirac | Pendiente | — | — |
-| F9ED.22 | `cap31` | Figura convolución | Pendiente | — | — |
-| F9ED.23 | `cap31` | Decisión G ×21 + tags | Pendiente | — | myproof dentro (estilo A) |
-| F9ED.24 | `cap31` | Tabla transformadas + R3 convolución | Pendiente | — | — |
-| F9ED.25 | 5 caps | Conexiones inter-capítulo (\ref) | Pendiente | — | Coordinado con F9AL.22 |
-| F9ED.26 | 5 caps | Headings + verificación huérfanos | Pendiente | — | — |
-| F9ED.27 | maestro | Compilación + re-inventario | Pendiente | — | — |
+| F9ED.02 | `cap27` | Teoremas existencia-unicidad + lineal (R3) | Completado | 2026-07-24 | `thm:cap27:existencia-unicidad` (Picard–Lindelöf + rem iteración de Picard + contraejemplo `y'=y^{2/3}`); `thm:cap27:lineal-general` colocado en §lineales (mejor R1 que en Definiciones). |
+| F9ED.03 | `cap27` | Figura campo de pendientes + soluciones | Completado | 2026-07-24 | `fig:campo_pendientes` (TikZ `\foreach` de `y'=x-y` + 3 curvas `y=x-1+Ce^{-x}`, `\clip`). |
+| F9ED.04 | `cap27` | Figuras RL (circuitikz) + enfriamiento | Completado | 2026-07-24 | `fig:circuito_rl` (circuitikz, fuente senoidal); `fig:enfriamiento_curvas` (pgfplots, 3 T₀ incl. uno que se calienta). |
+| F9ED.05 | `cap27` | Decisión G ×19 + tags | Completado | 2026-07-24 | 4 elevaciones (#1 sep+PVI, #11 lineal trig, #12 homogénea, #16 inversión x(y)); **nueva §Ecuaciones homogéneas**; 15 resueltos adicionales anidados+tagged; 15 propuestos nuevos SymPy-OK (4B/8I/3D). |
+| F9ED.06 | `cap27` | Párrafo de conexión del bloque ED | Completado | 2026-07-24 | Párrafo de apertura (integración `\ref{cap:tecintegracion}` + mapa de los 5 caps). |
+| F9ED.07 | `cap28` | Figura masa-resorte-amortiguador | Completado | 2026-07-24 | `fig:masa_resorte` (TikZ 2D, resorte zigzag MANUAL — no hay `decorations.pathmorphing`, aunque circuitikz sí lo carga; pared `pattern`, dashpot). |
+| F9ED.08 | `cap28` | Figura 4 regímenes + resonancia | Completado | 2026-07-24 | `fig:regimenes_amortiguamiento` (pgfplots, sub/crít/sobre + resonancia). Trig en pgfplots: `cos(deg(3*x))`. |
+| F9ED.09 | `cap28` | Figura RLC + analogía | Completado | 2026-07-24 | `fig:circuito_rlc` (circuitikz) + analogía m↔L, c↔R, k↔1/C en prosa y caption. |
+| F9ED.10 | `cap28` | Decisión G ×20 + tags | Completado | 2026-07-24 | 5 elevaciones (#7 resonancia, #9 var. tan x, #11 C-E, #15 osc PVI, #17 RLC forzado); **#20 placeholder retirado (autor OK)**; 14 resueltos adicionales (3B/7I/4D); 15 propuestos nuevos SymPy-OK. |
+| F9ED.11 | `cap28` | Auditoría R3 Wronskiano/superposición | Completado | 2026-07-24 | Labels `thm:cap28:superposicion/wronskiano/estructura`; rem con **fórmula de Abel** (W'=−a_{n-1}W ⇒ nunca nula o idénticamente nula). |
+| F9ED.12 | `cap29` | Encapsular tikz masas acopladas | Completado | 2026-07-24 | `center`→`figure[H]`+caption+`fig:masas_acopladas`. |
+| F9ED.13 | `cap29` | Figura plano de fases (3 casos) | Completado | 2026-07-24 | `fig:plano_fases` (3 minipages: nodo/foco/silla). **Bug corregido:** espiral con `deg(90*t/3.6)` desbordaba «Dimension too large» → ángulo directo en grados `domain=0:900`. |
+| F9ED.14 | `cap29` | Figura 2 mallas (circuitikz) | Completado | 2026-07-24 | `fig:dos_mallas` (circuitikz, 2 mallas + M mutua dashed + i₁,i₂ loop arcs). Leve estrechez i₂/E₂ (cosmética, legible). |
+| F9ED.15 | `cap29` | Teorema estructura sistemas (R3) | Completado | 2026-07-24 | `thm:cap29:estructura` (espacio vect. dim n, matriz fundamental, Abel) + rem con `\ref{vvpropios}`; label al teorema existente `thm:cap29:solucion-general`. |
+| F9ED.16 | `cap29` | Decisión G ×20 + tags | Completado | 2026-07-24 | 5 elevaciones (#3 elim, #5 reales, #7 complejos, #9 repetido defectivo, #11 coef indet); 15 resueltos adicionales (5B/7I/3D, reorg. por script `reorg_cap29_banco.py`); 15 propuestos nuevos SymPy-OK. |
+| F9ED.17 | `cap30` | Figuras Bessel + Legendre | Completado | 2026-07-24 | `fig:bessel` (J₀,J₁,J₂ con coords precalculadas por scipy) en §Bessel; `fig:legendre` (P₀–P₃ plot directo) tras Rodrigues. |
+| F9ED.18 | `cap30` | Figura puntos singulares + radio | Completado | 2026-07-24 | `fig:radio_singularidades` (plano complejo: x₀ + 2 singularidades + círculo R a la más cercana) tras el teo. de existencia en serie. |
+| F9ED.19 | `cap30` | Decisión G ×16 + tags | Completado | 2026-07-24 | 3 elevaciones (#3 serie→e^x, #6 ec. indicial, #11 P₂ Rodrigues); 13 resueltos adicionales (5B/7I/1D, ya estilo A) + 13 propuestos nuevos. Script `reorg_cap30_banco.py`. |
+| F9ED.20 | `cap30` | Auditoría R3 + \ref a C2 | Completado | 2026-07-24 | §Repaso referencia `cap:ssfunciones`/`def:serie_potencias`/`thm:radio_convergencia`/`thm:prop_pot`; labels `thm:cap30:existencia-serie` (con `\ref` a radio C2) y `thm:cap30:frobenius`. |
+| F9ED.21 | `cap31` | Figuras Heaviside + Dirac | Completado | 2026-07-24 | `fig:heaviside` (salto en $a$, punto lleno/vacío) y `fig:dirac` (2 pulsos anidados de área 1 + flecha δ). |
+| F9ED.22 | `cap31` | Figura convolución | Completado | 2026-07-24 | `fig:convolucion` (pgfplots: $e^{-t}$, $e^{-2t}$, $(f*g)=e^{-t}-e^{-2t}$). |
+| F9ED.23 | `cap31` | Decisión G ×21 + tags | Completado | 2026-07-24 | 3 elevaciones (#12 inversa por convolución, #16 PVI por tramos, #17 sistema 2×2); 18 resueltos adicionales (6B/9I/3D) + 15 propuestos nuevos. Script `reorg_cap31_banco.py`. |
+| F9ED.24 | `cap31` | Tabla transformadas + R3 convolución | Completado | 2026-07-24 | **`tab:transformadas`** creada (no existía; 10 pares $f\!\to\!F$) + ref en el ejemplo de linealidad; label `thm:cap31:convolucion` + rem con **esquema de prueba** (integral doble + cambio $t=\tau+\sigma$). |
+| F9ED.25 | 5 caps | Conexiones inter-capítulo (\ref) | Completado | 2026-07-24 | cap28→`\ref{numcomp}` (Euler en raíces complejas); cap31→`\ref{cap:impropias}` (label nuevo en impropias); cap29→`vvpropios` y cap30→`ssfunciones` ya hechas. |
+| F9ED.26 | 5 caps | Headings + verificación huérfanos | Completado | 2026-07-24 | Script `check_edos.py`: **0 huérfanos**, 1 §propuestos + 1 §resueltos adicionales por cap, 0 variantes de heading. |
+| F9ED.27 | maestro | Compilación + re-inventario | Completado | 2026-07-24 | 2 pasadas lualatex, **842 pp, 0 errores, 0 refs indefinidas, 0 overfull graves**. 8 figuras nuevas del bloque cap30/cap31 verificadas visualmente. |
 
-**Total: 27 ítems.**
+**Total: 27 ítems — FASE F9-EDOs COMPLETA (27/27) al 2026-07-24.**
+
+**Cierre F9-EDOs (2026-07-24):** completados F9ED.02–.27 en la sesión (F9ED.01 ya estaba). Aportes del bloque: **13 figuras nuevas** (0 antes en los 5 caps), **~10 teoremas/esquemas de estructura** (cap27 pasó de 0 a 2 teoremas), 1 sección nueva (§Ecuaciones homogéneas), 1 tabla de transformadas, **18 elevaciones a `example`**, **73 propuestos nuevos** SymPy-verificados, bancos graduados B/I/D y anidados, y conexiones `\ref` inter-capítulo. PDF **842 pp, 0 errores**. **Contenido del libro congelado → listo para Fase 10 (F10.01 índice analítico).**
 
 ---
 
