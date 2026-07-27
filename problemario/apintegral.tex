@@ -48,7 +48,7 @@ En general, un protocolo práctico puede resumirse así para cada aplicación:
 \end{description}
 \end{rem}
 
-\begin{theorem}[Principio unificador de las aplicaciones de la integral]
+\begin{theorem}[Principio unificador de las aplicaciones de la integral]\index{aplicaciones de la integral!principio unificador}
 Cualquier cantidad acumulativa $Q$ que satisfaga:
 \begin{enumerate}
   \item Puede aproximarse en subintervalos: $Q\approx\sum g(x_i^*)\Delta x$.
@@ -77,7 +77,7 @@ problema.
 \section{Cálculo de áreas de regiones planas}
 % ============================================================
 
-\begin{definition}[Área bajo una curva]
+\begin{definition}[Área bajo una curva]\index{area@área!bajo una curva}
 Sea $f:[a,b]\to\mathbb{R}$ una función continua y no negativa. El
 \textbf{área} de la región acotada por la gráfica de $f$, el eje $x$ y las
 rectas verticales $x=a$, $x=b$ se define como
@@ -169,7 +169,7 @@ La Figura~\ref{fig:area_con_signo} distingue ambas regiones.
 \end{myproof}
 \end{example}
 
-\begin{theorem}[Área entre dos curvas]
+\begin{theorem}[Área entre dos curvas]\index{area@área!entre dos curvas}
 Sean $f$ y $g$ funciones continuas en $[a,b]$ tales que $f(x)\geq g(x)$
 para todo $x\in[a,b]$. El área de la región acotada por ambas gráficas y
 las rectas $x=a$, $x=b$ es
@@ -357,7 +357,7 @@ $\bigl[\tfrac{5\pi}4,2\pi\bigr]$.
 \end{myproof}
 \end{example}
 
-\begin{definition}
+\begin{definition}\index{area@área!por integracion respecto a $y$@por integración respecto a $y$}
 Si la región está acotada por curvas de la forma $x=p(y)$ y $x=q(y)$,
 con $p(y)\geq q(y)$ para $y\in[c,d]$, entonces el área es
 \[
@@ -523,7 +523,7 @@ métodos fundamentales, cada uno adecuado para distintas configuraciones.
 \subsection{Método de los discos}
 % -----------------------------------------------------------
 
-\begin{theorem}[Volumen por discos respecto al eje $x$]
+\begin{theorem}[Volumen por discos respecto al eje $x$]\index{volumen!metodo de los discos@método de los discos}
 Sea $R$ la región acotada por $y=f(x)\geq 0$, $x=a$, $x=b$ y el eje $x$.
 Al rotar $R$ alrededor del eje $x$, el volumen del sólido generado es
 \[
@@ -668,7 +668,7 @@ podemos calcular la mitad del volumen y multiplicar por $2$:
 \subsection{Método de las arandelas (\emph{washers})}
 % -----------------------------------------------------------
 
-\begin{theorem}[Volumen por arandelas]
+\begin{theorem}[Volumen por arandelas]\index{volumen!metodo de las arandelas@método de las arandelas}
 Sea $R$ la región acotada por $y=f(x)$ (superior) e $y=g(x)$ (inferior),
 con $f(x)\geq g(x)\geq 0$, $x\in[a,b]$. Al rotar $R$ alrededor del eje $x$,
 el volumen es
@@ -834,7 +834,7 @@ $V = 2\pi\int_0^1 \bigl[(2-x^2)^2-1\bigr]dx$.
 \subsection{Método de los cascarones cilíndricos (\emph{shells})}
 % -----------------------------------------------------------
 
-\begin{theorem}[Volumen por cascarones girando respecto al eje $y$]
+\begin{theorem}[Volumen por cascarones girando respecto al eje $y$]\index{volumen!metodo de los cascarones@método de los cascarones}
 Sea $R$ la región acotada por $y=f(x)\geq 0$, $x=a$, $x=b$
 ($0\leq a<b$) y el eje $x$. Al rotar $R$ alrededor del eje $y$, el volumen
 es
@@ -1028,7 +1028,7 @@ Luego integramos:
 \section{Longitud de arco}
 % ============================================================
 
-\begin{definition}[Longitud de una curva suave]
+\begin{definition}[Longitud de una curva suave]\index{longitud de arco!curva suave}
 Sea $f$ una función con derivada continua en $[a,b]$. La
 \textbf{longitud de arco} de la gráfica de $f$ desde $x=a$ hasta $x=b$ es
 \[
@@ -1193,7 +1193,7 @@ Usando la definición exponencial $\sinh t = \frac{e^t-e^{-t}}{2}$ y sabiendo qu
 \section{Áreas de superficies de revolución}
 % ============================================================
 
-\begin{definition}[Área superficial de revolución respecto al eje $x$]
+\begin{definition}[Área superficial de revolución respecto al eje $x$]\index{area superficial de revolucion@área superficial de revolución}
 Sea $f$ una función no negativa con derivada continua en $[a,b]$. El área
 de la superficie generada al rotar la gráfica de $f$ alrededor del eje $x$
 es
@@ -1297,7 +1297,7 @@ La variable $x$ recorre todo el diámetro de la semicircunferencia: $x\in[-R,R]$
 \end{myproof}
 \end{example}
 
-\begin{theorem}[Superficie alrededor del eje $y$]
+\begin{theorem}[Superficie alrededor del eje $y$]\index{area superficial de revolucion@área superficial de revolución!eje $y$}
 Si la gráfica de $y=f(x)$, $x\in[a,b]$, con $f\geq 0$ y $f'$ continua,
 gira alrededor del eje $y$, el área superficial es
 \[
@@ -1385,7 +1385,7 @@ Los límites cambian: $x=0 \to u=1$ y $x=1 \to u=5$:
 
 \subsection{Trabajo mecánico}
 
-\begin{definition}[Trabajo de una fuerza variable]
+\begin{definition}[Trabajo de una fuerza variable]\index{trabajo}
 Si una fuerza $F(x)$ actúa en la dirección del movimiento a lo largo del
 eje $x$, el trabajo realizado al mover un objeto desde $x=a$ hasta $x=b$
 es
@@ -1720,7 +1720,7 @@ La variable $y$ recorre desde la base hasta el borde: $y\in[0,5]$.
 \subsection{Centro de masa y centroide}
 % -----------------------------------------------------------
 
-\begin{definition}[Momentos y centro de masa de una lámina plana]
+\begin{definition}[Momentos y centro de masa de una lámina plana]\index{centro de masa!lamina plana@lámina plana}\index{momentos de una lamina@momentos de una lámina}
 Sea $R$ una región plana de densidad constante $\rho$, acotada por
 $y=f(x)\geq 0$, $x=a$ y $x=b$. Sus \textbf{momentos} respecto a los ejes
 son
@@ -1744,7 +1744,7 @@ los momentos se calculan mediante integrales dobles, que se estudiarán en
 Cálculo Multivariable.
 \end{rem}
 
-\begin{theorem}[Teorema de Pappus para el volumen]
+\begin{theorem}[Teorema de Pappus para el volumen]\index{Pappus, teorema de}
 Si una región plana $R$ de área $A$ se hace girar alrededor de un eje
 exterior (que no la cruza), el volumen del sólido de revolución generado
 es
@@ -1911,7 +1911,7 @@ con franjas verticales y usando $\frac{1}{2}[f(x)]^2$:
 \subsection{Momento de inercia}
 % -----------------------------------------------------------
 
-\begin{definition}[Momento de inercia de una lámina]
+\begin{definition}[Momento de inercia de una lámina]\index{momento de inercia}
 El \textbf{momento de inercia} de una lámina de densidad $\rho$ respecto
 a un eje mide su resistencia a la rotación. Para los ejes coordenados:
 \[
@@ -2077,7 +2077,7 @@ $I = I_{\text{cm}} + Md^2$, donde $d$ es la distancia entre los ejes.
 \section{Presión y fuerza hidrostática}
 % ============================================================
 
-\begin{definition}[Fuerza hidrostática sobre una placa plana]
+\begin{definition}[Fuerza hidrostática sobre una placa plana]\index{fuerza hidrostatica@fuerza hidrostática}
 La presión hidrostática a profundidad $h$ en un fluido de densidad $\rho$
 es $P=\rho g h$. La fuerza total sobre una placa plana sumergida
 verticalmente, con anchura $w(h)$ a profundidad $h$, entre profundidades

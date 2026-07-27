@@ -41,7 +41,7 @@ fuente de dificultad.
 Empezamos con el concepto de límite para funciones de dos variables,
 que luego extenderemos a tres o más.
 
-\begin{definition}[Límite de una función de dos variables]
+\begin{definition}[Límite de una función de dos variables]\index{limite@límite!de funciones de dos variables}
 Sea $f$ una función definida en un disco abierto centrado en $(a,b)$,
 excepto posiblemente en $(a,b)$. Decimos que
 \[
@@ -575,7 +575,7 @@ $\boxed{0}$
 
 Las propiedades algebraicas de los límites se extienden naturalmente a
 varias variables.
-\begin{theorem}
+\begin{theorem}\index{limite@límite!leyes para varias variables}
 Si $\lim f=L$ y $\lim g=K$ en una abierto $R$ de $\mathbb{R}^n$, entonces
 \[
 \begin{aligned}
@@ -623,7 +623,7 @@ luego $f$ está definida y es continua en ese punto.
 % TEOREMA DEL EMPAREDADO (SÁNDWICH) EN VARIAS VARIABLES
 % ------------------------------------------------------------
 
-\begin{theorem}[Teorema del emparedado para funciones de dos variables]
+\begin{theorem}[Teorema del emparedado para funciones de dos variables]\index{teorema del sandwich@teorema del sándwich!para funciones de dos variables}
 Si existe un disco perforado centrado en $(a,b)$ donde
 \[
 |f(x,y)-L| \leq g(x,y)
@@ -779,7 +779,7 @@ $x$, $f$ crece unas $10$ unidades por unidad de longitud.
 % CONTINUIDAD
 % ------------------------------------------------------------
 
-\begin{definition}[Continuidad en un punto]
+\begin{definition}[Continuidad en un punto]\index{continuidad!en varias variables}
 Una función $f$ de dos variables es \textbf{continua en $(a,b)$} si:
 \begin{enumerate}
     \item $f(a,b)$ está definida,
@@ -823,7 +823,7 @@ que no existe.
 \end{myproof}
 \end{prob}
 
-\begin{definition}[Continuidad en conjuntos]
+\begin{definition}[Continuidad en conjuntos]\index{continuidad!en conjuntos}
 Sea $R$ un \textbf{conjunto abierto} de $\mathbb{R}^n,$ $f$ es continua en $R\subset\mathbb{R}^2$ si es continua en todo punto de $R$. Análogamente, $f$ es continua en un \textbf{conjunto cerrado} $R$ si es continua en todo punto interior y, en los puntos frontera, el límite desde dentro de la región coincide con el valor de la     función.
 \end{definition}
 
@@ -883,7 +883,7 @@ que depende de $m$ (para $1+6m^5\neq 0$), por lo que el límite en el origen no 
 \end{myproof}
 \end{prob}
 
-\begin{theorem}[Composición de funciones continuas]
+\begin{theorem}[Composición de funciones continuas]\index{continuidad!composicion de funciones@composición de funciones}
 Si $f$ es continua en $(a,b)$ y $g$ es continua en $f(a,b)$, entonces
 la composición $g(f(x,y))$ es continua en $(a,b)$.
 \end{theorem}
@@ -928,7 +928,7 @@ $\boxed{f \text{ es continua en todo } \mathbb{R}^2}$.
 % EXTENSIÓN A TRES VARIABLES
 % ------------------------------------------------------------
 
-\begin{definition}[Continuidad para tres variables]
+\begin{definition}[Continuidad para tres variables]\index{continuidad!para tres variables}
 Una función $f$ de tres variables es continua en $(a,b,c)$ si
 \[
 \lim_{(x,y,z)\to(a,b,c)} f(x,y,z) = f(a,b,c).

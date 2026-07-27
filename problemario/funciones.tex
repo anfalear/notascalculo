@@ -7,7 +7,7 @@ En la práctica, esta dependencia aparece en todas partes: el área de un círcu
 
 \section{Propiedades básicas}
 
-\begin{definition}[Función]
+\begin{definition}[Función]\index{funcion@función}
 Una \textbf{función} $f$ es una regla de correspondencia que asigna a cada elemento $x$ de un conjunto denominado \textbf{dominio} $D_f$, un \emph{único} valor $f(x)$ en otro conjunto llamado \textbf{codominio}. 
 
 El conjunto de todos los valores efectivamente alcanzados,
@@ -257,7 +257,7 @@ Una curva en el plano $xy$ es la gráfica de una función $y = f(x)$ \emph{si y 
 \subsection{Funciones crecientes, decrecientes, pares e impares}
 % -----------------------------------------------------------
 
-\begin{definition}[Funciones monótonas]
+\begin{definition}[Funciones monótonas]\index{funcion@función!monotona@monótona}
 Sea $f$ una función definida en un intervalo $I$.
 \begin{itemize}
   \item $f$ es \textbf{creciente} en $I$ si $x_1 < x_2 \Rightarrow f(x_1) < f(x_2)$ para todo $x_1, x_2 \in I$.
@@ -292,7 +292,7 @@ Como $x_1 < x_2$, se tiene $x_2 - x_1 > 0$. El signo de la diferencia depende de
 
 El ejemplo anterior se resolverá con mayor facilidad más adelante, luego de estudiar la derivada. Mientras tanto, observe que hay algunas formas adicionales de representar funciones:
 
-\begin{definition}[Funciones pares e impares]
+\begin{definition}[Funciones pares e impares]\index{funcion@función!par e impar}
 Sea $f: D_f \to \mathbb{R}$ con $D_f$ simétrico respecto al origen (es decir, $x \in D_f \Rightarrow -x \in D_f$).
 \begin{itemize}
   \item $f$ es \textbf{par} si $f(-x) = f(x)$ para todo $x \in D_f$. Su gráfica es simétrica respecto al eje $y$.
@@ -379,7 +379,7 @@ Existe un puñado de funciones básicas ---las herramientas fundamentales del c�
 \subsection{Función potencia}
 % -----------------------------------------------------------
 
-\begin{definition}[Función potencia]
+\begin{definition}[Función potencia]\index{funcion@función!potencia}
 Sea $r \in \mathbb{Q}$, $r = p/q$ en forma reducida con $q \in \mathbb{N}^+$. La \textbf{función potencia} es $f(x) = x^r = \sqrt[q]{x^p}$. Su dominio depende de la paridad de $q$ y el signo de $r$:
 \begin{itemize}
   \item $q$ \textbf{impar}: $D_f = \mathbb{R}$.
@@ -459,7 +459,7 @@ ilustran las funciones potencia más representativas:
 \subsection{Funciones exponenciales y logarítmicas}
 % -----------------------------------------------------------
 
-\begin{definition}[Función exponencial]
+\begin{definition}[Función exponencial]\index{funcion@función!exponencial}
 Sea $a > 0$, $a \neq 1$. La \textbf{función exponencial} de base $a$ es $f(x) = a^x$, con $D_f = \mathbb{R}$ y $R_f = (0,+\infty)$. Es estrictamente creciente si $a > 1$ y estrictamente decreciente si $0 < a < 1$. Tiene asíntota horizontal $y = 0$ y pasa por $(0,1)$.
 
 El número $e \approx 2.71828\ldots$ (base de Euler) ocupa un lugar privilegiado: la función $e^x$ es la única cuya pendiente en $(0,1)$ es exactamente $1$, propiedad que se demostrará formalmente al estudiar la derivada.
@@ -493,7 +493,7 @@ decaimiento de $(1/2)^x$.
 \end{example}
 
 
-\begin{definition}[Función logarítmica]
+\begin{definition}[Función logarítmica]\index{funcion@función!logaritmica@logarítmica}
 Sea $a > 0$, $a \neq 1$. La \textbf{función logarítmica} de base $a$ es $f(x) = \log_a x$, definida como la inversa de $a^x$:
 \[
   a^{\log_a x} = x \quad (x > 0) \qquad \text{y} \qquad \log_a(a^x) = x \quad (x \in \mathbb{R}).
@@ -534,11 +534,11 @@ dominio común $(0,+\infty)$.
 \subsection{Funciones trigonométricas}
 % -----------------------------------------------------------
 
-\begin{definition}[Función periódica]
+\begin{definition}[Función periódica]\index{funcion@función!periodica@periódica}
 $f: D_f \to \mathbb{R}$ es \textbf{periódica} si existe $T > 0$ tal que $f(x+T) = f(x)$ para todo $x \in D_f$ con $x+T \in D_f$. El menor $T$ se llama \textbf{período fundamental}.
 \end{definition}
 
-\begin{definition}[Funciones trigonométricas fundamentales]
+\begin{definition}[Funciones trigonométricas fundamentales]\index{funcion@función!trigonometrica@trigonométrica}
 Las seis funciones trigonométricas fundamentales se definen con $x \in \mathbb{R}$ en radianes:
 
 \begin{center}
@@ -617,7 +617,7 @@ de las funciones trigonométricas fundamentales.
 \subsection{Función compuesta y función elemental}
 % -----------------------------------------------------------
 
-\begin{definition}[Función compuesta]
+\begin{definition}[Función compuesta]\index{funcion@función!compuesta}
 Sean $f: D_f \to \mathbb{R}$ y $g: D_g \to \mathbb{R}$. La \textbf{composición} $f \circ g$ se define por
 \[
   (f \circ g)(x) = f(g(x)),
@@ -649,7 +649,7 @@ La función $h(x) = \ln(\sen(x^2+1))$ es la composición $h = \ln \circ \sen \ci
 \]
 \end{rem}
 
-\begin{definition}[Función elemental]
+\begin{definition}[Función elemental]\index{funcion@función!elemental}
 Una función $f$ es \textbf{elemental} si se obtiene a partir de funciones potencia, exponenciales, logarítmicas, trigonométricas (y sus inversas) y constantes reales mediante un número \emph{finito} de sumas, restas, multiplicaciones, divisiones y composiciones.
 
 Las \textbf{funciones algebraicas} son el subconjunto de funciones elementales que solo involucran operaciones algebraicas (sin exponenciales ni trigonométricas). Se subdividen en:
@@ -806,7 +806,7 @@ acuerdo con los datos.
 
 Muchos fenómenos físicos admiten dos perspectivas complementarias: dada la producción de una fábrica en función del tiempo, podríamos querer saber en cuánto tiempo se alcanza cierta producción. Esto motiva el concepto de función inversa.
 
-\begin{definition}[Función inyectiva]
+\begin{definition}[Función inyectiva]\index{funcion@función!inyectiva}
 $f: D_f \to \mathbb{R}$ es \textbf{inyectiva} (uno a uno) si
 \[
   x_1 \neq x_2 \;\Rightarrow\; f(x_1) \neq f(x_2) \quad \forall\, x_1, x_2 \in D_f.
@@ -818,7 +818,7 @@ Equivalentemente: $f(a) = f(b) \Rightarrow a = b$.
 $f$ es inyectiva si y solo si ninguna recta horizontal interseca su gráfica en más de un punto. Esta condición es necesaria y suficiente para que exista $f^{-1}$.
 \end{rem}
 
-\begin{definition}[Función inversa]
+\begin{definition}[Función inversa]\index{funcion@función!inversa}
 Sea $f: D_f \to R_f$ inyectiva. Su \textbf{función inversa} $f^{-1}: R_f \to D_f$ se define por
 \[
   f^{-1}(y) = x \;\Longleftrightarrow\; f(x) = y,
@@ -990,7 +990,7 @@ figura~\ref{fig:inversa_reflexion}).
 
 Las funciones trigonométricas no son globalmente inyectivas (son periódicas), por lo que se restringe su dominio a un \textbf{intervalo principal} para definir sus inversas.
 
-\begin{definition}[Funciones trigonométricas inversas]
+\begin{definition}[Funciones trigonométricas inversas]\index{funcion@función!trigonometrica inversa@trigonométrica inversa}
 \begin{center}
 \renewcommand{\arraystretch}{1.6}
 \begin{tabular}{|c|c|c|}
@@ -1068,7 +1068,7 @@ principales sobre sus intervalos principales.
 
 Las leyes que gobiernan las operaciones con potencias y logaritmos son la base del álgebra del cálculo. Las resumimos en los siguientes teoremas.
 
-\begin{theorem}[Leyes de los exponentes]
+\begin{theorem}[Leyes de los exponentes]\index{exponentes, leyes de}
 Sean $a, b > 0$ y $x, y \in \mathbb{R}$. Entonces:
 \begin{enumerate}
   \item $b^{x+y} = b^x \cdot b^y$
@@ -1078,7 +1078,7 @@ Sean $a, b > 0$ y $x, y \in \mathbb{R}$. Entonces:
 \end{enumerate}
 \end{theorem}
 
-\begin{theorem}[Leyes de los logaritmos]
+\begin{theorem}[Leyes de los logaritmos]\index{logaritmo!leyes}
 Sea $b > 0$, $b \neq 1$, y $x, y > 0$, $r \in \mathbb{R}$. Entonces:
 \begin{enumerate}
   \item $\log_b(xy) = \log_b x + \log_b y$
@@ -1088,11 +1088,11 @@ Sea $b > 0$, $b \neq 1$, y $x, y > 0$, $r \in \mathbb{R}$. Entonces:
 Además: $\log_b x = y \Leftrightarrow b^y = x$.
 \end{theorem}
 
-\begin{definition}[Logaritmo natural]
+\begin{definition}[Logaritmo natural]\index{logaritmo!natural}
 $\ln x = \log_e x$ donde $e \approx 2.71828$. Satisface $\ln(e^x) = x$ y $e^{\ln x} = x$ para $x > 0$. En particular, $\ln e = 1$ y $\ln 1 = 0$.
 \end{definition}
 
-\begin{theorem}[Fórmula de cambio de base]
+\begin{theorem}[Fórmula de cambio de base]\index{logaritmo!cambio de base}
 Sea $b > 0$, $b \neq 1$. Entonces
 \[
   \log_b x = \frac{\ln x}{\ln b}.

@@ -33,7 +33,7 @@ El método de exhaución de Arquímedes anticipa conceptualmente el límite, aun
 
 Para formalizar el proceso de aproximación por sumas finitas se utiliza la \textbf{notación sigma}, que permite escribir sumas de muchos términos de forma compacta. La suma $f(x_1) + f(x_2) + \cdots + f(x_n)$ se escribe como $\sum_{i=1}^{n} f(x_i)$.
 
-\begin{theorem}[Fórmulas de sumatorias fundamentales]
+\begin{theorem}[Fórmulas de sumatorias fundamentales]\index{sumatorias, formulas de@sumatorias, fórmulas de}
 Para todo entero positivo $n$:
 \[
 \sum_{i=1}^{n} 1 = n, \qquad
@@ -49,7 +49,7 @@ La fórmula $\sum_{i=1}^n i = \frac{n(n+1)}{2}$ se atribuye popularmente a Gauss
 
 \section{Sumas de Riemann}
 
-\begin{definition}
+\begin{definition}\index{particion de un intervalo@partición de un intervalo}
 Sea $f$ una función definida en $[a,b]$. Una \textbf{partición} de $[a,b]$ es un conjunto de puntos $P = \{x_0, x_1, \ldots, x_n\}$ con
 \[
 a = x_0 < x_1 < x_2 < \cdots < x_n = b.
@@ -128,7 +128,7 @@ Este resultado puede verificarse geométricamente: la región es un trapecio de 
 
 \section{La Integral Definida}
 
-\begin{definition}
+\begin{definition}\index{integral definida}
 Sea $f$ definida en $[a,b]$. Se dice que $f$ es \textbf{integrable en $[a,b]$} si el límite
 \[
 \int_{a}^{b} f(x)\,dx \;=\; \lim_{\|P\|\to 0} \sum_{i=1}^{n} f(\bar{x}_i)\,\Delta x_i
@@ -136,7 +136,7 @@ Sea $f$ definida en $[a,b]$. Se dice que $f$ es \textbf{integrable en $[a,b]$} s
 existe y es el mismo para toda elección de particiones con $\|P\|\to 0$ y para toda elección de puntos muestra $\bar{x}_i$. Este límite se denomina la \textbf{integral definida} de $f$ en $[a,b]$.
 \end{definition}
 
-\begin{theorem}[Integrabilidad de funciones continuas]
+\begin{theorem}[Integrabilidad de funciones continuas]\index{integral definida!integrabilidad de funciones continuas}
 Si $f$ es continua en $[a,b]$, entonces $f$ es integrable en $[a,b]$. Más aún, $f$ es integrable en $[a,b]$ si es acotada y tiene a lo sumo un número finito de discontinuidades.
 \end{theorem}
 
@@ -173,7 +173,7 @@ $\int_a^b f = A^+ - A^-$.}
 
 \section{Propiedades de la Integral Definida}
 
-\begin{theorem}[Propiedades algebraicas]
+\begin{theorem}[Propiedades algebraicas]\index{integral definida!propiedades algebraicas}
 Sean $f$ y $g$ integrables en $[a,b]$ y $k \in \R$. Entonces:
 \begin{enumerate}
     \item $\displaystyle\int_{a}^{b} k\,f(x)\,dx = k\int_{a}^{b} f(x)\,dx$.
@@ -183,14 +183,14 @@ Sean $f$ y $g$ integrables en $[a,b]$ y $k \in \R$. Entonces:
 \end{enumerate}
 \end{theorem}
 
-\begin{theorem}[Aditividad en intervalos]
+\begin{theorem}[Aditividad en intervalos]\index{integral definida!aditividad en intervalos}
 Si $f$ es integrable en un intervalo que contiene a $a$, $b$ y $c$ (en cualquier orden), entonces
 \[
 \int_{a}^{b} f(x)\,dx = \int_{a}^{c} f(x)\,dx + \int_{c}^{b} f(x)\,dx.
 \]
 \end{theorem}
 
-\begin{theorem}[Simetría para funciones pares e impares]
+\begin{theorem}[Simetría para funciones pares e impares]\index{integral definida!simetria@simetría}
 Sea $f$ integrable en $[-a, a]$ con $a > 0$.
 \begin{enumerate}
     \item Si $f$ es \textbf{par} ($f(-x) = f(x)$): $\displaystyle\int_{-a}^{a} f(x)\,dx = 2\int_{0}^{a} f(x)\,dx$.
@@ -202,7 +202,7 @@ Sea $f$ integrable en $[-a, a]$ con $a > 0$.
 Las propiedades de simetría reducen significativamente el trabajo algebraico en integrales sobre intervalos simétricos. Por ejemplo, $\int_{-\pi}^{\pi}\sen^3 x\,dx = 0$ sin necesidad de calcular nada, pues $\sen^3 x$ es función impar.
 \end{rem}
 
-\begin{theorem}[Propiedad de acotamiento y comparación]
+\begin{theorem}[Propiedad de acotamiento y comparación]\index{integral definida!acotamiento y comparacion@acotamiento y comparación}
 Sea $f$ integrable en $[a,b]$ con $a < b$.
 \begin{enumerate}
     \item Si $m \leq f(x) \leq M$ para todo $x\in[a,b]$, entonces
@@ -240,7 +240,7 @@ El resultado más importante del análisis elemental es la conexión entre las d
 
 \subsection{Primer Teorema Fundamental}
 
-\begin{definition}
+\begin{definition}\index{funcion de acumulacion@función de acumulación}
 Sea $f$ continua en $[a,b]$. La \textbf{función de acumulación} (o función de área) asociada a $f$ es
 \[
 F(x) = \int_{a}^{x} f(t)\,dt, \qquad x \in [a,b].
@@ -266,7 +266,7 @@ crece esta área al desplazar $x$ es exactamente $f(x)$.}
 \label{fig:funcion_acumulacion}
 \end{figure}
 
-\begin{theorem}[Primer Teorema Fundamental del Cálculo --- TFC1]
+\begin{theorem}[Primer Teorema Fundamental del Cálculo --- TFC1]\index{teorema fundamental del calculo@teorema fundamental del cálculo!primero}
 Si $f$ es continua en $[a,b]$, entonces la función de acumulación $F(x) = \int_{a}^{x} f(t)\,dt$ es diferenciable en $(a,b)$ y
 \[
 F'(x) = \frac{d}{dx}\left[\int_{a}^{x} f(t)\,dt\right] = f(x).
@@ -332,7 +332,7 @@ La forma general de aplicación del TFC1 con regla de la cadena es:
 
 \subsection{Segundo Teorema Fundamental}
 
-\begin{theorem}[Segundo Teorema Fundamental del Cálculo --- TFC2]
+\begin{theorem}[Segundo Teorema Fundamental del Cálculo --- TFC2]\index{teorema fundamental del calculo@teorema fundamental del cálculo!segundo}
 Si $f$ es continua en $[a,b]$ y $G$ es \textbf{cualquier antiderivada} de $f$ en $[a,b]$ (es decir, $G' = f$), entonces
 \[
 \int_{a}^{b} f(x)\,dx = G(b) - G(a) \;=\; \Big[G(x)\Big]_{a}^{b}.
@@ -383,7 +383,7 @@ enunciaron para integrales indefinidas. La regla de sustitución admite una
 versión directa para integrales definidas, que evita el paso de regresar a
 la variable original.
 
-\begin{theorem}[Regla de sustitución --- integral definida]
+\begin{theorem}[Regla de sustitución --- integral definida]\index{sustitucion, regla de@sustitución, regla de!integral definida}
 \label{thm:sustitucion-definida}
 Si $g'$ es continua en $[a,b]$ y $f$ es continua en el rango de $g$,
 entonces
@@ -425,14 +425,14 @@ Para $x=0$: $u=6$; para $x=1$: $u = 1+2+6 = 9$.
 
 \section{Teorema del Valor Medio para Integrales}
 
-\begin{definition}
+\begin{definition}\index{valor promedio de una funcion@valor promedio de una función}
 Si $f$ es integrable en $[a,b]$, el \textbf{valor promedio} de $f$ en $[a,b]$ es
 \[
 \bar{f} = \frac{1}{b-a}\int_{a}^{b} f(x)\,dx.
 \]
 \end{definition}
 
-\begin{theorem}[Teorema del Valor Medio para Integrales]
+\begin{theorem}[Teorema del Valor Medio para Integrales]\index{teorema del valor medio!para integrales}
 Si $f$ es continua en $[a,b]$, entonces existe al menos un número $c \in (a,b)$ tal que
 \[
 f(c) = \frac{1}{b-a}\int_{a}^{b} f(x)\,dx, \qquad \text{equivalentemente,} \qquad \int_{a}^{b} f(x)\,dx = f(c)(b-a).
@@ -495,7 +495,7 @@ El punto $c$ satisface $f(c) = c^2 = 7$, de donde $c = \sqrt{7} \approx 2.646$. 
 \end{myproof}
 \end{example}
 
-\begin{theorem}[Segundo Teorema del Valor Medio para Integrales]
+\begin{theorem}[Segundo Teorema del Valor Medio para Integrales]\index{teorema del valor medio!segundo, para integrales}
 Si $f$ es integrable en $[a,b]$ y $\phi$ es monótona en $[a,b]$, entonces existe $\xi \in [a,b]$ tal que
 \[
 \int_{a}^{b} f(x)\,\phi(x)\,dx = \phi(a)\int_{a}^{\xi} f(x)\,dx + \phi(b)\int_{\xi}^{b} f(x)\,dx.

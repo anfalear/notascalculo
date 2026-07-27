@@ -76,7 +76,7 @@ aunque $f(1)$ no exista. La figura~\ref{fig:limite_ejemplo} ilustra este comport
 
 El trabajo de Weierstrass permite definir este concepto de manera formal:
 
-\begin{definition}
+\begin{definition}\index{limite@límite!definicion epsilon-delta@definición épsilon-delta}
 Sea $f$ definida en un intervalo abierto que contiene a $c$, excepto quizás
 en $c$ mismo. Se dice que
 \(
@@ -218,7 +218,7 @@ $5\pm\epsilon$ y el entorno $3\pm\delta$ con $\delta=\epsilon/2$.}
 \end{myproof}
 \end{example}
 
-\begin{theorem}[Unicidad del límite]
+\begin{theorem}[Unicidad del límite]\index{limite@límite!unicidad}
 Si $\lim_{x\to c}f(x)$ existe, entonces es único.
 \end{theorem}
 
@@ -246,7 +246,7 @@ lo cual es absurdo. Por tanto, $L_1 = L_2$.
 
 Los límites satisfacen las siguientes propiedades algebraicas:
 
-\begin{theorem}[Leyes de los límites]
+\begin{theorem}[Leyes de los límites]\index{limite@límite!leyes}
 Sean $\lim_{x\to c}f(x) = L$ y $\lim_{x\to c}g(x) = K$, con $k\in\R$:
 \begin{enumerate}
   \item $\displaystyle\lim_{x\to c} k = k$.
@@ -276,14 +276,14 @@ En muchas funciones de interés práctico como la función valor absoluto,
 la función piso o las funciones definidas por casos el comportamiento
 difiere según si $x$ se acerca por valores menores o mayores que $c$.
 
-\begin{definition}[Límites laterales]
+\begin{definition}[Límites laterales]\index{limite@límite!laterales}
 $L$ es el \textbf{límite por la derecha} de $f$ en $c$,
 $\lim_{x\to c^+}f(x)=L$, si para todo $\epsilon>0$ existe $\delta>0$ tal
 que $0<x-c<\delta$ implica $|f(x)-L|<\epsilon$. Análogamente,
 $\lim_{x\to c^-}f(x)=L$ si $0<c-x<\delta$ implica $|f(x)-L|<\epsilon$.
 \end{definition}
 
-\begin{theorem}[Condición de existencia del límite bilateral]
+\begin{theorem}[Condición de existencia del límite bilateral]\index{limite@límite!bilateral, condicion de existencia@bilateral, condición de existencia}
 $\lim_{x\to c}f(x) = L$ si y solo si
 $\lim_{x\to c^-}f(x) = L$ \;y\; $\lim_{x\to c^+}f(x) = L$.
 \end{theorem}
@@ -369,7 +369,7 @@ por el conjugado del numerador.
 Este teorema permite calcular varios límites y es la base de múltiples
 demostraciones.
 
-\begin{theorem}[Del encaje o del sándwich]
+\begin{theorem}[Del encaje o del sándwich]\index{teorema del sandwich@teorema del sándwich}
 Si $h(x)\leq f(x)\leq g(x)$ en algún intervalo abierto que contiene a
 $c$ (salvo posiblemente en $c$), y
 \(
@@ -528,7 +528,7 @@ $\sen x$ y $\cos x$.
 \section{Límites Infinitos y en el Infinito}
 %%==========================================================
 
-\begin{definition}
+\begin{definition}\index{asintota@asíntota!vertical}\index{asintota@asíntota!horizontal}
 Se dice que $\lim_{x\to c}f(x) = +\infty$ si para todo $M>0$ existe
 $\delta>0$ tal que $0<|x-c|<\delta$ implica $f(x)>M$. Geométricamente,
 la recta $x=c$ es una \textbf{asíntota vertical} de la gráfica de $f$.
@@ -660,7 +660,7 @@ calcular el límite del exponente.
 \section{Continuidad}
 %%==========================================================
 
-\begin{definition}
+\begin{definition}\index{continuidad}
 $f$ es \textbf{continua en $c$} si se satisfacen simultáneamente:
 \begin{enumerate}
   \item $f(c)$ está definida.
@@ -678,7 +678,7 @@ definición matemática. Nótese que la continuidad en $[a,b]$ requiere
 únicamente límites laterales en los extremos, lo cual permite que funciones
 como $f(x)=\sqrt{x}$ sean continuas en $[0,+\infty)$.
 
-\begin{definition}
+\begin{definition}\index{discontinuidad}
 Sea $f$ discontinua en $c$. Se distinguen:
 \begin{itemize}
   \item \textbf{Removible:} $\lim_{x\to c}f(x)$ existe pero es distinto de
@@ -795,7 +795,7 @@ $f(3) = n = \lim_{x\to 3}f(x) = 3$:
 \section{El Teorema del Valor Intermedio}
 %%==========================================================
 
-\begin{theorem}[Teorema del Valor Intermedio (TVI)]
+\begin{theorem}[Teorema del Valor Intermedio (TVI)]\index{teorema del valor intermedio}
 Si $f$ es continua en $[a,b]$ y $k$ es cualquier número estrictamente
 comprendido entre $f(a)$ y $f(b)$ (con $f(a)\neq f(b)$), entonces existe
 al menos un $c\in(a,b)$ tal que $f(c)=k$.
@@ -875,7 +875,7 @@ si $\lim_{x\to a}\alpha(x)=0$. Cuando dos infinitesimales tienden a cero en
 el mismo proceso límite, la razón entre ellos captura cuál desaparece más
 rápido.
 
-\begin{definition}
+\begin{definition}\index{infinitesimales!orden}
 Sean $\alpha$, $\beta$ infinitesimales para $x\to a$:
 \begin{enumerate}
   \item $\beta$ es de \textbf{orden superior} a $\alpha$ si
@@ -892,7 +892,7 @@ $\sen x\sim x$ cuando $x\to 0$ porque $x-\sen x\sim\dfrac{x^3}{6}$, que
 tiende a cero mucho más rápido que $x$.
 \end{rem}
 
-\begin{theorem}[Sustitución de equivalentes]
+\begin{theorem}[Sustitución de equivalentes]\index{infinitesimales!equivalentes}
 Si $\alpha\sim\alpha'$ y $\beta\sim\beta'$ cuando $x\to a$, entonces
 \[
   \lim_{x\to a}\frac{\alpha}{\beta} = \lim_{x\to a}\frac{\alpha'}{\beta'}.

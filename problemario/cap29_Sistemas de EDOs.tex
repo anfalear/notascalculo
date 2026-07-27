@@ -43,7 +43,7 @@ el sistema se escribe de manera compacta como
 
 Cuando $\mathbf{F}(t)\equiv \mathbf{0}$, el sistema se llama \emph{homogéneo}; en caso contrario, \emph{no homogéneo}. Si la matriz $A$ es constante, el sistema es de \emph{coeficientes constantes}.
 
-\begin{definition}
+\begin{definition}\index{sistema de ecuaciones diferenciales}
 Una \emph{solución} del sistema en un intervalo $I$ es un vector de funciones $\mathbf{X}(t)$ diferenciable en $I$ que satisface la ecuación para todo $t\in I$. Dado un punto inicial $t_0\in I$ y un vector $\mathbf{X}_0\in\mathbb{R}^n$, el \emph{problema de valor inicial (PVI)} consiste en encontrar una solución que cumpla $\mathbf{X}(t_0)=\mathbf{X}_0$.
 \end{definition}
 
@@ -316,7 +316,7 @@ Buscamos soluciones de la forma $\mathbf{X}=e^{\lambda t}\mathbf{v}$, con $\math
 \]
 Por tanto, $\lambda$ debe ser un valor propio de $A$ y $\mathbf{v}$ un vector propio asociado. Los métodos para calcular valores y vectores propios, junto con una primera aplicación de la diagonalización a estos sistemas, se desarrollaron en el Capítulo~\ref{vvpropios}.
 
-\begin{theorem}[Estructura del espacio de soluciones]\label{thm:cap29:estructura}
+\begin{theorem}[Estructura del espacio de soluciones]\label{thm:cap29:estructura}\index{sistema de ecuaciones diferenciales!estructura del espacio de soluciones}
 El conjunto de soluciones del sistema homogéneo $\mathbf{X}'=A\mathbf{X}$, con $A\in\mathbb{R}^{n\times n}$ constante, es un \textbf{espacio vectorial de dimensión $n$}. Si $\mathbf{X}_1,\dots,\mathbf{X}_n$ son soluciones linealmente independientes, la \textbf{matriz fundamental} $\Phi(t)=[\,\mathbf{X}_1(t)\;\cdots\;\mathbf{X}_n(t)\,]$ reúne una base y toda solución se escribe $\mathbf{X}(t)=\Phi(t)\mathbf{c}$ para un único $\mathbf{c}\in\mathbb{R}^n$. Las soluciones son independientes si y solo si su wronskiano $\det\Phi(t)$ es no nulo (basta comprobarlo en un punto, por la fórmula de Abel).
 \end{theorem}
 
@@ -324,7 +324,7 @@ El conjunto de soluciones del sistema homogéneo $\mathbf{X}'=A\mathbf{X}$, con 
 Este resultado enlaza directamente con el álgebra lineal del Capítulo~\ref{vvpropios}: proponer soluciones $\mathbf{X}=e^{\lambda t}\mathbf{v}$ traduce el problema al \emph{espectro} de $A$. Los tres casos que siguen —valores propios reales distintos, complejos conjugados y repetidos— son exactamente las tres formas del espectro, y la diagonalizabilidad de $A$ decide si existe una base completa de vectores propios o hay que recurrir a vectores propios generalizados.
 \end{rem}
 
-\begin{theorem}[Solución general por vectores propios]\label{thm:cap29:solucion-general}
+\begin{theorem}[Solución general por vectores propios]\label{thm:cap29:solucion-general}\index{sistema de ecuaciones diferenciales!solucion por vectores propios@solución por vectores propios}
 Si $A$ tiene $n$ vectores propios linealmente independientes $\mathbf{v}_1,\dots,\mathbf{v}_n$ correspondientes a los valores propios $\lambda_1,\dots,\lambda_n$ (no necesariamente distintos), entonces la solución general del sistema homogéneo es
 \[
 \mathbf{X}(t)=c_1 e^{\lambda_1 t}\mathbf{v}_1+c_2 e^{\lambda_2 t}\mathbf{v}_2+\cdots+c_n e^{\lambda_n t}\mathbf{v}_n.

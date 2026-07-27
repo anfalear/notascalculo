@@ -58,7 +58,7 @@ En este capítulo se estudian los valores y vectores propios de una matriz cuadr
 
 Según el teorema fundamental del álgebra (Teorema \ref{tfam}), todo polinomio no constante de grado $n$ con coeficientes complejos tiene exactamente $n$ raíces complejas contando multiplicidades. En el contexto del álgebra lineal, los valores $\lambda$ que son raíces del polinomio característico de $A$ se denominan \textbf{valores propios} de $A$.
 
-\begin{definition}[Multiplicidad algebraica y geométrica]\label{multiplicidadgeometrica}\index{valores y vectores propios!multiplicidad algebraica y geométrica}
+\begin{definition}[Multiplicidad algebraica y geométrica]\label{multiplicidadgeometrica}\index{valores y vectores propios!multiplicidad algebraica y geometrica@multiplicidad algebraica y geométrica}
 Para cada valor propio $\lambda$ de una matriz $A$, se definen:
 \begin{itemize}
     \item \textbf{Multiplicidad algebraica}: Número de veces que $\lambda$ aparece como raíz del polinomio característico $\det(\lambda I - A) = 0$.
@@ -76,7 +76,7 @@ Considere ahora la matriz $B = \begin{pmatrix} a & 0 \\ 0 & a \end{pmatrix}$. Su
 \end{rem}
 
 
-\begin{theorem}[Caracterización de valores propios]\label{teo:caracterizacion}\index{valores y vectores propios!caracterización}
+\begin{theorem}[Caracterización de valores propios]\label{teo:caracterizacion}\index{valores y vectores propios!caracterizacion@caracterización}
 Sea $A \in M_n(\mathbb{R})$. Las siguientes afirmaciones son equivalentes:
 \begin{enumerate}[$(1)$]
     \item $\lambda$ es un valor propio de $A$.
@@ -435,7 +435,7 @@ Una matriz $A \in M_n(\mathbb{R})$ es \textbf{diagonalizable} si existe una matr
 \end{definition}
 
 
-\begin{theorem}[Condición de diagonalización]\label{thm:cap08:diagonalizacion}\index{matriz!diagonalizable!condición}
+\begin{theorem}[Condición de diagonalización]\label{thm:cap08:diagonalizacion}\index{matriz!diagonalizable!condicion@condición}
 Sea $A \in M_n(\mathbb{R})$. Las siguientes afirmaciones son equivalentes:
 \begin{enumerate}[$(1)$]
     \item $A$ es diagonalizable.
@@ -569,7 +569,7 @@ A^6 \begin{pmatrix} 4 \\ 3 \end{pmatrix}
 
 Cuando alguna multiplicidad geométrica es menor que la algebraica, la matriz no es diagonalizable: no hay suficientes vectores propios linealmente independientes para formar la matriz $P$. Aun así, toda matriz puede llevarse a una forma «casi diagonal», que es su representación canónica en el caso general.
 
-\begin{definition}[Bloque de Jordan]\index{Jordan, forma canónica de!bloque}
+\begin{definition}[Bloque de Jordan]\index{Jordan, forma canonica de@Jordan, forma canónica de!bloque}
 Un \textbf{bloque de Jordan} de tamaño $k$ asociado al valor propio $\lambda$ es la matriz $J_k(\lambda)\in M_k(\mathbb{C})$ que tiene $\lambda$ en toda la diagonal, $1$ en la superdiagonal y $0$ en las demás entradas:
 \[
 J_1(\lambda)=\begin{pmatrix}\lambda\end{pmatrix}, \qquad
@@ -578,7 +578,7 @@ J_3(\lambda)=\begin{pmatrix}\lambda & 1 & 0\\ 0 & \lambda & 1\\ 0 & 0 & \lambda\
 \]
 \end{definition}
 
-\begin{theorem}[Forma canónica de Jordan]\label{thm:cap08:jordan}\index{Jordan, forma canónica de}
+\begin{theorem}[Forma canónica de Jordan]\label{thm:cap08:jordan}\index{Jordan, forma canonica de@Jordan, forma canónica de}
 Toda matriz $A\in M_n(\mathbb{C})$ es semejante a una matriz formada por bloques de Jordan: existe una matriz invertible $P$ tal que
 \[
 A = P\, J\, P^{-1}, \qquad
@@ -823,7 +823,7 @@ lo que prueba el teorema de Cayley-Hamilton: toda matriz cuadrada anula su propi
 
 \section{Valores propios e invertibilidad}
 
-\begin{theorem}[Caracterización de matrices invertibles - Versión 5]\index{matriz!invertible!caracterización}
+\begin{theorem}[Caracterización de matrices invertibles - Versión 5]\index{matriz!invertible!caracterizacion@caracterización}
 Sea $A$ una matriz $n\times n$, las siguientes afirmaciones son equivalentes: \begin{enumerate}
     \item $A$ es invertible.
     \item La forma escalonada reducida de $A$ es la matriz identidad $I_n$.

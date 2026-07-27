@@ -185,7 +185,7 @@ En un espacio vectorial real con producto interno:
 \end{enumerate}
 \end{theorem}
 
-\begin{theorem}[Teorema de Pitágoras]\index{Pitágoras, teorema de}
+\begin{theorem}[Teorema de Pitágoras]\index{Pitagoras, teorema de@Pitágoras, teorema de}
 Si $\mathbf{u} \perp \mathbf{v}$ en un espacio vectorial con producto interno real, entonces \(
 \|\mathbf{u} + \mathbf{v}\|^2 = \|\mathbf{u}\|^2 + \|\mathbf{v}\|^2
 .\)
@@ -387,7 +387,7 @@ c_j \langle \mathbf{v}_j, \mathbf{v}_j \rangle = c_j \|\mathbf{v}_j\|^2 = 0
 \end{proof}
 
 
-\begin{definition}[Proyección ortogonal]\index{proyección ortogonal}
+\begin{definition}[Proyección ortogonal]\index{proyeccion ortogonal@proyección ortogonal}
 Sea $V$ espacio vectorial con producto interno real y $\mathbf{u}, \mathbf{v} \in V$ con $\mathbf{v} \neq \mathbf{0}$. La \textbf{proyección ortogonal} de $\mathbf{u}$ sobre $\mathbf{v}$ es: \(
 \operatorname{proy}_{\mathbf{v}} \mathbf{u} = \frac{\langle \mathbf{u}, \mathbf{v} \rangle}{\|\mathbf{v}\|^2} \mathbf{v}
 \)
@@ -413,7 +413,7 @@ Sea $V$ espacio vectorial con producto interno real y $\mathbf{u}, \mathbf{v} \i
 \label{fig:proyeccion_ortogonal}
 \end{figure}
 
-\begin{theorem}[Expansión en base ortogonal]\index{base (espacio vectorial)!ortogonal, expansión}
+\begin{theorem}[Expansión en base ortogonal]\index{base (espacio vectorial)!ortogonal, expansion@ortogonal, expansión}
 Sea $S = \{ \mathbf{v}_1, \dots, \mathbf{v}_n \}$ una base ortogonal de $V$ (espacio vectorial con producto interno real). Para todo $\mathbf{u} \in V$ \(
 \mathbf{u} = \sum_{i=1}^n \operatorname{proy}_{\mathbf{v}_i} \mathbf{u} = \sum_{i=1}^n \frac{\langle \mathbf{u}, \mathbf{v}_i \rangle}{\|\mathbf{v}_i\|^2} \mathbf{v}_i
 \)
@@ -442,7 +442,7 @@ Sustituyendo en la combinación lineal:\(
 \end{proof}
 \end{theorem}
 
-\begin{theorem}[Descomposición ortogonal]\index{descomposición ortogonal}
+\begin{theorem}[Descomposición ortogonal]\index{descomposicion ortogonal@descomposición ortogonal}
 Sea $W$ subespacio de dimensión finita de $V$ (espacio vectorial con producto interno real). Para todo $\mathbf{u} \in V$, existen únicos $\mathbf{w} \in W$ y $\mathbf{w}^\perp \in W^\perp$ tales que:
 \[
 \mathbf{u} = \mathbf{w} + \mathbf{w}^\perp
@@ -616,13 +616,13 @@ es una base ortogonal de $\mathcal{P}_2(\mathbb{R})$ para este producto interno.
 
 \section{Proyección ortogonal y mínimos cuadrados}
 
-\begin{definition}[Aproximación por mínimos cuadrados]\index{mínimos cuadrados}
+\begin{definition}[Aproximación por mínimos cuadrados]\index{minimos cuadrados@mínimos cuadrados}
 Sea $A \in \mathcal{M}_{m \times n}(\mathbb{R})$ y $b \in \mathbb{R}^m$. Si el sistema $Ax = b$ no tiene solución exacta (es decir, $b \notin \mathcal{C}(A)$), se busca $x$ tal que $Ax$ sea el vector más cercano posible a $b$, minimizando el error cuadrático: \(
 \min_{x} \|b - Ax\|
 .\) La mejor aproximación es el vector $Ax$ tal que $Ax = \operatorname{proy}_{\mathcal{C}(A)}(b)$.
 \end{definition}
 
-\begin{theorem}[Mejor aproximación]\index{mínimos cuadrados!mejor aproximación}
+\begin{theorem}[Mejor aproximación]\index{minimos cuadrados@mínimos cuadrados!mejor aproximacion@mejor aproximación}
 Sea $W$ subespacio de $V$ (espacio vectorial con producto interno real, dimensión finita) y $b \in V$. La proyección ortogonal $\operatorname{proy}_W(b)$ es el único vector en $W$ que minimiza la distancia a $b$:
 \[
 \|b - \operatorname{proy}_W(b)\| \leq \|b - w\| \quad \forall w \in W
@@ -640,7 +640,7 @@ La igualdad se da solo cuando $w = \operatorname{proy}_W(b)$.
 \end{proof}
 \end{theorem}
 
-\begin{theorem}[Ecuaciones normales]\index{mínimos cuadrados!ecuaciones normales}
+\begin{theorem}[Ecuaciones normales]\index{minimos cuadrados@mínimos cuadrados!ecuaciones normales}
 Dado $A \in \mathbb{R}^{m \times n}$ y $b \in \mathbb{R}^m$, el vector $x$ que minimiza $\|b - Ax\|$ satisface:
 \[
 A^T A x = A^T b
@@ -765,7 +765,7 @@ $$\boxed{X = \left(-\dfrac{31}{91},\ -\dfrac{4}{7},\ \dfrac{46}{65}\right),\quad
 \end{myproof}
 \end{example}
 
-\begin{theorem}[Solución única]\index{mínimos cuadrados!solución única}
+\begin{theorem}[Solución única]\index{minimos cuadrados@mínimos cuadrados!solucion unica@solución única}
 Si las columnas de $A$ son linealmente independientes, entonces:
 \begin{enumerate}
     \item $A^T A$ es invertible
@@ -1005,7 +1005,7 @@ Desarrollo en serie de potencias alrededor de $x=a$ con coeficientes $a_j = f^{(
 \end{proof}
 \end{lemma}
 
-\begin{theorem}[Fórmula de Euler]\label{demformeuler}\index{Euler, fórmula de}
+\begin{theorem}[Fórmula de Euler]\label{demformeuler}\index{Euler, formula de@Euler, fórmula de}
 Para $\theta \in \mathbb{R}$:
 \[
 e^{i\theta} = \cos \theta + i \sen \theta

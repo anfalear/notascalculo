@@ -2,7 +2,7 @@
 
 \section{Definición y condiciones de existencia}
 
-\begin{definition}
+\begin{definition}\index{transformada de Laplace}
 Sea $f(t)$ una función definida para $t \ge 0$. Su \textbf{transformada de Laplace} se define como la integral impropia
 \[
 \mathcal{L}\{f(t)\} = \int_0^\infty e^{-st} f(t)\,dt,
@@ -14,14 +14,14 @@ siempre que esta integral impropia converja para algún valor de $s$ (los criter
 La transformada de Laplace es una herramienta muy útil para resolver ecuaciones diferenciales lineales con coeficientes constantes, ya que transforma derivadas en operaciones algebraicas y convierte condiciones iniciales en términos sencillos. Además, maneja de forma natural funciones discontinuas o impulsivas.
 \end{rem}
 
-\begin{definition}[Orden exponencial]
+\begin{definition}[Orden exponencial]\index{orden exponencial}
 Se dice que $f(t)$ es de \textbf{orden exponencial} si existen constantes $M>0$, $a\in\mathbb R$ y $T>0$ tales que
 \[
 |f(t)| \le M e^{a t}\quad \forall t\ge T.
 \]
 \end{definition}
 
-\begin{theorem}[Condiciones suficientes de existencia]
+\begin{theorem}[Condiciones suficientes de existencia]\index{transformada de Laplace!existencia}
 Si $f(t)$ es continua por tramos en $[0,\infty)$ y de orden exponencial, entonces su transformada de Laplace $\mathcal{L}\{f(t)\}$ existe para todo $s>a$, donde $a$ es la constante de orden exponencial.
 \end{theorem}
 
@@ -142,7 +142,7 @@ $\delta(t-a)$ & $e^{-as}$ \\
 
 \section{Propiedades fundamentales de la transformada}
 
-\begin{theorem}[Linealidad]
+\begin{theorem}[Linealidad]\index{transformada de Laplace!linealidad}
 La transformada de Laplace es lineal: para cualesquiera constantes $a,b$ y funciones $f,g$ cuyas transformadas existan,
 \[
 \mathcal{L}\{a f(t) + b g(t)\} = a\,\mathcal{L}\{f(t)\} + b\,\mathcal{L}\{g(t)\}.
@@ -173,7 +173,7 @@ Por lo tanto,
 \end{myproof}
 \end{example}
 
-\begin{theorem}[Primer teorema de traslación (desplazamiento en $s$)]
+\begin{theorem}[Primer teorema de traslación (desplazamiento en $s$)]\index{traslacion, primer teorema de@traslación, primer teorema de}
 Si $\mathcal{L}\{f(t)\}=F(s)$, entonces
 \[
 \mathcal{L}\{e^{at} f(t)\} = F(s-a).
@@ -202,7 +202,7 @@ Por tanto,
 \end{myproof}
 \end{example}
 
-\begin{theorem}[Transformada de derivadas]
+\begin{theorem}[Transformada de derivadas]\index{transformada de Laplace!de derivadas}
 Sea $f(t)$ continua con derivada $f'(t)$ continua por tramos en $[0,\infty)$ y de orden exponencial. Entonces
 \[
 \mathcal{L}\{f'(t)\} = s F(s) - f(0),
@@ -237,7 +237,7 @@ Así,
 \end{myproof}
 \end{example}
 
-\begin{theorem}[Transformada de integrales]
+\begin{theorem}[Transformada de integrales]\index{transformada de Laplace!de integrales}
 Si $F(s)=\mathcal{L}\{f(t)\}$, entonces
 \[
 \mathcal{L}\left\{\int_0^t f(\tau)\,d\tau\right\} = \frac{F(s)}{s}.
@@ -264,7 +264,7 @@ F(s)=\mathcal{L}\{e^{-2t}\cos(3t)\} = \frac{s+2}{(s+2)^2+9}.
 \end{myproof}
 \end{example}
 
-\begin{theorem}[Derivada de la transformada (multiplicación por $t$)]
+\begin{theorem}[Derivada de la transformada (multiplicación por $t$)]\index{transformada de Laplace!derivada de la transformada}
 Si $F(s)=\mathcal{L}\{f(t)\}$, entonces
 \[
 \mathcal{L}\{t^n f(t)\} = (-1)^n F^{(n)}(s),\qquad n=1,2,\dots
@@ -290,7 +290,7 @@ Por tanto,
 \end{myproof}
 \end{example}
 
-\begin{theorem}[División por $t$]
+\begin{theorem}[División por $t$]\index{transformada de Laplace!division por $t$@división por $t$}
 Si el límite $\lim_{t\to0^+} f(t)/t$ existe y es finito, entonces
 \[
 \mathcal{L}\left\{\frac{f(t)}{t}\right\} = \int_s^\infty F(u)\,du,
@@ -321,7 +321,7 @@ Por lo tanto,
 
 \section{Transformada inversa de Laplace}
 
-\begin{definition}
+\begin{definition}\index{transformada de Laplace!inversa}
 Dada una función $F(s)$, se llama \textbf{transformada inversa de Laplace} de $F$ a la función $f(t)$ tal que $\mathcal{L}\{f(t)\}=F(s)$. Se denota por
 \[
 f(t) = \mathcal{L}^{-1}\{F(s)\}.
@@ -470,7 +470,7 @@ Luego
 
 \section{Función escalón unitario (Heaviside) y segundo teorema de traslación}
 
-\begin{definition}[Escalón unitario]
+\begin{definition}[Escalón unitario]\index{escalon unitario@escalón unitario}
 La función escalón unitario (o de Heaviside) se define por
 \[
 u(t-a) = 
@@ -504,7 +504,7 @@ El escalón unitario permite representar funciones que se ``activan'' en un inst
 \label{fig:heaviside}
 \end{figure}
 
-\begin{theorem}[Segundo teorema de traslación (desplazamiento en $t$)]
+\begin{theorem}[Segundo teorema de traslación (desplazamiento en $t$)]\index{traslacion, segundo teorema de@traslación, segundo teorema de}
 Si $\mathcal{L}\{f(t)\}=F(s)$, entonces
 \[
 \mathcal{L}\{u(t-a) f(t-a)\} = e^{-as} F(s).
@@ -572,7 +572,7 @@ Hallar $\mathcal{L}^{-1}\left\{\frac{e^{-4s}}{s^2+1}\right\}$.
 
 \section{Función impulso unitario (delta de Dirac)}
 
-\begin{definition}[Delta de Dirac]
+\begin{definition}[Delta de Dirac]\index{delta de Dirac}
 La función impulso unitario (o delta de Dirac) centrada en $t=a$, denotada $\delta(t-a)$, se define como el límite (en sentido distribucional) de funciones pulso:
 \[
 \delta(t-a) = \lim_{\epsilon\to0^+} \frac{1}{2\epsilon}
@@ -609,7 +609,7 @@ para cualquier función $f$ continua en $a$ (con $a\ge0$).
 \label{fig:dirac}
 \end{figure}
 
-\begin{theorem}[Transformada de la delta]
+\begin{theorem}[Transformada de la delta]\index{delta de Dirac!transformada}
 Para $a\ge0$,
 \[
 \mathcal{L}\{\delta(t-a)\} = e^{-as}.
@@ -691,7 +691,7 @@ Por tanto,
 
 \section{Teorema de convolución}
 
-\begin{definition}
+\begin{definition}\index{convolucion@convolución}
 La \textbf{convolución} de dos funciones $f(t)$ y $g(t)$, definidas para $t\ge0$, es la función
 \[
 (f * g)(t) = \int_0^t f(\tau) g(t-\tau)\,d\tau.
@@ -702,7 +702,7 @@ La \textbf{convolución} de dos funciones $f(t)$ y $g(t)$, definidas para $t\ge0
 La convolución es conmutativa, asociativa y distributiva respecto a la suma. Es una operación muy útil porque permite expresar la respuesta de un sistema lineal a una entrada arbitraria en términos de su respuesta impulsiva.
 \end{rem}
 
-\begin{theorem}[Teorema de convolución]
+\begin{theorem}[Teorema de convolución]\index{convolucion@convolución!teorema de}
 \label{thm:cap31:convolucion}
 Si $\mathcal{L}\{f(t)\}=F(s)$ y $\mathcal{L}\{g(t)\}=G(s)$, entonces
 \[

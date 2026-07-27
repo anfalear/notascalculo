@@ -8,7 +8,7 @@ En este capítulo se estudiarán las propiedades fundamentales de las transforma
 
 
 \section{Transformaciones lineales}
-\begin{definition}[Transformación lineal]\index{transformación lineal} \label{defTL}
+\begin{definition}[Transformación lineal]\index{transformacion lineal@transformación lineal} \label{defTL}
 Sean $V$ y $W$ espacios vectoriales sobre el mismo campo $\mathbb{F}$. Una \textbf{transformación lineal} $T:V\rightarrow W$ es una función de $V$ en $W$ que satisface, para todo par de vectores $v_1, v_2 \in V$ y todo escalar $k \in \mathbb{F}$, las siguientes propiedades:
 \begin{enumerate}[$1.$]
     \item \textbf{Propiedad aditiva:} $T(v_1 + v_2) = T(v_1) + T(v_2)$.
@@ -142,7 +142,7 @@ T(u) = T\left(\sum_{i=1}^{n} k_i v_i\right) = \sum_{i=1}^{n} k_i T(v_i).
 
 \section{Núcleo, imagen y el teorema de la dimensión}
 
-\begin{definition}[Kernel e imagen de una transformación lineal]\index{transformación lineal!kernel e imagen}
+\begin{definition}[Kernel e imagen de una transformación lineal]\index{transformacion lineal@transformación lineal!kernel e imagen}
 Sea $T: V \to W$ una transformación lineal entre espacios vectoriales sobre un campo $\mathbb{F}$. Se definen:
 
 \begin{itemize}
@@ -198,7 +198,7 @@ Sea $T: V \to W$ una transformación lineal entre espacios vectoriales sobre un 
 \end{proof}
 \end{theorem}
 
-\begin{definition}[Rango y nulidad]\index{transformación lineal!rango y nulidad}
+\begin{definition}[Rango y nulidad]\index{transformacion lineal@transformación lineal!rango y nulidad}
 Sea $T: V \to W$ una transformación lineal entre espacios vectoriales. Se definen:
 
 \begin{itemize}
@@ -214,7 +214,7 @@ Sea $T: V \to W$ una transformación lineal entre espacios vectoriales. Se defin
 \end{definition}
 
 
-\begin{theorem}[Teorema de la dimensión]\label{teodim}\index{transformación lineal!teorema de la dimensión}
+\begin{theorem}[Teorema de la dimensión]\label{teodim}\index{transformacion lineal@transformación lineal!teorema de la dimension@teorema de la dimensión}
 Sea $T: V \to W$ una transformación lineal entre espacios vectoriales sobre un campo $\mathbb{F}$, con $\dim(V)$ y $\dim(W)$ finitos. Entonces,
 \[
 \operatorname{rang}(T) + \operatorname{nul}(T) = \dim(V).
@@ -256,14 +256,14 @@ Como hay $n-r$ vectores en este conjunto, $\dim(\operatorname{Im}(T)) = n - r$. 
 \end{theorem}
 
 
-\begin{definition}[Transformación lineal inyectiva]\index{transformación lineal!inyectiva}
+\begin{definition}[Transformación lineal inyectiva]\index{transformacion lineal@transformación lineal!inyectiva}
 Sea $T: V \to W$ una transformación lineal entre espacios vectoriales. Se dice que $T$ es \textbf{inyectiva} si para cualesquiera $u, v \in V$, se cumple que
 \[
 T(u) = T(v) \implies u = v.
 \]
 \end{definition}
 
-\begin{definition}[Transformación lineal sobreyectiva]\index{transformación lineal!sobreyectiva}
+\begin{definition}[Transformación lineal sobreyectiva]\index{transformacion lineal@transformación lineal!sobreyectiva}
 Sea $T: V \to W$ una transformación lineal. Se dice que $T$ es \textbf{sobreyectiva} si para todo $w \in W$ existe $v \in V$ tal que $T(v) = w$, es decir,
 \[
 \operatorname{Im}(T) = W.
@@ -377,7 +377,7 @@ Tomando $(x_3, x_4) = (1,0)$ y $(0,1)$ obtenemos una base de $\ker(T)$:
 
 \section{Composición, invertibilidad e isomorfismos}
 
-\begin{definition}[Composición de transformaciones lineales]\index{transformación lineal!composición}
+\begin{definition}[Composición de transformaciones lineales]\index{transformacion lineal@transformación lineal!composicion@composición}
 Sean $U$, $V$ y $W$ espacios vectoriales sobre el mismo campo $\mathbb{F}$, y sean $T_1: U \to V$ y $T_2: V \to W$ transformaciones lineales. Se define la composición $T_2 \circ T_1: U \to W$ por
 \[
 (T_2 \circ T_1)(u) = T_2(T_1(u)), \qquad \text{para todo } u \in U.
@@ -423,7 +423,7 @@ La Figura~\ref{fig:composicion_diagrama} representa la composición como un diag
 \end{figure}
 
 
-\begin{definition}[Inversa de una transformación lineal]\index{transformación lineal!inversa}
+\begin{definition}[Inversa de una transformación lineal]\index{transformacion lineal@transformación lineal!inversa}
 Sea $T: V \to W$ una transformación lineal. Se dice que $T$ es invertible si existe una transformación lineal $T^{-1}: W \to V$ tal que
 \[
 T^{-1}(T(v)) = v \quad \text{para todo } v \in V, \qquad \text{y} \qquad T(T^{-1}(w)) = w \quad \text{para todo } w \in W.
@@ -563,7 +563,7 @@ se resuelve en cadena: $a = 0 \implies b = 0 \implies c = 0 \implies d = 0$. Por
 
 \section{Matriz asociada a una transformación lineal}
 
-\begin{definition}[Matriz asociada a una transformación lineal]\index{transformación lineal!matriz asociada}
+\begin{definition}[Matriz asociada a una transformación lineal]\index{transformacion lineal@transformación lineal!matriz asociada}
 Sean $V$ y $W$ espacios vectoriales sobre un campo $\mathbb{F}$, con $\dim(V) = n$ y $\dim(W) = m$. Sea $T: V \to W$ una transformación lineal. Sean $B = \{v_1, \ldots, v_n\}$ una base de $V$ y $B' = \{w_1, \ldots, w_m\}$ una base de $W$.
 
 La \textbf{matriz asociada a $T$ respecto de las bases $B$ y $B'$}, denotada por $[T]_{B', B}$, es la matriz $A \in \mathbb{F}^{m \times n}$ tal que, para todo $x \in V$,

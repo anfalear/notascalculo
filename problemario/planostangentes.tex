@@ -27,7 +27,7 @@ solo una de las variables varía y la otra permanece fija? Esta
 pregunta conduce al concepto de derivada parcial: la derivada con
 respecto a una variable, manteniendo las demás constantes.
 
-\begin{definition}[Derivadas parciales primeras]
+\begin{definition}[Derivadas parciales primeras]\index{derivada parcial}
 Sea $f$ una función de dos variables. Las \textbf{derivadas parciales
 de primer orden} de $f$ en $(x,y)$ se definen como:
 \[
@@ -251,7 +251,7 @@ de unos $0.25\,^\circ$C por cada km/h adicional.
 % DERIVADAS PARCIALES DE ORDEN SUPERIOR
 % ------------------------------------------------------------
 
-\begin{definition}[Derivadas parciales de segundo orden]
+\begin{definition}[Derivadas parciales de segundo orden]\index{derivada parcial!de segundo orden}
 Si $f$ tiene derivadas parciales primeras, podemos derivarlas de
 nuevo para obtener las \textbf{derivadas parciales de segundo orden}:
 \[
@@ -274,7 +274,7 @@ luego respecto a $y$; es decir, $f_{xy}=(f_x)_y$. Algunos autores
 escriben $\frac{\partial^2 f}{\partial y\partial x}$ para $f_{xy}$.
 \end{rem}
 
-\begin{theorem}[Teorema de Clairaut (igualdad de derivadas cruzadas)]
+\begin{theorem}[Teorema de Clairaut (igualdad de derivadas cruzadas)]\index{Clairaut, teorema de}
 Si $f$, $f_x$, $f_y$, $f_{xy}$ y $f_{yx}$ son continuas en un disco
 abierto que contiene a $(a,b)$, entonces
 \[
@@ -614,7 +614,7 @@ Recordemos que, para una función de una variable $y=f(x)$, la recta tangente en
 y = f(x_0) + f'(x_0)(x-x_0).
 \]
 
-Para una función de dos variables $z=f(x,y)$, cuya gráfica es una superficie en $\mathbb{R}^3$, el análogo a la recta tangente es el \textbf{plano tangente}. Este plano es la mejor aproximación lineal a la superficie en un punto $(x_0, y_0, z_0)$.
+Para una función de dos variables $z=f(x,y)$, cuya gráfica es una superficie en $\mathbb{R}^3$, el análogo a la recta tangente es el \textbf{plano tangente}\index{plano tangente}. Este plano es la mejor aproximación lineal a la superficie en un punto $(x_0, y_0, z_0)$.
 
 \begin{figure}[H]
 \centering
@@ -807,7 +807,7 @@ Esto es imposible en $\mathbb{R}$.
 
 Así como la recta tangente se usa para aproximar la función de una variable cerca del punto de tangencia, el plano tangente se usa para aproximar la función de dos variables cerca del punto de tangencia.
 
-\begin{definition}[Linealización]
+\begin{definition}[Linealización]\index{linealizacion@linealización}
 La \textbf{linealización} de una función $z = f(x, y)$ en un punto $(x_0, y_0)$ donde $f$ es diferenciable es la función lineal
 \[
 L(x, y) = f(x_0, y_0) + f_x(x_0, y_0)(x - x_0) + f_y(x_0, y_0)(y - y_0).
@@ -888,7 +888,7 @@ Valor real: $\ln(1.06)\approx 0.0583$.
 
 \section{Diferenciales}
 
-\begin{definition}[Diferencial total]
+\begin{definition}[Diferencial total]\index{diferencial total}
 Para una función de dos variables $z = f(x, y)$, los diferenciales $dx$ y $dy$ son variables independientes. El \textbf{diferencial total} $dz$ (o $df$) se define como
 \[
 dz = f_x(x, y)\,dx + f_y(x, y)\,dy = \frac{\partial z}{\partial x}\,dx + \frac{\partial z}{\partial y}\,dy.
@@ -953,7 +953,7 @@ dw = f_x \, dx + f_y \, dy + f_z \, dz.
 La noción de diferenciabilidad formaliza la condición bajo la cual un plano tangente existe y la aproximación lineal es buena. Una función es diferenciable en un punto si su incremento $\Delta z$ puede escribirse como la combinación lineal dada por el diferencial total más un error que tiende a cero más rápido que la distancia al punto.
 \end{rem}
 
-\begin{theorem}[Diferenciabilidad y continuidad]
+\begin{theorem}[Diferenciabilidad y continuidad]\index{diferenciabilidad!implica continuidad}
 Si $f$ es diferenciable en un punto $(x_0, y_0)$, entonces $f$ es continua en ese punto.
 \end{theorem}
 \begin{proof}
@@ -979,7 +979,7 @@ $\displaystyle\lim_{(\Delta x,\Delta y)\to(0,0)}f(x_0+\Delta x,\,y_0+\Delta y)=f
 que es precisamente la continuidad de $f$ en $(x_0,y_0)$.
 \end{proof}
 
-\begin{theorem}[Criterio de diferenciabilidad]
+\begin{theorem}[Criterio de diferenciabilidad]\index{diferenciabilidad!criterio}
 Si las derivadas parciales $f_x$ y $f_y$ existen en una región que contiene a $(x_0, y_0)$ y son continuas en $(x_0, y_0)$, entonces $f$ es diferenciable en $(x_0, y_0)$.
 \end{theorem}
 

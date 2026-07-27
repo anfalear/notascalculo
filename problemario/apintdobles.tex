@@ -14,13 +14,13 @@ Si el límite de estas sumas existe cuando la norma de la partición tiende a ce
 \iint_R f(x,y)\,dA = \lim_{\|P\|\to0}\sum_{i,j} f(\bar{x}_{ij},\bar{y}_{ij})\,\Delta A_{ij}.
 \]
 
-\begin{theorem}[Integrabilidad]
+\begin{theorem}[Integrabilidad]\index{integral doble}\index{integral doble!integrabilidad}
 Si $f$ es continua en $R$, entonces $f$ es integrable en $R$. Más generalmente, si $f$ es acotada y continua excepto posiblemente en un número finito de curvas suaves, también es integrable.
 \end{theorem}
 
 El cálculo directo de la integral doble a partir de sumas de Riemann es engorroso. El teorema de Fubini la reduce a dos integrales simples sucesivas.
 
-\begin{theorem}[Fubini]
+\begin{theorem}[Fubini]\index{Fubini, teorema de}
 Si $f$ es continua en el rectángulo $R=[a,b]\times[c,d]$, entonces
 \[
 \iint_R f(x,y)\,dA = \int_a^b\left[\int_c^d f(x,y)\,dy\right]dx
@@ -78,7 +78,7 @@ Calcular $\displaystyle\iint_R (x^2 y + y^2)\,dA$, donde $R=[0,1]\times[0,2]$.
 
 No toda región de integración es un rectángulo. Consideramos regiones acotadas con fronteras suaves. Dos tipos básicos son:
 
-\begin{definition}[Región tipo I ($y$-simple)]
+\begin{definition}[Región tipo I ($y$-simple)]\index{region@región!tipo I}
 Una región $D$ es de tipo I si puede expresarse como
 \[
 D=\{(x,y): a\le x\le b,\; g_1(x)\le y\le g_2(x)\},
@@ -86,7 +86,7 @@ D=\{(x,y): a\le x\le b,\; g_1(x)\le y\le g_2(x)\},
 donde $g_1,g_2$ son funciones continuas en $[a,b]$.
 \end{definition}
 
-\begin{definition}[Región tipo II ($x$-simple)]
+\begin{definition}[Región tipo II ($x$-simple)]\index{region@región!tipo II}
 Una región $D$ es de tipo II si puede expresarse como
 \[
 D=\{(x,y): c\le y\le d,\; h_1(y)\le x\le h_2(y)\},
@@ -1337,7 +1337,7 @@ En muchas integrales dobles la región o el integrando sugieren un cambio
 de variables que simplifica el cálculo. El instrumento que mide cómo se
 transforma el elemento de área es el \textbf{jacobiano}.
 
-\begin{definition}[Transformación y jacobiano en $\mathbb{R}^2$]
+\begin{definition}[Transformación y jacobiano en $\mathbb{R}^2$]\index{jacobiano!en $\mathbb{R}^2$}
 Sea $T\colon R^*\subset\mathbb{R}^2\to\mathbb{R}^2$ la transformación
 $T(u,v)=(x(u,v),\,y(u,v))$ de clase $\mathcal{C}^1$. El
 \textbf{jacobiano} de $T$ en $(u,v)$ es el determinante
@@ -1394,7 +1394,7 @@ $\xrightarrow{\;T\;}$\\[4pt]
 \label{fig:jacobiano_2x2}
 \end{figure}
 
-\begin{theorem}[Cambio de variables en integrales dobles]
+\begin{theorem}[Cambio de variables en integrales dobles]\index{cambio de variables!integrales dobles}
 Sea $T(u,v)=(x(u,v),y(u,v))$ una transformación $\mathcal{C}^1$
 inyectiva (excepto posiblemente en la frontera) que lleva $R^*$ en
 el plano $(u,v)$ a $R$ en el plano $(x,y)$. Si $f$ es continua en

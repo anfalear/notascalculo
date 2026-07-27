@@ -15,13 +15,13 @@ Las matrices son objetos fundamentales en matemáticas aplicadas, utilizadas en 
 \begin{example}[Suma de dos matrices $2\times 2$] $\begin{pmatrix} 5 & 8 \\ 6 & 1 \end{pmatrix} + \begin{pmatrix} -7 & 8 \\ 6 & 4 \end{pmatrix} = \begin{pmatrix} -2 & 16 \\ 12 & 5 \end{pmatrix}.$
 \end{example}
 
-\begin{definition}[Multiplicación por escalar]\index{matriz!multiplicación por escalar}
+\begin{definition}[Multiplicación por escalar]\index{matriz!multiplicacion por escalar@multiplicación por escalar}
 Dado $k \in \mathbb{R}$ o $\mathbb{C}$, $kA = (k \cdot a_{ij})$.
 \end{definition}
 \begin{example}[Producto por escalar de una matriz $4\times 4$] $5 \cdot \begin{pmatrix} 0 & 2 & 0 & 9 \\ 1 & 0 & 0 & 1 \\ 0 & 1 & 3 & 0 \\ 2 & 5 & 1 & 3 \end{pmatrix} = \begin{pmatrix} 0 & 10 & 0 & 45 \\ 5 & 0 & 0 & 5 \\ 0 & 5 & 15 & 0 \\ 10 & 25 & 5 & 15 \end{pmatrix}.$
 \end{example}
 
-\begin{definition}[Multiplicación de matrices]\index{matriz!multiplicación}
+\begin{definition}[Multiplicación de matrices]\index{matriz!multiplicacion@multiplicación}
 Para $A$ de tamaño $m \times n$ y $B$ de tamaño $n \times p$, el producto $AB$ tiene tamaño $m \times p$ y $(AB)_{ij} = \sum_{k=1}^n a_{ik}b_{kj}$.
 \end{definition}
 
@@ -320,7 +320,7 @@ Una matriz cuadrada es:
 \begin{example}[Matrices triangulares superior e inferior] $\begin{pmatrix} 2 & 9 \\ 0 & 4 \end{pmatrix}$ es una matriz triangular superior y una matriz triangular inferior es $\begin{pmatrix} 1 & 0 \\ 3 & 5 \end{pmatrix}.$
 \end{example}
 
-\begin{definition}[Matriz simétrica]\index{matriz!simétrica} Una matriz cuadrada $A$ es \textbf{simétrica} si $A^T = A$ ($a_{ij} = a_{ji}$). Los elementos son simétricos respecto a la diagonal principal.
+\begin{definition}[Matriz simétrica]\index{matriz!simetrica@simétrica} Una matriz cuadrada $A$ es \textbf{simétrica} si $A^T = A$ ($a_{ij} = a_{ji}$). Los elementos son simétricos respecto a la diagonal principal.
 \end{definition}
 
 \begin{example}[Matriz simétrica] La matriz
@@ -331,7 +331,7 @@ $\begin{pmatrix}
 \end{pmatrix}$ es simétrica.
 \end{example}
 
-\begin{definition}[Matriz antisimétrica]\index{matriz!antisimétrica} Una matriz cuadrada $A$ es \textbf{antisimétrica} si $A^T = -A$ ($a_{ij} = -a_{ji}$). Los elementos diagonales son cero.
+\begin{definition}[Matriz antisimétrica]\index{matriz!antisimetrica@antisimétrica} Una matriz cuadrada $A$ es \textbf{antisimétrica} si $A^T = -A$ ($a_{ij} = -a_{ji}$). Los elementos diagonales son cero.
 \end{definition}
 
 \begin{example}[Matrices antisimétricas] Las matrices
@@ -770,7 +770,7 @@ $\boxed{\operatorname{rango}(A) = 1, \quad \operatorname{rango}(B) = 3}$
 \end{myproof}
 \end{example}
 
-\begin{theorem}[Caracterización de matrices invertibles, version 1]\label{thm:invertible-equiv}\index{matriz!invertible!caracterización}
+\begin{theorem}[Caracterización de matrices invertibles, version 1]\label{thm:invertible-equiv}\index{matriz!invertible!caracterizacion@caracterización}
 Sea $A$ una matriz cuadrada de orden $n \times n$. Las siguientes afirmaciones son equivalentes:
 \begin{enumerate}
     \item $A$ es invertible.
@@ -1175,7 +1175,7 @@ $\boxed{\det(A) = 0}$ — la matriz $A$ es singular (no invertible).
 \end{myproof}
 \end{example}
 
-\begin{theorem}[Invariancia del determinante en la expansión por cofactores]\index{determinante!expansión por cofactores}
+\begin{theorem}[Invariancia del determinante en la expansión por cofactores]\index{determinante!expansion por cofactores@expansión por cofactores}
 \label{rem:invariance-det}
 El valor del determinante de una matriz cuadrada es independiente de la fila o columna seleccionada para su cálculo mediante expansión por cofactores. Formalmente, para cualquier matriz $A_{n\times n}$ y cualquier elección de $1 \leq i,j \leq n$:
 \[
@@ -1575,7 +1575,7 @@ A \cdot \text{adj}(A) = \begin{pmatrix}
 \end{proof}
 
 
-\begin{theorem}[Caracterización de matrices invertibles - Versión 2]\label{thm:invertible-equiv-v2}\index{matriz!invertible!caracterización}
+\begin{theorem}[Caracterización de matrices invertibles - Versión 2]\label{thm:invertible-equiv-v2}\index{matriz!invertible!caracterizacion@caracterización}
 Sea $A$ una matriz cuadrada de orden $n \times n$. Las siguientes afirmaciones son equivalentes:
 \begin{enumerate}
     \item $A$ es invertible.

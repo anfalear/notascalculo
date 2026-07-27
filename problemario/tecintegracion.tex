@@ -9,7 +9,7 @@ el caso de la derivada, su operación inversa es la \textbf{antiderivada} o
 pregunta \emph{«¿qué función tiene esta derivada?»}. La definimos a
 continuación:
 
-\begin{definition}
+\begin{definition}\index{antiderivada}
 Se dice que $F$ es una \textbf{antiderivada} de $f$ en un intervalo $I$ si
 $D_{x}F(x)=f(x)$ para todo $x\in I$, es decir, $F^{\prime}(x)=f(x)$ para
 toda $x$ en $I$.
@@ -117,7 +117,7 @@ $\dfrac{1}{x\sqrt{x^{2}-1}}$          & $\text{arcsec}\,x + C$ \\
 Además, la integral indefinida es un operador lineal, por lo cual cumple las
 siguientes propiedades:
 
-\begin{theorem}[Linealidad de la integral indefinida]
+\begin{theorem}[Linealidad de la integral indefinida]\index{integral indefinida!linealidad}
 \label{teo:linealidad}
 Suponga que $f$ y $g$ tienen antiderivadas (integrales indefinidas) y sea
 $k$ una constante. Entonces:
@@ -162,7 +162,7 @@ se concluye que
 \]
 \end{proof}
 
-\begin{theorem}[Regla generalizada de la potencia]
+\begin{theorem}[Regla generalizada de la potencia]\index{regla de la potencia generalizada}
 \label{teo:potencia-generalizada}
 Sean $g$ una función derivable y $r$ un número racional con $r\neq -1$.
 Entonces
@@ -227,7 +227,7 @@ es antiderivada de $f$, entonces
 \]
 Integrando ambos lados se obtiene la identidad fundamental de la técnica:
 
-\begin{theorem}[Regla de sustitución --- integral indefinida]
+\begin{theorem}[Regla de sustitución --- integral indefinida]\index{sustitucion, regla de@sustitución, regla de!integral indefinida}
 Si $u = g(x)$ es diferenciable en su dominio y $f$ es continua en el rango
 de $g$, entonces
 \[
@@ -383,7 +383,7 @@ $u = x^2+9$, $du = 2x\,dx$. Límites: $x=0 \Rightarrow u=9$; $x=4 \Rightarrow u=
 La integración por partes es la contraparte de la regla del producto. De
 $\frac{d}{dx}[uv] = u\,v' + v\,u'$, integrando y despejando:
 
-\begin{theorem}[Fórmula de integración por partes]
+\begin{theorem}[Fórmula de integración por partes]\index{integracion por partes@integración por partes}
 Si $u$ y $v$ son funciones con derivadas continuas:
 \[
 \int u\, dv = u\,v - \int v\, du.
@@ -596,7 +596,7 @@ teorema de Pitágoras y de las definiciones de las funciones trigonométricas
 sobre el círculo unitario; no deben memorizarse como fórmulas aisladas,
 sino comprenderse como relaciones geométricas.
 
-\begin{theorem}[Identidades pitagóricas]
+\begin{theorem}[Identidades pitagóricas]\index{identidades trigonometricas@identidades trigonométricas!pitagoricas@pitagóricas}
 Para todo $x \in \R$ donde las funciones estén definidas:
 \[
 \sen^2 x + \cos^2 x = 1, \qquad
@@ -605,7 +605,7 @@ Para todo $x \in \R$ donde las funciones estén definidas:
 \]
 \end{theorem}
 
-\begin{theorem}[Identidades de reducción de potencia y ángulo doble]
+\begin{theorem}[Identidades de reducción de potencia y ángulo doble]\index{identidades trigonometricas@identidades trigonométricas!reduccion de potencia@reducción de potencia}
 \[
 \sen^2 x = \frac{1 - \cos 2x}{2}, \qquad
 \cos^2 x = \frac{1 + \cos 2x}{2}, \qquad
@@ -613,7 +613,7 @@ Para todo $x \in \R$ donde las funciones estén definidas:
 \]
 \end{theorem}
 
-\begin{theorem}[Fórmulas de producto a suma]
+\begin{theorem}[Fórmulas de producto a suma]\index{identidades trigonometricas@identidades trigonométricas!producto a suma}
 \[
 \sen A \cos B = \tfrac{1}{2}[\sen(A+B) + \sen(A-B)],
 \]
@@ -700,7 +700,7 @@ Ambos exponentes pares (Caso~3). Usamos $\sen x\cos x = \frac{\sen 2x}{2}$:
 \end{myproof}
 \end{example}
 
-\begin{theorem}[Fórmulas de reducción]
+\begin{theorem}[Fórmulas de reducción]\index{formulas de reduccion@fórmulas de reducción}
 Para $n \geq 2$ entero:
 \[
 \int \sen^n x \, dx
@@ -1070,7 +1070,7 @@ en forma cerrada.
 
 \subsection{Casos de descomposición}
 
-\begin{definition}
+\begin{definition}\index{fracciones parciales}
 Sea $\frac{P(x)}{Q(x)}$ una fracción propia:
 
 \textbf{Caso I --- Factores lineales distintos.}

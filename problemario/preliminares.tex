@@ -62,7 +62,7 @@ suma y producto) y su estructura de \emph{orden} (que formaliza la relación
 ``ser menor que''). A continuación se recogen los axiomas esenciales que
 gobiernan estas dos estructuras.
 
-\begin{theorem}[Axiomas de campo de $\mathbb{R}$]\label{thm:campo}
+\begin{theorem}[Axiomas de campo de $\mathbb{R}$]\label{thm:campo}\index{numeros reales@números reales!axiomas de campo}
 El conjunto $\mathbb{R}$, dotado de las operaciones de adición $(+)$ y
 multiplicación $(\cdot)$, satisface los siguientes axiomas para todo
 $x, y, z \in \mathbb{R}$:
@@ -81,7 +81,7 @@ $x, y, z \in \mathbb{R}$:
 \end{enumerate}
 \end{theorem}
 
-\begin{theorem}[Axiomas de orden de $\mathbb{R}$]\label{thm:orden}
+\begin{theorem}[Axiomas de orden de $\mathbb{R}$]\label{thm:orden}\index{numeros reales@números reales!axiomas de orden}
 En $\mathbb{R}$ existe una relación de orden $<$ que satisface, para todo
 $x, y, z \in \mathbb{R}$:
 \begin{enumerate}
@@ -199,7 +199,7 @@ los habría si trabajásemos solo con $\mathbb{Q}$).
 Una consecuencia inmediata de la densidad de $\mathbb{R}$ es el siguiente
 resultado clásico.
 
-\begin{theorem}[Aproximación de irracionales por racionales]
+\begin{theorem}[Aproximación de irracionales por racionales]\index{densidad de $\mathbb{Q}$ en $\mathbb{R}$}
 \label{thm:densidad}
 Para todo número irracional $\alpha$ y para todo $\varepsilon > 0$, existe un
 número racional $r \in \mathbb{Q}$ tal que $|\alpha - r| < \varepsilon$. En
@@ -242,7 +242,7 @@ origen} es siempre una cantidad no negativa, independientemente de si $x$ está
 a la derecha o a la izquierda del cero. Esta distancia es precisamente lo que
 codifica el valor absoluto.
 
-\begin{definition}[Valor absoluto]\label{def:valorabsoluto}
+\begin{definition}[Valor absoluto]\label{def:valorabsoluto}\index{valor absoluto}
 El \textbf{valor absoluto} (o módulo) de un número real $x$, denotado $|x|$,
 se define como:
 \[
@@ -266,7 +266,7 @@ Las propiedades fundamentales del valor absoluto se recogen en el siguiente
 teorema, cuyas demostraciones ilustran el uso conjunto de la Definición
 \ref{def:valorabsoluto} y los axiomas de orden.
 
-\begin{theorem}[Propiedades del valor absoluto]\label{thm:valorabsoluto}
+\begin{theorem}[Propiedades del valor absoluto]\label{thm:valorabsoluto}\index{valor absoluto!propiedades}
 Dados $x, y \in \mathbb{R}$, se cumplen las siguientes propiedades:
 \begin{enumerate}
    \item \textbf{Desigualdad triangular:} $|x + y| \leq |x| + |y|$.
@@ -498,7 +498,7 @@ $y = \sen\theta$, con $x^2 + y^2 = 1$.}
 El vocabulario preciso para describir los conjuntos de valores posibles de una
 variable se introduce mediante la noción de \emph{intervalo}.
 
-\begin{definition}[Intervalos]\label{def:intervalos}
+\begin{definition}[Intervalos]\label{def:intervalos}\index{intervalos}
 Un \textbf{intervalo} es el conjunto de valores $x \in \mathbb{R}$ comprendidos
 entre dos reales $a < b$. Los intervalos se clasifican según la inclusión o
 exclusión de sus extremos:
@@ -555,7 +555,7 @@ derivadas. Intuitivamente, una vecindad de un punto $x_0$ es un intervalo
 abierto que lo contiene y cuya ``anchura'' queda determinada por el radio
 $\varepsilon$ (figura~\ref{fig:vecindad}).
 
-\begin{definition}[Vecindad abierta]\label{def:vecindad}
+\begin{definition}[Vecindad abierta]\label{def:vecindad}\index{vecindad abierta}
 Dados $x_0 \in \mathbb{R}$ y $\varepsilon > 0$, la \textbf{vecindad de radio
 $\varepsilon$ centrada en $x_0$} es el intervalo abierto
 \[
@@ -614,7 +614,7 @@ La noción de completitud de $\mathbb{R}$, la que distingue a los reales de los
 racionales, se captura con precisión mediante el concepto de supremo. Antes de
 enunciarlo, es necesario introducir la idea de conjunto acotado.
 
-\begin{definition}[Conjunto acotado, cota superior e inferior]
+\begin{definition}[Conjunto acotado, cota superior e inferior]\index{conjunto acotado}
 \label{def:cotado}
 Sea $S \subseteq \mathbb{R}$, $S \neq \emptyset$.
 \begin{itemize}
@@ -628,7 +628,7 @@ Sea $S \subseteq \mathbb{R}$, $S \neq \emptyset$.
 \end{itemize}
 \end{definition}
 
-\begin{definition}[Supremo e ínfimo]\label{def:supremo}
+\begin{definition}[Supremo e ínfimo]\label{def:supremo}\index{supremo e infimo@supremo e ínfimo}
 Sea $S \subseteq \mathbb{R}$, $S \neq \emptyset$ y acotado superiormente.
 \begin{itemize}
    \item El \textbf{supremo} (o \textit{mínimo de las cotas superiores}) de
@@ -692,7 +692,7 @@ $(\alpha-\varepsilon,\,\alpha]$ contiene algún $x \in S$.}
 El siguiente axioma es el que, a nivel más profundo, distingue a $\mathbb{R}$
 de $\mathbb{Q}$ y garantiza la «ausencia de huecos» en la recta numérica.
 
-\begin{theorem}[Axioma del Supremo]
+\begin{theorem}[Axioma del Supremo]\index{axioma del supremo}
 \label{thm:supremo}
 Todo subconjunto no vacío $S \subseteq \mathbb{R}$ acotado superiormente posee
 supremo en $\mathbb{R}$:

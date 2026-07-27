@@ -24,7 +24,7 @@ presentando con creciente sofisticación a lo largo del capítulo.
 \section{Sucesiones de números reales}
 % ============================================================
 
-\begin{definition}[Sucesión de números reales]
+\begin{definition}[Sucesión de números reales]\index{sucesion@sucesión}
 Una \textbf{sucesión} de números reales es una función $a : \mathbb{N}
 \to \mathbb{R}$. Se denota $\{a_n\}_{n=1}^{\infty}$ o simplemente
 $\{a_n\}$; el valor $a_n = a(n)$ recibe el nombre de \textbf{término
@@ -66,7 +66,7 @@ Las sucesiones pueden especificarse de distintas maneras:
 
 Antes de avanzar hacia el límite, necesitamos una herramienta robusta para demostrar propiedades que dependen de los números naturales, especialmente en fórmulas de sumatorias y recurrencias.
 
-\begin{theorem}[Principio de Inducción]
+\begin{theorem}[Principio de Inducción]\index{induccion, principio de@inducción, principio de}
 Sea $P(n)$ una afirmación sobre un entero positivo $n$. $P(n)$ es verdadera para todo $n \in \mathbb{N}$ si:
 \begin{enumerate}
     \item \textbf{Paso base:} $P(1)$ es verdadera (o $P(N)$ para un valor inicial dado).
@@ -118,7 +118,7 @@ Por lo tanto, la fórmula es válida $\forall n \in \mathbb{N}$: $\boxed{\sum_{i
 
 El comportamiento asintótico de una sucesión se formaliza mediante el concepto de límite.
 
-\begin{definition}[Límite de una sucesión]
+\begin{definition}[Límite de una sucesión]\index{sucesion@sucesión!limite@límite}
 Se dice que la sucesión $\{a_n\}$ \textbf{converge} al número real $L$, y se
 escribe $\lim_{n\to\infty} a_n = L$, si para todo $\varepsilon > 0$ existe
 $N = N(\varepsilon) \in \mathbb{N}$ tal que
@@ -172,7 +172,7 @@ número finito de términos (los de índice $n\leq N$) puede quedar fuera.}
 \label{fig:sucesion_convergente_banda}
 \end{figure}
 
-\begin{theorem}[Unicidad del límite]
+\begin{theorem}[Unicidad del límite]\index{sucesion@sucesión!unicidad del limite@unicidad del límite}
 Si una sucesión converge, su límite es único.
 \end{theorem}
 
@@ -188,7 +188,7 @@ una contradicción. Luego $L = M$.
 
 Las propiedades algebraicas de los límites de funciones se trasladan directamente a sucesiones, simplemente se reescriben en términos de sucesiones:
 
-\begin{theorem}[Propiedades aritméticas del límite de una sucesión]
+\begin{theorem}[Propiedades aritméticas del límite de una sucesión]\index{sucesion@sucesión!propiedades aritmeticas del limite@propiedades aritméticas del límite}
 Si $\lim_{n \to \infty} a_n = A$ y $\lim_{n \to \infty} b_n = B$, entonces:
 \begin{enumerate}
   \item $\lim_{n \to \infty} (a_n \pm b_n) = A \pm B$.
@@ -201,7 +201,7 @@ Si $\lim_{n \to \infty} a_n = A$ y $\lim_{n \to \infty} b_n = B$, entonces:
 \end{enumerate}
 \end{theorem}
 
-\begin{theorem}[Teorema del emparedado]
+\begin{theorem}[Teorema del emparedado]\index{teorema del sandwich@teorema del sándwich!para sucesiones}
 Si existen $N_0 \in \mathbb{N}$ y sucesiones $\{a_n\}$, $\{b_n\}$ tales que
 $a_n \leq c_n \leq b_n$ para todo $n > N_0$, y
 $\lim_{n \to \infty} a_n = \lim_{n \to \infty} b_n = L$, entonces
@@ -289,7 +289,7 @@ $\lim_{n\to\infty} 0 = 0$ y $\lim_{n\to\infty} \dfrac{n}{n^2+1} = 0$.
 \subsection{Monotonía, acotación y convergencia}
 % ------------------------------------------------------------
 
-\begin{definition}[Sucesión monótona y acotada]
+\begin{definition}[Sucesión monótona y acotada]\index{sucesion@sucesión!monotona y acotada@monótona y acotada}
 La sucesión $\{a_n\}$ es:
 \begin{itemize}
   \item \textbf{No decreciente} si $a_n \leq a_{n+1}$ para todo $n$;
@@ -305,7 +305,7 @@ La sucesión $\{a_n\}$ es:
 Toda sucesión convergente es acotada. El recíproco es falso: $a_n = (-1)^n$ es acotada pero diverge.
 \end{rem}
 
-\begin{theorem}[Convergencia monótona]
+\begin{theorem}[Convergencia monótona]\index{convergencia monotona, teorema de@convergencia monótona, teorema de}
 \label{thm:mono}
 Toda sucesión monótona y acotada converge. Más precisamente:
 \begin{itemize}
@@ -380,13 +380,13 @@ Como el límite del cociente es $1/2 < 1$, por los criterios de convergencia:
 \end{myproof}
 \end{example}
 
-\begin{definition}[Sucesión de Cauchy]
+\begin{definition}[Sucesión de Cauchy]\index{sucesion@sucesión!de Cauchy}
 La sucesión $\{a_n\}$ es de \textbf{Cauchy} si para todo $\varepsilon > 0$
 existe $N \in \mathbb{N}$ tal que $|a_n - a_m| < \varepsilon$ para todo
 $n, m > N$.
 \end{definition}
 
-\begin{theorem}[Criterio de Cauchy]
+\begin{theorem}[Criterio de Cauchy]\index{Cauchy!criterio de convergencia}
 En $\mathbb{R}$, una sucesión converge si y solo si es de Cauchy.
 \end{theorem}
 
@@ -564,7 +564,7 @@ Descartamos la raíz negativa y concluimos
 % ============================================================
 El cálculo de límites usando infinitesimales puede extenderse de manera natural a sucesiones:
 
-\begin{definition}[Infinitesimales equivalentes]
+\begin{definition}[Infinitesimales equivalentes]\index{infinitesimales!equivalentes}
 Dos sucesiones infinitesimales $\alpha_n \to 0$ y $\beta_n \to 0$ son
 \textbf{equivalentes} si $\displaystyle\lim_{n\to\infty}
 \frac{\alpha_n}{\beta_n} = 1$, y se escribe $\alpha_n \sim \beta_n$.
@@ -655,7 +655,7 @@ La Figura~\ref{fig:limite_lhopital_continuo} muestra el comportamiento de la ext
 \end{example}
 
 
-\begin{theorem}[Stolz-Cesàro]
+\begin{theorem}[Stolz-Cesàro]\index{Stolz-Cesaro, criterio de@Stolz-Cesàro, criterio de}
 Sea $\{b_n\}$ estrictamente creciente con $\lim_{n\to\infty} b_n = +\infty$.
 Si existe
 \[
@@ -817,7 +817,7 @@ La respuesta no siempre es afirmativa, y comprenderla requiere abandonar la
 noción de suma aritmética finita y reemplazarla por la de \textbf{límite de
 sumas parciales}.
 
-\begin{definition}[Serie numérica y suma parcial]
+\begin{definition}[Serie numérica y suma parcial]\index{serie!numerica@numérica}\index{suma parcial}
 Dada $\{a_n\}_{n=1}^\infty$, la \textbf{serie} asociada es la expresión
 formal $\displaystyle\sum_{n=1}^\infty a_n$. La \textbf{$N$-ésima suma
 parcial} es $S_N = \displaystyle\sum_{n=1}^N a_n$.
@@ -834,7 +834,7 @@ reordenación de Riemann). Siempre opere con $S_N$ primero y tome el
 límite al final.
 \end{rem}
 
-\begin{theorem}[Criterio del término $n$-ésimo]
+\begin{theorem}[Criterio del término $n$-ésimo]\index{serie!criterio del termino $n$-esimo@criterio del término $n$-ésimo}
 Si $\displaystyle\sum_{n=1}^\infty a_n$ converge, entonces
 $\lim_{n\to\infty} a_n = 0$.
 
@@ -853,7 +853,7 @@ de convergencia.
 \subsection{Series clásicas: geométrica, telescópica y $p$-series}
 % ------------------------------------------------------------
 
-\begin{theorem}[Serie geométrica]
+\begin{theorem}[Serie geométrica]\index{serie!geometrica@geométrica}
 Para $a \neq 0$ y $r \in \mathbb{R}$:
 \[
   \sum_{n=0}^\infty ar^n =
@@ -900,7 +900,7 @@ llena el cuadrado completo de área $1$.}
 \label{fig:serie_geometrica_cuadrado}
 \end{figure}
 
-\begin{theorem}[Series $p$]
+\begin{theorem}[Series $p$]\index{serie!$p$}
 La serie $\displaystyle\sum_{n=1}^\infty \frac{1}{n^p}$ converge si y
 solo si $p > 1$.
 \end{theorem}
@@ -974,7 +974,7 @@ acotada superiormente. Este principio es la base de todos los criterios
 analíticos que siguen.
 
 
-\begin{theorem}[Criterio de la integral]
+\begin{theorem}[Criterio de la integral]\index{serie!criterio de la integral}
 Sea $f : [1,+\infty) \to \mathbb{R}$ continua, positiva y decreciente con
 $f(n) = a_n$. Entonces $\displaystyle\sum_{n=1}^\infty a_n$ converge si y
 solo si $\displaystyle\int_1^\infty f(x)\,dx$ converge. Además:
@@ -1046,7 +1046,7 @@ La integral converge, luego la serie \textbf{converge}:
 \end{example}
 
 
-\begin{theorem}[Comparación directa y en el límite]
+\begin{theorem}[Comparación directa y en el límite]\index{serie!criterio de comparacion@criterio de comparación}
 Sean $\sum a_n$ y $\sum b_n$ con $a_n, b_n \geq 0$.
 \begin{itemize}
   \item \textbf{Comparación directa:} Si $a_n \leq b_n$ para $n \geq N$
@@ -1103,7 +1103,7 @@ comparación en el límite:
 \end{myproof}
 \end{example}
 
-\begin{theorem}[Criterio del cociente — D'Alembert]
+\begin{theorem}[Criterio del cociente — D'Alembert]\index{serie!criterio del cociente}
 Sea $a_n > 0$ y $L = \displaystyle\lim_{n\to\infty}\dfrac{a_{n+1}}{a_n}$.
 \begin{itemize}
   \item $L < 1 \implies$ converge absolutamente.
@@ -1123,7 +1123,7 @@ inconcluso, como muestran $\sum 1/n$ (diverge) y $\sum 1/n^2$ (converge), ambas
 con $L=1$.
 \end{proof}
 
-\begin{theorem}[Criterio de la raíz — Cauchy]
+\begin{theorem}[Criterio de la raíz — Cauchy]\index{serie!criterio de la raiz@criterio de la raíz}
 Sea $R = \displaystyle\lim_{n\to\infty}\sqrt[n]{|a_n|}$.
 \begin{itemize}
   \item $R < 1 \implies$ converge absolutamente.
@@ -1238,7 +1238,7 @@ Como $R = 0 < 1$, la serie \textbf{converge absolutamente}:
 \subsection{Convergencia absoluta y series de signo variable}
 % ============================================================
 
-\begin{definition}[Convergencia absoluta y condicional] Dada la serie $\sum a_n$ diremos que:
+\begin{definition}[Convergencia absoluta y condicional]\index{serie!convergencia absoluta y condicional} Dada la serie $\sum a_n$ diremos que:
 \begin{itemize}
   \item $\sum a_n$ es \textbf{absolutamente convergente} si $\sum|a_n|$
         converge.
@@ -1248,7 +1248,7 @@ Como $R = 0 < 1$, la serie \textbf{converge absolutamente}:
 Toda serie absolutamente convergente converge, pero el recíproco es falso.
 \end{definition}
 
-\begin{theorem}[Criterio de Leibniz para series alternadas]
+\begin{theorem}[Criterio de Leibniz para series alternadas]\index{serie!criterio de Leibniz}
 Sea $\displaystyle\sum_{n=1}^\infty(-1)^{n+1}a_n$ con $a_n > 0$. Si
 $\{a_n\}$ es \emph{decreciente} y $\lim_{n\to\infty}a_n = 0$, la serie
 converge. Además, el error de truncamiento satisface:
@@ -1330,7 +1330,7 @@ es decir, $N+1 > 10000$, luego $N \geq 10000$.
 \end{example}
 
 
-\begin{theorem}[Criterio de Raabe]
+\begin{theorem}[Criterio de Raabe]\index{serie!criterio de Raabe}
 Si $a_n > 0$ y $\displaystyle\rho = \lim_{n\to\infty} n\!\left(
 \frac{a_n}{a_{n+1}}-1\right)$, entonces:
 \begin{itemize}

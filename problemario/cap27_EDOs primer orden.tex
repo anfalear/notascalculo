@@ -6,11 +6,11 @@ Este es el primero de cinco capítulos dedicados a las ecuaciones diferenciales:
 
 \section{Definiciones básicas}
 
-\begin{definition}
+\begin{definition}\index{ecuacion diferencial ordinaria@ecuación diferencial ordinaria}
 Una \textbf{ecuación diferencial ordinaria (EDO)} es una ecuación que involucra una función desconocida \(y(x)\) y algunas de sus derivadas. El \textbf{orden} de la EDO es el orden de la derivada más alta que aparece. El \textbf{grado} es el exponente al que está elevada la derivada de mayor orden, siempre que la ecuación sea polinómica en las derivadas.
 \end{definition}
 
-\begin{definition}
+\begin{definition}\index{ecuacion diferencial ordinaria@ecuación diferencial ordinaria!lineal}
 Una EDO es \textbf{lineal} si puede escribirse como
 \[
 a_n(x)y^{(n)} + a_{n-1}(x)y^{(n-1)} + \cdots + a_1(x)y' + a_0(x)y = g(x),
@@ -18,11 +18,11 @@ a_n(x)y^{(n)} + a_{n-1}(x)y^{(n-1)} + \cdots + a_1(x)y' + a_0(x)y = g(x),
 donde \(a_i(x)\) y \(g(x)\) son funciones de \(x\) únicamente. Si no es de esta forma, se dice \textbf{no lineal}.
 \end{definition}
 
-\begin{definition}
+\begin{definition}\index{ecuacion diferencial ordinaria@ecuación diferencial ordinaria!solucion general y particular@solución general y particular}
 Una \textbf{solución general} de una EDO de orden \(n\) es una familia de soluciones que depende de \(n\) constantes arbitrarias. Una \textbf{solución particular} se obtiene asignando valores específicos a dichas constantes, a menudo mediante condiciones iniciales.
 \end{definition}
 
-\begin{definition}
+\begin{definition}\index{problema de valor inicial}
 Un \textbf{problema de valor inicial (PVI)} consiste en una EDO junto con condiciones que especifican el valor de la función y sus derivadas hasta el orden \(n-1\) en un punto dado \(x_0\):
 \[
 y(x_0)=y_0,\quad y'(x_0)=y_1,\quad \dots,\quad y^{(n-1)}(x_0)=y_{n-1}.
@@ -56,7 +56,7 @@ Antes de resolver una EDO conviene \emph{verla}. Una EDO de primer orden \(y'=f(
 
 El campo de pendientes sugiere que por cada punto pasa exactamente una curva solución. Esto no es casual: es el contenido del teorema fundamental del capítulo.
 
-\begin{theorem}[Existencia y unicidad (Picard--Lindelöf)]\label{thm:cap27:existencia-unicidad}
+\begin{theorem}[Existencia y unicidad (Picard--Lindelöf)]\label{thm:cap27:existencia-unicidad}\index{existencia y unicidad!Picard--Lindelof@Picard--Lindelöf}
 Sean \(f(x,y)\) y \(\partial f/\partial y\) continuas en un rectángulo
 \[
 \mathcal{R}=\{(x,y):|x-x_0|\le a,\ |y-y_0|\le b\}.
@@ -205,7 +205,7 @@ y(x) = \frac{1}{\mu(x)}\left(\int \mu(x) Q(x)\,dx + C\right).
 
 A diferencia del caso general no lineal —donde el Teorema~\ref{thm:cap27:existencia-unicidad} solo garantiza una solución \emph{local}—, la fórmula anterior existe en todo el intervalo donde los coeficientes son continuos.
 
-\begin{theorem}[Solución general de la EDO lineal de primer orden]\label{thm:cap27:lineal-general}
+\begin{theorem}[Solución general de la EDO lineal de primer orden]\label{thm:cap27:lineal-general}\index{ecuacion diferencial ordinaria@ecuación diferencial ordinaria!lineal de primer orden}
 Si \(P(x)\) y \(Q(x)\) son continuas en un intervalo abierto \(I\) que contiene a \(x_0\), entonces el problema de valor inicial
 \[
 y'+P(x)y=Q(x),\qquad y(x_0)=y_0,

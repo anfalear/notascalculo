@@ -1,25 +1,154 @@
-\indexentry{número complejo|hyperpage}{27}
-\indexentry{número complejo!operaciones básicas|hyperpage}{27}
-\indexentry{número complejo!propiedades de campo|hyperpage}{27}
-\indexentry{número complejo!módulo y argumento|hyperpage}{30}
-\indexentry{Euler, fórmula de|hyperpage}{30}
-\indexentry{número complejo!forma polar|hyperpage}{30}
-\indexentry{número complejo!forma polar!multiplicación y división|hyperpage}{30}
+\indexentry{numeros reales@números reales!axiomas de campo|hyperpage}{16}
+\indexentry{numeros reales@números reales!axiomas de orden|hyperpage}{16}
+\indexentry{densidad de $\mathbb{Q}$ en $\mathbb{R}$|hyperpage}{17}
+\indexentry{valor absoluto|hyperpage}{17}
+\indexentry{valor absoluto!propiedades|hyperpage}{18}
+\indexentry{intervalos|hyperpage}{20}
+\indexentry{vecindad abierta|hyperpage}{21}
+\indexentry{conjunto acotado|hyperpage}{21}
+\indexentry{supremo e infimo@supremo e ínfimo|hyperpage}{21}
+\indexentry{axioma del supremo|hyperpage}{22}
+\indexentry{numero complejo@número complejo|hyperpage}{27}
+\indexentry{numero complejo@número complejo!operaciones basicas@operaciones básicas|hyperpage}{27}
+\indexentry{numero complejo@número complejo!propiedades de campo|hyperpage}{27}
+\indexentry{numero complejo@número complejo!modulo y argumento@módulo y argumento|hyperpage}{30}
+\indexentry{Euler, formula de@Euler, fórmula de|hyperpage}{30}
+\indexentry{numero complejo@número complejo!forma polar|hyperpage}{30}
+\indexentry{numero complejo@número complejo!forma polar!multiplicacion y division@multiplicación y división|hyperpage}{30}
 \indexentry{De Moivre, teorema de|hyperpage}{33}
-\indexentry{polinomio!raíz|hyperpage}{34}
-\indexentry{teorema fundamental del álgebra|hyperpage}{34}
-\indexentry{polinomio!raíces conjugadas|hyperpage}{35}
+\indexentry{polinomio!raiz@raíz|hyperpage}{34}
+\indexentry{teorema fundamental del algebra@teorema fundamental del álgebra|hyperpage}{34}
+\indexentry{polinomio!raices conjugadas@raíces conjugadas|hyperpage}{35}
+\indexentry{funcion@función|hyperpage}{53}
+\indexentry{funcion@función!monotona@monótona|hyperpage}{57}
+\indexentry{funcion@función!par e impar|hyperpage}{57}
+\indexentry{funcion@función!potencia|hyperpage}{59}
+\indexentry{funcion@función!exponencial|hyperpage}{59}
+\indexentry{funcion@función!logaritmica@logarítmica|hyperpage}{60}
+\indexentry{funcion@función!periodica@periódica|hyperpage}{60}
+\indexentry{funcion@función!trigonometrica@trigonométrica|hyperpage}{60}
+\indexentry{funcion@función!compuesta|hyperpage}{61}
+\indexentry{funcion@función!elemental|hyperpage}{62}
+\indexentry{funcion@función!inyectiva|hyperpage}{64}
+\indexentry{funcion@función!inversa|hyperpage}{64}
+\indexentry{funcion@función!trigonometrica inversa@trigonométrica inversa|hyperpage}{66}
+\indexentry{exponentes, leyes de|hyperpage}{67}
+\indexentry{logaritmo!leyes|hyperpage}{67}
+\indexentry{logaritmo!natural|hyperpage}{68}
+\indexentry{logaritmo!cambio de base|hyperpage}{68}
+\indexentry{limite@límite!definicion epsilon-delta@definición épsilon-delta|hyperpage}{74}
+\indexentry{limite@límite!unicidad|hyperpage}{75}
+\indexentry{limite@límite!leyes|hyperpage}{76}
+\indexentry{limite@límite!laterales|hyperpage}{76}
+\indexentry{limite@límite!bilateral, condicion de existencia@bilateral, condición de existencia|hyperpage}{76}
+\indexentry{teorema del sandwich@teorema del sándwich|hyperpage}{77}
+\indexentry{asintota@asíntota!vertical|hyperpage}{78}
+\indexentry{asintota@asíntota!horizontal|hyperpage}{78}
+\indexentry{continuidad|hyperpage}{80}
+\indexentry{discontinuidad|hyperpage}{80}
+\indexentry{teorema del valor intermedio|hyperpage}{81}
+\indexentry{infinitesimales!orden|hyperpage}{83}
+\indexentry{infinitesimales!equivalentes|hyperpage}{83}
+\indexentry{derivada|hyperpage}{89}
+\indexentry{derivada!derivable implica continua|hyperpage}{91}
+\indexentry{derivada!reglas fundamentales|hyperpage}{92}
+\indexentry{derivada!de funciones trigonometricas@de funciones trigonométricas|hyperpage}{93}
+\indexentry{regla de la cadena|hyperpage}{93}
+\indexentry{derivada!exponencial y logaritmica@exponencial y logarítmica|hyperpage}{95}
+\indexentry{derivada!de orden superior|hyperpage}{96}
+\indexentry{Leibniz, formula de@Leibniz, fórmula de|hyperpage}{97}
+\indexentry{derivada!de la funcion inversa@de la función inversa|hyperpage}{98}
+\indexentry{derivada!de funciones trigonometricas inversas@de funciones trigonométricas inversas|hyperpage}{100}
+\indexentry{extremos!absolutos|hyperpage}{112}
+\indexentry{punto critico@punto crítico|hyperpage}{112}
+\indexentry{Weierstrass!teorema del valor extremo|hyperpage}{112}
+\indexentry{Fermat, teorema de|hyperpage}{112}
+\indexentry{criterio de monotonia@criterio de monotonía|hyperpage}{113}
+\indexentry{concavidad|hyperpage}{114}
+\indexentry{extremos!locales|hyperpage}{116}
+\indexentry{extremos!criterio de la primera derivada|hyperpage}{116}
+\indexentry{extremos!criterio de la segunda derivada|hyperpage}{116}
+\indexentry{teorema del valor medio!de Lagrange|hyperpage}{124}
+\indexentry{L'Hopital, regla de@L'Hôpital, regla de|hyperpage}{126}
+\indexentry{punto fijo!convergencia|hyperpage}{130}
+\indexentry{diferencial|hyperpage}{130}
+\indexentry{linealizacion@linealización|hyperpage}{130}
+\indexentry{vector!definicion geometrica@definición geométrica|hyperpage}{141}
+\indexentry{vector!en coordenadas|hyperpage}{141}
+\indexentry{vector!operaciones en coordenadas|hyperpage}{142}
+\indexentry{norma de un vector|hyperpage}{143}
+\indexentry{vector!unitario|hyperpage}{144}
+\indexentry{producto punto|hyperpage}{144}
+\indexentry{angulo entre vectores@ángulo entre vectores|hyperpage}{145}
+\indexentry{producto cruz|hyperpage}{145}
+\indexentry{plano en el espacio|hyperpage}{146}
+\indexentry{proyeccion ortogonal@proyección ortogonal|hyperpage}{149}
+\indexentry{proyeccion ortogonal@proyección ortogonal!propiedades|hyperpage}{149}
+\indexentry{recta en el espacio|hyperpage}{150}
+\indexentry{antiderivada|hyperpage}{173}
+\indexentry{integral indefinida!linealidad|hyperpage}{175}
+\indexentry{regla de la potencia generalizada|hyperpage}{175}
+\indexentry{sustitucion, regla de@sustitución, regla de!integral indefinida|hyperpage}{176}
+\indexentry{integracion por partes@integración por partes|hyperpage}{178}
+\indexentry{identidades trigonometricas@identidades trigonométricas!pitagoricas@pitagóricas|hyperpage}{181}
+\indexentry{identidades trigonometricas@identidades trigonométricas!reduccion de potencia@reducción de potencia|hyperpage}{181}
+\indexentry{identidades trigonometricas@identidades trigonométricas!producto a suma|hyperpage}{181}
+\indexentry{formulas de reduccion@fórmulas de reducción|hyperpage}{182}
+\indexentry{fracciones parciales|hyperpage}{187}
+\indexentry{sumatorias, formulas de@sumatorias, fórmulas de|hyperpage}{194}
+\indexentry{particion de un intervalo@partición de un intervalo|hyperpage}{194}
+\indexentry{integral definida|hyperpage}{195}
+\indexentry{integral definida!integrabilidad de funciones continuas|hyperpage}{195}
+\indexentry{integral definida!propiedades algebraicas|hyperpage}{196}
+\indexentry{integral definida!aditividad en intervalos|hyperpage}{196}
+\indexentry{integral definida!simetria@simetría|hyperpage}{196}
+\indexentry{integral definida!acotamiento y comparacion@acotamiento y comparación|hyperpage}{196}
+\indexentry{funcion de acumulacion@función de acumulación|hyperpage}{197}
+\indexentry{teorema fundamental del calculo@teorema fundamental del cálculo!primero|hyperpage}{198}
+\indexentry{teorema fundamental del calculo@teorema fundamental del cálculo!segundo|hyperpage}{198}
+\indexentry{sustitucion, regla de@sustitución, regla de!integral definida|hyperpage}{199}
+\indexentry{valor promedio de una funcion@valor promedio de una función|hyperpage}{200}
+\indexentry{teorema del valor medio!para integrales|hyperpage}{200}
+\indexentry{teorema del valor medio!segundo, para integrales|hyperpage}{201}
+\indexentry{aplicaciones de la integral!principio unificador|hyperpage}{203}
+\indexentry{area@área!bajo una curva|hyperpage}{204}
+\indexentry{area@área!entre dos curvas|hyperpage}{205}
+\indexentry{area@área!por integracion respecto a $y$@por integración respecto a $y$|hyperpage}{206}
+\indexentry{volumen!metodo de los discos@método de los discos|hyperpage}{208}
+\indexentry{volumen!metodo de las arandelas@método de las arandelas|hyperpage}{210}
+\indexentry{volumen!metodo de los cascarones@método de los cascarones|hyperpage}{211}
+\indexentry{longitud de arco!curva suave|hyperpage}{213}
+\indexentry{area superficial de revolucion@área superficial de revolución|hyperpage}{215}
+\indexentry{area superficial de revolucion@área superficial de revolución!eje $y$|hyperpage}{217}
+\indexentry{trabajo|hyperpage}{218}
+\indexentry{centro de masa!lamina plana@lámina plana|hyperpage}{221}
+\indexentry{momentos de una lamina@momentos de una lámina|hyperpage}{221}
+\indexentry{Pappus, teorema de|hyperpage}{221}
+\indexentry{momento de inercia|hyperpage}{223}
+\indexentry{fuerza hidrostatica@fuerza hidrostática|hyperpage}{224}
+\indexentry{integral impropia!tipo I|hyperpage}{229}
+\indexentry{integral impropia!criterio de comparacion@criterio de comparación|hyperpage}{229}
+\indexentry{funcion de densidad de probabilidad@función de densidad de probabilidad|hyperpage}{232}
+\indexentry{variable aleatoria continua!media y varianza|hyperpage}{234}
+\indexentry{integral impropia!tipo II|hyperpage}{236}
+\indexentry{integral impropia!discontinuidad interior|hyperpage}{236}
+\indexentry{curva parametrica@curva paramétrica|hyperpage}{245}
+\indexentry{curva parametrica@curva paramétrica!derivada|hyperpage}{246}
+\indexentry{longitud de arco!curva parametrica@curva paramétrica|hyperpage}{249}
+\indexentry{coordenadas polares|hyperpage}{251}
+\indexentry{area@área!en coordenadas polares|hyperpage}{255}
+\indexentry{longitud de arco!en coordenadas polares|hyperpage}{257}
 \indexentry{matriz|hyperpage}{263}
 \indexentry{matriz!suma|hyperpage}{263}
-\indexentry{matriz!multiplicación por escalar|hyperpage}{263}
-\indexentry{matriz!multiplicación|hyperpage}{263}
+\indexentry{matriz!multiplicacion por escalar@multiplicación por escalar|hyperpage}{263}
+\indexentry{matriz!multiplicacion@multiplicación|hyperpage}{263}
 \indexentry{matriz!transpuesta|hyperpage}{264}
 \indexentry{grafo dirigido|hyperpage}{265}
 \indexentry{matriz!de adyacencia|hyperpage}{265}
 \indexentry{matriz!diagonal|hyperpage}{266}
 \indexentry{matriz!triangular|hyperpage}{267}
-\indexentry{matriz!simétrica|hyperpage}{267}
-\indexentry{matriz!antisimétrica|hyperpage}{267}
+\indexentry{matriz!simetrica@simétrica|hyperpage}{267}
+\indexentry{matriz!antisimetrica@antisimétrica|hyperpage}{267}
 \indexentry{traza de una matriz|hyperpage}{267}
 \indexentry{traza de una matriz!propiedades|hyperpage}{267}
 \indexentry{matriz!invertible|hyperpage}{268}
@@ -31,52 +160,52 @@
 \indexentry{forma escalonada reducida!unicidad|hyperpage}{273}
 \indexentry{rango de una matriz|hyperpage}{273}
 \indexentry{rango de una matriz!propiedades|hyperpage}{273}
-\indexentry{matriz!invertible!caracterización|hyperpage}{274}
+\indexentry{matriz!invertible!caracterizacion@caracterización|hyperpage}{274}
 \indexentry{determinante|hyperpage}{276}
 \indexentry{menor (matriz)|hyperpage}{278}
-\indexentry{determinante!expansión por cofactores|hyperpage}{279}
+\indexentry{determinante!expansion por cofactores@expansión por cofactores|hyperpage}{279}
 \indexentry{regla de Sarrus|hyperpage}{280}
 \indexentry{determinante!propiedades|hyperpage}{282}
 \indexentry{matriz!adjunta|hyperpage}{284}
-\indexentry{matriz!invertible!caracterización|hyperpage}{284}
-\indexentry{combinación lineal|hyperpage}{307}
+\indexentry{matriz!invertible!caracterizacion@caracterización|hyperpage}{284}
+\indexentry{combinacion lineal@combinación lineal|hyperpage}{307}
 \indexentry{sistema de ecuaciones lineales|hyperpage}{308}
-\indexentry{sistema de ecuaciones lineales!tipos de solución|hyperpage}{308}
-\indexentry{sistema de ecuaciones lineales!homogéneo|hyperpage}{308}
-\indexentry{variables básicas y libres|hyperpage}{312}
-\indexentry{Rouché-Frobenius, teorema de|hyperpage}{313}
-\indexentry{matriz!invertible!caracterización|hyperpage}{315}
-\indexentry{sistema de ecuaciones lineales!homogéneo!propiedades|hyperpage}{316}
+\indexentry{sistema de ecuaciones lineales!tipos de solucion@tipos de solución|hyperpage}{308}
+\indexentry{sistema de ecuaciones lineales!homogeneo@homogéneo|hyperpage}{308}
+\indexentry{variables basicas y libres@variables básicas y libres|hyperpage}{312}
+\indexentry{Rouche-Frobenius, teorema de@Rouché-Frobenius, teorema de|hyperpage}{313}
+\indexentry{matriz!invertible!caracterizacion@caracterización|hyperpage}{315}
+\indexentry{sistema de ecuaciones lineales!homogeneo@homogéneo!propiedades|hyperpage}{316}
 \indexentry{Cramer, regla de|hyperpage}{317}
 \indexentry{espacio vectorial|hyperpage}{345}
 \indexentry{subespacio vectorial|hyperpage}{348}
 \indexentry{subespacio vectorial!test|hyperpage}{348}
-\indexentry{subespacio vectorial!intersección finita|hyperpage}{350}
-\indexentry{combinación lineal|hyperpage}{352}
+\indexentry{subespacio vectorial!interseccion finita@intersección finita|hyperpage}{350}
+\indexentry{combinacion lineal@combinación lineal|hyperpage}{352}
 \indexentry{subespacio generado|hyperpage}{352}
 \indexentry{subespacio generado!propiedad minimal|hyperpage}{352}
 \indexentry{independencia lineal|hyperpage}{354}
 \indexentry{independencia lineal!test|hyperpage}{354}
-\indexentry{Wronskiano|hyperpage}{355}
-\indexentry{Wronskiano!criterio|hyperpage}{355}
-\indexentry{espacio vectorial!dimensión finita|hyperpage}{355}
+\indexentry{wronskiano|hyperpage}{355}
+\indexentry{wronskiano!criterio|hyperpage}{355}
+\indexentry{espacio vectorial!dimension finita@dimensión finita|hyperpage}{355}
 \indexentry{base (espacio vectorial)|hyperpage}{355}
-\indexentry{base (espacio vectorial)!unicidad de representación|hyperpage}{356}
+\indexentry{base (espacio vectorial)!unicidad de representacion@unicidad de representación|hyperpage}{356}
 \indexentry{vector de coordenadas|hyperpage}{356}
 \indexentry{lema de intercambio|hyperpage}{356}
-\indexentry{base (espacio vectorial)!invariancia del número de elementos|hyperpage}{357}
-\indexentry{dimensión (espacio vectorial)|hyperpage}{357}
-\indexentry{dimensión (espacio vectorial)!propiedades|hyperpage}{357}
+\indexentry{base (espacio vectorial)!invariancia del numero de elementos@invariancia del número de elementos|hyperpage}{357}
+\indexentry{dimension (espacio vectorial)@dimensión (espacio vectorial)|hyperpage}{357}
+\indexentry{dimension (espacio vectorial)@dimensión (espacio vectorial)!propiedades|hyperpage}{357}
 \indexentry{base (espacio vectorial)!teorema de la base incompleta|hyperpage}{357}
-\indexentry{dimensión (espacio vectorial)!de subespacios|hyperpage}{357}
+\indexentry{dimension (espacio vectorial)@dimensión (espacio vectorial)!de subespacios|hyperpage}{357}
 \indexentry{matriz!de cambio de base|hyperpage}{358}
 \indexentry{espacios fundamentales|hyperpage}{358}
-\indexentry{espacios fundamentales!caracterización de consistencia|hyperpage}{359}
+\indexentry{espacios fundamentales!caracterizacion de consistencia@caracterización de consistencia|hyperpage}{359}
 \indexentry{espacios fundamentales!invariancia bajo operaciones fila|hyperpage}{359}
 \indexentry{espacios fundamentales!base del espacio columna|hyperpage}{359}
 \indexentry{rango-nulidad, teorema del|hyperpage}{359}
 \indexentry{espacios fundamentales!teorema fundamental|hyperpage}{360}
-\indexentry{matriz!invertible!caracterización|hyperpage}{361}
+\indexentry{matriz!invertible!caracterizacion@caracterización|hyperpage}{361}
 \indexentry{producto interno|hyperpage}{373}
 \indexentry{norma inducida|hyperpage}{373}
 \indexentry{bola unitaria|hyperpage}{373}
@@ -85,39 +214,211 @@
 \indexentry{ortogonalidad|hyperpage}{374}
 \indexentry{Cauchy-Schwarz, desigualdad de|hyperpage}{375}
 \indexentry{Cauchy-Schwarz, desigualdad de!consecuencias|hyperpage}{375}
-\indexentry{Pitágoras, teorema de|hyperpage}{376}
+\indexentry{Pitagoras, teorema de@Pitágoras, teorema de|hyperpage}{376}
 \indexentry{complemento ortogonal|hyperpage}{377}
 \indexentry{complemento ortogonal!propiedades|hyperpage}{377}
 \indexentry{espacios fundamentales!relaciones fundamentales (producto interno)|hyperpage}{378}
 \indexentry{conjunto ortogonal y ortonormal|hyperpage}{379}
-\indexentry{proyección ortogonal|hyperpage}{379}
-\indexentry{base (espacio vectorial)!ortogonal, expansión|hyperpage}{379}
-\indexentry{descomposición ortogonal|hyperpage}{380}
+\indexentry{proyeccion ortogonal@proyección ortogonal|hyperpage}{379}
+\indexentry{base (espacio vectorial)!ortogonal, expansion@ortogonal, expansión|hyperpage}{379}
+\indexentry{descomposicion ortogonal@descomposición ortogonal|hyperpage}{380}
 \indexentry{Gram-Schmidt, proceso de|hyperpage}{380}
-\indexentry{mínimos cuadrados|hyperpage}{383}
-\indexentry{mínimos cuadrados!mejor aproximación|hyperpage}{383}
-\indexentry{mínimos cuadrados!ecuaciones normales|hyperpage}{383}
-\indexentry{mínimos cuadrados!solución única|hyperpage}{385}
+\indexentry{minimos cuadrados@mínimos cuadrados|hyperpage}{383}
+\indexentry{minimos cuadrados@mínimos cuadrados!mejor aproximacion@mejor aproximación|hyperpage}{383}
+\indexentry{minimos cuadrados@mínimos cuadrados!ecuaciones normales|hyperpage}{383}
+\indexentry{minimos cuadrados@mínimos cuadrados!solucion unica@solución única|hyperpage}{385}
 \indexentry{serie de Fourier|hyperpage}{387}
-\indexentry{Euler, fórmula de|hyperpage}{388}
+\indexentry{Euler, formula de@Euler, fórmula de|hyperpage}{388}
+\indexentry{funcion vectorial@función vectorial|hyperpage}{403}
+\indexentry{funcion vectorial@función vectorial!limite@límite|hyperpage}{405}
+\indexentry{funcion vectorial@función vectorial!continuidad|hyperpage}{407}
+\indexentry{funcion vectorial@función vectorial!continuidad componente a componente|hyperpage}{407}
+\indexentry{funcion vectorial@función vectorial!derivada|hyperpage}{407}
+\indexentry{funcion vectorial@función vectorial!derivada componente a componente|hyperpage}{408}
+\indexentry{funcion vectorial@función vectorial!reglas de derivacion@reglas de derivación|hyperpage}{411}
+\indexentry{funcion vectorial@función vectorial!integral indefinida|hyperpage}{411}
+\indexentry{funcion vectorial@función vectorial!integral definida|hyperpage}{412}
+\indexentry{teorema fundamental del calculo@teorema fundamental del cálculo!para funciones vectoriales|hyperpage}{412}
+\indexentry{longitud de arco!en $\mathbb{R}^3$|hyperpage}{413}
+\indexentry{funcion longitud de arco@función longitud de arco|hyperpage}{415}
+\indexentry{funcion@función!de dos variables|hyperpage}{416}
+\indexentry{funcion@función!de tres variables|hyperpage}{416}
+\indexentry{curva de nivel|hyperpage}{427}
+\indexentry{superficie de nivel|hyperpage}{427}
+\indexentry{limite@límite!de funciones de dos variables|hyperpage}{439}
+\indexentry{limite@límite!leyes para varias variables|hyperpage}{446}
+\indexentry{teorema del sandwich@teorema del sándwich!para funciones de dos variables|hyperpage}{447}
+\indexentry{continuidad!en varias variables|hyperpage}{449}
+\indexentry{continuidad!en conjuntos|hyperpage}{450}
+\indexentry{continuidad!composicion de funciones@composición de funciones|hyperpage}{451}
+\indexentry{continuidad!para tres variables|hyperpage}{451}
+\indexentry{derivada parcial|hyperpage}{455}
+\indexentry{derivada parcial!de segundo orden|hyperpage}{458}
+\indexentry{Clairaut, teorema de|hyperpage}{458}
+\indexentry{plano tangente|hyperpage}{462}
+\indexentry{linealizacion@linealización|hyperpage}{464}
+\indexentry{diferencial total|hyperpage}{466}
+\indexentry{diferenciabilidad!implica continuidad|hyperpage}{466}
+\indexentry{diferenciabilidad!criterio|hyperpage}{466}
+\indexentry{regla de la cadena!varias variables, caso 1|hyperpage}{469}
+\indexentry{regla de la cadena!varias variables, caso 2|hyperpage}{471}
+\indexentry{derivacion implicita@derivación implícita!varias variables|hyperpage}{472}
+\indexentry{gradiente|hyperpage}{475}
+\indexentry{gradiente!propiedades|hyperpage}{476}
+\indexentry{derivada direccional|hyperpage}{477}
+\indexentry{derivada direccional!formula del gradiente@fórmula del gradiente|hyperpage}{477}
+\indexentry{derivada direccional!maximo@máximo|hyperpage}{479}
+\indexentry{plano tangente!superficie implicita@superficie implícita|hyperpage}{482}
+\indexentry{recta normal|hyperpage}{482}
+\indexentry{extremos!en varias variables|hyperpage}{487}
+\indexentry{extremos!condicion necesaria@condición necesaria|hyperpage}{487}
+\indexentry{punto critico@punto crítico|hyperpage}{487}
+\indexentry{Weierstrass!teorema del valor extremo|hyperpage}{488}
+\indexentry{hessiano|hyperpage}{488}
+\indexentry{extremos!criterio de la segunda derivada, varias variables|hyperpage}{488}
+\indexentry{curva regular|hyperpage}{497}
+\indexentry{funcion implicita, teorema de la@función implícita, teorema de la|hyperpage}{497}
+\indexentry{multiplicadores de Lagrange|hyperpage}{497}
+\indexentry{multiplicadores de Lagrange!existencia de extremos|hyperpage}{498}
+\indexentry{hessiano!limitado|hyperpage}{500}
+\indexentry{multiplicadores de Lagrange!dos restricciones|hyperpage}{501}
 \indexentry{valores y vectores propios|hyperpage}{507}
-\indexentry{valores y vectores propios!multiplicidad algebraica y geométrica|hyperpage}{508}
-\indexentry{valores y vectores propios!caracterización|hyperpage}{508}
+\indexentry{valores y vectores propios!multiplicidad algebraica y geometrica@multiplicidad algebraica y geométrica|hyperpage}{508}
+\indexentry{valores y vectores propios!caracterizacion@caracterización|hyperpage}{508}
 \indexentry{valores y vectores propios!potencias|hyperpage}{509}
 \indexentry{matriz!diagonalizable|hyperpage}{513}
-\indexentry{matriz!diagonalizable!condición|hyperpage}{513}
-\indexentry{Jordan, forma canónica de!bloque|hyperpage}{515}
-\indexentry{Jordan, forma canónica de|hyperpage}{515}
+\indexentry{matriz!diagonalizable!condicion@condición|hyperpage}{513}
+\indexentry{Jordan, forma canonica de@Jordan, forma canónica de!bloque|hyperpage}{515}
+\indexentry{Jordan, forma canonica de@Jordan, forma canónica de|hyperpage}{515}
 \indexentry{Cayley-Hamilton, teorema de|hyperpage}{519}
-\indexentry{matriz!invertible!caracterización|hyperpage}{519}
-\indexentry{transformación lineal|hyperpage}{533}
-\indexentry{transformación lineal!kernel e imagen|hyperpage}{535}
-\indexentry{transformación lineal!rango y nulidad|hyperpage}{536}
-\indexentry{transformación lineal!teorema de la dimensión|hyperpage}{537}
-\indexentry{transformación lineal!inyectiva|hyperpage}{537}
-\indexentry{transformación lineal!sobreyectiva|hyperpage}{537}
-\indexentry{transformación lineal!composición|hyperpage}{539}
-\indexentry{transformación lineal!inversa|hyperpage}{540}
+\indexentry{matriz!invertible!caracterizacion@caracterización|hyperpage}{519}
+\indexentry{transformacion lineal@transformación lineal|hyperpage}{533}
+\indexentry{transformacion lineal@transformación lineal!kernel e imagen|hyperpage}{535}
+\indexentry{transformacion lineal@transformación lineal!rango y nulidad|hyperpage}{536}
+\indexentry{transformacion lineal@transformación lineal!teorema de la dimension@teorema de la dimensión|hyperpage}{537}
+\indexentry{transformacion lineal@transformación lineal!inyectiva|hyperpage}{537}
+\indexentry{transformacion lineal@transformación lineal!sobreyectiva|hyperpage}{537}
+\indexentry{transformacion lineal@transformación lineal!composicion@composición|hyperpage}{539}
+\indexentry{transformacion lineal@transformación lineal!inversa|hyperpage}{540}
 \indexentry{isomorfismo|hyperpage}{540}
 \indexentry{isomorfismo!con $\mathbb{R}^n$|hyperpage}{540}
-\indexentry{transformación lineal!matriz asociada|hyperpage}{542}
+\indexentry{transformacion lineal@transformación lineal!matriz asociada|hyperpage}{542}
+\indexentry{sucesion@sucesión|hyperpage}{575}
+\indexentry{induccion, principio de@inducción, principio de|hyperpage}{576}
+\indexentry{sucesion@sucesión!limite@límite|hyperpage}{577}
+\indexentry{sucesion@sucesión!unicidad del limite@unicidad del límite|hyperpage}{577}
+\indexentry{sucesion@sucesión!propiedades aritmeticas del limite@propiedades aritméticas del límite|hyperpage}{577}
+\indexentry{teorema del sandwich@teorema del sándwich!para sucesiones|hyperpage}{578}
+\indexentry{sucesion@sucesión!monotona y acotada@monótona y acotada|hyperpage}{578}
+\indexentry{convergencia monotona, teorema de@convergencia monótona, teorema de|hyperpage}{579}
+\indexentry{sucesion@sucesión!de Cauchy|hyperpage}{580}
+\indexentry{Cauchy!criterio de convergencia|hyperpage}{580}
+\indexentry{infinitesimales!equivalentes|hyperpage}{582}
+\indexentry{Stolz-Cesaro, criterio de@Stolz-Cesàro, criterio de|hyperpage}{583}
+\indexentry{serie!numerica@numérica|hyperpage}{585}
+\indexentry{suma parcial|hyperpage}{585}
+\indexentry{serie!criterio del termino $n$-esimo@criterio del término $n$-ésimo|hyperpage}{585}
+\indexentry{serie!geometrica@geométrica|hyperpage}{585}
+\indexentry{serie!$p$|hyperpage}{586}
+\indexentry{serie!criterio de la integral|hyperpage}{587}
+\indexentry{serie!criterio de comparacion@criterio de comparación|hyperpage}{588}
+\indexentry{serie!criterio del cociente|hyperpage}{588}
+\indexentry{serie!criterio de la raiz@criterio de la raíz|hyperpage}{589}
+\indexentry{serie!convergencia absoluta y condicional|hyperpage}{590}
+\indexentry{serie!criterio de Leibniz|hyperpage}{590}
+\indexentry{serie!criterio de Raabe|hyperpage}{591}
+\indexentry{sucesion de funciones@sucesión de funciones|hyperpage}{595}
+\indexentry{convergencia!puntual y uniforme|hyperpage}{595}
+\indexentry{convergencia!criterio de Cauchy uniforme|hyperpage}{598}
+\indexentry{convergencia!uniforme, propiedades|hyperpage}{598}
+\indexentry{Dini, teorema de|hyperpage}{599}
+\indexentry{Weierstrass!teorema de aproximacion@teorema de aproximación|hyperpage}{600}
+\indexentry{serie de funciones|hyperpage}{601}
+\indexentry{Weierstrass!criterio-$M$|hyperpage}{601}
+\indexentry{Dirichlet y Abel, criterios de|hyperpage}{603}
+\indexentry{serie de funciones!propiedades|hyperpage}{604}
+\indexentry{serie de potencias|hyperpage}{606}
+\indexentry{serie de potencias!radio e intervalo de convergencia|hyperpage}{606}
+\indexentry{serie de potencias!propiedades analiticas@propiedades analíticas|hyperpage}{610}
+\indexentry{serie de Taylor|hyperpage}{610}
+\indexentry{irracionalidad de $e$|hyperpage}{614}
+\indexentry{Borel, teorema de|hyperpage}{614}
+\indexentry{serie de potencias!unicidad|hyperpage}{615}
+\indexentry{ecuacion diferencial ordinaria@ecuación diferencial ordinaria|hyperpage}{619}
+\indexentry{ecuacion diferencial ordinaria@ecuación diferencial ordinaria!lineal|hyperpage}{619}
+\indexentry{ecuacion diferencial ordinaria@ecuación diferencial ordinaria!solucion general y particular@solución general y particular|hyperpage}{619}
+\indexentry{problema de valor inicial|hyperpage}{619}
+\indexentry{existencia y unicidad!Picard--Lindelof@Picard--Lindelöf|hyperpage}{620}
+\indexentry{ecuacion diferencial ordinaria@ecuación diferencial ordinaria!lineal de primer orden|hyperpage}{622}
+\indexentry{ecuacion diferencial lineal de orden $n$@ecuación diferencial lineal de orden $n$|hyperpage}{633}
+\indexentry{principio de superposicion@principio de superposición|hyperpage}{633}
+\indexentry{conjunto fundamental de soluciones|hyperpage}{633}
+\indexentry{wronskiano|hyperpage}{633}
+\indexentry{ecuacion diferencial lineal de orden $n$@ecuación diferencial lineal de orden $n$!estructura de la solucion@estructura de la solución|hyperpage}{634}
+\indexentry{ecuacion caracteristica@ecuación característica|hyperpage}{635}
+\indexentry{coeficientes indeterminados|hyperpage}{636}
+\indexentry{Cauchy-Euler, ecuacion de@Cauchy-Euler, ecuación de|hyperpage}{639}
+\indexentry{sistema de ecuaciones diferenciales|hyperpage}{645}
+\indexentry{sistema de ecuaciones diferenciales!estructura del espacio de soluciones|hyperpage}{649}
+\indexentry{sistema de ecuaciones diferenciales!solucion por vectores propios@solución por vectores propios|hyperpage}{649}
+\indexentry{punto ordinario y singular|hyperpage}{668}
+\indexentry{solucion en series de potencias@solución en series de potencias|hyperpage}{668}
+\indexentry{punto singular regular|hyperpage}{672}
+\indexentry{Frobenius, metodo de@Frobenius, método de|hyperpage}{672}
+\indexentry{transformada de Laplace|hyperpage}{681}
+\indexentry{orden exponencial|hyperpage}{681}
+\indexentry{transformada de Laplace!existencia|hyperpage}{681}
+\indexentry{transformada de Laplace!linealidad|hyperpage}{683}
+\indexentry{traslacion, primer teorema de@traslación, primer teorema de|hyperpage}{684}
+\indexentry{transformada de Laplace!de derivadas|hyperpage}{684}
+\indexentry{transformada de Laplace!de integrales|hyperpage}{685}
+\indexentry{transformada de Laplace!derivada de la transformada|hyperpage}{685}
+\indexentry{transformada de Laplace!division por $t$@división por $t$|hyperpage}{685}
+\indexentry{transformada de Laplace!inversa|hyperpage}{686}
+\indexentry{escalon unitario@escalón unitario|hyperpage}{688}
+\indexentry{traslacion, segundo teorema de@traslación, segundo teorema de|hyperpage}{689}
+\indexentry{delta de Dirac|hyperpage}{690}
+\indexentry{delta de Dirac!transformada|hyperpage}{690}
+\indexentry{convolucion@convolución|hyperpage}{691}
+\indexentry{convolucion@convolución!teorema de|hyperpage}{692}
+\indexentry{integral doble|hyperpage}{707}
+\indexentry{integral doble!integrabilidad|hyperpage}{707}
+\indexentry{Fubini, teorema de|hyperpage}{707}
+\indexentry{region@región!tipo I|hyperpage}{708}
+\indexentry{region@región!tipo II|hyperpage}{708}
+\indexentry{jacobiano!en $\mathbb{R}^2$|hyperpage}{728}
+\indexentry{cambio de variables!integrales dobles|hyperpage}{728}
+\indexentry{integral triple|hyperpage}{735}
+\indexentry{Fubini, teorema de!integrales triples|hyperpage}{735}
+\indexentry{densidad|hyperpage}{738}
+\indexentry{centro de masa!en el espacio|hyperpage}{738}
+\indexentry{momento de inercia!en el espacio|hyperpage}{739}
+\indexentry{jacobiano!en $\mathbb{R}^3$|hyperpage}{743}
+\indexentry{cambio de variables!integrales triples|hyperpage}{743}
+\indexentry{coordenadas cilindricas@coordenadas cilíndricas|hyperpage}{743}
+\indexentry{coordenadas cilindricas@coordenadas cilíndricas!integral triple|hyperpage}{744}
+\indexentry{coordenadas esfericas@coordenadas esféricas|hyperpage}{745}
+\indexentry{coordenadas esfericas@coordenadas esféricas!integral triple|hyperpage}{746}
+\indexentry{campo vectorial|hyperpage}{751}
+\indexentry{campo vectorial!continuidad y diferenciabilidad|hyperpage}{751}
+\indexentry{campo vectorial!gradiente|hyperpage}{752}
+\indexentry{campo vectorial!conservativo|hyperpage}{752}
+\indexentry{campo vectorial!conservativo, caracterizacion en el plano@conservativo, caracterización en el plano|hyperpage}{752}
+\indexentry{integral de linea@integral de línea!de un campo escalar|hyperpage}{754}
+\indexentry{integral de linea@integral de línea!teorema de evaluacion@teorema de evaluación|hyperpage}{754}
+\indexentry{integral de linea@integral de línea!de un campo vectorial|hyperpage}{757}
+\indexentry{campo vectorial!conservativo|hyperpage}{758}
+\indexentry{independencia de la trayectoria|hyperpage}{758}
+\indexentry{teorema fundamental de las integrales de linea@teorema fundamental de las integrales de línea|hyperpage}{759}
+\indexentry{curva cerrada simple|hyperpage}{763}
+\indexentry{orientacion positiva@orientación positiva|hyperpage}{763}
+\indexentry{Green, teorema de|hyperpage}{763}
+\indexentry{divergencia|hyperpage}{767}
+\indexentry{rotacional|hyperpage}{767}
+\indexentry{superficie!parametrica suave@paramétrica suave|hyperpage}{771}
+\indexentry{superficie!orientacion@orientación|hyperpage}{771}
+\indexentry{integral de superficie!de un campo escalar|hyperpage}{772}
+\indexentry{flujo de un campo vectorial|hyperpage}{776}
+\indexentry{integral de superficie!de un campo vectorial|hyperpage}{776}
+\indexentry{divergencia, teorema de la|hyperpage}{777}
+\indexentry{Stokes, teorema de|hyperpage}{780}

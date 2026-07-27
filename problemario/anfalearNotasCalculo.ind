@@ -1,36 +1,135 @@
 \begin{theindex}
 
+  \item ángulo entre vectores, \hyperpage{145}
+  \item antiderivada, \hyperpage{173}
+  \item aplicaciones de la integral
+    \subitem principio unificador, \hyperpage{203}
+  \item área
+    \subitem bajo una curva, \hyperpage{204}
+    \subitem en coordenadas polares, \hyperpage{255}
+    \subitem entre dos curvas, \hyperpage{205}
+    \subitem por integración respecto a $y$, \hyperpage{206}
+  \item área superficial de revolución, \hyperpage{215}
+    \subitem eje $y$, \hyperpage{217}
+  \item asíntota
+    \subitem horizontal, \hyperpage{78}
+    \subitem vertical, \hyperpage{78}
+  \item axioma del supremo, \hyperpage{22}
+
+  \indexspace
+
   \item base (espacio vectorial), \hyperpage{355}
     \subitem invariancia del número de elementos, \hyperpage{357}
     \subitem ortogonal, expansión, \hyperpage{379}
     \subitem teorema de la base incompleta, \hyperpage{357}
     \subitem unicidad de representación, \hyperpage{356}
   \item bola unitaria, \hyperpage{373}
+  \item Borel, teorema de, \hyperpage{614}
 
   \indexspace
 
+  \item cambio de variables
+    \subitem integrales dobles, \hyperpage{728}
+    \subitem integrales triples, \hyperpage{743}
+  \item campo vectorial, \hyperpage{751}
+    \subitem conservativo, \hyperpage{752}, \hyperpage{758}
+    \subitem conservativo, caracterización en el plano, 
+		\hyperpage{752}
+    \subitem continuidad y diferenciabilidad, \hyperpage{751}
+    \subitem gradiente, \hyperpage{752}
+  \item Cauchy
+    \subitem criterio de convergencia, \hyperpage{580}
+  \item Cauchy-Euler, ecuación de, \hyperpage{639}
   \item Cauchy-Schwarz, desigualdad de, \hyperpage{375}
     \subitem consecuencias, \hyperpage{375}
   \item Cayley-Hamilton, teorema de, \hyperpage{519}
+  \item centro de masa
+    \subitem en el espacio, \hyperpage{738}
+    \subitem lámina plana, \hyperpage{221}
+  \item Clairaut, teorema de, \hyperpage{458}
+  \item coeficientes indeterminados, \hyperpage{636}
   \item combinación lineal, \hyperpage{307}, \hyperpage{352}
   \item complemento ortogonal, \hyperpage{377}
     \subitem propiedades, \hyperpage{377}
+  \item concavidad, \hyperpage{114}
+  \item conjunto acotado, \hyperpage{21}
+  \item conjunto fundamental de soluciones, \hyperpage{633}
   \item conjunto ortogonal y ortonormal, \hyperpage{379}
+  \item continuidad, \hyperpage{80}
+    \subitem composición de funciones, \hyperpage{451}
+    \subitem en conjuntos, \hyperpage{450}
+    \subitem en varias variables, \hyperpage{449}
+    \subitem para tres variables, \hyperpage{451}
+  \item convergencia
+    \subitem criterio de Cauchy uniforme, \hyperpage{598}
+    \subitem puntual y uniforme, \hyperpage{595}
+    \subitem uniforme, propiedades, \hyperpage{598}
+  \item convergencia monótona, teorema de, \hyperpage{579}
+  \item convolución, \hyperpage{691}
+    \subitem teorema de, \hyperpage{692}
+  \item coordenadas cilíndricas, \hyperpage{743}
+    \subitem integral triple, \hyperpage{744}
+  \item coordenadas esféricas, \hyperpage{745}
+    \subitem integral triple, \hyperpage{746}
+  \item coordenadas polares, \hyperpage{251}
   \item Cramer, regla de, \hyperpage{317}
+  \item criterio de monotonía, \hyperpage{113}
+  \item curva cerrada simple, \hyperpage{763}
+  \item curva de nivel, \hyperpage{427}
+  \item curva paramétrica, \hyperpage{245}
+    \subitem derivada, \hyperpage{246}
+  \item curva regular, \hyperpage{497}
 
   \indexspace
 
   \item De Moivre, teorema de, \hyperpage{33}
+  \item delta de Dirac, \hyperpage{690}
+    \subitem transformada, \hyperpage{690}
+  \item densidad, \hyperpage{738}
+  \item densidad de $\mathbb{Q}$ en $\mathbb{R}$, \hyperpage{17}
+  \item derivación implícita
+    \subitem varias variables, \hyperpage{472}
+  \item derivada, \hyperpage{89}
+    \subitem de funciones trigonométricas, \hyperpage{93}
+    \subitem de funciones trigonométricas inversas, \hyperpage{100}
+    \subitem de la función inversa, \hyperpage{98}
+    \subitem de orden superior, \hyperpage{96}
+    \subitem derivable implica continua, \hyperpage{91}
+    \subitem exponencial y logarítmica, \hyperpage{95}
+    \subitem reglas fundamentales, \hyperpage{92}
+  \item derivada direccional, \hyperpage{477}
+    \subitem fórmula del gradiente, \hyperpage{477}
+    \subitem máximo, \hyperpage{479}
+  \item derivada parcial, \hyperpage{455}
+    \subitem de segundo orden, \hyperpage{458}
   \item descomposición ortogonal, \hyperpage{380}
   \item determinante, \hyperpage{276}
     \subitem expansión por cofactores, \hyperpage{279}
     \subitem propiedades, \hyperpage{282}
+  \item diferenciabilidad
+    \subitem criterio, \hyperpage{466}
+    \subitem implica continuidad, \hyperpage{466}
+  \item diferencial, \hyperpage{130}
+  \item diferencial total, \hyperpage{466}
   \item dimensión (espacio vectorial), \hyperpage{357}
     \subitem de subespacios, \hyperpage{357}
     \subitem propiedades, \hyperpage{357}
+  \item Dini, teorema de, \hyperpage{599}
+  \item Dirichlet y Abel, criterios de, \hyperpage{603}
+  \item discontinuidad, \hyperpage{80}
+  \item divergencia, \hyperpage{767}
+  \item divergencia, teorema de la, \hyperpage{777}
 
   \indexspace
 
+  \item ecuación característica, \hyperpage{635}
+  \item ecuación diferencial lineal de orden $n$, \hyperpage{633}
+    \subitem estructura de la solución, \hyperpage{634}
+  \item ecuación diferencial ordinaria, \hyperpage{619}
+    \subitem lineal, \hyperpage{619}
+    \subitem lineal de primer orden, \hyperpage{622}
+    \subitem solución general y particular, \hyperpage{619}
+  \item escalón unitario, \hyperpage{688}
   \item espacio vectorial, \hyperpage{345}
     \subitem dimensión finita, \hyperpage{355}
   \item espacios fundamentales, \hyperpage{358}
@@ -41,33 +140,147 @@
 		\hyperpage{378}
     \subitem teorema fundamental, \hyperpage{360}
   \item Euler, fórmula de, \hyperpage{30}, \hyperpage{388}
+  \item existencia y unicidad
+    \subitem Picard--Lindelöf, \hyperpage{620}
+  \item exponentes, leyes de, \hyperpage{67}
+  \item extremos
+    \subitem absolutos, \hyperpage{112}
+    \subitem condición necesaria, \hyperpage{487}
+    \subitem criterio de la primera derivada, \hyperpage{116}
+    \subitem criterio de la segunda derivada, \hyperpage{116}
+    \subitem criterio de la segunda derivada, varias variables, 
+		\hyperpage{488}
+    \subitem en varias variables, \hyperpage{487}
+    \subitem locales, \hyperpage{116}
 
   \indexspace
 
+  \item Fermat, teorema de, \hyperpage{112}
+  \item flujo de un campo vectorial, \hyperpage{776}
   \item forma escalonada, \hyperpage{270}
   \item forma escalonada reducida, \hyperpage{271}
     \subitem unicidad, \hyperpage{273}
+  \item fórmulas de reducción, \hyperpage{182}
+  \item fracciones parciales, \hyperpage{187}
+  \item Frobenius, método de, \hyperpage{672}
+  \item Fubini, teorema de, \hyperpage{707}
+    \subitem integrales triples, \hyperpage{735}
+  \item fuerza hidrostática, \hyperpage{224}
+  \item función, \hyperpage{53}
+    \subitem compuesta, \hyperpage{61}
+    \subitem de dos variables, \hyperpage{416}
+    \subitem de tres variables, \hyperpage{416}
+    \subitem elemental, \hyperpage{62}
+    \subitem exponencial, \hyperpage{59}
+    \subitem inversa, \hyperpage{64}
+    \subitem inyectiva, \hyperpage{64}
+    \subitem logarítmica, \hyperpage{60}
+    \subitem monótona, \hyperpage{57}
+    \subitem par e impar, \hyperpage{57}
+    \subitem periódica, \hyperpage{60}
+    \subitem potencia, \hyperpage{59}
+    \subitem trigonométrica, \hyperpage{60}
+    \subitem trigonométrica inversa, \hyperpage{66}
+  \item función de acumulación, \hyperpage{197}
+  \item función de densidad de probabilidad, \hyperpage{232}
+  \item función implícita, teorema de la, \hyperpage{497}
+  \item función longitud de arco, \hyperpage{415}
+  \item función vectorial, \hyperpage{403}
+    \subitem continuidad, \hyperpage{407}
+    \subitem continuidad componente a componente, \hyperpage{407}
+    \subitem derivada, \hyperpage{407}
+    \subitem derivada componente a componente, \hyperpage{408}
+    \subitem integral definida, \hyperpage{412}
+    \subitem integral indefinida, \hyperpage{411}
+    \subitem límite, \hyperpage{405}
+    \subitem reglas de derivación, \hyperpage{411}
 
   \indexspace
 
+  \item gradiente, \hyperpage{475}
+    \subitem propiedades, \hyperpage{476}
   \item grafo dirigido, \hyperpage{265}
   \item Gram-Schmidt, proceso de, \hyperpage{380}
+  \item Green, teorema de, \hyperpage{763}
 
   \indexspace
 
+  \item hessiano, \hyperpage{488}
+    \subitem limitado, \hyperpage{500}
+
+  \indexspace
+
+  \item identidades trigonométricas
+    \subitem pitagóricas, \hyperpage{181}
+    \subitem producto a suma, \hyperpage{181}
+    \subitem reducción de potencia, \hyperpage{181}
+  \item independencia de la trayectoria, \hyperpage{758}
   \item independencia lineal, \hyperpage{354}
     \subitem test, \hyperpage{354}
+  \item inducción, principio de, \hyperpage{576}
+  \item infinitesimales
+    \subitem equivalentes, \hyperpage{83}, \hyperpage{582}
+    \subitem orden, \hyperpage{83}
+  \item integración por partes, \hyperpage{178}
+  \item integral de línea
+    \subitem de un campo escalar, \hyperpage{754}
+    \subitem de un campo vectorial, \hyperpage{757}
+    \subitem teorema de evaluación, \hyperpage{754}
+  \item integral de superficie
+    \subitem de un campo escalar, \hyperpage{772}
+    \subitem de un campo vectorial, \hyperpage{776}
+  \item integral definida, \hyperpage{195}
+    \subitem acotamiento y comparación, \hyperpage{196}
+    \subitem aditividad en intervalos, \hyperpage{196}
+    \subitem integrabilidad de funciones continuas, \hyperpage{195}
+    \subitem propiedades algebraicas, \hyperpage{196}
+    \subitem simetría, \hyperpage{196}
+  \item integral doble, \hyperpage{707}
+    \subitem integrabilidad, \hyperpage{707}
+  \item integral impropia
+    \subitem criterio de comparación, \hyperpage{229}
+    \subitem discontinuidad interior, \hyperpage{236}
+    \subitem tipo I, \hyperpage{229}
+    \subitem tipo II, \hyperpage{236}
+  \item integral indefinida
+    \subitem linealidad, \hyperpage{175}
+  \item integral triple, \hyperpage{735}
+  \item intervalos, \hyperpage{20}
+  \item irracionalidad de $e$, \hyperpage{614}
   \item isomorfismo, \hyperpage{540}
     \subitem con $\mathbb{R}^n$, \hyperpage{540}
 
   \indexspace
 
+  \item jacobiano
+    \subitem en $\mathbb{R}^2$, \hyperpage{728}
+    \subitem en $\mathbb{R}^3$, \hyperpage{743}
   \item Jordan, forma canónica de, \hyperpage{515}
     \subitem bloque, \hyperpage{515}
 
   \indexspace
 
+  \item L'Hôpital, regla de, \hyperpage{126}
+  \item Leibniz, fórmula de, \hyperpage{97}
   \item lema de intercambio, \hyperpage{356}
+  \item límite
+    \subitem bilateral, condición de existencia, \hyperpage{76}
+    \subitem de funciones de dos variables, \hyperpage{439}
+    \subitem definición épsilon-delta, \hyperpage{74}
+    \subitem laterales, \hyperpage{76}
+    \subitem leyes, \hyperpage{76}
+    \subitem leyes para varias variables, \hyperpage{446}
+    \subitem unicidad, \hyperpage{75}
+  \item linealización, \hyperpage{130}, \hyperpage{464}
+  \item logaritmo
+    \subitem cambio de base, \hyperpage{68}
+    \subitem leyes, \hyperpage{67}
+    \subitem natural, \hyperpage{68}
+  \item longitud de arco
+    \subitem curva paramétrica, \hyperpage{249}
+    \subitem curva suave, \hyperpage{213}
+    \subitem en $\mathbb{R}^3$, \hyperpage{413}
+    \subitem en coordenadas polares, \hyperpage{257}
 
   \indexspace
 
@@ -95,9 +308,16 @@
     \subitem ecuaciones normales, \hyperpage{383}
     \subitem mejor aproximación, \hyperpage{383}
     \subitem solución única, \hyperpage{385}
+  \item momento de inercia, \hyperpage{223}
+    \subitem en el espacio, \hyperpage{739}
+  \item momentos de una lámina, \hyperpage{221}
+  \item multiplicadores de Lagrange, \hyperpage{497}
+    \subitem dos restricciones, \hyperpage{501}
+    \subitem existencia de extremos, \hyperpage{498}
 
   \indexspace
 
+  \item norma de un vector, \hyperpage{143}
   \item norma inducida, \hyperpage{373}
   \item número complejo, \hyperpage{27}
     \subitem forma polar, \hyperpage{30}
@@ -105,47 +325,134 @@
     \subitem módulo y argumento, \hyperpage{30}
     \subitem operaciones básicas, \hyperpage{27}
     \subitem propiedades de campo, \hyperpage{27}
+  \item números reales
+    \subitem axiomas de campo, \hyperpage{16}
+    \subitem axiomas de orden, \hyperpage{16}
 
   \indexspace
 
   \item operaciones elementales de fila, \hyperpage{268}
+  \item orden exponencial, \hyperpage{681}
+  \item orientación positiva, \hyperpage{763}
   \item ortogonalidad, \hyperpage{374}
 
   \indexspace
 
+  \item Pappus, teorema de, \hyperpage{221}
+  \item partición de un intervalo, \hyperpage{194}
   \item Pitágoras, teorema de, \hyperpage{376}
+  \item plano en el espacio, \hyperpage{146}
+  \item plano tangente, \hyperpage{462}
+    \subitem superficie implícita, \hyperpage{482}
   \item polinomio
     \subitem raíces conjugadas, \hyperpage{35}
     \subitem raíz, \hyperpage{34}
+  \item principio de superposición, \hyperpage{633}
+  \item problema de valor inicial, \hyperpage{619}
+  \item producto cruz, \hyperpage{145}
   \item producto interno, \hyperpage{373}
     \subitem complejo, \hyperpage{374}
     \subitem propiedades (complejo), \hyperpage{374}
-  \item proyección ortogonal, \hyperpage{379}
+  \item producto punto, \hyperpage{144}
+  \item proyección ortogonal, \hyperpage{149}, \hyperpage{379}
+    \subitem propiedades, \hyperpage{149}
+  \item punto crítico, \hyperpage{112}, \hyperpage{487}
+  \item punto fijo
+    \subitem convergencia, \hyperpage{130}
+  \item punto ordinario y singular, \hyperpage{668}
+  \item punto singular regular, \hyperpage{672}
 
   \indexspace
 
   \item rango de una matriz, \hyperpage{273}
     \subitem propiedades, \hyperpage{273}
   \item rango-nulidad, teorema del, \hyperpage{359}
+  \item recta en el espacio, \hyperpage{150}
+  \item recta normal, \hyperpage{482}
+  \item región
+    \subitem tipo I, \hyperpage{708}
+    \subitem tipo II, \hyperpage{708}
+  \item regla de la cadena, \hyperpage{93}
+    \subitem varias variables, caso 1, \hyperpage{469}
+    \subitem varias variables, caso 2, \hyperpage{471}
+  \item regla de la potencia generalizada, \hyperpage{175}
   \item regla de Sarrus, \hyperpage{280}
+  \item rotacional, \hyperpage{767}
   \item Rouché-Frobenius, teorema de, \hyperpage{313}
 
   \indexspace
 
+  \item serie
+    \subitem $p$, \hyperpage{586}
+    \subitem convergencia absoluta y condicional, \hyperpage{590}
+    \subitem criterio de comparación, \hyperpage{588}
+    \subitem criterio de la integral, \hyperpage{587}
+    \subitem criterio de la raíz, \hyperpage{589}
+    \subitem criterio de Leibniz, \hyperpage{590}
+    \subitem criterio de Raabe, \hyperpage{591}
+    \subitem criterio del cociente, \hyperpage{588}
+    \subitem criterio del término $n$-ésimo, \hyperpage{585}
+    \subitem geométrica, \hyperpage{585}
+    \subitem numérica, \hyperpage{585}
   \item serie de Fourier, \hyperpage{387}
+  \item serie de funciones, \hyperpage{601}
+    \subitem propiedades, \hyperpage{604}
+  \item serie de potencias, \hyperpage{606}
+    \subitem propiedades analíticas, \hyperpage{610}
+    \subitem radio e intervalo de convergencia, \hyperpage{606}
+    \subitem unicidad, \hyperpage{615}
+  \item serie de Taylor, \hyperpage{610}
+  \item sistema de ecuaciones diferenciales, \hyperpage{645}
+    \subitem estructura del espacio de soluciones, \hyperpage{649}
+    \subitem solución por vectores propios, \hyperpage{649}
   \item sistema de ecuaciones lineales, \hyperpage{308}
     \subitem homogéneo, \hyperpage{308}
       \subsubitem propiedades, \hyperpage{316}
     \subitem tipos de solución, \hyperpage{308}
+  \item solución en series de potencias, \hyperpage{668}
+  \item Stokes, teorema de, \hyperpage{780}
+  \item Stolz-Cesàro, criterio de, \hyperpage{583}
   \item subespacio generado, \hyperpage{352}
     \subitem propiedad minimal, \hyperpage{352}
   \item subespacio vectorial, \hyperpage{348}
     \subitem intersección finita, \hyperpage{350}
     \subitem test, \hyperpage{348}
+  \item sucesión, \hyperpage{575}
+    \subitem de Cauchy, \hyperpage{580}
+    \subitem límite, \hyperpage{577}
+    \subitem monótona y acotada, \hyperpage{578}
+    \subitem propiedades aritméticas del límite, \hyperpage{577}
+    \subitem unicidad del límite, \hyperpage{577}
+  \item sucesión de funciones, \hyperpage{595}
+  \item suma parcial, \hyperpage{585}
+  \item sumatorias, fórmulas de, \hyperpage{194}
+  \item superficie
+    \subitem orientación, \hyperpage{771}
+    \subitem paramétrica suave, \hyperpage{771}
+  \item superficie de nivel, \hyperpage{427}
+  \item supremo e ínfimo, \hyperpage{21}
+  \item sustitución, regla de
+    \subitem integral definida, \hyperpage{199}
+    \subitem integral indefinida, \hyperpage{176}
 
   \indexspace
 
+  \item teorema del sándwich, \hyperpage{77}
+    \subitem para funciones de dos variables, \hyperpage{447}
+    \subitem para sucesiones, \hyperpage{578}
+  \item teorema del valor intermedio, \hyperpage{81}
+  \item teorema del valor medio
+    \subitem de Lagrange, \hyperpage{124}
+    \subitem para integrales, \hyperpage{200}
+    \subitem segundo, para integrales, \hyperpage{201}
+  \item teorema fundamental de las integrales de línea, 
+		\hyperpage{759}
   \item teorema fundamental del álgebra, \hyperpage{34}
+  \item teorema fundamental del cálculo
+    \subitem para funciones vectoriales, \hyperpage{412}
+    \subitem primero, \hyperpage{198}
+    \subitem segundo, \hyperpage{198}
+  \item trabajo, \hyperpage{218}
   \item transformación lineal, \hyperpage{533}
     \subitem composición, \hyperpage{539}
     \subitem inversa, \hyperpage{540}
@@ -155,21 +462,51 @@
     \subitem rango y nulidad, \hyperpage{536}
     \subitem sobreyectiva, \hyperpage{537}
     \subitem teorema de la dimensión, \hyperpage{537}
+  \item transformada de Laplace, \hyperpage{681}
+    \subitem de derivadas, \hyperpage{684}
+    \subitem de integrales, \hyperpage{685}
+    \subitem derivada de la transformada, \hyperpage{685}
+    \subitem división por $t$, \hyperpage{685}
+    \subitem existencia, \hyperpage{681}
+    \subitem inversa, \hyperpage{686}
+    \subitem linealidad, \hyperpage{683}
+  \item traslación, primer teorema de, \hyperpage{684}
+  \item traslación, segundo teorema de, \hyperpage{689}
   \item traza de una matriz, \hyperpage{267}
     \subitem propiedades, \hyperpage{267}
 
   \indexspace
 
+  \item valor absoluto, \hyperpage{17}
+    \subitem propiedades, \hyperpage{18}
+  \item valor promedio de una función, \hyperpage{200}
   \item valores y vectores propios, \hyperpage{507}
     \subitem caracterización, \hyperpage{508}
     \subitem multiplicidad algebraica y geométrica, \hyperpage{508}
     \subitem potencias, \hyperpage{509}
+  \item variable aleatoria continua
+    \subitem media y varianza, \hyperpage{234}
   \item variables básicas y libres, \hyperpage{312}
+  \item vecindad abierta, \hyperpage{21}
+  \item vector
+    \subitem definición geométrica, \hyperpage{141}
+    \subitem en coordenadas, \hyperpage{141}
+    \subitem operaciones en coordenadas, \hyperpage{142}
+    \subitem unitario, \hyperpage{144}
   \item vector de coordenadas, \hyperpage{356}
+  \item volumen
+    \subitem método de las arandelas, \hyperpage{210}
+    \subitem método de los cascarones, \hyperpage{211}
+    \subitem método de los discos, \hyperpage{208}
 
   \indexspace
 
-  \item Wronskiano, \hyperpage{355}
+  \item Weierstrass
+    \subitem criterio-$M$, \hyperpage{601}
+    \subitem teorema de aproximación, \hyperpage{600}
+    \subitem teorema del valor extremo, \hyperpage{112}, 
+		\hyperpage{488}
+  \item wronskiano, \hyperpage{355}, \hyperpage{633}
     \subitem criterio, \hyperpage{355}
 
 \end{theindex}

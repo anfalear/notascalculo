@@ -22,7 +22,7 @@ prolonga indefinidamente hacia la derecha o hacia la izquierda? Para dar sentido
 fenómenos físicos, modelos probabilísticos y problemas de ingeniería donde el dominio no está
 acotado, introducimos el concepto de \textbf{integral impropia de primer tipo}.
 
-\begin{definition}[Integral impropia con límite infinito]
+\begin{definition}[Integral impropia con límite infinito]\index{integral impropia!tipo I}
 Sea $f(x)$ una función continua en $[a, \infty)$. Definimos la integral impropia con límite
 superior infinito como el límite de integrales propias:
 \[
@@ -40,7 +40,7 @@ $c$ (frecuentemente $c=0$):
 \]
 \end{definition}
 
-\begin{theorem}[Criterio de convergencia]
+\begin{theorem}[Criterio de convergencia]\index{integral impropia!criterio de comparacion@criterio de comparación}
 Las integrales impropias de límite infinito \textbf{convergen} si y solo si los límites
 involucrados en su definición existen y son números reales finitos. Si el límite es $\pm\infty$
 o no existe, se dice que la integral \textbf{diverge}.
@@ -263,7 +263,7 @@ probabilidad representa la \textbf{certeza total}. Las variables aleatorias cont
 mediante funciones no negativas cuya área total bajo la curva debe ser exactamente $1$. Toda
 integral que aparezca en este marco es, en esencia, una integral impropia de primer tipo.
 
-\begin{definition}[Función de densidad de probabilidad]
+\begin{definition}[Función de densidad de probabilidad]\index{funcion de densidad de probabilidad@función de densidad de probabilidad}
 Una función $f(x)$ es una \textbf{función de densidad de probabilidad} (FDP) para una variable
 aleatoria continua $X$ si satisface:
 \begin{enumerate}
@@ -361,7 +361,7 @@ Por tanto $k=3$, y la FDP normalizada es:
 \end{myproof}
 \end{example}
 
-\begin{theorem}[Media y varianza de una variable aleatoria continua]
+\begin{theorem}[Media y varianza de una variable aleatoria continua]\index{variable aleatoria continua!media y varianza}
 La \textbf{media} $\mu$ (valor esperado) y la \textbf{varianza} $\sigma^2$ de una variable
 aleatoria continua con FDP $f(x)$ se definen como:
 \[
@@ -502,7 +502,7 @@ Fundamental del Cálculo (TFC): el TFC requiere continuidad de $f$ en $[a,b]$. S
 infinito en un extremo o en un punto interior, las sumas de Riemann pueden diverger o requerir un
 tratamiento por límites laterales.
 
-\begin{definition}[Integral impropia de tipo II]
+\begin{definition}[Integral impropia de tipo II]\index{integral impropia!tipo II}
 Sea $f$ continua en $[a,b)$ con $\lim_{x\to b^-}|f(x)|=\infty$. Definimos:
 \[
   \int_{a}^{b} f(x)\,dx = \lim_{t\to b^-}\int_{a}^{t} f(x)\,dx.
@@ -513,7 +513,7 @@ Si la discontinuidad está en el extremo izquierdo $x=a$:
 \]
 \end{definition}
 
-\begin{theorem}[Convergencia con discontinuidad interior]
+\begin{theorem}[Convergencia con discontinuidad interior]\index{integral impropia!discontinuidad interior}
 Si $f$ tiene una discontinuidad infinita en $c\in(a,b)$, entonces:
 \[
   \int_{a}^{b} f(x)\,dx = \int_{a}^{c} f(x)\,dx + \int_{c}^{b} f(x)\,dx,

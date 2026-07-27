@@ -6,7 +6,7 @@ El hilo conductor de este capítulo es el mismo que en las integrales dobles: \e
 
 \section{Integrales triples en coordenadas rectangulares}
 
-\begin{definition}[Integral triple]
+\begin{definition}[Integral triple]\index{integral triple}
 Sea \(D\) una región cerrada y acotada en \(\mathbb{R}^3\), y sea \(f(x,y,z)\) una función continua en \(D\). Dividimos \(D\) en \(n\) subregiones (cajas) de volumen \(\Delta V_k\), elegimos un punto \((x_k^*, y_k^*, z_k^*)\) en cada subregión y formamos la suma de Riemann
 \[
 S_n = \sum_{k=1}^{n} f(x_k^*, y_k^*, z_k^*)\,\Delta V_k.
@@ -25,7 +25,7 @@ existe, donde \(\|P\|\) es la norma de la partición (el máximo diámetro de la
 
 Geométricamente, si \(f\equiv 1\), la integral triple da el volumen del sólido \(D\). Si \(f\) representa una densidad de masa, la integral triple da la masa total.
 
-\begin{theorem}[Teorema de Fubini para integrales triples] \label{th:fubini3d}
+\begin{theorem}[Teorema de Fubini para integrales triples] \label{th:fubini3d}\index{Fubini, teorema de!integrales triples}
 Sea \(D\) una región sólida acotada en \(\mathbb{R}^3\) y sea \(f\) continua en \(D\). Entonces la integral triple de \(f\) sobre \(D\) puede calcularse como una integral iterada en cualquiera de los seis órdenes posibles. Por ejemplo, si la proyección de \(D\) sobre el plano \(xy\) es \(R\), y para cada \((x,y)\in R\) la variable \(z\) varía entre \(z_1(x,y)\) y \(z_2(x,y)\), entonces
 \[
 \iiint_D f(x,y,z)\,dV
@@ -179,7 +179,7 @@ Este es un ejemplo de cómo el cambio de orden requiere reexpresar cuidadosament
 
 Las integrales triples son la herramienta natural para calcular propiedades físicas de cuerpos tridimensionales con densidad variable \(\rho(x,y,z)\). La masa total, el centro de masa y los momentos de inercia se obtienen como integrales de la densidad o de sus productos con las coordenadas.
 
-\begin{definition}[Masa por unidad de volumen]
+\begin{definition}[Masa por unidad de volumen]\index{densidad}
 
 Si \(\rho(x,y,z)\) es la densidad (masa por unidad de volumen) de un sólido \(D\), la masa total es
 \[
@@ -187,7 +187,7 @@ M = \iiint_D \rho(x,y,z)\,dV.
 \]
 \end{definition}
 
-\begin{definition}[Centro de masa en 3D]
+\begin{definition}[Centro de masa en 3D]\index{centro de masa!en el espacio}
 El centro de masa \((\bar{x},\bar{y},\bar{z})\) se define mediante los primeros momentos respecto a los planos coordenados:
 \[
 M_{yz} = \iiint_D x\,\rho\,dV,\quad
@@ -202,7 +202,7 @@ y entonces
 \]
 Si la densidad es constante, el centro de masa coincide con el centroide del sólido.
 \end{definition}
-\begin{definition}[Momentos de inercia]
+\begin{definition}[Momentos de inercia]\index{momento de inercia!en el espacio}
 
 El momento de inercia mide la resistencia de un cuerpo a la rotación alrededor de un eje. Para un eje \(L\), el momento de inercia es
 \[
@@ -491,7 +491,7 @@ Los problemas marcados con asterisco son de carácter no exigente en la evaluaci
 El mismo principio aplicado en integrales dobles se extiende a integrales triples con un jacobiano
 $3\times3$.
 
-\begin{definition}[Jacobiano en $\mathbb{R}^3$]
+\begin{definition}[Jacobiano en $\mathbb{R}^3$]\index{jacobiano!en $\mathbb{R}^3$}
 Sea $T(u,v,w)=(x(u,v,w),y(u,v,w),z(u,v,w))$ de clase $\mathcal{C}^1$.
 El \textbf{jacobiano} de $T$ es
 \[
@@ -506,7 +506,7 @@ Geométricamente, $|J|$ es el factor de escala de volumen: un
 paralelepípedo unidad en $(u,v,w)$ ocupa volumen $|J|$ en $(x,y,z)$.
 \end{definition}
 
-\begin{theorem}[Cambio de variables en integrales triples]
+\begin{theorem}[Cambio de variables en integrales triples]\index{cambio de variables!integrales triples}
 Si $T(u,v,w)=(x,y,z)$ es $\mathcal{C}^1$ e inyectiva (excepto en la
 frontera) de $D^*$ a $D$, y $f$ es continua en $D$, entonces
 \[
@@ -523,7 +523,7 @@ Jacobianos.
 
 Las \textbf{coordenadas cilíndricas} $(r,\theta,z)$ generalizan las coordenadas polares al espacio: $x$ e $y$ se expresan en términos de $r$ y $\theta$, mientras que $z$ permanece igual.
 
-\begin{definition}[Coordenadas cilíndricas]
+\begin{definition}[Coordenadas cilíndricas]\index{coordenadas cilindricas@coordenadas cilíndricas}
 Las coordenadas cilíndricas $(r,\theta,z)$ se relacionan con las coordenadas rectangulares $(x,y,z)$ mediante
 \[
 x = r\cos\theta,\quad y = r\sen\theta,\quad z = z,
@@ -593,7 +593,7 @@ dV = r\,dr\,d\theta\,dz.
 \label{fig:coordenadas_cilindricas}
 \end{figure}
 
-\begin{theorem}[Integral triple en coordenadas cilíndricas]
+\begin{theorem}[Integral triple en coordenadas cilíndricas]\index{coordenadas cilindricas@coordenadas cilíndricas!integral triple}
 Si el sólido $D$ se describe como $\alpha\le\theta\le\beta$, $g_1(\theta)\le r\le g_2(\theta)$, $z_1(r,\theta)\le z\le z_2(r,\theta)$, entonces
 \[
 \iiint_D f(x,y,z)\,dV
@@ -668,7 +668,7 @@ I = 4\cdot\frac{\pi}{2}\cdot 324 = \boxed{648\pi}.
 
 Las \textbf{coordenadas esféricas} $(\rho,\varphi,\theta)$ son especialmente útiles cuando el sólido tiene simetría esférica o cónica.
 
-\begin{definition}[Coordenadas esféricas]
+\begin{definition}[Coordenadas esféricas]\index{coordenadas esfericas@coordenadas esféricas}
 Las coordenadas esféricas $(\rho,\varphi,\theta)$ se relacionan con las coordenadas rectangulares $(x,y,z)$ mediante
 \[
 x = \rho\sen\varphi\cos\theta,\quad
@@ -755,7 +755,7 @@ La ecuación $x^2+y^2=4z$ es un \textbf{paraboloide circular} con vértice en el
 \end{myproof}
 \end{prob}
 
-\begin{theorem}[Integral triple en coordenadas esféricas]
+\begin{theorem}[Integral triple en coordenadas esféricas]\index{coordenadas esfericas@coordenadas esféricas!integral triple}
 Si $D$ se describe como $\alpha\le\theta\le\beta$, $\varphi_1\le\varphi\le\varphi_2$, $0\le\rho\le g(\varphi,\theta)$, entonces
 \[
 \iiint_D f\,dV

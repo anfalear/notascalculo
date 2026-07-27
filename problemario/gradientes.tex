@@ -8,7 +8,7 @@ La regla de la cadena extiende formas de calcular las derivadas parciales de una
 
 \section{Regla de la cadena}
 
-\begin{theorem}[Regla de la cadena, Caso 1]
+\begin{theorem}[Regla de la cadena, Caso 1]\index{regla de la cadena!varias variables, caso 1}
 Si $z = f(x, y)$ es diferenciable y $x = g(t)$, $y = h(t)$ son funciones diferenciables de $t$, entonces $z$ es una función diferenciable de $t$ y
 \[
 \frac{dz}{dt} = \frac{\partial z}{\partial x}\frac{dx}{dt} + \frac{\partial z}{\partial y}\frac{dy}{dt}.
@@ -177,7 +177,7 @@ Sea $\alpha$ el ángulo opuesto al cateto $a=10\,cm$ (con $\dfrac{da}{dt}=1\,cm/
 
 
 Si hay dos variables independientes, usamos el segundo caso de la regla de la cadena: 
-\begin{theorem}[Regla de la cadena, Caso 2]
+\begin{theorem}[Regla de la cadena, Caso 2]\index{regla de la cadena!varias variables, caso 2}
 Si $z = f(x, y)$ es diferenciable y $x = g(s, t)$, $y = h(s, t)$ son diferenciables, entonces $z$ es una función diferenciable de $s$ y $t$, y
 \[
 \frac{\partial z}{\partial s} = \frac{\partial z}{\partial x}\frac{\partial x}{\partial s} + \frac{\partial z}{\partial y}\frac{\partial y}{\partial s},
@@ -241,7 +241,7 @@ Sustituyendo $x$ e $y$:
 
 Cuando una función $z = f(x, y)$ no se da explícitamente, sino que está definida implícitamente por una ecuación $F(x, y, z) = 0$, podemos hallar sus derivadas parciales utilizando la regla de la cadena.
 
-\begin{theorem}[Derivación implícita para funciones de varias variables]
+\begin{theorem}[Derivación implícita para funciones de varias variables]\index{derivacion implicita@derivación implícita!varias variables}
 Si una ecuación $F(x, y, z) = 0$ define implícitamente a $z$ como una función diferenciable de $x$ e $y$, entonces
 \[
 \frac{\partial z}{\partial x} = -\frac{F_x}{F_z}, \quad \frac{\partial z}{\partial y} = -\frac{F_y}{F_z}, \quad \text{siempre que } F_z \neq 0.
@@ -464,7 +464,7 @@ es extender esta idea y aprender a medir cómo cambia la función en
 se llama \textbf{derivada direccional}. Antes de definirla,
 necesitamos conocer un concepto clave: el \textbf{vector gradiente}.
 
-\begin{definition}[Gradiente de una función escalar]
+\begin{definition}[Gradiente de una función escalar]\index{gradiente}
 Sea $f$ una función escalar de dos o tres variables.
 \begin{itemize}
     \item Si $f(x,y)$ es una función de dos variables, el \textbf{gradiente}
@@ -524,7 +524,7 @@ en una herramienta flexible. Estas propiedades se deducen directamente de
 la linealidad de la derivación parcial y de las reglas del producto y
 cociente para funciones escalares.
 
-\begin{theorem}[Propiedades del gradiente]
+\begin{theorem}[Propiedades del gradiente]\index{gradiente!propiedades}
 Sean $f$ y $g$ funciones escalares diferenciables de dos o tres
 variables, y sea $k\in\mathbb{R}$ una constante. Entonces:
 \begin{enumerate}
@@ -616,7 +616,7 @@ dadas en forma implícita.
 
 Con el gradiente como herramienta auxiliar, se puede ahora definir la derivada direccional. Intuitivamente, la derivada direccional mide la tasa de cambio de $f$ cuando nos movemos desde un punto dado en una dirección específica, representada por un vector unitario.
 
-\begin{definition}[Derivada direccional]
+\begin{definition}[Derivada direccional]\index{derivada direccional}
 La \textbf{derivada direccional} de $f(x,y)$ en el punto
 $(x_0,y_0)$ y en la dirección del vector unitario
 $\mathbf{u} = \langle u_1, u_2 \rangle$ está dada por:
@@ -694,7 +694,7 @@ derivada direccional sin recurrir al límite.
 \label{fig:derivada_direccional}
 \end{figure}
 
-\begin{theorem}[Fórmula del gradiente para la derivada direccional]
+\begin{theorem}[Fórmula del gradiente para la derivada direccional]\index{derivada direccional!formula del gradiente@fórmula del gradiente}
 Sea $f$ una función diferenciable en el punto $p=(a,b)$, y sea
 $\mathbf{u}=\langle u_1,u_2\rangle$ un vector unitario. Entonces:
 \[
@@ -831,7 +831,7 @@ D_\mathbf{u}f=\frac{3}{4}\cdot\frac{-1}{\sqrt{5}}+\frac{1}{3}\cdot\frac{2}{\sqrt
 
 Supongamos que tenemos una función $f$ de dos o tres variables y queremos saber cómo cambia su valor en distintas direcciones a partir de un punto. Surgen dos preguntas importantes: ¿en qué dirección cambia más rápido la función y cuál es esa máxima tasa de cambio? El siguiente teorema responde ambas preguntas.
 
-\begin{theorem}[Máximo de la derivada direccional]
+\begin{theorem}[Máximo de la derivada direccional]\index{derivada direccional!maximo@máximo}
 Supongamos que $f$ es una función diferenciable de dos o tres variables.
 El valor máximo de la derivada direccional $D_{\mathbf{u}} f(\mathbf{x})$
 es $|\nabla f(\mathbf{x})|$ y se presenta cuando $\mathbf{u}$ tiene la
@@ -1065,7 +1065,7 @@ recupera la fórmula del plano tangente para funciones explícitas
 estudiada en la lección anterior.
 \end{rem}
 
-\begin{definition}[Plano tangente y recta normal para superficie implícita]
+\begin{definition}[Plano tangente y recta normal para superficie implícita]\index{plano tangente!superficie implicita@superficie implícita}\index{recta normal}
 Sea $F(x,y,z)=k$ una superficie y supóngase que $F$ es diferenciable en
 el punto $P(x_0,y_0,z_0)$, con $\nabla F(x_0,y_0,z_0) \neq \mathbf{0}$.
 El \textbf{plano tangente} a la superficie en $P$ es el plano que pasa

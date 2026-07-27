@@ -2,7 +2,7 @@
 
 \section{Teoría general de las EDO lineales de orden $n$}
 
-\begin{definition}
+\begin{definition}\index{ecuacion diferencial lineal de orden $n$@ecuación diferencial lineal de orden $n$}
 Una \textbf{ecuación diferencial lineal de orden $n$} se escribe en su forma estándar como
 \[
 y^{(n)} + a_{n-1}(x)y^{(n-1)} + \cdots + a_1(x)y' + a_0(x)y = g(x),
@@ -10,7 +10,7 @@ y^{(n)} + a_{n-1}(x)y^{(n-1)} + \cdots + a_1(x)y' + a_0(x)y = g(x),
 donde $a_0(x), a_1(x), \ldots, a_{n-1}(x)$ y $g(x)$ son funciones continuas en un intervalo $I$. Si $g(x) \equiv 0$, la ecuación se llama \textbf{homogénea}; en caso contrario, \textbf{no homogénea}.
 \end{definition}
 
-\begin{theorem}[Principio de superposición]\label{thm:cap28:superposicion}
+\begin{theorem}[Principio de superposición]\label{thm:cap28:superposicion}\index{principio de superposicion@principio de superposición}
 Si $y_1, y_2, \ldots, y_k$ son soluciones de la ecuación homogénea
 \[
 y^{(n)} + a_{n-1}(x)y^{(n-1)} + \cdots + a_0(x)y = 0,
@@ -22,7 +22,7 @@ y = c_1 y_1 + c_2 y_2 + \cdots + c_k y_k
 también es solución.
 \end{theorem}
 
-\begin{definition}
+\begin{definition}\index{conjunto fundamental de soluciones}
 Un conjunto de $n$ soluciones $\{y_1, y_2, \ldots, y_n\}$ de la ecuación homogénea es un \textbf{conjunto fundamental} si son linealmente independientes en $I$. La solución general de la homogénea es
 \[
 y_h = c_1 y_1 + c_2 y_2 + \cdots + c_n y_n.
@@ -39,7 +39,7 @@ y_1^{(n-1)} & y_2^{(n-1)} & \cdots & y_n^{(n-1)}
 \]
 \end{definition}
 
-\begin{theorem}[Criterio de independencia lineal]\label{thm:cap28:wronskiano}
+\begin{theorem}[Criterio de independencia lineal]\label{thm:cap28:wronskiano}\index{wronskiano}
 Las soluciones $y_1,\ldots,y_n$ son linealmente independientes en $I$ si y solo si $W(y_1,\ldots,y_n)(x) \neq 0$ para todo $x \in I$.
 \end{theorem}
 
@@ -51,7 +51,7 @@ W(x)=W(x_0)\exp\!\left(-\int_{x_0}^{x} a_{n-1}(t)\,dt\right).
 Como la exponencial nunca se anula, \(W\) es \emph{idénticamente nula} o \emph{nunca nula} en \(I\); basta evaluarla en un punto. Si las soluciones fueran linealmente dependientes, una columna del determinante sería combinación de las otras y \(W\equiv 0\); recíprocamente, \(W(x_0)\neq 0\) impide toda relación de dependencia.
 \end{rem}
 
-\begin{theorem}[Estructura de la solución general]\label{thm:cap28:estructura}
+\begin{theorem}[Estructura de la solución general]\label{thm:cap28:estructura}\index{ecuacion diferencial lineal de orden $n$@ecuación diferencial lineal de orden $n$!estructura de la solucion@estructura de la solución}
 Si $y_p$ es una solución particular de la ecuación no homogénea y $y_h$ es la solución general de la homogénea asociada, entonces la solución general de la no homogénea es
 \[
 y = y_h + y_p.
@@ -142,7 +142,7 @@ con $a_i \in \mathbb{R}$. Probamos soluciones de la forma $y = e^{rx}$. Sustituy
 a_n r^n + a_{n-1} r^{n-1} + \cdots + a_1 r + a_0 = 0.
 \]
 
-\begin{theorem}[Casos de las raíces]
+\begin{theorem}[Casos de las raíces]\index{ecuacion caracteristica@ecuación característica}
 \begin{enumerate}
 \item Si $r$ es raíz real simple, la solución es $e^{rx}$.
 \item Si $r$ es raíz real de multiplicidad $k$, las soluciones son $e^{rx}, x e^{rx}, \ldots, x^{k-1} e^{rx}$.
@@ -214,7 +214,7 @@ a_n y^{(n)} + \cdots + a_0 y = g(x),
 \]
 donde $g(x)$ es una combinación de polinomios, exponenciales, senos y cosenos, proponemos una solución particular $y_p$ con coeficientes indeterminados.
 
-\begin{definition}[Tabla de formas de $y_p$]
+\begin{definition}[Tabla de formas de $y_p$]\index{coeficientes indeterminados}
 \begin{center}
 \begin{tabular}{c|c}
 $g(x)$ & Forma de $y_p$ \\ \hline
@@ -443,7 +443,7 @@ con $a,b,c$ constantes. Buscamos soluciones $y = x^m$. Sustituyendo obtenemos
 a m(m-1) + b m + c = 0.
 \]
 
-\begin{theorem}[Casos]
+\begin{theorem}[Casos]\index{Cauchy-Euler, ecuacion de@Cauchy-Euler, ecuación de}
 \begin{enumerate}
 \item Raíces $m_1 \neq m_2$ reales: $y = c_1 x^{m_1} + c_2 x^{m_2}$.
 \item Raíz $m$ repetida: $y = c_1 x^m + c_2 x^m \ln x$.

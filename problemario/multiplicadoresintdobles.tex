@@ -16,7 +16,7 @@ una configuración sin análogo en una dimensión.
 \section{Definiciones básicas}
 %%----------------------------------------------------------
 
-\begin{definition}[Extremos absolutos y locales]
+\begin{definition}[Extremos absolutos y locales]\index{extremos!en varias variables}
 Sea $f$ una función de dos variables con dominio $S$, y sea
 $p_0\in S$.
 \begin{itemize}
@@ -31,7 +31,7 @@ $p_0\in S$.
 \end{itemize}
 \end{definition}
 
-\begin{theorem}[Condición necesaria para extremo local]
+\begin{theorem}[Condición necesaria para extremo local]\index{extremos!condicion necesaria@condición necesaria}
 Si $f$ tiene un máximo local o un mínimo local en $(a,b)$ y las
 derivadas parciales de primer orden de $f$ existen ahí, entonces
 \[
@@ -47,7 +47,7 @@ Análogamente, $h(y)=f(a,y)$ tiene un extremo local en $y=b$, luego
 $h'(b)=f_y(a,b)=0$.
 \end{proof}
 
-\begin{definition}[Punto crítico]
+\begin{definition}[Punto crítico]\index{punto critico@punto crítico}
 Un punto $(a,b)$ en el interior del dominio de $f$ es un
 \textbf{punto crítico} si $f_x(a,b)=0$ y $f_y(a,b)=0$, o si al menos
 una de las derivadas parciales no existe.
@@ -100,7 +100,7 @@ otra.
 El siguiente resultado garantiza la existencia de extremos absolutos para
 funciones continuas sobre conjuntos cerrados y acotados.
 
-\begin{theorem}[Teorema del Valor Extremo de Weierstrass]
+\begin{theorem}[Teorema del Valor Extremo de Weierstrass]\index{Weierstrass!teorema del valor extremo}
 Si $f$ es una función continua de dos variables en un conjunto $S$ que es
 \textbf{cerrado} y \textbf{acotado}, entonces $f$ alcanza un valor
 máximo absoluto y un valor mínimo absoluto en $S$.
@@ -150,7 +150,7 @@ El criterio de la segunda derivada para funciones de dos variables
 clasifica los puntos críticos donde $f_x=f_y=0$ utilizando las derivadas
 parciales de segundo orden.
 
-\begin{definition}[Discriminante o Hessiano]
+\begin{definition}[Discriminante o Hessiano]\index{hessiano}
 Para una función $f$ de dos variables con derivadas parciales de segundo
 orden continuas, se define el \textbf{discriminante} (o Hessiano) en un
 punto $(a,b)$ como:
@@ -159,7 +159,7 @@ D(a,b) = f_{xx}(a,b) f_{yy}(a,b) - \bigl[f_{xy}(a,b)\bigr]^2.
 \]
 \end{definition}
 
-\begin{theorem}[Criterio de la segunda derivada]
+\begin{theorem}[Criterio de la segunda derivada]\index{extremos!criterio de la segunda derivada, varias variables}
 Sea $f$ una función con derivadas parciales de segundo orden continuas en
 una vecindad de un punto crítico $(a,b)$ donde $f_x(a,b)=0$ y
 $f_y(a,b)=0$. Sea $D = f_{xx}f_{yy} - (f_{xy})^2$ evaluado en $(a,b)$.
@@ -665,11 +665,11 @@ La pregunta que guía el desarrollo es: ¿cómo hallar el máximo \emph{sin} eli
 
 Note que, para la función objetivo a minimizar en el problema del rectángulo las curvas de nivel de $f(x,y)=xy$ son hipérbolas $xy=C$, y la restricción $g=0$ es una circunferencia. Si en un punto de la circunferencia se alcanza el máximo de $f$ restringido, la hipérbola que pasa por ese punto debe ser \textbf{tangente} a la circunferencia; de otro modo, moviéndonos ligeramente sobre la circunferencia podríamos aumentar el área. Para justificar esta tangencia necesitamos el concepto de curva regular y el teorema de la función implícita.
 
-\begin{definition}[Curva regular]
+\begin{definition}[Curva regular]\index{curva regular}
 Una \textbf{curva regular} en $\R^2$ es una función diferenciable $\mathbf{r}\colon I\subset\R\to\R^2$, $\mathbf{r}(t)=(x(t),y(t))$, tal que $\mathbf{r}'(t)\neq\mathbf{0}$ para todo $t\in I$.
 \end{definition}
 
-\begin{theorem}[Función implícita]
+\begin{theorem}[Función implícita]\index{funcion implicita, teorema de la@función implícita, teorema de la}
 Si $g\colon\R^2\to\R$ es de clase $\mathcal C^1$ y $\nabla g(x_0,y_0)\neq\mathbf{0}$ con $g(x_0,y_0)=0$, entonces en un abierto de $(x_0,y_0)$ la ecuación $g(x,y)=0$ define una curva regular (localmente expresable como $y=\varphi(x)$ o $x=\psi(y)$).
 \end{theorem}
 
@@ -701,7 +701,7 @@ Este escalar $\lambda$ se denomina \textbf{multiplicador de Lagrange}. La iguald
 
 \section{Teorema de los Multiplicadores de Lagrange}
 
-\begin{theorem}[Multiplicadores de Lagrange, condición necesaria]
+\begin{theorem}[Multiplicadores de Lagrange, condición necesaria]\index{multiplicadores de Lagrange}
 Sean $f$ y $g$ funciones de clase $\mathcal C^1$ en un abierto de $\R^n$. Si $\mathbf{x}_0$ es un extremo local de $f$ restringido a la superficie $g(\mathbf{x})=0$ y $\nabla g(\mathbf{x}_0)\neq \mathbf{0}$, entonces existe un escalar $\lambda$ tal que
 \[
 \nabla f(\mathbf{x}_0) = \lambda\,\nabla g(\mathbf{x}_0).
@@ -719,7 +719,7 @@ El teorema establece una condición \emph{necesaria, no suficiente}: los puntos 
 
 El siguiente teorema garantiza la existencia de extremos cuando la restricción es compacta.
 
-\begin{theorem}[Weierstrass]
+\begin{theorem}[Weierstrass]\index{multiplicadores de Lagrange!existencia de extremos}
 Sea $K\subset\R^n$ compacto (cerrado y acotado) y $f\colon K\to\R$ continua. Entonces $f$ alcanza su máximo y su mínimo absolutos en $K$.
 \end{theorem}
 
@@ -873,7 +873,7 @@ Cuando la regularidad se cumple y se ha identificado un candidato $\mathbf{p}=(x
 \]
 donde $F=f+\lambda g$ y el determinante se evalúa en el candidato $(x_0,y_0)$.
 
-\begin{theorem}[Criterio del hessiano limitado]
+\begin{theorem}[Criterio del hessiano limitado]\index{hessiano!limitado}
 Suponga que $(x_0,y_0)$ es un candidato de Lagrange para optimizar $f$ sujeta a $g=0$, con $\partial g/\partial y(x_0,y_0)\neq0$. Entonces:
 \begin{itemize}
     \item Si $\mathcal{H}(x_0,y_0)>0$, el punto es un \textbf{máximo condicionado}.
@@ -993,7 +993,7 @@ Cuando se busca un extremo de $f$ sobre la curva definida por \emph{dos}
 restricciones $g=0$ y $h=0$, la condición necesaria involucra dos
 multiplicadores.
 
-\begin{theorem}[Multiplicadores de Lagrange con dos restricciones]
+\begin{theorem}[Multiplicadores de Lagrange con dos restricciones]\index{multiplicadores de Lagrange!dos restricciones}
 Sea $f$ con un extremo en $P$ sobre la curva $g(\mathbf x)=0$,
 $h(\mathbf x)=0$, y supóngase que $\nabla g(P)$ y $\nabla h(P)$ son
 linealmente independientes. Entonces existen escalares $\lambda,\mu$ tales que

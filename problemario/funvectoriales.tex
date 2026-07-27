@@ -25,7 +25,7 @@ múltiples y el cálculo vectorial.
 
 \section{Funciones vectoriales}
 \label{sec:vector-functions}
-\begin{definition}[Función vectorial]
+\begin{definition}[Función vectorial]\index{funcion vectorial@función vectorial}
 Una \textbf{función vectorial} es una regla que asigna a cada número
 real $t$ de su dominio un único vector $\mathbf{r}(t)$ en
 $\mathbb{R}^2$ o en $\mathbb{R}^3$. Mientras que una función escalar
@@ -193,7 +193,7 @@ Intuitivamente, $\mathbf{r}(t)$ se acerca a un vector $\mathbf{u}$
 si, a medida que $t$ tiende a $a$, cada componente de $\mathbf{r}(t)$
 se aproxima a la componente correspondiente de $\mathbf{u}$.
 
-\begin{definition}[Límite de una función vectorial]
+\begin{definition}[Límite de una función vectorial]\index{funcion vectorial@función vectorial!limite@límite}
 Sea $\mathbf{r}(t) = \langle f(t), g(t), h(t) \rangle$ definida en un
 entorno de $a$ (excepto, posiblemente, en $a$ mismo). Se dice que el
 límite de $\mathbf{r}(t)$ cuando $t$ tiende a $a$ es el vector
@@ -326,7 +326,7 @@ La continuidad de una función vectorial se define exigiendo que el
 límite en un punto coincida con el valor de la función en ese punto, de
 manera análoga al caso escalar.
 
-\begin{definition}[Continuidad de una función vectorial]
+\begin{definition}[Continuidad de una función vectorial]\index{funcion vectorial@función vectorial!continuidad}
 Una función vectorial $\mathbf{r}(t) = \langle f(t), g(t), h(t) \rangle$
 es \textbf{continua} en $t = a$ si
 \[
@@ -335,7 +335,7 @@ es \textbf{continua} en $t = a$ si
 Es continua en un intervalo si lo es en todo punto del intervalo.
 \end{definition}
 
-\begin{theorem}[Continuidad componente a componente]
+\begin{theorem}[Continuidad componente a componente]\index{funcion vectorial@función vectorial!continuidad componente a componente}
 Una función vectorial $\mathbf{r}(t) = \langle f(t), g(t), h(t) \rangle$
 es continua en $t = a$ si y solo si $f$, $g$ y $h$ son continuas en
 $t = a$.
@@ -391,7 +391,7 @@ describe la posición de una partícula, su derivada es el vector
 velocidad, cuya dirección es tangente a la trayectoria y cuya magnitud
 es la rapidez.
 
-\begin{definition}[Derivada de una función vectorial]
+\begin{definition}[Derivada de una función vectorial]\index{funcion vectorial@función vectorial!derivada}
 Sea $\mathbf{r}(t) = \langle f(t), g(t), h(t) \rangle$. La derivada de
 $\mathbf{r}$ en $t$ se define como
 \[
@@ -406,7 +406,7 @@ $\mathbf{r}$ es \textbf{diferenciable} en $a$.
 El siguiente teorema muestra que la derivación de funciones vectoriales
 se reduce a derivar componente a componente.
 
-\begin{theorem}[Derivada componente a componente]
+\begin{theorem}[Derivada componente a componente]\index{funcion vectorial@función vectorial!derivada componente a componente}
 Si $\mathbf{r}(t) = \langle f(t), g(t), h(t) \rangle$ y $f$, $g$, $h$
 son derivables, entonces
 \[
@@ -708,7 +708,7 @@ Con $\cos 0=1$ y $\sen 0=0$,
 Las siguientes reglas operativas son consecuencia directa de la
 derivación componente a componente.
 
-\begin{theorem}[Reglas de derivación]
+\begin{theorem}[Reglas de derivación]\index{funcion vectorial@función vectorial!reglas de derivacion@reglas de derivación}
 Sean $\mathbf{u}(t)$ y $\mathbf{v}(t)$ funciones vectoriales derivables,
 $f(t)$ una función escalar derivable y $c$ una constante real. Entonces:
 \begin{enumerate}
@@ -741,7 +741,7 @@ La integración de funciones vectoriales se realiza integrando cada
 componente por separado. La integral indefinida produce una familia de
 vectores que difieren en una constante vectorial arbitraria.
 
-\begin{definition}[Integral indefinida de una función vectorial]
+\begin{definition}[Integral indefinida de una función vectorial]\index{funcion vectorial@función vectorial!integral indefinida}
 Si $\mathbf{r}(t) = \langle f(t), g(t), h(t) \rangle$ es continua,
 su \textbf{integral indefinida} es
 \[
@@ -753,7 +753,7 @@ donde $\mathbf{R}'(t) = \mathbf{r}(t)$ y $\mathbf{C}$ es un vector
 constante arbitrario.
 \end{definition}
 
-\begin{definition}[Integral definida de una función vectorial]
+\begin{definition}[Integral definida de una función vectorial]\index{funcion vectorial@función vectorial!integral definida}
 Si $\mathbf{r}(t) = \langle f(t), g(t), h(t) \rangle$ es continua en
 $[a,b]$, su \textbf{integral definida} es
 \[
@@ -767,7 +767,7 @@ $[a,b]$, su \textbf{integral definida} es
 El teorema fundamental del cálculo se extiende naturalmente a funciones
 vectoriales.
 
-\begin{theorem}[Teorema fundamental del cálculo para funciones vectoriales]
+\begin{theorem}[Teorema fundamental del cálculo para funciones vectoriales]\index{teorema fundamental del calculo@teorema fundamental del cálculo!para funciones vectoriales}
 Si $\mathbf{R}(t)$ es una antiderivada de $\mathbf{r}(t)$ en $[a,b]$,
 entonces
 \[
@@ -869,7 +869,7 @@ L_n = \sum_{i=1}^n \|\mathbf{r}(t_i) - \mathbf{r}(t_{i-1})\|.
 Haciendo $n \to \infty$ (y refinando la partición), la suma converge a
 la longitud de arco de la curva.
 
-\begin{theorem}[Longitud de arco en $\mathbb{R}^3$]
+\begin{theorem}[Longitud de arco en $\mathbb{R}^3$]\index{longitud de arco!en $\mathbb{R}^3$}
 Si $\mathbf{r}(t) = \langle x(t), y(t), z(t) \rangle$ tiene derivada
 continua en $[a,b]$, la \textbf{longitud de arco} de la curva desde
 $t=a$ hasta $t=b$ es
@@ -1039,7 +1039,7 @@ La función longitud de arco permite expresar la posición sobre una curva
 en función de la distancia recorrida, lo que resulta útil para
 simplificar ciertos cálculos en geometría diferencial y física.
 
-\begin{definition}[Función longitud de arco]
+\begin{definition}[Función longitud de arco]\index{funcion longitud de arco@función longitud de arco}
 Sea $\mathbf{r}(t)$ una curva suave (es decir, $\mathbf{r}'$ continua y
 $\mathbf{r}'(t) \neq \mathbf{0}$) definida para $t \geq a$. La
 \textbf{función longitud de arco} desde $t = a$ es
@@ -1118,7 +1118,7 @@ un subconjunto de $\mathbb{R}$. Este curso se centra en funciones de
 dos y tres variables, aunque los conceptos se generalizan a dimensiones
 superiores.
 
-\begin{definition}[Función de dos variables]
+\begin{definition}[Función de dos variables]\index{funcion@función!de dos variables}
 Sea $D \subseteq \mathbb{R}^2$ un conjunto de pares ordenados $(x,y)$.
 Una \textbf{función de dos variables} es una regla que asigna a cada
 $(x,y) \in D$ un único número real $f(x,y)$. El conjunto $D$ es el
@@ -1129,7 +1129,7 @@ $(x,y) \in D$ un único número real $f(x,y)$. El conjunto $D$ es el
 es el \textbf{rango} o \textbf{recorrido} de $f$.
 \end{definition}
 
-\begin{definition}[Función de tres variables]
+\begin{definition}[Función de tres variables]\index{funcion@función!de tres variables}
 Sea $D \subseteq \mathbb{R}^3$ un conjunto de ternas ordenadas $(x,y,z)$.
 Una \textbf{función de tres variables} es una regla que asigna a cada
 $(x,y,z) \in D$ un único número real $f(x,y,z)$.
@@ -2008,7 +2008,7 @@ visualizar funciones de dos variables sin necesidad de construir su
 gráfica tridimensional. Una curva de nivel está formada por todos los
 puntos del dominio donde la función toma un valor constante.
 
-\begin{definition}[Curva de nivel]
+\begin{definition}[Curva de nivel]\index{curva de nivel}
 Sea $f(x,y)$ una función de dos variables. Para un número real $k$, la
 \textbf{curva de nivel} $k$ de $f$ es el conjunto
 \[
@@ -2023,7 +2023,7 @@ intersección de esta superficie con el plano horizontal $z = k$ es una
 curva en el espacio. La proyección de dicha curva sobre el plano $xy$
 es la curva de nivel correspondiente.
 
-\begin{definition}[Superficie de nivel]
+\begin{definition}[Superficie de nivel]\index{superficie de nivel}
 Para una función de tres variables $f(x,y,z)$, una \textbf{superficie
 de nivel} es el conjunto de puntos $(x,y,z)$ del dominio que satisfacen
 $f(x,y,z) = k$ para un valor fijo de $k$.

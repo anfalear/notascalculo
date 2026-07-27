@@ -6,7 +6,7 @@ Los vectores tienen dos representaciones equivalentes: como flechas en el espaci
 
 \section{Vectores y operaciones básicas}
 
-\begin{definition}[Suma y producto por escalar de vectores de manera geométrica]\label{defvectoresgeometrica}
+\begin{definition}[Suma y producto por escalar de vectores de manera geométrica]\label{defvectoresgeometrica}\index{vector!definicion geometrica@definición geométrica}
  
 Geométricamente, un vector $\mathbf{v}$ es una flecha en el espacio caracterizada por tres propiedades: \textbf{magnitud} (longitud, tamaño o norma), \textbf{dirección} y \textbf{sentido}.
 
@@ -43,7 +43,7 @@ Para sumar dos vectores $\mathbf{v}$ y $\mathbf{w}$, se utiliza la regla del par
 Para calcular $\mathbf{u}+\mathbf{v}$, se coloca el punto inicial de $\mathbf{v}$ en el punto final de $\mathbf{u}$. El vector suma (en rojo) va desde el origen hasta el punto final resultante. La resta $\mathbf{v}-\mathbf{w}$ (en azul) equivale a la suma $\mathbf{v}+(-\mathbf{w})$.
 \end{definition}
 
-\begin{definition}[Vectores en términos de coordenadas]\label{def:vectorescoordenadas}
+\begin{definition}[Vectores en términos de coordenadas]\label{def:vectorescoordenadas}\index{vector!en coordenadas}
 Un vector se representa en un sistema de coordenadas con su punto inicial en el origen y su punto final determinado por sus componentes.
 
 \begin{multicols}{2}
@@ -113,7 +113,7 @@ Un vector se representa en un sistema de coordenadas con su punto inicial en el 
 Los vectores tridimensionales se grafican usando la regla de la mano derecha.
 \end{definition}
 
-\begin{definition}[Operaciones con vectores usando coordenadas]
+\begin{definition}[Operaciones con vectores usando coordenadas]\index{vector!operaciones en coordenadas}
 Sean $\mathbf{u} = (u_1, u_2, \ldots, u_n)$ y $\mathbf{v} = (v_1, v_2, \ldots, v_n)$ vectores de $n$ componentes. Las operaciones básicas son:
 
 \begin{enumerate}
@@ -339,7 +339,7 @@ Los problemas de geometría analítica clásica se resuelven eficientemente usan
 
 \section{Norma y vectores unitarios}
 
-\begin{definition}[Norma de un vector]
+\begin{definition}[Norma de un vector]\index{norma de un vector}
 La \textbf{norma} de un vector $\mathbf{u} = (u_1, u_2, \ldots, u_n)$ en $\mathbb{R}^n$ es: $\|\mathbf{u}\| = \sqrt{u_1^2 + u_2^2 + \cdots + u_n^2}.$
 \end{definition}
 
@@ -386,7 +386,7 @@ $$\|\mathbf{u}\| = \sqrt{2^2 + 3^2 + 6^2} = \sqrt{4 + 9 + 36} = \sqrt{49} = 7$$
 \end{myproof}
 \end{example}
 
-\begin{definition}[Vector unitario]
+\begin{definition}[Vector unitario]\index{vector!unitario}
 Un \textbf{vector unitario} tiene norma igual a 1. Cualquier vector $\mathbf{v}$ se convierte en unitario mediante:
 $$\mathbf{u} = \frac{\mathbf{v}}{\|\mathbf{v}\|}$$
 \end{definition}
@@ -433,7 +433,7 @@ $$\mathbf{v} = \frac{\mathbf{u}}{\|\mathbf{u}\|} = \left(\frac{2}{7}, \frac{3}{7
 
 \section{Producto punto y ángulo entre vectores}
 
-\begin{definition}[Producto punto]
+\begin{definition}[Producto punto]\index{producto punto}
 El \textbf{producto punto} de vectores $\mathbf{u} = (u_1, u_2, \ldots, u_n)$ y $\mathbf{v} = (v_1, v_2, \ldots, v_n)$ es:
 $$\mathbf{u} \cdot \mathbf{v} = u_1v_1 + u_2v_2 + \cdots + u_nv_n$$
 \end{definition}
@@ -464,7 +464,7 @@ El ángulo entre vectores $\mathbf{u}$ y $\mathbf{v}$ es siempre menor que $\pi$
 \end{rem}
 
 
-\begin{definition}[Ángulo entre vectores]
+\begin{definition}[Ángulo entre vectores]\index{angulo entre vectores@ángulo entre vectores}
 El ángulo $\theta$ entre vectores $\mathbf{u}$ y $\mathbf{v}$ está dado por:
 $$\cos(\theta) = \frac{\mathbf{u} \cdot \mathbf{v}}{\|\mathbf{u}\| \|\mathbf{v}\|}$$
 $$\theta = \arccos\left(\frac{\mathbf{u} \cdot \mathbf{v}}{\|\mathbf{u}\| \|\mathbf{v}\|}\right)$$
@@ -474,7 +474,7 @@ El \textbf{sentido} del vector está determinado por la dirección de su flecha.
 
 \section{Producto cruz}
 
-\begin{definition}[Producto cruz] \label{defprodcruz}
+\begin{definition}[Producto cruz] \label{defprodcruz}\index{producto cruz}
 El \textbf{producto cruz} (o \textit{producto vectorial}) es una operación \textbf{exclusiva de $\mathbb{R}^3$} que toma dos vectores $\vec{a} = (a_1, a_2, a_3)$ y $\vec{b} = (b_1, b_2, b_3)$ y devuelve un nuevo vector $\vec{a} \times \vec{b}$ perpendicular al plano que forman $\vec{a}$ y $\vec{b}$. Su magnitud es igual al área del paralelogramo generado por ambos vectores. Se calcula de la siguiente manera: 
 \[
 \vec{a} \times \vec{b} = \det\begin{pmatrix}
@@ -529,7 +529,7 @@ Sean los vectores $\vec{a} = (1, 2, 0)$ y $\vec{b} = (3, 4, 0).$ Entonces: $\vec
 
 \section{Planos en el espacio}
 
-\begin{definition}[Plano en el espacio]
+\begin{definition}[Plano en el espacio]\index{plano en el espacio}
 Un \textbf{plano} en el espacio tridimensional es el conjunto de todos los puntos \((x, y, z)\) que satisfacen la ecuación \(\vec{n} \cdot (\vec{r} - \vec{r_0}) = 0
 \) donde \(\vec{r_0} = (x_0, y_0, z_0)\) es un punto conocido del plano, \(\vec{n} = (a, b, c)\) es el vector normal (perpendicular) al plano y \(\vec{r} = (x, y, z)\) es cualquier punto del plano.
 Desarrollando el producto punto, obtenemos la \textbf{ecuación general del plano}
@@ -770,7 +770,7 @@ Sean ${\bf u} = \begin{pmatrix} -1 \\ 2 \\ 4 \end{pmatrix},$  ${\bf v} = \begin{
 
 \section{Proyección ortogonal}
 
-\begin{definition}[Proyección ortogonal]
+\begin{definition}[Proyección ortogonal]\index{proyeccion ortogonal@proyección ortogonal}
 La \textbf{proyección ortogonal} del vector $\mathbf{u}$ sobre el vector $\mathbf{v}$ (denotada como $\text{proy}_{\mathbf{v}}\mathbf{u}$) es el vector que resulta de proyectar $\mathbf{u}$ perpendicularmente sobre la recta que contiene a $\mathbf{v}$. Matemáticamente, la proyección ortogonal se define como: $\text{proy}_{\mathbf{v}}\mathbf{u} = \frac{\mathbf{u} \cdot \mathbf{v}}{\mathbf{v} \cdot \mathbf{v}} \mathbf{v} = \frac{\mathbf{u} \cdot \mathbf{v}}{\|\mathbf{v}\|^2} \mathbf{v}$
 donde $\mathbf{u} \cdot \mathbf{v}$ es el producto punto entre $\mathbf{u}$ y $\mathbf{v}$ mientras que $\|\mathbf{v}\|^2 = \mathbf{v} \cdot \mathbf{v}$ es el cuadrado de la norma de $\mathbf{v}.$ Su representación geométrica se da por: 
 
@@ -832,7 +832,7 @@ Calcule $\text{proy}_{\mathbf{v}}\mathbf{u}$ para $\mathbf{u} = (3, 4)$ y $\math
 \end{myproof}
 \end{example}
 
-\begin{theorem}[Propiedades de la proyección ortogonal] Dados dos vectores $\mathbf{u}$ y $\mathbf{v}$ se cumple que:
+\begin{theorem}[Propiedades de la proyección ortogonal]\index{proyeccion ortogonal@proyección ortogonal!propiedades} Dados dos vectores $\mathbf{u}$ y $\mathbf{v}$ se cumple que:
 \begin{enumerate}
 \item La proyección $\text{proy}_{\mathbf{v}}\mathbf{u}$ es paralela a $\mathbf{v}$
 \item El vector $\mathbf{u} - \text{proy}_{\mathbf{v}}\mathbf{u}$ es perpendicular a $\mathbf{v}$
@@ -842,7 +842,7 @@ Calcule $\text{proy}_{\mathbf{v}}\mathbf{u}$ para $\mathbf{u} = (3, 4)$ y $\math
 
 \section{Rectas en el espacio}
 
-\begin{definition}[Recta en el espacio]
+\begin{definition}[Recta en el espacio]\index{recta en el espacio}
 Una \textbf{recta en el espacio tridimensional} es el conjunto de puntos que siguen una dirección constante (vector director) desde un punto dado (punto de apoyo). Se define vectorialmente como $\vec{r} = \vec{r_0} + t\vec{d}$ con $t \in \mathbb{R}$, donde $\vec{r_0} = (x_0, y_0, z_0)$ es el vector posición de un punto conocido y $\vec{d} = (a, b, c)$ es el vector director. 
 
 \begin{figure}[H]

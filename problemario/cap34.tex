@@ -15,7 +15,7 @@ comportamiento \emph{en la frontera}, y constituye el germen de los
 teoremas de Stokes y de la divergencia que se estudiarán en la lección
 siguiente.
 
-\begin{definition}[Curva cerrada simple y orientación positiva]
+\begin{definition}[Curva cerrada simple y orientación positiva]\index{curva cerrada simple}\index{orientacion positiva@orientación positiva}
 Una curva $C$ en el plano se dice \textbf{cerrada} si su punto inicial
 coincide con su punto final, y \textbf{simple} si no se intersecta a sí
 misma (excepto en los extremos). Su \textbf{orientación positiva} es
@@ -47,7 +47,7 @@ región convexa).
 \label{fig:curva_orientacion_positiva}
 \end{figure}
 
-\begin{theorem}[Teorema de Green]
+\begin{theorem}[Teorema de Green]\index{Green, teorema de}
 Sea $C$ una curva suave por partes, cerrada simple, orientada
 positivamente en el plano, y sea $R$ la región encerrada por $C$.
 Si $M(x,y)$ y $N(x,y)$ son funciones con derivadas parciales continuas
@@ -392,7 +392,7 @@ mide la tendencia a \emph{fluir} hacia el exterior o el interior.
 \label{fig:campo_vectorial_rotacional}
 \end{figure}
 
-\begin{definition}[Divergencia]
+\begin{definition}[Divergencia]\index{divergencia}
 La \textbf{divergencia} de un campo vectorial $\mathbf{F}(x,y,z) =
 \langle F_1, F_2, F_3 \rangle$ es el campo escalar
 \[
@@ -408,7 +408,7 @@ En $\mathbb{R}^2$, para $\mathbf{F} = \langle M, N \rangle$,
 \]
 \end{definition}
 
-\begin{definition}[Rotacional]
+\begin{definition}[Rotacional]\index{rotacional}
 El \textbf{rotacional} de un campo vectorial $\mathbf{F}(x,y,z) =
 \langle F_1, F_2, F_3 \rangle$ es el campo vectorial
 \[
@@ -655,7 +655,7 @@ El hilo conductor sigue siendo \emph{rebanar, aproximar e integrar}, pero ahora 
 
 Para integrar sobre una superficie curva necesitamos una forma sistemática de describirla y de medir sus áreas infinitesimales. La parametrización cumple ese rol: convierte un problema geométrico en el plano de los parámetros $(u,v)$ en un problema de integración doble.
 
-\begin{definition}[Superficie paramétrica suave]
+\begin{definition}[Superficie paramétrica suave]\index{superficie!parametrica suave@paramétrica suave}
 Una \textbf{superficie paramétrica suave} es una función $\mathbf{r}: D \subset \mathbb{R}^2 \to \mathbb{R}^3$ de la forma
 \[
 \mathbf{r}(u,v) = \bigl( x(u,v),\; y(u,v),\; z(u,v) \bigr),
@@ -678,7 +678,7 @@ dS = \|\mathbf{r}_u \times \mathbf{r}_v\|\,du\,dv.
 \]
 Este elemento es la llave que convierte cualquier integral de superficie en una integral doble sobre el dominio $D$.
 
-\begin{definition}[Orientación de una superficie]
+\begin{definition}[Orientación de una superficie]\index{superficie!orientacion@orientación}
 Una superficie orientable admite dos campos normales unitarios continuos, $\mathbf{n}$ y $-\mathbf{n}$. Elegir uno de ellos es \textbf{orientar} la superficie. Si la superficie está dada como gráfica $z = f(x,y)$, la elección natural es
 \[
 \mathbf{n} = \frac{\langle -f_x, -f_y, 1 \rangle}{\sqrt{1+f_x^2+f_y^2}},
@@ -710,7 +710,7 @@ Esta fórmula recupera el elemento de área que ya usamos en la sección de supe
 \section{Integral de superficie de un campo escalar}
 % ============================================================
 
-\begin{definition}[Integral de superficie escalar]
+\begin{definition}[Integral de superficie escalar]\index{integral de superficie!de un campo escalar}
 Sea $f(x,y,z)$ una función continua definida sobre una superficie paramétrica suave $S$, dada por $\mathbf{r}(u,v)$ con $(u,v)\in D$. La \textbf{integral de superficie de $f$ sobre $S$} es
 \[
 \iint_S f(x,y,z)\,dS
@@ -976,7 +976,7 @@ Si un campo vectorial $\mathbf{F}$ representa la velocidad de un fluido, el volu
 \label{fig:superficie_orientada}
 \end{figure}
 
-\begin{definition}[Flujo de un campo vectorial]
+\begin{definition}[Flujo de un campo vectorial]\index{flujo de un campo vectorial}\index{integral de superficie!de un campo vectorial}
 Sea $\mathbf{F}$ un campo vectorial continuo sobre una superficie orientada $S$ con normal unitaria $\mathbf{n}$. La \textbf{integral de superficie de $\mathbf{F}$ sobre $S$}, o \textbf{flujo} de $\mathbf{F}$ a través de $S$, es
 \[
 \iint_S \mathbf{F}\cdot\mathbf{n}\,dS.
@@ -1093,7 +1093,7 @@ Sobre el cono, $\mathbf{F} = \langle 0,0,r\rangle$. Luego
 
 El teorema de la divergencia (o teorema de Gauss) establece que el flujo total de un campo vectorial a través de la superficie cerrada que limita un sólido es igual a la integral triple de la divergencia del campo en el interior del sólido.
 
-\begin{theorem}[Teorema de la divergencia]
+\begin{theorem}[Teorema de la divergencia]\index{divergencia, teorema de la}
 Sea $Q\subset\mathbb{R}^3$ un sólido acotado con frontera suave por partes $\partial Q$, orientada con la normal unitaria exterior $\mathbf{n}$. Si $\mathbf{F}(x,y,z)$ es un campo vectorial cuyas componentes tienen derivadas parciales de primer orden continuas en $Q$, entonces
 \[
 \iint_{\partial Q} \mathbf{F}\cdot\mathbf{n}\,dS
@@ -1300,7 +1300,7 @@ V=\frac{4}{3}\pi(2)^3=\frac{32\pi}{3}.
 
 El teorema de Stokes generaliza el teorema de Green a superficies curvas en $\mathbb{R}^3$: relaciona la circulación de un campo vectorial a lo largo del borde de una superficie con el flujo de su rotacional a través de la superficie.
 
-\begin{theorem}[Teorema de Stokes]
+\begin{theorem}[Teorema de Stokes]\index{Stokes, teorema de}
 Sea $S$ una superficie orientada, suave por partes, con vector normal unitario $\mathbf{n}$, y sea $\partial S$ su curva frontera, cerrada y simple, orientada positivamente según la regla de la mano derecha (si los dedos siguen el borde, el pulgar apunta en la dirección de $\mathbf{n}$). Si $\mathbf{F}$ es un campo vectorial con derivadas parciales continuas en una región abierta que contiene a $S$, entonces
 \[
 \oint_{\partial S} \mathbf{F}\cdot d\mathbf{r}

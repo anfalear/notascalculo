@@ -31,7 +31,7 @@ y anticipa los contraejemplos.
 \section{Sucesiones de funciones}
 % ============================================================
 
-\begin{definition}[Sucesión de funciones]
+\begin{definition}[Sucesión de funciones]\index{sucesion de funciones@sucesión de funciones}
 Sea $X \subset \mathbb{R}$. Una \textbf{sucesión de funciones}
 $\{f_n\}_{n=1}^\infty$ en $X$ es una familia de funciones
 $f_n : X \to \mathbb{R}$ indexada por $n \in \mathbb{N}$. Cada $n$
@@ -40,7 +40,7 @@ que $n \to \infty$. El objeto central del análisis es el comportamiento
 de esta familia cuando el índice crece sin cota.
 \end{definition}
 
-\begin{definition}[Convergencia puntual y uniforme]
+\begin{definition}[Convergencia puntual y uniforme]\index{convergencia!puntual y uniforme}
 Sea $\{f_n\}$ una sucesión de funciones en $X$ y $f : X \to \mathbb{R}$.
 \begin{enumerate}
     \item $\{f_n\}$ \textbf{converge puntualmente} a $f$ en $X$ si
@@ -348,7 +348,7 @@ a cero en cada punto del dominio.
 \end{example}
 
 % ----------------------------------------------------------
-\begin{theorem}[Criterio de Cauchy para convergencia uniforme]
+\begin{theorem}[Criterio de Cauchy para convergencia uniforme]\index{convergencia!criterio de Cauchy uniforme}
 $\{f_n\}$ converge uniformemente en $X$ si y solo si para todo
 $\varepsilon > 0$ existe $N \in \mathbb{N}$ tal que
 $|f_n(x) - f_m(x)| < \varepsilon$ para todo $n, m > N$ y todo
@@ -364,7 +364,7 @@ de funciones.
 \end{rem}
 
 % ----------------------------------------------------------
-\begin{theorem}[Propiedades de la convergencia uniforme]
+\begin{theorem}[Propiedades de la convergencia uniforme]\index{convergencia!uniforme, propiedades}
 \label{thm:prop_uniforme}
 Sea $\{f_n\}$ una sucesión que converge uniformemente a $f$ en $[a,b]$.
 \begin{enumerate}
@@ -469,7 +469,7 @@ precisamente esa hipótesis falla aquí.
 \end{example}
 
 % ----------------------------------------------------------
-\begin{theorem}[Teorema de Dini]
+\begin{theorem}[Teorema de Dini]\index{Dini, teorema de}
 \label{thm:dini}
 Sea $K \subset \mathbb{R}$ compacto y $\{f_n\}$ una sucesión de
 funciones continuas en $K$ que converge puntualmente a una función
@@ -487,7 +487,7 @@ actúa como un \emph{puente riguroso} que transforma la convergencia
 puntual en uniforme bajo condiciones estructurales fuertes.
 \end{rem}
 
-\begin{theorem}[Teorema de aproximación de Weierstrass]
+\begin{theorem}[Teorema de aproximación de Weierstrass]\index{Weierstrass!teorema de aproximacion@teorema de aproximación}
 \label{thm:weierstrass_aprox}
 Sea $f \in C[a,b]$. Para todo $\varepsilon > 0$ existe un polinomio
 $P(x)$ tal que $\sup_{x\in[a,b]}|f(x) - P(x)| < \varepsilon$.
@@ -636,7 +636,7 @@ fundamentales son: ¿en qué puntos converge la suma? ¿Es esa
 convergencia uniforme? ¿Se preservan la continuidad, la integrabilidad
 y la derivabilidad de los sumandos?
 
-\begin{definition}[Serie de funciones y convergencia]
+\begin{definition}[Serie de funciones y convergencia]\index{serie de funciones}
 Sea $\{u_n\}_{n=1}^\infty$ una sucesión de funciones definidas en
 $X \subset \mathbb{R}$. La \textbf{serie de funciones}
 $\sum_{n=1}^\infty u_n(x)$ tiene sumas parciales
@@ -661,7 +661,7 @@ argumentos.
 \end{rem}
 
 % ----------------------------------------------------------
-\begin{theorem}[Criterio-$M$ de Weierstrass]
+\begin{theorem}[Criterio-$M$ de Weierstrass]\index{Weierstrass!criterio-$M$}
 \label{thm:weierstrass_M}
 Sea $\{u_n\}$ una sucesión de funciones en $X$ y $\{M_n\}$ una
 sucesión de números reales positivos tales que
@@ -849,7 +849,7 @@ propiedad \emph{global} del dominio, sensible a su clausura.
 \end{example}
 
 % ----------------------------------------------------------
-\begin{theorem}[Criterios de Dirichlet y Abel para series de funciones]
+\begin{theorem}[Criterios de Dirichlet y Abel para series de funciones]\index{Dirichlet y Abel, criterios de}
 \label{thm:dirichlet_abel}
 Sean $\{a_n(x)\}$ y $\{b_n(x)\}$ funciones definidas en $X$.
 \begin{enumerate}
@@ -875,7 +875,7 @@ pero no por el criterio-$M$.
 \end{rem}
 
 % ----------------------------------------------------------
-\begin{theorem}[Propiedades de las series uniformemente convergentes]
+\begin{theorem}[Propiedades de las series uniformemente convergentes]\index{serie de funciones!propiedades}
 \label{thm:series_uniforme}
 Sea $\sum u_n$ una serie de funciones que converge uniformemente a
 $S$ en $[a,b]$.
@@ -1102,7 +1102,7 @@ combinación de estructura y convergencia hace que las series de
 potencias sean el vehículo natural para representar funciones
 analíticas y para calcular con ellas.
 
-\begin{definition}[Serie de potencias]
+\begin{definition}[Serie de potencias]\index{serie de potencias}
 \label{def:serie_potencias}
 Una \textbf{serie de potencias} centrada en $c \in \mathbb{R}$ es una
 expresión de la forma
@@ -1114,7 +1114,7 @@ donde $\{a_n\}_{n=0}^\infty \subset \mathbb{R}$ son los
 \textbf{coeficientes} de la serie.
 \end{definition}
 
-\begin{theorem}[Radio e intervalo de convergencia]
+\begin{theorem}[Radio e intervalo de convergencia]\index{serie de potencias!radio e intervalo de convergencia}
 \label{thm:radio_convergencia}
 Toda serie de potencias $\sum a_n(x-c)^n$ tiene asociado un único
 radio de convergencia $R \in [0,+\infty]$ dado por la
@@ -1445,7 +1445,7 @@ $\sum_{n=1}^\infty (-1)^n/n = -\ln 2$.
 \end{example}
 
 % ----------------------------------------------------------
-\begin{theorem}[Propiedades analíticas de las series de potencias]
+\begin{theorem}[Propiedades analíticas de las series de potencias]\index{serie de potencias!propiedades analiticas@propiedades analíticas}
 \label{thm:prop_pot}
 Sea $f(x) = \sum_{n=0}^\infty a_n(x-c)^n$ con radio de convergencia
 $R > 0$.
@@ -1477,7 +1477,7 @@ potencias con las series de Taylor y con el concepto de analiticidad.
 \end{rem}
 
 % ----------------------------------------------------------
-\begin{theorem}[Serie de Taylor]
+\begin{theorem}[Serie de Taylor]\index{serie de Taylor}
 \label{thm:taylor}
 Si $f$ tiene representación en serie de potencias en un entorno de
 $c$, dicha representación es única y sus coeficientes son
@@ -1716,7 +1716,7 @@ series de potencias dota al analista de herramientas operacionales
 para manipularlas como expresiones algebraicas.
 
 % ----------------------------------------------------------
-\begin{theorem}[Irracionalidad de $e$]
+\begin{theorem}[Irracionalidad de $e$]\index{irracionalidad de $e$}
 \label{thm:irrac_e}
 El número $e = \sum_{n=0}^\infty 1/n!$ es irracional.
 \end{theorem}
@@ -1742,7 +1742,7 @@ $r\neq 0$, y la transcendencia de $e$ (Hermite, 1873).
 \end{rem}
 
 % ----------------------------------------------------------
-\begin{theorem}[Teorema de Borel]
+\begin{theorem}[Teorema de Borel]\index{Borel, teorema de}
 \label{thm:borel}
 Dada cualquier sucesión $\{a_n\}_{n=0}^\infty$ de números reales,
 existe una función $f \in C^\infty(\mathbb{R})$ tal que
@@ -1861,7 +1861,7 @@ la diferenciabilidad infinita.
 \end{rem}
 
 % ----------------------------------------------------------
-\begin{theorem}[Unicidad y álgebra de series de potencias]
+\begin{theorem}[Unicidad y álgebra de series de potencias]\index{serie de potencias!unicidad}
 \label{thm:algebra_series}
 Sean $f(x) = \sum a_n(x-c)^n$ con radio $R_1$ y
 $g(x) = \sum b_n(x-c)^n$ con radio $R_2$. Dentro de sus radios de

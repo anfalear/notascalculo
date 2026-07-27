@@ -37,7 +37,73 @@ El alcance condiciona qué ítems son obligatorios:
 de todos los conceptos centrales; sin entradas duplicadas por variante
 ortográfica; compilación limpia.
 **Momento recomendado:** tras cerrar F9-EDOs (contenido congelado).
-**Estado:** Planificado (2026-07-23).
+**Estado:** COMPLETO (2026-07-27). Ejecutado en 8 lotes.
+
+**Ejecución por lotes:**
+
+| # | Lote | Archivos | Entradas |
+|---|------|----------|----------|
+| 1 | Álgebra lineal | matrices, sel, espaciosvectoriales, prodinterno, vvpropios, translineales, complejos | 123 |
+| 2 | Cálculo 1 var. — diferencial | preliminares, funciones, limites, derivadas, apderivadas | 63 |
+| 3 | Cálculo 1 var. — integral | tecintegracion, intdefinida, apintegral, impropias, polares | 53 |
+| 4 | Sucesiones y series | sucesionesyseries, sucesionesyseriesfunciones | 41 |
+| 5 | Cálculo en varias variables | vectoresrn, limvariasvariables, planostangentes, gradientes, multiplicadoresintdobles, funvectoriales | 64 |
+| 6 | EDOs | cap27, cap28, cap29, cap30, cap31 | 37 |
+| 7 | Integrales avanzadas | apintdobles, inttriples, cap33, cap34 | 40 |
+| 8 | Cierre y auditoría | — | +3 |
+
+**Total: 424 entradas `\index{}` en 34 archivos, 197 cabeceras de primer nivel.**
+
+**Convenciones fijadas:**
+- El `\index{}` va pegado al constructo de apertura del entorno, tras el
+  argumento opcional y el `\label` si lo hay:
+  `\begin{theorem}[Teorema de Green]\index{Green, teorema de}`.
+- Solo en el punto de *definición* del concepto (definiciones, teoremas con
+  nombre, métodos), nunca en cada aparición.
+- **Claves de ordenación `sinacentos@conacentos` en toda clave con tilde.**
+  `makeindex` ordena por bytes UTF-8, así que sin ellas los acentos rompen el
+  alfabeto: `ángulo` y `área` caían **después de `wronskiano`**, `límite`
+  después de `longitud de arco`, y `mínimos cuadrados` después de
+  `multiplicadores de Lagrange`. Detectado en la verificación visual, no por
+  la compilación (makeindex no avisa).
+  **Regla crítica:** la clave de orden debe aplicarse *uniformemente* — si una
+  misma cabecera aparece con clave en un archivo y sin ella en otro, el índice
+  la parte en dos entradas distintas. Se aplican por script sobre todos los
+  `.tex` a la vez y se verifican con `check_sortkeys.py`.
+- Subentradas con `!` (hasta 3 niveles, p. ej. `matriz!invertible!caracterización`).
+- Los cruces entre capítulos fusionan página bajo la misma clave (p. ej.
+  «Euler, fórmula de» combina `prodinterno` y `complejos`; «Weierstrass»
+  combina apderivadas, multiplicadoresintdobles y ssfunciones).
+
+**Auditoría de cierre (lote 8) — unificaciones aplicadas:**
+- `Wronskiano` → `wronskiano` (espaciosvectoriales), para fusionar con cap28.
+- `extremos absolutos` / `extremos locales` (+ sus dos criterios) → subentradas
+  de una única cabecera `extremos`, junto con las de varias variables.
+- `Weierstrass, teorema del valor extremo de` → `Weierstrass!teorema del valor
+  extremo`, que fusiona el caso de una y varias variables.
+- `teorema del valor medio` → `teorema del valor medio!de Lagrange`, para
+  convivir con las dos subentradas de integrales.
+- `plano tangente`: la noción se introduce en prosa (no hay entorno), así que
+  el `\index{}` va anclado al `\textbf{plano tangente}` de `planostangentes`.
+- `integral de superficie!de un campo vectorial` añadido junto a `flujo`.
+- `infinitesimales equivalentes` → `infinitesimales!equivalentes` (limites y
+  sucesionesyseries), para no dejar dos cabeceras contiguas casi idénticas.
+- Resultado: **0 variantes ortográficas**, 0 cabeceras partidas, 0 llaves
+  desbalanceadas, 0 claves con caracteres especiales de makeindex sin escapar.
+
+**Fragmentaciones NO corregidas (decisión deliberada):** pares como
+`serie` / `serie de Taylor`, `derivada` / `derivada parcial`,
+`divergencia` / `divergencia, teorema de la`, `función` / `función vectorial`
+son conceptos distintos y alfabetizan contiguos; separarlos es práctica
+estándar de indización y facilita la búsqueda.
+
+**Secuencia de compilación:** `lualatex` ×2 → `makeindex anfalearNotasCalculo.idx`
+→ `lualatex`. `imakeidx` está sin `-shell-escape`, así que **no** ejecuta
+makeindex automáticamente: hay que invocarlo a mano.
+
+**Scripts** (scratchpad): `seed_index.py` (siembra por archivo+línea),
+`audit_index.py` (variantes, duplicados, cabeceras huérfanas),
+`fix_index.py` (unificaciones del cierre).
 
 ### F10.02 — Atribución y derechos de problemas de terceros
 **Resoluble por nosotros: PARCIAL (requiere decisión y posiblemente permisos).**
@@ -60,5 +126,6 @@ profesional, ISBN.
 
 ---
 
-**Total: 4 frentes.** F10.01 es el único ejecutable de inmediato por nosotros;
-se ejecuta al congelar el contenido.
+**Total: 4 frentes.** F10.01 **cerrado el 2026-07-27**. Los tres restantes
+(F10.02 atribución, F10.03 erratas, F10.04 producción) dependen de decisiones
+del autor o de terceros, no de compilar.

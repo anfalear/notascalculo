@@ -26,7 +26,7 @@ simplemente como la diferencia de potencial entre los extremos.
 
 \section{Campos Vectoriales}
 
-\begin{definition}[Campo vectorial]
+\begin{definition}[Campo vectorial]\index{campo vectorial}
 Un \textbf{campo vectorial} en \(\mathbb{R}^3\) es una función
 \(\mathbf{F}: D \subseteq \mathbb{R}^3 \to \mathbb{R}^3\) que asigna a
 cada punto \((x,y,z)\) de su dominio un vector tridimensional. Se
@@ -54,14 +54,14 @@ sentido en cada punto del espacio. Ejemplos físicos incluyen:
 \end{itemize}
 \end{rem}
 
-\begin{definition}[Continuidad y diferenciabilidad de un campo vectorial]
+\begin{definition}[Continuidad y diferenciabilidad de un campo vectorial]\index{campo vectorial!continuidad y diferenciabilidad}
 Un campo vectorial \(\mathbf{F} = M\mathbf{i}+N\mathbf{j}+P\mathbf{k}\)
 es \textbf{continuo} en una región \(D\) si cada una de sus funciones
 componentes \(M,N,P\) es continua en \(D\). Es \textbf{diferenciable}
 si cada componente tiene derivadas parciales continuas en \(D\).
 \end{definition}
 
-\begin{definition}[Campo vectorial gradiente]
+\begin{definition}[Campo vectorial gradiente]\index{campo vectorial!gradiente}
 Dada una función escalar \(f: D \subseteq \mathbb{R}^n \to \mathbb{R}\)
 diferenciable, su \textbf{gradiente} es el campo vectorial definido por
 \[
@@ -121,7 +121,7 @@ Además, \(\nabla f(P)\) es perpendicular a las curvas (o superficies)
 de nivel de \(f\) que pasan por \(P\).
 \end{rem}
 
-\begin{definition}[Campo vectorial conservativo]
+\begin{definition}[Campo vectorial conservativo]\index{campo vectorial!conservativo}
 Un campo vectorial \(\mathbf{F}\) se dice \textbf{conservativo} si
 existe una función escalar \(\Phi\), llamada \textbf{función
 potencial}, tal que
@@ -164,7 +164,7 @@ escalar. En este caso, el campo se denomina \textbf{campo gradiente}.
   las flechas apuntan radialmente; la integral sobre cualquier curva cerrada $C$ es cero}
 \label{fig:campo_conservativo}
 \end{figure}
-\begin{theorem}[Caracterización de campos conservativos en el plano]
+\begin{theorem}[Caracterización de campos conservativos en el plano]\index{campo vectorial!conservativo, caracterizacion en el plano@conservativo, caracterización en el plano}
 Sean \(M(x,y)\) y \(N(x,y)\) funciones con derivadas parciales continuas
 en una región abierta \(R\). El campo vectorial
 \(\mathbf{F}(x,y) = M(x,y)\mathbf{i} + N(x,y)\mathbf{j}\) es
@@ -253,7 +253,7 @@ Verificamos: \(\nabla \Phi = (2xy)\,\mathbf{i} + (x^2+3y^2)\,\mathbf{j} = \mathb
 La integral de línea de un campo escalar generaliza la integral definida a curvas. En lugar de integrar sobre un intervalo en el eje \(x\), se integra sobre una curva \(C\) en el plano o en el espacio, acumulando los valores de una función escalar \(f\) a lo largo de la
 curva.
 
-\begin{definition}[Integral de línea sobre un campo escalar]
+\begin{definition}[Integral de línea sobre un campo escalar]\index{integral de linea@integral de línea!de un campo escalar}
 Sea \(C\) una curva suave en \(\mathbb{R}^2\) parametrizada por
 \(\mathbf{r}(t) = (x(t), y(t))\), con \(a \le t \le b\). Dividimos
 el intervalo \([a,b]\) en \(n\) subintervalos, lo que induce una
@@ -302,7 +302,7 @@ Para calcular \(\int_C f\,ds\), se sigue este protocolo:
 \end{enumerate}
 \end{pasos}
 
-\begin{theorem}[Teorema de evaluación para integral de línea de campo escalar]
+\begin{theorem}[Teorema de evaluación para integral de línea de campo escalar]\index{integral de linea@integral de línea!teorema de evaluacion@teorema de evaluación}
 Sea \(C\) una curva suave en \(\mathbb{R}^2\) parametrizada por
 \(\mathbf{r}(t) = (x(t), y(t))\), \(a \le t \le b\), con \(x(t)\) y
 \(y(t)\) derivables con derivadas continuas. Sea \(f\) continua en
@@ -480,7 +480,7 @@ desplazamiento por la longitud de cada segmento, y se suman todas las
 contribuciones. Al tomar el límite cuando los segmentos se hacen
 infinitamente pequeños, se obtiene la integral.
 
-\begin{definition}[Integral de línea de un campo vectorial]
+\begin{definition}[Integral de línea de un campo vectorial]\index{integral de linea@integral de línea!de un campo vectorial}
 Sea $\mathbf{F}$ un campo vectorial continuo definido en una región que
 contiene una curva suave por partes $C$, parametrizada por
 \[
@@ -618,7 +618,7 @@ extremos?
 La respuesta conduce a la noción de \textbf{campo conservativo}, que
 es el análogo en varias variables de la antiderivada en una variable.
 
-\begin{definition}[Campo conservativo]
+\begin{definition}[Campo conservativo]\index{campo vectorial!conservativo}
 Un campo vectorial $\mathbf{F}$ definido en una región $D$ se dice
 \textbf{conservativo} si existe una función escalar $f$ (llamada
 \textbf{función potencial}) tal que
@@ -628,7 +628,7 @@ Un campo vectorial $\mathbf{F}$ definido en una región $D$ se dice
 en todo punto de $D$. Es decir, $\mathbf{F}$ es el gradiente de $f$.
 \end{definition}
 
-\begin{theorem}[Independencia de la trayectoria]
+\begin{theorem}[Independencia de la trayectoria]\index{independencia de la trayectoria}
 Sea $\mathbf{F}$ un campo vectorial continuo en una región abierta y
 conexa $D$. La integral de línea
 \[
@@ -662,7 +662,7 @@ La demostración formal requiere verificar que las derivadas parciales
 de $f$ coinciden con las componentes de $\mathbf{F}$.
 \end{proof}
 
-\begin{theorem}[Teorema fundamental de las integrales de línea]
+\begin{theorem}[Teorema fundamental de las integrales de línea]\index{teorema fundamental de las integrales de linea@teorema fundamental de las integrales de línea}
 Sea $C$ una curva suave por partes que une los puntos $A$ y $B$,
 contenida en una región $D$. Si $\mathbf{F} = \nabla f$ es un campo
 gradiente continuo en $D$, entonces

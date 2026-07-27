@@ -330,7 +330,7 @@ Despejando:
 %%==========================================================
 Una de las aplicaciones más importantes de la derivada es la localización de los extremos de una función, a continuación su definición.
 
-\begin{definition}
+\begin{definition}\index{extremos!absolutos}
 Sea $f$ definida en un conjunto $S$. Se dice que:
 \begin{itemize}
     \item $f(c)$ es el \textbf{máximo absoluto} de $f$ en $S$ si
@@ -339,13 +339,13 @@ Sea $f$ definida en un conjunto $S$. Se dice que:
     $f(c)\leq f(x)$ para todo $x\in S$.
     \end{itemize}
   \end{definition}
-  \begin{definition} Se dice que $c$ es un \textbf{punto crítico} de $f$ si es un punto interior
+  \begin{definition}\index{punto critico@punto crítico} Se dice que $c$ es un \textbf{punto crítico} de $f$ si es un punto interior
     del dominio donde $f'(c)=0$ (\textbf{punto estacionario}) o donde
     $f'(c)$ no existe (\textbf{punto singular}).
 \end{definition}
 
 
-\begin{theorem}[Teorema del Valor Extremo de Weierstrass]
+\begin{theorem}[Teorema del Valor Extremo de Weierstrass]\index{Weierstrass!teorema del valor extremo}
 Si $f$ es continua en el intervalo cerrado $[a,b]$, entonces $f$ alcanza
 un máximo absoluto y un mínimo absoluto en $[a,b]$.
 \end{theorem}
@@ -358,7 +358,7 @@ La función $f(x)=x$ en $(0,1)$ es el ejemplo elemental: está acotada
 pero no tiene ni máximo ni mínimo en el intervalo abierto.
 \end{rem}
 
-\begin{theorem}[Fermat]
+\begin{theorem}[Fermat]\index{Fermat, teorema de}
 Si $f$ tiene un extremo local en un punto interior $c$ del dominio, y
 $f'(c)$ existe, entonces $f'(c)=0$.
 \end{theorem}
@@ -444,7 +444,7 @@ el signo de la derivada. Si $f'(x)>0$, la función crece; si $f'(x)<0$,
 decrece. Este vínculo entre la derivada y el comportamiento de $f$ queda
 formalizado en el siguiente criterio.
 
-\begin{theorem}[Criterio de monotonía]
+\begin{theorem}[Criterio de monotonía]\index{criterio de monotonia@criterio de monotonía}
 Sea $f$ continua en $[a,b]$ y derivable en $(a,b)$:
 \begin{itemize}
     \item Si $f'(x)>0$ para todo $x\in(a,b)$, entonces $f$ es
@@ -576,7 +576,7 @@ cualquier par de puntos interiores permanece dentro de ella, y
 comportamiento lo detecta la segunda derivada: su signo indica si la
 pendiente $f'$ crece o decrece a medida que $x$ avanza.
 
-\begin{definition}
+\begin{definition}\index{concavidad}
 La gráfica de $f$ es \textbf{cóncava hacia arriba} en $(a,b)$ si $f'$
 es creciente en ese intervalo, y \textbf{cóncava hacia abajo} si $f'$
 es decreciente. Equivalentemente:
@@ -723,13 +723,13 @@ puntos críticos y puede abordarse mediante dos criterios: uno basado en
 el cambio de signo de $f'$ y otro, más ágil cuando es aplicable, basado
 en el signo de $f''$.
 
-\begin{definition}
+\begin{definition}\index{extremos!locales}
 $f(c)$ es un \textbf{máximo local} si existe un intervalo abierto
 $(a,b)$ que contiene a $c$ tal que $f(c)\geq f(x)$ para todo
 $x\in(a,b)$. Análogamente se define el \textbf{mínimo local}.
 \end{definition}
 
-\begin{theorem}[Criterio de la primera derivada]
+\begin{theorem}[Criterio de la primera derivada]\index{extremos!criterio de la primera derivada}
 Sea $c$ un punto crítico de $f$:
 \begin{itemize}
     \item Si $f'$ cambia de $+$ a $-$ en $c$: \textbf{máximo local}.
@@ -738,7 +738,7 @@ Sea $c$ un punto crítico de $f$:
 \end{itemize}
 \end{theorem}
 
-\begin{theorem}[Criterio de la segunda derivada]
+\begin{theorem}[Criterio de la segunda derivada]\index{extremos!criterio de la segunda derivada}
 Si $f'(c)=0$ y $f''(c)$ existe:
 \begin{itemize}
     \item $f''(c)<0$: \textbf{máximo local} (la curva es cóncava hacia
@@ -1468,7 +1468,7 @@ de que los extremos tengan la misma imagen: ahora se garantiza la
 existencia de un punto donde la pendiente de la tangente coincide con
 la pendiente de la recta que une los dos extremos de la curva.
 
-\begin{theorem}[del Valor Medio de Lagrange]
+\begin{theorem}[del Valor Medio de Lagrange]\index{teorema del valor medio!de Lagrange}
 Si $f$ es continua en $[a,b]$ y derivable en $(a,b)$, existe al menos
 un $c\in(a,b)$ tal que
 \[
@@ -1630,7 +1630,7 @@ buscado. Sin embargo, debe aplicarse con precisión: solo es válida
 bajo condiciones específicas, y su uso incorrecto conduce a resultados
 erróneos.
 
-\begin{theorem}[Regla de L'Hôpital]
+\begin{theorem}[Regla de L'Hôpital]\index{L'Hopital, regla de@L'Hôpital, regla de}
 Supóngase que $\lim_{x\to a}f(x)=0$ y $\lim_{x\to a}g(x)=0$ tiene forma
 $\frac{0}{0}$, o que ambos tienden a $\pm\infty$ tiene forma
 $\frac{\infty}{\infty}$. Si $f$ y $g$ son derivables cerca de $a$,
@@ -1957,7 +1957,7 @@ la reescritura es correcta, todo punto fijo de $g$ es raíz de $f$.
 La convergencia de la sucesión depende de qué tan fuertemente $g$
 «contrae» el espacio en torno a $x^*$.
 
-\begin{theorem}[Convergencia del punto fijo]
+\begin{theorem}[Convergencia del punto fijo]\index{punto fijo!convergencia}
 Si $|g'(x)|<1$ para todo $x$ en un intervalo que contiene a la raíz,
 las iteraciones $x_{n+1}=g(x_n)$ convergen a ella desde cualquier
 punto inicial en ese intervalo.
@@ -2003,7 +2003,7 @@ mediante el concepto de \textbf{diferencial} y la
 \textbf{linealización}, herramientas que permiten estimar cambios
 en los valores de $f$ sin calcular raíces ni integrales.
 
-\begin{definition}
+\begin{definition}\index{diferencial}
 Sea $f$ derivable en $x$. El \textbf{diferencial de $f$} es la expresión
 \[
 df = f'(x)\,dx,
@@ -2021,7 +2021,7 @@ Cuando $|dx|\ll 1$, el error relativo $(\Delta y - dy)/\Delta y$
 también es pequeño, por lo que $dy$ es una aproximación práctica útil.
 \end{rem}
 
-\begin{theorem}[Aproximación lineal o linealización]
+\begin{theorem}[Aproximación lineal o linealización]\index{linealizacion@linealización}
 Si $f$ es derivable en $a$, entonces para $x$ cerca de $a$:
 \[
 f(x) \approx L(x) = f(a) + f'(a)(x - a).

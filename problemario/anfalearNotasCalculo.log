@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (MiKTeX 25.4) (format=lualatex 2025.7.7)  24 JUL 2026 15:07
+This is LuaHBTeX, Version 1.22.0 (MiKTeX 25.4) (format=lualatex 2025.7.7)  27 JUL 2026 09:48
  restricted system commands enabled.
 **anfalearNotasCalculo.tex
 (./anfalearNotasCalculo.tex
@@ -7996,11 +7996,35 @@ LaTeX Info: Redefining \% on input line 554.
 
 
 
+LaTeX Info: Redefining \. on input line 219.
+LaTeX Info: Redefining \% on input line 219.
+[842]
+
+
+
+
+
+LaTeX Info: Redefining \. on input line 344.
+LaTeX Info: Redefining \% on input line 344.
+[843]
+
+
+
+
+
+LaTeX Info: Redefining \. on input line 461.
+LaTeX Info: Redefining \% on input line 461.
+[844]
+
+
+
+
+
 )
 
 LaTeX Info: Redefining \. on input line 555.
 LaTeX Info: Redefining \% on input line 555.
-[842]
+[845]
 \tf@loe=\write9
 
 \openout9 = anfalearNotasCalculo.loe
@@ -8017,13 +8041,13 @@ Package rerunfilecheck Info: File `anfalearNotasCalculo.out' has not changed.
 )
 
 Here is how much of LuaTeX's memory you used:
- 98951 strings out of 470205
+ 98954 strings out of 470205
  305229,4101490 words of node,token memory allocated
  27025 words of node memory still in use:
    32 hlist, 2 vlist, 14 rule, 3 glue, 4 kern, 1 glyph, 8197 attribute, 101 glue
 _spec, 4136 attribute_list, 2 write, 24 pdf_literal, 189 pdf_action, 24 pdf_colo
 rstack nodes
-   avail lists: 1:21,2:24849,3:16348,4:546,5:2066,6:249,7:11350,8:150,9:4399,10:
+   avail lists: 1:21,2:24849,3:16348,4:546,5:2066,6:336,7:11350,8:150,9:4399,10:
 32,11:1181
  117594 multiletter control sequences out of 65536+600000
  153 fonts using 36017359 bytes
@@ -8066,9 +8090,9 @@ fonts/type1/public/amsfonts/latxfont/line10.pfb><C:/Users/anfalear/AppData/Local
 /Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/anfale
 ar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
 
-Output written on anfalearNotasCalculo.pdf (842 pages, 7385895 bytes).
+Output written on anfalearNotasCalculo.pdf (845 pages, 7451275 bytes).
 
-PDF statistics: 16264 PDF objects out of 18468 (max. 8388607)
- 7989 named destinations out of 8907 (max. 131072)
+PDF statistics: 16580 PDF objects out of 18468 (max. 8388607)
+ 7992 named destinations out of 8907 (max. 131072)
  3365 words of extra memory for PDF output out of 10000 (max. 100000000)
 

@@ -34,7 +34,7 @@ abstracta de límite y facilita la intuición en problemas aplicados.
 \end{rem}
 
 
-\begin{definition}
+\begin{definition}\index{derivada}
 Sea $f$ una función definida en un intervalo abierto que contiene a $c$.
 La \textbf{derivada de $f$ en $c$} se define como
 \[
@@ -182,7 +182,7 @@ $dy$ y $dx$ adquirirán significado autónomo preciso.
 \end{rem}
 
 Una de las propiedades importantes de la derivada se resume a continuación:
-\begin{theorem}
+\begin{theorem}\index{derivada!derivable implica continua}
 Si $f$ es derivable en $c$, entonces $f$ es continua en $c$.
 \end{theorem}
 
@@ -224,7 +224,7 @@ La función de Weierstrass (1872) fue el primer ejemplo de una función continua
 Las siguientes reglas se demuestran a partir de la definición de límite
 y permiten derivar cualquier función elemental de manera mecánica.
 
-\begin{theorem}[Reglas fundamentales de derivación]
+\begin{theorem}[Reglas fundamentales de derivación]\index{derivada!reglas fundamentales}
 Sean $f$ y $g$ funciones derivables, $k,n\in\R$:
 \begin{enumerate}
     \item \textbf{Constante:} $D_x(k) = 0$.
@@ -298,7 +298,7 @@ f'(x) = \frac{(x^3-1)(2x)-(x^2+3)(3x^2)}{(x^3-1)^2}.
 \section{Derivadas de las Funciones Trigonométricas}
 %%==========================================================
 
-\begin{theorem}[Derivadas de las funciones trigonométricas básicas]
+\begin{theorem}[Derivadas de las funciones trigonométricas básicas]\index{derivada!de funciones trigonometricas@de funciones trigonométricas}
 \[
 D_x(\sen x) = \cos x, \qquad D_x(\cos x) = -\sen x,
 \]
@@ -342,7 +342,7 @@ Por ejemplo, $D_x(\tan x) = D_x\!\left(\frac{\sen x}{\cos x}\right)
 \section{Regla de la Cadena}
 %%==========================================================
 
-\begin{theorem}[Regla de la cadena]
+\begin{theorem}[Regla de la cadena]\index{regla de la cadena}
 Si $g$ es derivable en $x$ y $f$ es derivable en $g(x)$, entonces la función compuesta $h = f\circ g$ es derivable en $x$ y \(
 h'(x) = f'(g(x))\cdot g'(x).
 \)
@@ -480,7 +480,7 @@ $y = [\tan(5x)]^3$; tres capas: potencia, tangente, función lineal.
 \section{Derivadas de Funciones Exponenciales y Logarítmicas}
 %%==========================================================
 
-\begin{theorem}[Derivadas exponenciales y logarítmicas]
+\begin{theorem}[Derivadas exponenciales y logarítmicas]\index{derivada!exponencial y logaritmica@exponencial y logarítmica}
 \[
 D_x(e^x) = e^x, \qquad D_x(a^x) = a^x\ln a \quad (a>0,\, a\neq 1),
 \]
@@ -562,7 +562,7 @@ Derivar $f(x) = x^2\cdot 3^x$.
 
 Si $f'$ es a su vez derivable, se puede calcular su derivada, llamada la \textbf{segunda derivada} de $f$. El proceso puede repetirse indefinidamente.
 
-\begin{definition}
+\begin{definition}\index{derivada!de orden superior}
 La \textbf{derivada de orden $n$} de $f$, denotada $f^{(n)}(x)$,
 $\dfrac{d^n y}{dx^n}$ o $D^n_x f$, se define inductivamente como la
 derivada de $f^{(n-1)}$.
@@ -618,7 +618,7 @@ y' = e^x(\sen x+\cos x), \qquad y'' = 2e^x\cos x.
 \end{myproof}
 \end{example}
 
-\begin{theorem}[Fórmula de Leibniz para el producto]
+\begin{theorem}[Fórmula de Leibniz para el producto]\index{Leibniz, formula de@Leibniz, fórmula de}
 Si $f$ y $g$ tienen derivadas hasta el orden $n$:
 \[
 (fg)^{(n)} = \sum_{k=0}^{n}\binom{n}{k}f^{(k)}g^{(n-k)}.
@@ -703,7 +703,7 @@ y-4 = -\frac{3}{4}(x-3) \implies \boxed{3x+4y = 25.}
 \end{myproof}
 \end{example}
 
-\begin{theorem}[Derivada de la función inversa]
+\begin{theorem}[Derivada de la función inversa]\index{derivada!de la funcion inversa@de la función inversa}
 Sea $f$ una función inyectiva y continua en un intervalo abierto $I$, y sea $a \in I$. Si $f$ es derivable en $a$ y $f'(a) \neq 0$, entonces su función inversa $f^{-1}$ es derivable en $b = f(a)$ y se cumple que:
 \[
 (f^{-1})'(b) = \frac{1}{f'(a)}
@@ -870,7 +870,7 @@ $\frac{y'}{y}=\ln a$, es decir, $y'=a^x\ln a$. Este resultado explica por qué $
 \section{Derivadas de las Funciones Trigonométricas Inversas}
 %%==========================================================
 
-\begin{theorem}[Derivadas de las inversas trigonométricas]
+\begin{theorem}[Derivadas de las inversas trigonométricas]\index{derivada!de funciones trigonometricas inversas@de funciones trigonométricas inversas}
 \[
 D_x(\arcsin x) = \frac{1}{\sqrt{1-x^2}}, \qquad
 D_x(\arccos x) = \frac{-1}{\sqrt{1-x^2}},

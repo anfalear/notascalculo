@@ -310,7 +310,7 @@ $$\boxed{(c)\ W \text{ no es subespacio (no es cerrado bajo multiplicación por 
 \end{example}
 
 
-\begin{theorem}[La intersección finita de subespacios es subespacio]\label{interseccionsubespacios}\index{subespacio vectorial!intersección finita}
+\begin{theorem}[La intersección finita de subespacios es subespacio]\label{interseccionsubespacios}\index{subespacio vectorial!interseccion finita@intersección finita}
 Sean $W_1,$ $W_2,\dots, W_n$ subespacios de $V$. Entonces $W_1\cap W_2 \cap \cdots \cap W_n =\bigcap_{i=1}^{n} W_i\text{ es subespacio de }V.$
 
 \begin{proof} Debe probarse que $\bigcap_{i=1}^{n} W_i$ cumple las condiciones del Teorema \ref{testsubespacio}. Como cada $W_i$ es un subespacio de $V,$ entonces cada uno contiene al vector cero, por lo tanto, el vector cero está en su intersección. Sean $u,v\in \bigcap_{i=1}^{n} W_i,$ entonces $u,v\in W_i$ para cada $i.$ Como cada $W_i$ es un subespacio, $u+v\in W_i$ para cada $i,$ y así $u+v\in \bigcap_{i=1}^{n} W_i.$ Finalmente, si $u\in \bigcap_{i=1}^{n} W_i$ y $k$ es un escalar, entonces $u\in W_i$ para cada $i,$ por lo cual $ku\in W_i$ para cada $i,$ y así $ku\in \bigcap_{i=1}^{n} W_i.$
@@ -370,7 +370,7 @@ $$\boxed{\mathcal{N}(A) = \operatorname{span}\!\left\{\begin{pmatrix}-1\\1\\0\en
 \section{Combinaciones lineales y generados}
 Las combinaciones lineales permitirán describir un vector en términos de otros vectores del espacio. Se introducen su definición y el concepto de generado:
 
-\begin{definition}[Combinación lineal]\label{def:comblineal}\index{combinación lineal}
+\begin{definition}[Combinación lineal]\label{def:comblineal}\index{combinacion lineal@combinación lineal}
 Sea $V$ un espacio vectorial sobre un cuerpo $\mathbb{F}$. Se dice que un vector $w \in V$ es \textbf{combinación lineal} de los vectores $v_1,v_2,\dots, v_n \in V$ si existen escalares $\alpha_1,\alpha_2,\dots,\alpha_n \in \mathbb{F}$ tales que  \(w = \alpha_1 v_1 + \alpha_2 v_2 + \cdots + \alpha_n v_n.\)
 Los escalares $\alpha_i$ se denominan \textbf{coeficientes de la combinación lineal}.
 \end{definition}
@@ -553,7 +553,7 @@ $$\boxed{\lambda = 1 \quad \text{o} \quad \lambda = -\tfrac{1}{2}.}$$
 \end{myproof}
 \end{example}
 
-\begin{definition}[Wronskiano]\index{Wronskiano}
+\begin{definition}[Wronskiano]\index{wronskiano}
 Para funciones $f_1,\dots,f_n$ $(n-1)$-veces diferenciables en $(-\infty, \infty)$, el \textbf{Wronskiano} es:
 $$W(x) = \begin{vmatrix} 
 f_1(x) & f_2(x) & \cdots & f_n(x) \\
@@ -563,7 +563,7 @@ f_1^{(n-1)}(x) & f_2^{(n-1)}(x) & \cdots & f_n^{(n-1)}(x)
 \end{vmatrix}$$
 \end{definition}
 
-\begin{theorem}[Criterio del Wronskiano]\index{Wronskiano!criterio}
+\begin{theorem}[Criterio del Wronskiano]\index{wronskiano!criterio}
 Si $W(x) \not\equiv 0$ en $(-\infty, \infty)$, entonces $\{f_1,\dots,f_n\}$ es l.i. en $\mathcal{C}^{n-1}(-\infty, \infty)$.
 \begin{proof}
 Probamos el contrarrecíproco. Si $\{f_1,\dots,f_n\}$ es l.d., existen escalares $c_1,\dots,c_n$ no todos nulos tales que $c_1f_1(x)+\cdots+c_nf_n(x)=0$ para todo $x$. Derivando esta identidad $k$ veces se obtiene $c_1f_1^{(k)}(x)+\cdots+c_nf_n^{(k)}(x)=0$ para $k=0,1,\dots,n-1$. Es decir, para cada $x$ fijo las columnas de la matriz del Wronskiano satisfacen una relación lineal no trivial con los mismos coeficientes $c_i$, de modo que su determinante se anula: $W(x)=0$ para todo $x$, esto es, $W \equiv 0$.
@@ -574,7 +574,7 @@ Probamos el contrarrecíproco. Si $\{f_1,\dots,f_n\}$ es l.d., existen escalares
 
 Esta sección aborda uno de los conceptos fundamentales en álgebra lineal: la capacidad de representar cualquier vector mediante un conjunto específico de vectores conocido como \textbf{base}. Una base en un espacio vectorial permite generar cualquier vector mediante combinaciones lineales, determinar la dimensión del espacio, y estudiar propiedades fundamentales.
 
-\begin{definition}[Espacio vectorial de dimensión finita]\index{espacio vectorial!dimensión finita}
+\begin{definition}[Espacio vectorial de dimensión finita]\index{espacio vectorial!dimension finita@dimensión finita}
 Un espacio vectorial $V$ sobre $\mathbb{K}$ es de \textbf{dimensión finita} si existe un conjunto finito que genera $V$. En caso contrario, es de \textbf{dimensión infinita}.
 \end{definition}
 
@@ -618,7 +618,7 @@ $$\boxed{\text{Las matrices son l.d. y no forman base de } \mathcal{M}_{2\times 
 \end{myproof}
 \end{example}
 
-\begin{theorem}[Unicidad de la representación]\label{thm:unicidad-representacion}\index{base (espacio vectorial)!unicidad de representación}
+\begin{theorem}[Unicidad de la representación]\label{thm:unicidad-representacion}\index{base (espacio vectorial)!unicidad de representacion@unicidad de representación}
 Si $S = \{v_1,\dots,v_n\}$ es base de $V$, entonces todo $u \in V$ tiene representación única $u = \sum_{i=1}^n k_i v_i$.	
 \begin{proof}
 Supongamos dos representaciones $u = \sum_{i=1}^n k_i v_i = \sum_{i=1}^n c_i v_i$. Entonces:
@@ -638,18 +638,18 @@ Esbozamos el argumento de intercambio (Steinitz). Como $\{v_1,\ldots,v_n\}$ gene
 \end{proof}
 \end{theorem}
 
-\begin{theorem}[Invariancia del número de elementos en una base]\label{thm:cap06:invariancia-base}\index{base (espacio vectorial)!invariancia del número de elementos}
+\begin{theorem}[Invariancia del número de elementos en una base]\label{thm:cap06:invariancia-base}\index{base (espacio vectorial)!invariancia del numero de elementos@invariancia del número de elementos}
 Todas las bases de un espacio vectorial de dimensión finita tienen el mismo número de vectores.
 \begin{proof}
 Sean $B_1 = \{u_1, \ldots, u_m\}$ y $B_2 = \{v_1, \ldots, v_n\}$ dos bases de $V$. Como $B_1$ es linealmente independiente y $B_2$ genera $V$, por el Lema de intercambio (Teorema \ref{thm:cap06:lema-intercambio}) tenemos $m \leq n$. Análogamente, como $B_2$ es linealmente independiente y $B_1$ genera $V$, tenemos $n \leq m$. Por tanto, $m = n$.
 \end{proof}
 \end{theorem}
 
-\begin{definition}[Dimensión]\index{dimensión (espacio vectorial)}
+\begin{definition}[Dimensión]\index{dimension (espacio vectorial)@dimensión (espacio vectorial)}
 La \textbf{dimensión} de $V$ ($\dim V$) es el número de vectores en cualquier base de $V$. Por convención, $\dim \{\mathbf{0}\} = 0$.
 \end{definition}
 
-\begin{theorem}[Propiedades dimensionales]\index{dimensión (espacio vectorial)!propiedades}
+\begin{theorem}[Propiedades dimensionales]\index{dimension (espacio vectorial)@dimensión (espacio vectorial)!propiedades}
 Si $\dim V = n$, entonces:
 \begin{enumerate}
 \item Cualquier conjunto con más de $n$ vectores es linealmente dependiente.
@@ -678,7 +678,7 @@ Sea $V$ con $\dim V = n$:
 \end{proof}
 \end{theorem}
 
-\begin{theorem}[Dimensión de subespacios]\index{dimensión (espacio vectorial)!de subespacios}
+\begin{theorem}[Dimensión de subespacios]\index{dimension (espacio vectorial)@dimensión (espacio vectorial)!de subespacios}
 Si $W \subseteq V$ es subespacio y $\dim V < \infty$, entonces:
 \begin{enumerate}
 \item $\dim W \leq \dim V$
@@ -774,7 +774,7 @@ $$\boxed{\mathcal{N}(A) = \operatorname{span}\!\left\{ \begin{pmatrix}-79/72\\5/
 \end{myproof}
 \end{example}
 
-\begin{theorem}[Caracterización de consistencia]\index{espacios fundamentales!caracterización de consistencia}
+\begin{theorem}[Caracterización de consistencia]\index{espacios fundamentales!caracterizacion de consistencia@caracterización de consistencia}
 El sistema $A\mathbf{x} = \mathbf{b}$ es consistente si y solo si $\mathbf{b} \in \mathcal{C}(A)$.
 \begin{proof}
 $(\Rightarrow)$ Si $A\mathbf{x} = \mathbf{b}$ tiene solución $\mathbf{x} = \mathbf{x}_0$, entonces $\mathbf{b} = A\mathbf{x}_0 = \sum_{i=1}^n x_{0i} \mathbf{a}_i$, donde $\mathbf{a}_i$ son las columnas de $A$. Por tanto, $\mathbf{b} \in \mathcal{C}(A)$.
@@ -889,7 +889,7 @@ $$\boxed{A = \begin{pmatrix} -2 & 4 & 1 & 0 \\ -5 & 8 & 0 & 1 \end{pmatrix}}$$
 \end{myproof}
 \end{example}
 
-\begin{theorem}[Caracterización de matrices invertibles - Versión 4]\label{thm:invertible-equiv-v4}\index{matriz!invertible!caracterización}
+\begin{theorem}[Caracterización de matrices invertibles - Versión 4]\label{thm:invertible-equiv-v4}\index{matriz!invertible!caracterizacion@caracterización}
 Sea $A$ una matriz cuadrada de orden $n \times n$. Las siguientes afirmaciones son equivalentes:
 \begin{enumerate}
     \item $A$ es invertible.
