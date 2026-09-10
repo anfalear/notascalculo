@@ -1,0 +1,869 @@
+\documentclass[11pt,aspectratio=169]{beamer}
+\input{estilo_presentaciones}
+
+\setpie{Límites y continuidad --- Cálculo III}
+\setbloques{7}
+
+% ============ RASTREADOR DE PASOS (prueba de trayectorias) ============
+\newcommand{\traytracker}[1]{%
+  {\footnotesize\centering
+  \pasoitem{1}{1. Trayectoria A}{#1}\ $\rightarrow$\
+  \pasoitem{2}{2. Trayectoria B}{#1}\ $\rightarrow$\
+  \pasoitem{3}{3. Comparación}{#1}\ $\rightarrow$\
+  \pasoitem{4}{4. Conclusión}{#1}\par}
+  \vspace{4pt}
+}
+
+% ============ DIAGRAMA DE LAS 5 ESTRATEGIAS ============
+\newcommand{\estrategias}{%
+  \begin{center}
+  \begin{tikzpicture}[node distance=0.35cm,
+      est/.style={draw=tealx,thick,fill=tealx!10,rounded corners,
+                  minimum width=2.3cm,minimum height=1.0cm,align=center,font=\footnotesize}]
+    \node[est] (e1) {\bfseries 1\\Trayectorias};
+    \node[est,right=of e1] (e2) {\bfseries 2\\Sustitución\\directa};
+    \node[est,right=of e2] (e3) {\bfseries 3\\Manipulación\\algebraica};
+    \node[est,below=0.45cm of e2] (e4) {\bfseries 4\\Coordenadas\\polares};
+    \node[est,below=0.45cm of e3] (e5) {\bfseries 5\\Emparedado};
+    \draw[-Stealth,thick,gray60] (e1) -- (e2);
+    \draw[-Stealth,thick,gray60] (e2) -- (e3);
+    \draw[-Stealth,thick,gray60] (e4) -- (e5);
+  \end{tikzpicture}
+  \end{center}
+}
+
+\title{Límites y continuidad}
+\subtitle{Funciones de varias variables}
+\author{Andrés Fabián Leal Archila}
+\institute{Cálculo III (Multivariable) --- Cód. 20254}
+\date{\today}
+
+\begin{document}
+
+\portada
+
+% ---------- AGENDA ----------
+\begin{frame}{Agenda de la clase}
+  \begin{enumerate}
+    \setlength{\itemsep}{6pt}
+    \item \textbf{Teoría}: definición, motivación, algoritmo de decisión \hfill{\small\color{gray60}(10 min)}
+    \item \textbf{Prueba de trayectorias} (3 problemas tipo) \hfill{\small\color{gray60}(16 min)}
+    \item \textbf{Sustitución directa} y manipulación algebraica \hfill{\small\color{gray60}(10 min)}
+    \item \textbf{Coordenadas polares} \hfill{\small\color{gray60}(10 min)}
+    \item \textbf{Teorema del emparedado} \hfill{\small\color{gray60}(10 min)}
+    \item \textbf{Continuidad}: definición, casos por partes, discontinuidades, regiones \hfill{\small\color{gray60}(16 min)}
+    \item \textbf{Extensión a 3 variables} y lectura de mapas de contorno \hfill{\small\color{gray60}(8 min)}
+    \item \textbf{Cierre}: algoritmo completo y tabla resumen \hfill{\small\color{gray60}(5 min)}
+  \end{enumerate}
+  \vfill
+  \begin{center}
+    \small\color{gray60} Duración estimada total: $\sim$85 minutos
+  \end{center}
+\end{frame}
+
+% ======================================================
+% BLOQUE 1 --- TEORÍA
+% ======================================================
+\bloqueframe{1}{Teoría}{Definición, motivación multitrayectoria, algoritmo de decisión}
+
+\begin{frame}{Motivación: \textquestiondown{}qué cambia respecto a una variable?}
+  \begin{columns}
+    \begin{column}{0.55\textwidth}
+      \begin{itemize}
+        \item En una variable, un punto $a$ solo se puede aproximar de \textbf{dos} formas: por la izquierda o por la derecha.
+        \pause
+        \item En dos variables, un punto $(a,b)$ se puede aproximar por \textbf{infinitas trayectorias}: rectas de cualquier pendiente, parábolas, cúbicas, espirales\dots
+        \pause
+        \item Para que el límite exista, $f$ debe tender al \textbf{mismo valor} a lo largo de \emph{todas} ellas.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.43\textwidth}
+      \centering
+      \begin{tikzpicture}[scale=0.95]
+        \draw[thin,->] (-1.8,0) -- (1.8,0);
+        \draw[thin,->] (0,-1.8) -- (0,1.8);
+        \draw[tealx,thick]   (-1.6,-1.6) -- (1.6,1.6);
+        \draw[brick,thick]   (-1.6,1.6) .. controls (-0.5,0.2) .. (0,0)
+                              .. controls (0.5,-0.2) .. (1.6,-1.6);
+        \draw[gold,thick,domain=-1.3:1.3,samples=60] plot (\x,{\x*\x});
+        \draw[navy,thick,domain=-1.25:1.25,samples=60] plot ({\x*\x},\x);
+        \fill[black] (0,0) circle (1.6pt);
+      \end{tikzpicture}\\[4pt]
+      {\footnotesize\color{gray60} infinitas trayectorias hacia un mismo punto}
+    \end{column}
+  \end{columns}
+  \vspace{4pt}
+  \pause
+  \begin{center}\small\color{tealx} Esta \textbf{independencia direccional} es la novedad central --- y la principal fuente de dificultad.\end{center}
+\end{frame}
+
+\begin{frame}{Definición formal ($\varepsilon$--$\delta$)}
+  \begin{block}{Definición}
+    Sea $f$ definida en un disco abierto centrado en $(a,b)$, excepto posiblemente en $(a,b)$. Decimos que
+    \[
+      \lim_{(x,y)\to(a,b)} f(x,y)=L
+    \]
+    si para todo $\varepsilon>0$ existe $\delta>0$ tal que
+    \[
+      0<\sqrt{(x-a)^2+(y-b)^2}<\delta
+      \implies
+      |f(x,y)-L|<\varepsilon.
+    \]
+  \end{block}
+  \pause
+  \vspace{-6pt}
+  \begin{center}
+  \begin{tikzpicture}[scale=0.62]
+    \draw[thin,->] (-2.2,0) -- (2.2,0) node[right,font=\scriptsize] {$x$};
+    \draw[thin,->] (0,-1.5) -- (0,1.7) node[above,font=\scriptsize] {$y$};
+    \fill[tealx,opacity=0.15] (0.5,0.3) circle (0.95);
+    \draw[tealx,thick,dashed] (0.5,0.3) circle (0.95);
+    \fill[brick] (0.5,0.3) circle (1.5pt);
+    \node[brick,font=\scriptsize,below] at (0.5,0.2) {$(a,b)$};
+    \fill[navy] (1.1,0.95) circle (1.2pt);
+    \node[navy,font=\scriptsize,above right] at (1.1,0.95) {$(x,y)$};
+    \draw[-Stealth,tealx] (0.5,0.3) -- (0.5,1.25) node[midway,left,font=\scriptsize] {$\delta$};
+  \end{tikzpicture}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Extensión a tres variables (mención breve)}
+  \begin{block}{Definición}
+    Para $f(x,y,z)$ sustituimos la distancia por la de $\mathbb R^3$:
+    \[
+      \lim_{(x,y,z)\to(a,b,c)} f(x,y,z)=L
+    \]
+    si para todo $\varepsilon>0$ existe $\delta>0$ tal que
+    \[
+      0<\sqrt{(x-a)^2+(y-b)^2+(z-c)^2}<\delta
+      \implies
+      |f(x,y,z)-L|<\varepsilon.
+    \]
+  \end{block}
+  \pause
+  \begin{center}
+  \normalsize Misma idea, misma dificultad: ahora hay infinitas trayectorias \emph{en el espacio}, no solo en el plano.
+  \end{center}
+  \pause
+  \vspace{4pt}
+  \begin{center}\small\color{gray60} Todas las técnicas que veamos hoy para 2 variables se extienden sin cambios conceptuales a 3.\end{center}
+\end{frame}
+
+\begin{frame}{Algoritmo de decisión: 5 estrategias}
+  \estrategias
+  \pause
+  \vspace{2pt}
+  \begin{itemize}\small
+    \item \textbf{1. Trayectorias} --- para \emph{descartar} existencia (si dos dan valores distintos, no existe).
+    \pause
+    \item \textbf{2--3. Sustitución/álgebra} --- cuando la función es continua o se puede simplificar.
+    \pause
+    \item \textbf{4. Polares} --- cuando el punto es el origen y aparece $x^2+y^2$.
+    \pause
+    \item \textbf{5. Emparedado} --- cuando se puede acotar la función entre dos que comparten límite.
+  \end{itemize}
+  \pause
+  \begin{center}\small\color{gray60} Estas 5 estrategias son exactamente el mapa de ruta de la clase de hoy.\end{center}
+\end{frame}
+
+% ======================================================
+% BLOQUE 2 --- PRUEBA DE TRAYECTORIAS
+% ======================================================
+\bloqueframe{2}{Prueba de trayectorias}{Tres problemas tipo: cuándo el límite NO existe}
+
+\begin{frame}{La idea: trayectorias distintas, valores distintos}
+  \begin{itemize}
+    \item Elegimos una familia de curvas que pasan por el punto (rectas $y=mx$, parábolas $y=mx^2$, etc.) y sustituimos en $f$.
+    \pause
+    \item Cada trayectoria reduce el límite de dos variables a un límite de \textbf{una sola} variable.
+    \pause
+    \item Si dos trayectorias distintas dan valores distintos, el límite \textbf{no existe} --- sin importar qué tan simples sean las trayectorias.
+  \end{itemize}
+  \vspace{8pt}
+  \pause
+  \notaclave{esta técnica solo sirve para \textbf{descartar} existencia; nunca prueba que el límite \emph{sí} existe}
+\end{frame}
+
+\begin{frame}{Problema tipo 1: planteamiento}
+  \traytracker{1}
+  \begin{block}{Problema}
+    Sea $f(x,y)=\dfrac{x^2y}{x^4+y^2}$. Estudiar $\displaystyle\lim_{(x,y)\to(0,0)} f(x,y)$.
+  \end{block}
+\end{frame}
+
+\begin{frame}{Problema tipo 1: trayectoria $y=x$}
+  \traytracker{1}
+  Sustituyendo $y=x$:
+  \[
+    f(x,x)=\frac{x^2\cdot x}{x^4+x^2}=\frac{x^3}{x^2(x^2+1)}=\frac{x}{x^2+1}.
+  \]
+  \pause
+  \[
+    \lim_{x\to 0}\frac{x}{x^2+1}=0.
+  \]
+\end{frame}
+
+\begin{frame}{Problema tipo 1: trayectoria $y=x^2$}
+  \traytracker{2}
+  Sustituyendo $y=x^2$:
+  \[
+    f(x,x^2)=\frac{x^2\cdot x^2}{x^4+(x^2)^2}=\frac{x^4}{x^4+x^4}=\frac12.
+  \]
+  \pause
+  \[
+    \lim_{x\to 0}\frac12=\frac12.
+  \]
+\end{frame}
+
+\begin{frame}{Problema tipo 1: comparación y conclusión}
+  \traytracker{3}
+  Los valores obtenidos son
+  \[
+    0\neq\frac12.
+  \]
+  \pause
+  \begin{center}\normalsize\color{tealx} Dos trayectorias producen límites distintos.\end{center}
+  \pause
+  \traytracker{4}
+  \[
+    \boxed{\lim_{(x,y)\to(0,0)}\frac{x^2y}{x^4+y^2}\ \text{no existe.}}
+  \]
+\end{frame}
+
+\begin{frame}{Problema tipo 2: planteamiento}
+  \traytracker{1}
+  \begin{block}{Problema}
+    Sea $f(x,y)=\dfrac{x^3y}{x^6+y^2}$. Estudiar $\displaystyle\lim_{(x,y)\to(0,0)} f(x,y)$.
+  \end{block}
+  \pause
+  \begin{center}\small\color{gray60} El exponente de $x$ en el denominador ($x^6$) sugiere probar $y=x^3$ primero --- la trayectoria que \textbf{iguala potencias}.\end{center}
+\end{frame}
+
+\begin{frame}{Problema tipo 2: trayectoria $y=x^3$}
+  \traytracker{1}
+  Sustituyendo $y=x^3$:
+  \[
+    f(x,x^3)=\frac{x^3\cdot x^3}{x^6+(x^3)^2}=\frac{x^6}{x^6+x^6}=\frac12.
+  \]
+  \pause
+  \[
+    \lim_{x\to 0}\frac12=\frac12.
+  \]
+\end{frame}
+
+\begin{frame}{Problema tipo 2: trayectoria $y=x$}
+  \traytracker{2}
+  Sustituyendo $y=x$:
+  \[
+    f(x,x)=\frac{x^3\cdot x}{x^6+x^2}=\frac{x^4}{x^2(x^4+1)}=\frac{x^2}{x^4+1}.
+  \]
+  \pause
+  \[
+    \lim_{x\to 0}\frac{x^2}{x^4+1}=0.
+  \]
+\end{frame}
+
+\begin{frame}{Problema tipo 2: comparación y conclusión}
+  \traytracker{3}
+  Los valores obtenidos son
+  \[
+    \frac12\neq 0.
+  \]
+  \pause
+  \traytracker{4}
+  \[
+    \boxed{\lim_{(x,y)\to(0,0)}\frac{x^3y}{x^6+y^2}\ \text{no existe.}}
+  \]
+  \pause
+  \vspace{2pt}
+  \begin{center}\small\color{gray60} Note el patrón: cuando el denominador tiene $x^{2k}$, la trayectoria $y=x^k$ suele ser la que revela el problema.\end{center}
+\end{frame}
+
+\begin{frame}{Problema tipo 3: rectas $y=mx$ con valor dependiente de $m$}
+  \begin{block}{Problema}
+    Sea $f(x,y)=\dfrac{x^2y^2}{x^4+y^4}$. Estudiar $\displaystyle\lim_{(x,y)\to(0,0)} f(x,y)$.
+  \end{block}
+  \pause
+  Sustituyendo $y=mx$ (para $m\in\mathbb R$ arbitrario):
+  \[
+    f(x,mx)=\frac{x^2(mx)^2}{x^4+(mx)^4}=\frac{m^2x^4}{x^4(1+m^4)}=\frac{m^2}{1+m^4}.
+  \]
+  \pause
+  \begin{center}
+  \normalsize El valor $\dfrac{m^2}{1+m^4}$ \textbf{depende de $m$}: para $m=0$ es $0$; para $m=1$ es $\tfrac12$.
+  \end{center}
+\end{frame}
+
+\begin{frame}{Problema tipo 3: conclusión}
+  Las rectas $y=0$ y $y=x$ producen límites $0$ y $\tfrac12$ respectivamente.
+  \pause
+  \[
+    \boxed{\lim_{(x,y)\to(0,0)}\frac{x^2y^2}{x^4+y^4}\ \text{no existe.}}
+  \]
+  \pause
+  \vspace{6pt}
+  \notaclave{no siempre hace falta una curva --- a veces las rectas ya bastan, si el valor depende de la pendiente $m$}
+\end{frame}
+
+% ======================================================
+% BLOQUE 3 --- SUSTITUCIÓN Y ÁLGEBRA
+% ======================================================
+\bloqueframe{3}{Sustitución directa y manipulación algebraica}{Cuando la función ya es continua, o se puede simplificar}
+
+\begin{frame}{Sustitución directa: la idea}
+  \begin{block}{Principio}
+    Si $f$ es \textbf{continua} en $(a,b)$ --- por ejemplo, cociente de funciones continuas con denominador no nulo --- entonces
+    \[
+      \lim_{(x,y)\to(a,b)} f(x,y)=f(a,b).
+    \]
+  \end{block}
+  \pause
+  \begin{itemize}
+    \item Polinomios, funciones racionales (denominador $\neq 0$), exponenciales, logaritmos y trigonométricas son continuas en todo su dominio.
+    \pause
+    \item Es la técnica más rápida --- siempre conviene descartarla primero antes de pasar a técnicas más laboriosas.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Sustitución directa: problema tipo}
+  \begin{block}{Problema}
+    Calcular $\displaystyle\lim_{(x,y)\to(\pi,1)}\frac{\cos(xy)}{y^2+1}$.
+  \end{block}
+  \pause
+  \textbf{Paso 1.} $\dfrac{\cos(xy)}{y^2+1}$ es cociente de funciones continuas en todo $\mathbb R^2$.
+  \pause
+  \textbf{Paso 2.} En $(\pi,1)$: $1^2+1=2\neq 0$, luego $f$ es continua ahí.
+  \pause
+  \textbf{Paso 3.} Sustitución directa:
+  \[
+    \frac{\cos(\pi\cdot 1)}{1^2+1}=\frac{\cos\pi}{2}=-\frac12.
+  \]
+  \pause
+  \[
+    \boxed{\lim_{(x,y)\to(\pi,1)}\frac{\cos(xy)}{y^2+1}=-\frac12}
+  \]
+\end{frame}
+
+\begin{frame}{Manipulación algebraica: factorización --- planteamiento}
+  \begin{block}{Problema}
+    Calcular
+    \[
+      \lim_{(x,y)\to(0,0)}\frac{x^4y^2+x^2y^4-5x^2-5y^2}{x^2+y^2}.
+    \]
+  \end{block}
+  \pause
+  \vspace{4pt}
+  \begin{center}\normalsize\color{brick} Sustitución directa da $\tfrac00$: hay que simplificar \emph{antes} de tomar el límite.\end{center}
+\end{frame}
+
+\begin{frame}{Manipulación algebraica: factorización --- solución}
+  \textbf{Paso 1. Factorizar el numerador.}
+  \vspace{-4pt}
+  \begin{align*}
+    x^4y^2+x^2y^4-5x^2-5y^2
+    &= x^2y^2(x^2+y^2)-5(x^2+y^2)\\
+    &= (x^2+y^2)(x^2y^2-5).
+  \end{align*}
+  \pause
+  \vspace{-8pt}
+  \textbf{Paso 2. Simplificar} (válido para $(x,y)\neq(0,0)$, donde $x^2+y^2>0$):
+  \[
+    \frac{(x^2+y^2)(x^2y^2-5)}{x^2+y^2}=x^2y^2-5.
+  \]
+  \pause
+  \vspace{-8pt}
+  \textbf{Paso 3. Límite} (la función ya es continua en $(0,0)$):
+  \[
+    \lim_{(x,y)\to(0,0)}(x^2y^2-5)=0-5.
+  \]
+  \pause
+  \vspace{-8pt}
+  \[
+    \boxed{\lim_{(x,y)\to(0,0)}\frac{x^4y^2+x^2y^4-5x^2-5y^2}{x^2+y^2}=-5}
+  \]
+\end{frame}
+
+\begin{frame}{Manipulación algebraica: racionalización --- planteamiento}
+  \begin{block}{Problema}
+    Calcular
+    $\displaystyle\lim_{(x,y)\to(0,0)}\frac{x^2+y^2}{\sqrt{x^2+y^2+1}-1}$
+    usando coordenadas polares.
+  \end{block}
+  \pause
+  \textbf{Paso 1. Coordenadas polares.} Con $x^2+y^2=r^2$:
+  \[
+    \lim_{(x,y)\to(0,0)}\frac{x^2+y^2}{\sqrt{x^2+y^2+1}-1}
+    =\lim_{r\to 0^+}\frac{r^2}{\sqrt{r^2+1}-1}.
+  \]
+  \pause
+  \begin{center}\small\color{gray60} Ahora es un límite de una sola variable ($r$) --- pero sigue siendo $\tfrac00$.\end{center}
+\end{frame}
+
+\begin{frame}{Manipulación algebraica: racionalización --- solución}
+  \textbf{Paso 2. Racionalizar} (multiplicar por el conjugado):
+  \[
+    \frac{r^2}{\sqrt{r^2+1}-1}\cdot\frac{\sqrt{r^2+1}+1}{\sqrt{r^2+1}+1}
+    =\frac{r^2\left(\sqrt{r^2+1}+1\right)}{(r^2+1)-1}
+    =\sqrt{r^2+1}+1.
+  \]
+  \pause
+  \textbf{Paso 3. Límite simplificado.}
+  \[
+    \lim_{r\to 0^+}\left(\sqrt{r^2+1}+1\right)=\sqrt{0+1}+1=2.
+  \]
+  \pause
+  \[
+    \boxed{\lim_{(x,y)\to(0,0)}\frac{x^2+y^2}{\sqrt{x^2+y^2+1}-1}=2}
+  \]
+\end{frame}
+
+% ======================================================
+% BLOQUE 4 --- COORDENADAS POLARES
+% ======================================================
+\bloqueframe{4}{Coordenadas polares}{Cuando el punto de aproximación es el origen}
+
+\begin{frame}{El método: idea general}
+  \begin{itemize}
+    \item Útil cuando el punto de aproximación es el \textbf{origen} y la función contiene $x^2+y^2$.
+    \pause
+    \item Sustituir $x=r\cos\theta$, $y=r\sen\theta$: entonces $x^2+y^2=r^2$ y $(x,y)\to(0,0)$ equivale a $r\to 0^+$.
+    \pause
+    \item Si el límite cuando $r\to 0^+$ \textbf{no depende de $\theta$}, el límite existe y vale eso; si depende de $\theta$, no existe.
+  \end{itemize}
+  \vspace{8pt}
+  \pause
+  \alerta{la independencia de $\theta$ para cada $\theta$ fijo no siempre basta formalmente (se requiere convergencia uniforme en $\theta$), pero para funciones acotadas en $\theta$ --- como todas las de hoy --- la conclusión es válida}
+\end{frame}
+
+\begin{frame}{Problema tipo: planteamiento}
+  \begin{block}{Problema}
+    Sea $f(x,y)=\dfrac{x^2y}{x^2+y^2}$. Estudiar $\displaystyle\lim_{(x,y)\to(0,0)} f(x,y)$.
+  \end{block}
+\end{frame}
+
+\begin{frame}{Problema tipo: solución}
+  \textbf{Paso 1. Coordenadas polares.}
+  \[
+    f(r\cos\theta,r\sen\theta)
+    =\frac{(r\cos\theta)^2(r\sen\theta)}{(r\cos\theta)^2+(r\sen\theta)^2}
+    =\frac{r^3\cos^2\theta\,\sen\theta}{r^2}
+    =r\cos^2\theta\,\sen\theta.
+  \]
+  \pause
+  \textbf{Paso 2. Límite cuando $r\to 0$.} Como $|\cos^2\theta\,\sen\theta|\le 1$:
+  \[
+    \lim_{r\to 0^+} r\cos^2\theta\,\sen\theta=0
+    \qquad\text{para cualquier }\theta\text{ fijo.}
+  \]
+  \pause
+  \textbf{Paso 3. Independencia de $\theta$.} El resultado es $0$ sin importar $\theta$.
+  \pause
+  \[
+    \boxed{\lim_{(x,y)\to(0,0)}\frac{x^2y}{x^2+y^2}=0}
+  \]
+\end{frame}
+
+\begin{frame}{Proposición: función acotada $\times$ función que tiende a cero}
+  \begin{block}{Proposición}
+    Sea $g(r,\theta)=f(r\cos\theta,r\sen\theta)=\phi(\theta)\cdot\psi(r)$, con $|\phi(\theta)|\le M$ para todo $\theta$, y $\lim_{r\to 0^+}\psi(r)=0$. Entonces
+    \[
+      \lim_{(x,y)\to(0,0)} f(x,y)=0.
+    \]
+  \end{block}
+  \pause
+  \vspace{2pt}
+  {\small\textbf{Idea de la demostración:} dado $\varepsilon>0$, tomamos $\delta$ tal que $|\psi(r)|<\varepsilon/M$ para $r<\delta$; entonces
+  \[
+    |f(x,y)|=|\phi(\theta)||\psi(r)|\le M\cdot\frac{\varepsilon}{M}=\varepsilon.
+  \]}
+  \pause
+  \notaclave{formaliza lo que veníamos haciendo: acotar la parte angular y dejar que la parte radial haga el trabajo}
+\end{frame}
+
+\begin{frame}{Aplicación de la proposición --- planteamiento}
+  \begin{block}{Problema}
+    Calcular $\displaystyle\lim_{(x,y)\to(0,0)}\frac{x^4y}{x^4+y^4}$ aplicando la proposición.
+  \end{block}
+  \pause
+  \textbf{Paso 1. Coordenadas polares.}
+  \[
+    f(r\cos\theta,r\sen\theta)
+    =\frac{r^5\cos^4\theta\,\sen\theta}{r^4(\cos^4\theta+\sen^4\theta)}
+    =r\cdot\underbrace{\frac{\cos^4\theta\,\sen\theta}{\cos^4\theta+\sen^4\theta}}_{\phi(\theta)}.
+  \]
+\end{frame}
+
+\begin{frame}{Aplicación de la proposición --- solución}
+  \textbf{Paso 2. Acotar $\phi(\theta)$.} Por identidad trigonométrica:
+  \[
+    \cos^4\theta+\sen^4\theta=1-\tfrac12\sen^2(2\theta)\ge\tfrac12.
+  \]
+  \pause
+  Como $|\cos^4\theta|\le 1$ y $|\sen\theta|\le 1$:
+  \[
+    |\phi(\theta)|=\frac{|\cos^4\theta||\sen\theta|}{\cos^4\theta+\sen^4\theta}\le\frac{1}{1/2}=2.
+  \]
+  \pause
+  \textbf{Paso 3. Aplicar la proposición.} $g(r,\theta)=\phi(\theta)\cdot r$ con $|\phi(\theta)|\le 2$ y $\psi(r)=r\to 0^+$.
+  \pause
+  \[
+    \boxed{\lim_{(x,y)\to(0,0)}\frac{x^4y}{x^4+y^4}=0}
+  \]
+\end{frame}
+
+% ======================================================
+% BLOQUE 5 --- TEOREMA DEL EMPAREDADO
+% ======================================================
+\bloqueframe{5}{Teorema del emparedado}{Acotar para forzar el límite}
+
+\begin{frame}{Enunciado del teorema}
+  \begin{block}{Teorema del emparedado (2 variables)}
+    Si existe un disco perforado centrado en $(a,b)$ donde
+    \[
+      |f(x,y)-L|\le g(x,y)
+    \]
+    y $\displaystyle\lim_{(x,y)\to(a,b)} g(x,y)=0$, entonces $\displaystyle\lim_{(x,y)\to(a,b)} f(x,y)=L$.
+  \end{block}
+  \pause
+  \begin{center}
+  \normalsize Misma idea que en una variable: si $f$ queda atrapada entre dos funciones que comparten límite, $f$ también lo comparte.
+  \end{center}
+  \pause
+  \notaclave{el reto real casi siempre es \emph{encontrar} la cota $g(x,y)$ --- una vez la tienes, el resto es mecánico}
+\end{frame}
+
+\begin{frame}{Problema tipo 1: planteamiento}
+  \begin{block}{Problema}
+    Calcular $\displaystyle\lim_{(x,y)\to(0,0)}\frac{x^2y^2}{x^2+y^2}$.
+  \end{block}
+  \pause
+  \textbf{Paso 1. Cota inferior.} Como $x^2,y^2\ge 0$ y $x^2+y^2>0$ para $(x,y)\neq(0,0)$:
+  \[
+    \frac{x^2y^2}{x^2+y^2}\ge 0.
+  \]
+\end{frame}
+
+\begin{frame}{Problema tipo 1: cota superior y conclusión}
+  \textbf{Paso 2. Cota superior.} Como $(x^2+y^2)^2=x^4+2x^2y^2+y^4\ge x^2y^2$:
+  \[
+    \frac{x^2y^2}{x^2+y^2}\le\frac{(x^2+y^2)^2}{x^2+y^2}=x^2+y^2.
+  \]
+  \pause
+  \textbf{Paso 3. Emparedado.}
+  \[
+    0\le\frac{x^2y^2}{x^2+y^2}\le x^2+y^2,
+    \qquad
+    \lim_{(x,y)\to(0,0)}(x^2+y^2)=0.
+  \]
+  \pause
+  \[
+    \boxed{\lim_{(x,y)\to(0,0)}\frac{x^2y^2}{x^2+y^2}=0}
+  \]
+\end{frame}
+
+\begin{frame}{Problema tipo 2: acotación directa}
+  \begin{block}{Problema}
+    Sea $f(x,y)=x\cos\!\left(\dfrac1y\right)$, con $-1\le\cos\!\left(\dfrac1y\right)\le 1$. Calcular $\displaystyle\lim_{(x,y)\to(0,0)} f(x,y)$.
+  \end{block}
+  \pause
+  \textbf{Paso 1. Acotación.} Multiplicando por $|x|\ge 0$:
+  \[
+    -|x|\le x\cos\!\left(\frac1y\right)\le |x|.
+  \]
+  \pause
+  \textbf{Paso 2. Límite de las cotas.} Ambas tienden a $0$.
+  \pause
+  \[
+    \boxed{\lim_{(x,y)\to(0,0)} x\cos\!\left(\frac1y\right)=0}
+  \]
+\end{frame}
+
+\begin{frame}{Problema tipo 3: cota dada en el enunciado}
+  \begin{block}{Problema}
+    Sea $f(x,y)=\dfrac{\arctan(xy)}{xy}$, con $1-\dfrac{x^2y^3}{3}<\dfrac{\arctan(xy)}{xy}<1$. Calcular $\displaystyle\lim_{(x,y)\to(0,0)} f(x,y)$.
+  \end{block}
+  \pause
+  \textbf{Paso 1. Límite de las cotas.}
+  \[
+    \lim_{(x,y)\to(0,0)}\left(1-\frac{x^2y^3}{3}\right)=1,
+    \qquad
+    \lim_{(x,y)\to(0,0)} 1=1.
+  \]
+  \pause
+  \vspace{-6pt}
+  \textbf{Paso 2. Emparedado.} Ambas cotas tienden a $1$.
+  \pause
+  \vspace{-2pt}
+  \[
+    \boxed{\lim_{(x,y)\to(0,0)}\frac{\arctan(xy)}{xy}=1}
+  \]
+  \pause
+  \vspace{-4pt}
+  \begin{center}\small\color{gray60} Aquí no necesitamos \emph{construir} la cota --- el enunciado ya nos la da.\end{center}
+\end{frame}
+
+% ======================================================
+% BLOQUE 6 --- CONTINUIDAD
+% ======================================================
+\bloqueframe{6}{Continuidad}{Definición, funciones por partes, discontinuidades, regiones}
+
+\begin{frame}{Definición de continuidad en un punto}
+  \begin{block}{Definición}
+    $f$ es \textbf{continua} en $(a,b)$ si se cumplen las tres condiciones:
+    \begin{enumerate}
+      \item $f(a,b)$ está definida,
+      \item $\displaystyle\lim_{(x,y)\to(a,b)} f(x,y)$ existe,
+      \item $\displaystyle\lim_{(x,y)\to(a,b)} f(x,y)=f(a,b)$.
+    \end{enumerate}
+  \end{block}
+  \pause
+  \begin{center}\normalsize Si alguna falla, $f$ tiene una \textbf{discontinuidad} en $(a,b)$.\end{center}
+  \pause
+  \vspace{4pt}
+  \begin{center}\small\color{gray60} Igual que en una variable: polinomios, racionales (denominador $\neq 0$), exponenciales, logaritmos y trigonométricas son continuas en todo su dominio.\end{center}
+\end{frame}
+
+\begin{frame}{Función definida por partes --- planteamiento}
+  \begin{block}{Problema}
+    Estudiar la continuidad de
+    \[
+      f(x,y)=\begin{cases}
+        \dfrac{x^2y}{x^2+y^2}, & (x,y)\neq(0,0),\\[10pt]
+        0, & (x,y)=(0,0).
+      \end{cases}
+    \]
+  \end{block}
+  \pause
+  \textbf{Paso 1.} Para $(x,y)\neq(0,0)$, $f$ es cociente de funciones continuas con denominador $x^2+y^2>0$: continua en $\mathbb R^2\setminus\{(0,0)\}$.
+  \pause
+  \begin{center}\small\color{gray60} Falta verificar el único punto delicado: el origen.\end{center}
+\end{frame}
+
+\begin{frame}{Función definida por partes --- continuidad en el origen}
+  \textbf{Paso 2.} Coordenadas polares ($x=r\cos\theta$, $y=r\sen\theta$):
+  \[
+    \frac{x^2y}{x^2+y^2}=\frac{r^3\cos^2\theta\,\sen\theta}{r^2}
+    =r\cos^2\theta\,\sen\theta\ \xrightarrow[\ r\to 0\ ]{}\ 0.
+  \]
+  \pause
+  \[
+    \lim_{(x,y)\to(0,0)} f(x,y)=0=f(0,0).
+  \]
+  \pause
+  \textbf{Paso 3. Conclusión.} $f$ es continua en $\mathbb R^2\setminus\{(0,0)\}$ y también en $(0,0)$.
+  \pause
+  \[
+    \boxed{f\ \text{es continua en todo }\mathbb R^2.}
+  \]
+\end{frame}
+
+\begin{frame}{Discontinuidad no removible --- ejemplo 1: planteamiento}
+  \begin{block}{Problema}
+    Sea $f(x,y)=\dfrac{8x^3y^2}{x^9+y^3}$. Determinar dónde es discontinua y si es removible.
+  \end{block}
+  \pause
+  \textbf{Paso 1. Puntos de indeterminación.} $f$ se indetermina cuando $x^9+y^3=0$, es decir sobre la curva $y=-x^3$.
+\end{frame}
+
+\begin{frame}{Discontinuidad no removible --- ejemplo 1: conclusión}
+  \textbf{Paso 2. Límite sobre la curva $y=-x^3$.} Con $x=k$, $y=-k^3$:
+  \[
+    \frac{8k^3(-k^3)^2}{k^9+(-k^3)^3}=\frac{8k^9}{k^9-k^9}=\frac{8k^9}{0},
+  \]
+  \pause
+  que no existe (para $k\neq 0$ el numerador es no nulo y el denominador se anula).
+  \pause
+  \textbf{Paso 3. Removibilidad.}
+  \[
+    \boxed{\text{Discontinua sobre }y=-x^3;\ \text{no removible.}}
+  \]
+  \pause
+  \begin{center}\small\color{gray60} Diferencia clave: aquí la indeterminación ocurre a lo largo de \emph{toda una curva}, no solo en un punto.\end{center}
+\end{frame}
+
+\begin{frame}{Discontinuidad no removible --- ejemplo 2: planteamiento}
+  \begin{block}{Problema}
+    Sea $f(x,y)=\dfrac{x^4y}{x^8+y^2}$. Determinar dónde es discontinua y si es removible.
+  \end{block}
+  \pause
+  \textbf{Paso 1. Puntos de indeterminación.} $f$ se indetermina solo cuando $x^8+y^2=0$, es decir en $(x,y)=(0,0)$.
+\end{frame}
+
+\begin{frame}{Discontinuidad no removible --- ejemplo 2: conclusión}
+  \textbf{Paso 2. Familia $y=mx^4$.}
+  \[
+    \frac{x^4(mx^4)}{x^8+(mx^4)^2}=\frac{mx^8}{x^8(1+m^2)}=\frac{m}{1+m^2}.
+  \]
+  \pause
+  Este valor depende de $m$: el límite en $(0,0)$ no existe.
+  \pause
+  \textbf{Paso 3. Removibilidad.}
+  \[
+    \boxed{\text{Discontinua en }(0,0);\ \text{no removible.}}
+  \]
+  \pause
+  \begin{center}\small\color{gray60} Igual que en el Bloque 2, la trayectoria $y=mx^4$ iguala potencias con el $x^8$ del denominador.\end{center}
+\end{frame}
+
+\begin{frame}{Continuidad en regiones --- planteamiento}
+  \begin{block}{Problema}
+    Determine si es verdadera o falsa: la función $g(x,y)=\dfrac{\sqrt{xy}}{x^2+y^2-9}$ es continua en toda la región $D=\{(x,y):|x|+|y|<2\}$.
+  \end{block}
+  \pause
+  \textbf{Paso 1. Dominio de $g$.} Se requieren dos condiciones:
+  \begin{itemize}
+    \item $\sqrt{xy}$ real $\Rightarrow xy\ge 0$ (cuadrantes I y III, incluidos los ejes);
+    \item $x^2+y^2-9\neq 0$, es decir, no estar sobre la circunferencia de radio $3$.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Continuidad en regiones --- análisis del denominador}
+  \textbf{Paso 2. El denominador en $D$.} Para todo $(x,y)\in D$:
+  \[
+    x^2+y^2\le(|x|+|y|)^2<2^2=4<9,
+  \]
+  \pause
+  de modo que $x^2+y^2-9<0$ y nunca se anula en $D$.
+  \pause
+  \begin{center}\normalsize\color{tealx} La segunda condición se cumple en toda la región.\end{center}
+\end{frame}
+
+\begin{frame}{Continuidad en regiones --- análisis del radicando y conclusión}
+  \textbf{Paso 3. El radicando en $D$.} $D$ es el rombo abierto de vértices $(\pm 2,0)$, $(0,\pm 2)$, que \emph{sí} contiene puntos de los cuadrantes II y IV.
+  \pause
+  Por ejemplo, $\left(-\tfrac12,\tfrac12\right)\in D$ (pues $\left|-\tfrac12\right|+\left|\tfrac12\right|=1<2$), pero ahí $xy=-\tfrac14<0$ y $\sqrt{xy}$ no es real.
+  \pause
+  \textbf{Paso 4. Conclusión.} $g$ no está definida en toda la región $D$.
+  \pause
+  \[
+    \boxed{\text{FALSA.}}
+  \]
+  \pause
+  \begin{center}\small\color{gray60} Sí es cierto que $g$ es continua en $D\cap\{xy\ge 0\}$ --- la parte de $D$ en los cuadrantes I y III.\end{center}
+\end{frame}
+
+% ======================================================
+% BLOQUE 7 --- TRES VARIABLES Y CONTORNOS
+% ======================================================
+\bloqueframe{7}{Tres variables y mapas de contorno}{Extensión natural y una lectura gráfica}
+
+\begin{frame}{Límite en tres variables --- planteamiento}
+  \begin{block}{Problema}
+    Calcular $\displaystyle\lim_{(x,y,z)\to(0,0,0)}\frac{x^2-y^2}{x^2+y^2+z^2}$.
+  \end{block}
+  \pause
+  \vspace{4pt}
+  \begin{center}\small\color{gray60} Mismo espíritu que el Bloque 2: probamos con trayectorias, ahora en $\mathbb R^3$.\end{center}
+\end{frame}
+
+\begin{frame}{Límite en tres variables --- dos trayectorias y conclusión}
+  \textbf{Trayectoria $x=y$, $z=0$.}
+  \[
+    f(x,x,0)=\frac{x^2-x^2}{x^2+x^2+0}=0.
+  \]
+  \pause
+  \textbf{Trayectoria $x=0$, $z=0$.}
+  \[
+    f(0,y,0)=\frac{0-y^2}{0+y^2+0}=-1.
+  \]
+  \pause
+  Los valores $0\neq -1$ son distintos.
+  \pause
+  \[
+    \boxed{\lim_{(x,y,z)\to(0,0,0)}\frac{x^2-y^2}{x^2+y^2+z^2}\ \text{no existe.}}
+  \]
+\end{frame}
+
+\begin{frame}{Bonus: leyendo un límite en un mapa de contorno}
+  \begin{block}{Problema}
+    El mapa de contorno de $f(x,y)$ muestra curvas de nivel $10,20,30,40$ que cortan el eje $x$ en $x\approx-1.5,-0.5,0.5,1.5$. Estime
+    $\displaystyle\lim_{h\to 0}\frac{f(h,0)-f(0,0)}{h}$.
+  \end{block}
+  \vspace{-2pt}
+  \begin{center}
+  \begin{tikzpicture}[scale=0.8]
+    \draw[thin,->] (-2.6,0) -- (2.6,0) node[right,font=\scriptsize] {$x$};
+    \draw[thin,->] (0,-1.4) -- (0,1.6) node[above,font=\scriptsize] {$y$};
+    \foreach \xc/\lab in {-1.5/10, -0.5/20, 0.5/30, 1.5/40}{
+      \draw[tealx,thick,variable=\t,domain=-1.25:1.25,samples=40]
+        plot ({\xc + 0.22*\t*\t}, {\t});
+      \node[tealx,font=\scriptsize,above] at ({\xc+0.34},{1.3}) {$\lab$};
+    }
+    \fill[brick] (0,0) circle (1.6pt);
+    \node[brick,font=\scriptsize,below left] at (0,0) {$O$};
+  \end{tikzpicture}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Bonus: interpretación del resultado}
+  \textbf{Paso 1.} $O$ queda entre los niveles $20$ y $30$: $f(0,0)\approx 25$.
+  \pause
+  \textbf{Paso 2.} Sobre el eje $x$: $f(0.5,0)\approx 30$, $f(-0.5,0)\approx 20$.
+  \pause
+  \textbf{Paso 3. Cociente incremental por ambos lados.}
+  \[
+    \frac{30-25}{0.5}=10,
+    \qquad
+    \frac{20-25}{-0.5}=10.
+  \]
+  \pause
+  \[
+    \boxed{\lim_{h\to 0}\frac{f(h,0)-f(0,0)}{h}\approx +10>0}
+  \]
+  \pause
+  \begin{center}\small\color{gray60} Es la razón de cambio de $f$ en la dirección $+x$: al avanzar sobre el eje $x$, $f$ crece $\sim 10$ unidades por unidad de longitud.\end{center}
+\end{frame}
+
+\begin{frame}{Resumen: algoritmo completo de decisión}
+  \estrategias
+  \vspace{6pt}
+  \begin{center}
+  \normalsize Ya vimos \textbf{8 problemas tipo} distintos que recorren estas 5 estrategias --- son tu referencia de cuál usar según la forma de la función.
+  \end{center}
+\end{frame}
+
+\begin{frame}{Resumen: tabla de técnicas}
+  \begin{center}
+  \renewcommand{\arraystretch}{1.35}
+  \small
+  \begin{tabular}{lll}
+    \toprule
+    \textbf{Técnica} & \textbf{Cuándo usarla} & \textbf{Ejemplo trabajado}\\
+    \midrule
+    Trayectorias
+      & Sospechas que no existe
+      & $\frac{x^2y}{x^4+y^2}$, $\frac{x^3y}{x^6+y^2}$, $\frac{x^2y^2}{x^4+y^4}$\\
+    Sustitución directa
+      & $f$ ya es continua en el punto
+      & $\frac{\cos(xy)}{y^2+1}$ en $(\pi,1)$\\
+    Manipulación algebraica
+      & Indeterminación $\tfrac00$ simplificable
+      & factorización, racionalización\\
+    Coordenadas polares
+      & Punto $=$ origen, aparece $x^2+y^2$
+      & $\frac{x^2y}{x^2+y^2}$, $\frac{x^4y}{x^4+y^4}$\\
+    Emparedado
+      & Puedes acotar $f$ entre dos funciones
+      & $\frac{x^2y^2}{x^2+y^2}$, $x\cos(1/y)$\\
+    \bottomrule
+  \end{tabular}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Cierre}
+  \begin{itemize}
+    \setlength{\itemsep}{5pt}
+    \item El límite en varias variables exige el \textbf{mismo valor por todas las trayectorias} --- la fuente de toda la dificultad de hoy.
+    \pause
+    \item Las 5 estrategias no son excluyentes: muchos problemas combinan más de una (racionalizar y pasar a polares, por ejemplo).
+    \pause
+    \item La continuidad hereda directamente la definición de límite: solo agrega la condición de que el valor coincida con $f(a,b)$.
+  \end{itemize}
+  \vspace{8pt}
+  \pause
+  \begin{block}{Próxima clase}
+    Con límites y continuidad resueltos, el siguiente paso es la \textbf{derivada parcial}: cómo cambia $f$ al mover una sola variable a la vez.
+  \end{block}
+\end{frame}
+
+\end{document}

@@ -1,0 +1,743 @@
+\documentclass[11pt,aspectratio=169]{beamer}
+\input{estilo_presentaciones}
+
+\setpie{Superficies cuádricas --- Cálculo III}
+\setbloques{6}
+
+\title{Superficies cuádricas}
+\subtitle{Trazas, cortes y curvas de nivel en $\mathbb{R}^3$}
+\author{Andrés Fabián Leal Archila}
+\institute{Cálculo III (Multivariable) --- Cód. 20254}
+\date{\today}
+
+\begin{document}
+
+\portada
+% ---------- AGENDA ----------
+\begin{frame}{Agenda de la clase}
+  \begin{enumerate}
+    \setlength{\itemsep}{8pt}
+    \item \textbf{Recordatorio}: paraboloide elíptico (ya visto) como referencia \hfill{\small\color{gray60}(3 min)}
+    \item \textbf{Elipsoide} \hfill{\small\color{gray60}(8 min)}
+    \item \textbf{Hiperboloide de una hoja} \hfill{\small\color{gray60}(9 min)}
+    \item \textbf{Hiperboloide de dos hojas} \hfill{\small\color{gray60}(9 min)}
+    \item \textbf{Cono elíptico} \hfill{\small\color{gray60}(7 min)}
+    \item \textbf{Cilindros} (elíptico, parabólico, hiperbólico) \hfill{\small\color{gray60}(9 min)}
+    \item \textbf{Superficies de nivel}: $f(x,y,z)=x^2+y^2-z^2$ \hfill{\small\color{gray60}(8 min)}
+    \item \textbf{Cierre}: tabla comparativa de las 9 cuádricas \hfill{\small\color{gray60}(5 min)}
+  \end{enumerate}
+  \vfill
+  \begin{center}
+    \small\color{gray60} Duración estimada total: $\sim$58 minutos
+  \end{center}
+\end{frame}
+
+% ======================================================
+% BLOQUE 0 --- RECORDATORIO (paraboloide elíptico, ya visto)
+% ======================================================
+\begin{frame}{Recordatorio: paraboloide elíptico}
+  \begin{block}{Ya visto}
+    \[
+      z = \frac{x^2}{a^2}+\frac{y^2}{b^2}
+    \]
+  \end{block}
+  \pause
+  \begin{center}\normalsize
+  Con esa cuádrica establecimos el \textbf{patrón} que repetimos hoy para cada superficie nueva:
+  \end{center}
+  \vspace{4pt}
+  \begin{center}
+  \begin{tikzpicture}[node distance=0.35cm]
+    \node[draw=tealx,thick,fill=tealx!10,rounded corners,minimum width=2.3cm,minimum height=1cm,align=center,font=\footnotesize] (p1) {Ecuación\\canónica};
+    \node[draw=tealx,thick,fill=tealx!10,rounded corners,minimum width=2.3cm,minimum height=1cm,align=center,font=\footnotesize,right=of p1] (p2) {Ejemplo\\numérico};
+    \node[draw=tealx,thick,fill=tealx!10,rounded corners,minimum width=2.3cm,minimum height=1cm,align=center,font=\footnotesize,right=of p2] (p3) {Trazas con\\planos coord.};
+    \node[draw=tealx,thick,fill=tealx!10,rounded corners,minimum width=2.3cm,minimum height=1cm,align=center,font=\footnotesize,right=of p3] (p4) {Curvas de\\nivel ($z=k$)};
+    \draw[-{Stealth},tealx,thick] (p1)--(p2);
+    \draw[-{Stealth},tealx,thick] (p2)--(p3);
+    \draw[-{Stealth},tealx,thick] (p3)--(p4);
+  \end{tikzpicture}
+  \end{center}
+  \pause
+  \begin{center}\small\color{gray60}
+  Hoy: 4 cuádricas centrales, 3 cilindros, y cómo una sola función $f(x,y,z)$ genera varias de ellas a la vez.
+  \end{center}
+\end{frame}
+
+% ======================================================
+% BLOQUE 1 --- ELIPSOIDE
+% ======================================================
+\bloqueframe{1}{Elipsoide}{Ecuación, ejemplo, trazas y curvas de nivel}
+
+\begin{frame}{Elipsoide --- ecuación canónica}
+  \begin{block}{Ecuación canónica}
+    \[
+      \frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2}=1, \qquad a,b,c>0.
+    \]
+  \end{block}
+  \pause
+  \begin{itemize}
+    \item Es la generalización del elipsoide (achatado en 3 direcciones distintas).
+    \pause
+    \item \textbf{Caso particular:} si $a=b=c=r$, se reduce a la esfera $x^2+y^2+z^2=r^2$.
+    \pause
+    \item Superficie \textbf{acotada}: no se extiende al infinito en ninguna dirección.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Elipsoide --- ejemplo}
+  \begin{block}{Problema}
+    Identificar y describir la superficie $\dfrac{x^2}{4}+\dfrac{y^2}{9}+z^2=1$.
+  \end{block}
+  \pause
+  \[
+    a=2,\qquad b=3,\qquad c=1.
+  \]
+  \pause
+  \begin{center}\normalsize\color{tealx}
+  Elipsoide centrado en el origen: semieje $2$ en $x$, $3$ en $y$, $1$ en $z$.
+  \end{center}
+\end{frame}
+
+\begin{frame}{Elipsoide --- trazas con los planos coordenados}
+  \begin{columns}
+    \begin{column}{0.55\textwidth}
+      \[
+        z=0:\ \ \frac{x^2}{4}+\frac{y^2}{9}=1 \ \ \text{(elipse en } xy\text{)}
+      \]
+      \pause
+      \[
+        y=0:\ \ \frac{x^2}{4}+z^2=1 \ \ \text{(elipse en } xz\text{)}
+      \]
+      \pause
+      \[
+        x=0:\ \ \frac{y^2}{9}+z^2=1 \ \ \text{(elipse en } yz\text{)}
+      \]
+    \end{column}
+    \begin{column}{0.4\textwidth}
+      \centering
+      \begin{tikzpicture}[scale=0.55]
+        \draw[navy,thick] (0,0) ellipse (2 and 1.4);
+        \draw[tealx,thick,dashed] (0,0) ellipse (1.4 and 1.4);
+        \draw[brick,thick,dotted] (0,0) ellipse (2 and 2);
+      \end{tikzpicture}\\
+      \small\color{gray60} las tres trazas son elipses
+    \end{column}
+  \end{columns}
+  \pause
+  \vspace{4pt}
+  \begin{center}\normalsize\color{tealx}\textbf{Las tres trazas del elipsoide son siempre elipses} --- ninguna se degenera.\end{center}
+\end{frame}
+
+\begin{frame}{Elipsoide --- curvas de nivel}
+  Cortando con $z=k$:
+  \[
+    \frac{x^2}{4}+\frac{y^2}{9}=1-k^2.
+  \]
+  \pause
+  \begin{itemize}
+    \item Si $|k|<1$: elipse real, cuyo tamaño \textbf{depende de $k$}.
+    \pause
+    \item Si $|k|=1$: el lado derecho es $0$ --- la ``elipse'' se colapsa a un \textbf{punto}.
+    \pause
+    \item Si $|k|>1$: lado derecho negativo --- \textbf{no hay intersección} (el corte queda fuera del elipsoide).
+  \end{itemize}
+  \pause
+  \begin{center}\normalsize\color{tealx}
+  Las curvas de nivel crecen desde $k=0$ (elipse más grande) y se \textbf{achican hasta un punto} en $k=\pm1$.
+  \end{center}
+  \notaanimacion{corte $z=k$ deslizante --- ver cómo la elipse crece y luego se cierra en un punto}
+\end{frame}
+
+% ======================================================
+% BLOQUE 2 --- HIPERBOLOIDE DE UNA HOJA
+% ======================================================
+\bloqueframe{2}{Hiperboloide de una hoja}{Ecuación, ejemplo, trazas y curvas de nivel}
+
+\begin{frame}{Hiperboloide de una hoja --- ecuación canónica}
+  \begin{block}{Ecuación canónica (eje en $z$)}
+    \[
+      \frac{x^2}{a^2}+\frac{y^2}{b^2}-\frac{z^2}{c^2}=1.
+    \]
+  \end{block}
+  \pause
+  \begin{itemize}
+    \item El signo negativo va con la variable del \textbf{eje de la superficie} (aquí, $z$).
+    \pause
+    \item Es \textbf{conexa} (una sola pieza) y \textbf{no acotada}: se abre indefinidamente en la dirección del eje.
+    \pause
+    \item Superficie \textbf{reglada}: puede generarse con rectas, por eso aparece en torres de refrigeración y estructuras arquitectónicas.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Hiperboloide de una hoja --- ejemplo}
+  \begin{block}{Problema}
+    Identificar $\dfrac{x^2}{4}+\dfrac{y^2}{9}-z^2=1$.
+  \end{block}
+  \pause
+  \begin{center}\normalsize\color{tealx}
+  Hiperboloide de una hoja con eje en $z$; la ``cintura'' (sección más angosta) está en $z=0$.
+  \end{center}
+\end{frame}
+
+\begin{frame}{Hiperboloide de una hoja --- trazas con los planos coordenados}
+  \begin{columns}
+    \begin{column}{0.55\textwidth}
+      \[
+        z=0:\ \ \frac{x^2}{4}+\frac{y^2}{9}=1 \ \ \text{(\textbf{elipse}, la cintura)}
+      \]
+      \pause
+      \[
+        y=0:\ \ \frac{x^2}{4}-z^2=1 \ \ \text{(\textbf{hipérbola})}
+      \]
+      \pause
+      \[
+        x=0:\ \ \frac{y^2}{9}-z^2=1 \ \ \text{(\textbf{hipérbola})}
+      \]
+    \end{column}
+    \begin{column}{0.4\textwidth}
+      \centering
+      \begin{tikzpicture}[scale=0.5]
+        \draw[navy,thick] (0,0) ellipse (2 and 1.4);
+        \draw[tealx,thick,domain=-1.5:1.5,samples=40] plot ({2*sqrt(1+(\x)^2)},{\x});
+        \draw[tealx,thick,domain=-1.5:1.5,samples=40] plot ({-2*sqrt(1+(\x)^2)},{\x});
+        \draw[brick,thick,domain=-1.5:1.5,samples=40] plot ({\x*0},{0});
+      \end{tikzpicture}\\
+      \small\color{gray60} cintura elíptica + ramas hiperbólicas
+    \end{column}
+  \end{columns}
+  \pause
+  \vspace{4pt}
+  \begin{center}\normalsize\color{tealx}\textbf{Mezcla:} una traza elipse y dos trazas hipérbola --- combina las dos cónicas.\end{center}
+\end{frame}
+
+\begin{frame}{Hiperboloide de una hoja --- curvas de nivel}
+  Cortando con $z=k$:
+  \[
+    \frac{x^2}{4}+\frac{y^2}{9}=1+k^2.
+  \]
+  \pause
+  \begin{center}\normalsize\color{tealx}
+  El lado derecho es \textbf{siempre positivo} (mínimo en $k=0$, dando $1$) --- \textbf{para todo $k$ hay una elipse real}.
+  \end{center}
+  \pause
+  \begin{itemize}
+    \item La elipse más pequeña ocurre en $k=0$: la cintura.
+    \item Al alejarse de $k=0$ (en cualquier dirección), la elipse \textbf{crece sin límite}.
+  \end{itemize}
+  \pause
+  \begin{center}\small\color{gray60}
+  Contraste con el elipsoide: ahí las curvas de nivel se \textbf{cerraban} en $k=\pm1$; aquí \textbf{nunca se cierran}.
+  \end{center}
+  \notaanimacion{corte $z=k$ deslizante --- la elipse de la cintura se ensancha sin límite}
+\end{frame}
+
+% ======================================================
+% BLOQUE 3 --- HIPERBOLOIDE DE DOS HOJAS
+% ======================================================
+\bloqueframe{3}{Hiperboloide de dos hojas}{Ecuación, ejemplo, trazas y curvas de nivel}
+
+\begin{frame}{Hiperboloide de dos hojas --- ecuación canónica}
+  \begin{block}{Ecuación canónica (eje en $z$)}
+    \[
+      \frac{z^2}{c^2}-\frac{x^2}{a^2}-\frac{y^2}{b^2}=1.
+    \]
+  \end{block}
+  \pause
+  \begin{itemize}
+    \item \textbf{Dos signos negativos} (en vez de uno): esta es la diferencia clave con el hiperboloide de una hoja.
+    \pause
+    \item Es \textbf{disconexa}: consta de \textbf{dos piezas separadas} (dos ``hojas''), una con $z>0$ y otra con $z<0$.
+    \pause
+    \item No hay puntos con $z$ cerca de $0$ --- hay un ``hueco'' entre las dos hojas.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Hiperboloide de dos hojas --- ejemplo}
+  \begin{block}{Problema}
+    Identificar $z^2-\dfrac{x^2}{4}-\dfrac{y^2}{9}=1$.
+  \end{block}
+  \pause
+  \begin{center}\normalsize\color{tealx}
+  Hiperboloide de dos hojas con eje en $z$; cada hoja se abre a partir de su vértice.
+  \end{center}
+  \pause
+  \begin{center}\small\color{gray60}
+  Vértices: donde $x=y=0$, es decir $z^2=1 \Rightarrow z=\pm1$.
+  \end{center}
+\end{frame}
+
+\begin{frame}{Hiperboloide de dos hojas --- trazas con los planos coordenados}
+  \[
+    y=0:\ \ z^2-\frac{x^2}{4}=1 \ \ \text{(\textbf{hipérbola})}
+  \]
+  \pause
+  \[
+    x=0:\ \ z^2-\frac{y^2}{9}=1 \ \ \text{(\textbf{hipérbola})}
+  \]
+  \pause
+  \[
+    z=0:\ \ -\frac{x^2}{4}-\frac{y^2}{9}=1 \ \ \Longrightarrow\ \ \text{\textbf{ningún punto real}}
+  \]
+  \pause
+  \begin{center}\normalsize\color{brick}
+  \textbf{El plano $z=0$ no toca la superficie} --- es justo el ``hueco'' entre las dos hojas.
+  \end{center}
+\end{frame}
+
+\begin{frame}{Hiperboloide de dos hojas --- curvas de nivel}
+  Cortando con $z=k$:
+  \[
+    \frac{x^2}{4}+\frac{y^2}{9}=k^2-1.
+  \]
+  \pause
+  \begin{itemize}
+    \item Si $|k|<1$: lado derecho negativo --- \textbf{vacío} (confirma el hueco).
+    \pause
+    \item Si $|k|=1$: lado derecho $0$ --- un \textbf{punto} (el vértice de cada hoja).
+    \pause
+    \item Si $|k|>1$: elipse real, que \textbf{crece} conforme $|k|$ aumenta.
+  \end{itemize}
+  \pause
+  \begin{center}\normalsize\color{tealx}
+  Cada hoja \textbf{nace de un punto} (el vértice) y se abre en elipses cada vez más grandes.
+  \end{center}
+\end{frame}
+
+% ======================================================
+% BLOQUE 4 --- CONO ELÍPTICO
+% ======================================================
+\bloqueframe{4}{Cono elíptico}{Ecuación, ejemplo, trazas y curvas de nivel}
+
+\begin{frame}{Cono elíptico --- ecuación canónica}
+  \begin{block}{Ecuación canónica (eje en $z$)}
+    \[
+      \frac{x^2}{a^2}+\frac{y^2}{b^2}=\frac{z^2}{c^2}.
+    \]
+  \end{block}
+  \pause
+  \begin{itemize}
+    \item A diferencia de las anteriores, el lado derecho \textbf{es una variable al cuadrado}, no una constante.
+    \pause
+    \item El único punto singular (el \textbf{vértice}) es el origen.
+    \pause
+    \item Vista como familia de rectas: el cono es \textbf{unión de rectas por el origen}.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Cono elíptico --- ejemplo}
+  \begin{block}{Problema}
+    Identificar $\dfrac{x^2}{4}+\dfrac{y^2}{9}=z^2$.
+  \end{block}
+  \pause
+  \begin{center}\normalsize\color{tealx}
+  Cono elíptico con vértice en el origen y eje en $z$.
+  \end{center}
+\end{frame}
+
+\begin{frame}{Cono elíptico --- trazas con los planos coordenados}
+  \[
+    y=0:\ \ \frac{x^2}{4}=z^2 \ \Longrightarrow\ z=\pm\frac{x}{2}\ \ \text{(\textbf{dos rectas})}
+  \]
+  \pause
+  \[
+    x=0:\ \ \frac{y^2}{9}=z^2 \ \Longrightarrow\ z=\pm\frac{y}{3}\ \ \text{(\textbf{dos rectas})}
+  \]
+  \pause
+  \[
+    z=0:\ \ \frac{x^2}{4}+\frac{y^2}{9}=0 \ \Longrightarrow\ \ \text{\textbf{solo el punto } }(0,0)
+  \]
+  \pause
+  \begin{center}\normalsize\color{tealx}
+  Trazas \textbf{degeneradas}: pares de rectas (no hipérbolas) y un punto (no elipse) --- síntoma de que el vértice es un punto singular.
+  \end{center}
+\end{frame}
+
+\begin{frame}{Cono elíptico --- curvas de nivel}
+  Cortando con $z=k$:
+  \[
+    \frac{x^2}{4}+\frac{y^2}{9}=k^2.
+  \]
+  \pause
+  \begin{itemize}
+    \item Si $k=0$: un solo \textbf{punto} (el vértice).
+    \pause
+    \item Si $k\neq0$: \textbf{elipse}, con semiejes proporcionales a $|k|$ (crecimiento \textbf{lineal}, no cuadrático).
+  \end{itemize}
+  \pause
+  \begin{center}\normalsize\color{tealx}
+  El cono es el caso \textbf{límite}: ni se cierra en un punto aislado como el elipsoide, ni tiene hueco como el hiperboloide de dos hojas --- las elipses arrancan de tamaño cero en $k=0$ y crecen sin parar.
+  \end{center}
+  \notaanimacion{corte $z=k$ deslizante --- el cono conecta continuamente con las dos hojas del hiperboloide}
+\end{frame}
+
+% ======================================================
+% BLOQUE 5 --- CILINDROS
+% ======================================================
+\bloqueframe{5}{Cilindros}{Superficies degeneradas: falta una variable}
+
+\begin{frame}{Cilindros --- idea general}
+  \begin{block}{Idea clave}
+    En $\mathbb{R}^3$, una ecuación donde \textbf{falta una variable} define un cilindro: la variable ausente puede tomar \textbf{cualquier valor} sin cambiar la ecuación.
+  \end{block}
+  \pause
+  \begin{itemize}
+    \item No son ``menos importantes'' que las anteriores --- son el caso \textbf{límite} donde la sección transversal \textbf{no cambia} al mover la variable faltante.
+    \pause
+    \item Se clasifican según la \textbf{cónica} que aparece en las dos variables presentes: elipse, parábola o hipérbola.
+    \pause
+    \item Con esto, ya tenemos las 3 cónicas del plano (elipse, parábola, hipérbola) generando 3 familias de cilindros.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Cilindro elíptico}
+  \begin{block}{Ecuación (falta $z$)}
+    \[
+      \frac{x^2}{a^2}+\frac{y^2}{b^2}=1.
+    \]
+  \end{block}
+  \pause
+  \textbf{Ejemplo:} $\dfrac{x^2}{4}+\dfrac{y^2}{9}=1$.
+  \pause
+  \begin{itemize}
+    \item \textbf{Traza en $z=0$:} la elipse $\frac{x^2}{4}+\frac{y^2}{9}=1$ (idéntica para cualquier $z=k$).
+    \pause
+    \item \textbf{Trazas en $x=0$ y $y=0$:} rectas verticales paralelas al eje $z$.
+  \end{itemize}
+  \pause
+  \begin{center}\normalsize\color{tealx}
+  \textbf{Curva de nivel constante:} el corte $z=k$ da \emph{siempre la misma elipse}, sin importar $k$ --- la superficie es esa elipse ``arrastrada'' a lo largo de todo el eje $z$.
+  \end{center}
+\end{frame}
+
+\begin{frame}{Cilindro parabólico}
+  \begin{block}{Ecuación (falta $z$)}
+    \[
+      y=x^2.
+    \]
+  \end{block}
+  \pause
+  \begin{itemize}
+    \item \textbf{Traza en $z=0$:} la parábola $y=x^2$ (misma para cualquier $z=k$).
+    \pause
+    \item \textbf{Traza en $x=0$:} la recta $y=0$ (para todo $z$).
+    \pause
+    \item \textbf{Traza en $y=0$:} solo la recta $x=0$ (para todo $z$).
+  \end{itemize}
+  \pause
+  \begin{center}\normalsize\color{tealx}
+  \textbf{Curva de nivel constante:} el corte $z=k$ siempre reproduce la misma parábola $y=x^2$ --- la superficie es esa parábola arrastrada a lo largo del eje $z$.
+  \end{center}
+\end{frame}
+
+\begin{frame}{Cilindro hiperbólico}
+  \begin{block}{Ecuación (falta $z$)}
+    \[
+      \frac{x^2}{a^2}-\frac{y^2}{b^2}=1.
+    \]
+  \end{block}
+  \pause
+  \textbf{Ejemplo:} $\dfrac{x^2}{4}-y^2=1$.
+  \pause
+  \begin{itemize}
+    \item \textbf{Traza en $z=0$:} la hipérbola $\frac{x^2}{4}-y^2=1$ (misma para cualquier $z=k$).
+    \pause
+    \item \textbf{Traza en $y=0$:} dos rectas verticales $x=\pm2$.
+    \pause
+    \item \textbf{Traza en $x=0$:} $-y^2=1$, \textbf{sin solución real} --- el plano $x=0$ no toca la superficie.
+  \end{itemize}
+  \pause
+  \begin{center}\normalsize\color{tealx}
+  \textbf{Curva de nivel constante:} el corte $z=k$ siempre da la misma hipérbola --- arrastrada a lo largo del eje $z$.
+  \end{center}
+\end{frame}
+
+% ======================================================
+% BLOQUE 6 --- SUPERFICIES DE NIVEL
+% ======================================================
+\bloqueframe{6}{Superficies de nivel}{$f(x,y,z)=x^2+y^2-z^2$: tres cuádricas, un solo ejemplo}
+
+\begin{frame}{Superficies de nivel --- concepto}
+  \begin{block}{Definición}
+    Para $f:\mathbb{R}^3\to\mathbb{R}$, la \textbf{superficie de nivel} $k$ es el conjunto
+    \[
+      \{(x,y,z) : f(x,y,z)=k\}.
+    \]
+  \end{block}
+  \pause
+  \begin{center}\normalsize\color{tealx}
+  Es la \textbf{misma idea} que las curvas de nivel de $f(x,y)$: fijamos el valor de la función y vemos qué puntos lo alcanzan --- solo que ahora esos puntos forman una \textbf{superficie} en $\mathbb{R}^3$, no una curva en $\mathbb{R}^2$.
+  \end{center}
+  \pause
+  \begin{center}\small\color{gray60}
+  Cada cuádrica de este bloque es, en realidad, \textbf{una sola} superficie de nivel de alguna $f$.
+  \end{center}
+\end{frame}
+
+\begin{frame}{Superficies de nivel de $f(x,y,z)=x^2+y^2-z^2$ --- planteamiento}
+  \begin{block}{Problema}
+    Sea $f(x,y,z)=x^2+y^2-z^2$. Describir la superficie de nivel $f(x,y,z)=k$ para cada valor de $k$.
+  \end{block}
+  \pause
+  \[
+    x^2+y^2-z^2=k \qquad\Longleftrightarrow\qquad x^2+y^2=z^2+k.
+  \]
+  \pause
+  \begin{center}\normalsize
+  El signo de $k$ decide \textbf{qué tipo de cuádrica} obtenemos --- las tres ya las conocemos.
+  \end{center}
+\end{frame}
+
+\begin{frame}{Caso $k>0$: hiperboloide de una hoja}
+  \[
+    x^2+y^2-z^2=k \ \Longleftrightarrow\ \frac{x^2}{k}+\frac{y^2}{k}-\frac{z^2}{k}=1.
+  \]
+  \pause
+  \begin{center}\normalsize\color{tealx}
+  Misma forma del \textbf{Bloque 2}: hiperboloide de una hoja, con cintura de radio $\sqrt{k}$ en $z=0$.
+  \end{center}
+  \pause
+  \begin{center}\small\color{gray60}
+  Entre más grande $k$, más ancha la cintura.
+  \end{center}
+\end{frame}
+
+\begin{frame}{Caso $k=0$: cono elíptico}
+  \[
+    x^2+y^2-z^2=0 \ \Longleftrightarrow\ x^2+y^2=z^2.
+  \]
+  \pause
+  \begin{center}\normalsize\color{tealx}
+  Exactamente el \textbf{Bloque 4}: cono elíptico (aquí, circular) con vértice en el origen.
+  \end{center}
+  \pause
+  \begin{center}\normalsize\color{brick}
+  \textbf{Este es el valor frontera:} separa el caso $k>0$ del caso $k<0$.
+  \end{center}
+\end{frame}
+
+\begin{frame}{Caso $k<0$: hiperboloide de dos hojas}
+  Escribiendo $k=-m$ con $m>0$:
+  \[
+    x^2+y^2-z^2=-m \ \Longleftrightarrow\ \frac{z^2}{m}-\frac{x^2}{m}-\frac{y^2}{m}=1.
+  \]
+  \pause
+  \begin{center}\normalsize\color{tealx}
+  Misma forma del \textbf{Bloque 3}: hiperboloide de dos hojas, con vértices en $z=\pm\sqrt{m}$.
+  \end{center}
+\end{frame}
+
+\begin{frame}{Superficies de nivel --- síntesis}
+  \begin{center}
+  \begin{tikzpicture}[scale=0.62]
+    \draw[-{Stealth},thick,gray60] (-4.5,0) -- (4.5,0) node[right,black]{$k$};
+    \fill[brick] (0,0) circle (2.2pt);
+    \node[below,brick,font=\footnotesize,align=center] at (0,-0.3) {$k=0$\\cono};
+    \node[above,tealx,font=\footnotesize,align=center] at (2.6,0.3) {$k>0$\\hiperb.\ 1 hoja};
+    \node[above,navy,font=\footnotesize,align=center] at (-2.6,0.3) {$k<0$\\hiperb.\ 2 hojas};
+    \draw[tealx,thick,-{Stealth}] (0.5,0) -- (4.2,0);
+    \draw[navy,thick,{Stealth}-] (-4.2,0) -- (-0.5,0);
+  \end{tikzpicture}
+  \end{center}
+  \pause
+  \begin{center}\normalsize
+  \textbf{Una sola familia de superficies}, $x^2+y^2-z^2=k$, recorre \textbf{continuamente} los tres tipos de cuádricas al variar $k$.
+  \end{center}
+  \pause
+  \begin{center}\small\color{gray60}
+  El cono ($k=0$) no es un caso aparte: es la \textbf{frontera exacta} donde el hiperboloide de una hoja se ``cierra'' para convertirse en el de dos hojas.
+  \end{center}
+\end{frame}
+
+% ======================================================
+% CIERRE
+% ======================================================
+\begin{frame}{Resumen: las 9 cuádricas}
+  \footnotesize
+  \begin{center}
+  \renewcommand{\arraystretch}{1.35}
+  \begin{tabular}{p{2.7cm}p{4.4cm}p{4.6cm}}
+    \toprule
+    \textbf{Cuádrica} & \textbf{Ecuación} & \textbf{Curva de nivel ($z=k$)} \\
+    \midrule
+    Paraboloide elíptico & $z=\frac{x^2}{a^2}+\frac{y^2}{b^2}$ & elipse (crece con $\sqrt{k}$, $k\ge0$) \\
+    Elipsoide & $\frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2}=1$ & elipse, se cierra en $k=\pm1$ \\
+    Hiperb.\ 1 hoja & $\frac{x^2}{a^2}+\frac{y^2}{b^2}-\frac{z^2}{c^2}=1$ & elipse, nunca se cierra \\
+    Hiperb.\ 2 hojas & $\frac{z^2}{c^2}-\frac{x^2}{a^2}-\frac{y^2}{b^2}=1$ & vacío, luego punto, luego elipse \\
+    Cono elíptico & $\frac{x^2}{a^2}+\frac{y^2}{b^2}=\frac{z^2}{c^2}$ & punto en $k=0$, elipse lineal en $k$ \\
+    Cil.\ elíptico & $\frac{x^2}{a^2}+\frac{y^2}{b^2}=1$ & elipse constante (no depende de $k$) \\
+    Cil.\ parabólico & $y=x^2$ & parábola constante \\
+    Cil.\ hiperbólico & $\frac{x^2}{a^2}-\frac{y^2}{b^2}=1$ & hipérbola constante \\
+    \bottomrule
+  \end{tabular}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Cierre}
+  \begin{itemize}
+    \item Todas las cuádricas se identifican con el \textbf{mismo procedimiento}: ecuación canónica $\to$ ejemplo $\to$ trazas $\to$ curvas de nivel.
+    \pause
+    \item El \textbf{signo} de cada término (y si aparece del lado ``constante'' o ``variable'') determina el tipo de cuádrica.
+    \pause
+    \item Las superficies de nivel de una sola función pueden \textbf{recorrer varias cuádricas distintas} al variar $k$ --- no son objetos aislados.
+  \end{itemize}
+  \vspace{10pt}
+  \pause
+  \begin{block}{Próxima clase}
+    Con las superficies ya identificadas, el siguiente paso es describir \textbf{regiones sólidas} delimitadas por cuádricas --- necesario para integrales triples.
+  \end{block}
+\end{frame}
+
+% ======================================================
+% GALERÍA --- FIGURAS YA GRAFICADAS (estilo problemario)
+% ======================================================
+\begin{frame}[plain]
+  \vfill
+  \begin{center}
+    {\color{gray60}\footnotesize GALERÍA}\\[0.3em]
+    {\color{navy}\Large\bfseries Las superficies, ya graficadas}\\[0.6em]
+    {\color{tealx}\footnotesize Mismas ecuaciones trabajadas en clase --- estilo problemario}
+  \end{center}
+  \vfill
+\end{frame}
+
+\begin{frame}{Galería --- paraboloide elíptico y elipsoide}
+  \begin{center}
+  \figcard{
+    \begin{tikzpicture}
+    \begin{axis}[axis lines=center, xlabel=$x$, ylabel=$y$, zlabel=$z$,
+                 xmin=-2.2,xmax=2.2,ymin=-2.2,ymax=2.2,zmin=0,zmax=4.5,
+                 view={130}{25}, ticklabel style={font=\tiny},
+                 width=5.6cm, height=5cm]
+      \addplot3[surf, shader=flat corner, samples=15, domain=-2:2,
+                colormap/cool, opacity=0.78] {x^2+y^2};
+    \end{axis}
+    \end{tikzpicture}
+  }{$z=x^2+y^2$ (paraboloide elíptico, recordatorio)}
+  \hfill
+  \figcard{
+    \begin{tikzpicture}
+    \begin{axis}[axis lines=center, xlabel=$x$, ylabel=$y$, zlabel=$z$,
+                 xmin=-2.5,xmax=2.5,ymin=-3.5,ymax=3.5,zmin=-1.3,zmax=1.3,
+                 view={125}{22}, ticklabel style={font=\tiny},
+                 width=5.6cm, height=5cm, trig format plots=deg]
+      \addplot3[surf, shader=flat corner, samples=20,
+                variable=\u, variable y=\v,
+                domain=0:180, y domain=0:360,
+                colormap/cool, opacity=0.80]
+        ({2*sin(\u)*cos(\v)}, {3*sin(\u)*sin(\v)}, {cos(\u)});
+    \end{axis}
+    \end{tikzpicture}
+  }{$\frac{x^2}{4}+\frac{y^2}{9}+z^2=1$ (elipsoide)}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Galería --- hiperboloide de una hoja y de dos hojas}
+  \begin{center}
+  \figcard{
+    \begin{tikzpicture}
+    \begin{axis}[axis lines=center, xlabel=$x$, ylabel=$y$, zlabel=$z$,
+                 xmin=-2.8,xmax=2.8,ymin=-3.6,ymax=3.6,zmin=-1.9,zmax=1.9,
+                 view={115}{18}, ticklabel style={font=\tiny},
+                 width=5.6cm, height=5cm]
+      \addplot3[surf, shader=flat corner, samples=18,
+                colormap/cool, opacity=0.78,
+                variable=\u, variable y=\v,
+                domain=0:360, y domain=-1.8:1.8,
+                trig format plots=deg]
+               ({2*sqrt(1+\v*\v)*cos(\u)}, {3*sqrt(1+\v*\v)*sin(\u)}, {\v});
+    \end{axis}
+    \end{tikzpicture}
+  }{$\frac{x^2}{4}+\frac{y^2}{9}-z^2=1$ (hiperb.\ 1 hoja)}
+  \hfill
+  \figcard{
+    \begin{tikzpicture}
+    \begin{axis}[axis lines=center, xlabel=$x$, ylabel=$y$, zlabel=$z$,
+                 xmin=-3.2,xmax=3.2,ymin=-4.2,ymax=4.2,zmin=-3.2,zmax=3.2,
+                 view={130}{25}, ticklabel style={font=\tiny},
+                 width=5.6cm, height=5cm]
+      \addplot3[surf, shader=flat corner, samples=16, domain=-3:3,
+                colormap/cool, opacity=0.78] {sqrt(1+x^2/4+y^2/9)};
+      \addplot3[surf, shader=flat corner, samples=16, domain=-3:3,
+                colormap/cool, opacity=0.78] {-sqrt(1+x^2/4+y^2/9)};
+    \end{axis}
+    \end{tikzpicture}
+  }{$z^2-\frac{x^2}{4}-\frac{y^2}{9}=1$ (hiperb.\ 2 hojas)}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Galería --- cono elíptico y cilindro elíptico}
+  \begin{center}
+  \figcard{
+    \begin{tikzpicture}
+    \begin{axis}[axis lines=center, xlabel=$x$, ylabel=$y$, zlabel=$z$,
+                 xmin=-4.4,xmax=4.4,ymin=-6.4,ymax=6.4,zmin=-2.2,zmax=2.2,
+                 view={120}{20}, ticklabel style={font=\tiny},
+                 width=5.6cm, height=5cm]
+      \addplot3[surf, shader=flat corner, samples=22,
+                colormap/cool, opacity=0.78,
+                variable=\u, variable y=\v,
+                domain=0:360, y domain=-2:2,
+                trig format plots=deg]
+               ({2*\v*cos(\u)}, {3*\v*sin(\u)}, {\v});
+    \end{axis}
+    \end{tikzpicture}
+  }{$\frac{x^2}{4}+\frac{y^2}{9}=z^2$ (cono elíptico)}
+  \hfill
+  \figcard{
+    \begin{tikzpicture}
+    \begin{axis}[axis lines=center, xlabel=$x$, ylabel=$y$, zlabel=$z$,
+                 xmin=-2.4,xmax=2.4,ymin=-3.4,ymax=3.4,zmin=0,zmax=4,
+                 view={130}{25}, ticklabel style={font=\tiny},
+                 width=5.6cm, height=5cm]
+      \addplot3[surf, shader=flat corner, samples=20,
+                colormap/cool, opacity=0.78,
+                variable=\u, variable y=\v,
+                domain=0:360, y domain=0:3.5,
+                trig format plots=deg]
+               ({2*cos(\u)}, {3*sin(\u)}, {\v});
+    \end{axis}
+    \end{tikzpicture}
+  }{$\frac{x^2}{4}+\frac{y^2}{9}=1$ (cilindro elíptico)}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Galería --- cilindro parabólico y cilindro hiperbólico}
+  \begin{center}
+  \figcard{
+    \begin{tikzpicture}
+    \begin{axis}[axis lines=center, xlabel=$x$, ylabel=$y$, zlabel=$z$,
+                 xmin=-2.2,xmax=2.2,ymin=0,ymax=4.5,zmin=0,zmax=3.5,
+                 view={130}{25}, ticklabel style={font=\tiny},
+                 width=5.6cm, height=5cm]
+      \addplot3[surf, shader=flat corner, samples=20,
+                colormap/cool, opacity=0.78,
+                variable=\u, variable y=\v,
+                domain=-2.1:2.1, y domain=0:3.5]
+               ({\u}, {\u*\u}, {\v});
+    \end{axis}
+    \end{tikzpicture}
+  }{$y=x^2$ (cilindro parabólico)}
+  \hfill
+  \figcard{
+    \begin{tikzpicture}
+    \begin{axis}[axis lines=center, xlabel=$x$, ylabel=$y$, zlabel=$z$,
+                 xmin=-4.2,xmax=4.2,ymin=-2.2,ymax=2.2,zmin=0,zmax=3.5,
+                 view={130}{25}, ticklabel style={font=\tiny},
+                 width=5.6cm, height=5cm]
+      \addplot3[surf, shader=flat corner, samples=18,
+                colormap/cool, opacity=0.78,
+                variable=\u, variable y=\v,
+                domain=-2:2, y domain=0:3.5]
+               ({2*sqrt(1+\u*\u)}, {\u}, {\v});
+      \addplot3[surf, shader=flat corner, samples=18,
+                colormap/cool, opacity=0.78,
+                variable=\u, variable y=\v,
+                domain=-2:2, y domain=0:3.5]
+               ({-2*sqrt(1+\u*\u)}, {\u}, {\v});
+    \end{axis}
+    \end{tikzpicture}
+  }{$\frac{x^2}{4}-y^2=1$ (cilindro hiperbólico)}
+  \end{center}
+\end{frame}
+
+\end{document}

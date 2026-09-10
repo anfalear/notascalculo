@@ -1,0 +1,494 @@
+\documentclass[11pt,aspectratio=169]{beamer}
+\input{estilo_presentaciones}
+
+\setpie{Longitud de arco --- Cálculo III}
+\setbloques{6}
+
+% ============ RASTREADOR DE PASOS (algoritmo de 4 pasos) ============
+\newcommand{\pasotracker}[1]{%
+  {\footnotesize\centering
+  \pasoitem{1}{1. Parametrización}{#1}\ $\rightarrow$\
+  \pasoitem{2}{2. Derivada}{#1}\ $\rightarrow$\
+  \pasoitem{3}{3. Magnitud}{#1}\ $\rightarrow$\
+  \pasoitem{4}{4. Integración}{#1}\par}
+  \vspace{4pt}
+}
+
+% ============ RASTREADOR PARA REPARAMETRIZACIÓN ============
+\newcommand{\stracker}[1]{%
+  {\footnotesize\centering
+  \pasoitem{1}{1. Derivada y magnitud}{#1}\ $\rightarrow$\
+  \pasoitem{2}{2. Función $s(t)$}{#1}\ $\rightarrow$\
+  \pasoitem{3}{3. Invertir $t(s)$}{#1}\ $\rightarrow$\
+  \pasoitem{4}{4. Sustituir $\mathbf r(s)$}{#1}\par}
+  \vspace{4pt}
+}
+
+\title{Longitud de arco}
+\subtitle{Curvas parametrizadas en $\mathbb{R}^n$}
+\author{Andrés Fabián Leal Archila}
+\institute{Cálculo III (Multivariable) --- Cód. 20254}
+\date{\today}
+
+\begin{document}
+
+\portada
+% ---------- AGENDA ----------
+\begin{frame}{Agenda de la clase}
+  \begin{enumerate}
+    \setlength{\itemsep}{10pt}
+    \item \textbf{Teoría}: definición, fórmula, algoritmo \hfill {\small\color{gray60}(16 min)}
+    \item \textbf{Ejemplo ancla}: la hélice circular \hfill {\small\color{gray60}(10 min)}
+    \item \textbf{Un caso con más técnica}: parábola con sustitución \hfill {\small\color{gray60}(9 min)}
+    \item \textbf{Otro caso técnico}: espiral logarítmica \hfill {\small\color{gray60}(10 min)}
+    \item \textbf{Función longitud de arco}: reparametrización natural \hfill {\small\color{gray60}(13 min)}
+    \item \textbf{Cierre}: cuándo falla la inversión, y curvas no suaves \hfill {\small\color{gray60}(9 min)}
+  \end{enumerate}
+  \vfill
+  \begin{center}
+    \small\color{gray60} Duración estimada total: $\sim$67 minutos
+  \end{center}
+\end{frame}
+
+% ======================================================
+% BLOQUE 1 --- TEORÍA
+% ======================================================
+\bloqueframe{1}{Teoría: definición y fórmula}{Motivación, teorema, algoritmo de 4 pasos}
+
+\begin{frame}{Motivación: \textquestiondown{}qué es la longitud de una curva?}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \begin{itemize}
+        \item Queremos medir la distancia recorrida \textbf{siguiendo la forma exacta} de la curva, no en línea recta.
+        \pause
+        \item Idea: aproximar la curva con una \textbf{poligonal} (segmentos rectos entre puntos de la curva).
+        \pause
+        \item Entre más segmentos usemos, mejor se ajusta la poligonal a la curva.
+        \pause
+        \item La longitud de arco es el \textbf{límite} de las longitudes poligonales cuando el número de segmentos $n\to\infty$.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.45\textwidth}
+      \centering
+      \begin{tikzpicture}[scale=0.85]
+        \draw[navy,thick,domain=0:3.4,samples=60] plot (\x,{1.6*sin(60*\x)+1.8});
+        \foreach \x in {0,0.34,0.68,1.02,1.36,1.7,2.04,2.38,2.72,3.06,3.4}{
+          \pgfmathsetmacro{\y}{1.6*sin(60*\x)+1.8}
+          \fill[brick] (\x,\y) circle (1pt);
+        }
+        \draw[tealx,thick]
+          (0,{1.6*sin(0)+1.8}) -- (0.34,{1.6*sin(60*0.34)+1.8})
+          -- (0.68,{1.6*sin(60*0.68)+1.8}) -- (1.02,{1.6*sin(60*1.02)+1.8})
+          -- (1.36,{1.6*sin(60*1.36)+1.8}) -- (1.7,{1.6*sin(60*1.7)+1.8})
+          -- (2.04,{1.6*sin(60*2.04)+1.8}) -- (2.38,{1.6*sin(60*2.38)+1.8})
+          -- (2.72,{1.6*sin(60*2.72)+1.8}) -- (3.06,{1.6*sin(60*3.06)+1.8})
+          -- (3.4,{1.6*sin(60*3.4)+1.8});
+      \end{tikzpicture}
+      {\footnotesize\color{gray60} poligonal (teal) aproximando la curva (azul)}
+    \end{column}
+  \end{columns}
+  \vspace{2pt}
+  \notaanimacion{aproximación poligonal --- ver cómo converge al aumentar $n$}
+\end{frame}
+
+\begin{frame}{Definición formal}
+  Sea $\mathbf r(t)=\langle x(t),y(t),z(t)\rangle$ con derivada continua en $[a,b]$.
+  \pause
+  \begin{block}{Teorema (Longitud de arco en $\mathbb R^3$)}
+    \[
+      L = \int_a^b \|\mathbf r'(t)\|\,dt
+        = \int_a^b \sqrt{[x'(t)]^2+[y'(t)]^2+[z'(t)]^2}\,dt.
+    \]
+  \end{block}
+  \pause
+  \begin{block}{En $\mathbb R^2$}
+    \[
+      L = \int_a^b \sqrt{[x'(t)]^2+[y'(t)]^2}\,dt.
+    \]
+  \end{block}
+  \pause
+  \begin{center}
+  \small\color{gray60} $\|\mathbf r'(t)\|$ es la \textbf{rapidez}: la fórmula dice que la distancia total es ``rapidez $\times$ tiempo'', integrada sobre todo el recorrido.
+  \end{center}
+\end{frame}
+
+\begin{frame}{Conexión con Cálculo II}
+  \begin{block}{Recordatorio}
+    Si la curva es la gráfica de $y=f(x)$ (caso particular: $x=t$, $y=f(t)$), la fórmula se reduce a la que ya conoces:
+    \[
+      L=\int_a^b \sqrt{1+[f'(x)]^2}\,dx.
+    \]
+  \end{block}
+  \vspace{6pt}
+  \begin{center}
+  \normalsize No es una fórmula nueva --- es la \textbf{misma idea}, extendida a curvas en $\mathbb R^3$ (o parametrizadas de cualquier forma, no solo $y=f(x)$).
+  \end{center}
+\end{frame}
+
+\begin{frame}{Algoritmo: 4 pasos}
+  \begin{center}
+  \begin{tikzpicture}[node distance=0.4cm]
+    \node[draw=tealx,thick,fill=tealx!10,rounded corners,minimum width=2.6cm,minimum height=1.2cm,align=center] (p1) {\bfseries 1\\Parametrización};
+    \node[draw=tealx,thick,fill=tealx!10,rounded corners,minimum width=2.6cm,minimum height=1.2cm,align=center,right=of p1] (p2) {\bfseries 2\\Derivada};
+    \node[draw=tealx,thick,fill=tealx!10,rounded corners,minimum width=2.6cm,minimum height=1.2cm,align=center,right=of p2] (p3) {\bfseries 3\\Magnitud};
+    \node[draw=tealx,thick,fill=tealx!10,rounded corners,minimum width=2.6cm,minimum height=1.2cm,align=center,right=of p3] (p4) {\bfseries 4\\Integración};
+    \draw[-Stealth,thick,gray60] (p1) -- (p2);
+    \draw[-Stealth,thick,gray60] (p2) -- (p3);
+    \draw[-Stealth,thick,gray60] (p3) -- (p4);
+  \end{tikzpicture}
+  \end{center}
+  \vspace{10pt}
+  \begin{enumerate}
+    \item Identificar $\mathbf r(t)$ y el intervalo $[a,b]$.
+    \item Calcular $\mathbf r'(t)$.
+    \item Calcular $\|\mathbf r'(t)\|$.
+    \item Evaluar $\displaystyle\int_a^b \|\mathbf r'(t)\|\,dt$.
+  \end{enumerate}
+  \vspace{6pt}
+  \begin{center}\small\color{gray60} Este es el mapa que seguimos en cada ejemplo.\end{center}
+\end{frame}
+
+% ======================================================
+% BLOQUE 2 --- HÉLICE (EJEMPLO ANCLA)
+% ======================================================
+\bloqueframe{2}{Ejemplo ancla: la hélice circular}{Un caso limpio, sin sustituciones}
+
+\begin{frame}{Hélice circular --- planteamiento}
+  \pasotracker{1}
+  \begin{block}{Problema}
+    Calcular la longitud de un arco de la hélice
+    \[
+      \mathbf r(t) = \langle \cos t,\ \sen t,\ t\rangle, \qquad 0\le t\le 2\pi.
+    \]
+  \end{block}
+  \vspace{6pt}
+  \begin{center}
+  \small\color{gray60} Una vuelta completa alrededor del eje $z$, mientras sube una altura $2\pi$.
+  \end{center}
+\end{frame}
+
+\begin{frame}{Hélice circular --- derivada}
+  \pasotracker{2}
+  Derivando componente a componente:
+  \[
+    \mathbf r'(t) = \langle -\sen t,\ \cos t,\ 1\rangle.
+  \]
+\end{frame}
+
+\begin{frame}{Hélice circular --- magnitud}
+  \pasotracker{3}
+  \[
+    \|\mathbf r'(t)\|
+    = \sqrt{(-\sen t)^2+(\cos t)^2+1^2}
+    = \sqrt{\sen^2 t+\cos^2 t+1}
+    = \sqrt{1+1}=\sqrt 2.
+  \]
+  \pause
+  \begin{center}
+  \normalsize\color{tealx} El módulo es \textbf{constante}: la hélice se recorre a rapidez constante.
+  \end{center}
+\end{frame}
+
+\begin{frame}{Hélice circular --- integración}
+  \pasotracker{4}
+  \[
+    L = \int_0^{2\pi}\|\mathbf r'(t)\|\,dt = \int_0^{2\pi}\sqrt2\,dt = \sqrt2\,(2\pi-0) = 2\pi\sqrt2.
+  \]
+  \pause
+  \[
+    \boxed{L=2\pi\sqrt2}
+  \]
+\end{frame}
+
+\begin{frame}{Hélice circular --- interpretación geométrica}
+  \begin{itemize}
+    \item La hélice da una vuelta completa mientras sube una altura $2\pi$.
+    \item La longitud $2\pi\sqrt2$ es \textbf{mayor} que la proyección circular ($2\pi$) y mayor que la altura ($2\pi$).
+    \pause
+    \item Si se \textbf{desenrollara} la hélice sobre un plano, sería la hipotenusa de un triángulo rectángulo de catetos $2\pi$ y $2\pi$:
+    \[
+      \sqrt{(2\pi)^2+(2\pi)^2}=2\pi\sqrt2. \quad\checkmark
+    \]
+  \end{itemize}
+  \vspace{8pt}
+  \notaanimacion{hélice 3D + desenrollado al triángulo $2\pi\times2\pi$}
+\end{frame}
+
+% ======================================================
+% BLOQUE 3 --- PARÁBOLA (SUSTITUCIÓN)
+% ======================================================
+\bloqueframe{3}{Un caso con más técnica}{Parábola $\langle t, t^2\rangle$: sustitución + fórmula de tabla}
+
+\begin{frame}{Parábola --- planteamiento}
+  \pasotracker{1}
+  \begin{block}{Problema}
+    Calcular la longitud de arco de $\mathbf r(t)=\langle t,\ t^2\rangle$, $0\le t\le 1$.
+  \end{block}
+  \vspace{6pt}
+  \begin{center}\small\color{gray60} Esta curva va a volver a aparecer al final de la clase --- guárdala en mente.\end{center}
+\end{frame}
+
+\begin{frame}{Parábola --- derivada y módulo}
+  \pasotracker{2}
+  \[
+    \mathbf r'(t)=\langle 1,\ 2t\rangle
+  \]
+  \pause
+  \pasotracker{3}
+  \[
+    \|\mathbf r'(t)\| = \sqrt{1+4t^2}.
+  \]
+\end{frame}
+
+\begin{frame}{Parábola --- integración}
+  \pasotracker{4}
+  \[
+    L=\int_0^1\sqrt{1+4t^2}\,dt.
+  \]
+  \pause
+  Sustitución $u=2t$, $du=2\,dt$:
+  \[
+    L = \frac12\int_0^2\sqrt{1+u^2}\,du.
+  \]
+  \pause
+  Fórmula de tabla $\displaystyle\int\sqrt{1+u^2}\,du=\frac{u\sqrt{1+u^2}}{2}+\frac12\ln\!\left(u+\sqrt{1+u^2}\right)$:
+  \[
+    L=\frac12\left[\frac{u\sqrt{1+u^2}}{2}+\frac12\ln\!\left(u+\sqrt{1+u^2}\right)\right]_0^2.
+  \]
+\end{frame}
+
+\begin{frame}{Parábola --- resultado}
+  Evaluando en $u=2$ y $u=0$:
+  \[
+    L=\frac12\left[\sqrt5+\frac12\ln(2+\sqrt5)\right].
+  \]
+  \pause
+  \[
+    \boxed{L=\frac{\sqrt5}{2}+\frac14\ln\!\left(2+\sqrt5\right)\approx 1.479.}
+  \]
+\end{frame}
+
+% ======================================================
+% BLOQUE 4 --- ESPIRAL LOGARÍTMICA
+% ======================================================
+\bloqueframe{4}{Otro caso técnico}{Espiral $e^t\langle\cos t,\sen t\rangle$: álgebra limpia}
+
+\begin{frame}{Espiral logarítmica --- planteamiento}
+  \pasotracker{1}
+  \begin{block}{Problema}
+    Calcular la longitud de arco de $\mathbf r(t)=\langle e^t\cos t,\ e^t\sen t\rangle$, $0\le t\le\pi$.
+  \end{block}
+\end{frame}
+
+\begin{frame}{Espiral logarítmica --- derivada}
+  \pasotracker{2}
+  Regla del producto en cada componente:
+  \[
+    \mathbf r'(t)=\langle e^t(\cos t-\sen t),\ e^t(\sen t+\cos t)\rangle.
+  \]
+\end{frame}
+
+\begin{frame}{Espiral logarítmica --- módulo}
+  \pasotracker{3}
+  \begin{align*}
+    \|\mathbf r'(t)\|^2
+    &= e^{2t}(\cos t-\sen t)^2 + e^{2t}(\sen t+\cos t)^2\\
+    \pause
+    &= e^{2t}\bigl[(\cos^2t-2\sen t\cos t+\sen^2t)+(\sen^2t+2\sen t\cos t+\cos^2t)\bigr]\\
+    \pause
+    &= e^{2t}\cdot 2.
+  \end{align*}
+  \pause
+  \begin{center}\normalsize\color{tealx} Los términos cruzados se cancelan.\end{center}
+  \[
+    \|\mathbf r'(t)\|=\sqrt2\,e^t.
+  \]
+\end{frame}
+
+\begin{frame}{Espiral logarítmica --- integración}
+  \pasotracker{4}
+  \[
+    L=\int_0^\pi \sqrt2\,e^t\,dt = \sqrt2\left[e^t\right]_0^\pi = \sqrt2\,(e^\pi-1).
+  \]
+  \pause
+  \[
+    \boxed{L=\sqrt2\,(e^\pi-1).}
+  \]
+\end{frame}
+
+% ======================================================
+% BLOQUE 5 --- FUNCIÓN LONGITUD DE ARCO
+% ======================================================
+\bloqueframe{5}{Función longitud de arco}{Reparametrización natural de una curva}
+
+\begin{frame}{\textquestiondown{}Por qué reparametrizar por longitud de arco?}
+  \begin{itemize}
+    \item Hasta ahora, $t$ es solo un parámetro --- \textbf{no} necesariamente representa distancia recorrida.
+    \pause
+    \item Sería útil tener un parámetro que \textbf{sí} coincida con la distancia recorrida sobre la curva.
+    \pause
+    \item Eso es la \textbf{parametrización por longitud de arco}: útil en geometría diferencial (curvatura, torsión).
+  \end{itemize}
+  \pause
+  \begin{block}{Definición}
+    Sea $\mathbf r(t)$ suave ($\mathbf r'$ continua, $\mathbf r'(t)\neq\mathbf 0$) para $t\ge a$. La \textbf{función longitud de arco} desde $t=a$ es
+    \[
+      s(t)=\int_a^t \|\mathbf r'(u)\|\,du.
+    \]
+  \end{block}
+\end{frame}
+
+\begin{frame}{Invertibilidad}
+  Por el Teorema Fundamental del Cálculo,
+  \[
+    \frac{ds}{dt}=\|\mathbf r'(t)\| > 0.
+  \]
+  \pause
+  \begin{center}\normalsize\color{tealx} Como $\mathbf r$ es suave ($\mathbf r'(t)\neq\mathbf 0$), esta derivada es \textbf{siempre positiva}.\end{center}
+  \pause
+  \vspace{6pt}
+  Por lo tanto $s(t)$ es \textbf{estrictamente creciente} $\Rightarrow$ \textbf{invertible}.
+  \vspace{6pt}
+  \pause
+  \begin{center}\small\color{gray60} La hipótesis $\mathbf r'(t)\neq\mathbf 0$ es esencial --- volvemos a esto al final de la clase.\end{center}
+\end{frame}
+
+\begin{frame}{Reparametrización}
+  Como $s(t)$ es invertible, existe $t(s)$, y podemos escribir
+  \[
+    \mathbf r(s) = \mathbf r(t(s)).
+  \]
+  \pause
+  \begin{block}{Propiedad fundamental}
+    \[
+      \|\mathbf r'(s)\| = 1.
+    \]
+  \end{block}
+  \pause
+  \begin{center}
+  \normalsize La rapidez es constante e igual a $1$: el parámetro $s$ \textbf{coincide} con la distancia recorrida.
+  \end{center}
+  \vspace{6pt}
+  \begin{center}\small\color{gray60} Es la parametrización \emph{natural} de la curva --- elimina la dependencia de qué tan rápido se recorre.\end{center}
+\end{frame}
+
+\begin{frame}{Ejemplo: circunferencia --- planteamiento}
+  \stracker{1}
+  \begin{block}{Problema}
+    Sea $\mathbf r(t)=\langle R\cos t,\ R\sen t\rangle$, $t\in[0,2\pi]$. Encontrar $s(t)$ y reparametrizar en términos de $s$.
+  \end{block}
+  \pause
+  \[
+    \mathbf r'(t)=\langle -R\sen t,\ R\cos t\rangle,
+    \qquad
+    \|\mathbf r'(t)\|=\sqrt{R^2\sen^2t+R^2\cos^2t}=R.
+  \]
+\end{frame}
+
+\begin{frame}{Ejemplo: circunferencia --- función $s(t)$}
+  \stracker{2}
+  Tomando $a=0$:
+  \[
+    s(t)=\int_0^t R\,du = Rt.
+  \]
+  \pause
+  \stracker{3}
+  Despejando $t$:
+  \[
+    t=\frac{s}{R}.
+  \]
+\end{frame}
+
+\begin{frame}{Ejemplo: circunferencia --- reparametrización y verificación}
+  \stracker{4}
+  Sustituyendo en $\mathbf r(t)$:
+  \[
+    \mathbf r(s)=\left\langle R\cos\frac{s}{R},\ R\sen\frac{s}{R}\right\rangle, \qquad 0\le s\le 2\pi R.
+  \]
+  \pause
+  Verificación de rapidez unitaria:
+  \[
+    \mathbf r'(s)=\left\langle -\sen\frac{s}{R},\ \cos\frac{s}{R}\right\rangle,
+    \qquad \|\mathbf r'(s)\|=1. \quad\checkmark
+  \]
+  \pause
+  \[
+    \boxed{s(t)=Rt,\qquad \mathbf r(s)=\left\langle R\cos\frac{s}{R},\ R\sen\frac{s}{R}\right\rangle}
+  \]
+\end{frame}
+
+% ======================================================
+% BLOQUE 6 --- CIERRE
+% ======================================================
+\bloqueframe{6}{Cierre}{Cuando no se puede invertir, y curvas no suaves}
+
+\begin{frame}{La parábola, revisitada}
+  Para $\mathbf r(t)=\langle t,\ t^2\rangle$, la función longitud de arco es
+  \[
+    s(t)=\int_0^t\sqrt{1+4u^2}\,du = \frac{t}{2}\sqrt{1+4t^2}+\frac14\ln\!\left(2t+\sqrt{1+4t^2}\right).
+  \]
+  \pause
+  \begin{center}\normalsize\color{tealx} $s(t)$ \textbf{sí} tiene forma cerrada --- es el mismo cálculo del Bloque 3.\end{center}
+  \pause
+  \vspace{6pt}
+  Pero \textbf{despejar $t$ en función de $s$} (invertir $s(t)$) no se puede hacer algebraicamente: mezcla un término lineal con un logaritmo.
+  \pause
+  \begin{center}
+  \normalsize\color{brick}\textbf{$\mathbf r(s)$ queda solo definida implícitamente.}
+  \end{center}
+  \vspace{4pt}
+  \begin{center}\small\color{gray60} No toda curva suave admite reparametrización explícita por longitud de arco.\end{center}
+\end{frame}
+
+\begin{frame}{El astroide: una curva no suave}
+  \begin{block}{Curva}
+    \[
+      \mathbf r(t)=\langle \cos^3 t,\ \sen^3 t\rangle.
+    \]
+  \end{block}
+  \pause
+  \[
+    \mathbf r'(t) = \langle -3\cos^2t\,\sen t,\ 3\sen^2t\,\cos t\rangle
+    = 3\sen t\cos t\,\langle -\cos t,\ \sen t\rangle.
+  \]
+  \pause
+  \begin{center}\normalsize\color{brick}\textbf{$\mathbf r'(t)=\mathbf 0$ en los múltiplos de $\pi/2$}\end{center}
+  \vspace{6pt}
+  \pause
+  \begin{center}\small\color{gray60} Ahí la curva tiene \textbf{cúspides}: no es suave, y la función longitud de arco (tal como la definimos) no aplica en esos puntos.\end{center}
+\end{frame}
+
+\begin{frame}{El astroide: longitud de un arco}
+  Para $0\le t\le \pi/2$ (donde sí es suave, salvo en los extremos):
+  \[
+    \|\mathbf r'(t)\| = 3|\sen t\cos t| = \tfrac32\sen(2t).
+  \]
+  \pause
+  \[
+    L=\int_0^{\pi/2} \tfrac32\sen(2t)\,dt = \left[-\tfrac34\cos(2t)\right]_0^{\pi/2}.
+  \]
+  \pause
+  \[
+    L = -\tfrac34\cos(\pi) - \left(-\tfrac34\cos 0\right) = \tfrac34+\tfrac34.
+  \]
+  \pause
+  \[
+    \boxed{L=\tfrac32.}
+  \]
+\end{frame}
+
+\begin{frame}{Resumen}
+  \begin{itemize}
+    \item Longitud de arco: $\displaystyle L=\int_a^b\|\mathbf r'(t)\|\,dt$ --- misma idea de Cálculo II, extendida a $\mathbb R^n$.
+    \item El cálculo siempre sigue el mismo algoritmo de 4 pasos.
+    \item La función $s(t)=\int_a^t\|\mathbf r'(u)\|\,du$ permite reparametrizar por longitud de arco, con $\|\mathbf r'(s)\|=1$.
+    \item Esto requiere $s(t)$ invertible (curva suave, $\mathbf r'\neq\mathbf 0$) --- y aun siendo invertible en teoría, no siempre se puede despejar $t(s)$ en forma cerrada.
+  \end{itemize}
+  \vspace{10pt}
+  \pause
+  \begin{block}{Próxima clase}
+    Con la parametrización por longitud de arco lista, podemos definir \textbf{curvatura} y \textbf{torsión}: cuánto se dobla y cuánto se tuerce una curva en el espacio.
+  \end{block}
+\end{frame}
+
+\end{document}
