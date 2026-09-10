@@ -1,0 +1,2310 @@
+\documentclass[11pt,aspectratio=169]{beamer}
+
+% ============ PAQUETES ============
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{booktabs}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,decorations.pathmorphing,decorations.markings,positioning}
+\usepackage{xcolor}
+
+\DeclareMathOperator{\sen}{sen}
+
+% ============ COLORES (mismos que longitud_arco.tex y cuadricas.tex) ============
+\definecolor{navy}{HTML}{1B2A4A}
+\definecolor{tealx}{HTML}{1F7A6C}
+\definecolor{brick}{HTML}{A34A3E}
+\definecolor{gold}{HTML}{B8891C}
+\definecolor{lightbg}{HTML}{F2F2EF}
+\definecolor{gray60}{HTML}{8A8A85}
+
+% ============ TEMA BASE ============
+\usetheme{default}
+\usefonttheme[onlymath]{serif}   % matemáticas en Computer Modern, texto en sans
+\setbeamertemplate{navigation symbols}{}
+\setbeamercolor{title}{fg=navy}
+\setbeamercolor{frametitle}{bg=navy,fg=white}
+\setbeamercolor{structure}{fg=tealx}
+\setbeamercolor{block title}{bg=tealx,fg=white}
+\setbeamercolor{block body}{bg=lightbg,fg=black}
+\setbeamercolor{alerted text}{fg=brick}
+\setbeamercolor{normal text}{fg=black}
+\setbeamerfont{frametitle}{series=\bfseries}
+\setbeamertemplate{frametitle}{
+  \nointerlineskip
+  \vskip-2pt
+  \begin{beamercolorbox}[wd=\paperwidth,ht=1.15cm,dp=0.35cm,leftskip=0.5cm]{frametitle}
+    \usebeamerfont{frametitle}\insertframetitle
+  \end{beamercolorbox}
+}
+\setbeamertemplate{footline}{
+  \leavevmode
+  \hbox{\begin{beamercolorbox}[wd=\paperwidth,ht=0.5cm,dp=0.2cm,leftskip=0.5cm,rightskip=0.5cm]{structure}
+    \footnotesize\color{gray60} Derivadas parciales --- Cálculo III \hfill \insertframenumber/\inserttotalframenumber
+  \end{beamercolorbox}}
+}
+\setbeamertemplate{itemize items}[circle]
+\setbeamertemplate{blocks}[rounded][shadow=false]
+
+% ============ RASTREADORES DE PASOS ============
+\newcommand{\pasoitem}[3]{%
+  \ifnum#1=#3
+    \textbf{\textcolor{tealx}{#2}}%
+  \else
+    \textcolor{gray60}{#2}%
+  \fi
+}
+
+% Protocolo: plano tangente a z=f(x,y)
+\newcommand{\pttracker}[1]{%
+  {\footnotesize\centering
+  \pasoitem{1}{1. Parciales en $(x_0,y_0)$}{#1}\ $\rightarrow$\
+  \pasoitem{2}{2. Ecuación del plano}{#1}\ $\rightarrow$\
+  \pasoitem{3}{3. Simplificar}{#1}\par}
+  \vspace{4pt}
+}
+
+% Protocolo: regla de la cadena
+\newcommand{\rctracker}[1]{%
+  {\footnotesize\centering
+  \pasoitem{1}{1. Dependencias}{#1}\ $\rightarrow$\
+  \pasoitem{2}{2. Parciales de $z$}{#1}\ $\rightarrow$\
+  \pasoitem{3}{3. Derivar intermedias}{#1}\ $\rightarrow$\
+  \pasoitem{4}{4. Sustituir y sumar}{#1}\par}
+  \vspace{4pt}
+}
+
+% Protocolo: derivada direccional
+\newcommand{\ddtracker}[1]{%
+  {\footnotesize\centering
+  \pasoitem{1}{1. Gradiente}{#1}\ $\rightarrow$\
+  \pasoitem{2}{2. Evaluar en $p$}{#1}\ $\rightarrow$\
+  \pasoitem{3}{3. Normalizar $\mathbf u$}{#1}\ $\rightarrow$\
+  \pasoitem{4}{4. Producto escalar}{#1}\par}
+  \vspace{4pt}
+}
+
+% Protocolo: clasificación de puntos críticos
+\newcommand{\pctracker}[1]{%
+  {\footnotesize\centering
+  \pasoitem{1}{1. Puntos críticos}{#1}\ $\rightarrow$\
+  \pasoitem{2}{2. Segundas derivadas}{#1}\ $\rightarrow$\
+  \pasoitem{3}{3. Discriminante $D$}{#1}\ $\rightarrow$\
+  \pasoitem{4}{4. Clasificar}{#1}\par}
+  \vspace{4pt}
+}
+
+% Protocolo: multiplicadores de Lagrange
+\newcommand{\lgtracker}[1]{%
+  {\footnotesize\centering
+  \pasoitem{1}{1. Función de Lagrange}{#1}\ $\rightarrow$\
+  \pasoitem{2}{2. Sistema $\nabla F=\mathbf 0$}{#1}\ $\rightarrow$\
+  \pasoitem{3}{3. Candidatos}{#1}\ $\rightarrow$\
+  \pasoitem{4}{4. Clasificación}{#1}\par}
+  \vspace{4pt}
+}
+
+% ============ CAJA DE NOTA DE ANIMACIÓN ============
+\newcommand{\notaanimacion}[1]{%
+  \begin{center}
+    \fbox{\begin{minipage}{0.85\textwidth}\footnotesize\centering
+    \textbf{\textcolor{gold}{$\blacktriangleright$ animación}}\quad #1
+    \end{minipage}}
+  \end{center}
+}
+
+% ============ CAJA DE ADVERTENCIA ============
+\newcommand{\alerta}[1]{%
+  \begin{center}
+    \fbox{\begin{minipage}{0.88\textwidth}\footnotesize\centering
+    \textbf{\textcolor{brick}{$\blacksquare$ cuidado}}\quad #1
+    \end{minipage}}
+  \end{center}
+}
+
+% ============ FRAME DE DIVISOR DE BLOQUE ============
+\newcommand{\bloqueframe}[3]{%
+\begin{frame}[plain]
+  \vfill
+  \begin{center}
+    {\color{gray60}\footnotesize BLOQUE #1 DE 6}\\[0.3em]
+    {\color{navy}\Large\bfseries #2}\\[0.6em]
+    {\color{tealx}\footnotesize #3}
+  \end{center}
+  \vfill
+\end{frame}
+}
+
+% ============ TARJETA DE FIGURA ============
+\newcommand{\figcard}[2]{%
+  \begin{minipage}[c]{0.48\textwidth}
+    \centering
+    #1\\[2pt]
+    {\footnotesize #2}
+  \end{minipage}
+}
+
+\title{\textcolor{white}{Derivadas parciales}}
+\subtitle{\textcolor{white!85!black}{Diferenciación de funciones de varias variables}}
+\author{Andrés Fabián Leal Archila}
+\institute{Cálculo III (Multivariable) --- Cód. 20254}
+\date{\today}
+
+\begin{document}
+
+% ---------- TÍTULO ----------
+{
+\setbeamertemplate{footline}{}
+\begin{frame}[plain]
+  \begin{tikzpicture}[remember picture,overlay]
+    \fill[navy] (current page.south west) rectangle (current page.north east);
+  \end{tikzpicture}
+  \vspace{1.2cm}
+  \centering
+  {\color{white}\Huge\bfseries Derivadas parciales}\\[0.4em]
+  {\color{tealx!60!white}\Large Diferenciación de funciones de varias variables}\\[1.5em]
+  {\color{white!85!black}\large Andrés Fabián Leal Archila}\\[0.2em]
+  {\color{white!70!black}\normalsize Cálculo III (Multivariable) --- Cód. 20254}\\[0.2em]
+  {\color{white!60!black}\small \today}
+\end{frame}
+}
+
+% ---------- AGENDA ----------
+\begin{frame}{Agenda de la unidad}
+  \begin{enumerate}
+    \setlength{\itemsep}{6pt}
+    \item \textbf{Derivadas parciales}: definición, cálculo, orden superior, Clairaut \hfill{\small\color{gray60}(25 min)}
+    \item \textbf{Plano tangente}, linealización, diferenciales y diferenciabilidad \hfill{\small\color{gray60}(35 min)}
+    \item \textbf{Regla de la cadena} y derivación implícita \hfill{\small\color{gray60}(20 min)}
+    \item \textbf{Gradiente} y derivada direccional \hfill{\small\color{gray60}(25 min)}
+    \item \textbf{Superficies implícitas}: plano tangente y recta normal \hfill{\small\color{gray60}(15 min)}
+    \item \textbf{Optimización}: extremos libres y multiplicadores de Lagrange \hfill{\small\color{gray60}(30 min)}
+  \end{enumerate}
+  \vfill
+  \begin{center}
+    \small\color{gray60} Capítulos 19, 20 y 21 del problemario --- material para varias sesiones
+  \end{center}
+\end{frame}
+
+\begin{frame}{Un solo hilo conductor}
+  \begin{center}
+  \begin{tikzpicture}[node distance=0.35cm, every node/.style={font=\footnotesize}]
+    \node[draw=navy,thick,fill=navy!8,rounded corners,minimum width=2.5cm,minimum height=1.0cm,align=center] (dp) {\bfseries Derivada\\parcial};
+    \node[draw=tealx,thick,fill=tealx!10,rounded corners,minimum width=2.5cm,minimum height=1.0cm,align=center,right=of dp] (pt) {Plano\\tangente};
+    \node[draw=tealx,thick,fill=tealx!10,rounded corners,minimum width=2.5cm,minimum height=1.0cm,align=center,right=of pt] (gr) {Gradiente\\$\nabla f$};
+    \node[draw=tealx,thick,fill=tealx!10,rounded corners,minimum width=2.5cm,minimum height=1.0cm,align=center,right=of gr] (op) {Optimización};
+    \draw[-Stealth,thick,gray60] (dp) -- (pt);
+    \draw[-Stealth,thick,gray60] (pt) -- (gr);
+    \draw[-Stealth,thick,gray60] (gr) -- (op);
+  \end{tikzpicture}
+  \end{center}
+  \vspace{12pt}
+  \begin{itemize}
+    \item Todo arranca de una sola idea: \textbf{derivar respecto a una variable dejando las otras fijas}.
+    \pause
+    \item Con las parciales se construye el \textbf{plano tangente} (aproximación lineal de la superficie).
+    \pause
+    \item Empaquetadas en un vector forman el \textbf{gradiente}, que mide el cambio en \emph{cualquier} dirección.
+    \pause
+    \item Y anulando el gradiente se localizan los \textbf{extremos}, libres o con restricciones.
+  \end{itemize}
+\end{frame}
+
+% ======================================================
+% BLOQUE 1 --- DERIVADAS PARCIALES
+% ======================================================
+\bloqueframe{1}{Derivadas parciales}{Definición, cálculo operativo, orden superior y Clairaut}
+
+\begin{frame}{Motivación: \textquestiondown{}cómo se deriva con dos variables?}
+  \begin{columns}
+    \begin{column}{0.52\textwidth}
+      \begin{itemize}
+        \item En una variable, $f'(x)$ mide la tasa de cambio instantánea cuando $x$ varía.
+        \pause
+        \item Con $f(x,y)$ la pregunta ya no tiene una sola respuesta: $x$ e $y$ pueden variar de infinitas maneras.
+        \pause
+        \item La estrategia es \textbf{congelar} una variable y variar la otra: eso reduce el problema a uno de una variable.
+        \pause
+        \item Esa es exactamente la \textbf{derivada parcial}.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.44\textwidth}
+      \centering
+      \begin{tikzpicture}[scale=0.9]
+        \draw[thin,->] (-0.3,0) -- (3.3,0) node[right] {\small $x$};
+        \draw[thin,->] (0,-0.3) -- (0,3.0) node[above] {\small $y$};
+        \draw[tealx,thick,dashed] (0,1.6) -- (3.1,1.6);
+        \node[tealx,anchor=west,font=\scriptsize] at (2.2,1.85) {$y=y_0$};
+        \draw[brick,thick,dashed] (1.4,0) -- (1.4,2.9);
+        \node[brick,anchor=south,font=\scriptsize] at (1.4,2.9) {$x=x_0$};
+        \fill[navy] (1.4,1.6) circle (2pt);
+        \node[navy,anchor=north east,font=\scriptsize] at (1.35,1.55) {$(x_0,y_0)$};
+        \draw[-Stealth,tealx,thick] (1.4,1.6) -- (2.4,1.6);
+        \draw[-Stealth,brick,thick] (1.4,1.6) -- (1.4,2.5);
+      \end{tikzpicture}\\[4pt]
+      {\footnotesize\color{gray60} moverse solo en $x$ (teal) o solo en $y$ (rojo)}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Definición formal}
+  \begin{block}{Derivadas parciales de primer orden}
+    Sea $f$ una función de dos variables. Se definen
+    \[
+      f_x(x,y)=\frac{\partial f}{\partial x}=\lim_{h\to 0}\frac{f(x+h,y)-f(x,y)}{h},
+    \]
+    \[
+      f_y(x,y)=\frac{\partial f}{\partial y}=\lim_{h\to 0}\frac{f(x,y+h)-f(x,y)}{h},
+    \]
+    siempre que los límites existan.
+  \end{block}
+  \pause
+  \vspace{4pt}
+  \begin{center}
+  \small\color{gray60} La notación $\partial$ (introducida por Jacobi) distingue la parcial de la derivada ordinaria $df/dx$.
+  \end{center}
+\end{frame}
+
+\begin{frame}{La regla operativa}
+  \begin{block}{En la práctica}
+    Para calcular $f_x$ se deriva $f$ \textbf{como si $y$ fuera una constante}; para $f_y$, como si $x$ lo fuera.
+  \end{block}
+  \pause
+  \vspace{4pt}
+  Todas las reglas de una variable siguen valiendo: producto, cociente, cadena.
+  \vspace{8pt}
+  \pause
+  \begin{center}
+  \begin{tabular}{ll}
+    \toprule
+    \textbf{Notación} & \textbf{Significado} \\
+    \midrule
+    $f_x$, $\partial f/\partial x$, $\partial_x f$ & derivar respecto a $x$ \\
+    $f_{xy}=(f_x)_y$ & primero $x$, luego $y$ \\
+    $\partial^2 f/\partial y\,\partial x$ & lo mismo que $f_{xy}$ \\
+    \bottomrule
+  \end{tabular}
+  \end{center}
+  \vspace{6pt}
+  \pause
+  \begin{center}\small\color{gray60} Ojo con el orden: las dos notaciones lo escriben al revés una de la otra.\end{center}
+\end{frame}
+
+\begin{frame}{Interpretación geométrica}
+  \begin{columns}
+    \begin{column}{0.44\textwidth}
+      \begin{itemize}
+        \item El plano $y=y_0$ corta la superficie $z=f(x,y)$ en una curva $C$.
+        \pause
+        \item $f_x(x_0,y_0)$ es la \textbf{pendiente} de la recta tangente a $C$ en $(x_0,y_0,z_0)$.
+        \pause
+        \item Análogamente $f_y(x_0,y_0)$ con el corte $x=x_0$.
+      \end{itemize}
+      \vspace{6pt}
+      \pause
+      {\small\color{tealx} Dos pendientes, dos direcciones: las de los ejes.}
+    \end{column}
+    \begin{column}{0.54\textwidth}
+      \centering
+      \begin{tikzpicture}
+      \begin{axis}[
+          view={42}{22},
+          xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+          axis lines=center, tick style={thin},
+          zmin=0, zmax=4.5, xmin=0, xmax=2.2, ymin=0, ymax=2.2,
+          xtick={1,2}, ytick={1,2}, ztick={2,4},
+          ticklabel style={font=\tiny},
+          width=7.2cm, height=6.8cm,
+      ]
+          \addplot3[surf, shader=flat corner, samples=16,
+                    domain=0:2, y domain=0:2, opacity=0.60, colormap/cool] {x^2 + y^2};
+          \addplot3[thick, brick, variable=t, domain=0:2, samples=30] ({t}, {1}, {t*t + 1});
+          \addplot3[thick, navy, variable=t, domain=0:2, samples=30] ({1}, {t}, {1 + t*t});
+          \addplot3[ultra thick, brick, dashed, variable=t, domain=0.1:2.0, samples=2] ({t}, {1}, {2*t});
+          \addplot3[ultra thick, navy, dashed, variable=t, domain=0.1:2.0, samples=2] ({1}, {t}, {2*t});
+          \addplot3[only marks, mark=*, mark size=2pt, black] coordinates {(1,1,2)};
+          \node[anchor=north, brick, font=\tiny] at (axis cs:1.85,1,3.7) {pend.\ $=f_x$};
+          \node[anchor=west, navy, font=\tiny] at (axis cs:1,1.85,3.7) {pend.\ $=f_y$};
+      \end{axis}
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
+  \vspace{-4pt}
+  \notaanimacion{barrer el plano de corte $y=y_0$ y ver girar la recta tangente}
+\end{frame}
+
+\begin{frame}{Ejemplo 1 --- por la definición: $f(x,y)=x^2y^3$}
+  Aplicamos el límite en $x$, con $y$ fijo:
+  \pause
+  \begin{align*}
+    f_x(x,y) &= \lim_{h\to 0}\frac{(x+h)^2y^3 - x^2y^3}{h}\\
+    \pause
+    &= \lim_{h\to 0}\frac{(x^2+2xh+h^2)y^3 - x^2y^3}{h}
+     = \lim_{h\to 0}\frac{2xhy^3 + h^2y^3}{h}\\
+    \pause
+    &= \lim_{h\to 0}\bigl(2xy^3 + hy^3\bigr) = 2xy^3.
+  \end{align*}
+  \pause
+  \begin{center}\small\color{gray60} Todo el trabajo es de una variable: $y^3$ se comportó como una constante multiplicativa.\end{center}
+\end{frame}
+
+\begin{frame}{Ejemplo 1 --- la otra parcial y la verificación}
+  Ahora con $x$ fijo:
+  \[
+    f_y(x,y)=\lim_{h\to 0}\frac{x^2(y+h)^3-x^2y^3}{h}
+    =\lim_{h\to 0}\frac{x^2(3y^2h+3yh^2+h^3)}{h}
+    =3x^2y^2.
+  \]
+  \pause
+  \textbf{Verificación con las reglas directas:}
+  \[
+    \partial_x(x^2y^3)=2xy^3\ \checkmark
+    \qquad
+    \partial_y(x^2y^3)=3x^2y^2\ \checkmark
+  \]
+  \pause
+  \[
+    \boxed{f_x=2xy^3,\qquad f_y=3x^2y^2}
+  \]
+  \pause
+  \begin{center}\small\color{gray60} En la práctica nunca se usan los límites: se aplican las reglas ordinarias.\end{center}
+\end{frame}
+
+\begin{frame}{Ejemplo 2 --- reglas operativas}
+  \begin{block}{Problema}
+    Calcular las parciales de a) $f(x,y)=xe^{x/y}$ \quad y \quad b) $f(x,y)=\ln(x^2+y^2)$.
+  \end{block}
+  \pause
+  \textbf{(a) $f_x$} --- $y$ constante, regla del producto:
+  \[
+    f_x = 1\cdot e^{x/y} + x\cdot e^{x/y}\cdot\frac{1}{y}
+        = e^{x/y}\left(1+\frac{x}{y}\right).
+  \]
+  \pause
+  \textbf{(a) $f_y$} --- $x$ constante, cadena sobre $e^{x/y}$ con $\partial_y(x/y)=-x/y^2$:
+  \[
+    f_y = xe^{x/y}\left(-\frac{x}{y^2}\right) = -\frac{x^2}{y^2}e^{x/y}.
+  \]
+\end{frame}
+
+\begin{frame}{Ejemplo 2 --- resultado}
+  \[
+    \boxed{f_x=e^{x/y}\!\left(1+\frac{x}{y}\right),\qquad f_y=-\frac{x^2}{y^2}e^{x/y}}
+  \]
+  \pause
+  \vspace{6pt}
+  \textbf{(b) $f(x,y)=\ln(x^2+y^2)$} --- logaritmo compuesto; en cada caso la otra variable es constante:
+  \[
+    f_x=\frac{2x}{x^2+y^2},\qquad f_y=\frac{2y}{x^2+y^2}.
+  \]
+  \pause
+  \[
+    \boxed{f_x=\frac{2x}{x^2+y^2},\qquad f_y=\frac{2y}{x^2+y^2}}
+  \]
+  \pause
+  \begin{center}\small\color{tealx} Guarde esta función: reaparecerá al verificar la ecuación de Laplace.\end{center}
+\end{frame}
+
+\begin{frame}{Parciales a partir de datos: sensación térmica}
+  La tabla registra la sensación térmica $S$ ($^\circ$C) según temperatura $T$ ($^\circ$C) y viento $v$ (km/h):
+  \begin{center}
+  \begin{tabular}{c|cccc}
+    \toprule
+    $S(T,v)$ & $v=10$ & $v=20$ & $v=30$ & $v=40$ \\
+    \midrule
+    $T=-10$  & $-15$ & $-18$ & $-20$ & $-21$ \\
+    $T=-5$   & $-9$  & \textcolor{brick}{$\mathbf{-12}$}  & $-14$ & $-15$ \\
+    $T=0$    & $-3$  & $-5$  & $-7$  & $-8$  \\
+    $T=5$    & $3$   & $1$   & $-1$  & $-2$  \\
+    \bottomrule
+  \end{tabular}
+  \end{center}
+  \vspace{6pt}
+  \pause
+  \begin{center}
+  Estimar $\partial S/\partial T$ y $\partial S/\partial v$ en $(T,v)=(-5,20)$.
+  \end{center}
+  \vspace{4pt}
+  \pause
+  \begin{center}\small\color{gray60} Cada parcial es un cociente incremental: con datos tabulados lo aproximamos por \textbf{diferencias centradas}.\end{center}
+\end{frame}
+
+\begin{frame}{Sensación térmica --- cálculo e interpretación}
+  \textbf{En $T$} (columna $v=20$ fija, filas vecinas $T=-10$ y $T=0$):
+  \[
+    \frac{\partial S}{\partial T}\approx\frac{S(0,20)-S(-10,20)}{0-(-10)}=\frac{-5-(-18)}{10}=1.3.
+  \]
+  \pause
+  \textbf{En $v$} (fila $T=-5$ fija, columnas vecinas $v=10$ y $v=30$):
+  \[
+    \frac{\partial S}{\partial v}\approx\frac{S(-5,30)-S(-5,10)}{30-10}=\frac{-14-(-9)}{20}=-0.25.
+  \]
+  \pause
+  \[
+    \boxed{\frac{\partial S}{\partial T}\approx 1.3,\qquad
+           \frac{\partial S}{\partial v}\approx -0.25\ \tfrac{^\circ\mathrm{C}}{\mathrm{km/h}}}
+  \]
+  \pause
+  \begin{itemize}
+    \item[] {\small $\partial S/\partial T>0$: más calor en el aire da más sensación de calor (amplificada: $1.3$ por cada grado).}
+    \item[] {\small $\partial S/\partial v<0$: más viento da sensación más fría, unos $0.25\,^\circ$C por cada km/h.}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Derivadas parciales de segundo orden}
+  Las parciales son a su vez funciones de $(x,y)$: se pueden volver a derivar.
+  \pause
+  \begin{block}{Cuatro derivadas segundas}
+    \[
+    \begin{aligned}
+      f_{xx} &= \frac{\partial^2f}{\partial x^2}=\frac{\partial}{\partial x}\!\left(\frac{\partial f}{\partial x}\right),
+      &\qquad
+      f_{xy} &= \frac{\partial^2f}{\partial y\,\partial x}=\frac{\partial}{\partial y}\!\left(\frac{\partial f}{\partial x}\right),\\[4pt]
+      f_{yx} &= \frac{\partial^2f}{\partial x\,\partial y}=\frac{\partial}{\partial x}\!\left(\frac{\partial f}{\partial y}\right),
+      &\qquad
+      f_{yy} &= \frac{\partial^2f}{\partial y^2}=\frac{\partial}{\partial y}\!\left(\frac{\partial f}{\partial y}\right).
+    \end{aligned}
+    \]
+  \end{block}
+  \pause
+  \begin{center}
+  \small\color{gray60} $f_{xy}$ y $f_{yx}$ son las \textbf{derivadas cruzadas} o mixtas. \textquestiondown{}Coinciden siempre?
+  \end{center}
+\end{frame}
+
+\begin{frame}{Teorema de Clairaut}
+  \begin{block}{Igualdad de las derivadas cruzadas}
+    Si $f$, $f_x$, $f_y$, $f_{xy}$ y $f_{yx}$ son continuas en un disco abierto que contiene a $(a,b)$, entonces
+    \[
+      f_{xy}(a,b)=f_{yx}(a,b).
+    \]
+  \end{block}
+  \pause
+  \vspace{4pt}
+  \begin{itemize}
+    \item Para casi todas las funciones de las aplicaciones, \textbf{el orden de derivación no importa}.
+    \pause
+    \item Consecuencia práctica: se puede elegir el orden \emph{más sencillo} de calcular.
+    \pause
+    \item Se extiende a tres o más variables: $f_{xz}=f_{zx}$, $f_{yz}=f_{zy}$, etc.
+  \end{itemize}
+  \vspace{6pt}
+  \pause
+  \begin{center}\small\color{gray60} La demostración usa el Teorema del Valor Medio sobre $g(x)=f(x,y+h)-f(x,y)$.\end{center}
+\end{frame}
+
+\begin{frame}{Ejemplo 3 --- segundas derivadas de $f(x,y)=x^2e^{xy}$}
+  \textbf{Paso 1. Primeras derivadas.}
+  \[
+    f_x = 2xe^{xy} + x^2ye^{xy} = (2x+x^2y)e^{xy},
+    \qquad
+    f_y = x^2\cdot xe^{xy}=x^3e^{xy}.
+  \]
+  \pause
+  \textbf{Paso 2. $f_{xx}$} (regla del producto sobre $f_x$):
+  \[
+    f_{xx}=(2+2xy)e^{xy}+(2x+x^2y)\,ye^{xy}=(2+4xy+x^2y^2)e^{xy}.
+  \]
+  \pause
+  \textbf{$f_{yy}$} (mucho más corta):
+  \[
+    f_{yy}=\frac{\partial}{\partial y}\bigl(x^3e^{xy}\bigr)=x^4e^{xy}.
+  \]
+\end{frame}
+
+\begin{frame}{Ejemplo 3 --- las cruzadas y Clairaut}
+  \[
+    f_{xy}=\frac{\partial}{\partial y}\bigl[(2x+x^2y)e^{xy}\bigr]
+          = x^2e^{xy}+(2x+x^2y)\,xe^{xy}
+          = (3x^2+x^3y)e^{xy}.
+  \]
+  \pause
+  \[
+    f_{yx}=\frac{\partial}{\partial x}\bigl(x^3e^{xy}\bigr)
+          = 3x^2e^{xy}+x^3ye^{xy}
+          = (3x^2+x^3y)e^{xy}.
+  \]
+  \pause
+  \begin{center}\normalsize\color{tealx} $f_{xy}=f_{yx}$, como garantiza Clairaut.\end{center}
+  \pause
+  \[
+    \boxed{f_{xx}=(2+4xy+x^2y^2)e^{xy},\quad f_{yy}=x^4e^{xy},\quad f_{xy}=f_{yx}=(3x^2+x^3y)e^{xy}}
+  \]
+\end{frame}
+
+\begin{frame}{Tres o más variables}
+  La definición es idéntica: se congelan \emph{todas} las demás.
+  \[
+    f_x=\lim_{h\to 0}\frac{f(x+h,y,z)-f(x,y,z)}{h},
+  \]
+  y análogamente $f_y$, $f_z$.
+  \pause
+  \vspace{6pt}
+  \begin{block}{Ejemplo: $f(x,y,z)=e^{xy}\sen z$}
+    \[
+      f_x=ye^{xy}\sen z,\qquad
+      f_y=xe^{xy}\sen z,\qquad
+      f_z=e^{xy}\cos z.
+    \]
+  \end{block}
+  \pause
+  \begin{center}\small\color{gray60} En $f_x$ y $f_y$ el factor $\sen z$ es una constante; en $f_z$ lo es $e^{xy}$.\end{center}
+\end{frame}
+
+\begin{frame}{Para qué sirven: ecuaciones en derivadas parciales}
+  Las parciales son el lenguaje de los modelos físicos. Dos verificaciones clásicas:
+  \vspace{6pt}
+  \pause
+  \begin{block}{Ecuación de onda: $u_{tt}=a^2u_{xx}$ con $u(x,t)=\sen(x-at)$}
+    \[
+      u_x=\cos(x-at),\quad u_{xx}=-\sen(x-at);
+    \]
+    \[
+      u_t=-a\cos(x-at),\quad u_{tt}=-a^2\sen(x-at).
+    \]
+    \[
+      a^2u_{xx}=-a^2\sen(x-at)=u_{tt}.\quad\checkmark
+    \]
+  \end{block}
+  \pause
+  \begin{center}\small\color{gray60} Una onda que viaja hacia la derecha con rapidez $a$ sin deformarse.\end{center}
+\end{frame}
+
+\begin{frame}{Ecuación de Laplace: $u_{xx}+u_{yy}=0$}
+  Sea $u(x,y)=\ln(x^2+y^2)$, con $(x,y)\neq(0,0)$. Ya calculamos
+  \[
+    u_x=\frac{2x}{x^2+y^2},\qquad u_y=\frac{2y}{x^2+y^2}.
+  \]
+  \pause
+  Regla del cociente:
+  \[
+    u_{xx}=\frac{2(x^2+y^2)-2x\cdot 2x}{(x^2+y^2)^2}=\frac{2y^2-2x^2}{(x^2+y^2)^2},
+    \qquad
+    u_{yy}=\frac{2x^2-2y^2}{(x^2+y^2)^2}.
+  \]
+  \pause
+  \[
+    u_{xx}+u_{yy}=\frac{(2y^2-2x^2)+(2x^2-2y^2)}{(x^2+y^2)^2}=0.\quad\checkmark
+  \]
+  \pause
+  \begin{center}\small\color{gray60} Las soluciones de Laplace se llaman \textbf{armónicas}: modelan temperaturas en equilibrio.\end{center}
+\end{frame}
+
+\begin{frame}{Una advertencia importante}
+  \begin{block}{Función}
+    \[
+      f(x,y)=\begin{cases}\dfrac{x^2y^2}{x^2+y^2}, & (x,y)\neq(0,0),\\[8pt] 0, & (x,y)=(0,0).\end{cases}
+    \]
+  \end{block}
+  \pause
+  Por la definición, fijando $y=0$ y luego $x=0$:
+  \[
+    f_x(0,0)=\lim_{h\to 0}\frac{f(h,0)-0}{h}=\lim_{h\to 0}\frac{0}{h}=0,
+    \qquad
+    f_y(0,0)=0.
+  \]
+  \pause
+  \alerta{Las dos parciales \textbf{existen} en el origen y aun así $f$ \textbf{no} es diferenciable ahí.}
+  \pause
+  \begin{center}\small\color{gray60} Esa es la razón de ser del Bloque 2: hace falta una noción más fuerte.\end{center}
+\end{frame}
+
+% ======================================================
+% BLOQUE 2 --- PLANO TANGENTE Y DIFERENCIABILIDAD
+% ======================================================
+\bloqueframe{2}{Plano tangente y diferenciabilidad}{Linealización, diferencial total y el criterio práctico}
+
+\begin{frame}{De la recta tangente al plano tangente}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      Para $y=f(x)$, la recta tangente en $x_0$ es la mejor aproximación lineal:
+      \[
+        y=f(x_0)+f'(x_0)(x-x_0).
+      \]
+      \pause
+      \vspace{4pt}
+      Para $z=f(x,y)$, cuya gráfica es una superficie en $\mathbb R^3$, el análogo es el \textbf{plano tangente}.
+      \pause
+      \vspace{6pt}
+      \begin{block}{Ecuación}
+        \[
+          z-z_0=f_x(x_0,y_0)(x-x_0)+f_y(x_0,y_0)(y-y_0).
+        \]
+      \end{block}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \centering
+      \begin{tikzpicture}
+      \begin{axis}[
+          view={40}{25},
+          xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+          axis lines=center, tick style={thin},
+          zmin=0, zmax=5, xtick={-1,1}, ytick={-1,1}, ztick={2,4},
+          ticklabel style={font=\tiny},
+          width=7.0cm, height=6.6cm,
+      ]
+          \addplot3[surf, shader=flat corner, samples=18,
+                    domain=-1.8:1.8, opacity=0.70, colormap/cool] {x^2 + y^2};
+          \addplot3[only marks, mark=*, mark size=2pt, brick] coordinates {(1,0,1)};
+          \addplot3[surf, shader=flat, samples=4,
+                    domain=0.2:1.8, y domain=-0.9:0.9, opacity=0.55, colormap/hot] {2*x - 1};
+          \draw[->, thick, brick] (axis cs:1,0,1) -- (axis cs:0.374,0,1.313);
+          \node[above right, font=\tiny] at (axis cs:0.374,0,1.313) {$\mathbf n$};
+      \end{axis}
+      \end{tikzpicture}\\[-2pt]
+      {\footnotesize\color{gray60} plano tangente a $z=x^2+y^2$ en $(1,0,1)$}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Protocolo: 3 pasos}
+  \begin{center}
+  \begin{tikzpicture}[node distance=0.5cm]
+    \node[draw=tealx,thick,fill=tealx!10,rounded corners,minimum width=3.2cm,minimum height=1.2cm,align=center] (p1) {\bfseries 1\\Parciales en $(x_0,y_0)$};
+    \node[draw=tealx,thick,fill=tealx!10,rounded corners,minimum width=3.2cm,minimum height=1.2cm,align=center,right=of p1] (p2) {\bfseries 2\\Ecuación del plano};
+    \node[draw=tealx,thick,fill=tealx!10,rounded corners,minimum width=3.2cm,minimum height=1.2cm,align=center,right=of p2] (p3) {\bfseries 3\\Simplificar};
+    \draw[-Stealth,thick,gray60] (p1) -- (p2);
+    \draw[-Stealth,thick,gray60] (p2) -- (p3);
+  \end{tikzpicture}
+  \end{center}
+  \vspace{10pt}
+  \begin{enumerate}
+    \item Evaluar $f_x(x_0,y_0)$ y $f_y(x_0,y_0)$ (y también $z_0=f(x_0,y_0)$).
+    \item Sustituir en $z-z_0=f_x(x_0,y_0)(x-x_0)+f_y(x_0,y_0)(y-y_0)$.
+    \item Reordenar a la forma compacta $z=L(x,y)$.
+  \end{enumerate}
+  \vspace{6pt}
+  \begin{center}\small\color{gray60} El plano contiene las dos rectas tangentes del Bloque 1: sus pendientes son $f_x$ y $f_y$.\end{center}
+\end{frame}
+
+\begin{frame}{Ejemplo --- paraboloide elíptico $z=2x^2+y^2$ en $(1,1,3)$}
+  \pttracker{1}
+  Como $f$ es un polinomio, es diferenciable en todo $\mathbb R^2$:
+  \[
+    f_x=4x,\quad f_y=2y
+    \qquad\Longrightarrow\qquad
+    f_x(1,1)=4,\quad f_y(1,1)=2,\quad f(1,1)=3.
+  \]
+  \pause
+  \pttracker{2}
+  \[
+    z-3=4(x-1)+2(y-1).
+  \]
+  \pause
+  \pttracker{3}
+  \[
+    \boxed{z=4x+2y-3}
+  \]
+\end{frame}
+
+\begin{frame}{Ejercicio --- $z=x^2y^3$ en $(1,2)$}
+  \pttracker{1}
+  \[
+    f_x=2xy^3,\quad f_y=3x^2y^2
+    \qquad\Longrightarrow\qquad
+    f_x(1,2)=16,\quad f_y(1,2)=12,\quad f(1,2)=8.
+  \]
+  \pause
+  \pttracker{2}
+  \[
+    z-8=16(x-1)+12(y-2).
+  \]
+  \pause
+  \pttracker{3}
+  \[
+    \boxed{z=16x+12y-20}
+  \]
+  \pause
+  \begin{center}\small\color{gray60} Nótese que son las mismas parciales del Ejemplo 1: el plano tangente no exige cálculos nuevos.\end{center}
+\end{frame}
+
+% ------------------------------------------------------
+% Problemas 19.23, 19.24 y 19.25 --- solo con la Construcción
+% ------------------------------------------------------
+\begin{frame}{Problema 19.23 --- dos superficies tangentes entre sí}
+  \begin{block}{Problema}
+    Demuestre que el elipsoide $3x^2+2y^2+z^2=9$ y la esfera $x^2+y^2+z^2-8x-6y-8z+24=0$ son tangentes en $(1,1,2)$, es decir, que comparten el plano tangente.
+  \end{block}
+  \pause
+  \vspace{2pt}
+  \begin{center}\normalsize\color{tealx} La estrategia: despejar $z$ en cada superficie y aplicar la Construcción a las dos.\end{center}
+  \pause
+  \vspace{4pt}
+  Ninguna de las dos ecuaciones está en la forma $z=f(x,y)$, pero ambas son \textbf{cuadráticas en $z$}: cada una define dos ramas, y basta quedarse con la que pasa por el punto.
+\end{frame}
+
+\begin{frame}{Problema 19.23 --- elegir la rama de cada superficie}
+  \pttracker{1}
+  \textbf{Elipsoide.} $z^2=9-3x^2-2y^2$ y en el punto $z=2>0$, luego
+  \[
+    f(x,y)=\sqrt{9-3x^2-2y^2},
+    \qquad f(1,1)=\sqrt{9-3-2}=2.\ \checkmark
+  \]
+  \pause
+  \textbf{Esfera.} Completando cuadrados,
+  \[
+    x^2+y^2+z^2-8x-6y-8z+24=(x-4)^2+(y-3)^2+(z-4)^2-17,
+  \]
+  \pause
+  o sea centro $(4,3,4)$ y radio $\sqrt{17}$. Como $z=2<4$, la rama es la \emph{inferior}:
+  \[
+    g(x,y)=4-\sqrt{17-(x-4)^2-(y-3)^2},
+    \qquad g(1,1)=4-\sqrt{4}=2.\ \checkmark
+  \]
+\end{frame}
+
+\begin{frame}{Problema 19.23 --- las parciales de cada rama}
+  \pttracker{1}
+  \textbf{Elipsoide} (cadena, con la otra variable constante):
+  \[
+    f_x=\frac{-3x}{\sqrt{9-3x^2-2y^2}},\qquad
+    f_y=\frac{-2y}{\sqrt{9-3x^2-2y^2}};
+    \qquad\text{en }(1,1)\text{ el radicando vale }4:
+  \]
+  \[
+    f_x(1,1)=-\tfrac32,\qquad f_y(1,1)=-1.
+  \]
+  \pause
+  \textbf{Esfera}, con $u=17-(x-4)^2-(y-3)^2$:
+  \[
+    g_x=\frac{x-4}{\sqrt u},\qquad
+    g_y=\frac{y-3}{\sqrt u};
+    \qquad\text{en }(1,1)\text{ también }u=4:
+  \]
+  \[
+    g_x(1,1)=\frac{1-4}{2}=-\tfrac32,\qquad g_y(1,1)=\frac{1-3}{2}=-1.
+  \]
+\end{frame}
+
+\begin{frame}{Problema 19.23 --- el plano tangente común}
+  \begin{center}
+  \normalsize\color{tealx} Mismo punto, mismas parciales $\Rightarrow$ la Construcción devuelve el mismo plano.
+  \end{center}
+  \vspace{6pt}
+  \pause
+  \pttracker{2}
+  \[
+    z-2=-\tfrac32(x-1)-1\,(y-1).
+  \]
+  \pause
+  \pttracker{3}
+  \[
+    \boxed{3x+2y+2z=9}
+  \]
+  \pause
+  \vspace{2pt}
+  \begin{center}\small\color{gray60} No hizo falta nada más que $f_x$, $f_y$ y la fórmula del plano tangente.\end{center}
+\end{frame}
+
+\begin{frame}{Problema 19.24 --- plano tangente paralelo a un plano dado}
+  \begin{block}{Problema}
+    Determine el punto del paraboloide $y=x^2+z^2$ donde el plano tangente es paralelo al plano $x+2y+3z=1$.
+  \end{block}
+  \pause
+  \alerta{Aquí la variable despejada es $y$, no $z$. La Construcción vale igual: la superficie es la \textbf{gráfica sobre el plano $xz$}.}
+  \pause
+  \[
+    y=f(x,z)=x^2+z^2
+    \quad\Longrightarrow\quad
+    y-y_0=f_x(x_0,z_0)(x-x_0)+f_z(x_0,z_0)(z-z_0).
+  \]
+  \pause
+  \begin{center}\small\color{gray60} $f$ es un polinomio: es diferenciable en todo el plano $xz$, así que hay plano tangente en cada punto.\end{center}
+\end{frame}
+
+\begin{frame}{Problema 19.24 --- el plano tangente genérico}
+  \pttracker{1}
+  \[
+    f_x=2x,\qquad f_z=2z
+    \qquad\Longrightarrow\qquad
+    y-y_0=2x_0(x-x_0)+2z_0(z-z_0).
+  \]
+  \pause
+  \pttracker{2}
+  Desarrollando, los términos constantes son $-2x_0^2-2z_0^2+y_0$, y como $x_0^2+z_0^2=y_0$ eso vale $-2y_0+y_0=-y_0$:
+  \pause
+  \pttracker{3}
+  \[
+    \boxed{2x_0\,x-y+2z_0\,z=y_0}
+  \]
+  \pause
+  \begin{center}\small\color{tealx} Una sola fórmula que describe el plano tangente en \emph{todos} los puntos a la vez.\end{center}
+\end{frame}
+
+\begin{frame}{Problema 19.24 --- imponer el paralelismo}
+  Dos planos son paralelos exactamente cuando los coeficientes de $x$, $y$, $z$ son \textbf{proporcionales}. Comparando con $x+2y+3z=1$:
+  \[
+    (2x_0,\ -1,\ 2z_0)=k\,(1,\ 2,\ 3).
+  \]
+  \pause
+  La segunda componente ya fija todo: $-1=2k$, luego $k=-\tfrac12$.
+  \pause
+  \[
+    2x_0=-\tfrac12\implies x_0=-\tfrac14,
+    \qquad
+    2z_0=-\tfrac32\implies z_0=-\tfrac34.
+  \]
+  \pause
+  Sustituyendo en el paraboloide: $y_0=\tfrac1{16}+\tfrac9{16}=\tfrac58$.
+  \pause
+  \[
+    \boxed{\left(-\tfrac14,\ \tfrac58,\ -\tfrac34\right)}
+  \]
+\end{frame}
+
+\begin{frame}{Problema 19.25 --- el mismo método, otro final}
+  \begin{block}{Problema}
+    Halle los puntos del hiperboloide $x^2-y^2-z^2=1$ donde el plano tangente es paralelo al plano $z=x+y$.
+  \end{block}
+  \pause
+  \pttracker{1}
+  De $x^2=1+y^2+z^2\ge 1$ se sigue $|x|\ge 1$: hay \textbf{dos hojas}, y cada una es la gráfica sobre el plano $yz$ de
+  \[
+    x=f(y,z)=\pm\sqrt{1+y^2+z^2}.
+  \]
+  \pause
+  \begin{center}\small\color{tealx} Como $|x_0|\ge 1$, nunca es $x_0=0$: podremos dividir por $x_0$ sin reservas.\end{center}
+\end{frame}
+
+\begin{frame}{Problema 19.25 --- el plano tangente genérico}
+  \pttracker{1}
+  En cualquiera de las dos hojas el signo se absorbe, porque $x=\pm\sqrt{1+y^2+z^2}$:
+  \[
+    f_y=\pm\frac{y}{\sqrt{1+y^2+z^2}}=\frac{y}{x},
+    \qquad
+    f_z=\pm\frac{z}{\sqrt{1+y^2+z^2}}=\frac{z}{x}.
+  \]
+  \pause
+  \pttracker{2}
+  \[
+    x-x_0=\frac{y_0}{x_0}(y-y_0)+\frac{z_0}{x_0}(z-z_0).
+  \]
+  \pause
+  \pttracker{3}
+  Multiplicando por $x_0$ y usando $x_0^2-y_0^2-z_0^2=1$:
+  \[
+    \boxed{x_0\,x-y_0\,y-z_0\,z=1}
+  \]
+\end{frame}
+
+\begin{frame}{Problema 19.25 --- la condición resulta imposible}
+  El plano $z=x+y$ se escribe $x+y-z=0$. Proporcionalidad de coeficientes:
+  \[
+    (x_0,\ -y_0,\ -z_0)=k\,(1,\ 1,\ -1)
+    \implies
+    x_0=k,\quad y_0=-k,\quad z_0=k.
+  \]
+  \pause
+  Pero el punto debe estar sobre el hiperboloide:
+  \[
+    x_0^2-y_0^2-z_0^2=k^2-(-k)^2-k^2=-k^2=1
+    \implies k^2=-1.
+  \]
+  \pause
+  \begin{center}\normalsize\color{brick} Imposible en $\mathbb R$.\end{center}
+  \pause
+  \[
+    \boxed{\text{No hay ningún punto del hiperboloide con plano tangente paralelo a }z=x+y.}
+  \]
+  \pause
+  \begin{center}\small\color{gray60} Que el método no encuentre solución \emph{es} la respuesta: no todo plano admite un tangente paralelo.\end{center}
+\end{frame}
+
+\begin{frame}{Linealización}
+  \begin{block}{Definición}
+    Si $f$ es diferenciable en $(x_0,y_0)$, su \textbf{linealización} es
+    \[
+      L(x,y)=f(x_0,y_0)+f_x(x_0,y_0)(x-x_0)+f_y(x_0,y_0)(y-y_0),
+    \]
+    y la \textbf{aproximación lineal} correspondiente es $f(x,y)\approx L(x,y)$ para $(x,y)$ cercano a $(x_0,y_0)$.
+  \end{block}
+  \pause
+  \vspace{6pt}
+  \begin{center}
+  \normalsize\color{tealx} Linealizar y hallar el plano tangente son \textbf{el mismo cálculo}: $L$ es la altura del plano.
+  \end{center}
+  \pause
+  \vspace{4pt}
+  \begin{center}\small\color{gray60} La utilidad: reemplazar una función complicada por una lineal en una vecindad pequeña.\end{center}
+\end{frame}
+
+\begin{frame}{Ejemplo --- $f(x,y)=\sqrt{x^2+y^2}$ en $(3,4)$}
+  \pttracker{1}
+  \[
+    f_x=\frac{x}{\sqrt{x^2+y^2}},\qquad f_y=\frac{y}{\sqrt{x^2+y^2}}.
+  \]
+  \pause
+  Ambas son continuas en $(3,4)$ (el radicando no se anula ahí), luego $f$ es diferenciable:
+  \[
+    f_x(3,4)=\tfrac35,\qquad f_y(3,4)=\tfrac45,\qquad f(3,4)=5.
+  \]
+  \pause
+  \pttracker{2}
+  \[
+    L(x,y)=5+\tfrac35(x-3)+\tfrac45(y-4).
+  \]
+\end{frame}
+
+\begin{frame}{Ejemplo --- simplificación y aproximación}
+  \pttracker{3}
+  \[
+    L(x,y)=\frac{3x+4y}{5}.
+  \]
+  \pause
+  Aproximamos $f(3.1,3.9)$:
+  \[
+    f(3.1,3.9)\approx L(3.1,3.9)=\frac{9.3+15.6}{5}=\frac{24.9}{5}=4.98.
+  \]
+  \pause
+  Valor real: $\sqrt{3.1^2+3.9^2}=\sqrt{24.82}\approx 4.98197$.
+  \pause
+  \[
+    \boxed{L(x,y)=\frac{3x+4y}{5},\qquad f(3.1,3.9)\approx 4.98}
+  \]
+  \pause
+  \begin{center}\small\color{tealx} Error menor que $2\times 10^{-3}$: la aproximación lineal es muy buena \emph{cerca} del punto.\end{center}
+\end{frame}
+
+\begin{frame}{El diferencial total}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \begin{block}{Definición}
+        \[
+          dz=f_x\,dx+f_y\,dy
+            =\frac{\partial z}{\partial x}dx+\frac{\partial z}{\partial y}dy.
+        \]
+      \end{block}
+      \pause
+      \begin{itemize}
+        \item $dz$ es el cambio en la \emph{linealización}; $\Delta z$ es el cambio \emph{real} de $f$.
+        \pause
+        \item Si $dx=\Delta x$ y $dy=\Delta y$ son pequeños: $\Delta z\approx dz$.
+        \pause
+        \item Con tres variables: $dw=f_x\,dx+f_y\,dy+f_z\,dz$.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \centering
+      \begin{tikzpicture}[scale=0.92]
+        \draw[thin,->] (-0.3,0) -- (3.2,0) node[right] {\small $x$};
+        \draw[thin,->] (0,-0.3) -- (0,3.2) node[above] {\small $z$};
+        \draw[thick, navy, domain=0.4:2.6, samples=50, smooth, variable=\t]
+            plot ({\t}, {\t*\t/2.2});
+        \node[anchor=east, navy, font=\scriptsize] at (2.7,3.05) {$z=f(x,y_0)$};
+        \pgfmathsetmacro{\xo}{1.5}
+        \pgfmathsetmacro{\zo}{1.5*1.5/2.2}
+        \filldraw[brick] (\xo,\zo) circle (1.5pt);
+        \pgfmathsetmacro{\m}{1.5/1.1}
+        \draw[thick, brick] ({1.5-0.8},{\zo - \m*0.8}) -- ({1.5+0.8},{\zo + \m*0.8});
+        \pgfmathsetmacro{\dx}{0.7}
+        \draw[thin, <->] (\xo, \zo-0.18) -- (\xo+\dx, \zo-0.18)
+            node[midway, below, font=\scriptsize] {$\Delta x$};
+        \pgfmathsetmacro{\znew}{(\xo+\dx)*(\xo+\dx)/2.2}
+        \draw[thin, navy] (\xo+\dx, \zo) -- (\xo+\dx, \znew);
+        \node[anchor=west, navy, font=\scriptsize] at (\xo+\dx+0.05, {(\zo+\znew)/2}) {$\Delta z$};
+        \pgfmathsetmacro{\dz}{\m*\dx}
+        \draw[thin, brick] (\xo+\dx, \zo) -- (\xo+\dx, \zo+\dz);
+        \node[anchor=east, brick, font=\scriptsize] at (\xo+\dx-0.05, {\zo+\dz/2}) {$dz$};
+        \draw[thin, gray60, <->] (\xo+\dx+0.55, \zo+\dz) -- (\xo+\dx+0.55, \znew)
+            node[midway, right, font=\scriptsize] {error};
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{\textquestiondown{}Qué significa exactamente ser diferenciable?}
+  \begin{block}{Idea}
+    $f$ es diferenciable en $(x_0,y_0)$ si el incremento se descompone como
+    \[
+      \Delta z = f_x(x_0,y_0)\Delta x + f_y(x_0,y_0)\Delta y
+                 + \varepsilon_1\Delta x + \varepsilon_2\Delta y,
+    \]
+    con $\varepsilon_1,\varepsilon_2\to 0$ cuando $(\Delta x,\Delta y)\to(0,0)$.
+  \end{block}
+  \pause
+  \vspace{2pt}
+  Es decir: el plano tangente aproxima a $f$ con un error que tiende a cero \emph{más rápido} que la distancia al punto.
+  \pause
+  \vspace{4pt}
+  \begin{block}{Teorema}
+    Si $f$ es diferenciable en $(x_0,y_0)$, entonces $f$ es continua en ese punto.
+  \end{block}
+  \pause
+  \begin{center}\small\color{gray60} Prueba: cada sumando está acotado por algo que tiende a $0$, luego $\Delta z\to 0$.\end{center}
+\end{frame}
+
+\begin{frame}{El criterio práctico de diferenciabilidad}
+  \begin{block}{Criterio}
+    Si $f_x$ y $f_y$ existen en una región que contiene a $(x_0,y_0)$ y son \textbf{continuas} en $(x_0,y_0)$, entonces $f$ es diferenciable en $(x_0,y_0)$.
+  \end{block}
+  \pause
+  \vspace{8pt}
+  \begin{center}
+  \begin{tikzpicture}[node distance=0.7cm, every node/.style={font=\footnotesize}]
+    \node[draw=tealx,thick,fill=tealx!10,rounded corners,minimum width=3.4cm,minimum height=0.9cm,align=center] (a) {parciales continuas};
+    \node[draw=navy,thick,fill=navy!8,rounded corners,minimum width=3.4cm,minimum height=0.9cm,align=center,right=of a] (b) {diferenciable};
+    \node[draw=gray60,thick,fill=lightbg,rounded corners,minimum width=3.4cm,minimum height=0.9cm,align=center,right=of b] (c) {continua};
+    \draw[-Stealth,thick,tealx] (a) -- (b);
+    \draw[-Stealth,thick,tealx] (b) -- (c);
+  \end{tikzpicture}
+  \end{center}
+  \vspace{8pt}
+  \pause
+  \alerta{Las flechas \textbf{no} se devuelven: existir las parciales no basta (recuerde $x^2y^2/(x^2+y^2)$), y ser continua tampoco implica ser diferenciable.}
+\end{frame}
+
+\begin{frame}{Ejemplo --- diferenciabilidad de $f(x,y)=xe^{xy}$ en $(1,0)$}
+  \pttracker{1}
+  \[
+    f_x=e^{xy}+xye^{xy},\qquad f_y=x^2e^{xy}.
+  \]
+  \pause
+  Ambas son continuas en todo $\mathbb R^2$ (composiciones de continuas), luego por el criterio $f$ es diferenciable en $(1,0)$.
+  \pause
+  \vspace{4pt}
+  En $(1,0)$ se tiene $e^{xy}=e^0=1$:
+  \[
+    f(1,0)=1,\qquad f_x(1,0)=1,\qquad f_y(1,0)=1.
+  \]
+  \pause
+  \pttracker{2}
+  \[
+    L(x,y)=1+1(x-1)+1(y-0)=x+y.
+  \]
+\end{frame}
+
+\begin{frame}{Ejemplo --- aproximación}
+  \pttracker{3}
+  \[
+    f(1.1,-0.1)\approx L(1.1,-0.1)=1.1-0.1=1.0.
+  \]
+  \pause
+  Valor real: $f(1.1,-0.1)=1.1\,e^{-0.11}\approx 0.9854$.
+  \pause
+  \[
+    \boxed{L(x,y)=x+y,\qquad f(1.1,-0.1)\approx 1.0}
+  \]
+  \pause
+  \vspace{6pt}
+  \begin{center}\small\color{gray60} El error ($\approx 1.5\%$) crece con la distancia al punto de tangencia: la aproximación es \emph{local}.\end{center}
+\end{frame}
+
+% ======================================================
+% BLOQUE 3 --- REGLA DE LA CADENA
+% ======================================================
+\bloqueframe{3}{Regla de la cadena}{Dos casos, derivación implícita y segundas derivadas}
+
+\begin{frame}{Caso 1: una sola variable independiente}
+  \begin{columns}
+    \begin{column}{0.55\textwidth}
+      \begin{block}{Teorema}
+        Si $z=f(x,y)$ es diferenciable y $x=g(t)$, $y=h(t)$ son diferenciables, entonces
+        \[
+          \frac{dz}{dt}=\frac{\partial z}{\partial x}\frac{dx}{dt}
+                       +\frac{\partial z}{\partial y}\frac{dy}{dt}.
+        \]
+      \end{block}
+      \pause
+      \vspace{4pt}
+      {\small Una contribución por cada camino que lleva de $t$ a $z$: se derivan los eslabones y se suman los caminos.}
+    \end{column}
+    \begin{column}{0.42\textwidth}
+      \centering
+      \begin{tikzpicture}[every node/.style={font=\footnotesize}, level distance=1.3cm]
+        \node[draw=navy,thick,fill=navy!8,rounded corners,inner sep=3pt] (z) at (0,2.6) {$z$};
+        \node[draw=tealx,thick,fill=tealx!10,rounded corners,inner sep=3pt] (x) at (-1.1,1.3) {$x$};
+        \node[draw=tealx,thick,fill=tealx!10,rounded corners,inner sep=3pt] (y) at (1.1,1.3) {$y$};
+        \node[draw=brick,thick,fill=brick!8,rounded corners,inner sep=3pt] (t1) at (-1.1,0) {$t$};
+        \node[draw=brick,thick,fill=brick!8,rounded corners,inner sep=3pt] (t2) at (1.1,0) {$t$};
+        \draw[-Stealth,gray60] (z) -- (x) node[midway,left,font=\tiny] {$z_x$};
+        \draw[-Stealth,gray60] (z) -- (y) node[midway,right,font=\tiny] {$z_y$};
+        \draw[-Stealth,gray60] (x) -- (t1) node[midway,left,font=\tiny] {$dx/dt$};
+        \draw[-Stealth,gray60] (y) -- (t2) node[midway,right,font=\tiny] {$dy/dt$};
+      \end{tikzpicture}\\[4pt]
+      {\footnotesize\color{gray60} árbol de dependencias}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Ejemplo --- $z=x^2y-\sen y$, $x=\sqrt{t^2+1}$, $y=e^t$}
+  \rctracker{1}
+  $z$ depende de $t$ solo a través de $x(t)$ e $y(t)$: aplica el Caso 1.
+  \pause
+  \rctracker{2}
+  \[
+    \frac{\partial z}{\partial x}=2xy,\qquad
+    \frac{\partial z}{\partial y}=x^2-\cos y.
+  \]
+  \pause
+  \rctracker{3}
+  \[
+    \frac{dx}{dt}=\frac{t}{\sqrt{t^2+1}},\qquad
+    \frac{dy}{dt}=e^t.
+  \]
+\end{frame}
+
+\begin{frame}{Ejemplo --- sustituir y sumar}
+  \rctracker{4}
+  \[
+    \frac{dz}{dt}=(2xy)\frac{dx}{dt}+(x^2-\cos y)\frac{dy}{dt}.
+  \]
+  \pause
+  Sustituyendo $x=\sqrt{t^2+1}$, $y=e^t$:
+  \[
+    \frac{dz}{dt}=2\sqrt{t^2+1}\,e^t\cdot\frac{t}{\sqrt{t^2+1}}
+                 +\bigl(t^2+1-\cos(e^t)\bigr)e^t.
+  \]
+  \pause
+  El radical se cancela en el primer sumando:
+  \[
+    \frac{dz}{dt}=2te^t+\bigl(t^2+1-\cos(e^t)\bigr)e^t.
+  \]
+  \pause
+  \vspace{-6pt}
+  \[
+    \boxed{\frac{dz}{dt}=\bigl(t^2+2t+1-\cos(e^t)\bigr)e^t}
+  \]
+\end{frame}
+
+\begin{frame}{Aplicación --- razones relacionadas: la ley de Ohm}
+  \begin{block}{Problema}
+    En un circuito, $V=IR$. La batería se gasta ($dV/dt=-0.02$ V/s) y el resistor se calienta ($dR/dt=0.04\ \Omega$/s). \textquestiondown{}Cómo cambia la corriente cuando $R=500\ \Omega$ e $I=0.06$ A?
+  \end{block}
+  \pause
+  \[
+    \frac{dV}{dt}=\frac{\partial V}{\partial I}\frac{dI}{dt}
+                 +\frac{\partial V}{\partial R}\frac{dR}{dt}
+                 =R\frac{dI}{dt}+I\frac{dR}{dt}.
+  \]
+  \pause
+  \[
+    -0.02=500\frac{dI}{dt}+(0.06)(0.04)=500\frac{dI}{dt}+0.0024.
+  \]
+  \pause
+  \[
+    \frac{dI}{dt}=\frac{-0.0224}{500}
+    \qquad\Longrightarrow\qquad
+    \boxed{\frac{dI}{dt}\approx -4.48\times 10^{-5}\ \text{A/s}}
+  \]
+\end{frame}
+
+\begin{frame}{Caso 2: dos variables independientes}
+  \begin{columns}
+    \begin{column}{0.55\textwidth}
+      \begin{block}{Teorema}
+        Si $z=f(x,y)$ es diferenciable y $x=g(s,t)$, $y=h(s,t)$ son diferenciables, entonces
+        \[
+          \frac{\partial z}{\partial s}=\frac{\partial z}{\partial x}\frac{\partial x}{\partial s}
+                                       +\frac{\partial z}{\partial y}\frac{\partial y}{\partial s},
+        \]
+        \[
+          \frac{\partial z}{\partial t}=\frac{\partial z}{\partial x}\frac{\partial x}{\partial t}
+                                       +\frac{\partial z}{\partial y}\frac{\partial y}{\partial t}.
+        \]
+      \end{block}
+      \pause
+      {\small Ahora hay \emph{dos} fórmulas: una por cada variable independiente.}
+    \end{column}
+    \begin{column}{0.42\textwidth}
+      \centering
+      \begin{tikzpicture}[every node/.style={font=\footnotesize}]
+        \node[draw=navy,thick,fill=navy!8,rounded corners,inner sep=3pt] (z) at (0,2.6) {$z$};
+        \node[draw=tealx,thick,fill=tealx!10,rounded corners,inner sep=3pt] (x) at (-1.3,1.3) {$x$};
+        \node[draw=tealx,thick,fill=tealx!10,rounded corners,inner sep=3pt] (y) at (1.3,1.3) {$y$};
+        \node[draw=brick,thick,fill=brick!8,rounded corners,inner sep=3pt] (s1) at (-2.0,0) {$s$};
+        \node[draw=brick,thick,fill=brick!8,rounded corners,inner sep=3pt] (t1) at (-0.7,0) {$t$};
+        \node[draw=brick,thick,fill=brick!8,rounded corners,inner sep=3pt] (s2) at (0.7,0) {$s$};
+        \node[draw=brick,thick,fill=brick!8,rounded corners,inner sep=3pt] (t2) at (2.0,0) {$t$};
+        \draw[-Stealth,gray60] (z) -- (x);
+        \draw[-Stealth,gray60] (z) -- (y);
+        \draw[-Stealth,gray60] (x) -- (s1);
+        \draw[-Stealth,gray60] (x) -- (t1);
+        \draw[-Stealth,gray60] (y) -- (s2);
+        \draw[-Stealth,gray60] (y) -- (t2);
+      \end{tikzpicture}\\[4pt]
+      {\footnotesize\color{gray60} cuatro caminos, dos por variable}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Ejemplo --- $z=\sen(xy)$, $x=s^2+t$, $y=\ln(st)$}
+  \rctracker{1}
+  Dos variables independientes $s,t$ (con $s,t>0$ para que $\ln(st)$ exista): Caso 2.
+  \pause
+  \rctracker{2}
+  \[
+    \frac{\partial z}{\partial x}=y\cos(xy),\qquad
+    \frac{\partial z}{\partial y}=x\cos(xy).
+  \]
+  \pause
+  \rctracker{3}
+  Usando $\ln(st)=\ln s+\ln t$:
+  \[
+    \frac{\partial x}{\partial s}=2s,\quad \frac{\partial x}{\partial t}=1,\qquad
+    \frac{\partial y}{\partial s}=\frac1s,\quad \frac{\partial y}{\partial t}=\frac1t.
+  \]
+\end{frame}
+
+\begin{frame}{Ejemplo --- ensamblaje}
+  \rctracker{4}
+  \[
+    \frac{\partial z}{\partial s}=\bigl(y\cos(xy)\bigr)(2s)+\bigl(x\cos(xy)\bigr)\frac1s,
+    \qquad
+    \frac{\partial z}{\partial t}=\bigl(y\cos(xy)\bigr)(1)+\bigl(x\cos(xy)\bigr)\frac1t.
+  \]
+  \pause
+  Sustituyendo $x=s^2+t$, $y=\ln(st)$:
+  \[
+    \boxed{\frac{\partial z}{\partial s}=\cos\bigl((s^2+t)\ln(st)\bigr)\left(2s\ln(st)+\frac{s^2+t}{s}\right)}
+  \]
+  \pause
+  \[
+    \boxed{\frac{\partial z}{\partial t}=\cos\bigl((s^2+t)\ln(st)\bigr)\left(\ln(st)+\frac{s^2+t}{t}\right)}
+  \]
+\end{frame}
+
+\begin{frame}{Derivación implícita}
+  Si $z$ no está despejada sino definida por una ecuación $F(x,y,z)=0$, la regla de la cadena da las parciales sin despejar.
+  \pause
+  \begin{block}{Teorema}
+    \[
+      \frac{\partial z}{\partial x}=-\frac{F_x}{F_z},
+      \qquad
+      \frac{\partial z}{\partial y}=-\frac{F_y}{F_z},
+      \qquad\text{siempre que } F_z\neq 0.
+    \]
+  \end{block}
+  \pause
+  \begin{block}{Caso de dos variables: $F(x,y)=0$ define $y=y(x)$}
+    \[
+      \frac{dy}{dx}=-\frac{F_x}{F_y},\qquad F_y\neq 0.
+    \]
+  \end{block}
+  \pause
+  \begin{center}\small\color{gray60} Protocolo: (1) pasar todo a un lado y definir $F$; (2) calcular $F_x,F_y,F_z$; (3) aplicar la fórmula; (4) simplificar.\end{center}
+\end{frame}
+
+\begin{frame}{Ejemplo --- $3yz^2-e^{4x}\cos(4z)-3y^2=4$}
+  \textbf{Paso 1.} Definir $F$:
+  \[
+    F(x,y,z)=3yz^2-e^{4x}\cos(4z)-3y^2-4.
+  \]
+  \pause
+  \textbf{Paso 2.} Parciales de $F$ (cada una tratando las otras dos como constantes):
+  \[
+    F_x=-4e^{4x}\cos(4z),\qquad
+    F_y=3z^2-6y,\qquad
+    F_z=6yz+4e^{4x}\sen(4z).
+  \]
+  \pause
+  \textbf{Paso 3.} Aplicar las fórmulas (donde $F_z\neq 0$):
+  \[
+    \boxed{\frac{\partial z}{\partial x}=\frac{4e^{4x}\cos(4z)}{6yz+4e^{4x}\sen(4z)}},
+    \qquad
+    \boxed{\frac{\partial z}{\partial y}=\frac{6y-3z^2}{6yz+4e^{4x}\sen(4z)}}
+  \]
+\end{frame}
+
+\begin{frame}{Ejercicio --- $x^2y-y^2z+z^3=1$}
+  Definimos $F(x,y,z)=x^2y-y^2z+z^3-1$.
+  \pause
+  \[
+    F_x=2xy,\qquad F_y=x^2-2yz,\qquad F_z=3z^2-y^2.
+  \]
+  \pause
+  \[
+    \frac{\partial z}{\partial x}=-\frac{F_x}{F_z}=-\frac{2xy}{3z^2-y^2},
+    \qquad
+    \frac{\partial z}{\partial y}=-\frac{F_y}{F_z}=-\frac{x^2-2yz}{3z^2-y^2}.
+  \]
+  \pause
+  \[
+    \boxed{\frac{\partial z}{\partial x}=-\frac{2xy}{3z^2-y^2},\qquad
+           \frac{\partial z}{\partial y}=-\frac{x^2-2yz}{3z^2-y^2}}
+    \qquad (3z^2\neq y^2)
+  \]
+  \pause
+  \begin{center}\small\color{gray60} Siempre hay que declarar la hipótesis $F_z\neq 0$: es donde la fórmula puede fallar.\end{center}
+\end{frame}
+
+\begin{frame}{Segundas derivadas por la cadena}
+  \alerta{Al derivar por segunda vez, $f_x$ y $f_y$ \textbf{siguen siendo funciones de las variables intermedias}: hay que reaplicarles la cadena.}
+  \pause
+  \vspace{4pt}
+  \textbf{Ejemplo (polares).} Sea $w=f(x,y)$ con $x=r\cos\theta$, $y=r\sen\theta$. Como $x_r=\cos\theta$, $y_r=\sen\theta$:
+  \[
+    w_r=f_x\cos\theta+f_y\sen\theta.
+  \]
+  \pause
+  Derivando otra vez respecto a $r$ (con $\theta$ constante):
+  \[
+    \frac{\partial}{\partial r}(f_x)=f_{xx}\cos\theta+f_{xy}\sen\theta,
+    \qquad
+    \frac{\partial}{\partial r}(f_y)=f_{yx}\cos\theta+f_{yy}\sen\theta.
+  \]
+  \pause
+  Combinando y usando $f_{xy}=f_{yx}$ (Clairaut):
+  \[
+    \boxed{\frac{\partial^2w}{\partial r^2}=f_{xx}\cos^2\theta+2f_{xy}\cos\theta\sen\theta+f_{yy}\sen^2\theta}
+  \]
+\end{frame}
+
+% ======================================================
+% BLOQUE 4 --- GRADIENTE Y DERIVADA DIRECCIONAL
+% ======================================================
+\bloqueframe{4}{Gradiente y derivada direccional}{Medir el cambio en cualquier dirección}
+
+\begin{frame}{Del eje a cualquier dirección}
+  \begin{columns}
+    \begin{column}{0.52\textwidth}
+      \begin{itemize}
+        \item $f_x$ y $f_y$ solo miden el cambio \textbf{a lo largo de los ejes}.
+        \pause
+        \item Pero uno puede moverse en cualquier dirección $\mathbf u$ del plano.
+        \pause
+        \item Esa medida es la \textbf{derivada direccional} $D_{\mathbf u}f$.
+        \pause
+        \item Antes hace falta empaquetar las parciales en un vector: el \textbf{gradiente}.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.44\textwidth}
+      \centering
+      \begin{tikzpicture}[scale=1.0]
+        \fill[navy] (0,0) circle (2pt);
+        \draw[-Stealth,gray60,thick] (0,0) -- (1.6,0) node[right,font=\scriptsize] {$\mathbf i$};
+        \draw[-Stealth,gray60,thick] (0,0) -- (0,1.6) node[above,font=\scriptsize] {$\mathbf j$};
+        \draw[-Stealth,brick,very thick] (0,0) -- (1.25,1.0) node[right,font=\scriptsize] {$\mathbf u$};
+        \draw[-Stealth,brick,thick,dashed] (0,0) -- (-1.0,1.25);
+        \draw[-Stealth,brick,thick,dashed] (0,0) -- (1.4,-0.7);
+        \draw[-Stealth,brick,thick,dashed] (0,0) -- (-1.3,-0.9);
+        \draw[tealx,thin] (0,0) circle (1.6);
+      \end{tikzpicture}\\[4pt]
+      {\footnotesize\color{gray60} infinitas direcciones unitarias}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{El vector gradiente}
+  \begin{block}{Definición}
+    Para $f(x,y)$:
+    \[
+      \nabla f(x,y)=\langle f_x(x,y),\,f_y(x,y)\rangle
+                   =\frac{\partial f}{\partial x}\mathbf i+\frac{\partial f}{\partial y}\mathbf j.
+    \]
+    Para $f(x,y,z)$:
+    \[
+      \nabla f(x,y,z)=\langle f_x,\,f_y,\,f_z\rangle
+                     =\frac{\partial f}{\partial x}\mathbf i+\frac{\partial f}{\partial y}\mathbf j+\frac{\partial f}{\partial z}\mathbf k.
+    \]
+  \end{block}
+  \pause
+  \vspace{4pt}
+  \begin{center}
+  \small\color{gray60} El símbolo $\nabla$ se lee \emph{nabla} o \emph{del}. El gradiente convierte una función escalar en un \textbf{campo vectorial}: contiene toda la información de primer orden de $f$ en el punto.
+  \end{center}
+\end{frame}
+
+\begin{frame}{Ejemplo --- $f(x,y)=x^2\sen y+e^{xy}$}
+  \textbf{Paso 1.} Parcial en $x$ ($y$ constante):
+  \[
+    f_x=2x\sen y+ye^{xy}.
+  \]
+  \pause
+  \textbf{Paso 2.} Parcial en $y$ ($x$ constante):
+  \[
+    f_y=x^2\cos y+xe^{xy}.
+  \]
+  \pause
+  \textbf{Paso 3.} Ensamblaje:
+  \[
+    \boxed{\nabla f(x,y)=(2x\sen y+ye^{xy})\,\mathbf i+(x^2\cos y+xe^{xy})\,\mathbf j}
+  \]
+  \pause
+  \vspace{4pt}
+  \begin{center}\small\color{gray60} No hay técnica nueva: calcular el gradiente es calcular las parciales y escribirlas como vector.\end{center}
+\end{frame}
+
+\begin{frame}{Propiedades algebraicas del gradiente}
+  Se deducen de la linealidad de la derivación parcial y de las reglas del producto y cociente.
+  \vspace{8pt}
+  \pause
+  \begin{center}
+  \begin{tabular}{ll}
+    \toprule
+    \textbf{Propiedad} & \textbf{Enunciado} \\
+    \midrule
+    Linealidad & $\nabla(f\pm g)=\nabla f\pm\nabla g$ \\[3pt]
+    Constante & $\nabla(kf)=k\,\nabla f$ \\[3pt]
+    Producto & $\nabla(fg)=f\,\nabla g+g\,\nabla f$ \\[3pt]
+    Cociente & $\nabla\!\left(\dfrac{f}{g}\right)=\dfrac{g\,\nabla f-f\,\nabla g}{g^2}$, \ $g\neq 0$ \\
+    \bottomrule
+  \end{tabular}
+  \end{center}
+  \vspace{10pt}
+  \pause
+  \begin{center}\small\color{gray60} Son exactamente las reglas de una variable, aplicadas componente a componente.\end{center}
+\end{frame}
+
+\begin{frame}{Las tres propiedades geométricas del gradiente}
+  \begin{columns}
+    \begin{column}{0.48\textwidth}
+      \begin{enumerate}
+        \item \textbf{Dirección de mayor aumento}: $\nabla f(x_0,y_0)$ apunta hacia donde $f$ crece más rápido.
+        \pause
+        \item \textbf{Magnitud}: $\|\nabla f(x_0,y_0)\|$ es la \emph{tasa máxima} de cambio.
+        \pause
+        \item \textbf{Perpendicularidad}: $\nabla f$ es ortogonal a las curvas de nivel $f(x,y)=k$.
+      \end{enumerate}
+      \vspace{6pt}
+      \pause
+      {\small\color{gray60} Prueba de (3): si $f(\mathbf r(t))=k$, derivando por la cadena $\nabla f\cdot\mathbf r'(t)=0$.}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \centering
+      \begin{tikzpicture}[scale=0.70]
+        \draw[thin,->] (-2.5,0) -- (2.8,0) node[right,font=\scriptsize] {$x$};
+        \draw[thin,->] (0,-2.5) -- (0,2.8) node[above,font=\scriptsize] {$y$};
+        \foreach \c in {0.5,1,1.5,2,2.5}{
+            \pgfmathsetmacro{\a}{sqrt(\c)}
+            \pgfmathsetmacro{\b}{2*sqrt(\c)}
+            \draw[thick, navy] (0,0) ellipse ({\a} and {\b});
+        }
+        \draw[-Stealth, thick, brick] (1,0) -- (1.6,0);
+        \draw[-Stealth, thick, brick] (0,2) -- (0,2.3);
+        \draw[-Stealth, thick, brick] (-1,0) -- (-1.6,0);
+        \draw[-Stealth, thick, brick] (0,-2) -- (0,-2.3);
+        \foreach \px/\py in {1/0, 0/2, -1/0, 0/-2}
+            \filldraw[brick] (\px,\py) circle (1.5pt);
+        \node[anchor=west, brick, font=\scriptsize] at (1.65,0.2) {$\nabla f$};
+      \end{tikzpicture}\\[2pt]
+      {\footnotesize\color{gray60} $f(x,y)=x^2+\tfrac{y^2}{4}$: el gradiente cruza las elipses en ángulo recto}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{La derivada direccional}
+  \begin{columns}
+    \begin{column}{0.46\textwidth}
+      \begin{block}{Definición}
+        Para $\mathbf u=\langle u_1,u_2\rangle$ \textbf{unitario}, escribiendo $p_0=(x_0,y_0)$,
+        \[
+          D_{\mathbf u}f(p_0)=\lim_{h\to 0}\frac{f(p_0+h\mathbf u)-f(p_0)}{h}.
+        \]
+      \end{block}
+      \pause
+      \vspace{2pt}
+      {\small Generaliza las parciales: $D_{\mathbf i}f=f_x$ y $D_{\mathbf j}f=f_y$.}
+      \pause
+      \vspace{6pt}
+      {\small\color{brick}\textbf{Cuidado:} $\mathbf u$ \textbf{debe} ser unitario; si no, el cociente no mide cambio por unidad de longitud recorrida.}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centering
+      \begin{tikzpicture}
+      \begin{axis}[
+          view={40}{28},
+          xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+          axis lines=center, tick style={thin},
+          zmin=0, zmax=4.5, xtick={-1,1}, ytick={-1,1}, ztick={2,4},
+          ticklabel style={font=\tiny},
+          width=6.2cm, height=5.9cm,
+      ]
+          \addplot3[surf, shader=flat corner, samples=16,
+                    domain=-1.5:1.5, opacity=0.65, colormap/cool] {x^2 + y^2};
+          \addplot3[only marks, mark=*, mark size=2pt, brick] coordinates {(1,0,1)};
+          \node[above right, font=\tiny] at (axis cs:1,0,1) {$P$};
+          \addplot3[thick, tealx, domain=-1.1:1.1, samples=30, samples y=0] ({x},{x},{2*x^2});
+          \draw[->, thick, brick]
+              (axis cs:1,0,1) -- (axis cs:{1+0.707*0.5},{0.707*0.5},{1+1.414*0.5});
+          \node[above, font=\tiny] at (axis cs:{1+0.707*0.3},{0.707*0.3},{1+1.414*0.3}) {$D_{\mathbf u}f$};
+          \draw[->, thick, navy] (axis cs:1,0,0) -- (axis cs:{1+0.707*0.5},{0.707*0.5},0);
+          \node[below, font=\tiny] at (axis cs:{1+0.707*0.3},{0.707*0.3},0) {$\mathbf u$};
+      \end{axis}
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{La fórmula que evita el límite}
+  \begin{block}{Teorema}
+    Si $f$ es diferenciable en $p=(a,b)$ y $\mathbf u=\langle u_1,u_2\rangle$ es unitario,
+    \[
+      D_{\mathbf u}f(p)=\nabla f(p)\cdot\mathbf u=f_x(a,b)u_1+f_y(a,b)u_2.
+    \]
+    Si $\mathbf u=\langle\cos\theta,\sen\theta\rangle$:
+    \[
+      D_{\mathbf u}f(a,b)=f_x(a,b)\cos\theta+f_y(a,b)\sen\theta.
+    \]
+  \end{block}
+  \pause
+  \vspace{6pt}
+  \begin{center}
+  \begin{tikzpicture}[node distance=0.45cm, every node/.style={font=\scriptsize}]
+    \node[draw=tealx,thick,fill=tealx!10,rounded corners,minimum width=2.4cm,minimum height=1.0cm,align=center] (p1) {\bfseries 1\\Gradiente};
+    \node[draw=tealx,thick,fill=tealx!10,rounded corners,minimum width=2.4cm,minimum height=1.0cm,align=center,right=of p1] (p2) {\bfseries 2\\Evaluar en $p$};
+    \node[draw=tealx,thick,fill=tealx!10,rounded corners,minimum width=2.4cm,minimum height=1.0cm,align=center,right=of p2] (p3) {\bfseries 3\\Normalizar $\mathbf v$};
+    \node[draw=tealx,thick,fill=tealx!10,rounded corners,minimum width=2.4cm,minimum height=1.0cm,align=center,right=of p3] (p4) {\bfseries 4\\Producto escalar};
+    \draw[-Stealth,thick,gray60] (p1) -- (p2);
+    \draw[-Stealth,thick,gray60] (p2) -- (p3);
+    \draw[-Stealth,thick,gray60] (p3) -- (p4);
+  \end{tikzpicture}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Ejemplo --- $f(x,y)=e^x\sen y$ en $p=(0,\pi/4)$, $\mathbf v=\mathbf i+\sqrt3\,\mathbf j$}
+  \ddtracker{1}
+  \[
+    \nabla f(x,y)=\langle e^x\sen y,\ e^x\cos y\rangle.
+  \]
+  \pause
+  \ddtracker{2}
+  \[
+    \nabla f(0,\pi/4)=\left\langle \sen\frac{\pi}{4},\ \cos\frac{\pi}{4}\right\rangle
+    =\left\langle \frac{\sqrt2}{2},\ \frac{\sqrt2}{2}\right\rangle.
+  \]
+  \pause
+  \ddtracker{3}
+  \[
+    |\mathbf v|=\sqrt{1+3}=2,
+    \qquad
+    \mathbf u=\left\langle\frac12,\ \frac{\sqrt3}{2}\right\rangle.
+  \]
+\end{frame}
+
+\begin{frame}{Ejemplo --- producto escalar}
+  \ddtracker{4}
+  \[
+    D_{\mathbf u}f(0,\pi/4)
+    =\frac{\sqrt2}{2}\cdot\frac12+\frac{\sqrt2}{2}\cdot\frac{\sqrt3}{2}
+    =\frac{\sqrt2}{4}+\frac{\sqrt6}{4}.
+  \]
+  \pause
+  \[
+    \boxed{D_{\mathbf u}f(0,\pi/4)=\frac{\sqrt2+\sqrt6}{4}\approx 0.966}
+  \]
+  \pause
+  \vspace{8pt}
+  \begin{center}\small\color{gray60} El paso 3 (normalizar) es el que más se olvida --- y el que cambia el resultado.\end{center}
+\end{frame}
+
+\begin{frame}{\textquestiondown{}En qué dirección crece más rápido?}
+  \begin{block}{Teorema}
+    Si $f$ es diferenciable, el valor \textbf{máximo} de $D_{\mathbf u}f(\mathbf x)$ es $\|\nabla f(\mathbf x)\|$ y se alcanza cuando $\mathbf u$ tiene la dirección de $\nabla f(\mathbf x)$. El \textbf{mínimo} es $-\|\nabla f(\mathbf x)\|$, en la dirección $-\nabla f$.
+  \end{block}
+  \pause
+  \vspace{4pt}
+  \textbf{Demostración.} Por la definición de producto escalar,
+  \[
+    D_{\mathbf u}f=\|\nabla f\|\,\|\mathbf u\|\cos\theta=\|\nabla f\|\cos\theta,
+  \]
+  con $\theta$ el ángulo entre $\nabla f$ y $\mathbf u$.
+  \pause
+  El máximo de $\cos\theta$ es $1$ (en $\theta=0$) y el mínimo es $-1$ (en $\theta=\pi$). $\square$
+  \pause
+  \vspace{4pt}
+  \begin{center}\small\color{tealx} Esta es la base del \textbf{descenso del gradiente}, el algoritmo central del aprendizaje automático.\end{center}
+\end{frame}
+
+\begin{frame}{Ejemplo --- $f(x,y)=xe^y$ en $P(2,0)$}
+  \ddtracker{1}
+  \[
+    \nabla f(x,y)=\langle e^y,\ xe^y\rangle
+    \qquad\Longrightarrow\qquad
+    \nabla f(2,0)=\langle 1,2\rangle.
+  \]
+  \pause
+  \textbf{(a)} Razón de cambio hacia $Q(-\tfrac12,2)$:
+  \[
+    \overrightarrow{PQ}=\left(-\tfrac52,2\right),\quad
+    |\overrightarrow{PQ}|=\frac{\sqrt{41}}{2},\quad
+    \mathbf u=\left(-\frac{5}{\sqrt{41}},\frac{4}{\sqrt{41}}\right).
+  \]
+  \pause
+  \[
+    D_{\mathbf u}f(2,0)=\langle 1,2\rangle\cdot\mathbf u=\frac{-5+8}{\sqrt{41}}=\frac{3}{\sqrt{41}}.
+  \]
+  \pause
+  \textbf{(b)} Máximo crecimiento: dirección $\langle 1,2\rangle$, tasa $\|\nabla f(2,0)\|=\sqrt5$.
+  \pause
+  \[
+    \boxed{D_{\mathbf u}f(2,0)=\tfrac{3}{\sqrt{41}};\qquad
+           \text{dir. máx.}=\langle 1,2\rangle;\qquad \text{tasa}=\sqrt5}
+  \]
+\end{frame}
+
+\begin{frame}{Aplicación --- \textquestiondown{}en qué direcciones NO cambia la temperatura?}
+  \begin{columns}
+    \begin{column}{0.53\textwidth}
+      \begin{block}{Problema}
+        {\small La temperatura de una placa es $T(x,y)=80xy^2$. Desde $P(2,-3)$, halle las direcciones unitarias con $D_{\mathbf u}T(P)=0$.}
+      \end{block}
+      \pause
+      \small
+      \[
+        \nabla T(2,-3)=\langle 720,-960\rangle=240\langle 3,-4\rangle.
+      \]
+      \pause
+      Entonces $D_{\mathbf u}T=240(3u_1-4u_2)=0$, o sea $3u_1=4u_2$.
+      \pause
+      Con $\|\mathbf u\|=1$: $u_1=4t$, $u_2=3t$, $25t^2=1$, $t=\pm\tfrac15$:
+      \[
+        \boxed{\mathbf u=\pm\left\langle\tfrac45,\tfrac35\right\rangle}
+      \]
+    \end{column}
+    \begin{column}{0.45\textwidth}
+      \centering
+      \begin{tikzpicture}[scale=0.70]
+        \draw[thin,->] (-0.5,0) -- (5.8,0) node[right,font=\scriptsize] {$x$};
+        \draw[thin,->] (0,-4.9) -- (0,0.6) node[above,font=\scriptsize] {$y$};
+        \draw[thick, navy, variable=\t, domain=-4.6:-1.9, samples=50, smooth]
+            plot ({18/(\t*\t)},{\t});
+        \node[anchor=west, navy, font=\scriptsize] at (4.6,-1.9) {$xy^2=18$};
+        \filldraw[brick] (2,-3) circle (2.5pt);
+        \node[anchor=east, brick, font=\scriptsize] at (1.85,-2.75) {$P(2,-3)$};
+        \draw[-Stealth, very thick, brick] (2,-3) -- (3.1,-4.4);
+        \node[anchor=west, brick, font=\scriptsize] at (3.15,-4.5) {$\nabla T$};
+        \draw[-Stealth, very thick, tealx, dashed] (2,-3) -- (3.4,-1.95);
+        \node[anchor=west, tealx, font=\scriptsize] at (3.45,-1.9) {$\mathbf u_1$};
+        \draw[-Stealth, very thick, tealx, dashed] (2,-3) -- (0.6,-4.05);
+        \node[anchor=east, tealx, font=\scriptsize] at (0.55,-4.15) {$\mathbf u_2$};
+      \end{tikzpicture}\\[2pt]
+      {\footnotesize\color{gray60} tangentes a la curva de nivel $T=1440$}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Interpretación y una cota útil}
+  \begin{center}
+  \normalsize\color{tealx} Moverse \emph{a lo largo de una curva de nivel} es la única forma de que $T$ no cambie instantáneamente.
+  \end{center}
+  \vspace{8pt}
+  \pause
+  \begin{block}{Problema (reconstrucción del gradiente)}
+    En $P$ se sabe que $D_{\mathbf u}f=2\sqrt2$ con $\mathbf u=\tfrac{1}{\sqrt2}\langle1,1\rangle$ y $D_{\mathbf v}f=\sqrt2$ con $\mathbf v=\tfrac{1}{\sqrt2}\langle1,-1\rangle$. Halle $\nabla f(P)$. \textquestiondown{}Existe $\mathbf w$ con $D_{\mathbf w}f(P)=4$?
+  \end{block}
+  \pause
+  Con $\nabla f(P)=\langle a,b\rangle$: $\ \tfrac{a+b}{\sqrt2}=2\sqrt2$ y $\tfrac{a-b}{\sqrt2}=\sqrt2$, es decir $a+b=4$, $a-b=2$.
+  \pause
+  \[
+    \nabla f(P)=\langle 3,1\rangle,\qquad \|\nabla f(P)\|=\sqrt{10}\approx 3.16.
+  \]
+  \pause
+  \[
+    \boxed{|D_{\mathbf w}f|\le\sqrt{10}<4:\ \text{no existe tal dirección.}}
+  \]
+\end{frame}
+
+% ======================================================
+% BLOQUE 5 --- SUPERFICIES IMPLÍCITAS
+% ======================================================
+\bloqueframe{5}{Superficies implícitas}{Plano tangente y recta normal vía el gradiente}
+
+\begin{frame}{El gradiente es normal a la superficie}
+  Hasta ahora el plano tangente exigía $z$ despejada. Con el gradiente ya no hace falta.
+  \pause
+  \vspace{6pt}
+  \begin{block}{Definición}
+    Sea $F(x,y,z)=k$ con $F$ diferenciable en $P(x_0,y_0,z_0)$ y $\nabla F(P)\neq\mathbf 0$.
+    \begin{itemize}
+      \item El \textbf{plano tangente} en $P$ es el plano que pasa por $P$ y es perpendicular a $\nabla F(P)$.
+      \item La \textbf{recta normal} en $P$ es la recta por $P$ con vector director $\nabla F(P)$.
+    \end{itemize}
+  \end{block}
+  \pause
+  \vspace{4pt}
+  \begin{center}\small\color{gray60} Consistencia: si $z=f(x,y)$, tome $F=f(x,y)-z$; entonces $\nabla F=\langle f_x,f_y,-1\rangle$ y se recupera la fórmula del Bloque 2.\end{center}
+\end{frame}
+
+\begin{frame}{Las ecuaciones}
+  \begin{block}{Plano tangente}
+    \[
+      \nabla F(x_0,y_0,z_0)\cdot\langle x-x_0,\,y-y_0,\,z-z_0\rangle=0,
+    \]
+    es decir
+    \[
+      F_x(P)(x-x_0)+F_y(P)(y-y_0)+F_z(P)(z-z_0)=0.
+    \]
+  \end{block}
+  \pause
+  \begin{block}{Recta normal (paramétrica)}
+    \[
+      x=x_0+tF_x(P),\qquad y=y_0+tF_y(P),\qquad z=z_0+tF_z(P),\qquad t\in\mathbb R.
+    \]
+  \end{block}
+  \pause
+  \begin{center}\small\color{gray60} Protocolo: (1) escribir $F=k$; (2) calcular $\nabla F$; (3) evaluar en $P$; (4) escribir plano y recta.\end{center}
+\end{frame}
+
+\begin{frame}{Ejemplo --- $xe^{yz}=1$ en $(1,0,5)$}
+  \textbf{Paso 1.} $F(x,y,z)=xe^{yz}-1=0$.
+  \pause
+  \textbf{Paso 2.} Gradiente:
+  \[
+    \nabla F=\langle e^{yz},\ xze^{yz},\ xye^{yz}\rangle.
+  \]
+  \pause
+  \textbf{Paso 3.} Evaluación en $P(1,0,5)$, donde $e^{yz}=e^0=1$:
+  \[
+    \nabla F(1,0,5)=\langle 1,\,5,\,0\rangle.
+  \]
+  \pause
+  \textbf{Paso 4.} Ecuaciones:
+  \[
+    1(x-1)+5(y-0)+0(z-5)=0 \implies x+5y=1,
+  \]
+  \[
+    (x,y,z)=(1,0,5)+t\langle 1,5,0\rangle.
+  \]
+  \pause
+  \[
+    \boxed{\text{Plano: } x+5y=1;\qquad \text{Recta: } (1,0,5)+t\langle 1,5,0\rangle}
+  \]
+\end{frame}
+
+\begin{frame}{Ejercicios --- tres superficies}
+  \small
+  \textbf{(a) Esfera $x^2+y^2+z^2=14$ en $(1,2,3)$.}
+  \[
+    \nabla F=\langle 2x,2y,2z\rangle\big|_{(1,2,3)}=\langle 2,4,6\rangle
+    \Rightarrow \boxed{x+2y+3z=14},\ \
+    \frac{x-1}{1}=\frac{y-2}{2}=\frac{z-3}{3}.
+  \]
+  \pause
+  \textbf{(b) $x^2+2y^2-z^2=4$ en $(2,1,-1)$.}
+  \[
+    \nabla F=\langle 2x,4y,-2z\rangle\big|_{(2,1,-1)}=\langle 4,4,2\rangle
+    \Rightarrow \boxed{2x+2y+z=5},\ \
+    \frac{x-2}{2}=\frac{y-1}{2}=\frac{z+1}{1}.
+  \]
+  \pause
+  \textbf{(c) $xy+yz+zx=1$ en $(1,0,1)$.}
+  \[
+    \nabla F=\langle y+z,\,x+z,\,y+x\rangle\big|_{(1,0,1)}=\langle 1,2,1\rangle
+    \Rightarrow \boxed{x+2y+z=2},\ \
+    \frac{x-1}{1}=\frac{y}{2}=\frac{z-1}{1}.
+  \]
+\end{frame}
+
+\begin{frame}{Dos consecuencias geométricas}
+  \begin{block}{(a) Toda recta normal a la esfera $x^2+y^2+z^2=R^2$ pasa por el origen}
+    Con $F=x^2+y^2+z^2-R^2$: $\nabla F=2\langle x,y,z\rangle$, luego
+    \[
+      \mathbf L(t)=P+t\,\nabla F(P)=(1+2t)\langle x_0,y_0,z_0\rangle.
+    \]
+    Para $t=-\tfrac12$ se obtiene $\mathbf L=\mathbf 0$. $\checkmark$
+  \end{block}
+  \pause
+  \begin{block}{(b) La esfera y el cono $x^2+y^2=z^2$ se cortan ortogonalmente}
+    Con $G=x^2+y^2-z^2$: $\nabla F=2\langle x,y,z\rangle$, $\nabla G=2\langle x,y,-z\rangle$, luego
+    \[
+      \nabla F\cdot\nabla G=4(x^2+y^2-z^2)=0
+    \]
+    sobre la intersección, porque ahí vale la ecuación del cono. $\checkmark$
+  \end{block}
+\end{frame}
+
+\begin{frame}{El Problema 19.23, revisitado}
+  En el Bloque 2 probamos que el elipsoide $3x^2+2y^2+z^2=9$ y la esfera $x^2+y^2+z^2-8x-6y-8z+24=0$ son tangentes en $(1,1,2)$: hubo que \emph{despejar $z$}, elegir la rama correcta de cada una y derivar dos raíces.
+  \pause
+  \vspace{4pt}
+  \begin{center}\normalsize\color{tealx} Con el gradiente el mismo problema cabe en dos líneas.\end{center}
+  \pause
+  \vspace{2pt}
+  \textbf{Elipsoide:} $F=3x^2+2y^2+z^2-9$, \quad $\nabla F\big|_{(1,1,2)}=\langle 6x,4y,2z\rangle\big|_{(1,1,2)}=\langle 6,4,4\rangle$.
+  \par\pause\smallskip
+  \textbf{Esfera:} $G=x^2+y^2+z^2-8x-6y-8z+24$, \quad $\nabla G\big|_{(1,1,2)}=\langle -6,-4,-4\rangle$.
+  \par\pause
+  \[
+    \nabla G=-\nabla F
+    \implies
+    \boxed{\text{normales paralelos: mismo plano tangente } 3x+2y+2z=9.}
+  \]
+  \pause
+  \begin{center}\small\color{gray60} Ni ramas, ni radicales, ni preocuparse por el signo: esa es la ganancia de la forma implícita.\end{center}
+\end{frame}
+
+% ======================================================
+% BLOQUE 6 --- OPTIMIZACIÓN
+% ======================================================
+\bloqueframe{6}{Optimización}{Extremos libres, criterio del hessiano y multiplicadores de Lagrange}
+
+\begin{frame}{Extremos y puntos críticos}
+  \begin{block}{Definiciones}
+    $f(p_0)$ es máximo (mínimo) \textbf{absoluto} si $f(p_0)\ge f(p)$ (resp.\ $\le$) para todo $p$ del dominio; es \textbf{local} si la desigualdad vale solo para $p$ cercano a $p_0$.
+  \end{block}
+  \pause
+  \begin{block}{Condición necesaria}
+    Si $f$ tiene un extremo local en $(a,b)$ y las parciales existen ahí, entonces
+    \[
+      f_x(a,b)=0 \qquad\text{y}\qquad f_y(a,b)=0.
+    \]
+  \end{block}
+  \pause
+  \vspace{2pt}
+  {\small\textbf{Prueba:} $g(x)=f(x,b)$ tiene un extremo local en $x=a$, luego por Fermat $g'(a)=f_x(a,b)=0$; igual con $h(y)=f(a,y)$.}
+  \pause
+  \vspace{4pt}
+  \begin{center}\small\color{gray60} $(a,b)$ es \textbf{punto crítico} si $f_x=f_y=0$ o si alguna parcial no existe.\end{center}
+\end{frame}
+
+\begin{frame}{La condición no es suficiente: el punto de silla}
+  \begin{columns}
+    \begin{column}{0.46\textwidth}
+      \begin{itemize}
+        \item En una variable, un punto crítico es máximo, mínimo o inflexión.
+        \pause
+        \item En dos variables aparece un objeto nuevo: el \textbf{punto de silla}.
+        \pause
+        \item En $z=x^2-y^2$ el origen es mínimo en la dirección $x$ y máximo en la dirección $y$.
+        \pause
+        \item Ambas parciales se anulan y sin embargo no hay extremo.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centering
+      \begin{tikzpicture}
+      \begin{axis}[
+          view={40}{25},
+          xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+          axis lines=center, tick style={thin},
+          zmin=-2.5, zmax=2.5, xtick={-1,1}, ytick={-1,1}, ztick={-2,2},
+          ticklabel style={font=\tiny},
+          width=7.0cm, height=6.6cm,
+      ]
+          \addplot3[surf, shader=flat corner, samples=18,
+                    domain=-1.5:1.5, opacity=0.78, colormap/cool] {x^2 - y^2};
+          \addplot3[only marks, mark=*, mark size=2.5pt, brick] coordinates {(0,0,0)};
+          \addplot3[thick, navy, domain=-1.3:1.3, samples=30, samples y=0] ({x},{0},{x^2});
+          \addplot3[thick, brick, domain=-1.3:1.3, samples=30, samples y=0] ({0},{x},{-x^2});
+      \end{axis}
+      \end{tikzpicture}\\[-2pt]
+      {\footnotesize\color{gray60} $z=x^2-y^2$: silla en el origen}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Criterio de la segunda derivada}
+  \begin{block}{Discriminante (hessiano)}
+    \[
+      D(a,b)=f_{xx}(a,b)\,f_{yy}(a,b)-\bigl[f_{xy}(a,b)\bigr]^2
+            =\begin{vmatrix} f_{xx} & f_{xy}\\ f_{yx} & f_{yy}\end{vmatrix}.
+    \]
+  \end{block}
+  \pause
+  \begin{block}{Criterio (en un punto crítico $(a,b)$, con segundas derivadas continuas)}
+    \begin{center}
+    \begin{tabular}{ll}
+      \toprule
+      $D>0$ y $f_{xx}>0$ & mínimo local \\
+      $D>0$ y $f_{xx}<0$ & máximo local \\
+      $D<0$ & punto de silla \\
+      $D=0$ & criterio inconcluso \\
+      \bottomrule
+    \end{tabular}
+    \end{center}
+  \end{block}
+  \pause
+  \begin{center}\small\color{gray60} El caso $D=0$ es el único que exige análisis adicional: la información de segundo orden no alcanza.\end{center}
+\end{frame}
+
+\begin{frame}{Ejemplo --- $f(x,y)=x^4+y^4-4xy+1$}
+  \pctracker{1}
+  \[
+    f_x=4x^3-4y=0\implies y=x^3,
+    \qquad
+    f_y=4y^3-4x=0\implies x=y^3.
+  \]
+  \pause
+  Sustituyendo: $x=(x^3)^3=x^9$, luego $x(x^8-1)=0$ y las raíces reales son $x=0,\pm1$:
+  \[
+    (0,0),\qquad (1,1),\qquad (-1,-1).
+  \]
+  \pause
+  \pctracker{2}
+  \[
+    f_{xx}=12x^2,\qquad f_{xy}=-4,\qquad f_{yy}=12y^2.
+  \]
+  \pause
+  \pctracker{3}
+  \[
+    D(x,y)=(12x^2)(12y^2)-(-4)^2=144x^2y^2-16.
+  \]
+\end{frame}
+
+\begin{frame}{Ejemplo --- clasificación}
+  \pctracker{4}
+  \begin{center}
+  \begin{tabular}{cccl}
+    \toprule
+    \textbf{Punto} & $D$ & $f_{xx}$ & \textbf{Conclusión} \\
+    \midrule
+    $(0,0)$   & $-16<0$ & --- & punto de silla, $f=1$ \\
+    $(1,1)$   & $128>0$ & $12>0$ & mínimo local, $f=-1$ \\
+    $(-1,-1)$ & $128>0$ & $12>0$ & mínimo local, $f=-1$ \\
+    \bottomrule
+  \end{tabular}
+  \end{center}
+  \pause
+  \vspace{8pt}
+  \[
+    \boxed{\text{Silla: }(0,0,1);\qquad \text{Mínimos: }(1,1,-1)\text{ y }(-1,-1,-1)}
+  \]
+  \pause
+  \vspace{4pt}
+  \begin{center}\small\color{gray60} En $(0,0)$ la función crece en las direcciones de los ejes ($x^4$, $y^4$) pero decrece en las diagonales, donde domina $-4xy$.\end{center}
+\end{frame}
+
+\begin{frame}{Cuando el criterio falla: $f(x,y)=(x^2+y^2)e^{-(x^2+y^2)}$}
+  Con $u=x^2+y^2$: $f_x=2xe^{-u}(1-u)$ y $f_y=2ye^{-u}(1-u)$. Como $e^{-u}>0$,
+  \[
+    x(1-u)=0 \quad\text{y}\quad y(1-u)=0.
+  \]
+  \pause
+  \begin{center}\normalsize\color{brick} Los puntos críticos son el origen \textbf{y toda la circunferencia} $x^2+y^2=1$.\end{center}
+  \pause
+  \vspace{4pt}
+  Sobre esa circunferencia $D=0$: los críticos no están aislados. Hay que analizar radialmente $g(u)=ue^{-u}$, con $g'(u)=e^{-u}(1-u)$.
+  \pause
+  \[
+    \boxed{\begin{aligned}
+      &\text{Mínimo absoluto en }(0,0),\ \text{con } f=0;\\
+      &\text{máximos en toda la circunferencia } x^2+y^2=1,\ \text{con } f=e^{-1}.
+    \end{aligned}}
+  \]
+  \pause
+  \alerta{El criterio $D$ está pensado para puntos \textbf{aislados}: no diagnostica un continuo de extremos.}
+\end{frame}
+
+\begin{frame}{Extremos absolutos en un conjunto cerrado y acotado}
+  \begin{block}{Teorema de Weierstrass}
+    Si $f$ es continua sobre $S$ \textbf{cerrado} y \textbf{acotado}, entonces $f$ alcanza en $S$ un máximo y un mínimo absolutos.
+  \end{block}
+  \pause
+  \vspace{4pt}
+  \begin{enumerate}
+    \item \textbf{Interior}: hallar los puntos críticos de $f$ dentro de $S$.
+    \pause
+    \item \textbf{Frontera}: parametrizarla y reducir a funciones de \emph{una} variable; incluir vértices y esquinas.
+    \pause
+    \item \textbf{Evaluar} $f$ en todos los candidatos.
+    \pause
+    \item \textbf{Comparar}: el mayor es el máximo absoluto, el menor el mínimo.
+  \end{enumerate}
+  \vspace{6pt}
+  \pause
+  \begin{center}\small\color{gray60} Las dos hipótesis son esenciales: sin cerradura el extremo puede caer fuera; sin acotación $f$ puede crecer sin límite.\end{center}
+\end{frame}
+
+\begin{frame}{Optimización con restricciones: el problema motivador}
+  \begin{block}{Problema}
+    Determine el área máxima de un rectángulo cuya diagonal mide $d>0$.
+  \end{block}
+  \pause
+  Con un vértice en el origen y el opuesto en $(x,y)$, $x,y>0$:
+  \[
+    \text{Maximizar } f(x,y)=xy
+    \quad\text{sujeta a}\quad
+    g(x,y)=x^2+y^2-d^2=0.
+  \]
+  \pause
+  \vspace{4pt}
+  \begin{center}
+  \normalsize\color{tealx} \textquestiondown{}Y si no queremos despejar una variable?
+  \end{center}
+  \pause
+  \vspace{4pt}
+  \begin{itemize}
+    \item Las curvas de nivel de $f$ son hipérbolas $xy=C$; la restricción es una circunferencia.
+    \pause
+    \item En el óptimo la hipérbola debe ser \textbf{tangente} a la circunferencia: si la cruzara, moviéndose sobre ella se podría aumentar el área.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Por qué los gradientes quedan paralelos}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \small
+      \begin{itemize}
+        \item Si $\mathbf r(t)$ parametriza $g=0$ y $h(t)=f(\mathbf r(t))$ tiene un extremo en $t_0$, entonces $h'(t_0)=0$:
+        \[ \nabla f\cdot\mathbf r'(t_0)=0. \]
+        \pause
+        \item Por otro lado, $\nabla g\cdot\mathbf r'(t_0)=0$ (el gradiente es normal a su curva de nivel).
+        \pause
+        \item En $\mathbb R^2$, dos vectores perpendiculares a la misma recta son \textbf{paralelos}:
+        \[ \nabla f=\lambda\,\nabla g. \]
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \centering
+      \begin{tikzpicture}[scale=0.75]
+        \draw[thin,->] (-2.3,0) -- (2.5,0) node[right,font=\scriptsize] {$x$};
+        \draw[thin,->] (0,-2.3) -- (0,2.5) node[above,font=\scriptsize] {$y$};
+        \foreach \c in {0.5,1,1.5,2}{
+            \pgfmathsetmacro{\a}{sqrt(\c)}
+            \pgfmathsetmacro{\b}{sqrt(2*\c)}
+            \draw[thick, navy] (0,0) ellipse ({\a} and {\b});
+        }
+        \draw[thick, brick, domain=-1.4:2.4, variable=\t, samples=2] plot ({\t},{1-\t});
+        \node[anchor=north west, brick, font=\scriptsize] at (1.5,-0.6) {$g=x+y-1=0$};
+        \filldraw[brick] ({1/3},{2/3}) circle (2pt);
+        \draw[-Stealth, thick, tealx] ({1/3},{2/3}) -- ({1/3+0.35},{2/3+0.35});
+        \node[anchor=west, tealx, font=\scriptsize] at ({1/3+0.36},{2/3+0.36}) {$\nabla f\parallel\nabla g$};
+      \end{tikzpicture}\\[2pt]
+      {\footnotesize\color{gray60} el óptimo está donde una curva de nivel toca la restricción}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Teorema de los multiplicadores de Lagrange}
+  \begin{block}{Condición necesaria}
+    Sean $f,g$ de clase $\mathcal C^1$ en un abierto de $\mathbb R^n$. Si $\mathbf x_0$ es extremo local de $f$ restringido a $g(\mathbf x)=0$ y $\nabla g(\mathbf x_0)\neq\mathbf 0$, entonces existe $\lambda$ tal que
+    \[
+      \nabla f(\mathbf x_0)=\lambda\,\nabla g(\mathbf x_0).
+    \]
+    Equivalentemente, con la \textbf{función de Lagrange} $F(\mathbf x,\lambda)=f(\mathbf x)+\lambda g(\mathbf x)$, la condición junto con $g(\mathbf x_0)=0$ equivale a $\nabla F=\mathbf 0$.
+  \end{block}
+  \pause
+  \vspace{4pt}
+  \alerta{Es una condición \textbf{necesaria, no suficiente}: los puntos hallados son solo \emph{candidatos}.}
+  \pause
+  \vspace{2pt}
+  \begin{center}\small\color{gray60} Si además la restricción es compacta, Weierstrass garantiza que el máximo y el mínimo existen y están entre los candidatos: basta evaluar y comparar.\end{center}
+\end{frame}
+
+\begin{frame}{Ejemplo --- rectángulo de diagonal fija}
+  \lgtracker{1}
+  Con $f=xy$, $g=x^2+y^2-d^2$, $\nabla f=(y,x)$, $\nabla g=(2x,2y)$:
+  \[
+    F(x,y,\lambda)=xy+\lambda(x^2+y^2-d^2).
+  \]
+  \pause
+  \lgtracker{2}
+  \[
+    \begin{cases}
+      y+2\lambda x=0,\\
+      x+2\lambda y=0,\\
+      x^2+y^2=d^2.
+    \end{cases}
+  \]
+  \pause
+  \lgtracker{3}
+  Multiplicando la primera por $x$ y la segunda por $y$: $xy=-2\lambda x^2=-2\lambda y^2$, luego $x^2=y^2$. Con la restricción, $2x^2=d^2$ y $x=\pm d/\sqrt2$.
+\end{frame}
+
+\begin{frame}{Ejemplo --- evaluación de los candidatos}
+  \lgtracker{4}
+  Los cuatro candidatos son $(\pm d/\sqrt2,\ \pm d/\sqrt2)$:
+  \begin{center}
+  \begin{tabular}{cc}
+    \toprule
+    \textbf{Candidato} & $f=xy$ \\
+    \midrule
+    $(d/\sqrt2,\,d/\sqrt2)$ y $(-d/\sqrt2,\,-d/\sqrt2)$ & $d^2/2$ \\
+    $(-d/\sqrt2,\,d/\sqrt2)$ y $(d/\sqrt2,\,-d/\sqrt2)$ & $-d^2/2$ \\
+    \bottomrule
+  \end{tabular}
+  \end{center}
+  \pause
+  \vspace{6pt}
+  La circunferencia es compacta, luego el máximo absoluto es $d^2/2$. Restringiendo a $x,y>0$:
+  \[
+    \boxed{\left(\frac{d}{\sqrt2},\frac{d}{\sqrt2}\right),\qquad A_{\max}=\frac{d^2}{2}}
+  \]
+  \pause
+  \begin{center}\small\color{tealx} El rectángulo óptimo es el \textbf{cuadrado} --- resultado clásico, obtenido sin despejar nada.\end{center}
+\end{frame}
+
+\begin{frame}{Criterio del hessiano limitado}
+  Cuando la restricción no es compacta hace falta un criterio de segundo orden:
+  \[
+    \mathcal H=\det\begin{bmatrix}
+      0 & -g_x & -g_y \\
+      -g_x & F_{xx} & F_{xy} \\
+      -g_y & F_{xy} & F_{yy}
+    \end{bmatrix},
+    \qquad F=f+\lambda g,
+  \]
+  evaluado en el candidato $(x_0,y_0)$.
+  \pause
+  \begin{block}{Criterio (con $g_y(x_0,y_0)\neq 0$)}
+    \begin{center}
+    \begin{tabular}{ll}
+      \toprule
+      $\mathcal H>0$ & máximo condicionado \\
+      $\mathcal H<0$ & mínimo condicionado \\
+      $\mathcal H=0$ & no concluyente \\
+      \bottomrule
+    \end{tabular}
+    \end{center}
+  \end{block}
+\end{frame}
+
+\begin{frame}{Aplicación del hessiano limitado al rectángulo}
+  Con $\lambda=-1/2$ en $A=(d/\sqrt2,d/\sqrt2)$:
+  \[
+    g_x=2x,\quad g_y=2y,\quad
+    F_{xx}=2\lambda=-1,\quad F_{yy}=2\lambda=-1,\quad F_{xy}=1.
+  \]
+  \pause
+  Evaluando: $g_x\big|_A=g_y\big|_A=d\sqrt2$.
+  \pause
+  \[
+    \mathcal H=\det\begin{bmatrix}
+      0 & -d\sqrt2 & -d\sqrt2\\
+      -d\sqrt2 & -1 & 1\\
+      -d\sqrt2 & 1 & -1
+    \end{bmatrix}=8d^2>0.
+  \]
+  \pause
+  \[
+    \boxed{\mathcal H>0 \implies A \text{ es máximo condicionado, con } A_{\max}=\frac{d^2}{2}}
+  \]
+  \pause
+  \begin{center}\small\color{gray60} Confirma por segundo orden lo que la compacidad ya había dado por comparación.\end{center}
+\end{frame}
+
+\begin{frame}{Cuando falla la regularidad: la cúspide}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \begin{block}{Problema}
+        Minimizar $f(x,y)=x^2+y^2$ sujeta a $g(x,y)=x^2-y^3=0$.
+      \end{block}
+      \pause
+      \small
+      \begin{itemize}
+        \item La restricción es $y=x^{2/3}$: tiene una \textbf{cúspide} en el origen.
+        \pause
+        \item El mínimo está en $(0,0)$, pues $f\ge 0$ y $f(0,0)=0$.
+        \pause
+        \item Pero $\nabla g=(2x,-3y^2)$ y $\nabla g(0,0)=\mathbf 0$.
+        \pause
+        \item El sistema se reduce a $0=0$: el método \textbf{no localiza} el extremo.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \centering
+      \begin{tikzpicture}[scale=0.90,>=Stealth]
+        \draw[->] (-2.6,0) -- (2.6,0) node[right,font=\scriptsize] {$x$};
+        \draw[->] (0,-0.4) -- (0,2.3) node[above,font=\scriptsize] {$y$};
+        \draw[thick,navy,domain=-1.4:1.4,samples=200] plot ({\x*\x*\x},{\x*\x});
+        \fill[brick] (0,0) circle (2pt);
+        \node[brick,anchor=north,font=\scriptsize] at (0,-0.1) {$(0,0)$, $d_{\min}=0$};
+        \node[navy,right,font=\scriptsize] at (1.4,1.8) {$y^3=x^2$};
+        \node[anchor=south west,font=\scriptsize,brick] at (-2.5,1.3) {$\nabla g(0,0)=\mathbf 0$};
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
+  \vspace{-6pt}
+  \alerta{La hipótesis $\nabla g\neq\mathbf 0$ no es decorativa: sin ella el teorema no dice nada.}
+\end{frame}
+
+\begin{frame}{Un candidato falso}
+  \begin{block}{Problema}
+    \textquestiondown{}Tiene extremos condicionados $f(x,y)=y-x^5$ sujeta a $g(x,y)=y-x^3=0$?
+  \end{block}
+  \pause
+  Sobre la restricción $y=x^3$: $\ h(x)=f(x,x^3)=x^3-x^5=x^3(1-x^2)$.
+  \pause
+  El origen es punto crítico de $h$, pero \textbf{no} es extremo: $h(x)>0$ para $x>0$ pequeño y $h(x)<0$ para $x<0$ pequeño.
+  \pause
+  Sin embargo, con $\nabla f=(-5x^4,1)$ y $\nabla g=(-3x^2,1)$ (regular en todo punto):
+  \[
+    \begin{cases} -5x^4=-3\lambda x^2,\\ 1=\lambda,\\ y=x^3\end{cases}
+    \implies \lambda=1,\ 5x^4=3x^2 \implies x=0 \ \text{ o } \ x=\pm\sqrt{3/5}.
+  \]
+  \pause
+  \vspace{-4pt}
+  \begin{center}\color{brick} $(0,0)$ es candidato de Lagrange y no es extremo: $\nabla F=\mathbf 0$ es necesaria, no suficiente.\end{center}
+\end{frame}
+
+\begin{frame}{Dos restricciones}
+  \begin{block}{Teorema}
+    Si $f$ tiene un extremo en $P$ sobre la curva $g(\mathbf x)=0$, $h(\mathbf x)=0$, y $\nabla g(P)$, $\nabla h(P)$ son linealmente independientes, entonces existen $\lambda,\mu$ con
+    \[
+      \nabla f(P)=\lambda\,\nabla g(P)+\mu\,\nabla h(P).
+    \]
+  \end{block}
+  \pause
+  \textbf{Ejemplo.} Punto de la recta $x+y+z=1$, $x-y+2z=2$ más cercano al origen. Minimizamos $f=x^2+y^2+z^2$:
+  \[
+    2x=\lambda+\mu,\qquad 2y=\lambda-\mu,\qquad 2z=\lambda+2\mu.
+  \]
+  \pause
+  Sustituyendo en las restricciones: $3\lambda+2\mu=2$ y $\lambda+3\mu=2$, de donde $\lambda=\tfrac27$, $\mu=\tfrac47$.
+  \pause
+  \[
+    \boxed{\left(\tfrac37,\,-\tfrac17,\,\tfrac57\right),\qquad d=\sqrt{\tfrac57}}
+  \]
+\end{frame}
+
+\begin{frame}{Ejemplo --- caja inscrita en un elipsoide}
+  \begin{block}{Problema}
+    Volumen máximo de una caja de caras paralelas a los planos coordenados inscrita en el elipsoide $\frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2}=1$.
+  \end{block}
+  \pause
+  Con el vértice en el primer octante, $V=8xyz$ sujeto a $g=0$. De $\nabla V=\lambda\nabla g$:
+  \[
+    8yz=\lambda\frac{2x}{a^2},\qquad 8xz=\lambda\frac{2y}{b^2},\qquad 8xy=\lambda\frac{2z}{c^2}.
+  \]
+  \pause
+  Multiplicando por $x$, $y$, $z$, los lados izquierdos coinciden ($=8xyz$):
+  \[
+    \frac{x^2}{a^2}=\frac{y^2}{b^2}=\frac{z^2}{c^2}
+    \quad\Longrightarrow\quad
+    \text{cada término vale }\tfrac13.
+  \]
+  \pause
+  \vspace{-6pt}
+  \[
+    \boxed{V_{\max}=8\cdot\frac{a}{\sqrt3}\cdot\frac{b}{\sqrt3}\cdot\frac{c}{\sqrt3}=\frac{8abc}{3\sqrt3}}
+  \]
+\end{frame}
+
+% ======================================================
+% CIERRE
+% ======================================================
+\begin{frame}{Mapa de la unidad}
+  \begin{center}
+  \begin{tikzpicture}[every node/.style={font=\scriptsize,align=center}, node distance=0.45cm]
+    \node[draw=navy,very thick,fill=navy!10,rounded corners,minimum width=3.0cm,minimum height=1.0cm] (dp) at (0,0) {\bfseries $f_x$, $f_y$\\derivadas parciales};
+    \node[draw=tealx,thick,fill=tealx!8,rounded corners,minimum width=2.7cm,minimum height=0.9cm] (cl) at (-4.4,1.6) {Clairaut\\$f_{xy}=f_{yx}$};
+    \node[draw=tealx,thick,fill=tealx!8,rounded corners,minimum width=2.7cm,minimum height=0.9cm] (pt) at (-4.4,-1.6) {plano tangente\\linealización};
+    \node[draw=tealx,thick,fill=tealx!8,rounded corners,minimum width=2.7cm,minimum height=0.9cm] (rc) at (0,2.2) {regla de la cadena\\deriv.\ implícita};
+    \node[draw=brick,very thick,fill=brick!8,rounded corners,minimum width=2.7cm,minimum height=0.9cm] (gr) at (4.4,0) {$\nabla f$\\gradiente};
+    \node[draw=tealx,thick,fill=tealx!8,rounded corners,minimum width=2.7cm,minimum height=0.9cm] (dd) at (4.4,2.0) {derivada\\direccional};
+    \node[draw=tealx,thick,fill=tealx!8,rounded corners,minimum width=2.7cm,minimum height=0.9cm] (si) at (4.4,-2.0) {superficies\\implícitas};
+    \node[draw=tealx,thick,fill=tealx!8,rounded corners,minimum width=2.7cm,minimum height=0.9cm] (op) at (0,-2.4) {extremos\\Lagrange};
+    \draw[-Stealth,gray60] (dp) -- (cl);
+    \draw[-Stealth,gray60] (dp) -- (pt);
+    \draw[-Stealth,gray60] (dp) -- (rc);
+    \draw[-Stealth,gray60] (dp) -- (gr);
+    \draw[-Stealth,gray60] (gr) -- (dd);
+    \draw[-Stealth,gray60] (gr) -- (si);
+    \draw[-Stealth,gray60] (gr) -- (op);
+    \draw[-Stealth,gray60] (dp) -- (op);
+  \end{tikzpicture}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Resumen}
+  \small
+  \begin{itemize}
+    \setlength{\itemsep}{2pt}
+    \item Una \textbf{derivada parcial} se calcula congelando las demás variables.
+    \item El \textbf{plano tangente} $z-z_0=f_x\Delta x+f_y\Delta y$ es la aproximación lineal; que existan las parciales \emph{no basta} --- hace falta \textbf{diferenciabilidad}.
+    \item La \textbf{regla de la cadena} suma una contribución por cada camino del árbol de dependencias.
+    \item El \textbf{gradiente} $\nabla f=\langle f_x,f_y\rangle$ apunta al mayor crecimiento, mide la tasa máxima y es normal a las curvas y superficies de nivel.
+    \item $D_{\mathbf u}f=\nabla f\cdot\mathbf u$ con $\mathbf u$ \textbf{unitario}, y $|D_{\mathbf u}f|\le\|\nabla f\|$.
+    \item \textbf{Extremos libres}: $D=f_{xx}f_{yy}-f_{xy}^2$. \textbf{Restringidos}: $\nabla f=\lambda\nabla g$, verificando siempre $\nabla g\neq\mathbf 0$.
+  \end{itemize}
+  \pause
+  \begin{block}{Próxima unidad}
+    La contraparte integral: \textbf{integrales dobles y triples}.
+  \end{block}
+\end{frame}
+
+\end{document}

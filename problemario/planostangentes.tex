@@ -656,7 +656,7 @@ Para una función de dos variables $z=f(x,y)$, cuya gráfica es una superficie e
 \label{fig:plano_tangente_3d}
 \end{figure}
 
-\begin{pasos}[Protocolo para hallar el plano tangente a una superficie] Sea $z=f(x,y)$ una superficie y $P=(x_0, y_0, f(x_0, y_0))$ un punto sobre ella, estos pasos permiten calcular el plano tangente a $z$ en $P.$
+\begin{pasos}[Protocolo para hallar el plano tangente a una superficie]\label{pasos:plano_tangente} Sea $z=f(x,y)$ una superficie y $P=(x_0, y_0, f(x_0, y_0))$ un punto sobre ella, estos pasos permiten calcular el plano tangente a $z$ en $P.$
 \begin{enumerate}
     \item \textbf{Calcular las derivadas parciales}: Evaluar las derivadas parciales de primer orden en el punto $(x_0, y_0)$: $f_x(x_0, y_0)$ y $f_y(x_0, y_0)$.
     \item \textbf{Construir la ecuación}: Sustituir estos valores en la fórmula del plano tangente:
@@ -736,20 +736,55 @@ El plano tangente contiene las rectas tangentes a las curvas de intersección de
 \begin{prob}
 Demuestre que el elipsoide $3x^2+2y^2+z^2=9$ y la esfera $x^2+y^2+z^2-8x-6y-8z+24=0$ son tangentes entre sí en el punto $(1,1,2)$. (Esto quiere decir que tienen un plano tangente común en ese punto.)
 \begin{myproof}
-\textbf{Paso 1. Plano tangente al elipsoide en $(1,1,2)$.}
-Sea $F(x,y,z)=3x^2+2y^2+z^2-9$. El gradiente $\nabla F=6x\,\mathbf{i}+4y\,\mathbf{j}+2z\,\mathbf{k}$ es normal a la superficie, así que el plano tangente en $(1,1,2)$ es:
-$0=6(x-1)+4(y-1)+4(z-2).$
+\textbf{Paso 1. Escribir cada superficie como gráfica $z=f(x,y)$ cerca de $(1,1,2)$.}
+Ambas ecuaciones son cuadráticas en $z$, de modo que cada una define dos ramas; en cada caso se elige la que pasa por el punto dado, donde $z=2$.
 
-\textbf{Paso 2. Plano tangente a la esfera en $(1,1,2)$.}
-Sea $G(x,y,z)=x^2+y^2+z^2-8x-6y-8z+24$. El gradiente $\nabla G=(2x-8)\,\mathbf{i}+(2y-6)\,\mathbf{j}+(2z-8)\,\mathbf{k}$ evaluado en $(1,1,2)$: $(-6,-4,-4)$. El plano tangente es:
-$0=-6(x-1)-4(y-1)-4(z-2).$
-
-\textbf{Paso 3. Comparación de vectores normales.}
-El normal al elipsoide es $\langle 6,4,4\rangle$ y el normal a la esfera es $\langle -6,-4,-4\rangle=-\langle 6,4,4\rangle$. Son paralelos (antiparalelos), luego los planos tangentes son iguales.
-
-\textbf{Paso 4. Resultado.}
+Para el elipsoide, $z^2=9-3x^2-2y^2$ y como $z=2>0$ la rama es
 \[
-\boxed{\text{Las superficies son tangentes en }(1,1,2)\text{: comparten el mismo plano tangente.}}
+f(x,y)=\sqrt{9-3x^2-2y^2},\qquad f(1,1)=\sqrt{9-3-2}=\sqrt{4}=2.\quad\checkmark
+\]
+Para la esfera, completando cuadrados,
+\[
+x^2+y^2+z^2-8x-6y-8z+24=(x-4)^2+(y-3)^2+(z-4)^2-17,
+\]
+así que la superficie es la esfera de centro $(4,3,4)$ y radio $\sqrt{17}$. Como $z=2<4$, la rama que pasa por el punto es la inferior:
+\[
+g(x,y)=4-\sqrt{17-(x-4)^2-(y-3)^2},\qquad g(1,1)=4-\sqrt{17-9-4}=4-2=2.\quad\checkmark
+\]
+
+\textbf{Paso 2. Derivadas parciales del elipsoide en $(1,1)$.}
+Derivando $f$ mediante la regla de la cadena (con la otra variable constante):
+\[
+f_x=\frac{-6x}{2\sqrt{9-3x^2-2y^2}}=\frac{-3x}{\sqrt{9-3x^2-2y^2}},
+\qquad
+f_y=\frac{-4y}{2\sqrt{9-3x^2-2y^2}}=\frac{-2y}{\sqrt{9-3x^2-2y^2}}.
+\]
+En $(1,1)$ el radicando vale $4$, luego
+\[
+f_x(1,1)=-\frac{3}{2},\qquad f_y(1,1)=-1.
+\]
+
+\textbf{Paso 3. Derivadas parciales de la esfera en $(1,1)$.}
+De la misma forma, escribiendo $u(x,y)=17-(x-4)^2-(y-3)^2$:
+\[
+g_x=-\frac{-2(x-4)}{2\sqrt{u}}=\frac{x-4}{\sqrt{u}},
+\qquad
+g_y=\frac{y-3}{\sqrt{u}}.
+\]
+En $(1,1)$ se tiene $u=4$, luego
+\[
+g_x(1,1)=\frac{1-4}{2}=-\frac{3}{2},\qquad g_y(1,1)=\frac{1-3}{2}=-1.
+\]
+
+\textbf{Paso 4. Conclusión.}
+Las dos superficies pasan por el mismo punto y tienen las mismas derivadas parciales ahí, de modo que la fórmula de la Construcción~\ref{pasos:plano_tangente} produce, para ambas, el mismo plano:
+\[
+z-2=-\frac{3}{2}(x-1)-1\,(y-1)
+\quad\Longleftrightarrow\quad
+3x+2y+2z=9.
+\]
+\[
+\boxed{\text{Las superficies son tangentes en }(1,1,2)\text{: comparten el plano tangente }3x+2y+2z=9.}
 \]
 \end{myproof}
 \end{prob}
@@ -758,21 +793,44 @@ El normal al elipsoide es $\langle 6,4,4\rangle$ y el normal a la esfera es $\la
 \begin{prob}
 Determine el punto del paraboloide $y=x^2+z^2$ donde el plano tangente es paralelo al plano $x+2y+3z=1.$
 \begin{myproof}
-\textbf{Paso 1. Gradiente de la superficie.}
-Sea $F(x,y,z)=x^2+z^2-y$. Entonces $\nabla F=\langle 2x,-1,2z\rangle$ es normal al plano tangente.
-
-\textbf{Paso 2. Condición de paralelismo.}
-Para que el plano tangente sea paralelo a $x+2y+3z=1$, los normales deben ser paralelos:
-$\langle 2x,-1,2z\rangle=k\langle 1,2,3\rangle.$
-Despejando: $2x=k$, $-1=2k$ y $2z=3k$, luego $k=-\tfrac{1}{2}$.
-
-\textbf{Paso 3. Coordenadas del punto.}
-Con $k=-\tfrac{1}{2}$: $x_0=-\tfrac{1}{4}$, $z_0=-\tfrac{3}{4}$; sustituyendo en el paraboloide:
+\textbf{Paso 1. Escribir la superficie como gráfica.}
+Aquí la variable ya despejada es $y$, no $z$: el paraboloide es la gráfica de
 \[
-y_0=\left(-\tfrac{1}{4}\right)^2+\left(-\tfrac{3}{4}\right)^2=\tfrac{1}{16}+\tfrac{9}{16}=\tfrac{5}{8}.
+y=f(x,z)=x^2+z^2,
+\]
+definida y diferenciable en todo el plano $xz$. La Construcción~\ref{pasos:plano_tangente} se aplica sin cambios permutando el papel de las variables: en el punto $(x_0,y_0,z_0)$ con $y_0=f(x_0,z_0)$, el plano tangente es
+\[
+y-y_0=f_x(x_0,z_0)(x-x_0)+f_z(x_0,z_0)(z-z_0).
+\]
+
+\textbf{Paso 2. Plano tangente en un punto genérico.}
+Como $f_x=2x$ y $f_z=2z$,
+\[
+y-y_0=2x_0(x-x_0)+2z_0(z-z_0).
+\]
+Desarrollando y usando que $x_0^2+z_0^2=y_0$, los términos constantes se agrupan en
+$-2x_0^2-2z_0^2+y_0=-2y_0+y_0=-y_0$, de modo que la ecuación se reduce a
+\[
+2x_0\,x-y+2z_0\,z=y_0.
+\]
+
+\textbf{Paso 3. Condición de paralelismo.}
+Dos planos son paralelos exactamente cuando los coeficientes de $x$, $y$ y $z$ son proporcionales. Comparando con $x+2y+3z=1$:
+\[
+(2x_0,\,-1,\,2z_0)=k\,(1,\,2,\,3).
+\]
+La segunda componente da $-1=2k$, es decir $k=-\tfrac{1}{2}$, y con ese valor
+\[
+2x_0=-\tfrac{1}{2}\implies x_0=-\tfrac{1}{4},
+\qquad
+2z_0=-\tfrac{3}{2}\implies z_0=-\tfrac{3}{4}.
 \]
 
 \textbf{Paso 4. Resultado.}
+Sustituyendo en el paraboloide,
+\[
+y_0=\left(-\tfrac{1}{4}\right)^2+\left(-\tfrac{3}{4}\right)^2=\tfrac{1}{16}+\tfrac{9}{16}=\tfrac{5}{8}.
+\]
 \[
 \boxed{\left(-\frac{1}{4},\,\frac{5}{8},\,-\frac{3}{4}\right)}
 \]
@@ -783,20 +841,43 @@ y_0=\left(-\tfrac{1}{4}\right)^2+\left(-\tfrac{3}{4}\right)^2=\tfrac{1}{16}+\tfr
 \begin{prob}
 Halle los puntos del hiperboloide $x^2-y^2-z^2=1$ donde el plano tangente es paralelo al plano $z = x + y.$
 \begin{myproof}
-\textbf{Paso 1. Gradiente del hiperboloide.}
-Sea $F(x,y,z)=x^2-y^2-z^2-1$. El gradiente $\nabla F=\langle 2x,-2y,-2z\rangle$ es normal al plano tangente.
-
-\textbf{Paso 2. Condición de paralelismo.}
-El plano $z=x+y$ se escribe $x+y-z=0$, con normal $\langle 1,1,-1\rangle$. La condición es $\langle 2x_0,-2y_0,-2z_0\rangle=k\langle 1,1,-1\rangle$, equivalente a $\langle x_0,-y_0,-z_0\rangle=k\langle 1,1,-1\rangle$.
-Luego $x_0=k$, $y_0=-k$, $z_0=k$.
-
-\textbf{Paso 3. Sustitución en el hiperboloide.}
+\textbf{Paso 1. Escribir el hiperboloide como gráfica.}
+De $x^2=1+y^2+z^2\ge 1$ se sigue que $|x|\ge 1$: la superficie tiene dos hojas y cada una es la gráfica de
 \[
-k^2-(-k)^2-k^2=k^2-k^2-k^2=-k^2=1\implies k^2=-1.
+x=f(y,z)=\pm\sqrt{1+y^2+z^2}
 \]
-Esto es imposible en $\mathbb{R}$.
+sobre todo el plano $yz$. En particular, $x_0\neq 0$ en cualquier punto de la superficie, lo que permite dividir por $x_0$ más adelante.
 
-\textbf{Paso 4. Resultado.}
+\textbf{Paso 2. Parciales y plano tangente en un punto genérico.}
+En cualquiera de las dos hojas,
+\[
+f_y=\pm\frac{y}{\sqrt{1+y^2+z^2}}=\frac{y}{x},
+\qquad
+f_z=\pm\frac{z}{\sqrt{1+y^2+z^2}}=\frac{z}{x},
+\]
+donde el signo se absorbe porque precisamente $x=\pm\sqrt{1+y^2+z^2}$. Aplicando la Construcción~\ref{pasos:plano_tangente} con $x$ como variable despejada:
+\[
+x-x_0=\frac{y_0}{x_0}(y-y_0)+\frac{z_0}{x_0}(z-z_0).
+\]
+Multiplicando por $x_0$ y usando que $x_0^2-y_0^2-z_0^2=1$:
+\[
+x_0\,x-y_0\,y-z_0\,z=x_0^2-y_0^2-z_0^2=1.
+\]
+
+\textbf{Paso 3. Condición de paralelismo.}
+El plano $z=x+y$ se escribe $x+y-z=0$. Los coeficientes deben ser proporcionales:
+\[
+(x_0,\,-y_0,\,-z_0)=k\,(1,\,1,\,-1)
+\implies
+x_0=k,\quad y_0=-k,\quad z_0=k.
+\]
+
+\textbf{Paso 4. Sustitución y conclusión.}
+Estos valores deben satisfacer la ecuación del hiperboloide:
+\[
+x_0^2-y_0^2-z_0^2=k^2-(-k)^2-k^2=-k^2=1\implies k^2=-1,
+\]
+lo cual es imposible en $\mathbb{R}$.
 \[
 \boxed{\text{No existe ningún punto del hiperboloide con plano tangente paralelo a }z=x+y.}
 \]
