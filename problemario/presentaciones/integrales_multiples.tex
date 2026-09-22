@@ -1,0 +1,1864 @@
+\documentclass[11pt,aspectratio=169]{beamer}
+\input{estilo_presentaciones}
+
+\setpie{Integrales múltiples --- Cálculo III}
+\setbloques{7}
+
+% ============ RASTREADORES DE PASOS ============
+% Protocolo: integral doble sobre una región general
+\newcommand{\dobletracker}[1]{%
+  {\footnotesize\centering
+  \pasoitem{1}{1. Dibujar la región}{#1}\ $\rightarrow$\
+  \pasoitem{2}{2. Tipo I o tipo II}{#1}\ $\rightarrow$\
+  \pasoitem{3}{3. Límites}{#1}\ $\rightarrow$\
+  \pasoitem{4}{4. Integrar dentro-fuera}{#1}\par}
+  \vspace{4pt}
+}
+
+% Protocolo: coordenadas polares
+\newcommand{\polartracker}[1]{%
+  {\footnotesize\centering
+  \pasoitem{1}{1. Región en $(r,\theta)$}{#1}\ $\rightarrow$\
+  \pasoitem{2}{2. Convertir $f$}{#1}\ $\rightarrow$\
+  \pasoitem{3}{3. Factor $r$}{#1}\ $\rightarrow$\
+  \pasoitem{4}{4. Integrar}{#1}\par}
+  \vspace{4pt}
+}
+
+% Protocolo: integral triple en rectangulares
+\newcommand{\tripletracker}[1]{%
+  {\footnotesize\centering
+  \pasoitem{1}{1. Describir el sólido}{#1}\ $\rightarrow$\
+  \pasoitem{2}{2. Proyectar}{#1}\ $\rightarrow$\
+  \pasoitem{3}{3. Límites $z$, $y$, $x$}{#1}\ $\rightarrow$\
+  \pasoitem{4}{4. Integrar}{#1}\par}
+  \vspace{4pt}
+}
+
+% Protocolo: coordenadas curvilíneas en el espacio
+\newcommand{\curvitracker}[1]{%
+  {\footnotesize\centering
+  \pasoitem{1}{1. Reconocer la simetría}{#1}\ $\rightarrow$\
+  \pasoitem{2}{2. Reescribir la región}{#1}\ $\rightarrow$\
+  \pasoitem{3}{3. Poner el jacobiano}{#1}\ $\rightarrow$\
+  \pasoitem{4}{4. Integrar}{#1}\par}
+  \vspace{4pt}
+}
+
+% ============ DIAGRAMA DE LOS SISTEMAS DE COORDENADAS ============
+\newcommand{\sistemas}{%
+  \begin{center}
+  \begin{tikzpicture}[node distance=0.35cm,
+      sis/.style={draw=tealx,thick,fill=tealx!10,rounded corners,
+                  minimum width=2.6cm,minimum height=1.0cm,align=center,font=\footnotesize}]
+    \node[sis] (c1) {\bfseries Rectangulares\\$dA=dx\,dy$};
+    \node[sis,right=of c1] (c2) {\bfseries Polares\\$dA=r\,dr\,d\theta$};
+    \node[sis,below=0.45cm of c1] (c3) {\bfseries Cilíndricas\\$dV=r\,dz\,dr\,d\theta$};
+    \node[sis,below=0.45cm of c2] (c4) {\bfseries Esféricas\\$dV=\rho^2\sen\varphi\,d\rho\,d\varphi\,d\theta$};
+    \draw[-Stealth,thick,gray60] (c1) -- (c2);
+    \draw[-Stealth,thick,gray60] (c3) -- (c4);
+    \draw[-Stealth,thick,gray60] (c1) -- (c3);
+    \draw[-Stealth,thick,gray60] (c2) -- (c4);
+  \end{tikzpicture}
+  \end{center}
+}
+
+\title{Integrales múltiples}
+\subtitle{Integrales dobles y triples}
+\author{Andrés Fabián Leal Archila}
+\institute{Cálculo III (Multivariable) --- Cód. 20254}
+\date{\today}
+
+\begin{document}
+
+\portada
+
+% ---------- AGENDA ----------
+\begin{frame}{Agenda de la unidad}
+  \begin{enumerate}
+    \setlength{\itemsep}{6pt}
+    \item \textbf{La integral doble}: sumas de Riemann, Fubini, rectángulos \hfill{\small\color{gray60}(20 min)}
+    \item \textbf{Regiones generales}: tipo I, tipo II e inversión del orden \hfill{\small\color{gray60}(25 min)}
+    \item \textbf{Coordenadas polares} \hfill{\small\color{gray60}(20 min)}
+    \item \textbf{Aplicaciones}: volumen, promedio, masa, inercia, área de superficie, probabilidad \hfill{\small\color{gray60}(40 min)}
+    \item \textbf{Integrales triples} en coordenadas rectangulares \hfill{\small\color{gray60}(25 min)}
+    \item \textbf{Cilíndricas y esféricas} \hfill{\small\color{gray60}(35 min)}
+    \item \textbf{Cambio de variables}: el jacobiano lo unifica todo \hfill{\small\color{gray60}(20 min)}
+  \end{enumerate}
+  \vfill
+  \begin{center}
+    \small\color{gray60} Capítulos 31 y 32 del problemario --- material para varias sesiones
+  \end{center}
+\end{frame}
+
+\begin{frame}{Un solo hilo conductor}
+  \begin{center}
+  \begin{tikzpicture}[node distance=0.35cm, every node/.style={font=\footnotesize}]
+    \node[draw=navy,thick,fill=navy!8,rounded corners,minimum width=2.6cm,minimum height=1.0cm,align=center] (ri) {\bfseries Suma de\\Riemann};
+    \node[draw=tealx,thick,fill=tealx!10,rounded corners,minimum width=2.6cm,minimum height=1.0cm,align=center,right=of ri] (fu) {Fubini:\\integral iterada};
+    \node[draw=tealx,thick,fill=tealx!10,rounded corners,minimum width=2.6cm,minimum height=1.0cm,align=center,right=of fu] (li) {Poner los\\límites};
+    \node[draw=tealx,thick,fill=tealx!10,rounded corners,minimum width=2.6cm,minimum height=1.0cm,align=center,right=of li] (ja) {Jacobiano:\\cambiar de sistema};
+    \draw[-Stealth,thick,gray60] (ri) -- (fu);
+    \draw[-Stealth,thick,gray60] (fu) -- (li);
+    \draw[-Stealth,thick,gray60] (li) -- (ja);
+  \end{tikzpicture}
+  \end{center}
+  \vspace{10pt}
+  \begin{itemize}
+    \item Toda la unidad sale de una sola idea: \textbf{cortar en pedacitos, multiplicar por el tamaño del pedacito y sumar}.
+    \pause
+    \item El teorema de \textbf{Fubini} convierte esa suma en integrales simples sucesivas: lo único nuevo es \emph{poner bien los límites}.
+    \pause
+    \item Casi todo el trabajo de esta unidad es \textbf{geometría de la región}, no técnicas de integración.
+    \pause
+    \item Y cuando la región es incómoda en $x,y,z$, se cambia de sistema de coordenadas: el \textbf{jacobiano} dice qué le pasa al tamaño del pedacito.
+  \end{itemize}
+\end{frame}
+
+% ======================================================
+% BLOQUE 1 --- LA INTEGRAL DOBLE
+% ======================================================
+\bloqueframe{1}{La integral doble}{Sumas de Riemann, Fubini y el caso del rectángulo}
+
+\begin{frame}{Motivación: \textquestiondown{}cuánto volumen hay bajo una superficie?}
+  \begin{columns}
+    \begin{column}{0.52\textwidth}
+      \begin{itemize}
+        \item En una variable, $\int_a^b f(x)\,dx$ suma áreas de rectángulos $f(x_i)\,\Delta x_i$.
+        \pause
+        \item Con $f(x,y)\ge0$ sobre un rectángulo $R$, la pregunta natural es el \textbf{volumen} bajo la superficie $z=f(x,y)$.
+        \pause
+        \item Partimos $R$ en $mn$ subrectángulos $R_{ij}$ de área $\Delta A_{ij}=\Delta x_i\,\Delta y_j$ y sobre cada uno levantamos una \textbf{caja} de altura $f(\bar x_{ij},\bar y_{ij})$.
+        \pause
+        \item El volumen es el límite de la suma de esas cajas cuando la partición se refina.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.44\textwidth}
+      \centering
+      \begin{tikzpicture}[scale=0.95]
+        \foreach \i in {0,1,2,3,4}{
+          \draw[gray60,thin] (\i*0.7,0) -- (\i*0.7+1.2,0.6);
+          \draw[gray60,thin] (\i*0.35,\i*0.3) -- (\i*0.35+2.8,\i*0.3);
+        }
+        \draw[navy,thick] (0,0) -- (2.8,0) -- (4.0,0.6) -- (1.2,0.6) -- cycle;
+        \fill[tealx!25,draw=tealx,thick] (0.7,0.3) -- (1.4,0.3) -- (1.4,1.5) -- (0.7,1.5) -- cycle;
+        \fill[tealx!35,draw=tealx,thick] (1.4,0.3) -- (2.1,0.3) -- (2.1,1.9) -- (1.4,1.9) -- cycle;
+        \fill[tealx!20,draw=tealx,thick] (2.1,0.3) -- (2.8,0.3) -- (2.8,1.3) -- (2.1,1.3) -- cycle;
+        \draw[brick,thick,domain=0.7:2.8,samples=40] plot (\x,{2.1-0.9*(\x-1.75)*(\x-1.75)});
+        \node[font=\footnotesize,gray60] at (2.0,-0.35) {$R$};
+      \end{tikzpicture}\\[2pt]
+      {\footnotesize\color{gray60} cajas de altura $f(\bar x_{ij},\bar y_{ij})$ y base $\Delta A_{ij}$}
+    \end{column}
+  \end{columns}
+  \notaanimacion{refinamiento de la partición --- ver las cajas converger a la superficie}
+\end{frame}
+
+\begin{frame}{Definición: la integral doble}
+  Sea $R=[a,b]\times[c,d]$. Con una partición en subrectángulos $R_{ij}$ de área $\Delta A_{ij}$ y puntos muestra $(\bar x_{ij},\bar y_{ij})\in R_{ij}$, formamos la \textbf{suma de Riemann}
+  \[
+    \sum_{i=1}^{m}\sum_{j=1}^{n} f(\bar x_{ij},\bar y_{ij})\,\Delta A_{ij}.
+  \]
+  \pause
+  \begin{block}{Definición}
+    Si el límite de estas sumas existe cuando $\|P\|\to0$, se dice que $f$ es \textbf{integrable} sobre $R$ y
+    \[
+      \iint_R f(x,y)\,dA \;=\; \lim_{\|P\|\to0}\ \sum_{i,j} f(\bar x_{ij},\bar y_{ij})\,\Delta A_{ij}.
+    \]
+  \end{block}
+  \pause
+  \begin{center}\small\color{gray60}
+  El límite no depende ni de la partición ni de los puntos muestra elegidos.
+  \end{center}
+\end{frame}
+
+\begin{frame}{\textquestiondown{}Cuándo existe la integral?}
+  \begin{block}{Teorema (Integrabilidad)}
+    Si $f$ es continua en $R$, entonces $f$ es integrable en $R$.\\[4pt]
+    Más generalmente, si $f$ es acotada y continua salvo en un número finito de curvas suaves, también es integrable.
+  \end{block}
+  \pause
+  \vspace{6pt}
+  \begin{center}
+  \normalsize En la práctica: \textbf{casi todo lo que escribiremos es integrable}. La dificultad no está en la existencia, sino en el cálculo.
+  \end{center}
+  \pause
+  \vspace{6pt}
+  \begin{center}\small\color{gray60}
+  Y calcular directamente desde la suma de Riemann es inviable. Hace falta un puente hacia las integrales de una variable.
+  \end{center}
+\end{frame}
+
+\begin{frame}{El puente: teorema de Fubini}
+  \begin{block}{Teorema (Fubini)}
+    Si $f$ es continua en $R=[a,b]\times[c,d]$, entonces
+    \[
+      \iint_R f(x,y)\,dA
+      = \int_a^b\!\left[\int_c^d f(x,y)\,dy\right]dx
+      = \int_c^d\!\left[\int_a^b f(x,y)\,dx\right]dy.
+    \]
+  \end{block}
+  \pause
+  \begin{itemize}
+    \item La integral \textbf{interior} se hace manteniendo fija la otra variable: es una integral de Cálculo I.
+    \pause
+    \item Sobre un rectángulo con $f$ continua, \textbf{el orden es libre}: se elige el que dé cuentas más cortas.
+  \end{itemize}
+  \pause
+  \notaclave{Fubini no es una fórmula nueva de integración: es un permiso para integrar una variable a la vez.}
+\end{frame}
+
+\begin{frame}{Propiedades}
+  \begin{block}{Linealidad}
+    \centering
+    $\displaystyle\iint_R \bigl[\alpha f+\beta g\bigr]\,dA
+      = \alpha\iint_R f\,dA + \beta\iint_R g\,dA$.
+  \end{block}
+  \pause
+  \begin{block}{Aditividad}
+    Si $R=R_1\cup R_2$ y ambas se solapan solo en sus fronteras,
+    $\displaystyle\iint_R f\,dA = \iint_{R_1} f\,dA + \iint_{R_2} f\,dA$.
+  \end{block}
+  \pause
+  \begin{block}{Comparación}
+    Si $f(x,y)\le g(x,y)$ en $R$, entonces $\displaystyle\iint_R f\,dA \le \iint_R g\,dA$.\\[2pt]
+    {\small\color{gray60} La aditividad es la que permite partir regiones complicadas en trozos manejables.}
+  \end{block}
+\end{frame}
+
+\begin{frame}{Algoritmo sobre un rectángulo: 3 pasos}
+  \begin{center}
+  \begin{tikzpicture}[node distance=0.5cm]
+    \node[draw=tealx,thick,fill=tealx!10,rounded corners,minimum width=3.0cm,minimum height=1.2cm,align=center] (p1) {\bfseries 1\\Elegir el orden};
+    \node[draw=tealx,thick,fill=tealx!10,rounded corners,minimum width=3.0cm,minimum height=1.2cm,align=center,right=of p1] (p2) {\bfseries 2\\Integral interior};
+    \node[draw=tealx,thick,fill=tealx!10,rounded corners,minimum width=3.0cm,minimum height=1.2cm,align=center,right=of p2] (p3) {\bfseries 3\\Integral exterior};
+    \draw[-Stealth,thick,gray60] (p1) -- (p2);
+    \draw[-Stealth,thick,gray60] (p2) -- (p3);
+  \end{tikzpicture}
+  \end{center}
+  \vspace{10pt}
+  \begin{enumerate}
+    \item Decidir si se integra primero en $x$ o en $y$ (se busca que la interior sea sencilla).
+    \item Integrar respecto a la variable interior, \textbf{tratando la otra como constante}.
+    \item Integrar el resultado respecto a la variable restante.
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}{Ejemplo ancla --- planteamiento e integral interior}
+  \begin{block}{Problema}
+    Calcular $\displaystyle\iint_R (x^2y+y^2)\,dA$, donde $R=[0,1]\times[0,2]$.
+  \end{block}
+  \pause
+  \vspace{4pt}
+  Elegimos el orden $dy\,dx$:
+  \[
+    \iint_R (x^2y+y^2)\,dA = \int_0^1\!\!\int_0^2 (x^2y+y^2)\,dy\,dx.
+  \]
+  \pause
+  Manteniendo $x$ \textbf{fija} e integrando en $y$:
+  \[
+    \int_0^2 (x^2y+y^2)\,dy
+    = \left[\frac{x^2y^2}{2}+\frac{y^3}{3}\right]_0^2
+    = \frac{x^2\cdot4}{2}+\frac83
+    = 2x^2+\frac{8}{3}.
+  \]
+  \pause
+  \begin{center}\normalsize\color{tealx}
+  El resultado es una función solo de $x$: eso siempre debe ocurrir.
+  \end{center}
+\end{frame}
+
+\begin{frame}{Ejemplo ancla --- integral exterior}
+  \[
+    \int_0^1\left(2x^2+\frac{8}{3}\right)dx
+    = \left[\frac{2x^3}{3}+\frac{8x}{3}\right]_0^1
+    = \frac{2}{3}+\frac{8}{3}.
+  \]
+  \pause
+  \[
+    \boxed{\iint_R (x^2y+y^2)\,dA = \frac{10}{3}}
+  \]
+  \pause
+  \vspace{4pt}
+  \begin{center}\small\color{gray60}
+  Los límites de $y$ salieron constantes porque $R$ es un rectángulo: eso es justo lo que cambia en el bloque siguiente. Ejercicio: rehacerlo en el orden $dx\,dy$ y verificar que da lo mismo.
+  \end{center}
+\end{frame}
+
+% ======================================================
+% BLOQUE 2 --- REGIONES GENERALES
+% ======================================================
+\bloqueframe{2}{Regiones generales}{Tipo I, tipo II y la inversión del orden}
+
+\begin{frame}{Más allá del rectángulo}
+  \begin{itemize}
+    \item Casi ninguna región interesante es un rectángulo: son regiones limitadas por curvas.
+    \pause
+    \item La idea es la misma, pero ahora \textbf{los límites de la variable interior dependen de la exterior}.
+    \pause
+    \item Dos descripciones básicas cubren la mayoría de los casos:
+  \end{itemize}
+  \vspace{8pt}
+  \pause
+  \begin{columns}
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Tipo I ($y$-simple)}
+        \[
+          D=\{(x,y):\ a\le x\le b,
+        \]
+        \[
+          g_1(x)\le y\le g_2(x)\}
+        \]
+      \end{block}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Tipo II ($x$-simple)}
+        \[
+          D=\{(x,y):\ c\le y\le d,
+        \]
+        \[
+          h_1(y)\le x\le h_2(y)\}
+        \]
+      \end{block}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Las dos descripciones, en dibujo}
+  \begin{columns}
+    \begin{column}{0.48\textwidth}
+      \centering
+      \begin{tikzpicture}[scale=1.15]
+        \draw[thin,->] (-0.3,0)--(3.1,0) node[right]{$x$};
+        \draw[thin,->] (0,-0.3)--(0,2.9) node[above]{$y$};
+        \fill[tealx!20]
+          (0.5,0.4) ..controls (1.2,0.15) and (1.8,0.15).. (2.5,0.4)
+          -- (2.5,2.2) ..controls (1.8,2.45) and (1.2,2.45).. (0.5,2.2)
+          -- cycle;
+        \draw[tealx,thick]
+          (0.5,0.4) ..controls (1.2,0.15) and (1.8,0.15).. (2.5,0.4)
+          node[right,font=\scriptsize]{$y=g_1(x)$};
+        \draw[tealx,thick]
+          (0.5,2.2) ..controls (1.2,2.45) and (1.8,2.45).. (2.5,2.2)
+          node[right,font=\scriptsize]{$y=g_2(x)$};
+        \draw[brick,thick,-Stealth] (1.5,0.23) -- (1.5,2.37);
+        \draw[thin,dashed,gray60] (0.5,0) node[below,font=\scriptsize]{$a$} -- (0.5,2.2);
+        \draw[thin,dashed,gray60] (2.5,0) node[below,font=\scriptsize]{$b$} -- (2.5,2.2);
+        \node[font=\scriptsize] at (0.95,1.3){$D$};
+      \end{tikzpicture}\\[2pt]
+      {\footnotesize\color{gray60} Tipo I: la flecha barre \textbf{vertical}, $dy$ va primero}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \centering
+      \begin{tikzpicture}[scale=1.15]
+        \draw[thin,->] (-0.3,0)--(3.1,0) node[right]{$x$};
+        \draw[thin,->] (0,-0.3)--(0,2.9) node[above]{$y$};
+        \fill[brick!20]
+          (0.35,0.5) ..controls (0.0,1.2) and (0.0,1.8).. (0.35,2.5)
+          -- (2.3,2.5) ..controls (2.65,1.8) and (2.65,1.2).. (2.3,0.5)
+          -- cycle;
+        \draw[brick,thick]
+          (0.35,0.5) ..controls (0.0,1.2) and (0.0,1.8).. (0.35,2.5)
+          node[above,font=\scriptsize]{$x=h_1(y)$};
+        \draw[brick,thick]
+          (2.3,0.5) ..controls (2.65,1.2) and (2.65,1.8).. (2.3,2.5)
+          node[above,font=\scriptsize]{$x=h_2(y)$};
+        \draw[tealx,thick,-Stealth] (0.05,1.5) -- (2.62,1.5);
+        \draw[thin,dashed,gray60] (0,0.5) node[left,font=\scriptsize]{$c$} -- (0.35,0.5);
+        \draw[thin,dashed,gray60] (0,2.5) node[left,font=\scriptsize]{$d$} -- (0.35,2.5);
+        \node[font=\scriptsize] at (1.3,2.0){$D$};
+      \end{tikzpicture}\\[2pt]
+      {\footnotesize\color{gray60} Tipo II: la flecha barre \textbf{horizontal}, $dx$ va primero}
+    \end{column}
+  \end{columns}
+  \vspace{4pt}
+  \notaclave{La flecha de barrido entra por una curva y sale por otra: esas dos curvas son los límites de la integral interior.}
+\end{frame}
+
+\begin{frame}{Las dos fórmulas}
+  \begin{block}{Tipo I}
+    \[
+      \iint_D f(x,y)\,dA = \int_a^b\!\!\int_{g_1(x)}^{g_2(x)} f(x,y)\,dy\,dx.
+    \]
+  \end{block}
+  \pause
+  \begin{block}{Tipo II}
+    \[
+      \iint_D f(x,y)\,dA = \int_c^d\!\!\int_{h_1(y)}^{h_2(y)} f(x,y)\,dx\,dy.
+    \]
+  \end{block}
+  \pause
+  \alerta{Los límites \textbf{exteriores} son siempre \emph{números}. Si te queda una $y$ en el límite exterior de $dx$, la región está mal descrita.}
+\end{frame}
+
+\begin{frame}{Protocolo: 4 pasos}
+  \begin{center}
+  \begin{tikzpicture}[node distance=0.4cm]
+    \node[draw=tealx,thick,fill=tealx!10,rounded corners,minimum width=2.6cm,minimum height=1.2cm,align=center] (p1) {\bfseries 1\\Dibujar\\la región};
+    \node[draw=tealx,thick,fill=tealx!10,rounded corners,minimum width=2.6cm,minimum height=1.2cm,align=center,right=of p1] (p2) {\bfseries 2\\Tipo I\\o tipo II};
+    \node[draw=tealx,thick,fill=tealx!10,rounded corners,minimum width=2.6cm,minimum height=1.2cm,align=center,right=of p2] (p3) {\bfseries 3\\Poner\\límites};
+    \node[draw=tealx,thick,fill=tealx!10,rounded corners,minimum width=2.6cm,minimum height=1.2cm,align=center,right=of p3] (p4) {\bfseries 4\\Integrar\\dentro-fuera};
+    \draw[-Stealth,thick,gray60] (p1) -- (p2);
+    \draw[-Stealth,thick,gray60] (p2) -- (p3);
+    \draw[-Stealth,thick,gray60] (p3) -- (p4);
+  \end{tikzpicture}
+  \end{center}
+  \vspace{10pt}
+  \begin{enumerate}
+    \item Dibujar $D$ y hallar los puntos de corte de las curvas frontera.
+    \item Decidir el tipo: \textbf{siempre} conviene el que evite partir la región.
+    \item Escribir los límites; comprobar que los exteriores son números.
+    \item Integrar primero la interior, luego la exterior.
+  \end{enumerate}
+  \vspace{4pt}
+  \begin{center}\small\color{gray60} El paso 1 no es opcional: sin dibujo, los límites salen mal.\end{center}
+\end{frame}
+
+\begin{frame}{Región tipo I --- planteamiento}
+  \dobletracker{1}
+  \begin{columns}
+    \begin{column}{0.55\textwidth}
+      \begin{block}{Problema}
+        Evaluar $\displaystyle\iint_D xy\,dA$, donde $D$ está acotada por $y=x^2$ y $y=x$.
+      \end{block}
+      \pause
+      \vspace{4pt}
+      Intersección: $x^2=x \Rightarrow x=0$ o $x=1$.\\[4pt]
+      En $[0,1]$ se cumple $x^2\le x$, así que la parábola va \textbf{abajo} y la recta \textbf{arriba}.
+    \end{column}
+    \begin{column}{0.42\textwidth}
+      \centering
+      \begin{tikzpicture}[scale=2.4]
+        \draw[thin,->] (-0.1,0)--(1.3,0) node[right,font=\small]{$x$};
+        \draw[thin,->] (0,-0.1)--(0,1.25) node[above,font=\small]{$y$};
+        \fill[tealx!20] plot[domain=0:1,samples=30] (\x,{\x*\x}) -- (1,1) -- plot[domain=1:0,samples=2] (\x,\x) -- cycle;
+        \draw[navy,thick] (0,0)--(1.15,1.15) node[right,font=\scriptsize]{$y=x$};
+        \draw[brick,thick] plot[domain=0:1.08,samples=30] (\x,{\x*\x}) node[right,font=\scriptsize]{$y=x^2$};
+        \draw[gold,thick,-Stealth] (0.6,0.36)--(0.6,0.6);
+        \draw[thin] (1,0.02)--(1,-0.02) node[below,font=\scriptsize]{$1$};
+        \node[font=\scriptsize] at (0.37,0.48){$D$};
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Región tipo I --- límites}
+  \dobletracker{2}
+  \dobletracker{3}
+  Para cada $x\in[0,1]$, la flecha vertical entra en $y=x^2$ y sale en $y=x$:
+  \[
+    D=\{(x,y):\ 0\le x\le 1,\ \ x^2\le y\le x\}.
+  \]
+  \pause
+  \[
+    \iint_D xy\,dA = \int_0^1\!\!\int_{x^2}^{x} xy\,dy\,dx.
+  \]
+\end{frame}
+
+\begin{frame}{Región tipo I --- integración}
+  \dobletracker{4}
+  Interior (con $x$ constante):
+  \[
+    \int_{x^2}^{x} xy\,dy = x\left[\frac{y^2}{2}\right]_{x^2}^{x}
+    = \frac{x}{2}\bigl(x^2-x^4\bigr) = \frac{x^3}{2}-\frac{x^5}{2}.
+  \]
+  \pause
+  Exterior:
+  \[
+    \int_0^1\left(\frac{x^3}{2}-\frac{x^5}{2}\right)dx
+    = \frac12\left[\frac{x^4}{4}-\frac{x^6}{6}\right]_0^1
+    = \frac12\left(\frac14-\frac16\right) = \frac12\cdot\frac{1}{12}.
+  \]
+  \pause
+  \[
+    \boxed{\iint_D xy\,dA = \frac{1}{24}}
+  \]
+\end{frame}
+
+\begin{frame}{Región tipo II --- planteamiento y límites}
+  \dobletracker{1}
+  \begin{columns}
+    \begin{column}{0.55\textwidth}
+      \begin{block}{Problema}
+        Evaluar $\displaystyle\iint_D (x+y)\,dA$, donde $D$ está acotada por $x=y^2$ y $x=y+2$.
+      \end{block}
+      \pause
+      \small
+      Intersección: $y^2=y+2\Rightarrow y=-1,\ y=2$.
+      \par\pause\smallskip
+      \textbf{No hay elección real}: como tipo I habría que partir $D$ en dos trozos; como tipo II sale de una pieza.
+      \par\pause\smallskip
+      La flecha horizontal entra en la parábola y sale en la recta:
+      \vspace{-6pt}
+      \[
+        \int_{-1}^{2}\!\!\int_{y^2}^{y+2} (x+y)\,dx\,dy.
+      \]
+    \end{column}
+    \begin{column}{0.42\textwidth}
+      \onslide<1->
+      \centering
+      \begin{tikzpicture}[scale=0.85]
+        \draw[thin,->] (-0.4,0)--(4.8,0) node[right,font=\small]{$x$};
+        \draw[thin,->] (0,-1.8)--(0,2.9) node[above,font=\small]{$y$};
+        \fill[brick!20] plot[domain=-1:2,samples=40,variable=\t] ({\t*\t},\t)
+          -- plot[domain=2:-1,samples=2,variable=\t] ({\t+2},\t) -- cycle;
+        \draw[brick,thick] plot[domain=-1.35:2.1,samples=40,variable=\t] ({\t*\t},\t)
+          node[right,font=\scriptsize]{$x=y^2$};
+        \draw[navy,thick] (0.4,-1.6)--(4.4,2.4) node[right,font=\scriptsize]{$x=y+2$};
+        \draw[gold,thick,-Stealth] (0.25,0.5)--(2.5,0.5);
+        \draw[thin] (0.05,2)--(-0.05,2) node[left,font=\scriptsize]{$2$};
+        \draw[thin] (0.05,-1)--(-0.05,-1) node[left,font=\scriptsize]{$-1$};
+        \node[font=\scriptsize] at (1.5,1.4){$D$};
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Región tipo II --- integración}
+  \dobletracker{4}
+  \[
+    \int_{y^2}^{y+2}(x+y)\,dx = \left[\frac{x^2}{2}+yx\right]_{y^2}^{y+2}
+    = \underbrace{\frac{3y^2}{2}+4y+2}_{\text{en }x=y+2}
+      -\underbrace{\left(\frac{y^4}{2}+y^3\right)}_{\text{en }x=y^2}.
+  \]
+  \pause
+  \[
+    \int_{-1}^{2}\left(-\frac{y^4}{2}-y^3+\frac{3y^2}{2}+4y+2\right)dy
+    = \left[-\frac{y^5}{10}-\frac{y^4}{4}+\frac{y^3}{2}+2y^2+2y\right]_{-1}^{2}.
+  \]
+  \pause
+  En $y=2$ vale $\dfrac{44}{5}$; en $y=-1$ vale $-\dfrac{13}{20}$. Restando:
+  \[
+    \boxed{\iint_D (x+y)\,dA = \frac{44}{5}+\frac{13}{20} = \frac{189}{20}}
+  \]
+\end{frame}
+
+\begin{frame}{Invertir el orden: cuando no queda otra}
+  \begin{block}{Problema}
+    Evaluar $\displaystyle\int_0^1\!\!\int_x^1 \sen(y^2)\,dy\,dx$.
+  \end{block}
+  \pause
+  \vspace{4pt}
+  \begin{center}
+  \normalsize\color{brick}\textbf{$\sen(y^2)$ no tiene antiderivada elemental}: la integral interior, tal como está, es imposible.
+  \end{center}
+  \pause
+  \vspace{6pt}
+  \begin{center}
+  \normalsize\color{tealx} Pero la integral \emph{doble} sí se puede: basta cambiar el orden.
+  \end{center}
+  \pause
+  \vspace{6pt}
+  \begin{center}\small\color{gray60}
+  El procedimiento es siempre el mismo: \textbf{leer la región de los límites dados}, dibujarla y volverla a describir del otro tipo.
+  \end{center}
+\end{frame}
+
+\begin{frame}{Invertir el orden --- leer y redescribir la región}
+  \begin{columns}
+    \begin{column}{0.52\textwidth}
+      Los límites dados dicen
+      \[
+        D=\{(x,y):\ 0\le x\le 1,\ \ x\le y\le 1\},
+      \]
+      que es el triángulo de vértices $(0,0)$, $(0,1)$ y $(1,1)$.
+      \pause
+      \vspace{6pt}
+
+      Como tipo II, para cada $y\in[0,1]$ la flecha horizontal va de $x=0$ a $x=y$:
+      \[
+        D=\{(x,y):\ 0\le y\le 1,\ \ 0\le x\le y\}.
+      \]
+    \end{column}
+    \begin{column}{0.44\textwidth}
+      \centering
+      \begin{tikzpicture}[scale=2.4]
+        \draw[thin,->] (-0.1,0)--(1.3,0) node[right,font=\small]{$x$};
+        \draw[thin,->] (0,-0.1)--(0,1.3) node[above,font=\small]{$y$};
+        \fill[tealx!20] (0,0)--(1,1)--(0,1)--cycle;
+        \draw[navy,thick] (0,0)--(1.1,1.1) node[right,font=\scriptsize]{$y=x$};
+        \draw[brick,thick] (0,1)--(1,1) node[above right,font=\scriptsize]{$y=1$};
+        \draw[gold,thick,-Stealth] (0,0.65)--(0.65,0.65);
+        \draw[thin] (1,0.02)--(1,-0.02) node[below,font=\scriptsize]{$1$};
+        \node[font=\scriptsize] at (0.28,0.82){$D$};
+      \end{tikzpicture}\\[2pt]
+      {\footnotesize\color{gray60} ahora la flecha barre horizontal}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Invertir el orden --- resultado}
+  \[
+    \int_0^1\!\!\int_x^1 \sen(y^2)\,dy\,dx
+    = \int_0^1\!\!\int_0^y \sen(y^2)\,dx\,dy.
+  \]
+  \pause
+  Ahora la interior es trivial ($\sen(y^2)$ no depende de $x$):
+  \[
+    \int_0^y \sen(y^2)\,dx = y\,\sen(y^2).
+  \]
+  \pause
+  Y la exterior sale con $u=y^2$, $du=2y\,dy$:
+  \[
+    \int_0^1 y\,\sen(y^2)\,dy = \left[-\frac{\cos(y^2)}{2}\right]_0^1 = \frac{1-\cos 1}{2}.
+  \]
+  \pause
+  \[
+    \boxed{\int_0^1\!\!\int_x^1 \sen(y^2)\,dy\,dx = \frac{1-\cos 1}{2}}
+  \]
+\end{frame}
+
+\begin{frame}{Cierre del bloque 2}
+  \begin{itemize}
+    \item El trabajo está en \textbf{describir la región}, no en integrar.
+    \pause
+    \item Hay dos motivos para invertir el orden:
+    \begin{itemize}
+      \item la región se parte en varios trozos de un tipo y en uno solo del otro;
+      \item la integral interior no se puede hacer en el orden dado.
+    \end{itemize}
+    \pause
+    \item Para invertir: \textbf{dibujar la región a partir de los límites} y redescribirla. Nunca intercambiar los límites mecánicamente.
+  \end{itemize}
+  \vspace{8pt}
+  \pause
+  \alerta{$\displaystyle\int_0^1\!\!\int_x^1 f\,dy\,dx \;\neq\; \int_0^1\!\!\int_x^1 f\,dx\,dy$. Los límites cambian con el orden.}
+\end{frame}
+
+% ======================================================
+% BLOQUE 3 --- COORDENADAS POLARES
+% ======================================================
+\bloqueframe{3}{Coordenadas polares}{Cuando la región (o la función) es redonda}
+
+\begin{frame}{\textquestiondown{}Cuándo pasar a polares?}
+  \begin{itemize}
+    \item Cuando la \textbf{región} es un disco, un anillo, un sector o algo limitado por curvas polares.
+    \pause
+    \item Cuando en el \textbf{integrando} aparece $x^2+y^2$ (que en polares es simplemente $r^2$).
+    \pause
+    \item Cuando los límites rectangulares involucran raíces del tipo $\sqrt{a^2-x^2}$.
+  \end{itemize}
+  \vspace{10pt}
+  \pause
+  \begin{block}{El cambio}
+    \[
+      x=r\cos\theta,\qquad y=r\sen\theta,\qquad x^2+y^2=r^2.
+    \]
+  \end{block}
+  \pause
+  \begin{center}\small\color{gray60} Con $r\ge0$ la distancia al origen y $\theta$ el ángulo polar.\end{center}
+\end{frame}
+
+\begin{frame}{El elemento de área no es $dr\,d\theta$}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \begin{itemize}
+        \item Un ``rectángulo polar'' tiene lados $dr$ (radial) y $r\,d\theta$ (arco de circunferencia).
+        \pause
+        \item Su área es el producto de los dos lados:
+        \[
+          dA = r\,dr\,d\theta.
+        \]
+        \pause
+        \item El factor $r$ tiene sentido geométrico: \textbf{lejos del origen los sectores son más anchos}.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \centering
+      \begin{tikzpicture}[scale=2.4]
+        \draw[->,thin] (-0.15,0)--(1.45,0) node[right,font=\small]{$x$};
+        \draw[->,thin] (0,-0.15)--(0,1.42) node[above,font=\small]{$y$};
+        \draw[gray60,thin] (0.70,0) arc(0:65:0.70);
+        \draw[gray60,thin] (1.00,0) arc(0:65:1.00);
+        \draw[gray60,thin] (0,0)--(1.18,0.550);
+        \draw[gray60,thin] (0,0)--(0.92,0.920);
+        \fill[tealx!35,opacity=0.9]
+          (0.634,0.296) -- (0.906,0.423) arc(25:45:1.00) --
+          (0.495,0.495) arc(45:25:0.70) -- cycle;
+        \node[anchor=south,font=\scriptsize,tealx] at (1.02,0.47) {$dr$};
+        \node[anchor=west,font=\scriptsize,tealx] at (0.72,0.75) {$r\,d\theta$};
+        \draw[-Stealth,thick,navy] (0,0)--(0.819,0.574);
+        \draw[thin] (0.20,0) arc(0:35:0.20);
+        \node[font=\scriptsize] at (0.31,0.08) {$\theta$};
+      \end{tikzpicture}\\[2pt]
+      {\footnotesize\color{gray60} $dA = (dr)(r\,d\theta) = r\,dr\,d\theta$}
+    \end{column}
+  \end{columns}
+  \vspace{2pt}
+  \alerta{Olvidar la $r$ es el error más frecuente de todo el capítulo.}
+\end{frame}
+
+\begin{frame}{Regiones $r$-simples y la fórmula}
+  Una región es \textbf{$r$-simple} si se describe como
+  \[
+    D=\{(r,\theta):\ \alpha\le\theta\le\beta,\ \ r_1(\theta)\le r\le r_2(\theta)\}.
+  \]
+  \pause
+  \begin{block}{Integral doble en polares}
+    \[
+      \iint_D f(x,y)\,dA
+      = \int_\alpha^\beta\!\!\int_{r_1(\theta)}^{r_2(\theta)}
+        f(r\cos\theta,\,r\sen\theta)\;r\,dr\,d\theta.
+    \]
+  \end{block}
+  \pause
+  \begin{center}\small\color{gray60}
+  Es la misma estructura de antes: $\theta$ hace de variable exterior y $r$ de interior.
+  \end{center}
+\end{frame}
+
+\begin{frame}{Protocolo en polares}
+  \begin{enumerate}
+    \setlength{\itemsep}{5pt}
+    \item \textbf{Dibujar e identificar la región.} Determinar el rango de $\theta$ y, para cada $\theta$, el rango de $r$.
+    \item \textbf{Convertir la función.} Sustituir $x=r\cos\theta$, $y=r\sen\theta$.
+    \item \textbf{Incluir el factor $r$.} Reemplazar $dA$ por $r\,dr\,d\theta$.
+    \item \textbf{Escribir la integral iterada} y evaluar: primero en $r$, luego en $\theta$.
+  \end{enumerate}
+  \vspace{10pt}
+  \pause
+  \notaclave{En polares la flecha de barrido sale del origen hacia afuera: entra por $r_1(\theta)$ y sale por $r_2(\theta)$.}
+\end{frame}
+
+\begin{frame}{Integral sobre un disco --- planteamiento}
+  \polartracker{1}
+  \begin{block}{Problema}
+    Calcular $\displaystyle\iint_D (x^2+y^2)\,dA$, donde $D$ es el disco $x^2+y^2\le 1$.
+  \end{block}
+  \pause
+  \vspace{4pt}
+  En polares el disco unidad es simplemente
+  \[
+    D:\quad 0\le r\le 1,\qquad 0\le\theta\le 2\pi.
+  \]
+  \pause
+  \polartracker{2}
+  \[
+    x^2+y^2 = r^2.
+  \]
+\end{frame}
+
+\begin{frame}{Integral sobre un disco --- cálculo}
+  \polartracker{3}
+  \[
+    \iint_D (x^2+y^2)\,dA = \int_0^{2\pi}\!\!\int_0^1 r^2\cdot r\,dr\,d\theta
+    = \int_0^{2\pi}\!\!\int_0^1 r^3\,dr\,d\theta.
+  \]
+  \pause
+  \polartracker{4}
+  \[
+    = \int_0^{2\pi}\left[\frac{r^4}{4}\right]_0^1 d\theta
+    = \int_0^{2\pi}\frac14\,d\theta = \frac{2\pi}{4}
+    = \boxed{\frac{\pi}{2}}
+  \]
+  \pause
+  \begin{center}\small\color{gray60}
+  En rectangulares esta integral exigiría $\int_{-1}^{1}\int_{-\sqrt{1-x^2}}^{\sqrt{1-x^2}}(x^2+y^2)\,dy\,dx$: mucho más trabajo.
+  \end{center}
+\end{frame}
+
+\begin{frame}{Área de una cardioide --- planteamiento}
+  \polartracker{1}
+  \begin{columns}
+    \begin{column}{0.55\textwidth}
+      \begin{block}{Problema}
+        Calcular el área encerrada por la cardioide $r=1+\cos\theta$.
+      \end{block}
+      \pause
+      \vspace{4pt}
+      Con $f\equiv1$, el área es $\displaystyle\iint_D 1\,dA$. La región es
+      \[
+        D:\ 0\le\theta\le2\pi,\quad 0\le r\le 1+\cos\theta.
+      \]
+      \pause
+      \[
+        A = \int_0^{2\pi}\!\!\int_0^{1+\cos\theta} r\,dr\,d\theta.
+      \]
+    \end{column}
+    \begin{column}{0.42\textwidth}
+      \centering
+      \begin{tikzpicture}[scale=1.15]
+        \draw[thin,->] (-2.4,0)--(2.6,0) node[right,font=\small]{$x$};
+        \draw[thin,->] (0,-1.8)--(0,1.9) node[above,font=\small]{$y$};
+        \fill[tealx!25,domain=0:360,samples=180,smooth]
+          plot ({(1+cos(\x))*cos(\x)},{(1+cos(\x))*sin(\x)});
+        \draw[tealx,thick,domain=0:360,samples=180,smooth]
+          plot ({(1+cos(\x))*cos(\x)},{(1+cos(\x))*sin(\x)});
+        \draw[thin] (2,0.04)--(2,-0.04) node[below,font=\scriptsize]{$2$};
+      \end{tikzpicture}\\[2pt]
+      {\footnotesize\color{gray60} $r=1+\cos\theta$}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Área de una cardioide --- cálculo}
+  \polartracker{4}
+  \[
+    A = \int_0^{2\pi}\left[\frac{r^2}{2}\right]_0^{1+\cos\theta} d\theta
+      = \frac12\int_0^{2\pi}(1+\cos\theta)^2\,d\theta.
+  \]
+  \pause
+  Desarrollando con $\cos^2\theta=\frac{1+\cos2\theta}{2}$:
+  \[
+    (1+\cos\theta)^2 = 1+2\cos\theta+\cos^2\theta
+    = \frac32+2\cos\theta+\frac12\cos2\theta.
+  \]
+  \pause
+  \[
+    A = \frac12\left[\frac32\theta+2\sen\theta+\frac14\sen2\theta\right]_0^{2\pi}
+      = \frac12\cdot\frac32\cdot2\pi
+      = \boxed{\frac{3\pi}{2}}
+  \]
+\end{frame}
+
+% ======================================================
+% BLOQUE 4 --- APLICACIONES DE LA INTEGRAL DOBLE
+% ======================================================
+\bloqueframe{4}{Aplicaciones de la integral doble}{Volumen, masa, centro de masa, inercia y área de superficie}
+
+\begin{frame}{Una sola idea, seis lecturas}
+  \begin{center}
+  \renewcommand{\arraystretch}{1.5}
+  \small
+  \begin{tabular}{lll}
+    \toprule
+    \textbf{Se integra} & \textbf{Se obtiene} & \textbf{Fórmula}\\
+    \midrule
+    $f(x,y)\ge0$ & volumen bajo $z=f(x,y)$ & $V=\iint_D f\,dA$\\
+    $1$ & área de la región & $A=\iint_D dA$\\
+    $f$, entre el área & valor promedio de $f$ & $f_{\text{prom}}=\frac{1}{A(D)}\iint_D f\,dA$\\
+    $\rho(x,y)$ & masa de la lámina & $m=\iint_D \rho\,dA$\\
+    $x\rho$, $y\rho$ & momentos estáticos & $M_y=\iint_D x\rho\,dA$, $M_x=\iint_D y\rho\,dA$\\
+    $x^2\rho$, $y^2\rho$ & momentos de inercia & $I_y=\iint_D x^2\rho\,dA$, $I_x=\iint_D y^2\rho\,dA$\\
+    \bottomrule
+  \end{tabular}
+  \end{center}
+  \vspace{8pt}
+  \pause
+  \begin{center}
+  \normalsize\color{tealx} Cambia el integrando, no el método. Los pasos son siempre los mismos cuatro.
+  \end{center}
+\end{frame}
+
+\begin{frame}{Volumen bajo un paraboloide}
+  \begin{block}{Problema}
+    Calcular el volumen bajo $z=4-x^2-y^2$ sobre $D=[0,1]\times[0,1]$.
+  \end{block}
+  \pause
+  \[
+    V=\int_0^1\!\!\int_0^1 (4-x^2-y^2)\,dy\,dx.
+  \]
+  \pause
+  Interior en $y$:\quad
+  $\displaystyle\int_0^1 (4-x^2-y^2)\,dy = \left[4y-x^2y-\frac{y^3}{3}\right]_0^1 = \frac{11}{3}-x^2$.
+  \pause
+  \vspace{4pt}
+
+  Exterior en $x$:\quad
+  $\displaystyle V=\int_0^1\left(\frac{11}{3}-x^2\right)dx = \frac{11}{3}-\frac13
+  = \boxed{\frac{10}{3}}$
+\end{frame}
+
+\begin{frame}{Valor promedio de una función}
+  \begin{block}{Definición}
+    El \textbf{valor promedio} de $f$ sobre una región $D$ de área $A(D)>0$ es
+    $\displaystyle f_{\text{prom}}=\frac{1}{A(D)}\iint_D f(x,y)\,dA$.
+  \end{block}
+  \pause
+  \textbf{Problema.} Una placa triangular de vértices $(0,0)$, $(2,0)$ y $(0,2)$ tiene temperatura $T(x,y)=40+30xy$ en $^\circ$C. Halle la temperatura media de la placa.
+  \pause
+  \[
+    A(D)=2,
+    \qquad
+    \iint_D 30xy\,dA=30\int_0^2\!\!\int_0^{2-x}\!\! xy\ dy\,dx
+    =30\int_0^2\frac{x(2-x)^2}{2}\,dx=30\cdot\frac23=20.
+  \]
+  \pause
+  \[
+    T_{\text{prom}}=\frac{40\cdot2+20}{2}=\boxed{50\ ^\circ\mathrm C}
+  \]
+  \pause
+  \begin{center}\small\color{gray60} Comprobación: sobre $D$ la temperatura va de $40^\circ$ a $70^\circ$; el promedio cae justo en medio. \checkmark\end{center}
+\end{frame}
+
+\begin{frame}{Masa y centro de masa de una lámina}
+  Lámina que ocupa $D$ con densidad superficial $\rho(x,y)$:
+  \begin{block}{Masa y momentos}
+    \[
+      m=\iint_D \rho\,dA,\qquad
+      M_x=\iint_D y\,\rho\,dA,\qquad
+      M_y=\iint_D x\,\rho\,dA.
+    \]
+  \end{block}
+  \pause
+  \begin{block}{Centro de masa}
+    \[
+      \bar x = \frac{M_y}{m},\qquad \bar y = \frac{M_x}{m}.
+    \]
+  \end{block}
+  \pause
+  \alerta{Cuidado con el cruce de subíndices: $\bar x$ se obtiene de $M_y$, y $\bar y$ de $M_x$. El momento $M_y$ mide el giro alrededor del eje $y$, y por eso lleva el factor $x$.}
+\end{frame}
+
+\begin{frame}{Centro de masa --- ejemplo}
+  \begin{block}{Problema}
+    Lámina sobre $[0,4]\times[0,3]$ con densidad $\rho(x,y)=y+1$. Hallar el centro de masa.
+  \end{block}
+  \pause
+  \textbf{Masa.}
+  \[
+    m=\int_0^4\!\!\int_0^3 (y+1)\,dy\,dx
+     =\int_0^4\left[\frac{y^2}{2}+y\right]_0^3 dx
+     =\int_0^4 \frac{15}{2}\,dx = 30.
+  \]
+  \pause
+  \textbf{Momentos.}
+  \[
+    M_x=\int_0^4\!\!\int_0^3 y(y+1)\,dy\,dx=\int_0^4\frac{27}{2}\,dx=54,
+    \qquad
+    M_y=\int_0^4 x\cdot\frac{15}{2}\,dx = 60.
+  \]
+  \pause
+  \[
+    (\bar x,\bar y)=\left(\frac{60}{30},\frac{54}{30}\right)
+    = \boxed{\left(2,\tfrac95\right)}
+  \]
+\end{frame}
+
+\begin{frame}{Interpretación del resultado}
+  \begin{itemize}
+    \item $\bar x = 2$ es el punto medio de $[0,4]$: correcto, porque $\rho=y+1$ \textbf{no depende de $x$}, así que en la dirección $x$ la lámina es homogénea.
+    \pause
+    \item $\bar y = 9/5 > 3/2$: el centro de masa está \textbf{por encima} del centro geométrico, porque la densidad crece con $y$.
+  \end{itemize}
+  \vspace{10pt}
+  \pause
+  \notaclave{Siempre conviene predecir el signo o la posición del resultado antes de integrar: es la forma más rápida de detectar un error de cuentas.}
+\end{frame}
+
+\begin{frame}{Momentos de inercia}
+  \begin{block}{Definiciones}
+    \[
+      I_x=\iint_D y^2\rho(x,y)\,dA,\qquad
+      I_y=\iint_D x^2\rho(x,y)\,dA,
+    \]
+    \[
+      I_0=\iint_D (x^2+y^2)\rho(x,y)\,dA = I_x+I_y.
+    \]
+  \end{block}
+  \pause
+  \vspace{4pt}
+  \begin{center}
+  \small\color{gray60}
+  $I_x$ mide la resistencia a girar alrededor del eje $x$, e $I_0$ (momento polar) alrededor del origen.\\
+  La distancia al eje entra \textbf{al cuadrado}: la masa lejana pesa mucho más.
+  \end{center}
+\end{frame}
+
+\begin{frame}{Momentos de inercia --- ejemplo}
+  \begin{block}{Problema}
+    Lámina $D=[0,2]\times[0,1]$ con $\rho(x,y)=x+y$. Hallar $I_x$, $I_y$, $I_0$.
+  \end{block}
+  \pause
+  \[
+    I_x=\int_0^2\!\!\int_0^1 y^2(x+y)\,dy\,dx
+    =\int_0^2\left(\frac{x}{3}+\frac14\right)dx
+    =\frac23+\frac12 = \frac76.
+  \]
+  \pause
+  \[
+    I_y=\int_0^2\!\!\int_0^1 x^2(x+y)\,dy\,dx
+    =\int_0^2\left(x^3+\frac{x^2}{2}\right)dx
+    = 4+\frac43 = \frac{16}{3}.
+  \]
+  \pause
+  \[
+    \boxed{I_x=\tfrac76,\quad I_y=\tfrac{16}{3},\quad I_0=I_x+I_y=\tfrac{13}{2}}
+  \]
+\end{frame}
+
+\begin{frame}{Área de una superficie}
+  Si $S$ es la gráfica de $z=f(x,y)$ sobre una región $D$, con $f_x,f_y$ continuas:
+  \begin{block}{Fórmula}
+    \[
+      A(S)=\iint_D \sqrt{1+f_x^2+f_y^2}\ dA.
+    \]
+  \end{block}
+  \pause
+  \begin{itemize}
+    \item La idea: sobre cada $\Delta A_i$ de $D$, el parche de plano tangente tiene área $\sqrt{1+f_x^2+f_y^2}\,\Delta A_i$.
+    \pause
+    \item El factor $\sqrt{1+f_x^2+f_y^2}\ge1$ es el \textbf{estiramiento} de la superficie respecto a su sombra en el plano.
+    \pause
+    \item Si $f$ es constante, el factor vale $1$ y se recupera $A(S)=$ área de $D$. \checkmark
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Área de un paraboloide --- planteamiento}
+  \begin{block}{Problema}
+    Calcular el área de $z=x^2+y^2$ sobre el disco $x^2+y^2\le1$.
+  \end{block}
+  \pause
+  Derivadas parciales: $f_x=2x$, $f_y=2y$, luego
+  \[
+    A(S)=\iint_D \sqrt{1+4x^2+4y^2}\ dA.
+  \]
+  \pause
+  \vspace{4pt}
+  \begin{center}
+  \normalsize\color{tealx} Aparece $x^2+y^2$ y la región es un disco: \textbf{polares}.
+  \end{center}
+  \pause
+  \[
+    A(S)=\int_0^{2\pi}\!\!\int_0^1 \sqrt{1+4r^2}\ r\,dr\,d\theta.
+  \]
+\end{frame}
+
+\begin{frame}{Área de un paraboloide --- cálculo}
+  Sustitución $u=1+4r^2$, $du=8r\,dr$, es decir $r\,dr = du/8$. Límites: $r=0\Rightarrow u=1$, $r=1\Rightarrow u=5$.
+  \pause
+  \[
+    \int_0^1 \sqrt{1+4r^2}\ r\,dr
+    = \frac18\int_1^5 u^{1/2}\,du
+    = \frac18\left[\frac23 u^{3/2}\right]_1^5
+    = \frac{1}{12}\bigl(5\sqrt5-1\bigr).
+  \]
+  \pause
+  Multiplicando por $\int_0^{2\pi}d\theta=2\pi$:
+  \[
+    \boxed{A(S)=\frac{\pi}{6}\bigl(5\sqrt5-1\bigr)}
+  \]
+  \pause
+  \vspace{4pt}
+  \begin{center}\small\color{gray60}
+  Comprobación de magnitud: $\frac{\pi}{6}(5\sqrt5-1)\approx 5{,}33$, mayor que el área del disco $\pi\approx3{,}14$. \checkmark
+  \end{center}
+\end{frame}
+
+\begin{frame}{Una lectura no geométrica: probabilidad}
+  \begin{block}{Densidad conjunta}
+    $f(x,y)$ es una \textbf{función de densidad conjunta} de $(X,Y)$ si $f\ge0$ y $\iint_{\mathbb R^2}f\,dA=1$; entonces
+    \[
+      P\bigl((X,Y)\in D\bigr)=\iint_D f(x,y)\,dA.
+    \]
+  \end{block}
+  \pause
+  \textbf{Problema.} Dos componentes independientes tienen vidas útiles $X$, $Y$ (en años) con densidad $f(x,y)=e^{-x-y}$ si $x\ge0$, $y\ge0$, y $f=0$ en el resto.
+  \pause
+  \[
+    \iint_{\mathbb R^2}f\,dA=\int_0^\infty\!\! e^{-x}dx\int_0^\infty\!\! e^{-y}dy=1\cdot1=1\quad\checkmark
+  \]
+  \pause
+  \begin{center}\normalsize\color{tealx} \textquestiondown{}Qué probabilidad hay de que las dos vidas sumadas no lleguen a un año?\end{center}
+\end{frame}
+
+\begin{frame}{Probabilidad --- todo está en la región}
+  La condición $X+Y\le1$ define el triángulo $D:\ x\ge0$, $y\ge0$, $x+y\le1$. Descrito como tipo I:
+  \[
+    P(X+Y\le1)=\int_0^1\!\!\int_0^{1-x} e^{-x}e^{-y}\ dy\,dx.
+  \]
+  \pause
+  \[
+    \int_0^{1-x}\!\! e^{-y}dy = 1-e^{-(1-x)} = 1-e^{x-1}
+    \quad\Longrightarrow\quad
+    P=\int_0^1 e^{-x}\left(1-e^{x-1}\right)dx.
+  \]
+  \pause
+  El producto $e^{-x}e^{x-1}$ es la constante $e^{-1}$, así que
+  \[
+    P=\int_0^1\left(e^{-x}-e^{-1}\right)dx
+     =\bigl[-e^{-x}\bigr]_0^1-e^{-1}
+     =\left(1-e^{-1}\right)-e^{-1}.
+  \]
+  \pause
+  \[
+    \boxed{P(X+Y\le1)=1-\frac{2}{e}\approx 0.264}
+  \]
+\end{frame}
+
+% ======================================================
+% BLOQUE 5 --- INTEGRALES TRIPLES
+% ======================================================
+\bloqueframe{5}{Integrales triples}{Coordenadas rectangulares: el arte de poner seis límites}
+
+\begin{frame}{De dos a tres variables}
+  \begin{itemize}
+    \item Ahora $D$ es un \textbf{sólido} en $\mathbb R^3$ y se parte en cajas de volumen $\Delta V_k$.
+    \pause
+    \item Suma de Riemann: $\displaystyle\sum_k f(x_k^*,y_k^*,z_k^*)\,\Delta V_k$; su límite es
+    \[
+      \iiint_D f(x,y,z)\,dV.
+    \]
+    \pause
+    \item Dos lecturas inmediatas:
+    \begin{itemize}
+      \item si $f\equiv1$, la integral da el \textbf{volumen} del sólido;
+      \item si $f=\rho$ es una densidad, da la \textbf{masa}.
+    \end{itemize}
+  \end{itemize}
+  \vspace{8pt}
+  \pause
+  \begin{center}\small\color{gray60}
+  Ya no hay interpretación de ``volumen bajo la gráfica'': la gráfica de $f(x,y,z)$ vive en $\mathbb R^4$.
+  \end{center}
+\end{frame}
+
+\begin{frame}{Fubini en tres dimensiones}
+  \begin{block}{Teorema}
+    Si $f$ es continua en el sólido $D$, la integral triple se calcula como integral iterada en cualquiera de los \textbf{seis} órdenes posibles. Por ejemplo, proyectando sobre el plano $xy$:
+    \[
+      \iiint_D f\,dV
+      = \int_a^b\!\!\int_{g_1(x)}^{g_2(x)}\!\!\int_{z_1(x,y)}^{z_2(x,y)} f(x,y,z)\,dz\,dy\,dx.
+    \]
+  \end{block}
+  \pause
+  \begin{itemize}
+    \item Los dos límites \textbf{interiores} pueden depender de $x$ e $y$ (son superficies).
+    \pause
+    \item Los dos \textbf{intermedios} pueden depender solo de $x$ (son curvas en el plano).
+    \pause
+    \item Los dos \textbf{exteriores} son siempre números.
+  \end{itemize}
+  \pause
+  \notaclave{Regla de oro: cada límite solo puede contener variables que se integren \emph{después} que él.}
+\end{frame}
+
+\begin{frame}{Protocolo: del sólido a los seis límites}
+  \begin{enumerate}
+    \setlength{\itemsep}{4pt}
+    \item \textbf{Identificar el sólido $D$}: qué superficies lo limitan. Dibujar un esquema.
+    \item \textbf{Elegir el orden} (por ejemplo $dz\,dy\,dx$).
+    \item \textbf{Proyectar} sobre el plano de las dos variables exteriores; se obtiene una región plana $R$.
+    \item \textbf{Límites de la variable interior}: para cada $(x,y)\in R$, $z$ va de la superficie \emph{inferior} $z_1(x,y)$ a la \emph{superior} $z_2(x,y)$.
+    \item \textbf{Límites intermedios y exteriores}: describir $R$ como región tipo I o tipo II, exactamente como en el bloque 2.
+    \item \textbf{Integrar} de dentro hacia afuera.
+  \end{enumerate}
+  \vspace{6pt}
+  \pause
+  \begin{center}
+  \normalsize\color{tealx} Los pasos 5 y 6 son el problema de integral doble que ya sabemos resolver.
+  \end{center}
+\end{frame}
+
+\begin{frame}{Tetraedro --- planteamiento}
+  \tripletracker{1}
+  \begin{columns}
+    \begin{column}{0.55\textwidth}
+      \begin{block}{Problema}
+        Calcular el volumen del sólido limitado por los planos coordenados y el plano $x+y+z=1$.
+      \end{block}
+      \pause
+      \vspace{4pt}
+      Es el tetraedro de vértices $(0,0,0)$, $(1,0,0)$, $(0,1,0)$, $(0,0,1)$.
+      \pause
+      \\[6pt]
+      \tripletracker{2}
+      Proyección sobre $xy$: el triángulo
+      \[
+        R:\ x\ge0,\ y\ge0,\ x+y\le1.
+      \]
+    \end{column}
+    \begin{column}{0.42\textwidth}
+      \centering
+      \begin{tikzpicture}[scale=1.5]
+        \draw[-Stealth,thin,gray60] (0,0)--(1.6,0) node[right,font=\small]{$x$};
+        \draw[-Stealth,thin,gray60] (0,0)--(0,1.6) node[above,font=\small]{$z$};
+        \draw[-Stealth,thin,gray60] (0,0)--(-0.85,-0.85) node[below left,font=\small]{$y$};
+        \fill[tealx!25,opacity=0.85] (1.2,0)--(0,1.2)--(-0.72,-0.72)--cycle;
+        \fill[navy!12,opacity=0.7] (0,0)--(1.2,0)--(-0.72,-0.72)--cycle;
+        \draw[navy,thick] (1.2,0)--(0,1.2)--(-0.72,-0.72)--cycle;
+        \draw[gray60,thick] (0,0)--(1.2,0);
+        \draw[gray60,thick] (0,0)--(0,1.2);
+        \draw[gray60,thick] (0,0)--(-0.72,-0.72);
+        \node[font=\scriptsize,navy] at (0.55,0.6) {$x+y+z=1$};
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Tetraedro --- límites e integración}
+  \tripletracker{3}
+  \begin{itemize}
+    \item $z$ va de $0$ (plano $z=0$) a $1-x-y$ (plano inclinado).
+    \item En $R$: para cada $x$, $y$ va de $0$ a $1-x$.
+    \item Y $x$ va de $0$ a $1$.
+  \end{itemize}
+  \pause
+  \[
+    V=\int_0^1\!\!\int_0^{1-x}\!\!\int_0^{1-x-y} dz\,dy\,dx.
+  \]
+  \pause
+  \tripletracker{4}
+  \[
+    \int_0^{1-x-y}dz = 1-x-y,
+    \qquad
+    \int_0^{1-x}(1-x-y)\,dy = \left[(1-x)y-\frac{y^2}{2}\right]_0^{1-x} = \frac{(1-x)^2}{2}.
+  \]
+  \pause
+  \[
+    V=\int_0^1\frac{(1-x)^2}{2}\,dx = \frac12\left[-\frac{(1-x)^3}{3}\right]_0^1
+    = \boxed{\frac16}
+  \]
+\end{frame}
+
+\begin{frame}{Tetraedro --- comprobación}
+  \begin{center}
+  \normalsize
+  El volumen de un tetraedro con tres aristas perpendiculares de longitudes $a$, $b$, $c$ es
+  \[
+    V = \frac{abc}{6}.
+  \]
+  \end{center}
+  \pause
+  \vspace{6pt}
+  \begin{center}
+  Aquí $a=b=c=1$, luego $V=\dfrac16$. \quad\checkmark
+  \end{center}
+  \pause
+  \vspace{10pt}
+  \begin{center}\small\color{gray60}
+  Siempre que exista una fórmula geométrica conocida, úsala para verificar el montaje de los límites.
+  \end{center}
+\end{frame}
+
+\begin{frame}{Una función sobre el mismo tetraedro}
+  \begin{block}{Problema}
+    Calcular $\displaystyle\iiint_D (x+y)\,dV$ sobre el tetraedro anterior.
+  \end{block}
+  \pause
+  Mismos límites; solo cambia el integrando:
+  $\displaystyle I=\int_0^1\!\!\int_0^{1-x}\!\!\int_0^{1-x-y} (x+y)\,dz\,dy\,dx$.
+  \pause
+  \vspace{4pt}
+
+  Interior en $z$:\quad $\displaystyle\int_0^{1-x-y}(x+y)\,dz = (x+y)(1-x-y)$.
+  \pause
+  \vspace{4pt}
+
+  Con la sustitución $u=x+y$ (para $x$ fijo, $du=dy$; $y=0\Rightarrow u=x$, $y=1-x\Rightarrow u=1$):
+  \[
+    \int_0^{1-x}(x+y)(1-x-y)\,dy = \int_x^1 u(1-u)\,du
+    = \left[\frac{u^2}{2}-\frac{u^3}{3}\right]_x^1
+    = \frac16-\frac{x^2}{2}+\frac{x^3}{3}.
+  \]
+\end{frame}
+
+\begin{frame}{Una función sobre el mismo tetraedro --- resultado}
+  \[
+    I=\int_0^1\left(\frac16-\frac{x^2}{2}+\frac{x^3}{3}\right)dx
+    = \left[\frac{x}{6}-\frac{x^3}{6}+\frac{x^4}{12}\right]_0^1.
+  \]
+  \pause
+  \[
+    = \frac16-\frac16+\frac{1}{12}.
+  \]
+  \pause
+  \[
+    \boxed{\iiint_D (x+y)\,dV = \frac{1}{12}}
+  \]
+  \pause
+  \vspace{6pt}
+  \begin{center}\small\color{gray60}
+  Coherente: el valor medio de $x+y$ sobre el tetraedro es $\frac{1/12}{1/6}=\frac12$, un número razonable para un sólido contenido en $x+y\le1$.
+  \end{center}
+\end{frame}
+
+\begin{frame}{Cambio de orden en tres variables}
+  \begin{block}{Problema}
+    Reescribir $\displaystyle I=\int_0^1\!\!\int_0^x\!\!\int_0^{x+y} f(x,y,z)\,dz\,dy\,dx$ en el orden $dz\,dx\,dy$.
+  \end{block}
+  \pause
+  \textbf{Paso 1. Leer el sólido.}
+  \[
+    D=\{(x,y,z):\ 0\le x\le1,\ \ 0\le y\le x,\ \ 0\le z\le x+y\}.
+  \]
+  \pause
+  \textbf{Paso 2. Nueva variable exterior $y$.} De $0\le y\le x\le1$ se deduce $0\le y\le 1$.
+  \pause
+
+  \textbf{Paso 3. Variable intermedia $x$.} Para $y$ fijo, la condición $y\le x\le1$ da $y\le x\le 1$.
+  \pause
+
+  \textbf{Paso 4. La interior no cambia:} $0\le z\le x+y$.
+  \pause
+  \[
+    \boxed{I=\int_0^1\!\!\int_y^1\!\!\int_0^{x+y} f(x,y,z)\,dz\,dx\,dy}
+  \]
+\end{frame}
+
+\begin{frame}{Masa y centro de masa en el espacio}
+  \begin{block}{Masa}
+    Sólido $D$ con densidad volumétrica $\rho(x,y,z)$:\quad
+    $\displaystyle m=\iiint_D \rho\,dV$.
+  \end{block}
+  \pause
+  \begin{block}{Centro de masa}
+    {\small\[
+      \bar x=\frac1m\iiint_D x\,\rho\,dV,\quad
+      \bar y=\frac1m\iiint_D y\,\rho\,dV,\quad
+      \bar z=\frac1m\iiint_D z\,\rho\,dV.
+    \]}
+  \end{block}
+  \pause
+  \begin{block}{Momentos de inercia}
+    {\small\[
+      I_x=\iiint_D (y^2+z^2)\rho\,dV,\quad
+      I_y=\iiint_D (x^2+z^2)\rho\,dV,\quad
+      I_z=\iiint_D (x^2+y^2)\rho\,dV.
+    \]}
+    {\small\color{gray60} En 3D el integrando de $I_z$ es la distancia \emph{al eje $z$} al cuadrado: $x^2+y^2$.}
+  \end{block}
+\end{frame}
+
+% ======================================================
+% BLOQUE 6 --- CILÍNDRICAS Y ESFÉRICAS
+% ======================================================
+\bloqueframe{6}{Cilíndricas y esféricas}{Los dos sistemas que resuelven casi todo sólido con simetría}
+
+\begin{frame}{Coordenadas cilíndricas}
+  \begin{columns}
+    \begin{column}{0.52\textwidth}
+      \begin{block}{Definición}
+        \[
+          x=r\cos\theta,\quad y=r\sen\theta,\quad z=z,
+        \]
+        con $r\ge0$ y $\theta\in[0,2\pi)$.
+      \end{block}
+      \pause
+      \vspace{4pt}
+      Son las polares del plano $xy$, dejando $z$ intacta.
+      \pause
+      \begin{block}{Elemento de volumen}
+        \centering $dV = r\,dz\,dr\,d\theta$.
+      \end{block}
+    \end{column}
+    \begin{column}{0.44\textwidth}
+      \centering
+      \begin{tikzpicture}[scale=1.25]
+        \draw[-Stealth,thin,gray60] (0,0)--(1.9,0) node[right,font=\small]{$r$};
+        \draw[-Stealth,thin,gray60] (0,0)--(0,2.2) node[above,font=\small]{$z$};
+        \draw[gray60,thin,dashed] (1.2,0)--(1.2,1.9);
+        \fill[tealx!30] (1.0,0.9) rectangle (1.35,1.25);
+        \draw[tealx,thick] (1.0,0.9) rectangle (1.35,1.25);
+        \draw[navy,thick,-Stealth] (0,0)--(1.2,1.5);
+        \draw[dashed,gray60] (1.2,1.5)--(1.2,0);
+        \draw[dashed,gray60] (0,1.5)--(1.2,1.5);
+        \node[font=\scriptsize,tealx] at (1.75,1.1) {$dV=$};
+        \node[font=\scriptsize,tealx] at (1.75,0.82) {$r\,dz\,dr\,d\theta$};
+      \end{tikzpicture}\\[2pt]
+      {\footnotesize\color{gray60} el factor $r$ es el mismo de las polares}
+    \end{column}
+  \end{columns}
+  \pause
+  \begin{center}\small\color{gray60}
+  \textbf{Cuándo usarlas:} la proyección sobre $xy$ es circular o anular; aparecen cilindros, conos o paraboloides de revolución.
+  \end{center}
+\end{frame}
+
+\begin{frame}{El jacobiano cilíndrico, explícito}
+  \[
+    \frac{\partial(x,y,z)}{\partial(r,\theta,z)}
+    = \det\begin{pmatrix}
+        \cos\theta & -r\sen\theta & 0\\
+        \sen\theta & \ \ r\cos\theta & 0\\
+        0 & 0 & 1
+      \end{pmatrix}.
+  \]
+  \pause
+  Desarrollando por la tercera fila:
+  \[
+    = 1\cdot\bigl(r\cos^2\theta + r\sen^2\theta\bigr) = r.
+  \]
+  \pause
+  \begin{block}{Integral triple en cilíndricas}
+    \[
+      \iiint_D f\,dV
+      = \int_\alpha^\beta\!\!\int_{r_1(\theta)}^{r_2(\theta)}\!\!\int_{z_1(r,\theta)}^{z_2(r,\theta)}
+        f(r\cos\theta,\,r\sen\theta,\,z)\ r\,dz\,dr\,d\theta.
+    \]
+  \end{block}
+\end{frame}
+
+\begin{frame}{Sólido con simetría cilíndrica --- planteamiento}
+  \curvitracker{1}
+  \begin{columns}
+    \begin{column}{0.55\textwidth}
+      \begin{block}{Problema}
+        Calcular el volumen del sólido acotado arriba por $z=4-x^2-y^2$, abajo por $z=0$, dentro del cilindro $x^2+y^2=4$.
+      \end{block}
+      \pause
+      \curvitracker{2}
+      \begin{itemize}
+        \item Cilindro $x^2+y^2=4 \Rightarrow r=2$.
+        \item Paraboloide $z=4-x^2-y^2 \Rightarrow z=4-r^2$.
+        \item Para $r\in[0,2]$ se cumple $4-r^2\ge0$.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.42\textwidth}
+      \centering
+      \begin{tikzpicture}[scale=0.92]
+        \draw[-Stealth,thin,gray60] (-2.6,0)--(2.8,0) node[right,font=\small]{$r$};
+        \draw[-Stealth,thin,gray60] (0,-0.4)--(0,4.6) node[above,font=\small]{$z$};
+        \fill[tealx!25,domain=-2:2,samples=60,smooth] plot (\x,{4-\x*\x}) -- (2,0) -- (-2,0) -- cycle;
+        \draw[navy,thick,domain=-2.15:2.15,samples=60,smooth] plot (\x,{4-\x*\x});
+        \draw[brick,thick] (-2,0)--(-2,4.4);
+        \draw[brick,thick] (2,0)--(2,4.4);
+        \node[font=\scriptsize,navy] at (1.35,3.3) {$z=4-r^2$};
+        \node[font=\scriptsize,brick] at (2.45,2.2) {$r=2$};
+        \draw[thin] (2,0.08)--(2,-0.08) node[below,font=\scriptsize]{$2$};
+        \draw[thin] (0.08,4)--(-0.08,4) node[left,font=\scriptsize]{$4$};
+      \end{tikzpicture}\\[2pt]
+      {\footnotesize\color{gray60} corte con un plano que contiene al eje $z$}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Sólido con simetría cilíndrica --- cálculo}
+  \curvitracker{3}
+  \[
+    V=\int_0^{2\pi}\!\!\int_0^{2}\!\!\int_0^{4-r^2} r\,dz\,dr\,d\theta.
+  \]
+  \pause
+  \curvitracker{4}
+  Interior en $z$ (el factor $r$ es constante respecto a $z$):\quad
+  $\displaystyle\int_0^{4-r^2} r\,dz = r(4-r^2)$.
+  \pause
+  \vspace{4pt}
+
+  Las tres integrales se separan porque nada depende de $\theta$:
+  \[
+    V = 2\pi\int_0^2 (4r-r^3)\,dr
+      = 2\pi\left[2r^2-\frac{r^4}{4}\right]_0^2
+      = 2\pi(8-4) = \boxed{8\pi}
+  \]
+  \pause
+  \begin{center}\small\color{gray60} Comprobación: es la mitad del cilindro circunscrito, de volumen $\pi\cdot2^2\cdot4=16\pi$. \checkmark\end{center}
+\end{frame}
+
+\begin{frame}{Masa con densidad radial --- planteamiento}
+  \curvitracker{1}
+  \begin{block}{Problema}
+    Un rodillo cilíndrico de radio $2\ \mathrm m$ y altura $5\ \mathrm m$ se fabricó con un material cuya densidad crece con la distancia al eje: $\rho(x,y,z)=300\sqrt{x^2+y^2}$ en $\mathrm{kg/m^3}$. Halle su masa.
+  \end{block}
+  \pause
+  \curvitracker{2}
+  La simetría es axial y la densidad depende solo de la distancia al eje: cilíndricas.
+  \[
+    \Omega:\quad 0\le\theta\le2\pi,\qquad 0\le r\le2,\qquad 0\le z\le5,
+    \qquad \rho=300\,r.
+  \]
+  \pause
+  \curvitracker{3}
+  Con $dV=r\,dz\,dr\,d\theta$ aparecen \textbf{dos} factores $r$: uno de la densidad y otro del jacobiano.
+  \[
+    m=\int_0^{2\pi}\!\!\int_0^2\!\!\int_0^5 300\,r\cdot r\ dz\,dr\,d\theta.
+  \]
+\end{frame}
+
+\begin{frame}{Masa con densidad radial --- cálculo}
+  \curvitracker{4}
+  Los tres factores se separan:
+  \[
+    m=300\underbrace{\int_0^{2\pi}\!\!d\theta}_{2\pi}\cdot
+      \underbrace{\int_0^2 r^2dr}_{8/3}\cdot
+      \underbrace{\int_0^5 dz}_{5}
+     =300\cdot2\pi\cdot\frac83\cdot5.
+  \]
+  \pause
+  \[
+    \boxed{m=8000\pi\ \mathrm{kg}\approx 25\,133\ \mathrm{kg}}
+  \]
+  \pause
+  \textbf{Contraste.} Si el rodillo fuera uniforme con la densidad del borde, $600\ \mathrm{kg/m^3}$, su masa sería $600\cdot\pi\cdot2^2\cdot5=12\,000\pi\ \mathrm{kg}$.
+  \pause
+  \begin{center}\small\color{gray60} La masa real es $\tfrac23$ de esa: hay poco material cerca del eje. \checkmark\end{center}
+\end{frame}
+
+\begin{frame}{Coordenadas esféricas}
+  \begin{columns}
+    \begin{column}{0.52\textwidth}
+      \begin{block}{Definición}
+        \[
+          \begin{aligned}
+            x&=\rho\sen\varphi\cos\theta,\\
+            y&=\rho\sen\varphi\sen\theta,\\
+            z&=\rho\cos\varphi,
+          \end{aligned}
+        \]
+        con $\rho\ge0$, $\varphi\in[0,\pi]$, $\theta\in[0,2\pi)$.
+      \end{block}
+      \pause
+      \begin{itemize}\small
+        \item $\rho=\sqrt{x^2+y^2+z^2}$ es la distancia al origen.
+        \item $\varphi$ es el ángulo \textbf{desde el eje $z$} (no desde el plano $xy$).
+        \item $\theta$ es el mismo azimut de las cilíndricas.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.44\textwidth}
+      \centering
+      \begin{tikzpicture}[scale=0.95]
+        \draw[-Stealth,thin,gray60] (0,0)--(1.7,0) node[right,font=\small]{$x,y$};
+        \draw[-Stealth,thin,gray60] (0,0)--(0,1.8) node[above,font=\small]{$z$};
+        \draw[gray60,thin] (1.3,0) arc(0:90:1.3);
+        \draw[navy,thick,-Stealth] (0,0)--(0.92,0.92);
+        \node[font=\scriptsize,navy] at (0.35,0.62) {$\rho$};
+        \draw[thin] (0,0.42) arc(90:45:0.42);
+        \node[font=\scriptsize] at (0.22,0.30) {$\varphi$};
+        \draw[dashed,gray60] (0.92,0.92)--(0.92,0);
+        \draw[dashed,gray60] (0,0.92)--(0.92,0.92);
+      \end{tikzpicture}\\[2pt]
+      {\footnotesize\color{gray60} $\varphi$ se mide desde el semieje $z$ positivo}
+    \end{column}
+  \end{columns}
+  \pause
+  \begin{block}{Elemento de volumen}
+    \centering $dV=\rho^2\sen\varphi\ d\rho\,d\varphi\,d\theta$.
+  \end{block}
+\end{frame}
+
+\begin{frame}{Traducciones útiles a esféricas}
+  \begin{center}
+  \renewcommand{\arraystretch}{1.5}
+  \small
+  \begin{tabular}{ll}
+    \toprule
+    \textbf{En rectangulares} & \textbf{En esféricas}\\
+    \midrule
+    $x^2+y^2+z^2=a^2$ (esfera) & $\rho=a$\\
+    $z=\sqrt{x^2+y^2}$ (cono a $45^\circ$) & $\varphi=\pi/4$\\
+    $z^2\ge x^2+y^2$, $z\ge0$ (interior del cono) & $0\le\varphi\le\pi/4$\\
+    $z=0$ (plano $xy$) & $\varphi=\pi/2$\\
+    $z\ge0$ (semiespacio superior) & $0\le\varphi\le\pi/2$\\
+    $x^2+y^2$ & $\rho^2\sen^2\varphi$\\
+    \bottomrule
+  \end{tabular}
+  \end{center}
+  \vspace{8pt}
+  \pause
+  \begin{center}
+  \normalsize\color{tealx} \textbf{Cuándo usarlas:} esferas, bolas, conos, o cualquier región descrita por distancias al origen.
+  \end{center}
+\end{frame}
+
+\begin{frame}{Volumen de una bola}
+  \begin{block}{Problema}
+    Verificar que el volumen de $x^2+y^2+z^2\le a^2$ es $\dfrac43\pi a^3$.
+  \end{block}
+  \pause
+  La bola completa es $0\le\rho\le a$, $0\le\varphi\le\pi$, $0\le\theta\le2\pi$: \textbf{los seis límites son constantes}.
+  \pause
+  \[
+    V=\int_0^{2\pi}\!\!\int_0^{\pi}\!\!\int_0^{a}\rho^2\sen\varphi\ d\rho\,d\varphi\,d\theta.
+  \]
+  \pause
+  Al ser constantes los límites y factorizarse el integrando, las tres integrales se separan:
+  \[
+    V=\underbrace{\int_0^{2\pi}\!\!d\theta}_{2\pi}\cdot
+      \underbrace{\int_0^{\pi}\!\!\sen\varphi\,d\varphi}_{2}\cdot
+      \underbrace{\int_0^{a}\!\!\rho^2\,d\rho}_{a^3/3}
+    = \boxed{\frac{4\pi a^3}{3}}
+  \]
+\end{frame}
+
+\begin{frame}{Cono y esfera --- planteamiento}
+  \curvitracker{1}
+  \begin{columns}
+    \begin{column}{0.56\textwidth}
+      \begin{block}{Problema}
+        Calcular $\displaystyle\iiint_\Omega 5z\,dV$, donde
+        \[
+          \Omega=\{x^2+y^2+z^2\le4,\ z\ge0,\ z^2\ge x^2+y^2\}.
+        \]
+      \end{block}
+      \pause
+      \begin{itemize}
+        \item La esfera da $\rho\le2$.
+        \item $z\ge\sqrt{x^2+y^2}$ equivale a $\cos\varphi\ge\sen\varphi$, es decir $\varphi\le\pi/4$.
+        \item Sin restricción en $\theta$: $0\le\theta\le2\pi$.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.40\textwidth}
+      \centering
+      \begin{tikzpicture}[scale=1.0]
+        \draw[-Stealth,thin,gray60] (-2.6,0)--(2.8,0) node[right,font=\small]{$x,y$};
+        \draw[-Stealth,thin,gray60] (0,-0.4)--(0,2.9) node[above,font=\small]{$z$};
+        \fill[tealx!25] (0,0) -- (1.414,1.414) arc(45:135:2) -- cycle;
+        \draw[navy,thick] (2,0) arc(0:180:2);
+        \draw[brick,thick] (0,0)--(1.9,1.9);
+        \draw[brick,thick] (0,0)--(-1.9,1.9);
+        \node[font=\scriptsize,navy] at (1.75,1.75) {$\rho=2$};
+        \node[font=\scriptsize,brick] at (0.95,0.35) {$\varphi=\pi/4$};
+      \end{tikzpicture}\\[2pt]
+      {\footnotesize\color{gray60} ``cucurucho'' de helado}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Cono y esfera --- cálculo}
+  \curvitracker{3}
+  Con $z=\rho\cos\varphi$ y $dV=\rho^2\sen\varphi\,d\rho\,d\varphi\,d\theta$:
+  \[
+    \iiint_\Omega 5z\,dV
+    = 5\int_0^{2\pi}\!\!\int_0^{\pi/4}\!\!\int_0^{2}
+      \rho^3\cos\varphi\sen\varphi\ d\rho\,d\varphi\,d\theta.
+  \]
+  \pause
+  \curvitracker{4}
+  De nuevo los tres factores se separan:
+  \[
+    = 5\underbrace{\int_0^{2\pi}\!\!d\theta}_{2\pi}\cdot
+      \underbrace{\int_0^{\pi/4}\!\!\cos\varphi\sen\varphi\,d\varphi}_{\left[\frac{\sen^2\varphi}{2}\right]_0^{\pi/4}=\frac14}\cdot
+      \underbrace{\int_0^{2}\!\!\rho^3\,d\rho}_{4}
+    = \boxed{10\pi}
+  \]
+  \pause
+  \begin{center}\small\color{gray60} El resultado es positivo, como debe ser: $z\ge0$ en todo $\Omega$. \checkmark\end{center}
+\end{frame}
+
+\begin{frame}{Momento de inercia de una bola --- planteamiento}
+  \curvitracker{1}
+  \begin{block}{Problema}
+    Halle el momento de inercia respecto al eje $z$ de una bola maciza homogénea de radio $a$ y masa $M$.
+  \end{block}
+  \pause
+  \alerta{Aquí la densidad constante se escribe $\delta$: el símbolo $\rho$ ya está ocupado por el radio esférico.}
+  \pause
+  \curvitracker{2}
+  \[
+    I_z=\iiint_\Omega (x^2+y^2)\,\delta\ dV,
+    \qquad\text{y en esféricas}\qquad
+    x^2+y^2=\rho^2\sen^2\varphi.
+  \]
+  \pause
+  \curvitracker{3}
+  Con $dV=\rho^2\sen\varphi\,d\rho\,d\varphi\,d\theta$ el integrando queda $\delta\,\rho^4\sen^3\varphi$:
+  \[
+    I_z=\delta\int_0^{2\pi}\!\!\int_0^{\pi}\!\!\int_0^{a}\rho^4\sen^3\varphi\ d\rho\,d\varphi\,d\theta.
+  \]
+\end{frame}
+
+\begin{frame}{Momento de inercia de una bola --- cálculo}
+  \curvitracker{4}
+  \[
+    I_z=\delta\underbrace{\int_0^{2\pi}\!\!d\theta}_{2\pi}\cdot
+        \underbrace{\int_0^{\pi}\!\sen^3\varphi\,d\varphi}_{4/3}\cdot
+        \underbrace{\int_0^{a}\!\rho^4d\rho}_{a^5/5}
+       =\frac{8\pi\delta a^5}{15}.
+  \]
+  \pause
+  La bola es homogénea, así que $M=\delta\cdot\tfrac43\pi a^3$, es decir $\delta=\dfrac{3M}{4\pi a^3}$:
+  \[
+    I_z=\frac{8\pi a^5}{15}\cdot\frac{3M}{4\pi a^3}
+       =\boxed{\frac{2}{5}\,M a^2}
+  \]
+  \pause
+  \begin{center}\normalsize\color{tealx} Es la fórmula que ya conocen de mecánica: aquí sale de una integral triple en tres líneas.\end{center}
+\end{frame}
+
+\begin{frame}{\textquestiondown{}Qué sistema elegir?}
+  \begin{center}
+  \renewcommand{\arraystretch}{1.5}
+  \small
+  \begin{tabular}{lll}
+    \toprule
+    \textbf{Sistema} & \textbf{Señal de que conviene} & \textbf{Elemento}\\
+    \midrule
+    Rectangulares
+      & cajas, planos, prismas, tetraedros
+      & $dV=dz\,dy\,dx$\\
+    Cilíndricas
+      & cilindros, conos, paraboloides de revolución
+      & $dV=r\,dz\,dr\,d\theta$\\
+    Esféricas
+      & esferas, bolas, sectores cónicos
+      & $dV=\rho^2\sen\varphi\,d\rho\,d\varphi\,d\theta$\\
+    \bottomrule
+  \end{tabular}
+  \end{center}
+  \vspace{10pt}
+  \pause
+  \begin{itemize}
+    \item Si el sólido tiene un \textbf{eje} de simetría: cilíndricas.
+    \item Si tiene un \textbf{centro} de simetría: esféricas.
+  \end{itemize}
+  \pause
+  \notaclave{Cuando los seis límites salen constantes, la integral se factoriza en tres integrales simples independientes. Eso es señal de que se eligió bien el sistema.}
+\end{frame}
+
+% ======================================================
+% BLOQUE 7 --- CAMBIO DE VARIABLES
+% ======================================================
+\bloqueframe{7}{Cambio de variables}{El jacobiano: una sola regla detrás de los tres sistemas}
+
+\begin{frame}{La pregunta de fondo}
+  \begin{itemize}
+    \item En polares apareció un factor $r$; en cilíndricas, otra vez $r$; en esféricas, $\rho^2\sen\varphi$.
+    \pause
+    \item \textbf{No son tres reglas distintas}: son tres casos de un mismo teorema.
+    \pause
+    \item La pregunta: si una transformación $T$ lleva el plano $(u,v)$ al plano $(x,y)$, \textquestiondown{}en qué factor se estiran o encogen las áreas?
+  \end{itemize}
+  \vspace{10pt}
+  \pause
+  \begin{center}
+  \normalsize\color{tealx} La respuesta es el \textbf{jacobiano}: el determinante de la matriz de derivadas parciales de $T$.
+  \end{center}
+\end{frame}
+
+\begin{frame}{Jacobiano en $\mathbb R^2$}
+  \begin{columns}
+    \begin{column}{0.56\textwidth}
+      \begin{block}{Definición}
+        Para $T(u,v)=(x(u,v),y(u,v))$ de clase $\mathcal C^1$,
+        \[
+          \frac{\partial(x,y)}{\partial(u,v)}
+          = \det\begin{pmatrix}
+              x_u & x_v\\
+              y_u & y_v
+            \end{pmatrix}
+          = x_u y_v - x_v y_u.
+        \]
+      \end{block}
+      \pause
+      \vspace{4pt}
+      Geométricamente, $\left|\dfrac{\partial(x,y)}{\partial(u,v)}\right|$ es el \textbf{factor local de escala de áreas}: el cuadrado unidad en $(u,v)$ se convierte en una región de área $|J|$ en $(x,y)$.
+    \end{column}
+    \begin{column}{0.40\textwidth}
+      \centering
+      \begin{tikzpicture}[scale=1.15]
+        \draw[thin,->] (-0.2,0)--(1.5,0) node[right,font=\scriptsize]{$u$};
+        \draw[thin,->] (0,-0.2)--(0,1.5) node[above,font=\scriptsize]{$v$};
+        \fill[tealx!20] (0,0) rectangle (1,1);
+        \draw[tealx,thick] (0,0) rectangle (1,1);
+        \node[font=\scriptsize,tealx] at (0.5,0.5) {$R^*$};
+      \end{tikzpicture}\\[4pt]
+      {$\xrightarrow{\ \ T\ \ }$\quad\footnotesize\color{gray60}área $\times|J|$}\\[4pt]
+      \begin{tikzpicture}[scale=1.15]
+        \draw[thin,->] (-0.2,0)--(1.7,0) node[right,font=\scriptsize]{$x$};
+        \draw[thin,->] (0,-0.2)--(0,1.5) node[above,font=\scriptsize]{$y$};
+        \fill[brick!20] (0,0)--(1.2,0.3)--(1.4,1.0)--(0.2,0.7)--cycle;
+        \draw[brick,thick] (0,0)--(1.2,0.3)--(1.4,1.0)--(0.2,0.7)--cycle;
+        \node[font=\scriptsize,brick] at (0.7,0.5) {$R$};
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{El teorema de cambio de variables}
+  \begin{block}{Teorema}
+    Si $T(u,v)=(x(u,v),y(u,v))$ es $\mathcal C^1$, inyectiva salvo quizá en la frontera, lleva $R^*$ en $R$, y $f$ es continua en $R$:
+    {\small\[
+      \iint_R f(x,y)\,dA
+      = \iint_{R^*} f\bigl(x(u,v),y(u,v)\bigr)
+        \left|\frac{\partial(x,y)}{\partial(u,v)}\right| du\,dv.
+    \]}
+  \end{block}
+  \pause
+  \textbf{Polares como caso particular.} Con $x=r\cos\theta$, $y=r\sen\theta$,
+  \[
+    \frac{\partial(x,y)}{\partial(r,\theta)}
+    = \det\begin{pmatrix}
+        \cos\theta & -r\sen\theta\\
+        \sen\theta & \ \ r\cos\theta
+      \end{pmatrix}
+    = r\cos^2\theta + r\sen^2\theta = r.
+  \]
+  \pause
+  \begin{center}\normalsize\color{tealx} El misterioso factor $r$ de todo el bloque 3 era simplemente $|J|$.\end{center}
+  \pause
+  \begin{center}\small\color{gray60} En $\mathbb R^3$ rige lo mismo con el jacobiano $3\times3$: cilíndricas dan $|J|=r$ y esféricas $|J|=\rho^2\sen\varphi$. Puede anularse en medida nula --- el origen en polares --- sin invalidar el teorema.\end{center}
+\end{frame}
+
+\begin{frame}{Un ejemplo que solo sale en polares}
+  \begin{block}{Problema}
+    Calcular $\displaystyle\iint_R e^{x^2+y^2}\,dA$, donde $R$ es el disco $x^2+y^2\le4$.
+  \end{block}
+  \pause
+  \textbf{Transformación.} $x=r\cos\theta$, $y=r\sen\theta$; \quad $|J|=r$.
+  \pause
+
+  \textbf{Nueva región.} $0\le r\le2$, $0\le\theta\le2\pi$.
+  \pause
+  \[
+    \iint_R e^{x^2+y^2}\,dA
+    = \int_0^{2\pi}\!\!\int_0^2 e^{r^2}\ r\,dr\,d\theta
+    = 2\pi\left[\tfrac12 e^{r^2}\right]_0^2
+    = \boxed{\pi\bigl(e^4-1\bigr)}
+  \]
+  \pause
+  \begin{center}\small\color{gray60}
+  Sin el factor $r$ la sustitución $u=r^2$ no funcionaría: es el jacobiano el que hace la integral posible.
+  \end{center}
+\end{frame}
+
+\begin{frame}{Resumen: la tabla completa}
+  \begin{center}
+  \renewcommand{\arraystretch}{1.35}
+  \small
+  \begin{tabular}{lll}
+    \toprule
+    \textbf{Cambio} & \textbf{Jacobiano $|J|$} & \textbf{Elemento}\\
+    \midrule
+    Polares $(r,\theta)$ & $r$ & $dA=r\,dr\,d\theta$\\
+    Cilíndricas $(r,\theta,z)$ & $r$ & $dV=r\,dz\,dr\,d\theta$\\
+    Esféricas $(\rho,\varphi,\theta)$ & $\rho^2\sen\varphi$ & $dV=\rho^2\sen\varphi\,d\rho\,d\varphi\,d\theta$\\
+    General $T(u,v)$ & $|x_uy_v-x_vy_u|$ & $dA=|J|\,du\,dv$\\
+    \bottomrule
+  \end{tabular}
+  \end{center}
+  \pause
+  \sistemas
+\end{frame}
+
+\begin{frame}{Resumen de la unidad}
+  \begin{itemize}
+    \setlength{\itemsep}{5pt}
+    \item Toda integral múltiple es el límite de una suma ``valor $\times$ tamaño del pedacito''; \textbf{Fubini} la convierte en integrales de una variable.
+    \pause
+    \item El trabajo real está en \textbf{describir la región}: dibujarla, elegir el orden, poner los límites. Los límites exteriores son siempre números.
+    \pause
+    \item Cambiar el orden de integración es a veces una comodidad y a veces la única salida (por ejemplo con $\sen(y^2)$).
+    \pause
+    \item Cambiar de \textbf{sistema de coordenadas} simplifica la región; el precio es el jacobiano: $r$, $r$, o $\rho^2\sen\varphi$.
+    \pause
+    \item Las aplicaciones (volumen, masa, centro de masa, inercia, área de superficie) no cambian el método: solo cambian el integrando.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Errores que cuestan más puntos}
+  \begin{enumerate}
+    \setlength{\itemsep}{6pt}
+    \item Olvidar el factor $r$ en polares o cilíndricas, y el $\rho^2\sen\varphi$ en esféricas.
+    \pause
+    \item Dejar la variable interior dentro de un límite exterior.
+    \pause
+    \item Intercambiar los límites al cambiar el orden, sin redibujar la región.
+    \pause
+    \item Confundir $\bar x=M_y/m$ con $\bar x=M_x/m$.
+    \pause
+    \item Medir $\varphi$ desde el plano $xy$ en lugar de desde el eje $z$.
+  \end{enumerate}
+  \vspace{10pt}
+  \pause
+  \begin{center}\small\color{gray60}
+  Los cinco se detectan con el mismo hábito: \textbf{dibujar la región antes de escribir la integral}.
+  \end{center}
+\end{frame}
+
+\begin{frame}{Cierre}
+  \begin{center}
+  \normalsize
+  Hasta ahora integramos sobre \textbf{regiones planas} y \textbf{sólidos}.
+  \end{center}
+  \vspace{10pt}
+  \pause
+  \begin{block}{Próxima clase}
+    Los mismos ingredientes, pero integrando sobre \textbf{curvas} y \textbf{superficies}, y con un campo vectorial en lugar de una función escalar: integrales de línea, flujo, y los teoremas de Green, Stokes y la divergencia.
+  \end{block}
+  \vspace{8pt}
+  \pause
+  \begin{center}\small\color{gray60}
+  Allí reaparecerán todas las integrales dobles y triples de hoy: son la herramienta de cálculo de los teoremas integrales.
+  \end{center}
+\end{frame}
+
+\end{document}

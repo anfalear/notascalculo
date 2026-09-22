@@ -1,0 +1,1715 @@
+\documentclass[11pt,aspectratio=169]{beamer}
+\input{estilo_presentaciones}
+
+\setpie{Campos vectoriales --- Cálculo III}
+\setbloques{7}
+
+% ============ RASTREADORES DE PASOS ============
+% Protocolo: integral de línea de un campo escalar
+\newcommand{\escalartracker}[1]{%
+  {\footnotesize\centering
+  \pasoitem{1}{1. Parametrizar $C$}{#1}\ $\rightarrow$\
+  \pasoitem{2}{2. Rapidez $\|\mathbf r'\|$}{#1}\ $\rightarrow$\
+  \pasoitem{3}{3. Sustituir en $f$}{#1}\ $\rightarrow$\
+  \pasoitem{4}{4. Integrar}{#1}\par}
+  \vspace{4pt}
+}
+
+% Protocolo: integral de línea de un campo vectorial
+\newcommand{\vectortracker}[1]{%
+  {\footnotesize\centering
+  \pasoitem{1}{1. Parametrizar $C$}{#1}\ $\rightarrow$\
+  \pasoitem{2}{2. $\mathbf r'(t)$}{#1}\ $\rightarrow$\
+  \pasoitem{3}{3. $\mathbf F(\mathbf r(t))$}{#1}\ $\rightarrow$\
+  \pasoitem{4}{4. Producto punto}{#1}\ $\rightarrow$\
+  \pasoitem{5}{5. Integrar}{#1}\par}
+  \vspace{4pt}
+}
+
+% Protocolo: función potencial
+\newcommand{\pottracker}[1]{%
+  {\footnotesize\centering
+  \pasoitem{1}{1. \textquestiondown{}$M_y=N_x$?}{#1}\ $\rightarrow$\
+  \pasoitem{2}{2. Integrar $M$ en $x$}{#1}\ $\rightarrow$\
+  \pasoitem{3}{3. Derivar y ajustar}{#1}\ $\rightarrow$\
+  \pasoitem{4}{4. Evaluar $f(B)-f(A)$}{#1}\par}
+  \vspace{4pt}
+}
+
+% Protocolo: teorema de Green
+\newcommand{\greentracker}[1]{%
+  {\footnotesize\centering
+  \pasoitem{1}{1. Identificar $M$, $N$}{#1}\ $\rightarrow$\
+  \pasoitem{2}{2. Calcular $N_x-M_y$}{#1}\ $\rightarrow$\
+  \pasoitem{3}{3. Describir $R$}{#1}\ $\rightarrow$\
+  \pasoitem{4}{4. Integral doble}{#1}\par}
+  \vspace{4pt}
+}
+
+% Protocolo: flujo a través de una superficie
+\newcommand{\flujotracker}[1]{%
+  {\footnotesize\centering
+  \pasoitem{1}{1. Orientar $S$}{#1}\ $\rightarrow$\
+  \pasoitem{2}{2. Parametrizar}{#1}\ $\rightarrow$\
+  \pasoitem{3}{3. $\mathbf r_u\times\mathbf r_v$}{#1}\ $\rightarrow$\
+  \pasoitem{4}{4. Producto punto}{#1}\ $\rightarrow$\
+  \pasoitem{5}{5. Integral doble}{#1}\par}
+  \vspace{4pt}
+}
+
+% ============ EL GRAN ESQUEMA UNIFICADOR ============
+\newcommand{\granesquema}{%
+  \begin{center}
+  \begin{tikzpicture}[node distance=0.32cm,
+      teo/.style={draw=tealx,thick,fill=tealx!10,rounded corners,
+                  minimum width=2.7cm,minimum height=1.15cm,align=center,font=\scriptsize}]
+    \node[draw=navy,thick,fill=navy!8,rounded corners,minimum width=2.7cm,
+          minimum height=1.15cm,align=center,font=\scriptsize] (tfc)
+      {\bfseries TFC\\$\int_a^b f'=f(b)-f(a)$};
+    \node[teo,right=of tfc] (tfil) {\bfseries T. fundamental\\de int. de línea};
+    \node[teo,right=of tfil] (green) {\bfseries Green\\(en el plano)};
+    \node[teo,below=0.4cm of tfil] (stokes) {\bfseries Stokes\\(superficies)};
+    \node[teo,below=0.4cm of green] (div) {\bfseries Divergencia\\(sólidos)};
+    \draw[-Stealth,thick,gray60] (tfc) -- (tfil);
+    \draw[-Stealth,thick,gray60] (tfil) -- (green);
+    \draw[-Stealth,thick,gray60] (green) -- (div);
+    \draw[-Stealth,thick,gray60] (green) -- (stokes);
+  \end{tikzpicture}
+  \end{center}
+}
+
+\title{Campos vectoriales}
+\subtitle{Integrales de línea, de superficie y teoremas integrales}
+\author{Andrés Fabián Leal Archila}
+\institute{Cálculo III (Multivariable) --- Cód. 20254}
+\date{\today}
+
+\begin{document}
+
+\portada
+
+% ---------- AGENDA ----------
+\begin{frame}{Agenda de la unidad}
+  \begin{enumerate}
+    \setlength{\itemsep}{6pt}
+    \item \textbf{Campos vectoriales}: gradientes, campos conservativos \hfill{\small\color{gray60}(20 min)}
+    \item \textbf{Integral de línea} de un campo escalar \hfill{\small\color{gray60}(20 min)}
+    \item \textbf{Integral de línea} de un campo vectorial: trabajo y circulación \hfill{\small\color{gray60}(20 min)}
+    \item \textbf{Independencia de la trayectoria} y teorema fundamental \hfill{\small\color{gray60}(30 min)}
+    \item \textbf{Teorema de Green}, divergencia y rotacional \hfill{\small\color{gray60}(30 min)}
+    \item \textbf{Superficies}: integrales de superficie y flujo \hfill{\small\color{gray60}(30 min)}
+    \item \textbf{Divergencia y Stokes}: el cuadro completo \hfill{\small\color{gray60}(35 min)}
+  \end{enumerate}
+  \vfill
+  \begin{center}
+    \small\color{gray60} Capítulos 33 y 34 del problemario --- material para varias sesiones
+  \end{center}
+\end{frame}
+
+\begin{frame}{Adónde vamos}
+  \granesquema
+  \vspace{6pt}
+  \begin{itemize}
+    \item Toda la unidad persigue \textbf{una sola idea}, la del Teorema Fundamental del Cálculo:
+    \pause
+    \begin{center}
+    \normalsize\color{tealx} \emph{lo que pasa en el interior de una región queda determinado por lo que pasa en su frontera.}
+    \end{center}
+    \pause
+    \item Cambia la dimensión del objeto (curva, superficie, sólido) y cambia la derivada que aparece (gradiente, rotacional, divergencia), pero el patrón es siempre el mismo.
+  \end{itemize}
+\end{frame}
+
+% ======================================================
+% BLOQUE 1 --- CAMPOS VECTORIALES
+% ======================================================
+\bloqueframe{1}{Campos vectoriales}{Definición, campos gradiente y campos conservativos}
+
+\begin{frame}{\textquestiondown{}Qué es un campo vectorial?}
+  \begin{columns}
+    \begin{column}{0.52\textwidth}
+      \begin{block}{Definición}
+        Un \textbf{campo vectorial} es una función que asigna a cada punto un \emph{vector}:
+        \[
+          \mathbf F(x,y)=M(x,y)\,\mathbf i + N(x,y)\,\mathbf j,
+        \]
+        \[
+          \mathbf F(x,y,z)=M\,\mathbf i + N\,\mathbf j + P\,\mathbf k.
+        \]
+      \end{block}
+      \pause
+      \vspace{4pt}
+      {\small Es \textbf{continuo} si lo son sus componentes, y \textbf{diferenciable} si estas tienen derivadas parciales continuas.}
+    \end{column}
+    \begin{column}{0.44\textwidth}
+      \centering
+      \begin{tikzpicture}[scale=0.7]
+        \draw[thin,->,gray60] (-2.4,0)--(2.6,0) node[right,font=\scriptsize]{$x$};
+        \draw[thin,->,gray60] (0,-2.4)--(0,2.6) node[above,font=\scriptsize]{$y$};
+        \foreach \xi in {-2,-1,0,1,2}{
+          \foreach \yi in {-2,-1,0,1,2}{
+            \draw[-Stealth,tealx] (\xi,\yi)--({\xi-\yi*0.3},{\yi+\xi*0.3});
+          }
+        }
+        \filldraw[navy] (0,0) circle (1.5pt);
+      \end{tikzpicture}\\[2pt]
+      {\footnotesize\color{gray60} $\mathbf F(x,y)=\langle -y,\ x\rangle$: gira}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Para qué sirven}
+  \begin{itemize}
+    \setlength{\itemsep}{6pt}
+    \item \textbf{Velocidades de un fluido}: cada partícula se mueve con el vector que indica el campo en su posición.
+    \pause
+    \item \textbf{Campo gravitacional}: la fuerza que experimenta una masa unitaria en cada punto.
+    \pause
+    \item \textbf{Campo eléctrico}: la fuerza por unidad de carga.
+    \pause
+    \item \textbf{Campo magnético}.
+  \end{itemize}
+  \vspace{10pt}
+  \pause
+  \notaclave{Un campo escalar asigna un \emph{número} a cada punto (temperatura, presión); un campo vectorial asigna un \emph{vector} (velocidad, fuerza).}
+\end{frame}
+
+\begin{frame}{El primer ejemplo: el campo gradiente}
+  \begin{columns}
+    \begin{column}{0.52\textwidth}
+      \begin{block}{Definición}
+        Si $f$ es diferenciable, su \textbf{gradiente}
+        \[
+          \nabla f = \langle f_x,\ f_y\rangle
+          \quad\text{o}\quad
+          \nabla f = \langle f_x,\ f_y,\ f_z\rangle
+        \]
+        es un campo vectorial.
+      \end{block}
+      \pause
+      \begin{itemize}\small
+        \item $\nabla f(P)$ apunta en la dirección de \textbf{máximo crecimiento} de $f$.
+        \item $\|\nabla f(P)\|$ es la tasa de cambio en esa dirección.
+        \item $\nabla f(P)$ es \textbf{perpendicular} a la curva de nivel que pasa por $P$.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.44\textwidth}
+      \centering
+      \begin{tikzpicture}[scale=0.82]
+        \draw[thin,->,gray60] (-2.4,0)--(2.6,0) node[right,font=\scriptsize]{$x$};
+        \draw[thin,->,gray60] (0,-2.3)--(0,2.5) node[above,font=\scriptsize]{$y$};
+        \draw[navy,thick] (0,0) ellipse (0.50 and 1.00);
+        \draw[navy,thick] (0,0) ellipse (0.71 and 1.41);
+        \draw[navy,thick] (0,0) ellipse (1.00 and 2.00);
+        \foreach \xi/\yi in {%
+            -1.6/-1.6, -1.6/0.8, -0.8/-0.8, -0.8/1.6,
+             0.8/-1.6,  0.8/0.8,  1.6/-0.8,  1.6/1.6}{
+          \draw[-Stealth,brick] (\xi,\yi)--({\xi+2*\xi*0.16},{\yi+\yi/2*0.16});
+        }
+        \node[navy,font=\scriptsize,anchor=south east] at (2.6,0.1) {$f=c$};
+      \end{tikzpicture}\\[2pt]
+      {\footnotesize\color{gray60} $\nabla f$ (rojo) $\perp$ curvas de nivel (azul)}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Campos conservativos}
+  \begin{block}{Definición}
+    Un campo $\mathbf F$ es \textbf{conservativo} si existe una función escalar $\Phi$, llamada \textbf{función potencial}, tal que
+    \[
+      \mathbf F = \nabla \Phi.
+    \]
+  \end{block}
+  \pause
+  \vspace{4pt}
+  \begin{center}
+  \normalsize\color{tealx} Un campo conservativo es, literalmente, ``el gradiente de algo''.
+  \end{center}
+  \pause
+  \vspace{8pt}
+  \begin{center}\small\color{gray60}
+  La analogía con una variable es exacta: $\Phi$ hace el papel de la \textbf{antiderivada} de $\mathbf F$.\\
+  Y como allí, la pregunta importante es: \textquestiondown{}cuándo existe, y cómo se encuentra?
+  \end{center}
+\end{frame}
+
+\begin{frame}{El criterio en el plano}
+  \begin{block}{Teorema (caracterización en el plano)}
+    Sean $M$ y $N$ con derivadas parciales continuas en una región abierta $R$. El campo $\mathbf F(x,y)=M\,\mathbf i+N\,\mathbf j$ es conservativo si y solo si
+    \[
+      \frac{\partial N}{\partial x} = \frac{\partial M}{\partial y}
+      \quad\text{en } R.
+    \]
+  \end{block}
+  \pause
+  \vspace{4pt}
+  \begin{center}\small\color{gray60}
+  Es la igualdad de derivadas cruzadas: si $\mathbf F=\nabla\Phi$, entonces $M=\Phi_x$ y $N=\Phi_y$, y por Clairaut $M_y=\Phi_{xy}=\Phi_{yx}=N_x$.
+  \end{center}
+  \pause
+  \alerta{La condición siempre es \emph{necesaria}. Solo es \emph{suficiente} si la región es \textbf{simplemente conexa} (sin agujeros).}
+\end{frame}
+
+\begin{frame}{El contraejemplo que hay que recordar}
+  \begin{block}{Un campo irrotacional que no es conservativo}
+    \[
+      \mathbf F(x,y) = \left\langle \frac{-y}{x^2+y^2},\ \frac{x}{x^2+y^2}\right\rangle,
+      \qquad \text{dominio } \mathbb R^2\setminus\{(0,0)\}.
+    \]
+  \end{block}
+  \pause
+  \begin{itemize}
+    \item Cumple $N_x=M_y$ en todo su dominio.
+    \pause
+    \item Pero su integral a lo largo de la circunferencia unidad vale $2\pi\neq0$.
+    \pause
+    \item Un campo conservativo tendría circulación cero sobre \emph{toda} curva cerrada.
+  \end{itemize}
+  \vspace{8pt}
+  \pause
+  \begin{center}
+  \normalsize\color{brick} El agujero en el origen es el culpable: el dominio \textbf{no} es simplemente conexo.
+  \end{center}
+\end{frame}
+
+\begin{frame}{Protocolo: hallar la función potencial}
+  \begin{enumerate}
+    \setlength{\itemsep}{5pt}
+    \item \textbf{Verificar la condición.} En $\mathbb R^2$ simplemente conexo, comprobar $M_y=N_x$. En $\mathbb R^3$, comprobar $\nabla\times\mathbf F=\mathbf 0$.
+    \item \textbf{Integrar una componente.} De $\Phi_x=M$, integrar respecto a $x$:
+    $\Phi = \int M\,dx + g(y,z)$.
+    \item \textbf{Derivar y ajustar.} Derivar respecto a $y$ e igualar a $N$ para determinar $g_y$. Repetir con $P$ si se está en $\mathbb R^3$.
+    \item \textbf{Escribir $\Phi$} explícitamente (la constante es irrelevante).
+  \end{enumerate}
+  \vspace{8pt}
+  \pause
+  \notaclave{La constante de integración de un paso es una \emph{función} de las variables restantes: ese es el único truco del método.}
+\end{frame}
+
+\begin{frame}{Hallar el potencial --- ejemplo}
+  \pottracker{1}
+  \begin{block}{Problema}
+    \textquestiondown{}Es $\mathbf F(x,y)=\langle 2xy,\ x^2+3y^2\rangle$ conservativo? Si lo es, hallar su potencial.
+  \end{block}
+  \pause
+  Con $M=2xy$ y $N=x^2+3y^2$:
+  \[
+    \frac{\partial M}{\partial y}=2x,
+    \qquad
+    \frac{\partial N}{\partial x}=2x.
+  \]
+  \pause
+  \begin{center}
+  \normalsize\color{tealx} Son iguales en todo $\mathbb R^2$, que es simplemente conexo: $\mathbf F$ \textbf{es conservativo}.
+  \end{center}
+\end{frame}
+
+\begin{frame}{Hallar el potencial --- construcción}
+  \pottracker{2}
+  Integramos $\Phi_x = 2xy$ respecto a $x$ (tratando $y$ como constante):
+  \[
+    \Phi(x,y) = x^2 y + g(y).
+  \]
+  \pause
+  \pottracker{3}
+  Derivamos respecto a $y$ e igualamos a $N$:
+  \[
+    \Phi_y = x^2 + g'(y) = x^2+3y^2
+    \ \Longrightarrow\ g'(y)=3y^2
+    \ \Longrightarrow\ g(y)=y^3+C.
+  \]
+  \pause
+  \[
+    \boxed{\Phi(x,y) = x^2y+y^3+C}
+  \]
+  \pause
+  \vspace{2pt}
+  \begin{center}\small\color{gray60}
+  Verificación obligatoria: $\nabla\Phi = \langle 2xy,\ x^2+3y^2\rangle = \mathbf F$. \checkmark
+  \end{center}
+\end{frame}
+
+% ======================================================
+% BLOQUE 2 --- INTEGRAL DE LÍNEA DE UN CAMPO ESCALAR
+% ======================================================
+\bloqueframe{2}{Integral de línea de un campo escalar}{Acumular una función a lo largo de una curva}
+
+\begin{frame}{La idea}
+  \begin{columns}
+    \begin{column}{0.52\textwidth}
+      \begin{itemize}
+        \item En Cálculo I integrábamos sobre un \textbf{intervalo} del eje $x$.
+        \pause
+        \item Ahora integramos sobre una \textbf{curva} $C$ del plano o del espacio.
+        \pause
+        \item Se parte $C$ en trocitos de longitud $\Delta s_i$, se evalúa $f$ en un punto de cada trocito y se suma
+        $\displaystyle\sum_{i=1}^n f(x_i^*,y_i^*)\,\Delta s_i$.
+        \pause
+        \item El límite es $\displaystyle\int_C f\,ds$.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.44\textwidth}
+      \centering
+      \begin{tikzpicture}[scale=0.82]
+        \draw[navy,thick,domain=0:3.4,samples=60] plot (\x,{0.9*sin(70*\x)+1.6});
+        \foreach \x in {0,0.425,0.85,1.275,1.7,2.125,2.55,2.975,3.4}{
+          \pgfmathsetmacro{\y}{0.9*sin(70*\x)+1.6}
+          \fill[brick] (\x,\y) circle (1.4pt);
+        }
+        \draw[tealx,thick,-Stealth] (1.275,{0.9*sin(70*1.275)+1.6}) -- (1.7,{0.9*sin(70*1.7)+1.6})
+          node[midway,below,font=\scriptsize,tealx]{$\Delta s_i$};
+        \node[navy,font=\scriptsize] at (3.2,0.8) {$C$};
+      \end{tikzpicture}\\[2pt]
+      {\footnotesize\color{gray60} la curva partida en trocitos de arco}
+    \end{column}
+  \end{columns}
+  \vspace{2pt}
+  \pause
+  \notaclave{Si $f$ es la densidad lineal de un alambre curvo, $\int_C f\,ds$ es su masa.}
+\end{frame}
+
+\begin{frame}{La llave: $ds=\|\mathbf r'(t)\|\,dt$}
+  Si $C$ está parametrizada por $\mathbf r(t)$, $a\le t\le b$, el elemento de longitud de arco es
+  \[
+    ds = \|\mathbf r'(t)\|\,dt.
+  \]
+  \pause
+  \begin{block}{Teorema de evaluación}
+    \[
+      \int_C f(x,y)\,ds = \int_a^b f\bigl(x(t),y(t)\bigr)\sqrt{[x'(t)]^2+[y'(t)]^2}\ dt,
+    \]
+    \[
+      \int_C f(x,y,z)\,ds = \int_a^b f\bigl(\mathbf r(t)\bigr)\sqrt{[x']^2+[y']^2+[z']^2}\ dt.
+    \]
+  \end{block}
+  \pause
+  \begin{center}\small\color{gray60}
+  Es la misma $\|\mathbf r'(t)\|$ de la fórmula de longitud de arco: aquí solo aparece multiplicada por $f$.
+  \end{center}
+\end{frame}
+
+\begin{frame}{Protocolo: 4 pasos}
+  \begin{center}
+  \begin{tikzpicture}[node distance=0.4cm]
+    \node[draw=tealx,thick,fill=tealx!10,rounded corners,minimum width=2.6cm,minimum height=1.2cm,align=center] (p1) {\bfseries 1\\Parametrizar};
+    \node[draw=tealx,thick,fill=tealx!10,rounded corners,minimum width=2.6cm,minimum height=1.2cm,align=center,right=of p1] (p2) {\bfseries 2\\Rapidez\\$\|\mathbf r'(t)\|$};
+    \node[draw=tealx,thick,fill=tealx!10,rounded corners,minimum width=2.6cm,minimum height=1.2cm,align=center,right=of p2] (p3) {\bfseries 3\\Sustituir\\en $f$};
+    \node[draw=tealx,thick,fill=tealx!10,rounded corners,minimum width=2.6cm,minimum height=1.2cm,align=center,right=of p3] (p4) {\bfseries 4\\Integrar};
+    \draw[-Stealth,thick,gray60] (p1) -- (p2);
+    \draw[-Stealth,thick,gray60] (p2) -- (p3);
+    \draw[-Stealth,thick,gray60] (p3) -- (p4);
+  \end{tikzpicture}
+  \end{center}
+  \vspace{8pt}
+  \pause
+  \begin{block}{Dos propiedades importantes}
+    \begin{itemize}
+      \item \textbf{No depende de la orientación}: $\displaystyle\int_{-C} f\,ds = \int_C f\,ds$ (porque $ds>0$ siempre).
+      \item \textbf{Aditividad}: si $C=C_1\cup\cdots\cup C_n$ es suave por partes, se integra en cada trozo y se suma.
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}{Un segmento de recta}
+  \escalartracker{4}
+  \begin{block}{Problema}
+    Calcular $\displaystyle\int_C (x+y)\,ds$, donde $C$ es el segmento de $(0,0)$ a $(1,2)$.
+  \end{block}
+  \pause
+  Parametrización estándar de un segmento $A\to B$:\ $\mathbf r(t)=(1-t)A+tB$. Aquí $\mathbf r(t)=\langle t,\ 2t\rangle$ con $0\le t\le1$, y
+  \[
+    \mathbf r'(t)=\langle 1,2\rangle,
+    \qquad \|\mathbf r'(t)\|=\sqrt5,
+    \qquad f\bigl(\mathbf r(t)\bigr)=t+2t=3t.
+  \]
+  \pause
+  \[
+    \int_C (x+y)\,ds = \int_0^1 3t\cdot\sqrt5\ dt
+    = 3\sqrt5\left[\frac{t^2}{2}\right]_0^1
+    = \boxed{\frac{3\sqrt5}{2}}
+  \]
+  \pause
+  \begin{center}\small\color{gray60}
+  Comprobación: el segmento mide $\sqrt5$ y el valor medio de $x+y$ sobre él es $3/2$. \checkmark
+  \end{center}
+\end{frame}
+
+\begin{frame}{Una hélice en el espacio}
+  \escalartracker{4}
+  \begin{block}{Problema}
+    Calcular $\displaystyle\int_C (x^2+y^2+z^2)\,ds$ sobre la hélice $\mathbf r(t)=\langle\cos t,\ \sen t,\ t\rangle$, $0\le t\le2\pi$.
+  \end{block}
+  \pause
+  \[
+    \mathbf r'(t)=\langle-\sen t,\ \cos t,\ 1\rangle
+    \ \Longrightarrow\ \|\mathbf r'(t)\|=\sqrt2,
+    \qquad
+    f\bigl(\mathbf r(t)\bigr)=\cos^2t+\sen^2t+t^2=1+t^2.
+  \]
+  \pause
+  \[
+    \int_C (x^2+y^2+z^2)\,ds
+    = \int_0^{2\pi}(1+t^2)\sqrt2\ dt
+    = \sqrt2\left[t+\frac{t^3}{3}\right]_0^{2\pi}
+    = \boxed{2\sqrt2\,\pi\left(1+\frac{4\pi^2}{3}\right)}
+  \]
+  \pause
+  \begin{center}\small\color{gray60}
+  La rapidez constante $\sqrt2$ es la misma que apareció al calcular la longitud de la hélice.
+  \end{center}
+\end{frame}
+
+\begin{frame}{Una curva suave por partes}
+  \begin{columns}
+    \begin{column}{0.54\textwidth}
+      \begin{block}{Problema}
+        Calcular $\displaystyle\int_C (x^2+y^2)\,ds$, con $C$ la frontera del cuadrado de vértices $(0,0)$, $(1,0)$, $(1,1)$, $(0,1)$.
+      \end{block}
+      \pause
+      \vspace{2pt}
+      {\small La curva tiene esquinas: no es suave. Se parte en cuatro segmentos y se usa la aditividad.}
+    \end{column}
+    \begin{column}{0.42\textwidth}
+      \centering
+      \begin{tikzpicture}[scale=2.0]
+        \draw[thin,->,gray60] (-0.15,0)--(1.4,0) node[right,font=\scriptsize]{$x$};
+        \draw[thin,->,gray60] (0,-0.15)--(0,1.4) node[above,font=\scriptsize]{$y$};
+        \fill[tealx!12] (0,0) rectangle (1,1);
+        \draw[navy,thick] (0,0)--(1,0) node[midway,below,font=\scriptsize]{$C_1$};
+        \draw[navy,thick] (1,0)--(1,1) node[midway,right,font=\scriptsize]{$C_2$};
+        \draw[navy,thick] (1,1)--(0,1) node[midway,above,font=\scriptsize]{$C_3$};
+        \draw[navy,thick] (0,1)--(0,0) node[midway,left,font=\scriptsize]{$C_4$};
+        \foreach \p in {(0,0),(1,0),(1,1),(0,1)} \fill[brick] \p circle (1.2pt);
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
+  \vspace{4pt}
+  \pause
+  \begin{center}
+  $\displaystyle\int_C f\,ds = \int_{C_1} f\,ds+\int_{C_2} f\,ds+\int_{C_3} f\,ds+\int_{C_4} f\,ds$.
+  \end{center}
+\end{frame}
+
+\begin{frame}{Una curva suave por partes --- las cuatro piezas}
+  En los cuatro segmentos $\|\mathbf r'\|=1$, así que $ds=dt$:
+  \pause
+  \vspace{4pt}
+  \begin{center}
+  \renewcommand{\arraystretch}{1.45}
+  \small
+  \begin{tabular}{llll}
+    \toprule
+    \textbf{Trozo} & \textbf{Parametrización} & \textbf{$f$ sobre el trozo} & \textbf{Integral}\\
+    \midrule
+    $C_1$ & $(t,0)$, $0\le t\le1$ & $t^2$ & $\int_0^1 t^2\,dt = \tfrac13$\\
+    $C_2$ & $(1,t)$, $0\le t\le1$ & $1+t^2$ & $\int_0^1(1+t^2)\,dt = \tfrac43$\\
+    $C_3$ & $(1-t,1)$, $0\le t\le1$ & $(1-t)^2+1$ & $\int_0^1[(1-t)^2+1]\,dt = \tfrac43$\\
+    $C_4$ & $(0,1-t)$, $0\le t\le1$ & $(1-t)^2$ & $\int_0^1(1-t)^2\,dt = \tfrac13$\\
+    \bottomrule
+  \end{tabular}
+  \end{center}
+  \pause
+  \[
+    \int_C (x^2+y^2)\,ds = \tfrac13+\tfrac43+\tfrac43+\tfrac13 = \boxed{\frac{10}{3}}
+  \]
+\end{frame}
+
+\begin{frame}{Para qué sirve: la masa de un alambre}
+  \escalartracker{1}
+  \begin{block}{Problema}
+    Un alambre tiene la forma de la semicircunferencia $x^2+y^2=1$, $y\ge0$ (en metros), y su densidad lineal es $\rho(x,y)=y$ en $\mathrm{kg/m}$: pesa más arriba que en los extremos. Halle su masa y su centro de masa.
+  \end{block}
+  \pause
+  \notaclave{$m=\displaystyle\int_C\rho\,ds$,\qquad $\bar x=\frac1m\displaystyle\int_C x\,\rho\,ds$,\qquad $\bar y=\frac1m\displaystyle\int_C y\,\rho\,ds$.}
+  \pause
+  \escalartracker{2}
+  Con $\mathbf r(t)=\langle\cos t,\ \sen t\rangle$, $0\le t\le\pi$, se tiene $\|\mathbf r'(t)\|=1$: aquí $ds=dt$ y $\rho=\sen t$.
+\end{frame}
+
+\begin{frame}{La masa del alambre --- centro de masa}
+  \escalartracker{4}
+  \[
+    m=\int_0^\pi \sen t\ dt = \bigl[-\cos t\bigr]_0^\pi = 2\ \mathrm{kg}.
+  \]
+  \pause
+  \[
+    \bar x=\frac12\int_0^\pi \cos t\,\sen t\ dt = 0\ \text{(por simetría)},
+    \qquad
+    \bar y=\frac12\int_0^\pi \sen^2 t\ dt = \frac12\cdot\frac\pi2=\frac\pi4 .
+  \]
+  \pause
+  \[
+    \boxed{m=2\ \mathrm{kg},\qquad (\bar x,\bar y)=\left(0,\ \tfrac\pi4\right)\approx(0,\ 0.79)}
+  \]
+  \pause
+  \begin{center}\small\color{gray60} Si el alambre fuera homogéneo el centro de masa caería en $y=2/\pi\approx0.64$: sale más alto porque la densidad crece con la altura. \checkmark\end{center}
+\end{frame}
+
+% ======================================================
+% BLOQUE 3 --- INTEGRAL DE LÍNEA DE UN CAMPO VECTORIAL
+% ======================================================
+\bloqueframe{3}{Integral de línea de un campo vectorial}{Trabajo y circulación}
+
+\begin{frame}{Una pregunta distinta}
+  \begin{itemize}
+    \item Con un campo \emph{escalar} acumulábamos valores de $f$ a lo largo de $C$.
+    \pause
+    \item Con un campo \emph{vectorial} la pregunta es otra: \textbf{\textquestiondown{}cuánto empuja $\mathbf F$ en la dirección en que se recorre la curva?}
+    \pause
+    \item Físicamente:
+    \begin{itemize}
+      \item si $\mathbf F$ es una fuerza, la integral es el \textbf{trabajo};
+      \item si $\mathbf F$ es la velocidad de un fluido y $C$ es cerrada, es la \textbf{circulación}.
+    \end{itemize}
+  \end{itemize}
+  \vspace{10pt}
+  \pause
+  \begin{center}
+  \normalsize\color{tealx}
+  Solo cuenta la componente de $\mathbf F$ \textbf{tangente} a la curva.
+  \end{center}
+\end{frame}
+
+\begin{frame}{Definición}
+  \begin{block}{Integral de línea de un campo vectorial}
+    Para $C$ suave por partes parametrizada por $\mathbf r(t)$, $a\le t\le b$:
+    \[
+      \int_C \mathbf F\cdot d\mathbf r
+      = \int_a^b \mathbf F\bigl(\mathbf r(t)\bigr)\cdot\mathbf r'(t)\ dt.
+    \]
+  \end{block}
+  \pause
+  \begin{block}{Dos notaciones equivalentes}
+    \[
+      \int_C \mathbf F\cdot d\mathbf r = \int_C M\,dx+N\,dy+P\,dz
+      \qquad\text{y}\qquad
+      \int_C \mathbf F\cdot d\mathbf r = \int_C \mathbf F\cdot\mathbf T\ ds,
+    \]
+    con $\mathbf T$ el vector tangente unitario.
+  \end{block}
+  \pause
+  \begin{center}\small\color{gray60}
+  El valor no depende de la parametrización elegida, siempre que se conserve la orientación.
+  \end{center}
+\end{frame}
+
+\begin{frame}{La diferencia crucial: la orientación}
+  \begin{block}{Campo escalar}
+    \[
+      \int_{-C} f\,ds = \int_C f\,ds.
+    \]
+    {\small $ds$ es siempre positivo: recorrer al revés no cambia nada.}
+  \end{block}
+  \pause
+  \begin{block}{Campo vectorial}
+    \[
+      \int_{-C} \mathbf F\cdot d\mathbf r = -\int_C \mathbf F\cdot d\mathbf r.
+    \]
+    {\small $\mathbf r'(t)$ cambia de signo: el trabajo \emph{a favor} y \emph{en contra} de una fuerza se distinguen.}
+  \end{block}
+  \pause
+  \alerta{Antes de integrar, comprobar siempre que la parametrización recorre $C$ en el sentido pedido.}
+\end{frame}
+
+\begin{frame}{Protocolo: 5 pasos}
+  \begin{enumerate}
+    \setlength{\itemsep}{5pt}
+    \item \textbf{Parametrizar} $C$ respetando la orientación pedida: $\mathbf r(t)$, $a\le t\le b$.
+    \item \textbf{Derivar}: calcular $\mathbf r'(t)$.
+    \item \textbf{Evaluar el campo sobre la curva}: formar $\mathbf F(\mathbf r(t))$.
+    \item \textbf{Producto punto}: $\mathbf F(\mathbf r(t))\cdot\mathbf r'(t)$, que es una función escalar de $t$.
+    \item \textbf{Integrar} esa función de $a$ a $b$.
+  \end{enumerate}
+  \vspace{10pt}
+  \pause
+  \notaclave{Nótese que aquí \textbf{no} aparece $\|\mathbf r'(t)\|$: el producto punto ya incorpora el factor correcto.}
+\end{frame}
+
+\begin{frame}{Trabajo de una fuerza variable --- planteamiento}
+  \vectortracker{1}
+  \begin{columns}
+    \begin{column}{0.56\textwidth}
+      \begin{block}{Problema}
+        Calcular el trabajo de $\mathbf F(x,y)=\langle y,\ x^2\rangle$ al mover una partícula de $(0,0)$ a $(1,1)$ \textbf{a lo largo de la parábola} $y=x^2$.
+      \end{block}
+      \pause
+      \vspace{4pt}
+      Parametrización natural de $y=x^2$:
+      \[
+        \mathbf r(t)=\langle t,\ t^2\rangle,\qquad 0\le t\le1,
+      \]
+      que recorre la curva en el sentido correcto.
+    \end{column}
+    \begin{column}{0.40\textwidth}
+      \centering
+      \begin{tikzpicture}[scale=2.2]
+        \draw[thin,->,gray60] (-0.1,0)--(1.35,0) node[right,font=\scriptsize]{$x$};
+        \draw[thin,->,gray60] (0,-0.1)--(0,1.35) node[above,font=\scriptsize]{$y$};
+        \draw[navy,thick,-Stealth] plot[domain=0:1.06,samples=40] (\x,{\x*\x})
+          node[right,font=\scriptsize]{$y=x^2$};
+        \draw[gray60,dashed] (0,0)--(1,1);
+        \foreach \t in {0.2,0.5,0.8}{
+          \pgfmathsetmacro{\yy}{\t*\t}
+          \draw[-Stealth,brick,thin] (\t,\yy)--({\t+0.22*\yy},{\yy+0.22*\t*\t});
+        }
+        \fill[navy] (0,0) circle (1.0pt);
+        \fill[navy] (1,1) circle (1.0pt);
+      \end{tikzpicture}\\[2pt]
+      {\footnotesize\color{gray60} el campo $\mathbf F$ sobre la trayectoria}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Trabajo de una fuerza variable --- cálculo}
+  \vectortracker{2}
+  $\mathbf r'(t)=\langle 1,\ 2t\rangle$.
+  \pause
+  \vspace{4pt}
+
+  \vectortracker{3}
+  Sustituyendo $x=t$, $y=t^2$ en $\mathbf F=\langle y,\ x^2\rangle$:\quad
+  $\mathbf F(\mathbf r(t))=\langle t^2,\ t^2\rangle$.
+  \pause
+  \vspace{4pt}
+
+  \vectortracker{4}
+  \[
+    \mathbf F(\mathbf r(t))\cdot\mathbf r'(t)
+    = \langle t^2,\ t^2\rangle\cdot\langle 1,\ 2t\rangle
+    = t^2+2t^3.
+  \]
+  \pause
+  \vectortracker{5}
+  \[
+    \int_C \mathbf F\cdot d\mathbf r
+    = \int_0^1 (t^2+2t^3)\,dt
+    = \left[\frac{t^3}{3}+\frac{t^4}{2}\right]_0^1
+    = \frac13+\frac12
+    = \boxed{\frac56}
+  \]
+\end{frame}
+
+\begin{frame}{\textquestiondown{}Y si cambiamos de camino?}
+  Por el \textbf{segmento recto} $\mathbf r(t)=\langle t,\ t\rangle$, $0\le t\le1$:
+  \[
+    \int_C \mathbf F\cdot d\mathbf r
+    = \int_0^1 \langle t,\ t^2\rangle\cdot\langle 1,1\rangle\ dt
+    = \int_0^1 (t+t^2)\,dt
+    = \frac12+\frac13 = \frac56.
+  \]
+  \pause
+  \vspace{4pt}
+  \begin{center}
+  \normalsize\color{tealx} \textbf{El mismo valor.} \textquestiondown{}Casualidad, o hay algo detrás?
+  \end{center}
+  \pause
+  \vspace{8pt}
+  \begin{center}\small\color{gray60}
+  (En este caso es casualidad: $\mathbf F=\langle y,x^2\rangle$ \emph{no} es conservativo, pues $M_y=1$ y $N_x=2x$.\\
+  Otro camino entre los mismos puntos daría un valor distinto.)
+  \end{center}
+  \pause
+  \vspace{4pt}
+  \begin{center}
+  \normalsize La pregunta correcta ocupa el bloque siguiente.
+  \end{center}
+\end{frame}
+
+% ======================================================
+% BLOQUE 4 --- INDEPENDENCIA DE LA TRAYECTORIA
+% ======================================================
+\bloqueframe{4}{Independencia de la trayectoria}{El teorema fundamental de las integrales de línea}
+
+\begin{frame}{La pregunta y la respuesta}
+  \begin{center}
+  \normalsize
+  \textquestiondown{}Bajo qué condiciones $\displaystyle\int_C \mathbf F\cdot d\mathbf r$ depende \textbf{solo de los extremos} de $C$?
+  \end{center}
+  \vspace{10pt}
+  \pause
+  \begin{block}{Teorema (independencia de la trayectoria)}
+    Sea $\mathbf F$ continuo en una región abierta y conexa $D$. La integral $\int_C \mathbf F\cdot d\mathbf r$ es independiente de la trayectoria en $D$ \textbf{si y solo si} $\mathbf F$ es conservativo en $D$.
+  \end{block}
+  \pause
+  \vspace{6pt}
+  \begin{center}\small\color{gray60}
+  Es decir: independencia del camino, existencia de potencial y circulación nula sobre curvas cerradas son \textbf{tres formas de decir lo mismo}.
+  \end{center}
+\end{frame}
+
+\begin{frame}{El teorema fundamental de las integrales de línea}
+  \begin{block}{Teorema}
+    Si $\mathbf F=\nabla f$ es continuo en $D$ y $C$ es una curva suave por partes de $A$ a $B$ contenida en $D$:
+    \[
+      \int_C \mathbf F\cdot d\mathbf r = f(B)-f(A).
+    \]
+    En particular, si $C$ es cerrada ($A=B$), entonces $\displaystyle\oint_C \mathbf F\cdot d\mathbf r = 0$.
+  \end{block}
+  \pause
+  \vspace{4pt}
+  \begin{center}
+  \normalsize\color{tealx} Es la \textbf{regla de Barrow} para curvas: la integral del gradiente es la diferencia del potencial en los extremos.
+  \end{center}
+  \pause
+  \vspace{6pt}
+  \begin{center}\small\color{gray60}
+  La dificultad se traslada: ya no hay que parametrizar, pero sí hay que \emph{encontrar} el potencial.
+  \end{center}
+\end{frame}
+
+\begin{frame}{Por qué es cierto (dos líneas)}
+  Si $\mathbf F=\nabla f$, la regla de la cadena da
+  \[
+    \mathbf F\bigl(\mathbf r(t)\bigr)\cdot\mathbf r'(t)
+    = \nabla f\bigl(\mathbf r(t)\bigr)\cdot\mathbf r'(t)
+    = \frac{d}{dt}\,f\bigl(\mathbf r(t)\bigr).
+  \]
+  \pause
+  \vspace{4pt}
+  Y ahora es el Teorema Fundamental del Cálculo de una variable:
+  \[
+    \int_C \mathbf F\cdot d\mathbf r
+    = \int_a^b \frac{d}{dt}f\bigl(\mathbf r(t)\bigr)\,dt
+    = f\bigl(\mathbf r(b)\bigr)-f\bigl(\mathbf r(a)\bigr).
+  \]
+  \pause
+  \vspace{6pt}
+  \begin{center}\small\color{gray60}
+  El recíproco se prueba definiendo $f(P)$ como la integral de $\mathbf F$ desde un punto fijo $P_0$ hasta $P$, y verificando que $\nabla f=\mathbf F$.
+  \end{center}
+\end{frame}
+
+\begin{frame}{Aplicación del teorema fundamental}
+  \pottracker{1}
+  \begin{block}{Problema}
+    Para $\mathbf F(x,y)=\langle 2xy,\ x^2+2y\rangle$, calcular $\int_C \mathbf F\cdot d\mathbf r$ a lo largo de \emph{cualquier} curva de $A=(0,1)$ a $B=(1,2)$.
+  \end{block}
+  \pause
+  Con $M=2xy$, $N=x^2+2y$:\quad $M_y = 2x = N_x$ en todo $\mathbb R^2$. Conservativo. \checkmark
+  \pause
+  \vspace{4pt}
+
+  \pottracker{2}
+  $\displaystyle f(x,y)=\int 2xy\,dx = x^2y+g(y)$.
+  \pause
+  \vspace{4pt}
+
+  \pottracker{3}
+  $f_y = x^2+g'(y) = x^2+2y \Rightarrow g'(y)=2y \Rightarrow g(y)=y^2$, luego $f(x,y)=x^2y+y^2$.
+\end{frame}
+
+\begin{frame}{Aplicación del teorema fundamental --- resultado}
+  \pottracker{4}
+  \[
+    \int_C \mathbf F\cdot d\mathbf r = f(1,2)-f(0,1).
+  \]
+  \pause
+  \[
+    f(1,2) = 1^2\cdot 2 + 2^2 = 6,
+    \qquad
+    f(0,1) = 0^2\cdot 1 + 1^2 = 1.
+  \]
+  \pause
+  \[
+    \boxed{\int_C \mathbf F\cdot d\mathbf r = 6-1 = 5}
+  \]
+  \pause
+  \vspace{4pt}
+  \begin{center}
+  \normalsize\color{tealx} Sin parametrizar ninguna curva: el valor es $5$ por \textbf{todos} los caminos de $(0,1)$ a $(1,2)$.
+  \end{center}
+  \pause
+  \begin{center}\small\color{gray60}
+  Y la constante de integración es irrelevante: se cancela en la resta $f(B)-f(A)$.
+  \end{center}
+\end{frame}
+
+\begin{frame}{Un potencial en $\mathbb R^3$}
+  \begin{block}{Problema}
+    Sea $\mathbf F(x,y,z)=\langle y+z,\ x+z,\ x+y\rangle$, que es conservativo. Construir su potencial integrando sobre el segmento del origen a $(x,y,z)$.
+  \end{block}
+  \pause
+  Parametrizamos $\mathbf r(t)=t\langle x,y,z\rangle$, $t\in[0,1]$, con $\mathbf r'(t)=\langle x,y,z\rangle$. Sobre el segmento,
+  \[
+    \mathbf F(\mathbf r(t)) = t\langle y+z,\ x+z,\ x+y\rangle.
+  \]
+  \pause
+  \[
+    \mathbf F(\mathbf r(t))\cdot\mathbf r'(t)
+    = t\bigl[(y+z)x+(x+z)y+(x+y)z\bigr]
+    = 2t\,(xy+xz+yz).
+  \]
+  \pause
+  \[
+    f(x,y,z)=\int_0^1 2t\,(xy+xz+yz)\,dt = \boxed{xy+xz+yz}
+  \]
+  \pause
+  \begin{center}\small\color{gray60} Verificación: $\nabla f = \langle y+z,\ x+z,\ x+y\rangle = \mathbf F$. \checkmark\end{center}
+\end{frame}
+
+\begin{frame}{Trabajo y energía --- el campo gravitatorio}
+  \begin{block}{Problema}
+    La fuerza que un planeta de masa $M$ centrado en el origen ejerce sobre un cuerpo de masa $m$ situado en $\mathbf r$ es
+    $\mathbf F(\mathbf r)=-\dfrac{GMm}{\|\mathbf r\|^{3}}\,\mathbf r$.
+    \textquestiondown{}Cuánto trabajo hace al mover el cuerpo de un punto a otro?
+  \end{block}
+  \pause
+  \textbf{Primero, es conservativo.} Con $r=\|\mathbf r\|=\sqrt{x^2+y^2+z^2}$,
+  \[
+    \frac{\partial}{\partial x}\left(\frac1r\right)=-\frac{x}{r^{3}}
+    \quad\Longrightarrow\quad
+    \nabla\!\left(\frac{GMm}{r}\right)=-\frac{GMm}{r^{3}}\,\mathbf r=\mathbf F .
+  \]
+  \pause
+  \begin{center}\normalsize\color{tealx} El potencial es $f(\mathbf r)=\dfrac{GMm}{\|\mathbf r\|}$: solo depende de la distancia al centro.\end{center}
+\end{frame}
+
+\begin{frame}{Trabajo y energía --- la trayectoria no importa}
+  Por el teorema fundamental, el trabajo entre dos puntos a distancias $r_1$ y $r_2$ del centro es
+  \[
+    W=f(\mathbf r_2)-f(\mathbf r_1)=GMm\left(\frac{1}{r_2}-\frac{1}{r_1}\right).
+  \]
+  \pause
+  \textbf{Subir un satélite} desde la superficie ($r_1=R$) hasta la órbita $r_2=R+h$: como $r_2>r_1$, el campo hace trabajo \emph{negativo} y hay que aportar
+  \[
+    -W=GMm\left(\frac1R-\frac{1}{R+h}\right)=\frac{GMm\,h}{R(R+h)} .
+  \]
+  \pause
+  \[
+    \boxed{\text{si } h\to\infty:\quad -W\to\frac{GMm}{R}}
+  \]
+  \pause
+  \begin{center}\small\color{gray60} Esa cota \textbf{finita} es la energía de escape. \end{center}
+\end{frame}
+
+\begin{frame}{Resumen del bloque: cuatro enunciados equivalentes}
+  Para $\mathbf F$ continuo en una región abierta, conexa y \textbf{simplemente conexa} $D$, son equivalentes:
+  \vspace{8pt}
+  \begin{enumerate}
+    \setlength{\itemsep}{5pt}
+    \item $\mathbf F$ es conservativo: $\mathbf F=\nabla f$ para alguna $f$.
+    \pause
+    \item $\displaystyle\int_C \mathbf F\cdot d\mathbf r$ es independiente de la trayectoria en $D$.
+    \pause
+    \item $\displaystyle\oint_C \mathbf F\cdot d\mathbf r = 0$ para toda curva cerrada $C\subset D$.
+    \pause
+    \item $\nabla\times\mathbf F=\mathbf 0$ en $D$ (en el plano: $M_y=N_x$).
+  \end{enumerate}
+  \vspace{10pt}
+  \pause
+  \alerta{La equivalencia con (4) exige que $D$ sea simplemente conexo. Las tres primeras son equivalentes en cualquier región abierta y conexa.}
+\end{frame}
+
+% ======================================================
+% BLOQUE 5 --- GREEN, DIVERGENCIA Y ROTACIONAL
+% ======================================================
+\bloqueframe{5}{Teorema de Green}{Frontera e interior, más divergencia y rotacional}
+
+\begin{frame}{Frontera contra interior}
+  \begin{columns}
+    \begin{column}{0.54\textwidth}
+      \begin{itemize}
+        \item Primer resultado que relaciona lo que hace un campo \textbf{en la frontera} con lo que hace \textbf{en el interior}.
+        \pause
+        \item Requiere fijar la \textbf{orientación positiva}: se recorre $C$ de modo que la región $R$ quede siempre \emph{a la izquierda} (antihorario para regiones convexas).
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.42\textwidth}
+      \centering
+      \begin{tikzpicture}[scale=1.25]
+        \fill[tealx!20]
+          (1.5,0.4) ..controls (2.8,0.2) and (3.2,1.0).. (2.8,1.8)
+                    ..controls (2.3,2.5) and (0.9,2.6).. (0.6,1.8)
+                    ..controls (0.2,1.1) and (0.7,0.3).. (1.5,0.4);
+        \draw[navy,thick,-Stealth]
+          (1.5,0.4) ..controls (2.8,0.2) and (3.2,1.0).. (2.8,1.8);
+        \draw[navy,thick,-Stealth]
+          (2.8,1.8) ..controls (2.3,2.5) and (0.9,2.6).. (0.6,1.8)
+                    ..controls (0.2,1.1) and (0.7,0.3).. (1.5,0.4);
+        \node[navy,font=\scriptsize,anchor=west] at (2.95,0.75){$C=\partial R$};
+        \node[font=\scriptsize] at (1.6,1.45){$R$};
+      \end{tikzpicture}\\[2pt]
+      {\footnotesize\color{gray60} orientación positiva}
+    \end{column}
+  \end{columns}
+  \vspace{4pt}
+  \pause
+  \begin{center}\small\color{gray60}
+  Una curva es \textbf{cerrada} si empieza y termina en el mismo punto, y \textbf{simple} si no se corta a sí misma.
+  \end{center}
+\end{frame}
+
+\begin{frame}{Teorema de Green}
+  \begin{block}{Teorema}
+    Sea $C$ cerrada simple, suave por partes, orientada positivamente, y $R$ la región que encierra. Si $M$ y $N$ tienen derivadas parciales continuas en un abierto que contiene a $R$:
+    \[
+      \oint_C M\,dx+N\,dy
+      = \iint_R \left(\frac{\partial N}{\partial x}-\frac{\partial M}{\partial y}\right) dA.
+    \]
+  \end{block}
+  \pause
+  \begin{block}{Forma vectorial}
+    Con $\mathbf F=\langle M,N\rangle$:
+    \[
+      \oint_{\partial R}\mathbf F\cdot d\mathbf r
+      = \iint_R (\nabla\times\mathbf F)\cdot\mathbf k\ dA.
+    \]
+  \end{block}
+  \pause
+  \begin{center}\small\color{gray60}
+  Una integral de línea sobre la frontera $=$ una integral doble sobre el interior.
+  \end{center}
+\end{frame}
+
+\begin{frame}{Por qué funciona, y para qué regiones}
+  \begin{columns}[t]
+    \begin{column}{0.52\textwidth}
+      \small
+      \textbf{Idea de la demostración.} Basta probarlo para una región que sea a la vez de tipo I y de tipo II.
+      \par\pause\smallskip
+      Como tipo I, el TFC en la dirección $y$ da $\int_{g_1(x)}^{g_2(x)}M_y\,dy=M(x,g_2)-M(x,g_1)$, y esa diferencia es, con los signos de la orientación positiva, exactamente $-\oint_C M\,dx$:
+      \[
+        \oint_C M\,dx = -\iint_R \frac{\partial M}{\partial y}\,dA.
+      \]
+      \par\pause\smallskip
+      Como tipo II sale $\displaystyle\oint_C N\,dy=\iint_R N_x\,dA$. Sumando, se obtiene Green.
+    \end{column}
+    \begin{column}{0.44\textwidth}
+      \onslide<1->
+      \small
+      \textbf{Regiones más generales.}
+      \begin{itemize}
+        \item Si $R$ no es simple, se parte en subregiones simples.
+        \item Los \textbf{cortes internos} se recorren dos veces en sentidos opuestos y se \textbf{cancelan}.
+        \item Queda solo la frontera exterior.
+      \end{itemize}
+      \centering
+      \begin{tikzpicture}[scale=0.72]
+        \fill[tealx!15] (0,0) rectangle (3,2);
+        \draw[navy,thick] (0,0) rectangle (3,2);
+        \draw[gray60,dashed] (1.5,0)--(1.5,2);
+        \draw[-Stealth,brick,thick] (1.38,0.7)--(1.38,1.3);
+        \draw[-Stealth,brick,thick] (1.62,1.3)--(1.62,0.7);
+        \node[brick,font=\scriptsize,anchor=north] at (1.5,-0.15) {se cancelan};
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
+  \vspace{2pt}
+  \begin{center}\small\color{gray60}
+  Esta misma cancelación reaparecerá, palabra por palabra, en Stokes y en la divergencia.
+  \end{center}
+\end{frame}
+
+\begin{frame}{Verificación de Green --- planteamiento}
+  \greentracker{1}
+  \begin{block}{Problema}
+    Verificar el teorema de Green para $\mathbf F(x,y)=\langle -y,\ x\rangle$ y la región encerrada por $x^2+y^2=4$.
+  \end{block}
+  \pause
+  Aquí $M=-y$ y $N=x$.
+  \pause
+  \greentracker{2}
+  \[
+    \frac{\partial N}{\partial x}-\frac{\partial M}{\partial y}
+    = 1-(-1) = 2.
+  \]
+  \pause
+  \greentracker{3}
+  $R$ es el disco de radio $2$: en polares, $0\le r\le2$, $0\le\theta\le2\pi$.
+\end{frame}
+
+\begin{frame}{Verificación de Green --- los dos lados}
+  \greentracker{4}
+  \textbf{Lado de la integral doble.}
+  \[
+    \iint_R 2\,dA = 2\int_0^{2\pi}\!\!\int_0^2 r\,dr\,d\theta
+    = 2\cdot2\pi\cdot 2 = 8\pi.
+  \]
+  \pause
+  \textbf{Lado de la integral de línea.} Con $\mathbf r(t)=\langle 2\cos t,\ 2\sen t\rangle$, $0\le t\le2\pi$:
+  \[
+    \mathbf F(\mathbf r(t)) = \langle -2\sen t,\ 2\cos t\rangle = \mathbf r'(t),
+  \]
+  \[
+    \oint_C \mathbf F\cdot d\mathbf r
+    = \int_0^{2\pi} 4(\sen^2t+\cos^2t)\,dt = \int_0^{2\pi} 4\,dt = 8\pi.
+  \]
+  \pause
+  \[
+    \boxed{8\pi = 8\pi}\qquad\checkmark
+  \]
+\end{frame}
+
+\begin{frame}{Green sobre una curva abierta --- el truco}
+  \begin{columns}
+    \begin{column}{0.54\textwidth}
+      \begin{block}{Problema}
+        Evaluar $\int_C \mathbf F\cdot d\mathbf r$ para $\mathbf F=\langle x^2+y,\ 4x-y^2\rangle$, donde $C$ es el arco de $y=\sen x$ de $(0,0)$ a $(\pi,0)$.
+      \end{block}
+      \pause
+      \vspace{2pt}
+      {\small $C$ es \textbf{abierta}: Green no se aplica directamente. La \emph{cerramos} con el segmento $S$ del eje $x$, calculamos por Green y restamos la parte añadida.}
+    \end{column}
+    \begin{column}{0.42\textwidth}
+      \centering
+      \begin{tikzpicture}[scale=1.25]
+        \fill[tealx!20] plot[domain=0:3.1416,samples=60] ({\x},{sin(deg(\x))}) -- (0,0) -- cycle;
+        \draw[thin,->,gray60] (-0.3,0)--(3.7,0) node[right,font=\scriptsize]{$x$};
+        \draw[thin,->,gray60] (0,-0.3)--(0,1.4) node[above,font=\scriptsize]{$y$};
+        \draw[navy,thick] plot[domain=0:3.1416,samples=60] ({\x},{sin(deg(\x))});
+        \draw[brick,thick,-Stealth] (0,0)--(3.1416,0);
+        \node[navy,font=\scriptsize] at (1.6,1.15) {$C$};
+        \node[brick,font=\scriptsize,below] at (1.6,0) {$S$};
+        \node[font=\scriptsize] at (1.57,0.35) {$R$};
+        \node[font=\scriptsize,below] at (3.1416,-0.05) {$\pi$};
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Green sobre una curva abierta --- cálculo}
+  \textbf{Paso 1. Aplicar Green a la región cerrada.} Con $M=x^2+y$, $N=4x-y^2$:\ $N_x-M_y=4-1=3$.
+  \[
+    \oint_{\partial R}\mathbf F\cdot d\mathbf r = \iint_R 3\,dA
+    = 3\int_0^\pi \sen x\,dx = 3\cdot2 = 6.
+  \]
+  \pause
+  \textbf{Paso 2. Descomponer con la orientación correcta.} La frontera positiva recorre $S$ de $(0,0)$ a $(\pi,0)$ y luego el arco \emph{al revés}, así que $\oint_{\partial R} = \int_S - \int_C$.
+  \pause
+  \vspace{4pt}
+
+  \textbf{Paso 3. La parte fácil.} Sobre $S$: $y=0$, $dy=0$, luego $\mathbf F\cdot d\mathbf r = x^2\,dx$ y
+  $\displaystyle\int_S = \int_0^\pi x^2\,dx = \frac{\pi^3}{3}$.
+  \pause
+  \[
+    6 = \frac{\pi^3}{3}-\int_C
+    \quad\Longrightarrow\quad
+    \boxed{\int_C \mathbf F\cdot d\mathbf r = \frac{\pi^3}{3}-6}
+  \]
+\end{frame}
+
+\begin{frame}{Green al revés: medir áreas recorriendo el borde}
+  Si se elige $\mathbf F$ de modo que $N_x-M_y=1$, el lado derecho de Green es el \textbf{área} de $R$:
+  \[
+    \mathbf F=\left\langle-\tfrac{y}{2},\ \tfrac{x}{2}\right\rangle
+    \ \Longrightarrow\ N_x-M_y=\tfrac12+\tfrac12=1
+    \ \Longrightarrow\
+    \boxed{A(R)=\frac12\oint_C x\,dy-y\,dx}
+  \]
+  \pause
+  \textbf{Ejemplo: la elipse} $\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1$, con $\mathbf r(t)=\langle a\cos t,\ b\sen t\rangle$, $0\le t\le2\pi$:
+  \[
+    x\,dy-y\,dx
+    = a\cos t\,(b\cos t)\,dt - b\sen t\,(-a\sen t)\,dt
+    = ab\,dt .
+  \]
+  \pause
+  \[
+    A=\frac12\int_0^{2\pi} ab\ dt = \boxed{\pi ab}
+  \]
+  \pause
+  \begin{center}\small\color{gray60} Se obtiene un área recorriendo únicamente su \textbf{borde}: ese es el principio del planímetro. \end{center}
+\end{frame}
+
+\begin{frame}{Divergencia y rotacional}
+  \begin{block}{Divergencia (campo escalar)}
+    Para $\mathbf F=\langle F_1,F_2,F_3\rangle$:
+    \[
+      \nabla\cdot\mathbf F
+      = \frac{\partial F_1}{\partial x}+\frac{\partial F_2}{\partial y}+\frac{\partial F_3}{\partial z}.
+    \]
+  \end{block}
+  \pause
+  \begin{block}{Rotacional (campo vectorial)}
+    \[
+      \nabla\times\mathbf F
+      = \begin{vmatrix}
+          \mathbf i & \mathbf j & \mathbf k\\
+          \partial_x & \partial_y & \partial_z\\
+          F_1 & F_2 & F_3
+        \end{vmatrix}.
+    \]
+  \end{block}
+  \pause
+  \begin{center}\small\color{gray60}
+  En el plano, con $\mathbf F=\langle M,N,0\rangle$, el rotacional se reduce al escalar $(\nabla\times\mathbf F)\cdot\mathbf k = N_x-M_y$.
+  \end{center}
+\end{frame}
+
+\begin{frame}{Qué miden}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \begin{block}{Divergencia}
+        Densidad de flujo neto que \textbf{sale} de un punto.
+        \begin{itemize}\small
+          \item $\nabla\cdot\mathbf F>0$: el punto es una \textbf{fuente}.
+          \item $\nabla\cdot\mathbf F<0$: es un \textbf{sumidero}.
+          \item $\nabla\cdot\mathbf F=0$: campo \textbf{incompresible}.
+        \end{itemize}
+      \end{block}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{block}{Rotacional}
+        Circulación local del campo alrededor de un punto.
+        \begin{itemize}\small
+          \item Su \emph{dirección} es el eje de giro.
+          \item Su \emph{magnitud}, la intensidad del giro.
+          \item $\nabla\times\mathbf F=\mathbf 0$: campo \textbf{irrotacional}.
+        \end{itemize}
+      \end{block}
+    \end{column}
+  \end{columns}
+  \vspace{6pt}
+  \pause
+  \begin{center}
+  \normalsize\color{tealx} Para $\mathbf F=\langle -y,x\rangle$: $\ \nabla\cdot\mathbf F = 0$ y $\nabla\times\mathbf F = 2\mathbf k$. Gira sin comprimir.
+  \end{center}
+  \pause
+  \notaclave{En un dominio simplemente conexo: $\mathbf F$ conservativo $\iff$ $\nabla\times\mathbf F=\mathbf 0$.}
+\end{frame}
+
+% ======================================================
+% BLOQUE 6 --- SUPERFICIES Y FLUJO
+% ======================================================
+\bloqueframe{6}{Superficies y flujo}{Integrales de superficie de campos escalares y vectoriales}
+
+\begin{frame}{Superficies paramétricas}
+  \begin{block}{Definición}
+    Una \textbf{superficie paramétrica suave} es $\mathbf r:D\subset\mathbb R^2\to\mathbb R^3$,
+    \[
+      \mathbf r(u,v)=\bigl(x(u,v),\ y(u,v),\ z(u,v)\bigr),
+    \]
+    con derivadas parciales continuas y $\mathbf r_u\times\mathbf r_v\neq\mathbf 0$ en todo punto.
+  \end{block}
+  \pause
+  \begin{itemize}
+    \item $\mathbf r_u$ y $\mathbf r_v$ generan el \textbf{plano tangente}; $\mathbf r_u\times\mathbf r_v$ es perpendicular a él.
+    \pause
+    \item $\|\mathbf r_u\times\mathbf r_v\|$ es el área del paralelogramo infinitesimal generado por $du$ y $dv$:
+    \[
+      dS = \|\mathbf r_u\times\mathbf r_v\|\ du\,dv.
+    \]
+  \end{itemize}
+  \pause
+  \notaclave{$dS$ es la llave que convierte \emph{cualquier} integral de superficie en una integral doble sobre $D$.}
+\end{frame}
+
+\begin{frame}{El caso más frecuente: una gráfica}
+  Si $S$ es la gráfica de $z=f(x,y)$ sobre $R\subset\mathbb R^2$, la parametrización natural es
+  \[
+    \mathbf r(x,y)=\langle x,\ y,\ f(x,y)\rangle.
+  \]
+  \pause
+  \begin{block}{Normal y elemento de área}
+    \[
+      \mathbf r_x\times\mathbf r_y = \langle -f_x,\ -f_y,\ 1\rangle,
+      \qquad
+      dS = \sqrt{1+f_x^2+f_y^2}\ dx\,dy.
+    \]
+  \end{block}
+  \pause
+  \vspace{4pt}
+  \begin{center}
+  \normalsize\color{tealx} Es exactamente la fórmula de área de superficie del capítulo de integrales dobles.
+  \end{center}
+  \pause
+  \begin{center}\small\color{gray60}
+  La tercera componente de $\langle -f_x,-f_y,1\rangle$ es $+1$: esta normal apunta \textbf{hacia arriba}.
+  \end{center}
+\end{frame}
+
+\begin{frame}{Orientación}
+  \begin{block}{Definición}
+    Una superficie orientable admite dos campos normales unitarios continuos, $\mathbf n$ y $-\mathbf n$. \textbf{Orientarla} es elegir uno.
+    \[
+      \mathbf n = \frac{\mathbf r_u\times\mathbf r_v}{\|\mathbf r_u\times\mathbf r_v\|}
+      \qquad\text{o, para una gráfica,}\qquad
+      \mathbf n = \frac{\langle -f_x,-f_y,1\rangle}{\sqrt{1+f_x^2+f_y^2}}.
+    \]
+  \end{block}
+  \pause
+  \begin{itemize}
+    \item Intercambiar $u$ y $v$ invierte el producto cruzado y, con él, la orientación.
+    \pause
+    \item No toda superficie es orientable: la \textbf{banda de Möbius} es el contraejemplo clásico.
+  \end{itemize}
+  \pause
+  \begin{center}\small\color{gray60}
+  En este curso todas las superficies son orientables: gráficas, esferas, cilindros, conos y uniones por partes.
+  \end{center}
+\end{frame}
+
+\begin{frame}{Integral de superficie de un campo escalar}
+  \begin{block}{Definición}
+    \[
+      \iint_S f(x,y,z)\,dS
+      = \iint_D f\bigl(\mathbf r(u,v)\bigr)\ \|\mathbf r_u\times\mathbf r_v\|\ du\,dv.
+    \]
+  \end{block}
+  \pause
+  \begin{itemize}
+    \item \textbf{No depende de la orientación}: $\|\mathbf r_u\times\mathbf r_v\|>0$ siempre (igual que $\int_C f\,ds$).
+    \pause
+    \item Si $f\equiv1$ se recupera el \textbf{área} de la superficie: $\ \text{Área}(S)=\iint_S dS$.
+    \pause
+    \item Si $f=\rho$ es una densidad superficial, se obtiene la \textbf{masa} de una lámina curva.
+  \end{itemize}
+  \vspace{6pt}
+  \pause
+  \begin{center}\small\color{gray60}
+  El protocolo es: parametrizar $\to$ calcular $dS$ $\to$ sustituir en $f$ $\to$ reducir a integral doble $\to$ evaluar (a menudo en polares).
+  \end{center}
+\end{frame}
+
+\begin{frame}{Integral escalar sobre una esfera}
+  \begin{block}{Problema}
+    Calcular $\displaystyle\iint_S (x^2+y^2)\,dS$, donde $S$ es la esfera $x^2+y^2+z^2=4$.
+  \end{block}
+  \pause
+  \textbf{Parametrización esférica} con $\rho=2$:
+  \[
+    \mathbf r(\varphi,\theta)=\langle 2\sen\varphi\cos\theta,\ 2\sen\varphi\sen\theta,\ 2\cos\varphi\rangle,
+    \quad \varphi\in[0,\pi],\ \theta\in[0,2\pi].
+  \]
+  \pause
+  \textbf{Elemento de área.} Para una esfera de radio $R$ se tiene $\|\mathbf r_\varphi\times\mathbf r_\theta\|=R^2\sen\varphi$, luego $dS=4\sen\varphi\ d\varphi\,d\theta$.
+  \pause
+  \vspace{4pt}
+
+  \textbf{Integrando.} Sobre la esfera, $x^2+y^2 = 4\sen^2\varphi$, así que
+  \[
+    (x^2+y^2)\,dS = 16\sen^3\varphi\ d\varphi\,d\theta.
+  \]
+\end{frame}
+
+\begin{frame}{Integral escalar sobre una esfera --- resultado}
+  \[
+    I = \int_0^{2\pi}\!\!\int_0^\pi 16\sen^3\varphi\ d\varphi\,d\theta
+      = 16\cdot 2\pi\int_0^\pi \sen^3\varphi\ d\varphi.
+  \]
+  \pause
+  Con $\sen^3\varphi = (1-\cos^2\varphi)\sen\varphi$ y $u=\cos\varphi$:
+  \[
+    \int_0^\pi \sen^3\varphi\ d\varphi = \left[-\cos\varphi+\frac{\cos^3\varphi}{3}\right]_0^\pi = \frac43.
+  \]
+  \pause
+  \[
+    I = 32\pi\cdot\frac43 = \boxed{\frac{128\pi}{3}}
+  \]
+  \pause
+  \vspace{2pt}
+  \begin{center}\small\color{gray60}
+  Comprobación de magnitud: el área de la esfera es $16\pi$ y $x^2+y^2\le4$, luego $I\le64\pi$. Y $128\pi/3\approx 42{,}7\pi$. \checkmark
+  \end{center}
+\end{frame}
+
+\begin{frame}{Flujo: la integral de superficie de un campo vectorial}
+  \begin{columns}
+    \begin{column}{0.55\textwidth}
+      \begin{itemize}
+        \item Si $\mathbf F$ es la velocidad de un fluido, el volumen que atraviesa $dS$ por unidad de tiempo es la componente \textbf{normal} de $\mathbf F$ por $dS$.
+        \pause
+        \item El \textbf{flujo} de $\mathbf F$ a través de $S$ es
+        \[
+          \iint_S \mathbf F\cdot\mathbf n\ dS.
+        \]
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.42\textwidth}
+      \centering
+      \begin{tikzpicture}[scale=0.88]
+        \draw[navy,thick] (0,0) .. controls (1,0.7) and (2,-0.3) .. (3,0.4);
+        \foreach \p/\a in {0.5/70, 1.5/95, 2.5/62}{
+          \draw[-Stealth,brick,thick] (\p,{0.25+0.12*sin(180*\p)})
+            -- ++({cos(\a)*0.8},{sin(\a)*0.8});
+        }
+        \draw[-Stealth,tealx,thick] (0.2,-0.5)--(0.9,0.0);
+        \draw[-Stealth,tealx,thick] (1.3,-0.6)--(2.0,-0.1);
+        \draw[-Stealth,tealx,thick] (2.4,-0.5)--(3.1,0.0);
+        \node[navy,font=\scriptsize,anchor=west] at (3.05,0.5) {$S$};
+        \node[brick,font=\scriptsize,anchor=south] at (1.5,1.2) {$\mathbf n$};
+        \node[tealx,font=\scriptsize,anchor=north] at (1.6,-0.7) {$\mathbf F$};
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
+  \vspace{4pt}
+  \pause
+  \begin{block}{Fórmula de cálculo}
+    Con orientación compatible con la parametrización,
+    \[
+      \iint_S \mathbf F\cdot\mathbf n\ dS
+      = \iint_D \mathbf F\bigl(\mathbf r(u,v)\bigr)\cdot(\mathbf r_u\times\mathbf r_v)\ du\,dv.
+    \]
+  \end{block}
+\end{frame}
+
+\begin{frame}{Dos observaciones sobre el flujo}
+  \begin{itemize}
+    \setlength{\itemsep}{6pt}
+    \item La norma $\|\mathbf r_u\times\mathbf r_v\|$ del denominador de $\mathbf n$ \textbf{se cancela} con la de $dS$: en la práctica se usa el vector normal \emph{sin normalizar}.
+    \pause
+    \item El flujo \textbf{sí} depende de la orientación: cambiar $\mathbf n$ por $-\mathbf n$ le cambia el signo.
+    \begin{itemize}\small
+      \item Positivo: el campo sale a través de $S$.
+      \item Negativo: entra.
+    \end{itemize}
+  \end{itemize}
+  \vspace{8pt}
+  \pause
+  \alerta{Paso obligatorio: después de calcular $\mathbf r_u\times\mathbf r_v$, comprobar que apunta hacia donde pide el problema (hacia arriba, hacia afuera\ldots). Si no, multiplicar por $-1$.}
+\end{frame}
+
+\begin{frame}{Flujo a través de un cilindro}
+  \flujotracker{5}
+  \begin{block}{Problema}
+    Flujo de $\mathbf F=\langle x,y,z\rangle$ a través de la superficie lateral del cilindro $x^2+y^2=1$, $0\le z\le2$, orientado hacia afuera.
+  \end{block}
+  \pause
+  $\mathbf r(\theta,z)=\langle\cos\theta,\ \sen\theta,\ z\rangle$, con $0\le\theta\le2\pi$ y $0\le z\le2$:
+  \[
+    \mathbf r_\theta\times\mathbf r_z
+    = \langle-\sen\theta,\cos\theta,0\rangle\times\langle0,0,1\rangle
+    = \langle\cos\theta,\ \sen\theta,\ 0\rangle,
+  \]
+  que apunta radialmente hacia afuera: es la orientación pedida. \checkmark
+  \pause
+  \par\smallskip
+  Sobre el cilindro $\mathbf F=\langle\cos\theta,\sen\theta,z\rangle$, luego $\mathbf F\cdot(\mathbf r_\theta\times\mathbf r_z)=\cos^2\theta+\sen^2\theta=1$:
+  \[
+    \iint_S \mathbf F\cdot\mathbf n\ dS = \int_0^{2\pi}\!\!\int_0^2 1\ dz\,d\theta = \boxed{4\pi}
+  \]
+\end{frame}
+
+\begin{frame}{Flujo a través de un cono}
+  \begin{block}{Problema}
+    Flujo de $\mathbf F=\langle 0,0,z\rangle$ a través del cono $z=\sqrt{x^2+y^2}$, $0\le z\le1$, orientado hacia arriba.
+  \end{block}
+  \pause
+  Es una gráfica: $\mathbf r(x,y)=\langle x,\ y,\ \sqrt{x^2+y^2}\rangle$ sobre $R:x^2+y^2\le1$. Con $r=\sqrt{x^2+y^2}$,
+  \[
+    f_x=\frac{x}{r},\quad f_y=\frac{y}{r}
+    \quad\Longrightarrow\quad
+    \mathbf r_x\times\mathbf r_y = \left\langle -\frac{x}{r},\ -\frac{y}{r},\ 1\right\rangle.
+  \]
+  \pause
+  Tercera componente $1>0$: orientación correcta. Sobre el cono $\mathbf F=\langle0,0,r\rangle$, luego
+  \[
+    \mathbf F\cdot(\mathbf r_x\times\mathbf r_y) = r.
+  \]
+  \pause
+  \[
+    \iint_S \mathbf F\cdot\mathbf n\ dS = \iint_R r\,dA
+    = \int_0^{2\pi}\!\!\int_0^1 r\cdot r\,dr\,d\theta = \boxed{\frac{2\pi}{3}}
+  \]
+\end{frame}
+
+% ======================================================
+% BLOQUE 7 --- DIVERGENCIA Y STOKES
+% ======================================================
+\bloqueframe{7}{Divergencia y Stokes}{Los dos grandes teoremas, y el cuadro completo}
+
+\begin{frame}{Teorema de la divergencia (Gauss)}
+  \begin{block}{Teorema}
+    Sea $Q\subset\mathbb R^3$ un sólido acotado con frontera $\partial Q$ suave por partes, orientada con la normal \textbf{exterior} $\mathbf n$. Si las componentes de $\mathbf F$ tienen derivadas parciales de primer orden continuas en $Q$:
+    \[
+      \iint_{\partial Q}\mathbf F\cdot\mathbf n\ dS
+      = \iiint_Q (\nabla\cdot\mathbf F)\ dV.
+    \]
+  \end{block}
+  \pause
+  \vspace{4pt}
+  \begin{center}
+  \normalsize\color{tealx}
+  El flujo neto que sale por la frontera $=$ la suma de todas las fuentes interiores.
+  \end{center}
+  \pause
+  \begin{center}\small\color{gray60}
+  Si $\nabla\cdot\mathbf F=0$ en todo $Q$, el flujo neto es cero: todo lo que entra, sale.
+  \end{center}
+\end{frame}
+
+\begin{frame}{Por qué funciona}
+  \begin{columns}
+    \begin{column}{0.54\textwidth}
+      \begin{itemize}
+        \item Se divide $Q$ en celdas infinitesimales y se suman los flujos.
+        \pause
+        \item Cada cara \textbf{interior} es saliente para una celda y entrante para la vecina: las contribuciones \textbf{se cancelan por pares}.
+        \pause
+        \item Solo sobrevive el flujo a través de la frontera exterior $\partial Q$.
+        \pause
+        \item Y cada celda aporta $\nabla\cdot\mathbf F\ dV$.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.42\textwidth}
+      \centering
+      \begin{tikzpicture}[scale=0.85]
+        \fill[tealx!12] (0,0) rectangle (4,3.2);
+        \draw[gray60] (0,1.6)--(4,1.6);
+        \draw[gray60] (2,0)--(2,3.2);
+        \draw[navy,thick] (0,0) rectangle (4,3.2);
+        \draw[-Stealth,brick,thick] (1.7,0.85)--(2.05,0.85);
+        \draw[-Stealth,brick,thick] (2.3,0.62)--(1.95,0.62);
+        \node[brick,font=\scriptsize] at (2.0,0.25) {se cancelan};
+        \foreach \p in {(0,0.8),(0,2.4)} \draw[-Stealth,navy,thick] \p -- ++(-0.5,0);
+        \foreach \p in {(4,0.8),(4,2.4)} \draw[-Stealth,navy,thick] \p -- ++(0.5,0);
+        \foreach \p in {(1,3.2),(3,3.2)} \draw[-Stealth,navy,thick] \p -- ++(0,0.5);
+        \foreach \p in {(1,0),(3,0)} \draw[-Stealth,navy,thick] \p -- ++(0,-0.5);
+        \node[font=\scriptsize] at (1.0,2.3) {$Q$};
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
+  \vspace{4pt}
+  \pause
+  \begin{center}\small\color{gray60} Es la misma cancelación que en Green, una dimensión más arriba.\end{center}
+\end{frame}
+
+\begin{frame}{Divergencia --- el caso que más conviene}
+  \begin{block}{Problema}
+    Calcular el flujo de $\mathbf F=\langle y,\ xz,\ z^2\rangle$ a través de la superficie cerrada que limita el sólido entre $z=1-x^2-y^2$ y $z=0$.
+  \end{block}
+  \pause
+  \begin{center}\small\color{brick}
+  Directamente habría que calcular \textbf{dos} integrales de superficie (tapa y paraboloide). Con divergencia, una integral triple.
+  \end{center}
+  \pause
+  \textbf{Divergencia.}
+  \[
+    \nabla\cdot\mathbf F = \frac{\partial}{\partial x}(y)+\frac{\partial}{\partial y}(xz)+\frac{\partial}{\partial z}(z^2)
+    = 0+0+2z = 2z.
+  \]
+  \pause
+  \[
+    \iint_{\partial Q}\mathbf F\cdot\mathbf n\ dS = \iiint_Q 2z\ dV.
+  \]
+\end{frame}
+
+\begin{frame}{Divergencia --- cálculo}
+  En cilíndricas: $z$ de $0$ a $1-r^2$, $r$ de $0$ a $1$, $\theta$ de $0$ a $2\pi$, con $dV=r\,dz\,dr\,d\theta$.
+  \[
+    \iiint_Q 2z\ dV
+    = 2\int_0^{2\pi}\!\!\int_0^1\!\!\int_0^{1-r^2} z\,r\ dz\,dr\,d\theta.
+  \]
+  \pause
+  \[
+    = 2\cdot2\pi\int_0^1 r\left[\frac{z^2}{2}\right]_0^{1-r^2} dr
+    = 2\pi\int_0^1 r(1-r^2)^2\ dr.
+  \]
+  \pause
+  Con $u=1-r^2$, $r\,dr=-du/2$:
+  \[
+    2\pi\int_0^1 r(1-r^2)^2 dr = \pi\int_0^1 u^2\,du = \frac{\pi}{3}.
+  \]
+  \pause
+  \[
+    \boxed{\text{Flujo} = \frac{\pi}{3}}
+  \]
+\end{frame}
+
+\begin{frame}{Ley de Gauss --- el flujo de una carga puntual}
+  \begin{block}{Problema}
+    El campo eléctrico de una carga $q$ situada en el origen es
+    $\mathbf E(\mathbf r)=\dfrac{q}{4\pi\varepsilon_0}\dfrac{\mathbf r}{\|\mathbf r\|^{3}}$.
+    Halle su flujo a través de la esfera $S_a$ de radio $a$ centrada en la carga.
+  \end{block}
+  \pause
+  Sobre $S_a$ el normal exterior es $\mathbf n=\mathbf r/a$ y $\|\mathbf r\|=a$, así que
+  \[
+    \mathbf E\cdot\mathbf n
+    = \frac{q}{4\pi\varepsilon_0}\cdot\frac{\mathbf r\cdot\mathbf r}{a^{3}\cdot a}
+    = \frac{q}{4\pi\varepsilon_0}\cdot\frac{a^{2}}{a^{4}}
+    = \frac{q}{4\pi\varepsilon_0 a^{2}},
+  \]
+  que es \textbf{constante} sobre toda la esfera.
+  \pause
+  \[
+    \iint_{S_a}\mathbf E\cdot\mathbf n\ dS
+    = \frac{q}{4\pi\varepsilon_0 a^{2}}\cdot\underbrace{4\pi a^{2}}_{\text{área de }S_a}
+    = \boxed{\frac{q}{\varepsilon_0}}
+  \]
+  \pause
+  \begin{center}\normalsize\color{tealx} El radio se cancela: el flujo no depende de la esfera elegida.\end{center}
+\end{frame}
+
+\begin{frame}{Ley de Gauss --- por qué vale cualquier superficie}
+  La razón está en la divergencia. Con $r=\|\mathbf r\|$,
+  \[
+    \frac{\partial}{\partial x}\left(\frac{x}{r^{3}}\right)=\frac{1}{r^{3}}-\frac{3x^{2}}{r^{5}}
+    \quad\Longrightarrow\quad
+    \nabla\cdot\frac{\mathbf r}{r^{3}}=\frac{3}{r^{3}}-\frac{3r^{2}}{r^{5}}=0
+    \quad (\mathbf r\neq\mathbf 0).
+  \]
+  \pause
+  \alerta{En el origen $\mathbf E$ ni siquiera está definido: el teorema de la divergencia \textbf{no} se aplica a una región que contenga la carga.}
+  \pause
+  \textbf{El truco.} Sea $S$ cualquier superficie cerrada que encierre la carga y $S_a$ una esfera pequeña dentro. En la región $Q$ \emph{entre} ambas, $\mathbf E$ es suave y $\nabla\cdot\mathbf E=0$:
+  \[
+    0=\iiint_Q \nabla\cdot\mathbf E\ dV
+     = \iint_{S}\mathbf E\cdot\mathbf n\ dS-\iint_{S_a}\mathbf E\cdot\mathbf n\ dS .
+  \]
+  \pause
+  \[
+    \boxed{\iint_S \mathbf E\cdot\mathbf n\ dS=\frac{q}{\varepsilon_0}\ \text{ si } S \text{ encierra la carga;}\quad 0 \text{ si no.}}
+  \]
+\end{frame}
+
+\begin{frame}{Teorema de Stokes}
+  \begin{block}{Teorema}
+    Sea $S$ una superficie orientada, suave por partes, con normal unitaria $\mathbf n$, y sea $\partial S$ su curva frontera, cerrada y simple, orientada según la \textbf{regla de la mano derecha} respecto de $\mathbf n$. Si $\mathbf F$ tiene derivadas parciales continuas en un abierto que contiene a $S$:
+    \[
+      \oint_{\partial S}\mathbf F\cdot d\mathbf r
+      = \iint_S (\nabla\times\mathbf F)\cdot\mathbf n\ dS.
+    \]
+  \end{block}
+  \pause
+  \vspace{4pt}
+  \begin{center}
+  \normalsize\color{tealx}
+  La circulación alrededor del borde $=$ la suma de las ``micro-circulaciones'' interiores.
+  \end{center}
+  \pause
+  \begin{center}\small\color{gray60}
+  \textbf{Regla de la mano derecha}: si los dedos siguen $\partial S$, el pulgar apunta en la dirección de $\mathbf n$.
+  \end{center}
+\end{frame}
+
+\begin{frame}{Green es Stokes en el plano}
+  Si $S$ es una región plana $R$ del plano $xy$, parametrizada por $\mathbf r(x,y)=\langle x,y,0\rangle$, su normal es $\mathbf n=\mathbf k$.
+  \pause
+  \vspace{4pt}
+
+  Escribiendo $\mathbf F(x,y,z)=\langle M(x,y),\ N(x,y),\ 0\rangle$:
+  \[
+    \nabla\times\mathbf F = \left\langle 0,\ 0,\ \frac{\partial N}{\partial x}-\frac{\partial M}{\partial y}\right\rangle,
+    \qquad
+    (\nabla\times\mathbf F)\cdot\mathbf k = \frac{\partial N}{\partial x}-\frac{\partial M}{\partial y}.
+  \]
+  \pause
+  Y Stokes se convierte en
+  \[
+    \oint_{\partial R}\mathbf F\cdot d\mathbf r
+    = \iint_R\left(\frac{\partial N}{\partial x}-\frac{\partial M}{\partial y}\right) dA,
+  \]
+  \pause
+  \begin{center}
+  \normalsize\color{tealx} que es exactamente el teorema de Green.
+  \end{center}
+\end{frame}
+
+\begin{frame}{Verificación de Stokes --- los dos lados}
+  \begin{block}{Problema}
+    Verificar Stokes para $\mathbf F=\langle -y,\ x,\ z\rangle$ sobre $S: z=4-x^2-y^2$, $z\ge0$, orientada hacia arriba.
+  \end{block}
+  \pause
+  \textbf{Rotacional.}\quad
+  $\nabla\times\mathbf F = \langle 0-0,\ 0-0,\ 1-(-1)\rangle = \langle 0,0,2\rangle$.
+  \pause
+  \vspace{4pt}
+
+  \textbf{Lado de la superficie.} Con $f_x=-2x$, $f_y=-2y$, la normal hacia arriba sin normalizar es $\langle 2x,2y,1\rangle$; el producto punto vale $2$, luego
+  $\displaystyle\iint_S(\nabla\times\mathbf F)\cdot\mathbf n\ dS = \iint_R 2\,dA = 2\pi\cdot2^2 = 8\pi$.
+  \pause
+  \vspace{4pt}
+
+  \textbf{Lado de la curva.} $\partial S$ es $x^2+y^2=4$, $z=0$; con $\mathbf r(t)=\langle2\cos t,2\sen t,0\rangle$ el producto punto vale $4$, luego
+  $\displaystyle\oint_{\partial S}\mathbf F\cdot d\mathbf r = \int_0^{2\pi}4\,dt = 8\pi$. \quad$\boxed{8\pi=8\pi}$\ \checkmark
+\end{frame}
+
+\begin{frame}{Stokes como atajo: elegir el lado fácil}
+  \begin{block}{Problema}
+    Calcular $\displaystyle\oint_C \mathbf F\cdot d\mathbf r$ con $\mathbf F=\langle z,\ x,\ y\rangle$ y $C: x^2+y^2=1$, $z=0$, antihoraria vista desde arriba.
+  \end{block}
+  \pause
+  $C$ es el borde del \textbf{hemisferio superior} $S: x^2+y^2+z^2=1$, $z\ge0$, con normal exterior $\mathbf n=\langle x,y,z\rangle$.
+  \pause
+  \vspace{4pt}
+
+  \textbf{Rotacional.}\quad $\nabla\times\mathbf F = \langle 1,1,1\rangle$, luego
+  $(\nabla\times\mathbf F)\cdot\mathbf n = x+y+z$.
+  \pause
+  \vspace{4pt}
+
+  \textbf{Simetría.} $\iint_S x\,dS = \iint_S y\,dS = 0$ (integrandos impares sobre una región simétrica). Queda $\iint_S z\,dS$.
+  \pause
+  \[
+    \iint_S z\ dS = \int_0^{2\pi}\!\!\int_0^{\pi/2}\cos\varphi\,\sen\varphi\ d\varphi\,d\theta
+    = 2\pi\cdot\frac12 = \boxed{\pi}
+  \]
+\end{frame}
+
+\begin{frame}{El cuadro completo}
+  \granesquema
+  \begin{center}
+  \renewcommand{\arraystretch}{1.2}
+  \footnotesize
+  \begin{tabular}{lll}
+    \toprule
+    \textbf{Teorema} & \textbf{Frontera} & \textbf{Interior}\\
+    \midrule
+    TFC & $f(b)-f(a)$ (dos puntos) & $\int_a^b f'\,dx$\\
+    Int.\ de línea & $f(B)-f(A)$ (dos puntos) & $\int_C \nabla f\cdot d\mathbf r$\\
+    Green & $\oint_{\partial R}\mathbf F\cdot d\mathbf r$ (curva) & $\iint_R (N_x-M_y)\,dA$\\
+    Stokes & $\oint_{\partial S}\mathbf F\cdot d\mathbf r$ (curva) & $\iint_S (\nabla\times\mathbf F)\cdot\mathbf n\,dS$\\
+    Divergencia & $\iint_{\partial Q}\mathbf F\cdot\mathbf n\,dS$ (superficie) & $\iiint_Q (\nabla\cdot\mathbf F)\,dV$\\
+    \bottomrule
+  \end{tabular}
+  \end{center}
+\end{frame}
+
+\begin{frame}{\textquestiondown{}Qué herramienta usar?}
+  \begin{center}
+  \renewcommand{\arraystretch}{1.4}
+  \small
+  \begin{tabular}{ll}
+    \toprule
+    \textbf{Si el problema pide\ldots} & \textbf{Mirar primero\ldots}\\
+    \midrule
+    $\int_C \mathbf F\cdot d\mathbf r$ con $C$ abierta
+      & \textquestiondown{}es $\mathbf F$ conservativo? $\Rightarrow$ T. fundamental\\
+    $\oint_C \mathbf F\cdot d\mathbf r$ con $C$ cerrada plana
+      & Green\\
+    $\oint_C \mathbf F\cdot d\mathbf r$ con $C$ cerrada en $\mathbb R^3$
+      & Stokes (elegir la superficie más simple)\\
+    flujo por una superficie \textbf{cerrada}
+      & Teorema de la divergencia\\
+    flujo por una superficie \textbf{abierta}
+      & cálculo directo con $\mathbf r_u\times\mathbf r_v$\\
+    \bottomrule
+  \end{tabular}
+  \end{center}
+  \vspace{8pt}
+  \pause
+  \notaclave{Casi siempre hay dos caminos. La habilidad del curso consiste en reconocer cuál de los dos lados de la igualdad es el fácil.}
+\end{frame}
+
+\begin{frame}{Errores que cuestan más puntos}
+  \begin{enumerate}
+    \setlength{\itemsep}{6pt}
+    \item Olvidar la orientación: signo equivocado en $\int_C\mathbf F\cdot d\mathbf r$ o en el flujo.
+    \pause
+    \item Usar $\|\mathbf r'(t)\|$ en una integral de línea \emph{vectorial} (allí va $\mathbf r'(t)$, sin norma).
+    \pause
+    \item Aplicar $M_y=N_x$ en un dominio con agujeros y concluir que el campo es conservativo.
+    \pause
+    \item Aplicar el teorema de la divergencia a una superficie que no es cerrada.
+    \pause
+    \item En Stokes, orientar el borde sin respetar la regla de la mano derecha.
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}{Cierre}
+  \begin{itemize}
+    \setlength{\itemsep}{5pt}
+    \item Un \textbf{campo vectorial} asigna un vector a cada punto; el caso central es el campo gradiente.
+    \pause
+    \item Integrar sobre una \textbf{curva}: $\int_C f\,ds$ acumula valores; $\int_C\mathbf F\cdot d\mathbf r$ mide trabajo o circulación y depende de la orientación.
+    \pause
+    \item Si $\mathbf F$ es \textbf{conservativo}, la integral solo depende de los extremos: $f(B)-f(A)$.
+    \pause
+    \item Integrar sobre una \textbf{superficie}: $\iint_S f\,dS$ da área o masa; $\iint_S\mathbf F\cdot\mathbf n\,dS$ da flujo.
+    \pause
+    \item \textbf{Green}, \textbf{Stokes} y \textbf{divergencia} son la misma idea del TFC en dimensiones crecientes: la frontera determina el interior.
+  \end{itemize}
+\end{frame}
+
+\end{document}
