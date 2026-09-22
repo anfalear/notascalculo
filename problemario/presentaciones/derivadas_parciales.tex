@@ -71,9 +71,9 @@
     \item \textbf{Derivadas parciales}: definición, cálculo, orden superior, Clairaut \hfill{\small\color{gray60}(25 min)}
     \item \textbf{Plano tangente}, linealización, diferenciales y diferenciabilidad \hfill{\small\color{gray60}(35 min)}
     \item \textbf{Regla de la cadena} y derivación implícita \hfill{\small\color{gray60}(20 min)}
-    \item \textbf{Gradiente} y derivada direccional \hfill{\small\color{gray60}(25 min)}
-    \item \textbf{Superficies implícitas}: plano tangente y recta normal \hfill{\small\color{gray60}(15 min)}
-    \item \textbf{Optimización}: extremos libres y multiplicadores de Lagrange \hfill{\small\color{gray60}(30 min)}
+    \item \textbf{Gradiente} y derivada direccional \hfill{\small\color{gray60}(30 min)}
+    \item \textbf{Superficies implícitas}: revisita del plano tangente \hfill{\small\color{gray60}(5 min)}
+    \item \textbf{Optimización}: extremos libres y multiplicadores de Lagrange \hfill{\small\color{gray60}(45 min)}
   \end{enumerate}
   \vfill
   \begin{center}
@@ -1589,74 +1589,110 @@
   \]
 \end{frame}
 
+\begin{frame}{Aplicación --- una sonda térmica en tres dimensiones}
+  \begin{block}{Problema}
+    {\small Una fuente puntual en el origen calienta una sala: la temperatura, en $^\circ$C con $x,y,z$ en metros, es
+    $T(x,y,z)=\dfrac{200}{x^2+y^2+z^2+1}$. Una sonda está en $P(1,1,1)$.
+    \textbf{(a)} \textquestiondown{}A qué razón cambia $T$ si avanza hacia $Q(3,2,1)$?}
+  \end{block}
+  \pause
+  \ddtracker{1}
+  \[
+    \nabla T=-\frac{400\,\langle x,y,z\rangle}{\left(x^2+y^2+z^2+1\right)^2}.
+  \]
+  \pause
+  En $P$ el denominador vale $x^2+y^2+z^2+1=4$, luego $T(P)=50^\circ$C y
+  $\nabla T(1,1,1)=-\tfrac{400}{16}\langle 1,1,1\rangle=-25\,\langle 1,1,1\rangle$.
+\end{frame}
+
+\begin{frame}{La sonda --- rumbo a $Q$}
+  \ddtracker{3}
+  \[
+    \overrightarrow{PQ}=\langle 2,1,0\rangle,\qquad
+    \bigl\|\overrightarrow{PQ}\bigr\|=\sqrt5,\qquad
+    \mathbf u=\frac{1}{\sqrt5}\langle 2,1,0\rangle.
+  \]
+  \pause
+  \[
+    D_{\mathbf u}T(P)=-25\,\langle 1,1,1\rangle\cdot\frac{1}{\sqrt5}\langle 2,1,0\rangle
+    =-\frac{25(2+1+0)}{\sqrt5}=-\frac{75}{\sqrt5}=-15\sqrt5.
+  \]
+  \pause
+  \[
+    \boxed{D_{\mathbf u}T(1,1,1)=-15\sqrt5\approx-33.5\ \frac{^\circ\mathrm{C}}{\mathrm m}}
+  \]
+  \pause
+  \begin{center}\small\color{gray60} El signo negativo es información física: por ese rumbo la sonda \textbf{se enfría}.\end{center}
+\end{frame}
+
+\begin{frame}{La sonda --- \textquestiondown{}hacia dónde conviene moverse?}
+  \begin{columns}
+    \begin{column}{0.56\textwidth}
+      \small
+      \textbf{(b) Calentamiento máximo.} Es la dirección de $\nabla T(P)$:
+      \[
+        \mathbf u=-\frac{1}{\sqrt3}\langle 1,1,1\rangle,
+        \qquad
+        \|\nabla T(P)\|=25\sqrt3\approx43.3\ \frac{^\circ\mathrm C}{\mathrm m}.
+      \]
+      \onslide<2->
+      \begin{center}\color{tealx} Esa dirección apunta exactamente al origen: el gradiente \emph{localiza la fuente de calor}.\end{center}
+      \onslide<3->
+      \textbf{(c) Sin cambio.} $D_{\mathbf u}T=0$ exige $\mathbf u\perp\langle 1,1,1\rangle$: ya no son dos direcciones, sino todo un \textbf{plano} de ellas, tangente a la isoterma esférica
+      \[
+        x^2+y^2+z^2=3\qquad (T=50^\circ\mathrm C).
+      \]
+    \end{column}
+    \begin{column}{0.42\textwidth}
+      \onslide<1->
+      \centering
+      \begin{tikzpicture}[scale=0.85]
+        \foreach \r in {0.8,1.6,2.4}{\draw[thin,navy!50] (0,0) circle (\r);}
+        \fill[brick] (0,0) circle (2.2pt);
+        \node[brick,font=\scriptsize,anchor=north east] at (-0.05,-0.05) {fuente};
+        \coordinate (P) at (1.697,1.697);
+        \fill[navy] (P) circle (2.2pt);
+        \node[navy,font=\scriptsize,anchor=south west] at (1.75,1.75) {$P$};
+        \draw[-Stealth,very thick,brick] (P) -- (1.0,1.0);
+        \node[brick,font=\scriptsize,anchor=east] at (0.95,1.30) {$\nabla T$};
+        \draw[-Stealth,thick,tealx,dashed] (P) -- (1.06,2.33);
+        \draw[-Stealth,thick,tealx,dashed] (P) -- (2.33,1.06);
+        \node[tealx,font=\scriptsize,anchor=south] at (1.06,2.38) {$D_{\mathbf u}T=0$};
+      \end{tikzpicture}\\[2pt]
+      {\footnotesize\color{gray60} corte de las isotermas esféricas}
+    \end{column}
+  \end{columns}
+\end{frame}
+
 % ======================================================
 % BLOQUE 5 --- SUPERFICIES IMPLÍCITAS
 % ======================================================
 \bloqueframe{5}{Superficies implícitas}{Plano tangente y recta normal vía el gradiente}
 
-\begin{frame}{El gradiente es normal a la superficie}
-  Hasta ahora el plano tangente exigía $z$ despejada. Con el gradiente ya no hace falta.
-  \pause
-  \vspace{6pt}
-  \begin{block}{Definición}
-    Sea $F(x,y,z)=k$ con $F$ diferenciable en $P(x_0,y_0,z_0)$ y $\nabla F(P)\neq\mathbf 0$.
-    \begin{itemize}
-      \item El \textbf{plano tangente} en $P$ es el plano que pasa por $P$ y es perpendicular a $\nabla F(P)$.
-      \item La \textbf{recta normal} en $P$ es la recta por $P$ con vector director $\nabla F(P)$.
-    \end{itemize}
-  \end{block}
+\begin{frame}{Revisita: el gradiente es el vector normal}
+  En el Bloque 2 el plano tangente exigía tener $z$ \textbf{despejada}. Con el gradiente esa exigencia desaparece.
   \pause
   \vspace{4pt}
+  \begin{block}{Definición y ecuaciones}
+    Sea $F(x,y,z)=k$ con $F$ diferenciable en $P(x_0,y_0,z_0)$ y $\nabla F(P)\neq\mathbf 0$. Entonces $\nabla F(P)$ es \textbf{normal} a la superficie en $P$, y
+    \[
+      \textbf{plano tangente:}\quad
+      \nabla F(P)\cdot\langle x-x_0,\,y-y_0,\,z-z_0\rangle=0,
+    \]
+    \[
+      \textbf{recta normal:}\quad
+      (x,y,z)=(x_0,y_0,z_0)+t\,\nabla F(P),\qquad t\in\mathbb R.
+    \]
+  \end{block}
+  \pause
+  \vspace{2pt}
   \begin{center}\small\color{gray60} Consistencia: si $z=f(x,y)$, tome $F=f(x,y)-z$; entonces $\nabla F=\langle f_x,f_y,-1\rangle$ y se recupera la fórmula del Bloque 2.\end{center}
+  \pause
+  \vspace{-2pt}
+  \begin{center}\small\color{tealx} El mismo plano tangente de siempre, pero sin despejar ni elegir rama.\end{center}
 \end{frame}
 
-\begin{frame}{Las ecuaciones}
-  \begin{block}{Plano tangente}
-    \[
-      \nabla F(x_0,y_0,z_0)\cdot\langle x-x_0,\,y-y_0,\,z-z_0\rangle=0,
-    \]
-    es decir
-    \[
-      F_x(P)(x-x_0)+F_y(P)(y-y_0)+F_z(P)(z-z_0)=0.
-    \]
-  \end{block}
-  \pause
-  \begin{block}{Recta normal (paramétrica)}
-    \[
-      x=x_0+tF_x(P),\qquad y=y_0+tF_y(P),\qquad z=z_0+tF_z(P),\qquad t\in\mathbb R.
-    \]
-  \end{block}
-  \pause
-  \begin{center}\small\color{gray60} Protocolo: (1) escribir $F=k$; (2) calcular $\nabla F$; (3) evaluar en $P$; (4) escribir plano y recta.\end{center}
-\end{frame}
-
-\begin{frame}{Ejemplo --- $xe^{yz}=1$ en $(1,0,5)$}
-  \textbf{Paso 1.} $F(x,y,z)=xe^{yz}-1=0$.
-  \pause
-  \textbf{Paso 2.} Gradiente:
-  \[
-    \nabla F=\langle e^{yz},\ xze^{yz},\ xye^{yz}\rangle.
-  \]
-  \pause
-  \textbf{Paso 3.} Evaluación en $P(1,0,5)$, donde $e^{yz}=e^0=1$:
-  \[
-    \nabla F(1,0,5)=\langle 1,\,5,\,0\rangle.
-  \]
-  \pause
-  \textbf{Paso 4.} Ecuaciones:
-  \[
-    1(x-1)+5(y-0)+0(z-5)=0 \implies x+5y=1,
-  \]
-  \[
-    (x,y,z)=(1,0,5)+t\langle 1,5,0\rangle.
-  \]
-  \pause
-  \[
-    \boxed{\text{Plano: } x+5y=1;\qquad \text{Recta: } (1,0,5)+t\langle 1,5,0\rangle}
-  \]
-\end{frame}
-
-\begin{frame}{Ejercicios --- tres superficies}
+\begin{frame}{Tres superficies de un vistazo}
   \small
   \textbf{(a) Esfera $x^2+y^2+z^2=14$ en $(1,2,3)$.}
   \[
@@ -1678,44 +1714,8 @@
     \Rightarrow \boxed{x+2y+z=2},\ \
     \frac{x-1}{1}=\frac{y}{2}=\frac{z-1}{1}.
   \]
-\end{frame}
-
-\begin{frame}{Dos consecuencias geométricas}
-  \begin{block}{(a) Toda recta normal a la esfera $x^2+y^2+z^2=R^2$ pasa por el origen}
-    Con $F=x^2+y^2+z^2-R^2$: $\nabla F=2\langle x,y,z\rangle$, luego
-    \[
-      \mathbf L(t)=P+t\,\nabla F(P)=(1+2t)\langle x_0,y_0,z_0\rangle.
-    \]
-    Para $t=-\tfrac12$ se obtiene $\mathbf L=\mathbf 0$. $\checkmark$
-  \end{block}
   \pause
-  \begin{block}{(b) La esfera y el cono $x^2+y^2=z^2$ se cortan ortogonalmente}
-    Con $G=x^2+y^2-z^2$: $\nabla F=2\langle x,y,z\rangle$, $\nabla G=2\langle x,y,-z\rangle$, luego
-    \[
-      \nabla F\cdot\nabla G=4(x^2+y^2-z^2)=0
-    \]
-    sobre la intersección, porque ahí vale la ecuación del cono. $\checkmark$
-  \end{block}
-\end{frame}
-
-\begin{frame}{El Problema 19.23, revisitado}
-  En el Bloque 2 probamos que el elipsoide $3x^2+2y^2+z^2=9$ y la esfera $x^2+y^2+z^2-8x-6y-8z+24=0$ son tangentes en $(1,1,2)$: hubo que \emph{despejar $z$}, elegir la rama correcta de cada una y derivar dos raíces.
-  \pause
-  \vspace{4pt}
-  \begin{center}\normalsize\color{tealx} Con el gradiente el mismo problema cabe en dos líneas.\end{center}
-  \pause
-  \vspace{2pt}
-  \textbf{Elipsoide:} $F=3x^2+2y^2+z^2-9$, \quad $\nabla F\big|_{(1,1,2)}=\langle 6x,4y,2z\rangle\big|_{(1,1,2)}=\langle 6,4,4\rangle$.
-  \par\pause\smallskip
-  \textbf{Esfera:} $G=x^2+y^2+z^2-8x-6y-8z+24$, \quad $\nabla G\big|_{(1,1,2)}=\langle -6,-4,-4\rangle$.
-  \par\pause
-  \[
-    \nabla G=-\nabla F
-    \implies
-    \boxed{\text{normales paralelos: mismo plano tangente } 3x+2y+2z=9.}
-  \]
-  \pause
-  \begin{center}\small\color{gray60} Ni ramas, ni radicales, ni preocuparse por el signo: esa es la ganancia de la forma implícita.\end{center}
+  \begin{center}\small\color{gray60} Tres superficies, un solo procedimiento: escribir $F=k$, calcular $\nabla F$, evaluar en $P$.\end{center}
 \end{frame}
 
 % ======================================================
@@ -1849,6 +1849,37 @@
   \begin{center}\small\color{gray60} En $(0,0)$ la función crece en las direcciones de los ejes ($x^4$, $y^4$) pero decrece en las diagonales, donde domina $-4xy$.\end{center}
 \end{frame}
 
+\begin{frame}{Ejemplo --- $f(x,y)=x^3+y^3-3xy$}
+  \pctracker{1}
+  \[
+    f_x=3x^2-3y=0\implies y=x^2,
+    \qquad
+    f_y=3y^2-3x=0\implies x=y^2.
+  \]
+  \pause
+  Sustituyendo, $x=(x^2)^2=x^4$, o sea $x(x^3-1)=0$: hay \textbf{dos} puntos críticos, $(0,0)$ y $(1,1)$.
+  \pause
+  \[
+    f_{xx}=6x,\quad f_{xy}=-3,\quad f_{yy}=6y
+    \qquad\Longrightarrow\qquad
+    D(x,y)=36xy-9.
+  \]
+  \pause
+  \pctracker{4}
+  \begin{center}
+  \begin{tabular}{cccl}
+    \toprule
+    \textbf{Punto} & $D$ & $f_{xx}$ & \textbf{Conclusión} \\
+    \midrule
+    $(0,0)$ & $-9<0$   & ---    & punto de silla, $f=0$ \\
+    $(1,1)$ & $27>0$   & $6>0$  & mínimo local, $f=-1$ \\
+    \bottomrule
+  \end{tabular}
+  \end{center}
+  \pause
+  \begin{center}\small\color{gray60} Aquí la sustitución da $x=x^4$: solo dos raíces reales, no tres.\end{center}
+\end{frame}
+
 \begin{frame}{Cuando el criterio falla: $f(x,y)=(x^2+y^2)e^{-(x^2+y^2)}$}
   Con $u=x^2+y^2$: $f_x=2xe^{-u}(1-u)$ y $f_y=2ye^{-u}(1-u)$. Como $e^{-u}>0$,
   \[
@@ -1888,6 +1919,70 @@
   \vspace{6pt}
   \pause
   \begin{center}\small\color{gray60} Las dos hipótesis son esenciales: sin cerradura el extremo puede caer fuera; sin acotación $f$ puede crecer sin límite.\end{center}
+\end{frame}
+
+\begin{frame}{Ejemplo --- $f(x,y)=x^2-2xy+2y$ sobre $R=[0,3]\times[0,2]$}
+  \textbf{Paso 1 --- interior.}
+  \[
+    f_x=2x-2y=0,\qquad f_y=-2x+2=0
+    \qquad\Longrightarrow\qquad (x,y)=(1,1),\quad f(1,1)=1.
+  \]
+  \par\pause\smallskip
+  \textbf{Paso 2 --- frontera.} Cada lado reduce $f$ a una función de \emph{una} variable:
+  \vspace{2pt}
+  \begin{columns}[t]
+    \begin{column}{0.48\textwidth}
+      \small
+      \pause
+      $L_1:\ y=0,\ 0\le x\le 3$
+      \[ f=x^2\ \text{ creciente} \]
+      candidatos $(0,0)$ y $(3,0)$.
+      \pause
+      \vspace{4pt}
+      $L_2:\ x=3,\ 0\le y\le 2$
+      \[ f=9-6y+2y=9-4y\ \text{ decreciente} \]
+      candidatos $(3,0)$ y $(3,2)$.
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \small
+      \pause
+      $L_3:\ y=2,\ 0\le x\le 3$
+      \[ f=x^2-4x+4=(x-2)^2 \]
+      candidatos $(2,2)$, $(0,2)$ y $(3,2)$.
+      \pause
+      \vspace{4pt}
+      $L_4:\ x=0,\ 0\le y\le 2$
+      \[ f=2y\ \text{ creciente} \]
+      candidatos $(0,0)$ y $(0,2)$.
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{El rectángulo --- evaluar y comparar}
+  \begin{center}
+  \begin{tabular}{lcccccc}
+    \toprule
+    \textbf{Punto} & $(1,1)$ & $(0,0)$ & $(3,0)$ & $(3,2)$ & $(2,2)$ & $(0,2)$ \\
+    \midrule
+    $f$ & $1$ & $0$ & $9$ & $1$ & $0$ & $4$ \\
+    \bottomrule
+  \end{tabular}
+  \end{center}
+  \pause
+  \vspace{4pt}
+  \[
+    \boxed{\max_R f=9\ \text{en}\ (3,0);\qquad \min_R f=0\ \text{en}\ (0,0)\ \text{y}\ (2,2)}
+  \]
+  \pause
+  \vspace{2pt}
+  \small
+  \begin{itemize}
+    \item El mínimo se alcanza en \textbf{dos} puntos distintos: nada obliga a que el extremo absoluto sea único.
+    \pause
+    \item El crítico interior $(1,1)$ no es ninguno de los dos --- de hecho $D=(2)(0)-(-2)^2=-4<0$: es un punto de silla.
+    \pause
+    \item Aquí ambos extremos viven en la frontera. Por eso el paso 2 nunca se puede omitir.
+  \end{itemize}
 \end{frame}
 
 \begin{frame}{Optimización con restricciones: el problema motivador}
@@ -2058,58 +2153,137 @@
   \begin{center}\small\color{gray60} Confirma por segundo orden lo que la compacidad ya había dado por comparación.\end{center}
 \end{frame}
 
-\begin{frame}{Cuando falla la regularidad: la cúspide}
-  \begin{columns}
-    \begin{column}{0.5\textwidth}
-      \begin{block}{Problema}
-        Minimizar $f(x,y)=x^2+y^2$ sujeta a $g(x,y)=x^2-y^3=0$.
-      \end{block}
-      \pause
+\begin{frame}{Dos advertencias sobre el método}
+  \begin{columns}[t]
+    \begin{column}{0.47\textwidth}
+      \textbf{(1) La hipótesis $\nabla g\neq\mathbf 0$}\\[3pt]
       \small
+      Minimizar $f=x^2+y^2$ sujeta a $g=x^2-y^3=0$.
+      \pause
       \begin{itemize}
         \item La restricción es $y=x^{2/3}$: tiene una \textbf{cúspide} en el origen.
-        \pause
-        \item El mínimo está en $(0,0)$, pues $f\ge 0$ y $f(0,0)=0$.
-        \pause
-        \item Pero $\nabla g=(2x,-3y^2)$ y $\nabla g(0,0)=\mathbf 0$.
-        \pause
-        \item El sistema se reduce a $0=0$: el método \textbf{no localiza} el extremo.
+        \item El mínimo está en $(0,0)$, pues $f\ge0$ y $f(0,0)=0$.
+        \item Pero $\nabla g=(2x,-3y^2)$ se anula ahí y el sistema se reduce a $0=0$.
       \end{itemize}
+      \pause
+      \begin{center}\color{brick} El método \textbf{no localiza} ese extremo.\end{center}
     \end{column}
-    \begin{column}{0.46\textwidth}
-      \centering
-      \begin{tikzpicture}[scale=0.90,>=Stealth]
-        \draw[->] (-2.6,0) -- (2.6,0) node[right,font=\scriptsize] {$x$};
-        \draw[->] (0,-0.4) -- (0,2.3) node[above,font=\scriptsize] {$y$};
-        \draw[thick,navy,domain=-1.4:1.4,samples=200] plot ({\x*\x*\x},{\x*\x});
-        \fill[brick] (0,0) circle (2pt);
-        \node[brick,anchor=north,font=\scriptsize] at (0,-0.1) {$(0,0)$, $d_{\min}=0$};
-        \node[navy,right,font=\scriptsize] at (1.4,1.8) {$y^3=x^2$};
-        \node[anchor=south west,font=\scriptsize,brick] at (-2.5,1.3) {$\nabla g(0,0)=\mathbf 0$};
-      \end{tikzpicture}
+    \begin{column}{0.47\textwidth}
+      \pause
+      \textbf{(2) Necesaria, no suficiente}\\[3pt]
+      \small
+      \textquestiondown{}Tiene extremos $f=y-x^5$ sujeta a $g=y-x^3=0$?
+      \pause
+      \begin{itemize}
+        \item Sobre la restricción, $h(x)=x^3-x^5$; el origen \textbf{no} es extremo: $h>0$ a la derecha y $h<0$ a la izquierda.
+        \item Y sin embargo, con $\nabla f=(-5x^4,1)$ y $\nabla g=(-3x^2,1)$, el sistema da $\lambda=1$ y $x=0$.
+      \end{itemize}
+      \pause
+      \begin{center}\color{brick} $(0,0)$ es candidato y no es extremo.\end{center}
     \end{column}
   \end{columns}
-  \vspace{-6pt}
-  \alerta{La hipótesis $\nabla g\neq\mathbf 0$ no es decorativa: sin ella el teorema no dice nada.}
+  \vspace{2pt}
+  \alerta{Verifique siempre $\nabla g\neq\mathbf 0$ --- y clasifique después los candidatos: por compacidad, por el hessiano limitado o mirando $f$ sobre la curva.}
 \end{frame}
 
-\begin{frame}{Un candidato falso}
+\begin{frame}{Ejemplo --- caja sin tapa de volumen máximo}
   \begin{block}{Problema}
-    \textquestiondown{}Tiene extremos condicionados $f(x,y)=y-x^5$ sujeta a $g(x,y)=y-x^3=0$?
+    Se dispone de $12\ \mathrm{m}^2$ de lámina. \textquestiondown{}Cuál es el volumen máximo de una caja rectangular \textbf{sin tapa} que puede construirse sin desperdicio?
   \end{block}
   \pause
-  Sobre la restricción $y=x^3$: $\ h(x)=f(x,x^3)=x^3-x^5=x^3(1-x^2)$.
-  \pause
-  El origen es punto crítico de $h$, pero \textbf{no} es extremo: $h(x)>0$ para $x>0$ pequeño y $h(x)<0$ para $x<0$ pequeño.
-  \pause
-  Sin embargo, con $\nabla f=(-5x^4,1)$ y $\nabla g=(-3x^2,1)$ (regular en todo punto):
+  \lgtracker{1}
+  Con base $x\times y$ y altura $z$, todas positivas, el material es la base más cuatro paredes:
   \[
-    \begin{cases} -5x^4=-3\lambda x^2,\\ 1=\lambda,\\ y=x^3\end{cases}
-    \implies \lambda=1,\ 5x^4=3x^2 \implies x=0 \ \text{ o } \ x=\pm\sqrt{3/5}.
+    f(x,y,z)=xyz,
+    \qquad
+    g(x,y,z)=xy+2xz+2yz-12=0.
   \]
   \pause
+  \lgtracker{2}
+  \[
+    \begin{cases}
+      yz=\lambda\,(y+2z),\\
+      xz=\lambda\,(x+2z),\\
+      xy=\lambda\,(2x+2y),\\
+      xy+2xz+2yz=12.
+    \end{cases}
+  \]
+\end{frame}
+
+\begin{frame}{La caja --- resolver el sistema}
+  \lgtracker{3}
+  Multiplicando la primera ecuación por $x$, la segunda por $y$ y la tercera por $z$, el lado izquierdo es $xyz$ en las tres:
+  \[
+    \lambda(xy+2xz)=\lambda(xy+2yz)=\lambda(2xz+2yz).
+  \]
+  \pause
+  Si $\lambda=0$ el sistema forzaría $xyz=0$, imposible. Cancelando $\lambda$:
+  \[
+    2xz=2yz\implies x=y,
+    \qquad
+    xy=2yz\implies x=2z.
+  \]
+  \pause
+  \lgtracker{4}
+  Con $x=y=2z$ en la restricción: $4z^2+4z^2+4z^2=12z^2=12$, luego $z=1$.
+  \pause
+  \[
+    \boxed{\text{caja de } 2\times2\times1\ \mathrm m,\qquad V_{\max}=4\ \mathrm m^3}
+  \]
+  \pause
+  \begin{center}\small\color{gray60} La base resulta el \textbf{doble de ancha que alta}: sin tapa, la geometría óptima ya no es el cubo.\end{center}
+\end{frame}
+
+\begin{frame}{Los dos métodos juntos --- el disco cerrado}
+  \begin{block}{Problema}
+    Halle los extremos absolutos de $f(x,y)=x^2+2y^2-x$ sobre el disco $x^2+y^2\le1$. Es una región cerrada y acotada, pero de frontera \textbf{curva}: el interior se trata con el criterio $D$ y la frontera con multiplicadores.
+  \end{block}
+  \pause
+  \textbf{Interior} ($x^2+y^2<1$):
+  \[
+    f_x=2x-1=0,\quad f_y=4y=0
+    \implies \left(\tfrac12,0\right),\ \text{que sí está dentro}.
+  \]
   \vspace{-4pt}
-  \begin{center}\color{brick} $(0,0)$ es candidato de Lagrange y no es extremo: $\nabla F=\mathbf 0$ es necesaria, no suficiente.\end{center}
+  \[
+    D=f_{xx}f_{yy}-f_{xy}^2=(2)(4)-0^2=8>0,\quad f_{xx}=2>0
+    \implies \text{mínimo local},\ f=-\tfrac14.
+  \]
+  \par\pause\smallskip
+  \textbf{Frontera} ($g=x^2+y^2-1=0$), con $\nabla f=\lambda\nabla g$:
+  \[
+    \langle 2x-1,\ 4y\rangle=\lambda\langle 2x,\ 2y\rangle
+    \implies
+    \begin{cases} 2x-1=2\lambda x,\\ 4y=2\lambda y.\end{cases}
+  \]
+\end{frame}
+
+\begin{frame}{El disco --- las dos ramas de la frontera}
+  La segunda ecuación, $4y=2\lambda y$, se factoriza como $2y(2-\lambda)=0$: o bien $y=0$, o bien $\lambda=2$.
+  \par\pause\smallskip
+  \textbf{Rama $y=0$.} La restricción da $x=\pm1$, de modo que
+  $f(1,0)=0$ y $f(-1,0)=2$.
+  \par\pause\smallskip
+  \textbf{Rama $\lambda=2$.} Entonces $2x-1=4x$, luego $x=-\tfrac12$ y $y^2=1-\tfrac14=\tfrac34$, de donde
+  \[
+    f\!\left(-\tfrac12,\pm\tfrac{\sqrt3}{2}\right)=\tfrac14+2\cdot\tfrac34+\tfrac12=\tfrac94.
+  \]
+  \pause
+  \begin{center}\small
+  \begin{tabular}{lcccc}
+    \toprule
+    \textbf{Punto} & $\left(\frac12,0\right)$ & $(1,0)$ & $(-1,0)$ & $\left(-\frac12,\pm\frac{\sqrt3}{2}\right)$ \\
+    \midrule
+    $f$ & $-\frac14$ & $0$ & $2$ & $\frac94$ \\
+    \bottomrule
+  \end{tabular}
+  \end{center}
+  \pause
+  \vspace{-4pt}
+  \[
+    \boxed{\max f=\tfrac94\ \text{en}\ \left(-\tfrac12,\pm\tfrac{\sqrt3}{2}\right);
+           \qquad \min f=-\tfrac14\ \text{en}\ \left(\tfrac12,0\right)}
+  \]
 \end{frame}
 
 \begin{frame}{Dos restricciones}
