@@ -7,7 +7,7 @@ El problema de calcular el área de regiones con fronteras curvas es uno de los 
 
 La Figura~\ref{fig:exhaucion_circulo} ilustra el método sobre el círculo.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[scale=1.8]
     \draw[thick] (0,0) circle (1);
@@ -62,7 +62,7 @@ R_P = \sum_{i=1}^{n} f(\bar{x}_i)\,\Delta x_i.
 
 Geométricamente, cada término $f(\bar{x}_i)\,\Delta x_i$ es el área con signo de un rectángulo de base $\Delta x_i$ y altura $f(\bar{x}_i)$: positiva si $f(\bar{x}_i) > 0$, negativa si $f(\bar{x}_i) < 0$. La Figura~\ref{fig:suma_riemann} muestra la construcción.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[scale=1.1]
     \draw[->] (-0.3,0) -- (5.2,0) node[right] {$x$};
@@ -144,7 +144,7 @@ Si $f$ es continua en $[a,b]$, entonces $f$ es integrable en $[a,b]$. Más aún,
 La interpretación geométrica de la integral definida depende del signo de $f$. Si $f(x)\geq 0$ en $[a,b]$, la integral representa el área de la región comprendida entre la gráfica de $f$ y el eje $x$. Si $f$ toma valores negativos en alguna parte del intervalo, la integral representa el \textbf{área neta}: el área de las regiones sobre el eje $x$ menos el área de las regiones bajo el eje $x$.
 \end{rem}
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[scale=1.1]
     \draw[->] (-0.3,0) -- (5.2,0) node[right] {$x$};
@@ -247,7 +247,7 @@ F(x) = \int_{a}^{x} f(t)\,dt, \qquad x \in [a,b].
 \]
 \end{definition}
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[scale=1.1]
     \fill[blue!15, domain=1:3.5, samples=100]
@@ -439,7 +439,7 @@ f(c) = \frac{1}{b-a}\int_{a}^{b} f(x)\,dx, \qquad \text{equivalentemente,} \qqua
 \]
 \end{theorem}
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[scale=1.15]
     % Área bajo la curva

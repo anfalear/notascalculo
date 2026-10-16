@@ -95,7 +95,7 @@ para cumplirla. La condición $0<|x-c|$ recalca que el comportamiento de $f$
 \emph{exactamente} en $c$ es irrelevante; solo importa su entorno perforado.
 La figura~\ref{fig:limite_epsilon_delta} representa la condición en general.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[>=latex, scale=1.0]
   % Ejes
@@ -406,7 +406,7 @@ origen y los puntos $O=(0,0)$, $A=(1,0)$, $B=(\cos x,\sen x)$ sobre dicho
 círculo, y $T=(1,\tan x)$ sobre la recta $x=1$ (véase la
 figura~\ref{fig:encaje_areas}).
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[scale=3.5, >=stealth, line cap=round, line join=round]
   \pgfmathsetmacro{\ang}{38}
@@ -556,7 +556,7 @@ $P$ y $Q$:
 \end{itemize}
 \end{rem}
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}
 \begin{axis}[
@@ -699,7 +699,7 @@ Sea $f$ discontinua en $c$. Se distinguen:
 La figura~\ref{fig:tipos_discontinuidad} esquematiza los tres tipos que
 aparecen con mayor frecuencia en este curso.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{minipage}{0.32\textwidth}
 \centering
@@ -908,7 +908,8 @@ desarrollos de Taylor-Maclaurin.
 
 A continuación se muestra la tabla de equivalencias fundamentales cuando $x\to 0:$
 
-\begin{center}
+\begin{table}[H]
+\centering
 \renewcommand{\arraystretch}{1.6}
 \begin{tabular}{>{$}c<{$} @{\quad$\sim$\quad} >{$}c<{$} l}
   \toprule
@@ -926,7 +927,8 @@ A continuación se muestra la tabla de equivalencias fundamentales cuando $x\to 
   \sqrt[n]{1+x}-1 & \dfrac{x}{n}       & caso $\alpha=\dfrac{1}{n}$ del anterior \\
   \bottomrule
 \end{tabular}
-\end{center}
+\caption{Equivalencias fundamentales cuando $x\to 0$.}
+\end{table}
 
 \begin{rem}
 Todas las equivalencias de la tabla son instancias del desarrollo de Taylor

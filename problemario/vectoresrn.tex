@@ -10,7 +10,7 @@ Los vectores tienen dos representaciones equivalentes: como flechas en el espaci
  
 Geométricamente, un vector $\mathbf{v}$ es una flecha en el espacio caracterizada por tres propiedades: \textbf{magnitud} (longitud, tamaño o norma), \textbf{dirección} y \textbf{sentido}.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}
     % Vector v
@@ -24,7 +24,7 @@ Geométricamente, un vector $\mathbf{v}$ es una flecha en el espacio caracteriza
 
 Para sumar dos vectores $\mathbf{v}$ y $\mathbf{w}$, se utiliza la regla del paralelogramo:
  
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}
     % Vector v
@@ -450,7 +450,7 @@ $$\mathbf{u} \cdot \mathbf{v} = (1)(4) + (2)(-1) + (3)(2) = 4 - 2 + 6 = 8$$
 \begin{rem}
 El ángulo entre vectores $\mathbf{u}$ y $\mathbf{v}$ es siempre menor que $\pi$ radianes.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}
     \draw[thick,->] (0,0) -- (3,1) node [anchor=south west] {$\mathbf{u}$};
@@ -492,7 +492,7 @@ Sean los vectores $\vec{a} = (1, 2, 0)$ y $\vec{b} = (3, 4, 0).$ Entonces: $\vec
 3 & 4 & 0 \\
 \end{pmatrix} = \mathbf{i}(2 \cdot 0 - 0 \cdot 4) - \mathbf{j}(1 \cdot 0 - 0 \cdot 3) + \mathbf{k}(1 \cdot 4 - 2 \cdot 3) = \mathbf{i}(0) - \mathbf{j}(0) + \mathbf{k}(4 - 6) = (0, 0, -2).$
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
     \centering
     \begin{tikzpicture}[scale=0.8]
         % Sistema de coordenadas 3D simplificado
@@ -535,7 +535,7 @@ Un \textbf{plano} en el espacio tridimensional es el conjunto de todos los punto
 Desarrollando el producto punto, obtenemos la \textbf{ecuación general del plano}
 \[a(x-x_0) + b(y-y_0) + c(z-z_0)= 0.\]
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[scale=0.8, >=Stealth]
     % Plano (representado como un paralelogramo)
@@ -648,7 +648,13 @@ Dados los puntos $A=(3,0,2)$, $B=(4,3,0)$ y $C=(8,1,-1)$, calcular:
 \end{align*}
 
 Perímetro: $\boxed{\sqrt{14} + \sqrt{35} + \sqrt{21}} \approx 14.240$
-
+\end{enumerate}
+\end{multicols}
+% Dos bloques multicols: dentro del recuadro un multicols no se parte entre
+% páginas, así que dividirlo permite que el recuadro se corte entre ellos.
+\begin{multicols}{2}
+\begin{enumerate}[$(a)$]
+\setcounter{enumi}{1}
 \item Ángulos internos:
 
 Para el ángulo en $A$ (entre $\overrightarrow{AB}$ y $\overrightarrow{AC}$):
@@ -774,7 +780,7 @@ Sean ${\bf u} = \begin{pmatrix} -1 \\ 2 \\ 4 \end{pmatrix},$  ${\bf v} = \begin{
 La \textbf{proyección ortogonal} del vector $\mathbf{u}$ sobre el vector $\mathbf{v}$ (denotada como $\text{proy}_{\mathbf{v}}\mathbf{u}$) es el vector que resulta de proyectar $\mathbf{u}$ perpendicularmente sobre la recta que contiene a $\mathbf{v}$. Matemáticamente, la proyección ortogonal se define como: $\text{proy}_{\mathbf{v}}\mathbf{u} = \frac{\mathbf{u} \cdot \mathbf{v}}{\mathbf{v} \cdot \mathbf{v}} \mathbf{v} = \frac{\mathbf{u} \cdot \mathbf{v}}{\|\mathbf{v}\|^2} \mathbf{v}$
 donde $\mathbf{u} \cdot \mathbf{v}$ es el producto punto entre $\mathbf{u}$ y $\mathbf{v}$ mientras que $\|\mathbf{v}\|^2 = \mathbf{v} \cdot \mathbf{v}$ es el cuadrado de la norma de $\mathbf{v}.$ Su representación geométrica se da por: 
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[scale=0.8, >=Stealth]
     % Configuración de coordenadas
@@ -845,7 +851,7 @@ Calcule $\text{proy}_{\mathbf{v}}\mathbf{u}$ para $\mathbf{u} = (3, 4)$ y $\math
 \begin{definition}[Recta en el espacio]\index{recta en el espacio}
 Una \textbf{recta en el espacio tridimensional} es el conjunto de puntos que siguen una dirección constante (vector director) desde un punto dado (punto de apoyo). Se define vectorialmente como $\vec{r} = \vec{r_0} + t\vec{d}$ con $t \in \mathbb{R}$, donde $\vec{r_0} = (x_0, y_0, z_0)$ es el vector posición de un punto conocido y $\vec{d} = (a, b, c)$ es el vector director. 
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[scale=0.8, >=stealth]
     % Plano de trabajo con grid de referencia
@@ -992,7 +998,7 @@ $\mathbf{u} - \text{proy}_{\mathbf{v}} \mathbf{u} = (-9,-3,-4) - \frac{-1}{10} (
 (\cite{espinoza2006Algebralineal}, p. 87, Problema 78)
 Un rayo de luz viaja por la recta $l=\{(2,0,1)+t(-1,-1,0)\}$. Al chocar con el plano $2x-y+z+2=0$ se refleja. Hallar la recta $l_1$ que contiene el rayo reflejado.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
 \clip(-3,0.6898444376684937) rectangle (5.704830109449234,5.826700269504003);

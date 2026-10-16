@@ -9,13 +9,16 @@
 \usepackage[utf8]{inputenc}
 \usepackage[spanish]{babel}
 \usepackage{fontspec}          % fuentes OpenType/TrueType nativas
-\setmainfont{Times New Roman}  % APA: Times New Roman 12 pt
+\setmainfont{Humanst521 BT}[Path=fuentes/, Extension=.TTF, UprightFont=HUM521N, BoldFont=HUM521B, ItalicFont=HUM521I, BoldItalicFont=HUM521BI]  % fuente institucional UIS
+\setsansfont{Humanst521 BT}[Path=fuentes/, Extension=.TTF, UprightFont=HUM521N, BoldFont=HUM521B, ItalicFont=HUM521I, BoldItalicFont=HUM521BI]
 
 % ==========================================
 % PAQUETES MATEMÁTICOS
 % ==========================================
 \usepackage{amsmath,amsthm,amssymb,amsfonts}
 \usepackage{mathrsfs}
+\usepackage{newunicodechar}
+\newunicodechar{✓}{\ensuremath{\checkmark}}  % la fuente de texto no trae U+2713
 
 % ==========================================
 % ÍNDICE ANALÍTICO

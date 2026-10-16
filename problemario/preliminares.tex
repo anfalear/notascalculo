@@ -161,7 +161,7 @@ axioma de tricotomía, si $x_1 > 0$ entonces $x_1$ se ubica a la derecha del
 origen, y si $x_2 < 0$ se ubica a la izquierda
 (figura~\ref{fig:rectanumerica}).
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[>=latex, scale=1.1]
    % Eje real
@@ -471,7 +471,7 @@ valores comprendidos entre $-1$ y $+1$ a medida que $\theta$ recorre la recta.
 El \textbf{campo de variación} (o \emph{rango}) de $z$ es, en este caso, el
 intervalo cerrado $[-1,1]$.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[scale=1.5]
    \draw[thick] (0,0) circle (1cm);
@@ -503,7 +503,8 @@ Un \textbf{intervalo} es el conjunto de valores $x \in \mathbb{R}$ comprendidos
 entre dos reales $a < b$. Los intervalos se clasifican según la inclusión o
 exclusión de sus extremos:
 
-\begin{center}
+\begin{table}[H]
+\centering
 \renewcommand{\arraystretch}{1.4}
 \begin{tabular}{llll}
 \hline
@@ -516,7 +517,8 @@ Infinito       & $(c,+\infty)$ & $\{x \in \mathbb{R} : x > c\}$      & $c$ exclu
 Infinito       & $(-\infty,c]$ & $\{x \in \mathbb{R} : x \leq c\}$   & $c$ incluido\\
 Recta real     & $(-\infty,+\infty)$ & $\mathbb{R}$                 & sin extremos\\\hline
 \end{tabular}
-\end{center}
+\caption{Tipos de intervalos.}
+\end{table}
 
 Gráficamente, un extremo \emph{incluido} se representa con un círculo
 \textbf{relleno} ($\bullet$) y un extremo \emph{excluido} con un círculo
@@ -528,7 +530,7 @@ Los conjuntos $(-1,1)$, $[-2,3)$ y $(0,+\infty)$ son intervalos de los tipos
 abierto, semiabierto y abierto infinito, respectivamente. La
 figura~\ref{fig:intervalo_abierto} representa el primero en la recta real.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[>=latex, scale=1.1]
    \draw[latex-latex, thick] (-3.2,0) -- (3.2,0);
@@ -573,7 +575,7 @@ $\varepsilon$ de $x_0$» al lenguaje algebraico del valor absoluto. Esta
 equivalencia es el corazón de la definición épsilon-delta de límite.
 \end{rem}
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[>=latex, scale=1.3]
    \draw[latex-latex, thick] (-3.5,0) -- (3.5,0);
@@ -649,7 +651,7 @@ a la derecha de $\sup S$ y, por ser este la \emph{menor} cota superior,
 cualquier franja $(\alpha - \varepsilon,\, \alpha]$ con $\varepsilon > 0$
 contiene al menos un punto de $S$.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[>=latex, scale=1.15]
    % Eje

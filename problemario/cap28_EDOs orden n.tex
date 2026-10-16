@@ -215,14 +215,16 @@ a_n y^{(n)} + \cdots + a_0 y = g(x),
 donde $g(x)$ es una combinación de polinomios, exponenciales, senos y cosenos, proponemos una solución particular $y_p$ con coeficientes indeterminados.
 
 \begin{definition}[Tabla de formas de $y_p$]\index{coeficientes indeterminados}
-\begin{center}
+\begin{table}[H]
+\centering
 \begin{tabular}{c|c}
 $g(x)$ & Forma de $y_p$ \\ \hline
 $P_n(x)$ (polinomio de grado $n$) & $x^s (A_n x^n + \cdots + A_0)$ \\
 $P_n(x) e^{\alpha x}$ & $x^s e^{\alpha x}(A_n x^n + \cdots + A_0)$ \\
 $P_n(x) e^{\alpha x}\cos(\beta x)$ & $x^s e^{\alpha x}[(A_n x^n + \cdots + A_0)\cos(\beta x) + (B_n x^n + \cdots + B_0)\sen(\beta x)]$ \\
 \end{tabular}
-\end{center}
+\caption{Forma de la solución particular $y_p$ según el término $g(x)$.}
+\end{table}
 donde $s$ es el menor entero no negativo tal que ningún término de $y_p$ sea solución de la homogénea asociada.
 \end{definition}
 
@@ -532,7 +534,7 @@ m x'' + c x' + k x = F(t).
 \]
 Aquí $x(t)$ es el desplazamiento desde el equilibrio (Figura~\ref{fig:masa_resorte}): el resorte aporta la fuerza restauradora $-kx$, el amortiguador la fuerza disipativa $-cx'$ y $F(t)$ es la excitación externa.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[scale=1.0]
 % pared
@@ -605,7 +607,7 @@ Resuelva $x''+4x=0$ con $x(0)=1$, $x'(0)=-2$.
 
 El signo del discriminante $c^2-4mk$ de la ecuación característica separa tres regímenes libres ($F=0$), y una forzante en la frecuencia natural produce un cuarto comportamiento, la resonancia (Figura~\ref{fig:regimenes_amortiguamiento}).
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}
 \begin{axis}[
@@ -634,7 +636,7 @@ L Q'' + R Q' + \frac{1}{C} Q = E(t).
 \]
 Esta ecuación es \emph{formalmente idéntica} a la del oscilador mecánico, con las correspondencias $m\leftrightarrow L$, $c\leftrightarrow R$, $k\leftrightarrow 1/C$ y $F\leftrightarrow E$ (Figura~\ref{fig:circuito_rlc}). Todo lo dicho sobre amortiguamiento y resonancia se traslada palabra por palabra al circuito.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{circuitikz}[american, scale=0.95, transform shape]
 \draw (0,0) to[sinusoidal voltage source, l=$E(t)$] (0,2.6)

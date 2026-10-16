@@ -85,7 +85,7 @@ y esta banda se estrecha hasta desaparecer cuando $\varepsilon\to 0$
 (Figura~\ref{fig:ssf_banda_uniforme}).
 \end{rem}
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}
 \begin{axis}[
@@ -140,11 +140,11 @@ La Figura~\ref{fig:ssf_puntual_no_uniforme} muestra las primeras $f_n$.
         plot (\x, {\x})         node[above left] {\small $f_1$};
     \draw[dash pattern=on 3pt off 2pt, red!80!black, thick,
           domain=0:1, samples=60]
-        plot (\x, {\x^2})       node[right=2pt] {\small $f_2$};
+        plot (\x, {(\x)^2})       node[right=2pt] {\small $f_2$};
     \draw[gray, thick, domain=0:1, samples=60]
-        plot (\x, {\x^5})       node[right=2pt] {\small $f_5$};
+        plot (\x, {(\x)^5})       node[right=2pt] {\small $f_5$};
     \draw[orange!80!black, very thick, domain=0:1, samples=60]
-        plot (\x, {\x^10})      node[below right] {\small $f_{10}$};
+        plot (\x, {(\x)^10})      node[below right] {\small $f_{10}$};
     \draw[<-] (0.93,0.48) -- (1.1,0.55)
         node[right, font=\tiny] {pico residual};
 \end{tikzpicture}
@@ -795,13 +795,13 @@ La Figura~\ref{fig:ssf_geometrica_compactos} compara el comportamiento en $[0,r]
         node[above left] {\small $S_1$};
     \draw[dash pattern=on 3pt off 2pt, red!80!black, thick,
           domain=0:1, samples=40]
-        plot (\x, {\x - \x^2})
+        plot (\x, {\x - (\x)^2})
         node[above] {\small $S_2$};
     \draw[gray, thick, domain=0:1, samples=40]
-        plot (\x, {\x - \x^2 + \x^3 - \x^4})
+        plot (\x, {\x - (\x)^2 + (\x)^3 - (\x)^4})
         node[right=2pt] {\small $S_4$};
     \draw[orange!80!black, very thick, domain=0:0.98, samples=80]
-        plot (\x, {\x - \x^2 + \x^3 - \x^4 + \x^5 - \x^6 + \x^7 - \x^8})
+        plot (\x, {\x - (\x)^2 + (\x)^3 - (\x)^4 + (\x)^5 - (\x)^6 + (\x)^7 - (\x)^8})
         node[right=2pt] {\small $S_8$};
 \end{tikzpicture}
 \caption{Serie geométrica alternada $\sum(-x)^n$: converge uniformemente en cada compacto $[0,r]$ con $r<1$, pero no en todo $(-1,1)$, donde la convergencia se degrada cerca de los extremos.}
@@ -1153,7 +1153,7 @@ extremos $x=c\pm R$ no queda determinado por este argumento y exige análisis
 separado.
 \end{proof}
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[scale=1.0]
   % recta
@@ -1318,12 +1318,12 @@ La Figura~\ref{fig:ssf_derivacion_geometrica} muestra la función suma y sus apr
         plot (\x, {\x})                                  node[right=2pt] {\small $S_1$};
     \draw[dash pattern=on 3pt off 2pt, red!80!black, thick,
           domain=0:0.82, samples=40]
-        plot (\x, {\x + 2*\x^2})                         node[right=2pt] {\small $S_2$};
+        plot (\x, {\x + 2*(\x)^2})                         node[right=2pt] {\small $S_2$};
     \draw[gray, thick, domain=0:0.78, samples=40]
-        plot (\x, {\x + 2*\x^2 + 3*\x^3 + 4*\x^4})      node[right=2pt] {\small $S_4$};
+        plot (\x, {\x + 2*(\x)^2 + 3*(\x)^3 + 4*(\x)^4})      node[right=2pt] {\small $S_4$};
     \draw[orange!80!black, very thick, domain=0:0.74, samples=60]
-        plot (\x, {\x + 2*\x^2 + 3*\x^3 + 4*\x^4
-                  + 5*\x^5 + 6*\x^6 + 7*\x^7 + 8*\x^8}) node[right=2pt] {\small $S_8$};
+        plot (\x, {\x + 2*(\x)^2 + 3*(\x)^3 + 4*(\x)^4
+                  + 5*(\x)^5 + 6*(\x)^6 + 7*(\x)^7 + 8*(\x)^8}) node[right=2pt] {\small $S_8$};
     \draw[dotted, very thick, black!60, domain=0:0.70, samples=50]
         plot (\x, {\x/(1-\x)^2})
         node[right=2pt] {\small $S(x)=\tfrac{x}{(1-x)^2}$};
@@ -1396,12 +1396,12 @@ La Figura~\ref{fig:ssf_serie_logaritmica} muestra las sumas parciales aproximand
         plot (\x, {\x})                                          node[right=1pt] {\small $S_1$};
     \draw[dash pattern=on 3pt off 2pt, red!80!black, thick,
           domain=-1:0.93, samples=60]
-        plot (\x, {\x + \x^2/2})                                node[right=1pt] {\small $S_2$};
+        plot (\x, {\x + (\x)^2/2})                                node[right=1pt] {\small $S_2$};
     \draw[gray, thick, domain=-1:0.90, samples=80]
-        plot (\x, {\x + \x^2/2 + \x^3/3 + \x^4/4})             node[right=1pt] {\small $S_4$};
+        plot (\x, {\x + (\x)^2/2 + (\x)^3/3 + (\x)^4/4})             node[right=1pt] {\small $S_4$};
     \draw[orange!80!black, very thick, domain=-1:0.87, samples=120]
-        plot (\x, {\x + \x^2/2 + \x^3/3 + \x^4/4
-                  + \x^5/5 + \x^6/6 + \x^7/7 + \x^8/8})        node[right=1pt] {\small $S_8$};
+        plot (\x, {\x + (\x)^2/2 + (\x)^3/3 + (\x)^4/4
+                  + (\x)^5/5 + (\x)^6/6 + (\x)^7/7 + (\x)^8/8})        node[right=1pt] {\small $S_8$};
     \fill[blue!60] (-1, {-ln(2)}) circle (1.5pt)
         node[left, font=\tiny] {$-\ln 2$};
 \end{tikzpicture}
@@ -1539,20 +1539,20 @@ La Figura~\ref{fig:ssf_aplicaciones_potencias} ilustra la aproximación y su err
     \draw[->] (0,-0.2) -- (0,1.3)  node[left]  {$y$};
     % e^{-x^2} y aproximaciones polinómicas
     \draw[dotted, very thick, black!60, domain=-1:1, samples=80]
-        plot (\x, {exp(-\x^2)})
+        plot (\x, {exp(-(\x)^2)})
         node[above right] {\small $e^{-x^2}$};
     \draw[dashed, blue, thick, domain=-1:1, samples=40]
-        plot (\x, {1 - \x^2})
+        plot (\x, {1 - (\x)^2})
         node[below left] {\small $P_2$};
     \draw[dash pattern=on 3pt off 2pt, red!80!black, thick,
           domain=-1:1, samples=40]
-        plot (\x, {1 - \x^2 + \x^4/2})
+        plot (\x, {1 - (\x)^2 + (\x)^4/2})
         node[below] {\small $P_4$};
     \draw[gray, thick, domain=-1:1, samples=60]
-        plot (\x, {1 - \x^2 + \x^4/2 - \x^6/6})
+        plot (\x, {1 - (\x)^2 + (\x)^4/2 - (\x)^6/6})
         node[below right] {\small $P_6$};
     \draw[orange!80!black, very thick, domain=-1:1, samples=80]
-        plot (\x, {1 - \x^2 + \x^4/2 - \x^6/6 + \x^8/24})
+        plot (\x, {1 - (\x)^2 + (\x)^4/2 - (\x)^6/6 + (\x)^8/24})
         node[right=1pt] {\small $P_8$};
 \end{tikzpicture}
 \caption{Aplicaciones de las series de potencias: cálculo de límites, integrales sin primitiva elemental y estimación del error de truncamiento mediante el resto.}

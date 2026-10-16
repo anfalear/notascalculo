@@ -61,7 +61,7 @@ que es un punto donde la función crece en una dirección y decrece en
 otra.
 \end{rem}
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}
 \begin{axis}[
@@ -402,16 +402,16 @@ Se construirá un canal abierto con sección transversal en la forma de un  trap
 \begin{myproof}
 \begin{figure}[H]
 \centering
-\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.7cm,y=0.7cm,font=\small]
 \clip(-0.9631690910028438,-1.0185175531939794) rectangle (9.64234461356722,3.9917251304360035);
 \draw [shift={(6.,0.)},line width=2.pt] (0,0) -- (0.:0.4500217979308372) arc (0.:56.309932474020215:0.4500217979308372) -- cycle;
 \draw [shift={(2.,0.)},line width=2.pt] (0,0) -- (123.6900675259798:0.4500217979308372) arc (123.6900675259798:180.:0.4500217979308372) -- cycle;
 \draw [shift={(8.,3.)},line width=2.pt] (0,0) -- (180.:0.4500217979308372) arc (180.:236.3099324740202:0.4500217979308372) -- cycle;
 \draw [shift={(0.,3.)},line width=2.pt,] (0,0) -- (-56.309932474020215:0.4500217979308372) arc (-56.309932474020215:0.:0.4500217979308372) -- cycle;
-\draw [line width=5.2pt] (0.,3.)-- (2.,0.);
-\draw [line width=5.2pt] (2.,0.)-- (6.,0.);
-\draw [line width=5.2pt] (6.,0.)-- (8.,3.);
-\draw [line width=5.2pt] (8.,3.)-- (0.,3.);
+\draw [line width=3.6pt] (0.,3.)-- (2.,0.);
+\draw [line width=3.6pt] (2.,0.)-- (6.,0.);
+\draw [line width=3.6pt] (6.,0.)-- (8.,3.);
+\draw [line width=3.6pt] (8.,3.)-- (0.,3.);
 \draw [line width=2.pt] (2.,0.)-- (2.,3.);
 \draw [line width=2.pt] (6.,0.)-- (6.,3.);
 \draw (0.46189993577814065,1.5616074216094848) node[anchor=north west] {$x$};
@@ -725,7 +725,7 @@ Sea $K\subset\R^n$ compacto (cerrado y acotado) y $f\colon K\to\R$ continua. Ent
 
 Si la restricción $S$ es compacta, el teorema de Weierstrass asegura la existencia de extremos absolutos; si además la regularidad se cumple en todos los puntos de $S$, todo extremo aparece como candidato de Lagrange, por lo que basta evaluar $f$ en todos los candidatos y comparar.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[scale=1.2]
     \draw[thin,->] (-2.3,0) -- (2.5,0) node[right] {$x$};
@@ -827,7 +827,7 @@ La restricción $y^3=x^2$ se puede escribir como $y=x^{2/3}$, que tiene una cús
 \]
 La hipótesis de regularidad falla en el punto del extremo. El sistema de Lagrange no produce una solución significativa para ese punto: $\nabla f(0,0)=(0,0)$ y $\nabla g(0,0)=(0,0)$, por lo que la ecuación $\nabla f=\lambda\nabla g$ se reduce a $0=0$, y el método no puede localizar el extremo.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[scale=1.2,>=stealth]
   \draw[->] (-2.9,0) -- (2.9,0) node[right] {$x$};

@@ -24,7 +24,7 @@ recorrer la curva (sentido antihorario para una curva que encierra una
 región convexa).
 \end{definition}
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[scale=1.35]
     \draw[thin,->] (-0.3,0)--(3.6,0) node[right]{$x$};
@@ -97,7 +97,7 @@ De manera análoga, expresando $R$ como región de tipo II
 Sumando ambas igualdades se obtiene la fórmula de Green.
 \end{proof}
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[scale=1.2]
   % Region R (ellipse)
@@ -248,7 +248,7 @@ De $6=\dfrac{\pi^3}{3}-\int_C$,
 \end{myproof}
 \end{example}
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[scale=1.5]
   % region bajo el arco
@@ -333,7 +333,7 @@ Coincide con la integral doble: $\boxed{\dfrac{45\pi}{2}=\dfrac{45\pi}{2}}$.
 
 \begin{figure}[H]
 \centering
-\begin{tikzpicture}[scale=1.1]
+\begin{tikzpicture}[scale=0.8]
   % anillo
   \fill[blue!12,even odd rule] (0,0) circle (2) (0,0) circle (1);
   % ejes
@@ -368,7 +368,7 @@ mide la tendencia a \emph{fluir} hacia el exterior o el interior.
 
 \begin{figure}[H]
 \centering
-\begin{tikzpicture}[scale=0.88]
+\begin{tikzpicture}[scale=0.7]
     \draw[thin,->] (-2.5,0)--(2.8,0) node[right]{$x$};
     \draw[thin,->] (0,-2.5)--(0,2.8) node[above]{$y$};
     \foreach \xi/\yi in {
@@ -946,7 +946,7 @@ I_z=\frac{8\pi}{3}\cdot\frac{M}{4\pi R^2}\cdot R^4=\boxed{\dfrac{2}{3}MR^2}.
 
 Si un campo vectorial $\mathbf{F}$ representa la velocidad de un fluido, el volumen de fluido que atraviesa un elemento de superficie $dS$ por unidad de tiempo es la componente normal de $\mathbf{F}$ multiplicada por $dS$: $\mathbf{F}\cdot\mathbf{n}\,dS$. La integral de esta cantidad sobre toda la superficie es el \textbf{flujo}.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}
 \begin{axis}[
@@ -1113,7 +1113,7 @@ La demostración rigurosa sigue la misma estrategia que el Teorema Fundamental d
 Para la componente $P$ del campo, se aplica el teorema de Fubini y el TFC en la dirección $x$; el resultado se suma con las otras dos componentes. La orientación exterior garantiza que los signos en la frontera coincidan con los de la integral de flujo.
 \end{proof}
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[scale=1.0]
   % 2x2 grid of cells representing solid Q
@@ -1314,7 +1314,7 @@ donde $\displaystyle \nabla\times\mathbf{F} = \left( \frac{\partial R}{\partial 
 La interpretación física es clara: la circulación total del campo alrededor del borde de una superficie es igual a la suma de las ``micro-circulaciones'' (el rotacional) a través de la superficie. Si $\nabla\times\mathbf{F}=\mathbf{0}$ en toda la superficie, el campo es irrotacional y la integral de línea sobre cualquier curva cerrada que limite una porción de $S$ es cero (independencia de la trayectoria local).
 \end{rem}
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[scale=1.1]
   % Surface S (closed organic shape suggesting a curved surface)

@@ -393,7 +393,7 @@ Sea $V$ espacio vectorial con producto interno real y $\mathbf{u}, \mathbf{v} \i
 \)
 \end{definition}
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[scale=1.2, >=stealth]
 % Recta generada por v
@@ -492,7 +492,7 @@ Cada $\mathbf{v}_k$ es ortogonal a $\mathbf{v}_1, \dots, \mathbf{v}_{k-1}$ por c
 \end{proof}
 \end{theorem}
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[scale=1.3, >=stealth]
 \draw[gray!50, very thin] (-1.4,-0.4) grid (2.4,2.4);
@@ -888,7 +888,7 @@ La figura confirma el ajuste: los cuatro puntos experimentales quedan repartidos
     ymin=0, ymax=8,
     legend pos=north west,
     scaled ticks=false,
-    width=0.8\textwidth
+    width=0.7\textwidth, height=0.28\textheight
 ]
 \addplot[only marks, mark=*, red, mark size=3pt] coordinates {
     (6.1,1.5)
@@ -1062,7 +1062,7 @@ Base: \( \boxed{\left\{ \begin{pmatrix} -1 \\ 0 \\ 1 \end{pmatrix} \right\}} \).
 % Intermedio
 \begin{prob}
 Una altura de un triángulo es cada uno de los segmentos que une un vértice con un punto de su lado opuesto o de su prolongación y es perpendicular a dicho lado.
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[scale=0.7, rotate=-20]
 \coordinate (A) at (0,0);
@@ -1424,12 +1424,14 @@ Base: \( \mathbf{w}_1 = (-2,1,0,3),\; \mathbf{w}_2 = (2,0,1,-3) \).
 Aplicamos Gram-Schmidt para base ortogonal:
 \( \mathbf{v}_1 = \mathbf{w}_1 = (-2,1,0,3) \).
 \[
-\mathbf{v}_2 = \mathbf{w}_2 - \frac{\langle \mathbf{w}_2, \mathbf{v}_1 \rangle}{\|\mathbf{v}_1\|^2}\mathbf{v}_1
+\begin{aligned}
+\mathbf{v}_2 &= \mathbf{w}_2 - \frac{\langle \mathbf{w}_2, \mathbf{v}_1 \rangle}{\|\mathbf{v}_1\|^2}\mathbf{v}_1
 = (2,0,1,-3) - \frac{-4-9}{14}(-2,1,0,3)
-= (2,0,1,-3) + \frac{13}{14}(-2,1,0,3)
-= \left(2-\frac{26}{14}, \frac{13}{14}, 1, -3+\frac{39}{14}\right)
+= (2,0,1,-3) + \frac{13}{14}(-2,1,0,3)\\
+&= \left(2-\frac{26}{14}, \frac{13}{14}, 1, -3+\frac{39}{14}\right)
 = \left(\frac{2}{14}, \frac{13}{14}, 1, -\frac{3}{14}\right)
 = \frac{1}{14}(2,13,14,-3).
+\end{aligned}
 \]
 Base ortogonal:
 \[
@@ -1439,11 +1441,13 @@ Base ortogonal:
 \textbf{Paso 2. (b)} \( W^\perp \) es el espacio fila de la matriz de coeficientes. Como el espacio fila tiene dimensión 2 (rango 2, pues $r_3 = 2r_1 + r_2$), basta tomar dos filas independientes y ortogonalizar. Tomamos \( r_1=(1,-1,1,1) \) y \( r_2=(2,1,-1,1) \):
 \( \mathbf{u}_1 = r_1 = (1,-1,1,1) \).
 \[
-\mathbf{u}_2 = r_2 - \frac{\langle r_2, \mathbf{u}_1 \rangle}{\|\mathbf{u}_1\|^2}\mathbf{u}_1
-= (2,1,-1,1) - \frac{2-1-1+1}{4}(1,-1,1,1)
-= (2,1,-1,1) - \frac{1}{4}(1,-1,1,1)
+\begin{aligned}
+\mathbf{u}_2 &= r_2 - \frac{\langle r_2, \mathbf{u}_1 \rangle}{\|\mathbf{u}_1\|^2}\mathbf{u}_1
+= (2,1,-1,1) - \frac{2-1-1+1}{4}(1,-1,1,1)\\
+&= (2,1,-1,1) - \frac{1}{4}(1,-1,1,1)
 = \left(\frac{7}{4}, \frac{5}{4}, -\frac{5}{4}, \frac{3}{4}\right)
 = \frac{1}{4}(7,5,-5,3).
+\end{aligned}
 \]
 Base ortogonal de \( W^\perp \):
 \[
@@ -1459,11 +1463,13 @@ Usando la base ortogonal \( \mathbf{a}_1 = (1,-1,1,1) \), \( \mathbf{a}_2 = (7,5
 \langle \mathbf{u}, \mathbf{a}_2 \rangle = 63+20-25+6=64,\quad \|\mathbf{a}_2\|^2 = 49+25+25+9=108.
 \]
 \[
-\operatorname{proy}_{W^\perp} \mathbf{u} = \frac{12}{4}\mathbf{a}_1 + \frac{64}{108}\mathbf{a}_2
+\begin{aligned}
+\operatorname{proy}_{W^\perp} \mathbf{u} &= \frac{12}{4}\mathbf{a}_1 + \frac{64}{108}\mathbf{a}_2
 = 3(1,-1,1,1) + \frac{16}{27}(7,5,-5,3)
-= \left(3+\frac{112}{27}, -3+\frac{80}{27}, 3-\frac{80}{27}, 3+\frac{48}{27}\right)
-= \left(\frac{193}{27}, -\frac{1}{27}, \frac{1}{27}, \frac{129}{27}\right)
+= \left(3+\frac{112}{27}, -3+\frac{80}{27}, 3-\frac{80}{27}, 3+\frac{48}{27}\right)\\
+&= \left(\frac{193}{27}, -\frac{1}{27}, \frac{1}{27}, \frac{129}{27}\right)
 = \frac{1}{27}(193,-1,1,129).
+\end{aligned}
 \]
 \[
 \boxed{\operatorname{proy}_{W^\perp} \mathbf{u} = \frac{1}{27}(193,-1,1,129)}.

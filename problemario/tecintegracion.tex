@@ -47,7 +47,7 @@ traslación vertical, y en un valor de $x$ fijo todas tienen la misma
 pendiente, precisamente $f(x)$. La Figura~\ref{fig:familia_antiderivadas}
 ilustra esta situación para $f(x)=x^2$.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}
 \begin{axis}[
@@ -513,7 +513,8 @@ Calcular $\displaystyle\int x^3 e^{2x}\, dx$ usando integración por partes tabu
 \textbf{Paso 1: Construir la tabla.}
 Columna izquierda: derivadas sucesivas de $x^3$; columna derecha: antiderivadas sucesivas de $e^{2x}$; signos alternados $+,-,+,-,\ldots$
 
-\begin{center}
+\begin{table}[H]
+\centering
 \renewcommand{\arraystretch}{1.6}
 \begin{tabular}{c c c}
 \toprule
@@ -526,7 +527,8 @@ $-$ & $6$ & $\dfrac{1}{8}e^{2x}$ \\
 $+$ & $0$ & $\dfrac{1}{16}e^{2x}$ \\
 \bottomrule
 \end{tabular}
-\end{center}
+\caption{Método tabular para $\int x^3e^{2x}\,dx$.}
+\end{table}
 
 \textbf{Paso 2: Sumar los productos diagonales con sus signos.}
 \[
@@ -858,7 +860,7 @@ Sustitución: $u = a\sen\theta$, $\theta \in \left[-\frac{\pi}{2},
 \frac{\pi}{2}\right]$; $du = a\cos\theta\,d\theta$;
 $\sqrt{a^2-u^2} = a\cos\theta$.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[scale=1.5]
     \draw[thick] (0,0) -- (2,0) -- (2,1.5) -- cycle;
@@ -923,7 +925,7 @@ Sustitución: $u=a\tan\theta$, $\theta\in\left(-\frac{\pi}{2},
 \frac{\pi}{2}\right)$; $du=a\sec^2\theta\,d\theta$;
 $\sqrt{a^2+u^2}=a\sec\theta$.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[scale=1.5]
     \draw[thick] (0,0) -- (2,0) -- (2,1.5) -- cycle;
@@ -964,7 +966,7 @@ Sustitución: $u=a\sec\theta$, $\theta\in\left[0,\frac{\pi}{2}\right)\cup
 \left(\frac{\pi}{2},\pi\right]$; $du=a\sec\theta\tan\theta\,d\theta$;
 $\sqrt{u^2-a^2}=a\tan\theta$.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[scale=1.5]
     \draw[thick] (0,0) -- (2,0) -- (2,1.5) -- cycle;
@@ -1004,7 +1006,8 @@ $\tan\theta=\frac{\sqrt{x^2-9}}{3}$, $\theta=\operatorname{arcsec}\!\!\left(\fra
 
 \subsection{Tabla resumen de sustituciones}
 
-\begin{center}
+\begin{table}[H]
+\centering
 \begin{tabular}{>{$}c<{$} >{$}c<{$} >{$}c<{$} >{$}c<{$}}
 \toprule
 \text{Radical} & \text{Sustitución} & \text{Diferencial}
@@ -1018,7 +1021,8 @@ $\tan\theta=\frac{\sqrt{x^2-9}}{3}$, $\theta=\operatorname{arcsec}\!\!\left(\fra
 & \sqrt{u^2-a^2}=a\tan\theta \\
 \bottomrule
 \end{tabular}
-\end{center}
+\caption{Sustituciones trigonométricas según el radical del integrando.}
+\end{table}
 
 \begin{rem}
 Cuando el radical involucra una cuadrática general $\sqrt{ax^2+bx+c}$,

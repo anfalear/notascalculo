@@ -31,7 +31,7 @@ y(x_0)=y_0,\quad y'(x_0)=y_1,\quad \dots,\quad y^{(n-1)}(x_0)=y_{n-1}.
 
 Antes de resolver una EDO conviene \emph{verla}. Una EDO de primer orden \(y'=f(x,y)\) asigna a cada punto \((x,y)\) del plano una pendiente \(f(x,y)\); el conjunto de esos pequeños segmentos es el \textbf{campo de pendientes}, y toda curva solución debe ser tangente al campo en cada uno de sus puntos. La Figura~\ref{fig:campo_pendientes} muestra el campo de \(y'=x-y\) con tres soluciones superpuestas: aun sin resolver la ecuación, el dibujo revela que todas las soluciones se aproximan a la recta \(y=x-1\).
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[scale=1.05]
 \draw[->,gray!55] (-2.4,0)--(3.5,0) node[right]{\small $x$};
@@ -528,7 +528,7 @@ La ley de Newton establece que la tasa de cambio de la temperatura de un cuerpo 
 \]
 donde \(T_a\) es la temperatura ambiente. La solución \(T(t)=T_a+(T_0-T_a)e^{-kt}\) es una familia de exponenciales que se acercan a \(T_a\) sin cruzarla (Figura~\ref{fig:enfriamiento_curvas}): un cuerpo más caliente que el ambiente se enfría y uno más frío se calienta, ambos hacia el equilibrio térmico.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}
 \begin{axis}[
@@ -583,7 +583,7 @@ Calculando:
 \subsection{Circuito RL con fuente senoidal}
 Consideremos ahora \(E(t)=E_0 \sen(\omega t)\). La ecuación es \(L i' + R i = E_0 \sen(\omega t)\). La solución particular se obtiene por coeficientes indeterminados o por factor integrante. El circuito subyacente (Figura~\ref{fig:circuito_rl}) consta de una resistencia \(R\) y una inductancia \(L\) en serie con la fuente; aplicando la ley de voltajes de Kirchhoff, la caída \(Ri\) en la resistencia más la caída \(L\,i'\) en la inductancia igualan al voltaje de la fuente.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{circuitikz}[american, scale=0.95, transform shape]
 \draw (0,0) to[sinusoidal voltage source, l=$E(t)$] (0,2.6)

@@ -65,7 +65,7 @@ el punto $(x_0,y_0,f(x_0,y_0))$. Análogamente, $f_y(x_0,y_0)$ es la
 pendiente de la recta tangente a la curva obtenida al cortar con el
 plano $x=x_0$.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}
 \begin{axis}[
@@ -202,7 +202,8 @@ f_y = \frac{2y}{x^2+y^2}}
 La tabla registra la \emph{sensación térmica} $S$ (en $^\circ$C) en función de
 la temperatura del aire $T$ (en $^\circ$C) y la velocidad del viento $v$ (en
 km/h) medidas en una estación meteorológica:
-\begin{center}
+\begin{table}[H]
+\centering
 \begin{tabular}{c|cccc}
 $S(T,v)$ & $v=10$ & $v=20$ & $v=30$ & $v=40$ \\ \hline
 $T=-10$  & $-15$  & $-18$  & $-20$  & $-21$  \\
@@ -210,7 +211,8 @@ $T=-5$   & $-9$   & $-12$  & $-14$  & $-15$  \\
 $T=0$    & $-3$   & $-5$   & $-7$   & $-8$   \\
 $T=5$    & $3$    & $1$    & $-1$   & $-2$   \\
 \end{tabular}
-\end{center}
+\caption{Sensación térmica $S$ (en $^\circ$C) según la temperatura $T$ y la velocidad del viento $v$.}
+\end{table}
 Estime $\partial S/\partial T$ y $\partial S/\partial v$ en el punto
 $(T,v)=(-5,20)$ e interprete sus unidades y signos.
 \begin{myproof}
@@ -616,7 +618,7 @@ y = f(x_0) + f'(x_0)(x-x_0).
 
 Para una función de dos variables $z=f(x,y)$, cuya gráfica es una superficie en $\mathbb{R}^3$, el análogo a la recta tangente es el \textbf{plano tangente}\index{plano tangente}. Este plano es la mejor aproximación lineal a la superficie en un punto $(x_0, y_0, z_0)$.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}
 \begin{axis}[
@@ -977,7 +979,7 @@ dz = f_x(x, y)\,dx + f_y(x, y)\,dy = \frac{\partial z}{\partial x}\,dx + \frac{\
 Este diferencial representa el cambio en la \emph{linealización} $L(x,y)$ cuando las variables independientes cambian en $dx$ y $dy$. Si $dx = \Delta x$ y $dy = \Delta y$ son pequeños, entonces $\Delta z \approx dz$.
 \end{definition}
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[scale=1.2]
     \draw[thin,->] (-0.3,0) -- (3.2,0) node[right] {$x$};

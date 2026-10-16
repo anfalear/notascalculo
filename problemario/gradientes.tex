@@ -130,12 +130,12 @@ $S=2la+2ah+2hl$. Datos: $l=5\,m$, $a=3\,m$, $h=9\,m$; $\dfrac{dl}{dt}=-0.5\,m/s$
 
 \textbf{Paso 3. Regla de la cadena y sustitución.}
 \[
-\frac{dS}{dt}=(2a+2h)\frac{dl}{dt}+(2l+2h)\frac{da}{dt}+(2a+2l)\frac{dh}{dt}.
-\]
-\[
-=(2(3)+2(9))(-0.5)+(2(5)+2(9))(0.3)+(2(3)+2(5))(0.3)
-=24(-0.5)+28(0.3)+16(0.3)
+\begin{aligned}
+\frac{dS}{dt}&=(2a+2h)\frac{dl}{dt}+(2l+2h)\frac{da}{dt}+(2a+2l)\frac{dh}{dt}\\
+&=(2(3)+2(9))(-0.5)+(2(5)+2(9))(0.3)+(2(3)+2(5))(0.3)\\
+&=24(-0.5)+28(0.3)+16(0.3)
 =-12+8.4+4.8=1.2\ m^2/s.
+\end{aligned}
 \]
 
 \textbf{Paso 4. Resultado.}
@@ -561,7 +561,7 @@ central del análisis local de funciones de varias variables.
     donde $f(x,y) = k$ para alguna constante $k$.
 \end{enumerate}
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[scale=1.15]
     \draw[thin,->] (-2.5,0) -- (2.8,0) node[right] {$x$};
@@ -646,7 +646,7 @@ $D_{\mathbf{u}} f(x_0,y_0)$.
 El siguiente teorema proporciona la fórmula práctica para calcular la
 derivada direccional sin recurrir al límite.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}
 \begin{axis}[
@@ -975,7 +975,7 @@ Ambas direcciones son perpendiculares a $\nabla T(P)$: son las direcciones \emph
 \end{myproof}
 \end{prob}
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[scale=0.85]
     % Ejes
@@ -1336,7 +1336,7 @@ Durante una reacción química sobre una placa, la temperatura en cada punto es 
 \begin{prob}
 La longitud del lado marcado $x$ del triángulo de la figura (no está construído a escala) aumenta a una tasa de $0.5\ cm/s$, el lado marcado $y$ crece a una tasa de $0.3\ cm/s$ y el ángulo $\theta$ aumenta a una tasa de $0.2\ rad/s.$ Emplee la regla de la cadena para determinar la tasa a la cual el área del triángulo está cambiando en el instante $x=13\ cm,$ $y=8\ cm$ y $\theta= \dfrac{\pi}{4}.$
 \textit{Sugerencia: Determine cuál es la altura del triángulo en términos de $\theta$ tomando como base a $y.$}
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[scale=1.0]
   \coordinate (O) at (0,0);

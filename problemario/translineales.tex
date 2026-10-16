@@ -410,7 +410,7 @@ Esto prueba que $T_2 \circ T_1$ es una transformación lineal.
 
 La Figura~\ref{fig:composicion_diagrama} representa la composición como un diagrama: aplicar primero $T_1$ y después $T_2$ equivale a recorrer la flecha diagonal $T_2 \circ T_1$.
 
-\begin{figure}[H]\centering
+\begin{figure}[!htbp]\centering
 \begin{tikzpicture}[>=stealth, node distance=3cm, scale=1.2]
     \node (U) at (0,0) {$U$};
     \node (V) [right=of U] {$V$};
@@ -575,7 +575,7 @@ donde $[x]_B$ es el vector de coordenadas de $x$ en la base $B$, y $[T(x)]_{B'}$
 
 La Figura~\ref{fig:diagrama_matriz_asociada} resume esta relación: aplicar $T$ a un vector equivale a multiplicar su vector de coordenadas por la matriz $[T]_{B',B}$.
 
-\begin{figure}[H]\centering
+\begin{figure}[!htbp]\centering
 \begin{tikzpicture}[>=stealth, node distance=3.5cm, scale=1]
     \node (v) at (0,0) {$x \in V$};
     \node (vb) [below=of v] {$[x]_B$};
@@ -910,7 +910,7 @@ T(p(x)) = \begin{pmatrix} p(-1) \\ p(0) \\ p(1) \end{pmatrix}
 
 Toda matriz $A \in \mathbb{M}_2(\mathbb{R})$ define una transformación lineal $T(x) = Ax$ en el plano, y sus columnas son precisamente las imágenes de los vectores canónicos $e_1$ y $e_2$. Por eso, para visualizar el efecto geométrico de $T$ basta observar qué le hace al cuadrado unitario de lados $e_1$ y $e_2$: su imagen es el paralelogramo de lados $T(e_1)$ y $T(e_2)$. La Figura~\ref{fig:cuadrado_rotacion_cizalla} muestra dos casos representativos: una rotación, que gira el cuadrado sin deformarlo, y una cizalla, que lo inclina en un paralelogramo de la misma área.
 
-\begin{figure}[H]\centering
+\begin{figure}[!htbp]\centering
 \begin{minipage}{0.48\textwidth}\centering
 \begin{tikzpicture}[scale=1.3]
     \draw[->] (-0.7,0) -- (1.6,0) node[below] {\small $x$};
@@ -957,7 +957,7 @@ A continuación se presentan algunos ejemplos clásicos de transformaciones line
     T\begin{pmatrix}a\\b\end{pmatrix} = \begin{pmatrix}b\\a\end{pmatrix}.
     \]
     La Figura~\ref{fig:reflexion_recta_yx} muestra el efecto sobre el punto $(1,4)$, que se transforma en $(4,1)$.
-    \begin{figure}[H]\centering
+    \begin{figure}[!htbp]\centering
         \begin{tikzpicture}[scale=0.5]
             \draw[step=1cm,help lines] (-1.5,-1.5) grid (4.7,4.7);
             \draw[latex-latex, line width=0.08cm] (-2,0) -- (5,0);
@@ -989,7 +989,7 @@ A continuación se presentan algunos ejemplos clásicos de transformaciones line
     = \frac{\sqrt{2}}{2} \begin{pmatrix} -3 \\ 5 \end{pmatrix}
     \]
     La Figura~\ref{fig:rotacion_origen} ilustra la rotación de un ángulo $\theta$ sobre la circunferencia unitaria.
-    \begin{figure}[H]\centering
+    \begin{figure}[!htbp]\centering
         \begin{tikzpicture}[scale=1.5]
             \draw[step=0.2cm,help lines] (-1.5,-1.5) grid (1.5,1.5);
             \filldraw[fill=green!20,draw=green!50!black] (0,0) -- (3mm,0mm) arc [start angle=0, end angle=30, radius=5mm] -- cycle;
@@ -1013,7 +1013,7 @@ A continuación se presentan algunos ejemplos clásicos de transformaciones line
     \end{pmatrix}
     \]
     La Figura~\ref{fig:escalado_region} muestra la región original y su imagen ampliada.
-    \begin{figure}[H]\centering
+    \begin{figure}[!htbp]\centering
         \begin{tikzpicture}[scale=0.3]
             \draw[step=1cm,help lines, line width=0.01cm] (-1,-1) grid (8,7);
             \draw[latex-latex, line width=0.05cm] (-1.5,0) -- (9,0);
@@ -1044,7 +1044,7 @@ Consideremos una figura en el plano (la "casita") representada por los vértices
     \]
     Esta transformación invierte la coordenada $x$ y deja inalterada la coordenada $y$ (Figura~\ref{fig:casita_reflexion_y}).
 
-    \begin{figure}[H]\centering
+    \begin{figure}[!htbp]\centering
     \begin{tikzpicture}[scale=0.35]
         % Ejes y cuadrícula
         \draw[step=1cm,help lines, line width=0.05cm] (1,-1) grid (-8,8);
@@ -1067,7 +1067,7 @@ Consideremos una figura en el plano (la "casita") representada por los vértices
     \]
     Esta transformación multiplica por $2$ cada coordenada, ampliando la figura al doble de su tamaño (Figura~\ref{fig:casita_dilatacion}).
 
-    \begin{figure}[H]\centering
+    \begin{figure}[!htbp]\centering
     \begin{tikzpicture}[scale=0.35]
         % Ejes y cuadrícula
         \draw[step=1cm,help lines, line width=0.05cm] (-1,-1) grid (10,12);
@@ -1090,7 +1090,7 @@ Consideremos una figura en el plano (la "casita") representada por los vértices
     \]
     Esta transformación invierte la coordenada $y$ y deja inalterada la coordenada $x$ (Figura~\ref{fig:casita_reflexion_x}).
 
-    \begin{figure}[H]\centering
+    \begin{figure}[!htbp]\centering
     \begin{tikzpicture}[scale=0.35]
         % Ejes y cuadrícula
         \draw[step=1cm,help lines, line width=0.05cm] (-1,-9) grid (8,3);
@@ -2027,7 +2027,7 @@ Sea $A$ una matriz $2\times 2.$ ¿Es la transformación lineal $T(A)=\begin{pmat
 \begin{prob}
 Dada la figura plana de la Figura~\ref{fig:figura_original_plano}, determine el efecto geométrico que efectúan sobre ella las transformaciones lineales representadas por las siguientes matrices. Para cada caso, calcule el kernel, la imagen, el rango y la nulidad.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,xscale=1,yscale=1]
 \begin{axis}[
@@ -2294,7 +2294,7 @@ ytick={-1.0,0.0,...,4.0},]
 \begin{prob}
 Dada la figura tridimensional de la Figura~\ref{fig:sudoku_original}, determine el efecto geométrico que efectúan sobre ella las transformaciones lineales representadas por las siguientes matrices. Calcule el kernel, la imagen, la nulidad y el rango. Represente gráficamente las transformaciones.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering 
 \begin{tikzpicture}[every node/.style={minimum size=1cm},on grid]
 \begin{scope}[every node/.append style={yslant=-0.5},yslant=-0.5]

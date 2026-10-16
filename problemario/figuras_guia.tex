@@ -16,7 +16,7 @@
 %   axis cs:x,y,z → coordenadas del eje en \draw dentro de 3D
 % Advertencia: ~4 s en LuaLaTeX (50 puntos en axis3d)
 % ============================================================
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}
 \begin{axis}[
@@ -63,7 +63,7 @@
 % Normal: ∇(z−x²−y²)=(−2x,−2y,1) en (1,0,1)→(−2,0,1)/√5, ×0.7
 % Advertencia: ~8 s en LuaLaTeX (superficie 3D con relleno)
 % ============================================================
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}
 \begin{axis}[
@@ -117,7 +117,7 @@
 %   $(2,4)$  → anchor=west xshift=5pt  [derecha del punto]
 % Tiempo de compilación: <1 s
 % ============================================================
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[scale=1.1]
     % Ejes
@@ -195,7 +195,7 @@
 %     blue!50       → franja representativa (opacity=0.45)
 %   Tiempo 3D: <15 s con shader=flat + samples=20 en LuaLaTeX
 %   Entorno figure (obligatorio):
-%     \begin{figure}[H]\centering ... \caption{}\label{fig:nombre}
+%     \begin{figure}[!htbp]\centering ... \caption{}\label{fig:nombre}
 %     \end{figure}  — [H] siempre; toda figura lleva caption y label
 %   Etiquetas sin solapamiento (obligatorio):
 %     Usar \node separado del \draw, nunca node al final de plot

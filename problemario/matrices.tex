@@ -25,7 +25,7 @@ Dado $k \in \mathbb{R}$ o $\mathbb{C}$, $kA = (k \cdot a_{ij})$.
 Para $A$ de tamaño $m \times n$ y $B$ de tamaño $n \times p$, el producto $AB$ tiene tamaño $m \times p$ y $(AB)_{ij} = \sum_{k=1}^n a_{ik}b_{kj}$.
 \end{definition}
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[>=stealth]
 \matrix (A) [matrix of math nodes, nodes={anchor=base, text height=10pt, text depth=5pt},
@@ -244,6 +244,7 @@ Febrero & 5 & 6 & 0\\
 Marzo & 2 & 9 & 4\\
 Abril & 1 & 1 & 7\\\hline
 \end{tabular}
+\caption{Unidades vendidas de cada producto por mes.}
 \end{table}
 
 Escriba una matriz que represente la cantidad total de dinero obtenido cada mes.
@@ -974,7 +975,7 @@ a_{11}a_{22} - a_{12}a_{21} \neq 0
 \) caracteriza perfectamente la invertibilidad de la matriz.
 \end{rem}
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[scale=1.1, >=stealth]
 \draw[gray!50, very thin] (-0.6,-0.6) grid (4.6,3.6);
@@ -1069,7 +1070,7 @@ Dada una matriz $A$ de tamaño $n \times n$, el \textbf{menor} $M_{ij}$ es la su
 El determinante $\det(M_{ij})$ se llama \textit{menor del elemento} $a_{ij}$.
 \end{definition}
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}
 \matrix (M1) [matrix of math nodes, nodes={anchor=base, text height=9pt, text depth=4pt},
@@ -1240,7 +1241,7 @@ a_{31} & a_{32} & a_{33}
 
 \item \textbf{Método gráfico} (extensión de columnas):
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[every node/.style={anchor=base, text height=14pt, text depth=7pt}]
 % Matriz extendida - solo columnas adicionales
@@ -1284,7 +1285,7 @@ a_{31} & a_{32} & a_{33} & |[blue]| a_{31} & |[blue]| a_{32} \\
 
 \item \textbf{Método alternativo} (extensión de filas):
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[every node/.style={anchor=base, text height=14pt, text depth=7pt}]
 % Matriz extendida - con filas adicionales
@@ -1730,7 +1731,7 @@ Determine la matriz de adyacencia asociada a los siguientes grafos. Use $A^3$ pa
 
 \begin{enumerate}[a)]
 \item
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[node distance=15mm, ultra thick,
         main/.style = {circle, draw, minimum size=8mm, font=\footnotesize\sffamily\bfseries}]
@@ -1774,7 +1775,7 @@ A^3 = \begin{pmatrix}
 \end{myproof}
 
 \item
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[auto, node distance=1.5cm, ultra thick,
         main node/.style={circle, draw, minimum size=8mm, font=\footnotesize\sffamily\bfseries}]
@@ -1813,7 +1814,7 @@ B = \begin{pmatrix}
 \end{myproof}
 
 \item
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[auto, node distance=1.5cm, ultra thick,
         main node/.style={circle, draw, minimum size=8mm, font=\footnotesize\sffamily\bfseries}]
@@ -2193,6 +2194,7 @@ Vegetariano & 200 \\
 Carne & 150 \\
 Mariscos & 100 \\\hline
 \end{tabular}
+\caption{Ventas mensuales por tipo de plato.}
 \end{table}
 
 Si los costos de producción por plato son: Vegetariano \$3000, Carne \$9000 y Mariscos \$15000, calcule:
@@ -3365,6 +3367,7 @@ Norte & 120 & 8 & 30\\
 Centro & 200 & 5 & 45\\
 Sur & 150 & 12 & 25\\\hline
 \end{tabular}
+\caption{Ventas de un día en cada sucursal.}
 \end{table}
 
 Escriba una matriz de ventas y un vector de precios cuyo producto entregue el ingreso total de cada sucursal, y calcúlelo.

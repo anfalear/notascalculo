@@ -21,7 +21,7 @@ La figura~\ref{fig:dominio_rango} ilustra geométricamente ambos conjuntos:
 el dominio se lee proyectando la gráfica sobre el eje $x$, y el rango,
 proyectándola sobre el eje $y$.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[>=latex, scale=1.1]
    % Ejes
@@ -237,7 +237,7 @@ Aunque conocer las cuatro representaciones de una función (verbal, numérica, a
 \begin{rem}[Prueba de la recta vertical]
 Una curva en el plano $xy$ es la gráfica de una función $y = f(x)$ \emph{si y solo si} ninguna recta vertical interseca la curva en más de un punto. Por ejemplo, la circunferencia $x^2 + y^2 = 1$ no es la gráfica de una función: la recta $x = 0.5$ la corta en dos puntos, $(0.5,\,\sqrt{3}/2)$ y $(0.5,\,-\sqrt{3}/2)$ (figura~\ref{fig:recta_vertical}).
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[scale=1.5]
 \draw[->] (-1.5,0) -- (1.5,0) node[right] {$x$};
@@ -398,7 +398,7 @@ Estas reglas garantizan que $x^r$ produzca valores reales para todo $x$ en su do
 Las figuras~\ref{fig:potencias_enteras} y~\ref{fig:potencias_racionales}
 ilustran las funciones potencia más representativas:
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[scale=0.75]
 \begin{axis}[
@@ -431,7 +431,7 @@ ilustran las funciones potencia más representativas:
 \label{fig:potencias_enteras}
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[scale=0.75]
 \begin{axis}[
@@ -468,7 +468,7 @@ El número $e \approx 2.71828\ldots$ (base de Euler) ocupa un lugar privilegiado
 \begin{example}[Exponenciales creciente y decreciente]
 La figura~\ref{fig:exponenciales} contrasta el crecimiento de $2^x$ con el
 decaimiento de $(1/2)^x$.
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[scale=1.0]
 \begin{axis}[
@@ -504,7 +504,7 @@ $D_f = (0,+\infty)$, $R_f = \mathbb{R}$. Pasa por $(1,0)$ y tiene asíntota vert
 \begin{example}[Logarítmica base 2 vs.\ logarítmica natural]
 La figura~\ref{fig:logaritmicas} compara $\log_2 x$ con $\ln x$ sobre su
 dominio común $(0,+\infty)$.
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[scale=1.0]
 \begin{axis}[
@@ -541,7 +541,8 @@ $f: D_f \to \mathbb{R}$ es \textbf{periódica} si existe $T > 0$ tal que $f(x+T)
 \begin{definition}[Funciones trigonométricas fundamentales]\index{funcion@función!trigonometrica@trigonométrica}
 Las seis funciones trigonométricas fundamentales se definen con $x \in \mathbb{R}$ en radianes:
 
-\begin{center}
+\begin{table}[H]
+\centering
 \renewcommand{\arraystretch}{1.5}
 \begin{tabular}{|l|l|l|l|l|}
 \hline
@@ -555,14 +556,15 @@ $\sec x$ & $\mathbb{R}\setminus\{\pi/2+k\pi\}$ & $(-\infty,-1]\cup[1,+\infty)$ &
 $\csc x$ & $\mathbb{R}\setminus\{k\pi\}$ & $(-\infty,-1]\cup[1,+\infty)$ & $2\pi$ & impar \\
 \hline
 \end{tabular}
-\end{center}
+\caption{Dominio, rango, período y paridad de las funciones trigonométricas.}
+\end{table}
 donde $k \in \mathbb{Z}$.
 \end{definition}
 
 \begin{example}[Gráficas de las funciones trigonométricas]
 Las figuras~\ref{fig:seno_coseno} y~\ref{fig:tangente} muestran las gráficas
 de las funciones trigonométricas fundamentales.
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[scale=0.85]
 \begin{axis}[
@@ -583,7 +585,7 @@ de las funciones trigonométricas fundamentales.
 \label{fig:seno_coseno}
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[scale=0.85]
 \begin{axis}[
@@ -682,7 +684,7 @@ Dados $h, k \in \mathbb{R}$:
 La figura~\ref{fig:traslaciones_parabola} ilustra los tres tipos de
 traslación aplicados a la parábola $y = x^2$.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[scale=0.85]
 \begin{axis}[
@@ -734,7 +736,7 @@ tiene los siguientes parámetros geométricos:
 La figura~\ref{fig:amplitud_fase} identifica estos parámetros en un caso
 concreto.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[scale=1.0]
 \begin{axis}[
@@ -841,7 +843,7 @@ Dado $y = f(x)$:
 La gráfica de $f^{-1}$ es la reflexión de la gráfica de $f$ respecto a la recta $y = x$ (figura~\ref{fig:inversa_reflexion}).
 \end{rem}
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[scale=1.0]
 \begin{axis}[
@@ -991,7 +993,8 @@ figura~\ref{fig:inversa_reflexion}).
 Las funciones trigonométricas no son globalmente inyectivas (son periódicas), por lo que se restringe su dominio a un \textbf{intervalo principal} para definir sus inversas.
 
 \begin{definition}[Funciones trigonométricas inversas]\index{funcion@función!trigonometrica inversa@trigonométrica inversa}
-\begin{center}
+\begin{table}[H]
+\centering
 \renewcommand{\arraystretch}{1.6}
 \begin{tabular}{|c|c|c|}
 \hline
@@ -1005,13 +1008,14 @@ $\text{arcsec}\, x$ & $(-\infty,-1]\cup[1,+\infty)$ & $[0,\pi]\setminus\{\pi/2\}
 $\text{arccsc}\, x$ & $(-\infty,-1]\cup[1,+\infty)$ & $[-\pi/2,\pi/2]\setminus\{0\}$ \\
 \hline
 \end{tabular}
-\end{center}
+\caption{Dominio y rango de las funciones trigonométricas inversas.}
+\end{table}
 \end{definition}
 
 \begin{example}[Gráficas de $\arcsin$, $\arccos$ y $\arctan$]
 La figura~\ref{fig:trig_inversas} muestra las tres inversas trigonométricas
 principales sobre sus intervalos principales.
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[scale=0.85]
 \begin{axis}[
@@ -1229,16 +1233,24 @@ Encuentre una expresión para la función cúbica $f$ sabiendo que $f(1) = 6$ y 
 
 \begin{prob}
 Para cada función compuesta, descompóngala en funciones elementales $f$ y $g$ tales que $h = f\circ g$. Calcule el dominio de $h$.
-\begin{multicols}{2}
+% minipages en vez de multicols: aquí multicols forzaba un salto que dejaba
+% el enunciado solo en una página casi vacía.
+\par\noindent
+\begin{minipage}[t]{0.48\textwidth}
 \begin{enumerate}
   \item $h(x) = \sqrt{x^2-4}$
   \item $h(x) = e^{\sen x}$
   \item $h(x) = \ln(1+e^x)$
+\end{enumerate}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\begin{enumerate}
+\setcounter{enumi}{3}
   \item $h(x) = \cos^3(2x)$
   \item $h(x) = \arctan\!\bigl(\sqrt{x}\bigr)$
   \item $h(x) = \dfrac{1}{\sqrt{1-x^2}}$
 \end{enumerate}
-\end{multicols}
+\end{minipage}
 \end{prob}
 
 \begin{prob} Construya una fórmula explícita para cada situación. Calcule y justifique el dominio.
@@ -1251,7 +1263,7 @@ Para cada función compuesta, descompóngala en funciones elementales $f$ y $g$ 
 
 \item Una ventana normanda tiene la forma de un rectángulo coronado por un semicírculo (figura~\ref{fig:ventana_normanda}). Si el perímetro de la ventana es de 15 m, exprese el área \( A \) de la ventana en función del ancho \( x \) de la ventana.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[scale=0.8]
     % Dimensiones para la figura
@@ -1291,7 +1303,7 @@ Para cada función compuesta, descompóngala en funciones elementales $f$ y $g$ 
 
 \item Se va a construir una caja sin tapa, a partir de una hoja rectangular de cartón que tiene dimensiones de 12 por 20 centímetros, recortando cuadrados iguales de lado \(x\) en cada una de las esquinas y doblando los lados como se ilustra en la figura~\ref{fig:caja}. Exprese el volumen \(V\) de la caja en función de \(x\).
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[scale=0.4]
     % Rectángulo de cartón (vista en planta)
@@ -1348,7 +1360,7 @@ Para cada función compuesta, descompóngala en funciones elementales $f$ y $g$ 
  
 \item Una tienda de acampar (llamada también carpa para \textit{camping}) con forma de pirámide de base cuadrada se construye a partir de una pieza cuadrada de material de $5\ \text{m}$ de lado. En la base de la pirámide sea $x$ metros la distancia del centro a uno de sus lados como se muestra en la figura~\ref{fig:caja-3d}.   Encuentre un modelo matemático que exprese el volumen de la tienda de acampar como función de $x$ y calcule su dominio.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \begin{center}
 \begin{tikzpicture}[scale=1.5, thick]
     % Cuadrado exterior (base)

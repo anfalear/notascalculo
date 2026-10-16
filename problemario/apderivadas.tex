@@ -398,7 +398,8 @@ del intervalo.}
 Se evalúa $f$ en los puntos críticos $x=0$, $x=2$ y en los extremos
 $x=-\tfrac{1}{2}$, $x=4$:
 
-\begin{center}
+\begin{table}[H]
+\centering
 \begin{tabular}{c l c}
 \toprule
 $x$ & \multicolumn{1}{c}{Cálculo} & $f(x)$ \\
@@ -413,7 +414,8 @@ $2$ & $8 - 12 + 1$ & $-3$ \\[6pt]
 $4$ & $64 - 48 + 1$ & $17$ \\
 \bottomrule
 \end{tabular}
-\end{center}
+\caption{Valores de $f$ en los puntos críticos y en los extremos del intervalo.}
+\end{table}
 
 \textbf{Paso 3. Identificar el máximo y el mínimo absolutos.}
 
@@ -474,7 +476,8 @@ $(-\infty,-1)$, $(-1,1)$ y $(1,+\infty)$.
 
 \textbf{Paso 2. Analizar el signo de $f'$ en cada intervalo.}
 
-\begin{center}
+\begin{table}[H]
+\centering
 \begin{tabular}{c c c c}
 \toprule
 Intervalo & Signo de $(x+1)$ & Signo de $(x-1)$ & Signo de $f'(x)$ \\
@@ -484,7 +487,8 @@ $(-1,\;1)$     & $+$ & $-$ & $-$ \\
 $(1,+\infty)$  & $+$ & $+$ & $+$ \\
 \bottomrule
 \end{tabular}
-\end{center}
+\caption{Signo de $f'$ y monotonía de $f(x)=x^3-3x$.}
+\end{table}
 
 \textbf{Paso 3. Concluir la monotonía.}
 
@@ -617,7 +621,8 @@ $(-\infty,0)$, $(0,2)$ y $(2,+\infty)$.
 
 \textbf{Paso 2. Analizar el signo de $f''$ en cada intervalo.}
 
-\begin{center}
+\begin{table}[H]
+\centering
 \begin{tabular}{c c c c c}
 \toprule
 Intervalo & Signo de $12x$ & Signo de $(x-2)$ & Signo de $f''(x)$
@@ -628,7 +633,8 @@ $(0,\;2)$     & $+$ & $-$ & $-$ & hacia abajo  $\frown$ \\
 $(2,+\infty)$ & $+$ & $+$ & $+$ & hacia arriba $\smile$ \\
 \bottomrule
 \end{tabular}
-\end{center}
+\caption{Signo de $f''$ y concavidad de $f(x)=x^4-4x^3$.}
+\end{table}
 
 \textbf{Paso 3. Identificar los puntos de inflexión.}
 
@@ -651,18 +657,18 @@ f(0)=0, \qquad f(2)=16-32=-16.
 %   yscale → controla el alto   (bájalo para menos alto)
 %   Relación actual ≈ 2:1  (xscale=1.1, yscale=0.45)
 % ============================================================
-\begin{tikzpicture}[>=stealth, xscale=2.5, yscale=0.5]
+\begin{tikzpicture}[>=stealth, xscale=2.5, yscale=0.26]
 
   % --- Ejes ---
   \draw[->] (-1.5,0) -- (4.5,0) node[right] {$x$};
-  \draw[->] (0,-18)  -- (0,6)   node[above] {$y$};
+  \draw[->] (0,-28)  -- (0,7)   node[above] {$y$};
 
   % --- Marcas eje x ---
   \foreach \x in {-1,1,2,3,4}
     \draw (\x,0.25) -- (\x,-0.25) node[below, font=\small] {$\x$};
 
   % --- Marcas eje y ---
-  \foreach \y in {-15,-10,-5,5}
+  \foreach \y in {-25,-20,-10,-5,5}
     \draw (0.15,\y) -- (-0.15,\y) node[left, font=\small] {$\y$};
 
   % --- Curva por tramos coloreados según concavidad ---
@@ -778,7 +784,8 @@ Los puntos críticos, donde $f'(x)=0$, son $x=0$ y $x=3$. Estos dos
 valores dividen la recta real en tres intervalos. Se analiza el signo
 de cada factor en cada uno de ellos:
 
-\begin{center}
+\begin{table}[H]
+\centering
 \begin{tabular}{c c c c c}
 \toprule
 Intervalo & Signo de $4x^2$ & Signo de $(x-3)$ & Signo de $f'(x)$
@@ -789,7 +796,8 @@ $(0,\,3)$       & $+$ & $-$ & $-$ & decreciente \\
 $(3,\,+\infty)$ & $+$ & $+$ & $+$ & creciente   \\
 \bottomrule
 \end{tabular}
-\end{center}
+\caption{Análisis completo de $f(x)=x^4-4x^3$: signo de $f'$ y monotonía.}
+\end{table}
 
 Nótese que $f'$ mantiene el signo negativo a ambos lados de $x=0$: la
 función sigue decreciendo sin interrupciones al pasar por ese punto, de
@@ -809,7 +817,8 @@ f''(x) = 12x^2 - 24x = 12x(x-2).
 Los candidatos a puntos de inflexión son $x=0$ y $x=2$. Se analiza el
 signo de $f''$ en los tres intervalos resultantes:
 
-\begin{center}
+\begin{table}[H]
+\centering
 \begin{tabular}{c c c c c}
 \toprule
 Intervalo & Signo de $12x$ & Signo de $(x-2)$ & Signo de $f''(x)$
@@ -820,7 +829,8 @@ $(0,\,2)$       & $+$ & $-$ & $-$ & hacia abajo  $\frown$ \\
 $(2,\,+\infty)$ & $+$ & $+$ & $+$ & hacia arriba $\smile$ \\
 \bottomrule
 \end{tabular}
-\end{center}
+\caption{Análisis completo de $f(x)=x^4-4x^3$: signo de $f''$ y concavidad.}
+\end{table}
 
 Como $f''$ cambia de signo en $x=0$ (de $+$ a $-$) y en $x=2$ (de $-$
 a $+$), ambos son \textbf{puntos de inflexión}. Sus imágenes son:
@@ -837,7 +847,8 @@ permitió concluir que no hay extremo en ese punto.
 
 \textbf{Resumen del análisis completo.}
 
-\begin{center}
+\begin{table}[H]
+\centering
 \begin{tabular}{c l}
 \toprule
 Punto & Clasificación \\
@@ -847,7 +858,8 @@ $x=2$ & Punto de inflexión en $(2,\,-16)$. \\
 $x=3$ & Mínimo local en $(3,\,-27)$. \\
 \bottomrule
 \end{tabular}
-\end{center}
+\caption{Análisis completo de $f(x)=x^4-4x^3$: clasificación de los puntos notables.}
+\end{table}
 
 La función decrece en $(-\infty,3)$, alcanza su único mínimo local en
 $x=3$, y crece en $(3,+\infty)$. La concavidad cambia en $x=0$ y
@@ -942,7 +954,8 @@ El único punto crítico interior al dominio es $x=0$, pues $f'(x)=0$
 implica $x=0$. Como $(x^2-4)^2>0$ siempre, el signo de $f'$ queda
 determinado únicamente por $-8x$:
 
-\begin{center}
+\begin{table}[H]
+\centering
 \begin{tabular}{c c c}
 \toprule
 Intervalo & Signo de $f'(x)$ & Monotonía \\
@@ -953,7 +966,8 @@ $(0,\;2)$      & $-$ & decreciente \\
 $(2,+\infty)$  & $-$ & decreciente \\
 \bottomrule
 \end{tabular}
-\end{center}
+\caption{Signo de $f'$ y monotonía de $f(x)=x^2/(x^2-4)$.}
+\end{table}
 
 En $x=0$ la derivada cambia de $+$ a $-$, lo que indica un
 \textbf{máximo local} con valor $f(0)=0$. Obsérvese que, aunque la
@@ -973,7 +987,8 @@ f''(x)
 El numerador $8(3x^2+4)>0$ para todo $x\in\mathbb{R}$, de modo que el
 signo de $f''$ depende exclusivamente del denominador $(x^2-4)^3$:
 
-\begin{center}
+\begin{table}[H]
+\centering
 \begin{tabular}{c c c c}
 \toprule
 Intervalo & Signo de $(x^2-4)^3$ & Signo de $f''(x)$ & Concavidad \\
@@ -983,7 +998,8 @@ $(-2,\;2)$     & $-$ & $-$ & hacia abajo  $\frown$ \\
 $(2,+\infty)$  & $+$ & $+$ & hacia arriba $\smile$ \\
 \bottomrule
 \end{tabular}
-\end{center}
+\caption{Signo de $f''$ y concavidad de $f(x)=x^2/(x^2-4)$.}
+\end{table}
 
 Como $f''(x)=0$ no tiene solución real, \textbf{no hay puntos de
 inflexión}. La concavidad cambia únicamente en las asíntotas verticales,
@@ -991,7 +1007,8 @@ que no pertenecen al dominio.
 
 \textbf{Paso 4. Tabla resumen y bosquejo.}
 
-\begin{center}
+\begin{table}[H]
+\centering
 \renewcommand{\arraystretch}{1.3}
 \begin{tabular}{c c c c}
 \toprule
@@ -1003,7 +1020,8 @@ $(0,\;2)$      & $-$ & $-$ & decreciente, cóncava $\downarrow$ \\
 $(2,+\infty)$  & $-$ & $+$ & decreciente, cóncava $\uparrow$ \\
 \bottomrule
 \end{tabular}
-\end{center}
+\caption{Resumen del comportamiento de $f(x)=x^2/(x^2-4)$ por intervalos.}
+\end{table}
 
 \[
 \boxed{\text{Máx. local: }(0,0);\quad\text{asíntotas verticales: }x=\pm2;\quad\text{asíntota horizontal: }y=1.}
@@ -1485,7 +1503,7 @@ fue exactamente $60$ km/h. El siguiente ejemplo muestra que el TVM no
 es un resultado independiente, sino una consecuencia directa del Lema
 de Rolle.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[scale=1.4,>=stealth]
   \draw[->,thin] (-0.2,0)--(7,0) node[right]{$x$};
@@ -1657,7 +1675,8 @@ Además de $\frac{0}{0}$ y $\frac{\infty}{\infty}$, existen otras formas
 indeterminadas que no son cocientes directos. La tabla siguiente muestra
 cómo reducirlas a una de las dos formas en que L'Hôpital es aplicable.
 
-\begin{center}
+\begin{table}[H]
+\centering
 \renewcommand{\arraystretch}{1.6}
 \begin{tabular}{l l l}
 \toprule
@@ -1674,7 +1693,8 @@ $0^0,\;1^\infty,\;\infty^0$ &
   $0/0$ \ o \ $\infty/\infty$; resultado: $e^L$ \\
 \bottomrule
 \end{tabular}
-\end{center}
+\caption{Reducción de las demás formas indeterminadas a $0/0$ o $\infty/\infty$ para aplicar L'Hôpital.}
+\end{table}
 
 Los cuatro ejemplos que siguen ilustran cada tipo de forma indeterminada.
 
@@ -1922,7 +1942,8 @@ x_{n+1} = x_n - \frac{x_n^2-2}{2x_n} = \frac{x_n + 2/x_n}{2}.
 
 Partiendo de $x_0=1$:
 
-\begin{center}
+\begin{table}[H]
+\centering
 \begin{tabular}{c l}
 \toprule
 $n$ & \multicolumn{1}{c}{$x_n$} \\
@@ -1933,7 +1954,8 @@ $2$ & $1.41\overline{6}$ \\
 $3$ & $1.41421356\ldots$ \\
 \bottomrule
 \end{tabular}
-\end{center}
+\caption{Iteraciones de Newton-Raphson para $\sqrt{2}$ partiendo de $x_0=1$.}
+\end{table}
 
 \textbf{Paso 3. Interpretar la convergencia.}
 
@@ -1976,7 +1998,8 @@ raíces simples.
 \end{rem}
 
 Finalmente se realiza una comparación de los tres métodos
-\begin{center}
+\begin{table}[H]
+\centering
 \renewcommand{\arraystretch}{1.6}
 \begin{tabular}{l l l l}
 \toprule
@@ -1991,7 +2014,8 @@ Punto fijo     & Lineal/variable & Baja  &
   $|g'|<1$ en un entorno de la raíz \\
 \bottomrule
 \end{tabular}
-\end{center}
+\caption{Comparación de los métodos de bisección, Newton-Raphson y punto fijo.}
+\end{table}
 
 %%==========================================================
 \section{Diferenciales y Aproximaciones Lineales}
@@ -2180,7 +2204,7 @@ cuando la profundidad es de $5$ m?
 Un cuadrado está inscrito en un círculo de radio $r$. ¿A qué razón
 cambia el área del cuadrado cuando el radio del círculo crece a razón
 de $4$ pulg/min? Vea la figura~\ref{fig:cuadrado_inscrito}.
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[scale=0.9]
   \draw[thick] (0,0) circle (2);
@@ -2201,7 +2225,7 @@ respecto al camino (Eje $y$). Si en el tiempo $t=0$ el niño se encuentra en
 el punto del camino más cercano al globo, ¿con qué rapidez incrementa la
 distancia entre ellos $3$ segundos después?
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \tdplotsetmaincoords{70}{110}
 \begin{tikzpicture}[tdplot_main_coords, scale=0.08, >=stealth]
@@ -2280,7 +2304,7 @@ en que el cono queda totalmente sumergido?
 \begin{prob}
   El dispositivo mostrado en la figura consta de dos ruedas dentadas, $A$ y $B$, conectadas por una cadena que no desliza. Un brazo extendible une un punto fijo $P$ con un punto $T$ situado sobre el borde de la rueda $B$. El segmento $PO$ mide $4$ dm, y los radios de las ruedas $A$ y $B$ son $1$ dm y $2$ dm, respectivamente. Los segmentos $AO$ y $OP$ son perpendiculares. La rueda $A$ gira a razón de una vuelta por segundo en sentido antihorario. Si inicialmente el punto $T$ se encuentra sobre el segmento $OP$, ¿con qué rapidez cambia la longitud $x = PT$ cuando el ángulo $\theta = \angle POT$ es de $60^\circ$?
 
-  \begin{figure}[H]
+  \begin{figure}[!htbp]
     \centering
     \begin{tikzpicture}[scale=0.85, every node/.style={font=\small}, >=stealth]
       % Parámetros geométricos
@@ -2403,7 +2427,7 @@ La gráfica a continuación es la de la derivada $f'$ de una cierta
 función $f$. A partir de ella determine los intervalos de crecimiento
 y decrecimiento de $f$, sus extremos locales, sus intervalos de
 concavidad y realice un bosquejo de $f$ (figura~\ref{fig:grafica_fprima}).
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[scale=0.8]
   \draw[step=1cm,gray!40,very thin] (-4,-2) grid (3,8);
@@ -2491,7 +2515,7 @@ máxima.
 %  \item Interprete geométricamente la configuración óptima.
 %\end{enumerate}
 %
-%\begin{figure}[H]
+%\begin{figure}[!htbp]
 %\centering
 %\begin{tikzpicture}[scale=1.25, >=stealth, line join=round,
 %                    every node/.style={font=\small}]
@@ -2612,7 +2636,7 @@ punto~$C$ en la costa y luego nadar en línea recta desde $C$ hasta $B$.
   \item ¿Llegará al helicóptero antes de que deba partir?
 \end{enumerate}
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[scale=0.72, >=stealth, line join=round,
                     every node/.style={font=\small}]
@@ -2704,7 +2728,7 @@ Ana asiste a una sala de cine cuya pantalla se modela como un segmento vertical 
 \]
 aplicada a los ángulos que forman las líneas de visión con la horizontal.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[scale=1.1, >=stealth, line join=round, every node/.style={font=\small}]
   % Ejes coordenados
@@ -2753,7 +2777,7 @@ Dos astas de bandera se encuentran instaladas verticalmente sobre un terreno pla
 
 Se conoce que la altura de la primera asta es de $2$ metros y la altura de la segunda es de $1$ metro. Determine la distancia $x$ desde la base de la asta más alta hasta el punto de anclaje en el suelo, de modo que la longitud total del cable ($d_1 + d_2$) sea mínima.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[scale=1.2, >=stealth, line join=round]
   % Definición de puntos geométricos

@@ -103,7 +103,7 @@ Para regiones tipo II, se tiene
 \iint_D f(x,y)\,dA = \int_c^d \int_{h_1(y)}^{h_2(y)} f(x,y)\,dx\,dy.
 \]
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{minipage}{0.46\textwidth}
 \centering
@@ -242,7 +242,7 @@ $\displaystyle\boxed{\iint_D (x+y)\,dA = \tfrac{189}{20}}$.
 En regiones generales, elegir el orden de integración adecuado puede simplificar drásticamente los límites. A menudo, una región que no es tipo I puede ser tipo II, y viceversa. Si la región no es de ninguno de estos tipos, se puede descomponer en varias subregiones.
 \end{rem}
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{minipage}{0.46\textwidth}
 \centering
@@ -766,7 +766,7 @@ M_{y}&=\int_{0}^{1}\int_{0}^{e^x}x\left(2-x+y\right)\ dydx,\\
 
 \begin{prob}
 Verifique que los momentos de inercia de una lámina rectangular, con ancho $b$, altura $h$ y densidad $\rho(x,y)=1$ están dados por $I_x=\dfrac{1}{3}bh^3$ e $I_y=\dfrac{1}{3}b^3h.$ Calcule $\overline{\overline{x}}$ e $\overline{\overline{y}}.$ Vea la figura.
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[scale=0.8]
   \draw[->] (-1.3,0) -- (6.3,0) node[right] {$x$};
@@ -814,7 +814,7 @@ El elemento de área en coordenadas polares es
 dA = r\,dr\,d\theta.
 \]
 Esta fórmula se obtiene del área de un sector circular infinitesimal: un rectángulo polar de lados \(\Delta r\) y \(\Delta\theta\) tiene área aproximadamente \(r\Delta r\Delta\theta\). (Véase la sección correspondiente del capítulo sobre curvas polares.)
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[scale=2.2]
   % Ejes
@@ -1248,7 +1248,7 @@ En coordenadas cartesianas se obtiene el mismo valor:
 \end{myproof}
 \end{prob}
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[scale=1.7]
   % Región sombreada entre la parábola (inferior) y la recta (superior)
@@ -1354,7 +1354,7 @@ Geométricamente, $\left|\dfrac{\partial(x,y)}{\partial(u,v)}\right|$ es
 el factor de escala local de áreas bajo $T$.
 \end{definition}
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{minipage}{0.42\textwidth}
 \centering
@@ -1508,7 +1508,7 @@ Determine el volumen del tetraedro acotado por los planos de coordenadas y el pl
 
 \begin{prob}
 Considere la región $R$ (ver figura \ref{fig:region_cuadricas_1}), la cual está limitada por las curvas $y=x+5,$ $y=-x^2-4x-1,$ $y=x-1,$ $y=5x^2-10x+5.$ Plantee la integral doble que permite calcular el área encerrada por estas curvas y determine el valor de esta área.
-\begin{figure}[H]\centering
+\begin{figure}[!htbp]\centering
 \begin{tikzpicture}[scale=0.8]
   \draw[->] (-5,0) -- (4.3,0) node[right] {$x$};
   \draw[->] (0,-2) -- (0,5.9) node[above] {$y$};
@@ -1551,7 +1551,7 @@ Considere la región $R$ (ver la figura), la cual está limitada por las curvas 
 \item Plantee la integral doble que permite calcular el área encerrada por estas curvas. Defina claramente los límites de integración.
 \item Evalúe la integral que obtuvo en el paso anterior. Muestre explícitamente todos los cálculos necesarios para obtener el área.
 \end{enumerate}
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[scale=0.95]
   \draw[->] (-2.7,0) -- (3.7,0) node[right] {$x$};
@@ -1717,7 +1717,7 @@ Calcule el volumen del sólido $Q$ limitado por las superficies $z=\dfrac{y}{x^2
 
 \begin{prob}
 Considere la región $R$ (ver figura \ref{fig:region_polar_1}), la cual está limitada por las curvas $y=-x+6,$ $x^2+y^2=9$ y  $(x - 3)^{2} + y^{2} = 9.$ Use coordenadas polares para calcular la integral $\displaystyle\int\int_{R}  \dfrac{dA}{\sqrt{\left(x^2+y^2\right)^3}}$.
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[scale=0.7]
   \draw[->] (-2,0) -- (8,0) node[right] {$x$};
@@ -1744,7 +1744,7 @@ Considere la región $R$ (ver figura \ref{fig:region_polar_1}), la cual está li
 % [Original: líneas 2295-2321 | sin verificar | PSTRICKS - pendiente convertir a tikz]
 \begin{prob}
 Considere la región $R$ (ver figura \ref{fig:region_polar_2}), la cual está limitada por las curvas $y=-x+10,$ $x^2+y^2=25$ y  $(x - 5)^{2} + y^{2} = 25.$ Use coordenadas polares para calcular la integral $\displaystyle\int\int_{R}  \dfrac{dA}{\sqrt{\left(x^2+y^2\right)^3}}$.
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[scale=0.42]
   \draw[->] (-1,0) -- (12,0) node[right] {$x$};

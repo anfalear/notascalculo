@@ -54,7 +54,7 @@ pendiente de la recta secante cuando un punto se desplaza hacia el otro
 a lo largo de la curva. Ambas son expresiones del mismo concepto y se
 usan indistintamente según conveniencia.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[scale=1.7]
   % ejes
@@ -148,7 +148,8 @@ f'(x) = \lim_{h\to 0}\frac{\sqrt{x+h}-\sqrt{x}}{h}.
 El cálculo heredó notaciones de distintas escuelas históricas, cada una
 con ventajas propias:
 
-\begin{center}
+\begin{table}[H]
+\centering
 \renewcommand{\arraystretch}{1.5}
 \begin{tabular}{l l l}
 \toprule
@@ -164,7 +165,8 @@ Operador & $D_x f$, $Df$
     & La derivación como operador lineal \\
 \bottomrule
 \end{tabular}
-\end{center}
+\caption{Notaciones para la derivada.}
+\end{table}
 
 Para $y = x^3$, las cuatro notaciones expresan el mismo resultado:
 \[
@@ -395,7 +397,7 @@ corrige exactamente este problema al redefinir el cociente cuando el denominador
 \end{enumerate}
 \end{rem}
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[every node/.style={font=\small}]
   \node (y) at (0,2.2) {$y$};
@@ -568,7 +570,8 @@ $\dfrac{d^n y}{dx^n}$ o $D^n_x f$, se define inductivamente como la
 derivada de $f^{(n-1)}$.
 \end{definition}
 
-\begin{center}
+\begin{table}[H]
+\centering
 \renewcommand{\arraystretch}{1.4}
 \begin{tabular}{l l l}
 \toprule
@@ -580,7 +583,8 @@ Tercera & $f'''(x)$ & $\dfrac{d^3y}{dx^3}$ \\
 $n$-ésima & $f^{(n)}(x)$ & $\dfrac{d^ny}{dx^n}$ \\
 \bottomrule
 \end{tabular}
-\end{center}
+\caption{Notaciones para las derivadas de orden superior.}
+\end{table}
 
 \textbf{Interpretación física.} Si $s(t)$ es la posición de un objeto, entonces $s'(t)$ es la \textbf{velocidad}, $s''(t)$ es la \textbf{aceleración} y $s'''(t)$ es el \textbf{tirón} (\emph{jerk}), que mide la variación de la aceleración y es relevante en ingeniería de confort (diseño de vehículos y elevadores).
 
@@ -946,35 +950,50 @@ f'(x) = \arcsin x + \frac{x}{\sqrt{1-x^2}} + \frac{-2x}{2\sqrt{1-x^2}}
 \end{example}
 
 La siguiente tabla resume las derivadas de las funciones más comunes:
-\begin{center}
+\begin{table}[H]
+\centering
 \renewcommand{\arraystretch}{1.7}
-\begin{tabular}{>{$}l<{$} @{\quad$=$\quad} >{$}l<{$}}
+% Tres bloques lado a lado (algebraicas/exponenciales, trigonométricas,
+% trigonométricas inversas) para que la tabla no ocupe una página entera.
+\begin{tabular}[t]{>{$}l<{$} @{\ $=$\ } >{$}l<{$}}
 \toprule
-D_x f(x) & \text{Resultado} \\
+\multicolumn{2}{c}{\textbf{Algebraicas y exponenciales}} \\
 \midrule
 D_x(k) & 0 \\
 D_x(x^n) & nx^{n-1} \\
 D_x(e^x) & e^x \\
 D_x(a^x) & a^x\ln a \\
 D_x(\ln x) & \dfrac{1}{x} \\
-D_x(\log_a x) & \dfrac{1}{x\ln a} \\[4pt]
+D_x(\log_a x) & \dfrac{1}{x\ln a} \\
+\bottomrule
+\end{tabular}\hfill
+\begin{tabular}[t]{>{$}l<{$} @{\ $=$\ } >{$}l<{$}}
+\toprule
+\multicolumn{2}{c}{\textbf{Trigonométricas}} \\
 \midrule
 D_x(\sen x) & \cos x \\
 D_x(\cos x) & -\sen x \\
 D_x(\tan x) & \sec^2 x \\
 D_x(\cot x) & -\csc^2 x \\
 D_x(\sec x) & \sec x\tan x \\
-D_x(\csc x) & -\csc x\cot x \\[4pt]
+D_x(\csc x) & -\csc x\cot x \\
+\bottomrule
+\end{tabular}\hfill
+\begin{tabular}[t]{>{$}l<{$} @{\ $=$\ } >{$}l<{$}}
+\toprule
+\multicolumn{2}{c}{\textbf{Trigonométricas inversas}} \\
 \midrule
-D_x(\arcsin x) & \dfrac{1}{\sqrt{1-x^2}} \\[4pt]
-D_x(\arccos x) & \dfrac{-1}{\sqrt{1-x^2}} \\[4pt]
-D_x(\arctan x) & \dfrac{1}{1+x^2} \\[4pt]
-D_x(\text{arccot}\,x) & \dfrac{-1}{1+x^2} \\[4pt]
-D_x(\text{arcsec}\,x) & \dfrac{1}{|x|\sqrt{x^2-1}} \\[4pt]
-D_x(\text{arccsc}\,x) & \dfrac{-1}{|x|\sqrt{x^2-1}} \\[4pt]
+D_x(\arcsin x) & \dfrac{1}{\sqrt{1-x^2}} \\
+D_x(\arccos x) & \dfrac{-1}{\sqrt{1-x^2}} \\
+D_x(\arctan x) & \dfrac{1}{1+x^2} \\
+D_x(\text{arccot}\,x) & \dfrac{-1}{1+x^2} \\
+D_x(\text{arcsec}\,x) & \dfrac{1}{|x|\sqrt{x^2-1}} \\
+D_x(\text{arccsc}\,x) & \dfrac{-1}{|x|\sqrt{x^2-1}} \\
 \bottomrule
 \end{tabular}
-\end{center}
+\caption{Derivadas de las funciones elementales.}
+\label{tab:derivadas_elementales}
+\end{table}
 
 \begin{rem}
 Toda fórmula de la tabla admite una versión general por la regla de la
@@ -1344,7 +1363,7 @@ punto de tangencia $y = c - \dfrac{1}{2}$. Luego use las ecuaciones
 de la circunferencia y la parábola para mostrar que
 $c = r^2 + \dfrac{1}{4}$.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 
 \begin{tikzpicture}[scale=1.4]
@@ -1387,7 +1406,7 @@ más simplificada posible.
 Encuentre los puntos $P$ y $Q$ sobre la parábola $y=1-x^2$ de modo que
 el triángulo formado por el eje $x$ y las rectas tangentes en $P$ y $Q$
 sea equilátero. Vea la figura \ref{trider}.
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 
 % Valores exactos: P=(-1/sqrt(3), 2/3), Q=(1/sqrt(3), 2/3)
@@ -1433,7 +1452,7 @@ el eje $x$ está colocada la lámpara?
 
 % La recta de la lámpara (3,2) pasa por (-1,1) (punto de tangencia)
 % y llega hasta (-5,0) en el borde de la sombra.
-\begin{figure}[H]
+\begin{figure}[!htbp]
 \centering
 \begin{tikzpicture}[scale=0.9]
   \draw[->] (-5.8,0) -- (4,0) node[right] {$x$};
