@@ -1,0 +1,305 @@
+% ============================================================
+% video_3_stokes.tex
+% Video 3: teorema de Stokes (12-15 min) + problema 40(a) del Taller 3.
+% Material de partida: bloques 5 y 7 de campos_vectoriales.tex (que queda intacto).
+%
+% Carpeta: C:/Users/anfalear/notascalculo/problemario/presentaciones/videos_campos/
+% (local, fuera de Dropbox). Estilo: ../estilo_presentaciones.tex, que es la copia
+% VIGENTE (la de la raíz de Cálculo III 2026-2, en Dropbox, es un espejo idéntico),
+% más estilo_videos.tex.
+% Motor: lualatex (dos pasadas). Se compila con build_campos.py (raíz de 2026-2),
+% que además genera guion_video_3.txt y capitulos_video_3.txt.
+% Guion: \narracion debajo de cada frame, con su duración estimada a 130 palabras/min.
+% Meta: 1.700-1.950 palabras.
+% ============================================================
+\documentclass[14pt,aspectratio=169]{beamer}
+\input{../estilo_presentaciones}
+\input{estilo_videos}
+
+\setpie{Video 3: teorema de Stokes --- Cálculo III}
+
+% ============ EL GRAN ESQUEMA UNIFICADOR (copiado de campos_vectoriales.tex) ============
+\newcommand{\granesquema}{%
+  \begin{center}
+  \begin{tikzpicture}[node distance=0.32cm,
+      teo/.style={draw=tealx,thick,fill=tealx!10,rounded corners,
+                  minimum width=2.7cm,minimum height=1.15cm,align=center,font=\scriptsize}]
+    \node[draw=navy,thick,fill=navy!8,rounded corners,minimum width=2.7cm,
+          minimum height=1.15cm,align=center,font=\scriptsize] (tfc)
+      {\bfseries TFC\\$\int_a^b f'=f(b)-f(a)$};
+    \node[teo,right=of tfc] (tfil) {\bfseries T. fundamental\\de int. de línea};
+    \node[teo,right=of tfil] (green) {\bfseries Green\\(en el plano)};
+    \node[teo,below=0.4cm of tfil] (stokes) {\bfseries Stokes\\(superficies)};
+    \node[teo,below=0.4cm of green] (div) {\bfseries Divergencia\\(sólidos)};
+    \draw[-Stealth,thick,gray60] (tfc) -- (tfil);
+    \draw[-Stealth,thick,gray60] (tfil) -- (green);
+    \draw[-Stealth,thick,gray60] (green) -- (div);
+    \draw[-Stealth,thick,gray60] (green) -- (stokes);
+  \end{tikzpicture}
+  \end{center}
+}
+
+\title{Teorema de Stokes}
+\subtitle{Circulación en el borde, rotacional en la superficie}
+\author{Andrés Fabián Leal Archila}
+\institute{Cálculo III (Multivariable) --- Cód. 20254}
+\date{Video 3 de 3}
+
+\begin{document}
+
+% ======================================================
+\capitulo{Presentación}
+% ======================================================
+\portada
+\narracion[≈ 49 s]{Hola. Este es el tercer y último video de la unidad de campos vectoriales, y está dedicado al teorema de Stokes. En el primer video, Green relacionó la circulación sobre una curva cerrada del plano con una integral doble sobre la región que encierra. Stokes hace lo mismo, pero para curvas cerradas en el espacio: la circulación alrededor de la curva se calcula con el rotacional sobre cualquier superficie que la tenga como borde. Vamos a repasar qué mide el rotacional, enunciar el teorema con su regla de orientación, ver por qué Green es un caso particular y resolver el problema cuarenta a del taller tres.}
+
+% ======================================================
+\capitulo{Rotacional y circulación}
+% ======================================================
+\begin{frame}{Recordatorio: el rotacional}
+  Para $\mathbf F=\langle M,N,P\rangle$:
+  \[
+    \nabla\times\mathbf F=
+    \begin{vmatrix}
+      \mathbf i & \mathbf j & \mathbf k\\
+      \partial_x & \partial_y & \partial_z\\
+      M & N & P
+    \end{vmatrix}
+    =\langle P_y-N_z,\ M_z-P_x,\ N_x-M_y\rangle
+  \]
+  \pause
+  \begin{center}\small\color{gray60} Sesión A: en un dominio simplemente conexo, $\nabla\times\mathbf F=\mathbf 0\iff\mathbf F$ conservativo.\end{center}
+\end{frame}
+\narracion[≈ 66 s]{Empecemos recordando el rotacional, que vimos en la Sesión A. Para un campo M, N, P, el rotacional se calcula como un determinante simbólico: en la primera fila los vectores i, j, k; en la segunda, las derivadas parciales respecto a x, y, z; y en la tercera, las componentes del campo. Al desarrollarlo quedan tres componentes: P sub y menos N sub z, M sub z menos P sub x, y N sub x menos M sub y. Fíjense en que la tercera es exactamente la expresión de Green. Y recuerden el criterio: en un dominio simplemente conexo, el rotacional es cero si y solo si el campo es conservativo. Un consejo: escriban las seis derivadas cruzadas por separado antes de restar. Ahí se pierden signos, sobre todo en la componente del medio, que es M sub z menos P sub x.}
+
+\begin{frame}{El rotacional mide giro}
+  \begin{columns}
+    \begin{column}{0.58\textwidth}
+      En un punto, con un disquito de radio $a$ perpendicular a $\mathbf n$:
+      \[
+        (\nabla\times\mathbf F)\cdot\mathbf n
+        =\lim_{a\to0}\frac{1}{\pi a^2}\oint_{C_a}\mathbf F\cdot d\mathbf r
+      \]
+      \pause
+      {\small Circulación por unidad de área.}
+    \end{column}
+    \begin{column}{0.38\textwidth}
+      \pause
+      \centering
+      \begin{tikzpicture}[scale=0.55]
+        \foreach \xi in {-2,-1,0,1,2}{
+          \foreach \yi in {-2,-1,0,1,2}{
+            \draw[-Stealth,tealx] (\xi,\yi)--({\xi-\yi*0.3},{\yi+\xi*0.3});
+          }
+        }
+        \filldraw[navy] (0,0) circle (2pt);
+      \end{tikzpicture}\\
+      {\small $\langle -y,x,0\rangle$: $\nabla\times\mathbf F=2\mathbf k$}
+    \end{column}
+  \end{columns}
+\end{frame}
+\narracion[≈ 48 s]{¿Qué mide el rotacional? Imaginen un disquito muy pequeño de radio a, centrado en un punto y perpendicular a una dirección n. Calculamos la circulación del campo alrededor del borde del disquito y la dividimos por su área. Cuando el radio tiende a cero, ese cociente es la componente del rotacional en la dirección n. Es decir, el rotacional mide la circulación por unidad de área: cuánto tiende el campo a hacer girar una pequeña rueda de paletas puesta en ese punto. Por ejemplo, el campo menos y, x, cero gira alrededor del eje z, y su rotacional es dos k, en todos los puntos.}
+
+\begin{frame}{De Green a Stokes}
+  \textbf{Green} (curva en el plano):
+  \[
+    \oint_{\partial R}\mathbf F\cdot d\mathbf r=\iint_R(\nabla\times\mathbf F)\cdot\mathbf k\,dA
+  \]
+  \pause
+  \textbf{Pregunta:} \textquestiondown{}y si la curva cerrada está en el espacio?
+  \pause
+  \begin{center}\color{tealx}
+    región plana $R$ $\ \to\ $ superficie $S$\qquad $\mathbf k\ \to\ \mathbf n$
+  \end{center}
+\end{frame}
+\narracion[≈ 50 s]{Ahora juntemos esto con Green. En su forma vectorial, Green dice que la circulación alrededor del borde de una región plana es la integral de la componente k del rotacional sobre la región. Esto encaja perfectamente con lo anterior: sumamos las circulaciones de muchos cuadritos pequeños y las de los lados interiores se cancelan. Pero ¿qué pasa si la curva cerrada no está en un plano, sino que se tuerce en el espacio? La idea natural es reemplazar la región plana por una superficie que tenga a la curva como borde, y la dirección k por la normal de esa superficie. Eso es exactamente el teorema de Stokes.}
+
+% ======================================================
+\capitulo{Teorema de Stokes}
+% ======================================================
+\begin{frame}{Teorema de Stokes}
+  \begin{block}{Teorema}
+    Si $S$ es una superficie orientada con normal $\mathbf n$ y su borde $\partial S$ está orientado por la \textbf{regla de la mano derecha},
+    \[
+      \oint_{\partial S}\mathbf F\cdot d\mathbf r=\iint_S(\nabla\times\mathbf F)\cdot\mathbf n\,dS .
+    \]
+  \end{block}
+  \pause
+  \begin{center}\color{tealx} Circulación en el borde $=$ suma de las micro-circulaciones.\end{center}
+\end{frame}
+\narracion[≈ 51 s]{Este es el teorema. Tomamos una superficie S orientada, con normal n, cuyo borde es una curva cerrada. Si el campo tiene derivadas parciales continuas en una región que contiene a la superficie, entonces la circulación del campo alrededor del borde es igual al flujo del rotacional a través de la superficie. A la izquierda, una integral de línea; a la derecha, una integral de superficie como las del video anterior, pero del rotacional, no del campo. La lectura es la misma de Green: la circulación grande alrededor del borde es la suma de todas las pequeñas circulaciones sobre la superficie. Lo único delicado es la orientación, que vemos ahora.}
+
+\begin{frame}{Regla de la mano derecha}
+  \begin{columns}
+    \begin{column}{0.55\textwidth}
+      \begin{itemize}
+        \setlength{\itemsep}{10pt}
+        \item Los dedos siguen el sentido de $\partial S$.
+        \item El pulgar apunta en la dirección de $\mathbf n$.
+      \end{itemize}
+      \pause
+      \vspace{6pt}
+      {\small\color{gray60} Curva antihoraria vista desde arriba $\leftrightarrow$ normal hacia arriba.}
+    \end{column}
+    \begin{column}{0.41\textwidth}
+      \centering
+      \begin{tikzpicture}[scale=1.1]
+        \fill[tealx!20] (0,0) ellipse (1.6 and 0.55);
+        \draw[navy,thick] (0,0) ellipse (1.6 and 0.55);
+        \draw[-Stealth,navy,very thick] (0.4,-0.53) -- (0.6,-0.51);
+        \draw[-Stealth,navy,very thick] (-0.4,0.53) -- (-0.6,0.51);
+        \draw[-Stealth,brick,thick] (0,0) -- (0,1.6) node[above,font=\small]{$\mathbf n$};
+        \node[navy,font=\small] at (1.95,-0.35) {$\partial S$};
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
+\end{frame}
+\narracion[≈ 43 s]{La regla de la mano derecha conecta la orientación de la superficie con la del borde. Pongan la mano derecha de modo que los dedos doblados sigan el sentido en que se recorre la curva: el pulgar debe apuntar en la dirección de la normal. En el caso más común, una curva recorrida en sentido antihorario vista desde arriba corresponde a una superficie con normal hacia arriba. Si escogen la normal hacia abajo con la curva en sentido antihorario, el resultado sale con el signo cambiado. Este es el error más frecuente con Stokes.}
+
+\manimframe{La curva y la superficie que la tapa}{Una curva cerrada torcida en el espacio, recorrida por una flecha. Aparecen varias superficies que la tienen como borde (un disco deformado, un casquete); en cada una, la normal dada por la regla de la mano derecha y el mismo valor de la circulación.}
+\narracion[≈ 25 s]{Veamos una curva cerrada que se tuerce en el espacio. Como una burbuja de jabón en un aro, hay muchas superficies que la tienen como borde: un disco deformado, un casquete, una bolsa. En todas, la normal dada por la mano derecha apunta hacia el mismo lado, y el flujo del rotacional es el mismo.}
+
+\begin{frame}{Cualquier superficie sirve}
+  Si $S_1$ y $S_2$ tienen el \textbf{mismo borde} $C$ (con orientaciones compatibles):
+  \[
+    \iint_{S_1}(\nabla\times\mathbf F)\cdot\mathbf n\,dS
+    =\oint_C\mathbf F\cdot d\mathbf r
+    =\iint_{S_2}(\nabla\times\mathbf F)\cdot\mathbf n\,dS
+  \]
+  \pause
+  \begin{center}\color{tealx} Se puede escoger la superficie \textbf{más fácil}.\end{center}
+\end{frame}
+\narracion[≈ 39 s]{De aquí sale una consecuencia muy útil. Si dos superficies distintas tienen el mismo borde, con orientaciones compatibles, las dos integrales del rotacional son iguales a la misma circulación, y por lo tanto iguales entre sí. El valor no depende de la superficie, solo de su borde. En la práctica esto significa que, cuando usamos Stokes para calcular una circulación, tenemos libertad total para escoger la superficie. Y siempre conviene escoger la más simple: casi siempre un pedazo de plano, donde la normal es constante.}
+
+\begin{frame}{Green es Stokes en el plano}
+  $S=R$ en el plano $xy$, \quad $\mathbf n=\mathbf k$, \quad $\mathbf F=\langle M(x,y),\ N(x,y),\ 0\rangle$:
+  \pause
+  \[
+    (\nabla\times\mathbf F)\cdot\mathbf k=N_x-M_y
+  \]
+  \pause
+  \[
+    \oint_{\partial R}\mathbf F\cdot d\mathbf r=\iint_R(N_x-M_y)\,dA
+  \]
+  \pause
+  \begin{center}\color{tealx} \ldots que es exactamente el teorema de Green.\end{center}
+\end{frame}
+\narracion[≈ 52 s]{Comprobemos que Stokes contiene a Green. Tomemos como superficie una región plana R en el plano x y, con normal k hacia arriba. Por la regla de la mano derecha, el borde se recorre en sentido antihorario visto desde arriba, que es la orientación positiva de Green. Si el campo es M, N, cero, con M y N que solo dependen de x y de y, su rotacional es cero, cero, N sub x menos M sub y. El producto punto con k es N sub x menos M sub y, y el elemento de área del plano es d A. Stokes se convierte, palabra por palabra, en el teorema de Green.}
+
+\begin{frame}{Elegir el lado fácil}
+  $\mathbf F=\langle z,\ x,\ y\rangle$, \quad $C$: $x^2+y^2=1$, $z=0$, antihoraria.
+  \pause
+  \[
+    \nabla\times\mathbf F=\langle 1,\ 1,\ 1\rangle
+  \]
+  \pause
+  Superficie: el \textbf{disco} $x^2+y^2\le1$, $z=0$, con $\mathbf n=\mathbf k$:
+  \[
+    \oint_C\mathbf F\cdot d\mathbf r=\iint_{\text{disco}}1\,dA=\boxed{\pi}
+  \]
+  \pause
+  \begin{center}\small\color{gray60} Con el hemisferio superior también sale $\pi$, con más trabajo.\end{center}
+\end{frame}
+\narracion[≈ 42 s]{Un ejemplo de esta libertad. Queremos la circulación del campo z, x, y alrededor de la circunferencia unitaria en el plano z igual a cero, en sentido antihorario. El rotacional es uno, uno, uno, constante. Como superficie podríamos tomar el hemisferio superior, y efectivamente sale pi, pero hay que integrar sobre una esfera. Es mucho más fácil tomar el disco plano que tiene la misma circunferencia como borde, con normal k hacia arriba. Entonces el rotacional punto k vale uno, y la integral es el área del disco: pi. Un renglón.}
+
+% ======================================================
+\capitulo{Problema 40(a)}
+% ======================================================
+\begin{frame}{Problema 40(a)}
+  $\mathbf F=\langle -y^3,\ x^3,\ -z^3\rangle$.
+  \vspace{6pt}
+
+  $C$: el cilindro $x^2+y^2=1$ cortado por el plano $x+y+z=1$,\\ antihoraria vista desde arriba.
+  \vspace{8pt}
+
+  Calcular $\displaystyle\oint_C\mathbf F\cdot d\mathbf r$ con Stokes.
+\end{frame}
+\narracion[≈ 60 s]{Vamos al problema cuarenta a. El campo es menos y al cubo, x al cubo, menos z al cubo. La curva C es la intersección del cilindro x cuadrado más y cuadrado igual a uno con el plano x más y más z igual a uno: es una elipse inclinada, que se recorre en sentido antihorario vista desde arriba. Calcularla directamente exige parametrizar la elipse e integrar potencias cúbicas de senos y cosenos. Con Stokes, la cuenta se vuelve mucho más corta. El plan tiene tres pasos, y son los mismos para cualquier circulación en el espacio: calcular el rotacional, escoger una superficie fácil cuyo borde sea la curva, con la normal que indique la mano derecha, y hacer la integral de superficie, que casi siempre termina en polares.}
+
+\begin{frame}{40(a): el rotacional}
+  $M=-y^3$, \quad $N=x^3$, \quad $P=-z^3$:
+  \pause
+  \[
+    \nabla\times\mathbf F=\langle P_y-N_z,\ M_z-P_x,\ N_x-M_y\rangle
+  \]
+  \pause
+  \[
+    =\langle 0-0,\ 0-0,\ 3x^2-(-3y^2)\rangle=\boxed{\langle 0,\ 0,\ 3(x^2+y^2)\rangle}
+  \]
+\end{frame}
+\narracion[≈ 50 s]{Primer paso, el rotacional. M es menos y al cubo, N es x al cubo y P es menos z al cubo. La primera componente es P sub y menos N sub z: P solo depende de z y N solo de x, así que da cero. La segunda es M sub z menos P sub x, que también es cero por la misma razón. La tercera es N sub x menos M sub y: tres x cuadrado menos menos tres y cuadrado, es decir, tres x cuadrado más tres y cuadrado. El rotacional apunta en la dirección de k y vale tres veces x cuadrado más y cuadrado.}
+
+\begin{frame}{40(a): la superficie fácil}
+  $S$: la parte del \textbf{plano} $z=1-x-y$ dentro del cilindro.
+  \pause
+  \[
+    \langle -f_x,\ -f_y,\ 1\rangle=\langle 1,\ 1,\ 1\rangle
+  \]
+  \begin{center}\small\color{gray60} Hacia arriba: compatible con $C$ antihoraria (mano derecha).\end{center}
+  \pause
+  \[
+    (\nabla\times\mathbf F)\cdot\langle1,1,1\rangle=3(x^2+y^2)
+  \]
+\end{frame}
+\narracion[≈ 55 s]{Segundo paso, escoger la superficie. La curva está sobre el plano x más y más z igual a uno, así que la superficie más simple es el pedazo de ese plano que queda dentro del cilindro. Lo escribimos como la gráfica z igual a uno menos x menos y, sobre el disco unitario. Con la fórmula de la gráfica, el normal hacia arriba es menos f sub x, menos f sub y, uno, que da uno, uno, uno. Hacia arriba es justo lo que pide la regla de la mano derecha, porque la curva va en sentido antihorario vista desde arriba. El producto punto del rotacional con uno, uno, uno es simplemente tres x cuadrado más tres y cuadrado.}
+
+\begin{frame}{40(a): la integral}
+  Sobre el disco $x^2+y^2\le1$, en polares:
+  \[
+    \oint_C\mathbf F\cdot d\mathbf r
+    =\int_0^{2\pi}\!\!\int_0^1 3r^2\cdot r\,dr\,d\theta
+    =2\pi\cdot\frac34
+  \]
+  \pause
+  \[
+    \boxed{\oint_C\mathbf F\cdot d\mathbf r=\frac{3\pi}{2}}
+  \]
+\end{frame}
+\narracion[≈ 46 s]{Tercer paso, la integral. La región de abajo es el disco unitario, así que pasamos a polares: x cuadrado más y cuadrado es r cuadrado y el elemento de área es r d r d theta. El integrando queda tres r cuadrado por r, tres r al cubo. Su integral de cero a uno es tres cuartos, y la integral en theta aporta dos pi. El resultado es tres pi medios. Fíjense en lo que ganamos: en vez de parametrizar una elipse inclinada e integrar cubos de senos, hicimos un rotacional, un producto punto y una integral en polares.}
+
+% ======================================================
+\capitulo{Errores, cuadro completo y para recordar}
+% ======================================================
+\begin{frame}{Errores típicos con Stokes}
+  \begin{enumerate}
+    \setlength{\itemsep}{10pt}
+    \item Orientar el borde \textbf{sin} la regla de la mano derecha.\\
+      {\small\color{gray60} Antihoraria vista desde arriba $\leftrightarrow$ normal hacia arriba.}
+    \pause
+    \item Integrar $\mathbf F$ en vez de $\nabla\times\mathbf F$ sobre la superficie.
+    \pause
+    \item Escoger una superficie difícil cuando hay un plano disponible.
+  \end{enumerate}
+\end{frame}
+\narracion[≈ 42 s]{Tres errores típicos. El primero, y el más costoso, es la orientación: la normal de la superficie y el sentido del borde deben estar ligados por la regla de la mano derecha. Si la curva va en sentido antihorario vista desde arriba, la normal va hacia arriba. El segundo es integrar el campo en lugar de su rotacional sobre la superficie; Stokes habla del flujo del rotacional. Y el tercero es más de estrategia: escoger una superficie complicada cuando la curva está sobre un plano. Usen la libertad que da el teorema.}
+
+\begin{frame}{El cuadro completo}
+  \vspace{-6pt}
+  \granesquema
+  \pause
+  \vspace{-4pt}
+  \begin{center}
+  \renewcommand{\arraystretch}{1.15}
+  \footnotesize
+  \begin{tabular}{lll}
+    \toprule
+    \textbf{Teorema} & \textbf{Frontera} & \textbf{Interior}\\
+    \midrule
+    Green & $\oint_{\partial R}\mathbf F\cdot d\mathbf r$ & $\iint_R (N_x-M_y)\,dA$\\
+    Stokes & $\oint_{\partial S}\mathbf F\cdot d\mathbf r$ & $\iint_S (\nabla\times\mathbf F)\cdot\mathbf n\,dS$\\
+    Divergencia & $\iint_{\partial E}\mathbf F\cdot\mathbf n\,dS$ & $\iiint_E (\nabla\cdot\mathbf F)\,dV$\\
+    \bottomrule
+  \end{tabular}
+  \end{center}
+\end{frame}
+\narracion[≈ 43 s]{Con esto completamos el cuadro de la unidad. Todo empezó con el teorema fundamental del cálculo: la integral de una derivada sobre un intervalo depende solo de los extremos. Luego vino el teorema fundamental de las integrales de línea, con el gradiente. Green lo llevó a regiones del plano, y de Green salen los dos grandes teoremas del espacio: Stokes, para superficies con borde, con el rotacional, y la divergencia, para sólidos, con la divergencia. En todos, una integral sobre la frontera es igual a la integral de una derivada sobre el interior.}
+
+\ideas{%
+  \item Rotacional: circulación por unidad de área.
+  \item Stokes: $\oint_{\partial S}\mathbf F\cdot d\mathbf r=\iint_S(\nabla\times\mathbf F)\cdot\mathbf n\,dS$.
+  \item Mano derecha: antihoraria desde arriba $\leftrightarrow$ normal hacia arriba.
+  \item Cualquier superficie con ese borde sirve: escoger la más fácil.
+}
+\narracion[≈ 46 s]{Para terminar, cuatro ideas. Uno: el rotacional mide circulación por unidad de área. Dos: Stokes iguala la circulación sobre el borde con el flujo del rotacional a través de la superficie. Tres: la orientación se amarra con la regla de la mano derecha. Y cuatro: cualquier superficie con el mismo borde sirve, así que escojan la más fácil. Con esto terminamos los tres videos y el cuadro completo de la unidad. Practiquen con las partes b y c del problema cuarenta del taller, que mezclan Stokes y divergencia, y respondan el cuestionario de Moodle antes de la fecha de cierre.}
+
+\end{document}

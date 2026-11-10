@@ -1,0 +1,114 @@
+\documentclass[14pt]{extarticle}
+\usepackage[a4paper,margin=2cm]{geometry}
+\usepackage{fontspec}
+\setmainfont{Segoe UI}
+\usepackage{xcolor}
+\definecolor{navy}{HTML}{1B2A4A}\definecolor{tealx}{HTML}{1F7A6C}
+\definecolor{brick}{HTML}{A34A3E}\definecolor{gray60}{HTML}{8A8A85}
+\usepackage{fancyhdr}\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\color{gray60}\small Video 2 — Superficies, flujo y divergencia \quad·\quad \thepage}
+\setlength{\parindent}{0pt}\setlength{\parskip}{6pt}
+\linespread{1.25}
+\newcommand{\capitulo}[1]{\vspace{14pt}{\color{tealx}\Large\bfseries #1}\par\vspace{2pt}}
+\newcommand{\bloque}[3]{\needspace{5\baselineskip}\vspace{4pt}%
+  {\color{navy}\bfseries #1}\hfill{\color{gray60}\small #2}\par
+  \ifx&#3&\else{\color{brick}\small\bfseries #3}\par\fi}
+\newcommand{\pausa}{\par\vspace{4pt}{\centering\color{brick}\bfseries — PAUSA 3 s —\par}\vspace{4pt}}
+\usepackage{needspace}
+\begin{document}
+
+{\color{navy}\LARGE\bfseries Video 2 — Superficies, flujo y divergencia}\par
+{\color{gray60}2933 palabras ≈ 22:34 min a 130 palabras/min (meta 2900-3250 palabras)}\par
+\fbox{\parbox{\linewidth}{\small\textbf{Para grabar:} lea de corrido. En cada \textcolor{brick}{\textbf{— PAUSA 3 s —}} quédese callado unos 3 segundos (así se cambia de diapositiva). Si se equivoca: pausa y repita el bloque desde el comienzo.}}\par
+\capitulo{Presentación}
+\bloque{1. Portada}{0:00 · 116 palabras, ≈ 54 s}{}
+Hola. Este es el segundo video de la unidad de campos vectoriales. En el primero vimos el teorema de Green, que relaciona una curva cerrada con la región plana que encierra. Ahora subimos una dimensión: vamos a integrar sobre superficies en el espacio. Primero veremos cómo se describe una superficie con dos parámetros, qué es su vector normal y cómo se mide el área. Después definiremos el flujo de un campo a través de una superficie, y terminaremos con el teorema de la divergencia, que relaciona el flujo a través de una superficie cerrada con lo que pasa dentro del sólido. Resolveremos completos los problemas treinta y ocho y treinta y nueve b del taller tres.\par
+\pausa
+\capitulo{Superficies paramétricas}
+\bloque{2. De curvas a superficies}{0:54 · 110 palabras, ≈ 51 s}{}
+Recordemos cómo trabajamos con curvas. Una curva se describe con un solo parámetro t: es como tomar un pedazo de la recta real y doblarlo en el espacio. Para integrar sobre la curva, la llevamos de vuelta al intervalo de t, pagando un factor, que era la rapidez, la norma de r prima. Con las superficies la idea es la misma, pero con dos parámetros, u y v. Tomamos una región D del plano u v y la doblamos en el espacio. Para integrar sobre la superficie, la llevaremos de vuelta a D, y otra vez habrá que pagar un factor. Ese factor es lo que vamos a construir ahora.\par
+\pausa
+\bloque{3. Superficies paramétricas}{1:44 · 124 palabras, ≈ 57 s}{}
+Una superficie paramétrica es una función r de u y v, con valores en el espacio, definida sobre una región D del plano. Pedimos derivadas parciales continuas y que el producto cruz de r sub u con r sub v no se anule. ¿Qué significan esas derivadas? Si dejamos v fija y movemos u, el punto recorre una curva sobre la superficie, y r sub u es su vector tangente. Lo mismo con r sub v cuando movemos v. Así que r sub u y r sub v son dos vectores tangentes a la superficie, y su producto cruz es perpendicular a los dos: es un vector normal. La condición de que no se anule garantiza que la superficie no tenga picos ni pliegues.\par
+\pausa
+\bloque{4. Vector normal sobre una superficie parametrizada}{2:42 · 58 palabras, ≈ 27 s}{▶ aquí va una animación}
+Veamos esto en movimiento. Sobre la superficie dibujamos las curvas donde u es constante y donde v es constante. En un punto aparecen los dos vectores tangentes, r sub u y r sub v, que generan un pequeño paralelogramo. Perpendicular a ese paralelogramo aparece el producto cruz: el vector normal. Al mover el punto, el normal lo acompaña.\par
+\pausa
+\bloque{5. El elemento de área}{3:08 · 112 palabras, ≈ 52 s}{}
+Ahora el factor que buscábamos. Un rectangulito de lados d u y d v en el plano u v se convierte, sobre la superficie, en algo que es casi un paralelogramo, cuyos lados son r sub u por d u y r sub v por d v. El área de un paralelogramo es la norma del producto cruz de sus lados. Por eso el elemento de área de la superficie es la norma de r sub u cruz r sub v, por d u d v. Es el análogo exacto de la rapidez en las curvas, y es la llave que convierte cualquier integral de superficie en una integral doble sobre D.\par
+\pausa
+\bloque{6. El caso más frecuente: una gráfica}{4:00 · 119 palabras, ≈ 55 s}{}
+En la mayoría de los ejercicios la superficie es la gráfica de una función, z igual a f de x y. Entonces usamos x y y como parámetros: r de x y es x, y, f de x y. Las derivadas son uno, cero, f sub x y cero, uno, f sub y, y su producto cruz es menos f sub x, menos f sub y, uno. Su norma es la raíz de uno más f sub x al cuadrado más f sub y al cuadrado, que es la fórmula de área de superficie que ya vimos con integrales dobles. Un detalle que usaremos mucho: la tercera componente de este normal es más uno, así que apunta hacia arriba.\par
+\pausa
+\bloque{7. Otro caso: el cilindro}{4:55 · 147 palabras, ≈ 68 s}{}
+Cuando la superficie no es una gráfica, hay que escoger otros parámetros. Un caso típico es la pared de un cilindro, por ejemplo el de radio dos y altura tres, que aparecerá en el problema treinta y nueve. Los parámetros naturales son el ángulo theta y la altura z: el punto es dos coseno de theta, dos seno de theta, z. Derivando, r sub theta es menos dos seno, dos coseno, cero, y r sub z es cero, cero, uno. Su producto cruz es dos coseno, dos seno, cero: un vector horizontal que apunta radialmente hacia afuera, y su norma es dos. Así que el elemento de área es dos d theta d z. Comprobación: integrando dos sobre theta de cero a dos pi y z de cero a tres sale doce pi, que es dos pi por el radio por la altura, el área lateral conocida.\par
+\pausa
+\bloque{8. Integral de superficie de un campo escalar}{6:03 · 94 palabras, ≈ 43 s}{}
+Con el elemento de área ya podemos integrar un campo escalar sobre una superficie: se evalúa f sobre la parametrización, se multiplica por la norma del producto cruz y se integra sobre D. Es la misma receta que con las curvas. Si f vale uno, obtenemos el área de la superficie; si f es una densidad, obtenemos la masa de una lámina curva. Como la norma siempre es positiva, esta integral no depende de hacia dónde apunte el normal. El problema treinta y siete del taller, la pantalla de una lámpara, practica exactamente esto.\par
+\pausa
+\capitulo{Orientación y flujo}
+\bloque{9. Orientación}{6:46 · 106 palabras, ≈ 49 s}{}
+Para integrar campos vectoriales necesitamos una decisión más: la orientación. En cada punto de una superficie hay dos normales unitarias, una opuesta a la otra. Orientar la superficie es escoger una de las dos de manera continua: por ejemplo, hacia arriba en una gráfica, o hacia afuera en una esfera. Para una superficie cerrada, la que encierra un sólido, la convención es la normal exterior. Y un dato curioso: no todas las superficies se pueden orientar. La banda de Möbius tiene una sola cara; si caminan por ella, vuelven al punto de partida con la normal al revés. En este curso todas las superficies son orientables.\par
+\pausa
+\bloque{10. Flujo: la idea}{7:35 · 105 palabras, ≈ 48 s}{}
+Ahora la idea de flujo. Imaginen que F es la velocidad de un fluido y que S es una red sumergida en él. ¿Cuánto fluido atraviesa la red por unidad de tiempo? La parte del movimiento que es paralela a la red no la atraviesa; solo cuenta la componente normal, F punto n. Por un pedacito de área d S pasa entonces F punto n por d S. Sumando sobre toda la superficie obtenemos el flujo: la integral de superficie de F punto n. Si el fluido cruza en el sentido de la normal, el aporte es positivo; si cruza en sentido contrario, es negativo.\par
+\pausa
+\bloque{11. Flujo: la fórmula de cálculo}{8:24 · 99 palabras, ≈ 46 s}{}
+Para calcular, escribimos el normal unitario como el producto cruz dividido por su norma, y el elemento de área como la norma por d u d v. Las dos normas se cancelan, y queda una fórmula muy limpia: el flujo es la integral doble sobre D de F evaluado en la parametrización, punto el producto cruz sin normalizar. Para una gráfica con normal hacia arriba es todavía más simple: se integra F punto menos f sub x, menos f sub y, uno, sobre la región de abajo. Esta es la fórmula que usaremos en el problema treinta y ocho.\par
+\pausa
+\bloque{12. Dos observaciones sobre el flujo}{9:09 · 94 palabras, ≈ 43 s}{}
+Dos observaciones antes de seguir. La primera ya la vimos: en la práctica nunca hay que normalizar el vector normal, porque esa norma se cancela con la del elemento de área. La segunda es importante: a diferencia de la integral de un campo escalar, el flujo sí depende de la orientación. Si cambian n por menos n, el flujo cambia de signo. Por eso hay un paso obligatorio: después de calcular el producto cruz, revisen hacia dónde apunta. Si el problema pide hacia arriba y el suyo apunta hacia abajo, multiplíquenlo por menos uno.\par
+\pausa
+\capitulo{Teorema de la divergencia}
+\bloque{13. Teorema de la divergencia}{9:53 · Gauss)  (115 palabras, ≈ 53 s}{}
+Y llegamos al teorema de la divergencia, también llamado teorema de Gauss. Si E es un sólido, su frontera es una superficie cerrada, y la orientamos con la normal exterior. El teorema dice que el flujo de F hacia afuera a través de esa superficie es igual a la integral triple de la divergencia de F sobre el sólido. Recuerden de la Sesión A que la divergencia mide cuánto sale de cada punto: fuentes si es positiva, sumideros si es negativa. Así que el teorema dice algo muy natural: todo lo que sale por la frontera es la suma de lo que producen las fuentes de adentro. Es otra vez la idea frontera contra interior.\par
+\pausa
+\bloque{14. Por qué funciona}{10:46 · 107 palabras, ≈ 49 s}{}
+La razón es la misma que en Green. Partimos el sólido en cajitas muy pequeñas. El flujo que sale de una cajita es, aproximadamente, la divergencia por su volumen; de hecho, así se define la divergencia. Ahora sumamos los flujos de todas las cajitas. Cada cara interior es compartida por dos cajitas vecinas: para una es de salida y para la otra es de entrada, con la normal al revés, así que esos aportes se cancelan por pares. Lo único que sobrevive es el flujo a través de las caras que están en la frontera del sólido. Es la misma cancelación de Green, una dimensión más arriba.\par
+\pausa
+\bloque{15. Divergencia cero: lo que entra, sale}{11:35 · 105 palabras, ≈ 48 s}{}
+Una consecuencia inmediata. Si la divergencia es cero en todo el sólido, la integral triple es cero, y por lo tanto el flujo neto a través de la frontera también es cero. No quiere decir que el campo no cruce la superficie: quiere decir que todo lo que entra por un lado sale por otro. Por eso a esos campos se les llama incompresibles. Por ejemplo, el campo y, z, x tiene divergencia cero más cero más cero. Sin hacer ninguna integral de superficie sabemos que su flujo neto a través de cualquier superficie cerrada es cero, sea una esfera, un cubo o un cilindro.\par
+\pausa
+\bloque{16. Flujo a través del paraboloide cerrado con su base}{12:24 · 58 palabras, ≈ 27 s}{▶ aquí va una animación}
+Este es el sólido del problema treinta y ocho: el domo del paraboloide con su base plana. El campo apunta hacia afuera desde el origen. Por el domo el fluido sale; en la base, las flechas son horizontales y no la atraviesan. Fíjense en las normales exteriores: hacia arriba en el domo y hacia abajo en la base.\par
+\pausa
+\capitulo{Problema 38}
+\bloque{17. Problema 38}{12:50 · 87 palabras, ≈ 40 s}{}
+El enunciado: el campo es x, y, z, el vector posición. La superficie S es el paraboloide z igual a cuatro menos x cuadrado menos y cuadrado, con z mayor o igual que cero, orientado hacia arriba. Es un domo que corta el plano x y en la circunferencia de radio dos. Primero calcularemos el flujo a través del domo directamente. Después, el flujo a través de la base, orientada hacia abajo. Y al final verificaremos que la suma coincide con la integral triple de la divergencia.\par
+\pausa
+\bloque{18. 38(a): normal y producto punto}{13:30 · 112 palabras, ≈ 52 s}{}
+Es una gráfica, así que usamos la fórmula de la gráfica. Con f igual a cuatro menos x cuadrado menos y cuadrado, las derivadas son menos dos x y menos dos y. El normal menos f sub x, menos f sub y, uno, queda dos x, dos y, uno. Su tercera componente es positiva, así que apunta hacia arriba, como pide el problema. Ahora el producto punto con F, que es x, y, z: da dos x cuadrado más dos y cuadrado más z. Pero sobre la superficie z no es libre: vale cuatro menos x cuadrado menos y cuadrado. Al sustituir y simplificar queda x cuadrado más y cuadrado más cuatro.\par
+\pausa
+\bloque{19. 38(a): en polares}{14:22 · 149 palabras, ≈ 69 s}{}
+La región de integración es la sombra del domo en el plano x y, el disco de radio dos, así que pasamos a polares: x cuadrado más y cuadrado es r cuadrado, y el elemento de área es r d r d theta. Queda la integral de cero a dos pi y de cero a dos de r cuadrado más cuatro, por r. La primitiva es r a la cuarta sobre cuatro más dos r cuadrado. En r igual a dos vale cuatro más ocho, doce, y multiplicando por dos pi obtenemos veinticuatro pi. Ese es el flujo hacia arriba a través del domo. Es positivo, como esperábamos: el campo apunta hacia afuera desde el origen y el domo lo rodea por arriba, así que el fluido lo atraviesa en el sentido de la normal. Un resultado negativo aquí habría sido una señal de alarma para revisar la orientación.\par
+\pausa
+\bloque{20. 38(b): la base}{15:31 · 94 palabras, ≈ 43 s}{}
+Ahora la base, el disco de radio dos en el plano z igual a cero, orientado hacia abajo. Su normal unitaria es cero, cero, menos uno. El producto punto de F con esa normal es menos z, y sobre la base z vale cero. Así que el integrando es cero en todos los puntos y el flujo a través de la base es cero. Tiene sentido físico: sobre el plano z igual a cero, el campo es x, y, cero, que es horizontal. El fluido se desliza sobre la base, pero no la atraviesa.\par
+\pausa
+\bloque{21. 38(c): la divergencia}{16:14 · 100 palabras, ≈ 46 s}{}
+Ahora el lado de la divergencia. La divergencia de x, y, z es uno más uno más uno, es decir, tres, constante. Entonces la integral triple es tres veces el volumen del sólido. El volumen del domo es la integral doble de su altura, cuatro menos r cuadrado, sobre el disco de radio dos, en polares. La primitiva es dos r cuadrado menos r a la cuarta sobre cuatro, que en r igual a dos vale ocho menos cuatro, cuatro; por dos pi da ocho pi. Así que la integral de la divergencia es tres por ocho pi, veinticuatro pi.\par
+\pausa
+\bloque{22. 38: la cuenta cierra}{17:00 · 95 palabras, ≈ 44 s}{}
+Juntemos todo. La superficie cerrada que limita el sólido es el domo más la base. Con las orientaciones que usamos, hacia arriba en el domo y hacia abajo en la base, las dos normales apuntan hacia afuera del sólido: son exteriores, como exige el teorema. El flujo total es veinticuatro pi más cero, y la integral triple de la divergencia también es veinticuatro pi. El teorema se cumple. Y noten la lección práctica: si alguien nos pide el flujo por un domo abierto, podemos cerrarlo con una tapa fácil, usar divergencia y restar la tapa.\par
+\pausa
+\capitulo{Problema 39(b)}
+\bloque{23. Problema 39(b)}{17:44 · 80 palabras, ≈ 37 s}{}
+Segundo problema, el treinta y nueve b. El campo es x y cuadrado, y z cuadrado, z x cuadrado, y el sólido es el cilindro de radio dos y altura tres. Nos piden el flujo saliente a través de toda la frontera del cilindro, y además que pensemos cuántas integrales de superficie habría que hacer si no tuviéramos el teorema. La frontera es cerrada y nos piden el flujo hacia afuera: es exactamente la situación del teorema de la divergencia.\par
+\pausa
+\bloque{24. 39(b): divergencia e integral triple}{18:21 · 130 palabras, ≈ 60 s}{}
+Calculamos la divergencia: la derivada de x y cuadrado respecto a x es y cuadrado, la de y z cuadrado respecto a y es z cuadrado, y la de z x cuadrado respecto a z es x cuadrado. La suma es x cuadrado más y cuadrado más z cuadrado. El sólido es un cilindro, así que usamos cilíndricas: x cuadrado más y cuadrado es r cuadrado y el elemento de volumen es r d z d r d theta. Integrando primero en z de cero a tres, r cuadrado por r da tres r cubo y z cuadrado por r da nueve r. Luego en r de cero a dos: tres r cubo da doce y nueve r da dieciocho. Treinta por dos pi: el flujo saliente es sesenta pi.\par
+\pausa
+\bloque{25. 39(b): ¿y directamente?}{19:21 · 141 palabras, ≈ 65 s}{}
+¿Y si lo hiciéramos sin el teorema? La frontera del cilindro tiene tres piezas, y cada una necesita su propia parametrización y su propia normal exterior. La tapa en z igual a tres, con normal k hacia arriba. La base en z igual a cero, con normal menos k. Y la pared lateral, donde r vale dos, con normal radial hacia afuera, que se parametriza con theta y z. Serían tres integrales de superficie, con tres oportunidades de equivocarse en una orientación. Con el teorema de la divergencia fue una sola integral triple, y bastante amable. Si quieren practicar, hagan al menos la de la tapa: allí la normal es k, el campo vale z por x cuadrado con z igual a tres, y la integral sobre el disco de radio dos se hace en polares en un par de líneas.\par
+\pausa
+\bloque{26. Cuándo conviene la divergencia}{20:26 · 93 palabras, ≈ 43 s}{}
+Resumamos cuándo usar cada herramienta. Si la superficie es cerrada, piensen primero en el teorema de la divergencia: una integral triple suele ser más fácil que varias de superficie, sobre todo si la divergencia es sencilla. Si la superficie es abierta, el teorema no se aplica directamente y lo natural es el cálculo con el producto cruz. Y hay un caso intermedio, el del problema treinta y ocho: una superficie abierta que se puede cerrar con una tapa plana. Se cierra, se usa la divergencia y se resta el flujo por la tapa.\par
+\pausa
+\capitulo{Errores y para recordar}
+\bloque{27. Errores típicos con la divergencia}{21:09 · 87 palabras, ≈ 40 s}{}
+Tres errores frecuentes. El primero: usar el teorema de la divergencia sobre una superficie que no es cerrada, por ejemplo el domo solo, sin la base. El teorema habla de la frontera completa de un sólido. El segundo: la orientación. El teorema da el flujo hacia afuera; si el problema pide el flujo hacia adentro, hay que cambiarle el signo. Y el tercero, en el cálculo directo: no revisar hacia dónde apunta el producto cruz antes de integrar. Treinta segundos de revisión les ahorran un signo equivocado.\par
+\pausa
+\bloque{28. Para recordar}{21:49 · 96 palabras, ≈ 44 s}{}
+Para cerrar, cuatro ideas. Uno: el elemento de área es la norma de r sub u cruz r sub v, y para una gráfica el normal hacia arriba es menos f sub x, menos f sub y, uno. Dos: el flujo es la integral de F punto n, y depende de la orientación. Tres: para una superficie cerrada, el flujo hacia afuera es la integral triple de la divergencia. Y cuatro: si la superficie es abierta pero fácil de cerrar, ciérrenla, usen divergencia y resten la tapa. En el último video veremos el teorema de Stokes.\par
+\pausa{\centering\color{gray60}(fin)\par}\end{document}

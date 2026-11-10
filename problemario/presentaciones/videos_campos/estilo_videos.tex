@@ -1,0 +1,63 @@
+% ============================================================
+% estilo_videos.tex
+% Macros para los decks de video (Green, superficies/flujo/divergencia, Stokes).
+%
+% Carpeta: C:/Users/anfalear/notascalculo/problemario/presentaciones/videos_campos/
+% (local, fuera de Dropbox por espacio; aquí se compilan los videos).
+% Estilo base: estilo_presentaciones.tex. La copia VIGENTE es la de la carpeta
+% superior, C:/Users/anfalear/notascalculo/problemario/presentaciones/, y los
+% videos la cargan directamente con \input{../estilo_presentaciones}. (La copia
+% en la raíz de Cálculo III 2026-2, en Dropbox, es un espejo idéntico.)
+% Se compilan con build_campos.py (en la raíz de Cálculo III 2026-2).
+%
+% Uso:
+%
+%     \documentclass[14pt,aspectratio=169]{beamer}
+%     \input{../estilo_presentaciones}
+%     \input{estilo_videos}
+%
+% Macros:
+%   \narracion[duración]{guion}  Guion hablado del frame anterior. No se imprime;
+%                                build_campos.py cuenta sus palabras (130 pal/min).
+%   \manimframe{nombre}{desc}    Frame marcador: aquí va la animación de Manim.
+%   \capitulo{título}            Inicio de capítulo (marcador del PDF y de
+%                                capitulos_video_N.txt).
+%   \ideas{...}                  Frame final "Para recordar" (lista de ítems).
+% ============================================================
+
+% ============ GUION ============
+% El argumento se descarta: el guion vive en el .tex y no en el PDF.
+\newcommand{\narracion}[2][]{}
+
+% ============ CAPÍTULOS ============
+% \section no imprime nada en este tema; deja el marcador en el PDF.
+\newcommand{\capitulo}[1]{\section{#1}}
+
+% ============ TIPOGRAFÍA DE VIDEO ============
+\setbeamerfont{frametitle}{size=\Large,series=\bfseries}
+\setbeamerfont{block title}{size=\normalsize}
+\setbeamertemplate{itemize items}[circle]
+\setlength{\leftmargini}{1.4em}
+
+% ============ MARCADOR DE ANIMACIÓN ============
+\newcommand{\manimframe}[2]{%
+\begin{frame}[plain]
+  \vfill
+  \begin{center}
+    {\color{gold}\Large\bfseries $\blacktriangleright$ Animación Manim}\\[0.5em]
+    {\color{navy}\LARGE\bfseries #1}\\[1em]
+    \begin{minipage}{0.8\textwidth}\centering\color{gray60}\normalsize #2\end{minipage}
+  \end{center}
+  \vfill
+\end{frame}
+}
+
+% ============ IDEAS PARA RECORDAR ============
+\newcommand{\ideas}[1]{%
+\begin{frame}{Para recordar}
+  \begin{enumerate}
+    \setlength{\itemsep}{10pt}
+    #1
+  \end{enumerate}
+\end{frame}
+}

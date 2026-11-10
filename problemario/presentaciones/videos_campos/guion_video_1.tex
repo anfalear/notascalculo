@@ -1,0 +1,80 @@
+\documentclass[14pt]{extarticle}
+\usepackage[a4paper,margin=2cm]{geometry}
+\usepackage{fontspec}
+\setmainfont{Segoe UI}
+\usepackage{xcolor}
+\definecolor{navy}{HTML}{1B2A4A}\definecolor{tealx}{HTML}{1F7A6C}
+\definecolor{brick}{HTML}{A34A3E}\definecolor{gray60}{HTML}{8A8A85}
+\usepackage{fancyhdr}\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\color{gray60}\small Video 1 — Teorema de Green \quad·\quad \thepage}
+\setlength{\parindent}{0pt}\setlength{\parskip}{6pt}
+\linespread{1.25}
+\newcommand{\capitulo}[1]{\vspace{14pt}{\color{tealx}\Large\bfseries #1}\par\vspace{2pt}}
+\newcommand{\bloque}[3]{\needspace{5\baselineskip}\vspace{4pt}%
+  {\color{navy}\bfseries #1}\hfill{\color{gray60}\small #2}\par
+  \ifx&#3&\else{\color{brick}\small\bfseries #3}\par\fi}
+\newcommand{\pausa}{\par\vspace{4pt}{\centering\color{brick}\bfseries — PAUSA 3 s —\par}\vspace{4pt}}
+\usepackage{needspace}
+\begin{document}
+
+{\color{navy}\LARGE\bfseries Video 1 — Teorema de Green}\par
+{\color{gray60}1810 palabras ≈ 13:55 min a 130 palabras/min (meta 1700-1950 palabras)}\par
+\fbox{\parbox{\linewidth}{\small\textbf{Para grabar:} lea de corrido. En cada \textcolor{brick}{\textbf{— PAUSA 3 s —}} quédese callado unos 3 segundos (así se cambia de diapositiva). Si se equivoca: pausa y repita el bloque desde el comienzo.}}\par
+\capitulo{Presentación}
+\bloque{1. Portada}{0:00 · 115 palabras, ≈ 53 s}{}
+Hola. En este video vamos a estudiar el teorema de Green, el primero de los tres grandes teoremas de la unidad de campos vectoriales. En clase vimos que, cuando un campo es conservativo, la integral de línea solo depende de los extremos de la curva. Green responde una pregunta más general: qué pasa con la integral de línea sobre una curva cerrada cuando el campo no es conservativo. Vamos a ver el enunciado, la orientación, las condiciones para poder usarlo y una idea de por qué funciona. Y terminamos con una aplicación muy concreta: medir el área de un lote recorriendo solamente su borde, que es el problema treinta y cuatro a del taller tres.\par
+\pausa
+\capitulo{La idea y el enunciado}
+\bloque{2. Frontera contra interior}{0:53 · 118 palabras, ≈ 54 s}{}
+Empecemos por la idea. El teorema fundamental del cálculo dice que la integral de la derivada sobre un intervalo se calcula con solo dos números: el valor de la función en los extremos. Es decir, todo lo que pasa en el interior del intervalo queda resumido en su frontera. Green es exactamente la misma idea, una dimensión más arriba. Ahora la región es un pedazo del plano, su frontera es una curva cerrada, y el teorema dice que una integral de línea sobre esa curva es igual a una integral doble sobre la región que encierra. Esta idea, frontera contra interior, es el hilo de toda la unidad: la volveremos a ver en la divergencia y en Stokes.\par
+\pausa
+\bloque{3. Orientación positiva}{1:48 · 95 palabras, ≈ 44 s}{}
+Antes del enunciado necesitamos fijar un sentido de recorrido, porque la integral de línea de un campo vectorial cambia de signo si recorremos la curva al revés. La convención se llama orientación positiva: caminamos por la curva de manera que la región quede siempre a nuestra izquierda. Para una región sin agujeros, como la de la figura, eso es simplemente el sentido antihorario. A la curva frontera la escribimos con el símbolo de derivada parcial delante de la R: se lee frontera de R. Cuando un enunciado diga orientada positivamente, esto es lo que significa.\par
+\pausa
+\bloque{4. Teorema de Green}{2:31 · 123 palabras, ≈ 57 s}{}
+Este es el teorema. A la izquierda está la integral de línea del campo M, N sobre la curva cerrada C, recorrida en sentido positivo. A la derecha, una integral doble sobre la región encerrada, y el integrando es la derivada de N respecto a x menos la derivada de M respecto a y. Ojo con el orden: primero N con x, luego M con y. Esa resta ya la conocen de la Sesión A: es la componente k del rotacional del campo. Por eso la forma vectorial dice que la circulación del campo alrededor del borde es igual a la integral del rotacional sobre el interior. Si el campo fuera conservativo, el rotacional sería cero y la circulación también, como ya sabíamos.\par
+\pausa
+\bloque{5. Cuándo se puede usar}{3:28 · 114 palabras, ≈ 53 s}{}
+Green tiene condiciones, y hay que revisarlas cada vez. Primero, la curva tiene que ser cerrada, es decir, empezar y terminar en el mismo punto, y simple, es decir, sin cortarse a sí misma. Puede tener esquinas, como un polígono. Segundo, tiene que estar orientada positivamente; si está al revés, el resultado cambia de signo. Y tercero, el más olvidado: las derivadas parciales de M y de N tienen que ser continuas en toda la región, no solo sobre la curva. Si dentro de la región hay un punto donde el campo no está definido, Green no se puede usar sobre esa región. Al final del video veremos el ejemplo típico de esta trampa.\par
+\pausa
+\bloque{6. Región y orientación del borde}{4:21 · 57 palabras, ≈ 26 s}{▶ aquí va una animación}
+Veamos la orientación en movimiento. La flecha recorre el borde y la región siempre queda a su izquierda. Ahora una región con un agujero: el borde exterior se recorre en sentido antihorario, pero el borde interior se recorre en sentido horario, porque así la región sigue quedando a la izquierda. Esa es la orientación positiva en general.\par
+\pausa
+\bloque{7. Por qué funciona}{4:47 · 112 palabras, ≈ 52 s}{}
+¿Por qué es cierto? La idea es partir la región en cuadritos muy pequeños. Sobre un cuadrito, si calculan la circulación del campo recorriendo sus cuatro lados, obtienen aproximadamente la derivada de N respecto a x menos la de M respecto a y, por el área del cuadrito. Al sumar todos los cuadritos pasa algo bonito: cada lado interior pertenece a dos cuadritos vecinos y se recorre dos veces, en sentidos opuestos, así que se cancela. Lo único que sobrevive es el borde exterior. A la izquierda queda la integral de línea sobre la frontera; a la derecha, la suma de los aportes de todos los cuadritos, que es la integral doble.\par
+\pausa
+\capitulo{Verificación en un disco}
+\bloque{8. Verificación de Green en un disco}{5:39 · 52 palabras, ≈ 24 s}{▶ aquí va una animación}
+Comprobemos el teorema en un caso concreto, con el campo menos y, x sobre el disco de radio dos. Sobre la circunferencia, el campo es tangente y siempre empuja a favor del recorrido, así que la circulación se va acumulando. Del otro lado, el rotacional vale dos en cada punto del disco.\par
+\pausa
+\bloque{9. Verificación: los dos lados}{6:03 · 119 palabras, ≈ 55 s}{}
+Hagamos las cuentas. En el interior, M es menos y y N es x. La derivada de N respecto a x es uno, la de M respecto a y es menos uno, y la resta da dos. La integral doble de dos sobre el disco es dos veces su área, cuatro pi, o sea ocho pi. Ahora el borde: parametrizamos la circunferencia con dos coseno de t, dos seno de t. Sobre ella el campo es menos dos seno, dos coseno, que coincide con la derivada de la parametrización, así que el producto punto es cuatro seno cuadrado más cuatro coseno cuadrado, es decir, cuatro. Integrando cuatro de cero a dos pi da ocho pi. Los dos lados coinciden.\par
+\pausa
+\capitulo{Áreas con Green}
+\bloque{10. Green al revés: medir áreas}{6:58 · 122 palabras, ≈ 56 s}{}
+Ahora usemos Green al revés. Normalmente convertimos una integral de línea difícil en una integral doble más fácil. Pero también podemos ir en la otra dirección. Si escogemos un campo cuyo rotacional valga exactamente uno, la integral doble del lado derecho es la integral de uno sobre la región, que es su área. Un campo que sirve es menos y medios, x medios: la derivada de N respecto a x es un medio, la de M respecto a y es menos un medio, y la resta da uno. Así obtenemos la fórmula del recuadro: el área es un medio de la integral de x d y menos y d x sobre el borde. Es el principio de un aparato real, el planímetro.\par
+\pausa
+\bloque{11. Ejemplo: la elipse}{7:54 · 118 palabras, ≈ 54 s}{}
+Probemos la fórmula con una elipse de semiejes a y b. La parametrizamos con a coseno de t, b seno de t, con t de cero a dos pi, que la recorre en sentido antihorario. Entonces d x es menos a seno de t d t y d y es b coseno de t d t. Al formar x d y menos y d x aparecen a b coseno cuadrado más a b seno cuadrado, que es simplemente a b. Integrando a b de cero a dos pi y multiplicando por un medio, obtenemos pi a b, la fórmula conocida del área de la elipse. Con un círculo de radio a, sale pi a cuadrado, como debe ser.\par
+\pausa
+\capitulo{Problema 34(a)}
+\bloque{12. Problema 34(a): el área de un lote}{8:48 · 92 palabras, ≈ 42 s}{}
+Vamos al problema treinta y cuatro a del taller. Un topógrafo camina por el borde de un lote en sentido antihorario y anota las coordenadas de los cinco vértices, en metros: cero cero, cuarenta cero, cincuenta treinta, veinte cuarenta y cinco, y cero veinticinco. No tiene una fórmula para la región, solo la lista de esquinas. La pregunta es el área del lote. Como sabemos el borde, la fórmula de Green para áreas es la herramienta natural. El borde son cinco segmentos, y lo primero es ver cuánto aporta un segmento cualquiera.\par
+\pausa
+\bloque{13. 34(a): lo que aporta un lado}{9:31 · 149 palabras, ≈ 69 s}{}
+Tomemos un lado que va del punto x uno, y uno al punto x dos, y dos, y llamemos delta x y delta y a las diferencias. Lo parametrizamos con x igual a x uno más t delta x, y igual a y uno más t delta y, con t entre cero y uno. Entonces d x es delta x d t y d y es delta y d t. Al formar x d y menos y d x, los términos con t se cancelan, porque t delta x delta y aparece una vez sumando y otra restando. Queda x uno delta y menos y uno delta x, que al desarrollar da x uno y dos menos x dos y uno. Es una constante, así que integrar de cero a uno no cambia nada. Cada lado aporta un medio de x uno y dos menos x dos y uno.\par
+\pausa
+\bloque{14. 34(a): los cinco lados}{10:40 · 120 palabras, ≈ 55 s}{}
+Ahora solo hay que llenar la tabla. El primer lado está sobre el eje x y aporta cero. El segundo, de cuarenta cero a cincuenta treinta, aporta cuarenta por treinta menos cincuenta por cero, que es mil doscientos. El tercero, de cincuenta treinta a veinte cuarenta y cinco, aporta cincuenta por cuarenta y cinco, dos mil doscientos cincuenta, menos veinte por treinta, seiscientos: mil seiscientos cincuenta. El cuarto aporta veinte por veinticinco, quinientos, menos cero. Y el último está sobre el eje y y aporta cero. La suma es tres mil trescientos cincuenta, y la mitad es mil seiscientos setenta y cinco metros cuadrados. Esta es la fórmula que usan los topógrafos, a veces llamada fórmula del cordón de zapato.\par
+\pausa
+\bloque{15. 34(a): comprobación}{11:35 · 100 palabras, ≈ 46 s}{}
+Siempre conviene comprobar. Metemos el lote en el rectángulo de cincuenta por cuarenta y cinco, que mide dos mil doscientos cincuenta metros cuadrados. Lo que sobra son tres triángulos rectángulos en las esquinas. El de abajo a la derecha tiene catetos diez y treinta: área ciento cincuenta. El de arriba a la derecha, catetos quince y treinta: doscientos veinticinco. Y el de arriba a la izquierda, catetos veinte y veinte: doscientos. En total sobran quinientos setenta y cinco, y dos mil doscientos cincuenta menos quinientos setenta y cinco da otra vez mil seiscientos setenta y cinco. Las dos cuentas coinciden.\par
+\pausa
+\capitulo{Errores y para recordar}
+\bloque{16. Errores típicos con Green}{12:21 · 117 palabras, ≈ 54 s}{}
+Dos errores que cuestan puntos. El primero es la orientación: si la curva se recorre en sentido horario, Green da el resultado con el signo cambiado. Revisen siempre el sentido antes de igualar. El segundo es el dominio con agujeros. El campo de la pantalla, el mismo del problema treinta y cinco, cumple que la derivada de N respecto a x es igual a la de M respecto a y, así que el lado derecho de Green parecería ser cero. Sin embargo, su circulación sobre la circunferencia unitaria es dos pi. No hay contradicción: el campo no está definido en el origen, que queda dentro del disco, y por eso Green no se aplica a esa región.\par
+\pausa
+\bloque{17. Para recordar}{13:15 · 87 palabras, ≈ 40 s}{}
+Para cerrar, cuatro ideas. Uno: Green iguala la circulación sobre el borde con la integral doble de N sub x menos M sub y sobre el interior. Dos: la orientación positiva deja la región siempre a la izquierda. Tres: antes de usarlo, revisen que la curva sea cerrada y simple y que el campo sea suave en toda la región, sin agujeros. Y cuatro: leído al revés, Green mide áreas recorriendo solo el borde. En el siguiente video pasamos a superficies y al teorema de la divergencia.\par
+\pausa{\centering\color{gray60}(fin)\par}\end{document}

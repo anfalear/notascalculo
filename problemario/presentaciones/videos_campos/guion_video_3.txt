@@ -1,0 +1,68 @@
+GUION --- video_3_stokes.tex
+1750 palabras ≈ 13:28 min a 130 palabras/min (meta 1700-1950 palabras)
+Generado por build_campos.py a partir de los \narracion del .tex: edite el .tex, no este archivo.
+
+=== Presentación ===
+
+[0:00] Frame 1: Portada  (106 palabras, ≈ 49 s)
+Hola. Este es el tercer y último video de la unidad de campos vectoriales, y está dedicado al teorema de Stokes. En el primer video, Green relacionó la circulación sobre una curva cerrada del plano con una integral doble sobre la región que encierra. Stokes hace lo mismo, pero para curvas cerradas en el espacio: la circulación alrededor de la curva se calcula con el rotacional sobre cualquier superficie que la tenga como borde. Vamos a repasar qué mide el rotacional, enunciar el teorema con su regla de orientación, ver por qué Green es un caso particular y resolver el problema cuarenta a del taller tres.
+
+
+=== Rotacional y circulación ===
+
+[0:49] Frame 2: Recordatorio: el rotacional  (143 palabras, ≈ 66 s)
+Empecemos recordando el rotacional, que vimos en la Sesión A. Para un campo M, N, P, el rotacional se calcula como un determinante simbólico: en la primera fila los vectores i, j, k; en la segunda, las derivadas parciales respecto a x, y, z; y en la tercera, las componentes del campo. Al desarrollarlo quedan tres componentes: P sub y menos N sub z, M sub z menos P sub x, y N sub x menos M sub y. Fíjense en que la tercera es exactamente la expresión de Green. Y recuerden el criterio: en un dominio simplemente conexo, el rotacional es cero si y solo si el campo es conservativo. Un consejo: escriban las seis derivadas cruzadas por separado antes de restar. Ahí se pierden signos, sobre todo en la componente del medio, que es M sub z menos P sub x.
+
+[1:55] Frame 3: El rotacional mide giro  (105 palabras, ≈ 48 s)
+¿Qué mide el rotacional? Imaginen un disquito muy pequeño de radio a, centrado en un punto y perpendicular a una dirección n. Calculamos la circulación del campo alrededor del borde del disquito y la dividimos por su área. Cuando el radio tiende a cero, ese cociente es la componente del rotacional en la dirección n. Es decir, el rotacional mide la circulación por unidad de área: cuánto tiende el campo a hacer girar una pequeña rueda de paletas puesta en ese punto. Por ejemplo, el campo menos y, x, cero gira alrededor del eje z, y su rotacional es dos k, en todos los puntos.
+
+[2:43] Frame 4: De Green a Stokes  (108 palabras, ≈ 50 s)
+Ahora juntemos esto con Green. En su forma vectorial, Green dice que la circulación alrededor del borde de una región plana es la integral de la componente k del rotacional sobre la región. Esto encaja perfectamente con lo anterior: sumamos las circulaciones de muchos cuadritos pequeños y las de los lados interiores se cancelan. Pero ¿qué pasa si la curva cerrada no está en un plano, sino que se tuerce en el espacio? La idea natural es reemplazar la región plana por una superficie que tenga a la curva como borde, y la dirección k por la normal de esa superficie. Eso es exactamente el teorema de Stokes.
+
+
+=== Teorema de Stokes ===
+
+[3:33] Frame 5: Teorema de Stokes  (110 palabras, ≈ 51 s)
+Este es el teorema. Tomamos una superficie S orientada, con normal n, cuyo borde es una curva cerrada. Si el campo tiene derivadas parciales continuas en una región que contiene a la superficie, entonces la circulación del campo alrededor del borde es igual al flujo del rotacional a través de la superficie. A la izquierda, una integral de línea; a la derecha, una integral de superficie como las del video anterior, pero del rotacional, no del campo. La lectura es la misma de Green: la circulación grande alrededor del borde es la suma de todas las pequeñas circulaciones sobre la superficie. Lo único delicado es la orientación, que vemos ahora.
+
+[4:24] Frame 6: Regla de la mano derecha  (94 palabras, ≈ 43 s)
+La regla de la mano derecha conecta la orientación de la superficie con la del borde. Pongan la mano derecha de modo que los dedos doblados sigan el sentido en que se recorre la curva: el pulgar debe apuntar en la dirección de la normal. En el caso más común, una curva recorrida en sentido antihorario vista desde arriba corresponde a una superficie con normal hacia arriba. Si escogen la normal hacia abajo con la curva en sentido antihorario, el resultado sale con el signo cambiado. Este es el error más frecuente con Stokes.
+
+[5:07] Frame 7: Manim: La curva y la superficie que la tapa  (55 palabras, ≈ 25 s)
+Veamos una curva cerrada que se tuerce en el espacio. Como una burbuja de jabón en un aro, hay muchas superficies que la tienen como borde: un disco deformado, un casquete, una bolsa. En todas, la normal dada por la mano derecha apunta hacia el mismo lado, y el flujo del rotacional es el mismo.
+
+[5:33] Frame 8: Cualquier superficie sirve  (85 palabras, ≈ 39 s)
+De aquí sale una consecuencia muy útil. Si dos superficies distintas tienen el mismo borde, con orientaciones compatibles, las dos integrales del rotacional son iguales a la misma circulación, y por lo tanto iguales entre sí. El valor no depende de la superficie, solo de su borde. En la práctica esto significa que, cuando usamos Stokes para calcular una circulación, tenemos libertad total para escoger la superficie. Y siempre conviene escoger la más simple: casi siempre un pedazo de plano, donde la normal es constante.
+
+[6:12] Frame 9: Green es Stokes en el plano  (112 palabras, ≈ 52 s)
+Comprobemos que Stokes contiene a Green. Tomemos como superficie una región plana R en el plano x y, con normal k hacia arriba. Por la regla de la mano derecha, el borde se recorre en sentido antihorario visto desde arriba, que es la orientación positiva de Green. Si el campo es M, N, cero, con M y N que solo dependen de x y de y, su rotacional es cero, cero, N sub x menos M sub y. El producto punto con k es N sub x menos M sub y, y el elemento de área del plano es d A. Stokes se convierte, palabra por palabra, en el teorema de Green.
+
+[7:04] Frame 10: Elegir el lado fácil  (91 palabras, ≈ 42 s)
+Un ejemplo de esta libertad. Queremos la circulación del campo z, x, y alrededor de la circunferencia unitaria en el plano z igual a cero, en sentido antihorario. El rotacional es uno, uno, uno, constante. Como superficie podríamos tomar el hemisferio superior, y efectivamente sale pi, pero hay que integrar sobre una esfera. Es mucho más fácil tomar el disco plano que tiene la misma circunferencia como borde, con normal k hacia arriba. Entonces el rotacional punto k vale uno, y la integral es el área del disco: pi. Un renglón.
+
+
+=== Problema 40(a) ===
+
+[7:46] Frame 11: Problema 40(a)  (129 palabras, ≈ 60 s)
+Vamos al problema cuarenta a. El campo es menos y al cubo, x al cubo, menos z al cubo. La curva C es la intersección del cilindro x cuadrado más y cuadrado igual a uno con el plano x más y más z igual a uno: es una elipse inclinada, que se recorre en sentido antihorario vista desde arriba. Calcularla directamente exige parametrizar la elipse e integrar potencias cúbicas de senos y cosenos. Con Stokes, la cuenta se vuelve mucho más corta. El plan tiene tres pasos, y son los mismos para cualquier circulación en el espacio: calcular el rotacional, escoger una superficie fácil cuyo borde sea la curva, con la normal que indique la mano derecha, y hacer la integral de superficie, que casi siempre termina en polares.
+
+[8:45] Frame 12: 40(a): el rotacional  (109 palabras, ≈ 50 s)
+Primer paso, el rotacional. M es menos y al cubo, N es x al cubo y P es menos z al cubo. La primera componente es P sub y menos N sub z: P solo depende de z y N solo de x, así que da cero. La segunda es M sub z menos P sub x, que también es cero por la misma razón. La tercera es N sub x menos M sub y: tres x cuadrado menos menos tres y cuadrado, es decir, tres x cuadrado más tres y cuadrado. El rotacional apunta en la dirección de k y vale tres veces x cuadrado más y cuadrado.
+
+[9:36] Frame 13: 40(a): la superficie fácil  (119 palabras, ≈ 55 s)
+Segundo paso, escoger la superficie. La curva está sobre el plano x más y más z igual a uno, así que la superficie más simple es el pedazo de ese plano que queda dentro del cilindro. Lo escribimos como la gráfica z igual a uno menos x menos y, sobre el disco unitario. Con la fórmula de la gráfica, el normal hacia arriba es menos f sub x, menos f sub y, uno, que da uno, uno, uno. Hacia arriba es justo lo que pide la regla de la mano derecha, porque la curva va en sentido antihorario vista desde arriba. El producto punto del rotacional con uno, uno, uno es simplemente tres x cuadrado más tres y cuadrado.
+
+[10:30] Frame 14: 40(a): la integral  (99 palabras, ≈ 46 s)
+Tercer paso, la integral. La región de abajo es el disco unitario, así que pasamos a polares: x cuadrado más y cuadrado es r cuadrado y el elemento de área es r d r d theta. El integrando queda tres r cuadrado por r, tres r al cubo. Su integral de cero a uno es tres cuartos, y la integral en theta aporta dos pi. El resultado es tres pi medios. Fíjense en lo que ganamos: en vez de parametrizar una elipse inclinada e integrar cubos de senos, hicimos un rotacional, un producto punto y una integral en polares.
+
+
+=== Errores, cuadro completo y para recordar ===
+
+[11:16] Frame 15: Errores típicos con Stokes  (92 palabras, ≈ 42 s)
+Tres errores típicos. El primero, y el más costoso, es la orientación: la normal de la superficie y el sentido del borde deben estar ligados por la regla de la mano derecha. Si la curva va en sentido antihorario vista desde arriba, la normal va hacia arriba. El segundo es integrar el campo en lugar de su rotacional sobre la superficie; Stokes habla del flujo del rotacional. Y el tercero es más de estrategia: escoger una superficie complicada cuando la curva está sobre un plano. Usen la libertad que da el teorema.
+
+[11:59] Frame 16: El cuadro completo  (93 palabras, ≈ 43 s)
+Con esto completamos el cuadro de la unidad. Todo empezó con el teorema fundamental del cálculo: la integral de una derivada sobre un intervalo depende solo de los extremos. Luego vino el teorema fundamental de las integrales de línea, con el gradiente. Green lo llevó a regiones del plano, y de Green salen los dos grandes teoremas del espacio: Stokes, para superficies con borde, con el rotacional, y la divergencia, para sólidos, con la divergencia. En todos, una integral sobre la frontera es igual a la integral de una derivada sobre el interior.
+
+[12:42] Frame 17: Para recordar  (100 palabras, ≈ 46 s)
+Para terminar, cuatro ideas. Uno: el rotacional mide circulación por unidad de área. Dos: Stokes iguala la circulación sobre el borde con el flujo del rotacional a través de la superficie. Tres: la orientación se amarra con la regla de la mano derecha. Y cuatro: cualquier superficie con el mismo borde sirve, así que escojan la más fácil. Con esto terminamos los tres videos y el cuadro completo de la unidad. Practiquen con las partes b y c del problema cuarenta del taller, que mezclan Stokes y divergencia, y respondan el cuestionario de Moodle antes de la fecha de cierre.

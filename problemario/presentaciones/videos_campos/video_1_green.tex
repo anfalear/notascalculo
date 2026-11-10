@@ -1,0 +1,325 @@
+% ============================================================
+% video_1_green.tex
+% Video 1: teorema de Green (12-15 min) + problema 34(a) del Taller 3.
+% Material de partida: bloque 5 de campos_vectoriales.tex (que queda intacto).
+%
+% Carpeta: C:/Users/anfalear/notascalculo/problemario/presentaciones/videos_campos/
+% (local, fuera de Dropbox). Estilo: ../estilo_presentaciones.tex, que es la copia
+% VIGENTE (la de la raíz de Cálculo III 2026-2, en Dropbox, es un espejo idéntico),
+% más estilo_videos.tex.
+% Motor: lualatex (dos pasadas). Se compila con build_campos.py (raíz de 2026-2),
+% que además genera guion_video_1.txt y capitulos_video_1.txt.
+% Guion: \narracion debajo de cada frame, con su duración estimada a 130 palabras/min.
+% Meta: 1.700-1.950 palabras.
+% ============================================================
+\documentclass[14pt,aspectratio=169]{beamer}
+\input{../estilo_presentaciones}
+\input{estilo_videos}
+
+\setpie{Video 1: teorema de Green --- Cálculo III}
+
+\title{Teorema de Green}
+\subtitle{Frontera contra interior, en el plano}
+\author{Andrés Fabián Leal Archila}
+\institute{Cálculo III (Multivariable) --- Cód. 20254}
+\date{Video 1 de 3}
+
+\begin{document}
+
+% ======================================================
+\capitulo{Presentación}
+% ======================================================
+\portada
+\narracion[≈ 53 s]{Hola. En este video vamos a estudiar el teorema de Green, el primero de los tres grandes teoremas de la unidad de campos vectoriales. En clase vimos que, cuando un campo es conservativo, la integral de línea solo depende de los extremos de la curva. Green responde una pregunta más general: qué pasa con la integral de línea sobre una curva cerrada cuando el campo no es conservativo. Vamos a ver el enunciado, la orientación, las condiciones para poder usarlo y una idea de por qué funciona. Y terminamos con una aplicación muy concreta: medir el área de un lote recorriendo solamente su borde, que es el problema treinta y cuatro a del taller tres.}
+
+% ======================================================
+\capitulo{La idea y el enunciado}
+% ======================================================
+\begin{frame}{Frontera contra interior}
+  \begin{itemize}
+    \setlength{\itemsep}{8pt}
+    \item \textbf{TFC:}\quad $\displaystyle\int_a^b f'(x)\,dx = f(b)-f(a)$\\
+      {\small\color{gray60} el interior del intervalo \ $\leftrightarrow$\ sus dos extremos}
+    \pause
+    \item \textbf{Green:}\quad $\displaystyle\oint_C(\cdots) = \iint_R(\cdots)$\\
+      {\small\color{gray60} la curva frontera \ $\leftrightarrow$\ la región que encierra}
+  \end{itemize}
+  \pause
+  \vfill
+  \begin{center}
+  \color{tealx} Lo que pasa en el interior queda determinado\\ por lo que pasa en el borde.
+  \end{center}
+\end{frame}
+\narracion[≈ 54 s]{Empecemos por la idea. El teorema fundamental del cálculo dice que la integral de la derivada sobre un intervalo se calcula con solo dos números: el valor de la función en los extremos. Es decir, todo lo que pasa en el interior del intervalo queda resumido en su frontera. Green es exactamente la misma idea, una dimensión más arriba. Ahora la región es un pedazo del plano, su frontera es una curva cerrada, y el teorema dice que una integral de línea sobre esa curva es igual a una integral doble sobre la región que encierra. Esta idea, frontera contra interior, es el hilo de toda la unidad: la volveremos a ver en la divergencia y en Stokes.}
+
+\begin{frame}{Orientación positiva}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \begin{itemize}
+        \setlength{\itemsep}{8pt}
+        \item Se recorre $C$ dejando la región $R$ \textbf{siempre a la izquierda}.
+        \item Para una región sin agujeros: sentido \textbf{antihorario}.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \centering
+      \begin{tikzpicture}[scale=1.5]
+        \fill[tealx!20]
+          (1.5,0.4) ..controls (2.8,0.2) and (3.2,1.0).. (2.8,1.8)
+                    ..controls (2.3,2.5) and (0.9,2.6).. (0.6,1.8)
+                    ..controls (0.2,1.1) and (0.7,0.3).. (1.5,0.4);
+        \draw[navy,thick,-Stealth]
+          (1.5,0.4) ..controls (2.8,0.2) and (3.2,1.0).. (2.8,1.8);
+        \draw[navy,thick,-Stealth]
+          (2.8,1.8) ..controls (2.3,2.5) and (0.9,2.6).. (0.6,1.8)
+                    ..controls (0.2,1.1) and (0.7,0.3).. (1.5,0.4);
+        \node[navy,font=\small,anchor=west] at (2.95,0.75){$C=\partial R$};
+        \node[font=\small] at (1.6,1.45){$R$};
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
+\end{frame}
+\narracion[≈ 44 s]{Antes del enunciado necesitamos fijar un sentido de recorrido, porque la integral de línea de un campo vectorial cambia de signo si recorremos la curva al revés. La convención se llama orientación positiva: caminamos por la curva de manera que la región quede siempre a nuestra izquierda. Para una región sin agujeros, como la de la figura, eso es simplemente el sentido antihorario. A la curva frontera la escribimos con el símbolo de derivada parcial delante de la R: se lee frontera de R. Cuando un enunciado diga orientada positivamente, esto es lo que significa.}
+
+\begin{frame}{Teorema de Green}
+  \begin{block}{Teorema}
+    Si $C$ es la frontera de $R$, orientada positivamente,
+    \[
+      \oint_C M\,dx+N\,dy
+      = \iint_R \left(\frac{\partial N}{\partial x}-\frac{\partial M}{\partial y}\right) dA .
+    \]
+  \end{block}
+  \pause
+  \vspace{6pt}
+  \begin{center}
+    Con $\mathbf F=\langle M,N\rangle$:\quad
+    $\displaystyle\oint_{\partial R}\mathbf F\cdot d\mathbf r=\iint_R(\nabla\times\mathbf F)\cdot\mathbf k\,dA$
+  \end{center}
+\end{frame}
+\narracion[≈ 57 s]{Este es el teorema. A la izquierda está la integral de línea del campo M, N sobre la curva cerrada C, recorrida en sentido positivo. A la derecha, una integral doble sobre la región encerrada, y el integrando es la derivada de N respecto a x menos la derivada de M respecto a y. Ojo con el orden: primero N con x, luego M con y. Esa resta ya la conocen de la Sesión A: es la componente k del rotacional del campo. Por eso la forma vectorial dice que la circulación del campo alrededor del borde es igual a la integral del rotacional sobre el interior. Si el campo fuera conservativo, el rotacional sería cero y la circulación también, como ya sabíamos.}
+
+\begin{frame}{Cuándo se puede usar}
+  \begin{itemize}
+    \setlength{\itemsep}{8pt}
+    \item $C$ es \textbf{cerrada}, \textbf{simple} y suave por partes.
+    \item $C$ está orientada \textbf{positivamente}.
+    \item $M$ y $N$ tienen derivadas parciales \textbf{continuas} en un abierto que contiene a \textbf{toda} la región $R$.
+  \end{itemize}
+  \pause
+  \vspace{4pt}
+  \alerta{Si el campo no está definido en algún punto de $R$ (un ``agujero''), Green \textbf{no} se aplica a esa región.}
+\end{frame}
+\narracion[≈ 53 s]{Green tiene condiciones, y hay que revisarlas cada vez. Primero, la curva tiene que ser cerrada, es decir, empezar y terminar en el mismo punto, y simple, es decir, sin cortarse a sí misma. Puede tener esquinas, como un polígono. Segundo, tiene que estar orientada positivamente; si está al revés, el resultado cambia de signo. Y tercero, el más olvidado: las derivadas parciales de M y de N tienen que ser continuas en toda la región, no solo sobre la curva. Si dentro de la región hay un punto donde el campo no está definido, Green no se puede usar sobre esa región. Al final del video veremos el ejemplo típico de esta trampa.}
+
+\manimframe{Región y orientación del borde}{Se dibuja una región $R$ y una flecha recorre su borde dejándola a la izquierda. Después, una región con un agujero: el borde exterior en sentido antihorario y el interior en sentido horario.}
+\narracion[≈ 26 s]{Veamos la orientación en movimiento. La flecha recorre el borde y la región siempre queda a su izquierda. Ahora una región con un agujero: el borde exterior se recorre en sentido antihorario, pero el borde interior se recorre en sentido horario, porque así la región sigue quedando a la izquierda. Esa es la orientación positiva en general.}
+
+\begin{frame}{Por qué funciona}
+  \begin{columns}
+    \begin{column}{0.52\textwidth}
+      \begin{itemize}
+        \setlength{\itemsep}{8pt}
+        \item Se parte $R$ en cuadritos.
+        \pause
+        \item En cada cuadrito: circulación $\approx (N_x-M_y)\,\Delta A$.
+        \pause
+        \item Los lados interiores se recorren dos veces, en sentidos opuestos: \textbf{se cancelan}.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.44\textwidth}
+      \centering
+      \begin{tikzpicture}[scale=1.0]
+        \fill[tealx!15] (0,0) rectangle (3,2);
+        \draw[navy,thick] (0,0) rectangle (3,2);
+        \draw[gray60,dashed] (1.5,0)--(1.5,2);
+        \draw[-Stealth,brick,thick] (1.38,0.7)--(1.38,1.3);
+        \draw[-Stealth,brick,thick] (1.62,1.3)--(1.62,0.7);
+        \node[brick,font=\small,anchor=north] at (1.5,-0.15) {se cancelan};
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
+\end{frame}
+\narracion[≈ 52 s]{¿Por qué es cierto? La idea es partir la región en cuadritos muy pequeños. Sobre un cuadrito, si calculan la circulación del campo recorriendo sus cuatro lados, obtienen aproximadamente la derivada de N respecto a x menos la de M respecto a y, por el área del cuadrito. Al sumar todos los cuadritos pasa algo bonito: cada lado interior pertenece a dos cuadritos vecinos y se recorre dos veces, en sentidos opuestos, así que se cancela. Lo único que sobrevive es el borde exterior. A la izquierda queda la integral de línea sobre la frontera; a la derecha, la suma de los aportes de todos los cuadritos, que es la integral doble.}
+
+% ======================================================
+\capitulo{Verificación en un disco}
+% ======================================================
+\manimframe{Verificación de Green en un disco}{$\mathbf F=\langle -y,x\rangle$ sobre la circunferencia de radio $2$: las flechas del campo son tangentes y la circulación se acumula hasta $8\pi$. Luego el disco se llena con la densidad constante $N_x-M_y=2$ y el área $4\pi$ da $8\pi$.}
+\narracion[≈ 24 s]{Comprobemos el teorema en un caso concreto, con el campo menos y, x sobre el disco de radio dos. Sobre la circunferencia, el campo es tangente y siempre empuja a favor del recorrido, así que la circulación se va acumulando. Del otro lado, el rotacional vale dos en cada punto del disco.}
+
+\begin{frame}{Verificación: los dos lados}
+  $\mathbf F=\langle -y,\ x\rangle$, \quad $R:\ x^2+y^2\le4$.
+  \pause
+  \begin{itemize}
+    \setlength{\itemsep}{8pt}
+    \item \textbf{Interior:}\quad $N_x-M_y=1-(-1)=2$,\quad
+      $\displaystyle\iint_R 2\,dA = 2\cdot 4\pi = 8\pi$.
+    \pause
+    \item \textbf{Borde:}\quad $\mathbf r(t)=\langle 2\cos t,\ 2\sen t\rangle$,\quad
+      $\mathbf F\cdot\mathbf r' = 4$,\quad
+      $\displaystyle\int_0^{2\pi}4\,dt = 8\pi$.
+  \end{itemize}
+  \pause
+  \vfill
+  \begin{center}\color{tealx}\Large $8\pi=8\pi$\ \checkmark\end{center}
+\end{frame}
+\narracion[≈ 55 s]{Hagamos las cuentas. En el interior, M es menos y y N es x. La derivada de N respecto a x es uno, la de M respecto a y es menos uno, y la resta da dos. La integral doble de dos sobre el disco es dos veces su área, cuatro pi, o sea ocho pi. Ahora el borde: parametrizamos la circunferencia con dos coseno de t, dos seno de t. Sobre ella el campo es menos dos seno, dos coseno, que coincide con la derivada de la parametrización, así que el producto punto es cuatro seno cuadrado más cuatro coseno cuadrado, es decir, cuatro. Integrando cuatro de cero a dos pi da ocho pi. Los dos lados coinciden.}
+
+% ======================================================
+\capitulo{Áreas con Green}
+% ======================================================
+\begin{frame}{Green al revés: medir áreas}
+  Si $N_x-M_y=1$, el lado derecho de Green es el \textbf{área} de $R$.
+  \pause
+  \[
+    \mathbf F=\left\langle-\tfrac{y}{2},\ \tfrac{x}{2}\right\rangle
+    \ \Longrightarrow\ N_x-M_y=\tfrac12+\tfrac12=1
+  \]
+  \pause
+  \[
+    \boxed{A(R)=\frac12\oint_C x\,dy-y\,dx}
+  \]
+  \pause
+  \begin{center}\small\color{gray60} Un área calculada recorriendo solo el borde: el principio del planímetro.\end{center}
+\end{frame}
+\narracion[≈ 56 s]{Ahora usemos Green al revés. Normalmente convertimos una integral de línea difícil en una integral doble más fácil. Pero también podemos ir en la otra dirección. Si escogemos un campo cuyo rotacional valga exactamente uno, la integral doble del lado derecho es la integral de uno sobre la región, que es su área. Un campo que sirve es menos y medios, x medios: la derivada de N respecto a x es un medio, la de M respecto a y es menos un medio, y la resta da uno. Así obtenemos la fórmula del recuadro: el área es un medio de la integral de x d y menos y d x sobre el borde. Es el principio de un aparato real, el planímetro.}
+
+\begin{frame}{Ejemplo: la elipse}
+  $\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1$,\quad $\mathbf r(t)=\langle a\cos t,\ b\sen t\rangle$,\quad $0\le t\le2\pi$.
+  \pause
+  \[
+    x\,dy-y\,dx = a\cos t\,(b\cos t)\,dt-b\sen t\,(-a\sen t)\,dt = ab\,dt
+  \]
+  \pause
+  \[
+    A=\frac12\int_0^{2\pi}ab\,dt=\boxed{\pi ab}
+  \]
+\end{frame}
+\narracion[≈ 54 s]{Probemos la fórmula con una elipse de semiejes a y b. La parametrizamos con a coseno de t, b seno de t, con t de cero a dos pi, que la recorre en sentido antihorario. Entonces d x es menos a seno de t d t y d y es b coseno de t d t. Al formar x d y menos y d x aparecen a b coseno cuadrado más a b seno cuadrado, que es simplemente a b. Integrando a b de cero a dos pi y multiplicando por un medio, obtenemos pi a b, la fórmula conocida del área de la elipse. Con un círculo de radio a, sale pi a cuadrado, como debe ser.}
+
+% ======================================================
+\capitulo{Problema 34(a)}
+% ======================================================
+\begin{frame}{Problema 34(a): el área de un lote}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \raggedright
+      Un topógrafo recorre el borde de un lote en sentido \textbf{antihorario}:\\
+      $(0,0)$, $(40,0)$, $(50,30)$,\\ $(20,45)$, $(0,25)$ (metros).
+      \pause
+      \vspace{8pt}
+
+      Usar $A=\frac12\oint_C x\,dy-y\,dx$.
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \centering
+      \begin{tikzpicture}[scale=0.07]
+        \fill[tealx!20] (0,0) -- (40,0) -- (50,30) -- (20,45) -- (0,25) -- cycle;
+        \draw[thick, navy] (0,0) -- (40,0) -- (50,30) -- (20,45) -- (0,25) -- cycle;
+        \draw[-Stealth, thick, brick] (15,0) -- (25,0);
+        \foreach \p/\pos in {{(0,0)}/below left,{(40,0)}/below,{(50,30)}/right,{(20,45)}/above,{(0,25)}/left}
+          \fill \p circle (0.7) node[\pos]{\scriptsize\p};
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
+\end{frame}
+\narracion[≈ 42 s]{Vamos al problema treinta y cuatro a del taller. Un topógrafo camina por el borde de un lote en sentido antihorario y anota las coordenadas de los cinco vértices, en metros: cero cero, cuarenta cero, cincuenta treinta, veinte cuarenta y cinco, y cero veinticinco. No tiene una fórmula para la región, solo la lista de esquinas. La pregunta es el área del lote. Como sabemos el borde, la fórmula de Green para áreas es la herramienta natural. El borde son cinco segmentos, y lo primero es ver cuánto aporta un segmento cualquiera.}
+
+\begin{frame}{34(a): lo que aporta un lado}
+  Lado de $(x_1,y_1)$ a $(x_2,y_2)$:\\
+  \hspace*{1em}$x=x_1+t\,\Delta x$,\quad $y=y_1+t\,\Delta y$,\quad $0\le t\le1$.
+  \pause
+  \[
+    x\,dy-y\,dx=\bigl[(x_1+t\Delta x)\Delta y-(y_1+t\Delta y)\Delta x\bigr]dt
+  \]
+  \pause
+  \[
+    = (x_1\Delta y-y_1\Delta x)\,dt=(x_1y_2-x_2y_1)\,dt
+  \]
+  \pause
+  \[
+    \boxed{\frac12\int_{\text{lado}}x\,dy-y\,dx=\frac12\,(x_1y_2-x_2y_1)}
+  \]
+\end{frame}
+\narracion[≈ 69 s]{Tomemos un lado que va del punto x uno, y uno al punto x dos, y dos, y llamemos delta x y delta y a las diferencias. Lo parametrizamos con x igual a x uno más t delta x, y igual a y uno más t delta y, con t entre cero y uno. Entonces d x es delta x d t y d y es delta y d t. Al formar x d y menos y d x, los términos con t se cancelan, porque t delta x delta y aparece una vez sumando y otra restando. Queda x uno delta y menos y uno delta x, que al desarrollar da x uno y dos menos x dos y uno. Es una constante, así que integrar de cero a uno no cambia nada. Cada lado aporta un medio de x uno y dos menos x dos y uno.}
+
+\begin{frame}{34(a): los cinco lados}
+  \begin{columns}
+    \begin{column}{0.64\textwidth}
+      \centering\small
+      \renewcommand{\arraystretch}{1.15}
+      \begin{tabular}{lc}
+        \toprule
+        \textbf{Lado} & $x_1y_2-x_2y_1$\\
+        \midrule
+        $(0,0)\to(40,0)$ & $0$\\
+        $(40,0)\to(50,30)$ & $1200-0=1200$\\
+        $(50,30)\to(20,45)$ & $2250-600=1650$\\
+        $(20,45)\to(0,25)$ & $500-0=500$\\
+        $(0,25)\to(0,0)$ & $0$\\
+        \midrule
+        \textbf{Suma} & $3350$\\
+        \bottomrule
+      \end{tabular}
+    \end{column}
+    \begin{column}{0.32\textwidth}
+      \pause
+      \[
+        A=\tfrac12\cdot3350
+      \]
+      \[
+        \boxed{A=1675\ \mathrm{m}^2}
+      \]
+    \end{column}
+  \end{columns}
+\end{frame}
+\narracion[≈ 55 s]{Ahora solo hay que llenar la tabla. El primer lado está sobre el eje x y aporta cero. El segundo, de cuarenta cero a cincuenta treinta, aporta cuarenta por treinta menos cincuenta por cero, que es mil doscientos. El tercero, de cincuenta treinta a veinte cuarenta y cinco, aporta cincuenta por cuarenta y cinco, dos mil doscientos cincuenta, menos veinte por treinta, seiscientos: mil seiscientos cincuenta. El cuarto aporta veinte por veinticinco, quinientos, menos cero. Y el último está sobre el eje y y aporta cero. La suma es tres mil trescientos cincuenta, y la mitad es mil seiscientos setenta y cinco metros cuadrados. Esta es la fórmula que usan los topógrafos, a veces llamada fórmula del cordón de zapato.}
+
+\begin{frame}{34(a): comprobación}
+  \begin{columns}
+    \begin{column}{0.52\textwidth}
+      Rectángulo $50\times45$ menos tres triángulos:
+      \[
+        2250-(150+225+200)=\boxed{1675}\ \checkmark
+      \]
+      \pause
+      {\small\color{gray60} $1675\ \mathrm{m}^2 \approx 0{,}17$ hectáreas.}
+    \end{column}
+    \begin{column}{0.44\textwidth}
+      \centering
+      \begin{tikzpicture}[scale=0.075]
+        \draw[gray60, dashed] (0,0) rectangle (50,45);
+        \fill[brick!20] (40,0) -- (50,0) -- (50,30) -- cycle;
+        \fill[brick!20] (50,30) -- (50,45) -- (20,45) -- cycle;
+        \fill[brick!20] (20,45) -- (0,45) -- (0,25) -- cycle;
+        \fill[tealx!20] (0,0) -- (40,0) -- (50,30) -- (20,45) -- (0,25) -- cycle;
+        \draw[thick, navy] (0,0) -- (40,0) -- (50,30) -- (20,45) -- (0,25) -- cycle;
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
+\end{frame}
+\narracion[≈ 46 s]{Siempre conviene comprobar. Metemos el lote en el rectángulo de cincuenta por cuarenta y cinco, que mide dos mil doscientos cincuenta metros cuadrados. Lo que sobra son tres triángulos rectángulos en las esquinas. El de abajo a la derecha tiene catetos diez y treinta: área ciento cincuenta. El de arriba a la derecha, catetos quince y treinta: doscientos veinticinco. Y el de arriba a la izquierda, catetos veinte y veinte: doscientos. En total sobran quinientos setenta y cinco, y dos mil doscientos cincuenta menos quinientos setenta y cinco da otra vez mil seiscientos setenta y cinco. Las dos cuentas coinciden.}
+
+% ======================================================
+\capitulo{Errores y para recordar}
+% ======================================================
+\begin{frame}{Errores típicos con Green}
+  \begin{enumerate}
+    \setlength{\itemsep}{10pt}
+    \item \textbf{Orientación}: si $C$ va en sentido horario, $\oint_C=-\iint_R(N_x-M_y)\,dA$.
+    \pause
+    \item \textbf{Dominio con agujeros}: $\mathbf F=\Bigl\langle\frac{-y}{x^2+y^2},\frac{x}{x^2+y^2}\Bigr\rangle$ cumple $N_x=M_y$, pero su circulación en la circunferencia unitaria es $2\pi\neq0$.
+    \\{\small\color{gray60} No contradice a Green: $\mathbf F$ no está definido en el origen, que está dentro del disco.}
+  \end{enumerate}
+\end{frame}
+\narracion[≈ 54 s]{Dos errores que cuestan puntos. El primero es la orientación: si la curva se recorre en sentido horario, Green da el resultado con el signo cambiado. Revisen siempre el sentido antes de igualar. El segundo es el dominio con agujeros. El campo de la pantalla, el mismo del problema treinta y cinco, cumple que la derivada de N respecto a x es igual a la de M respecto a y, así que el lado derecho de Green parecería ser cero. Sin embargo, su circulación sobre la circunferencia unitaria es dos pi. No hay contradicción: el campo no está definido en el origen, que queda dentro del disco, y por eso Green no se aplica a esa región.}
+
+\ideas{%
+  \item Green: circulación en el borde $=$ integral doble de $N_x-M_y$ en el interior.
+  \item Orientación positiva: la región siempre a la izquierda.
+  \item Condiciones: curva cerrada y simple; campo $\mathcal C^1$ en \textbf{toda} la región.
+  \item Al revés: $A=\frac12\oint_C x\,dy-y\,dx$ mide áreas recorriendo el borde.
+}
+\narracion[≈ 40 s]{Para cerrar, cuatro ideas. Uno: Green iguala la circulación sobre el borde con la integral doble de N sub x menos M sub y sobre el interior. Dos: la orientación positiva deja la región siempre a la izquierda. Tres: antes de usarlo, revisen que la curva sea cerrada y simple y que el campo sea suave en toda la región, sin agujeros. Y cuatro: leído al revés, Green mide áreas recorriendo solo el borde. En el siguiente video pasamos a superficies y al teorema de la divergencia.}
+
+\end{document}
